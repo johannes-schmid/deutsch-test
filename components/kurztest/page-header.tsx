@@ -21,7 +21,7 @@ export function KurztestHeader({ crumbs, eyebrow, h1, lead, chips }: { crumbs: C
         </ol>
       </nav>
       <span className="font-[family-name:var(--v-font-mono)] text-[12px] tracking-[0.08em] text-v-muted uppercase">{eyebrow}</span>
-      <h1 className="v-display text-[clamp(36px,5vw,60px)] leading-[1.05]">{h1}</h1>
+      <h1 className="v-display text-[clamp(36px,5vw,60px)] leading-[1.05] text-balance">{h1}</h1>
       <p className="text-[17px] leading-relaxed text-v-muted sm:text-lg">{lead}</p>
       <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] text-v-muted">
         {chips.map((c) => (

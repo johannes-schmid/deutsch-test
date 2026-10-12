@@ -96,7 +96,7 @@ export const KURZTEST_COPY = {
   },
 }
 
-type SkillPage = { summary: string; detail: string; title: string; description: string; h1: string; lead: string; count: string }
+type SkillPage = { summary: string; detail: string; title: string; description: string; eyebrow?: string; h1: string; lead: string; count: string }
 
 export type ExamPage = {
   crumb: string
@@ -124,10 +124,11 @@ export const EXAM_PAGES: Partial<Record<ExamId, ExamPage>> = {
     skills: {
       hoeren: {
         summary: "Durchsagen, Radio und ein Gespräch", detail: "5 Aufgaben · etwa 4 Minuten",
-        title: "DTZ Hören gratis üben: Kurztest mit Lösungen | deutschtest üben",
-        description: "Übe DTZ Hören gratis: 5 Aufgaben mit Durchsagen, Radio und einem Gespräch, in etwa 4 Minuten. Danach Lösungen und Transkripte.",
-        h1: "DTZ Hören gratis üben",
-        lead: "5 Aufgaben aus drei Teilen: Durchsagen, Radio und ein Gespräch. Mit verschiedenen Stimmen, und jede Aufnahme läuft so oft wie in der Prüfung.",
+        title: "DTZ Hören gratis üben 2026 – Test mit Audio und Lösungen | deutschtest üben",
+        description: "DTZ Hören gratis üben: 5 Aufgaben aus Teil 1 bis 3, mit Durchsagen, Radio und Gespräch wie im Deutsch-Test für Zuwanderer. Mit Lösungen und Transkripten.",
+        eyebrow: "DTZ Hören · Teil 1, 2 und 3 · A2–B1",
+        h1: "DTZ Hören Test: gratis üben mit 5 Aufgaben",
+        lead: "Teste dein Hörverstehen für den Deutsch-Test für Zuwanderer. Du hörst Durchsagen, Radio und ein Gespräch mit verschiedenen Stimmen. Jede Aufnahme läuft so oft wie in der Prüfung. Danach siehst du alle Lösungen und Transkripte.",
         count: "5 Aufgaben",
       },
       lesen: {

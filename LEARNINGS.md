@@ -251,3 +251,9 @@
 **Outcome:** SUCCESS (tsc clean, build 39/39, all icon routes 200, `/de` 308).
 **What worked / went wrong:** A page that sets its own `openGraph` loses the file-convention `opengraph-image` from the root, so /dtz etc. had no og:image. Fixed by adding `OG_IMAGE` inside the shared `openGraph()` helper.
 **Lesson:** After adding an `opengraph-image`, curl an inner page with its own metadata and check `og:image`; inheritance stops at the first page-level `openGraph`.
+
+## 2026-10-12 — KNM-style SEO header on /gratis-test/dtz/hoeren
+**Changed:** Hören title/description/H1/lead and a new optional per-skill `eyebrow` in `lib/i18n/kurztest.ts`; `components/kurztest/skill-page.tsx` uses it; H1 gets `text-balance` in `components/kurztest/page-header.tsx`.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Copied knmoefenen.nl's pattern: the title carries the primary keyword plus the year, the H1 uses a variant keyword plus a number, the eyebrow lists format facts, and the lead spells out the full exam name. tsc and build pass. Screenshots at 390 and 1440 look clean.
+**Lesson:** Title and H1 should target different query variants ("gratis üben" vs "Test") instead of repeating each other. A year in a title has to be updated by hand every January.

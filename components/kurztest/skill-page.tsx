@@ -56,7 +56,7 @@ export function SkillPage({ exam, skill }: { exam: ExamId; skill: Skill }) {
   return (
     <div className="v-container pb-16">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [resource, breadcrumbList(crumbs)] }} />
-      <KurztestHeader crumbs={crumbs} eyebrow={p.hub.eyebrow} h1={c.h1} lead={c.lead} chips={[c.count, `${minutes} Minuten`, T.chips.free, T.chips.noAccount]} />
+      <KurztestHeader crumbs={crumbs} eyebrow={c.eyebrow ?? p.hub.eyebrow} h1={c.h1} lead={c.lead} chips={[c.count, `${minutes} Minuten`, T.chips.free, T.chips.noAccount]} />
       <KurztestRunner exam={exam} skill={skill} minutes={minutes} blocks={blocks} />
     </div>
   )
