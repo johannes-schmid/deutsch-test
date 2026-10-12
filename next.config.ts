@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   async redirects() {
     return [
+      // German became the default on 2026-10-12; English lives at /en.
+      { source: "/de", destination: "/", permanent: true },
       { source: "/dtz/kurztest", destination: "/gratis-test/dtz", permanent: true },
       { source: "/dtz/kurztest/:skill", destination: "/gratis-test/dtz/:skill", permanent: true },
     ];

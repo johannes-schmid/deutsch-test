@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,14 +14,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deutschtest-ueben.de"),
-  title: "deutschtest-ueben.de",
+  title: "deutschtest üben",
+  applicationName: "deutschtest üben",
+  twitter: { card: "summary_large_image" },
   description: "Realistische Modelltests für den Deutsch-Test für Zuwanderer (DTZ).",
 };
+
+export const viewport: Viewport = { themeColor: "#EEF1F6" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="de"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

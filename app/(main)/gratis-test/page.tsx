@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const live = (id: ExamId) => !!EXAM_PAGES[id] && liveSkills(id).length > 0
 
 const crumbs: Crumb[] = [
-  { name: T.crumbs.home, path: "/de" },
+  { name: T.crumbs.home, path: "/" },
   { name: T.crumbs.overview, path: PATH },
 ]
 

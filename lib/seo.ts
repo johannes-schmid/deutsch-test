@@ -19,8 +19,11 @@ export function breadcrumbList(crumbs: Crumb[]) {
   }
 }
 
+/** The site-wide share card (app/opengraph-image.png). A page that sets its own openGraph drops the inherited image, so the helper adds it back. */
+export const OG_IMAGE = { url: "/opengraph-image.png", width: 1200, height: 630, alt: "deutschtest üben: Deutschprüfung online üben" }
+
 export function openGraph(path: string, title: string, description: string) {
-  return { type: "website" as const, locale: "de_DE", siteName: SITE_NAME, url: absUrl(path), title, description }
+  return { type: "website" as const, locale: "de_DE", siteName: SITE_NAME, url: absUrl(path), title, description, images: [OG_IMAGE] }
 }
 
 // The operator, as on inburgeringoefenen.nl: Samen Sterk in Taal, represented by Amber van der Zalm.

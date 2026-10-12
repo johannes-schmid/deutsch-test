@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <>
-      <PageHeader crumbs={[{ name: "Start", path: "/de" }, { name: "Impressum", path: "/impressum" }]} h1="Impressum" />
+      <PageHeader crumbs={[{ name: "Start", path: "/" }, { name: "Impressum", path: "/impressum" }]} h1="Impressum" />
       <Prose>
         <h2>Angaben nach § 5 DDG</h2>
         <address>

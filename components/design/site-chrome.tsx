@@ -4,7 +4,7 @@ import { VButton } from "@/components/design/kit"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
 import { LANDING, type Locale } from "@/lib/i18n/landing"
 
-const HOME: Record<Locale, string> = { en: "/", de: "/de" }
+const HOME: Record<Locale, string> = { de: "/", en: "/en" }
 
 /** The site's top bar, shared by the landing pages and every inner page. `switchLang` hides the language link on pages that exist in one language only. */
 export function SiteNav({ locale, switchLang = true }: { locale: Locale; switchLang?: boolean }) {

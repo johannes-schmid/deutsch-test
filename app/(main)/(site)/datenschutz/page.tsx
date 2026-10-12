@@ -16,7 +16,7 @@ export default function DatenschutzPage() {
   return (
     <>
       <PageHeader
-        crumbs={[{ name: "Start", path: "/de" }, { name: "Datenschutz", path: "/datenschutz" }]}
+        crumbs={[{ name: "Start", path: "/" }, { name: "Datenschutz", path: "/datenschutz" }]}
         h1="Datenschutzerklärung"
         lead="Hier steht, welche Daten wir verarbeiten, warum wir das tun und welche Rechte du hast."
         meta="Stand: 12. Oktober 2026"

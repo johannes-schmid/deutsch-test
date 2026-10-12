@@ -150,7 +150,7 @@ The palette is cool and neutral, with a single warm accent and four skill tones 
   max about 46ch.
 - **Label:** Reddit Mono 400–500, 11–12px, uppercase, +0.08em. Timers and counts use `.v-num`
   (mono, tabular numbers).
-- Copy comes in English (`/`, the default) and simple German (`/de`, addressed as *du*). Sentences stay at 15 words or fewer. All strings live in `lib/i18n/landing.ts`. Exam task content stays German in both.
+- Copy comes in simple German (`/`, the default, addressed as *du*) and English (`/en`). Sentences stay at 15 words or fewer. All strings live in `lib/i18n/landing.ts`. Exam task content stays German in both.
 
 ## Layout
 
@@ -243,6 +243,7 @@ missing, add it to `components/exam/`, show it on `/design/pruefung`, and list i
 | `MatchItem` | situation tabs plus ads as a sideways scroll-snap row, and "x" (no match) as a dashed card |
 | `GapItem` | a letter with pill gaps; tapping a gap opens its options under the text and moves on to the next open gap |
 | `FeedbackSheet` | practice-mode explanation: the verdict, an explanation, the evidence marked in glow, and a language chip for translated explanations |
+| `ConfirmSheet` | replaces `window.confirm`/`alert` in exams (leave, hand in early, time up): bottom sheet on phones, centred card from `sm`; the safe choice is filled and focused; without `cancel` it is a one-button notice |
 | `ReadingLayout` / `ReadingText` | a "Text \| Aufgaben (n/m)" switch on phones and two panes from `lg`; the text sits at 18px |
 | `WritingTask` | choose task A or B (one task: no choice, shown as "Deine Aufgabe"), then content points the learner ticks off themselves (no live grading), a textarea and a word count |
 | `SpeakingTask` | pair exam: task and point chips, optional drawn `cards` (label + pictogram, Start Deutsch 1), turns from Prüfer, Partner and Du as a chat, a 72px mic with a level meter |

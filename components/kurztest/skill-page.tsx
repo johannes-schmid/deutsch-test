@@ -30,7 +30,7 @@ export function SkillPage({ exam, skill }: { exam: ExamId; skill: Skill }) {
   const c = p.skills[skill]
   const minutes = tasterMinutes(exam, skill)
   const crumbs: Crumb[] = [
-    { name: T.crumbs.home, path: "/de" },
+    { name: T.crumbs.home, path: "/" },
     { name: T.crumbs.overview, path: "/gratis-test" },
     { name: p.crumb, path: examPath(exam) },
     { name: T.names[skill], path: path(exam, skill) },

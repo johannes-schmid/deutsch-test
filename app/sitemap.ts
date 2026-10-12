@@ -11,8 +11,8 @@ import { LEGAL_COMPLETE, absUrl } from "@/lib/seo"
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: absUrl("/"), changeFrequency: "monthly", priority: 1, alternates: { languages: { en: absUrl("/"), de: absUrl("/de") } } },
-    { url: absUrl("/de"), changeFrequency: "monthly", priority: 1, alternates: { languages: { en: absUrl("/"), de: absUrl("/de") } } },
+    { url: absUrl("/"), changeFrequency: "monthly", priority: 1, alternates: { languages: { de: absUrl("/"), en: absUrl("/en") } } },
+    { url: absUrl("/en"), changeFrequency: "monthly", priority: 0.8, alternates: { languages: { de: absUrl("/"), en: absUrl("/en") } } },
     { url: absUrl("/dtz"), changeFrequency: "monthly", priority: 0.9 },
     { url: absUrl("/gratis-test"), changeFrequency: "weekly", priority: 0.9 },
     // An exam or skill without reviewed content is a 404, so it is never advertised.

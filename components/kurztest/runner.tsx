@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
-import { ExamAudio, ExamButton, ExamCopyProvider, ExamShell, PartIntro, ReadingLayout, ReadingText, SpeakingTask, WritingTask, useExamTimer } from "@/components/exam"
+import { ConfirmSheet, ExamAudio, ExamButton, ExamCopyProvider, ExamShell, PartIntro, ReadingLayout, ReadingText, SpeakingTask, WritingTask, useExamTimer } from "@/components/exam"
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { examPath, type ExamId } from "@/lib/exams"
 import { EXAM_PAGES, KURZTEST_COPY } from "@/lib/i18n/kurztest"
@@ -23,9 +23,14 @@ const top = () => {
 
 function useExit(exam: ExamId) {
   const router = useRouter()
-  return () => {
-    if (window.confirm(C.run.exitConfirm)) router.push(examPath(exam))
-  }
+  const [open, setOpen] = useState(false)
+  const sheet = <ConfirmSheet open={open} onOpenChange={setOpen} {...C.run.exitConfirm} onConfirm={() => router.push(examPath(exam))} />
+  return [() => setOpen(true), sheet] as const
+}
+
+/** Opens when the timer runs out; closing it in any way hands the test in. */
+function TimeUp({ left, onFinish }: { left: number; onFinish: () => void }) {
+  return <ConfirmSheet open={left === 0} onOpenChange={(o) => !o && onFinish()} {...C.run.timeUp} onConfirm={onFinish} />
 }
 
 const teilSections = (blocks: PublicBlock[], done: (b: PublicBlock) => number) =>
@@ -35,7 +40,8 @@ const teilSections = (blocks: PublicBlock[], done: (b: PublicBlock) => number) =
   })
 
 function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }: { exam: ExamId; skill: "lesen" | "hoeren"; minutes: number; blocks: PublicBlock[]; values: Values; onChange: (n: number, v: string) => void; onFinish: () => void }) {
-  const exit = useExit(exam)
+  const [exit, exitSheet] = useExit(exam)
+  const [confirmFinish, setConfirmFinish] = useState(false)
   const [i, setI] = useState(0)
   const timed = skill === "lesen"
   const left = useExamTimer(minutes * 60, timed)
@@ -45,12 +51,6 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }
     finished.current = true
     onFinish()
   }
-  useEffect(() => {
-    if (timed && left === 0) {
-      window.alert(C.run.timeUp)
-      finish()
-    }
-  })
   useEffect(top, [i])
 
   const block = blocks[i]
@@ -83,7 +83,7 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }
           <>
             {timed && i > 0 ? <ExamButton kind="soft" onClick={() => setI(i - 1)}>{C.run.back}</ExamButton> : null}
             {last ? (
-              <ExamButton onClick={() => (!open || window.confirm(C.run.finishConfirm(open))) && finish()}>{C.run.finish}</ExamButton>
+              <ExamButton onClick={() => (open ? setConfirmFinish(true) : finish())}>{C.run.finish}</ExamButton>
             ) : (
               <ExamButton onClick={() => setI(i + 1)}>{C.run.next}</ExamButton>
             )}
@@ -94,12 +94,15 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }
         {block.display.clip ? <ExamAudio key={block.id} clip={block.display.clip} /> : null}
         {reading ? <ReadingLayout key={block.id} answered={answered(block)} total={itemNumbers(block.display.items).length} text={<ReadingText data={reading} />} tasks={items} /> : items}
       </ExamShell>
+      {exitSheet}
+      <ConfirmSheet open={confirmFinish} onOpenChange={setConfirmFinish} {...C.run.finishConfirm} text={C.run.finishConfirm.text(open)} onConfirm={finish} />
+      {timed ? <TimeUp left={left} onFinish={finish} /> : null}
     </KurztestFrame>
   )
 }
 
 function WritingTest({ exam, minutes, block, onFinish }: { exam: ExamId; minutes: number; block: PublicBlock; onFinish: (task: string, text: string) => void }) {
-  const exit = useExit(exam)
+  const [exit, exitSheet] = useExit(exam)
   const tasks = block.display.writing!
   const [chosen, setChosen] = useState<string | null>(tasks.length === 1 ? tasks[0].key : null)
   const [text, setText] = useState("")
@@ -110,12 +113,6 @@ function WritingTest({ exam, minutes, block, onFinish }: { exam: ExamId; minutes
     finished.current = true
     onFinish(chosen ?? "A", text)
   }
-  useEffect(() => {
-    if (left === 0) {
-      window.alert(C.run.timeUp)
-      finish()
-    }
-  })
   return (
     <KurztestFrame scene="schreiben">
       <ExamShell
@@ -129,6 +126,8 @@ function WritingTest({ exam, minutes, block, onFinish }: { exam: ExamId; minutes
         <p className="text-[15px] leading-relaxed text-v-muted">{block.display.instruction}</p>
         <WritingTask options={tasks} chosen={chosen} onChoose={setChosen} value={text} onChange={(v) => setText(v.slice(0, MAX_TEXT))} />
       </ExamShell>
+      {exitSheet}
+      <TimeUp left={left} onFinish={finish} />
     </KurztestFrame>
   )
 }
@@ -139,7 +138,7 @@ function pickMime() {
 }
 
 function SpeakingTest({ exam, blocks, onFinish }: { exam: ExamId; blocks: PublicBlock[]; onFinish: (recordings: Blob[]) => void }) {
-  const exit = useExit(exam)
+  const [exit, exitSheet] = useExit(exam)
   const [b, setB] = useState(0)
   const [t, setT] = useState(0)
   const [error, setError] = useState<string | null>(null)
@@ -246,6 +245,7 @@ function SpeakingTest({ exam, blocks, onFinish }: { exam: ExamId; blocks: Public
         ) : null}
         {error ? <p role="alert" className="rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
       </ExamShell>
+      {exitSheet}
     </KurztestFrame>
   )
 }

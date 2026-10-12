@@ -1,5 +1,8 @@
 # Keyword strategy: homepage and exam pages
 
+> **Update 2026-10-12 (later):** German is the default again: `/` is German, `/en` is English, `/de` 308s to `/`.
+> The notes below about "/" (English) now apply to `/en`, and those about `/de` to `/`.
+>
 > **Update 2026-10-12:** `/` is now English and `/de` is German, linked with hreflang. Both lead
 > with "Pass Goethe, telc, DTZ & ÖSD" (Hannes's call, following TestGerman). The English
 > homepage targets "pass Goethe / telc / DTZ / ÖSD", "German exam practice online" and

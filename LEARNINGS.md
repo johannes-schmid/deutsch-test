@@ -245,3 +245,9 @@
 **Lesson:**
 - When a spec gains earlier Teile, re-check the item numbers of existing drafts. The validator doesn't catch duplicate numbers across files yet.
 - Any check that encodes one exam's format (pair partner, picture brief) must be keyed to that exam.
+
+## 2026-10-12 — Brand icons, share card, German as default
+**Changed:** `app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}` + `public/icon-*.png` rendered from the logo with Playwright; Next starter SVGs removed; `/` now German, English at `app/(main)/en`, `/de` → `/` 308 in `next.config.ts`; crumbs, nav, sitemap, hreflang, llms.txt repointed; `<html lang="de">`, theme color, twitter card.
+**Outcome:** SUCCESS (tsc clean, build 39/39, all icon routes 200, `/de` 308).
+**What worked / went wrong:** A page that sets its own `openGraph` loses the file-convention `opengraph-image` from the root, so /dtz etc. had no og:image. Fixed by adding `OG_IMAGE` inside the shared `openGraph()` helper.
+**Lesson:** After adding an `opengraph-image`, curl an inner page with its own metadata and check `og:image`; inheritance stops at the first page-level `openGraph`.

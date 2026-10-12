@@ -25,7 +25,7 @@ export function ExamHub({ exam }: { exam: ExamId }) {
   if (!p || !skills.length) notFound()
   const path = examPath(exam)
   const crumbs: Crumb[] = [
-    { name: T.crumbs.home, path: "/de" },
+    { name: T.crumbs.home, path: "/" },
     { name: T.crumbs.overview, path: "/gratis-test" },
     { name: p.crumb, path },
   ]

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ArrowRight, Clock, Headphones, RotateCcw, Users } from "lucide-react"
 import { cn } from "@/lib/utils"
 import {
-  ChoiceItem, ExamAudio, ExamButton, ExamShell, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
+  ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamShell, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
   ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, type ShellSection,
 } from "@/components/exam"
 import type { TrueFalse } from "@/lib/exam/types"
@@ -148,6 +148,7 @@ export function ExamGallery() {
   const [match, setMatch] = useState<Record<number, string>>({ 6: "a" })
   const [gap, setGap] = useState<Record<number, string>>({ 21: "zum" })
   const [time, setTime] = useState<string | null>(null)
+  const [sheet, setSheet] = useState<"exit" | "time" | null>(null)
   const [note, setNote] = useState("Liebe Frau Brandt,\n\nich kann am Samstag leider nicht kommen. ")
   return (
     <div className="v-container flex flex-col gap-12 py-10 sm:py-14">
@@ -199,6 +200,15 @@ export function ExamGallery() {
           <Panel className="lg:col-span-2"><MatchItem data={MATCH} value={{ 6: "a", 7: "c", 8: "x" }} review={MATCH_SOLUTION} /></Panel>
           <Panel className="lg:col-span-2"><GapItem data={GAP} value={{ 21: "am", 22: "Bestätigung" }} review={GAP_SOLUTION} /></Panel>
         </ExamStage>
+      </Block>
+
+      <Block title="Rückfragen" note="Statt der Browser-Fenster: unten ein Sheet auf dem Handy, ab Tablet eine Karte in der Mitte. Die sichere Wahl ist gefüllt und hat den Fokus. Ohne zweite Wahl ist es ein Hinweis.">
+        <div className="flex flex-wrap gap-2">
+          <ExamButton kind="soft" onClick={() => setSheet("exit")}>Test beenden</ExamButton>
+          <ExamButton kind="soft" onClick={() => setSheet("time")}>Zeit ist um</ExamButton>
+        </div>
+        <ConfirmSheet open={sheet === "exit"} onOpenChange={(o) => !o && setSheet(null)} title="Test beenden?" text="Deine Antworten gehen verloren." confirm="Beenden" cancel="Weitermachen" onConfirm={() => setSheet(null)} />
+        <ConfirmSheet open={sheet === "time"} onOpenChange={(o) => !o && setSheet(null)} title="Die Zeit ist um." text="Dein Test wird jetzt abgegeben." confirm="Zum Ergebnis" onConfirm={() => setSheet(null)} />
       </Block>
 
       <Block title="Audio" note="Kein Pausieren, kein Spulen. Die Anzahl der Durchgänge steht dabei. Mehrere Stimmen leuchten, wenn sie sprechen.">

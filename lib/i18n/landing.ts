@@ -5,7 +5,7 @@ const de = {
     title: "Goethe, telc, DTZ & ÖSD bestehen | Deutschprüfung online üben",
     description: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Übe Hören, Lesen, Schreiben und Sprechen. Mit Erklärungen in deiner Sprache. Gratis starten.",
   },
-  nav: { links: [{ label: "DTZ", href: "/dtz" }, { label: "Gratis-Test", href: "/gratis-test" }, { label: "Preise", href: "/preise" }, { label: "Fragen", href: "/de#fragen" }], login: "Anmelden", start: "Gratis starten", switchLabel: "English", switchShort: "EN", switchHref: "/" },
+  nav: { links: [{ label: "DTZ", href: "/dtz" }, { label: "Gratis-Test", href: "/gratis-test" }, { label: "Preise", href: "/preise" }, { label: "Fragen", href: "/#fragen" }], login: "Anmelden", start: "Gratis starten", switchLabel: "English", switchShort: "EN", switchHref: "/en" },
   hero: {
     eyebrow: "Deutschprüfung online vorbereiten",
     h1: "Goethe, telc, DTZ und ÖSD bestehen.",
@@ -146,7 +146,7 @@ const en: LandingCopy = {
     title: "Pass Goethe, telc, DTZ & ÖSD | German exam practice online",
     description: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Practice listening, reading, writing and speaking, with explanations in your language. Start free.",
   },
-  nav: { links: [{ label: "DTZ", href: "/dtz" }, { label: "Free test", href: "/gratis-test" }, { label: "Pricing", href: "/preise" }, { label: "FAQ", href: "/#fragen" }], login: "Log in", start: "Start free", switchLabel: "Deutsch", switchShort: "DE", switchHref: "/de" },
+  nav: { links: [{ label: "DTZ", href: "/dtz" }, { label: "Free test", href: "/gratis-test" }, { label: "Pricing", href: "/preise" }, { label: "FAQ", href: "/en#fragen" }], login: "Log in", start: "Start free", switchLabel: "Deutsch", switchShort: "DE", switchHref: "/" },
   hero: {
     eyebrow: "German exam prep online",
     h1: "Pass Goethe, telc, DTZ & ÖSD.",

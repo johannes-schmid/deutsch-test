@@ -235,7 +235,7 @@ deutsch-test/
 ```
 DESIGN.md                            # ★ the chosen visual system (Nachtzug + Fokus exam UI): tokens, components, rules
 seo/keyword-strategy.md              # keyword → page ownership, homepage title/H1/meta
-app/(main)/                          # public site: / (English) and /de (German) Nachtzug landing
+app/(main)/                          # public site: / (German, default) and /en (English) Nachtzug landing; /de 308s to /
 │   └── design/pruefung/             #   noindex reference: every exam component (+ /ergebnis results page)
 │   └── landing.css                  #   Nachtzug tokens + gradients, mapped onto shadcn tokens
 components/ui/                       # shadcn components (Base UI)
@@ -243,7 +243,7 @@ components/design/                   # shell, kit, interactive, variants/ (Nacht
 components/exam/                     # ★ Fokus exam system: ExamShell, items, audio, reading, writing, speaking, results
 lib/exam/                            # exam types, UI copy (de + en), design specimens (samples.ts, not real content)
 lib/design/                          # content.ts (shared copy, placeholder prices), variants.ts
-lib/i18n/landing.ts                  # landing copy, en (default, /) + de (/de)
+lib/i18n/landing.ts                  # landing copy, de (default, /) + en (/en)
 data/tts-voices.json                 # ★ the ElevenLabs voice cast with accent de/at/ch (AT/CH = provisional picks for ÖSD); content refers to keys, never voice_ids
 data/kurztest/drafts/                # ★ Kurztest content: one JSON per block, `display` (kit types) + `key` (server-only); only status "reviewed" ships
 public/audio/kurztest/               # rendered eleven_v4 clips for Hören blocks and Sprechen turns
@@ -254,6 +254,7 @@ app/(main)/gratis-test/              # level + exam picker; dtz/ = hub + /{hoere
 lib/exams.ts                         # ★ the 8 free-test exams (name, levels, official result format); research/<exam>.md = their blueprints
 lib/exam/exam-blueprints.ts          # part specs + prompt context for the non-DTZ exams (from research/<exam>.md); drafts → data/gratis-test/<exam>/ (--exam flag on the scripts)
 components/design/site-chrome.tsx    # SiteNav / SiteGlow / SiteFooter shared by the landing and every inner page
+app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}  # brand icons + share card (rendered from the Leuchte mark)
 lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
 app/(main)/(site)/                   # German text pages on one layout: dtz, preise, a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, impressum, datenschutz
 components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/sources), TestCta, Todo marker

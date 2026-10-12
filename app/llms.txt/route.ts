@@ -35,7 +35,7 @@ ${tests.join("\n")}
 ## Optional
 
 - [Kontakt](${u("/kontakt")})
-- [English homepage](${u("/")})
+- [English homepage](${u("/en")})
 `
 }
 
