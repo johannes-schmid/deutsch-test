@@ -1,0 +1,94 @@
+{
+  "id": "goethe-a2-lesen-t2-01",
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "teil": 2,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.752Z",
+    "textType": "Informationstafel in einem Kaufhaus"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Aufgaben und die Informationstafel. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "Ihr Mann hat bald Geburtstag. Sie möchten ihm eine neue Armbanduhr schenken.",
+          "options": [
+            {
+              "key": "a",
+              "label": "2. Stock"
+            },
+            {
+              "key": "b",
+              "label": "4. Stock"
+            },
+            {
+              "key": "c",
+              "label": "anderes Stockwerk"
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Ihre Tochter kommt bald in die Schule. Sie brauchen Hefte und Stifte für sie.",
+          "options": [
+            {
+              "key": "a",
+              "label": "Erdgeschoss"
+            },
+            {
+              "key": "b",
+              "label": "3. Stock"
+            },
+            {
+              "key": "c",
+              "label": "anderes Stockwerk"
+            }
+          ]
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Kaufhaus Brenner",
+      "source": "Informationstafel im Erdgeschoss",
+      "paragraphs": [
+        "Untergeschoss: Lebensmittel, Getränke, Bäckerei, Haushaltswaren, Reinigungsmittel",
+        "Erdgeschoss: Kosmetik, Parfüm, Schmuck, Uhren, Zeitschriften, Information",
+        "1. Stock: Damenmode, Damenschuhe, Taschen, Wäsche",
+        "2. Stock: Herrenmode, Herrenschuhe, Sportbekleidung, Koffer",
+        "3. Stock: Kindermode, Spielwaren, Babyartikel, Schulbedarf",
+        "4. Stock: Elektro, Computer, Handys, Fotoartikel, Musik und Filme",
+        "5. Stock: Möbel, Lampen, Teppiche, Bettwäsche, Restaurant mit Dachterrasse, Kundentoiletten"
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "c",
+        "explanation": "Uhren gibt es im Erdgeschoss, das ist nicht a oder b. Im 2. Stock gibt es nur Kleidung und Schuhe für Herren.",
+        "evidence": {
+          "text": "Erdgeschoss: Kosmetik, Parfüm, Schmuck, Uhren, Zeitschriften, Information",
+          "hit": "Erdgeschoss: Kosmetik, Parfüm, Schmuck, Uhren"
+        }
+      },
+      {
+        "n": 2,
+        "correct": "b",
+        "explanation": "Hefte und Stifte sind Schulbedarf, und den gibt es im 3. Stock. Im Erdgeschoss gibt es Zeitschriften, aber keine Schulsachen.",
+        "evidence": {
+          "text": "3. Stock: Kindermode, Spielwaren, Babyartikel, Schulbedarf",
+          "hit": "3. Stock: Kindermode, Spielwaren, Babyartikel, Schulbedarf"
+        }
+      }
+    ]
+  }
+}

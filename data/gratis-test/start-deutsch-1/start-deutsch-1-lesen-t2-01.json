@@ -1,0 +1,47 @@
+{
+  "id": "start-deutsch-1-lesen-t2-01",
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.727Z",
+    "textType": "Zwei Anzeigen oder Webseiten-Ausschnitte zu einer Alltagssituation"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situation und die zwei Texte. Wo finden Sie die Information? Wählen Sie a oder b.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 6,
+          "prompt": "Sie möchten am Samstagvormittag einen Deutschkurs besuchen.",
+          "options": [
+            {
+              "key": "a",
+              "label": "www.sprachschule-lindner.de · Deutschkurse A1: Montag bis Freitag, 9 bis 12 Uhr. Neue Kurse ab 3. März. Anmeldung im Büro."
+            },
+            {
+              "key": "b",
+              "label": "www.vhs-kaltenbach.de · Deutsch für Anfänger: jeden Samstag, 10 bis 13 Uhr. Kursbeginn: 8. März. Jetzt online anmelden!"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 6,
+        "correct": "b",
+        "explanation": "Der Kurs bei der VHS Kaltenbach ist am Samstag von 10 bis 13 Uhr. Die Sprachschule Lindner hat Kurse nur von Montag bis Freitag.",
+        "evidence": {
+          "text": "www.vhs-kaltenbach.de · Deutsch für Anfänger: jeden Samstag, 10 bis 13 Uhr. Kursbeginn: 8. März. Jetzt online anmelden!",
+          "hit": "jeden Samstag, 10 bis 13 Uhr"
+        }
+      }
+    ]
+  }
+}

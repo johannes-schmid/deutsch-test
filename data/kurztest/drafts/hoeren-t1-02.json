@@ -1,0 +1,82 @@
+{
+  "id": "hoeren-t1-02",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:02:13.643Z",
+    "textType": "Ansage auf dem Anrufbeantworter"
+  },
+  "display": {
+    "instruction": "Sie hören eine kurze Ansage. Lesen Sie zuerst die Frage. Wählen Sie dann die richtige Antwort: a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Wann kann Frau Kowalski ihr Auto abholen?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Morgen im Lauf des Tages."
+            },
+            {
+              "key": "b",
+              "label": "Am Donnerstag nach der Lieferung."
+            },
+            {
+              "key": "c",
+              "label": "Am Freitag ab dem Vormittag."
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 20.09,
+      "plays": 1,
+      "situation": "Nachricht von der Autowerkstatt",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 20.09
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Mitarbeiter der Werkstatt",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/hoeren-t1-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 2,
+        "correct": "c",
+        "explanation": "Das Auto ist erst am Freitag ab zehn Uhr fertig. Am Donnerstag kommt nur das Ersatzteil, und morgen geht es nicht.",
+        "evidence": {
+          "text": "Guten Tag, Frau Kowalski, hier ist Markus Behrendt von der Autowerkstatt Lindner. Ihr Wagen ist leider noch nicht fertig. Wir müssen ein Ersatzteil bestellen, das kommt erst am Donnerstag. Sie können das Auto nicht morgen, sondern am Freitag ab zehn Uhr abholen. Bitte rufen Sie uns zurück, unter null sieben elf, drei acht vier, zwanzig fünfundneunzig. Danke!",
+          "hit": "Sie können das Auto nicht morgen, sondern am Freitag ab zehn Uhr abholen."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "man_ben",
+        "text": "Guten Tag, Frau Kowalski, hier ist Markus Behrendt von der Autowerkstatt Lindner. Ihr Wagen ist leider noch nicht fertig. Wir müssen ein Ersatzteil bestellen, das kommt erst am Donnerstag. Sie können das Auto nicht morgen, sondern am Freitag ab zehn Uhr abholen. Bitte rufen Sie uns zurück, unter null sieben elf, drei acht vier, zwanzig fünfundneunzig. Danke!",
+        "delivery": "[friendly, slightly apologetic, phone message]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 407,
+      "at": "2026-10-12T12:04:42.274Z"
+    }
+  }
+}

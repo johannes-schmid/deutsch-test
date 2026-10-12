@@ -1,0 +1,134 @@
+{
+  "id": "start-deutsch-1-hoeren-t1-02",
+  "exam": "start-deutsch-1",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:29:30.277Z",
+    "textType": "Gespräch unter Freunden am Telefon"
+  },
+  "display": {
+    "instruction": "Sie hören ein kurzes Gespräch. Was ist richtig? Wählen Sie das passende Bild: a, b oder c. Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "picture",
+        "item": {
+          "n": 2,
+          "prompt": "Was bringt Paul zur Party mit?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Kuchen",
+              "picto": "kuchen"
+            },
+            {
+              "key": "b",
+              "label": "Salat",
+              "picto": "salat"
+            },
+            {
+              "key": "c",
+              "label": "Wein",
+              "picto": "wein"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 19.52,
+      "plays": 2,
+      "situation": "Gespräch am Telefon",
+      "segments": [
+        {
+          "speaker": "A",
+          "from": 0,
+          "to": 5.78
+        },
+        {
+          "speaker": "B",
+          "from": 5.78,
+          "to": 10.41
+        },
+        {
+          "speaker": "A",
+          "from": 10.41,
+          "to": 14.01
+        },
+        {
+          "speaker": "B",
+          "from": 14.01,
+          "to": 17.61
+        },
+        {
+          "speaker": "A",
+          "from": 17.61,
+          "to": 19.52
+        }
+      ],
+      "speakers": {
+        "A": {
+          "name": "Paul",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "B": {
+          "name": "Miriam",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/start-deutsch-1-hoeren-t1-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 2,
+        "correct": "b",
+        "explanation": "Miriam bittet Paul um einen Salat, und er sagt „Okay, gern“. Kuchen hat Miriam schon, und die Getränke kauft Jana.",
+        "evidence": {
+          "text": "Hallo Paul! Nein, Kuchen habe ich schon. Bring doch bitte einen Salat mit.",
+          "hit": "Bring doch bitte einen Salat mit."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "A",
+        "voice": "man_mark",
+        "text": "Hallo Miriam, hier ist Paul. Ich komme heute Abend zu deiner Party. Soll ich einen Kuchen mitbringen?",
+        "delivery": "[friendly, casual]"
+      },
+      {
+        "speaker": "B",
+        "voice": "woman_irene",
+        "text": "Hallo Paul! Nein, Kuchen habe ich schon. Bring doch bitte einen Salat mit.",
+        "delivery": "[cheerful, spontaneous]"
+      },
+      {
+        "speaker": "A",
+        "voice": "man_mark",
+        "text": "Okay, gern. Und Getränke? Wein vielleicht?",
+        "delivery": "[relaxed, questioning]"
+      },
+      {
+        "speaker": "B",
+        "voice": "woman_irene",
+        "text": "Nein, danke, Getränke kauft Jana. Bis heute Abend!",
+        "delivery": "[warm, friendly]"
+      },
+      {
+        "speaker": "A",
+        "voice": "man_mark",
+        "text": "Gut, bis dann. Tschüss!",
+        "delivery": "[friendly, casual]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 392,
+      "at": "2026-10-12T18:30:34.477Z"
+    }
+  }
+}

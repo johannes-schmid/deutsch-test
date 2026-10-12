@@ -1,12 +1,13 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
-import { FORMAT_STAND, LANGUAGES, PLACEHOLDER_PLANS } from "@/lib/design/content"
+import { FORMAT_STAND, LANGUAGES } from "@/lib/design/content"
+import { PLANS, formatEuro } from "@/lib/pricing"
 import { LANDING, NUMBER_LOCALE, type LandingCopy, type Locale } from "@/lib/i18n/landing"
-import { Check, Clock as ClockIcon, Globe, Headphones, Lock } from "lucide-react"
+import { Check, Clock as ClockIcon, Headphones, Lock } from "lucide-react"
 import { LevelScale, VButton } from "../kit"
 import { PlatformDemo } from "./nachtzug-demo"
 import { ExamTicket, LevelPath, LevelSeal, MetaChip, PromiseArt, TestCard } from "./nachtzug-icons"
-import { NzLogo } from "./nachtzug-logo"
+import { SiteFooter, SiteGlow, SiteNav } from "../site-chrome"
 
 const WEEK = [{ done: true }, { done: true }, { done: false }, { done: true }, { today: true }]
 
@@ -162,35 +163,13 @@ function Photo({ token, className, children }: { token: string; className?: stri
 
 export function Nachtzug({ locale }: { locale: Locale }) {
   const t = LANDING[locale]
-  const price = new Intl.NumberFormat(NUMBER_LOCALE[locale], { style: "currency", currency: "EUR" }).format(PLACEHOLDER_PLANS[0].cents / 100)
+  const price = formatEuro(PLANS.find((p) => p.featured)!.cents, NUMBER_LOCALE[locale])
   const art = audienceArt(t)
   return (
     <div>
       <header className="relative overflow-hidden">
-        <span className="nacht-orb top-[-160px] right-[8%] size-[520px] bg-(--p-glow)" />
-        <span className="nacht-orb top-[80px] right-[-140px] size-[460px] bg-[#5E86FF] [animation-delay:-7s]" />
-        <span className="nacht-orb top-[240px] right-[30%] size-[300px] bg-[#E58FB5] [animation-delay:-13s]" />
-        <div className="v-noise absolute inset-0" aria-hidden="true" />
-
-        <nav className="v-container relative z-10 flex items-center gap-4 py-5 text-[14px] sm:gap-6">
-          <NzLogo className="text-[19px]" />
-          <div className="hidden items-center gap-6 text-v-muted md:flex">
-            {t.nav.links.map((l) => <span key={l}>{l}</span>)}
-          </div>
-          <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-            <Link
-              href={t.nav.switchHref}
-              hrefLang={locale === "en" ? "de" : "en"}
-              aria-label={t.nav.switchLabel}
-              className="flex h-9 items-center gap-1.5 rounded-full px-2.5 text-[13.5px] font-semibold text-v-muted transition-colors hover:bg-v-ink/6 hover:text-v-ink"
-            >
-              <Globe className="size-4" aria-hidden="true" />
-              <span className="max-sm:sr-only">{t.nav.switchShort}</span>
-            </Link>
-            <VButton size="sm" kind="ghost" className="hidden sm:inline-flex">{t.nav.login}</VButton>
-            <VButton size="sm">{t.nav.start}</VButton>
-          </div>
-        </nav>
+        <SiteGlow />
+        <SiteNav locale={locale} />
 
         <div className="v-container relative z-10 grid items-center gap-14 pt-10 pb-24 sm:pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:pt-20 lg:pb-32">
           <div className="flex flex-col items-start gap-7">
@@ -200,8 +179,8 @@ export function Nachtzug({ locale }: { locale: Locale }) {
             </h1>
             <p className="max-w-[48ch] text-lg text-v-muted">{t.hero.lead}</p>
             <div className="flex flex-wrap gap-3">
-              <VButton size="lg">{t.hero.cta}</VButton>
-              <VButton size="lg" kind="ghost">{t.hero.cta2}</VButton>
+              <VButton size="lg" render={<Link href="/gratis-test" />} nativeButton={false}>{t.hero.cta}</VButton>
+              <VButton size="lg" kind="ghost" render={<Link href="/preise" />} nativeButton={false}>{t.hero.cta2}</VButton>
             </div>
             <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] text-v-muted">
               {t.hero.proof.map((p) => (
@@ -315,7 +294,7 @@ export function Nachtzug({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="border-t border-v-line py-24 sm:py-32">
+      <section id="fragen" className="scroll-mt-6 border-t border-v-line py-24 sm:py-32">
         <div className="v-container grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="flex flex-col gap-4">
             <h2 className="v-h2 text-[clamp(32px,4.4vw,52px)]">{t.faq.h2}</h2>
@@ -336,14 +315,11 @@ export function Nachtzug({ locale }: { locale: Locale }) {
         <Photo token="--g-photo-6" className="flex min-h-[420px] flex-col items-center justify-center gap-6 rounded-[28px] px-6 text-center">
           <h2 className="font-[family-name:var(--v-font-display)] text-[clamp(40px,6vw,80px)] leading-none tracking-[-0.02em] text-balance">{t.cta.h2}</h2>
           <p className="max-w-[40ch] text-lg text-v-muted">{t.cta.text}</p>
-          <VButton size="lg">{t.cta.button}</VButton>
+          <VButton size="lg" render={<Link href="/gratis-test" />} nativeButton={false}>{t.cta.button}</VButton>
         </Photo>
       </section>
 
-      <footer className="v-container flex flex-col gap-3 py-10 text-[13px] text-v-muted sm:flex-row sm:items-center sm:justify-between">
-        <NzLogo className="text-[15px]" />
-        <span>{t.footer.disclaimer} · {t.footer.imprint} · {t.footer.privacy}</span>
-      </footer>
+      <SiteFooter locale={locale} />
     </div>
   )
 }

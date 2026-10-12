@@ -1,0 +1,77 @@
+{
+  "id": "lesen-t3-01",
+  "skill": "lesen",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T11:03:27.969Z",
+    "textType": "Aushang im Haus oder in einer Einrichtung"
+  },
+  "display": {
+    "instruction": "Lesen Sie den Text. Ist die Aussage richtig oder falsch? Welche Antwort passt: a, b oder c?",
+    "reading": {
+      "sender": "Hausverwaltung Brenner & Partner GmbH",
+      "source": "Aushang im Treppenhaus",
+      "paragraphs": [
+        "Liebe Mieterinnen und Mieter,",
+        "in der Woche vom 14. bis 18. Oktober werden die Heizkörper überprüft. Ein Techniker der Firma Wärmetechnik Kaya kommt am Dienstag, 15. Oktober, zwischen 8 und 12 Uhr in die Wohnungen im Erdgeschoss und im ersten Stock. Die Wohnungen im zweiten und dritten Stock sind am Donnerstag, 17. Oktober, zur gleichen Zeit dran.",
+        "Bitte sorgen Sie dafür, dass die Heizkörper frei zugänglich sind. Wenn Sie an Ihrem Termin nicht zu Hause sein können, geben Sie Ihren Schlüssel bei Ihren Nachbarn ab oder rufen Sie bis Freitag, 11. Oktober, bei uns an: 0341 58 27 90. Ein zweiter Termin ist nur gegen eine Gebühr von 25 Euro möglich.",
+        "Vielen Dank für Ihr Verständnis!",
+        "Ihre Hausverwaltung Brenner & Partner"
+      ]
+    },
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 11,
+          "statement": "Wer im dritten Stock wohnt, bekommt am Dienstag Besuch vom Techniker."
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 12,
+          "prompt": "Was sollen Mieter tun, die an ihrem Termin nicht zu Hause sind?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Sie bezahlen 25 Euro und bekommen sofort einen neuen Termin."
+            },
+            {
+              "key": "b",
+              "label": "Sie lassen den Schlüssel beim Nachbarn oder melden sich vorher."
+            },
+            {
+              "key": "c",
+              "label": "Sie rufen am 18. Oktober direkt bei der Firma Kaya an."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 11,
+        "correct": "falsch",
+        "explanation": "Der Techniker kommt in den zweiten und dritten Stock erst am Donnerstag. Am Dienstag kommt er nur ins Erdgeschoss und in den ersten Stock.",
+        "evidence": {
+          "text": "in der Woche vom 14. bis 18. Oktober werden die Heizkörper überprüft. Ein Techniker der Firma Wärmetechnik Kaya kommt am Dienstag, 15. Oktober, zwischen 8 und 12 Uhr in die Wohnungen im Erdgeschoss und im ersten Stock. Die Wohnungen im zweiten und dritten Stock sind am Donnerstag, 17. Oktober, zur gleichen Zeit dran.",
+          "hit": "Die Wohnungen im zweiten und dritten Stock sind am Donnerstag, 17. Oktober, zur gleichen Zeit dran."
+        }
+      },
+      {
+        "n": 12,
+        "correct": "b",
+        "explanation": "Du sollst den Schlüssel bei den Nachbarn abgeben oder bis zum 11. Oktober bei der Hausverwaltung anrufen. Die 25 Euro zahlst du nur für einen zweiten Termin.",
+        "evidence": {
+          "text": "Bitte sorgen Sie dafür, dass die Heizkörper frei zugänglich sind. Wenn Sie an Ihrem Termin nicht zu Hause sein können, geben Sie Ihren Schlüssel bei Ihren Nachbarn ab oder rufen Sie bis Freitag, 11. Oktober, bei uns an: 0341 58 27 90. Ein zweiter Termin ist nur gegen eine Gebühr von 25 Euro möglich.",
+          "hit": "geben Sie Ihren Schlüssel bei Ihren Nachbarn ab oder rufen Sie bis Freitag, 11. Oktober, bei uns an"
+        }
+      }
+    ]
+  }
+}

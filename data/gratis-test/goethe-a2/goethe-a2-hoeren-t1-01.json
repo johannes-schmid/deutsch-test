@@ -1,0 +1,83 @@
+{
+  "id": "goethe-a2-hoeren-t1-01",
+  "exam": "goethe-a2",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.902Z",
+    "textType": "Radio: Hinweis auf eine Veranstaltung"
+  },
+  "display": {
+    "instruction": "Sie hören einen kurzen Text. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "Wo ist das Programm für Kinder?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Auf der großen Wiese"
+            },
+            {
+              "key": "b",
+              "label": "Am Eingang vom Park"
+            },
+            {
+              "key": "c",
+              "label": "In einem Zelt am Wasser"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 22.88,
+      "plays": 2,
+      "situation": "Tipp im Radio",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 22.88
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Moderatorin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-a2-hoeren-t1-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "c",
+        "explanation": "Das Kinderprogramm ist dieses Jahr im Zelt am See. Auf der Wiese ist es nicht mehr, und am Eingang gibt es nur Infos.",
+        "evidence": {
+          "text": "Und jetzt noch ein Tipp für das Wochenende: Am Samstag ist im Lindenpark wieder das große Sommerfest. Es gibt Musik, Spiele für Kinder und viele Stände mit Essen. Das Fest beginnt um elf Uhr und dauert bis zehn Uhr abends. Achtung: Das Kinderprogramm ist dieses Jahr nicht auf der großen Wiese, sondern im Zelt am See. Infos bekommen Sie am Eingang. Der Eintritt ist frei.",
+          "hit": "nicht auf der großen Wiese, sondern im Zelt am See"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Und jetzt noch ein Tipp für das Wochenende: Am Samstag ist im Lindenpark wieder das große Sommerfest. Es gibt Musik, Spiele für Kinder und viele Stände mit Essen. Das Fest beginnt um elf Uhr und dauert bis zehn Uhr abends. Achtung: Das Kinderprogramm ist dieses Jahr nicht auf der großen Wiese, sondern im Zelt am See. Infos bekommen Sie am Eingang. Der Eintritt ist frei.",
+        "delivery": "[cheerful, radio host]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 395,
+      "at": "2026-10-12T18:06:05.204Z"
+    }
+  }
+}

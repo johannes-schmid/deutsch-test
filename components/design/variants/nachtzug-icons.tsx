@@ -93,6 +93,30 @@ export function LevelSeal({ level, size = 88, ariaLabel = "Stufe" }: { level: Le
   )
 }
 
+/** The LevelSeal for exams scored in points: one arc for the share reached and a tick at the pass mark. */
+export function ScoreSeal({ share, pass, passed, size = 88, ariaLabel }: { share: number; pass: number; passed: boolean; size?: number; ariaLabel: string }) {
+  const r = 40
+  const c = 2 * Math.PI * r
+  const fill = Math.max(0, Math.min(1, share)) * c
+  const tick = pass * 2 * Math.PI - Math.PI / 2
+  const pct = Math.round(share * 100)
+  return (
+    <span className="nz-app nz-seal relative grid shrink-0 place-items-center rounded-full" style={{ width: size, height: size }} role="img" aria-label={`${ariaLabel} ${pct} %`}>
+      <svg viewBox="0 0 100 100" className="absolute inset-0" aria-hidden="true">
+        <circle cx="50" cy="50" r={r} fill="none" strokeWidth="5" stroke="var(--v-line)" />
+        {fill > 0 ? (
+          <circle cx="50" cy="50" r={r} fill="none" strokeWidth="5" strokeLinecap="round" stroke={passed ? "var(--p-glow)" : "var(--v-ink)"} strokeDasharray={`${fill} ${c - fill}`} transform="rotate(-90 50 50)" />
+        ) : null}
+        <line x1={50 + 34 * Math.cos(tick)} y1={50 + 34 * Math.sin(tick)} x2={50 + 46 * Math.cos(tick)} y2={50 + 46 * Math.sin(tick)} stroke="var(--v-ink)" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+      <span className="v-display flex items-baseline leading-none font-medium tracking-[-0.04em]" style={{ fontSize: size * 0.26 }}>
+        {pct}
+        <span style={{ fontSize: size * 0.13 }} className="ml-0.5">%</span>
+      </span>
+    </span>
+  )
+}
+
 export function LevelPath({ ariaLabel }: { ariaLabel?: string }) {
   return (
     <div className="flex items-center gap-3">

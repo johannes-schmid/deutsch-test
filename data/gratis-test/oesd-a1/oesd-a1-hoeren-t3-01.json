@@ -1,0 +1,200 @@
+{
+  "id": "oesd-a1-hoeren-t3-01",
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.729Z",
+    "textType": "Kurzinterviews auf der Straße zu einer Alltagsfrage"
+  },
+  "display": {
+    "instruction": "Sie hören Kurzinterviews. Eine Reporterin fragt Personen auf der Straße. Was sagt jede Person? Wählen Sie für jede Person eine Antwort. Sie hören die Interviews einmal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "Was sagt Lukas?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Kaffee"
+            },
+            {
+              "key": "b",
+              "label": "Milch"
+            },
+            {
+              "key": "c",
+              "label": "Tee"
+            },
+            {
+              "key": "d",
+              "label": "Saft"
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Was sagt Sabine?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Kaffee"
+            },
+            {
+              "key": "b",
+              "label": "Milch"
+            },
+            {
+              "key": "c",
+              "label": "Tee"
+            },
+            {
+              "key": "d",
+              "label": "Saft"
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 3,
+          "prompt": "Was sagt Marco?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Kaffee"
+            },
+            {
+              "key": "b",
+              "label": "Milch"
+            },
+            {
+              "key": "c",
+              "label": "Tee"
+            },
+            {
+              "key": "d",
+              "label": "Saft"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 58.32,
+      "plays": 1,
+      "situation": "Umfrage auf der Straße",
+      "segments": [
+        {
+          "speaker": "reporter",
+          "from": 0,
+          "to": 6.65
+        },
+        {
+          "speaker": "lukas",
+          "from": 6.65,
+          "to": 24.32
+        },
+        {
+          "speaker": "sabine",
+          "from": 24.32,
+          "to": 40.88
+        },
+        {
+          "speaker": "marco",
+          "from": 40.88,
+          "to": 58.32
+        }
+      ],
+      "speakers": {
+        "reporter": {
+          "name": "Reporterin",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "lukas": {
+          "name": "Lukas",
+          "tone": "var(--v-sk-schreiben)"
+        },
+        "sabine": {
+          "name": "Sabine",
+          "tone": "var(--v-sk-sprechen)"
+        },
+        "marco": {
+          "name": "Marco",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/oesd-a1-hoeren-t3-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "c",
+        "explanation": "Lukas trinkt jetzt jeden Morgen Tee. Kaffee hat er nur früher getrunken.",
+        "evidence": {
+          "text": "Hallo, ich bin Lukas. Ich wohne hier in Graz. Äh, am Morgen? Früher habe ich immer Kaffee getrunken, zwei, drei Tassen. Aber das ist nicht so gut für mich. Jetzt trinke ich Tee, äh, grünen Tee. Und manchmal ein Glas Wasser. Ja, also Tee, jeden Morgen.",
+          "hit": "Jetzt trinke ich Tee, äh, grünen Tee."
+        }
+      },
+      {
+        "n": 2,
+        "correct": "a",
+        "explanation": "Sabine braucht am Morgen eine große Tasse Kaffee. Milch trinken ihre Kinder, sie nimmt Milch nur im Kaffee.",
+        "evidence": {
+          "text": "Grüß Gott, mein Name ist Sabine. Äh, meine Kinder trinken am Morgen Milch, warme Milch. Ich trinke auch ein bisschen Milch, aber nur im Kaffee. Ja, ich brauche Kaffee am Morgen, äh, eine große Tasse. Ohne Kaffee geht es nicht! Ich bin dann sehr müde.",
+          "hit": "Ja, ich brauche Kaffee am Morgen, äh, eine große Tasse."
+        }
+      },
+      {
+        "n": 3,
+        "correct": "d",
+        "explanation": "Marco trinkt normal Orangensaft. Tee trinkt er nur manchmal am Sonntag.",
+        "evidence": {
+          "text": "Hallo! Ich heiße Marco. Ich komme aus Basel. Äh, was trinke ich am Morgen? Also, ich mag keinen Kaffee. Am Sonntag trinke ich manchmal Tee mit meiner Freundin. Aber normal, äh, trinke ich Saft, Orangensaft. Der ist kalt und frisch. Ja, Saft, das ist gut.",
+          "hit": "Aber normal, äh, trinke ich Saft, Orangensaft."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "reporter",
+        "voice": "woman_ela",
+        "text": "Hallo, entschuldigen Sie, haben Sie kurz Zeit? Wir machen heute eine Umfrage. Was trinken Sie am Morgen?",
+        "delivery": "[friendly, upbeat, reporter]"
+      },
+      {
+        "speaker": "lukas",
+        "voice": "man_gruber_at",
+        "text": "Hallo, ich bin Lukas. Ich wohne hier in Graz. Äh, am Morgen? Früher habe ich immer Kaffee getrunken, zwei, drei Tassen. Aber das ist nicht so gut für mich. Jetzt trinke ich Tee, äh, grünen Tee. Und manchmal ein Glas Wasser. Ja, also Tee, jeden Morgen.",
+        "delivery": "[relaxed, spontaneous]"
+      },
+      {
+        "speaker": "sabine",
+        "voice": "woman_irene",
+        "text": "Grüß Gott, mein Name ist Sabine. Äh, meine Kinder trinken am Morgen Milch, warme Milch. Ich trinke auch ein bisschen Milch, aber nur im Kaffee. Ja, ich brauche Kaffee am Morgen, äh, eine große Tasse. Ohne Kaffee geht es nicht! Ich bin dann sehr müde.",
+        "delivery": "[cheerful, laughing, spontaneous]"
+      },
+      {
+        "speaker": "marco",
+        "voice": "man_thomas_ch",
+        "text": "Hallo! Ich heiße Marco. Ich komme aus Basel. Äh, was trinke ich am Morgen? Also, ich mag keinen Kaffee. Am Sonntag trinke ich manchmal Tee mit meiner Freundin. Aber normal, äh, trinke ich Saft, Orangensaft. Der ist kalt und frisch. Ja, Saft, das ist gut.",
+        "delivery": "[young, casual, spontaneous]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 974,
+      "at": "2026-10-12T18:06:30.559Z"
+    }
+  }
+}

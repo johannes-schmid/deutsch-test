@@ -1,0 +1,47 @@
+{
+  "id": "start-deutsch-1-lesen-t2-02",
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:29:30.256Z",
+    "textType": "Zwei Anzeigen oder Webseiten-Ausschnitte zu einer Alltagssituation"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situation und die zwei Texte. Wo finden Sie die Information? Wählen Sie a oder b.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 7,
+          "prompt": "Sie arbeiten am Tag und möchten am Abend einen Deutschkurs besuchen.",
+          "options": [
+            {
+              "key": "a",
+              "label": "www.vhs-lindenau.de · Deutsch A1 für Anfänger · Montag und Mittwoch, 9:00–11:30 Uhr · Kursbeginn: 3. März · Anmeldung im Büro, Zimmer 4"
+            },
+            {
+              "key": "b",
+              "label": "www.sprachschule-mertens.de · Deutsch für Anfänger · Dienstag und Donnerstag, 18:30–20:00 Uhr · Start: 10. März · Telefon: 0341 55 82 17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 7,
+        "correct": "b",
+        "explanation": "Der Kurs in der Sprachschule Mertens ist am Abend, von 18:30 bis 20:00 Uhr. Der Kurs in der VHS ist am Vormittag, da arbeitest du.",
+        "evidence": {
+          "text": "www.sprachschule-mertens.de · Deutsch für Anfänger · Dienstag und Donnerstag, 18:30–20:00 Uhr · Start: 10. März · Telefon: 0341 55 82 17",
+          "hit": "Dienstag und Donnerstag, 18:30–20:00 Uhr"
+        }
+      }
+    ]
+  }
+}

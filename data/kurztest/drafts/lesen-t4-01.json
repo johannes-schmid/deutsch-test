@@ -1,0 +1,66 @@
+{
+  "id": "lesen-t4-01",
+  "skill": "lesen",
+  "teil": 4,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:03:36.205Z",
+    "textType": "Hausordnung"
+  },
+  "display": {
+    "instruction": "Lesen Sie den Text. Sind die Aussagen richtig oder falsch?",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 17,
+          "statement": "Einen Kinderwagen darf man unter bestimmten Bedingungen unten im Hausflur abstellen."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 18,
+          "statement": "Wer Sperrmüll loswerden möchte, meldet sich beim Hausmeister."
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Wohnungsbaugenossenschaft Lindenhof eG",
+      "source": "Hausordnung",
+      "paragraphs": [
+        "Hausordnung für die Wohnanlage Birkenweg 12–16",
+        "Liebe Mieterinnen und Mieter, ein gutes Zusammenleben funktioniert nur, wenn alle Rücksicht nehmen. Bitte beachten Sie deshalb die folgenden Regeln.",
+        "Ruhezeiten: Zwischen 22 und 7 Uhr sowie an Sonn- und Feiertagen bitten wir um Ruhe. Laute Musik, Bohren oder Staubsaugen sind in dieser Zeit nicht erlaubt. Auch mittags von 13 bis 15 Uhr sollte es im Haus leise sein.",
+        "Treppenhaus und Keller: Das Treppenhaus ist ein Fluchtweg und muss immer frei bleiben. Fahrräder stellen Sie bitte in den Fahrradraum im Keller. Kinderwagen und Rollatoren dürfen im Erdgeschoss unter der Treppe stehen, solange der Durchgang nicht versperrt ist.",
+        "Müll: Trennen Sie Ihren Abfall bitte nach Papier, Verpackungen, Bioabfall und Restmüll. Sperrmüll darf weder im Hof noch vor dem Haus abgestellt werden. Bitte vereinbaren Sie selbst einen Abholtermin bei der Stadtreinigung unter 0341 5578 200.",
+        "Waschküche: Die Waschmaschinen im Keller stehen Ihnen täglich von 8 bis 20 Uhr zur Verfügung. Tragen Sie sich vorher in die Liste an der Tür ein.",
+        "Balkon: Grillen ist nur mit einem Elektrogrill erlaubt. Blumenkästen müssen innen am Geländer befestigt werden.",
+        "Bei Schäden oder Fragen wenden Sie sich an unseren Hausmeister, Herrn Kowalczyk: Telefon 0341 5578 214, montags bis freitags von 8 bis 12 Uhr."
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 17,
+        "correct": "richtig",
+        "explanation": "Kinderwagen dürfen im Erdgeschoss unter der Treppe stehen. Der Durchgang muss aber frei bleiben.",
+        "evidence": {
+          "text": "Treppenhaus und Keller: Das Treppenhaus ist ein Fluchtweg und muss immer frei bleiben. Fahrräder stellen Sie bitte in den Fahrradraum im Keller. Kinderwagen und Rollatoren dürfen im Erdgeschoss unter der Treppe stehen, solange der Durchgang nicht versperrt ist.",
+          "hit": "Kinderwagen und Rollatoren dürfen im Erdgeschoss unter der Treppe stehen, solange der Durchgang nicht versperrt ist."
+        }
+      },
+      {
+        "n": 18,
+        "correct": "falsch",
+        "explanation": "Den Termin für Sperrmüll machst du selbst bei der Stadtreinigung. Der Hausmeister ist nur für Schäden und Fragen da.",
+        "evidence": {
+          "text": "Müll: Trennen Sie Ihren Abfall bitte nach Papier, Verpackungen, Bioabfall und Restmüll. Sperrmüll darf weder im Hof noch vor dem Haus abgestellt werden. Bitte vereinbaren Sie selbst einen Abholtermin bei der Stadtreinigung unter 0341 5578 200.",
+          "hit": "Bitte vereinbaren Sie selbst einen Abholtermin bei der Stadtreinigung unter 0341 5578 200."
+        }
+      }
+    ]
+  }
+}

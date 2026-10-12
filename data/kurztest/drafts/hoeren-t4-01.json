@@ -1,0 +1,161 @@
+{
+  "id": "hoeren-t4-01",
+  "skill": "hoeren",
+  "teil": 4,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:03:13.208Z",
+    "textType": "Radiosendung mit Hörermeinungen"
+  },
+  "display": {
+    "instruction": "Sie hören drei Meinungen. Welche Aussage passt zu welcher Person? Es gibt mehr Aussagen als Personen.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "",
+              "text": "Im Internet sind Lebensmittel günstiger als im Geschäft."
+            },
+            {
+              "key": "b",
+              "title": "",
+              "text": "Nach einer schlechten Erfahrung kauft er wieder selbst im Laden ein."
+            },
+            {
+              "key": "c",
+              "title": "",
+              "text": "Die Liefergebühr ist für sie zu hoch."
+            },
+            {
+              "key": "d",
+              "title": "",
+              "text": "Sie lässt sich vor allem schwere Einkäufe liefern."
+            },
+            {
+              "key": "e",
+              "title": "",
+              "text": "Eine Bestellung im Internet dauert länger als ein Einkauf im Laden."
+            },
+            {
+              "key": "f",
+              "title": "",
+              "text": "Sie spart so Zeit, kauft aber nicht alles online."
+            }
+          ],
+          "situations": [
+            {
+              "n": 18,
+              "text": "Was meint Sabine?"
+            },
+            {
+              "n": 19,
+              "text": "Was meint Dariusz?"
+            },
+            {
+              "n": 20,
+              "text": "Was meint Gerda?"
+            }
+          ]
+        },
+        "noMatch": false
+      }
+    ],
+    "clip": {
+      "duration": 66.64,
+      "plays": 1,
+      "situation": "Radiosendung: Lebensmittel online bestellen",
+      "segments": [
+        {
+          "speaker": "s1",
+          "from": 0,
+          "to": 22.25
+        },
+        {
+          "speaker": "s2",
+          "from": 22.25,
+          "to": 42.48
+        },
+        {
+          "speaker": "s3",
+          "from": 42.48,
+          "to": 66.64
+        }
+      ],
+      "speakers": {
+        "s1": {
+          "name": "Sabine",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "s2": {
+          "name": "Dariusz",
+          "tone": "var(--v-sk-schreiben)"
+        },
+        "s3": {
+          "name": "Gerda",
+          "tone": "var(--v-sk-sprechen)"
+        }
+      },
+      "src": "/audio/kurztest/hoeren-t4-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 18,
+        "correct": "f",
+        "explanation": "Sabine bestellt, weil sie wenig Zeit hat, aber Obst und Gemüse kauft sie selbst. Sie sagt nicht, dass es billiger ist, sondern eher teurer.",
+        "evidence": {
+          "text": "Also, ich finde das super praktisch. Ich arbeite Vollzeit und hab zwei kleine Kinder – da bleibt kaum Zeit, samstags durch den vollen Supermarkt zu laufen. Ich bestelle am Sonntagabend, und am Dienstag steht alles vor der Tür. Billiger ist das nicht, eher ein bisschen teurer. Aber Obst und Gemüse hole ich trotzdem selbst auf dem Markt. Das will ich mir einfach selber aussuchen.",
+          "hit": "Aber Obst und Gemüse hole ich trotzdem selbst auf dem Markt."
+        }
+      },
+      {
+        "n": 19,
+        "correct": "b",
+        "explanation": "Der Fahrer kam zu spät und die Sachen waren falsch, darum geht Dariusz wieder selbst einkaufen. Er sagt, im Laden dauert es länger, nicht online.",
+        "evidence": {
+          "text": "Hm, ich hab das letztes Jahr mal ausprobiert, und ehrlich gesagt: nie wieder. Ich hab mir extra frei genommen, und dann kam der Fahrer drei Stunden zu spät. Und statt Vollkornbrot war Toastbrot in der Tüte, die Milch war auch die falsche. Seitdem geh ich wieder selbst einkaufen. Das dauert vielleicht ein bisschen länger, aber da weiß ich wenigstens, was ich bekomme.",
+          "hit": "Seitdem geh ich wieder selbst einkaufen."
+        }
+      },
+      {
+        "n": 20,
+        "correct": "d",
+        "explanation": "Gerda kann Wasserkisten und Kartoffeln nicht mehr tragen und bestellt sie deshalb. Die Liefergebühr findet sie nicht zu teuer, sie zahlt sie gern.",
+        "evidence": {
+          "text": "Für mich ist das eine große Erleichterung. Ich bin zweiundsiebzig, hatte im Frühjahr eine Knie-OP, und ich wohne im dritten Stock ohne Aufzug. Wasserkisten, Waschmittel, Kartoffeln – das kann ich einfach nicht mehr hochtragen. Das bestelle ich jetzt, und der junge Mann bringt mir alles bis in die Küche. Die vier Euro neunzig Liefergebühr zahle ich gern. Kleinigkeiten kaufe ich aber noch im Laden unten.",
+          "hit": "Wasserkisten, Waschmittel, Kartoffeln – das kann ich einfach nicht mehr hochtragen. Das bestelle ich jetzt"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "s1",
+        "voice": "woman_ela",
+        "text": "Also, ich finde das super praktisch. Ich arbeite Vollzeit und hab zwei kleine Kinder – da bleibt kaum Zeit, samstags durch den vollen Supermarkt zu laufen. Ich bestelle am Sonntagabend, und am Dienstag steht alles vor der Tür. Billiger ist das nicht, eher ein bisschen teurer. Aber Obst und Gemüse hole ich trotzdem selbst auf dem Markt. Das will ich mir einfach selber aussuchen.",
+        "delivery": "[friendly, energetic]"
+      },
+      {
+        "speaker": "s2",
+        "voice": "man_ben",
+        "text": "Hm, ich hab das letztes Jahr mal ausprobiert, und ehrlich gesagt: nie wieder. Ich hab mir extra frei genommen, und dann kam der Fahrer drei Stunden zu spät. Und statt Vollkornbrot war Toastbrot in der Tüte, die Milch war auch die falsche. Seitdem geh ich wieder selbst einkaufen. Das dauert vielleicht ein bisschen länger, aber da weiß ich wenigstens, was ich bekomme.",
+        "delivery": "[annoyed, conversational]"
+      },
+      {
+        "speaker": "s3",
+        "voice": "woman_irene",
+        "text": "Für mich ist das eine große Erleichterung. Ich bin zweiundsiebzig, hatte im Frühjahr eine Knie-OP, und ich wohne im dritten Stock ohne Aufzug. Wasserkisten, Waschmittel, Kartoffeln – das kann ich einfach nicht mehr hochtragen. Das bestelle ich jetzt, und der junge Mann bringt mir alles bis in die Küche. Die vier Euro neunzig Liefergebühr zahle ich gern. Kleinigkeiten kaufe ich aber noch im Laden unten.",
+        "delivery": "[warm, older woman, calm]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 1227,
+      "at": "2026-10-12T12:05:24.171Z"
+    }
+  }
+}

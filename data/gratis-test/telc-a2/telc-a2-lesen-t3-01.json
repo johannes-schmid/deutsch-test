@@ -1,0 +1,110 @@
+{
+  "id": "telc-a2-lesen-t3-01",
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "teil": 3,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.678Z",
+    "textType": "Kurze Anzeigen und Webseiten-Teaser (Kurse, Freizeit, Dienstleistungen, Einkaufen)"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt? Für eine Situation gibt es keine passende Anzeige. Dann wählen Sie x.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Schwimmschule Delfin",
+              "text": "Kinder ab fünf Jahren lernen bei uns sicher schwimmen. Unsere Kurse sind montags und mittwochs um 16 Uhr. Anmeldung unter Tel. 0821 447392."
+            },
+            {
+              "key": "b",
+              "title": "Fahrradladen Speiche",
+              "text": "Sie brauchen ein neues Rad? Bei uns finden Sie gebrauchte Fahrräder zu günstigen Preisen. Montag bis Freitag 10 bis 18 Uhr, Lindenstraße 14."
+            },
+            {
+              "key": "c",
+              "title": "Sprachschule Lingua Plus",
+              "text": "Englisch für Anfänger in kleinen Gruppen mit höchstens acht Personen. Unterricht von Montag bis Donnerstag, immer vormittags von 9 bis 11:30 Uhr."
+            },
+            {
+              "key": "d",
+              "title": "Familienbad Wellenreich",
+              "text": "Neu: Schwimmkurs am Samstagvormittag für Kinder von fünf bis acht Jahren. Die Eltern können in dieser Zeit in unserem Café warten."
+            },
+            {
+              "key": "e",
+              "title": "Rad-Doktor",
+              "text": "Ihr Fahrrad fährt nicht mehr richtig? Wir machen es schnell und preiswert wieder fit. Wir holen Ihr Rad auch zu Hause ab. Tel. 0821 5590184."
+            },
+            {
+              "key": "f",
+              "title": "Volkshochschule Nordstadt",
+              "text": "Spanisch am Abend: Der Kurs ist dienstags von 19 bis 20:30 Uhr. Für Teilnehmer mit wenig Vorkenntnissen. Anmeldung online: www.vhs-nordstadt.de"
+            },
+            {
+              "key": "g",
+              "title": "Kochstudio Pfeffer",
+              "text": "Gemeinsam kochen und essen! Jeden Freitagabend lernen Sie bei uns Gerichte aus Italien. Preis pro Abend: 35 Euro, Lebensmittel inklusive."
+            },
+            {
+              "key": "h",
+              "title": "Kinderkiste – Secondhand",
+              "text": "Gut erhaltene Kleidung und Spielzeug für Kinder von null bis zehn Jahren. Wir kaufen auch Ihre Sachen an. Bahnhofstraße 3, Di–Sa geöffnet."
+            }
+          ],
+          "situations": [
+            {
+              "n": 1,
+              "text": "Ihr sechsjähriger Sohn soll schwimmen lernen, aber Sie haben nur am Wochenende Zeit."
+            },
+            {
+              "n": 2,
+              "text": "Ihr altes Fahrrad ist kaputt und Sie möchten es nicht wegwerfen, sondern reparieren lassen."
+            },
+            {
+              "n": 3,
+              "text": "Sie arbeiten tagsüber und suchen einen Englischkurs, den Sie nach der Arbeit besuchen können."
+            }
+          ]
+        },
+        "noMatch": true
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "d",
+        "explanation": "Im Familienbad gibt es einen Kurs am Samstag für Kinder von fünf bis acht Jahren. Die Schwimmschule Delfin hat Kurse nur am Montag und Mittwoch.",
+        "evidence": {
+          "text": "Neu: Schwimmkurs am Samstagvormittag für Kinder von fünf bis acht Jahren. Die Eltern können in dieser Zeit in unserem Café warten.",
+          "hit": "Schwimmkurs am Samstagvormittag für Kinder von fünf bis acht Jahren"
+        }
+      },
+      {
+        "n": 2,
+        "correct": "e",
+        "explanation": "Der Rad-Doktor repariert Fahrräder und macht sie wieder fit. Der Fahrradladen Speiche verkauft nur gebrauchte Räder.",
+        "evidence": {
+          "text": "Ihr Fahrrad fährt nicht mehr richtig? Wir machen es schnell und preiswert wieder fit. Wir holen Ihr Rad auch zu Hause ab. Tel. 0821 5590184.",
+          "hit": "Wir machen es schnell und preiswert wieder fit."
+        }
+      },
+      {
+        "n": 3,
+        "correct": "x",
+        "explanation": "Der Englischkurs von Lingua Plus ist nur am Vormittag. Der Kurs am Abend bei der Volkshochschule ist Spanisch, nicht Englisch.",
+        "evidence": {
+          "text": "Englisch für Anfänger in kleinen Gruppen mit höchstens acht Personen. Unterricht von Montag bis Donnerstag, immer vormittags von 9 bis 11:30 Uhr.",
+          "hit": "immer vormittags von 9 bis 11:30 Uhr"
+        }
+      }
+    ]
+  }
+}

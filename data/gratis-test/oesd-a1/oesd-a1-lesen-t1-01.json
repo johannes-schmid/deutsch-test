@@ -1,0 +1,126 @@
+{
+  "id": "oesd-a1-lesen-t1-01",
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.868Z",
+    "textType": "Zeitungsanzeigen"
+  },
+  "display": {
+    "instruction": "Sie suchen etwas in der Zeitung. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Mobil Plus – neuer Tarif",
+              "text": "Telefonieren Sie oft ins Ausland? Mit unserem Tarif „Europa“ telefonieren Sie in alle EU-Länder ohne Extrakosten. Nur 14,90 Euro im Monat. Jetzt in allen Mobil-Plus-Shops in Wien und Linz."
+            },
+            {
+              "key": "b",
+              "title": "Fahrradverleih am See",
+              "text": "Machen Sie Ferien am Bodensee? Bei uns können Sie Fahrräder und E-Bikes mieten. Ein Tag kostet 18 Euro, eine Woche 90 Euro. Seestraße 12, Konstanz. Täglich von 8 bis 19 Uhr."
+            },
+            {
+              "key": "c",
+              "title": "Café Lindenhof sucht Aushilfe",
+              "text": "Wir suchen eine freundliche Kellnerin oder einen freundlichen Kellner für Samstag und Sonntag, 10 bis 18 Uhr. Gute Bezahlung! Bitte rufen Sie an: 0316 48 27 15, Frau Berger."
+            },
+            {
+              "key": "d",
+              "title": "Fahrradwerkstatt Kettenblatt",
+              "text": "Ihr Fahrrad fährt nicht mehr? Kein Problem! Wir reparieren alle Fahrräder schnell und günstig. Bei uns finden Sie auch Helme und Fahrradlichter. Mo–Fr 9–18 Uhr, Annenstraße 30, Graz."
+            },
+            {
+              "key": "e",
+              "title": "Supermarkt Frischkauf",
+              "text": "Für unsere Filiale in München suchen wir Mitarbeiterinnen und Mitarbeiter für die Kasse. Arbeitszeit: Montag bis Freitag, 7 bis 13 Uhr. Kein Wochenende! Schreiben Sie an: jobs@frischkauf-muenchen.de"
+            },
+            {
+              "key": "f",
+              "title": "Handy-Doktor Bern",
+              "text": "Ist Ihr Handy kaputt oder funktioniert der Akku nicht mehr? Wir reparieren alle Handys in nur einer Stunde. Reparatur ab 49 Franken. Spitalgasse 8, Bern. Montag bis Samstag geöffnet."
+            }
+          ],
+          "situations": [
+            {
+              "n": 1,
+              "text": "Sie suchen eine Arbeit nur am Wochenende."
+            },
+            {
+              "n": 2,
+              "text": "Ihr Handy geht nicht mehr und Sie brauchen Hilfe."
+            },
+            {
+              "n": 3,
+              "text": "Sie brauchen im Urlaub für eine Woche ein Fahrrad."
+            },
+            {
+              "n": 4,
+              "text": "Ihr Fahrrad ist kaputt."
+            },
+            {
+              "n": 5,
+              "text": "Sie möchten mit dem Handy oft Ihre Familie in Spanien anrufen."
+            }
+          ]
+        },
+        "noMatch": false
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "c",
+        "explanation": "Das Café sucht jemand für Samstag und Sonntag. Der Supermarkt sucht auch Leute, aber nur von Montag bis Freitag.",
+        "evidence": {
+          "text": "Wir suchen eine freundliche Kellnerin oder einen freundlichen Kellner für Samstag und Sonntag, 10 bis 18 Uhr. Gute Bezahlung! Bitte rufen Sie an: 0316 48 27 15, Frau Berger.",
+          "hit": "für Samstag und Sonntag, 10 bis 18 Uhr"
+        }
+      },
+      {
+        "n": 2,
+        "correct": "f",
+        "explanation": "Der Handy-Doktor repariert Handys. Mobil Plus hat nur einen neuen Tarif, keine Reparatur.",
+        "evidence": {
+          "text": "Ist Ihr Handy kaputt oder funktioniert der Akku nicht mehr? Wir reparieren alle Handys in nur einer Stunde. Reparatur ab 49 Franken. Spitalgasse 8, Bern. Montag bis Samstag geöffnet.",
+          "hit": "Wir reparieren alle Handys in nur einer Stunde."
+        }
+      },
+      {
+        "n": 3,
+        "correct": "b",
+        "explanation": "Am Bodensee kannst du Fahrräder mieten, auch für eine Woche. Die Werkstatt in Graz repariert Fahrräder, sie vermietet keine.",
+        "evidence": {
+          "text": "Machen Sie Ferien am Bodensee? Bei uns können Sie Fahrräder und E-Bikes mieten. Ein Tag kostet 18 Euro, eine Woche 90 Euro. Seestraße 12, Konstanz. Täglich von 8 bis 19 Uhr.",
+          "hit": "Bei uns können Sie Fahrräder und E-Bikes mieten. Ein Tag kostet 18 Euro, eine Woche 90 Euro."
+        }
+      },
+      {
+        "n": 4,
+        "correct": "d",
+        "explanation": "Die Fahrradwerkstatt repariert Fahrräder. Der Fahrradverleih am See vermietet nur Fahrräder.",
+        "evidence": {
+          "text": "Ihr Fahrrad fährt nicht mehr? Kein Problem! Wir reparieren alle Fahrräder schnell und günstig. Bei uns finden Sie auch Helme und Fahrradlichter. Mo–Fr 9–18 Uhr, Annenstraße 30, Graz.",
+          "hit": "Wir reparieren alle Fahrräder schnell und günstig."
+        }
+      },
+      {
+        "n": 5,
+        "correct": "a",
+        "explanation": "Mit dem Tarif „Europa“ telefonierst du billig in alle EU-Länder. Der Handy-Doktor repariert nur Handys.",
+        "evidence": {
+          "text": "Telefonieren Sie oft ins Ausland? Mit unserem Tarif „Europa“ telefonieren Sie in alle EU-Länder ohne Extrakosten. Nur 14,90 Euro im Monat. Jetzt in allen Mobil-Plus-Shops in Wien und Linz.",
+          "hit": "Mit unserem Tarif „Europa“ telefonieren Sie in alle EU-Länder ohne Extrakosten."
+        }
+      }
+    ]
+  }
+}

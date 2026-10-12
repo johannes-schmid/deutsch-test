@@ -1,0 +1,64 @@
+{
+  "id": "start-deutsch-1-lesen-t1-01",
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:29:16.517Z",
+    "textType": "Kurze E-Mail an eine Freundin"
+  },
+  "display": {
+    "instruction": "Lesen Sie den Text. Sind die Aussagen richtig oder falsch?",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 1,
+          "statement": "Jana feiert ihre Party bei ihren Eltern."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 2,
+          "statement": "Hanna soll Getränke mitbringen."
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Jana",
+      "source": "E-Mail",
+      "paragraphs": [
+        "Liebe Hanna,",
+        "wie geht es dir? Am Samstag habe ich Geburtstag und ich mache eine kleine Party. Kommst du auch? Die Party ist nicht bei mir, sie ist im Garten von meinen Eltern in der Lindenstraße 14. Wir fangen um 19 Uhr an. Mein Bruder Felix macht Musik und wir grillen. Kannst du bitte einen Salat mitbringen? Getränke haben wir genug.",
+        "Ruf mich bitte bis Donnerstag an.",
+        "Viele Grüße",
+        "Jana"
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "richtig",
+        "explanation": "Die Party ist im Garten von Janas Eltern. Sie ist nicht in Janas Wohnung.",
+        "evidence": {
+          "text": "wie geht es dir? Am Samstag habe ich Geburtstag und ich mache eine kleine Party. Kommst du auch? Die Party ist nicht bei mir, sie ist im Garten von meinen Eltern in der Lindenstraße 14. Wir fangen um 19 Uhr an. Mein Bruder Felix macht Musik und wir grillen. Kannst du bitte einen Salat mitbringen? Getränke haben wir genug.",
+          "hit": "Die Party ist nicht bei mir, sie ist im Garten von meinen Eltern in der Lindenstraße 14."
+        }
+      },
+      {
+        "n": 2,
+        "correct": "falsch",
+        "explanation": "Hanna soll einen Salat mitbringen. Getränke hat Jana schon genug.",
+        "evidence": {
+          "text": "wie geht es dir? Am Samstag habe ich Geburtstag und ich mache eine kleine Party. Kommst du auch? Die Party ist nicht bei mir, sie ist im Garten von meinen Eltern in der Lindenstraße 14. Wir fangen um 19 Uhr an. Mein Bruder Felix macht Musik und wir grillen. Kannst du bitte einen Salat mitbringen? Getränke haben wir genug.",
+          "hit": "Kannst du bitte einen Salat mitbringen? Getränke haben wir genug."
+        }
+      }
+    ]
+  }
+}

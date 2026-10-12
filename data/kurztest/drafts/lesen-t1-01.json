@@ -1,0 +1,64 @@
+{
+  "id": "lesen-t1-01",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:02:13.645Z",
+    "textType": "Wegweiser im Bürgerbüro oder Rathaus"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situation und die Übersicht. Wo finden Sie die Information? Wählen Sie a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "Ihre Familie wohnt in einer zu kleinen Wohnung. Sie möchten eine günstige Sozialwohnung mieten und brauchen dafür eine Bescheinigung vom Amt. Wohin gehen Sie?",
+          "options": [
+            {
+              "key": "a",
+              "label": "2. Stock"
+            },
+            {
+              "key": "b",
+              "label": "4. Stock"
+            },
+            {
+              "key": "c",
+              "label": "Erdgeschoss"
+            }
+          ]
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Rathaus Lindenfeld",
+      "source": "Wegweiser im Foyer",
+      "paragraphs": [
+        "Erdgeschoss: Information, Wartemarken-Automat, Bürgerservice (An- und Ummeldung, Personalausweis, Reisepass, Führungszeugnis), Stadtkasse",
+        "1. Stock: Standesamt (Geburten, Eheschließungen, Sterbefälle), Fundbüro, Gewerbeamt (Gewerbeanmeldung und -abmeldung)",
+        "2. Stock: Ausländerbehörde (Aufenthaltstitel, Einbürgerung, Beratung zu Integrationskursen), Wohngeldstelle (Mietzuschuss, Lastenzuschuss), Rentenberatung",
+        "3. Stock: Jugendamt (Kita-Gutscheine, Elterngeld, Unterhaltsvorschuss), Schulamt (Schulanmeldung, Schülerfahrkarten)",
+        "4. Stock: Amt für Wohnungswesen (Wohnberechtigungsschein, Wohnungsvermittlung, Mietspiegel), Sozialamt (Grundsicherung, Bildungspaket), Bauamt",
+        "Untergeschoss: Straßenverkehrsamt (Kfz-Zulassung, Bewohnerparkausweise), Führerscheinstelle",
+        "Öffnungszeiten: Mo, Di, Do 8:00–12:00 und 14:00–18:00 Uhr, Mi geschlossen, Fr 8:00–12:00 Uhr",
+        "Termine mit Wartemarke oder online unter www.rathaus-lindenfeld.de. Aufzug und barrierefreies WC neben dem Haupteingang."
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "b",
+        "explanation": "Für eine Sozialwohnung brauchst du einen Wohnberechtigungsschein, den gibt es im 4. Stock. Die Wohngeldstelle im 2. Stock zahlt nur Geld für die Miete.",
+        "evidence": {
+          "text": "4. Stock: Amt für Wohnungswesen (Wohnberechtigungsschein, Wohnungsvermittlung, Mietspiegel), Sozialamt (Grundsicherung, Bildungspaket), Bauamt",
+          "hit": "4. Stock: Amt für Wohnungswesen (Wohnberechtigungsschein"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "telc-b1-hoeren-t3-01",
+  "exam": "telc-b1",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.806Z",
+    "textType": "Nachricht auf dem Anrufbeantworter"
+  },
+  "display": {
+    "instruction": "Sie hören fünf kurze Texte. Ist die Aussage richtig oder falsch? Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 1,
+          "statement": "Frau Kowalski kann am Montagvormittag in die Praxis kommen."
+        }
+      }
+    ],
+    "clip": {
+      "duration": 29.2,
+      "plays": 2,
+      "situation": "Nachricht auf dem Anrufbeantworter",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 29.2
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Praxismitarbeiterin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/telc-b1-hoeren-t3-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "falsch",
+        "explanation": "Der Termin am Montag ist um Viertel nach drei, also am Nachmittag. Nur der Termin am Freitag ist am Vormittag.",
+        "evidence": {
+          "text": "Guten Tag, Frau Kowalski, hier ist Petra Lindner von der Zahnarztpraxis Doktor Behrens. Es geht um Ihren Termin am Donnerstag um halb zehn. Doktor Behrens ist an dem Tag leider auf einer Fortbildung. Wir können Ihnen aber den Freitag zur gleichen Uhrzeit anbieten oder den Montag um Viertel nach drei. Bitte rufen Sie uns bis morgen Mittag zurück und sagen Sie, welcher Termin Ihnen besser passt. Unsere Nummer ist null sechs neun, vier vier, zwei acht, drei eins. Vielen Dank und auf Wiederhören!",
+          "hit": "oder den Montag um Viertel nach drei"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Guten Tag, Frau Kowalski, hier ist Petra Lindner von der Zahnarztpraxis Doktor Behrens. Es geht um Ihren Termin am Donnerstag um halb zehn. Doktor Behrens ist an dem Tag leider auf einer Fortbildung. Wir können Ihnen aber den Freitag zur gleichen Uhrzeit anbieten oder den Montag um Viertel nach drei. Bitte rufen Sie uns bis morgen Mittag zurück und sagen Sie, welcher Termin Ihnen besser passt. Unsere Nummer ist null sechs neun, vier vier, zwei acht, drei eins. Vielen Dank und auf Wiederhören!",
+        "delivery": "[friendly, professional, clear]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 529,
+      "at": "2026-10-12T18:06:50.014Z"
+    }
+  }
+}

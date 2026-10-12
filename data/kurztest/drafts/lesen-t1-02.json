@@ -1,0 +1,64 @@
+{
+  "id": "lesen-t1-02",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:02:37.153Z",
+    "textType": "Übersicht eines Stellenportals"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situation und die Übersicht. Wo finden Sie die Information? Wählen Sie a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Sie suchen Arbeit als Busfahrer. Das Portal soll Ihnen automatisch Bescheid sagen, sobald eine passende Stelle online ist. Wo klicken Sie?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Stellenangebote"
+            },
+            {
+              "key": "b",
+              "label": "Mein Konto"
+            },
+            {
+              "key": "c",
+              "label": "Arbeitgeber"
+            }
+          ]
+        }
+      }
+    ],
+    "reading": {
+      "sender": "JobRegion Rhein-Neckar",
+      "source": "Übersicht auf der Startseite",
+      "paragraphs": [
+        "Stellenangebote: Vollzeit, Teilzeit und Minijobs in Handel, Pflege, Gastronomie, Lager und Transport – täglich neue Angebote aus der Region",
+        "Ausbildung & Praktikum: freie Ausbildungsplätze, Schülerpraktika, Einstiegsqualifizierung, duales Studium",
+        "Bewerbungshilfe: Vorlagen für Lebenslauf und Anschreiben, Unterlagen kostenlos prüfen lassen, Tipps für das Vorstellungsgespräch",
+        "Weiterbildung: Deutsch für den Beruf, Führerschein Klasse C und D, Staplerschein, Computerkurse, Umschulungen",
+        "Anerkennung: ausländische Abschlüsse prüfen lassen, Beratung zu Zeugnissen und Übersetzungen",
+        "Mein Konto: Profil bearbeiten, Lebenslauf hochladen, gespeicherte Suchen und Job-Benachrichtigungen verwalten",
+        "Arbeitgeber: neue Stellenanzeige aufgeben, Preise und Pakete, Rückruf vom Firmenservice",
+        "Hilfe & Kontakt: häufige Fragen, Datenschutz, Live-Chat Montag bis Freitag von 8 bis 18 Uhr"
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 2,
+        "correct": "b",
+        "explanation": "Unter „Mein Konto“ kannst du Job-Benachrichtigungen einstellen, dann bekommst du automatisch eine Nachricht. Unter „Stellenangebote“ findest du die Jobs, aber du wirst dort nicht automatisch informiert.",
+        "evidence": {
+          "text": "Mein Konto: Profil bearbeiten, Lebenslauf hochladen, gespeicherte Suchen und Job-Benachrichtigungen verwalten",
+          "hit": "gespeicherte Suchen und Job-Benachrichtigungen verwalten"
+        }
+      }
+    ]
+  }
+}

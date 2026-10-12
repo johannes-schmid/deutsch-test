@@ -27,12 +27,22 @@ What we can say, and what we can't:
 | "with AI feedback" | "Feedback nach den DTZ-Kriterien" | never position the product as AI |
 | "in your language" | "Erklärungen in deiner Sprache" | same promise, true for 6 languages |
 | "No credit card" | "Ohne Anmeldung" | the free test needs no account at all |
-| "Goethe, telc, ÖSD" | DTZ + Einbürgerungstest only | **TODO(hannes):** decide whether Goethe/telc B1 is ever in scope |
+| "Goethe, telc, ÖSD" | Free tests for all three on A1–B1 under `/gratis-test` (decided 2026-10-12) | |
 
 "Bestehen" is fine for the **Einbürgerungstest** (17 of 33 correct). For the DTZ, use it only to
 match search phrasing in a guide that explains the result levels.
 
 ## Page ownership (one query, one page)
+
+> **Gratis-Tests (2026-10-12):** `/gratis-test` owns "Deutschprüfung gratis üben" (A1/A2/B1, Goethe ·
+> telc · ÖSD · DTZ); each `/gratis-test/{exam}` owns "[Prüfung] gratis üben/Modelltest online", e.g.
+> "telc B1 Prüfung online üben". Brand names are used in titles (Hannes, 2026-10-12), always with
+> the "nicht verbunden" note.
+> `/gratis-test/dtz` owns "DTZ gratis testen"; `/gratis-test/dtz/{skill}` owns
+> "DTZ [Teil] gratis üben", the same split inburgering uses (`/oefenen/{skill}` taster vs.
+> `/oefenexamen/...`). **TODO(hannes):** when `/dtz/{skill}` is built, keep its title on
+> "DTZ [Teil] üben / Prüfung" and link to the free test, so the two pages don't compete.
+
 
 | Page | Primary | Secondary |
 |---|---|---|

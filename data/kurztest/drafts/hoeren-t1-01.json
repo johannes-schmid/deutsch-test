@@ -1,0 +1,82 @@
+{
+  "id": "hoeren-t1-01",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T11:03:44.637Z",
+    "textType": "Durchsage am Bahnhof"
+  },
+  "display": {
+    "instruction": "Sie hören eine kurze Ansage. Lesen Sie zuerst die Frage. Wählen Sie dann die richtige Antwort: a, b oder c.",
+    "clip": {
+      "duration": 23.52,
+      "plays": 1,
+      "situation": "Durchsage am Bahnhof",
+      "speakers": {
+        "S1": {
+          "name": "Bahnhofssprecherin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 23.52
+        }
+      ],
+      "src": "/audio/kurztest/hoeren-t1-01.mp3"
+    },
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "Sie möchten nach Lindenfeld fahren. Was müssen Sie tun?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Sie warten zehn Minuten an Gleis drei."
+            },
+            {
+              "key": "b",
+              "label": "Sie gehen zu einem anderen Bahnsteig."
+            },
+            {
+              "key": "c",
+              "label": "Sie steigen in die vorderen Wagen ein."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "b",
+        "explanation": "Der Zug fährt heute nicht von Gleis drei, sondern von Gleis sieben ab. Die vorderen Wagen sind nur für Reisende nach Waldkirchen.",
+        "evidence": {
+          "text": "Achtung an Gleis drei. Information zur Regionalbahn nach Lindenfeld, planmäßige Abfahrt neun Uhr zwölf. Wegen einer Signalstörung fährt dieser Zug heute nicht hier ab, sondern von Gleis sieben. Die Abfahrt verzögert sich um etwa zehn Minuten. Reisende nach Waldkirchen steigen bitte in die vorderen Wagen ein. Der Zug wird in Bergheim geteilt. Wir bitten um Entschuldigung.",
+          "hit": "fährt dieser Zug heute nicht hier ab, sondern von Gleis sieben"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Achtung an Gleis drei. Information zur Regionalbahn nach Lindenfeld, planmäßige Abfahrt neun Uhr zwölf. Wegen einer Signalstörung fährt dieser Zug heute nicht hier ab, sondern von Gleis sieben. Die Abfahrt verzögert sich um etwa zehn Minuten. Reisende nach Waldkirchen steigen bitte in die vorderen Wagen ein. Der Zug wird in Bergheim geteilt. Wir bitten um Entschuldigung.",
+        "delivery": "[calm, station announcer]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 399,
+      "at": "2026-10-12T11:04:33.921Z"
+    }
+  }
+}

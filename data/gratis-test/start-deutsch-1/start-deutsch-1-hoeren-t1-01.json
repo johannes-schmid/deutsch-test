@@ -1,0 +1,134 @@
+{
+  "id": "start-deutsch-1-hoeren-t1-01",
+  "exam": "start-deutsch-1",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:29:16.517Z",
+    "textType": "Gespräch auf der Straße"
+  },
+  "display": {
+    "instruction": "Sie hören ein kurzes Gespräch. Was ist richtig? Wählen Sie das passende Bild: a, b oder c. Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "picture",
+        "item": {
+          "n": 1,
+          "prompt": "Wie fährt der Mann zum Bahnhof?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Bus",
+              "picto": "bus"
+            },
+            {
+              "key": "b",
+              "label": "Straßenbahn",
+              "picto": "strassenbahn"
+            },
+            {
+              "key": "c",
+              "label": "Taxi",
+              "picto": "auto"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 18.88,
+      "plays": 2,
+      "situation": "Gespräch auf der Straße",
+      "segments": [
+        {
+          "speaker": "A",
+          "from": 0,
+          "to": 4.25
+        },
+        {
+          "speaker": "B",
+          "from": 4.25,
+          "to": 10.01
+        },
+        {
+          "speaker": "A",
+          "from": 10.01,
+          "to": 11.7
+        },
+        {
+          "speaker": "B",
+          "from": 11.7,
+          "to": 16.41
+        },
+        {
+          "speaker": "A",
+          "from": 16.41,
+          "to": 18.88
+        }
+      ],
+      "speakers": {
+        "A": {
+          "name": "Mann",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "B": {
+          "name": "Frau",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/start-deutsch-1-hoeren-t1-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "b",
+        "explanation": "Die Frau sagt, er soll die Straßenbahn nehmen, und er sagt: „Dann mache ich das.“ Der Bus fährt heute nicht und das Taxi ist zu teuer.",
+        "evidence": {
+          "text": "Hm, der Bus fährt heute leider nicht. Nehmen Sie die Straßenbahn, die Linie vier.",
+          "hit": "Nehmen Sie die Straßenbahn, die Linie vier."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "A",
+        "voice": "man_ben",
+        "text": "Entschuldigung, wie komme ich zum Bahnhof? Fährt hier ein Bus?",
+        "delivery": "[polite, slightly unsure]"
+      },
+      {
+        "speaker": "B",
+        "voice": "woman_ela",
+        "text": "Hm, der Bus fährt heute leider nicht. Nehmen Sie die Straßenbahn, die Linie vier.",
+        "delivery": "[friendly, helpful]"
+      },
+      {
+        "speaker": "A",
+        "voice": "man_ben",
+        "text": "Oder vielleicht ein Taxi?",
+        "delivery": "[questioning, casual]"
+      },
+      {
+        "speaker": "B",
+        "voice": "woman_ela",
+        "text": "Nein, das ist zu teuer. Die Straßenbahn ist schnell, nur zehn Minuten.",
+        "delivery": "[friendly, spontaneous]"
+      },
+      {
+        "speaker": "A",
+        "voice": "man_ben",
+        "text": "Gut, dann mache ich das. Danke schön!",
+        "delivery": "[relieved, thankful]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 388,
+      "at": "2026-10-12T18:30:20.983Z"
+    }
+  }
+}

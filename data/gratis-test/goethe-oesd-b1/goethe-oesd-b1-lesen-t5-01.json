@@ -1,0 +1,94 @@
+{
+  "id": "goethe-oesd-b1-lesen-t5-01",
+  "exam": "goethe-oesd-b1",
+  "skill": "lesen",
+  "teil": 5,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.443Z",
+    "textType": "Hausordnung"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Aufgaben und den Text. Wählen Sie für jede Aufgabe die richtige Lösung: a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "In der Bibliothek darf man …",
+          "options": [
+            {
+              "key": "a",
+              "label": "im Lesesaal kurz telefonieren, wenn man leise spricht."
+            },
+            {
+              "key": "b",
+              "label": "in allen Räumen aus einer verschließbaren Flasche trinken."
+            },
+            {
+              "key": "c",
+              "label": "kleine Snacks am Arbeitsplatz im Lesesaal essen."
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Wer die Computer der Bibliothek benutzen möchte, …",
+          "options": [
+            {
+              "key": "a",
+              "label": "braucht dafür keinen Bibliotheksausweis."
+            },
+            {
+              "key": "b",
+              "label": "kann sie höchstens eine Stunde am Tag nutzen."
+            },
+            {
+              "key": "c",
+              "label": "muss vorher online einen Termin reservieren."
+            }
+          ]
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Stadtbibliothek Lindenau",
+      "source": "Aushang im Eingangsbereich",
+      "paragraphs": [
+        "Hausordnung der Stadtbibliothek Lindenau",
+        "§ 1 Geltungsbereich\nDiese Hausordnung gilt für alle Räume der Stadtbibliothek Lindenau, also auch für den Lesegarten und den Veranstaltungsraum im Untergeschoss. Mit dem Betreten der Bibliothek erkennen Besucherinnen und Besucher diese Regeln an.",
+        "§ 2 Öffnungszeiten\nDie Bibliothek ist von Dienstag bis Freitag von 10 bis 19 Uhr und am Samstag von 10 bis 14 Uhr geöffnet. In den Sommerferien gelten verkürzte Öffnungszeiten, die rechtzeitig auf unserer Website www.stadtbibliothek-lindenau.de bekannt gegeben werden. Die Ausleihe schließt 15 Minuten vor Ende der Öffnungszeit.",
+        "§ 3 Garderobe und Taschen\nJacken, große Taschen und Rucksäcke müssen in den Schließfächern im Eingangsbereich gelassen werden. Für die Schließfächer brauchen Sie eine 1-Euro-Münze, die Sie zurückbekommen. Kleine Handtaschen und durchsichtige Beutel dürfen mitgenommen werden.",
+        "§ 4 Verhalten in den Räumen\nIn den Lesesälen im ersten Stock ist Ruhe zu halten. Telefonieren ist nur im Foyer erlaubt. Getränke in verschließbaren Flaschen sind überall gestattet, Speisen dürfen nur in der Cafeteria verzehrt werden. Kinder unter acht Jahren dürfen sich nur in Begleitung eines Erwachsenen in der Bibliothek aufhalten.",
+        "§ 5 Computer und Internet\nDie öffentlichen Computer können mit dem Bibliotheksausweis für jeweils 60 Minuten pro Tag genutzt werden. Eine Reservierung ist an der Information oder telefonisch unter 06231 48 27 90 möglich. Das kostenlose WLAN steht allen Besucherinnen und Besuchern zur Verfügung; ein Ausweis ist dafür nicht nötig.",
+        "§ 6 Verstöße\nWer gegen diese Hausordnung verstößt, kann vom Personal aufgefordert werden, die Bibliothek zu verlassen. Bei wiederholten Verstößen kann der Bibliotheksausweis für bis zu drei Monate gesperrt werden. Beschädigte oder verlorene Medien müssen ersetzt werden."
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "b",
+        "explanation": "Getränke in Flaschen mit Deckel sind überall erlaubt. Telefonieren darfst du nur im Foyer und essen nur in der Cafeteria.",
+        "evidence": {
+          "text": "§ 4 Verhalten in den Räumen\nIn den Lesesälen im ersten Stock ist Ruhe zu halten. Telefonieren ist nur im Foyer erlaubt. Getränke in verschließbaren Flaschen sind überall gestattet, Speisen dürfen nur in der Cafeteria verzehrt werden. Kinder unter acht Jahren dürfen sich nur in Begleitung eines Erwachsenen in der Bibliothek aufhalten.",
+          "hit": "Getränke in verschließbaren Flaschen sind überall gestattet"
+        }
+      },
+      {
+        "n": 2,
+        "correct": "b",
+        "explanation": "Die Computer kann man 60 Minuten pro Tag nutzen. Ohne Ausweis geht nur das WLAN, und reservieren kann man an der Information oder per Telefon, nicht online.",
+        "evidence": {
+          "text": "§ 5 Computer und Internet\nDie öffentlichen Computer können mit dem Bibliotheksausweis für jeweils 60 Minuten pro Tag genutzt werden. Eine Reservierung ist an der Information oder telefonisch unter 06231 48 27 90 möglich. Das kostenlose WLAN steht allen Besucherinnen und Besuchern zur Verfügung; ein Ausweis ist dafür nicht nötig.",
+          "hit": "Die öffentlichen Computer können mit dem Bibliotheksausweis für jeweils 60 Minuten pro Tag genutzt werden."
+        }
+      }
+    ]
+  }
+}

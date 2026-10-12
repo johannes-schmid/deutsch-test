@@ -1,0 +1,82 @@
+{
+  "id": "hoeren-t2-02",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:02:40.146Z",
+    "textType": "Verkehrsmeldung im Radio"
+  },
+  "display": {
+    "instruction": "Sie hören eine Ansage im Radio. Lesen Sie zuerst die Frage. Wählen Sie dann die richtige Antwort: a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 6,
+          "prompt": "Was gilt am Wochenende für den Parkplatz am Hauptbahnhof?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Man bezahlt dort drei Euro pro Tag."
+            },
+            {
+              "key": "b",
+              "label": "Man muss dort nichts bezahlen."
+            },
+            {
+              "key": "c",
+              "label": "Man kann dort bis Montag nicht parken."
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 27.44,
+      "plays": 1,
+      "situation": "Verkehrsmeldung im Radio",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 27.44
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Radiosprecherin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/hoeren-t2-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 6,
+        "correct": "b",
+        "explanation": "Am Wochenende ist der Parkplatz kostenlos. Drei Euro kostet er nur normalerweise.",
+        "evidence": {
+          "text": "Hier ist Radio Weserwelle mit dem Verkehr. Wegen Bauarbeiten ist die Brücke in der Hafenstraße am Wochenende gesperrt. Die Sperrung beginnt am Freitag um zweiundzwanzig Uhr und dauert bis Montag früh um fünf. Bitte fahren Sie über die Lindenallee. Der Parkplatz am Hauptbahnhof kostet normalerweise drei Euro am Tag, an diesem Wochenende ist er kostenlos. Die Busse der Linie fünf fahren in dieser Zeit nur alle zwanzig Minuten. Gute Fahrt!",
+          "hit": "an diesem Wochenende ist er kostenlos"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Hier ist Radio Weserwelle mit dem Verkehr. Wegen Bauarbeiten ist die Brücke in der Hafenstraße am Wochenende gesperrt. Die Sperrung beginnt am Freitag um zweiundzwanzig Uhr und dauert bis Montag früh um fünf. Bitte fahren Sie über die Lindenallee. Der Parkplatz am Hauptbahnhof kostet normalerweise drei Euro am Tag, an diesem Wochenende ist er kostenlos. Die Busse der Linie fünf fahren in dieser Zeit nur alle zwanzig Minuten. Gute Fahrt!",
+        "delivery": "[clear, radio announcer]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 465,
+      "at": "2026-10-12T12:04:55.292Z"
+    }
+  }
+}

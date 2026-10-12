@@ -1,0 +1,83 @@
+{
+  "id": "start-deutsch-1-hoeren-t3-01",
+  "exam": "start-deutsch-1",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.875Z",
+    "textType": "Nachricht auf dem Anrufbeantworter (privat)"
+  },
+  "display": {
+    "instruction": "Sie hören eine Nachricht am Telefon. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 11,
+          "prompt": "Wann treffen sich Jonas und Mareike?",
+          "options": [
+            {
+              "key": "a",
+              "label": "um 16 Uhr"
+            },
+            {
+              "key": "b",
+              "label": "um 17.30 Uhr"
+            },
+            {
+              "key": "c",
+              "label": "um 18 Uhr"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 11.12,
+      "plays": 2,
+      "situation": "Nachricht am Telefon",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 11.12
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Mareike",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/start-deutsch-1-hoeren-t3-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 11,
+        "correct": "b",
+        "explanation": "Mareike sagt: nicht um vier, sondern um halb sechs, also um 17.30 Uhr. Um sechs Uhr beginnt nur der Film.",
+        "evidence": {
+          "text": "Hallo Jonas, hier ist Mareike. Wir treffen uns morgen vor dem Kino, aber nicht um vier, sondern erst um halb sechs. Der Film beginnt nämlich um sechs. Bis morgen, tschüss!",
+          "hit": "nicht um vier, sondern erst um halb sechs"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Hallo Jonas, hier ist Mareike. Wir treffen uns morgen vor dem Kino, aber nicht um vier, sondern erst um halb sechs. Der Film beginnt nämlich um sechs. Bis morgen, tschüss!",
+        "delivery": "[friendly, slow and clear]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 198,
+      "at": "2026-10-12T18:06:34.093Z"
+    }
+  }
+}

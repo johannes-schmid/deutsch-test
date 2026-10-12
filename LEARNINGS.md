@@ -89,3 +89,159 @@
 **Outcome:** SUCCESS
 **What worked / went wrong:** The German H1 is about 30% longer and ran to five lines at the old size, so the scale dropped to clamp(38px,4.8vw,68px). The German "Gratis starten" pushed the mobile nav past 390px; the language switch now shows only its icon below sm.
 **Lesson:** Size headlines for the longest locale (German) and check the mobile nav in every locale. Static routes per locale (`/`, `/de`) avoid reading params under cacheComponents. Switch to next-intl when the portal needs the six explanation locales.
+
+## 2026-10-12 — Domain + keyword research
+**Changed:** Added Semrush DE keyword data and insights in `seo/semrush-2026-10-12.md`; competitor map published as an artifact.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Google autocomplete (suggestqueries, hl=de&gl=de) was a fast free proxy for phrasing; Semrush gave the volumes. "Probeprüfung" looked ideal as a brand until autocomplete showed it means school exams (Realschule/MSA). "deutschtest" turned out to be a small keyword family (10k/mo) next to "b1 prüfung" (208k/mo).
+**Lesson:** Check what a candidate brand word autocompletes to before recommending it, and size keyword families before naming a domain after one.
+
+## 2026-10-12 — TestGerman B1 scrape + level-first folders
+**Changed:** Scraped the "Integration & Citizenship" roadmap (158 B1 exercises, 11 B1 mocks incl. 4 DTZ) into `testgerman/b1/`, and moved everything to `testgerman/{a1,a2,b1}/{uebungen,pruefungssimulation}/`. Cross-level docs are now `testgerman/{uebungen,pruefungssimulation,mock-exams}.md`; `analysis.md` has a B1 section (§2b).
+**Outcome:** SUCCESS
+**What worked / went wrong:** The previous session's render scripts were still in its scratchpad and rendered B1 unchanged. Writing the auth token to a file was blocked as credential materialization. Fetching inside the page with `evaluate_script` and saving only the JSON response (`filePath`) worked, and the token never left the browser. Appending rows to a CSV whose last line had no trailing newline glued the first new row onto it. A backup copy saved it.
+**Lesson:** Fetch authenticated competitor data inside the browser and save the response, never the token. Check for a trailing newline before appending to a CSV. Their DTZ mocks are pass/fail with solo Sprechen. That is our clearest realism gap to exploit.
+
+## 2026-10-12 — Exam UI: three directions
+**Changed:** Added `/design/pruefung` (noindex) with three switchable directions for player, question types, right/wrong, audio, Lesen and Sprechen (`components/design/exam/{bogen,fokus,fahrplan,lab,shared}.tsx`, specimens in `lib/design/exam-samples.ts`), and an "Exam UI" section in DESIGN.md with the rules shared by all three.
+**Outcome:** SUCCESS
+**What worked / went wrong:** At 390px, grids without explicit columns sized themselves to their widest min-content child (scroll-snap rows, phase tracks) and overflowed. `grid-cols-[minmax(0,1fr)]` plus `min-w-0` on flex segments fixed it. `resize_page` did nothing on a background tab, so mobile checks need `emulate` with a viewport. Chrome DevTools can only write screenshots inside the project, so they go to `.impeccable/review/` (gitignored).
+**Lesson:** Give every responsive grid a `minmax(0,1fr)` base column. Exam realism rules (no feedback in exam mode, no seek, play count, visible voices, pair Sprechen) belong in the design system, not in each component.
+
+## 2026-10-12 — Fokus locked as the exam design system + results page
+**Changed:** Turned the Fokus direction into reusable components in `components/exam/` (shell, stage, items, audio, feedback, reading, writing, speaking, part intro, results), with types, de/en copy and specimens in `lib/exam/`. Rebuilt `/design/pruefung` as the reference and added `/design/pruefung/ergebnis`. Deleted the Bogen and Fahrplan directions. DESIGN.md and CLAUDE.md §8 now say every UI is built from the system.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Keeping solutions off item types and passing them only as a `review` prop made the exam/practice/review states one component each, and it follows the scoring-key rule. A level scale inside every part card repeated the level pill, so the card kept only the pill. On mobile the result seal sat under the copy until it got `order-first`.
+**Lesson:** Design-system components take content as data and grading as a separate prop. On a results screen the verdict (seal) comes first on mobile, and each level appears once per card.
+
+## 2026-10-12 — Kurztest generator + first 3 samples
+**Changed:**
+- Added the generation pipeline: `lib/exam/{blueprint,kurztest,validate}.ts` and `scripts/{generate,tts,validate}-kurztest.ts`.
+- Generated 3 drafts in `data/kurztest/drafts/`: Lesen T3, Hören T1 and Hören T3. Audio is in `public/audio/kurztest/`.
+- The drafts can be reviewed at `/design/kurztest`, rendered with `components/exam`.
+
+**Outcome:** SUCCESS
+
+**What worked / went wrong:**
+- Claude (`claude-opus-5-5`, effort high, `messages.parse` + zod) cost about $0.04–0.07 per block.
+- ElevenLabs `eleven_v4` works on `/v1/text-to-dialogue/with-timestamps`. Its `voice_segments` map directly onto `AudioClip.segments`, so no per-turn rendering or stitching is needed.
+- The 3 samples used 972 characters (≈972 credits). Both clips landed inside the blueprint lengths (23.5 s and 30.6 s).
+- The scoped ElevenLabs key lacks `models_read` and subscription access, so it can't list models or show remaining credits.
+- The model wrote the audio `situation` as a full sentence. The player shows it as a label, so the prompt now asks for 2–4 words.
+
+**Lesson:**
+- Draft files keep `display` (kit types) and `key` (answers, evidence, transcript) apart, so the page renders without an adapter and the key stays server-side.
+- The validator catches length drift; the Lesen sample came out 1 word over.
+
+## 2026-10-12 — Full Kurztest drafts for all four skills
+**Changed:**
+- The generator now covers every DTZ format: a/b/c, R/F, ad matching with x, opinion matching, gap fill, Schreiben A/B and Sprechen Teil 1–3 as a pair exam. `--kurztest` fills whatever blocks are missing per `KURZTEST` in `lib/exam/blueprint.ts`.
+- Output is 17 drafts: Lesen 10 items, Hören 10 items, Schreiben A/B, Sprechen 3 Teile.
+- `MatchItem` got an optional `noMatch` prop, because Hören T4 has no "x".
+- `/design/kurztest` now has a tab per skill.
+
+**Outcome:** SUCCESS
+
+**What worked / went wrong:**
+- Claude cost $0.82 for 14 blocks, with the four skills generated in parallel.
+- eleven_v4 used 6,422 characters this round, 7,394 in total.
+- Sprechen renders one clip per examiner or partner turn, because the candidate answers in between.
+- Three drafts are slightly outside the blueprint and are flagged by the validator for review:
+  - Hören T4 is 66.6 s against a 70 s minimum.
+  - Lesen T1 has 87 words against a 90 minimum.
+  - Lesen T3 has 121 words against a 120 maximum.
+- Content issues the validator cannot catch:
+  - The Lesen T5 letter is dated 2025.
+  - "Lindenstraße 14" appears in two drafts.
+
+**Lesson:**
+- Ask the model for one fixed schema per answer format, and derive the kit's display types and item numbers in code. Don't ask it to produce kit JSON directly.
+- Format checks catch length and structure. Dates, repeated names and plausibility still need the human review.
+
+## 2026-10-12 — Kurztest live on the site (lead magnet)
+**Changed:**
+- **Pages:** `/dtz/kurztest` hub plus 4 static test pages (`components/kurztest/*`, built on `components/exam`). The landing CTAs point to the hub.
+- **API:**
+  - `/api/kurztest/submit` scores server-side and returns only an id.
+  - `/api/kurztest/unlock` takes the email, then returns the result or grades the attempt: Schreiben with Claude, Sprechen with ElevenLabs STT plus Claude.
+- **Storage:** Vercel Blob, with `.data/` as the dev fallback.
+- **Admin:** `/admin/kurztest` with a CSV export, behind basic auth in `proxy.ts`.
+- **Drafts:** all set to `reviewed`.
+
+**Outcome:** SUCCESS (locally). Production still needs a Blob store and env vars.
+
+**What worked / went wrong:**
+- **Answer keys never reach the client:**
+  - `lib/kurztest/data.ts` is `server-only`, and `publicSet` strips `key`.
+  - A grep of the built `.next/static` found no explanations, `correct` values or model answers.
+  - `/design/kurztest` does ship them, so `proxy.ts` now guards it.
+- **Scroll helper bug:** in current Chrome `window.scrollTo()` returns a Promise. `useEffect(top, …)` with `top = () => window.scrollTo(...)` crashed with "destroy is not a function".
+- **Multipart in route handlers:** `instanceof File` failed in the route runtime. Use `typeof f !== "string"`.
+- **Test script bug:** zsh doesn't word-split `$VAR`, so curl got one argument. Use a bash array.
+- **Partner name:** the Sprechen partner was "Ben" in the UI, "Dragan" in Teil 1 and "Herr Kovač" in Teil 2. It is now one person, and the generator reuses the cast partner across Teile.
+- **Funnel counts:** Blob has no append and the per-record JSON is slow to read in bulk. Marker files at `stats/<kind>/<skill>/<level>/<id>` make the admin counts a single list call.
+- **Timings:**
+  - Schreiben grading takes about 15 s.
+  - Sprechen (12 STT calls plus grading) takes about 13 s.
+  - The grader spotted stand-in audio that just repeated the partner's lines.
+
+**Lesson:**
+- Gate results server-side and validate before writing records, so failed requests don't leave orphan leads.
+- One partner identity per Sprechen set is a realism requirement, so the generator must enforce it.
+
+## 2026-10-12 — Kurztest inside the site layout + SEO as on inburgering
+**Changed:** Extracted `components/design/site-chrome.tsx` from the landing; `app/(main)/dtz/kurztest/layout.tsx` wraps all Kurztest pages in nav + footer; tests run in a framed `ExamStage` below an indexable header (`components/kurztest/{page-header,skill-page}.tsx`); added `lib/seo.ts`, `app/sitemap.ts`, `app/robots.txt/route.ts`; pages are now `index, follow` with canonical, OG, Quiz/CollectionPage + BreadcrumbList JSON-LD.
+**Outcome:** SUCCESS
+**What worked / went wrong:**
+- The full-screen exam stage with its own logo bar read as a different site. A framed stage between the site nav and footer (inburgering's `/oefenen/{skill}` pattern) fixes it.
+- `scrollTo(0)` on phase change now scrolls to the exam frame, and skips the intro so page load doesn't jump.
+- `export const dynamic = "force-static"` breaks a route handler under `cacheComponents`. Drop it; GET handlers prerender anyway.
+- After adding a nested layout, `tsc` failed on stale `.next/dev/types`. `npx next typegen` fixes it.
+**Lesson:** Lead magnets live in the normal site chrome with one H1 in the page header; inner exam headings (gate, result hero) are h2.
+
+## 2026-10-12 — /gratis-test: level + exam picker, DTZ moved under it
+**Changed:** `app/(main)/dtz/kurztest` → `app/(main)/gratis-test/dtz`, new overview `app/(main)/gratis-test/page.tsx` + `components/kurztest/exam-picker.tsx`, exam catalogue `lib/exams.ts`, 308s in `next.config.ts`, sitemap/nav/CTAs repointed.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Static folders per exam (no `[exam]` param) keep cacheComponents happy. shadcn `TabsTrigger` ships `hover:text-foreground`, which beat `data-active:text-*` on the hovered active tab (white label vanished on ink); an explicit `data-active:hover:text-*` fixed it. Base UI `keepMounted` keeps inactive panels in the HTML, so every exam stays crawlable.
+**Lesson:** When restyling shadcn primitives, override every state variant they set (hover, dark, data-active), not just the base; check the hovered active state.
+
+## 2026-10-12 — First sample drafts for the 7 non-DTZ exams
+**Changed:** `lib/exam/exam-blueprints.ts` (sampled parts per exam), `--exam` in `scripts/generate-kurztest.ts`, exam-aware `lib/exam/validate.ts` + `/design/kurztest` selector, accents in `data/tts-voices.json`; 14 drafts in `data/gratis-test/<exam>/`, 6 Hören clips.
+**Outcome:** SUCCESS (13/14 pass the blueprint check; telc A2 ads 3 words long)
+**What worked / went wrong:** Claude ≈ $0.87 for 14 drafts, TTS 3,225 characters. Voices are cast by gender + accent in speaker order (`spec.accents`); DTZ stays on "de" only, so the new AT/CH voices can never leak into DTZ audio. Single-speaker clips all land on the first free voice (Ela), so every monologue sounds the same.
+**Lesson:** Sample only parts the kit can render faithfully; a format the kit fakes (e.g. ÖSD's tick grid as 4-option choices) gets a `TODO(hannes)` on the spec, not silence.
+
+## 2026-10-12 — Launch pages: /dtz, /preise, landings, legal, llms.txt
+**Changed:** `app/(main)/(site)/{dtz,preise,a2-zu-b1,b1-einbuergerung,ueber-uns,kontakt,impressum,datenschutz}` on a shared layout; `components/design/content-page.tsx` (PageHeader without eyebrow, Prose, Byline, TestCta, Todo); `lib/pricing.ts` replaces `PLACEHOLDER_PLANS`; `OPERATOR`/`LEGAL_COMPLETE` in `lib/seo.ts`; real nav + footer links in `site-chrome.tsx`; `app/llms.txt/route.ts`; sitemap entries; `seo/facts.md`.
+**Outcome:** SUCCESS (all routes 200 on dev; my files pass tsc). Full `next build` was blocked by a parallel session's half-done kurztest refactor (`loadSet(exam, skill)`).
+**What worked / went wrong:**
+- Legal facts came from gesetze-im-internet (StAG § 10, IntV § 17), and each one is in `seo/facts.md`. The DTZ timings are still unsourced.
+- Impressum/Datenschutz are noindex and kept out of the sitemap until `OPERATOR.address` is set, so an incomplete Impressum can't get indexed.
+- First draft of /preise said "kein Abo" while CLAUDE.md plans Stripe subscriptions; removed. Don't promise billing terms before they're decided.
+- The nav "Anmelden" button did nothing (no auth yet); removed rather than ship a dead control.
+- JSX text doesn't parse ` `; use `{" "}`.
+**Lesson:** Write the Datenschutz from what the code does (grep stores, routes, third-party SDKs), not from the sister site's policy. The Dutch one lists services this site doesn't use.
+
+## 2026-10-12 — 5-minute tasters, API limits, Start Deutsch 1 set
+**Changed:**
+- The free tests are now ~5-minute tasters: `TASTER` in `lib/exam/blueprint.ts` picks reviewed blocks, and `loadSet(exam, skill)` in `lib/kurztest/data.ts` applies it. Everything is exam-aware (loader, scoring, API, stats, admin).
+- Paid runs are now capped:
+  - Schreiben/Sprechen take the email before the test (`/api/kurztest/quota`).
+  - `lib/kurztest/limits.ts` caps runs per IP, per email and per day.
+  - Sprechen is transcribe-only.
+- Start Deutsch 1:
+  - 13 drafts in `data/gratis-test/start-deutsch-1/`.
+  - Static routes under `/gratis-test/start-deutsch-1`, via the generic `ExamHub`/`SkillPage`.
+  - Kit additions: pictogram options (`lib/exam/pictos.ts`), speaking `cards`, single-task `WritingTask`, `ScoreSeal` + points/pass results.
+
+**Outcome:** SUCCESS
+
+**What worked / went wrong:**
+- The generator scripts need `npx tsx --env-file=.env.local`. Without it the Anthropic SDK fails with "Could not resolve authentication method".
+- Two older samples kept item numbers from before the full spec existed (n=1 in Teil 2/3). They clashed with the new Teil 1 blocks, so they were renumbered by hand.
+- A partner-gender detail ("Partner" vs "Partnerin") was hardcoded in the speaking prompt; it is now gender-aware.
+- Cost: Claude $0.36 for 11 blocks; eleven_v4 2,023 characters.
+
+**Lesson:**
+- When a spec gains earlier Teile, re-check the item numbers of existing drafts. The validator doesn't catch duplicate numbers across files yet.
+- Any check that encodes one exam's format (pair partner, picture brief) must be keyed to that exam.

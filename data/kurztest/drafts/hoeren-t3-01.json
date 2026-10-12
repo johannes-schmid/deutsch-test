@@ -1,0 +1,157 @@
+{
+  "id": "hoeren-t3-01",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T11:04:06.939Z",
+    "textType": "Alltagsgespräch in der Apotheke"
+  },
+  "display": {
+    "instruction": "Sie hören ein Gespräch. Zu jedem Gespräch gibt es zwei Aufgaben. Ist die Aussage richtig oder falsch? Und welche Antwort passt: a, b oder c?",
+    "clip": {
+      "duration": 30.64,
+      "plays": 1,
+      "situation": "Gespräch in der Apotheke",
+      "speakers": {
+        "A": {
+          "name": "Apothekerin",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "B": {
+          "name": "Kunde",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "segments": [
+        {
+          "speaker": "A",
+          "from": 0,
+          "to": 2.11
+        },
+        {
+          "speaker": "B",
+          "from": 2.11,
+          "to": 8.8
+        },
+        {
+          "speaker": "A",
+          "from": 8.8,
+          "to": 15.92
+        },
+        {
+          "speaker": "B",
+          "from": 15.92,
+          "to": 20.48
+        },
+        {
+          "speaker": "A",
+          "from": 20.48,
+          "to": 28.32
+        },
+        {
+          "speaker": "B",
+          "from": 28.32,
+          "to": 30.64
+        }
+      ],
+      "src": "/audio/kurztest/hoeren-t3-01.mp3"
+    },
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 10,
+          "statement": "Der Mann braucht für die Tropfen ein Rezept."
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 11,
+          "prompt": "Wann holt der Mann den Saft ab?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Morgen am Vormittag"
+            },
+            {
+              "key": "b",
+              "label": "Morgen um 17:30 Uhr"
+            },
+            {
+              "key": "c",
+              "label": "Morgen um 18:30 Uhr"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 10,
+        "correct": "falsch",
+        "explanation": "Die Apothekerin sagt, für die Tropfen braucht er kein Rezept. Das Rezept vom Kinderarzt ist für den Saft.",
+        "evidence": {
+          "text": "Kein Problem, wir haben bis halb sieben offen. Bis dahin können Sie ihr diese Tropfen gegen die Schmerzen geben. Dafür brauchen Sie kein Rezept.",
+          "hit": "Dafür brauchen Sie kein Rezept."
+        }
+      },
+      {
+        "n": 11,
+        "correct": "b",
+        "explanation": "Der Mann kann erst um halb sechs kommen, also um 17:30 Uhr. Morgen früh muss er arbeiten, und um halb sieben schließt die Apotheke.",
+        "evidence": {
+          "text": "Morgen früh? Da bin ich bei der Arbeit. Ich kann erst um halb sechs kommen.",
+          "hit": "Ich kann erst um halb sechs kommen."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "A",
+        "voice": "woman_ela",
+        "text": "Guten Tag, was kann ich für Sie tun?",
+        "delivery": "[friendly]"
+      },
+      {
+        "speaker": "B",
+        "voice": "man_ben",
+        "text": "Hallo. Ich hab hier ein Rezept vom Kinderarzt, für meine Tochter. Sie hat seit gestern Ohrenschmerzen.",
+        "delivery": "[slightly worried]"
+      },
+      {
+        "speaker": "A",
+        "voice": "woman_ela",
+        "text": "Mal sehen ... oh, den Saft haben wir leider nicht da. Ich bestelle ihn, dann ist er morgen früh hier.",
+        "delivery": "[apologetic]"
+      },
+      {
+        "speaker": "B",
+        "voice": "man_ben",
+        "text": "Morgen früh? Da bin ich bei der Arbeit. Ich kann erst um halb sechs kommen.",
+        "delivery": "[thinking aloud]"
+      },
+      {
+        "speaker": "A",
+        "voice": "woman_ela",
+        "text": "Kein Problem, wir haben bis halb sieben offen. Bis dahin können Sie ihr diese Tropfen gegen die Schmerzen geben. Dafür brauchen Sie kein Rezept.",
+        "delivery": "[helpful]"
+      },
+      {
+        "speaker": "B",
+        "voice": "man_ben",
+        "text": "Ja, gut, die nehme ich gleich mit.",
+        "delivery": "[relieved]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 573,
+      "at": "2026-10-12T11:04:51.883Z"
+    }
+  }
+}

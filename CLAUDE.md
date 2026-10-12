@@ -66,7 +66,9 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   - played once or twice exactly as in the real exam
   - no pause or rewind where the exam has none
 - **Exam conditions:** a real timer per section, the same flow between parts, and a scaled result
-  (B1 / A2 / unter A2), never a percentage or "bestanden".
+  (B1 / A2 / unter A2), never a percentage or "bestanden". Other exams show their **own official
+  result format** (e.g. Goethe/telc/ÖSD: bestanden / nicht bestanden with points), as set in
+  `research/<exam>.md` and `lib/exams.ts`. Decided by Hannes 2026-10-12.
 - **Sprechen simulates the pair exam,** including the partner's turns. It is never a series of
   solo prompts.
 - **Schreiben/Sprechen feedback** uses the official DTZ assessment criteria.
@@ -196,6 +198,9 @@ Mollie.** Don't port the Dutch sites' Mollie routes; rebuild that layer on Strip
 /                         home, diagnostic CTA ("Wie weit bist du von B1?")
 /dtz                      DTZ overview → /dtz/hoeren · /dtz/lesen · /dtz/schreiben · /dtz/sprechen
 /dtz/modelltest/[n]       full mock exams
+/gratis-test              free tests: pick level (A1/A2/B1) → exam → /gratis-test/{exam}/{skill}
+                          (only exams with reviewed content link out; /dtz/kurztest 308s to /gratis-test/dtz)
+                          each test is a ~5-minute taster (TASTER in lib/exam/blueprint.ts), a lead magnet, not a mock
 /b1-einbuergerung         landing: citizenship applicants
 /a2-zu-b1                 landing: stuck at A2
 /einbuergerungstest       free: all 310 BAMF questions incl. Bundesland questions
@@ -217,23 +222,46 @@ deutsch-test/
 ├── CLAUDE.md                        # this file
 ├── LEARNINGS.md                     # success/failure log (create with the first code session)
 ├── research/dtz-blueprint.md        # ★ the real DTZ format, sourced and dated (to be written)
-└── testgerman/                       # competitor research, mirrors their app sections; README.md in every folder
-    ├── analysis.md · examples.md    #   full teardown · structural examples (≤20-word excerpts)
-    ├── uebungen/{lesen,hoeren,schreiben,sprechen}/<level>/<topic>/  # "Übungen": all 275 exercises in full, screenshots/
-    ├── leben-in-deutschland/        #   "Leben in Deutschland" course library (NOT the LiD test); A2 Sprechen course teardown inside
-    ├── pruefungssimulation/         #   "Prüfungssimulation": 18 full mocks as <provider>/<level>/*.md, screenshots/, mock-exams.md blueprint
+└── testgerman/                       # competitor research, sorted by level; README.md in every folder
+    ├── analysis.md · examples.md    #   full teardown (B1 in §2b) · structural examples (≤20-word excerpts)
+    ├── uebungen.md · pruefungssimulation.md · mock-exams.md  # how each section works · ★ part-by-part mock blueprints incl. their 4 DTZ mocks
+    ├── {a1,a2,b1}/uebungen/<skill>/<topic>/       # all 433 exercises in full
+    ├── {a1,a2,b1}/pruefungssimulation/<provider>/ # all 29 mocks in full (DTZ only in b1/)
+    ├── leben-in-deutschland/        #   course library, same on every roadmap (NOT the LiD test); A2 Sprechen course teardown inside
+    ├── screenshots/                 #   exercise + simulator UI
     └── data/                        #   catalogue CSVs + raw/ (recon JSON + bundle; reference only, never ship)
 ```
 
 ```
-DESIGN.md                            # ★ the chosen visual system (Nachtzug): tokens, components, do's and don'ts
+DESIGN.md                            # ★ the chosen visual system (Nachtzug + Fokus exam UI): tokens, components, rules
 seo/keyword-strategy.md              # keyword → page ownership, homepage title/H1/meta
 app/(main)/                          # public site: / (English) and /de (German) Nachtzug landing
+│   └── design/pruefung/             #   noindex reference: every exam component (+ /ergebnis results page)
 │   └── landing.css                  #   Nachtzug tokens + gradients, mapped onto shadcn tokens
 components/ui/                       # shadcn components (Base UI)
-components/design/                   # shell, kit, interactive, variants/ (Nachtzug landing, icons, logo, demo)
+components/design/                   # shell, kit, interactive, variants/ (Nachtzug landing, icons, logo, demo), exam-gallery
+components/exam/                     # ★ Fokus exam system: ExamShell, items, audio, reading, writing, speaking, results
+lib/exam/                            # exam types, UI copy (de + en), design specimens (samples.ts, not real content)
 lib/design/                          # content.ts (shared copy, placeholder prices), variants.ts
 lib/i18n/landing.ts                  # landing copy, en (default, /) + de (/de)
+data/tts-voices.json                 # ★ the ElevenLabs voice cast with accent de/at/ch (AT/CH = provisional picks for ÖSD); content refers to keys, never voice_ids
+data/kurztest/drafts/                # ★ Kurztest content: one JSON per block, `display` (kit types) + `key` (server-only); only status "reviewed" ships
+public/audio/kurztest/               # rendered eleven_v4 clips for Hören blocks and Sprechen turns
+lib/exam/{blueprint,kurztest,validate,band}.ts  # part specs + 10-item composition, block types, blueprint validator, indicative band
+lib/kurztest/                        # server-only: data loader (strips keys), store (Vercel Blob / .data in dev), score, grade (Claude), stt, stats
+components/kurztest/                 # runner (Lesen/Hören, Schreiben, Sprechen), email gate, result view, shared item renderer
+app/(main)/gratis-test/              # level + exam picker; dtz/ = hub + /{hoeren,lesen,schreiben,sprechen} lead-magnet tests, site layout, indexed
+lib/exams.ts                         # ★ the 8 free-test exams (name, levels, official result format); research/<exam>.md = their blueprints
+lib/exam/exam-blueprints.ts          # part specs + prompt context for the non-DTZ exams (from research/<exam>.md); drafts → data/gratis-test/<exam>/ (--exam flag on the scripts)
+components/design/site-chrome.tsx    # SiteNav / SiteGlow / SiteFooter shared by the landing and every inner page
+lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
+app/(main)/(site)/                   # German text pages on one layout: dtz, preise, a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, impressum, datenschutz
+components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/sources), TestCta, Todo marker
+lib/pricing.ts · seo/facts.md        # the one price source (placeholders) · every number/legal fact with source + date
+app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
+lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
+app/(admin)/admin/kurztest + proxy.ts # funnel + leads + CSV, basic auth via ADMIN_PASSWORD (also guards /design/kurztest)
+scripts/{generate,tts,validate}-kurztest.ts  # Claude drafts → eleven_v4 audio → blueprint check
 ```
 
 **TODO:** extend with `data/`, `supabase/`, `scripts/`, `seo/` (with `facts.md`) when they exist.
@@ -243,10 +271,11 @@ lib/i18n/landing.ts                  # landing copy, en (default, /) + de (/de)
 ## 7. Competitor research — how to use it
 
 - `testgerman/` holds **structure and statistics** of TestGerman's platform, taken
-  from Hannes's paid account. Use them to benchmark formats, durations and pricing.
+  from Hannes's paid accounts (A1–A2 and A2–B1 roadmaps). Use them to benchmark formats, durations and pricing.
   **Never copy texts, questions, answers or audio** from them into this product.
 - Key gaps to beat:
-  - TestGerman's DTZ mock is advertised but **inactive**.
+  - TestGerman's 4 DTZ mocks (B1 roadmap only) give **pass/fail**, not B1/A2/unter A2, and their Sprechen
+    has no partner and no planning task (`testgerman/mock-exams.md` › DTZ).
   - All its audio is TTS, often with one voice.
   - Answer options are text only, with no picture options.
   - Sprechen is solo recordings scored by AI.
@@ -255,6 +284,12 @@ lib/i18n/landing.ts                  # landing copy, en (default, /) + de (/de)
 
 ## 8. Engineering rules
 
+- **Always build from the design system.** Every UI uses the components and tokens in
+  DESIGN.md: `components/exam/` (Fokus) for anything exam-related, `components/design/`
+  (`VButton`, `LevelScale`, `LevelSeal`, `PartIcon`, …) and `components/ui/` (shadcn) for the rest,
+  on the Nachtzug tokens. Never write a one-off option card, player, timer or result view. If a
+  piece is missing, add it to the system, show it on `/design/pruefung` and list it in DESIGN.md
+  before using it.
 - **Mobile first.** Most users are on a phone, often on a slow connection. Keep pages light and
   stream audio.
 - **Accessible:** real labels, keyboard navigation. Audio gets a transcript, **shown after
@@ -272,6 +307,9 @@ lib/i18n/landing.ts                  # landing copy, en (default, /) + de (/de)
 - **Stripe keys:** test-mode keys locally, live keys only on Vercel production. The secret key and
   webhook secret are server-only env vars.
 - **Every route that spends credits** (TTS, grading) checks auth/admin and is capped.
+  - Free tests: Schreiben/Sprechen take the email **before** the test, then `lib/kurztest/limits.ts` caps runs per IP,
+    per email and per day. Sprechen in the free test is **transcribe-only** (ElevenLabs Scribe, direct), no model
+    scoring. Decided by Hannes 2026-10-12. No Vercel AI Gateway, not even for this.
 
 ### Inherited traps (each has bitten the Dutch sites)
 

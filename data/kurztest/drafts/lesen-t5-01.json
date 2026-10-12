@@ -1,0 +1,56 @@
+{
+  "id": "lesen-t5-01",
+  "skill": "lesen",
+  "teil": 5,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:04:02.622Z",
+    "textType": "Formeller Brief: Kündigung"
+  },
+  "display": {
+    "instruction": "Lesen Sie den Brief. Welches Wort passt in die Lücke? Wählen Sie a, b oder c.",
+    "items": [
+      {
+        "type": "gap",
+        "data": {
+          "parts": [
+            "Mehmet Aydın\nLindenstraße 14\n34117 Kassel\n\nKassel, 12. März 2025\n\nKündigung meines Mitgliedsvertrags, Mitgliedsnummer 48213\n\nSehr geehrte Damen und Herren,\n\nhiermit kündige ich meinen Vertrag im Fitnessstudio „Aktiv Plus“ ",
+            {
+              "n": 20,
+              "options": [
+                "zum",
+                "im",
+                "seit"
+              ]
+            },
+            " 30. Juni 2025. Ich ziehe im Sommer nach Hamburg, ",
+            {
+              "n": 21,
+              "options": [
+                "deshalb",
+                "trotzdem",
+                "obwohl"
+              ]
+            },
+            " kann ich Ihr Studio leider nicht mehr besuchen.\n\nBitte buchen Sie ab Juli keine Beiträge mehr von meinem Konto ab. Außerdem bitte ich Sie, mir die Kündigung schriftlich zu bestätigen und mir das genaue Vertragsende mitzuteilen. Meine Mitgliedskarte schicke ich Ihnen mit diesem Brief zurück. Für Rückfragen erreichen Sie mich unter 0561 7738204.\n\nVielen Dank für Ihre Mühe.\n\nMit freundlichen Grüßen\nMehmet Aydın"
+          ]
+        }
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 20,
+        "correct": "zum",
+        "explanation": "Man kündigt „zum“ einem Datum, das ist eine feste Wendung. „Seit“ passt nicht, weil das Datum in der Zukunft liegt."
+      },
+      {
+        "n": 21,
+        "correct": "deshalb",
+        "explanation": "Der Umzug ist der Grund für die Kündigung, darum passt „deshalb“. „Obwohl“ geht nicht, weil danach das Verb am Ende stehen müsste."
+      }
+    ]
+  }
+}

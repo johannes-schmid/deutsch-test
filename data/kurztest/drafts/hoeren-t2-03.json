@@ -1,0 +1,82 @@
+{
+  "id": "hoeren-t2-03",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:03:00.309Z",
+    "textType": "Wetterbericht im Radio"
+  },
+  "display": {
+    "instruction": "Sie hören eine Ansage im Radio. Lesen Sie zuerst die Frage. Wählen Sie dann die richtige Antwort: a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 7,
+          "prompt": "Wie wird das Wetter am Samstagnachmittag im Bergland?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Die Sonne scheint, es ist warm."
+            },
+            {
+              "key": "b",
+              "label": "Es gibt dort ein starkes Unwetter."
+            },
+            {
+              "key": "c",
+              "label": "Es bleibt trocken, aber windig."
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 26.88,
+      "plays": 1,
+      "situation": "Wetterbericht im Radio",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 26.88
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Radiosprecherin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/hoeren-t2-03.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 7,
+        "correct": "b",
+        "explanation": "Im Bergland gibt es am Nachmittag kräftige Gewitter, also ein starkes Unwetter. Trocken und windig bleibt es nur an der Küste.",
+        "evidence": {
+          "text": "Und hier ist Radio Weserland mit dem Wetter für Samstag, den vierzehnten Juni. Am Vormittag scheint im ganzen Sendegebiet die Sonne, bei Temperaturen um zweiundzwanzig Grad. Ab etwa vierzehn Uhr ziehen von Westen dichte Wolken auf. Im Bergland gibt es am Nachmittag kräftige Gewitter, an der Küste bleibt es trocken, aber windig. Am Abend kühlt es auf vierzehn Grad ab. Am Sonntag wird es dann wieder freundlicher, mit bis zu fünfundzwanzig Grad.",
+          "hit": "Im Bergland gibt es am Nachmittag kräftige Gewitter"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Und hier ist Radio Weserland mit dem Wetter für Samstag, den vierzehnten Juni. Am Vormittag scheint im ganzen Sendegebiet die Sonne, bei Temperaturen um zweiundzwanzig Grad. Ab etwa vierzehn Uhr ziehen von Westen dichte Wolken auf. Im Bergland gibt es am Nachmittag kräftige Gewitter, an der Küste bleibt es trocken, aber windig. Am Abend kühlt es auf vierzehn Grad ab. Am Sonntag wird es dann wieder freundlicher, mit bis zu fünfundzwanzig Grad.",
+        "delivery": "[clear, friendly radio host]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 475,
+      "at": "2026-10-12T12:05:01.659Z"
+    }
+  }
+}

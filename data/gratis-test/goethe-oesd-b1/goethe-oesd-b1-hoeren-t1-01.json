@@ -1,0 +1,99 @@
+{
+  "id": "goethe-oesd-b1-hoeren-t1-01",
+  "exam": "goethe-oesd-b1",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.760Z",
+    "textType": "Nachricht auf der Mailbox"
+  },
+  "display": {
+    "instruction": "Sie hören einen kurzen Text. Zu jedem Text gibt es zwei Aufgaben. Ist die Aussage richtig oder falsch? Und welche Antwort passt: a, b oder c? Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 1,
+          "statement": "Die Heizungsreparatur in Frau Hubers Wohnung findet an einem anderen Tag statt."
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Was kann Frau Huber tun, wenn sie am Donnerstag nicht da ist?",
+          "options": [
+            {
+              "key": "a",
+              "label": "den Schlüssel in der Hausverwaltung abgeben"
+            },
+            {
+              "key": "b",
+              "label": "den Schlüssel unten beim Hausmeister lassen"
+            },
+            {
+              "key": "c",
+              "label": "den Techniker am Dienstag selbst anrufen"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 32.24,
+      "plays": 2,
+      "situation": "Nachricht der Hausverwaltung",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 32.24
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Hausverwaltung",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-oesd-b1-hoeren-t1-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "richtig",
+        "explanation": "Der Techniker ist am Dienstag krank, deshalb wird der Termin verschoben. Er kommt jetzt am Donnerstag.",
+        "evidence": {
+          "text": "Grüß Gott, Frau Huber, hier spricht Manfred Pichler von der Hausverwaltung Donaublick in Linz. Es geht um die Reparatur der Heizung in Ihrer Wohnung. Wir hatten ja Dienstag, den zwölften, ausgemacht. Leider ist der Techniker an dem Tag krank, darum muss ich den Termin verschieben. Er kommt jetzt am Donnerstag, aber erst am Nachmittag, so gegen halb drei. Wenn Sie da nicht zu Hause sind, können Sie den Schlüssel auch beim Hausmeister im Erdgeschoss abgeben. Bitte rufen Sie mich kurz zurück, unter null sieben drei zwei, vier fünf acht, eins neun null. Danke und auf Wiederhören!",
+          "hit": "Leider ist der Techniker an dem Tag krank, darum muss ich den Termin verschieben."
+        }
+      },
+      {
+        "n": 2,
+        "correct": "b",
+        "explanation": "Sie kann den Schlüssel beim Hausmeister im Erdgeschoss abgeben. Herrn Pichler soll sie nur zurückrufen, nicht den Schlüssel bringen.",
+        "evidence": {
+          "text": "Grüß Gott, Frau Huber, hier spricht Manfred Pichler von der Hausverwaltung Donaublick in Linz. Es geht um die Reparatur der Heizung in Ihrer Wohnung. Wir hatten ja Dienstag, den zwölften, ausgemacht. Leider ist der Techniker an dem Tag krank, darum muss ich den Termin verschieben. Er kommt jetzt am Donnerstag, aber erst am Nachmittag, so gegen halb drei. Wenn Sie da nicht zu Hause sind, können Sie den Schlüssel auch beim Hausmeister im Erdgeschoss abgeben. Bitte rufen Sie mich kurz zurück, unter null sieben drei zwei, vier fünf acht, eins neun null. Danke und auf Wiederhören!",
+          "hit": "können Sie den Schlüssel auch beim Hausmeister im Erdgeschoss abgeben"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "man_gruber_at",
+        "text": "Grüß Gott, Frau Huber, hier spricht Manfred Pichler von der Hausverwaltung Donaublick in Linz. Es geht um die Reparatur der Heizung in Ihrer Wohnung. Wir hatten ja Dienstag, den zwölften, ausgemacht. Leider ist der Techniker an dem Tag krank, darum muss ich den Termin verschieben. Er kommt jetzt am Donnerstag, aber erst am Nachmittag, so gegen halb drei. Wenn Sie da nicht zu Hause sind, können Sie den Schlüssel auch beim Hausmeister im Erdgeschoss abgeben. Bitte rufen Sie mich kurz zurück, unter null sieben drei zwei, vier fünf acht, eins neun null. Danke und auf Wiederhören!",
+        "delivery": "[friendly, professional]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 607,
+      "at": "2026-10-12T18:06:14.867Z"
+    }
+  }
+}

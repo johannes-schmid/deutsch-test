@@ -49,16 +49,6 @@ export const TEXT_TYPES = [
 
 export const LANGUAGES = ["English", "العربية", "Türkçe", "Українська", "Русский", "دری"]
 
-// TODO(hannes): placeholder prices for design only. Real prices go in lib/pricing.ts.
-export const PLACEHOLDER_PLANS = [
-  { id: "1m", name: "1 Monat", months: 1, cents: 1790 },
-  { id: "3m", name: "3 Monate", months: 3, cents: 3990, featured: true },
-  { id: "6m", name: "6 Monate", months: 6, cents: 5990 },
-]
-
-export const formatEuro = (cents: number) =>
-  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(cents / 100)
-
 export const PLAN_FEATURES = [
   "Alle Modelltests für Hören, Lesen, Schreiben, Sprechen",
   "Feedback für Schreiben und Sprechen",

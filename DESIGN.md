@@ -202,14 +202,72 @@ tokens.
 | `PartIcon` / `PartCard` | `variants/nachtzug-icons.tsx` | glass tile with a blurred tone blob. Sizes sm/md/lg = 36/48/64px |
 | `TestIcon` / `TestCard` | `variants/nachtzug-icons.tsx` | DTZ, Einbürgerungstest, Integrationskurs |
 | `LevelSeal` | `variants/nachtzug-icons.tsx` | three-arc ring that lights up to the level reached |
+| `ScoreSeal` | `variants/nachtzug-icons.tsx` | the LevelSeal for exams scored in points: one arc for the share reached (Glut when passed, ink when not), a tick at the pass mark, the % in the middle |
 | `LevelPath` | `variants/nachtzug-icons.tsx` | A2 seal, then dots, then a larger B1 seal |
 | `MetaChip` | `variants/nachtzug-icons.tsx` | glass pill with an icon (45 Min, 2× hören, zu zweit) |
 | `ExamTicket` | `variants/nachtzug-icons.tsx` | countdown ticket with the four part icons |
 | `PromiseArt` | `variants/nachtzug-icons.tsx` | review card: blueprint checks and a "Von einem Menschen geprüft" pill |
-| `PlatformDemo` | `variants/nachtzug-demo.tsx` | tabbed exam mock: Hören, Lesen, Schreiben, Sprechen, Ergebnis |
+| `SiteNav` / `SiteGlow` / `SiteFooter` | `site-chrome.tsx` | the one site header (logo → home, nav, CTA; `switchLang={false}` on German-only pages), the hero orbs, and the footer. Every public page uses these, never its own bar |
+| `ExamPicker` | `components/kurztest/exam-picker.tsx` | level pills (A1 · A2 · B1, shadcn Tabs, all panels kept in the HTML) over exam cards; a card without content is dashed with "Bald verfügbar" and no link |
+| `PageHeader` / `Prose` / `Byline` / `TestCta` / `Todo` | `content-page.tsx` | text pages: breadcrumb + H1 + lead (no eyebrow), long-form typography at 68ch, author/date/sources, one closing CTA band, dashed marker for unfilled facts |
+| `PlatformDemo` | `variants/nachtzug-demo.tsx` | the landing page's tabbed exam teaser (marketing only; real exam screens use `components/exam`) |
 
 Icons come from Lucide at stroke 1.75–2.5. That is the existing dependency; don't mix it with
 another icon family.
+
+## Exam UI: "Fokus"
+
+Every exam screen uses **Fokus**: one task per screen on a glass card (`.nz-app`) over a photo
+field, with big touch targets and a sticky action bar. It was chosen on 2026-10-12 over
+"Prüfungsbogen" (paper look) and "Fahrplan" (timetable).
+
+**Source of truth:** `components/exam/` (import from `@/components/exam`). Types are in
+`lib/exam/types.ts` and UI copy (de + en) in `lib/exam/copy.ts`. Live reference:
+`/design/pruefung` shows every part and every block, and `/design/pruefung/ergebnis` shows the
+results page (both noindex). Specimen data is in `lib/exam/samples.ts`; it was written for design
+and is not reviewed content.
+
+**Never build one-off exam UI.** New exam screens are composed from these components. If one is
+missing, add it to `components/exam/`, show it on `/design/pruefung`, and list it below.
+
+| Component | Use |
+|---|---|
+| `ExamStage` | The photo field behind every screen. `scene` picks the gradient per part (intro, hoeren, lesen, schreiben, sprechen, ergebnis). `framed` for previews |
+| `ExamShell` | The frame: exit (X), progress in one segment per Teil, `TimerChip` (turns glow under 5 min), content, sticky action bar, overview sheet (item grid). `wide` (1040px) for Lesen and Schreiben; otherwise 560px |
+| `ExamButton` | `primary` (ink pill, 48px), `soft`, `icon`, `iconSm` |
+| `PartIntro` | The screen before each part: icon, minutes, item count, an optional `about` ("what happens", free tests), the Teile, and the rules (play count, no rewind, timer). `action` replaces the start button, e.g. the email form before Schreiben/Sprechen |
+| `ExamAudio` / `useExamAudio` | A 112px round play button with a progress ring, waveform, speaker chips that light up per segment, and the play count. No pause or seek. It plays a real `<audio>` when `src` is set and simulates the clip otherwise |
+| `ChoiceItem` | a/b/c as 56px option cards with radio dots |
+| `TrueFalseItem` | richtig/falsch as two 56px toggles |
+| `PictureItem` | three square picture tiles: an `image`, a Lucide `icon` (specimens), or a `picto` key from `lib/exam/pictos.ts` with its short label under it (Start Deutsch 1 Hören Teil 1; pictograms stand in for drawings) |
+| `MatchItem` | situation tabs plus ads as a sideways scroll-snap row, and "x" (no match) as a dashed card |
+| `GapItem` | a letter with pill gaps; tapping a gap opens its options under the text and moves on to the next open gap |
+| `FeedbackSheet` | practice-mode explanation: the verdict, an explanation, the evidence marked in glow, and a language chip for translated explanations |
+| `ReadingLayout` / `ReadingText` | a "Text \| Aufgaben (n/m)" switch on phones and two panes from `lg`; the text sits at 18px |
+| `WritingTask` | choose task A or B (one task: no choice, shown as "Deine Aufgabe"), then content points the learner ticks off themselves (no live grading), a textarea and a word count |
+| `SpeakingTask` | pair exam: task and point chips, optional drawn `cards` (label + pictogram, Start Deutsch 1), turns from Prüfer, Partner and Du as a chat, a 72px mic with a level meter |
+| `ResultHero` · `PartResultCard` · `NextStepCard` · `ReviewList` | results page. DTZ: LevelSeal + scale and level pills. Exams scored in points (`score` + `pass`): ScoreSeal, a bestanden / nicht bestanden pill and "x von y Punkten · Bestanden ab 60 %", criteria with points (full / half / zero on the 3-step meter). Otherwise: overall seal and scale, per part a level pill plus item dots per Teil (Hören/Lesen) or criteria with a 3-step meter and "your text vs. better" (Schreiben/Sprechen), a rule-based next step, and wrong items to review |
+
+**States** (one vocabulary for every answer surface, `stateSurface` in `primitives.tsx`)
+- **idle:** surface + line border. **selected:** ink border + 1px ink ring. Chosen is ink, never glow.
+- **right:** glow fill + an inverse check. **solution:** glow ring + check + "Lösung".
+- **wrong:** rosé fill (`--v-sk-schreiben` at 30%) + X + "Deine Antwort". Rosé is the one semantic
+  exception to the single-accent rule, and it only ever means "wrong".
+
+**Rules**
+- **Exam mode gives no feedback.** A `review` prop is passed only after grading (Auswertung or
+  the Übungsmodus "Prüfen"). Items never carry their solution, so scoring keys stay on the server.
+- **Audio** shows its play count, locks when done ("Keine Wiederholung"), and the transcript unlocks
+  after answering. Several voices are visible as speaker chips in their tones.
+- **Sprechen** always shows the examiner and the partner as people with turns. Partner voices come
+  from `data/tts-voices.json`.
+- **Results** are B1 / A2 / unter A2 only. Per-Teil counts ("3 von 4 richtig") are fine;
+  percentages and "bestanden" are not. The next step is rule-based (weakest part first).
+- **Copy** goes through `useExamCopy()` (`ExamCopyProvider locale`). Exam content stays German.
+- **Layout:** touch targets at least 44px, option rows at least 56px. Every grid starts at
+  `grid-cols-[minmax(0,1fr)]`. Screens work at 390px.
+- **Motion:** screens enter with `.nz-screen` (420ms blur-up). The sheets slide on
+  `--ease-out-strong` over 300ms. Presses scale to 0.97–0.985. Only the record button pulses (`.nz-rec`).
 
 ## Do's and Don'ts
 

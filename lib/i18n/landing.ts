@@ -5,7 +5,7 @@ const de = {
     title: "Goethe, telc, DTZ & ÖSD bestehen | Deutschprüfung online üben",
     description: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Übe Hören, Lesen, Schreiben und Sprechen. Mit Erklärungen in deiner Sprache. Gratis starten.",
   },
-  nav: { links: ["Modelltests", "Preise", "Fragen"], login: "Anmelden", start: "Gratis starten", switchLabel: "English", switchShort: "EN", switchHref: "/" },
+  nav: { links: [{ label: "DTZ", href: "/dtz" }, { label: "Gratis-Test", href: "/gratis-test" }, { label: "Preise", href: "/preise" }, { label: "Fragen", href: "/de#fragen" }], login: "Anmelden", start: "Gratis starten", switchLabel: "English", switchShort: "EN", switchHref: "/" },
   hero: {
     eyebrow: "Deutschprüfung online vorbereiten",
     h1: "Goethe, telc, DTZ und ÖSD bestehen.",
@@ -68,7 +68,7 @@ const de = {
   },
   faq: {
     h2: "Fragen",
-    price: (p: string) => `Ab ${p} im Monat (Platzhalter). Der Gratis-Test kostet nichts.`,
+    price: (p: string) => `3 Monate kosten ${p}, inkl. MwSt. Der Gratis-Test kostet nichts.`,
     items: [
       { q: "Kann ich den DTZ online üben?", a: "Ja. Bei uns machst du komplette DTZ-Modelltests im Browser oder auf dem Handy. Ein Test pro Teil ist gratis." },
       { q: "Was mache ich, wenn ich beim DTZ nur A2 hatte?", a: "Mach einen Modelltest. Dann siehst du, welcher Teil dir noch zu B1 fehlt, und übst genau diesen Teil." },
@@ -79,7 +79,7 @@ const de = {
     ],
   },
   cta: { h2: "Bereit für den Prüfungstag?", text: "Mach jetzt deinen ersten Modelltest. Gratis und ohne Anmeldung.", button: "Gratis Test starten" },
-  footer: { disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz" },
+  footer: { disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", about: "Über uns", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
   parts: {
     hoeren: { name: "Hören", meta: "ca. 25 Min" },
     lesen: { name: "Lesen", meta: "45 Min" },
@@ -146,7 +146,7 @@ const en: LandingCopy = {
     title: "Pass Goethe, telc, DTZ & ÖSD | German exam practice online",
     description: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Practice listening, reading, writing and speaking, with explanations in your language. Start free.",
   },
-  nav: { links: ["Mock exams", "Pricing", "FAQ"], login: "Log in", start: "Start free", switchLabel: "Deutsch", switchShort: "DE", switchHref: "/de" },
+  nav: { links: [{ label: "DTZ", href: "/dtz" }, { label: "Free test", href: "/gratis-test" }, { label: "Pricing", href: "/preise" }, { label: "FAQ", href: "/#fragen" }], login: "Log in", start: "Start free", switchLabel: "Deutsch", switchShort: "DE", switchHref: "/de" },
   hero: {
     eyebrow: "German exam prep online",
     h1: "Pass Goethe, telc, DTZ & ÖSD.",
@@ -209,7 +209,7 @@ const en: LandingCopy = {
   },
   faq: {
     h2: "Questions",
-    price: (p: string) => `From ${p} a month (placeholder). The free test costs nothing.`,
+    price: (p: string) => `3 months cost ${p}, VAT included. The free test costs nothing.`,
     items: [
       { q: "Can I practice the DTZ online?", a: "Yes. You take complete DTZ mock exams in your browser or on your phone. One test per part is free." },
       { q: "What if I only got A2 in the DTZ?", a: "Take a mock exam. You'll see which part still keeps you from B1, and you practice exactly that part." },
@@ -220,7 +220,7 @@ const en: LandingCopy = {
     ],
   },
   cta: { h2: "Ready for exam day?", text: "Take your first mock exam now. Free, no account needed.", button: "Start free test" },
-  footer: { disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy" },
+  footer: { disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", about: "About us", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
   parts: {
     hoeren: { name: "Listening", meta: "approx. 25 min" },
     lesen: { name: "Reading", meta: "45 min" },

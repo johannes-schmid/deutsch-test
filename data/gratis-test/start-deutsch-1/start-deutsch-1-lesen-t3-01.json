@@ -1,0 +1,46 @@
+{
+  "id": "start-deutsch-1-lesen-t3-01",
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:29:37.723Z",
+    "textType": "Schild an einer Tür"
+  },
+  "display": {
+    "instruction": "Lesen Sie das Schild. Ist die Aussage richtig oder falsch?",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 11,
+          "statement": "Am 20. August ist die Praxis von Dr. Lindner offen."
+        }
+      }
+    ],
+    "reading": {
+      "sender": "An der Tür einer Arztpraxis",
+      "source": "Schild",
+      "paragraphs": [
+        "Praxis Dr. Lindner",
+        "Urlaub vom 12. bis 23. August",
+        "Vertretung: Dr. Krause, Bahnhofstraße 8"
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 11,
+        "correct": "falsch",
+        "explanation": "Dr. Lindner hat vom 12. bis 23. August Urlaub, die Praxis ist also am 20. August zu. Du musst an diesem Tag zu Dr. Krause gehen.",
+        "evidence": {
+          "text": "Urlaub vom 12. bis 23. August",
+          "hit": "Urlaub vom 12. bis 23. August"
+        }
+      }
+    ]
+  }
+}

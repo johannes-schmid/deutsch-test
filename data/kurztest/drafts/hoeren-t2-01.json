@@ -1,0 +1,82 @@
+{
+  "id": "hoeren-t2-01",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T12:02:26.674Z",
+    "textType": "Radioansage zu einer Veranstaltung"
+  },
+  "display": {
+    "instruction": "Sie hören eine Ansage im Radio. Lesen Sie zuerst die Frage. Wählen Sie dann die richtige Antwort: a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 5,
+          "prompt": "Wofür müssen die Besucher bezahlen?",
+          "options": [
+            {
+              "key": "a",
+              "label": "für den Eintritt zum Herbstfest"
+            },
+            {
+              "key": "b",
+              "label": "für die Bastelecke der Kinder"
+            },
+            {
+              "key": "c",
+              "label": "für die Musik am Abend"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 29.84,
+      "plays": 1,
+      "situation": "Veranstaltungstipp im Radio",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 29.84
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Radiosprecherin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/hoeren-t2-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 5,
+        "correct": "c",
+        "explanation": "Nur das Konzert am Abend kostet fünf Euro. Der Eintritt zum Fest ist frei.",
+        "evidence": {
+          "text": "Und hier noch ein Tipp fürs Wochenende von Radio Mainwelle: Am Samstag, dem vierzehnten September, feiert Neustadt sein großes Herbstfest auf dem Marktplatz. Los geht's um elf Uhr, Schluss ist um zweiundzwanzig Uhr. Für Kinder gibt es ein Karussell und eine Bastelecke im Rathaushof. Der Eintritt ist frei, nur das Konzert am Abend kostet fünf Euro. Wichtig: Der Flohmarkt findet dieses Jahr nicht am Marktplatz statt, sondern im Stadtpark. Wer mit dem Auto kommt, parkt am besten am Hallenbad.",
+          "hit": "Der Eintritt ist frei, nur das Konzert am Abend kostet fünf Euro."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Und hier noch ein Tipp fürs Wochenende von Radio Mainwelle: Am Samstag, dem vierzehnten September, feiert Neustadt sein großes Herbstfest auf dem Marktplatz. Los geht's um elf Uhr, Schluss ist um zweiundzwanzig Uhr. Für Kinder gibt es ein Karussell und eine Bastelecke im Rathaushof. Der Eintritt ist frei, nur das Konzert am Abend kostet fünf Euro. Wichtig: Der Flohmarkt findet dieses Jahr nicht am Marktplatz statt, sondern im Stadtpark. Wer mit dem Auto kommt, parkt am besten am Hallenbad.",
+        "delivery": "[upbeat, radio host]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 515,
+      "at": "2026-10-12T12:04:49.108Z"
+    }
+  }
+}

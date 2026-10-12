@@ -1,0 +1,118 @@
+{
+  "id": "oesd-a2-lesen-t1-01",
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.863Z",
+    "textType": "Einfache Zeitungsmeldungen (Lokales, Angebote, Veranstaltungen)"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Überschriften und die Texte. Welche Überschrift passt zu welchem Text?",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Stadtbibliothek bleibt bis Herbst geschlossen",
+              "text": ""
+            },
+            {
+              "key": "b",
+              "title": "Neue Schwimmkurse für Kinder",
+              "text": ""
+            },
+            {
+              "key": "c",
+              "title": "Gebrauchte Kindersachen günstig kaufen",
+              "text": ""
+            },
+            {
+              "key": "d",
+              "title": "Konzert im Stadtpark abgesagt",
+              "text": ""
+            },
+            {
+              "key": "e",
+              "title": "Bücherei jetzt auch samstags offen",
+              "text": ""
+            },
+            {
+              "key": "f",
+              "title": "Spielzeug tauschen im Kindergarten",
+              "text": ""
+            },
+            {
+              "key": "g",
+              "title": "Nie zu spät zum Schwimmenlernen",
+              "text": ""
+            },
+            {
+              "key": "h",
+              "title": "Busse fahren am Sonntag seltener",
+              "text": ""
+            },
+            {
+              "title": "Neues Café am Hauptplatz eröffnet",
+              "text": ""
+            },
+            {
+              "title": "Kostenlose Deutschkurse an der Volkshochschule",
+              "text": ""
+            }
+          ],
+          "situations": [
+            {
+              "n": 1,
+              "text": "Graz. Nach sechs Monaten Umbau können die Leserinnen und Leser ab Montag wieder in die Stadtbibliothek in der Lendgasse kommen. Es gibt jetzt einen hellen Lesesaal, zwanzig Computer und eine eigene Ecke für Kinder. Außerdem ist die Bibliothek länger geöffnet: von Dienstag bis Freitag bis 19 Uhr und neu auch am Samstag von 9 bis 13 Uhr."
+            },
+            {
+              "n": 2,
+              "text": "Freiburg. Am Sonntag, dem 14. April, findet in der Turnhalle der Lessingschule wieder der Kinderflohmarkt statt. Von 10 bis 15 Uhr verkaufen Eltern Kleidung, Schuhe, Bücher und Spielsachen, die ihre Kinder nicht mehr brauchen. Fast alles kostet weniger als fünf Euro. Wer selbst etwas verkaufen möchte, meldet sich bis Mittwoch beim Elternverein an. Ein Tisch kostet acht Euro."
+            },
+            {
+              "n": 3,
+              "text": "Luzern. Viele Erwachsene haben als Kind nie schwimmen gelernt. Das Hallenbad Allmend bietet ab Mai neue Kurse nur für Anfängerinnen und Anfänger über 18 Jahre an. Die Gruppen sind klein, höchstens sechs Personen. Der Kurs dauert acht Wochen, jeweils am Donnerstagabend, und kostet 160 Franken. Anmeldung an der Kasse oder unter www.hallenbad-allmend.ch."
+            }
+          ]
+        },
+        "noMatch": false
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "e",
+        "explanation": "Die Bibliothek ist nach dem Umbau wieder offen und neu auch am Samstag geöffnet. Überschrift a passt nicht, denn der Umbau ist schon fertig.",
+        "evidence": {
+          "text": "Graz. Nach sechs Monaten Umbau können die Leserinnen und Leser ab Montag wieder in die Stadtbibliothek in der Lendgasse kommen. Es gibt jetzt einen hellen Lesesaal, zwanzig Computer und eine eigene Ecke für Kinder. Außerdem ist die Bibliothek länger geöffnet: von Dienstag bis Freitag bis 19 Uhr und neu auch am Samstag von 9 bis 13 Uhr.",
+          "hit": "Außerdem ist die Bibliothek länger geöffnet: von Dienstag bis Freitag bis 19 Uhr und neu auch am Samstag von 9 bis 13 Uhr."
+        }
+      },
+      {
+        "n": 2,
+        "correct": "c",
+        "explanation": "Auf dem Flohmarkt kann man alte Kindersachen billig kaufen. Überschrift f passt nicht, denn man tauscht nichts, und es ist in einer Schule, nicht im Kindergarten.",
+        "evidence": {
+          "text": "Freiburg. Am Sonntag, dem 14. April, findet in der Turnhalle der Lessingschule wieder der Kinderflohmarkt statt. Von 10 bis 15 Uhr verkaufen Eltern Kleidung, Schuhe, Bücher und Spielsachen, die ihre Kinder nicht mehr brauchen. Fast alles kostet weniger als fünf Euro. Wer selbst etwas verkaufen möchte, meldet sich bis Mittwoch beim Elternverein an. Ein Tisch kostet acht Euro.",
+          "hit": "verkaufen Eltern Kleidung, Schuhe, Bücher und Spielsachen, die ihre Kinder nicht mehr brauchen. Fast alles kostet weniger als fünf Euro."
+        }
+      },
+      {
+        "n": 3,
+        "correct": "g",
+        "explanation": "Die Kurse sind für Erwachsene, die noch nicht schwimmen können. Überschrift b passt nicht, denn die Kurse sind nicht für Kinder.",
+        "evidence": {
+          "text": "Luzern. Viele Erwachsene haben als Kind nie schwimmen gelernt. Das Hallenbad Allmend bietet ab Mai neue Kurse nur für Anfängerinnen und Anfänger über 18 Jahre an. Die Gruppen sind klein, höchstens sechs Personen. Der Kurs dauert acht Wochen, jeweils am Donnerstagabend, und kostet 160 Franken. Anmeldung an der Kasse oder unter www.hallenbad-allmend.ch.",
+          "hit": "neue Kurse nur für Anfängerinnen und Anfänger über 18 Jahre"
+        }
+      }
+    ]
+  }
+}

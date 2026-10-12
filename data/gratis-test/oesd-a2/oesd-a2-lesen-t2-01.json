@@ -1,0 +1,93 @@
+{
+  "id": "oesd-a2-lesen-t2-01",
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "teil": 2,
+  "status": "draft",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-12T18:05:15.641Z",
+    "textType": "Zeitungsbericht über eine Person oder ein Projekt"
+  },
+  "display": {
+    "instruction": "Lesen Sie den Text. Wählen Sie für jede Aufgabe die richtige Antwort: a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 6,
+          "prompt": "Frau Gassner hat das Reparatur-Café gegründet, weil …",
+          "options": [
+            {
+              "key": "a",
+              "label": "sie in ihrem Geschäft keine Arbeit mehr hatte."
+            },
+            {
+              "key": "b",
+              "label": "die Leute oft neue Geräte statt einer Reparatur kauften."
+            },
+            {
+              "key": "c",
+              "label": "ihr Nachbar eine Werkstatt in seiner Garage hatte."
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 7,
+          "prompt": "Das Reparatur-Café …",
+          "options": [
+            {
+              "key": "a",
+              "label": "ist schon seit zwei Jahren im Gemeindesaal."
+            },
+            {
+              "key": "b",
+              "label": "kostet die Besucher kein Geld."
+            },
+            {
+              "key": "c",
+              "label": "kauft mit dem Geld aus der Kasse Kuchen."
+            }
+          ]
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Vorarlberger Wochenblatt",
+      "source": "Menschen aus der Region",
+      "paragraphs": [
+        "Reparieren statt wegwerfen",
+        "Jeden ersten Samstag im Monat ist im Gemeindesaal von Hohenems viel los. Dann kommen Leute mit kaputten Lampen, Radios, Kaffeemaschinen oder Hosen. Hinter der Idee steht Monika Gassner. Die 63-jährige Elektrikerin hat das Reparatur-Café vor zwei Jahren gegründet.",
+        "„Früher habe ich in einem großen Elektrogeschäft in Dornbirn gearbeitet“, erzählt sie. „Viele Kunden wollten ein altes Gerät reparieren lassen, aber das war oft zu teuer. Dann haben sie einfach ein neues gekauft. Das hat mich geärgert.“",
+        "Am Anfang hat sie zusammen mit ihrem Nachbarn in ihrer Garage repariert. Bald sind aber so viele Leute gekommen, dass der Platz zu klein war. Seit letztem Herbst darf das Team den Gemeindesaal benutzen. Heute helfen zwölf Freiwillige mit, darunter eine Schneiderin und zwei Studenten, die sich gut mit Computern auskennen.",
+        "Die Reparatur kostet nichts. Wer möchte, kann aber etwas Geld in eine Kasse geben. Damit kauft das Team Werkzeug und Ersatzteile. Außerdem gibt es Kaffee und Kuchen. „Viele bleiben nach der Reparatur noch sitzen und plaudern“, sagt Gassner. „Für viele ältere Menschen ist das fast wichtiger als das Gerät.“",
+        "Das nächste Reparatur-Café findet am 5. April von 9 bis 13 Uhr statt. Eine Anmeldung ist nicht nötig."
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 6,
+        "correct": "b",
+        "explanation": "Es hat sie geärgert, dass die Kunden einfach neue Geräte gekauft haben. Die Garage war nur der erste Ort für das Café, nicht der Grund.",
+        "evidence": {
+          "text": "„Früher habe ich in einem großen Elektrogeschäft in Dornbirn gearbeitet“, erzählt sie. „Viele Kunden wollten ein altes Gerät reparieren lassen, aber das war oft zu teuer. Dann haben sie einfach ein neues gekauft. Das hat mich geärgert.“",
+          "hit": "Dann haben sie einfach ein neues gekauft. Das hat mich geärgert."
+        }
+      },
+      {
+        "n": 7,
+        "correct": "b",
+        "explanation": "Im Text steht, dass die Reparatur nichts kostet. Das Café gibt es seit zwei Jahren, aber im Gemeindesaal ist es erst seit letztem Herbst.",
+        "evidence": {
+          "text": "Die Reparatur kostet nichts. Wer möchte, kann aber etwas Geld in eine Kasse geben. Damit kauft das Team Werkzeug und Ersatzteile. Außerdem gibt es Kaffee und Kuchen. „Viele bleiben nach der Reparatur noch sitzen und plaudern“, sagt Gassner. „Für viele ältere Menschen ist das fast wichtiger als das Gerät.“",
+          "hit": "Die Reparatur kostet nichts."
+        }
+      }
+    ]
+  }
+}
