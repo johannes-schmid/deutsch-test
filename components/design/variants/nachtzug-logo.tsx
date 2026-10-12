@@ -50,25 +50,3 @@ export function NzLogo({ className = "text-[18px]", tile = true }: { className?:
     </span>
   )
 }
-
-export function NachtzugLogos() {
-  return (
-    <div className="flex flex-col gap-4">
-      <span className="text-[13px] text-v-muted">Logo · Umlaut-Punkte</span>
-      <div className="flex flex-wrap items-center gap-4">
-        <div className="grid min-h-[96px] place-items-center rounded-[16px] bg-v-surface px-6">
-          <NzLogo className="text-[20px]" />
-        </div>
-        <div className="photo grid size-[96px] place-items-center rounded-[16px]" style={{ ["--photo" as string]: "var(--g-photo-5)" }}>
-          <LogoMark size={60} tile />
-        </div>
-        <div className="flex items-end gap-3">
-          <LogoMark size={48} tile />
-          <LogoMark size={28} tile />
-          <LogoMark size={16} tile />
-          <LogoMark size={40} />
-        </div>
-      </div>
-    </div>
-  )
-}

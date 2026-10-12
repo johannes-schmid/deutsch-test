@@ -9,19 +9,23 @@ export function AnswerOptions({
   defaultValue = SAMPLE_ITEM.correct,
   correct,
   feedback,
+  wrongText = "Noch nicht. Lies den Aushang noch einmal.",
+  ariaLabel = "Antworten",
   className,
 }: {
   options?: { key: string; label: string }[]
   defaultValue?: string | null
   correct?: string
   feedback?: string
+  wrongText?: string
+  ariaLabel?: string
   className?: string
 }) {
   const [value, setValue] = useState<string | null>(defaultValue)
   const answered = correct && value
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      <div className="flex flex-col gap-2" role="group" aria-label="Antworten">
+      <div className="flex flex-col gap-2" role="group" aria-label={ariaLabel}>
         {options.map((o) => {
           const on = value === o.key
           return (
@@ -57,7 +61,7 @@ export function AnswerOptions({
           aria-live="polite"
         >
           <span className="size-4 shrink-0 rounded-full bg-v-cta" aria-hidden="true" />
-          {value === correct ? feedback : "Noch nicht. Lies den Aushang noch einmal."}
+          {value === correct ? feedback : wrongText}
         </p>
       ) : null}
     </div>
@@ -69,10 +73,16 @@ const WAVE = [6, 12, 18, 10, 22, 16, 8, 20, 26, 14, 9, 18, 24, 12, 7, 16, 21, 11
 export function AudioPlayer({
   title = "Hören · Teil 2",
   note = "Du hörst den Text einmal.",
+  doneText = "Fertig. Wie in der Prüfung gibt es keine Wiederholung.",
+  playLabel = "Abspielen",
+  pauseLabel = "Pause",
   className,
 }: {
   title?: string
   note?: string
+  doneText?: string
+  playLabel?: string
+  pauseLabel?: string
   className?: string
 }) {
   const [playing, setPlaying] = useState(false)
@@ -100,7 +110,7 @@ export function AudioPlayer({
         <button
           type="button"
           aria-pressed={playing}
-          aria-label={playing ? "Pause" : "Abspielen"}
+          aria-label={playing ? pauseLabel : playLabel}
           disabled={done}
           onClick={() => setPlaying((p) => !p)}
           className="v-cta grid size-11 shrink-0 cursor-pointer place-items-center rounded-full transition-transform duration-150 ease-out active:scale-95 disabled:cursor-default disabled:opacity-40"
@@ -130,7 +140,7 @@ export function AudioPlayer({
       <p className="text-[13px] leading-snug">
         <b className="font-semibold">{title}</b>
         <br />
-        <span className="text-v-muted">{done ? "Fertig. Wie in der Prüfung gibt es keine Wiederholung." : note}</span>
+        <span className="text-v-muted">{done ? doneText : note}</span>
       </p>
     </div>
   )

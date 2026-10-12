@@ -228,11 +228,12 @@ deutsch-test/
 ```
 DESIGN.md                            # ★ the chosen visual system (Nachtzug): tokens, components, do's and don'ts
 seo/keyword-strategy.md              # keyword → page ownership, homepage title/H1/meta
-app/design/                          # /design/nachtzug: locked-in landing + live design-system panel (noindex)
-│   └── design.css                   #   Nachtzug tokens + gradients, mapped onto shadcn tokens
+app/(main)/                          # public site: / (English) and /de (German) Nachtzug landing
+│   └── landing.css                  #   Nachtzug tokens + gradients, mapped onto shadcn tokens
 components/ui/                       # shadcn components (Base UI)
-components/design/                   # shell (switcher), kit, design-system panel, variants/
+components/design/                   # shell, kit, interactive, variants/ (Nachtzug landing, icons, logo, demo)
 lib/design/                          # content.ts (shared copy, placeholder prices), variants.ts
+lib/i18n/landing.ts                  # landing copy, en (default, /) + de (/de)
 ```
 
 **TODO:** extend with `data/`, `supabase/`, `scripts/`, `seo/` (with `facts.md`) when they exist.

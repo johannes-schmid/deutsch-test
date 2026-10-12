@@ -43,9 +43,10 @@ export function Logo({ className }: { className?: string }) {
   )
 }
 
-export function LevelScale({ level = "B1", className }: { level?: "B1" | "A2" | "unter A2"; className?: string }) {
+export function LevelScale({ level = "B1", belowLabel = "unter A2", ariaLabel = "Ergebnis", className }: { level?: "B1" | "A2" | "unter A2"; belowLabel?: string; ariaLabel?: string; className?: string }) {
+  const show = (l: string) => (l === "unter A2" ? belowLabel : l)
   return (
-    <div className={cn("grid grid-cols-3 gap-1", className)} role="img" aria-label={`Ergebnis: ${level}`}>
+    <div className={cn("grid grid-cols-3 gap-1", className)} role="img" aria-label={`${ariaLabel}: ${show(level)}`}>
       {(["unter A2", "A2", "B1"] as const).map((l) => (
         <span
           key={l}
@@ -54,18 +55,18 @@ export function LevelScale({ level = "B1", className }: { level?: "B1" | "A2" | 
             l === level ? "bg-v-sel text-v-on-sel" : "bg-v-soft text-v-muted"
           )}
         >
-          {l}
+          {show(l)}
         </span>
       ))}
     </div>
   )
 }
 
-export function Timer({ value = "38:12", className }: { value?: string; className?: string }) {
+export function Timer({ value = "38:12", ariaLabel = "Restzeit", className }: { value?: string; ariaLabel?: string; className?: string }) {
   return (
     <span
       className={cn("v-timer v-num inline-flex items-center text-[15px] font-medium", className)}
-      aria-label={`Restzeit ${value}`}
+      aria-label={`${ariaLabel} ${value}`}
     >
       {value.split("").map((c, i) =>
         c === ":" ? (

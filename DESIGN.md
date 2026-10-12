@@ -99,9 +99,9 @@ components:
 
 # Design System: deutschtest üben
 
-Source of truth: `app/design/design.css` (tokens under `.v-frame[data-variant="nachtzug"]`),
+Source of truth: `app/(main)/landing.css` (tokens under `.v-frame[data-variant="nachtzug"]`),
 `components/design/` (components), `lib/design/variants.ts` (metadata). Live reference:
-`/design/nachtzug` (noindex). This page is fixed to **Glut · Hell**.
+`/` (the landing page), fixed to the Glut palette in light mode.
 
 ## Overview
 
@@ -150,7 +150,7 @@ The palette is cool and neutral, with a single warm accent and four skill tones 
   max about 46ch.
 - **Label:** Reddit Mono 400–500, 11–12px, uppercase, +0.08em. Timers and counts use `.v-num`
   (mono, tabular numbers).
-- Copy is simple German addressed as *du*, with sentences of 15 words or fewer.
+- Copy comes in English (`/`, the default) and simple German (`/de`, addressed as *du*). Sentences stay at 15 words or fewer. All strings live in `lib/i18n/landing.ts`. Exam task content stays German in both.
 
 ## Layout
 
@@ -207,7 +207,6 @@ tokens.
 | `ExamTicket` | `variants/nachtzug-icons.tsx` | countdown ticket with the four part icons |
 | `PromiseArt` | `variants/nachtzug-icons.tsx` | review card: blueprint checks and a "Von einem Menschen geprüft" pill |
 | `PlatformDemo` | `variants/nachtzug-demo.tsx` | tabbed exam mock: Hören, Lesen, Schreiben, Sprechen, Ergebnis |
-| `DesignSystem` | `design-system.tsx` | live token panel ("Designsystem · Glut · Hell") |
 
 Icons come from Lucide at stroke 1.75–2.5. That is the existing dependency; don't mix it with
 another icon family.
@@ -221,7 +220,7 @@ another icon family.
 - Flip forward arrows in RTL (Arabic, Dari).
 
 **Don't**
-- Don't show "bestanden", percentages, user counts, testimonials or "offiziell".
+- Don't show "bestanden" as a DTZ result, or percentages, user counts, testimonials or "offiziell". The hero's "Pass / bestehen" refers to the exams in general.
 - Don't lead with AI, and never write "ohne KI".
 - Don't use evening or after-work framing. The message is exam readiness.
 - Don't use serif display type, stock photos, or a second accent colour.

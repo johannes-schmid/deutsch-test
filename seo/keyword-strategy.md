@@ -1,5 +1,14 @@
 # Keyword strategy: homepage and exam pages
 
+> **Update 2026-10-12:** `/` is now English and `/de` is German, linked with hreflang. Both lead
+> with "Pass Goethe, telc, DTZ & ÖSD" (Hannes's call, following TestGerman). The English
+> homepage targets "pass Goethe / telc / DTZ / ÖSD", "German exam practice online" and
+> "German mock exam". `/de` targets "Goethe telc DTZ ÖSD bestehen" and "Deutschprüfung online
+> üben", with "DTZ online üben" as secondary. Titles and meta descriptions live in
+> `lib/i18n/landing.ts`. **TODO(hannes):** the hero claims Goethe, telc and ÖSD, but
+> `research/` only covers the DTZ. Write blueprints for those exams before shipping the claim.
+> The sections below are the earlier DTZ-only plan.
+
 Stand: 10/2026. Built on the qualitative competitor research from 2026-10-12 (US-based search,
 no volumes). **TODO(hannes):** confirm volumes in Keyword Planner, GSC or DataForSEO before
 building pages.

@@ -36,12 +36,6 @@ export const STEPS = [
   { title: "Übe gezielt", text: "Mehr Modelltests für die Teile, die dir noch fehlen." },
 ]
 
-export const AUDIENCES = [
-  { tag: "A2 → B1", title: "Du bist bei A2 geblieben", text: "Du willst den DTZ noch einmal machen und diesmal B1 schaffen." },
-  { tag: "Einbürgerung", title: "Du brauchst B1 für die Einbürgerung", text: "Du arbeitest und hast wenig Zeit. Du willst gezielt üben." },
-  { tag: "Integrationskurs", title: "Deine Prüfung kommt bald", text: "Du willst wissen, wie die Prüfung abläuft, bevor du hingehst." },
-]
-
 export const TEXT_TYPES = [
   "Behördenbrief",
   "Aushang",
@@ -69,22 +63,6 @@ export const PLAN_FEATURES = [
   "Alle Modelltests für Hören, Lesen, Schreiben, Sprechen",
   "Feedback für Schreiben und Sprechen",
   "Erklärungen in 6 Sprachen",
-]
-
-export const FAQ = [
-  {
-    q: "Ist das der offizielle DTZ?",
-    a: "Nein. Wir sind nicht mit dem BAMF, telc oder g.a.s.t. verbunden. Unsere Tests folgen dem offiziellen Format. Alle Aufgaben schreiben wir selbst.",
-  },
-  {
-    q: "Bekomme ich ein Zertifikat?",
-    a: "Nein. Dein Ergebnis ist ein Übungsergebnis. Das Zertifikat bekommst du nur in der echten Prüfung.",
-  },
-  { q: "Brauche ich ein Konto?", a: "Nein. Den Gratis-Test machst du ohne Anmeldung." },
-  {
-    q: "Gibt es Erklärungen in meiner Sprache?",
-    a: "Ja, auf Englisch, Arabisch, Türkisch, Ukrainisch, Russisch und Dari. Die Prüfungsaufgaben bleiben auf Deutsch, wie in der Prüfung.",
-  },
 ]
 
 export const SAMPLE_ITEM = {

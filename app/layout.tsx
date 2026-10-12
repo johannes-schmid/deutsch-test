@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://deutschtest-ueben.de"),
   title: "deutschtest-ueben.de",
   description: "Realistische Modelltests für den Deutsch-Test für Zuwanderer (DTZ).",
 };
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="de"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

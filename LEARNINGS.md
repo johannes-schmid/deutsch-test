@@ -71,3 +71,21 @@
 **Outcome:** SUCCESS
 **What worked / went wrong:** The GitHub repo is public. testgerman/ holds competitor exercises in full from a paid account, so it stays local only.
 **Lesson:** Check repo visibility before the first push. Competitor and copyright research never goes into a public repo.
+
+## 2026-10-12 — Removed design-system panel
+**Changed:** Removed the token panel at the bottom of /design/nachtzug: deleted components/design/design-system.tsx and the NachtzugLogos/NachtzugElements showcases, and reduced shell.tsx to a static server component.
+**Outcome:** SUCCESS
+**What worked / went wrong:** DESIGN.md is now the only reference for tokens and components; nothing on the page duplicates it.
+**Lesson:** Once a direction is locked, the documentation lives in DESIGN.md and not on the page.
+
+## 2026-10-12 — Nachtzug becomes the landing page
+**Changed:** Moved the landing to `/` via app/(main)/{layout,page}.tsx and moved the tokens from app/design/design.css to app/(main)/landing.css. Deleted all /design routes. The page now carries the title and meta description from seo/keyword-strategy.md.
+**Outcome:** SUCCESS
+**What worked / went wrong:** The root layout still loads Geist for future surfaces; (main) loads Host Grotesk and Reddit Mono.
+**Lesson:** Public pages live in the (main) route group so the portal, auth and admin layouts stay separate (CLAUDE.md §5).
+
+## 2026-10-12 — English default landing + German /de
+**Changed:** Moved all landing copy into lib/i18n/landing.ts (en + de, with de as the type source so a missing key fails tsc). `/` renders English and `/de` German, linked with hreflang, and `<html lang>` is now "en" with the German wrapper set to `lang="de"`. The new hero reads "Pass Goethe, telc, DTZ & ÖSD. No surprises on exam day." and no longer mentions B1.
+**Outcome:** SUCCESS
+**What worked / went wrong:** The German H1 is about 30% longer and ran to five lines at the old size, so the scale dropped to clamp(38px,4.8vw,68px). The German "Gratis starten" pushed the mobile nav past 390px; the language switch now shows only its icon below sm.
+**Lesson:** Size headlines for the longest locale (German) and check the mobile nav in every locale. Static routes per locale (`/`, `/de`) avoid reading params under cacheComponents. Switch to next-intl when the portal needs the six explanation locales.
