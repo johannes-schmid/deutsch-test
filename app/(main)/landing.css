@@ -124,3 +124,6 @@
 .consent-in { transition: opacity 320ms var(--ease-out-strong), transform 320ms var(--ease-out-strong); }
 @starting-style { .consent-in { opacity: 0; transform: translateY(12px); } }
 @media (prefers-reduced-motion: reduce) { @starting-style { .consent-in { transform: none; } } }
+.consent-panel { grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 260ms var(--ease-out-strong), opacity 200ms ease; }
+.consent-panel[data-open="true"] { grid-template-rows: 1fr; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .consent-panel { transition: opacity 150ms ease; } }

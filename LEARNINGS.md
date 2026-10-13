@@ -263,3 +263,9 @@
 **Outcome:** SUCCESS (tsc clean, build passes; Playwright: 0 GA requests before consent, gtag loads after accept, banner reopens from footer, decline removes `_ga` cookies).
 **What worked / went wrong:** Clearing `_ga` cookies then reloading left one cookie, because gtag rewrote it on unload. Setting `window['ga-disable-<ID>'] = true` before clearing fixed it.
 **Lesson:** To revoke GA consent, disable gtag first, then delete cookies, then reload. No GA without opt-in in DE (§ 25 TDDDG), unlike the Dutch sites.
+
+## 2026-10-13 — General cookie banner with categories
+**Changed:** `components/design/consent.tsx` is now a standard cookie banner (Nur notwendige / Alle akzeptieren / Einstellungen with Notwendig + Statistik switch), bottom right on desktop; shadcn `components/ui/switch.tsx` added; `.consent-panel` expand transition in `landing.css`; Datenschutz button names updated.
+**Outcome:** SUCCESS (tsc, build; Playwright: GA only with Statistik on, switch state persists, revoke clears `_ga`).
+**What worked / went wrong:** A GA-named headline read oddly to the user; the familiar "Wir nutzen Cookies" + categories pattern fits better. Storage key bumped to v2, so earlier choices are asked again.
+**Lesson:** For consent UI, use the pattern visitors already know; name vendors inside the categories, not in the headline.

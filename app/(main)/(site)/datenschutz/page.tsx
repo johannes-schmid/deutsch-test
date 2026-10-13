@@ -43,9 +43,9 @@ export default function DatenschutzPage() {
 
         <h3>Statistik mit Google Analytics (nur mit deiner Einwilligung)</h3>
         <p>
-          Wenn du im Hinweis auf <strong>Akzeptieren</strong> klickst, nutzen wir Google Analytics 4 von Google Ireland
+          Wenn du im Cookie-Hinweis <strong>Alle akzeptieren</strong> wählst oder <strong>Statistik</strong> einschaltest, nutzen wir Google Analytics 4 von Google Ireland
           Limited, Gordon House, Barrow Street, Dublin 4, Irland. Damit sehen wir, welche Seiten besucht werden und
-          wie die Tests genutzt werden. Klickst du auf <strong>Ablehnen</strong>, laden wir Google Analytics nicht.
+          wie die Tests genutzt werden. Wählst du <strong>Nur notwendige</strong>, laden wir Google Analytics nicht.
         </p>
         <p>
           Google setzt dafür Cookies (<code>_ga</code>, <code>_ga_…</code>, Laufzeit bis zu 2 Jahre) und verarbeitet
