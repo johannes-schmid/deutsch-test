@@ -1,4 +1,5 @@
 import { ArrowRight, Check, GraduationCap, Headphones, Landmark, MessagesSquare, Newspaper, PenLine, Ticket, type LucideIcon } from "lucide-react"
+import type { Brand } from "@/lib/exams"
 import type { LandingCopy } from "@/lib/i18n/landing"
 
 export type PartId = "hoeren" | "lesen" | "schreiben" | "sprechen"
@@ -36,6 +37,34 @@ export function PartIcon({ part, size }: { part: PartId; size?: "sm" | "md" | "l
 
 export function TestIcon({ test, size }: { test: TestId; size?: "sm" | "md" | "lg" }) {
   return <Tile icon={TESTS[test].icon} tone={TESTS[test].tone} size={size} />
+}
+
+const DE = ["#141414", "#DD2A2A", "#F2C230"]
+const AT = ["#D9363E", "#FFFFFF", "#D9363E"]
+
+/** Our own exam badges: the provider's name in our type, a provider tone, and the country it comes from. Never their logos. */
+const BRANDS: Record<Brand, { mark: string; tone: string; flag: string[]; country: string }> = {
+  goethe: { mark: "Goethe", tone: "var(--v-ex-goethe)", flag: DE, country: "Deutschland" },
+  telc: { mark: "telc", tone: "var(--v-ex-telc)", flag: DE, country: "Deutschland" },
+  oesd: { mark: "ÖSD", tone: "var(--v-ex-oesd)", flag: AT, country: "Österreich" },
+  sd1: { mark: "SD1", tone: "var(--v-sk-sprechen)", flag: DE, country: "Deutschland" },
+  dtz: { mark: "DTZ", tone: "var(--p-glow)", flag: DE, country: "Deutschland" },
+}
+
+export function ExamMark({ brand, size = "md" }: { brand: Brand; size?: "md" | "lg" }) {
+  const b = BRANDS[brand]
+  const box = { md: "size-12 rounded-2xl", lg: "size-16 rounded-[22px]" }[size]
+  const text = b.mark.length > 4 ? { md: "text-[10.5px]", lg: "text-[13px]" }[size] : { md: "text-[14px]", lg: "text-[18px]" }[size]
+  return (
+    <span className="relative shrink-0" aria-hidden="true">
+      <span className={`nz-tile relative grid place-items-center ${box}`} style={{ ["--tone" as string]: b.tone }}>
+        <b className={`relative font-semibold tracking-[-0.02em] ${text}`}>{b.mark}</b>
+      </span>
+      <span className="nz-flag absolute -right-1 -bottom-1 flex h-[11px] w-4 flex-col overflow-hidden rounded-[3px]" title={b.country}>
+        {b.flag.map((c, i) => <span key={i} className="flex-1" style={{ background: c }} />)}
+      </span>
+    </span>
+  )
 }
 
 export function PartCard({ part, t }: { part: PartId; t: LandingCopy }) {

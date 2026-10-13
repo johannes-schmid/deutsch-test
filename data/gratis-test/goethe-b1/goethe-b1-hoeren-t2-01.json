@@ -1,0 +1,83 @@
+{
+  "id": "goethe-b1-hoeren-t2-01",
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:40.347Z",
+    "textType": "Begrüßung bei einer Führung (Betrieb)"
+  },
+  "display": {
+    "instruction": "Sie hören einen Vortrag vor Publikum. Wählen Sie für jede Aufgabe die richtige Lösung: a, b oder c. Sie hören den Text einmal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 11,
+          "prompt": "Wo dürfen die Besucher Fotos machen?",
+          "options": [
+            {
+              "key": "a",
+              "label": "in der Produktionshalle"
+            },
+            {
+              "key": "b",
+              "label": "im Lager"
+            },
+            {
+              "key": "c",
+              "label": "im Besucherraum"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 48.48,
+      "plays": 1,
+      "situation": "Führung in einer Papierfabrik",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 48.48
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Leiterin der Führung",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-b1-hoeren-t2-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 11,
+        "correct": "b",
+        "explanation": "Frau Krüger sagt, dass man nur im Lager fotografieren darf. In der Produktionshalle ist es verboten.",
+        "evidence": {
+          "text": "Guten Morgen, liebe Gäste, und herzlich willkommen bei der Firma Lindner Papier hier in Göppingen. Mein Name ist Sabine Krüger und ich begleite Sie heute durch unseren Betrieb. Die Führung dauert ungefähr anderthalb Stunden. Zuerst gehen wir in die Produktionshalle, danach zeige ich Ihnen das Lager, und zum Schluss gibt es im Besucherraum im ersten Stock einen kleinen Film über die Geschichte unserer Firma. Bevor wir losgehen, noch ein paar wichtige Hinweise: In der Halle ist es sehr laut. Deshalb bekommt jeder von Ihnen gleich am Eingang einen Gehörschutz. Bitte tragen Sie ihn die ganze Zeit in der Halle. Fotografieren ist leider nur im Lager erlaubt, nicht in der Produktion. Ihre Jacken und Taschen können Sie hier vorne in die Schränke legen, die Schlüssel bekommen Sie bei mir. Ach ja, ursprünglich wollten wir am Ende noch zusammen in der Kantine essen, aber die ist heute leider geschlossen. Stattdessen gibt es Kaffee und Kuchen im Besucherraum. So, wenn Sie Fragen haben, fragen Sie einfach jederzeit. Dann gehen wir jetzt los!",
+          "hit": "Fotografieren ist leider nur im Lager erlaubt, nicht in der Produktion."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_irene",
+        "text": "Guten Morgen, liebe Gäste, und herzlich willkommen bei der Firma Lindner Papier hier in Göppingen. Mein Name ist Sabine Krüger und ich begleite Sie heute durch unseren Betrieb. Die Führung dauert ungefähr anderthalb Stunden. Zuerst gehen wir in die Produktionshalle, danach zeige ich Ihnen das Lager, und zum Schluss gibt es im Besucherraum im ersten Stock einen kleinen Film über die Geschichte unserer Firma. Bevor wir losgehen, noch ein paar wichtige Hinweise: In der Halle ist es sehr laut. Deshalb bekommt jeder von Ihnen gleich am Eingang einen Gehörschutz. Bitte tragen Sie ihn die ganze Zeit in der Halle. Fotografieren ist leider nur im Lager erlaubt, nicht in der Produktion. Ihre Jacken und Taschen können Sie hier vorne in die Schränke legen, die Schlüssel bekommen Sie bei mir. So, wenn Sie Fragen haben, fragen Sie einfach jederzeit. Dann gehen wir jetzt los!",
+        "delivery": "[friendly, clear, tour guide]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 903,
+      "at": "2026-10-13T05:54:39.339Z"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "oesd-b1-lesen-t3-01",
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:32.756Z",
+    "textType": "Anzeigen zu Kursen und Weiterbildung"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Für eine Person gibt es keine passende Anzeige: Dann wählen Sie x.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Schöne Bilder mit dem Handy",
+              "text": "Du bist zwischen 13 und 18 Jahre alt und fotografierst gern mit dem Smartphone? Im Jugendzentrum Klagenfurt-Waidmannsdorf zeigen wir dir an drei Nachmittagen, wie du bessere Fotos machst. Teilnahme kostenlos, Anmeldung unter 0463 28 41 77."
+            },
+            {
+              "key": "b",
+              "title": "Erste Hilfe für den Führerschein",
+              "text": "Sie brauchen den Sechs-Stunden-Kurs für Ihre Führerscheinprüfung? Die Rettungsschule Donau in Linz bietet ihn jeden Montag und Mittwoch von 18 bis 21 Uhr an. Preis: 65 Euro. Alle Infos und Termine finden Sie auf www.rettungsschule-donau.at"
+            },
+            {
+              "key": "c",
+              "title": "Bewerbungscoaching intensiv",
+              "text": "Ihre Bewerbung soll überzeugen? In unserem Intensivkurs in Wien-Mariahilf schreiben Sie Lebenslauf und Motivationsschreiben am Laptop und üben Vorstellungsgespräche. Drei Abende, jeweils 18 bis 21 Uhr. Kursbeitrag: 120 Euro. Anmeldung: www.karriereplus-wien.at"
+            },
+            {
+              "key": "d",
+              "title": "Spanisch für die Reise",
+              "text": "Im Sommer nach Spanien? In acht Wochen lernen Sie die wichtigsten Sätze für Hotel, Restaurant und Strand. Kleine Gruppen mit maximal acht Personen. Dienstags ab 19 Uhr im Sprachstudio Lend, Graz. 150 Euro. Tel. 0316 72 90 54"
+            },
+            {
+              "key": "e",
+              "title": "Notfallkurs kompakt am Samstag",
+              "text": "Für Fahrschülerinnen und Fahrschüler: Lernen Sie an einem einzigen Vormittag alles, was Sie für den Führerschein über Erste Hilfe wissen müssen. Jeden Samstag von 8 bis 14 Uhr im Volkshaus Linz-Urfahr. 60 Euro inklusive Bestätigung."
+            },
+            {
+              "key": "f",
+              "title": "Bewerben am Computer – leicht gemacht",
+              "text": "Bildungszentrum Favoriten, Wien: Wie gestalte ich meinen Lebenslauf am PC? Wie schicke ich meine Unterlagen per E-Mail? Kurs an vier Donnerstagen, 18.30 bis 20.30 Uhr. Kosten: 42 Euro. Anmeldung bis 10. März im Büro."
+            }
+          ],
+          "situations": [
+            {
+              "n": 13,
+              "text": "Ihre Freundin Aylin sucht in Wien einen Abendkurs, in dem sie Bewerbungen am Computer schreiben lernt, und möchte höchstens 50 Euro ausgeben."
+            },
+            {
+              "n": 14,
+              "text": "Ihr Nachbar Herbert ist gerade in Pension gegangen und möchte in Klagenfurt lernen, mit seinem Handy bessere Fotos zu machen."
+            },
+            {
+              "n": 15,
+              "text": "Ihr Kollege Markus macht gerade in Linz den Führerschein und braucht noch einen Erste-Hilfe-Kurs, hat aber nur am Wochenende Zeit."
+            }
+          ]
+        },
+        "noMatch": true
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 13,
+        "correct": "f",
+        "explanation": "Der Kurs in Favoriten ist am Abend und kostet nur 42 Euro. Der Kurs in Mariahilf ist auch am Abend, aber mit 120 Euro zu teuer.",
+        "evidence": {
+          "text": "Bildungszentrum Favoriten, Wien: Wie gestalte ich meinen Lebenslauf am PC? Wie schicke ich meine Unterlagen per E-Mail? Kurs an vier Donnerstagen, 18.30 bis 20.30 Uhr. Kosten: 42 Euro. Anmeldung bis 10. März im Büro.",
+          "hit": "Kurs an vier Donnerstagen, 18.30 bis 20.30 Uhr. Kosten: 42 Euro."
+        }
+      },
+      {
+        "n": 14,
+        "correct": "x",
+        "explanation": "Der Handy-Fotokurs in Klagenfurt ist nur für Jugendliche von 13 bis 18 Jahren. Für Herbert gibt es also keine passende Anzeige.",
+        "evidence": {
+          "text": "Du bist zwischen 13 und 18 Jahre alt und fotografierst gern mit dem Smartphone? Im Jugendzentrum Klagenfurt-Waidmannsdorf zeigen wir dir an drei Nachmittagen, wie du bessere Fotos machst. Teilnahme kostenlos, Anmeldung unter 0463 28 41 77.",
+          "hit": "Du bist zwischen 13 und 18 Jahre alt und fotografierst gern mit dem Smartphone?"
+        }
+      },
+      {
+        "n": 15,
+        "correct": "e",
+        "explanation": "Der Kurs im Volkshaus Linz-Urfahr findet am Samstag statt. Die Rettungsschule Donau passt nicht, weil ihr Kurs nur am Montag und Mittwoch ist.",
+        "evidence": {
+          "text": "Für Fahrschülerinnen und Fahrschüler: Lernen Sie an einem einzigen Vormittag alles, was Sie für den Führerschein über Erste Hilfe wissen müssen. Jeden Samstag von 8 bis 14 Uhr im Volkshaus Linz-Urfahr. 60 Euro inklusive Bestätigung.",
+          "hit": "Jeden Samstag von 8 bis 14 Uhr im Volkshaus Linz-Urfahr."
+        }
+      }
+    ]
+  }
+}

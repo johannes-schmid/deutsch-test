@@ -251,8 +251,10 @@ lib/exam/{blueprint,kurztest,validate,band}.ts  # part specs + 10-item compositi
 lib/kurztest/                        # server-only: data loader (strips keys), store (Vercel Blob / .data in dev), score, grade (Claude), stt, stats
 components/kurztest/                 # runner (Lesen/Hören, Schreiben, Sprechen), email gate, result view, shared item renderer
 app/(main)/gratis-test/              # level + exam picker; dtz/ = hub + /{hoeren,lesen,schreiben,sprechen} lead-magnet tests, site layout, indexed
-lib/exams.ts                         # ★ the 8 free-test exams (name, levels, official result format); research/<exam>.md = their blueprints
-lib/exam/exam-blueprints.ts          # part specs + prompt context for the non-DTZ exams (from research/<exam>.md); drafts → data/gratis-test/<exam>/ (--exam flag on the scripts)
+lib/exams.ts                         # ★ the 9 free-test exams (name, brand badge, levels, official result format, pass mark); research/<exam>.md = their blueprints
+lib/exam/exams/<exam>.ts             # ★ one file per non-DTZ exam: generator context, part specs, Schreiben/Sprechen briefs, rubric, 5-min taster (from research/<exam>.md; goethe-b1 + oesd-b1 share research/goethe-oesd-b1.md)
+lib/exam/exam-blueprints.ts          # aggregates lib/exam/exams/*; drafts → data/gratis-test/<exam>/ (--exam flag on the scripts)
+lib/i18n/exam-pages/<exam>.ts        # hub + skill page copy per non-DTZ exam (DTZ and Start Deutsch 1 stay in lib/i18n/kurztest.ts)
 components/design/site-chrome.tsx    # SiteNav / SiteGlow / SiteFooter shared by the landing and every inner page
 app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}  # brand icons + share card (rendered from the Leuchte mark)
 lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), BreadcrumbList/OG helpers, sitemap, robots, llms.txt

@@ -1,0 +1,199 @@
+{
+  "id": "oesd-b1-hoeren-t3-01",
+  "exam": "oesd-b1",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:42.027Z",
+    "textType": "Gespräch in der Straßenbahn"
+  },
+  "display": {
+    "instruction": "Sie hören ein Gespräch. Lesen Sie zuerst die Aussagen. Sind sie richtig oder falsch? Sie hören das Gespräch einmal.",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 16,
+          "statement": "Reto hat seine neue Wohnung im Internet gefunden."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 17,
+          "statement": "Reto schläft im Moment noch nicht in einem eigenen Bett."
+        }
+      }
+    ],
+    "clip": {
+      "duration": 67.92,
+      "plays": 1,
+      "situation": "Gespräch in der Straßenbahn",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 6.17
+        },
+        {
+          "speaker": "S2",
+          "from": 6.17,
+          "to": 12.96
+        },
+        {
+          "speaker": "S1",
+          "from": 12.96,
+          "to": 15.86
+        },
+        {
+          "speaker": "S2",
+          "from": 15.86,
+          "to": 24.98
+        },
+        {
+          "speaker": "S1",
+          "from": 24.98,
+          "to": 30.01
+        },
+        {
+          "speaker": "S2",
+          "from": 30.01,
+          "to": 41.04
+        },
+        {
+          "speaker": "S1",
+          "from": 41.04,
+          "to": 44.89
+        },
+        {
+          "speaker": "S2",
+          "from": 44.89,
+          "to": 53.92
+        },
+        {
+          "speaker": "S1",
+          "from": 53.92,
+          "to": 60.56
+        },
+        {
+          "speaker": "S2",
+          "from": 60.56,
+          "to": 66.88
+        },
+        {
+          "speaker": "S1",
+          "from": 66.88,
+          "to": 67.92
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Verena",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "S2": {
+          "name": "Reto",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/oesd-b1-hoeren-t3-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 16,
+        "correct": "falsch",
+        "explanation": "Reto hat im Internet gesucht, aber dort nichts gefunden. Eine Kollegin hat ihm die Wohnung von ihrem Bruder vermittelt.",
+        "evidence": {
+          "text": "Nein, eben nicht. Ich hab monatelang im Internet gesucht, aber nichts Passendes gefunden. Am Ende hat mir eine Kollegin geholfen. Ihr Bruder ist ausgezogen, und ich konnte seine Wohnung übernehmen.",
+          "hit": "Ich hab monatelang im Internet gesucht, aber nichts Passendes gefunden. Am Ende hat mir eine Kollegin geholfen."
+        }
+      },
+      {
+        "n": 17,
+        "correct": "richtig",
+        "explanation": "Reto schläft noch auf einer Matratze, das Bett kommt erst am Freitag. Nur die Küche war schon fertig, nicht die ganze Wohnung.",
+        "evidence": {
+          "text": "Hm, nicht ganz. Die Küche war schon drin, das war praktisch. Aber ich schlafe noch auf einer Matratze am Boden. Das Bett wird erst nächsten Freitag geliefert.",
+          "hit": "Aber ich schlafe noch auf einer Matratze am Boden. Das Bett wird erst nächsten Freitag geliefert."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_alexandra_at",
+        "text": "Hallo, Reto! Na so was, du fährst auch mit dem Einser? Wohnst du jetzt hier in der Gegend?",
+        "delivery": "[surprised, friendly]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "man_thomas_ch",
+        "text": "Hallo, Verena! Ja, genau, seit zwei Wochen. Ich hab endlich eine Wohnung gefunden, in der Nähe vom Karlsplatz.",
+        "delivery": "[cheerful, relaxed]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "woman_alexandra_at",
+        "text": "Super! Und, wie ist sie? Groß?",
+        "delivery": "[curious, friendly]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "man_thomas_ch",
+        "text": "Naja, eigentlich ziemlich klein, nur zwei Zimmer. Aber sie ist hell, und die Miete ist okay. In Zürich hätte ich für so was fast das Doppelte gezahlt.",
+        "delivery": "[casual, thoughtful]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "woman_alexandra_at",
+        "text": "Echt? Das glaub ich dir. Und wie hast du sie gefunden? Über eine Internetseite?",
+        "delivery": "[interested, spontaneous]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "man_thomas_ch",
+        "text": "Nein, eben nicht. Ich hab monatelang im Internet gesucht, aber nichts Passendes gefunden. Am Ende hat mir eine Kollegin geholfen. Ihr Bruder ist ausgezogen, und ich konnte seine Wohnung übernehmen.",
+        "delivery": "[lively, spontaneous]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "woman_alexandra_at",
+        "text": "Da hast du aber Glück gehabt! Und, hast du schon alles eingerichtet?",
+        "delivery": "[warm, friendly]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "man_thomas_ch",
+        "text": "Hm, nicht ganz. Die Küche war schon drin, das war praktisch. Aber ich schlafe noch auf einer Matratze am Boden. Das Bett wird erst nächsten Freitag geliefert.",
+        "delivery": "[slightly amused, casual]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "woman_alexandra_at",
+        "text": "Oje. Weißt du was, wenn du beim Aufbauen Hilfe brauchst, sag Bescheid. Mein Mann hat das ganze Werkzeug.",
+        "delivery": "[sympathetic, helpful]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "man_thomas_ch",
+        "text": "Oh, das ist echt nett, danke! Vielleicht komme ich darauf zurück. So, ich muss da vorne aussteigen. Bis bald!",
+        "delivery": "[grateful, hurried]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "woman_alexandra_at",
+        "text": "Tschüss, Reto!",
+        "delivery": "[friendly, brief]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 1344,
+      "at": "2026-10-13T05:56:00.911Z"
+    }
+  }
+}

@@ -22,11 +22,13 @@ function validateOpen(b: KurztestBlock): string[] {
   const out: string[] = []
   if (b.skill === "schreiben") {
     const w = b.display.writing ?? []
-    // DTZ: choose A or B, four points each. Start Deutsch 1: one task with three points.
-    const tasks = b.exam === "start-deutsch-1" ? 1 : 2
-    const points = b.exam === "start-deutsch-1" ? 3 : 4
+    const spec = openParts(b.exam).find((p) => p.skill === "schreiben" && p.teil === b.teil)
+    if (!spec) return [`no Schreiben spec for Teil ${b.teil}`]
+    // DTZ: choose A or B, four points each. Other exams: as in their spec.
+    const dtz = !b.exam || b.exam === "dtz"
+    const tasks = spec.tasks ?? (dtz ? 2 : 1)
+    const points = spec.points ?? (dtz ? 4 : 3)
     if (w.length !== tasks) out.push(`expected ${tasks} task(s), got ${w.length}`)
-    if (!openParts(b.exam).some((p) => p.skill === "schreiben" && p.teil === b.teil)) out.push(`no Schreiben spec for Teil ${b.teil}`)
     for (const t of w) {
       if (t.points.length !== points) out.push(`task ${t.key}: ${t.points.length} points, expected ${points}`)
       const model = b.key.writing?.find((m) => m.key === t.key)
@@ -41,9 +43,11 @@ function validateOpen(b: KurztestBlock): string[] {
   const mine = sp.turns.filter((t) => t.who === "du").length
   if (!mine) out.push("no turn for the candidate")
   if (mine !== b.key.speaking!.sampleAnswers.length) out.push("sample answers do not match the candidate turns")
-  // DTZ: a pair exam in every Teil, with a picture in Teil 2. Start Deutsch 1 Teil 1 is examiner-only (research §5).
+  // DTZ: a pair exam in every Teil, with a picture in Teil 2. Other exams: `partner: false` marks examiner-only Teile.
   const dtz = !b.exam || b.exam === "dtz"
-  if ((dtz || b.teil > 1) && !sp.turns.some((t) => t.who === "partner")) out.push("no partner turn: Sprechen is a pair exam")
+  const spec = openParts(b.exam).find((p) => p.skill === "sprechen" && p.teil === b.teil)
+  if (!spec) out.push(`no Sprechen spec for Teil ${b.teil}`)
+  if (spec?.partner !== false && !sp.turns.some((t) => t.who === "partner")) out.push("no partner turn: Sprechen is a pair exam")
   if (dtz && b.teil === 2 && !b.key.speaking!.pictureBrief) out.push("Teil 2 needs a picture brief")
   if (sp.turns.some((t) => t.who !== "du" && !t.src)) out.push("no audio rendered yet (run scripts/tts-kurztest.ts)")
   return out

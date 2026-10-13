@@ -1,0 +1,83 @@
+{
+  "id": "telc-a2-hoeren-t2-03",
+  "exam": "telc-a2",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:51.520Z",
+    "textType": "Radio: Verkehrsmeldung"
+  },
+  "display": {
+    "instruction": "Sie hören eine Meldung im Radio. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text einmal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 8,
+          "prompt": "Was ist in der Kieler Innenstadt los?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Nach einem Unfall gibt es dort Stau."
+            },
+            {
+              "key": "b",
+              "label": "Eine Brücke ist für einige Tage zu."
+            },
+            {
+              "key": "c",
+              "label": "Die Busse fahren dort heute nicht."
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 28.24,
+      "plays": 1,
+      "situation": "Verkehrsmeldung im Radio",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 28.24
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Radiosprecherin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/telc-a2-hoeren-t2-03.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 8,
+        "correct": "b",
+        "explanation": "Die Holstenbrücke ist bis Freitag gesperrt, also für einige Tage zu. Der Unfall mit Stau ist auf der A sieben, und die Busse fahren, aber einen anderen Weg.",
+        "evidence": {
+          "text": "Und jetzt die Verkehrsmeldungen. Auf der A sieben zwischen Hamburg-Nord und Quickborn gibt es nach einem Unfall fünf Kilometer Stau. Bitte fahren Sie dort langsam. In der Kieler Innenstadt ist die Holstenbrücke ab heute bis Freitag wegen Bauarbeiten gesperrt. Die Busse der Linie zwölf fahren deshalb eine Umleitung über den Hauptbahnhof. Und auf der B vier bei Neumünster liegt ein Reifen auf der Fahrbahn. Seien Sie dort bitte vorsichtig. Gute Fahrt!",
+          "hit": "In der Kieler Innenstadt ist die Holstenbrücke ab heute bis Freitag wegen Bauarbeiten gesperrt."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Und jetzt die Verkehrsmeldungen. Auf der A sieben zwischen Hamburg-Nord und Quickborn gibt es nach einem Unfall fünf Kilometer Stau. Bitte fahren Sie dort langsam. In der Kieler Innenstadt ist die Holstenbrücke ab heute bis Freitag wegen Bauarbeiten gesperrt. Die Busse der Linie zwölf fahren deshalb eine Umleitung über den Hauptbahnhof. Und auf der B vier bei Neumünster liegt ein Reifen auf der Fahrbahn. Seien Sie dort bitte vorsichtig. Gute Fahrt!",
+        "delivery": "[clear, calm, radio announcer]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 483,
+      "at": "2026-10-13T05:55:05.756Z"
+    }
+  }
+}

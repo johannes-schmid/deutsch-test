@@ -1,0 +1,65 @@
+{
+  "id": "telc-a2-lesen-t1-01",
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:51:31.776Z",
+    "textType": "Wegweiser in einem Kaufhaus"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situation und den Wegweiser. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "Sie möchten ein weiches Kopfkissen für Ihr Bett kaufen.",
+          "options": [
+            {
+              "key": "a",
+              "label": "Untergeschoss"
+            },
+            {
+              "key": "b",
+              "label": "3. Stock"
+            },
+            {
+              "key": "c",
+              "label": "anderes Stockwerk"
+            }
+          ]
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Kaufhaus Brenner",
+      "source": "Wegweiser",
+      "paragraphs": [
+        "Untergeschoss: Lebensmittel · Feinkost · Getränke · Bäckerei · Blumen · Haushaltswaren · Küchengeräte",
+        "Erdgeschoss: Kosmetik · Parfüm · Schmuck · Uhren · Sonnenbrillen · Zeitschriften · Information",
+        "1. Stock: Damenmode · Wäsche · Strümpfe · Taschen · Damenschuhe",
+        "2. Stock: Herrenmode · Herrenschuhe · Sportbekleidung · Koffer · Reisezubehör",
+        "3. Stock: Kindermode · Spielwaren · Kindermöbel · Babyartikel · Schreibwaren",
+        "4. Stock: Elektro · Handys · Computer · Fernseher · Musik · Spielkonsolen · Fotoabteilung · Kundenservice",
+        "5. Stock: Möbel · Lampen · Teppiche · Bettwaren · Gardinen · Restaurant · Toiletten",
+        "6. Stock: Parkdeck · Café · Aussichtsterrasse"
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "c",
+        "explanation": "Kissen gehören zu den Bettwaren, und die sind im 5. Stock. Haushaltswaren im Untergeschoss und Kindermöbel im 3. Stock passen nicht.",
+        "evidence": {
+          "text": "5. Stock: Möbel · Lampen · Teppiche · Bettwaren · Gardinen · Restaurant · Toiletten",
+          "hit": "5. Stock: Möbel · Lampen · Teppiche · Bettwaren"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "id": "telc-b1-hoeren-t1-01",
+  "exam": "telc-b1",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:06.633Z",
+    "textType": "Radiosendung: Umfrage auf der Straße zu einer Alltagsfrage"
+  },
+  "display": {
+    "instruction": "Sie hören eine Umfrage im Radio. Zu jeder Person gibt es eine Aussage. Ist die Aussage richtig oder falsch? Sie hören den Text einmal.",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 1,
+          "statement": "Lukas möchte, dass die Geschäfte sonntags öffnen, weil er unter der Woche wenig Zeit hat."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 2,
+          "statement": "Sabine hat nichts dagegen, wenn andere Leute am Sonntag einkaufen gehen."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 3,
+          "statement": "Thomas glaubt, dass Läden und Gastronomie von geöffneten Geschäften am Sonntag profitieren würden."
+        }
+      }
+    ],
+    "clip": {
+      "duration": 72.32,
+      "plays": 1,
+      "situation": "Umfrage im Radio",
+      "segments": [
+        {
+          "speaker": "M",
+          "from": 0,
+          "to": 10.21
+        },
+        {
+          "speaker": "P1",
+          "from": 10.21,
+          "to": 31.68
+        },
+        {
+          "speaker": "P2",
+          "from": 31.68,
+          "to": 52.48
+        },
+        {
+          "speaker": "P3",
+          "from": 52.48,
+          "to": 72.32
+        }
+      ],
+      "speakers": {
+        "M": {
+          "name": "Moderatorin",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "P1": {
+          "name": "Lukas",
+          "tone": "var(--v-sk-schreiben)"
+        },
+        "P2": {
+          "name": "Sabine",
+          "tone": "var(--v-sk-sprechen)"
+        },
+        "P3": {
+          "name": "Thomas",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/telc-b1-hoeren-t1-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "falsch",
+        "explanation": "Lukas sagt zwar, dass der Sonntag für ihn praktisch wäre. Aber wegen der Verkäuferinnen ist er dagegen.",
+        "evidence": {
+          "text": "Ja, hallo, ich bin Lukas. Also, ich arbeite im Schichtdienst im Krankenhaus, und unter der Woche schaffe ich es oft nicht in die Läden. Da wäre der Sonntag natürlich praktisch. Aber, na ja, ich denke auch an die Verkäuferinnen. Die brauchen ja auch mal einen freien Tag mit der Familie. Deshalb bin ich eigentlich dagegen, auch wenn es für mich bequemer wäre.",
+          "hit": "Deshalb bin ich eigentlich dagegen, auch wenn es für mich bequemer wäre."
+        }
+      },
+      {
+        "n": 2,
+        "correct": "richtig",
+        "explanation": "Sabine selbst würde sonntags nicht einkaufen. Aber es stört sie nicht, wenn andere das machen.",
+        "evidence": {
+          "text": "Ich bin Sabine. Hm, also für mich ist das eigentlich egal. Ich gehe sowieso nicht gern einkaufen, und das meiste bestelle ich im Internet. Sonntags mache ich lieber was mit meinen Kindern, wir gehen spazieren oder ins Schwimmbad. Wenn die Läden offen wären, würde ich da nicht hingehen. Aber wer das möchte, soll das ruhig machen, das stört mich nicht.",
+          "hit": "Aber wer das möchte, soll das ruhig machen, das stört mich nicht."
+        }
+      },
+      {
+        "n": 3,
+        "correct": "richtig",
+        "explanation": "Thomas sagt, dass dann viele Leute in die Stadt kommen. Das findet er gut für Geschäfte und Cafés.",
+        "evidence": {
+          "text": "Hallo, ich bin Thomas. Na ja, ich finde, wir sollten das ausprobieren. In anderen Ländern ist das ganz normal, zum Beispiel habe ich in Spanien gesehen, dass am Sonntag viele Leute in der Stadt sind. Das ist doch gut für die Geschäfte und auch für die Cafés. Und die Mitarbeiter könnten ja dafür an einem anderen Tag frei haben. Also, ich bin dafür.",
+          "hit": "Das ist doch gut für die Geschäfte und auch für die Cafés."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "M",
+        "voice": "woman_irene",
+        "text": "Hallo und guten Morgen! In vielen Städten wird gerade diskutiert, ob Geschäfte auch am Sonntag öffnen sollen, und wir haben deshalb heute in der Fußgängerzone nachgefragt.",
+        "delivery": "[cheerful, radio host]"
+      },
+      {
+        "speaker": "P1",
+        "voice": "man_ben",
+        "text": "Ja, hallo, ich bin Lukas. Also, ich arbeite im Schichtdienst im Krankenhaus, und unter der Woche schaffe ich es oft nicht in die Läden. Da wäre der Sonntag natürlich praktisch. Aber, na ja, ich denke auch an die Verkäuferinnen. Die brauchen ja auch mal einen freien Tag mit der Familie. Deshalb bin ich eigentlich dagegen, auch wenn es für mich bequemer wäre.",
+        "delivery": "[thoughtful, spontaneous]"
+      },
+      {
+        "speaker": "P2",
+        "voice": "woman_ela",
+        "text": "Ich bin Sabine. Hm, also für mich ist das eigentlich egal. Ich gehe sowieso nicht gern einkaufen, und das meiste bestelle ich im Internet. Sonntags mache ich lieber was mit meinen Kindern, wir gehen spazieren oder ins Schwimmbad. Wenn die Läden offen wären, würde ich da nicht hingehen. Aber wer das möchte, soll das ruhig machen, das stört mich nicht.",
+        "delivery": "[relaxed, friendly]"
+      },
+      {
+        "speaker": "P3",
+        "voice": "man_mark",
+        "text": "Hallo, ich bin Thomas. Na ja, ich finde, wir sollten das ausprobieren. In anderen Ländern ist das ganz normal, zum Beispiel habe ich in Spanien gesehen, dass am Sonntag viele Leute in der Stadt sind. Das ist doch gut für die Geschäfte und auch für die Cafés. Und die Mitarbeiter könnten ja dafür an einem anderen Tag frei haben. Also, ich bin dafür.",
+        "delivery": "[enthusiastic, spontaneous]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 1328,
+      "at": "2026-10-13T05:54:21.819Z"
+    }
+  }
+}

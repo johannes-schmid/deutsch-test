@@ -3,7 +3,7 @@
   "exam": "telc-a2",
   "skill": "lesen",
   "teil": 3,
-  "status": "draft",
+  "status": "reviewed",
   "generated": {
     "model": "claude-opus-5-5",
     "at": "2026-10-12T18:05:15.678Z",
@@ -29,7 +29,7 @@
             {
               "key": "c",
               "title": "Sprachschule Lingua Plus",
-              "text": "Englisch für Anfänger in kleinen Gruppen mit höchstens acht Personen. Unterricht von Montag bis Donnerstag, immer vormittags von 9 bis 11:30 Uhr."
+              "text": "Englisch für Anfänger in kleinen Gruppen. Unterricht von Montag bis Donnerstag, immer vormittags von 9 bis 11:30 Uhr."
             },
             {
               "key": "d",
@@ -59,15 +59,15 @@
           ],
           "situations": [
             {
-              "n": 1,
+              "n": 11,
               "text": "Ihr sechsjähriger Sohn soll schwimmen lernen, aber Sie haben nur am Wochenende Zeit."
             },
             {
-              "n": 2,
+              "n": 12,
               "text": "Ihr altes Fahrrad ist kaputt und Sie möchten es nicht wegwerfen, sondern reparieren lassen."
             },
             {
-              "n": 3,
+              "n": 13,
               "text": "Sie arbeiten tagsüber und suchen einen Englischkurs, den Sie nach der Arbeit besuchen können."
             }
           ]
@@ -79,7 +79,7 @@
   "key": {
     "answers": [
       {
-        "n": 1,
+        "n": 11,
         "correct": "d",
         "explanation": "Im Familienbad gibt es einen Kurs am Samstag für Kinder von fünf bis acht Jahren. Die Schwimmschule Delfin hat Kurse nur am Montag und Mittwoch.",
         "evidence": {
@@ -88,7 +88,7 @@
         }
       },
       {
-        "n": 2,
+        "n": 12,
         "correct": "e",
         "explanation": "Der Rad-Doktor repariert Fahrräder und macht sie wieder fit. Der Fahrradladen Speiche verkauft nur gebrauchte Räder.",
         "evidence": {
@@ -97,11 +97,11 @@
         }
       },
       {
-        "n": 3,
+        "n": 13,
         "correct": "x",
         "explanation": "Der Englischkurs von Lingua Plus ist nur am Vormittag. Der Kurs am Abend bei der Volkshochschule ist Spanisch, nicht Englisch.",
         "evidence": {
-          "text": "Englisch für Anfänger in kleinen Gruppen mit höchstens acht Personen. Unterricht von Montag bis Donnerstag, immer vormittags von 9 bis 11:30 Uhr.",
+          "text": "Englisch für Anfänger in kleinen Gruppen. Unterricht von Montag bis Donnerstag, immer vormittags von 9 bis 11:30 Uhr.",
           "hit": "immer vormittags von 9 bis 11:30 Uhr"
         }
       }

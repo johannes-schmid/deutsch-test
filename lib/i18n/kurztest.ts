@@ -1,7 +1,14 @@
 // Kurztest page copy. Simple German, du-form. Exam content itself lives in data/kurztest and data/gratis-test.
-// Shared strings here; per-exam page copy (hub, skills) in EXAM_PAGES below.
+// Shared strings here; per-exam page copy (hub, skills) in EXAM_PAGES below (newer exams in ./exam-pages/<exam>.ts).
 
 import type { ExamId } from "@/lib/exams"
+import { page as oesdA1 } from "./exam-pages/oesd-a1"
+import { page as goetheA2 } from "./exam-pages/goethe-a2"
+import { page as telcA2 } from "./exam-pages/telc-a2"
+import { page as oesdA2 } from "./exam-pages/oesd-a2"
+import { page as goetheB1 } from "./exam-pages/goethe-b1"
+import { page as oesdB1 } from "./exam-pages/oesd-b1"
+import { page as telcB1 } from "./exam-pages/telc-b1"
 
 export const KURZTEST_COPY = {
   crumbs: { home: "Startseite", overview: "Gratis-Tests" },
@@ -206,4 +213,11 @@ export const EXAM_PAGES: Partial<Record<ExamId, ExamPage>> = {
     },
     nextText: "Teste auch die anderen Teile. In der Prüfung zählen alle vier zusammen.",
   },
+  ...(oesdA1 && { "oesd-a1": oesdA1 }),
+  ...(goetheA2 && { "goethe-a2": goetheA2 }),
+  ...(telcA2 && { "telc-a2": telcA2 }),
+  ...(oesdA2 && { "oesd-a2": oesdA2 }),
+  ...(goetheB1 && { "goethe-b1": goetheB1 }),
+  ...(oesdB1 && { "oesd-b1": oesdB1 }),
+  ...(telcB1 && { "telc-b1": telcB1 }),
 }

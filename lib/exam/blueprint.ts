@@ -4,7 +4,7 @@
 // here is provisional. Structure only; their texts are never reused.
 
 import type { ExamId } from "@/lib/exams"
-import { EXAM_KURZTEST, EXAM_OPEN, EXAM_PARTS } from "./exam-blueprints"
+import { EXAM_KURZTEST, EXAM_OPEN, EXAM_PARTS, EXAM_TASTER } from "./exam-blueprints"
 import type { PartId } from "./types"
 
 /** "pic": a/b/c with picture options (Start Deutsch 1 Hören Teil 1). */
@@ -105,7 +105,23 @@ export const PARTS: PartSpec[] = [
   },
 ]
 
-export type OpenSpec = { skill: "schreiben" | "sprechen"; teil: number; title: string; instruction: string; minutes: number; todo?: string }
+export type OpenSpec = {
+  skill: "schreiben" | "sprechen"
+  teil: number
+  title: string
+  instruction: string
+  minutes: number
+  todo?: string
+  /** Non-DTZ exams: the generator brief for this Teil (task shape, turn order, model answer length). */
+  hint?: string
+  /** Schreiben: tasks to choose from (default: DTZ 2, others 1) and Leitpunkte per task (default: DTZ 4, others 3). */
+  tasks?: number
+  points?: number
+  /** Sprechen: false when the partner doesn't speak in this Teil. */
+  partner?: boolean
+  /** Sprechen: voice accents for examiner and partner, in that order. Default ["de", "de"]. */
+  accents?: ("de" | "at" | "ch")[]
+}
 
 // Real DTZ: Schreiben is one letter (choice of two tasks), Sprechen is a pair exam in three parts.
 // Source: CLAUDE.md §2 exam facts; TestGerman's mocks lack the pair format, so they are no reference here.
@@ -164,12 +180,7 @@ export const TASTER: Partial<Record<ExamId, Taster>> = {
     sprechen: [3],
     minutes: { lesen: 5, hoeren: 4, schreiben: 5, sprechen: 4 },
   },
-  "start-deutsch-1": {
-    lesen: [{ teil: 1, blocks: 1 }, { teil: 2, blocks: 2 }, { teil: 3, blocks: 1 }],
-    hoeren: [{ teil: 1, blocks: 2 }, { teil: 2, blocks: 1 }, { teil: 3, blocks: 2 }],
-    sprechen: [1, 2, 3],
-    minutes: { lesen: 5, hoeren: 4, schreiben: 5, sprechen: 4 },
-  },
+  ...EXAM_TASTER,
 }
 
 export const kurztestPlan = (exam: ExamId = "dtz") => (exam === "dtz" ? KURZTEST : EXAM_KURZTEST[exam])

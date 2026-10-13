@@ -38,13 +38,14 @@ const DTZ_SYSTEM = `Du bewertest Übungsantworten für den Deutsch-Test für Zuw
 ${RULES}
 Wenn die Antwort leer, viel zu kurz oder nicht auf Deutsch ist: Ergebnis "unter A2" und sag freundlich warum.`
 
-// research/start-deutsch-1.md §3.3, §4: full / half / zero per line; understandability counts, not the number of errors.
+// research/<exam>.md: each line scores one of its steps (Start Deutsch 1: full / half / zero; B1: A–E); understandability
+// counts, not the number of errors.
 const pointsSystem = (exam: Exclude<ExamId, "dtz">) => {
   const c = EXAM_CONTEXT[exam]
   return `Du bewertest Übungsantworten für ${c.name} (Niveau ${c.level}) nach Punkten wie in der echten Prüfung.
-Jede Zeile der Bewertung bekommt die volle Punktzahl, die Hälfte oder 0:
-- volle Punktzahl: erfüllt und gut verständlich.
-- die Hälfte: nur teilweise erfüllt, oder wegen Fehlern (Wortwahl, Satzbau, Aussprache im Transkript) schwer verständlich.
+Jede Zeile der Bewertung bekommt genau einen der Werte, die bei ihr stehen:
+- der höchste Wert: erfüllt und gut verständlich.
+- die Werte dazwischen: nur teilweise erfüllt, oder wegen Fehlern (Wortwahl, Satzbau, Aussprache im Transkript) schwerer verständlich.
 - 0: nicht erfüllt oder nicht verständlich.
 Es zählt, ob man es versteht, nicht die Zahl der Fehler. Rechtschreibung zählt nur, wenn sie das Verstehen stört. Bewerte für Niveau ${c.level}, nicht strenger.
 ${RULES}
@@ -63,9 +64,11 @@ async function ask<T extends z.ZodType>(schema: T, system: string, prompt: strin
   return res.parsed_output
 }
 
+const allowed = (l: RubricLine) => (l.steps ?? [1, 0.5, 0]).map((f) => f * l.max)
+
 const noQuote = <C extends { quote: { yours: string; better: string } | null }>(c: C) => ({ ...c, quote: c.quote ?? undefined })
 
-/** Grades on the DTZ levels, or against a points rubric for the other exams. Points snap to full, half or zero. */
+/** Grades on the DTZ levels, or against a points rubric for the other exams. Points snap to the line's nearest step. */
 async function grade(exam: ExamId, lines: RubricLine[] | null, prompt: string): Promise<Pick<GradedResult, "level" | "score" | "passed" | "summary" | "criteria">> {
   if (exam === "dtz" || !lines) {
     const g = await ask(LevelGrade, DTZ_SYSTEM, prompt)
@@ -74,11 +77,11 @@ async function grade(exam: ExamId, lines: RubricLine[] | null, prompt: string): 
   const g = await ask(PointsGrade, pointsSystem(exam), `${prompt}
 
 Bewertung (genau diese Zeilen, in dieser Reihenfolge, name wörtlich übernehmen):
-${lines.map((l) => `- ${l.name}: ${l.max} / ${l.max / 2} / 0 Punkte`).join("\n")}`)
+${lines.map((l) => `- ${l.name}: ${allowed(l).join(" / ")} Punkte`).join("\n")}`)
   const criteria: CriterionResult[] = lines.map((l, i) => {
     const c = g.criteria[i]
     const raw = Math.max(0, Math.min(l.max, c?.points ?? 0))
-    const points = raw >= l.max * 0.75 ? l.max : raw >= l.max * 0.25 ? l.max / 2 : 0
+    const points = allowed(l).reduce((best, v) => (Math.abs(v - raw) < Math.abs(best - raw) ? v : best))
     return { name: l.name, points: { points, max: l.max }, comment: c?.comment ?? "", quote: c?.quote ?? undefined }
   })
   const got = criteria.reduce((n, c) => n + c.points!.points, 0)
@@ -97,7 +100,7 @@ export async function gradeWriting(exam: ExamId, taskKey: string, text: string):
   const rubric = EXAM_RUBRICS[exam]?.schreiben
   // A content line named "Punkt n" takes the wording of the task's n-th point.
   const lines = rubric?.map((l) => ({ ...l, name: /^Punkt \d$/.test(l.name) ? task.points[Number(l.name.slice(-1)) - 1] ?? l.name : l.name })) ?? null
-  const g = await grade(exam, lines, `Teil: Schreiben. ${exam === "dtz" ? TASTER_NOTE : ""}
+  const g = await grade(exam, lines, `Teil: Schreiben. ${TASTER_NOTE}
 Aufgabe ${task.key}: ${task.title}
 Situation: ${task.situation}
 Leitpunkte: ${task.points.join(" | ")}

@@ -20,7 +20,7 @@ export function WritingTask({ options, chosen, onChoose, value, onChange }: { op
         <div className="flex flex-col gap-1.5">
           <span className="text-[13px] text-v-muted">{t.yourTask}</span>
           <b className="text-[17px] font-semibold">{single.title}</b>
-          <p className="max-w-[60ch] text-[15.5px] leading-relaxed">{single.situation}</p>
+          <p className="max-w-[60ch] text-[15.5px] leading-relaxed whitespace-pre-line">{single.situation}</p>
         </div>
       ) : (
         <div className="flex flex-col gap-2">
@@ -31,7 +31,7 @@ export function WritingTask({ options, chosen, onChoose, value, onChange }: { op
                 <span className={cn("v-num grid size-8 shrink-0 place-items-center rounded-full text-[14px] font-semibold", chosen === o.key ? "bg-v-ink text-v-bg" : "bg-v-soft")}>{o.key}</span>
                 <span className="flex flex-col gap-1">
                   <b className="text-[15.5px] font-semibold">{o.title}</b>
-                  <span className="text-[14px] leading-snug text-v-muted">{o.situation}</span>
+                  <span className="text-[14px] leading-snug whitespace-pre-line text-v-muted">{o.situation}</span>
                 </span>
               </button>
             ))}

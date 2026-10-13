@@ -1,0 +1,145 @@
+{
+  "id": "goethe-a2-hoeren-t3-01",
+  "exam": "goethe-a2",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:54.053Z",
+    "textType": "Gespräch beim Einkaufen"
+  },
+  "display": {
+    "instruction": "Sie hören ein kurzes Gespräch. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text einmal.",
+    "items": [
+      {
+        "type": "picture",
+        "item": {
+          "n": 11,
+          "prompt": "Was kaufen die beiden für den Kuchen?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Kirschen",
+              "picto": "kirschen"
+            },
+            {
+              "key": "b",
+              "label": "Trauben",
+              "picto": "trauben"
+            },
+            {
+              "key": "c",
+              "label": "Äpfel",
+              "picto": "apfel"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 27.2,
+      "plays": 1,
+      "situation": "Im Supermarkt",
+      "segments": [
+        {
+          "speaker": "F",
+          "from": 0,
+          "to": 4.76
+        },
+        {
+          "speaker": "M",
+          "from": 4.76,
+          "to": 10.8
+        },
+        {
+          "speaker": "F",
+          "from": 10.8,
+          "to": 13.36
+        },
+        {
+          "speaker": "M",
+          "from": 13.36,
+          "to": 19.45
+        },
+        {
+          "speaker": "F",
+          "from": 19.45,
+          "to": 25.24
+        },
+        {
+          "speaker": "M",
+          "from": 25.24,
+          "to": 27.2
+        }
+      ],
+      "speakers": {
+        "F": {
+          "name": "Frau",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "M": {
+          "name": "Jonas",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-a2-hoeren-t3-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 11,
+        "correct": "c",
+        "explanation": "Am Ende nehmen sie ein Kilo Äpfel, weil die im Angebot sind. Die Kirschen sind zu teuer und Trauben im Kuchen findet Jonas komisch.",
+        "evidence": {
+          "text": "Ach ja, Apfelkuchen mag deine Mutter doch so gern. Gut, dann nehmen wir ein Kilo Äpfel.",
+          "hit": "Gut, dann nehmen wir ein Kilo Äpfel."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "F",
+        "voice": "woman_irene",
+        "text": "Du, Jonas, wir brauchen noch Obst für den Kuchen morgen. Nehmen wir Kirschen?",
+        "delivery": "[friendly, casual]"
+      },
+      {
+        "speaker": "M",
+        "voice": "man_ben",
+        "text": "Hm, die sind heute aber ganz schön teuer. Schau mal, fünf Euro für das kleine Kästchen.",
+        "delivery": "[hesitant, surprised]"
+      },
+      {
+        "speaker": "F",
+        "voice": "woman_irene",
+        "text": "Stimmt. Und die Trauben hier?",
+        "delivery": "[thoughtful]"
+      },
+      {
+        "speaker": "M",
+        "voice": "man_ben",
+        "text": "Na ja, Trauben im Kuchen? Das finde ich komisch. Was ist mit Äpfeln? Die sind im Angebot.",
+        "delivery": "[amused, spontaneous]"
+      },
+      {
+        "speaker": "F",
+        "voice": "woman_irene",
+        "text": "Ach ja, Apfelkuchen mag deine Mutter doch so gern. Gut, dann nehmen wir ein Kilo Äpfel.",
+        "delivery": "[cheerful, decisive]"
+      },
+      {
+        "speaker": "M",
+        "voice": "man_ben",
+        "text": "Super, ich hol noch eine Tüte.",
+        "delivery": "[relaxed, friendly]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 516,
+      "at": "2026-10-13T05:55:36.999Z"
+    }
+  }
+}

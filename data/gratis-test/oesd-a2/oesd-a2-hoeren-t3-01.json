@@ -1,0 +1,159 @@
+{
+  "id": "oesd-a2-hoeren-t3-01",
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:03.725Z",
+    "textType": "Straßeninterview im Radio"
+  },
+  "display": {
+    "instruction": "Sie hören ein Interview. Eine Reporterin fragt Personen auf der Straße. Was sagt jede Person? Wählen Sie für jede Person eine Antwort. Sie hören das Interview einmal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 10,
+          "prompt": "Was sagt Monika?",
+          "options": [
+            {
+              "key": "a",
+              "label": "ans Meer fahren"
+            },
+            {
+              "key": "b",
+              "label": "in den Bergen wandern"
+            },
+            {
+              "key": "c",
+              "label": "Städte besichtigen"
+            },
+            {
+              "key": "d",
+              "label": "zu Hause bleiben"
+            },
+            {
+              "key": "e",
+              "label": "Freunde besuchen"
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 11,
+          "prompt": "Was sagt Stefan?",
+          "options": [
+            {
+              "key": "a",
+              "label": "ans Meer fahren"
+            },
+            {
+              "key": "b",
+              "label": "in den Bergen wandern"
+            },
+            {
+              "key": "c",
+              "label": "Städte besichtigen"
+            },
+            {
+              "key": "d",
+              "label": "zu Hause bleiben"
+            },
+            {
+              "key": "e",
+              "label": "Freunde besuchen"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 38.08,
+      "plays": 1,
+      "situation": "Straßeninterview im Radio",
+      "segments": [
+        {
+          "speaker": "reporter",
+          "from": 0,
+          "to": 7.37
+        },
+        {
+          "speaker": "monika",
+          "from": 7.37,
+          "to": 23.12
+        },
+        {
+          "speaker": "stefan",
+          "from": 23.12,
+          "to": 38.08
+        }
+      ],
+      "speakers": {
+        "reporter": {
+          "name": "Reporterin",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "monika": {
+          "name": "Monika",
+          "tone": "var(--v-sk-schreiben)"
+        },
+        "stefan": {
+          "name": "Stefan",
+          "tone": "var(--v-sk-sprechen)"
+        }
+      },
+      "src": "/audio/kurztest/oesd-a2-hoeren-t3-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 10,
+        "correct": "b",
+        "explanation": "Monika fährt heute in die Berge und geht jeden Tag zu Fuß. Ans Meer ist sie nur früher gefahren, jetzt ist es ihr zu heiß und zu voll.",
+        "evidence": {
+          "text": "Hallo, ich bin die Monika. Also, früher bin ich jeden Sommer ans Meer gefahren, nach Italien oder Kroatien. Aber äh, das ist mir jetzt zu heiß und zu voll. Heute fahre ich lieber in die Berge. Ich gehe dann jeden Tag ein paar Stunden zu Fuß.",
+          "hit": "Heute fahre ich lieber in die Berge. Ich gehe dann jeden Tag ein paar Stunden zu Fuß."
+        }
+      },
+      {
+        "n": 11,
+        "correct": "c",
+        "explanation": "Stefan fährt in große Städte und besucht dort Museen und Kirchen. Zu Hause bleiben mag er im Urlaub gar nicht.",
+        "evidence": {
+          "text": "Äh, ich heiße Stefan. Also, im Urlaub zu Hause bleiben, das mag ich gar nicht. Ich fahre lieber in eine große Stadt, zum Beispiel nach Wien oder Hamburg. Da gehe ich in Museen und schaue mir alte Kirchen an. Und abends esse ich gern im Restaurant.",
+          "hit": "Ich fahre lieber in eine große Stadt, zum Beispiel nach Wien oder Hamburg. Da gehe ich in Museen und schaue mir alte Kirchen an."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "reporter",
+        "voice": "woman_alexandra_at",
+        "text": "Grüß Gott, liebe Hörerinnen und Hörer! Wir sind heute in Linz unterwegs und fragen: Was machen Sie im Urlaub am liebsten?",
+        "delivery": "[friendly, upbeat, radio host]"
+      },
+      {
+        "speaker": "monika",
+        "voice": "woman_heidi_ch",
+        "text": "Hallo, ich bin die Monika. Also, früher bin ich jeden Sommer ans Meer gefahren, nach Italien oder Kroatien. Aber äh, das ist mir jetzt zu heiß und zu voll. Heute fahre ich lieber in die Berge. Ich gehe dann jeden Tag ein paar Stunden zu Fuß.",
+        "delivery": "[cheerful, spontaneous]"
+      },
+      {
+        "speaker": "stefan",
+        "voice": "man_mark",
+        "text": "Äh, ich heiße Stefan. Also, im Urlaub zu Hause bleiben, das mag ich gar nicht. Ich fahre lieber in eine große Stadt, zum Beispiel nach Wien oder Hamburg. Da gehe ich in Museen und schaue mir alte Kirchen an. Und abends esse ich gern im Restaurant.",
+        "delivery": "[relaxed, thoughtful, spontaneous]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 699,
+      "at": "2026-10-13T05:55:02.804Z"
+    }
+  }
+}

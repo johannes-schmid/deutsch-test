@@ -1,0 +1,145 @@
+{
+  "id": "goethe-a2-hoeren-t3-03",
+  "exam": "goethe-a2",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:26.121Z",
+    "textType": "Gespräch bei der Arbeit"
+  },
+  "display": {
+    "instruction": "Sie hören ein kurzes Gespräch. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text einmal.",
+    "items": [
+      {
+        "type": "picture",
+        "item": {
+          "n": 13,
+          "prompt": "Womit fährt Sabine morgen nach Bremen?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Auto",
+              "picto": "auto"
+            },
+            {
+              "key": "b",
+              "label": "Zug",
+              "picto": "zug"
+            },
+            {
+              "key": "c",
+              "label": "Flugzeug",
+              "picto": "flugzeug"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 24.96,
+      "plays": 1,
+      "situation": "Gespräch im Büro",
+      "segments": [
+        {
+          "speaker": "m",
+          "from": 0,
+          "to": 4.97
+        },
+        {
+          "speaker": "f",
+          "from": 4.97,
+          "to": 10.28
+        },
+        {
+          "speaker": "m",
+          "from": 10.28,
+          "to": 13.64
+        },
+        {
+          "speaker": "f",
+          "from": 13.64,
+          "to": 18.72
+        },
+        {
+          "speaker": "m",
+          "from": 18.72,
+          "to": 22.8
+        },
+        {
+          "speaker": "f",
+          "from": 22.8,
+          "to": 24.96
+        }
+      ],
+      "speakers": {
+        "m": {
+          "name": "Tobias",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "f": {
+          "name": "Sabine",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-a2-hoeren-t3-03.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 13,
+        "correct": "b",
+        "explanation": "Sabine fährt mit der Bahn, also mit dem Zug. Das Auto braucht der Chef, und Fliegen ist zu teuer.",
+        "evidence": {
+          "text": "Nee, nach Bremen ist das zu teuer. Ich fahre mit der Bahn, um sieben Uhr zehn.",
+          "hit": "Nee, nach Bremen ist das zu teuer. Ich fahre mit der Bahn, um sieben Uhr zehn."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "m",
+        "voice": "man_mark",
+        "text": "Hallo Sabine, fährst du morgen zur Firma Kessler nach Bremen? Nimmst du das Firmenauto?",
+        "delivery": "[friendly, casual]"
+      },
+      {
+        "speaker": "f",
+        "voice": "woman_ela",
+        "text": "Hallo Tobias. Eigentlich wollte ich mit dem Auto fahren, aber das braucht morgen der Chef.",
+        "delivery": "[slightly annoyed, conversational]"
+      },
+      {
+        "speaker": "m",
+        "voice": "man_mark",
+        "text": "Oh, schade. Und fliegen? Das geht doch schnell.",
+        "delivery": "[curious, spontaneous]"
+      },
+      {
+        "speaker": "f",
+        "voice": "woman_ela",
+        "text": "Nee, nach Bremen ist das zu teuer. Ich fahre mit der Bahn, um sieben Uhr zehn.",
+        "delivery": "[matter-of-fact]"
+      },
+      {
+        "speaker": "m",
+        "voice": "man_mark",
+        "text": "So früh? Na ja, dann kannst du im Zug noch arbeiten.",
+        "delivery": "[surprised, then relaxed]"
+      },
+      {
+        "speaker": "f",
+        "voice": "woman_ela",
+        "text": "Genau, ich nehme meinen Laptop mit.",
+        "delivery": "[cheerful, casual]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 528,
+      "at": "2026-10-13T05:55:51.700Z"
+    }
+  }
+}

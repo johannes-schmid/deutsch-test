@@ -1,0 +1,135 @@
+{
+  "id": "oesd-a1-hoeren-t2-01",
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:26.035Z",
+    "textType": "Nachricht auf der Sprachbox (privat)"
+  },
+  "display": {
+    "instruction": "Sie hören eine Nachricht am Telefon. Lesen Sie zuerst die Fragen. Wählen Sie die richtige Antwort: a, b oder c. Sie hören den Text zweimal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 6,
+          "prompt": "Wann beginnt die Party am Samstag?",
+          "options": [
+            {
+              "key": "a",
+              "label": "um 7 Uhr"
+            },
+            {
+              "key": "b",
+              "label": "um 6 Uhr"
+            },
+            {
+              "key": "c",
+              "label": "um 4 Uhr"
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 7,
+          "prompt": "Wie ist Lenas Handynummer?",
+          "options": [
+            {
+              "key": "a",
+              "label": "079 23 58 19"
+            },
+            {
+              "key": "b",
+              "label": "079 32 85 19"
+            },
+            {
+              "key": "c",
+              "label": "079 32 58 19"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 47.76,
+      "plays": 2,
+      "situation": "Nachricht am Telefon",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 18.01
+        },
+        {
+          "speaker": "S1",
+          "from": 18.01,
+          "to": 33.36
+        },
+        {
+          "speaker": "S1",
+          "from": 33.36,
+          "to": 47.76
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Lena",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/oesd-a1-hoeren-t2-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 6,
+        "correct": "b",
+        "explanation": "Lena sagt, die Party beginnt schon um sechs Uhr. Sieben Uhr war die alte Zeit.",
+        "evidence": {
+          "text": "Hallo Tobias, hier ist Lena. Du, ich mache am Samstag eine kleine Party, ich habe ja Geburtstag. Kommst du auch? Wir treffen uns nicht um sieben, wie ich zuerst gesagt habe, sondern schon um sechs Uhr. Und nicht bei mir zu Hause, sondern bei meiner Schwester. Ihre Wohnung ist größer.",
+          "hit": "Wir treffen uns nicht um sieben, wie ich zuerst gesagt habe, sondern schon um sechs Uhr."
+        }
+      },
+      {
+        "n": 7,
+        "correct": "c",
+        "explanation": "Lena sagt: null sieben neun, drei zwei, fünf acht, neunzehn. Die anderen Nummern haben einen Zahlendreher.",
+        "evidence": {
+          "text": "Ruf mich bitte bis Donnerstag zurück. Meine Handynummer ist null sieben neun, drei zwei, fünf acht, neunzehn. Noch einmal: null sieben neun, drei zwei, fünf acht, neunzehn. Bis bald, tschüss!",
+          "hit": "Meine Handynummer ist null sieben neun, drei zwei, fünf acht, neunzehn."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_heidi_ch",
+        "text": "Hallo Tobias, hier ist Lena. Du, ich mache am Samstag eine kleine Party, ich habe ja Geburtstag. Kommst du auch? Wir treffen uns nicht um sieben, wie ich zuerst gesagt habe, sondern schon um sechs Uhr. Und nicht bei mir zu Hause, sondern bei meiner Schwester. Ihre Wohnung ist größer.",
+        "delivery": "[friendly, slow and clear]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "woman_heidi_ch",
+        "text": "Die Adresse ist Lindengasse vierzehn, im zweiten Stock. Also, Lindengasse vierzehn. Der Name an der Tür ist Brunner, B-R-U-N-N-E-R. Bitte bring etwas zu trinken mit, Saft oder Limo.",
+        "delivery": "[friendly, slow and clear]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "woman_heidi_ch",
+        "text": "Ruf mich bitte bis Donnerstag zurück. Meine Handynummer ist null sieben neun, drei zwei, fünf acht, neunzehn. Noch einmal: null sieben neun, drei zwei, fünf acht, neunzehn. Bis bald, tschüss!",
+        "delivery": "[friendly, slow and clear]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 737,
+      "at": "2026-10-13T05:54:31.251Z"
+    }
+  }
+}

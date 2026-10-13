@@ -1,0 +1,72 @@
+{
+  "id": "telc-b1-lesen-t3-01",
+  "exam": "telc-b1",
+  "skill": "lesen",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:25.013Z",
+    "textType": "Kleinanzeigen"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Situation? Jede Anzeige passt nur einmal. Passt keine Anzeige, wählen Sie x.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Italienisch kochen für Erwachsene",
+              "text": "Am Samstag von 11 bis 15 Uhr zeigt Ihnen Koch Marco Bellini, wie man frische Pasta und Tiramisu macht. Teilnahme ab 16 Jahren. 45 € inklusive Essen und Getränke. Kochstudio Salvia, Marktplatz 8, Tel. 0341 2259036."
+            },
+            {
+              "key": "b",
+              "title": "Kochen mit der ganzen Familie",
+              "text": "Jeden Sonntag von 10 bis 13 Uhr bereiten Kinder ab 6 Jahren zusammen mit Mama oder Papa ein gesundes Mittagessen zu. Familienzentrum Lindenau, Gartenweg 3. 25 € pro Familie. Anmeldung unter www.familie-lindenau.de"
+            },
+            {
+              "key": "c",
+              "title": "Mathe? Kein Problem!",
+              "text": "Lernstudio Kluge bietet Nachhilfe für die Klassen 5 bis 10. Kleine Gruppen mit maximal vier Schülern, Montag bis Freitag 14 bis 19 Uhr. Unterricht nur in unseren Räumen in der Bahnhofstraße 12. Erste Stunde kostenlos! Tel. 0351 4482170."
+            }
+          ],
+          "situations": [
+            {
+              "n": 11,
+              "text": "Ein Kollege möchte am Wochenende zusammen mit seiner siebenjährigen Tochter kochen lernen."
+            },
+            {
+              "n": 12,
+              "text": "Ihre Nachbarin sucht für ihren Sohn in der 8. Klasse einen Mathelehrer, der zu ihnen nach Hause kommt."
+            }
+          ]
+        },
+        "noMatch": true
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 11,
+        "correct": "b",
+        "explanation": "Beim Familienkurs am Sonntag dürfen Kinder ab 6 Jahren mit ihren Eltern kochen. Der Kurs am Samstag ist erst ab 16 Jahren, also nicht für die Tochter.",
+        "evidence": {
+          "text": "Jeden Sonntag von 10 bis 13 Uhr bereiten Kinder ab 6 Jahren zusammen mit Mama oder Papa ein gesundes Mittagessen zu. Familienzentrum Lindenau, Gartenweg 3. 25 € pro Familie. Anmeldung unter www.familie-lindenau.de",
+          "hit": "Kinder ab 6 Jahren zusammen mit Mama oder Papa"
+        }
+      },
+      {
+        "n": 12,
+        "correct": "x",
+        "explanation": "Das Lernstudio bietet zwar Mathe für die 8. Klasse an. Aber der Unterricht findet nur im Lernstudio statt, nicht zu Hause.",
+        "evidence": {
+          "text": "Lernstudio Kluge bietet Nachhilfe für die Klassen 5 bis 10. Kleine Gruppen mit maximal vier Schülern, Montag bis Freitag 14 bis 19 Uhr. Unterricht nur in unseren Räumen in der Bahnhofstraße 12. Erste Stunde kostenlos! Tel. 0351 4482170.",
+          "hit": "Unterricht nur in unseren Räumen in der Bahnhofstraße 12"
+        }
+      }
+    ]
+  }
+}

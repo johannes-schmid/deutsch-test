@@ -1,0 +1,62 @@
+{
+  "id": "oesd-a1-lesen-t3-01",
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:14.997Z",
+    "textType": "Schild im Park"
+  },
+  "display": {
+    "instruction": "Sie lesen einen kurzen Text. Welches Bild passt? Wählen Sie a, b oder c.",
+    "items": [
+      {
+        "type": "picture",
+        "item": {
+          "n": 12,
+          "prompt": "Wo lesen Sie diesen Text?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Im Blumengeschäft",
+              "picto": "blume"
+            },
+            {
+              "key": "b",
+              "label": "Im Park",
+              "picto": "baum"
+            },
+            {
+              "key": "c",
+              "label": "Im Fahrradgeschäft",
+              "picto": "fahrrad"
+            }
+          ]
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Ein Schild",
+      "source": "Schild",
+      "paragraphs": [
+        "Liebe Besucherinnen und Besucher! Bitte bleiben Sie auf den Wegen und gehen Sie nicht auf die Blumenwiese.",
+        "Hunde nur an der Leine. Fahrräder bitte schieben. Danke!"
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 12,
+        "correct": "b",
+        "explanation": "Wege, eine Wiese und Hunde an der Leine gibt es im Park. Blumen und Fahrräder stehen auch im Text, aber in einem Geschäft gibt es keine Wiese.",
+        "evidence": {
+          "text": "Liebe Besucherinnen und Besucher! Bitte bleiben Sie auf den Wegen und gehen Sie nicht auf die Blumenwiese.",
+          "hit": "Bitte bleiben Sie auf den Wegen und gehen Sie nicht auf die Blumenwiese."
+        }
+      }
+    ]
+  }
+}

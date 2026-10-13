@@ -1,0 +1,134 @@
+{
+  "id": "goethe-a2-hoeren-t3-02",
+  "exam": "goethe-a2",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:08.076Z",
+    "textType": "Gespräch über einen Termin"
+  },
+  "display": {
+    "instruction": "Sie hören ein kurzes Gespräch. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text einmal.",
+    "items": [
+      {
+        "type": "picture",
+        "item": {
+          "n": 12,
+          "prompt": "Wo treffen sich Jana und Felix?",
+          "options": [
+            {
+              "key": "a",
+              "label": "vor dem Kino",
+              "picto": "kino"
+            },
+            {
+              "key": "b",
+              "label": "im Café",
+              "picto": "kaffee"
+            },
+            {
+              "key": "c",
+              "label": "an der Haltestelle",
+              "picto": "strassenbahn"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 26.72,
+      "plays": 1,
+      "situation": "Verabredung am Telefon",
+      "segments": [
+        {
+          "speaker": "F",
+          "from": 0,
+          "to": 5.21
+        },
+        {
+          "speaker": "M",
+          "from": 5.21,
+          "to": 11.05
+        },
+        {
+          "speaker": "F",
+          "from": 11.05,
+          "to": 14.51
+        },
+        {
+          "speaker": "M",
+          "from": 14.51,
+          "to": 23.53
+        },
+        {
+          "speaker": "F",
+          "from": 23.53,
+          "to": 26.72
+        }
+      ],
+      "speakers": {
+        "F": {
+          "name": "Jana",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "M": {
+          "name": "Felix",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-a2-hoeren-t3-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 12,
+        "correct": "c",
+        "explanation": "Felix schlägt am Ende die Straßenbahnhaltestelle vor und Jana sagt okay. Das Café ist samstags zu voll und vor dem Kino warten ist langweilig.",
+        "evidence": {
+          "text": "Stimmt. Und vor dem Kino warten ist auch langweilig. Weißt du was? Wir treffen uns an der Straßenbahnhaltestelle am Rathaus und fahren zusammen hin.",
+          "hit": "Wir treffen uns an der Straßenbahnhaltestelle am Rathaus und fahren zusammen hin."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "F",
+        "voice": "woman_irene",
+        "text": "Hallo Felix, hier ist Jana. Wegen Samstag: Wollen wir uns direkt vor dem Kino treffen?",
+        "delivery": "[friendly, casual]"
+      },
+      {
+        "speaker": "M",
+        "voice": "man_mark",
+        "text": "Der Film fängt erst um acht an. Wir könnten vorher noch einen Kaffee trinken, im Café Lindner.",
+        "delivery": "[relaxed, thinking aloud]"
+      },
+      {
+        "speaker": "F",
+        "voice": "woman_irene",
+        "text": "Gute Idee, aber da ist samstags immer so voll.",
+        "delivery": "[hesitant]"
+      },
+      {
+        "speaker": "M",
+        "voice": "man_mark",
+        "text": "Stimmt. Und vor dem Kino warten ist auch langweilig. Weißt du was? Wir treffen uns an der Straßenbahnhaltestelle am Rathaus und fahren zusammen hin.",
+        "delivery": "[spontaneous, cheerful]"
+      },
+      {
+        "speaker": "F",
+        "voice": "woman_irene",
+        "text": "Okay, das ist am einfachsten. Dann bis Samstag!",
+        "delivery": "[pleased, friendly]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 521,
+      "at": "2026-10-13T05:55:45.208Z"
+    }
+  }
+}

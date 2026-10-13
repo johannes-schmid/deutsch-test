@@ -1,0 +1,188 @@
+{
+  "id": "goethe-b1-hoeren-t3-01",
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:01.507Z",
+    "textType": "Gespräch zwischen Bekannten in der Straßenbahn"
+  },
+  "display": {
+    "instruction": "Sie hören ein Gespräch. Sind die Aussagen richtig oder falsch? Sie hören den Text einmal.",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 16,
+          "statement": "Svenjas Bruder hilft ihr am Samstag beim Umzug."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 17,
+          "statement": "Malte kann Svenja erst am Nachmittag helfen."
+        }
+      }
+    ],
+    "clip": {
+      "duration": 54.4,
+      "plays": 1,
+      "situation": "Gespräch in der Straßenbahn",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 4.48
+        },
+        {
+          "speaker": "S2",
+          "from": 4.48,
+          "to": 12.33
+        },
+        {
+          "speaker": "S1",
+          "from": 12.33,
+          "to": 14.01
+        },
+        {
+          "speaker": "S2",
+          "from": 14.01,
+          "to": 24.25
+        },
+        {
+          "speaker": "S1",
+          "from": 24.25,
+          "to": 26.17
+        },
+        {
+          "speaker": "S2",
+          "from": 26.17,
+          "to": 37.36
+        },
+        {
+          "speaker": "S1",
+          "from": 37.36,
+          "to": 44.64
+        },
+        {
+          "speaker": "S2",
+          "from": 44.64,
+          "to": 48.74
+        },
+        {
+          "speaker": "S1",
+          "from": 48.74,
+          "to": 53
+        },
+        {
+          "speaker": "S2",
+          "from": 53,
+          "to": 54.4
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Malte",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "S2": {
+          "name": "Svenja",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-b1-hoeren-t3-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 16,
+        "correct": "falsch",
+        "explanation": "Der Bruder wollte helfen, hat aber abgesagt, weil er arbeiten muss. Jetzt helfen nur zwei Freundinnen.",
+        "evidence": {
+          "text": "Tja, mein Bruder wollte eigentlich kommen, aber er hat leider abgesagt, der muss am Wochenende arbeiten. Jetzt hab ich nur zwei Freundinnen. Na ja, und die Möbel sind ziemlich schwer.",
+          "hit": "mein Bruder wollte eigentlich kommen, aber er hat leider abgesagt, der muss am Wochenende arbeiten."
+        }
+      },
+      {
+        "n": 17,
+        "correct": "richtig",
+        "explanation": "Am Vormittag hat Malte Fußballtraining. Er kann erst ab vierzehn Uhr kommen, also am Nachmittag.",
+        "evidence": {
+          "text": "Hm, also, Samstagvormittag hab ich Fußballtraining, aber so ab zwei Uhr könnte ich kommen. Wenn du willst.",
+          "hit": "Samstagvormittag hab ich Fußballtraining, aber so ab zwei Uhr könnte ich kommen."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "man_ben",
+        "text": "Hey, Svenja! Na, so früh unterwegs? Fährst du auch zur Arbeit?",
+        "delivery": "[surprised, friendly]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "woman_irene",
+        "text": "Hallo Malte! Nee, heute nicht. Ich hab mir zwei Tage freigenommen. Ich muss nämlich umziehen, also, am Samstag ist der Umzug.",
+        "delivery": "[cheerful, slightly hurried]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "man_ben",
+        "text": "Ach echt? Wohin denn?",
+        "delivery": "[curious, casual]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "woman_irene",
+        "text": "In die Gartenstraße, ganz in der Nähe vom Park. Die Wohnung ist größer, und, ähm, endlich hab ich einen Balkon. Aber jetzt fahr ich erst mal zum Baumarkt, ich brauch noch Kartons.",
+        "delivery": "[happy, spontaneous]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "man_ben",
+        "text": "Und wer hilft dir beim Tragen?",
+        "delivery": "[interested, casual]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "woman_irene",
+        "text": "Tja, mein Bruder wollte eigentlich kommen, aber er hat leider abgesagt, der muss am Wochenende arbeiten. Jetzt hab ich nur zwei Freundinnen. Na ja, und die Möbel sind ziemlich schwer.",
+        "delivery": "[sighing, a bit worried]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "man_ben",
+        "text": "Hm, also, Samstagvormittag hab ich Fußballtraining, aber so ab zwei Uhr könnte ich kommen. Wenn du willst.",
+        "delivery": "[thoughtful, helpful]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "woman_irene",
+        "text": "Echt? Das wär super! Ich koch dann auch was für alle, versprochen.",
+        "delivery": "[relieved, excited]"
+      },
+      {
+        "speaker": "S1",
+        "voice": "man_ben",
+        "text": "Abgemacht. Schick mir einfach die Adresse. Oh, ich muss hier raus. Bis Samstag!",
+        "delivery": "[friendly, rushed]"
+      },
+      {
+        "speaker": "S2",
+        "voice": "woman_irene",
+        "text": "Danke dir, tschüss!",
+        "delivery": "[warm, quick]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 1081,
+      "at": "2026-10-13T05:54:53.430Z"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "oesd-a2-hoeren-t2-01",
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:43.456Z",
+    "textType": "Sprachnachricht von einer Freundin"
+  },
+  "display": {
+    "instruction": "Sie hören eine Sprachnachricht. Notieren Sie die wichtigen Informationen: Wählen Sie für jede Aufgabe die richtige Antwort, a, b oder c. Sie hören die Nachricht zweimal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 5,
+          "prompt": "Treffpunkt:",
+          "options": [
+            {
+              "key": "a",
+              "label": "Hauptbahnhof"
+            },
+            {
+              "key": "b",
+              "label": "Haltestelle Jakominiplatz"
+            },
+            {
+              "key": "c",
+              "label": "bei der Hütte"
+            }
+          ]
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 6,
+          "prompt": "Mitbringen:",
+          "options": [
+            {
+              "key": "a",
+              "label": "Essen"
+            },
+            {
+              "key": "b",
+              "label": "Sonnencreme"
+            },
+            {
+              "key": "c",
+              "label": "Regenjacke"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 29.36,
+      "plays": 2,
+      "situation": "Sprachnachricht von Miriam",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 29.36
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Miriam",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/oesd-a2-hoeren-t2-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 5,
+        "correct": "b",
+        "explanation": "Miriam sagt, ihr trefft euch bei der Bushaltestelle am Jakominiplatz. Den Hauptbahnhof nennt sie, aber dort trefft ihr euch nicht.",
+        "evidence": {
+          "text": "Hallo Jana, hier ist Miriam! Du, wir machen am Samstag einen Ausflug auf den Schöckl, kommst du mit? Wir treffen uns um halb neun – aber nicht am Hauptbahnhof, sondern direkt bei der Bushaltestelle am Jakominiplatz. Essen musst du nicht mitnehmen, oben gibt es eine Hütte. Und Sonnencreme brauchst du auch nicht. Aber bring bitte eine Regenjacke mit, es soll am Nachmittag regnen. Die Fahrt mit der Seilbahn kostet eigentlich zweiundzwanzig Euro, aber zu viert zahlen wir nur sechzehn Euro pro Person. Ruf mich einfach an oder schreib mir. Bis dann, tschüss!",
+          "hit": "aber nicht am Hauptbahnhof, sondern direkt bei der Bushaltestelle am Jakominiplatz"
+        }
+      },
+      {
+        "n": 6,
+        "correct": "c",
+        "explanation": "Am Nachmittag soll es regnen, darum brauchst du eine Regenjacke. Essen und Sonnencreme musst du nicht mitnehmen.",
+        "evidence": {
+          "text": "Hallo Jana, hier ist Miriam! Du, wir machen am Samstag einen Ausflug auf den Schöckl, kommst du mit? Wir treffen uns um halb neun – aber nicht am Hauptbahnhof, sondern direkt bei der Bushaltestelle am Jakominiplatz. Essen musst du nicht mitnehmen, oben gibt es eine Hütte. Und Sonnencreme brauchst du auch nicht. Aber bring bitte eine Regenjacke mit, es soll am Nachmittag regnen. Die Fahrt mit der Seilbahn kostet eigentlich zweiundzwanzig Euro, aber zu viert zahlen wir nur sechzehn Euro pro Person. Ruf mich einfach an oder schreib mir. Bis dann, tschüss!",
+          "hit": "Aber bring bitte eine Regenjacke mit, es soll am Nachmittag regnen."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_alexandra_at",
+        "text": "Hallo Jana, hier ist Miriam! Du, wir machen am Samstag einen Ausflug auf den Schöckl, kommst du mit? Wir treffen uns um halb neun – aber nicht am Hauptbahnhof, sondern direkt bei der Bushaltestelle am Jakominiplatz. Essen musst du nicht mitnehmen, oben gibt es eine Hütte. Und Sonnencreme brauchst du auch nicht. Aber bring bitte eine Regenjacke mit, es soll am Nachmittag regnen. Die Fahrt mit der Seilbahn kostet eigentlich zweiundzwanzig Euro, aber zu viert zahlen wir nur sechzehn Euro pro Person. Ruf mich einfach an oder schreib mir. Bis dann, tschüss!",
+        "delivery": "[friendly, casual, spontaneous]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 590,
+      "at": "2026-10-13T05:54:53.213Z"
+    }
+  }
+}

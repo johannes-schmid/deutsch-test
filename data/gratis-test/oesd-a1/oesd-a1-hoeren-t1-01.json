@@ -1,0 +1,134 @@
+{
+  "id": "oesd-a1-hoeren-t1-01",
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:03.415Z",
+    "textType": "Gespräch im Urlaub"
+  },
+  "display": {
+    "instruction": "Sie hören ein kurzes Gespräch. Welches Bild passt zum Gespräch? Wählen Sie a, b oder c. Sie hören den Text einmal.",
+    "items": [
+      {
+        "type": "picture",
+        "item": {
+          "n": 1,
+          "prompt": "Welches Bild passt zum Gespräch?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Im Hotel",
+              "picto": "hotel"
+            },
+            {
+              "key": "b",
+              "label": "Auf dem Campingplatz",
+              "picto": "zelt"
+            },
+            {
+              "key": "c",
+              "label": "Auf dem Parkplatz",
+              "picto": "parkplatz"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 15.92,
+      "plays": 1,
+      "situation": "Gespräch im Urlaub",
+      "segments": [
+        {
+          "speaker": "A",
+          "from": 0,
+          "to": 4.5
+        },
+        {
+          "speaker": "B",
+          "from": 4.5,
+          "to": 7.3
+        },
+        {
+          "speaker": "A",
+          "from": 7.3,
+          "to": 9.37
+        },
+        {
+          "speaker": "B",
+          "from": 9.37,
+          "to": 15.06
+        },
+        {
+          "speaker": "A",
+          "from": 15.06,
+          "to": 15.92
+        }
+      ],
+      "speakers": {
+        "A": {
+          "name": "Urlauberin",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "B": {
+          "name": "Mitarbeiter",
+          "tone": "var(--v-sk-schreiben)"
+        }
+      },
+      "src": "/audio/kurztest/oesd-a1-hoeren-t1-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "b",
+        "explanation": "Die Frau braucht Platz für ein Zelt, also ist sie auf dem Campingplatz. Der Parkplatz ist nur neben den Duschen, und ein Hotel hat keine Zelte.",
+        "evidence": {
+          "text": "Grüß Gott! Haben Sie noch Platz für ein Zelt? Nur für zwei Nächte.",
+          "hit": "Haben Sie noch Platz für ein Zelt?"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "A",
+        "voice": "woman_alexandra_at",
+        "text": "Grüß Gott! Haben Sie noch Platz für ein Zelt? Nur für zwei Nächte.",
+        "delivery": "[friendly, slow]"
+      },
+      {
+        "speaker": "B",
+        "voice": "man_ben",
+        "text": "Ja, gerne. Sind Sie mit dem Auto da?",
+        "delivery": "[friendly, relaxed]"
+      },
+      {
+        "speaker": "A",
+        "voice": "woman_alexandra_at",
+        "text": "Nein, mit dem Fahrrad.",
+        "delivery": "[friendly, slow]"
+      },
+      {
+        "speaker": "B",
+        "voice": "man_ben",
+        "text": "Gut. Das kostet zwölf Euro pro Nacht. Die Duschen sind dort hinten, neben dem Parkplatz.",
+        "delivery": "[helpful, clear]"
+      },
+      {
+        "speaker": "A",
+        "voice": "woman_alexandra_at",
+        "text": "Danke schön!",
+        "delivery": "[cheerful]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 306,
+      "at": "2026-10-13T05:54:12.787Z"
+    }
+  }
+}

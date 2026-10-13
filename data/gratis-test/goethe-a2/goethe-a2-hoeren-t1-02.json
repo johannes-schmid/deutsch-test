@@ -1,0 +1,83 @@
+{
+  "id": "goethe-a2-hoeren-t1-02",
+  "exam": "goethe-a2",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:34.990Z",
+    "textType": "Nachricht auf dem Anrufbeantworter"
+  },
+  "display": {
+    "instruction": "Sie hören einen kurzen Text. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Wo treffen sich Tanja und Miriam am Samstag?",
+          "options": [
+            {
+              "key": "a",
+              "label": "am Bahnhof"
+            },
+            {
+              "key": "b",
+              "label": "auf dem Marktplatz"
+            },
+            {
+              "key": "c",
+              "label": "vor dem Stadtpark"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 20.88,
+      "plays": 2,
+      "situation": "Nachricht am Telefon",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 20.88
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Miriam",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-a2-hoeren-t1-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 2,
+        "correct": "c",
+        "explanation": "Miriam möchte sich jetzt direkt am Eingang vom Park treffen. Der Bahnhof war der alte Treffpunkt, und der Flohmarkt ist dieses Jahr nicht auf dem Marktplatz.",
+        "evidence": {
+          "text": "Hallo Tanja, hier ist Miriam. Es geht um Samstag und den Flohmarkt. Wir wollten uns ja um neun am Bahnhof treffen und dann zusammen zum Marktplatz laufen. Aber ich hab gerade gelesen: Der Flohmarkt ist dieses Jahr nicht auf dem Marktplatz, sondern im Stadtpark. Lass uns also gleich am Eingang vom Park treffen, beim großen Tor. Die Uhrzeit bleibt gleich. Ruf mich bitte kurz zurück. Tschüs!",
+          "hit": "Lass uns also gleich am Eingang vom Park treffen, beim großen Tor."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_irene",
+        "text": "Hallo Tanja, hier ist Miriam. Es geht um Samstag und den Flohmarkt. Wir wollten uns ja um neun am Bahnhof treffen und dann zusammen zum Marktplatz laufen. Aber ich hab gerade gelesen: Der Flohmarkt ist dieses Jahr nicht auf dem Marktplatz, sondern im Stadtpark. Lass uns also gleich am Eingang vom Park treffen, beim großen Tor. Die Uhrzeit bleibt gleich. Ruf mich bitte kurz zurück. Tschüs!",
+        "delivery": "[friendly, casual, slightly hurried]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 428,
+      "at": "2026-10-13T05:55:29.420Z"
+    }
+  }
+}

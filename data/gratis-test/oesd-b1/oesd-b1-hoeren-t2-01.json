@@ -1,0 +1,83 @@
+{
+  "id": "oesd-b1-hoeren-t2-01",
+  "exam": "oesd-b1",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:24.704Z",
+    "textType": "Begrüßung und Ablauf vor einer Stadtführung"
+  },
+  "display": {
+    "instruction": "Sie hören einen Vortrag. Lesen Sie zuerst die Aufgabe. Wählen Sie dann die richtige Antwort: a, b oder c. Sie hören den Text einmal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 11,
+          "prompt": "Was erfahren die Teilnehmer über die Stiftsbibliothek?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Man besucht sie am Ende der Führung."
+            },
+            {
+              "key": "b",
+              "label": "Man muss für sie achtzehn Franken extra zahlen."
+            },
+            {
+              "key": "c",
+              "label": "Man besucht sie direkt nach dem Marktplatz."
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 65.28,
+      "plays": 1,
+      "situation": "Vor einer Stadtführung",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 65.28
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Stadtführerin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/oesd-b1-hoeren-t2-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 11,
+        "correct": "a",
+        "explanation": "Die Bibliothek ist am Vormittag geschlossen, deshalb geht die Gruppe erst ganz am Schluss hinein. Die achtzehn Franken sind schon im Preis der Führung dabei, und nach dem Marktplatz kommt der Klosterbezirk.",
+        "evidence": {
+          "text": "Grüezi miteinander und herzlich willkommen in St. Gallen! Mein Name ist Regula Brändli, und ich begleite Sie heute durch die Altstadt. Schön, dass so viele gekommen sind, trotz des Nebels. Also, kurz zum Ablauf: Wir starten hier beim Bahnhof und gehen zuerst zum Marktplatz. Dort erzähle ich Ihnen etwas über die Stickerei, die hat die Stadt nämlich reich gemacht. Danach besuchen wir den Klosterbezirk mit der Kathedrale. Die berühmte Stiftsbibliothek steht natürlich auch auf dem Programm, aber heute Vormittag ist sie leider wegen einer Veranstaltung geschlossen. Wir gehen deshalb erst ganz am Schluss, so um halb eins, hinein. Der Eintritt kostet normalerweise achtzehn Franken, für Sie ist er aber schon im Preis der Führung dabei. Ach ja, und bitte denken Sie daran: In der Bibliothek müssen alle Filzpantoffeln über die Schuhe ziehen, die bekommen Sie beim Eingang. Fotografieren ist drinnen nicht erlaubt. Zwischendurch machen wir eine kurze Kaffeepause in einer Konditorei, dort können Sie auch den Biber probieren, das ist eine Spezialität von hier. Haben Sie noch Fragen? Nein? Gut, dann gehen wir los!",
+          "hit": "Wir gehen deshalb erst ganz am Schluss, so um halb eins, hinein."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_heidi_ch",
+        "text": "Grüezi miteinander und herzlich willkommen in St. Gallen! Mein Name ist Regula Brändli, und ich begleite Sie heute durch die Altstadt. Schön, dass so viele gekommen sind, trotz des Nebels. Also, kurz zum Ablauf: Wir starten hier beim Bahnhof und gehen zuerst zum Marktplatz. Dort erzähle ich Ihnen etwas über die Stickerei, die hat die Stadt nämlich reich gemacht. Danach besuchen wir den Klosterbezirk mit der Kathedrale. Die berühmte Stiftsbibliothek steht natürlich auch auf dem Programm, aber heute Vormittag ist sie leider wegen einer Veranstaltung geschlossen. Wir gehen deshalb erst ganz am Schluss, so um halb eins, hinein. Der Eintritt kostet normalerweise achtzehn Franken, für Sie ist er aber schon im Preis der Führung dabei. Ach ja, und bitte denken Sie daran: In der Bibliothek müssen alle Filzpantoffeln über die Schuhe ziehen, die bekommen Sie beim Eingang. Fotografieren ist drinnen nicht erlaubt. Zwischendurch machen wir eine kurze Kaffeepause in einer Konditorei, dort können Sie auch den Biber probieren, das ist eine Spezialität von hier. Haben Sie noch Fragen? Nein? Gut, dann gehen wir los!",
+        "delivery": "[warm, lively tour guide, Swiss accent]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 1154,
+      "at": "2026-10-13T05:55:41.629Z"
+    }
+  }
+}

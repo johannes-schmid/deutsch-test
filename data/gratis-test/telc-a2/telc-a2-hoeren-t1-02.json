@@ -1,0 +1,83 @@
+{
+  "id": "telc-a2-hoeren-t1-02",
+  "exam": "telc-a2",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:33.952Z",
+    "textType": "Nachricht vom Arbeitgeber auf dem Anrufbeantworter"
+  },
+  "display": {
+    "instruction": "Sie hören eine Nachricht am Telefon. Ergänzen Sie die Notiz: Welche Information fehlt? Wählen Sie a, b oder c. Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Dienst am Donnerstag: Beginn um … Uhr",
+          "options": [
+            {
+              "key": "a",
+              "label": "6.30"
+            },
+            {
+              "key": "b",
+              "label": "8.00"
+            },
+            {
+              "key": "c",
+              "label": "15.00"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 22.65,
+      "plays": 2,
+      "situation": "Nachricht am Telefon",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 22.65
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Chefin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/telc-a2-hoeren-t1-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 2,
+        "correct": "a",
+        "explanation": "Frau Kröger bittet Herrn Yilmaz, schon um halb sieben zu kommen. Acht Uhr war die alte Zeit, und um drei Uhr ist der Dienst zu Ende.",
+        "evidence": {
+          "text": "Hallo Herr Yilmaz, hier ist Sabine Kröger vom Gartencenter Grünwald. Es geht um Ihren Dienst am Donnerstag. Sie sollten ja eigentlich um acht Uhr anfangen, aber wir bekommen morgens eine große Lieferung. Können Sie bitte schon um halb sieben kommen? Dafür können Sie dann um drei nach Hause gehen. Bitte rufen Sie mich kurz zurück, unter null eins sieben eins, vier fünf, zwei acht, neun drei. Danke und bis dann!",
+          "hit": "Können Sie bitte schon um halb sieben kommen?"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Hallo Herr Yilmaz, hier ist Sabine Kröger vom Gartencenter Grünwald. Es geht um Ihren Dienst am Donnerstag. Sie sollten ja eigentlich um acht Uhr anfangen, aber wir bekommen morgens eine große Lieferung. Können Sie bitte schon um halb sieben kommen? Dafür können Sie dann um drei nach Hause gehen. Bitte rufen Sie mich kurz zurück, unter null eins sieben eins, vier fünf, zwei acht, neun drei. Danke und bis dann!",
+        "delivery": "[friendly, slightly hurried, phone message]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 457,
+      "at": "2026-10-13T05:54:51.149Z"
+    }
+  }
+}

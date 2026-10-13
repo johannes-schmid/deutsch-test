@@ -1,0 +1,95 @@
+{
+  "id": "goethe-b1-lesen-t3-01",
+  "exam": "goethe-b1",
+  "skill": "lesen",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:51:49.492Z",
+    "textType": "Anzeigen zu Freizeit- und Kursangeboten"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Für eine Person gibt es keine passende Anzeige. Dann wählen Sie x.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Fotografieren mit dem Smartphone",
+              "text": "Sie möchten bessere Fotos machen? Unser Anfängerkurs zeigt Ihnen die wichtigsten Tricks. Immer mittwochs von 16:30 bis 18:00 Uhr, sechs Termine, 45 Euro. Bitte eigenes Handy mitbringen. Anmeldung an der Information der Stadtbibliothek."
+            },
+            {
+              "key": "b",
+              "title": "Fotowochenende für Einsteiger",
+              "text": "Lernen Sie an zwei Tagen, wie Ihre Kamera funktioniert: Licht, Schärfe, Bildaufbau. Samstag und Sonntag, 14. und 15. Juni, jeweils 10 bis 16 Uhr. Keine Vorkenntnisse nötig. Kursgebühr 89 Euro. Infos unter www.vhs-bergheim-kurse.de"
+            },
+            {
+              "key": "c",
+              "title": "Gemeinsam kochen – Eltern und Kinder",
+              "text": "Ob Pizza oder Gemüsesuppe: Im Familienzentrum Sonnenhof stehen Eltern und Kinder (8–12 Jahre) zusammen am Herd. Jeden zweiten Samstag, 11 bis 14 Uhr, Lindenstraße 14. Pro Familie 15 Euro inklusive Zutaten. Anmeldung: 02271 48 39 20."
+            },
+            {
+              "key": "d",
+              "title": "Kinderkochschule „Kleine Köche“",
+              "text": "Kinder von 8 bis 12 Jahren lernen bei uns, einfache Gerichte selbst zu kochen. Damit die Kinder selbstständig arbeiten, bleiben Eltern bitte draußen. Dienstags 15 bis 17 Uhr, Restaurant Krone, Marktplatz 3. 12 Euro pro Termin."
+            },
+            {
+              "key": "e",
+              "title": "Salsa für Anfänger – Tanzschule Rhythmo",
+              "text": "Neuer Kurs ab 3. September, donnerstags 19:30 bis 21:00 Uhr. Zehn Abende für 120 Euro pro Person. Wichtig: Die Anmeldung ist nur als Paar möglich, bitte bringen Sie Ihre Tanzpartnerin oder Ihren Tanzpartner mit. www.tanzschule-rhythmo.de"
+            }
+          ],
+          "situations": [
+            {
+              "n": 13,
+              "text": "Meral sucht einen Kochkurs, den sie zusammen mit ihrem neunjährigen Sohn besuchen kann."
+            },
+            {
+              "n": 14,
+              "text": "Lukas möchte abends Salsa lernen, hat aber niemanden, der mit ihm zusammen tanzt."
+            },
+            {
+              "n": 15,
+              "text": "Jonas arbeitet von Montag bis Freitag bis 18 Uhr und sucht einen Fotokurs für Anfänger."
+            }
+          ]
+        },
+        "noMatch": true
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 13,
+        "correct": "c",
+        "explanation": "Im Familienzentrum kochen Eltern und Kinder zusammen, und ihr Sohn hat das richtige Alter. Bei der Kinderkochschule müssen die Eltern draußen bleiben.",
+        "evidence": {
+          "text": "Ob Pizza oder Gemüsesuppe: Im Familienzentrum Sonnenhof stehen Eltern und Kinder (8–12 Jahre) zusammen am Herd. Jeden zweiten Samstag, 11 bis 14 Uhr, Lindenstraße 14. Pro Familie 15 Euro inklusive Zutaten. Anmeldung: 02271 48 39 20.",
+          "hit": "stehen Eltern und Kinder (8–12 Jahre) zusammen am Herd"
+        }
+      },
+      {
+        "n": 14,
+        "correct": "x",
+        "explanation": "Der Salsakurs ist zwar abends, aber man kann sich nur als Paar anmelden. Lukas hat keinen Partner, deshalb passt keine Anzeige.",
+        "evidence": {
+          "text": "Neuer Kurs ab 3. September, donnerstags 19:30 bis 21:00 Uhr. Zehn Abende für 120 Euro pro Person. Wichtig: Die Anmeldung ist nur als Paar möglich, bitte bringen Sie Ihre Tanzpartnerin oder Ihren Tanzpartner mit. www.tanzschule-rhythmo.de",
+          "hit": "Die Anmeldung ist nur als Paar möglich, bitte bringen Sie Ihre Tanzpartnerin oder Ihren Tanzpartner mit."
+        }
+      },
+      {
+        "n": 15,
+        "correct": "b",
+        "explanation": "Das Fotowochenende ist am Samstag und Sonntag und man braucht keine Vorkenntnisse. Der Smartphone-Kurs ist mittwochs am Nachmittag, da arbeitet Jonas noch.",
+        "evidence": {
+          "text": "Lernen Sie an zwei Tagen, wie Ihre Kamera funktioniert: Licht, Schärfe, Bildaufbau. Samstag und Sonntag, 14. und 15. Juni, jeweils 10 bis 16 Uhr. Keine Vorkenntnisse nötig. Kursgebühr 89 Euro. Infos unter www.vhs-bergheim-kurse.de",
+          "hit": "Samstag und Sonntag, 14. und 15. Juni, jeweils 10 bis 16 Uhr. Keine Vorkenntnisse nötig."
+        }
+      }
+    ]
+  }
+}

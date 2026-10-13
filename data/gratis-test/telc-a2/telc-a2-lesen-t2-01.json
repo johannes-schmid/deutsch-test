@@ -1,0 +1,63 @@
+{
+  "id": "telc-a2-lesen-t2-01",
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:51:52.807Z",
+    "textType": "Kurzer Zeitungsartikel über eine Person aus der Region"
+  },
+  "display": {
+    "instruction": "Lesen Sie den Artikel. Sind die Aussagen richtig oder falsch?",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 6,
+          "statement": "Lena Brandt hat früher in einem Geschäft für Möbel gearbeitet."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 7,
+          "statement": "Lena Brandts Mutter arbeitet jeden Tag im Café mit."
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Kirchheimer Wochenblatt",
+      "source": "Zeitungsartikel",
+      "paragraphs": [
+        "Vom Hobby zum eigenen Café: Lena Brandt aus Kirchheim",
+        "Lena Brandt ist 34 Jahre alt und wohnt mit ihrem Mann und ihren zwei Töchtern in Kirchheim. Früher war sie Verkäuferin in einem Möbelhaus in Stuttgart. Aber sie hat schon immer gern gebacken. Am Wochenende hat sie oft Kuchen für Freunde und Nachbarn gemacht.",
+        "Vor ein paar Jahren hatte sie eine Idee: ein kleines Café im Zentrum. Im März 2022 hat sie das „Café Krümel“ in der Marktstraße eröffnet. Am Anfang war es schwer, denn sie hatte nur wenige Gäste. Heute kommen jeden Tag fast hundert Leute. Besonders beliebt ist ihr Apfelkuchen. Ihre Mutter hilft am Samstag in der Küche.",
+        "Im letzten Jahr hat Lena Brandt bei einem Wettbewerb unserer Zeitung den zweiten Platz gewonnen. Jetzt hat sie neue Pläne: Im Herbst möchte sie Backkurse für Kinder anbieten. „Kinder backen so gern, und das macht mir großen Spaß“, sagt sie."
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 6,
+        "correct": "richtig",
+        "explanation": "Im Text steht, dass sie früher Verkäuferin in einem Möbelhaus war. Ein Möbelhaus ist ein Geschäft für Möbel.",
+        "evidence": {
+          "text": "Lena Brandt ist 34 Jahre alt und wohnt mit ihrem Mann und ihren zwei Töchtern in Kirchheim. Früher war sie Verkäuferin in einem Möbelhaus in Stuttgart. Aber sie hat schon immer gern gebacken. Am Wochenende hat sie oft Kuchen für Freunde und Nachbarn gemacht.",
+          "hit": "Früher war sie Verkäuferin in einem Möbelhaus in Stuttgart."
+        }
+      },
+      {
+        "n": 7,
+        "correct": "falsch",
+        "explanation": "Die Mutter hilft nur am Samstag in der Küche, nicht jeden Tag.",
+        "evidence": {
+          "text": "Vor ein paar Jahren hatte sie eine Idee: ein kleines Café im Zentrum. Im März 2022 hat sie das „Café Krümel“ in der Marktstraße eröffnet. Am Anfang war es schwer, denn sie hatte nur wenige Gäste. Heute kommen jeden Tag fast hundert Leute. Besonders beliebt ist ihr Apfelkuchen. Ihre Mutter hilft am Samstag in der Küche.",
+          "hit": "Ihre Mutter hilft am Samstag in der Küche."
+        }
+      }
+    ]
+  }
+}

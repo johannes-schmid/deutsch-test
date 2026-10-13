@@ -1,0 +1,63 @@
+{
+  "id": "oesd-a1-lesen-t2-01",
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:03.412Z",
+    "textType": "Anzeige: Angebot in einem Geschäft"
+  },
+  "display": {
+    "instruction": "Sie lesen eine Anzeige. Sind die Aussagen richtig oder falsch?",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 6,
+          "statement": "Fahrräder für Kinder kosten diese Woche weniger."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 7,
+          "statement": "Am Sonntag bekommen die Kunden gratis Kaffee."
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Radsport Gruber, Linz",
+      "source": "Anzeige",
+      "paragraphs": [
+        "Großer Fahrrad-Sale!",
+        "Diese Woche alle Kinderfahrräder 20 Prozent billiger. Fahrradhelme nur 25 Euro.",
+        "Am Samstag gratis Kaffee für alle Kunden.",
+        "Wir haben Montag bis Samstag von 9 bis 17 Uhr geöffnet."
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 6,
+        "correct": "richtig",
+        "explanation": "In der Anzeige steht: Kinderfahrräder sind 20 Prozent billiger. Billiger heißt, sie kosten weniger.",
+        "evidence": {
+          "text": "Diese Woche alle Kinderfahrräder 20 Prozent billiger. Fahrradhelme nur 25 Euro.",
+          "hit": "Diese Woche alle Kinderfahrräder 20 Prozent billiger."
+        }
+      },
+      {
+        "n": 7,
+        "correct": "falsch",
+        "explanation": "Den Kaffee gibt es am Samstag, nicht am Sonntag. Am Sonntag ist das Geschäft auch geschlossen.",
+        "evidence": {
+          "text": "Am Samstag gratis Kaffee für alle Kunden.",
+          "hit": "Am Samstag gratis Kaffee für alle Kunden."
+        }
+      }
+    ]
+  }
+}

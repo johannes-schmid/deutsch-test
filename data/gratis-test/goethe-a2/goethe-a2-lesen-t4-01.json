@@ -1,0 +1,100 @@
+{
+  "id": "goethe-a2-lesen-t4-01",
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "teil": 4,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:04.016Z",
+    "textType": "Kurze Anzeigen im Internet"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Person? Für eine Person gibt es keine passende Anzeige. Dann wählen Sie x.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Kochschule Mertens",
+              "text": "Lernen Sie italienisch kochen! Unser Kurs ist für Anfänger ohne Erfahrung. Wir treffen uns jeden Dienstag und Donnerstag von 9:30 bis 12:30 Uhr. Am Ende essen wir alle zusammen. Anmeldung unter www.kochschule-mertens.de"
+            },
+            {
+              "key": "b",
+              "title": "Radhaus Engel",
+              "text": "Neue Fahrräder für die ganze Stadt! Bei uns finden Sie moderne E-Bikes und Stadträder für Damen und Herren. Jeden Samstag können Sie eine kostenlose Probefahrt machen. Mehr Informationen: www.radhaus-engel.de"
+            },
+            {
+              "key": "c",
+              "title": "Ferienhof Dünenblick",
+              "text": "Schöne Ferienwohnungen direkt an der Ostsee, nur 200 Meter vom Strand. Platz für bis zu sechs Personen, mit Garten und Grillplatz. Bitte beachten Sie: Haustiere sind bei uns leider nicht erlaubt. www.duenenblick-ferien.de"
+            },
+            {
+              "key": "d",
+              "title": "Kinderbörse Sonnenschein",
+              "text": "Alles für Kinder – gebraucht und günstig! Kleidung, Spielsachen, Kinderwagen und Räder für Kinder von 3 bis 14 Jahren. Sie finden uns im Gemeindehaus, Lindenstraße 12. Geöffnet Montag bis Freitag, 14 bis 18 Uhr."
+            },
+            {
+              "key": "e",
+              "title": "Volkshochschule Am Stadtpark",
+              "text": "Kochen leicht gemacht: Sie haben noch nie selbst gekocht? Kein Problem! In diesem Kurs lernen Sie einfache Gerichte für jeden Tag. Immer mittwochs von 18:30 bis 21 Uhr. Kursgebühr: 85 Euro für acht Abende."
+            },
+            {
+              "key": "f",
+              "title": "Hundepension Waldblick",
+              "text": "Sie fahren in den Urlaub und Ihr Hund kann nicht mit? Bei uns ist er in guten Händen. Großer Garten, lange Spaziergänge und viel Liebe. Rufen Sie uns an: 0421 / 55 38 07."
+            }
+          ],
+          "situations": [
+            {
+              "n": 16,
+              "text": "Herr Brandt arbeitet jeden Tag bis 17 Uhr und möchte einen Kochkurs für Anfänger besuchen."
+            },
+            {
+              "n": 17,
+              "text": "Familie Weber möchte mit ihrem Hund eine Woche Urlaub in einer Ferienwohnung am Meer machen."
+            },
+            {
+              "n": 18,
+              "text": "Frau Yilmaz sucht ein günstiges, gebrauchtes Fahrrad für ihren neunjährigen Sohn."
+            }
+          ]
+        },
+        "noMatch": true
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 16,
+        "correct": "e",
+        "explanation": "Der Kurs der Volkshochschule ist für Anfänger und findet am Abend statt. Die Kochschule Mertens ist auch für Anfänger, aber nur am Vormittag.",
+        "evidence": {
+          "text": "Kochen leicht gemacht: Sie haben noch nie selbst gekocht? Kein Problem! In diesem Kurs lernen Sie einfache Gerichte für jeden Tag. Immer mittwochs von 18:30 bis 21 Uhr. Kursgebühr: 85 Euro für acht Abende.",
+          "hit": "Immer mittwochs von 18:30 bis 21 Uhr."
+        }
+      },
+      {
+        "n": 17,
+        "correct": "x",
+        "explanation": "Der Ferienhof an der Ostsee passt fast, aber dort sind Tiere nicht erlaubt. Die Hundepension ist keine Ferienwohnung, dort bleibt der Hund ohne die Familie.",
+        "evidence": {
+          "text": "Schöne Ferienwohnungen direkt an der Ostsee, nur 200 Meter vom Strand. Platz für bis zu sechs Personen, mit Garten und Grillplatz. Bitte beachten Sie: Haustiere sind bei uns leider nicht erlaubt. www.duenenblick-ferien.de",
+          "hit": "Haustiere sind bei uns leider nicht erlaubt."
+        }
+      },
+      {
+        "n": 18,
+        "correct": "d",
+        "explanation": "Die Kinderbörse verkauft gebrauchte Räder für Kinder bis 14 Jahre. Das Radhaus Engel hat nur neue Fahrräder für Erwachsene.",
+        "evidence": {
+          "text": "Alles für Kinder – gebraucht und günstig! Kleidung, Spielsachen, Kinderwagen und Räder für Kinder von 3 bis 14 Jahren. Sie finden uns im Gemeindehaus, Lindenstraße 12. Geöffnet Montag bis Freitag, 14 bis 18 Uhr.",
+          "hit": "gebraucht und günstig! Kleidung, Spielsachen, Kinderwagen und Räder für Kinder von 3 bis 14 Jahren."
+        }
+      }
+    ]
+  }
+}

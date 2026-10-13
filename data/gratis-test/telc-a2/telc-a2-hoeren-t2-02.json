@@ -1,0 +1,83 @@
+{
+  "id": "telc-a2-hoeren-t2-02",
+  "exam": "telc-a2",
+  "skill": "hoeren",
+  "teil": 2,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:42.713Z",
+    "textType": "Radio: Wetterbericht"
+  },
+  "display": {
+    "instruction": "Sie hören eine Meldung im Radio. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text einmal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 7,
+          "prompt": "Wie ist das Wetter am Samstagnachmittag?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Im Süden regnet es ein bisschen."
+            },
+            {
+              "key": "b",
+              "label": "In ganz Bayern scheint die Sonne."
+            },
+            {
+              "key": "c",
+              "label": "Es wird kühl und es gibt Regen."
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 23.92,
+      "plays": 1,
+      "situation": "Wetterbericht im Radio",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 23.92
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Radiosprecherin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/telc-a2-hoeren-t2-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 7,
+        "correct": "b",
+        "explanation": "Am Nachmittag kommt überall die Sonne. Der Regen im Süden ist nur am Vormittag, und kühler wird es erst am Sonntag.",
+        "evidence": {
+          "text": "Und jetzt das Wetter für morgen, Samstag. Am Vormittag ist es in ganz Bayern noch bewölkt, im Süden kann es auch ein bisschen regnen. Am Nachmittag kommt dann überall die Sonne. Die Temperaturen: im Norden bis zu zweiundzwanzig Grad, in München und im Süden bis vierundzwanzig Grad. Am Sonntag wird es leider kühler. Dann gibt es überall Regen und nur noch sechzehn Grad.",
+          "hit": "Am Nachmittag kommt dann überall die Sonne."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Und jetzt das Wetter für morgen, Samstag. Am Vormittag ist es in ganz Bayern noch bewölkt, im Süden kann es auch ein bisschen regnen. Am Nachmittag kommt dann überall die Sonne. Die Temperaturen: im Norden bis zu zweiundzwanzig Grad, in München und im Süden bis vierundzwanzig Grad. Am Sonntag wird es leider kühler. Dann gibt es überall Regen und nur noch sechzehn Grad.",
+        "delivery": "[calm, announcer]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 389,
+      "at": "2026-10-13T05:54:58.256Z"
+    }
+  }
+}

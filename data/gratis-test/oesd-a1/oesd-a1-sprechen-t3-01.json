@@ -1,0 +1,109 @@
+{
+  "id": "oesd-a1-sprechen-t3-01",
+  "exam": "oesd-a1",
+  "skill": "sprechen",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:53:34.393Z",
+    "textType": "Rollenspiel"
+  },
+  "display": {
+    "instruction": "Spielen Sie die Situation vom Foto. Sie sind Kundin oder Kunde in der Bäckerei. Die Prüferin oder der Prüfer verkauft.",
+    "items": [],
+    "speaking": {
+      "data": {
+        "part": "Sprechen · Teil 3",
+        "title": "Rollenspiel zum Foto",
+        "task": "Spielen Sie die Situation vom Foto. Sie sind Kundin oder Kunde in der Bäckerei, und ich bin die Verkäuferin.",
+        "points": [
+          "Grüßen",
+          "Etwas bestellen",
+          "Nach dem Preis fragen",
+          "Bezahlen und verabschieden"
+        ],
+        "cards": [
+          {
+            "label": "Rollenspiel: Du kaufst in der Bäckerei ein",
+            "picto": "croissant"
+          }
+        ]
+      },
+      "people": {
+        "pruefer": {
+          "name": "Prüferin",
+          "initial": "P",
+          "tone": "var(--v-sk-lesen)"
+        },
+        "partner": {
+          "name": "Mehmet",
+          "initial": "M",
+          "tone": "var(--v-sk-schreiben)"
+        },
+        "du": {
+          "name": "Du",
+          "initial": "Du",
+          "tone": "var(--p-glow)"
+        }
+      },
+      "turns": [
+        {
+          "who": "pruefer",
+          "text": "Jetzt spielen wir: Sie kaufen in der Bäckerei ein, und ich bin die Verkäuferin. Guten Tag! Was darf es sein?",
+          "src": "/audio/kurztest/oesd-a1-sprechen-t3-01-0.mp3",
+          "duration": 7.36
+        },
+        {
+          "who": "du",
+          "text": "Grüß und bestell etwas."
+        },
+        {
+          "who": "pruefer",
+          "text": "Gern, bitte sehr. Möchten Sie noch etwas?",
+          "src": "/audio/kurztest/oesd-a1-sprechen-t3-01-2.mp3",
+          "duration": 2.88
+        },
+        {
+          "who": "du",
+          "text": "Antworte und frag nach dem Preis."
+        },
+        {
+          "who": "pruefer",
+          "text": "Das macht drei Euro zwanzig, bitte.",
+          "src": "/audio/kurztest/oesd-a1-sprechen-t3-01-4.mp3",
+          "duration": 2.48
+        },
+        {
+          "who": "du",
+          "text": "Bezahl und verabschiede dich."
+        },
+        {
+          "who": "pruefer",
+          "text": "Danke schön! Einen schönen Tag noch. Auf Wiedersehen!",
+          "src": "/audio/kurztest/oesd-a1-sprechen-t3-01-6.mp3",
+          "duration": 3.36
+        }
+      ]
+    }
+  },
+  "key": {
+    "answers": [],
+    "speaking": {
+      "voices": {
+        "pruefer": "woman_alexandra_at",
+        "partner": "man_ben"
+      },
+      "sampleAnswers": [
+        "Guten Tag! Ich möchte zwei Brötchen und ein Croissant, bitte.",
+        "Nein, danke, das ist alles. Was kostet das, bitte?",
+        "Hier sind fünf Euro. Vielen Dank! Auf Wiedersehen!"
+      ]
+    },
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 237,
+      "at": "2026-10-13T05:54:46.485Z"
+    }
+  }
+}

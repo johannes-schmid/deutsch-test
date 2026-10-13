@@ -1,0 +1,77 @@
+{
+  "id": "telc-b1-lesen-t1-01",
+  "exam": "telc-b1",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:06.659Z",
+    "textType": "Kurze Zeitungsmeldungen"
+  },
+  "display": {
+    "instruction": "Lesen Sie die Überschriften und die Texte. Welche Überschrift passt zu welchem Text? Jede Überschrift passt nur einmal.",
+    "items": [
+      {
+        "type": "match",
+        "data": {
+          "ads": [
+            {
+              "key": "a",
+              "title": "Mehr Radwege für die Innenstadt",
+              "text": ""
+            },
+            {
+              "key": "b",
+              "title": "Abgelaufen heißt nicht verdorben",
+              "text": ""
+            },
+            {
+              "key": "c",
+              "title": "Weniger Plastik bei Verpackungen",
+              "text": ""
+            },
+            {
+              "key": "d",
+              "title": "Wer sich bewegt, startet zufriedener",
+              "text": ""
+            }
+          ],
+          "situations": [
+            {
+              "n": 1,
+              "text": "Wer morgens mit dem Fahrrad oder zu Fuß zur Arbeit kommt, beginnt den Tag mit besserer Stimmung. Das zeigt eine Umfrage der Universität Kassel unter 2.000 Berufstätigen. Fast 70 Prozent der Radfahrer und Fußgänger sagten, sie fühlten sich bei Arbeitsbeginn wach und gut gelaunt. Bei den Autofahrern waren es nur 40 Prozent. Viele von ihnen nannten Staus und die Suche nach einem Parkplatz als Grund für ihren Stress am Morgen."
+            },
+            {
+              "n": 2,
+              "text": "Jedes Jahr werfen deutsche Haushalte viele Lebensmittel weg, oft nur, weil das Datum auf der Packung vorbei ist. Die Verbraucherzentrale weist darauf hin: Das Mindesthaltbarkeitsdatum ist kein Verfallsdatum. Joghurt, Nudeln oder Käse kann man häufig noch Tage oder sogar Wochen später essen. Man sollte die Produkte einfach ansehen, daran riechen und vorsichtig probieren. Nur bei frischem Fleisch und Fisch gilt: Nach dem Datum lieber nicht mehr essen."
+            }
+          ]
+        },
+        "noMatch": false
+      }
+    ]
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "d",
+        "explanation": "Die Meldung sagt: Wer sich auf dem Weg zur Arbeit bewegt, hat bessere Laune. Über neue Radwege in der Stadt steht nichts im Text.",
+        "evidence": {
+          "text": "Wer morgens mit dem Fahrrad oder zu Fuß zur Arbeit kommt, beginnt den Tag mit besserer Stimmung. Das zeigt eine Umfrage der Universität Kassel unter 2.000 Berufstätigen. Fast 70 Prozent der Radfahrer und Fußgänger sagten, sie fühlten sich bei Arbeitsbeginn wach und gut gelaunt. Bei den Autofahrern waren es nur 40 Prozent. Viele von ihnen nannten Staus und die Suche nach einem Parkplatz als Grund für ihren Stress am Morgen.",
+          "hit": "Wer morgens mit dem Fahrrad oder zu Fuß zur Arbeit kommt, beginnt den Tag mit besserer Stimmung."
+        }
+      },
+      {
+        "n": 2,
+        "correct": "b",
+        "explanation": "Die Meldung erklärt, dass man viele Lebensmittel nach dem Datum noch essen kann. Es geht um das Datum auf der Packung, nicht um Plastik bei Verpackungen.",
+        "evidence": {
+          "text": "Jedes Jahr werfen deutsche Haushalte viele Lebensmittel weg, oft nur, weil das Datum auf der Packung vorbei ist. Die Verbraucherzentrale weist darauf hin: Das Mindesthaltbarkeitsdatum ist kein Verfallsdatum. Joghurt, Nudeln oder Käse kann man häufig noch Tage oder sogar Wochen später essen. Man sollte die Produkte einfach ansehen, daran riechen und vorsichtig probieren. Nur bei frischem Fleisch und Fisch gilt: Nach dem Datum lieber nicht mehr essen.",
+          "hit": "Joghurt, Nudeln oder Käse kann man häufig noch Tage oder sogar Wochen später essen."
+        }
+      }
+    ]
+  }
+}

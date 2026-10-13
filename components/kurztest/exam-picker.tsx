@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { LEVELS, type Exam, type ExamId, type Level } from "@/lib/exams"
@@ -50,6 +51,7 @@ export function ExamPicker({ exams, initial = "B1" }: { exams: PickerExam[]; ini
 function ExamCard({ exam }: { exam: PickerExam }) {
   const body = (
     <>
+      <ExamMark brand={exam.brand} />
       <span className="flex min-w-0 flex-1 flex-col gap-1.5">
         <span className="font-[family-name:var(--v-font-mono)] text-[11.5px] tracking-[0.06em] text-v-muted uppercase">{exam.provider}</span>
         <b className="text-[19px] leading-snug font-semibold tracking-[-0.02em]">{exam.name}</b>

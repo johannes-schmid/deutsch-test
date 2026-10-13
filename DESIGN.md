@@ -201,6 +201,7 @@ tokens.
 | `LogoMark` / `NzLogo` | `variants/nachtzug-logo.tsx` | Leuchte U with orange and blue glowing dots. `tile` puts it on a white rounded square (radius 27%). The wordmark is all ink, and the ü dots glow |
 | `PartIcon` / `PartCard` | `variants/nachtzug-icons.tsx` | glass tile with a blurred tone blob. Sizes sm/md/lg = 36/48/64px |
 | `TestIcon` / `TestCard` | `variants/nachtzug-icons.tsx` | DTZ, Einbürgerungstest, Integrationskurs |
+| `ExamMark` | `variants/nachtzug-icons.tsx` | exam badge on the free-test overview: the provider name in our type on a tone tile (`--v-ex-goethe`, `--v-ex-telc`, `--v-ex-oesd`) plus a small country flag (DE, AT for ÖSD). Our own mark, never the provider's logo (we are not affiliated) |
 | `LevelSeal` | `variants/nachtzug-icons.tsx` | three-arc ring that lights up to the level reached |
 | `ScoreSeal` | `variants/nachtzug-icons.tsx` | the LevelSeal for exams scored in points: one arc for the share reached (Glut when passed, ink when not), a tick at the pass mark, the % in the middle |
 | `LevelPath` | `variants/nachtzug-icons.tsx` | A2 seal, then dots, then a larger B1 seal |

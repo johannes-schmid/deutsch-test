@@ -269,3 +269,20 @@
 **Outcome:** SUCCESS (tsc, build; Playwright: GA only with Statistik on, switch state persists, revoke clears `_ga`).
 **What worked / went wrong:** A GA-named headline read oddly to the user; the familiar "Wir nutzen Cookies" + categories pattern fits better. Storage key bumped to v2, so earlier choices are asked again.
 **Lesson:** For consent UI, use the pattern visitors already know; name vendors inside the categories, not in the headline.
+
+## 2026-10-13 — Free-test drafts for all 7 other exams, Goethe/ÖSD B1 split, exam badges
+**Changed:**
+- `goethe-oesd-b1` is now two exams, `goethe-b1` (DE voices) and `oesd-b1` (AT/CH voices), each with its own set. Every exam in `lib/exams.ts` has a `brand` and a `pass` mark.
+- Per-exam specs moved to `lib/exam/exams/<exam>.ts` (context, parts, plan, Schreiben/Sprechen briefs, rubric, taster), aggregated in `exam-blueprints.ts`. Page copy goes in `lib/i18n/exam-pages/<exam>.ts`.
+- Generator: the non-DTZ writing and speaking prompts read `hint`/`tasks`/`points`/`accents` from the OpenSpec, not hardcoded Start Deutsch 1 text. The validator reads `tasks`/`points`/`partner` from the spec. Rubric lines take `steps` (B1: A–E).
+- `ExamMark` badge (`variants/nachtzug-icons.tsx`, `--v-ex-*` tokens) on the overview cards and `/design/pruefung`. Exam facts are logged in `seo/facts.md`.
+- 7 parallel agents drafted 69 blocks (oesd-a1, goethe-a2, telc-a2, oesd-a2, goethe-b1, oesd-b1, telc-b1), all `draft`.
+**Outcome:** SUCCESS (tsc clean, `next build` passes, every new block validates; 3 older DTZ blocks still fail on small length deviations).
+**What worked / went wrong:**
+- Splitting the shared spec and copy files into one file per exam *before* fanning out let 7 agents work in one checkout without edit conflicts.
+- Agents wrote logs with the same names to the shared scratchpad and overwrote each other's cost lines. Give each agent its own log path.
+- Cost: Claude about $2.90 in all, eleven_v4 about 24k characters.
+- eleven_v4 speaks at about 2.9 words/s, but the generator assumes 2.3, so clips come out shorter than their spec.
+**Lesson:**
+- Before fanning out agents over shared config, give each unit its own file and an aggregator, and keep the shared code changes for yourself.
+- Never use a provider's logo for a "nicht verbunden" product. A badge with our own type, a provider tone and a country flag tells the exams apart just as well.

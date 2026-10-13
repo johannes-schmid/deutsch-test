@@ -1,0 +1,69 @@
+{
+  "id": "telc-b1-hoeren-t3-02",
+  "exam": "telc-b1",
+  "skill": "hoeren",
+  "teil": 3,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:36.738Z",
+    "textType": "Durchsage im Zug"
+  },
+  "display": {
+    "instruction": "Sie hören fünf kurze Texte. Ist die Aussage richtig oder falsch? Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 17,
+          "statement": "Fahrgäste nach Miltenberg müssen in Aschaffenburg einen späteren Zug nehmen."
+        }
+      }
+    ],
+    "clip": {
+      "duration": 28.96,
+      "plays": 2,
+      "situation": "Durchsage im Regionalexpress",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 28.96
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Zugbegleiterin",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/telc-b1-hoeren-t3-02.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 17,
+        "correct": "richtig",
+        "explanation": "Der Anschlusszug in Aschaffenburg wartet nicht. Deshalb nehmen die Reisenden nach Miltenberg den nächsten Zug um 11:42 Uhr.",
+        "evidence": {
+          "text": "Sehr geehrte Fahrgäste, willkommen im Regionalexpress nach Würzburg. Wegen einer Signalstörung haben wir im Moment etwa fünfzehn Minuten Verspätung. Unser nächster Halt ist Aschaffenburg. Liebe Reisende nach Miltenberg: Ihr Anschlusszug in Aschaffenburg kann heute leider nicht warten. Bitte nehmen Sie dann den nächsten Zug um elf Uhr zweiundvierzig von Gleis vier. Das Bordbistro im mittleren Teil des Zuges ist heute geschlossen. Wir bitten um Entschuldigung.",
+          "hit": "Ihr Anschlusszug in Aschaffenburg kann heute leider nicht warten. Bitte nehmen Sie dann den nächsten Zug um elf Uhr zweiundvierzig von Gleis vier."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_ela",
+        "text": "Sehr geehrte Fahrgäste, willkommen im Regionalexpress nach Würzburg. Wegen einer Signalstörung haben wir im Moment etwa fünfzehn Minuten Verspätung. Unser nächster Halt ist Aschaffenburg. Liebe Reisende nach Miltenberg: Ihr Anschlusszug in Aschaffenburg kann heute leider nicht warten. Bitte nehmen Sie dann den nächsten Zug um elf Uhr zweiundvierzig von Gleis vier. Das Bordbistro im mittleren Teil des Zuges ist heute geschlossen. Wir bitten um Entschuldigung.",
+        "delivery": "[calm, announcer]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 480,
+      "at": "2026-10-13T05:54:28.195Z"
+    }
+  }
+}

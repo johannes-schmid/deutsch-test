@@ -1,0 +1,66 @@
+{
+  "id": "oesd-b1-lesen-t1-01",
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:09.042Z",
+    "textType": "Persönliche E-Mail an eine Freundin"
+  },
+  "display": {
+    "instruction": "Lesen Sie den Text. Sind die Aussagen richtig oder falsch?",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 1,
+          "statement": "Miriam arbeitet zurzeit nur am Vormittag."
+        }
+      },
+      {
+        "type": "rf",
+        "item": {
+          "n": 2,
+          "statement": "Miriam hat durch den Kletterkurs schon neue Bekannte gefunden."
+        }
+      }
+    ],
+    "reading": {
+      "sender": "Miriam",
+      "source": "E-Mail",
+      "paragraphs": [
+        "Liebe Sandra,",
+        "vielen Dank für deine lange Nachricht! Entschuldige, dass ich erst jetzt antworte, aber die letzten Wochen waren wirklich chaotisch. Wie du weißt, bin ich Anfang März von Linz nach Salzburg gezogen. Die neue Wohnung ist kleiner als meine alte, aber sie hat einen Balkon mit Blick auf die Festung. Am Abend sitze ich oft draußen und trinke einen Tee – das ist für mich der schönste Moment des Tages.",
+        "Meine neue Stelle im Reisebüro gefällt mir sehr gut. Meine Kolleginnen sind nett und haben mir am Anfang viel geholfen. Eigentlich sollte ich nur vormittags arbeiten, aber weil eine Kollegin krank ist, mache ich im Moment auch drei Nachmittage pro Woche. Das ist anstrengend, aber ich verdiene natürlich mehr.",
+        "Leider kenne ich in Salzburg noch fast niemanden. Deshalb habe ich mich für einen Kletterkurs angemeldet. Ich hatte zuerst ein bisschen Angst, weil ich so etwas noch nie gemacht habe. Aber nach der ersten Stunde war ich total begeistert! Nach dem Training gehen wir manchmal zusammen etwas trinken, und so habe ich schon zwei nette Leute kennengelernt.",
+        "Hast du nicht Lust, mich bald zu besuchen? Zu Ostern habe ich vier Tage frei. Wir könnten durch die Altstadt spazieren oder auf den Gaisberg wandern, wenn das Wetter schön ist. Du kannst gern bei mir übernachten, ich habe ein bequemes Gästebett. Sag mir einfach Bescheid, ob es bei dir klappt!",
+        "Viele liebe Grüße",
+        "Miriam"
+      ]
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "falsch",
+        "explanation": "Eigentlich sollte Miriam nur vormittags arbeiten. Aber im Moment arbeitet sie auch an drei Nachmittagen, weil eine Kollegin krank ist.",
+        "evidence": {
+          "text": "Meine neue Stelle im Reisebüro gefällt mir sehr gut. Meine Kolleginnen sind nett und haben mir am Anfang viel geholfen. Eigentlich sollte ich nur vormittags arbeiten, aber weil eine Kollegin krank ist, mache ich im Moment auch drei Nachmittage pro Woche. Das ist anstrengend, aber ich verdiene natürlich mehr.",
+          "hit": "mache ich im Moment auch drei Nachmittage pro Woche"
+        }
+      },
+      {
+        "n": 2,
+        "correct": "richtig",
+        "explanation": "Nach dem Training geht Miriam mit den anderen etwas trinken und hat so zwei nette Leute kennengelernt. Dass sie in Salzburg fast niemanden kennt, war der Grund für den Kurs.",
+        "evidence": {
+          "text": "Leider kenne ich in Salzburg noch fast niemanden. Deshalb habe ich mich für einen Kletterkurs angemeldet. Ich hatte zuerst ein bisschen Angst, weil ich so etwas noch nie gemacht habe. Aber nach der ersten Stunde war ich total begeistert! Nach dem Training gehen wir manchmal zusammen etwas trinken, und so habe ich schon zwei nette Leute kennengelernt.",
+          "hit": "Nach dem Training gehen wir manchmal zusammen etwas trinken, und so habe ich schon zwei nette Leute kennengelernt."
+        }
+      }
+    ]
+  }
+}

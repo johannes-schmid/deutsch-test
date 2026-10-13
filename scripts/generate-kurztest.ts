@@ -228,7 +228,7 @@ Schreibe 6 Aussagen (ohne Buchstaben): 3 passen je genau zu einer Person, 3 sind
 answers: für jede Person in Reihenfolge der Buchstabe (a–f) der passenden Aussage.
 evidence: Ausschnitt aus dem Beitrag der Person.`)
     block.generated.textType = o.textType
-    const voiceOf = cast(o.speakers)
+    const voiceOf = cast(o.speakers, spec.accents)
     const script: ScriptTurn[] = o.opinions.map((t) => {
       const sp = o.speakers.find((s) => s.id === t.speaker)
       return { speaker: t.speaker, voice: voiceOf.get(t.speaker)!, text: t.text, delivery: sp?.delivery || undefined }
@@ -324,13 +324,18 @@ Schreibe genau 2 Aufgaben, A und B, wie in der echten Prüfung: Die Person wähl
 - register: meistens formell; höchstens eine Aufgabe informell.
 - modelAnswer: eine Musterlösung auf B1-Niveau, etwa 80–110 Wörter, mit Anrede, allen vier Punkten und Gruß. Natürliches Deutsch, keine perfekte Muttersprache.
 Die beiden Aufgaben haben verschiedene Themen.`
-      : `Teil: Schreiben, Teil ${teil} "${spec.title}". Anweisung: "${spec.instruction}"
-Schreibe genau 1 Aufgabe wie in der echten Prüfung (keine Wahl):
+      : (() => {
+          const tasks = spec.tasks ?? 1
+          const points = spec.points ?? 3
+          return `Teil: Schreiben, Teil ${teil} "${spec.title}". Anweisung: "${spec.instruction}"
+${tasks === 1 ? "Schreibe genau 1 Aufgabe wie in der echten Prüfung (keine Wahl):" : `Schreibe genau ${tasks} Aufgaben wie in der echten Prüfung; die Person wählt eine. Die Aufgaben haben verschiedene Themen. Jede Aufgabe:`}
 - title: 2–3 Wörter.
-- situation: 1–2 sehr einfache Sätze in Sie-Form (A1), z. B. "Sie können am Samstag nicht zum Kurs kommen. Schreiben Sie Ihrer Lehrerin eine E-Mail." Empfänger: eine Freundin, ein Kollege, eine Lehrerin, ein Büro (z. B. Touristeninformation, Sprachschule).
-- points: genau 3 Leitpunkte, kurz, wie im Prüfungsheft (z. B. "Warum schreiben Sie?", "Neuer Termin?", "Bitte um Antwort").
-- register: informell (Freundin, Freund, Kollege) oder formell (Büro).
-- modelAnswer: eine Musterlösung auf A1, etwa 30–40 Wörter, mit passender Anrede, allen drei Punkten (je 1–2 einfache Sätze) und Gruß. Zeilenumbrüche mit \\n.`
+- situation: wie im Prüfungsheft, in Sie-Form.
+- points: ${points ? `genau ${points} Leitpunkte, kurz, wie im Prüfungsheft` : "leer (diese Aufgabe hat keine Leitpunkte)"}.
+- register: formell oder informell, wie die Aufgabe es verlangt.
+- modelAnswer: eine Musterlösung auf Niveau ${EXAM_CONTEXT[EXAM as Exclude<ExamId, "dtz">].level}, natürliches Deutsch, keine perfekte Muttersprache. Zeilenumbrüche mit \\n.
+${spec.hint ?? ""}`
+        })()
   const o = await ask(WritingOutput, prompt)
   const block = base("schreiben", teil, id, spec.title, spec.instruction)
   block.display.writing = o.tasks.map((t, i) => ({ key: "AB"[i], title: t.title, situation: t.situation, points: t.points }))
@@ -344,30 +349,20 @@ const SPEAKING_HINTS: Record<number, string> = {
   3: `Beide planen gemeinsam etwas (z. B. ein Fest im Kurs, einen Ausflug, einen Umzug helfen, ein Geschenk). Die Prüferin gibt die Aufgabe. Der Partner macht Vorschläge, stimmt zu, widerspricht höflich, fragt nach. points: genau 4 Planungspunkte (z. B. "Wann?", "Was mitbringen?", "Wer macht was?", "Wie viel kostet es?").`,
 }
 
-// research/start-deutsch-1.md §3.4, §5: a group exam at A1, here with one partner. Each card is answered once.
-const SD1_SPEAKING_HINTS: Record<number, string> = {
-  1: `Die Prüferin begrüßt kurz und bittet "du", sich vorzustellen. points: genau die Stichwörter Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby. cards: leer.
-turns: 1. pruefer: Bitte um Vorstellung. 2. du: Hinweis "Stell dich vor. Die Stichwörter helfen." 3. pruefer: bittet "du", etwas zu buchstabieren (Nachname oder Straße). 4. du: Hinweis "Buchstabier deinen Nachnamen." (oder die Straße) 5. pruefer: fragt nach einer Zahl (Telefonnummer, Hausnummer oder Postleitzahl). 6. du: Hinweis zur Zahl. 7. pruefer: kurzer Dank. Der Partner spricht in diesem Teil nicht.`,
-  2: `Thema der Runde, z. B. Essen und Trinken, Einkaufen, Wochenende, Freizeit, Arbeit. cards: genau 1 Karte für "du": label = "Thema: <Thema> · <ein Wort>" (z. B. "Thema: Essen und Trinken · Frühstück"), picto = null. points: das Thema.
-turns: 1. pruefer: nennt das Thema und erklärt kurz. 2. partner: stellt "du" eine einfache Frage zum Thema mit dem Wort von seiner Karte (z. B. "Was trinkst du gern?"). 3. du: Hinweis "Antworte auf die Frage." 4. du: Hinweis "Frag deine Partnerin (oder: deinen Partner) mit deiner Karte: <Wort>." – passend zum gender des Partners. 5. partner: antwortet kurz (1–2 Sätze, A1). 6. pruefer: kurzer Dank.`,
-  3: `cards: genau 1 Karte für "du" mit einem Gegenstand oder Schild als Bild (picto aus der Liste, label = das Wort, z. B. "Regenschirm"). points: leer.
-turns: 1. pruefer: erklärt kurz, dass man um etwas bittet. 2. du: Hinweis "Bitte deine Partnerin (oder: deinen Partner) um etwas. Deine Karte: <Wort>." – passend zum gender des Partners. 3. partner: reagiert kurz auf die Bitte (ja oder höflich nein, 1 Satz). 4. partner: bittet "du" um etwas Anderes (eine einfache Bitte, z. B. "Gibst du mir bitte den Kuli?"). 5. du: Hinweis "Reagiere auf die Bitte." 6. pruefer: beendet die Prüfung freundlich.`,
-}
-
 async function speakingBlock(teil: number, id: string, avoid: string[]): Promise<KurztestBlock> {
   const spec = openParts(EXAM).find((p) => p.skill === "sprechen" && p.teil === teil)!
-  const sd1 = EXAM === "start-deutsch-1"
   // The real exam keeps one partner through all three Teile: reuse the one already cast.
   const known = existing(`${ID_PREFIX}sprechen-`)[0]
   const partner = known && { name: known.display.speaking!.people.partner.name, voice: known.key.speaking!.voices.partner, pruefer: known.key.speaking!.voices.pruefer }
-  const o = await ask(SpeakingOutput, sd1 ? `Teil: Sprechen, Teil ${teil} "${spec.title}". Anweisung: "${spec.instruction}"
-Start Deutsch 1 ist eine Gruppenprüfung; hier üben "du" und eine Partnerin oder ein Partner (andere Prüfungsteilnehmende, Niveau A1) mit einer Prüferin oder einem Prüfer.
-${SD1_SPEAKING_HINTS[teil]}
-title: "${spec.title}". task: die Aufgabe, wie die Prüferin sie stellt, 1–2 sehr einfache Sätze.
-Bei "pruefer" und "partner" steht in text ihr echter Text (sehr einfach, A1). Bei "du" steht in text der Hinweis, in sampleAnswer eine gute Beispielantwort auf A1 (1–3 kurze Sätze; beim Buchstabieren die Buchstaben mit Bindestrich, z. B. "K-A-R-I-M"). Bei den anderen ist sampleAnswer leer.
+  const ctx = EXAM === "dtz" ? null : EXAM_CONTEXT[EXAM]
+  const o = await ask(SpeakingOutput, ctx ? `Teil: Sprechen, Teil ${teil} "${spec.title}" (etwa ${spec.minutes} Minuten). Anweisung: "${spec.instruction}"
+Rollen: eine Prüferin oder ein Prüfer ("pruefer"), eine Partnerin oder ein Partner ("partner", andere Prüfungsteilnehmende, Niveau ${ctx.level}, leichte Fehler sind okay) und "du".
+${spec.hint ?? ""}
+title: "${spec.title}". task: die Aufgabe, wie die Prüferin sie stellt, 1–2 Sätze auf Niveau ${ctx.level}.
+Bei "pruefer" und "partner" steht in text ihr echter Text (Niveau ${ctx.level}). Bei "du" steht in text ein kurzer Hinweis in du-Form, was du jetzt sagst, und in sampleAnswer eine gute Beispielantwort auf Niveau ${ctx.level}. Bei den anderen ist sampleAnswer leer.
 Partner und "du" sagen du zueinander, die Prüferin sagt Sie.
-pictureBrief: null.
-${partner ? `Der Partner oder die Partnerin heißt ${partner.name} (partner.name = "${partner.name}", partner.gender = "${voices[partner.voice as keyof typeof voices].gender}") und ist dieselbe Person wie in den anderen Teilen. Die Prüferin hat gender "${voices[partner.pruefer as keyof typeof voices].gender}".` : `partner.name: ein Vorname, der zu Prüfungsteilnehmenden in Deutschland passt.`}
+pictureBrief: null, außer der Hinweis verlangt ein Bild.
+${partner ? `Der Partner oder die Partnerin heißt ${partner.name} (partner.name = "${partner.name}", partner.gender = "${voices[partner.voice as keyof typeof voices].gender}") und ist dieselbe Person wie in den anderen Teilen. Die Prüferin hat gender "${voices[partner.pruefer as keyof typeof voices].gender}".` : `partner.name: ein Vorname, der zu Prüfungsteilnehmenden passt (${ctx.setting.split(";")[0]}).`}
 ${avoid.length ? `Schon vorhanden, wähle ein anderes Thema: ${avoid.join("; ")}` : ""}` : `Teil: Sprechen, Teil ${teil} "${spec.title}" (Paarprüfung, etwa ${spec.minutes} Minuten). Anweisung: "${spec.instruction}"
 Der DTZ prüft Sprechen zu zweit: Prüferin oder Prüfer, eine Partnerin oder ein Partner (andere Prüfungsteilnehmende, Niveau B1, mit leichten Fehlern ist okay) und "du".
 cards: leer.
@@ -378,7 +373,7 @@ Der Partner spricht "du" mit du an, die Prüferin spricht beide mit Sie an.
 pictureBrief: ${teil === 2 ? "Pflicht." : "null."}
 ${partner ? `Der Partner oder die Partnerin heißt ${partner.name} (partner.name = "${partner.name}", partner.gender = "${voices[partner.voice as keyof typeof voices].gender}") und ist dieselbe Person wie in den anderen Teilen. Die Prüferin hat gender "${voices[partner.pruefer as keyof typeof voices].gender}".` : `partner.name: ein Vorname, der zu Prüfungsteilnehmenden in Deutschland passt. Die Prüferin nennt den Partner mit Nachnamen; erfinde einen passenden.`}
 ${avoid.length ? `Schon vorhanden, wähle ein anderes Thema: ${avoid.join("; ")}` : ""}`)
-  const voiceOf = partner ? null : cast([{ id: "pruefer", gender: o.pruefer.gender }, { id: "partner", gender: o.partner.gender }])
+  const voiceOf = partner ? null : cast([{ id: "pruefer", gender: o.pruefer.gender }, { id: "partner", gender: o.partner.gender }], spec.accents)
   const pv = partner?.pruefer ?? voiceOf!.get("pruefer")!
   const av = partner?.voice ?? voiceOf!.get("partner")!
   const partnerName = partner?.name ?? o.partner.name.split(" ")[0]

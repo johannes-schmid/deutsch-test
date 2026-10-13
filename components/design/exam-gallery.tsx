@@ -4,6 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Clock, Headphones, RotateCcw, Users } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { ExamMark } from "@/components/design/variants/nachtzug-icons"
+import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
   ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamShell, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
   ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, type ShellSection,
@@ -200,6 +202,17 @@ export function ExamGallery() {
           <Panel className="lg:col-span-2"><MatchItem data={MATCH} value={{ 6: "a", 7: "c", 8: "x" }} review={MATCH_SOLUTION} /></Panel>
           <Panel className="lg:col-span-2"><GapItem data={GAP} value={{ 21: "am", 22: "Bestätigung" }} review={GAP_SOLUTION} /></Panel>
         </ExamStage>
+      </Block>
+
+      <Block title="Prüfungs-Marken" note="Unsere eigenen Marken, nie die Logos der Anbieter: Name des Anbieters in unserer Schrift, ein Ton pro Anbieter und die Flagge des Herkunftslands. So unterscheiden sich Goethe B1 und ÖSD B1 auf einen Blick.">
+        <div className="flex flex-wrap gap-5">
+          {EXAM_IDS.map((id) => (
+            <span key={id} className="flex w-[88px] flex-col items-center gap-2 text-center">
+              <ExamMark brand={EXAMS[id].brand} />
+              <span className="text-[12px] leading-tight text-v-muted">{EXAMS[id].name}</span>
+            </span>
+          ))}
+        </div>
       </Block>
 
       <Block title="Rückfragen" note="Statt der Browser-Fenster: unten ein Sheet auf dem Handy, ab Tablet eine Karte in der Mitte. Die sichere Wahl ist gefüllt und hat den Fokus. Ohne zweite Wahl ist es ein Hinweis.">

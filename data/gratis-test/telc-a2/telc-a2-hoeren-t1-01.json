@@ -1,0 +1,83 @@
+{
+  "id": "telc-a2-hoeren-t1-01",
+  "exam": "telc-a2",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:25.184Z",
+    "textType": "Nachricht von einer Freundin auf dem Anrufbeantworter"
+  },
+  "display": {
+    "instruction": "Sie hören eine Nachricht am Telefon. Ergänzen Sie die Notiz: Welche Information fehlt? Wählen Sie a, b oder c. Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "choice",
+        "item": {
+          "n": 1,
+          "prompt": "Treffen mit Miriam am Samstag um … Uhr vor dem Kino",
+          "options": [
+            {
+              "key": "a",
+              "label": "16:00"
+            },
+            {
+              "key": "b",
+              "label": "18:30"
+            },
+            {
+              "key": "c",
+              "label": "19:00"
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 18.08,
+      "plays": 2,
+      "situation": "Nachricht am Telefon",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 18.08
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Miriam",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/telc-a2-hoeren-t1-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "b",
+        "explanation": "Miriam möchte sich erst um halb sieben treffen, also um 18:30 Uhr. Um vier war der alte Plan, und um sieben fängt nur der Film an.",
+        "evidence": {
+          "text": "Hallo Jana, hier ist Miriam. Du, wegen Samstag: Wir wollten doch um vier ins Kino gehen. Das klappt bei mir leider nicht, ich muss bis fünf arbeiten. Können wir uns erst um halb sieben treffen? Der Film fängt dann um sieben an. Wir treffen uns direkt vor dem Kino am Marktplatz, okay? Ruf mich bitte kurz zurück, ja? Tschüss!",
+          "hit": "Können wir uns erst um halb sieben treffen?"
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "woman_irene",
+        "text": "Hallo Jana, hier ist Miriam. Du, wegen Samstag: Wir wollten doch um vier ins Kino gehen. Das klappt bei mir leider nicht, ich muss bis fünf arbeiten. Können wir uns erst um halb sieben treffen? Der Film fängt dann um sieben an. Wir treffen uns direkt vor dem Kino am Marktplatz, okay? Ruf mich bitte kurz zurück, ja? Tschüss!",
+        "delivery": "[friendly, casual, slightly hurried]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 362,
+      "at": "2026-10-13T05:54:44.846Z"
+    }
+  }
+}

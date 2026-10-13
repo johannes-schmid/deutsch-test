@@ -1,0 +1,99 @@
+{
+  "id": "goethe-b1-hoeren-t1-01",
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "teil": 1,
+  "status": "reviewed",
+  "generated": {
+    "model": "claude-opus-5-5",
+    "at": "2026-10-13T05:52:23.815Z",
+    "textType": "Nachricht auf der Mailbox (Hausverwaltung)"
+  },
+  "display": {
+    "instruction": "Sie hören einen kurzen Text. Zu jedem Text gibt es zwei Aufgaben. Ist die Aussage richtig oder falsch? Und welche Antwort passt: a, b oder c? Sie hören jeden Text zweimal.",
+    "items": [
+      {
+        "type": "rf",
+        "item": {
+          "n": 1,
+          "statement": "Der Techniker kommt an einem anderen Tag als geplant."
+        }
+      },
+      {
+        "type": "choice",
+        "item": {
+          "n": 2,
+          "prompt": "Was kann Frau Albrecht mit dem Schlüssel machen?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Sie kann ihn ins Büro der Hausverwaltung bringen."
+            },
+            {
+              "key": "b",
+              "label": "Sie kann ihn bei der Frau von nebenan lassen."
+            },
+            {
+              "key": "c",
+              "label": "Sie kann ihn am Dienstag dem Techniker geben."
+            }
+          ]
+        }
+      }
+    ],
+    "clip": {
+      "duration": 33.92,
+      "plays": 2,
+      "situation": "Nachricht auf der Mailbox",
+      "segments": [
+        {
+          "speaker": "S1",
+          "from": 0,
+          "to": 33.92
+        }
+      ],
+      "speakers": {
+        "S1": {
+          "name": "Hausverwaltung",
+          "tone": "var(--v-sk-lesen)"
+        }
+      },
+      "src": "/audio/kurztest/goethe-b1-hoeren-t1-01.mp3"
+    }
+  },
+  "key": {
+    "answers": [
+      {
+        "n": 1,
+        "correct": "richtig",
+        "explanation": "Der Techniker sollte am Dienstag kommen, ist aber krank. Deshalb kommt er erst am Donnerstag.",
+        "evidence": {
+          "text": "Guten Tag, Frau Albrecht, hier spricht Jens Hartmann von der Hausverwaltung Brenner. Ich rufe wegen der Heizung an. Sie haben uns ja letzte Woche gesagt, dass die Heizung im Bad nicht richtig warm wird. Leider kann der Techniker nicht wie geplant am Dienstag kommen, er ist krank. Er kommt jetzt am Donnerstag, so zwischen acht und zehn Uhr. Wenn Sie da nicht zu Hause sind, können Sie den Schlüssel auch bei Ihrer Nachbarin, Frau Ludwig, abgeben. Bitte nicht bei uns im Büro, das ist donnerstags geschlossen. Rufen Sie mich doch kurz zurück, unter null sechs neun, vier fünf sieben, zwei zwei null. Danke und auf Wiederhören!",
+          "hit": "Leider kann der Techniker nicht wie geplant am Dienstag kommen, er ist krank. Er kommt jetzt am Donnerstag, so zwischen acht und zehn Uhr."
+        }
+      },
+      {
+        "n": 2,
+        "correct": "b",
+        "explanation": "Sie soll den Schlüssel bei ihrer Nachbarin Frau Ludwig abgeben. Ins Büro geht nicht, denn das ist donnerstags geschlossen.",
+        "evidence": {
+          "text": "Guten Tag, Frau Albrecht, hier spricht Jens Hartmann von der Hausverwaltung Brenner. Ich rufe wegen der Heizung an. Sie haben uns ja letzte Woche gesagt, dass die Heizung im Bad nicht richtig warm wird. Leider kann der Techniker nicht wie geplant am Dienstag kommen, er ist krank. Er kommt jetzt am Donnerstag, so zwischen acht und zehn Uhr. Wenn Sie da nicht zu Hause sind, können Sie den Schlüssel auch bei Ihrer Nachbarin, Frau Ludwig, abgeben. Bitte nicht bei uns im Büro, das ist donnerstags geschlossen. Rufen Sie mich doch kurz zurück, unter null sechs neun, vier fünf sieben, zwei zwei null. Danke und auf Wiederhören!",
+          "hit": "Wenn Sie da nicht zu Hause sind, können Sie den Schlüssel auch bei Ihrer Nachbarin, Frau Ludwig, abgeben."
+        }
+      }
+    ],
+    "script": [
+      {
+        "speaker": "S1",
+        "voice": "man_ben",
+        "text": "Guten Tag, Frau Albrecht, hier spricht Jens Hartmann von der Hausverwaltung Brenner. Ich rufe wegen der Heizung an. Sie haben uns ja letzte Woche gesagt, dass die Heizung im Bad nicht richtig warm wird. Leider kann der Techniker nicht wie geplant am Dienstag kommen, er ist krank. Er kommt jetzt am Donnerstag, so zwischen acht und zehn Uhr. Wenn Sie da nicht zu Hause sind, können Sie den Schlüssel auch bei Ihrer Nachbarin, Frau Ludwig, abgeben. Bitte nicht bei uns im Büro, das ist donnerstags geschlossen. Rufen Sie mich doch kurz zurück, unter null sechs neun, vier fünf sieben, zwei zwei null. Danke und auf Wiederhören!",
+        "delivery": "[friendly, professional]"
+      }
+    ],
+    "tts": {
+      "model": "eleven_v4",
+      "characters": 651,
+      "at": "2026-10-13T05:56:14.316Z"
+    }
+  }
+}
