@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Globe } from "lucide-react"
 import { VButton } from "@/components/design/kit"
+import { Consent, ConsentSettingsButton } from "@/components/design/consent"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
 import { LANDING, type Locale } from "@/lib/i18n/landing"
 
@@ -71,9 +72,11 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             {g.links.map((l) => (
               <Link key={l.href} href={l.href} className="w-fit rounded transition-colors hover:text-v-ink">{l.label}</Link>
             ))}
+            {g.title === f.groups.info ? <ConsentSettingsButton locale={locale} /> : null}
           </nav>
         ))}
       </div>
+      <Consent locale={locale} />
     </footer>
   )
 }

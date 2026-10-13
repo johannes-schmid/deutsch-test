@@ -257,3 +257,9 @@
 **Outcome:** SUCCESS
 **What worked / went wrong:** Copied knmoefenen.nl's pattern: the title carries the primary keyword plus the year, the H1 uses a variant keyword plus a number, the eyebrow lists format facts, and the lead spells out the full exam name. tsc and build pass. Screenshots at 390 and 1440 look clean.
 **Lesson:** Title and H1 should target different query variants ("gratis üben" vs "Test") instead of repeating each other. A year in a title has to be updated by hand every January.
+
+## 2026-10-13 — Google Analytics behind an opt-in banner
+**Changed:** `components/design/consent.tsx` (banner + `@next/third-parties` GoogleAnalytics, loads only after "Akzeptieren"; ID from `NEXT_PUBLIC_GA_ID`), mounted in `SiteFooter` with a "Cookie-Einstellungen" footer link; `.consent-in` entry transition in `landing.css`; GA section in `/datenschutz`.
+**Outcome:** SUCCESS (tsc clean, build passes; Playwright: 0 GA requests before consent, gtag loads after accept, banner reopens from footer, decline removes `_ga` cookies).
+**What worked / went wrong:** Clearing `_ga` cookies then reloading left one cookie, because gtag rewrote it on unload. Setting `window['ga-disable-<ID>'] = true` before clearing fixed it.
+**Lesson:** To revoke GA consent, disable gtag first, then delete cookies, then reload. No GA without opt-in in DE (§ 25 TDDDG), unlike the Dutch sites.

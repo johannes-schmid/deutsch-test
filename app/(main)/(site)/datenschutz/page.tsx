@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   robots: { index: LEGAL_COMPLETE, follow: true },
 }
 
-// Mirrors what the code does today: no cookies or analytics, Kurztest data in a private Vercel Blob store,
+// Mirrors what the code does today: Google Analytics only after opt-in (components/design/consent.tsx), Kurztest data in a private Vercel Blob store,
 // Schreiben graded by Anthropic, Sprechen transcribed by ElevenLabs. Update this page before adding a tracker or payments.
 export default function DatenschutzPage() {
   const mail = <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>
@@ -19,7 +19,7 @@ export default function DatenschutzPage() {
         crumbs={[{ name: "Start", path: "/" }, { name: "Datenschutz", path: "/datenschutz" }]}
         h1="Datenschutzerklärung"
         lead="Hier steht, welche Daten wir verarbeiten, warum wir das tun und welche Rechte du hast."
-        meta="Stand: 12. Oktober 2026"
+        meta="Stand: 13. Oktober 2026"
       />
       <Prose>
         <h2>1. Wer ist verantwortlich?</h2>
@@ -39,10 +39,26 @@ export default function DatenschutzPage() {
           verwenden sie nur für Betrieb und Sicherheit.
         </p>
         <p>Rechtsgrundlage: berechtigtes Interesse an einer sicheren, funktionierenden Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
+        <p>Schriften laden wir von unserem eigenen Server, nicht von Google.</p>
+
+        <h3>Statistik mit Google Analytics (nur mit deiner Einwilligung)</h3>
         <p>
-          Wir setzen <strong>keine Cookies</strong> und nutzen derzeit <strong>keine Analyse- oder Werbedienste</strong>.
-          Schriften laden wir von unserem eigenen Server, nicht von Google.
+          Wenn du im Hinweis auf <strong>Akzeptieren</strong> klickst, nutzen wir Google Analytics 4 von Google Ireland
+          Limited, Gordon House, Barrow Street, Dublin 4, Irland. Damit sehen wir, welche Seiten besucht werden und
+          wie die Tests genutzt werden. Klickst du auf <strong>Ablehnen</strong>, laden wir Google Analytics nicht.
         </p>
+        <p>
+          Google setzt dafür Cookies (<code>_ga</code>, <code>_ga_…</code>, Laufzeit bis zu 2 Jahre) und verarbeitet
+          zum Beispiel aufgerufene Seiten, Klicks, ungefähren Standort, Gerät und Browser. Google Analytics 4
+          speichert keine IP-Adressen. Die Daten können auch in die USA übermittelt werden. Google ist nach dem
+          EU-US Data Privacy Framework zertifiziert. Wir löschen die Daten in Google Analytics nach 2 Monaten.
+        </p>
+        <p>
+          Rechtsgrundlage: deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Du kannst sie jederzeit
+          über <strong>Cookie-Einstellungen</strong> unten auf jeder Seite widerrufen. Mehr dazu:{" "}
+          <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a>.
+        </p>
+        <p>Weitere Cookies oder Werbedienste nutzen wir nicht. Deine Wahl speichern wir nur in deinem Browser.</p>
 
         <h2>3. Wenn du einen Gratis-Test machst</h2>
         <p>Den Test machst du ohne Konto. Wir speichern deine Antworten unter einer zufälligen Nummer, ohne Namen.</p>
@@ -86,9 +102,10 @@ export default function DatenschutzPage() {
           <li><strong>Vercel Inc.</strong>: Hosting der Website und Speicher für Testergebnisse.</li>
           <li><strong>Anthropic PBC</strong>: Feedback für Schreiben.</li>
           <li><strong>ElevenLabs Inc.</strong>: Umwandlung von Sprachaufnahmen in Text, und die Stimmen in den Hörtexten.</li>
+          <li><strong>Google Ireland Limited</strong>: Statistik mit Google Analytics, nur mit deiner Einwilligung.</li>
         </ul>
         <p>
-          Diese Firmen sitzen in den USA. Die Übermittlung stützt sich auf das EU-US Data Privacy Framework oder auf
+          Diese Firmen sitzen in den USA oder geben Daten dorthin weiter. Die Übermittlung stützt sich auf das EU-US Data Privacy Framework oder auf
           die Standardvertragsklauseln der EU-Kommission. Wir verkaufen deine Daten nie.
         </p>
 

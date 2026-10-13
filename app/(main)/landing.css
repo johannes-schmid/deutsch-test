@@ -120,3 +120,7 @@
 @media (prefers-reduced-transparency: reduce) {
   .glass { background: var(--v-surface); backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
+
+.consent-in { transition: opacity 320ms var(--ease-out-strong), transform 320ms var(--ease-out-strong); }
+@starting-style { .consent-in { opacity: 0; transform: translateY(12px); } }
+@media (prefers-reduced-motion: reduce) { @starting-style { .consent-in { transform: none; } } }
