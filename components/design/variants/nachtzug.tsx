@@ -4,7 +4,7 @@ import { FORMAT_STAND, LANGUAGES } from "@/lib/design/content"
 import { PLANS, formatEuro } from "@/lib/pricing"
 import { LANDING, NUMBER_LOCALE, type LandingCopy, type Locale } from "@/lib/i18n/landing"
 import { Check, Clock as ClockIcon, Headphones, Lock } from "lucide-react"
-import { LevelScale, VButton } from "../kit"
+import { LevelScale, Photo, VButton } from "../kit"
 import { PlatformDemo } from "./nachtzug-demo"
 import { ExamTicket, LevelPath, LevelSeal, MetaChip, PromiseArt, TestCard } from "./nachtzug-icons"
 import { SiteFooter, SiteGlow, SiteNav } from "../site-chrome"
@@ -151,14 +151,6 @@ function audienceArt(t: LandingCopy) {
     </div>,
     <ExamTicket key="ticket" t={t} />,
   ]
-}
-
-function Photo({ token, className, children }: { token: string; className?: string; children?: React.ReactNode }) {
-  return (
-    <div className={`photo ${className ?? ""}`} style={{ ["--photo" as string]: `var(${token})` }}>
-      {children}
-    </div>
-  )
 }
 
 export function Nachtzug({ locale }: { locale: Locale }) {

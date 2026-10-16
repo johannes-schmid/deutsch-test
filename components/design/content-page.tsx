@@ -4,24 +4,31 @@ import { VButton } from "@/components/design/kit"
 import type { Crumb } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
-/** Breadcrumb, H1 and lead: the top of every text page (Ratgeber, legal, landings). No eyebrow; the H1 carries itself. */
+/** The visible trail; pass the same list to breadcrumbList() for the JSON-LD. */
+export function Crumbs({ crumbs }: { crumbs: Crumb[] }) {
+  return (
+    <nav aria-label="Brotkrumen">
+      <ol className="flex flex-wrap items-center gap-1 text-[13.5px] text-v-muted">
+        {crumbs.map((c, i) => (
+          <li key={c.path} className="flex items-center gap-1">
+            {i > 0 ? <ChevronRight className="size-3.5 rtl:-scale-x-100" aria-hidden="true" /> : null}
+            {i === crumbs.length - 1 ? (
+              <span aria-current="page" className="text-v-ink">{c.name}</span>
+            ) : (
+              <Link href={c.path} className="rounded transition-colors hover:text-v-ink">{c.name}</Link>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+/** Breadcrumb, H1 and lead: the top of every text page (legal, landings). No eyebrow; the H1 carries itself. */
 export function PageHeader({ crumbs, h1, lead, meta }: { crumbs: Crumb[]; h1: string; lead?: string; meta?: string }) {
   return (
     <header className="flex max-w-[64ch] flex-col items-start gap-5 pt-6 pb-10 sm:pt-10 sm:pb-14">
-      <nav aria-label="Brotkrumen">
-        <ol className="flex flex-wrap items-center gap-1 text-[13.5px] text-v-muted">
-          {crumbs.map((c, i) => (
-            <li key={c.path} className="flex items-center gap-1">
-              {i > 0 ? <ChevronRight className="size-3.5 rtl:-scale-x-100" aria-hidden="true" /> : null}
-              {i === crumbs.length - 1 ? (
-                <span aria-current="page" className="text-v-ink">{c.name}</span>
-              ) : (
-                <Link href={c.path} className="rounded transition-colors hover:text-v-ink">{c.name}</Link>
-              )}
-            </li>
-          ))}
-        </ol>
-      </nav>
+      <Crumbs crumbs={crumbs} />
       <h1 className="v-display pb-1 text-[clamp(36px,5vw,60px)] leading-[1.06]">{h1}</h1>
       {lead ? <p className="text-[17px] leading-relaxed text-v-muted sm:text-lg">{lead}</p> : null}
       {meta ? <p className="v-num text-[13px] text-v-muted">{meta}</p> : null}

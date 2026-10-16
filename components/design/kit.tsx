@@ -35,6 +35,15 @@ export function VButton({ kind = "cta", size = "md", className, ...props }: VBut
   )
 }
 
+/** A blurred gradient "photo" field (`--g-photo-1` … `-6`). Product cards sit on it in glass. */
+export function Photo({ token, className, children }: { token: string; className?: string; children?: React.ReactNode }) {
+  return (
+    <div className={cn("photo", className)} style={{ ["--photo" as string]: `var(${token})` }}>
+      {children}
+    </div>
+  )
+}
+
 export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn("font-display text-[17px] font-bold tracking-[-0.01em] whitespace-nowrap", className)}>

@@ -286,3 +286,20 @@
 **Lesson:**
 - Before fanning out agents over shared config, give each unit its own file and an aggregator, and keep the shared code changes for yourself.
 - Never use a provider's logo for a "nicht verbunden" product. A badge with our own type, a provider tone and a country flag tells the exams apart just as well.
+
+## 2026-10-16 — Blog with 3 draft articles and blog blocks in the design system
+**Changed:** `/blog` index + 3 static post routes in `app/(main)/(site)/blog/`, posts in `data/blog/*.tsx` (registry `lib/blog/posts.ts`), blocks in `components/design/article.tsx`, renderer + BlogPosting/FAQPage/Breadcrumb JSON-LD in `components/design/blog-article.tsx`, `.article-body` in `landing.css`, `/design/blog`, footer link + sitemap gated on reviewed posts, 16 new rows in `seo/facts.md`, `Photo` moved to `kit.tsx`.
+**Outcome:** SUCCESS (tsc clean, `next build` passes, 390/1440 screenshots with no horizontal scroll; production build 404s the drafts and leaves them out of the sitemap and footer).
+**What worked / went wrong:**
+- A research agent checked every DTZ fact against g.a.s.t., IntTestV and IntV before the articles were written. It found that external candidates **cannot** take the DTZ, that Hören is played once, and that Sprechen has no prep time. CLAUDE.md §2 still says audience 1 retakes "as external candidates".
+- `Prose` styles every descendant `ul/p`, which would restyle the blocks inside it. The fix was a separate `.article-body` that styles only the direct prose children of a section.
+- Sections as `{ id, title, body: JSX }` mean the table of contents can never disagree with the headings.
+**Lesson:**
+- Before writing a guide, check exam facts against the current operator's pages (g.a.s.t. since 2023, not telc) and the regulation. Our own CLAUDE.md had three wrong DTZ assumptions.
+- Gate drafts on `NODE_ENV === "development"`, not on `!== "production"`, so preview builds can't leak them.
+
+## 2026-10-16 — Blog reworked on inburgeringoefenen.nl's layout
+**Changed:** `components/design/article.tsx` rewritten (feature/side/grid cards, header with CTA + cover tile, white reading card, summary card, proof line, `NightCta`, related list); new `article-interactive.tsx` (scroll-spy TOC, `QuizCard` on the exam's `ChoiceItem`, `BlogFilter` chips); `lib/blog/author.ts`; posts get `crumb`, `category`, `summary`, `cover.mini`; `.nz-night` in landing.css.
+**Outcome:** SUCCESS (tsc, eslint, `next build` pass; 390/1440 screenshots, no horizontal scroll).
+**What worked / went wrong:** The live site screenshots were more useful than the code summary for copying the layout. The first scroll-spy observed headings with a narrow root, so a jump-scroll changed nothing and the TOC stuck on 01. Observing whole sections against a 1 % line at 40 % fixed it, because the sections are contiguous.
+**Lesson:** For scroll-spy with IntersectionObserver, observe the contiguous sections, not the headings. Never port a "teacher note" block without a real person's first-hand notes behind it.

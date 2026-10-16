@@ -1,5 +1,7 @@
 # Keyword strategy: homepage and exam pages
 
+> **Update 2026-10-16:** guides live under `/blog` (Hannes's call), not `/ratgeber`. Three drafts written, see the table below.
+
 > **Update 2026-10-12 (later):** German is the default again: `/` is German, `/en` is English, `/de` 308s to `/`.
 > The notes below about "/" (English) now apply to `/en`, and those about `/de` to `/`.
 >
@@ -56,7 +58,9 @@ match search phrasing in a guide that explains the result levels.
 | `/a2-zu-b1` | DTZ nur A2 | DTZ wiederholen · von A2 zu B1 |
 | `/b1-einbuergerung` | B1 für Einbürgerung | Sprachnachweis Einbürgerung B1 |
 | `/einbuergerungstest` | Einbürgerungstest online üben | Einbürgerungstest bestehen · 310 Fragen (see the LiD TODO in CLAUDE.md §4) |
-| `/ratgeber/dtz-bestehen` | DTZ bestehen | "Was heißt beim DTZ bestanden?" Explains B1 / A2 / unter A2 |
+| `/blog/dtz-bestehen` | DTZ bestehen | DTZ Ergebnis · DTZ Punkte · DTZ Bewertung · "Was heißt beim DTZ bestanden?" (not "DTZ Prüfung B1": `/dtz` owns it) |
+| `/blog/b1-pruefung` | B1 Prüfung | B1 Deutsch Prüfung · welche B1 Prüfung · DTZ oder telc B1 · B1 Prüfung Einbürgerung |
+| `/blog/b1-brief-schreiben` | B1 Prüfung Schreiben Tipps | telc B1 Prüfung Schreiben Tipps · B1 Brief schreiben Beispiel · Redemittel. `/dtz/schreiben` (not built) keeps "DTZ Schreiben üben" |
 
 Leave off every page: "pdf" queries (download intent; we can't host official material).
 

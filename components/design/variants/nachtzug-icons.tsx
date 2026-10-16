@@ -21,7 +21,8 @@ const LEVELS: Record<LevelId, { label: string; steps: number }> = {
   b1: { label: "B1", steps: 3 },
 }
 
-function Tile({ icon: Icon, tone, size = "md" }: { icon: LucideIcon; tone: string; size?: "sm" | "md" | "lg" }) {
+/** A glass tile with a tinted blob behind a Lucide icon. PartIcon, TestIcon and the blog notes build on it. */
+export function Tile({ icon: Icon, tone, size = "md" }: { icon: LucideIcon; tone: string; size?: "sm" | "md" | "lg" }) {
   const box = { sm: "size-9 rounded-xl", md: "size-12 rounded-2xl", lg: "size-16 rounded-[22px]" }[size]
   const glyph = { sm: "size-4", md: "size-5", lg: "size-7" }[size]
   return (

@@ -4,6 +4,7 @@ import { VButton } from "@/components/design/kit"
 import { Consent, ConsentSettingsButton } from "@/components/design/consent"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
 import { LANDING, type Locale } from "@/lib/i18n/landing"
+import { livePosts } from "@/lib/blog/posts"
 
 const HOME: Record<Locale, string> = { de: "/", en: "/en" }
 
@@ -55,7 +56,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
   const f = t.footer
   const groups = [
     { title: f.groups.exam, links: [{ label: "DTZ", href: "/dtz" }, { label: t.nav.links[1].label, href: "/gratis-test" }, { label: "A2 → B1", href: "/a2-zu-b1" }, { label: "B1 für die Einbürgerung", href: "/b1-einbuergerung" }, { label: t.nav.links[2].label, href: "/preise" }] },
-    { title: f.groups.info, links: [{ label: f.about, href: "/ueber-uns" }, { label: f.contact, href: "/kontakt" }, { label: f.imprint, href: "/impressum" }, { label: f.privacy, href: "/datenschutz" }] },
+    { title: f.groups.info, links: [...(livePosts().length ? [{ label: f.blog, href: "/blog" }] : []), { label: f.about, href: "/ueber-uns" }, { label: f.contact, href: "/kontakt" }, { label: f.imprint, href: "/impressum" }, { label: f.privacy, href: "/datenschutz" }] },
   ]
   return (
     <footer className="border-t border-v-line">

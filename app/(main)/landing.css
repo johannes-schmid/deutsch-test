@@ -130,3 +130,25 @@
 .consent-panel { grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 260ms var(--ease-out-strong), opacity 200ms ease; }
 .consent-panel[data-open="true"] { grid-template-rows: 1fr; opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .consent-panel { transition: opacity 150ms ease; } }
+
+/* ---------------------------------------------------------------- Blog article body
+   Styles only the prose children of a section, so design blocks inside keep their own styles. */
+.article-body { max-width: 68ch; font-size: 17px; line-height: 1.7; color: var(--v-ink); }
+.article-body > section { scroll-margin-top: 24px; }
+.article-body > section + section { margin-top: 64px; }
+.article-body h2 { margin-bottom: 18px; font-size: clamp(24px, 2.8vw, 30px); line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.article-body section > h3 { margin-top: 36px; margin-bottom: 6px; font-size: 19px; line-height: 1.3; font-weight: 600; text-wrap: balance; }
+.article-body :where(section > p, section > ul, section > ol) { margin-block: 16px; text-wrap: pretty; }
+.article-body :where(section > ul, section > ol) { display: flex; flex-direction: column; gap: 8px; padding-inline-start: 22px; }
+.article-body section > ul { list-style: disc; }
+.article-body section > ol { list-style: decimal; }
+.article-body :where(section > ul, section > ol) > li { padding-inline-start: 4px; }
+.article-body :where(section > ul, section > ol) > li::marker { color: var(--v-muted); }
+.article-body strong { font-weight: 600; }
+.article-body a { text-decoration: underline; text-decoration-color: var(--v-line); text-decoration-thickness: 1.5px; text-underline-offset: 4px; transition: text-decoration-color 150ms ease; }
+.article-body a:hover { text-decoration-color: currentColor; }
+.article-body ::selection, .v-frame ::selection { background: color-mix(in srgb, var(--p-glow) 45%, transparent); color: var(--v-ink); }
+.article-body h2 { scroll-margin-top: 24px; }
+/* The one dark block on a blog page (closing CTA). */
+.nz-night { position: relative; isolation: isolate; overflow: hidden; color: #F2EFE9; background: radial-gradient(55% 140% at 100% 110%, color-mix(in srgb, var(--p-glow) 55%, transparent) 0%, transparent 70%), radial-gradient(45% 120% at 0% 0%, #2E4FB8 0%, transparent 70%), #0B1020; }
+.nz-night::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: var(--noise); mix-blend-mode: overlay; opacity: 0.3; pointer-events: none; }

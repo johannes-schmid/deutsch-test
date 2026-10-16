@@ -3,6 +3,7 @@ import { EXAM_IDS, examPath } from "@/lib/exams"
 import { EXAM_PAGES } from "@/lib/i18n/kurztest"
 import { liveSkills } from "@/lib/kurztest/data"
 import { LEGAL_COMPLETE, absUrl } from "@/lib/seo"
+import { POSTS } from "@/lib/blog/posts"
 
 /**
  * Only indexable URLs. /design/* and /admin/* are noindex or behind a password, so they stay out:
@@ -25,6 +26,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ]
     }),
     ...["/a2-zu-b1", "/b1-einbuergerung", "/preise"].map((p) => ({ url: absUrl(p), changeFrequency: "monthly" as const, priority: 0.7 })),
+    // Reviewed posts only; drafts are noindex and 404 outside dev.
+    ...(POSTS.some((p) => p.status === "reviewed") ? [{ url: absUrl("/blog"), changeFrequency: "weekly" as const, priority: 0.6 }] : []),
+    ...POSTS.filter((p) => p.status === "reviewed").map((p) => ({ url: absUrl(`/blog/${p.slug}`), lastModified: p.reviewed, changeFrequency: "monthly" as const, priority: 0.7 })),
     ...["/ueber-uns", "/kontakt"].map((p) => ({ url: absUrl(p), changeFrequency: "yearly" as const, priority: 0.3 })),
     // Impressum and Datenschutz are noindex until the operator's address is filled in.
     ...(LEGAL_COMPLETE ? ["/impressum", "/datenschutz"].map((p) => ({ url: absUrl(p), changeFrequency: "yearly" as const, priority: 0.2 })) : []),

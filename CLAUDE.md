@@ -205,7 +205,7 @@ Mollie.** Don't port the Dutch sites' Mollie routes; rebuild that layer on Strip
 /a2-zu-b1                 landing: stuck at A2
 /einbuergerungstest       free: all 310 BAMF questions incl. Bundesland questions
 /leben-in-deutschland     free civic test practice (see the TODO in §4)
-/ratgeber/...             guides (e.g. booking the DTZ as an external candidate)
+/blog/...                 guides (data/blog/<slug>.tsx; drafts 404 outside `next dev`)
 /preise                   pricing
 /impressum · /datenschutz mandatory
 ```
@@ -265,6 +265,9 @@ app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unl
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
 app/(admin)/admin/kurztest + proxy.ts # funnel + leads + CSV, basic auth via ADMIN_PASSWORD (also guards /design/kurztest)
 scripts/{generate,tts,validate}-kurztest.ts  # Claude drafts → eleven_v4 audio → blueprint check
+data/blog/<slug>.tsx · lib/blog/       # blog posts (sections as JSX, status draft/reviewed) · registry (POSTS, isLive) and types
+components/design/article.tsx        # blog blocks (FactBox, Note, Steps, Compare, DoDont, DataTable, ExamStrip, LetterSample, …); blog-article.tsx renders a post + JSON-LD
+app/(main)/(site)/blog/              # /blog index + one static route per post; /design/blog shows every block
 ```
 
 **TODO:** extend with `data/`, `supabase/`, `scripts/`, `seo/` (with `facts.md`) when they exist.

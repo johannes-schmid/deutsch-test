@@ -79,7 +79,7 @@ const de = {
     ],
   },
   cta: { h2: "Bereit für den Prüfungstag?", text: "Mach jetzt deinen ersten Modelltest. Gratis und ohne Anmeldung.", button: "Gratis Test starten" },
-  footer: { disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", about: "Über uns", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
+  footer: { disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", about: "Über uns", blog: "Blog", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
   parts: {
     hoeren: { name: "Hören", meta: "ca. 25 Min" },
     lesen: { name: "Lesen", meta: "45 Min" },
@@ -220,7 +220,7 @@ const en: LandingCopy = {
     ],
   },
   cta: { h2: "Ready for exam day?", text: "Take your first mock exam now. Free, no account needed.", button: "Start free test" },
-  footer: { disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", about: "About us", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
+  footer: { disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", about: "About us", blog: "Blog", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
   parts: {
     hoeren: { name: "Listening", meta: "approx. 25 min" },
     lesen: { name: "Reading", meta: "45 min" },
