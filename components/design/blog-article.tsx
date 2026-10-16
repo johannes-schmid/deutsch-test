@@ -44,7 +44,7 @@ export function BlogArticle({ slug }: { slug: string }) {
         datePublished: post.published,
         dateModified: post.reviewed,
         image: absUrl(OG_IMAGE.url),
-        author: { "@type": "Person", name: AUTHOR.name, url: absUrl(AUTHOR.href), worksFor: PROVIDER },
+        author: { "@type": "Person", name: AUTHOR.name, url: absUrl(AUTHOR.href), jobTitle: AUTHOR.jobTitle, ...(AUTHOR.bio ? { description: AUTHOR.bio } : {}), sameAs: AUTHOR.sameAs, worksFor: PROVIDER },
         publisher: PROVIDER,
         citation: post.sources.map((s) => s.url),
       },
