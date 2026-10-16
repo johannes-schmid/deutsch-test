@@ -12,7 +12,7 @@ const GOETHE = { name: "Goethe-Institut / ÖSD: Goethe-Zertifikat B1, Übungssat
 
 export const b1BriefSchreiben: BlogPost = {
   slug: "b1-brief-schreiben",
-  status: "draft",
+  status: "reviewed",
   title: "B1-Prüfung Schreiben: Brief und E-Mail mit Beispiel",
   crumb: "B1-Prüfung Schreiben",
   description: "So schreibst du den Brief in der B1-Prüfung: Aufbau, nützliche Sätze und ein Beispiel. Für DTZ und telc Deutsch B1, mit den echten Bewertungskriterien.",

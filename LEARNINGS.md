@@ -303,3 +303,9 @@
 **Outcome:** SUCCESS (tsc, eslint, `next build` pass; 390/1440 screenshots, no horizontal scroll).
 **What worked / went wrong:** The live site screenshots were more useful than the code summary for copying the layout. The first scroll-spy observed headings with a narrow root, so a jump-scroll changed nothing and the TOC stuck on 01. Observing whole sections against a 1 % line at 40 % fixed it, because the sections are contiguous.
 **Lesson:** For scroll-spy with IntersectionObserver, observe the contiguous sections, not the headings. Never port a "teacher note" block without a real person's first-hand notes behind it.
+
+## 2026-10-16 — Blog in the header, /dtz becomes a blog article, all content reviewed
+**Changed:** the 3 blog posts set to `status: "reviewed"` (exam blocks already were); header nav is Blog · Gratis-Test · Preise · Fragen (`lib/i18n/landing.ts`); `/dtz` converted to `data/blog/dtz-pruefung.tsx` at `/blog/dtz-pruefung` with a 308 from `/dtz` (`next.config.ts`); internal links, footer, sitemap, llms.txt repointed.
+**Outcome:** SUCCESS (`next build`, tsc, eslint pass; 390/1440 screenshots, no horizontal scroll; `/dtz` 308s; sitemap lists 4 posts).
+**What worked / went wrong:** A Blog dropdown (shadcn navigation-menu) was built first, then dropped on request. Its popup portalled to `<body>`, outside `.v-frame`, so it lost the Nachtzug tokens. After deleting a route, `tsc` fails on stale `.next/types` until the next build.
+**Lesson:** Any Base UI portal must target the nearest `.v-frame` (as `components/exam/confirm.tsx` does). Run `next build` before `tsc` after removing a route.

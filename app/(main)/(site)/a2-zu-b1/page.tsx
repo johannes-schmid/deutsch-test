@@ -62,7 +62,7 @@ export default function A2ZuB1Page() {
           Situation ab. Frag deine Kursträgerin oder das BAMF. Das ist verbindlich, wir sind es nicht.
         </p>
         <p>
-          Wie der DTZ aufgebaut ist, liest du auf unserer Seite <Link href="/dtz">DTZ Prüfung</Link>.
+          Wie der DTZ aufgebaut ist, liest du auf unserer Seite <Link href="/blog/dtz-pruefung">DTZ Prüfung</Link>.
         </p>
       </Prose>
 

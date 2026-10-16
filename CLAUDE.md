@@ -196,7 +196,7 @@ Mollie.** Don't port the Dutch sites' Mollie routes; rebuild that layer on Strip
 
 ```
 /                         home, diagnostic CTA ("Wie weit bist du von B1?")
-/dtz                      DTZ overview → /dtz/hoeren · /dtz/lesen · /dtz/schreiben · /dtz/sprechen
+/dtz                      308 → /blog/dtz-pruefung (the DTZ overview is a blog article since 2026-10-16)
 /dtz/modelltest/[n]       full mock exams
 /gratis-test              free tests: pick level (A1/A2/B1) → exam → /gratis-test/{exam}/{skill}
                           (only exams with reviewed content link out; /dtz/kurztest 308s to /gratis-test/dtz)

@@ -71,7 +71,7 @@ export default function B1EinbuergerungPage() {
           <li>Mach vor der Prüfung noch einmal einen ganzen Test mit Zeit.</li>
         </ul>
         <p>
-          Wie der DTZ aufgebaut ist, liest du auf unserer Seite <Link href="/dtz">DTZ Prüfung</Link>.
+          Wie der DTZ aufgebaut ist, liest du auf unserer Seite <Link href="/blog/dtz-pruefung">DTZ Prüfung</Link>.
         </p>
         <p className="text-[14.5px] text-v-muted">
           Das ist keine Rechtsberatung. Verbindlich ist, was deine Einbürgerungsbehörde sagt. Stand: 10/2026.

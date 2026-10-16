@@ -16,7 +16,7 @@ const GER = { name: "Europarat: Gemeinsamer europäischer Referenzrahmen, Global
 
 export const b1Pruefung: BlogPost = {
   slug: "b1-pruefung",
-  status: "draft",
+  status: "reviewed",
   title: "B1-Prüfung: DTZ, telc, Goethe oder ÖSD im Vergleich",
   crumb: "B1-Prüfung",
   description: "Welche B1-Prüfung passt zu dir? DTZ, telc Deutsch B1, Goethe- und ÖSD-Zertifikat B1 im Vergleich: Aufbau, Dauer, Ergebnis und Einbürgerung.",

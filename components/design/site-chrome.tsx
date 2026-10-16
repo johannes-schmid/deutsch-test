@@ -55,7 +55,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
   const t = LANDING[locale]
   const f = t.footer
   const groups = [
-    { title: f.groups.exam, links: [{ label: "DTZ", href: "/dtz" }, { label: t.nav.links[1].label, href: "/gratis-test" }, { label: "A2 → B1", href: "/a2-zu-b1" }, { label: "B1 für die Einbürgerung", href: "/b1-einbuergerung" }, { label: t.nav.links[2].label, href: "/preise" }] },
+    { title: f.groups.exam, links: [{ label: "DTZ", href: "/blog/dtz-pruefung" }, { label: t.nav.links[1].label, href: "/gratis-test" }, { label: "A2 → B1", href: "/a2-zu-b1" }, { label: "B1 für die Einbürgerung", href: "/b1-einbuergerung" }, { label: t.nav.links[2].label, href: "/preise" }] },
     { title: f.groups.info, links: [...(livePosts().length ? [{ label: f.blog, href: "/blog" }] : []), { label: f.about, href: "/ueber-uns" }, { label: f.contact, href: "/kontakt" }, { label: f.imprint, href: "/impressum" }, { label: f.privacy, href: "/datenschutz" }] },
   ]
   return (

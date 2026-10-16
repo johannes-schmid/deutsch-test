@@ -14,7 +14,7 @@ const INTV = { name: "§ 17 IntV", url: "https://www.gesetze-im-internet.de/intv
 
 export const dtzBestehen: BlogPost = {
   slug: "dtz-bestehen",
-  status: "draft",
+  status: "reviewed",
   title: "DTZ bestehen: Was B1, A2 und unter A2 bedeuten",
   crumb: "DTZ bestehen",
   description: "Beim DTZ gibt es kein „bestanden“. Du bekommst B1, A2 oder unter A2. So werden Hören, Lesen, Schreiben und Sprechen bewertet, mit allen Punktgrenzen.",

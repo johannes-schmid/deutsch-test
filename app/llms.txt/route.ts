@@ -17,7 +17,7 @@ Die Website ist auf einfachem Deutsch geschrieben und spricht Lernende mit „du
 
 ## Prüfung
 
-- [DTZ Prüfung: Aufbau, Ablauf und Bewertung](${u("/dtz")}): die vier Teile, Zeiten und das Ergebnis
+- [DTZ Prüfung: Aufbau, Ablauf und Bewertung](${u("/blog/dtz-pruefung")}): die vier Teile, Zeiten und das Ergebnis
 - [Im DTZ nur A2? So schaffst du B1](${u("/a2-zu-b1")}): für Menschen, die den DTZ wiederholen
 - [B1 für die Einbürgerung](${u("/b1-einbuergerung")}): was § 10 StAG verlangt und wie man sich vorbereitet
 

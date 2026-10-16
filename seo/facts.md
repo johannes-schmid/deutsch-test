@@ -10,7 +10,7 @@ If it isn't in this file, it doesn't ship.
 | DTZ result: B1, A2 or unter A2, no pass/fail | /dtz, landing | IntV § 17 Abs. 1 ("skalierter Sprachtest"); TODO(hannes): add the telc/g.a.s.t. Handbuch | 2026-10-12 |
 | Einbürgerung needs "ausreichende Kenntnisse der deutschen Sprache" = B1 | /b1-einbuergerung | [StAG § 10 Abs. 1 Nr. 6, Abs. 4](https://www.gesetze-im-internet.de/stag/__10.html) | 2026-10-12 |
 | Exceptions for illness, disability, age | /b1-einbuergerung | StAG § 10 Abs. 6 (same link) | 2026-10-12 |
-| Timings: Hören ca. 25, Lesen 45, Schreiben 30, Sprechen ca. 16 Min | /dtz, landing | CLAUDE.md §2. TODO(hannes): official source (telc DTZ Modelltest / Handbuch) | unverified |
+| Timings: Hören ca. 25, Lesen 45, Schreiben 30, Sprechen ca. 16 Min | /blog/dtz-pruefung, landing | CLAUDE.md §2. TODO(hannes): official source (telc DTZ Modelltest / Handbuch) | unverified |
 | VAT 19% included in prices | /preise | German standard rate (UStG § 12 Abs. 1) | 2026-10-12 |
 | Placeholder prices 19.90 / 44.90 / 74.90 € | /preise | TestGerman benchmark, `lib/pricing.ts`. TODO(hannes): real prices | 2026-10-12 |
 
@@ -40,7 +40,7 @@ IntTestV https://www.gesetze-im-internet.de/inttestv/ · IntV § 17 https://www.
 
 | Fact | Used on | Source | Checked |
 |---|---|---|---|
-| DTZ written part 100 min without break: Hören ca. 25, Lesen 45, Schreiben 30; Sprechen pair exam ca. 16 min (law: "circa 15") | /blog/b1-pruefung, /blog/dtz-bestehen | G2, G3 p. 7, IntTestV § 3 Abs. 1. Resolves the "unverified" timings row above | 2026-10-16 |
+| DTZ written part 100 min without break: Hören ca. 25, Lesen 45, Schreiben 30; Sprechen pair exam ca. 16 min (law: "circa 15") | /blog/b1-pruefung, /blog/dtz-bestehen, /blog/dtz-pruefung | G2, G3 p. 7, IntTestV § 3 Abs. 1. Resolves the "unverified" timings row above | 2026-10-16 |
 | DTZ Hören 4 Teile / 20 items, every text played once; Lesen 5 Teile / 25 items | /blog/b1-pruefung | G1 ("Alle Texte werden einmal gehört"), G3 p. 6 | 2026-10-16 |
 | DTZ Sprechen: no preparation time; 3 Teile (über sich sprechen, über Erfahrungen sprechen mit Bild, gemeinsam etwas planen) | /blog/b1-pruefung, /blog/dtz-bestehen | G1 ("Eine Vorbereitungszeit ist nicht vorgesehen"), G3 p. 27 | 2026-10-16 |
 | DTZ scoring: Hören + Lesen together 45 points (B1 33–45, A2 20–32); Schreiben 20 (B1 15–20, A2 7–14); Sprechen 100 (B1 75–100, A2 35–74,5) | /blog/dtz-bestehen | G1, G3 pp. 47–48 | 2026-10-16 |
