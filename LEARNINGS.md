@@ -351,3 +351,9 @@
 **Outcome:** SUCCESS locally (tsc, eslint, `next build`; submit → unlock → cached re-unlock → email cap 429 → admin page + CSV checked against the local DB). Production needs the migration and `SUPABASE_SECRET_KEY`.
 **What worked / went wrong:** Production threw "Blob store is not connected" on the first real submission: the Blob store was never connected (noted as open in the 2026-10-12 entry), and the error only fires on a write. Limits are now count queries on `graded_at`, so no marker files.
 **Lesson:** An "open for production" item in LEARNINGS needs a check before launch. A route that only fails on a real write passes every smoke test.
+
+## 2026-10-21 — Admin panel on Google login + allowlist
+**Changed:** `supabase/migrations/20261021180000_admin_users.sql` (`admin_users` allowlist with an own-row RLS policy, seeded with Hannes's Gmail; `admin_signups_per_week()` security-definer function, service_role only); `lib/admin/{guard,stats}.ts`; `proxy.ts` gates `/admin`, `/api/admin`, `/design/kurztest` by session + allowlist (signed out → `/anmelden?next=`, not listed → 404, `X-Robots-Tag: noindex`); new `/admin` (signups per ISO week) and admin nav (`components/admin/admin-nav.tsx`); basic auth (`lib/admin-auth.ts`, `ADMIN_PASSWORD`) removed.
+**Outcome:** SUCCESS locally (tsc, eslint, `next build`; curl: signed out 307, non-admin 404 on all four paths, admin 200; 390/1440 screenshots, no horizontal scroll). Production needs the migration.
+**What worked / went wrong:** The local DB has no `supabase_migrations.schema_migrations` table, so a `psql`-applied migration leaves no history row. A Supabase session cookie over 4 KB is rejected by Playwright's `addCookies`; split it into `sb-127-auth-token.0/.1` chunks (curl accepts the single cookie).
+**Lesson:** Ask "is this user an admin?" with the user's own session under RLS, never the secret key. Aggregate `auth.users` in a SQL function rather than paging `listUsers`.

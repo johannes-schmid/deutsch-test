@@ -265,7 +265,7 @@ components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/so
 lib/pricing.ts · seo/facts.md        # the one price source (placeholders) · every number/legal fact with source + date
 app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
-app/(admin)/admin/kurztest + proxy.ts # funnel + leads + CSV, basic auth via ADMIN_PASSWORD (also guards /design/kurztest)
+app/(admin)/admin/                   # /admin = signups per week, /admin/kurztest = funnel + leads + CSV; Google login + `admin_users` allowlist (lib/admin/guard.ts, checked in proxy.ts and every page/route; also guards /design/kurztest)
 proxy.ts                             # also: Supabase session refresh on /dashboard + auth pages; no session → /anmelden, session on auth pages → /dashboard
 lib/supabase/{client,server}.ts      # @supabase/ssr clients (publishable key, never the service key); getSessionUser() = Google profile only
 lib/auth/redirect.ts                 # safeNext() (same-site paths only), PORTAL_HOME, auth error copy

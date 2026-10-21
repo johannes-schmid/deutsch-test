@@ -1,8 +1,6 @@
 import { Suspense } from "react"
-import { headers } from "next/headers"
 import { notFound } from "next/navigation"
-import { connection } from "next/server"
-import { isAdmin } from "@/lib/admin-auth"
+import { requireAdmin } from "@/lib/admin/guard"
 import { EXAMS, type ExamId } from "@/lib/exams"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { OUTCOMES, funnel, leads } from "@/lib/kurztest/stats"
@@ -14,8 +12,7 @@ const pct = (a: number, b: number) => (b ? `${Math.round((a / b) * 100)}%` : "â€
 const date = (iso: string) => new Date(iso).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short", timeZone: "Europe/Berlin" })
 
 async function Stats() {
-  await connection()
-  if (!isAdmin((await headers()).get("authorization"))) notFound()
+  if (!(await requireAdmin())) notFound()
   const [rows, latest] = await Promise.all([funnel(), leads(50)])
   const total = rows.reduce((s, r) => ({ attempts: s.attempts + r.attempts, leads: s.leads + r.leads }), { attempts: 0, leads: 0 })
 
