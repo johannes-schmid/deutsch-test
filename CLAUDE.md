@@ -8,7 +8,7 @@ Read §1–§4 before touching anything; the rest is reference.
 
 ## 1. Dev server (always use this)
 
-Scaffolded 2026-10-11 (Next.js 16.4, Tailwind v4, shadcn base-nova). Supabase Auth (Google only) since 2026-10-21; no tables yet.
+Scaffolded 2026-10-11 (Next.js 16.4, Tailwind v4, shadcn base-nova). Supabase Auth (Google only) since 2026-10-21; first table `kurztest_attempts` (free-test attempts + leads) the same day.
 Use these defaults so this stack can run next to the two Dutch ones:
 
 ```bash
@@ -250,7 +250,7 @@ data/tts-voices.json                 # ★ the ElevenLabs voice cast with accent
 data/kurztest/drafts/                # ★ Kurztest content: one JSON per block, `display` (kit types) + `key` (server-only); only status "reviewed" ships
 public/audio/kurztest/               # rendered eleven_v4 clips for Hören blocks and Sprechen turns
 lib/exam/{blueprint,kurztest,validate,band}.ts  # part specs + 10-item composition, block types, blueprint validator, indicative band
-lib/kurztest/                        # server-only: data loader (strips keys), store (Vercel Blob / .data in dev), score, grade (Claude), stt, stats
+lib/kurztest/                        # server-only: data loader (strips keys), store (Supabase `kurztest_attempts` via the secret-key client in `lib/supabase/admin.ts`), score, grade (Claude), stt, stats
 components/kurztest/                 # runner (Lesen/Hören, Schreiben, Sprechen), email gate, result view, shared item renderer
 app/(main)/gratis-test/              # level + exam picker; dtz/ = hub + /{hoeren,lesen,schreiben,sprechen} lead-magnet tests, site layout, indexed
 lib/exams.ts                         # ★ the 9 free-test exams (name, brand badge, levels, official result format, pass mark); research/<exam>.md = their blueprints

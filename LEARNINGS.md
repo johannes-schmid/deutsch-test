@@ -336,3 +336,9 @@
 **Outcome:** SUCCESS (tsc, eslint, `next build` pass; checked on /gratis-test and /dashboard at 1440).
 **What worked / went wrong:** Showing every option at 36/48/64px *and* in the two real contexts (sidebar list, photo card) made the choice fast. The blurred-blob tile and flag sticker read as noise at 36px.
 **Lesson:** Compare badge or icon options in their real contexts at the smallest size, not as a big specimen row.
+
+## 2026-10-21 — Free-test storage moved from Vercel Blob to Supabase
+**Changed:** `supabase/migrations/20261021120000_kurztest_attempts.sql` (one table: attempt, lead, cached grade; RLS on, no policies); `lib/supabase/admin.ts` (secret-key client); `lib/kurztest/{store,limits,stats}.ts`, `app/api/kurztest/{submit,unlock}` rewritten on it; `@vercel/blob` removed.
+**Outcome:** SUCCESS locally (tsc, eslint, `next build`; submit → unlock → cached re-unlock → email cap 429 → admin page + CSV checked against the local DB). Production needs the migration and `SUPABASE_SECRET_KEY`.
+**What worked / went wrong:** Production threw "Blob store is not connected" on the first real submission: the Blob store was never connected (noted as open in the 2026-10-12 entry), and the error only fires on a write. Limits are now count queries on `graded_at`, so no marker files.
+**Lesson:** An "open for production" item in LEARNINGS needs a check before launch. A route that only fails on a real write passes every smoke test.

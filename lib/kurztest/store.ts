@@ -1,59 +1,70 @@
 import "server-only"
-import fs from "node:fs"
-import path from "node:path"
-import { get, list as blobList, put as blobPut } from "@vercel/blob"
+import { createAdminClient } from "@/lib/supabase/admin"
+import type { GradedResult, TranscriptResult } from "./types"
 
-// Vercel Blob (private store) when credentials exist; plain files under .data/ in local dev.
-// One record per file, so concurrent writes never race.
+// One row per free-test attempt in public.kurztest_attempts: the submission, the lead (email) and the cached grade.
 
-const useBlob = () => !!(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID)
-const LOCAL = path.join(process.cwd(), ".data")
-
-function assertWritable() {
-  if (!useBlob() && process.env.VERCEL) throw new Error("Blob store is not connected (BLOB_READ_WRITE_TOKEN missing)")
+export type Attempt = {
+  id: string
+  exam: string
+  skill: string
+  level: string
+  answers: Record<string, string> | null
+  task: string | null
+  text: string | null
+  recorded: number | null
+  utm: Record<string, string> | null
+  started_at: string | null
+  finished_at: string
+  email: string | null
+  marketing: boolean | null
+  unlocked_at: string | null
+  grade: GradedResult | TranscriptResult | null
+  graded_at: string | null
+  ip_hash: string | null
 }
 
-export async function putJson(pathname: string, data: unknown) {
-  assertWritable()
-  const body = JSON.stringify(data)
-  if (useBlob()) {
-    await blobPut(pathname, body, { access: "private", contentType: "application/json", allowOverwrite: true, addRandomSuffix: false })
-    return
+const table = () => createAdminClient().from("kurztest_attempts")
+
+function check<T>({ data, error }: { data: T; error: { message: string } | null }) {
+  if (error) throw new Error(`kurztest_attempts: ${error.message}`)
+  return data
+}
+
+export async function insertAttempt(row: Partial<Attempt> & Pick<Attempt, "id" | "exam" | "skill">) {
+  check(await table().insert(row))
+}
+
+export async function getAttempt(id: string): Promise<Attempt | null> {
+  return check(await table().select("*").eq("id", id).maybeSingle()) as Attempt | null
+}
+
+export async function updateAttempt(id: string, patch: Partial<Attempt>) {
+  check(await table().update(patch).eq("id", id))
+}
+
+/** Sets the email only on the first unlock, so a later unlock with another address can't overwrite the lead. */
+export async function claimLead(id: string, email: string, marketing: boolean) {
+  check(await table().update({ email, marketing, unlocked_at: new Date().toISOString() }).eq("id", id).is("email", null))
+}
+
+/** Every row matching the select, paginated past the 1,000-row cap. */
+export async function selectAll<T>(columns: string, build: (q: ReturnType<ReturnType<typeof table>["select"]>) => typeof q = (q) => q.order("id"), max = Infinity): Promise<T[]> {
+  const out: T[] = []
+  for (let from = 0; from < max; from += 1000) {
+    const to = Math.min(from + 1000, max) - 1
+    const page = check(await build(table().select(columns)).range(from, to)) as T[]
+    out.push(...page)
+    if (page.length < to - from + 1) break
   }
-  const file = path.join(LOCAL, pathname)
-  fs.mkdirSync(path.dirname(file), { recursive: true })
-  fs.writeFileSync(file, body)
+  return out
 }
 
-export async function getJson<T>(pathname: string): Promise<T | null> {
-  if (useBlob()) {
-    const res = await get(pathname, { access: "private", useCache: false })
-    if (!res || res.statusCode !== 200 || !res.stream) return null
-    return JSON.parse(await new Response(res.stream).text()) as T
-  }
-  const file = path.join(LOCAL, pathname)
-  return fs.existsSync(file) ? (JSON.parse(fs.readFileSync(file, "utf8")) as T) : null
+/** Graded runs since `since` matching one column, for the daily caps. */
+export async function countGradedSince(since: string, match?: { column: "ip_hash" | "email"; value: string }) {
+  let q = table().select("id", { count: "exact", head: true }).gte("graded_at", since)
+  if (match) q = q.eq(match.column, match.value)
+  const { count, error } = await q
+  if (error) throw new Error(`kurztest_attempts: ${error.message}`)
+  return count ?? 0
 }
-
-/** Every entry under a prefix, paginated (a single page caps at 1,000). */
-export async function listEntries(prefix: string): Promise<{ pathname: string; uploadedAt: Date }[]> {
-  if (useBlob()) {
-    const out: { pathname: string; uploadedAt: Date }[] = []
-    let cursor: string | undefined
-    do {
-      const page = await blobList({ prefix, cursor, limit: 1000 })
-      out.push(...page.blobs.map((b) => ({ pathname: b.pathname, uploadedAt: b.uploadedAt })))
-      cursor = page.hasMore ? page.cursor : undefined
-    } while (cursor)
-    return out
-  }
-  const root = path.join(LOCAL, prefix)
-  if (!fs.existsSync(root)) return []
-  return (fs.readdirSync(root, { recursive: true }) as string[])
-    .map((f) => path.join(prefix, f))
-    .map((p) => ({ p, stat: fs.statSync(path.join(LOCAL, p)) }))
-    .filter(({ stat }) => stat.isFile())
-    .map(({ p, stat }) => ({ pathname: p, uploadedAt: stat.mtime }))
-}
-
-export const listPaths = async (prefix: string) => (await listEntries(prefix)).map((e) => e.pathname)

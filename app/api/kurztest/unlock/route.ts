@@ -1,16 +1,14 @@
 import { NextResponse } from "next/server"
 import { gradeWriting, speakingTranscript } from "@/lib/kurztest/grade"
-import { checkLimit, clientIp, countRun } from "@/lib/kurztest/limits"
+import { checkLimit, clientIp, hashIp } from "@/lib/kurztest/limits"
 import { scoreClosed } from "@/lib/kurztest/score"
-import { getJson, putJson } from "@/lib/kurztest/store"
+import { claimLead, getAttempt, updateAttempt } from "@/lib/kurztest/store"
 import { transcribe } from "@/lib/kurztest/stt"
 import { isExam } from "@/lib/kurztest/data"
 import { outcomeLabel, type GradedResult, type TranscriptResult } from "@/lib/kurztest/types"
 
 const MAX_FILE = 1_500_000
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
-
-type Attempt = { id: string; exam?: string; skill: string; answers?: Record<number, string>; task?: string; text?: string; level?: string }
 
 const fail = (error: string, status = 400) => NextResponse.json({ error }, { status })
 
@@ -26,9 +24,9 @@ export async function POST(req: Request) {
   if (!/^[0-9a-f-]{36}$/.test(attemptId)) return fail("bad_attempt")
   if (email.length > 254 || !EMAIL.test(email)) return fail("bad_email")
 
-  const attempt = await getJson<Attempt>(`attempts/${attemptId}.json`)
+  const attempt = await getAttempt(attemptId)
   if (!attempt) return fail("not_found", 404)
-  const exam = attempt.exam ?? "dtz"
+  const exam = attempt.exam
   if (!isExam(exam)) return fail("bad_exam")
 
   const files = form ? form.getAll("recordings").filter((f): f is File => typeof f !== "string") : []
@@ -37,23 +35,13 @@ export async function POST(req: Request) {
     if (files.length > 20 || files.some((f) => f.size > MAX_FILE)) return fail("too_large", 413)
   }
 
-  const leadPath = `leads/${attemptId}.json`
-  const existing = await getJson<Record<string, unknown>>(leadPath)
-  const lead = existing ?? { id: attemptId, email, marketing, exam, skill: attempt.skill, level: attempt.level ?? null, at: new Date().toISOString() }
-  if (!existing) await putJson(leadPath, lead)
-  const markLevel = async (level: string) => {
-    await putJson(leadPath, { ...lead, level })
-    await putJson(`stats/lead/${exam}/${attempt.skill}/${level}/${attemptId}`, {})
-  }
+  if (!attempt.email) await claimLead(attemptId, email, marketing)
 
   if (attempt.skill === "lesen" || attempt.skill === "hoeren") {
-    const result = scoreClosed(exam, attempt.skill, attempt.answers ?? {})
-    await markLevel(outcomeLabel(result))
-    return NextResponse.json(result)
+    return NextResponse.json(scoreClosed(exam, attempt.skill, attempt.answers ?? {}))
   }
 
-  const cached = await getJson<GradedResult | TranscriptResult>(`grades/${attemptId}.json`)
-  if (cached) return NextResponse.json(cached)
+  if (attempt.grade) return NextResponse.json(attempt.grade)
 
   const ip = clientIp(req)
   const limited = await checkLimit(ip, email)
@@ -69,12 +57,9 @@ export async function POST(req: Request) {
     }
   } catch (e) {
     console.error("kurztest grading failed", attempt.skill, e instanceof Error ? e.message : e)
-    await markLevel("offen")
     return fail("grading_failed", 502)
   }
 
-  await putJson(`grades/${attemptId}.json`, result)
-  await countRun(ip, email, attemptId)
-  await markLevel(result.kind === "transcript" ? "transkript" : outcomeLabel(result))
+  await updateAttempt(attemptId, { grade: result, graded_at: new Date().toISOString(), ip_hash: hashIp(ip), level: result.kind === "transcript" ? "transkript" : outcomeLabel(result) })
   return NextResponse.json(result)
 }

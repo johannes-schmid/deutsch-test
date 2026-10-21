@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { isExam, isSkill } from "@/lib/kurztest/data"
 import { scoreClosed } from "@/lib/kurztest/score"
-import { putJson } from "@/lib/kurztest/store"
+import { insertAttempt, type Attempt } from "@/lib/kurztest/store"
 import { MAX_TEXT, outcomeLabel, type SubmitBody } from "@/lib/kurztest/types"
 
 const cleanUtm = (utm: unknown) =>
@@ -24,15 +24,13 @@ export async function POST(req: Request) {
   if (!isExam(exam)) return NextResponse.json({ error: "bad_exam" }, { status: 400 })
 
   const id = crypto.randomUUID()
-  const base = { id, exam, skill: body.skill, startedAt: String(body.startedAt ?? "").slice(0, 40), finishedAt: new Date().toISOString(), utm: cleanUtm(body.utm) }
-  let record: Record<string, unknown>
-  let level = "offen"
+  const base = { id, exam, skill: body.skill, started_at: String(body.startedAt ?? "").slice(0, 40), utm: cleanUtm(body.utm) ?? null }
+  let record: Partial<Attempt> & Pick<Attempt, "id" | "exam" | "skill">
 
   if (body.skill === "lesen" || body.skill === "hoeren") {
     const answers = Object.fromEntries(Object.entries(body.answers ?? {}).filter(([n, v]) => /^\d+$/.test(n) && typeof v === "string").map(([n, v]) => [n, v.slice(0, 40)]))
     const result = scoreClosed(exam, body.skill, answers)
-    level = outcomeLabel(result)
-    record = { ...base, answers, correct: result.correct, total: result.total, level }
+    record = { ...base, answers, level: outcomeLabel(result) }
   } else if (body.skill === "schreiben") {
     if (!/^[AB]$/.test(body.task) || typeof body.text !== "string") return NextResponse.json({ error: "bad_writing" }, { status: 400 })
     record = { ...base, task: body.task, text: body.text.slice(0, MAX_TEXT) }
@@ -40,7 +38,6 @@ export async function POST(req: Request) {
     record = { ...base, recorded: Math.max(0, Math.min(20, Number((body as { recorded?: unknown }).recorded) || 0)) }
   }
 
-  await putJson(`attempts/${id}.json`, record)
-  await putJson(`stats/attempt/${exam}/${body.skill}/${level}/${id}`, {})
+  await insertAttempt(record)
   return NextResponse.json({ attemptId: id })
 }

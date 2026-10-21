@@ -2,41 +2,26 @@ import "server-only"
 import { EXAM_IDS, type ExamId } from "@/lib/exams"
 import type { Skill } from "./data"
 import { SKILLS } from "./data"
-import { getJson, listEntries } from "./store"
+import { selectAll } from "./store"
 
-export type Lead = { id: string; email: string; marketing: boolean; exam?: ExamId; skill: Skill; level: string | null; at: string }
+export type Lead = { id: string; email: string; marketing: boolean; exam: ExamId; skill: Skill; level: string; at: string }
 export const OUTCOMES = ["B1", "A2", "unter A2", "bestanden", "nicht bestanden", "transkript", "offen"] as const
 
-/** Counts come from marker pathnames (stats/<kind>/<exam>/<skill>/<outcome>/<id>), so no record is read. */
-const parse = (p: string) => {
-  const parts = p.split("/")
-  // Markers written before exams existed have no exam segment; those are all DTZ.
-  const [exam, skill, level, id] = parts.length === 5 ? ["dtz", ...parts.slice(2)] : parts.slice(2)
-  return { exam, skill, level, id }
-}
+type Row = { exam: string; skill: string; level: string; email: string | null }
 
 export async function funnel() {
-  const [attempts, leads] = await Promise.all([listEntries("stats/attempt/"), listEntries("stats/lead/")])
-  const a = attempts.map((e) => parse(e.pathname))
-  const l = leads.map((e) => parse(e.pathname))
+  const rows = await selectAll<Row>("exam, skill, level, email")
   return EXAM_IDS.flatMap((exam) =>
     SKILLS.map((skill) => {
-      const mine = (x: { exam: string; skill: string }) => x.exam === exam && x.skill === skill
-      const byId = new Map<string, string>()
-      for (const x of l.filter(mine)) if (!byId.has(x.id) || byId.get(x.id) === "offen") byId.set(x.id, x.level)
-      const outcomes = Object.fromEntries(OUTCOMES.map((o) => [o, [...byId.values()].filter((v) => v === o).length])) as Record<(typeof OUTCOMES)[number], number>
-      return { exam, skill, attempts: new Set(a.filter(mine).map((x) => x.id)).size, leads: byId.size, outcomes }
+      const mine = rows.filter((r) => r.exam === exam && r.skill === skill)
+      const unlocked = mine.filter((r) => r.email)
+      const outcomes = Object.fromEntries(OUTCOMES.map((o) => [o, unlocked.filter((r) => r.level === o).length])) as Record<(typeof OUTCOMES)[number], number>
+      return { exam, skill, attempts: mine.length, leads: unlocked.length, outcomes }
     })
   ).filter((r) => r.attempts || r.leads)
 }
 
 export async function leads(limit?: number): Promise<Lead[]> {
-  const entries = (await listEntries("leads/")).sort((a, b) => +b.uploadedAt - +a.uploadedAt)
-  const picked = limit ? entries.slice(0, limit) : entries
-  const out: Lead[] = []
-  for (let i = 0; i < picked.length; i += 20) {
-    const batch = await Promise.all(picked.slice(i, i + 20).map((e) => getJson<Lead>(e.pathname)))
-    out.push(...batch.filter((l): l is Lead => !!l))
-  }
-  return out
+  const rows = await selectAll<Omit<Lead, "at"> & { unlocked_at: string }>("id, email, marketing, exam, skill, level, unlocked_at", (q) => q.not("email", "is", null).order("unlocked_at", { ascending: false }).order("id"), limit)
+  return rows.map(({ unlocked_at, ...l }) => ({ ...l, at: unlocked_at }))
 }
