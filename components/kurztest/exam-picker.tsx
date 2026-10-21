@@ -1,10 +1,9 @@
 "use client"
 
-import { PhotoCard } from "@/components/design/kit"
-import { ExamMark } from "@/components/design/variants/nachtzug-icons"
+import { ExamCard } from "@/components/kurztest/exam-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
-import { LEVELS, type Brand, type Exam, type ExamId, type Level } from "@/lib/exams"
+import { LEVELS, type Exam, type ExamId, type Level } from "@/lib/exams"
 
 const T = KURZTEST_COPY.overview
 
@@ -36,7 +35,7 @@ export function ExamPicker({ exams, initial = "B1" }: { exams: PickerExam[]; ini
             <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {list.map((e) => (
                 <li key={e.id}>
-                  <ExamCard exam={e} />
+                  <ExamCard exam={e} href={e.href} />
                 </li>
               ))}
             </ul>
@@ -44,23 +43,5 @@ export function ExamPicker({ exams, initial = "B1" }: { exams: PickerExam[]; ini
         )
       })}
     </Tabs>
-  )
-}
-
-const PHOTO: Record<Brand, string> = { dtz: "--g-photo-5", goethe: "--g-photo-2", telc: "--g-photo-6", oesd: "--g-photo-4", sd1: "--g-photo-3" }
-
-function ExamCard({ exam }: { exam: PickerExam }) {
-  return (
-    <PhotoCard
-      token={PHOTO[exam.brand]}
-      art={<ExamMark brand={exam.brand} />}
-      chip={exam.href ? KURZTEST_COPY.chips.free : T.soon}
-      tags={<span>{exam.provider}</span>}
-      title={exam.name}
-      text={exam.summary}
-      meta={<span className="text-[13.5px] text-v-muted">{T.result}: {exam.result}</span>}
-      cta={T.start}
-      href={exam.href}
-    />
   )
 }

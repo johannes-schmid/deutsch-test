@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { Globe } from "lucide-react"
+import { Globe, UserRound } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { Consent, ConsentSettingsButton } from "@/components/design/consent"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
@@ -33,13 +33,17 @@ export function SiteNav({ locale, switchLang = true }: { locale: Locale; switchL
               href={t.nav.switchHref}
               hrefLang={locale === "en" ? "de" : "en"}
               aria-label={t.nav.switchLabel}
-              className="flex h-9 items-center gap-1.5 rounded-full px-2.5 text-[13.5px] font-semibold text-v-muted transition-colors hover:bg-v-ink/5 hover:text-v-ink"
+              className="flex h-9 items-center gap-1.5 rounded-full px-2.5 text-[13.5px] font-semibold text-v-muted transition-colors hover:bg-v-ink/5 hover:text-v-ink max-sm:hidden"
             >
               <Globe className="size-4" aria-hidden="true" />
-              <span className="max-sm:sr-only">{t.nav.switchShort}</span>
+              <span>{t.nav.switchShort}</span>
             </Link>
           ) : null}
-          <VButton size="sm" render={<Link href="/gratis-test" />} nativeButton={false} className="h-10 px-4">{t.nav.start}</VButton>
+          <Link href="/anmelden" aria-label={t.nav.login} className="flex h-10 min-w-9 items-center justify-center rounded-full text-[14px] font-semibold transition-[background-color,transform] duration-150 ease-out hover:bg-v-ink/5 active:scale-[0.97] sm:px-3">
+            <UserRound className="size-[18px] sm:hidden" aria-hidden="true" />
+            <span className="max-sm:sr-only">{t.nav.login}</span>
+          </Link>
+          <VButton size="sm" render={<Link href="/gratis-test" />} nativeButton={false} className="h-10 px-3.5 sm:px-4">{t.nav.start}</VButton>
         </div>
       </nav>
     </div>
@@ -86,7 +90,15 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             {g.links.map((l) => (
               <Link key={l.href} href={l.href} className="w-fit rounded transition-colors hover:text-v-ink">{l.label}</Link>
             ))}
-            {g.title === f.groups.info ? <ConsentSettingsButton locale={locale} /> : null}
+            {g.title === f.groups.info ? (
+              <>
+                <ConsentSettingsButton locale={locale} />
+                <Link href={t.nav.switchHref} hrefLang={locale === "en" ? "de" : "en"} className="flex w-fit items-center gap-1.5 rounded transition-colors hover:text-v-ink">
+                  <Globe className="size-3.5" aria-hidden="true" />
+                  {t.nav.switchLabel}
+                </Link>
+              </>
+            ) : null}
           </nav>
         ))}
       </div>

@@ -5,7 +5,7 @@
 import { SITE_URL } from "@/lib/seo"
 
 /** Behind a password or not content. Public pages are never disallowed. */
-const DISALLOW = ["/admin", "/api/"]
+const DISALLOW = ["/admin", "/api/", "/dashboard", "/auth/"]
 
 /** Vendors' own tokens; a typo is silent, so check the vendor docs before adding one. */
 const AGENT_GROUPS: [comment: string, agents: string[]][] = [

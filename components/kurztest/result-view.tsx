@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { NextStepCard, PartResultCard, ReadingText, ResultHero } from "@/components/exam"
 import { EXAMS, examPath, type ExamId } from "@/lib/exams"
 import { KURZTEST_COPY, type ExamPage } from "@/lib/i18n/kurztest"
+import { PORTAL_HOME } from "@/lib/auth/redirect"
 import type { PublicBlock } from "@/lib/kurztest/data"
 import type { KurztestResult } from "@/lib/kurztest/types"
 import { BlockItems, type Values } from "./items"
@@ -33,7 +34,7 @@ export function ResultView({ exam, page, skill, blocks, values, result }: { exam
   const router = useRouter()
   const name = KURZTEST_COPY.names[skill]
   const pass = EXAMS[exam].pass
-  const next = <NextStepCard text={page.nextText} cta={T.nextCta} onCta={() => router.push(examPath(exam))} onNewTest={() => window.location.reload()} />
+  const next = <NextStepCard text={T.continueText} cta={T.continueCta} onCta={() => router.push(`/registrieren?next=${encodeURIComponent(PORTAL_HOME)}`)} secondary={T.nextCta} onNewTest={() => router.push(examPath(exam))} />
 
   if (result.kind === "transcript") {
     return (

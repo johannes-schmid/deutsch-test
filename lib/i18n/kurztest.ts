@@ -99,6 +99,8 @@ export const KURZTEST_COPY = {
     noAnswer: "(keine Antwort verstanden)",
     sample: "Beispielantwort",
     nextCta: "Anderen Teil testen",
+    continueText: "Übe mit einem gratis Konto weiter. Alle Prüfungen an einem Ort.",
+    continueCta: "Weiter üben",
     again: "Noch einmal",
   },
 }

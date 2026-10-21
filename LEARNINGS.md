@@ -320,3 +320,19 @@
 - The running dev server kept serving a stale render of `/gratis-test/dtz` after the edit; `?x=1` showed the new version. It's a dev cache, not a code bug.
 - Skipped the Dutch trust strip (Trustpilot, user counts): we can't back those claims up.
 **Lesson:** When porting a sister site's look, change the shared chrome and page primitives first, then check every page type at 390 and 1440. If a dev page looks unchanged, bust the cache with a query string before debugging.
+
+## 2026-10-21 — Google sign-up and portal shell after inburgeringoefenen.nl
+**Changed:** Supabase Auth (Google only) with `@supabase/ssr` (`lib/supabase/`, `proxy.ts` session refresh + gate, `app/auth/callback`); `/registrieren` + `/anmelden` in `app/(auth)/`; login-only portal `/dashboard` in `app/(app)/` (`components/portal/`, `lib/portal.ts`); "Weiter üben" CTA on the free-test result (`result-view.tsx`, `NextStepCard` `secondary`); shared `ExamCard` + `examLive()`; "Anmelden" back in `SiteNav`; `/design/portal`; `supabase/config.toml` on 545xx.
+**Outcome:** SUCCESS locally (tsc, eslint, `next build` pass; 390/1440 screenshots with no horizontal scroll; result → "Weiter üben" → `/registrieren?next=/dashboard` checked in Playwright; signed-in portal checked with a local magic-link session). A real Google round trip is still pending the OAuth client.
+**What worked / went wrong:**
+- `getUser()` in a cacheComponents route threw "`Date.now()` while prerendering". Supabase checks token expiry with `Date.now()`, and `cookies()` alone doesn't make that legal. `await connection()` at the start of `getSessionUser()` fixed it.
+- `portalExamGroups()` reads the content files, which tripped the same check in the layout. `"use cache"` fixed it.
+- With email login disabled, the admin magic link (`/auth/v1/admin/generate_link`) is the way to get a local test session: build the `sb-127-auth-token` cookie as `base64-` + the session JSON.
+- Adding "Anmelden" overflowed the header pill at 390px. The language switch now hides below `sm` and also sits in the footer. At 360px the header still overflows, as it did before.
+**Lesson:** Any server read of the Supabase session under cacheComponents goes through one helper that calls `connection()` first. Keep entitlements out of `user_metadata`: users can edit it (inburgering's open hole), so use a `profiles` table or `app_metadata`.
+
+## 2026-10-21 — Flat exam badges (ExamMark = flag strip tile)
+**Changed:** `ExamMark` in `components/design/variants/nachtzug-icons.tsx` is now a white tile with the provider code and the country's colours as a bottom strip (chosen from 7 styles, then 9 flag variants on a throwaway `/design/exam-marks`); removed `--v-ex-*` and `.nz-flag` from `landing.css`; DESIGN.md updated.
+**Outcome:** SUCCESS (tsc, eslint, `next build` pass; checked on /gratis-test and /dashboard at 1440).
+**What worked / went wrong:** Showing every option at 36/48/64px *and* in the two real contexts (sidebar list, photo card) made the choice fast. The blurred-blob tile and flag sticker read as noise at 36px.
+**Lesson:** Compare badge or icon options in their real contexts at the smallest size, not as a big specimen row.

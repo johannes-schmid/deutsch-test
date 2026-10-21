@@ -5,6 +5,7 @@ import { TASTER } from "@/lib/exam/blueprint"
 import type { ItemKey, KurztestBlock } from "@/lib/exam/kurztest"
 import type { PartId } from "@/lib/exam/types"
 import { EXAM_IDS, type ExamId } from "@/lib/exams"
+import { EXAM_PAGES } from "@/lib/i18n/kurztest"
 
 export const SKILLS = ["hoeren", "lesen", "schreiben", "sprechen"] as const satisfies readonly PartId[]
 export type Skill = (typeof SKILLS)[number]
@@ -40,6 +41,9 @@ export const tasterMinutes = (exam: ExamId, skill: Skill) => TASTER[exam]?.minut
 
 /** Skills with reviewed content. An exam is live on /gratis-test once it has at least one. */
 export const liveSkills = (exam: ExamId) => SKILLS.filter((s) => loadSet(exam, s).length)
+
+/** An exam links out only once it has reviewed content; the others show as "Bald verfügbar" with no URL. */
+export const examLive = (exam: ExamId) => !!EXAM_PAGES[exam] && liveSkills(exam).length > 0
 
 /** What the browser may see before grading: no answers, evidence, transcripts or model answers. */
 export type PublicBlock = Pick<KurztestBlock, "id" | "skill" | "teil" | "display">

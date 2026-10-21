@@ -8,7 +8,7 @@ Read §1–§4 before touching anything; the rest is reference.
 
 ## 1. Dev server (always use this)
 
-Scaffolded 2026-10-11 (Next.js 16.4, Tailwind v4, shadcn base-nova). Supabase is not set up yet.
+Scaffolded 2026-10-11 (Next.js 16.4, Tailwind v4, shadcn base-nova). Supabase Auth (Google only) since 2026-10-21; no tables yet.
 Use these defaults so this stack can run next to the two Dutch ones:
 
 ```bash
@@ -25,6 +25,8 @@ Two projects on the same Supabase ports fight over them: the second fails with a
 that looks like Docker is broken. Don't move this one back to the defaults.
 
 - `.env.development.local` points at the local stack, so `npm run dev` can never write to production.
+- Local Google sign-in needs `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` in `supabase/.env` before
+  `supabase start`; the Google OAuth client must list `http://127.0.0.1:54521/auth/v1/callback`.
 - Build: `npx next build` · Types: `npx tsc --noEmit` (both verified). Unit/E2E: not set up yet.
 - `next.config.ts` has `cacheComponents` + `partialPrefetching` on. Don't read `params` or call
   `usePathname` outside `<Suspense>`; prefer static routes (see LEARNINGS.md).
@@ -264,6 +266,14 @@ lib/pricing.ts · seo/facts.md        # the one price source (placeholders) · e
 app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
 app/(admin)/admin/kurztest + proxy.ts # funnel + leads + CSV, basic auth via ADMIN_PASSWORD (also guards /design/kurztest)
+proxy.ts                             # also: Supabase session refresh on /dashboard + auth pages; no session → /anmelden, session on auth pages → /dashboard
+lib/supabase/{client,server}.ts      # @supabase/ssr clients (publishable key, never the service key); getSessionUser() = Google profile only
+lib/auth/redirect.ts                 # safeNext() (same-site paths only), PORTAL_HOME, auth error copy
+app/auth/callback/route.ts           # Google → Supabase PKCE code exchange → ?next
+app/(auth)/{registrieren,anmelden}/  # Google-only sign-up/sign-in (noindex); components/auth/ = GoogleButton + AuthHeader
+app/(app)/dashboard/                 # portal overview (login-only shell): greeting + the 9 exams by level; components/portal/ = sidebar, tab bar, account
+lib/portal.ts · lib/i18n/portal.ts   # exam groups for the portal ("use cache") · auth + portal copy
+supabase/config.toml                 # local stack on 545xx, email signups off, Google on
 scripts/{generate,tts,validate}-kurztest.ts  # Claude drafts → eleven_v4 audio → blueprint check
 data/blog/<slug>.tsx · lib/blog/       # blog posts (sections as JSX, status draft/reviewed) · registry (POSTS, isLive) and types
 components/design/article.tsx        # blog blocks (FactBox, Note, Steps, Compare, DoDont, DataTable, ExamStrip, LetterSample, …); blog-article.tsx renders a post + JSON-LD

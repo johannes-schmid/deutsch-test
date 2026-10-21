@@ -189,7 +189,7 @@ export function ReviewList({ entries }: { entries: ReviewEntry[] }) {
 }
 
 /** Routing is rule-based (AI Act boundary): weakest part first, then a new full mock. */
-export function NextStepCard({ text, cta, onCta, onNewTest }: { text: string; cta: string; onCta?: () => void; onNewTest?: () => void }) {
+export function NextStepCard({ text, cta, onCta, onNewTest, secondary }: { text: string; cta: string; onCta?: () => void; onNewTest?: () => void; secondary?: string }) {
   const t = useExamCopy()
   return (
     <section className="flex flex-col gap-4 rounded-[24px] bg-(--p-glow) p-6 text-[#0A0D18] sm:flex-row sm:items-center sm:justify-between">
@@ -199,7 +199,7 @@ export function NextStepCard({ text, cta, onCta, onNewTest }: { text: string; ct
       </div>
       <div className="flex shrink-0 flex-wrap gap-2">
         <ExamButton onClick={onCta} className="bg-[#0A0D18] text-white">{cta}</ExamButton>
-        <ExamButton kind="soft" onClick={onNewTest} className="bg-white/55 text-[#0A0D18]">{t.newTest}</ExamButton>
+        <ExamButton kind="soft" onClick={onNewTest} className="bg-white/55 text-[#0A0D18]">{secondary ?? t.newTest}</ExamButton>
       </div>
     </section>
   )

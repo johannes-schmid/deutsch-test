@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { JsonLd } from "@/components/design/json-ld"
 import { ExamPicker, type PickerExam } from "@/components/kurztest/exam-picker"
 import { KurztestHeader } from "@/components/kurztest/page-header"
-import { EXAMS, EXAM_IDS, examPath, type ExamId } from "@/lib/exams"
-import { EXAM_PAGES, KURZTEST_COPY } from "@/lib/i18n/kurztest"
-import { liveSkills } from "@/lib/kurztest/data"
+import { EXAMS, EXAM_IDS, examPath } from "@/lib/exams"
+import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
+import { examLive } from "@/lib/kurztest/data"
 import { PROVIDER, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/seo"
 
 const T = KURZTEST_COPY
@@ -18,16 +18,13 @@ export const metadata: Metadata = {
   openGraph: openGraph(PATH, T.overview.title, T.overview.description),
 }
 
-/** An exam links out only once it has reviewed content; the others show as "Bald verfügbar" with no URL. */
-const live = (id: ExamId) => !!EXAM_PAGES[id] && liveSkills(id).length > 0
-
 const crumbs: Crumb[] = [
   { name: T.crumbs.home, path: "/" },
   { name: T.crumbs.overview, path: PATH },
 ]
 
 export default function GratisTestPage() {
-  const exams: PickerExam[] = EXAM_IDS.map((id) => ({ ...EXAMS[id], id, href: live(id) ? examPath(id) : null }))
+  const exams: PickerExam[] = EXAM_IDS.map((id) => ({ ...EXAMS[id], id, href: examLive(id) ? examPath(id) : null }))
   const linked = exams.filter((e) => e.href)
   const jsonLd = {
     "@context": "https://schema.org",

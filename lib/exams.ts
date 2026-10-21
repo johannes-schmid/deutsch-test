@@ -11,6 +11,8 @@ export type Brand = "goethe" | "telc" | "oesd" | "sd1" | "dtz"
 
 export type Exam = {
   name: string
+  /** For tight spots like the portal sidebar; falls back to `name`. */
+  short?: string
   provider: string
   brand: Brand
   /** Every level the exam can certify; the overview lists it under each. */
@@ -104,6 +106,7 @@ export const EXAMS: Record<ExamId, Exam> = {
   },
   dtz: {
     name: "Deutsch-Test für Zuwanderer (DTZ)",
+    short: "DTZ",
     provider: "telc · g.a.s.t.",
     brand: "dtz",
     levels: ["A2", "B1"],
