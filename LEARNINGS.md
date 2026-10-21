@@ -337,6 +337,15 @@
 **What worked / went wrong:** Showing every option at 36/48/64px *and* in the two real contexts (sidebar list, photo card) made the choice fast. The blurred-blob tile and flag sticker read as noise at 36px.
 **Lesson:** Compare badge or icon options in their real contexts at the smallest size, not as a big specimen row.
 
+## 2026-10-21 — Portal exam and skill overviews, sidebar by level
+**Changed:** `/dashboard/[exam]` (4 `SkillCard`s) and `/dashboard/[exam]/[skill]` (10 `ModelltestRow`s, all "Bald verfügbar") with `generateStaticParams`; sidebar grouped A1 → A2 → B1 with the DTZ under A2 and B1 (`components/portal/portal-shell.tsx`, `PortalLink nested`); new `components/portal/portal-exam.tsx`; `lib/portal.ts` (`portalSkills`, `modelltests`, `portalPath`); overview cards now open the portal exam page; tab bar and avatar anchors point at `/dashboard#…`; `/design/portal` and DESIGN.md updated.
+**Outcome:** SUCCESS (tsc, eslint, `next build` pass; 390/1440 screenshots of overview, exam and skill pages with a local session, no horizontal scroll).
+**What worked / went wrong:**
+- Dynamic `[exam]/[skill]` with `generateStaticParams` over every value prerenders cleanly under cacheComponents; `await params` at the page top is fine then. The earlier trouble was `usePathname` outside Suspense, not params.
+- Local session for screenshots: `generate_link` (magiclink) then `/auth/v1/verify` with `type: "email"` (not `"magiclink"`, which returns otp_expired), cookie `sb-127-auth-token` = `base64-` + base64url(session).
+- Skipped Teil/item counts on the skill cards: the part specs omit some real Teile (e.g. telc A2 Hören Teil 3), so a sum would understate the real exam.
+**Lesson:** Don't derive user-facing exam facts from the taster specs; they're a subset. Real per-skill counts and timings need their own verified field.
+
 ## 2026-10-21 — Free-test storage moved from Vercel Blob to Supabase
 **Changed:** `supabase/migrations/20261021120000_kurztest_attempts.sql` (one table: attempt, lead, cached grade; RLS on, no policies); `lib/supabase/admin.ts` (secret-key client); `lib/kurztest/{store,limits,stats}.ts`, `app/api/kurztest/{submit,unlock}` rewritten on it; `@vercel/blob` removed.
 **Outcome:** SUCCESS locally (tsc, eslint, `next build`; submit → unlock → cached re-unlock → email cap 429 → admin page + CSV checked against the local DB). Production needs the migration and `SUPABASE_SECRET_KEY`.

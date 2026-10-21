@@ -12,7 +12,8 @@ import { cn } from "@/lib/utils"
 
 const T = PORTAL_COPY
 
-export type NavExam = { id: string; label: string; brand: Brand; href: string | null }
+export type NavExam = { id: string; label: string; brand: Brand; href: string }
+export type NavGroup = { level: string; exams: NavExam[] }
 
 const initials = (u: SessionUser) => (u.name ?? u.email).split(/[\s@.]+/).filter(Boolean).slice(0, 2).map((p) => p[0]!.toUpperCase()).join("")
 
@@ -58,8 +59,24 @@ export function AccountRow({ user }: { user: SessionUser | null }) {
 const SIDE_LINK = "flex min-h-11 items-center gap-3 rounded-full px-3 text-[14.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
 const SIDE_ACTIVE = "bg-v-ink font-semibold text-v-bg hover:bg-v-ink hover:text-v-bg"
 
-/** The floating glass sidebar from lg up: overview, the exams, the plan card and the account row. */
-export function PortalSidebar({ exams, account, className }: { exams: NavExam[]; account: React.ReactNode; className?: string }) {
+/** One exam in the sidebar, lit on its page and its skill pages. */
+function SideExam({ exam }: { exam: NavExam }) {
+  const body = (
+    <>
+      <ExamMark brand={exam.brand} size="sm" />
+      <span className="truncate">{exam.label}</span>
+    </>
+  )
+  const cls = cn(SIDE_LINK, "text-v-ink")
+  return (
+    <Suspense fallback={<Link href={exam.href} className={cls}>{body}</Link>}>
+      <PortalLink href={exam.href} className={cls} activeClassName={SIDE_ACTIVE} nested>{body}</PortalLink>
+    </Suspense>
+  )
+}
+
+/** The floating glass sidebar from lg up: overview, the exams by level, the plan card and the account row. */
+export function PortalSidebar({ groups, account, className }: { groups: NavGroup[]; account: React.ReactNode; className?: string }) {
   const overview = (
     <>
       <LayoutGrid className="size-[18px]" strokeWidth={2} aria-hidden="true" />
@@ -75,25 +92,23 @@ export function PortalSidebar({ exams, account, className }: { exams: NavExam[];
         <Suspense fallback={<Link href={PORTAL_HOME} className={SIDE_LINK}>{overview}</Link>}>
           <PortalLink href={PORTAL_HOME} className={SIDE_LINK} activeClassName={SIDE_ACTIVE}>{overview}</PortalLink>
         </Suspense>
-        <span className="px-3 pt-4 pb-1 text-[12.5px] font-semibold text-v-muted">{T.nav.exams}</span>
-        <ul className="-mx-1 flex min-h-0 flex-col gap-0.5 overflow-y-auto px-1">
-          {exams.map((e) => (
-            <li key={e.id}>
-              {e.href ? (
-                <Link href={e.href} className={cn(SIDE_LINK, "text-v-ink")}>
-                  <ExamMark brand={e.brand} size="sm" />
-                  <span className="truncate">{e.label}</span>
-                </Link>
-              ) : (
-                <span className={cn(SIDE_LINK, "pointer-events-none opacity-55")}>
-                  <ExamMark brand={e.brand} size="sm" />
-                  <span className="truncate">{e.label}</span>
-                  <span className="ml-auto shrink-0 text-[11.5px]">{T.soon}</span>
-                </span>
-              )}
-            </li>
+        <div className="-mx-1 mt-2 flex min-h-0 flex-col gap-3 overflow-y-auto px-1 pb-1">
+          {groups.map((g) => (
+            <section key={g.level} aria-labelledby={`side-${g.level}`} className="flex flex-col gap-0.5">
+              <h2 id={`side-${g.level}`} aria-label={`${T.nav.exams} ${g.level}`} className="flex items-center gap-2 px-3 pt-2 pb-1">
+                <span className="rounded-full bg-v-ink/7 px-2 py-px text-[12px] font-semibold text-v-ink">{g.level}</span>
+                <span className="h-px flex-1 bg-v-line" aria-hidden="true" />
+              </h2>
+              <ul className="flex flex-col gap-0.5">
+                {g.exams.map((e) => (
+                  <li key={e.id}>
+                    <SideExam exam={e} />
+                  </li>
+                ))}
+              </ul>
+            </section>
           ))}
-        </ul>
+        </div>
       </nav>
       <div className="flex flex-col gap-1 rounded-[20px] bg-v-soft/70 p-4">
         <span className="text-[12.5px] text-v-muted">{T.plan.label}</span>
@@ -116,9 +131,9 @@ export function PortalMobileHeader({ avatar }: { avatar: React.ReactNode }) {
         <Link href="/" className="rounded-lg">
           <NzLogo className="text-[17px]" />
         </Link>
-        <a href="#konto" aria-label={T.nav.account} className="grid size-11 place-items-center rounded-full transition-transform duration-150 ease-out active:scale-[0.95]">
+        <Link href={`${PORTAL_HOME}#konto`} aria-label={T.nav.account} className="grid size-11 place-items-center rounded-full transition-transform duration-150 ease-out active:scale-[0.95]">
           {avatar}
-        </a>
+        </Link>
       </header>
     </div>
   )
@@ -130,9 +145,9 @@ const TAB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
 /** Phones and tablets: the floating tab bar at the bottom. */
 export function PortalTabBar({ className }: { className?: string }) {
   const tabs = [
-    { href: "#pruefungen", label: T.nav.exams, icon: ListChecks },
+    { href: `${PORTAL_HOME}#pruefungen`, label: T.nav.exams, icon: ListChecks },
     { href: "/preise", label: T.nav.pricing, icon: Euro },
-    { href: "#konto", label: T.nav.account, icon: UserRound },
+    { href: `${PORTAL_HOME}#konto`, label: T.nav.account, icon: UserRound },
   ]
   const overview = (
     <>
@@ -144,21 +159,14 @@ export function PortalTabBar({ className }: { className?: string }) {
     <nav aria-label={T.nav.overview} className={cn("fixed inset-x-0 bottom-[max(10px,env(safe-area-inset-bottom))] z-30 mx-auto w-[calc(100%-24px)] max-w-[440px] lg:hidden", className)}>
       <div className="nz-chrome flex h-16 items-stretch gap-1 rounded-full p-1.5">
         <Suspense fallback={<Link href={PORTAL_HOME} className={TAB}>{overview}</Link>}>
-          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE}>{overview}</PortalLink>
+          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE} nested>{overview}</PortalLink>
         </Suspense>
-        {tabs.map(({ href, label, icon: Icon }) =>
-          href.startsWith("#") ? (
-            <a key={href} href={href} className={TAB}>
-              <Icon className="size-5" strokeWidth={2} aria-hidden="true" />
-              {label}
-            </a>
-          ) : (
-            <Link key={href} href={href} className={TAB}>
-              <Icon className="size-5" strokeWidth={2} aria-hidden="true" />
-              {label}
-            </Link>
-          )
-        )}
+        {tabs.map(({ href, label, icon: Icon }) => (
+          <Link key={href} href={href} className={TAB}>
+            <Icon className="size-5" strokeWidth={2} aria-hidden="true" />
+            {label}
+          </Link>
+        ))}
       </div>
     </nav>
   )

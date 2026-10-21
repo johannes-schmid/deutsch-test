@@ -23,14 +23,14 @@ async function HeaderAvatar() {
 
 /** The portal: proxy.ts already sent anyone without a session to /anmelden. Only the user-specific bits wait for cookies. */
 export default async function PortalLayout({ children }: { children: React.ReactNode }) {
-  const exams = (await portalExamGroups()).flatMap((g) => g.exams).map((e) => ({ id: e.id, label: e.short ?? e.name, brand: e.brand, href: e.href }))
+  const groups = (await portalExamGroups()).map((g) => ({ level: g.level, exams: g.exams.map((e) => ({ id: e.id, label: e.short ?? e.name, brand: e.brand, href: e.href })) }))
   return (
     <div className={`${hostGrotesk.variable} ${redditMono.variable}`}>
       <DesignShell id="nachtzug" lang="de">
         <div className="relative flex min-h-dvh items-start overflow-clip">
           <SiteGlow />
           <PortalSidebar
-            exams={exams}
+            groups={groups}
             account={
               <Suspense fallback={<AccountRow user={null} />}>
                 <Account />

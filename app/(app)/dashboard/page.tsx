@@ -71,7 +71,7 @@ export default async function DashboardPage() {
               <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 2xl:grid-cols-3">
                 {g.exams.map((e) => (
                   <li key={e.id}>
-                    <ExamCard exam={e} href={e.href} cta={T.start} />
+                    <ExamCard exam={e} href={e.href} cta={T.open} chip={e.levels.length > 1 ? e.levels.join("–") : null} />
                   </li>
                 ))}
               </ul>

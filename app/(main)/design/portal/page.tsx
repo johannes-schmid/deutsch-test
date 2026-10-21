@@ -3,7 +3,8 @@ import { DesignShell } from "@/components/design/shell"
 import { GoogleButtonFallback } from "@/components/auth/google-button"
 import { ExamCard } from "@/components/kurztest/exam-card"
 import { AccountRow, Avatar, PortalSidebar, PortalTabBar } from "@/components/portal/portal-shell"
-import { EXAMS, EXAM_IDS } from "@/lib/exams"
+import { ModelltestRow, PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
+import { EXAMS, EXAM_IDS, LEVELS } from "@/lib/exams"
 import type { SessionUser } from "@/lib/supabase/server"
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const USER: SessionUser = { email: "amina@example.com", name: "Amina Rahimi", firstName: "Amina", avatar: null }
-const NAV = EXAM_IDS.map((id, i) => ({ id, label: EXAMS[id].short ?? EXAMS[id].name, brand: EXAMS[id].brand, href: i === 0 ? null : `#${id}` }))
+const NAV = LEVELS.map((level) => ({ level, exams: EXAM_IDS.filter((id) => EXAMS[id].levels.includes(level)).map((id) => ({ id, label: EXAMS[id].short ?? EXAMS[id].name, brand: EXAMS[id].brand, href: `#${id}` })) }))
 
 function Spec({ name, note, children }: { name: string; note: string; children: React.ReactNode }) {
   return (
@@ -34,9 +35,9 @@ export default function PortalDesignPage() {
           Aufbau wie das Portal von inburgeringoefenen.nl, gebaut aus Nachtzug. Komponenten in components/portal/ und components/auth/. Daten hier sind Muster.
         </p>
 
-        <Spec name="PortalSidebar" note="Ab lg: schwebende Glas-Leiste, 280px. Übersicht (aktiv = Tinte), Prüfungen mit ExamMark, Paket-Karte, Konto-Zeile. Ohne Inhalt: gedimmt mit „Bald verfügbar“, kein Link.">
+        <Spec name="PortalSidebar" note="Ab lg: schwebende Glas-Leiste, 280px. Übersicht (aktiv = Tinte), dann die Prüfungen nach Niveau (A1, A2, B1) mit ExamMark; der DTZ steht unter A2 und B1. Eine Prüfung leuchtet auch auf ihren Teil-Seiten. Paket-Karte, Konto-Zeile.">
           <div className="photo rounded-[32px] p-6" style={{ ["--photo" as string]: "var(--g-photo-1)" }}>
-            <PortalSidebar exams={NAV} account={<AccountRow user={USER} />} className="static m-0 flex h-[720px]" />
+            <PortalSidebar groups={NAV} account={<AccountRow user={USER} />} className="static m-0 flex h-[720px]" />
           </div>
         </Spec>
 
@@ -61,7 +62,26 @@ export default function PortalDesignPage() {
           <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <li><ExamCard exam={EXAMS.dtz} href="#" /></li>
             <li><ExamCard exam={EXAMS["telc-b1"]} href={null} /></li>
+            <li><ExamCard exam={EXAMS.dtz} href="#" cta="Zur Prüfung" chip="A2–B1" /></li>
           </ul>
+        </Spec>
+
+        <Spec name="PortalCrumbs" note="Übersicht › Prüfung › Teil. Das letzte Glied ist die aktuelle Seite; der Pfeil spiegelt sich in RTL.">
+          <PortalCrumbs items={[{ label: "Übersicht", href: "#" }, { label: "Goethe B1", href: "#" }, { label: "Hören" }]} />
+        </Spec>
+
+        <Spec name="SkillCard" note="/dashboard/[exam]: ein Teil der Prüfung. PartIcon, Anzahl Modelltests, Status. Die ganze Karte öffnet den Teil; der Gratis-Test-Link liegt darüber und erscheint nur, wenn es geprüften Inhalt gibt.">
+          <ul className="grid max-w-[760px] grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+            <li><SkillCard skill="hoeren" name="Hören" href="#" free="#" count="10 Modelltests" status="Modelltests kommen bald" /></li>
+            <li><SkillCard skill="sprechen" name="Sprechen" href="#" free={null} count="10 Modelltests" status="Modelltests kommen bald" /></li>
+          </ul>
+        </Spec>
+
+        <Spec name="ModelltestRow" note="/dashboard/[exam]/[skill]: zehn Zeilen in einer Papierkarte. Mit href: Tinten-Nummer, „Starten“, runder Pfeil. Ohne: gestrichelte Nummer, „Bald verfügbar“, Uhr.">
+          <ol className="nz-paper flex max-w-[760px] flex-col divide-y divide-v-line overflow-hidden rounded-[24px]">
+            <li><ModelltestRow n={1} href="#" /></li>
+            <li><ModelltestRow n={2} href={null} /></li>
+          </ol>
         </Spec>
       </div>
     </DesignShell>

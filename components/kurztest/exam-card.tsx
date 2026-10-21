@@ -7,13 +7,13 @@ const T = KURZTEST_COPY.overview
 
 const PHOTO: Record<Brand, string> = { dtz: "--g-photo-5", goethe: "--g-photo-2", telc: "--g-photo-6", oesd: "--g-photo-4", sd1: "--g-photo-3" }
 
-/** One exam as a PhotoCard: brand badge, provider, summary, result format. No `href` = "Bald verfügbar". Used by /gratis-test and the portal. */
-export function ExamCard({ exam, href, cta = T.start }: { exam: Exam; href: string | null; cta?: string }) {
+/** One exam as a PhotoCard: brand badge, provider, summary, result format. No `href` = "Bald verfügbar"; `chip` replaces the "Gratis" chip (null hides it). Used by /gratis-test and the portal. */
+export function ExamCard({ exam, href, cta = T.start, chip }: { exam: Exam; href: string | null; cta?: string; chip?: string | null }) {
   return (
     <PhotoCard
       token={PHOTO[exam.brand]}
       art={<ExamMark brand={exam.brand} />}
-      chip={href ? KURZTEST_COPY.chips.free : T.soon}
+      chip={chip === undefined ? (href ? KURZTEST_COPY.chips.free : T.soon) : (chip ?? undefined)}
       tags={<span>{exam.provider}</span>}
       title={exam.name}
       text={exam.summary}

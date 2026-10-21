@@ -271,7 +271,7 @@ lib/supabase/{client,server}.ts      # @supabase/ssr clients (publishable key, n
 lib/auth/redirect.ts                 # safeNext() (same-site paths only), PORTAL_HOME, auth error copy
 app/auth/callback/route.ts           # Google → Supabase PKCE code exchange → ?next
 app/(auth)/{registrieren,anmelden}/  # Google-only sign-up/sign-in (noindex); components/auth/ = GoogleButton + AuthHeader
-app/(app)/dashboard/                 # portal overview (login-only shell): greeting + the 9 exams by level; components/portal/ = sidebar, tab bar, account
+app/(app)/dashboard/                 # portal (login-only): overview by level → [exam] (4 skill cards) → [exam]/[skill] (10 Modelltests); components/portal/ = sidebar, tab bar, account, exam pages
 lib/portal.ts · lib/i18n/portal.ts   # exam groups for the portal ("use cache") · auth + portal copy
 supabase/config.toml                 # local stack on 545xx, email signups off, Google on
 scripts/{generate,tts,validate}-kurztest.ts  # Claude drafts → eleven_v4 audio → blueprint check
