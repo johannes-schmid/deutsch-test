@@ -58,7 +58,7 @@ export default function BlogDesignPage() {
         <Spec name="FactBox" note="Belegte Aussage, Quelle in Mono darunter">
           <FactBox source={SRC} checked="10/2026">Eine Aussage mit Zahl steht immer mit Quelle da.</FactBox>
         </Spec>
-        <Spec name="Note: tipp · info · wichtig" note="Heller Ton-Hauch, Ton auch im Icon-Tile">
+        <Spec name="Note: tipp · info · wichtig" note="Heller Ton-Hauch, Icon im weißen Haarlinien-Tile">
           <Note kind="tipp"><p>Ein kurzer Tipp in einfachen Sätzen.</p></Note>
           <Note kind="info"><p>Hintergrund, der hilft, aber nicht nötig ist.</p></Note>
           <Note kind="wichtig" title="Frag zuerst deine Behörde"><p>Ein Hinweis mit Folgen.</p></Note>

@@ -300,7 +300,7 @@ export function Note({ kind = "tipp", title, children }: { kind?: keyof typeof N
   const n = NOTES[kind]
   return (
     <aside className="my-8 flex gap-4 rounded-[22px] p-5 sm:p-6" style={{ background: `color-mix(in srgb, ${n.tone} 14%, var(--v-surface))` }}>
-      <Tile icon={n.icon} tone={n.tone} size="sm" />
+      <Tile icon={n.icon} size="sm" />
       <div className="min-w-0 pt-1.5">
         <p className="font-semibold">{title ?? n.label}</p>
         <div className="mt-1.5 text-[16px] leading-relaxed text-pretty [&_p+p]:mt-2">{children}</div>

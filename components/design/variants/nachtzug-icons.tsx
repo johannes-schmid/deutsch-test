@@ -9,11 +9,7 @@ export type LevelId = "unter-a2" | "a2" | "b1"
 export const PART_ICONS: Record<PartId, LucideIcon> = { hoeren: Headphones, lesen: Newspaper, schreiben: PenLine, sprechen: MessagesSquare }
 const PART_IDS = Object.keys(PART_ICONS) as PartId[]
 
-const TESTS: Record<TestId, { icon: LucideIcon; tone: string }> = {
-  dtz: { icon: Ticket, tone: "var(--p-glow)" },
-  einbuergerung: { icon: Landmark, tone: "var(--v-sk-lesen)" },
-  kurs: { icon: GraduationCap, tone: "var(--v-sk-sprechen)" },
-}
+const TEST_ICONS: Record<TestId, LucideIcon> = { dtz: Ticket, einbuergerung: Landmark, kurs: GraduationCap }
 
 const LEVELS: Record<LevelId, { label: string; steps: number }> = {
   "unter-a2": { label: "<A2", steps: 1 },
@@ -21,23 +17,23 @@ const LEVELS: Record<LevelId, { label: string; steps: number }> = {
   b1: { label: "B1", steps: 3 },
 }
 
-/** A glass tile with a tinted blob behind a Lucide icon. PartIcon, TestIcon and the blog notes build on it. */
-export function Tile({ icon: Icon, tone, size = "md" }: { icon: LucideIcon; tone: string; size?: "sm" | "md" | "lg" }) {
+/** A white tile with a 1px ink ring around an ink Lucide icon, like ExamMark. PartIcon, TestIcon and the blog notes build on it. */
+export function Tile({ icon: Icon, size = "md" }: { icon: LucideIcon; size?: "sm" | "md" | "lg" }) {
   const box = { sm: "size-9 rounded-xl", md: "size-12 rounded-2xl", lg: "size-16 rounded-[22px]" }[size]
   const glyph = { sm: "size-4", md: "size-5", lg: "size-7" }[size]
   return (
-    <span className={`nz-tile relative grid shrink-0 place-items-center ${box}`} style={{ ["--tone" as string]: tone }}>
-      <Icon className={`relative ${glyph}`} strokeWidth={1.75} aria-hidden="true" />
+    <span className={`nz-tile grid shrink-0 place-items-center ${box}`}>
+      <Icon className={glyph} strokeWidth={1.85} aria-hidden="true" />
     </span>
   )
 }
 
 export function PartIcon({ part, size }: { part: PartId; size?: "sm" | "md" | "lg" }) {
-  return <Tile icon={PART_ICONS[part]} tone={`var(--v-sk-${part})`} size={size} />
+  return <Tile icon={PART_ICONS[part]} size={size} />
 }
 
 export function TestIcon({ test, size }: { test: TestId; size?: "sm" | "md" | "lg" }) {
-  return <Tile icon={TESTS[test].icon} tone={TESTS[test].tone} size={size} />
+  return <Tile icon={TEST_ICONS[test]} size={size} />
 }
 
 const DE = ["#141414", "#DD2A2A", "#F2C230"]
