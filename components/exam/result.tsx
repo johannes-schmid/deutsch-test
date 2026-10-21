@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, type ReactNode } from "react"
-import { ChevronDown } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, ChevronDown, Clock } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { CriterionResult, Level, PartResult, ReviewEntry, Score } from "@/lib/exam/types"
 import { LevelScale } from "@/components/design/kit"
@@ -201,6 +202,97 @@ export function NextStepCard({ text, cta, onCta, onNewTest, secondary }: { text:
         <ExamButton onClick={onCta} className="bg-[#0A0D18] text-white">{cta}</ExamButton>
         <ExamButton kind="soft" onClick={onNewTest} className="bg-white/55 text-[#0A0D18]">{secondary ?? t.newTest}</ExamButton>
       </div>
+    </section>
+  )
+}
+
+/** Correct out of total as a ring of one segment per task, filled in one run from the top: "3 of 5" reads as 3 of 5. */
+export function ScoreRing({ correct, total, caption, size = 150 }: { correct: number; total: number; caption: string; size?: number }) {
+  const c = size / 2
+  const r = c - 10
+  const gap = total > 1 ? Math.min(14, 120 / total) : 0
+  const step = 360 / Math.max(total, 1)
+  const point = (deg: number) => {
+    const a = ((deg - 90) * Math.PI) / 180
+    return `${c + r * Math.cos(a)} ${c + r * Math.sin(a)}`
+  }
+  const arc = (i: number) => {
+    const from = i * step + gap / 2
+    const to = (i + 1) * step - gap / 2
+    return `M ${point(from)} A ${r} ${r} 0 ${to - from > 180 ? 1 : 0} 1 ${point(to)}`
+  }
+  return (
+    <div className="relative grid shrink-0 place-items-center" style={{ width: size, height: size }} role="img" aria-label={`${correct} / ${total} ${caption}`}>
+      <svg viewBox={`0 0 ${size} ${size}`} className="absolute inset-0" aria-hidden="true">
+        {Array.from({ length: total }, (_, i) => (
+          <path key={i} d={arc(i)} fill="none" strokeWidth={9} strokeLinecap="round" className={i < correct ? "stroke-v-ink" : "stroke-v-ink/10"} />
+        ))}
+      </svg>
+      <span className="flex flex-col items-center" aria-hidden="true">
+        <b className="v-num text-[40px] leading-none font-semibold tracking-[-0.04em]">
+          {correct}
+          <span className="text-[18px] font-normal text-v-muted">/{total}</span>
+        </b>
+        <small className="v-num mt-1.5 text-[11px] tracking-[0.08em] text-v-muted uppercase">{caption}</small>
+      </span>
+    </div>
+  )
+}
+
+/**
+ * The end screen's one result card, after inburgeringoefenen.nl's free-practice result: the ring (or the seal) on
+ * the left, a mono line with the raw score, the verdict, where points went, then the scale and the time.
+ */
+export function ResultSummary({ visual, eyebrow, headline, lead, scale, time, note }: { visual: ReactNode; eyebrow: string; headline: ReactNode; lead?: ReactNode; scale?: ReactNode; time?: string; note: string }) {
+  return (
+    <section className="nz-app grid grid-cols-[minmax(0,1fr)] gap-6 rounded-[28px] p-6 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-start sm:gap-8 sm:p-8">
+      <div className="justify-self-center">{visual}</div>
+      <div className="flex min-w-0 flex-col gap-3">
+        <span className="v-num text-[12px] tracking-[0.08em] text-v-muted uppercase">{eyebrow}</span>
+        <h2 className="text-[clamp(26px,3.4vw,34px)] leading-[1.12] font-semibold tracking-[-0.025em] text-balance">{headline}</h2>
+        {lead ? <p className="max-w-[60ch] text-[15.5px] leading-relaxed text-v-muted text-pretty">{lead}</p> : null}
+        {scale ? <div className="pt-1">{scale}</div> : null}
+        {time ? (
+          <p className="flex items-start gap-2 text-[14.5px] leading-snug text-v-muted">
+            <Clock className="mt-px size-4 shrink-0" aria-hidden="true" />
+            {time}
+          </p>
+        ) : null}
+        <span className="text-[12.5px] text-v-muted">{note}</span>
+      </div>
+    </section>
+  )
+}
+
+/** Points against the pass mark on one bar, with a tick at the mark. For exams scored in points. */
+export function PointsBar({ score, pass }: { score: Score; pass: number }) {
+  const t = useExamCopy()
+  const share = score.max ? score.points / score.max : 0
+  const passed = share >= pass
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="relative h-2.5 overflow-hidden rounded-full bg-v-ink/8" role="img" aria-label={`${t.points(score.points, score.max)} · ${t.passMark(Math.round(pass * 100))}`}>
+        <span className={cn("absolute inset-y-0 left-0 rounded-full", passed ? "bg-(--p-glow)" : "bg-v-ink")} style={{ width: `${share * 100}%` }} />
+        <span className="absolute inset-y-0 w-0.5 bg-v-ink/50" style={{ left: `${pass * 100}%` }} />
+      </div>
+      <span className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-v-muted">
+        <PassPill passed={passed} />
+        <span className="v-num">{t.points(score.points, score.max)} · {t.passMark(Math.round(pass * 100))}</span>
+      </span>
+    </div>
+  )
+}
+
+/** The way on: one big ink button, a note under it, then quiet text links. */
+export function ContinueCard({ href, cta, note, links }: { href: string; cta: string; note?: ReactNode; links?: ReactNode }) {
+  return (
+    <section className="nz-app flex flex-col items-center gap-3 rounded-[28px] p-5 text-center sm:p-6">
+      <Link href={href} className="group flex h-14 w-full items-center justify-center gap-2 rounded-full bg-v-ink px-6 text-[16.5px] font-semibold text-v-bg shadow-[0_18px_36px_-18px_rgba(8,10,30,0.6)] transition-transform duration-150 ease-out active:scale-[0.98]">
+        {cta}
+        <ArrowRight className="size-5 transition-transform duration-150 ease-out group-hover:translate-x-0.5" aria-hidden="true" />
+      </Link>
+      {note ? <p className="text-[13.5px] leading-relaxed text-v-muted">{note}</p> : null}
+      {links ? <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-[14px] font-semibold">{links}</div> : null}
     </section>
   )
 }

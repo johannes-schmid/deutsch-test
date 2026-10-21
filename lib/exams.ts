@@ -116,3 +116,6 @@ export const EXAMS: Record<ExamId, Exam> = {
 }
 
 export const examPath = (id: ExamId) => `/gratis-test/${id}`
+
+/** The portal page for an exam, or one of its skills. Client-safe, unlike the rest of lib/portal.ts. */
+export const portalPath = (exam: ExamId, skill?: string) => (skill ? `/dashboard/${exam}/${skill}` : `/dashboard/${exam}`)

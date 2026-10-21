@@ -5,6 +5,7 @@ import { scoreClosed } from "@/lib/kurztest/score"
 import { claimLead, getAttempt, updateAttempt } from "@/lib/kurztest/store"
 import { transcribe } from "@/lib/kurztest/stt"
 import { isExam } from "@/lib/kurztest/data"
+import { getSessionUser } from "@/lib/supabase/server"
 import { outcomeLabel, type GradedResult, type TranscriptResult } from "@/lib/kurztest/types"
 
 const MAX_FILE = 1_500_000
@@ -12,14 +13,15 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 const fail = (error: string, status = 400) => NextResponse.json({ error }, { status })
 
-/** Email in, full result out. Writing is graded and speaking transcribed here, once per attempt, within the limits. */
+/** Email in (the account's email when signed in), full result out. Lesen/Hören need an account: guests meet the sign-up wall after Teil 1. Writing is graded and speaking transcribed here, once per attempt, within the limits. */
 export async function POST(req: Request) {
   const form = req.headers.get("content-type")?.includes("multipart/form-data") ? await req.formData() : null
   const json = form ? null : ((await req.json().catch(() => null)) as Record<string, unknown> | null)
   const field = (k: string) => (form ? form.get(k) : json?.[k])
 
   const attemptId = String(field("attemptId") ?? "")
-  const email = String(field("email") ?? "").trim().toLowerCase()
+  const user = await getSessionUser()
+  const email = (user?.email || String(field("email") ?? "")).trim().toLowerCase()
   const marketing = field("marketing") === true || field("marketing") === "true"
   if (!/^[0-9a-f-]{36}$/.test(attemptId)) return fail("bad_attempt")
   if (email.length > 254 || !EMAIL.test(email)) return fail("bad_email")
@@ -28,6 +30,8 @@ export async function POST(req: Request) {
   if (!attempt) return fail("not_found", 404)
   const exam = attempt.exam
   if (!isExam(exam)) return fail("bad_exam")
+
+  if (!user && (attempt.skill === "lesen" || attempt.skill === "hoeren")) return fail("auth_required", 401)
 
   const files = form ? form.getAll("recordings").filter((f): f is File => typeof f !== "string") : []
   if (attempt.skill === "sprechen") {

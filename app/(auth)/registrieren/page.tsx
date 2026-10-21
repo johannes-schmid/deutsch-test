@@ -22,7 +22,7 @@ export default function RegisterPage() {
   return (
     <>
       <AuthHeader switchTo={{ text: T.switch[0], label: T.switch[1], href: "/anmelden" }} />
-      <main className="v-container relative z-10 grid grid-cols-[minmax(0,1fr)] items-center gap-10 pt-10 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-16 lg:pt-24">
+      <main className="v-container relative z-10 grid flex-1 grid-cols-[minmax(0,1fr)] content-center items-center gap-10 py-8 sm:py-14 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-16">
         <section className="flex flex-col items-start gap-6">
           <h1 className="v-display max-w-[16ch] pb-1 text-[clamp(38px,5.4vw,68px)] leading-[1.04] text-balance">
             {T.h1}

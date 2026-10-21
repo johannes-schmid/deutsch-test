@@ -6,11 +6,13 @@ import { Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
 import { ConfirmSheet, ExamAudio, ExamButton, ExamCopyProvider, ExamShell, PartIntro, ReadingLayout, ReadingText, SpeakingTask, WritingTask, useExamTimer } from "@/components/exam"
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { examPath, type ExamId } from "@/lib/exams"
+import { createClient } from "@/lib/supabase/client"
 import { EXAM_PAGES, KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import type { PublicBlock } from "@/lib/kurztest/data"
 import { MAX_RECORDING_SECONDS, MAX_TEXT, type KurztestResult } from "@/lib/kurztest/types"
 import { FRAME_ID, KurztestFrame } from "./frame"
 import { EmailGate } from "./gate"
+import { GuestWall } from "./guest-wall"
 import { BlockItems, type Values } from "./items"
 import { ResultView } from "./result-view"
 
@@ -39,17 +41,36 @@ const teilSections = (blocks: PublicBlock[], done: (b: PublicBlock) => number) =
     return { id: `t${teil}`, label: `Teil ${teil}`, count: inTeil.reduce((n, b) => n + Math.max(1, itemNumbers(b.display.items).length), 0), done: inTeil.reduce((n, b) => n + done(b), 0) }
   })
 
-function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }: { exam: ExamId; skill: "lesen" | "hoeren"; minutes: number; blocks: PublicBlock[]; values: Values; onChange: (n: number, v: string) => void; onFinish: () => void }) {
+/** Index of the first block after Teil 1: where a guest meets the sign-up wall. A one-Teil test walls at the finish. */
+const wallIndex = (blocks: PublicBlock[]) => {
+  const n = blocks.findIndex((b) => b.teil !== blocks[0].teil)
+  return n === -1 ? blocks.length : n
+}
+
+type Resume = { values: Values; startedAt: string; left: number }
+const resumeKey = (exam: ExamId, skill: Skill) => `kurztest-resume:${exam}:${skill}`
+
+function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish, guest, onWall, start }: { exam: ExamId; skill: "lesen" | "hoeren"; minutes: number; blocks: PublicBlock[]; values: Values; onChange: (n: number, v: string) => void; onFinish: (left: number) => void; guest: boolean; onWall: (left: number) => void; start?: { i: number; left: number } }) {
   const [exit, exitSheet] = useExit(exam)
   const [confirmFinish, setConfirmFinish] = useState(false)
-  const [i, setI] = useState(0)
+  const [i, setI] = useState(start?.i ?? 0)
+  const [wall, setWall] = useState(false)
   const timed = skill === "lesen"
-  const left = useExamTimer(minutes * 60, timed)
+  const left = useExamTimer(start?.left ?? minutes * 60, timed && !wall)
+  const wallAt = wallIndex(blocks)
+  // Forward past Teil 1 is the account; back always works.
+  const go = (n: number) => {
+    if (guest && n > i && n >= wallAt) {
+      setWall(true)
+      return onWall(left)
+    }
+    setI(n)
+  }
   const finished = useRef(false)
   const finish = () => {
     if (finished.current) return
     finished.current = true
-    onFinish()
+    onFinish(left)
   }
   useEffect(top, [i])
 
@@ -63,8 +84,9 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }
   const items = <BlockItems block={block} values={values} onChange={onChange} />
 
   return (
-    <KurztestFrame scene={skill}>
+    <KurztestFrame scene={skill} focus label={C.run.progress(name)}>
       <ExamShell
+        part={skill}
         wide={!!reading}
         sections={teilSections(blocks, answered)}
         progressLabel={C.run.progress(name)}
@@ -75,7 +97,7 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }
             ? {
                 title: C.run.overview(name),
                 items: all.map((n) => ({ n, state: itemNumbers(block.display.items).includes(n) ? "current" : values[n] ? "done" : "open" })),
-                onJump: (n) => setI(blocks.findIndex((b) => itemNumbers(b.display.items).includes(n))),
+                onJump: (n) => go(blocks.findIndex((b) => itemNumbers(b.display.items).includes(n))),
               }
             : undefined
         }
@@ -83,9 +105,9 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }
           <>
             {timed && i > 0 ? <ExamButton kind="soft" onClick={() => setI(i - 1)}>{C.run.back}</ExamButton> : null}
             {last ? (
-              <ExamButton onClick={() => (open ? setConfirmFinish(true) : finish())}>{C.run.finish}</ExamButton>
+              <ExamButton onClick={() => (guest && wallAt === blocks.length ? go(blocks.length) : open ? setConfirmFinish(true) : finish())}>{C.run.finish}</ExamButton>
             ) : (
-              <ExamButton onClick={() => setI(i + 1)}>{C.run.next}</ExamButton>
+              <ExamButton onClick={() => go(i + 1)}>{C.run.next}</ExamButton>
             )}
           </>
         }
@@ -96,7 +118,8 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish }
       </ExamShell>
       {exitSheet}
       <ConfirmSheet open={confirmFinish} onOpenChange={setConfirmFinish} {...C.run.finishConfirm} text={C.run.finishConfirm.text(open)} onConfirm={finish} />
-      {timed ? <TimeUp left={left} onFinish={finish} /> : null}
+      {timed && !wall ? <TimeUp left={left} onFinish={finish} /> : null}
+      <GuestWall open={wall} answered={blocks.slice(0, wallAt).reduce((n, b) => n + answered(b), 0)} nextTeil={blocks[wallAt]?.teil ?? blocks[0].teil} returnTo={`${examPath(exam)}/${skill}`} />
     </KurztestFrame>
   )
 }
@@ -114,8 +137,9 @@ function WritingTest({ exam, minutes, block, onFinish }: { exam: ExamId; minutes
     onFinish(chosen ?? "A", text)
   }
   return (
-    <KurztestFrame scene="schreiben">
+    <KurztestFrame scene="schreiben" focus label={C.run.progress("Schreiben")}>
       <ExamShell
+        part="schreiben"
         wide
         sections={[{ id: "s", label: "Schreiben", count: 1, done: text.trim() ? 1 : 0 }]}
         progressLabel={C.run.progress("Schreiben")}
@@ -208,8 +232,9 @@ function SpeakingTest({ exam, blocks, onFinish }: { exam: ExamId; blocks: Public
   const sections = blocks.map((bl, j) => ({ id: bl.id, label: `Teil ${bl.teil}`, count: mine(bl), done: j < b ? mine(bl) : j > b ? 0 : Math.min(mine(bl), recordings.current.length - recordedBefore) }))
 
   return (
-    <KurztestFrame scene="sprechen">
+    <KurztestFrame scene="sprechen" focus label={C.run.progress("Sprechen")}>
       <ExamShell
+        part="sprechen"
         sections={sections}
         progressLabel={C.run.progress("Sprechen")}
         onExit={exit}
@@ -261,6 +286,10 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
   const [attemptId, setAttemptId] = useState<string | null>(null)
   const [result, setResult] = useState<KurztestResult | null>(null)
   const [error, setError] = useState<string | null>(null)
+  // Free tests: a guest gets Teil 1, then the sign-up wall. Signed-in users skip the email gate; the server takes the account's email.
+  const [signedIn, setSignedIn] = useState(false)
+  const [resumed, setResumed] = useState<{ i: number; left: number } | undefined>()
+  const [used, setUsed] = useState<number | undefined>()
   const recordings = useRef<Blob[]>([])
   const lastPayload = useRef<Record<string, unknown>>({})
   // Schreiben/Sprechen take the email before the test: the limits are checked first, and the result unlocks by itself.
@@ -272,6 +301,35 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
   useEffect(() => {
     if (phase !== "intro") top()
   }, [phase])
+
+  // Back from Google: restore Teil 1 once and continue at Teil 2. The key is removed so a second run starts clean.
+  useEffect(() => {
+    void createClient().auth.getSession().then(({ data }) => {
+      if (!data.session) return
+      setSignedIn(true)
+      let saved: Resume | null = null
+      try {
+        const raw = sessionStorage.getItem(resumeKey(exam, skill))
+        sessionStorage.removeItem(resumeKey(exam, skill))
+        saved = raw ? (JSON.parse(raw) as Resume) : null
+      } catch {
+        return
+      }
+      if (!saved || (skill !== "lesen" && skill !== "hoeren")) return
+      setValues(saved.values)
+      setStartedAt(saved.startedAt)
+      setResumed({ i: Math.min(wallIndex(blocks), blocks.length - 1), left: saved.left })
+      setPhase("test")
+    })
+  }, [exam, skill, blocks])
+
+  const saveForResume = (left: number) => {
+    try {
+      sessionStorage.setItem(resumeKey(exam, skill), JSON.stringify({ values, startedAt, left } satisfies Resume))
+    } catch {
+      // Private mode or full storage: the wall still works, the answers just don't come back.
+    }
+  }
 
   const errorText = (code?: string) =>
     code === "bad_email" ? C.gate.badEmail : code === "busy" ? C.gate.busy : code === "limit_ip" || code === "limit_email" ? C.gate.limit : C.gate.failed
@@ -312,9 +370,9 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
       setError(C.gate.failed)
       return setPhase("gate")
     }
-    if (!contact.current) return setPhase("gate")
+    if (!contact.current && !signedIn) return setPhase("gate")
     setPhase("grading")
-    const err = await unlock(id, contact.current.email, contact.current.marketing)
+    const err = await unlock(id, contact.current?.email ?? "", contact.current?.marketing ?? false)
     if (err) {
       setError(err)
       setPhase("gate")
@@ -332,6 +390,27 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
     contact.current = { email, marketing }
     start()
     return null
+  }
+
+  /** Graded test, signed in: the limits are checked against the account's email on the server. */
+  const startSignedIn = async () => {
+    setError(null)
+    const err = await register("", false)
+    if (err) setError(err)
+  }
+
+  /** From the end screen: Lesen/Hören start over at once; Schreiben/Sprechen go back through the intro and its limit check. */
+  const retry = () => {
+    setValues({})
+    setResult(null)
+    setAttemptId(null)
+    setError(null)
+    setResumed(undefined)
+    setUsed(undefined)
+    recordings.current = []
+    contact.current = null
+    if (graded) return setPhase("intro")
+    start()
   }
 
   const start = () => {
@@ -364,9 +443,10 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
         <KurztestFrame scene={skill}>
           <div className="mx-auto flex w-full max-w-[560px] flex-col gap-4">
             <div className="nz-app rounded-[24px] p-6 sm:p-8">
-              <PartIntro part={skill} name={`${name}: Kurztest`} minutes={minutes} count={count} teile={teile} rules={rules} about={about} onStart={graded ? undefined : start} />
+              <PartIntro part={skill} name={`${name}: Kurztest`} minutes={minutes} count={count} teile={teile} rules={rules} about={about} onStart={graded && !signedIn ? undefined : graded ? startSignedIn : start} />
+              {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
             </div>
-            {graded ? <EmailGate before speaking={skill === "sprechen"} onUnlock={register} /> : null}
+            {graded && !signedIn ? <EmailGate before speaking={skill === "sprechen"} onUnlock={register} /> : null}
           </div>
         </KurztestFrame>
       </ExamCopyProvider>
@@ -377,7 +457,10 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
     <ExamCopyProvider locale="de">
       {phase === "test" ? (
         skill === "lesen" || skill === "hoeren" ? (
-          <ClosedTest exam={exam} skill={skill} minutes={minutes} blocks={blocks} values={values} onChange={(n, v) => setValues((m) => ({ ...m, [n]: v }))} onFinish={() => submit({ answers: values })} />
+          <ClosedTest exam={exam} skill={skill} minutes={minutes} blocks={blocks} values={values} onChange={(n, v) => setValues((m) => ({ ...m, [n]: v }))} onFinish={(left) => {
+              setUsed(minutes * 60 - left)
+              void submit({ answers: values })
+            }} guest={!signedIn} onWall={saveForResume} start={resumed} />
         ) : skill === "schreiben" ? (
           <WritingTest exam={exam} minutes={minutes} block={blocks[0]} onFinish={(task, text) => submit({ task, text })} />
         ) : (
@@ -391,20 +474,20 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
           />
         )
       ) : (
-        <KurztestFrame scene="ergebnis">
+        <KurztestFrame scene="ergebnis" focus label={C.run.progress(name)}>
           {phase === "result" && result ? (
-            <ResultView exam={exam} page={page} skill={skill} blocks={blocks} values={values} result={result} />
+            <ResultView exam={exam} page={page} skill={skill} blocks={blocks} values={values} result={result} signedIn={signedIn} seconds={skill === "lesen" && used !== undefined ? { used, budget: minutes * 60 } : undefined} onRetry={retry} />
           ) : phase === "sending" || phase === "grading" ? (
             <div className="nz-app mx-auto w-full max-w-[560px] rounded-[24px] p-8 text-[16px] text-v-muted" role="status">
               {phase === "sending" ? C.gate.sending : skill === "sprechen" ? C.gate.transcribing : C.gate.grading}
             </div>
-          ) : attemptId && !contact.current ? (
+          ) : attemptId && !contact.current && !signedIn ? (
             <EmailGate speaking={skill === "sprechen"} onUnlock={(email, marketing) => unlock(attemptId, email, marketing)} />
           ) : (
             <div className="nz-app mx-auto flex w-full max-w-[560px] flex-col gap-4 rounded-[24px] p-8" role="alert">
               <p className="text-[16px]">{error ?? C.gate.failed}</p>
               {error === C.gate.limit || error === C.gate.busy ? null : (
-                <ExamButton onClick={() => (attemptId && contact.current ? void retryUnlock(attemptId) : submit(lastPayload.current))}>{C.result.again}</ExamButton>
+                <ExamButton onClick={() => (attemptId && (contact.current || signedIn) ? void retryUnlock(attemptId) : submit(lastPayload.current))}>{C.result.again}</ExamButton>
               )}
             </div>
           )}
@@ -415,7 +498,7 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
 
   async function retryUnlock(id: string) {
     setPhase("grading")
-    const err = await unlock(id, contact.current!.email, contact.current!.marketing)
+    const err = await unlock(id, contact.current?.email ?? "", contact.current?.marketing ?? false)
     if (err) {
       setError(err)
       setPhase("gate")

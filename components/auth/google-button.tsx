@@ -31,8 +31,8 @@ function Button({ label, pending, onClick, disabled }: { label: string; pending?
   )
 }
 
-/** The one Supabase Auth caller. Reads ?next and ?error, so it renders inside <Suspense> (fallback: GoogleButtonFallback). */
-export function GoogleButton({ mode }: { mode: "register" | "login" }) {
+/** The one Supabase Auth caller. Reads ?next and ?error, so it renders inside <Suspense> (fallback: GoogleButtonFallback). `next` overrides ?next. */
+export function GoogleButton({ mode, next: nextPath }: { mode: "register" | "login"; next?: string }) {
   const params = useSearchParams()
   const [pending, setPending] = useState(false)
   const [error, setError] = useState(() => authError(params.get("error")))
@@ -40,7 +40,7 @@ export function GoogleButton({ mode }: { mode: "register" | "login" }) {
   async function signIn() {
     setPending(true)
     setError(null)
-    const next = safeNext(params.get("next"))
+    const next = safeNext(nextPath ?? params.get("next"))
     const { error } = await createClient().auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}` },

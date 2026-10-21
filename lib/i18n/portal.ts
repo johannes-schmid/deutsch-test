@@ -19,6 +19,7 @@ export const AUTH_COPY = {
     h1: "Willkommen zurück.",
     lead: "Melde dich mit deinem Google-Konto an und übe weiter.",
     switch: ["Noch kein Konto?", "Registrieren"],
+    pricing: "Preise ansehen",
   },
   back: "Zur Startseite",
 }

@@ -13,8 +13,8 @@ export const metadata: Metadata = { title: T.title, alternates: { canonical: "/a
 export default function LoginPage() {
   return (
     <>
-      <AuthHeader switchTo={{ text: T.switch[0], label: T.switch[1], href: "/registrieren" }} />
-      <main className="v-container relative z-10 flex justify-center pt-14 sm:pt-24">
+      <AuthHeader switchTo={{ label: T.pricing, href: "/preise" }} />
+      <main className="v-container relative z-10 flex flex-1 flex-col items-center justify-center gap-6 py-8 sm:py-14">
         <section aria-labelledby="login-h" className="nz-app flex w-full max-w-[440px] flex-col gap-6 rounded-[28px] p-6 sm:p-8">
           <div className="flex flex-col gap-2">
             <h1 id="login-h" className="v-display pb-1 text-[clamp(32px,4vw,40px)] leading-[1.08]">{T.h1}</h1>
@@ -29,6 +29,10 @@ export default function LoginPage() {
             {R.legal[2]}
           </p>
         </section>
+        <p className="text-[14.5px] text-v-muted">
+          {T.switch[0]}{" "}
+          <Link href="/registrieren" className="font-semibold text-v-ink underline decoration-v-ink/30 decoration-[1.5px] underline-offset-4 hover:decoration-v-ink">{T.switch[1]}</Link>
+        </p>
       </main>
       <AuthFooter />
     </>

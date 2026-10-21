@@ -1,5 +1,5 @@
 import "server-only"
-import { EXAMS, EXAM_IDS, LEVELS, examPath, type Exam, type ExamId, type Level } from "@/lib/exams"
+import { EXAMS, EXAM_IDS, LEVELS, examPath, portalPath, type Exam, type ExamId, type Level } from "@/lib/exams"
 import { SKILLS, examLive, liveSkills, type Skill } from "@/lib/kurztest/data"
 
 export type PortalExam = Exam & { id: ExamId; href: string; free: string | null }
@@ -7,7 +7,7 @@ export type PortalExam = Exam & { id: ExamId; href: string; free: string | null 
 /** Modelltests per skill, as on inburgeringoefenen.nl. */
 export const MODELLTESTS = 10
 
-export const portalPath = (exam: ExamId, skill?: Skill) => (skill ? `/dashboard/${exam}/${skill}` : `/dashboard/${exam}`)
+export { portalPath }
 
 export const portalExam = (id: ExamId): PortalExam => ({ ...EXAMS[id], id, href: portalPath(id), free: examLive(id) ? examPath(id) : null })
 

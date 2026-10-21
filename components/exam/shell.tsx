@@ -1,9 +1,11 @@
 "use client"
 
-import { useEffect, useState, type ReactNode } from "react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
+import { createPortal } from "react-dom"
 import { Grid2x2, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import type { OverviewItem, Scene } from "@/lib/exam/types"
+import { PartIcon } from "@/components/design/variants/nachtzug-icons"
+import type { OverviewItem, PartId, Scene } from "@/lib/exam/types"
 import { ExamButton, fmt, useExamCopy } from "./primitives"
 
 const SCENES: Record<Scene, string> = {
@@ -24,6 +26,41 @@ export function ExamStage({ scene, framed, className, children }: { scene: Scene
     >
       {children}
     </div>
+  )
+}
+
+/**
+ * Focus mode, after inburgeringoefenen.nl's player: once a test starts it takes the whole screen, with no site nav,
+ * page header or footer. A fixed layer over the page (portalled into the nearest `.v-frame` for the tokens), the
+ * photo field pinned behind it, the page itself locked so only the layer scrolls. Dialogs (z-50) still sit above it.
+ */
+export function FocusLayer({ scene, label, children }: { scene: Scene; label: string; children: ReactNode }) {
+  const anchor = useRef<HTMLSpanElement>(null)
+  const [frame, setFrame] = useState<HTMLElement | null>(null)
+  useEffect(() => setFrame(anchor.current?.closest<HTMLElement>(".v-frame") ?? document.body), [])
+  useEffect(() => {
+    const root = document.documentElement
+    const prev = root.style.overflow
+    root.style.overflow = "hidden"
+    return () => {
+      root.style.overflow = prev
+    }
+  }, [])
+  return (
+    <>
+      <span ref={anchor} hidden />
+      {frame
+        ? createPortal(
+            <div aria-label={label} className="fixed inset-0 z-40 overflow-y-auto overscroll-contain">
+              <div aria-hidden="true" className="pointer-events-none fixed inset-0">
+                <div style={{ ["--photo" as string]: SCENES[scene] }} className="photo v-noise h-full" />
+              </div>
+              <div className="relative px-3 py-3 sm:px-6 sm:py-5">{children}</div>
+            </div>,
+            frame
+          )
+        : null}
+    </>
   )
 }
 
@@ -105,10 +142,32 @@ function OverviewSheet({ open, onClose, title, items, onJump }: { open: boolean;
 }
 
 /**
- * The exam frame: exit, progress per Teil, timer, the task, and a sticky action bar.
+ * The glass bar above every exam screen: exit, the skill, progress per Teil, done/total, and the timer.
+ * Sticky, so the clock and the way out stay in view over a long text.
+ */
+export function ExamBar({ part, sections, label, seconds, onExit, className }: { part?: PartId; sections: ShellSection[]; label: string; seconds?: number; onExit?: () => void; className?: string }) {
+  const t = useExamCopy()
+  const done = sections.reduce((n, x) => n + x.done, 0)
+  const total = sections.reduce((n, x) => n + x.count, 0)
+  return (
+    <div className={cn("nz-app sticky top-3 z-20 flex items-center gap-2.5 rounded-full py-2 ps-2 pe-3 sm:gap-3", className)}>
+      <ExamButton kind="iconSm" onClick={onExit} aria-label={t.exit}>
+        <X className="size-4" aria-hidden="true" />
+      </ExamButton>
+      {part ? <span className="max-sm:hidden"><PartIcon part={part} size="sm" /></span> : null}
+      <Progress sections={sections} label={label} />
+      <span className="v-num shrink-0 text-[12.5px] text-v-muted" aria-hidden="true">{done}/{total}</span>
+      {seconds !== undefined ? <TimerChip seconds={seconds} /> : null}
+    </div>
+  )
+}
+
+/**
+ * The exam frame: the glass bar, then the task in one card with a sticky action bar.
  * `wide` lets reading and writing split into two panes from `lg`.
  */
 export function ExamShell({
+  part,
   sections,
   progressLabel,
   seconds,
@@ -118,6 +177,7 @@ export function ExamShell({
   wide,
   children,
 }: {
+  part?: PartId
   sections: ShellSection[]
   progressLabel: string
   seconds?: number
@@ -130,26 +190,22 @@ export function ExamShell({
   const t = useExamCopy()
   const [open, setOpen] = useState(false)
   return (
-    <div className={cn("nz-app relative mx-auto flex w-full flex-col overflow-hidden rounded-[24px]", wide ? "max-w-[1040px]" : "max-w-[560px]")}>
-      <div className="flex items-center gap-3 px-4 pt-4">
-        <ExamButton kind="iconSm" onClick={onExit} aria-label={t.exit}>
-          <X className="size-4" aria-hidden="true" />
-        </ExamButton>
-        <Progress sections={sections} label={progressLabel} />
-        {seconds !== undefined ? <TimerChip seconds={seconds} /> : null}
+    <div className={cn("mx-auto flex w-full flex-col gap-3", wide ? "max-w-[1040px]" : "max-w-[560px]")}>
+      <ExamBar part={part} sections={sections} label={progressLabel} seconds={seconds} onExit={onExit} />
+      <div className="nz-app relative flex w-full flex-col overflow-clip rounded-[24px]">
+        <div className="flex flex-col gap-5 px-5 pt-6 pb-5">{children}</div>
+        {action || overview ? (
+          <div className="sticky bottom-0 mt-auto flex items-center gap-2 border-t border-v-line bg-v-surface/70 p-3 backdrop-blur-md">
+            {overview ? (
+              <ExamButton kind="icon" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-label={t.overview}>
+                <Grid2x2 className="size-5" aria-hidden="true" />
+              </ExamButton>
+            ) : null}
+            <div className="flex flex-1 gap-2 [&>*]:flex-1">{action}</div>
+          </div>
+        ) : null}
+        {overview ? <OverviewSheet open={open} onClose={() => setOpen(false)} {...overview} /> : null}
       </div>
-      <div className="flex flex-col gap-5 px-5 pt-6 pb-5">{children}</div>
-      {action || overview ? (
-        <div className="sticky bottom-0 mt-auto flex items-center gap-2 border-t border-v-line bg-v-surface/70 p-3 backdrop-blur-md">
-          {overview ? (
-            <ExamButton kind="icon" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-label={t.overview}>
-              <Grid2x2 className="size-5" aria-hidden="true" />
-            </ExamButton>
-          ) : null}
-          <div className="flex flex-1 gap-2 [&>*]:flex-1">{action}</div>
-        </div>
-      ) : null}
-      {overview ? <OverviewSheet open={open} onClose={() => setOpen(false)} {...overview} /> : null}
     </div>
   )
 }
