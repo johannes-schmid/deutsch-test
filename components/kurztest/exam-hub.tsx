@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowRight } from "lucide-react"
+import { PhotoCard } from "@/components/design/kit"
 import { JsonLd } from "@/components/design/json-ld"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { examPath, type ExamId } from "@/lib/exams"
@@ -11,6 +10,7 @@ import { PROVIDER, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/s
 import { KurztestHeader } from "./page-header"
 
 const T = KURZTEST_COPY
+const SKILL_PHOTO = { hoeren: "--g-photo-5", lesen: "--g-photo-6", schreiben: "--g-photo-4", sprechen: "--g-photo-2" } as const
 
 export function examHubMetadata(exam: ExamId): Metadata {
   const p = EXAM_PAGES[exam]!
@@ -53,23 +53,21 @@ export function ExamHub({ exam }: { exam: ExamId }) {
     <div className="v-container pb-16">
       <JsonLd data={jsonLd} />
       <KurztestHeader crumbs={crumbs} eyebrow={p.hub.eyebrow} h1={p.hub.h1} lead={p.hub.lead} chips={[T.chips.free, T.chips.noAccount, T.chips.solutions]} />
-      <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 md:grid-cols-2">
+      <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {skills.map((s) => {
           const c = p.skills[s]
           return (
             <li key={s}>
-              <Link
+              <PhotoCard
+                token={SKILL_PHOTO[s]}
+                art={<PartIcon part={s} size="lg" />}
+                chip={T.chips.free}
+                title={T.names[s]}
+                text={c.summary}
+                meta={<span className="text-[13.5px] text-v-muted">{c.detail}</span>}
+                cta={T.overview.start}
                 href={`${path}/${s}`}
-                className="nz-app group flex h-full items-center gap-4 rounded-[22px] p-4 transition-transform duration-150 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] sm:p-5"
-              >
-                <PartIcon part={s} size="lg" />
-                <span className="flex min-w-0 flex-1 flex-col gap-1">
-                  <b className="text-[20px] font-semibold tracking-[-0.02em]">{T.names[s]}</b>
-                  <span className="text-[15px] leading-snug">{c.summary}</span>
-                  <span className="text-[13.5px] text-v-muted">{c.detail}</span>
-                </span>
-                <ArrowRight className="size-5 shrink-0 text-v-muted transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
-              </Link>
+              />
             </li>
           )
         })}

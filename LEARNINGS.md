@@ -309,3 +309,14 @@
 **Outcome:** SUCCESS (`next build`, tsc, eslint pass; 390/1440 screenshots, no horizontal scroll; `/dtz` 308s; sitemap lists 4 posts).
 **What worked / went wrong:** A Blog dropdown (shadcn navigation-menu) was built first, then dropped on request. Its popup portalled to `<body>`, outside `.v-frame`, so it lost the Nachtzug tokens. After deleting a route, `tsc` fails on stale `.next/types` until the next build.
 **Lesson:** Any Base UI portal must target the nearest `.v-frame` (as `components/exam/confirm.tsx` does). Run `next build` before `tsc` after removing a route.
+
+## 2026-10-21 — Site restyled after inburgeringoefenen.nl, Nachtzug palette kept
+**Changed:** floating glass header pill with active-route pill + glass footer card (`components/design/site-chrome.tsx`, new `nav-links.tsx`); `PageHeader` icon + `h1Muted`, `Prose` on a white reading card with step-style `<ol>`, `Byline` mist panel, `TestCta` as photo-field band (`content-page.tsx`); new `PhotoCard` in `kit.tsx` used by the home exam row (`variants/nachtzug.tsx`, copy in `lib/i18n/landing.ts`), `ExamPicker` and `ExamHub`; dark recommended plan on `/preise`; eyebrows as glass chips; `ExamMark size="sm"`; new `app/not-found.tsx`; `.nz-chrome`/`.nz-paper`/`.nz-steps` in `landing.css`; DESIGN.md updated.
+**Outcome:** SUCCESS (tsc clean, `next build` passes, eslint clean on changed files; 10 older lint errors remain in untouched `consent.tsx`, `runner.tsx`, `kurztest/store.ts`; 390/1440 screenshots, no horizontal scroll).
+**What worked / went wrong:**
+- Sliced 1440×1600 full-page captures of the live Dutch site were readable; one full-page shot of an 8,800px page was useless.
+- Nearly every page shares `site-chrome`, `content-page` and the kurztest header/hub/picker, so the restyle touched ~15 files, not 60 routes.
+- A stretched-link card (`after:inset-0`) covered the clickable level tags in the photo head. Fix: head `pointer-events-none z-10`, tags `pointer-events-auto`.
+- The running dev server kept serving a stale render of `/gratis-test/dtz` after the edit; `?x=1` showed the new version. It's a dev cache, not a code bug.
+- Skipped the Dutch trust strip (Trustpilot, user counts): we can't back those claims up.
+**Lesson:** When porting a sister site's look, change the shared chrome and page primitives first, then check every page type at 390 and 1440. If a dev page looks unchanged, bust the cache with a query string before debugging.

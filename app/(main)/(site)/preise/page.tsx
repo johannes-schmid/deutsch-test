@@ -39,46 +39,48 @@ export default function PreisePage() {
       <JsonLd data={jsonLd} />
       <PageHeader
         crumbs={crumbs}
-        h1="Ein Paket für den ganzen DTZ"
+        h1="Ein Paket"
+        h1Muted="für den ganzen DTZ."
         lead="Am Prüfungstag machst du alle vier Teile. Darum gibt es bei uns ein Paket mit allen Teilen."
       />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {PLANS.map((p) => {
           const saving = savingsPercent(p)
+          const dark = p.featured
           return (
             <section
               key={p.id}
               aria-label={p.name}
-              className={`nz-app flex flex-col gap-5 rounded-[24px] p-6 sm:p-7 ${p.featured ? "outline-2 outline-offset-[-2px] outline-v-ink" : ""}`}
+              className={`flex flex-col gap-5 rounded-[28px] p-6 sm:p-7 ${dark ? "nz-night shadow-[0_40px_80px_-44px_rgba(8,10,30,0.7)]" : "nz-paper"}`}
             >
               <div className="flex min-h-7 flex-wrap items-center justify-between gap-x-3 gap-y-2">
                 <h2 className="text-[18px] font-semibold whitespace-nowrap">{p.name}</h2>
-                {p.featured ? <span className="rounded-full bg-v-ink px-3 py-1 text-[12.5px] font-semibold whitespace-nowrap text-v-bg">Empfohlen</span> : null}
+                {dark ? <span className="rounded-full bg-(--p-glow) px-3 py-1 text-[12.5px] font-semibold whitespace-nowrap text-[#0A0D18]">Empfohlen</span> : null}
               </div>
               <p className="flex items-baseline gap-2">
                 <span className="v-display text-[44px] leading-none tabular-nums">{formatEuro(p.cents)}</span>
               </p>
-              <p className="-mt-3 text-[14px] text-v-muted">
+              <p className={`-mt-3 text-[14px] ${dark ? "text-white/70" : "text-v-muted"}`}>
                 {p.months > 1 ? <>{formatEuro(perMonthCents(p))} im Monat{saving > 0 ? <>, du sparst {saving}{"\u00A0"}%</> : null}</> : "Zum Ausprobieren"}
               </p>
-              <ul className="flex flex-col gap-2.5 text-[15px]">
+              <ul className={`flex flex-col gap-2.5 border-t pt-5 text-[15px] ${dark ? "border-white/15" : "border-v-line"}`}>
                 {PLAN_FEATURES.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <Check className="mt-1 size-4 shrink-0 text-v-accent" strokeWidth={2.5} aria-hidden="true" />
+                    <Check className={`mt-1 size-4 shrink-0 ${dark ? "text-(--p-glow)" : "text-v-accent"}`} strokeWidth={2.5} aria-hidden="true" />
                     {f}
                   </li>
                 ))}
               </ul>
-              <VButton kind={p.featured ? "cta" : "ghost"} disabled className="mt-auto w-full">Bald verfügbar</VButton>
+              <VButton kind={dark ? "light" : "ghost"} disabled className="mt-auto w-full">Bald verfügbar</VButton>
             </section>
           )
         })}
 
-        <section aria-label="Gratis" className="flex flex-col gap-5 bg-v-surface/40 rounded-[24px] border border-dashed border-v-line p-6 sm:p-7">
+        <section aria-label="Gratis" className="flex flex-col gap-5 rounded-[28px] border border-dashed border-v-ink/20 bg-v-surface/40 p-6 sm:p-7">
           <h2 className="min-h-7 text-[18px] font-semibold">Gratis</h2>
           <p className="v-display text-[44px] leading-none tabular-nums">0 €</p>
-          <ul className="flex flex-col gap-2.5 text-[15px]">
+          <ul className="flex flex-col gap-2.5 border-t border-v-line pt-5 text-[15px]">
             {FREE.map((f) => (
               <li key={f} className="flex items-start gap-2.5">
                 <Check className="mt-1 size-4 shrink-0 text-v-accent" strokeWidth={2.5} aria-hidden="true" />

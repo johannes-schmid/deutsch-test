@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
-import { VButton } from "@/components/design/kit"
+import { ChevronRight, type LucideIcon } from "lucide-react"
+import { Photo, VButton } from "@/components/design/kit"
 import type { Crumb } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
@@ -24,35 +24,44 @@ export function Crumbs({ crumbs }: { crumbs: Crumb[] }) {
   )
 }
 
-/** Breadcrumb, H1 and lead: the top of every text page (legal, landings). No eyebrow; the H1 carries itself. */
-export function PageHeader({ crumbs, h1, lead, meta }: { crumbs: Crumb[]; h1: string; lead?: string; meta?: string }) {
+/** Breadcrumb, H1 and lead: the top of every text page (legal, landings). No eyebrow; the H1 carries itself. `h1Muted` continues the H1 in muted ink; `icon` sets a round tile above it. */
+export function PageHeader({ crumbs, h1, h1Muted, lead, meta, icon: Icon }: { crumbs: Crumb[]; h1: string; h1Muted?: string; lead?: string; meta?: string; icon?: LucideIcon }) {
   return (
-    <header className="flex max-w-[64ch] flex-col items-start gap-5 pt-6 pb-10 sm:pt-10 sm:pb-14">
+    <header className="flex max-w-[64ch] flex-col items-start gap-5 pt-8 pb-10 sm:pt-12 sm:pb-14">
       <Crumbs crumbs={crumbs} />
-      <h1 className="v-display pb-1 text-[clamp(36px,5vw,60px)] leading-[1.06]">{h1}</h1>
+      {Icon ? (
+        <span className="nz-chrome grid size-14 place-items-center rounded-full">
+          <Icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
+        </span>
+      ) : null}
+      <h1 className="v-display pb-1 text-[clamp(36px,5vw,60px)] leading-[1.06]">
+        {h1}
+        {h1Muted ? <span className="text-v-muted"> {h1Muted}</span> : null}
+      </h1>
       {lead ? <p className="text-[17px] leading-relaxed text-v-muted sm:text-lg">{lead}</p> : null}
       {meta ? <p className="v-num text-[13px] text-v-muted">{meta}</p> : null}
     </header>
   )
 }
 
-/** Long-form text: legal pages, guides, the about page. Styles plain h2/h3/p/ul/ol/a/table children. */
+/** Long-form text on one white reading card: legal pages, landings, the about page. Styles plain h2/h3/p/ul/ol/a/table children; an <ol> renders as numbered steps. */
 export function Prose({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <div
-      className={cn(
-        "max-w-[68ch] text-[16.5px] leading-[1.7] text-v-ink",
-        "[&_h2]:mt-14 [&_h2]:mb-4 [&_h2]:text-[clamp(22px,2.6vw,28px)] [&_h2]:leading-tight [&_h2]:font-semibold [&_h2]:tracking-[-0.015em] [&_h2]:text-balance [&_h2:first-child]:mt-0",
-        "[&_h3]:mt-8 [&_h3]:mb-2 [&_h3]:text-[18px] [&_h3]:font-semibold",
-        "[&_p]:my-4 [&_p]:text-pretty",
-        "[&_ul]:my-4 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2 [&_ul]:ps-5 [&_ul]:list-disc [&_ol]:my-4 [&_ol]:flex [&_ol]:flex-col [&_ol]:gap-2 [&_ol]:ps-5 [&_ol]:list-decimal [&_li]:ps-1 [&_li::marker]:text-v-muted",
-        "[&_a]:underline [&_a]:decoration-v-line [&_a]:decoration-[1.5px] [&_a]:underline-offset-4 [&_a]:transition-colors [&_a:hover]:decoration-v-ink",
-        "[&_strong]:font-semibold [&_address]:not-italic",
-        "[&_table]:my-6 [&_table]:w-full [&_table]:border-collapse [&_table]:text-[15.5px] [&_th]:py-3 [&_th]:pe-4 [&_th]:text-start [&_th]:align-top [&_th]:font-semibold [&_td]:py-3 [&_td]:pe-4 [&_td]:align-top [&_tr]:border-b [&_tr]:border-v-line",
-        className
-      )}
-    >
-      {children}
+    <div className={cn("nz-paper max-w-[54rem] rounded-[28px] px-6 py-8 sm:px-12 sm:py-12", className)}>
+      <div
+        className={cn(
+          "v-prose max-w-[68ch] text-[16.5px] leading-[1.7] text-v-ink",
+          "[&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-[clamp(21px,2.4vw,26px)] [&_h2]:leading-tight [&_h2]:font-semibold [&_h2]:tracking-[-0.02em] [&_h2]:text-balance [&_h2:first-child]:mt-0",
+          "[&_h3]:mt-8 [&_h3]:mb-2 [&_h3]:text-[18px] [&_h3]:font-semibold",
+          "[&_p]:my-4 [&_p]:text-pretty [&_p:first-child]:mt-0 [&>*:last-child]:mb-0",
+          "[&_ul]:my-4 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2 [&_ul]:ps-5 [&_ul]:list-disc [&_ul>li]:ps-1 [&_ul>li::marker]:text-v-accent [&_ol]:my-6",
+          "[&_a]:underline [&_a]:decoration-v-line [&_a]:decoration-[1.5px] [&_a]:underline-offset-4 [&_a]:transition-colors [&_a:hover]:decoration-v-ink",
+          "[&_strong]:font-semibold [&_address]:not-italic",
+          "[&_table]:my-6 [&_table]:w-full [&_table]:border-collapse [&_table]:text-[15.5px] [&_th]:py-3 [&_th]:pe-4 [&_th]:text-start [&_th]:align-top [&_th]:font-semibold [&_td]:py-3 [&_td]:pe-4 [&_td]:align-top [&_tr]:border-b [&_tr]:border-v-line"
+        )}
+      >
+        {children}
+      </div>
     </div>
   )
 }
@@ -65,13 +74,13 @@ export function Todo({ children }: { children: React.ReactNode }) {
 /** Author, review date and sources: required on every guide (CLAUDE.md §4). */
 export function Byline({ author, reviewed, sources }: { author: string; reviewed: string; sources: { name: string; url: string }[] }) {
   return (
-    <aside className="mt-16 max-w-[68ch] border-t border-v-line pt-6 text-[14.5px] leading-relaxed text-v-muted">
+    <aside className="mt-6 flex max-w-[54rem] flex-col gap-3 rounded-[22px] bg-v-soft/70 px-6 py-5 text-[14.5px] leading-relaxed text-v-muted sm:px-12">
       <p>
         Verantwortlich: <span className="text-v-ink">{author}</span>. Stand: <span className="v-num">{reviewed}</span>.
       </p>
       {sources.length ? (
-        <>
-          <p className="mt-3 text-v-ink">Quellen</p>
+        <div>
+          <p className="text-v-ink">Quellen</p>
           <ul className="mt-1 flex flex-col gap-1">
             {sources.map((s) => (
               <li key={s.url}>
@@ -79,21 +88,19 @@ export function Byline({ author, reviewed, sources }: { author: string; reviewed
               </li>
             ))}
           </ul>
-        </>
+        </div>
       ) : null}
     </aside>
   )
 }
 
-/** Closing band that sends the reader to the free test. One per page. */
+/** Closing band that sends the reader to the free test: a centred headline on a photo field. One per page. */
 export function TestCta({ h2, text, href = "/gratis-test/dtz", button = "Gratis Test starten" }: { h2: string; text: string; href?: string; button?: string }) {
   return (
-    <section className="nz-app mt-20 flex flex-col items-start gap-5 rounded-[24px] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
-      <div className="max-w-[46ch]">
-        <h2 className="text-[clamp(24px,3vw,32px)] leading-tight font-semibold tracking-[-0.02em] text-balance">{h2}</h2>
-        <p className="mt-2 text-[16px] leading-relaxed text-v-muted">{text}</p>
-      </div>
-      <VButton size="lg" render={<Link href={href} />} nativeButton={false} className="shrink-0">{button}</VButton>
-    </section>
+    <Photo token="--g-photo-6" className="mt-20 flex min-h-[340px] flex-col items-center justify-center gap-5 rounded-[28px] px-6 py-14 text-center sm:min-h-[380px]">
+      <h2 className="v-display max-w-[18ch] text-[clamp(32px,4.6vw,60px)] leading-[1.04]">{h2}</h2>
+      <p className="max-w-[42ch] text-[17px] leading-relaxed text-v-muted">{text}</p>
+      <VButton size="lg" render={<Link href={href} />} nativeButton={false} className="mt-1">{button}</VButton>
+    </Photo>
   )
 }

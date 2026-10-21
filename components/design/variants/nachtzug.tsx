@@ -4,10 +4,65 @@ import { FORMAT_STAND, LANGUAGES } from "@/lib/design/content"
 import { PLANS, formatEuro } from "@/lib/pricing"
 import { LANDING, NUMBER_LOCALE, type LandingCopy, type Locale } from "@/lib/i18n/landing"
 import { Check, Clock as ClockIcon, Headphones, Lock } from "lucide-react"
-import { LevelScale, Photo, VButton } from "../kit"
+import { LevelScale, Photo, PhotoCard, VButton } from "../kit"
 import { PlatformDemo } from "./nachtzug-demo"
-import { ExamTicket, LevelPath, LevelSeal, MetaChip, PromiseArt, TestCard } from "./nachtzug-icons"
+import { ExamMark, ExamTicket, LevelPath, LevelSeal, MetaChip, PromiseArt, TestCard } from "./nachtzug-icons"
 import { SiteFooter, SiteGlow, SiteNav } from "../site-chrome"
+import { examPath, type Brand, type ExamId } from "@/lib/exams"
+import { EXAM_PAGES } from "@/lib/i18n/kurztest"
+import { liveSkills } from "@/lib/kurztest/data"
+
+/** One card per exam family; the level tags link to each exam's free tests once they have reviewed content. */
+const HOME_EXAMS: { brand: Exclude<Brand, "sd1">; photo: string; main: ExamId; levels: [string, ExamId][] }[] = [
+  { brand: "dtz", photo: "--g-photo-5", main: "dtz", levels: [["A2–B1", "dtz"]] },
+  { brand: "goethe", photo: "--g-photo-2", main: "goethe-b1", levels: [["A2", "goethe-a2"], ["B1", "goethe-b1"]] },
+  { brand: "telc", photo: "--g-photo-6", main: "telc-b1", levels: [["A2", "telc-a2"], ["B1", "telc-b1"]] },
+  { brand: "oesd", photo: "--g-photo-4", main: "oesd-b1", levels: [["A1", "oesd-a1"], ["A2", "oesd-a2"], ["B1", "oesd-b1"]] },
+]
+const isLive = (id: ExamId) => !!EXAM_PAGES[id] && liveSkills(id).length > 0
+
+function ExamsSection({ t }: { t: LandingCopy }) {
+  const x = t.examsSection
+  return (
+    <section className="py-24 sm:py-32">
+      <div className="v-container flex flex-col gap-12">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+          <h2 className="v-h2 text-[clamp(32px,4.4vw,56px)]">
+            {x.h2} <span className="text-v-muted">{x.h2muted}</span>
+          </h2>
+          <p className="max-w-[52ch] text-lg text-v-muted">{x.lead}</p>
+        </div>
+        <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {HOME_EXAMS.map((e) => {
+            const c = x.cards[e.brand]
+            const live = isLive(e.main)
+            return (
+              <li key={e.brand}>
+                <PhotoCard
+                  token={e.photo}
+                  art={<ExamMark brand={e.brand} size="lg" />}
+                  chip={live ? x.live : undefined}
+                  tags={e.levels.map(([label, id]) =>
+                    isLive(id) ? (
+                      <Link key={id} href={examPath(id)} className="rounded underline decoration-v-ink/30 decoration-[1.5px] underline-offset-4 transition-colors hover:decoration-v-ink">{label}</Link>
+                    ) : (
+                      <span key={id} className="text-v-muted">{label}</span>
+                    )
+                  )}
+                  title={c.title}
+                  text={c.text}
+                  cta={x.cta}
+                  href={live ? examPath(e.main) : null}
+                  headClassName="sm:min-h-40"
+                />
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </section>
+  )
+}
 
 const WEEK = [{ done: true }, { done: true }, { done: false }, { done: true }, { today: true }]
 
@@ -165,7 +220,7 @@ export function Nachtzug({ locale }: { locale: Locale }) {
 
         <div className="v-container relative z-10 grid items-center gap-14 pt-10 pb-24 sm:pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:pt-20 lg:pb-32">
           <div className="flex flex-col items-start gap-7">
-            <span className="font-[family-name:var(--v-font-mono)] text-[12px] tracking-[0.08em] text-v-muted uppercase">{t.hero.eyebrow}</span>
+            <span className="nz-chrome rounded-full px-3.5 py-1.5 font-[family-name:var(--v-font-mono)] text-[11.5px] tracking-[0.08em] text-v-ink uppercase">{t.hero.eyebrow}</span>
             <h1 className="v-display max-w-[17ch] text-[clamp(38px,4.8vw,68px)] leading-[1.06]">
               {t.hero.h1} <em className="pr-1 text-v-muted italic">{t.hero.h1em}</em>
             </h1>
@@ -194,7 +249,9 @@ export function Nachtzug({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="py-24 sm:py-32">
+      <ExamsSection t={t} />
+
+      <section className="pb-24 sm:pb-32">
         <div className="v-container flex flex-col items-center gap-14">
           <div className="flex max-w-3xl flex-col items-center gap-4 text-center">
             <h2 className="v-h2 text-[clamp(30px,4vw,52px)]">{t.demoSection.h2}</h2>
@@ -248,7 +305,7 @@ export function Nachtzug({ locale }: { locale: Locale }) {
 
       <section className="py-24 sm:py-32">
         <div className="v-container flex flex-col gap-10">
-          <h2 className="v-h2 text-[clamp(32px,4.4vw,52px)]">{t.audiencesH2} <em className="italic">{t.audiencesH2em}</em></h2>
+          <h2 className="v-h2 text-[clamp(32px,4.4vw,52px)]">{t.audiencesH2} <span className="text-v-muted">{t.audiencesH2em}</span></h2>
           <div className="grid gap-4 md:grid-cols-3">
             {t.audiences.map((a, i) => (
               <Photo key={a.tag} token={["--g-photo-2", "--g-photo-3", "--g-photo-4"][i]} className="flex min-h-[420px] flex-col justify-between rounded-(--v-radius) p-6">

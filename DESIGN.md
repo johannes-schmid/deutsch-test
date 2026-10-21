@@ -150,6 +150,7 @@ The palette is cool and neutral, with a single warm accent and four skill tones 
   max about 46ch.
 - **Label:** Reddit Mono 400–500, 11–12px, uppercase, +0.08em. Timers and counts use `.v-num`
   (mono, tabular numbers).
+- **Two-tone headings** (from inburgeringoefenen.nl): the key phrase in ink, the rest in muted (`text-v-muted`), e.g. "Jede Prüfung, *Teil für Teil.*", "Ein Paket *für den ganzen DTZ.*" The hero keeps its italic muted line.
 - Copy comes in simple German (`/`, the default, addressed as *du*) and English (`/en`). Sentences stay at 15 words or fewer. All strings live in `lib/i18n/landing.ts`. Exam task content stays German in both.
 
 ## Layout
@@ -173,6 +174,8 @@ Depth comes from layering, with almost no shadow:
 3. **Glass** (`.nz-app`, `.glass`): frosted white at 88% with a 26px backdrop blur, an inner top
    highlight, and a long soft drop shadow `0 40px 80px -40px rgba(8,10,30,.55)`.
 4. **Float** (`.nz-float`): an 8px vertical bob over 7s, staggered with negative delays.
+
+5. **Chrome and paper**: `.nz-chrome` (white at 72%, 22px blur, white edge, soft navy drop) for the header pill, footer card and small glass chips; `.nz-paper` (solid surface, long soft drop) for reading cards and `PhotoCard`. The recommended price plan is the one `.nz-night` card on `/preise`.
 
 Every animation stops under `prefers-reduced-motion`. Glass becomes solid under
 `prefers-reduced-transparency`.
@@ -208,9 +211,10 @@ tokens.
 | `MetaChip` | `variants/nachtzug-icons.tsx` | glass pill with an icon (45 Min, 2× hören, zu zweit) |
 | `ExamTicket` | `variants/nachtzug-icons.tsx` | countdown ticket with the four part icons |
 | `PromiseArt` | `variants/nachtzug-icons.tsx` | review card: blueprint checks and a "Von einem Menschen geprüft" pill |
-| `SiteNav` / `SiteGlow` / `SiteFooter` | `site-chrome.tsx` | the one site header (logo → home, nav, CTA; `switchLang={false}` on German-only pages), the hero orbs, and the footer. Every public page uses these, never its own bar |
+| `SiteNav` / `SiteGlow` / `SiteFooter` | `site-chrome.tsx`, `nav-links.tsx` | the one site chrome, after inburgeringoefenen.nl. **Header:** a floating glass pill (`.nz-chrome`, 56px) inside the container; the current section gets a soft ink pill (`ActiveNavLinks`, in `<Suspense>`); `switchLang={false}` on German-only pages. **Footer:** a glass card (brand, blurb, four `ExamMark sm` tiles, link groups, two columns on phones) with the operator line and the disclaimer under it. Every public page uses these, never its own bar |
+| `PhotoCard` | `kit.tsx` | product card after the Dutch site: a `.photo` head (art tile, mono status chip, optional tag links) over a white body (title, text, meta, "cta + round ink arrow"). The whole card links via a stretched title link; head tags stay clickable above it. No `href` = dashed "Bald verfügbar" placeholder. Used by the home exam row, `ExamPicker` and `ExamHub` |
 | `ExamPicker` | `components/kurztest/exam-picker.tsx` | level pills (A1 · A2 · B1, shadcn Tabs, all panels kept in the HTML) over exam cards; a card without content is dashed with "Bald verfügbar" and no link |
-| `PageHeader` / `Prose` / `Byline` / `TestCta` / `Todo` | `content-page.tsx` | text pages: breadcrumb + H1 + lead (no eyebrow), long-form typography at 68ch, author/date/sources, one closing CTA band, dashed marker for unfilled facts |
+| `PageHeader` / `Prose` / `Byline` / `TestCta` / `Todo` | `content-page.tsx` | text pages. `PageHeader`: breadcrumb, optional round glass `icon` tile, H1 with an optional muted second half (`h1Muted`), lead. `Prose`: the text on one white reading card (`.nz-paper`, 28px radius), 68ch measure; an `<ol>` renders as numbered steps (ink dots on a rail, `.nz-steps`). `Byline`: mist panel under the card. `TestCta`: centred display headline on a `--g-photo-6` field, one per page. `Todo`: dashed marker for unfilled facts |
 | `Photo` | `kit.tsx` | blurred gradient field (`--g-photo-1` … `-6`); glass cards sit on it. Shared by the landing and the blog |
 | Blog page frame | `article.tsx`, `article-interactive.tsx` | modelled on inburgeringoefenen.nl's blog. **Index:** H1 with a muted second half, `AuthorCard` (glass), `BlogFilter` topic chips with counts, `FeatureCard` (cover full-bleed, text on an `nz-app` glass panel), two `SideCard`s (square photo thumb with the cover's `mini` art), then `GridCard`s, then one centred photo CTA. **Article:** `ArticleHeader` (crumbs, H1, lead, `Byline` = avatar · name · role · date \| mono reading time, ink CTA button, `CoverTile` = cover with a turned glass sheet behind), then one white reading card: sticky `ArticleToc` with numbered items and scroll-spy (IntersectionObserver on sections, `ArticleTocFold` on phones), `SummaryCard`, the text, `ArticleFaq` (accordion on a mist panel), `ArticleProof` (review line + sources), `NightCta` (the one dark block, `.nz-night`), then `RelatedList` |
 | In-article blocks | `article.tsx`, `article-interactive.tsx` | on the white card, so surfaces are mist (`bg-v-soft/60`), not borders. `FactBox` (bold claim, mono "Quelle · Stand"), `Note` tipp/info/wichtig (light wash of its tone + icon tile), `QuizCard` (one practice question built on the exam's `ChoiceItem`, answer shown after the tap), `ExamStrip` (explainer figure: exams on one time axis, part colours), `Steps`, `Compare` (3 items → 3 columns), `DoDont` (rosé wrong, glow right), `DataTable` (ink header, zebra, scrolls sideways), `LetterSample` (our own model letter with numbered notes). Live reference: `/design/blog` (noindex) |

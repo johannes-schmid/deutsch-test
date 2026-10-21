@@ -38,7 +38,8 @@ export default function B1EinbuergerungPage() {
       <JsonLd data={jsonLd} />
       <PageHeader
         crumbs={crumbs}
-        h1="B1 für die Einbürgerung"
+        h1="B1"
+        h1Muted="für die Einbürgerung"
         lead="Für den deutschen Pass musst du in der Regel Deutsch auf B1 nachweisen. Hier steht, was das heißt und wie du dich vorbereitest."
       />
 
@@ -77,10 +78,9 @@ export default function B1EinbuergerungPage() {
           Das ist keine Rechtsberatung. Verbindlich ist, was deine Einbürgerungsbehörde sagt. Stand: 10/2026.
         </p>
       </Prose>
+      <Byline author={`${OPERATOR.person}, ${OPERATOR.company}`} reviewed="10/2026" sources={SOURCES} />
 
       <TestCta h2="Hast du schon B1?" text="Mach einen Teil vom DTZ als Gratis-Test. Ohne Anmeldung." />
-
-      <Byline author={`${OPERATOR.person}, ${OPERATOR.company}`} reviewed="10/2026" sources={SOURCES} />
     </>
   )
 }

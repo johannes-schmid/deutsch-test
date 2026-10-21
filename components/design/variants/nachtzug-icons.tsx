@@ -52,10 +52,10 @@ const BRANDS: Record<Brand, { mark: string; tone: string; flag: string[]; countr
   dtz: { mark: "DTZ", tone: "var(--p-glow)", flag: DE, country: "Deutschland" },
 }
 
-export function ExamMark({ brand, size = "md" }: { brand: Brand; size?: "md" | "lg" }) {
+export function ExamMark({ brand, size = "md" }: { brand: Brand; size?: "sm" | "md" | "lg" }) {
   const b = BRANDS[brand]
-  const box = { md: "size-12 rounded-2xl", lg: "size-16 rounded-[22px]" }[size]
-  const text = b.mark.length > 4 ? { md: "text-[10.5px]", lg: "text-[13px]" }[size] : { md: "text-[14px]", lg: "text-[18px]" }[size]
+  const box = { sm: "size-9 rounded-xl", md: "size-12 rounded-2xl", lg: "size-16 rounded-[22px]" }[size]
+  const text = b.mark.length > 4 ? { sm: "text-[8.5px]", md: "text-[10.5px]", lg: "text-[13px]" }[size] : { sm: "text-[11px]", md: "text-[14px]", lg: "text-[18px]" }[size]
   return (
     <span className="relative shrink-0" aria-hidden="true">
       <span className={`nz-tile relative grid place-items-center ${box}`} style={{ ["--tone" as string]: b.tone }}>

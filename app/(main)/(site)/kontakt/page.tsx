@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Mail } from "lucide-react"
+import { Mail, MessageCircle } from "lucide-react"
 import { PageHeader, Prose } from "@/components/design/content-page"
 import { JsonLd } from "@/components/design/json-ld"
 import { CONTACT_EMAIL, PROVIDER, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/seo"
@@ -31,7 +31,7 @@ export default function KontaktPage() {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <PageHeader crumbs={crumbs} h1="Kontakt" lead="Hast du eine Frage oder einen Fehler gefunden? Schreib uns. Du kannst auf Deutsch oder Englisch schreiben." />
+      <PageHeader crumbs={crumbs} icon={MessageCircle} h1="Kontakt" lead="Hast du eine Frage oder einen Fehler gefunden? Schreib uns. Du kannst auf Deutsch oder Englisch schreiben." />
 
       <a
         href={`mailto:${CONTACT_EMAIL}`}

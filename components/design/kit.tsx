@@ -1,4 +1,6 @@
 import type { ComponentProps } from "react"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { SKILLS, type SkillId } from "@/lib/design/content"
@@ -41,6 +43,70 @@ export function Photo({ token, className, children }: { token: string; className
     <div className={cn("photo", className)} style={{ ["--photo" as string]: `var(${token})` }}>
       {children}
     </div>
+  )
+}
+
+/** A card with a photo-field head (art, a status chip, tags) over a white body, after inburgeringoefenen.nl's product cards. With `href` the whole card links (tags may hold their own links); without it, the card is a dashed "coming soon" placeholder. */
+export function PhotoCard({
+  token,
+  art,
+  chip,
+  tags,
+  title,
+  text,
+  meta,
+  cta,
+  href,
+  headClassName,
+}: {
+  token: string
+  art: React.ReactNode
+  chip?: string
+  tags?: React.ReactNode
+  title: string
+  text: string
+  meta?: React.ReactNode
+  cta?: string
+  href?: string | null
+  headClassName?: string
+}) {
+  const live = !!href
+  return (
+    <article
+      className={cn(
+        "group relative flex h-full flex-col overflow-hidden rounded-[24px]",
+        live ? "nz-paper transition-transform duration-200 ease-out hover:-translate-y-0.5 has-[a:active]:scale-[0.99]" : "border border-dashed border-v-ink/20 bg-v-surface/40"
+      )}
+    >
+      <Photo token={token} className={cn("pointer-events-none z-10 flex min-h-28 flex-col sm:min-h-36 justify-between gap-6 p-4", !live && "opacity-60", headClassName)}>
+        <div className="flex items-start justify-between gap-3">
+          {art}
+          {chip ? <span className="rounded-full bg-v-surface/75 px-2.5 py-1 font-[family-name:var(--v-font-mono)] text-[11px] tracking-[0.08em] text-v-ink uppercase backdrop-blur-md">{chip}</span> : null}
+        </div>
+        {tags ? <div className="pointer-events-auto flex flex-wrap gap-x-3 gap-y-1 font-[family-name:var(--v-font-mono)] text-[11.5px] tracking-[0.06em] text-v-ink uppercase">{tags}</div> : null}
+      </Photo>
+      <div className="flex flex-1 flex-col gap-2 p-5 sm:p-6">
+        <h3 className="text-[21px] leading-tight font-semibold tracking-[-0.02em] text-balance">
+          {live ? (
+            <Link href={href} className="rounded outline-none after:absolute after:inset-0 after:rounded-[24px] focus-visible:after:ring-2 focus-visible:after:ring-v-ink">
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
+        </h3>
+        <p className="text-[15px] leading-snug text-v-muted text-pretty">{text}</p>
+        {meta}
+        {live && cta ? (
+          <div className="mt-auto flex items-center justify-between gap-3 pt-4 text-[14.5px] font-semibold">
+            {cta}
+            <span className="grid size-9 shrink-0 place-items-center rounded-full bg-v-ink text-v-bg transition-transform duration-200 ease-out group-hover:translate-x-0.5" aria-hidden="true">
+              <ArrowRight className="size-4 rtl:-scale-x-100" strokeWidth={2.25} />
+            </span>
+          </div>
+        ) : null}
+      </div>
+    </article>
   )
 }
 

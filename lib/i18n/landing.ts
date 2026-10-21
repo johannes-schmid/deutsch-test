@@ -52,6 +52,19 @@ const de = {
   dashboard: { hello: "Hallo Amina", examIn: "Prüfung in 23 Tagen", days: ["Mo", "Di", "Mi", "Do", "Fr"], pillTitle: "Lesen · 45 Min", pillText: "Du kannst morgen weitermachen." },
   player: { title: "Hören · Teil 2", note: "Du hörst den Text einmal. Kein Zurückspulen." },
   result: { label: "Dein Ergebnis · Modelltest 2", rows: ["Hören", "Lesen", "Schreiben", "Sprechen"] },
+  examsSection: {
+    h2: "Jede Prüfung,",
+    h2muted: "Teil für Teil.",
+    lead: "Wähl deine Prüfung. Jeder Gratis-Test hat die gleichen Teile und Aufgabentypen wie die echte Prüfung.",
+    live: "Gratis",
+    cta: "Gratis testen",
+    cards: {
+      dtz: { title: "DTZ", text: "Die Prüfung am Ende vom Integrationskurs. Ergebnis: B1, A2 oder unter A2." },
+      goethe: { title: "Goethe-Zertifikat", text: "A2 und B1. Bei B1 machst du jedes Modul einzeln." },
+      telc: { title: "telc Deutsch", text: "A2 und B1. Bei B1 mit Sprachbausteinen." },
+      oesd: { title: "ÖSD Zertifikat", text: "A1, A2 und B1. Mit Stimmen aus Österreich und der Schweiz." },
+    },
+  },
   audiencesH2: "Gemacht für dich,",
   audiencesH2em: "egal woher du kommst.",
   audiences: [
@@ -79,7 +92,7 @@ const de = {
     ],
   },
   cta: { h2: "Bereit für den Prüfungstag?", text: "Mach jetzt deinen ersten Modelltest. Gratis und ohne Anmeldung.", button: "Gratis Test starten" },
-  footer: { disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", about: "Über uns", blog: "Blog", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
+  footer: { blurb: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Gleiche Teile, gleiche Zeiten.", disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", about: "Über uns", blog: "Blog", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
   parts: {
     hoeren: { name: "Hören", meta: "ca. 25 Min" },
     lesen: { name: "Lesen", meta: "45 Min" },
@@ -193,6 +206,19 @@ const en: LandingCopy = {
   dashboard: { hello: "Hi Amina", examIn: "Exam in 23 days", days: ["Mon", "Tue", "Wed", "Thu", "Fri"], pillTitle: "Reading · 45 min", pillText: "You can continue tomorrow." },
   player: { title: "Listening · Part 2", note: "You hear the text once. No rewinding." },
   result: { label: "Your result · Mock exam 2", rows: ["Listening", "Reading", "Writing", "Speaking"] },
+  examsSection: {
+    h2: "Every exam,",
+    h2muted: "part by part.",
+    lead: "Pick your exam. Every free test has the same parts and task types as the real exam.",
+    live: "Free",
+    cta: "Try it free",
+    cards: {
+      dtz: { title: "DTZ", text: "The exam at the end of the integration course. Result: B1, A2 or below A2." },
+      goethe: { title: "Goethe-Zertifikat", text: "A2 and B1. At B1 you take each module on its own." },
+      telc: { title: "telc Deutsch", text: "A2 and B1. At B1 with a grammar section (Sprachbausteine)." },
+      oesd: { title: "ÖSD Zertifikat", text: "A1, A2 and B1. With voices from Austria and Switzerland." },
+    },
+  },
   audiencesH2: "Made for you,",
   audiencesH2em: "wherever you come from.",
   audiences: [
@@ -220,7 +246,7 @@ const en: LandingCopy = {
     ],
   },
   cta: { h2: "Ready for exam day?", text: "Take your first mock exam now. Free, no account needed.", button: "Start free test" },
-  footer: { disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", about: "About us", blog: "Blog", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
+  footer: { blurb: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Same parts, same timing.", disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", about: "About us", blog: "Blog", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
   parts: {
     hoeren: { name: "Listening", meta: "approx. 25 min" },
     lesen: { name: "Reading", meta: "45 min" },

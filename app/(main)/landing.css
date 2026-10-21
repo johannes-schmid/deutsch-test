@@ -152,3 +152,27 @@
 /* The one dark block on a blog page (closing CTA). */
 .nz-night { position: relative; isolation: isolate; overflow: hidden; color: #F2EFE9; background: radial-gradient(55% 140% at 100% 110%, color-mix(in srgb, var(--p-glow) 55%, transparent) 0%, transparent 70%), radial-gradient(45% 120% at 0% 0%, #2E4FB8 0%, transparent 70%), #0B1020; }
 .nz-night::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: var(--noise); mix-blend-mode: overlay; opacity: 0.3; pointer-events: none; }
+
+/* ---------------------------------------------------------------- Site chrome and text pages
+   Header pill and footer card float on the page as frosted glass; text pages sit on one solid reading card. */
+.nz-chrome {
+  background: rgba(255, 255, 255, 0.72); -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 22px 44px -30px rgba(14, 19, 34, 0.32);
+}
+.nz-paper {
+  background: var(--v-surface); border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 2px rgba(14, 19, 34, 0.04), 0 36px 72px -48px rgba(14, 19, 34, 0.4);
+}
+@media (prefers-reduced-transparency: reduce) { .nz-chrome { background: var(--v-surface); backdrop-filter: none; -webkit-backdrop-filter: none; } }
+
+/* Numbered steps: ink dots on a thin rail (Prose <ol> and StepList). */
+:is(.nz-steps, .v-prose ol) { list-style: none; padding: 0; counter-reset: nz-step; display: flex; flex-direction: column; gap: 0; }
+:is(.nz-steps, .v-prose ol) > li { counter-increment: nz-step; position: relative; padding-inline-start: 52px; padding-bottom: 22px; min-height: 34px; }
+:is(.nz-steps, .v-prose ol) > li:last-child { padding-bottom: 0; }
+:is(.nz-steps, .v-prose ol) > li::before {
+  content: counter(nz-step); position: absolute; inset-inline-start: 0; top: -2px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--v-ink); color: var(--v-surface); font-family: var(--v-font-mono); font-size: 14px; font-weight: 500;
+}
+:is(.nz-steps, .v-prose ol) > li:not(:last-child)::after { content: ""; position: absolute; inset-inline-start: 16.5px; top: 36px; bottom: 2px; width: 1px; background: var(--v-line); }
+article.group:hover > .photo::before { scale: 1.05; }

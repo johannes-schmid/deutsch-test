@@ -1,11 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { PhotoCard } from "@/components/design/kit"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
-import { LEVELS, type Exam, type ExamId, type Level } from "@/lib/exams"
+import { LEVELS, type Brand, type Exam, type ExamId, type Level } from "@/lib/exams"
 
 const T = KURZTEST_COPY.overview
 
@@ -34,7 +33,7 @@ export function ExamPicker({ exams, initial = "B1" }: { exams: PickerExam[]; ini
         return (
           <TabsContent key={l} value={l} keepMounted className="flex flex-col gap-4 text-base">
             <p className="text-[15px] text-v-muted">{T.levels[l].hint}</p>
-            <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 md:grid-cols-2">
+            <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {list.map((e) => (
                 <li key={e.id}>
                   <ExamCard exam={e} />
@@ -48,32 +47,20 @@ export function ExamPicker({ exams, initial = "B1" }: { exams: PickerExam[]; ini
   )
 }
 
+const PHOTO: Record<Brand, string> = { dtz: "--g-photo-5", goethe: "--g-photo-2", telc: "--g-photo-6", oesd: "--g-photo-4", sd1: "--g-photo-3" }
+
 function ExamCard({ exam }: { exam: PickerExam }) {
-  const body = (
-    <>
-      <ExamMark brand={exam.brand} />
-      <span className="flex min-w-0 flex-1 flex-col gap-1.5">
-        <span className="font-[family-name:var(--v-font-mono)] text-[11.5px] tracking-[0.06em] text-v-muted uppercase">{exam.provider}</span>
-        <b className="text-[19px] leading-snug font-semibold tracking-[-0.02em]">{exam.name}</b>
-        <span className="text-[15px] leading-snug">{exam.summary}</span>
-        <span className="text-[13.5px] text-v-muted">{T.result}: {exam.result}</span>
-        {exam.href ? null : (
-          <span className="mt-1.5 self-start rounded-full bg-v-soft px-2.5 py-1 text-[12px] font-semibold whitespace-nowrap text-v-muted">{T.soon}</span>
-        )}
-      </span>
-      {exam.href ? (
-        <ArrowRight className="size-5 shrink-0 self-center text-v-muted transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
-      ) : null}
-    </>
-  )
-  const card = "flex h-full items-start gap-4 rounded-[22px] p-4 sm:p-5"
-  return exam.href ? (
-    <Link href={exam.href} className={`nz-app group ${card} transition-transform duration-150 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99]`}>
-      {body}
-    </Link>
-  ) : (
-    <div className={`${card} border border-dashed border-v-line`} aria-disabled="true">
-      {body}
-    </div>
+  return (
+    <PhotoCard
+      token={PHOTO[exam.brand]}
+      art={<ExamMark brand={exam.brand} />}
+      chip={exam.href ? KURZTEST_COPY.chips.free : T.soon}
+      tags={<span>{exam.provider}</span>}
+      title={exam.name}
+      text={exam.summary}
+      meta={<span className="text-[13.5px] text-v-muted">{T.result}: {exam.result}</span>}
+      cta={T.start}
+      href={exam.href}
+    />
   )
 }

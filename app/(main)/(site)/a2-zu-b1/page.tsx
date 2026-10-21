@@ -33,7 +33,8 @@ export default function A2ZuB1Page() {
       <JsonLd data={jsonLd} />
       <PageHeader
         crumbs={crumbs}
-        h1="Im DTZ nur A2? So schaffst du B1."
+        h1="Im DTZ nur A2?"
+        h1Muted="So schaffst du B1."
         lead="Viele Menschen haben nach dem ersten DTZ A2. Das ist kein Grund aufzugeben. Meist fehlt B1 nur in einem oder zwei Teilen."
       />
 
@@ -65,10 +66,9 @@ export default function A2ZuB1Page() {
           Wie der DTZ aufgebaut ist, liest du auf unserer Seite <Link href="/blog/dtz-pruefung">DTZ Prüfung</Link>.
         </p>
       </Prose>
+      <Byline author={`${OPERATOR.person}, ${OPERATOR.company}`} reviewed="10/2026" sources={[]} />
 
       <TestCta h2="Welcher Teil fehlt dir noch?" text="Mach den Gratis-Test für einen Teil vom DTZ. Du siehst sofort, wo du stehst." />
-
-      <Byline author={`${OPERATOR.person}, ${OPERATOR.company}`} reviewed="10/2026" sources={[]} />
     </>
   )
 }
