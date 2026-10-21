@@ -43,26 +43,25 @@ export function TestIcon({ test, size }: { test: TestId; size?: "sm" | "md" | "l
 const DE = ["#141414", "#DD2A2A", "#F2C230"]
 const AT = ["#D9363E", "#FFFFFF", "#D9363E"]
 
-/** Our own exam badges: the provider's name in our type, a provider tone, and the country it comes from. Never their logos. */
-const BRANDS: Record<Brand, { mark: string; tone: string; flag: string[]; country: string }> = {
-  goethe: { mark: "Goethe", tone: "var(--v-ex-goethe)", flag: DE, country: "Deutschland" },
-  telc: { mark: "telc", tone: "var(--v-ex-telc)", flag: DE, country: "Deutschland" },
-  oesd: { mark: "ÖSD", tone: "var(--v-ex-oesd)", flag: AT, country: "Österreich" },
-  sd1: { mark: "SD1", tone: "var(--v-sk-sprechen)", flag: DE, country: "Deutschland" },
-  dtz: { mark: "DTZ", tone: "var(--p-glow)", flag: DE, country: "Deutschland" },
+/** Our own exam badges: the provider's code in our type on a white tile, the country's colours as a strip along the bottom. Never their logos. */
+const BRANDS: Record<Brand, { mark: string; flag: string[]; country: string }> = {
+  goethe: { mark: "GI", flag: DE, country: "Deutschland" },
+  telc: { mark: "telc", flag: DE, country: "Deutschland" },
+  oesd: { mark: "ÖSD", flag: AT, country: "Österreich" },
+  sd1: { mark: "SD1", flag: DE, country: "Deutschland" },
+  dtz: { mark: "DTZ", flag: DE, country: "Deutschland" },
 }
 
 export function ExamMark({ brand, size = "md" }: { brand: Brand; size?: "sm" | "md" | "lg" }) {
   const b = BRANDS[brand]
-  const box = { sm: "size-9 rounded-xl", md: "size-12 rounded-2xl", lg: "size-16 rounded-[22px]" }[size]
-  const text = b.mark.length > 4 ? { sm: "text-[8.5px]", md: "text-[10.5px]", lg: "text-[13px]" }[size] : { sm: "text-[11px]", md: "text-[14px]", lg: "text-[18px]" }[size]
+  const box = { sm: "size-9 rounded-[10px]", md: "size-12 rounded-[13px]", lg: "size-16 rounded-[18px]" }[size]
+  const text = b.mark.length > 3 ? { sm: "text-[10px]", md: "text-[13.5px]", lg: "text-[18px]" }[size] : { sm: "text-[11.5px]", md: "text-[15.5px]", lg: "text-[20.5px]" }[size]
+  const strip = { sm: "h-[3px]", md: "h-1", lg: "h-[6px]" }[size]
   return (
-    <span className="relative shrink-0" aria-hidden="true">
-      <span className={`nz-tile relative grid place-items-center ${box}`} style={{ ["--tone" as string]: b.tone }}>
-        <b className={`relative font-semibold tracking-[-0.02em] ${text}`}>{b.mark}</b>
-      </span>
-      <span className="nz-flag absolute -right-1 -bottom-1 flex h-[11px] w-4 flex-col overflow-hidden rounded-[3px]" title={b.country}>
-        {b.flag.map((c, i) => <span key={i} className="flex-1" style={{ background: c }} />)}
+    <span className={`relative grid shrink-0 place-items-center overflow-hidden bg-white font-semibold tracking-[-0.03em] text-[#0E1322] shadow-[inset_0_0_0_1px_rgba(14,19,34,0.1)] ${box}`} title={b.country} aria-hidden="true">
+      <span className={`-mt-[8%] ${text}`}>{b.mark}</span>
+      <span className={`absolute inset-x-0 bottom-0 flex ${strip}`}>
+        {b.flag.map((c, i) => <span key={i} className="flex-1" style={{ background: c === "#FFFFFF" ? "#E9ECF2" : c }} />)}
       </span>
     </span>
   )

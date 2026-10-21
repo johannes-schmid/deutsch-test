@@ -47,7 +47,6 @@
   --v-bg: #EEF1F6; --v-surface: #FFFFFF; --v-soft: #E3E8F0; --v-ink: #0E1322; --v-muted: #596173; --v-line: #D6DCE6;
   --v-cta: #0E1322; --v-on-cta: #FFFFFF; --v-accent: var(--p-ember); --v-sel: #0E1322; --v-on-sel: #FFFFFF;
   --v-sk-hoeren: var(--p-ember); --v-sk-lesen: #5E86FF; --v-sk-schreiben: #E58FB5; --v-sk-sprechen: #5FB8A6;
-  --v-ex-goethe: #6FAF2E; --v-ex-telc: #2E8FCF; --v-ex-oesd: #D9363E;
   --v-glass: rgba(255, 255, 255, 0.62); --v-glass-line: rgba(14, 19, 34, 0.1); --v-orb: 0.4;
   --v-radius: 18px; --v-radius-btn: 999px; --v-radius-key: 999px;
   --v-font-display: var(--font-host), system-ui, sans-serif; --v-font-body: var(--font-host), system-ui, sans-serif;
@@ -65,7 +64,6 @@
   --v-bg: #070A12; --v-surface: #10162A; --v-soft: #141B30; --v-ink: #F2EFE9; --v-muted: #A2A8B6; --v-line: #1E2538;
   --v-cta: #F2EFE9; --v-on-cta: #070A12; --v-accent: var(--p-glow); --v-sel: var(--p-glow); --v-on-sel: #070A12;
   --v-sk-hoeren: var(--p-glow); --v-sk-lesen: #7FA7FF; --v-sk-schreiben: #E58FB5; --v-sk-sprechen: #8FD3C4;
-  --v-ex-goethe: #9BD45A; --v-ex-telc: #6BB8EC; --v-ex-oesd: #F0646B;
   --v-glass: rgba(255, 255, 255, 0.05); --v-glass-line: rgba(255, 255, 255, 0.11); --v-orb: 0.75;
   --g-photo-1: radial-gradient(28% 40% at 24% 66%, var(--p-glow) 0%, transparent 70%), radial-gradient(45% 55% at 76% 32%, #2E4FB8 0%, transparent 72%), radial-gradient(22% 30% at 58% 82%, #E58FB5 0%, transparent 70%), linear-gradient(160deg, #141C38 0%, #05070D 100%);
   --g-photo-2: radial-gradient(34% 46% at 70% 60%, #3FA592 0%, transparent 70%), radial-gradient(24% 34% at 28% 30%, #FFD08A 0%, transparent 70%), linear-gradient(200deg, #0B1F2A 0%, #04070B 100%);
@@ -105,7 +103,6 @@
 }
 .nz-tile { color: var(--v-ink); background: color-mix(in srgb, var(--tone) 26%, var(--v-surface)); border: 1px solid color-mix(in srgb, var(--tone) 40%, transparent); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6); overflow: hidden; }
 .nz-tile::before { content: ""; position: absolute; inset: -30% 30% 30% -30%; border-radius: 50%; background: var(--tone); filter: blur(10px); opacity: 0.55; }
-.nz-flag { box-shadow: 0 0 0 1.5px var(--v-surface); }
 .dark .nz-tile { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); }
 .nz-seal { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 16px 32px -18px rgba(8, 10, 30, 0.45); }
 .dark .nz-seal { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 16px 32px -18px rgba(0, 0, 0, 0.8); }
