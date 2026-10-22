@@ -1,0 +1,7 @@
+import { BlogArticle, blogMetadata } from "@/components/design/blog-article"
+
+export const metadata = blogMetadata("b1-brief-schreiben", "ru")
+
+export default function B1BriefSchreibenPageRu() {
+  return <BlogArticle slug="b1-brief-schreiben" locale="ru" />
+}

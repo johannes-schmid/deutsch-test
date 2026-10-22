@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useRef, useState, type ReactNode } from "react"
 import { Eye, EyeOff, Image as ImageIcon, Play, Square } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ChoiceItem, ExamAudio, ExamButton, ExamStage, FeedbackSheet, GapItem, MatchItem, PictureItem, ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, fmt } from "@/components/exam"
@@ -153,7 +153,8 @@ function Speaking({ block, reveal }: { block: KurztestBlock; reveal: boolean }) 
   )
 }
 
-function Sample({ block }: { block: KurztestBlock }) {
+/** One block in review mode (solutions on demand). `actions` sits next to the solution toggle, `extra` below the task. */
+export function BlockReview({ block, actions, extra }: { block: KurztestBlock; actions?: ReactNode; extra?: ReactNode }) {
   const [values, setValues] = useState<Values>({})
   const [reveal, setReveal] = useState(false)
   const [run, setRun] = useState(0)
@@ -172,15 +173,18 @@ function Sample({ block }: { block: KurztestBlock }) {
     <section className="flex flex-col gap-5 border-t border-v-line pt-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div className="flex max-w-[70ch] flex-col gap-1.5">
-          <h2 className="text-[24px] font-semibold tracking-[-0.02em]">{partLabel(block)}</h2>
+          <h2 className="text-[24px] font-semibold tracking-[-0.02em]">{partLabel(block)}{block.id.endsWith("-bsp") ? " · Beispiel" : ""}</h2>
           <p className="text-[15px] leading-relaxed text-v-muted">
             <code className="v-num text-[13.5px]">{block.id}</code> · {block.status === "draft" ? "Entwurf, nicht geprüft" : "geprüft"} · {facts.join(" · ")}
           </p>
         </div>
-        <ExamButton kind="soft" className="flex shrink-0 items-center gap-2 self-start sm:self-auto" onClick={() => setReveal((r) => !r)} aria-pressed={reveal}>
-          {reveal ? <EyeOff className="size-4" aria-hidden="true" /> : <Eye className="size-4" aria-hidden="true" />}
-          {reveal ? "Lösung ausblenden" : "Lösung zeigen"}
-        </ExamButton>
+        <div className="flex shrink-0 flex-wrap items-center gap-2 self-start sm:self-auto">
+          <ExamButton kind="soft" className="flex items-center gap-2" onClick={() => setReveal((r) => !r)} aria-pressed={reveal}>
+            {reveal ? <EyeOff className="size-4" aria-hidden="true" /> : <Eye className="size-4" aria-hidden="true" />}
+            {reveal ? "Lösung ausblenden" : "Lösung zeigen"}
+          </ExamButton>
+          {actions}
+        </div>
       </div>
 
       <ExamStage scene={block.skill} framed>
@@ -209,6 +213,7 @@ function Sample({ block }: { block: KurztestBlock }) {
           ) : (
             items
           )}
+          {extra}
         </div>
       </ExamStage>
     </section>
@@ -250,7 +255,7 @@ export function KurztestReview({ blocks: all }: { blocks: KurztestBlock[] }) {
               </button>
             ))}
           </div>
-          {shown.map((b) => <Sample key={b.id} block={b} />)}
+          {shown.map((b) => <BlockReview key={b.id} block={b} />)}
         </>
       ) : (
         <p className="text-v-muted">Noch keine Entwürfe. Starte <code className="v-num">scripts/generate-kurztest.ts</code>.</p>

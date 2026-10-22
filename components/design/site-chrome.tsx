@@ -1,51 +1,54 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { Globe, UserRound } from "lucide-react"
+import { UserRound } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { Consent, ConsentSettingsButton } from "@/components/design/consent"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { ActiveNavLinks, NavLinksFallback } from "@/components/design/nav-links"
+import { LangLinks, LangSwitch, LangSwitchFallback, MachineNote, MachineNoteBody } from "@/components/design/lang-switch"
 import type { Brand } from "@/lib/exams"
 import { OPERATOR } from "@/lib/seo"
-import { LANDING, type Locale } from "@/lib/i18n/landing"
+import { LANDING } from "@/lib/i18n/landing"
+import { isTranslated, lp, siteLocale, type Locale } from "@/lib/i18n/locale"
+import { UI } from "@/lib/i18n/ui"
 import { livePosts } from "@/lib/blog/posts"
 
-const HOME: Record<Locale, string> = { de: "/", en: "/en" }
+const home = (l: Locale) => (l === "en" ? "/en" : lp(l, "/"))
 
-/** The site's top bar: a floating glass pill inside the container, shared by the landing pages and every inner page. `switchLang` hides the language link on pages that exist in one language only. */
-export function SiteNav({ locale, switchLang = true }: { locale: Locale; switchLang?: boolean }) {
+/** The site's top bar: a floating glass pill inside the container, shared by the landing pages and every inner page. Translated pages get the machine-translation notice under it. */
+export function SiteNav({ locale }: { locale: Locale }) {
   const t = LANDING[locale]
+  const u = UI[siteLocale(locale)]
+  const sl = siteLocale(locale)
+  const links = t.nav.links.map((l) => ({ ...l, href: lp(sl, l.href) }))
   return (
     <div className="v-container relative z-20 pt-3 sm:pt-4">
       <nav className="nz-chrome flex h-14 items-center gap-2 rounded-full ps-3 pe-2 text-[14px] sm:ps-4 lg:gap-4">
-        <Link href={HOME[locale]} className="rounded-lg">
+        <Link href={home(locale)} className="rounded-lg">
           <NzLogo className="text-[18px]" />
         </Link>
         <div className="hidden items-center gap-0.5 md:flex">
-          <Suspense fallback={<NavLinksFallback links={t.nav.links} />}>
-            <ActiveNavLinks links={t.nav.links} />
+          <Suspense fallback={<NavLinksFallback links={links} />}>
+            <ActiveNavLinks links={links} />
           </Suspense>
         </div>
         <div className="ml-auto flex items-center gap-1 sm:gap-2">
-          {switchLang ? (
-            <Link
-              href={t.nav.switchHref}
-              hrefLang={locale === "en" ? "de" : "en"}
-              aria-label={t.nav.switchLabel}
-              className="flex h-9 items-center gap-1.5 rounded-full px-2.5 text-[13.5px] font-semibold text-v-muted transition-colors hover:bg-v-ink/5 hover:text-v-ink max-sm:hidden"
-            >
-              <Globe className="size-4" aria-hidden="true" />
-              <span>{t.nav.switchShort}</span>
-            </Link>
-          ) : null}
+          <Suspense fallback={<LangSwitchFallback locale={locale} />}>
+            <LangSwitch locale={locale} label={u.langMenu} />
+          </Suspense>
           <Link href="/anmelden" aria-label={t.nav.login} className="flex h-10 min-w-9 items-center justify-center rounded-full text-[14px] font-semibold transition-[background-color,transform] duration-150 ease-out hover:bg-v-ink/5 active:scale-[0.97] sm:px-3">
             <UserRound className="size-[18px] sm:hidden" aria-hidden="true" />
             <span className="max-sm:sr-only">{t.nav.login}</span>
           </Link>
-          <VButton size="sm" render={<Link href="/gratis-test" />} nativeButton={false} className="h-10 px-3.5 sm:px-4">{t.nav.start}</VButton>
+          <VButton size="sm" render={<Link href={lp(sl, "/gratis-test")} />} nativeButton={false} className="h-10 px-3.5 sm:px-4">{t.nav.start}</VButton>
         </div>
       </nav>
+      {isTranslated(locale) ? (
+        <Suspense fallback={<MachineNoteBody text={u.machine.text} original={u.machine.original} />}>
+          <MachineNote text={u.machine.text} original={u.machine.original} />
+        </Suspense>
+      ) : null}
     </div>
   )
 }
@@ -68,15 +71,19 @@ const MARKS: Brand[] = ["dtz", "goethe", "telc", "oesd"]
 export function SiteFooter({ locale }: { locale: Locale }) {
   const t = LANDING[locale]
   const f = t.footer
+  const sl = siteLocale(locale)
+  const u = UI[sl]
+  const at = (path: string) => lp(sl, path)
+  // Impressum and Datenschutz exist in German only: they are the legally binding texts.
   const groups = [
-    { title: f.groups.exam, links: [{ label: "DTZ", href: "/blog/dtz-pruefung" }, { label: t.nav.links[1].label, href: "/gratis-test" }, { label: "A2 → B1", href: "/a2-zu-b1" }, { label: "B1 für die Einbürgerung", href: "/b1-einbuergerung" }, { label: t.nav.links[2].label, href: "/preise" }] },
-    { title: f.groups.info, links: [...(livePosts().length ? [{ label: f.blog, href: "/blog" }] : []), { label: f.about, href: "/ueber-uns" }, { label: f.contact, href: "/kontakt" }, { label: f.imprint, href: "/impressum" }, { label: f.privacy, href: "/datenschutz" }] },
+    { title: f.groups.exam, links: [{ label: "DTZ", href: at("/blog/dtz-pruefung") }, { label: t.nav.links[1].label, href: at("/gratis-test") }, { label: "A2 → B1", href: at("/a2-zu-b1") }, { label: u.footerCitizenship, href: at("/b1-einbuergerung") }, { label: t.nav.links[2].label, href: at("/preise") }] },
+    { title: f.groups.info, links: [...(livePosts().length ? [{ label: f.blog, href: at("/blog") }] : []), { label: f.about, href: at("/ueber-uns") }, { label: f.contact, href: at("/kontakt") }, { label: f.imprint, href: "/impressum" }, { label: f.privacy, href: "/datenschutz" }] },
   ]
   return (
     <footer className="v-container pt-10 pb-6">
       <div className="nz-chrome grid grid-cols-2 gap-x-6 gap-y-10 rounded-[28px] p-7 text-[14px] text-v-muted sm:grid-cols-[1.4fr_1fr_1fr] sm:p-10">
         <div className="col-span-2 flex flex-col items-start gap-4 sm:col-span-1">
-          <Link href={HOME[locale]} className="rounded-lg">
+          <Link href={home(locale)} className="rounded-lg">
             <NzLogo className="text-[17px]" />
           </Link>
           <p className="max-w-[36ch] leading-relaxed text-pretty">{f.blurb}</p>
@@ -93,17 +100,16 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             {g.title === f.groups.info ? (
               <>
                 <ConsentSettingsButton locale={locale} />
-                <Link href={t.nav.switchHref} hrefLang={locale === "en" ? "de" : "en"} className="flex w-fit items-center gap-1.5 rounded transition-colors hover:text-v-ink">
-                  <Globe className="size-3.5" aria-hidden="true" />
-                  {t.nav.switchLabel}
-                </Link>
+                <Suspense>
+                  <LangLinks locale={locale} />
+                </Suspense>
               </>
             ) : null}
           </nav>
         ))}
       </div>
       <div className="flex flex-col gap-1.5 px-2 pt-5 text-[12.5px] text-v-muted sm:flex-row sm:justify-between sm:gap-6">
-        <span>{OPERATOR.company} · KvK {OPERATOR.kvk} · {locale === "de" ? "USt-IdNr." : "VAT"} {OPERATOR.vatId}</span>
+        <span>{OPERATOR.company} · KvK {OPERATOR.kvk} · {locale === "en" ? "VAT" : u.vat} {OPERATOR.vatId}</span>
         <span>{f.disclaimer}</span>
       </div>
       <Consent locale={locale} />

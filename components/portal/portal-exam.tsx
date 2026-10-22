@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, ChevronRight, Clock } from "lucide-react"
+import { ArrowRight, Check, ChevronRight, Clock, Lock, RotateCcw } from "lucide-react"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import type { PartId } from "@/lib/exam/types"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
@@ -65,27 +65,37 @@ export function SkillCard({ skill, name, href, free, count, status }: { skill: P
   )
 }
 
-/** One Modelltest in a skill's list. With `href` it starts the test; without, it waits as "Bald verfügbar". */
-export function ModelltestRow({ n, href }: { n: number; href: string | null }) {
+/** One Modelltest in a skill's list. Open, done and preview rows start the test; locked and coming rows wait. */
+export function ModelltestRow({ slot }: { slot: { n: number; state: "open" | "done" | "locked" | "soon" | "preview"; href: string | null; free: boolean; result: string | null } }) {
+  const { n, state, href, free, result } = slot
+  const live = !!href
+  const sub = state === "done" ? T.skill.slot.done(result) : state === "preview" ? T.skill.slot.preview : state === "locked" ? T.skill.slot.locked : state === "soon" ? T.soon : free ? `${T.skill.slot.free} · ${T.skill.slot.open}` : T.skill.slot.open
   const body = (
     <>
       <span
         className={cn(
-          "v-num grid size-12 shrink-0 place-items-center rounded-[14px] text-[17px] font-semibold",
-          href ? "bg-v-ink text-v-bg" : "border border-dashed border-v-ink/25 text-v-muted"
+          "v-num relative grid size-12 shrink-0 place-items-center rounded-[14px] text-[17px] font-semibold",
+          live ? "bg-v-ink text-v-bg" : state === "locked" ? "bg-v-soft text-v-muted" : "border border-dashed border-v-ink/25 text-v-muted"
         )}
         aria-hidden="true"
       >
         {String(n).padStart(2, "0")}
+        {state === "done" ? (
+          <span className="absolute -end-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--p-ember) text-[#0A0D18] ring-2 ring-v-surface">
+            <Check className="size-3" strokeWidth={3} />
+          </span>
+        ) : null}
       </span>
       <span className="flex min-w-0 flex-1 flex-col leading-tight">
-        <b className={cn("text-[16.5px] font-semibold", !href && "text-v-ink/70")}>{T.skill.test(n)}</b>
-        <span className="mt-1 text-[14px] text-v-muted">{href ? T.skill.start : T.soon}</span>
+        <b className={cn("text-[16.5px] font-semibold", !live && "text-v-ink/70")}>{T.skill.test(n)}</b>
+        <span className="mt-1 truncate text-[14px] text-v-muted">{sub}</span>
       </span>
-      {href ? (
+      {live ? (
         <span className={cn(ARROW, "group-hover:translate-x-0.5")} aria-hidden="true">
-          <ArrowRight className="size-4 rtl:-scale-x-100" strokeWidth={2.25} />
+          {state === "done" ? <RotateCcw className="size-4" strokeWidth={2.25} /> : <ArrowRight className="size-4 rtl:-scale-x-100" strokeWidth={2.25} />}
         </span>
+      ) : state === "locked" ? (
+        <Lock className="me-2 size-[18px] shrink-0 text-v-muted/70" strokeWidth={2} aria-hidden="true" />
       ) : (
         <Clock className="me-2 size-[18px] shrink-0 text-v-muted/70" strokeWidth={2} aria-hidden="true" />
       )}

@@ -112,3 +112,76 @@ export function ExamAudio({ clip, onDone, showLock = true }: { clip: AudioClip; 
     </div>
   )
 }
+
+export type ExamTrackCue = { teil: number; phase: "instruction" | "reading" | "clip" | "answer"; items: number[]; from: number; to: number }
+export type ExamTrackData = { src: string; duration: number; cues: ExamTrackCue[] }
+
+/**
+ * The whole Hören part as one track, as in the real exam: one start, then it runs to the end. No pause, no seek, no
+ * replay. `cue` is where the track is now, so the runner can show the matching task.
+ */
+export function useExamTrack(track: ExamTrackData) {
+  const [time, setTime] = useState(0)
+  const [state, setState] = useState<"idle" | "playing" | "blocked" | "ended">("idle")
+  const audio = useRef<HTMLAudioElement | null>(null)
+
+  useEffect(() => {
+    if (!track.src) return
+    const el = new Audio(track.src)
+    el.preload = "auto"
+    el.ontimeupdate = () => setTime(el.currentTime)
+    el.onended = () => { setTime(track.duration); setState("ended") }
+    // The exam does not stop when the candidate looks away; only the OS can pause us (calls, headphones out).
+    el.onpause = () => !el.ended && setState((s) => (s === "playing" ? "blocked" : s))
+    audio.current = el
+    return () => { el.onpause = null; el.pause(); audio.current = null }
+  }, [track.src, track.duration])
+
+  const start = () => {
+    const el = audio.current
+    if (!el || state === "playing" || state === "ended") return
+    void el.play().then(() => setState("playing")).catch(() => setState("blocked"))
+  }
+
+  const cue = track.cues.findLast((c) => c.from <= time) ?? track.cues[0]
+  return { time, state, cue, left: Math.max(0, track.duration - time), progress: Math.min(1, time / track.duration), start }
+}
+
+/** The track's face: start once, then Teil segments filling up, the current phase and what is left. */
+export function ExamTrack({ track, player }: { track: ExamTrackData; player: ReturnType<typeof useExamTrack> }) {
+  const t = useExamCopy()
+  const teile = [...new Set(track.cues.map((c) => c.teil))].map((teil) => {
+    const own = track.cues.filter((c) => c.teil === teil)
+    return { teil, from: own[0].from, to: own.at(-1)!.to }
+  })
+  const { state, cue, time } = player
+  const idle = state === "idle" || state === "blocked"
+  const status = state === "ended" ? t.track.ended : idle ? t.track.startNote : [`${t.part} ${cue.teil}`, t.track.item(cue.items), t.track.phase[cue.phase]].filter(Boolean).join(" · ")
+  return (
+    <div className="flex items-center gap-4 rounded-[20px] bg-v-soft p-3 pe-4">
+      <button
+        type="button"
+        onClick={player.start}
+        disabled={!idle}
+        aria-label={t.track.start}
+        className="relative grid size-14 shrink-0 cursor-pointer place-items-center rounded-full transition-transform duration-150 ease-out active:scale-95 disabled:cursor-default"
+      >
+        <Ring progress={player.progress} />
+        <span className={cn("grid size-10 place-items-center rounded-full transition-colors duration-200", idle ? "bg-v-ink text-v-bg" : "bg-v-surface", state === "ended" && "text-v-muted")}>
+          {state === "ended" ? <Check className="size-5" strokeWidth={2.5} aria-hidden="true" /> : idle ? <Play className="ml-0.5 size-5 fill-current" aria-hidden="true" /> : <Lock className="size-4" aria-hidden="true" />}
+        </span>
+      </button>
+      <div className="flex min-w-0 flex-1 flex-col gap-2">
+        <p className="truncate text-[14.5px] font-medium" aria-live="polite">{status}</p>
+        <div className="flex gap-1" aria-hidden="true">
+          {teile.map((x) => (
+            <span key={x.teil} className="h-1.5 overflow-hidden rounded-full bg-v-ink/10" style={{ flex: x.to - x.from }}>
+              <span className="block h-full rounded-full bg-v-ink transition-[width] duration-250 ease-linear" style={{ width: `${Math.max(0, Math.min(1, (time - x.from) / (x.to - x.from))) * 100}%` }} />
+            </span>
+          ))}
+        </div>
+      </div>
+      {idle && state === "idle" ? null : <span className="v-num shrink-0 text-[13px] text-v-muted">{fmt(player.left)}</span>}
+    </div>
+  )
+}

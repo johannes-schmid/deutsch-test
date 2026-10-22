@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
-  ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamShell, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
+  ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
   ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, type ShellSection,
 } from "@/components/exam"
 import type { TrueFalse } from "@/lib/exam/types"
 import {
   DURCHSAGE, APOTHEKE, GAP, GAP_SOLUTION, HOEREN_CHOICE, HOEREN_FEEDBACK, HOEREN_TEILE, HOEREN_TF, HOEREN_TF_SOLUTION, MATCH, MATCH_SOLUTION,
-  CARD_TURNS, PEOPLE, PICTO_PICTURE, PICTURE, READING, READING_CHOICE, READING_TF, SPEAKING, SPEAKING_CARDS, TURNS, WRITING, WRITING_SINGLE,
+  CARD_TURNS, PEOPLE, PICTO_PICTURE, PICTURE, TRACK, READING, READING_CHOICE, READING_TF, SPEAKING, SPEAKING_CARDS, TURNS, WRITING, WRITING_SINGLE,
 } from "@/lib/exam/samples"
 
 const teile = (doneUntil: number): ShellSection[] => {
@@ -137,6 +137,11 @@ function Block({ title, note, children }: { title: string; note: string; childre
   )
 }
 
+function TrackDemo() {
+  const player = useExamTrack(TRACK)
+  return <ExamTrack track={TRACK} player={player} />
+}
+
 function Panel({ children, className }: { children: React.ReactNode; className?: string }) {
   return <div className={cn("nz-app flex flex-col gap-4 rounded-[24px] p-5", className)}>{children}</div>
 }
@@ -193,7 +198,7 @@ export function ExamGallery() {
         <ExamStage scene="schreiben" framed className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:grid-cols-2">
           <Panel>
             <ChoiceItem item={HOEREN_CHOICE} value="a" review={{ correct: "b" }} />
-            <FeedbackSheet right={false} solution="b" explanation={HOEREN_FEEDBACK.explanation} evidence={HOEREN_FEEDBACK.evidence} />
+            <FeedbackSheet right={false} solution="b" explanation={HOEREN_FEEDBACK.explanation} evidence={HOEREN_FEEDBACK.evidence} language="UK" onLanguage={() => {}} />
           </Panel>
           <div className="flex flex-col gap-3">
             <Panel><TrueFalseItem item={HOEREN_TF} value="richtig" review={{ correct: HOEREN_TF_SOLUTION }} /></Panel>
@@ -231,10 +236,28 @@ export function ExamGallery() {
         </ExamStage>
       </Block>
 
-      <Block title="Sprechen zu zweit" note="Prüfer und Partnerin sind Personen mit eigenen Zügen. Die Stichpunkte stehen oben.">
+      <Block title="Hörtrack (Modelltest)" note="Im Modelltest ist Hören ein einziger Track wie in der Prüfung: einmal starten, dann laufen Ansage, Lesezeit, Hörtext und Antwortzeit ohne Pause. Die Segmente sind die Teile, die Zeile sagt, wo der Track gerade ist. Pausiert nur das Gerät, kann man weiterhören.">
+        <ExamStage scene="hoeren" framed>
+          <div className="nz-app mx-auto flex max-w-[560px] flex-col rounded-[24px] px-5 pt-6 pb-5">
+            <TrackDemo />
+          </div>
+        </ExamStage>
+      </Block>
+
+      <Block title="Sprechen zu zweit" note="Prüfer und Partnerin sind Personen mit eigenen Zügen. Die Stichpunkte stehen oben. DTZ Teil 2: jede Person hat ein anderes Foto (aus unserem Storage, mit Pexels-Nachweis); gezeigt wird das Foto der Person, die gerade spricht.">
         <ExamStage scene="sprechen" framed>
           <div className="nz-app mx-auto flex max-w-[560px] flex-col rounded-[24px] px-5 pt-6 pb-5">
             <SpeakingTask data={SPEAKING} people={PEOPLE} turns={TURNS} />
+          </div>
+        </ExamStage>
+        <ExamStage scene="sprechen" framed>
+          <div className="nz-app mx-auto flex max-w-[560px] flex-col rounded-[24px] px-5 pt-6 pb-5">
+            <SpeakingTask
+              data={{ part: "Sprechen · Teil 2", title: "Über Erfahrungen sprechen", task: "Was sehen Sie auf dem Foto? Was für eine Situation zeigt dieses Bild?", points: [] }}
+              people={PEOPLE}
+              turns={[{ who: "pruefer", text: "Bitte sehen Sie sich das Bild an und sagen Sie etwas dazu." }]}
+              photo={{ src: "/design/sprechen-foto.webp", alt: "Fünf junge Leute sitzen auf großen Felsen am Wasser und essen Pizza.", caption: "Dein Foto", credit: { name: "PNW Production", url: "https://www.pexels.com/photo/friends-on-a-social-gathering-9353438/" } }}
+            />
           </div>
         </ExamStage>
         <p className="flex items-center gap-2 text-[13.5px] text-v-muted"><Users className="size-4" aria-hidden="true" /> Ela ist eine echte Stimme aus der Besetzung in <code className="v-num">data/tts-voices.json</code>.</p>

@@ -1,19 +1,24 @@
-export type Locale = "en" | "de"
+import { NUMBER_LOCALE, type Locale } from "./locale"
+import { uk } from "./landing.uk"
+import { ru } from "./landing.ru"
+
+export type { Locale }
+export { NUMBER_LOCALE }
 
 const de = {
   meta: {
     title: "Goethe, telc, DTZ & ÖSD bestehen | Deutschprüfung online üben",
-    description: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Übe Hören, Lesen, Schreiben und Sprechen. Mit Erklärungen in deiner Sprache. Gratis starten.",
+    description: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Übe Hören, Lesen, Schreiben und Sprechen. Auch auf Ukrainisch und Russisch. Gratis starten.",
   },
-  nav: { links: [{ label: "Blog", href: "/blog" }, { label: "Gratis-Test", href: "/gratis-test" }, { label: "Preise", href: "/preise" }, { label: "Fragen", href: "/#fragen" }], login: "Anmelden", start: "Gratis starten", switchLabel: "English", switchShort: "EN", switchHref: "/en" },
+  nav: { links: [{ label: "Blog", href: "/blog" }, { label: "Gratis-Test", href: "/gratis-test" }, { label: "Preise", href: "/preise" }, { label: "Fragen", href: "/#fragen" }], login: "Anmelden", start: "Gratis starten" },
   hero: {
     eyebrow: "Deutschprüfung online vorbereiten",
     h1: "Goethe, telc, DTZ und ÖSD bestehen.",
     h1em: "Ohne Überraschung am Prüfungstag.",
-    lead: "Realistische Modelltests mit den gleichen Teilen, Zeiten und Aufgaben wie in der echten Prüfung. Übe Hören, Lesen, Schreiben und Sprechen. Mit Erklärungen in deiner Sprache.",
+    lead: "Realistische Modelltests mit den gleichen Teilen, Zeiten und Aufgaben wie in der echten Prüfung. Übe Hören, Lesen, Schreiben und Sprechen. Auch auf Ukrainisch und Russisch.",
     cta: "Gratis Test starten",
     cta2: "Preise ansehen",
-    proof: ["Ohne Anmeldung", "Gratis-Test", "Erklärungen in 6 Sprachen"],
+    proof: ["Ohne Anmeldung", "Gratis-Test", "Auch auf Ukrainisch und Russisch"],
     phone: {
       label: "Deine Prüfung in",
       big: "12 Tagen",
@@ -25,7 +30,7 @@ const de = {
       pillText: "Fertig. Als Nächstes: Schreiben.",
     },
   },
-  langStrip: "Erklärungen auf",
+  langStrip: "Diese Seite auf",
   demoSection: {
     h2: "Dein Modelltest, online.",
     lead: "Eine Prüfungssimulation mit allen vier Teilen. Gleiche Aufgabentypen, gleiche Zeit. Am Ende siehst du dein Ergebnis wie in der Prüfung.",
@@ -46,7 +51,7 @@ const de = {
     {
       title: "Dein Ergebnis, ehrlich.",
       text: "Du bekommst dein Ergebnis so, wie die Prüfung es bewertet. Du siehst genau, welcher Teil dir noch fehlt.",
-      points: ["Ergebnis pro Teil", "Feedback nach Kriterien", "Erklärungen in 6 Sprachen"],
+      points: ["Ergebnis pro Teil", "Feedback nach Kriterien", "Erklärungen auf Ukrainisch und Russisch"],
     },
   ],
   dashboard: { hello: "Hallo Amina", examIn: "Prüfung in 23 Tagen", days: ["Mo", "Di", "Mi", "Do", "Fr"], pillTitle: "Lesen · 45 Min", pillText: "Du kannst morgen weitermachen." },
@@ -88,7 +93,7 @@ const de = {
       { q: "Ist das die offizielle Prüfung?", a: "Nein. Wir sind nicht mit dem BAMF, telc, g.a.s.t., dem Goethe-Institut oder ÖSD verbunden. Unsere Tests folgen dem Format der Prüfungen. Alle Aufgaben schreiben wir selbst." },
       { q: "Bekomme ich ein Zertifikat?", a: "Nein. Dein Ergebnis ist ein Übungsergebnis. Das Zertifikat bekommst du nur in der echten Prüfung." },
       { q: "Brauche ich ein Konto?", a: "Nein. Den Gratis-Test machst du ohne Anmeldung." },
-      { q: "Gibt es Erklärungen in meiner Sprache?", a: "Ja, auf Englisch, Arabisch, Türkisch, Ukrainisch, Russisch und Dari. Die Prüfungsaufgaben bleiben auf Deutsch, wie in der Prüfung." },
+      { q: "Gibt es Erklärungen in meiner Sprache?", a: "Ja, auf Ukrainisch und Russisch. Die ganze Seite gibt es auch in diesen Sprachen, maschinell aus dem Deutschen übersetzt. Die Prüfungsaufgaben bleiben auf Deutsch, wie in der Prüfung." },
     ],
   },
   cta: { h2: "Bereit für den Prüfungstag?", text: "Mach jetzt deinen ersten Modelltest. Gratis und ohne Anmeldung.", button: "Gratis Test starten" },
@@ -157,17 +162,17 @@ export type LandingCopy = typeof de
 const en: LandingCopy = {
   meta: {
     title: "Pass Goethe, telc, DTZ & ÖSD | German exam practice online",
-    description: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Practice listening, reading, writing and speaking, with explanations in your language. Start free.",
+    description: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Practice listening, reading, writing and speaking. Also in Ukrainian and Russian. Start free.",
   },
-  nav: { links: [{ label: "Blog", href: "/blog" }, { label: "Free test", href: "/gratis-test" }, { label: "Pricing", href: "/preise" }, { label: "FAQ", href: "/en#fragen" }], login: "Log in", start: "Start free", switchLabel: "Deutsch", switchShort: "DE", switchHref: "/" },
+  nav: { links: [{ label: "Blog", href: "/blog" }, { label: "Free test", href: "/gratis-test" }, { label: "Pricing", href: "/preise" }, { label: "FAQ", href: "/en#fragen" }], login: "Log in", start: "Start free" },
   hero: {
     eyebrow: "German exam prep online",
     h1: "Pass Goethe, telc, DTZ & ÖSD.",
     h1em: "No surprises on exam day.",
-    lead: "Realistic mock exams with the same parts, timing and tasks as the real test. Practice listening, reading, writing and speaking. Get explanations in your language.",
+    lead: "Realistic mock exams with the same parts, timing and tasks as the real test. Practice listening, reading, writing and speaking. Also in Ukrainian and Russian.",
     cta: "Start free test",
     cta2: "See pricing",
-    proof: ["No account needed", "Free practice test", "Explanations in 6 languages"],
+    proof: ["No account needed", "Free practice test", "Also in Ukrainian and Russian"],
     phone: {
       label: "Your exam in",
       big: "12 days",
@@ -179,7 +184,7 @@ const en: LandingCopy = {
       pillText: "Done. Next up: Writing.",
     },
   },
-  langStrip: "Explanations in",
+  langStrip: "This page in",
   demoSection: {
     h2: "Your mock exam, online.",
     lead: "A full exam simulation with all four parts. Same task types, same timing. At the end you see your result the way the exam grades it.",
@@ -200,7 +205,7 @@ const en: LandingCopy = {
     {
       title: "An honest result.",
       text: "You get your result the way the exam grades it. You see exactly which part still needs work.",
-      points: ["Result for each part", "Feedback by exam criteria", "Explanations in 6 languages"],
+      points: ["Result for each part", "Feedback by exam criteria", "Explanations in Ukrainian and Russian"],
     },
   ],
   dashboard: { hello: "Hi Amina", examIn: "Exam in 23 days", days: ["Mon", "Tue", "Wed", "Thu", "Fri"], pillTitle: "Reading · 45 min", pillText: "You can continue tomorrow." },
@@ -242,7 +247,7 @@ const en: LandingCopy = {
       { q: "Is this the official exam?", a: "No. We are not affiliated with BAMF, telc, g.a.s.t., the Goethe-Institut or ÖSD. Our tests follow the exam formats. We write every task ourselves." },
       { q: "Do I get a certificate?", a: "No. Your result is a practice result. You only get a certificate in the real exam." },
       { q: "Do I need an account?", a: "No. You take the free test without signing up." },
-      { q: "Are there explanations in my language?", a: "Yes, in English, Arabic, Turkish, Ukrainian, Russian and Dari. The exam tasks stay in German, as in the real exam." },
+      { q: "Are there explanations in my language?", a: "Yes, in Ukrainian and Russian. The whole site is also available in both, machine-translated from German. The exam tasks stay in German, as in the real exam." },
     ],
   },
   cta: { h2: "Ready for exam day?", text: "Take your first mock exam now. Free, no account needed.", button: "Start free test" },
@@ -306,5 +311,4 @@ const en: LandingCopy = {
   },
 }
 
-export const LANDING: Record<Locale, LandingCopy> = { en, de }
-export const NUMBER_LOCALE: Record<Locale, string> = { en: "en-IE", de: "de-DE" }
+export const LANDING: Record<Locale, LandingCopy> = { en, de, uk, ru }

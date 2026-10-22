@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 const LINKS = [
   { href: "/admin", label: "Übersicht" },
   { href: "/admin/kurztest", label: "Kurztest" },
+  { href: "/admin/modelltests", label: "Modelltests" },
 ]
 
 /** Reads the pathname, so it renders inside <Suspense> (fallback: AdminNavLinks with no path). */
@@ -18,7 +19,7 @@ export function AdminNavLinks({ path }: { path?: string }) {
   return (
     <nav aria-label="Admin" className="flex gap-1">
       {LINKS.map((l) => {
-        const active = path === l.href
+        const active = path === l.href || (l.href !== "/admin" && !!path?.startsWith(`${l.href}/`))
         return (
           <Link
             key={l.href}

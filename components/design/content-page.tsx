@@ -1,13 +1,15 @@
 import Link from "next/link"
 import { ChevronRight, type LucideIcon } from "lucide-react"
 import { Photo, VButton } from "@/components/design/kit"
+import { lp, type SiteLocale } from "@/lib/i18n/locale"
+import { UI } from "@/lib/i18n/ui"
 import type { Crumb } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
 /** The visible trail; pass the same list to breadcrumbList() for the JSON-LD. */
-export function Crumbs({ crumbs }: { crumbs: Crumb[] }) {
+export function Crumbs({ crumbs, locale = "de" }: { crumbs: Crumb[]; locale?: SiteLocale }) {
   return (
-    <nav aria-label="Brotkrumen">
+    <nav aria-label={UI[locale].crumbsAria}>
       <ol className="flex flex-wrap items-center gap-1 text-[13.5px] text-v-muted">
         {crumbs.map((c, i) => (
           <li key={c.path} className="flex items-center gap-1">
@@ -25,10 +27,10 @@ export function Crumbs({ crumbs }: { crumbs: Crumb[] }) {
 }
 
 /** Breadcrumb, H1 and lead: the top of every text page (legal, landings). No eyebrow; the H1 carries itself. `h1Muted` continues the H1 in muted ink; `icon` sets a round tile above it. */
-export function PageHeader({ crumbs, h1, h1Muted, lead, meta, icon: Icon }: { crumbs: Crumb[]; h1: string; h1Muted?: string; lead?: string; meta?: string; icon?: LucideIcon }) {
+export function PageHeader({ crumbs, h1, h1Muted, lead, meta, icon: Icon, locale = "de" }: { crumbs: Crumb[]; h1: string; h1Muted?: string; lead?: string; meta?: string; icon?: LucideIcon; locale?: SiteLocale }) {
   return (
     <header className="flex max-w-[64ch] flex-col items-start gap-5 pt-8 pb-10 sm:pt-12 sm:pb-14">
-      <Crumbs crumbs={crumbs} />
+      <Crumbs crumbs={crumbs} locale={locale} />
       {Icon ? (
         <span className="nz-chrome grid size-14 place-items-center rounded-full">
           <Icon className="size-6" strokeWidth={1.75} aria-hidden="true" />
@@ -72,15 +74,16 @@ export function Todo({ children }: { children: React.ReactNode }) {
 }
 
 /** Author, review date and sources: required on every guide (CLAUDE.md §4). */
-export function Byline({ author, reviewed, sources }: { author: string; reviewed: string; sources: { name: string; url: string }[] }) {
+export function Byline({ author, reviewed, sources, locale = "de" }: { author: string; reviewed: string; sources: { name: string; url: string }[]; locale?: SiteLocale }) {
+  const t = UI[locale].byline
   return (
     <aside className="mt-6 flex max-w-[54rem] flex-col gap-3 rounded-[22px] bg-v-soft/70 px-6 py-5 text-[14.5px] leading-relaxed text-v-muted sm:px-12">
       <p>
-        Verantwortlich: <span className="text-v-ink">{author}</span>. Stand: <span className="v-num">{reviewed}</span>.
+        {t.responsible}: <span className="text-v-ink">{author}</span>. {t.stand}: <span className="v-num">{reviewed}</span>.
       </p>
       {sources.length ? (
         <div>
-          <p className="text-v-ink">Quellen</p>
+          <p className="text-v-ink">{t.sources}</p>
           <ul className="mt-1 flex flex-col gap-1">
             {sources.map((s) => (
               <li key={s.url}>
@@ -95,12 +98,12 @@ export function Byline({ author, reviewed, sources }: { author: string; reviewed
 }
 
 /** Closing band that sends the reader to the free test: a centred headline on a photo field. One per page. */
-export function TestCta({ h2, text, href = "/gratis-test/dtz", button = "Gratis Test starten" }: { h2: string; text: string; href?: string; button?: string }) {
+export function TestCta({ h2, text, href = "/gratis-test/dtz", button, locale = "de" }: { h2: string; text: string; href?: string; button?: string; locale?: SiteLocale }) {
   return (
     <Photo token="--g-photo-6" className="mt-20 flex min-h-[340px] flex-col items-center justify-center gap-5 rounded-[28px] px-6 py-14 text-center sm:min-h-[380px]">
       <h2 className="v-display max-w-[18ch] text-[clamp(32px,4.6vw,60px)] leading-[1.04]">{h2}</h2>
       <p className="max-w-[42ch] text-[17px] leading-relaxed text-v-muted">{text}</p>
-      <VButton size="lg" render={<Link href={href} />} nativeButton={false} className="mt-1">{button}</VButton>
+      <VButton size="lg" render={<Link href={lp(locale, href)} />} nativeButton={false} className="mt-1">{button ?? UI[locale].testCta}</VButton>
     </Photo>
   )
 }

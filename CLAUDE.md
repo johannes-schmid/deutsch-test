@@ -165,8 +165,10 @@ most likely because most of its content was AI-written. Don't repeat that here.
 
 - **Site language:** simple German (short sentences, ≤15 words on average, everyday words),
   addressing the user as **du**.
-- **Explanations** are available in English, Arabic, Turkish, Ukrainian, Russian and Dari.
-  Only the explanations are translated; exam content stays German.
+- **Ukrainian and Russian (since 2026-10-21, Hannes's call):** every public page is mirrored under `/uk` and
+  `/ru`, machine-translated from German and labelled as such at the top of each page (AI Act art. 50), plus the
+  item explanations in the free tests. Exam content stays German. Impressum/Datenschutz stay German only.
+  Planned later, not built: explanations in English, Arabic, Turkish and Dari. Don't claim a language before it ships.
   - **RTL support** for Arabic and Dari. Every forward arrow flips in RTL.
 - **Code, comments, commit messages and `LEARNINGS.md`:** English. **Chat with Hannes:** English.
 - **URL slugs:** German, lowercase, `ü→ue`, `ö→oe`, `ä→ae`, `ß→ss`.
@@ -193,6 +195,26 @@ Mollie.** Don't port the Dutch sites' Mollie routes; rebuild that layer on Strip
 - **ElevenLabs:** a designed German voice cast for Hören monologues and dialogues
 - **Model calls go directly to the provider. Never via Vercel AI Gateway** (global rule).
   inburgering-website's exception does not carry over.
+
+### Voice cast (approved by Hannes after listening, 2026-10-22)
+
+All audio on `eleven_v4_turbo`. Voice IDs live only in `data/tts-voices.json`; content refers to the keys.
+**A new voice needs Hannes's listening approval first** (render samples, send a listening page).
+
+| Accent | Men | Women |
+|---|---|---|
+| **DE** (standard German) | `man_mark` (narrator only) · `man_ben` (young) · `man_christian` (middle) · `man_simon` (young) · `man_johann` (old) · `man_michael` (old) | `woman_ela` (young) · `woman_irene` (middle) · `woman_laura` (middle) · `woman_lisa` (old) · `woman_kathi` (`de-learner`: soft Eastern European accent) |
+| **AT** | `man_gruber_at` · `man_martin_at` (stronger dialect) | `woman_alexandra_at` · `woman_emilia_at` |
+| **CH** | `man_andres_ch` · `man_thomas_ch` (maybe) | `woman_heidi_ch` · `woman_mia_ch` |
+
+- **Accent per exam:** DTZ, Goethe and telc use DE voices only. ÖSD uses AT (plus DE/CH where
+  `accents` in `lib/exam/exams/oesd-*.ts` says so). CH voices only where an exam has Swiss speakers.
+- **Kathi** (`de-learner`) is never a native role (announcer, examiner, official). Use her for people who
+  came to Germany themselves: Hören Teil 4 opinions, a learner partner in Sprechen.
+- **DTZ casting** (`scripts/modelltest/author.ts`): narrator Mark; Hören Teil 1–3 rotate Ben, Christian, Simon,
+  Ela, Irene, Laura, never one voice twice in a dialogue; Teil 4 four different voices with one older, one young,
+  both genders; Sprechen examiner Ela, partner Ben.
+- Rejected after listening (don't re-propose): Louisa, Yvonne, Ramona, Doreen, Nadine, Markus (AT).
 
 ### Site structure
 
@@ -223,7 +245,8 @@ Keep the four surfaces from the Dutch sites apart: public `(main)`, portal `(app
 deutsch-test/
 ├── CLAUDE.md                        # this file
 ├── LEARNINGS.md                     # success/failure log (create with the first code session)
-├── research/dtz-blueprint.md        # ★ the real DTZ format, sourced and dated (to be written)
+├── research/dtz-blueprint.md        # ★ the real DTZ format, sourced and dated (g.a.s.t. Übungssätze 1+2); encoded as `full` in lib/exam/blueprint.ts
+├── research/dtz-official-situations.md # every situation of the official DTZ sets (paraphrased): the generator's do-not-reuse list; official texts for the 6-word overlap check live only in .unit-cache/official/ (gitignored)
 └── testgerman/                       # competitor research, sorted by level; README.md in every folder
     ├── analysis.md · examples.md    #   full teardown (B1 in §2b) · structural examples (≤20-word excerpts)
     ├── uebungen.md · pruefungssimulation.md · mock-exams.md  # how each section works · ★ part-by-part mock blueprints incl. their 4 DTZ mocks
@@ -238,6 +261,7 @@ deutsch-test/
 DESIGN.md                            # ★ the chosen visual system (Nachtzug + Fokus exam UI): tokens, components, rules
 seo/keyword-strategy.md              # keyword → page ownership, homepage title/H1/meta
 app/(main)/                          # public site: / (German, default) and /en (English) Nachtzug landing; /de 308s to /
+app/(main)/{uk,ru}/                  # machine-translated mirror of every public page: two-line static routes, one per German route (cacheComponents: no [lang] param); Impressum/Datenschutz stay German
 │   └── design/pruefung/             #   noindex reference: every exam component (+ /ergebnis results page)
 │   └── landing.css                  #   Nachtzug tokens + gradients, mapped onto shadcn tokens
 components/ui/                       # shadcn components (Base UI)
@@ -245,7 +269,12 @@ components/design/                   # shell, kit, interactive, variants/ (Nacht
 components/exam/                     # ★ Fokus exam system: ExamShell, items, audio, reading, writing, speaking, results
 lib/exam/                            # exam types, UI copy (de + en), design specimens (samples.ts, not real content)
 lib/design/                          # content.ts (shared copy, placeholder prices), variants.ts
-lib/i18n/landing.ts                  # landing copy, de (default, /) + en (/en)
+lib/i18n/landing.ts                  # landing copy, de (default, /) + en (/en); uk/ru in landing.{uk,ru}.ts
+lib/i18n/locale.ts                   # locales, lp() path prefix, hreflang alternates()
+lib/i18n/ui.ts                       # shared chrome + blog labels (+ ui.{uk,ru}.ts); kurztest/exam copy also has .uk/.ru siblings
+data/pages/{de,uk,ru}/               # text-page copy (a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, preise); views in components/pages/
+data/blog/{uk,ru}/<slug>.tsx         # post translations: `{ ...germanPost, locale, <translated fields> }`, live with their German original
+data/explanations/{uk,ru}.json       # item explanations keyed <exam>/<blockId>/<n>; unlock swaps them in (lib/kurztest/explanations.ts)
 data/tts-voices.json                 # ★ the ElevenLabs voice cast with accent de/at/ch (AT/CH = provisional picks for ÖSD); content refers to keys, never voice_ids
 data/kurztest/drafts/                # ★ Kurztest content: one JSON per block, `display` (kit types) + `key` (server-only); only status "reviewed" ships
 public/audio/kurztest/               # rendered eleven_v4 clips for Hören blocks and Sprechen turns
@@ -272,9 +301,23 @@ lib/auth/redirect.ts                 # safeNext() (same-site paths only), PORTAL
 app/auth/callback/route.ts           # Google → Supabase PKCE code exchange → ?next
 app/(auth)/{registrieren,anmelden}/  # Google-only sign-up/sign-in (noindex); components/auth/ = GoogleButton + AuthHeader
 app/(app)/dashboard/                 # portal (login-only): overview by level → [exam] (4 skill cards) → [exam]/[skill] (10 Modelltests); components/portal/ = sidebar, tab bar, account, exam pages
+app/(app)/dashboard/[exam]/[skill]/[n]/ # ★ the Modelltest runner page + actions.ts (startAttempt, submitClosed, submitWriting, finishSpeaking; session + ownership checked in each)
+components/modelltest/               # runner.tsx (intro → test → result; Hören follows the one track, Lesen/Schreiben timed) · speaking.tsx (live pair exam)
+lib/entitlements.ts                  # ownsExam(): the one paid-access check; false until Stripe (Modelltest 1 per skill is free)
+lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
+lib/modelltest/{grade,speaking,sprechen-run}.ts # official DTZ steps: Schreiben 4×0–5, Sprechen 5/5/10/10/20 + 10/10/15/15 · live lines (Haiku) + voice (eleven_v4_turbo) · run state + FREE_SPEAKING_SECONDS cap
+app/api/modelltest/sprechen/turn/    # one answer: private recording → Scribe → next live line as audio (or null = pre-rendered fallback)
 lib/portal.ts · lib/i18n/portal.ts   # exam groups for the portal ("use cache") · auth + portal copy
 supabase/config.toml                 # local stack on 545xx, email signups off, Google on
+supabase/migrations/*_modelltests.sql # mt_* tables: sets (exam×skill×1..10, 0 = backlog), stimuli/questions/options/open_tasks (display + server-only key, no client policies), attempts/answers/submissions (owner reads); buckets exam-audio, exam-images, sprechen-recordings (private, own folder); mt_publish_issues()
 scripts/{generate,tts,validate}-kurztest.ts  # Claude drafts → eleven_v4 audio → blueprint check
+supabase/migrations/*_mt_set_track.sql # mt_sets.track: the Hören set as one track { src, duration, cues }
+scripts/lib/drafting.ts              # shared Claude call (direct API, optional image), system prompts, output schemas, voice casting
+scripts/modelltest/                  # ★ Modelltest pipeline: plan-dtz (topics per set) → author (Claude per Teil, validated) → audio (eleven_v4_turbo, Hören track / Sprechen lines) → images (Pexels → WebP, Claude refits text to the photo) → seed (local mt_* + Storage; never touches review_status)
+data/modelltest/<exam>/<skill>-NN.json # Modelltest drafts (MtSet); photos.lock.json = Pexels ids in use. Rendered media lives in .unit-cache/ (gitignored) until seeded
+lib/modelltest/types.ts              # MtSet/MtBlock (+ Hören track cues, Sprechen turns with phase/live, photos, live key)
+lib/exam/validate-modelltest.ts      # validateTeil (closed Teile vs `full`), validateSprechen, validateWriting, validateSet (whole set, used by author.ts and the admin publish gate)
+app/(admin)/admin/modelltests/       # review: overview (exam × skill × 10 slots) → [exam]/[skill]/[n] set preview with real exam components, "Geprüft" per Teil, publish gated on validateSet + mt_publish_issues; actions.ts = setReviewed/setPublished (requireAdmin each); lib/modelltest/admin.ts loads sets with Storage URLs
 data/blog/<slug>.tsx · lib/blog/       # blog posts (sections as JSX, status draft/reviewed) · registry (POSTS, isLive) and types
 components/design/article.tsx        # blog blocks (FactBox, Note, Steps, Compare, DoDont, DataTable, ExamStrip, LetterSample, …); blog-article.tsx renders a post + JSON-LD
 app/(main)/(site)/blog/              # /blog index + one static route per post; /design/blog shows every block

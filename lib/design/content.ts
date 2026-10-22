@@ -47,14 +47,6 @@ export const TEXT_TYPES = [
   "E-Mail",
 ]
 
-export const LANGUAGES = ["English", "العربية", "Türkçe", "Українська", "Русский", "دری"]
-
-export const PLAN_FEATURES = [
-  "Alle Modelltests für Hören, Lesen, Schreiben, Sprechen",
-  "Feedback für Schreiben und Sprechen",
-  "Erklärungen in 6 Sprachen",
-]
-
 export const SAMPLE_ITEM = {
   part: "Lesen · Aufgabe 3",
   source: "Aushang im Treppenhaus",

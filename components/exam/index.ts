@@ -1,6 +1,6 @@
 export { ExamCopyProvider, useExamCopy, ExamButton, ItemHeader, Mark, OptionCard, Radio, optionState, fmt } from "./primitives"
 export { ExamBar, ExamShell, ExamStage, FocusLayer, Progress, TimerChip, useExamTimer, type ShellSection } from "./shell"
-export { ExamAudio, useExamAudio } from "./audio"
+export { ExamAudio, useExamAudio, ExamTrack, useExamTrack, type ExamTrackData, type ExamTrackCue } from "./audio"
 export { ChoiceItem, TrueFalseItem, PictureItem, MatchItem, GapItem } from "./items"
 export { FeedbackSheet } from "./feedback"
 export { ReadingLayout, ReadingText } from "./reading"

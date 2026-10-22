@@ -1,13 +1,7 @@
-import type { Metadata } from "next"
-import { VariantPage } from "@/components/design/variant-page"
-import { LANDING } from "@/lib/i18n/landing"
+import { HomePage, homeMetadata } from "@/components/design/home-page"
 
-export const metadata: Metadata = {
-  title: LANDING.de.meta.title,
-  description: LANDING.de.meta.description,
-  alternates: { canonical: "/", languages: { de: "/", en: "/en", "x-default": "/" } },
-}
+export const metadata = homeMetadata("de")
 
 export default function Home() {
-  return <VariantPage locale="de" />
+  return <HomePage locale="de" />
 }

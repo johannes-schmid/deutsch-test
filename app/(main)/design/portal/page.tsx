@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-const USER: SessionUser = { email: "amina@example.com", name: "Amina Rahimi", firstName: "Amina", avatar: null }
+const USER: SessionUser = { id: "design-preview", email: "amina@example.com", name: "Amina Rahimi", firstName: "Amina", avatar: null }
 const NAV = LEVELS.map((level) => ({ level, exams: EXAM_IDS.filter((id) => EXAMS[id].levels.includes(level)).map((id) => ({ id, label: EXAMS[id].short ?? EXAMS[id].name, brand: EXAMS[id].brand, href: `#${id}` })) }))
 
 function Spec({ name, note, children }: { name: string; note: string; children: React.ReactNode }) {
@@ -77,10 +77,13 @@ export default function PortalDesignPage() {
           </ul>
         </Spec>
 
-        <Spec name="ModelltestRow" note="/dashboard/[exam]/[skill]: zehn Zeilen in einer Papierkarte. Mit href: Tinten-Nummer, „Starten“, runder Pfeil. Ohne: gestrichelte Nummer, „Bald verfügbar“, Uhr.">
+        <Spec name="ModelltestRow" note="/dashboard/[exam]/[skill]: zehn Zeilen in einer Papierkarte, ein Zustand pro Zeile. Gemacht: Ember-Haken an der Nummer, bestes Ergebnis, Pfeil wird „noch einmal“. Gesperrt: weiche Nummer und Schloss. Bald: gestrichelte Nummer und Uhr. Vorschau: nur für Admins, unveröffentlicht.">
           <ol className="nz-paper flex max-w-[760px] flex-col divide-y divide-v-line overflow-hidden rounded-[24px]">
-            <li><ModelltestRow n={1} href="#" /></li>
-            <li><ModelltestRow n={2} href={null} /></li>
+            <li><ModelltestRow slot={{ n: 1, state: "done", href: "#", free: true, result: "B1" }} /></li>
+            <li><ModelltestRow slot={{ n: 2, state: "open", href: "#", free: false, result: null }} /></li>
+            <li><ModelltestRow slot={{ n: 3, state: "preview", href: "#", free: false, result: null }} /></li>
+            <li><ModelltestRow slot={{ n: 4, state: "locked", href: null, free: false, result: null }} /></li>
+            <li><ModelltestRow slot={{ n: 5, state: "soon", href: null, free: false, result: null }} /></li>
           </ol>
         </Spec>
       </div>

@@ -1,17 +1,17 @@
 import type { ReactNode } from "react"
+import type { SiteLocale } from "@/lib/i18n/locale"
 
 export type Source = { name: string; url: string }
 
-export const CATEGORIES = {
-  pruefungen: "Prüfungen & Ergebnis",
-  schreiben: "Schreiben & Sprechen",
-  tipps: "Tipps & Vorbereitung",
-} as const
-export type CategoryId = keyof typeof CATEGORIES
+/** Labels per locale live in lib/i18n/ui.ts (blog.categories). */
+export const CATEGORY_IDS = ["pruefungen", "schreiben", "tipps"] as const
+export type CategoryId = (typeof CATEGORY_IDS)[number]
 
 /** One blog article. The body is a list of sections, so the table of contents can never disagree with the headings. */
 export type BlogPost = {
   slug: string
+  /** Absent = German. A translation spreads the German post and replaces the words (data/blog/<locale>/). */
+  locale?: SiteLocale
   /** Only "reviewed" ships to production (CLAUDE.md §4). Drafts render in dev only. */
   status: "draft" | "reviewed"
   /** `<title>` without the site suffix. Targets the primary keyword. */

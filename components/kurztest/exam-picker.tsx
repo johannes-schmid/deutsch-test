@@ -2,15 +2,14 @@
 
 import { ExamCard } from "@/components/kurztest/exam-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
+import { KURZTEST_COPY, type KurztestCopy } from "@/lib/i18n/kurztest"
 import { LEVELS, type Exam, type ExamId, type Level } from "@/lib/exams"
-
-const T = KURZTEST_COPY.overview
 
 export type PickerExam = Exam & { id: ExamId; href: string | null }
 
-/** Level first, then the exams on that level. Every panel stays in the HTML, so all exams are crawlable. */
-export function ExamPicker({ exams, initial = "B1" }: { exams: PickerExam[]; initial?: Level }) {
+/** Level first, then the exams on that level. Every panel stays in the HTML, so all exams are crawlable. Copy comes in as props (plain strings) so the bundle carries one locale. */
+export function ExamPicker({ exams, initial = "B1", t = KURZTEST_COPY.overview, free = KURZTEST_COPY.chips.free }: { exams: PickerExam[]; initial?: Level; t?: KurztestCopy["overview"]; free?: string }) {
+  const T = t
   return (
     <Tabs defaultValue={initial} className="gap-6">
       <div className="flex flex-col gap-3">
@@ -35,7 +34,7 @@ export function ExamPicker({ exams, initial = "B1" }: { exams: PickerExam[]; ini
             <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {list.map((e) => (
                 <li key={e.id}>
-                  <ExamCard exam={e} href={e.href} />
+                  <ExamCard exam={e} href={e.href} t={T} free={free} />
                 </li>
               ))}
             </ul>

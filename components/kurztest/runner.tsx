@@ -7,17 +7,18 @@ import { ConfirmSheet, ExamAudio, ExamButton, ExamCopyProvider, ExamShell, PartI
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { examPath, type ExamId } from "@/lib/exams"
 import { createClient } from "@/lib/supabase/client"
-import { EXAM_PAGES, KURZTEST_COPY } from "@/lib/i18n/kurztest"
+import type { ExamPage } from "@/lib/i18n/kurztest"
+import type { SiteLocale } from "@/lib/i18n/locale"
 import type { PublicBlock } from "@/lib/kurztest/data"
 import { MAX_RECORDING_SECONDS, MAX_TEXT, type KurztestResult } from "@/lib/kurztest/types"
 import { FRAME_ID, KurztestFrame } from "./frame"
 import { EmailGate } from "./gate"
 import { GuestWall } from "./guest-wall"
 import { BlockItems, type Values } from "./items"
+import { KurztestLocale, useKurztest } from "./locale"
 import { ResultView } from "./result-view"
 
 type Skill = PublicBlock["skill"]
-const C = KURZTEST_COPY
 
 const top = () => {
   document.getElementById(FRAME_ID)?.scrollIntoView({ behavior: "instant", block: "start" })
@@ -25,20 +26,22 @@ const top = () => {
 
 function useExit(exam: ExamId) {
   const router = useRouter()
+  const { T: C, at } = useKurztest()
   const [open, setOpen] = useState(false)
-  const sheet = <ConfirmSheet open={open} onOpenChange={setOpen} {...C.run.exitConfirm} onConfirm={() => router.push(examPath(exam))} />
+  const sheet = <ConfirmSheet open={open} onOpenChange={setOpen} {...C.run.exitConfirm} onConfirm={() => router.push(at(examPath(exam)))} />
   return [() => setOpen(true), sheet] as const
 }
 
 /** Opens when the timer runs out; closing it in any way hands the test in. */
 function TimeUp({ left, onFinish }: { left: number; onFinish: () => void }) {
+  const C = useKurztest().T
   return <ConfirmSheet open={left === 0} onOpenChange={(o) => !o && onFinish()} {...C.run.timeUp} onConfirm={onFinish} />
 }
 
-const teilSections = (blocks: PublicBlock[], done: (b: PublicBlock) => number) =>
-  [...new Set(blocks.map((b) => b.teil))].map((teil) => {
-    const inTeil = blocks.filter((b) => b.teil === teil)
-    return { id: `t${teil}`, label: `Teil ${teil}`, count: inTeil.reduce((n, b) => n + Math.max(1, itemNumbers(b.display.items).length), 0), done: inTeil.reduce((n, b) => n + done(b), 0) }
+const teilSections = (blocks: PublicBlock[], done: (b: PublicBlock) => number, teil: (n: number) => string) =>
+  [...new Set(blocks.map((b) => b.teil))].map((t) => {
+    const inTeil = blocks.filter((b) => b.teil === t)
+    return { id: `t${t}`, label: teil(t), count: inTeil.reduce((n, b) => n + Math.max(1, itemNumbers(b.display.items).length), 0), done: inTeil.reduce((n, b) => n + done(b), 0) }
   })
 
 /** Index of the first block after Teil 1: where a guest meets the sign-up wall. A one-Teil test walls at the finish. */
@@ -51,6 +54,7 @@ type Resume = { values: Values; startedAt: string; left: number }
 const resumeKey = (exam: ExamId, skill: Skill) => `kurztest-resume:${exam}:${skill}`
 
 function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish, guest, onWall, start }: { exam: ExamId; skill: "lesen" | "hoeren"; minutes: number; blocks: PublicBlock[]; values: Values; onChange: (n: number, v: string) => void; onFinish: (left: number) => void; guest: boolean; onWall: (left: number) => void; start?: { i: number; left: number } }) {
+  const { T: C, at } = useKurztest()
   const [exit, exitSheet] = useExit(exam)
   const [confirmFinish, setConfirmFinish] = useState(false)
   const [i, setI] = useState(start?.i ?? 0)
@@ -88,7 +92,7 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish, 
       <ExamShell
         part={skill}
         wide={!!reading}
-        sections={teilSections(blocks, answered)}
+        sections={teilSections(blocks, answered, C.teil)}
         progressLabel={C.run.progress(name)}
         seconds={timed ? left : undefined}
         onExit={exit}
@@ -119,12 +123,13 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish, 
       {exitSheet}
       <ConfirmSheet open={confirmFinish} onOpenChange={setConfirmFinish} {...C.run.finishConfirm} text={C.run.finishConfirm.text(open)} onConfirm={finish} />
       {timed && !wall ? <TimeUp left={left} onFinish={finish} /> : null}
-      <GuestWall open={wall} answered={blocks.slice(0, wallAt).reduce((n, b) => n + answered(b), 0)} nextTeil={blocks[wallAt]?.teil ?? blocks[0].teil} returnTo={`${examPath(exam)}/${skill}`} />
+      <GuestWall open={wall} answered={blocks.slice(0, wallAt).reduce((n, b) => n + answered(b), 0)} nextTeil={blocks[wallAt]?.teil ?? blocks[0].teil} returnTo={at(`${examPath(exam)}/${skill}`)} />
     </KurztestFrame>
   )
 }
 
 function WritingTest({ exam, minutes, block, onFinish }: { exam: ExamId; minutes: number; block: PublicBlock; onFinish: (task: string, text: string) => void }) {
+  const C = useKurztest().T
   const [exit, exitSheet] = useExit(exam)
   const tasks = block.display.writing!
   const [chosen, setChosen] = useState<string | null>(tasks.length === 1 ? tasks[0].key : null)
@@ -137,12 +142,12 @@ function WritingTest({ exam, minutes, block, onFinish }: { exam: ExamId; minutes
     onFinish(chosen ?? "A", text)
   }
   return (
-    <KurztestFrame scene="schreiben" focus label={C.run.progress("Schreiben")}>
+    <KurztestFrame scene="schreiben" focus label={C.run.progress(C.names.schreiben)}>
       <ExamShell
         part="schreiben"
         wide
         sections={[{ id: "s", label: "Schreiben", count: 1, done: text.trim() ? 1 : 0 }]}
-        progressLabel={C.run.progress("Schreiben")}
+        progressLabel={C.run.progress(C.names.schreiben)}
         seconds={left}
         onExit={exit}
         action={<ExamButton disabled={!chosen || !text.trim()} onClick={finish}>{C.run.finish}</ExamButton>}
@@ -162,6 +167,7 @@ function pickMime() {
 }
 
 function SpeakingTest({ exam, blocks, onFinish }: { exam: ExamId; blocks: PublicBlock[]; onFinish: (recordings: Blob[]) => void }) {
+  const C = useKurztest().T
   const [exit, exitSheet] = useExit(exam)
   const [b, setB] = useState(0)
   const [t, setT] = useState(0)
@@ -229,14 +235,14 @@ function SpeakingTest({ exam, blocks, onFinish }: { exam: ExamId; blocks: Public
 
   const mine = (bl: PublicBlock) => bl.display.speaking!.turns.filter((x) => x.who === "du").length
   const recordedBefore = blocks.slice(0, b).reduce((n, bl) => n + mine(bl), 0)
-  const sections = blocks.map((bl, j) => ({ id: bl.id, label: `Teil ${bl.teil}`, count: mine(bl), done: j < b ? mine(bl) : j > b ? 0 : Math.min(mine(bl), recordings.current.length - recordedBefore) }))
+  const sections = blocks.map((bl, j) => ({ id: bl.id, label: C.teil(bl.teil), count: mine(bl), done: j < b ? mine(bl) : j > b ? 0 : Math.min(mine(bl), recordings.current.length - recordedBefore) }))
 
   return (
-    <KurztestFrame scene="sprechen" focus label={C.run.progress("Sprechen")}>
+    <KurztestFrame scene="sprechen" focus label={C.run.progress(C.names.sprechen)}>
       <ExamShell
         part="sprechen"
         sections={sections}
-        progressLabel={C.run.progress("Sprechen")}
+        progressLabel={C.run.progress(C.names.sprechen)}
         onExit={exit}
         action={
           teilDone ? (
@@ -279,7 +285,19 @@ const utmFromUrl = () => Object.fromEntries([...new URLSearchParams(window.locat
 
 type Phase = "intro" | "test" | "sending" | "gate" | "grading" | "result"
 
-export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId; skill: Skill; minutes: number; blocks: PublicBlock[] }) {
+/** `page` comes from the server so the client bundle carries one exam's copy, not every exam's. */
+export function KurztestRunner({ locale, ...props }: RunnerProps & { locale: SiteLocale }) {
+  return (
+    <KurztestLocale locale={locale}>
+      <Runner {...props} />
+    </KurztestLocale>
+  )
+}
+
+type RunnerProps = { exam: ExamId; page: ExamPage; skill: Skill; minutes: number; blocks: PublicBlock[] }
+
+function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
+  const { T: C, locale } = useKurztest()
   const [phase, setPhase] = useState<Phase>("intro")
   const [startedAt, setStartedAt] = useState("")
   const [values, setValues] = useState<Values>({})
@@ -294,7 +312,6 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
   const lastPayload = useRef<Record<string, unknown>>({})
   // Schreiben/Sprechen take the email before the test: the limits are checked first, and the result unlocks by itself.
   const contact = useRef<{ email: string; marketing: boolean } | null>(null)
-  const page = EXAM_PAGES[exam]!
   const name = C.names[skill]
   const graded = skill === "schreiben" || skill === "sprechen"
 
@@ -342,10 +359,11 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
         form.append("attemptId", id)
         form.append("email", email)
         form.append("marketing", String(marketing))
+        form.append("locale", locale)
         recordings.current.forEach((r, i) => form.append("recordings", r, `answer-${i}.${r.type.includes("mp4") ? "m4a" : "webm"}`))
         res = await fetch("/api/kurztest/unlock", { method: "POST", body: form })
       } else {
-        res = await fetch("/api/kurztest/unlock", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId: id, email, marketing }) })
+        res = await fetch("/api/kurztest/unlock", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId: id, email, marketing, locale }) })
       }
     } catch {
       return C.gate.failed
@@ -421,12 +439,12 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
   if (phase === "intro") {
     const teile =
       skill === "schreiben"
-        ? blocks[0].display.writing!.map((w) => ({ label: blocks[0].display.writing!.length > 1 ? `Aufgabe ${w.key}` : `Teil ${blocks[0].teil}`, detail: w.title }))
+        ? blocks[0].display.writing!.map((w) => ({ label: blocks[0].display.writing!.length > 1 ? C.task(w.key) : C.teil(blocks[0].teil), detail: w.title }))
         : skill === "sprechen"
-          ? blocks.map((b) => ({ label: `Teil ${b.teil}`, detail: b.display.speaking!.data.title }))
+          ? blocks.map((b) => ({ label: C.teil(b.teil), detail: b.display.speaking!.data.title }))
           : [...new Set(blocks.map((b) => b.teil))].map((teil) => {
               const n = blocks.filter((b) => b.teil === teil).reduce((s, b) => s + itemNumbers(b.display.items).length, 0)
-              return { label: `Teil ${teil}`, detail: `${n} ${n === 1 ? "Aufgabe" : "Aufgaben"}` }
+              return { label: C.teil(teil), detail: C.taskCount(n) }
             })
     const rules =
       skill === "hoeren"
@@ -439,11 +457,11 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
     const count = graded ? (skill === "sprechen" ? blocks.length : 1) : blocks.reduce((s, b) => s + itemNumbers(b.display.items).length, 0)
     const about = (skill === "schreiben" ? C.about.schreiben(minutes) : skill === "sprechen" ? C.about.sprechen(minutes) : C.about.closed(minutes)).map((p) => <p key={p}>{p}</p>)
     return (
-      <ExamCopyProvider locale="de">
+      <ExamCopyProvider locale={locale}>
         <KurztestFrame scene={skill}>
           <div className="mx-auto flex w-full max-w-[560px] flex-col gap-4">
             <div className="nz-app rounded-[24px] p-6 sm:p-8">
-              <PartIntro part={skill} name={`${name}: Kurztest`} minutes={minutes} count={count} teile={teile} rules={rules} about={about} onStart={graded && !signedIn ? undefined : graded ? startSignedIn : start} />
+              <PartIntro part={skill} name={C.kurztest(name)} minutes={minutes} count={count} teile={teile} rules={rules} about={about} onStart={graded && !signedIn ? undefined : graded ? startSignedIn : start} />
               {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
             </div>
             {graded && !signedIn ? <EmailGate before speaking={skill === "sprechen"} onUnlock={register} /> : null}
@@ -454,7 +472,7 @@ export function KurztestRunner({ exam, skill, minutes, blocks }: { exam: ExamId;
   }
 
   return (
-    <ExamCopyProvider locale="de">
+    <ExamCopyProvider locale={locale}>
       {phase === "test" ? (
         skill === "lesen" || skill === "hoeren" ? (
           <ClosedTest exam={exam} skill={skill} minutes={minutes} blocks={blocks} values={values} onChange={(n, v) => setValues((m) => ({ ...m, [n]: v }))} onFinish={(left) => {

@@ -1,0 +1,83 @@
+// Russian, machine-translated from `de` in ./copy.ts. Keep keys in sync.
+
+import type { ExamCopy } from "./copy"
+
+const plural = (n: number, one: string, few: string, many: string) => {
+  const m10 = n % 10
+  const m100 = n % 100
+  if (m10 === 1 && m100 !== 11) return one
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few
+  return many
+}
+
+const num = (x: number) => String(x).replace(".", ",")
+
+export const ru: ExamCopy = {
+  exit: "Завершить тест",
+  overview: "Обзор",
+  close: "Закрыть",
+  next: "Далее",
+  check: "Проверить",
+  again: "Ещё раз",
+  start: "Начать",
+  timeLeft: "Осталось",
+  task: "Задание",
+  part: "Часть",
+  minutes: "мин",
+  items: (n: number) => `${n} ${plural(n, "задание", "задания", "заданий")}`,
+  play: "Воспроизвести",
+  heard: "Прослушано",
+  hearOnce: "слушать один раз",
+  hearTwice: "слушать два раза",
+  playsLeft: (n: number) => `ещё ${n}×`,
+  noReplay: "Готово. Повтора нет.",
+  switchLanguage: "Показать объяснение на другом языке",
+  transcriptLocked: "Транскрипт вы увидите после ответа.",
+  track: { start: "Начать аудирование", startNote: "Запись идёт без пауз, каждый текст один раз.", phase: { instruction: "Объявление", reading: "Время на чтение", clip: "Аудиотекст", answer: "Время на ответ" }, item: (ns: number[]) => (ns.length === 1 ? (ns[0] === 0 ? "Пример" : `Номер ${ns[0]}`) : ns.length === 2 ? `Номера ${ns[0]} и ${ns[1]}` : ""), left: "ещё", ended: "Аудирование окончено." },
+  richtig: "Richtig",
+  falsch: "Falsch",
+  right: "Верно!",
+  wrong: (key: string) => `Почти. Правильный ответ: ${key}.`,
+  yourAnswer: "Ваш ответ",
+  solution: "Ответ",
+  noMatch: "Ни одно объявление не подходит",
+  noMatchText: "Для этой ситуации нет объявления.",
+  situations: "Ситуации",
+  gap: (n: number) => `Пропуск ${n}`,
+  text: "Текст",
+  tasks: (done: number, total: number) => `Задания (${done}/${total})`,
+  chooseTask: "Выберите задание",
+  words: (n: number) => `${n} ${plural(n, "слово", "слова", "слов")}`,
+  writeAbout: "Напишите обо всех пунктах:",
+  letter: "Ваш текст",
+  yourTurn: (name: string) => `Ваша очередь. Ответьте: ${name}.`,
+  recording: "Идёт запись",
+  record: "Ответить",
+  stopRecording: "Остановить запись",
+  resultTitle: "Ваш результат",
+  resultNote: "Тренировочный результат в формате DTZ. Не официальный результат telc.",
+  nextStep: "Следующий шаг",
+  belowA2: "ниже A2",
+  levelAria: "Уровень",
+  correctOf: (n: number, total: number) => `${n} из ${total} правильно`,
+  resultNotePoints: "Тренировочный результат в формате экзамена. Не официальный результат.",
+  passed: "сдал (bestanden)",
+  failed: "не сдал (nicht bestanden)",
+  points: (p: number, max: number) => `${num(p)} из ${num(max)} ${Number.isInteger(max) ? plural(max, "балла", "баллов", "баллов") : "балла"}`,
+  pointsShort: (p: number, max: number) => `${num(p)}/${num(max)}`,
+  passMark: (pct: number) => `Сдано от ${pct} %`,
+  scoreAria: "Результат",
+  cards: "Ваши карточки",
+  yourTask: "Ваше задание",
+  criteria: "Критерии",
+  yourText: "Из вашего текста",
+  better: "Лучше",
+  review: "Для повторения",
+  reviewNote: "Эти задания были выполнены неверно. Посмотрите их ещё раз.",
+  open: "Посмотреть",
+  yours: "Ваш ответ",
+  newTest: "Новый пробный экзамен",
+  showAll: "Все критерии",
+  showLess: "Меньше",
+  partsTitle: "Ваши части",
+}

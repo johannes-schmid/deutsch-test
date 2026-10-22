@@ -10,7 +10,8 @@ import { fmt, useExamCopy } from "./primitives"
 const LEVEL = [4, 9, 14, 20, 26, 18, 10, 22, 30, 16, 8, 12]
 
 /** Pair exam: examiner and partner are people with turns; the learner answers with the mic. */
-export function SpeakingTask({ data, people, turns, covered = [], onRecordStart, onRecordStop, canRecord = true, idleLabel }: { data: SpeakingData; people: Record<Turn["who"], Person>; turns: Turn[]; covered?: string[]; onRecordStart?: () => void; onRecordStop?: () => void; canRecord?: boolean; idleLabel?: string }) {
+/** `photo`: DTZ Teil 2, the picture the current speaker talks about (each candidate has a different one). */
+export function SpeakingTask({ data, people, turns, covered = [], onRecordStart, onRecordStop, canRecord = true, idleLabel, photo }: { data: SpeakingData; people: Record<Turn["who"], Person>; turns: Turn[]; covered?: string[]; onRecordStart?: () => void; onRecordStop?: () => void; canRecord?: boolean; idleLabel?: string; photo?: { src?: string; alt: string; caption?: string; credit?: { name: string; url: string } } }) {
   const t = useExamCopy()
   const [rec, setRec] = useState(false)
   const [secs, setSecs] = useState(0)
@@ -41,6 +42,16 @@ export function SpeakingTask({ data, people, turns, covered = [], onRecordStart,
             )
           })}
         </div>
+        {photo?.src ? (
+          <figure className="mt-2 flex flex-col gap-1.5">
+            {/* eslint-disable-next-line @next/next/no-img-element -- 1200 px WebP from our own Storage */}
+            <img src={photo.src} alt={photo.alt} width={1200} height={800} className="aspect-[3/2] w-full rounded-2xl bg-v-soft object-cover" />
+            <figcaption className="flex flex-wrap justify-between gap-x-3 text-[12.5px] text-v-muted">
+              <span>{photo.caption}</span>
+              {photo.credit ? <a href={photo.credit.url} target="_blank" rel="noreferrer" className="underline decoration-v-ink/20 underline-offset-4 hover:text-v-ink">Foto: {photo.credit.name} / Pexels</a> : null}
+            </figcaption>
+          </figure>
+        ) : null}
         {data.cards?.length ? (
           <div className="mt-2 flex flex-col gap-2">
             <span className="text-[13px] text-v-muted">{t.cards}</span>

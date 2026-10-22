@@ -1,0 +1,806 @@
+{
+  "exam": "dtz",
+  "skill": "lesen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "dtz-lesen-01-t1-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-22T07:20:40.324Z",
+        "textType": "Wegweiser im Landratsamt"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben und die Übersicht. Wo (a, b oder c) finden Sie die Information?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie haben ein gebrauchtes Auto gekauft und möchten es auf Ihren Namen anmelden.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "EG"
+                },
+                {
+                  "key": "b",
+                  "label": "1. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 21,
+              "prompt": "Ihre Tochter kommt im Herbst in die Schule. Vorher muss ein Arzt sie untersuchen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "4. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 22,
+              "prompt": "Sie verdienen wenig und können Ihre Miete kaum bezahlen. Sie möchten dafür Geld vom Staat beantragen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "2. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Ihre Aufenthaltserlaubnis gilt nur noch zwei Monate. Sie möchten länger in Deutschland bleiben.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "EG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Ihr Nachbar hat gerade die Schule beendet und möchte im Landratsamt eine Ausbildung machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "EG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Sie waren letzte Woche bei der Zulassungsstelle und haben dort Ihren Regenschirm vergessen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "EG"
+                },
+                {
+                  "key": "b",
+                  "label": "UG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Landratsamt Kreis Mühlental, Am Schlossgarten 4",
+          "source": "Wegweiser im Eingangsbereich",
+          "paragraphs": [
+            "UG – Kfz-Zulassungsstelle und Führerscheinstelle: Anmeldung, Ummeldung und Abmeldung von Fahrzeugen, Wunschkennzeichen, Umweltplakette, Umtausch und Verlust des Führerscheins",
+            "EG – Bürgerbüro und Information: Wartenummern, Fundsachen, Beglaubigung von Kopien, Antragsformulare für alle Ämter, Kasse (Gebühren bar oder mit Karte)",
+            "1. OG – Ausländerbehörde: Aufenthaltstitel (Erteilung und Verlängerung), Niederlassungserlaubnis, Einbürgerung, Verpflichtung zum Integrationskurs, Verpflichtungserklärung für Besuch",
+            "2. OG – Sozialamt: Wohngeld, Grundsicherung im Alter, Hilfe zur Pflege, Bildungs- und Teilhabepaket für Schulkinder, Schwerbehindertenausweis",
+            "3. OG – Jugendamt: Elterngeld, Kitaplätze und Tagesmütter, Unterhaltsvorschuss für Alleinerziehende, Erziehungsberatung, Pflegefamilien und Adoption",
+            "4. OG – Gesundheitsamt: Impfberatung, Schuleingangsuntersuchung, Gesundheitszeugnis für Lebensmittelberufe, Beratung bei ansteckenden Krankheiten, Trinkwasserkontrolle",
+            "5. OG – Bauamt und Umwelt: Bauanträge, Denkmalschutz, Abfallberatung, Sperrmüll, Natur- und Tierschutz, Beschwerden über Lärm",
+            "6. OG – Verwaltung und Landrat: Personalabteilung (Stellenangebote, Ausbildungsplätze, Praktika), Pressestelle, Sitzungssaal, Büro des Landrats"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 21,
+            "correct": "b",
+            "explanation": "Die Untersuchung vor der Schule macht das Gesundheitsamt im 4. OG. Das Jugendamt im 3. OG ist für Kitas und Beratung da, nicht für Untersuchungen.",
+            "evidence": {
+              "text": "4. OG – Gesundheitsamt: Impfberatung, Schuleingangsuntersuchung, Gesundheitszeugnis für Lebensmittelberufe, Beratung bei ansteckenden Krankheiten, Trinkwasserkontrolle",
+              "hit": "4. OG – Gesundheitsamt: Impfberatung, Schuleingangsuntersuchung"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "b",
+            "explanation": "Hilfe für die Miete heißt Wohngeld, das gibt es beim Sozialamt im 2. OG. Im 3. OG gibt es nur Unterhaltsvorschuss für Alleinerziehende.",
+            "evidence": {
+              "text": "2. OG – Sozialamt: Wohngeld, Grundsicherung im Alter, Hilfe zur Pflege, Bildungs- und Teilhabepaket für Schulkinder, Schwerbehindertenausweis",
+              "hit": "2. OG – Sozialamt: Wohngeld"
+            }
+          },
+          {
+            "n": 23,
+            "correct": "a",
+            "explanation": "Die Ausländerbehörde im 1. OG verlängert Aufenthaltstitel. Im EG bekommst du nur Formulare, aber keine Verlängerung.",
+            "evidence": {
+              "text": "1. OG – Ausländerbehörde: Aufenthaltstitel (Erteilung und Verlängerung), Niederlassungserlaubnis, Einbürgerung, Verpflichtung zum Integrationskurs, Verpflichtungserklärung für Besuch",
+              "hit": "1. OG – Ausländerbehörde: Aufenthaltstitel (Erteilung und Verlängerung)"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "c",
+            "explanation": "Ausbildungsplätze im Amt vergibt die Personalabteilung im 6. OG. Das Jugendamt und die Information im EG sind dafür nicht zuständig.",
+            "evidence": {
+              "text": "6. OG – Verwaltung und Landrat: Personalabteilung (Stellenangebote, Ausbildungsplätze, Praktika), Pressestelle, Sitzungssaal, Büro des Landrats",
+              "hit": "6. OG – Verwaltung und Landrat: Personalabteilung (Stellenangebote, Ausbildungsplätze, Praktika)"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "a",
+            "explanation": "Verlorene Sachen findest du bei den Fundsachen im Bürgerbüro im EG. Im UG warst du zwar, aber dort gibt es kein Fundbüro.",
+            "evidence": {
+              "text": "EG – Bürgerbüro und Information: Wartenummern, Fundsachen, Beglaubigung von Kopien, Antragsformulare für alle Ämter, Kasse (Gebühren bar oder mit Karte)",
+              "hit": "EG – Bürgerbüro und Information: Wartenummern, Fundsachen"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "dtz-lesen-01-t2-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-22T08:32:16.089Z",
+        "textType": "Kleinanzeigen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen und die Anzeigen a–h. Finden Sie für jede Situation die passende Anzeige. Für eine Aufgabe gibt es keine Lösung. Markieren Sie in diesem Fall ein X.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Auszug geschafft? Wir machen den Rest!",
+                  "text": "Sie ziehen um und die alte Wohnung muss sauber übergeben werden? Das Team von Glanzwerk Reinigung übernimmt die komplette Endreinigung: Küche, Bad, Fenster, Böden und Heizkörper. Wir garantieren eine Reinigung, die jede Wohnungsabnahme besteht – sonst kommen wir kostenlos noch einmal. Festpreis nach kurzer Besichtigung. Termine auch samstags. Tel. 0341 / 58 27 90"
+                },
+                {
+                  "key": "b",
+                  "title": "Private Unterstützung für Seniorinnen und Senioren",
+                  "text": "Ich bin Rentnerin, 63 Jahre alt, und helfe älteren Menschen gern im Alltag: Einkaufen, Kochen, Staubsaugen, Begleitung zum Arzt. Ich komme zwei- bis dreimal pro Woche, gern auch vormittags. Bezahlung privat, 15 € pro Stunde. Bitte beachten: Ich habe keine Zulassung bei der Pflegekasse, eine Abrechnung über die Kasse ist daher nicht möglich. Renate Sommer, Tel. 0176 / 43 81 205"
+                },
+                {
+                  "key": "c",
+                  "title": "Reinigungskräfte (m/w/d) für den Vormittag",
+                  "text": "Die Firma SauberTeam GmbH sucht ab sofort Mitarbeiterinnen und Mitarbeiter für die Reinigung von Arztpraxen und Kanzleien in der Innenstadt. Arbeitszeit: Montag bis Freitag von 7:30 bis 12:00 Uhr. Minijob oder Teilzeit möglich. Gute Deutschkenntnisse sind nicht nötig, wir arbeiten Sie gründlich ein. Bezahlung nach Tarif. Bewerbung per Telefon: 0341 / 92 04 18 (Frau Kaya)."
+                },
+                {
+                  "key": "d",
+                  "title": "Zuverlässige Putzhilfe hat noch Termine frei",
+                  "text": "Ich heiße Ana Petrović und putze seit acht Jahren in Privathaushalten im Leipziger Süden. Ich komme regelmäßig einmal pro Woche oder alle zwei Wochen, auch am Samstag. Fenster putzen und Kühlschrank reinigen gehören bei mir dazu. Referenzen kann ich gern zeigen. Wichtig: Wegen einer starken Tierhaarallergie kann ich leider nur in Wohnungen ohne Hund, Katze oder andere Haustiere arbeiten. Tel. 0157 / 28 64 913"
+                },
+                {
+                  "key": "e",
+                  "title": "Bügeln? Das erledigen wir!",
+                  "text": "Bügelservice Faltenfrei: Wir waschen und bügeln Ihre Hemden, Blusen, Tischdecken und Bettwäsche – sorgfältig und zuverlässig. Unser Fahrer holt Ihre Wäsche einmal pro Woche bei Ihnen zu Hause oder im Büro ab und bringt sie nach drei Tagen frisch zurück. Abholung und Lieferung sind im Stadtgebiet kostenlos. Hemd gewaschen und gebügelt: 2,50 €. Bestellung online unter www.faltenfrei-service.de oder Tel. 0341 / 66 13 72."
+                },
+                {
+                  "key": "f",
+                  "title": "Lichtblick Alltagshilfe – Hilfe im Haushalt mit Pflegegrad",
+                  "text": "Sie haben einen Pflegegrad und brauchen Hilfe im Haushalt? Unsere geschulten Alltagsbegleiterinnen putzen, waschen, erledigen Einkäufe und leisten Gesellschaft. Wir sind von den Pflegekassen anerkannt und rechnen den monatlichen Entlastungsbetrag direkt mit Ihrer Kasse ab – für Sie entstehen meist keine eigenen Kosten. Wir beraten Sie gern kostenlos bei Ihnen zu Hause. Tel. 0341 / 47 55 10"
+                },
+                {
+                  "key": "g",
+                  "title": "Gebäudereinigung Wolf sucht Verstärkung",
+                  "text": "Für die Unterhaltsreinigung in Bürogebäuden und Supermärkten suchen wir zuverlässige Reinigungskräfte (m/w/d). Arbeitszeit: montags bis freitags von 18:00 bis 22:00 Uhr, gelegentlich auch am Wochenende. Wir bieten einen festen Arbeitsvertrag, 14,25 € pro Stunde und Arbeitskleidung. Ein Führerschein ist von Vorteil, aber keine Bedingung. Interesse? Kommen Sie zu unserem Bewerbertag am Mittwoch, 10–14 Uhr, Hafenstraße 7."
+                },
+                {
+                  "key": "h",
+                  "title": "Textilreinigung Brandt – Ihr Partner für saubere Kleidung",
+                  "text": "Anzüge, Mäntel, Abendkleider oder Gardinen: Wir reinigen schonend und schnell. Hemden waschen und bügeln wir ab 2,20 € pro Stück. Abgabe und Abholung bitte direkt in unserem Geschäft in der Lindenstraße 14, Mo–Fr 8–18 Uhr, Sa 9–13 Uhr. Einen Liefer- oder Abholservice bieten wir leider nicht an. Expressreinigung innerhalb von 24 Stunden gegen Aufpreis möglich."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 26,
+                  "text": "Sie wohnen bald in einer neuen Wohnung, und Ihr Vermieter nimmt die alten Räume nur zurück, wenn alles blitzsauber ist."
+                },
+                {
+                  "n": 27,
+                  "text": "Ihre Freundin arbeitet lange, hat keine Zeit, ihre Kleidung selbst in Ordnung zu bringen, und möchte die Sachen auch nicht selbst irgendwohin tragen."
+                },
+                {
+                  "n": 28,
+                  "text": "Sie suchen jemanden, der jede Woche bei Ihnen sauber macht, und in Ihrer Wohnung leben zwei Katzen."
+                },
+                {
+                  "n": 29,
+                  "text": "Ihr Großvater kann seine Wohnung nicht mehr allein in Ordnung halten, und die Hilfe soll nicht er selbst, sondern seine Versicherung bezahlen."
+                },
+                {
+                  "n": 30,
+                  "text": "Sie möchten Geld mit Putzen verdienen, können aber nur arbeiten, solange Ihre Kinder in der Schule sind."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 26,
+            "correct": "a",
+            "explanation": "Glanzwerk Reinigung putzt die alte Wohnung beim Umzug und garantiert, dass der Vermieter sie abnimmt. Ana Petrović kommt nur regelmäßig zum Putzen, nicht für einen Umzug.",
+            "evidence": {
+              "text": "Sie ziehen um und die alte Wohnung muss sauber übergeben werden? Das Team von Glanzwerk Reinigung übernimmt die komplette Endreinigung: Küche, Bad, Fenster, Böden und Heizkörper. Wir garantieren eine Reinigung, die jede Wohnungsabnahme besteht – sonst kommen wir kostenlos noch einmal. Festpreis nach kurzer Besichtigung. Termine auch samstags. Tel. 0341 / 58 27 90",
+              "hit": "Wir garantieren eine Reinigung, die jede Wohnungsabnahme besteht – sonst kommen wir kostenlos noch einmal."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "e",
+            "explanation": "Bei Faltenfrei holt ein Fahrer die Kleidung zu Hause oder im Büro ab und bringt sie zurück. Bei der Textilreinigung Brandt musst du alles selbst ins Geschäft bringen.",
+            "evidence": {
+              "text": "Bügelservice Faltenfrei: Wir waschen und bügeln Ihre Hemden, Blusen, Tischdecken und Bettwäsche – sorgfältig und zuverlässig. Unser Fahrer holt Ihre Wäsche einmal pro Woche bei Ihnen zu Hause oder im Büro ab und bringt sie nach drei Tagen frisch zurück. Abholung und Lieferung sind im Stadtgebiet kostenlos. Hemd gewaschen und gebügelt: 2,50 €. Bestellung online unter www.faltenfrei-service.de oder Tel. 0341 / 66 13 72.",
+              "hit": "Unser Fahrer holt Ihre Wäsche einmal pro Woche bei Ihnen zu Hause oder im Büro ab und bringt sie nach drei Tagen frisch zurück."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "x",
+            "explanation": "Ana Petrović putzt jede Woche, aber wegen ihrer Allergie nicht in Wohnungen mit Tieren. Keine andere Anzeige bietet eine regelmäßige Putzhilfe für dich.",
+            "evidence": {
+              "text": "Ich heiße Ana Petrović und putze seit acht Jahren in Privathaushalten im Leipziger Süden. Ich komme regelmäßig einmal pro Woche oder alle zwei Wochen, auch am Samstag. Fenster putzen und Kühlschrank reinigen gehören bei mir dazu. Referenzen kann ich gern zeigen. Wichtig: Wegen einer starken Tierhaarallergie kann ich leider nur in Wohnungen ohne Hund, Katze oder andere Haustiere arbeiten. Tel. 0157 / 28 64 913",
+              "hit": "kann ich leider nur in Wohnungen ohne Hund, Katze oder andere Haustiere arbeiten"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "f",
+            "explanation": "Lichtblick Alltagshilfe rechnet direkt mit der Pflegekasse ab. Renate Sommer hilft auch Senioren, möchte aber privat bezahlt werden.",
+            "evidence": {
+              "text": "Sie haben einen Pflegegrad und brauchen Hilfe im Haushalt? Unsere geschulten Alltagsbegleiterinnen putzen, waschen, erledigen Einkäufe und leisten Gesellschaft. Wir sind von den Pflegekassen anerkannt und rechnen den monatlichen Entlastungsbetrag direkt mit Ihrer Kasse ab – für Sie entstehen meist keine eigenen Kosten. Wir beraten Sie gern kostenlos bei Ihnen zu Hause. Tel. 0341 / 47 55 10",
+              "hit": "Wir sind von den Pflegekassen anerkannt und rechnen den monatlichen Entlastungsbetrag direkt mit Ihrer Kasse ab"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "c",
+            "explanation": "SauberTeam sucht Leute von 7:30 bis 12:00 Uhr, also während der Schulzeit. Bei der Gebäudereinigung Wolf arbeitest du abends.",
+            "evidence": {
+              "text": "Die Firma SauberTeam GmbH sucht ab sofort Mitarbeiterinnen und Mitarbeiter für die Reinigung von Arztpraxen und Kanzleien in der Innenstadt. Arbeitszeit: Montag bis Freitag von 7:30 bis 12:00 Uhr. Minijob oder Teilzeit möglich. Gute Deutschkenntnisse sind nicht nötig, wir arbeiten Sie gründlich ein. Bezahlung nach Tarif. Bewerbung per Telefon: 0341 / 92 04 18 (Frau Kaya).",
+              "hit": "Arbeitszeit: Montag bis Freitag von 7:30 bis 12:00 Uhr."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-01-t3-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-22T08:33:17.707Z",
+        "textType": "Pressemeldung"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 31,
+              "statement": "Nur Personen mit eigenem Garten können einen Baum bekommen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 32,
+              "prompt": "Die Bäume bekommt man",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "auf dem Marktplatz der Stadt."
+                },
+                {
+                  "key": "b",
+                  "label": "im Büro des Umweltamts."
+                },
+                {
+                  "key": "c",
+                  "label": "bei der städtischen Gärtnerei."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitungsmeldung",
+          "paragraphs": [
+            "Kirchhausen – Neue Bäume für private Gärten: Die Stadt Kirchhausen verschenkt in diesem Herbst 300 junge Bäume an ihre Bürgerinnen und Bürger. Zur Auswahl stehen Apfel-, Birnen- und Kirschbäume sowie einige heimische Laubbäume.",
+            "Mitmachen können alle, die in Kirchhausen wohnen und einen eigenen Garten haben. Wer nur einen Balkon hat, kann leider nicht teilnehmen, denn die Bäume werden bis zu sechs Meter hoch. Pro Haushalt gibt es höchstens einen Baum. Anmelden muss man sich bis zum 15. Oktober online auf der Internetseite der Stadt oder telefonisch beim Umweltamt.",
+            "Abholen kann man die Bäume am Samstag, 8. November, auf dem Gelände der Stadtgärtnerei. Ursprünglich war der Marktplatz geplant, aber dort ist wegen einer Baustelle nicht genug Platz. Mitarbeiter der Gärtnerei geben vor Ort Tipps zum Pflanzen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 31,
+            "correct": "richtig",
+            "explanation": "Mitmachen darf nur, wer in Kirchhausen wohnt und einen Garten hat. Wer nur einen Balkon hat, bekommt keinen Baum.",
+            "evidence": {
+              "text": "Mitmachen können alle, die in Kirchhausen wohnen und einen eigenen Garten haben. Wer nur einen Balkon hat, kann leider nicht teilnehmen, denn die Bäume werden bis zu sechs Meter hoch. Pro Haushalt gibt es höchstens einen Baum. Anmelden muss man sich bis zum 15. Oktober online auf der Internetseite der Stadt oder telefonisch beim Umweltamt.",
+              "hit": "Mitmachen können alle, die in Kirchhausen wohnen und einen eigenen Garten haben."
+            }
+          },
+          {
+            "n": 32,
+            "correct": "c",
+            "explanation": "Die Bäume holt man bei der Stadtgärtnerei ab. Der Marktplatz war nur geplant und wurde wegen einer Baustelle geändert.",
+            "evidence": {
+              "text": "Abholen kann man die Bäume am Samstag, 8. November, auf dem Gelände der Stadtgärtnerei. Ursprünglich war der Marktplatz geplant, aber dort ist wegen einer Baustelle nicht genug Platz. Mitarbeiter der Gärtnerei geben vor Ort Tipps zum Pflanzen.",
+              "hit": "Abholen kann man die Bäume am Samstag, 8. November, auf dem Gelände der Stadtgärtnerei."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-01-t3-02",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-22T08:33:17.709Z",
+        "textType": "Brief"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 33,
+              "statement": "Freitags ist der Hort ab März länger geöffnet."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 34,
+              "prompt": "Ab März",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dürfen Eltern ihr Kind am Nachmittag eine Stunde lang nicht abholen."
+                },
+                {
+                  "key": "b",
+                  "label": "können Eltern ihr Kind nach 15 Uhr nicht mehr abholen."
+                },
+                {
+                  "key": "c",
+                  "label": "müssen alle Eltern ein neues Formular im Büro ausfüllen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Hort am Mühlbach",
+          "source": "Brief",
+          "paragraphs": [
+            "Liebe Eltern,",
+            "ab dem 1. März ändern sich bei uns die Abholzeiten. Bisher konnten Sie Ihr Kind jederzeit abholen. Damit die Kinder ihre Hausaufgaben in Ruhe machen können, ist das in Zukunft zwischen 14 und 15 Uhr nicht mehr möglich. Danach können Sie Ihr Kind wie gewohnt bis 17 Uhr abholen. Am Freitag schließt der Hort künftig schon um 15:30 Uhr statt um 16 Uhr.",
+            "Soll Ihr Kind allein nach Hause gehen, brauchen wir dafür eine schriftliche Erlaubnis. Das Formular bekommen Sie bei den Erzieherinnen oder im Büro. Bitte geben Sie es bis Ende Februar ausgefüllt zurück. Für Kinder, die bereits eine Erlaubnis haben, ändert sich nichts.",
+            "Bei Fragen sprechen Sie uns gerne an.",
+            "Mit freundlichen Grüßen",
+            "Petra Lindner und das Team vom Hort am Mühlbach"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 33,
+            "correct": "falsch",
+            "explanation": "Am Freitag schließt der Hort früher, nämlich um 15:30 Uhr. Vorher war er bis 16 Uhr offen.",
+            "evidence": {
+              "text": "ab dem 1. März ändern sich bei uns die Abholzeiten. Bisher konnten Sie Ihr Kind jederzeit abholen. Damit die Kinder ihre Hausaufgaben in Ruhe machen können, ist das in Zukunft zwischen 14 und 15 Uhr nicht mehr möglich. Danach können Sie Ihr Kind wie gewohnt bis 17 Uhr abholen. Am Freitag schließt der Hort künftig schon um 15:30 Uhr statt um 16 Uhr.",
+              "hit": "Am Freitag schließt der Hort künftig schon um 15:30 Uhr statt um 16 Uhr."
+            }
+          },
+          {
+            "n": 34,
+            "correct": "a",
+            "explanation": "Zwischen 14 und 15 Uhr ist Hausaufgabenzeit, dann kann man nicht abholen. Das Formular brauchen nur Eltern, deren Kind allein nach Hause geht und noch keine Erlaubnis hat.",
+            "evidence": {
+              "text": "ab dem 1. März ändern sich bei uns die Abholzeiten. Bisher konnten Sie Ihr Kind jederzeit abholen. Damit die Kinder ihre Hausaufgaben in Ruhe machen können, ist das in Zukunft zwischen 14 und 15 Uhr nicht mehr möglich. Danach können Sie Ihr Kind wie gewohnt bis 17 Uhr abholen. Am Freitag schließt der Hort künftig schon um 15:30 Uhr statt um 16 Uhr.",
+              "hit": "Damit die Kinder ihre Hausaufgaben in Ruhe machen können, ist das in Zukunft zwischen 14 und 15 Uhr nicht mehr möglich."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-01-t3-03",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-22T08:33:17.709Z",
+        "textType": "E-Mail"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 35,
+              "statement": "Die Probestunde ist kostenlos."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 36,
+              "prompt": "Was schreibt die Musikschule?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Emre hat am Donnerstag seine Probestunde."
+                },
+                {
+                  "key": "b",
+                  "label": "Emre bekommt für die Stunde eine Gitarre."
+                },
+                {
+                  "key": "c",
+                  "label": "Emre braucht ein eigenes Instrument dafür."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Sabine Kowalski, Musikschule Rheinklang",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Sehr geehrte Frau Demir,",
+            "vielen Dank für Ihre Anmeldung. Gerne kann Ihr Sohn Emre eine Probestunde im Fach Gitarre besuchen. Leider ist am Donnerstag, wie von Ihnen gewünscht, kein Termin mehr frei. Wir können Ihnen aber Dienstag, den 14. Mai, um 16:30 Uhr anbieten. Der Unterricht findet in Raum 12 im zweiten Stock statt, Ihr Lehrer ist Herr Brandt.",
+            "Die Probestunde kostet nichts. Eine eigene Gitarre muss Emre nicht mitbringen, wir stellen ihm ein Instrument zur Verfügung. Wenn ihm der Unterricht gefällt, können Sie danach im Sekretariat einen Vertrag abschließen. Sollte der Termin nicht passen, rufen Sie uns bitte bis Montag unter 0621 48 39 17 an.",
+            "Mit freundlichen Grüßen",
+            "Sabine Kowalski",
+            "Musikschule Rheinklang"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 35,
+            "correct": "richtig",
+            "explanation": "In der E-Mail steht, dass die Probestunde nichts kostet. Erst für einen Vertrag danach muss man bezahlen.",
+            "evidence": {
+              "text": "Die Probestunde kostet nichts. Eine eigene Gitarre muss Emre nicht mitbringen, wir stellen ihm ein Instrument zur Verfügung. Wenn ihm der Unterricht gefällt, können Sie danach im Sekretariat einen Vertrag abschließen. Sollte der Termin nicht passen, rufen Sie uns bitte bis Montag unter 0621 48 39 17 an.",
+              "hit": "Die Probestunde kostet nichts."
+            }
+          },
+          {
+            "n": 36,
+            "correct": "b",
+            "explanation": "Die Musikschule leiht Emre ein Instrument. Donnerstag war zwar gewünscht, aber da ist kein Termin frei.",
+            "evidence": {
+              "text": "Die Probestunde kostet nichts. Eine eigene Gitarre muss Emre nicht mitbringen, wir stellen ihm ein Instrument zur Verfügung. Wenn ihm der Unterricht gefällt, können Sie danach im Sekretariat einen Vertrag abschließen. Sollte der Termin nicht passen, rufen Sie uns bitte bis Montag unter 0621 48 39 17 an.",
+              "hit": "Eine eigene Gitarre muss Emre nicht mitbringen, wir stellen ihm ein Instrument zur Verfügung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-01-t4-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-22T07:24:13.663Z",
+        "textType": "Regeln für Gäste im Freizeitpark"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text. Entscheiden Sie, ob die Aussagen richtig oder falsch sind.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 37,
+              "statement": "Wer den Park kurz verlässt, muss für die Rückkehr am gleichen Tag nicht noch einmal bezahlen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 38,
+              "statement": "Besucher können ihr eigenes Essen in den Park mitnehmen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 39,
+              "statement": "Mit einem Hund an der Leine darf man auch den Streichelzoo besuchen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Freizeitpark Wiesenland",
+          "source": "Aushang am Haupteingang",
+          "paragraphs": [
+            "Willkommen im Freizeitpark Wiesenland – Hinweise für unsere Gäste",
+            "Öffnungszeiten",
+            "Der Park ist von April bis Oktober täglich von 9:30 bis 18:00 Uhr geöffnet. In den Sommerferien bleiben die Tore bis 20:00 Uhr offen. Die Kassen schließen jeweils eine Stunde vor Parkende.",
+            "Eintrittspreise",
+            "– Erwachsene: 34 €",
+            "– Kinder von 4 bis 11 Jahren: 27 €",
+            "– Kinder unter 4 Jahren: frei",
+            "– Gruppen ab 15 Personen: 10 % Ermäßigung pro Person (nur mit Anmeldung)",
+            "Wer den Park verlässt und am selben Tag zurückkommen möchte, lässt sich am Ausgang einen Stempel geben. Damit ist der Wiedereintritt kostenlos.",
+            "Sicherheit in den Fahrgeschäften",
+            "An jeder Attraktion finden Sie Angaben zur Mindestgröße. Kinder unter 1,20 m dürfen manche Bahnen nur zusammen mit einer erwachsenen Person benutzen. Lose Gegenstände wie Handys, Brillen oder Mützen legen Sie bitte vor der Fahrt in die Ablagefächer. Für verlorene Sachen übernehmen wir keine Haftung.",
+            "Essen und Trinken",
+            "Eigene Speisen und Getränke dürfen Sie gern mitbringen. Grillen ist jedoch im ganzen Park verboten. Picknicktische stehen am Seeufer bereit. Glasflaschen sind aus Sicherheitsgründen nicht erlaubt.",
+            "Tiere",
+            "Hunde sind an der Leine willkommen, außer in den Fahrgeschäften und im Streichelzoo. Bitte nehmen Sie Hundekotbeutel mit.",
+            "Rauchen",
+            "Rauchen ist nur in den gekennzeichneten Raucherzonen erlaubt.",
+            "Fundsachen und Hilfe",
+            "Haben Sie etwas verloren oder Ihr Kind aus den Augen verloren? Wenden Sie sich an den Gästeservice neben dem Haupteingang oder rufen Sie 05741 88230 an."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 37,
+            "correct": "richtig",
+            "explanation": "Mit dem Stempel vom Ausgang kommst du am selben Tag kostenlos wieder hinein. Du brauchst also kein neues Ticket.",
+            "evidence": {
+              "text": "Wer den Park verlässt und am selben Tag zurückkommen möchte, lässt sich am Ausgang einen Stempel geben. Damit ist der Wiedereintritt kostenlos.",
+              "hit": "Wer den Park verlässt und am selben Tag zurückkommen möchte, lässt sich am Ausgang einen Stempel geben. Damit ist der Wiedereintritt kostenlos."
+            }
+          },
+          {
+            "n": 38,
+            "correct": "richtig",
+            "explanation": "Eigene Speisen und Getränke sind erlaubt. Verboten sind nur Grillen und Glasflaschen.",
+            "evidence": {
+              "text": "Eigene Speisen und Getränke dürfen Sie gern mitbringen. Grillen ist jedoch im ganzen Park verboten. Picknicktische stehen am Seeufer bereit. Glasflaschen sind aus Sicherheitsgründen nicht erlaubt.",
+              "hit": "Eigene Speisen und Getränke dürfen Sie gern mitbringen."
+            }
+          },
+          {
+            "n": 39,
+            "correct": "falsch",
+            "explanation": "Hunde sind zwar im Park willkommen, aber nicht im Streichelzoo. Dort und in den Fahrgeschäften sind sie verboten.",
+            "evidence": {
+              "text": "Hunde sind an der Leine willkommen, außer in den Fahrgeschäften und im Streichelzoo. Bitte nehmen Sie Hundekotbeutel mit.",
+              "hit": "Hunde sind an der Leine willkommen, außer in den Fahrgeschäften und im Streichelzoo."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-01-t5-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-22T08:33:48.681Z",
+        "textType": "Formeller Brief: Zusage der Musikschule für einen Platz im Gitarrenkurs"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text und schließen Sie die Lücken. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "parts": [
+                "Musikschule Klangwerk\nLindenallee 23\n34117 Kassel\n\nKassel, 14.08.20..\n\nZUSAGE: GITARRENKURS\n\nSehr ",
+                {
+                  "n": 0,
+                  "options": [
+                    "geehrter",
+                    "geehrten",
+                    "geehrte"
+                  ]
+                },
+                " Frau Okafor,\n\nvielen Dank für Ihre Anmeldung. Wir freuen uns, Ihnen mitteilen zu können, dass ",
+                {
+                  "n": 40,
+                  "options": [
+                    "Ihren",
+                    "Ihre",
+                    "Ihr"
+                  ]
+                },
+                " Sohn Daniel einen Platz im Gitarrenkurs bekommt. Der Kurs findet jeden Dienstag ",
+                {
+                  "n": 41,
+                  "options": [
+                    "von",
+                    "um",
+                    "seit"
+                  ]
+                },
+                " 16:30 bis 17:15 Uhr in Raum 4 statt. Die erste Stunde ist am 9. September.\n\nDaniel braucht noch keine eigene Gitarre, ",
+                {
+                  "n": 42,
+                  "options": [
+                    "obwohl",
+                    "weil",
+                    "deshalb"
+                  ]
+                },
+                " wir in den ersten Wochen Instrumente verleihen. ",
+                {
+                  "n": 43,
+                  "options": [
+                    "Ob",
+                    "Als",
+                    "Wenn"
+                  ]
+                },
+                " Sie später eine Gitarre kaufen möchten, berät Sie unser Lehrer gern.\n\nBitte unterschreiben Sie den beiliegenden Vertrag und schicken Sie ihn bis zum 30. August ",
+                {
+                  "n": 44,
+                  "options": [
+                    "von",
+                    "an",
+                    "bei"
+                  ]
+                },
+                " uns zurück.\n\nMit ",
+                {
+                  "n": 45,
+                  "options": [
+                    "freundlichen",
+                    "freundliche",
+                    "freundlicher"
+                  ]
+                },
+                " Grüßen\n\nPetra Hollmann"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 40,
+            "correct": "Ihr",
+            "explanation": "„Sohn“ ist maskulin und steht hier im Nominativ, also „Ihr Sohn“. „Ihren“ wäre Akkusativ."
+          },
+          {
+            "n": 41,
+            "correct": "von",
+            "explanation": "Für eine Zeitspanne sagt man „von … bis“. „Um“ benutzt du nur für einen genauen Zeitpunkt."
+          },
+          {
+            "n": 42,
+            "correct": "weil",
+            "explanation": "Der Satz nennt den Grund und das Verb steht am Ende, also „weil“. „Obwohl“ passt nicht, denn es ist kein Gegensatz."
+          },
+          {
+            "n": 43,
+            "correct": "Wenn",
+            "explanation": "Es geht um eine Bedingung in der Zukunft, deshalb „Wenn“. „Als“ benutzt du nur für die Vergangenheit."
+          },
+          {
+            "n": 44,
+            "correct": "an",
+            "explanation": "Man schickt etwas „an“ eine Person oder Firma zurück. „Bei uns“ zeigt einen Ort, keine Richtung."
+          },
+          {
+            "n": 45,
+            "correct": "freundlichen",
+            "explanation": "Die feste Grußformel heißt „Mit freundlichen Grüßen“. Nach „mit“ steht der Dativ Plural mit der Endung -en."
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "geehrte"
+      ]
+    }
+  ]
+}

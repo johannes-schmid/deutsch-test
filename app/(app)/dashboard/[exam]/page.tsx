@@ -1,10 +1,14 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import { notFound } from "next/navigation"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
 import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import { isExam } from "@/lib/kurztest/data"
-import { MODELLTESTS, portalSkills } from "@/lib/portal"
+import { MODELLTESTS, portalSkills, type PortalSkill } from "@/lib/portal"
+import { skillProgress } from "@/lib/modelltest/portal"
+import { getSessionUser } from "@/lib/supabase/server"
+import type { ExamId } from "@/lib/exams"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { PORTAL_HOME } from "@/lib/auth/redirect"
@@ -53,14 +57,30 @@ export default async function PortalExamPage({ params }: PageProps<"/dashboard/[
           {T.exam.skillsH}
           <span className="text-v-muted"> {T.exam.skillsMuted}</span>
         </h2>
-        <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
-          {skills.map((s) => (
-            <li key={s.skill}>
-              <SkillCard skill={s.skill} name={KURZTEST_COPY.names[s.skill]} href={s.href} free={s.free} count={T.exam.count(MODELLTESTS)} status={T.exam.soonLine} />
-            </li>
-          ))}
-        </ul>
+        <Suspense fallback={<Cards skills={skills} />}>
+          <ProgressCards exam={id} skills={skills} />
+        </Suspense>
       </section>
     </main>
   )
+}
+
+function Cards({ skills, status }: { skills: PortalSkill[]; status?: Record<string, string> }) {
+  return (
+    <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+      {skills.map((s) => (
+        <li key={s.skill}>
+          <SkillCard skill={s.skill} name={KURZTEST_COPY.names[s.skill]} href={s.href} free={s.free} count={T.exam.count(MODELLTESTS)} status={status?.[s.skill] ?? T.exam.soonLine} />
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+/** Per skill: how many Modelltests this user has done of those already out. */
+async function ProgressCards({ exam, skills }: { exam: ExamId; skills: PortalSkill[] }) {
+  const user = await getSessionUser()
+  const progress = user ? await skillProgress(exam, user.id) : {}
+  const status = Object.fromEntries(Object.entries(progress).map(([k, p]) => [k, T.exam.progress(p.done, p.available)]))
+  return <Cards skills={skills} status={status} />
 }

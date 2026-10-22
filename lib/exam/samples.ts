@@ -236,3 +236,17 @@ export const RESULT_POINTS: PartResult = {
     { name: "Anrede und Gruß", points: { points: 0, max: 1 }, comment: "Der Gruß am Ende fehlt. Schreib zum Beispiel: Viele Grüße." },
   ],
 }
+
+/** A short stand-in for a Hören track (one real free-test clip), cut into cues as the Modelltest track is. */
+export const TRACK = {
+  src: "/audio/kurztest/goethe-a2-hoeren-t1-01.mp3",
+  duration: 22.8,
+  cues: [
+    { teil: 1, phase: "instruction" as const, items: [0], from: 0, to: 3 },
+    { teil: 1, phase: "reading" as const, items: [1], from: 3, to: 6 },
+    { teil: 1, phase: "clip" as const, items: [1], from: 6, to: 12 },
+    { teil: 2, phase: "reading" as const, items: [5], from: 12, to: 14 },
+    { teil: 2, phase: "clip" as const, items: [5], from: 14, to: 20 },
+    { teil: 2, phase: "answer" as const, items: [5], from: 20, to: 22.8 },
+  ],
+}

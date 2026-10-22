@@ -1,5 +1,7 @@
 // Site origin and the JSON-LD shapes more than one page needs. Mirrors inburgering-website's lib/schema.ts.
 
+import { OG_LOCALE, type Locale } from "@/lib/i18n/locale"
+
 export const SITE_URL = "https://deutschtest-ueben.de"
 export const SITE_NAME = "deutschtest üben"
 export const ORG_ID = `${SITE_URL}/#organization`
@@ -22,8 +24,9 @@ export function breadcrumbList(crumbs: Crumb[]) {
 /** The site-wide share card (app/opengraph-image.png). A page that sets its own openGraph drops the inherited image, so the helper adds it back. */
 export const OG_IMAGE = { url: "/opengraph-image.png", width: 1200, height: 630, alt: "deutschtest üben: Deutschprüfung online üben" }
 
-export function openGraph(path: string, title: string, description: string) {
-  return { type: "website" as const, locale: "de_DE", siteName: SITE_NAME, url: absUrl(path), title, description, images: [OG_IMAGE] }
+/** `path` is the page's own (localized) path. */
+export function openGraph(path: string, title: string, description: string, locale: Locale = "de") {
+  return { type: "website" as const, locale: OG_LOCALE[locale], siteName: SITE_NAME, url: absUrl(path), title, description, images: [OG_IMAGE] }
 }
 
 // The operator, as on inburgeringoefenen.nl: Samen Sterk in Taal, represented by Amber van der Zalm.

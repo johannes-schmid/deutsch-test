@@ -5,12 +5,15 @@ import { Photo, VButton } from "@/components/design/kit"
 import { Crumbs } from "@/components/design/content-page"
 import { PartIcon, Tile, type PartId } from "@/components/design/variants/nachtzug-icons"
 import { AUTHOR } from "@/lib/blog/author"
-import { CATEGORIES, type BlogPost, type Source } from "@/lib/blog/types"
+import type { BlogPost, Source } from "@/lib/blog/types"
+import { lp, type SiteLocale } from "@/lib/i18n/locale"
+import { UI, formatDate as fmtDate } from "@/lib/i18n/ui"
 import type { Crumb } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
-const DATE = new Intl.DateTimeFormat("de-DE", { day: "numeric", month: "long", year: "numeric" })
-export const formatDate = (iso: string) => DATE.format(new Date(`${iso}T12:00:00Z`))
+export const formatDate = (iso: string, l: SiteLocale = "de") => fmtDate(iso, l)
+const loc = (post: BlogPost): SiteLocale => post.locale ?? "de"
+const postHref = (post: BlogPost) => lp(loc(post), `/blog/${post.slug}`)
 const initials = (name: string) => name.split(" ").filter((w) => /^[A-ZÄÖÜ]/.test(w)).map((w) => w[0]).slice(0, 2).join("")
 
 /* ------------------------------------------------------------------ author */
@@ -27,30 +30,30 @@ export function AuthorAvatar({ size = 44 }: { size?: number }) {
 }
 
 /** Name, role and date on one line, then the reading time after a hairline. */
-export function Byline({ date, minutes }: { date: string; minutes: number }) {
+export function Byline({ date, minutes, l = "de" }: { date: string; minutes: number; l?: SiteLocale }) {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
       <span className="flex items-center gap-3">
         <AuthorAvatar size={46} />
         <span className="flex flex-col leading-snug">
-          <Link href={AUTHOR.href} className="text-[14.5px] font-semibold">{AUTHOR.name}</Link>
-          <span className="text-[13.5px] text-v-muted">{AUTHOR.role} · <time dateTime={date}>{formatDate(date)}</time></span>
+          <Link href={lp(l, AUTHOR.href)} className="text-[14.5px] font-semibold">{AUTHOR.name}</Link>
+          <span className="text-[13.5px] text-v-muted">{AUTHOR.role} · <time dateTime={date}>{formatDate(date, l)}</time></span>
         </span>
       </span>
       <span className="hidden h-8 w-px bg-v-line sm:block" aria-hidden="true" />
-      <span className="v-eyebrow">{minutes} Min. Lesezeit</span>
+      <span className="v-eyebrow">{UI[l].blog.readingTime(minutes)}</span>
     </div>
   )
 }
 
 /** The author card under the blog index title. */
-export function AuthorCard() {
+export function AuthorCard({ l = "de" }: { l?: SiteLocale }) {
   return (
     <div className="glass flex max-w-[560px] items-center gap-3 rounded-[20px] p-3 pe-5">
       <AuthorAvatar size={42} />
       <span className="flex flex-col leading-snug">
-        <Link href={AUTHOR.href} className="text-[14px] font-semibold">{AUTHOR.name}</Link>
-        <span className="text-[13px] text-v-muted">{AUTHOR.bio ?? `${AUTHOR.role}. Jede Zahl in unseren Artikeln steht mit Quelle und Datum.`}</span>
+        <Link href={lp(l, AUTHOR.href)} className="text-[14px] font-semibold">{AUTHOR.name}</Link>
+        <span className="text-[13px] text-v-muted">{(l === "de" ? AUTHOR.bio : null) ?? UI[l].blog.authorFallback(AUTHOR.role)}</span>
       </span>
     </div>
   )
@@ -82,7 +85,7 @@ export function CoverTile({ cover }: { cover: BlogPost["cover"] }) {
 function CardMeta({ post, dated = true }: { post: BlogPost; dated?: boolean }) {
   return (
     <p className="v-eyebrow">
-      {CATEGORIES[post.category]}{dated ? <> · {formatDate(post.published)}</> : null}
+      {UI[loc(post)].blog.categories[post.category]}{dated ? <> · {formatDate(post.published, loc(post))}</> : null}
     </p>
   )
 }
@@ -90,7 +93,7 @@ function CardMeta({ post, dated = true }: { post: BlogPost; dated?: boolean }) {
 /** The big first card on /blog: cover full-bleed, text on a glass panel. */
 export function FeatureCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group relative block overflow-hidden rounded-[28px] active:scale-[0.995] [transition:transform_150ms_ease-out]">
+    <Link href={postHref(post)} className="group relative block overflow-hidden rounded-[28px] active:scale-[0.995] [transition:transform_150ms_ease-out]">
       <ArticleCover cover={post.cover} className="min-h-[460px] items-start pt-10 sm:min-h-[520px] sm:pt-14" scale={0.9} />
       <div className="nz-app absolute inset-x-3 bottom-3 flex flex-col gap-3 rounded-[22px] p-5 sm:inset-x-4 sm:bottom-4 sm:max-w-[560px] sm:p-6">
         <CardMeta post={post} />
@@ -100,7 +103,7 @@ export function FeatureCard({ post }: { post: BlogPost }) {
           <AuthorAvatar size={32} />
           <span className="flex flex-col leading-tight">
             <span className="font-semibold">{AUTHOR.name}</span>
-            <span className="text-v-muted">{post.readingMinutes} Min. Lesezeit</span>
+            <span className="text-v-muted">{UI[loc(post)].blog.readingTime(post.readingMinutes)}</span>
           </span>
         </span>
       </div>
@@ -111,14 +114,14 @@ export function FeatureCard({ post }: { post: BlogPost }) {
 /** The small cards next to the feature: a square thumbnail, then category, title, date. */
 export function SideCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group flex flex-1 items-center gap-5 rounded-[24px] bg-v-surface p-4 transition-shadow duration-200 active:scale-[0.99] [@media(hover:hover)]:hover:shadow-[0_18px_40px_-24px_rgba(14,19,34,0.3)]">
+    <Link href={postHref(post)} className="group flex flex-1 items-center gap-5 rounded-[24px] bg-v-surface p-4 transition-shadow duration-200 active:scale-[0.99] [@media(hover:hover)]:hover:shadow-[0_18px_40px_-24px_rgba(14,19,34,0.3)]">
       <Photo token={post.cover.photo} className="grid size-[112px] shrink-0 place-items-center rounded-[18px] sm:size-[136px]">
         <span aria-hidden="true">{post.cover.mini}</span>
       </Photo>
       <span className="flex min-w-0 flex-col gap-2">
         <CardMeta post={post} dated={false} />
         <span className="text-[17.5px] leading-snug font-semibold tracking-[-0.01em] text-balance">{post.h1}</span>
-        <span className="text-[13.5px] text-v-muted">{formatDate(post.published)} · {post.readingMinutes} Min.</span>
+        <span className="text-[13.5px] text-v-muted">{formatDate(post.published, loc(post))} · {UI[loc(post)].blog.minutesShort(post.readingMinutes)}</span>
       </span>
     </Link>
   )
@@ -127,14 +130,14 @@ export function SideCard({ post }: { post: BlogPost }) {
 /** Grid card: cover on top, a glass panel overlapping its lower edge. */
 export function GridCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group relative block overflow-hidden rounded-[24px] active:scale-[0.99] [transition:transform_150ms_ease-out]">
+    <Link href={postHref(post)} className="group relative block overflow-hidden rounded-[24px] active:scale-[0.99] [transition:transform_150ms_ease-out]">
       <ArticleCover cover={post.cover} className="aspect-[4/3.6] items-start pt-6" scale={0.72} />
       <div className="nz-app absolute inset-x-3 bottom-3 flex flex-col gap-2 rounded-[18px] p-4">
         <CardMeta post={post} dated={false} />
         <span className="text-[17px] leading-snug font-semibold text-balance">{post.h1}</span>
         <span className="flex justify-between text-[13px] text-v-muted">
-          <span>{formatDate(post.published)}</span>
-          <span>{post.readingMinutes} Min. Lesezeit</span>
+          <span>{formatDate(post.published, loc(post))}</span>
+          <span>{UI[loc(post)].blog.readingTime(post.readingMinutes)}</span>
         </span>
       </div>
     </Link>
@@ -146,12 +149,12 @@ export function GridCard({ post }: { post: BlogPost }) {
 export function ArticleHeader({ post, crumbs }: { post: BlogPost; crumbs: Crumb[] }) {
   return (
     <header className="pt-4 pb-12 sm:pt-8 lg:pb-16">
-      <Crumbs crumbs={crumbs} />
+      <Crumbs crumbs={crumbs} locale={loc(post)} />
       <div className="mt-8 grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-16">
         <div className="flex flex-col items-start">
           <h1 className="v-display pb-1 text-[clamp(38px,5.2vw,66px)] leading-[1.04]">{post.h1}</h1>
           <p className="mt-5 max-w-[54ch] text-[17px] leading-relaxed text-pretty text-v-muted sm:text-[19px]">{post.lead}</p>
-          <div className="mt-7"><Byline date={post.reviewed} minutes={post.readingMinutes} /></div>
+          <div className="mt-7"><Byline date={post.reviewed} minutes={post.readingMinutes} l={loc(post)} /></div>
           <VButton kind="ink" size="lg" render={<Link href={post.cta.href} />} nativeButton={false} className="mt-8 gap-2">
             {post.cta.button}
             <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
@@ -194,11 +197,11 @@ export function ArticleBody({ sections }: { sections: BlogPost["sections"] }) {
   )
 }
 
-export function ArticleFaq({ items }: { items: BlogPost["faq"] }) {
+export function ArticleFaq({ items, l = "de" }: { items: BlogPost["faq"]; l?: SiteLocale }) {
   if (!items.length) return null
   return (
     <section aria-labelledby="faq-h" className="mt-16">
-      <h2 id="faq-h" className="mb-4 text-[clamp(24px,2.8vw,30px)] leading-tight font-semibold tracking-[-0.02em]">Häufige Fragen</h2>
+      <h2 id="faq-h" className="mb-4 text-[clamp(24px,2.8vw,30px)] leading-tight font-semibold tracking-[-0.02em]">{UI[l].blog.faq}</h2>
       <Accordion className="rounded-[20px] bg-v-soft/60 px-5">
         {items.map((f) => (
           <AccordionItem key={f.q} value={f.q} className="border-b border-v-line last:border-b-0">
@@ -219,13 +222,13 @@ export function ArticleProof({ post }: { post: BlogPost }) {
         {post.status === "reviewed" ? <BadgeCheck className="mt-0.5 size-5 shrink-0" strokeWidth={1.75} aria-hidden="true" /> : <PencilLine className="mt-0.5 size-5 shrink-0" strokeWidth={1.75} aria-hidden="true" />}
         <span>
           {post.status === "reviewed"
-            ? <>Von {AUTHOR.name} geprüft am {formatDate(post.reviewed)}. Jede Zahl steht mit Quelle; die Liste findest du hier.</>
-            : <>Entwurf: noch nicht von einem Menschen geprüft. Nur lokal sichtbar.</>}
+            ? UI[loc(post)].blog.reviewed(AUTHOR.name, formatDate(post.reviewed, loc(post)))
+            : UI[loc(post)].blog.draft}
         </span>
       </p>
       {post.sources.length ? (
         <div className="px-1 text-[14px] leading-relaxed text-v-muted">
-          <p className="v-eyebrow mb-2">Quellen</p>
+          <p className="v-eyebrow mb-2">{UI[loc(post)].blog.sources}</p>
           <ul className="flex flex-col gap-1.5">
             {post.sources.map((s) => (
               <li key={s.url}><a href={s.url} rel="noopener" className="underline decoration-v-line underline-offset-4 transition-colors hover:text-v-ink">{s.name}</a></li>
@@ -255,13 +258,14 @@ export function NightCta({ title, text, href, button }: BlogPost["cta"]) {
 
 export function RelatedList({ posts }: { posts: BlogPost[] }) {
   if (!posts.length) return null
+  const l = loc(posts[0])
   return (
     <nav aria-labelledby="weiter-h" className="mt-6 rounded-[28px] bg-v-surface p-6 sm:p-8">
-      <h2 id="weiter-h" className="v-eyebrow mb-4">Weiterlesen</h2>
+      <h2 id="weiter-h" className="v-eyebrow mb-4">{UI[l].blog.more}</h2>
       <ul className="flex flex-col divide-y divide-v-line">
         {posts.map((p) => (
           <li key={p.slug}>
-            <Link href={`/blog/${p.slug}`} className="group flex items-center justify-between gap-4 py-3.5">
+            <Link href={postHref(p)} className="group flex items-center justify-between gap-4 py-3.5">
               <span className="flex flex-col">
                 <span className="text-[16px] font-semibold">{p.h1}</span>
                 <span className="text-[14px] text-v-muted">{p.description}</span>
@@ -278,31 +282,31 @@ export function RelatedList({ posts }: { posts: BlogPost[] }) {
 /* ------------------------------------------------------------------ blocks inside the text */
 
 /** One sourced claim. Every number in an article sits in one of these or links to its source (seo/facts.md). */
-export function FactBox({ children, source, checked }: { children: React.ReactNode; source: Source; checked: string }) {
+export function FactBox({ children, source, checked, l = "de" }: { children: React.ReactNode; source: Source; checked: string; l?: SiteLocale }) {
   return (
     <aside className="my-8 rounded-[22px] bg-v-soft/70 px-5 py-5 sm:px-6">
       <p className="text-[17.5px] leading-snug font-semibold text-pretty">{children}</p>
       <p className="v-num mt-3 text-[12.5px] text-v-muted">
-        Quelle: <a href={source.url} rel="noopener" className="font-semibold text-v-ink underline decoration-v-line underline-offset-4">{source.name}</a> · Stand {checked}
+        {UI[l].blog.source}: <a href={source.url} rel="noopener" className="font-semibold text-v-ink underline decoration-v-line underline-offset-4">{source.name}</a> · {UI[l].blog.stand} {checked}
       </p>
     </aside>
   )
 }
 
-const NOTES: Record<"tipp" | "info" | "wichtig", { icon: LucideIcon; tone: string; label: string }> = {
-  tipp: { icon: Lightbulb, tone: "var(--v-sk-sprechen)", label: "Tipp" },
-  info: { icon: Info, tone: "var(--v-sk-lesen)", label: "Gut zu wissen" },
-  wichtig: { icon: TriangleAlert, tone: "var(--p-glow)", label: "Wichtig" },
+const NOTES: Record<"tipp" | "info" | "wichtig", { icon: LucideIcon; tone: string }> = {
+  tipp: { icon: Lightbulb, tone: "var(--v-sk-sprechen)" },
+  info: { icon: Info, tone: "var(--v-sk-lesen)" },
+  wichtig: { icon: TriangleAlert, tone: "var(--p-glow)" },
 }
 
 /** A tip, a background fact or a caveat, on a light wash of its tone. */
-export function Note({ kind = "tipp", title, children }: { kind?: keyof typeof NOTES; title?: string; children: React.ReactNode }) {
+export function Note({ kind = "tipp", title, children, l = "de" }: { kind?: keyof typeof NOTES; title?: string; children: React.ReactNode; l?: SiteLocale }) {
   const n = NOTES[kind]
   return (
     <aside className="my-8 flex gap-4 rounded-[22px] p-5 sm:p-6" style={{ background: `color-mix(in srgb, ${n.tone} 14%, var(--v-surface))` }}>
       <Tile icon={n.icon} size="sm" />
       <div className="min-w-0 pt-1.5">
-        <p className="font-semibold">{title ?? n.label}</p>
+        <p className="font-semibold">{title ?? UI[l].blog.notes[kind]}</p>
         <div className="mt-1.5 text-[16px] leading-relaxed text-pretty [&_p+p]:mt-2">{children}</div>
       </div>
     </aside>
@@ -330,7 +334,7 @@ export function Steps({ items }: { items: { title: string; text: React.ReactNode
 export type CompareItem = { mark?: React.ReactNode; title: string; sub?: string; rows: { k: string; v: React.ReactNode }[]; href?: string; link?: string }
 
 /** Side-by-side cards with the same rows. `highlight` rings one. 3 items get 3 columns, so no cell stays empty. */
-export function Compare({ items, highlight }: { items: CompareItem[]; highlight?: number }) {
+export function Compare({ items, highlight, l = "de" }: { items: CompareItem[]; highlight?: number; l?: SiteLocale }) {
   return (
     <div className={cn("my-8 grid grid-cols-[minmax(0,1fr)] gap-3", items.length === 3 ? "md:grid-cols-3" : "sm:grid-cols-2")}>
       {items.map((it, i) => (
@@ -352,7 +356,7 @@ export function Compare({ items, highlight }: { items: CompareItem[]; highlight?
           </dl>
           {it.href ? (
             <Link href={it.href} className="mt-5 inline-flex w-fit items-center gap-1.5 pt-1 text-[14px] font-semibold">
-              {it.link ?? "Gratis testen"} <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+              {it.link ?? UI[l].blog.stripLink} <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
             </Link>
           ) : null}
         </div>
@@ -362,7 +366,7 @@ export function Compare({ items, highlight }: { items: CompareItem[]; highlight?
 }
 
 /** "So nicht / So geht's". Rosé means wrong, as in the exam UI; glow means right. Wrong comes first on phones. */
-export function DoDont({ dont, doThis, dontTitle = "So nicht", doTitle = "So geht's" }: { dont: React.ReactNode[]; doThis: React.ReactNode[]; dontTitle?: string; doTitle?: string }) {
+export function DoDont({ dont, doThis, l = "de", dontTitle = UI[l].blog.dont, doTitle = UI[l].blog.do }: { dont: React.ReactNode[]; doThis: React.ReactNode[]; l?: SiteLocale; dontTitle?: string; doTitle?: string }) {
   const col = (title: string, items: React.ReactNode[], right: boolean) => (
     <div className={cn("rounded-[22px] p-5", right ? "bg-[color-mix(in_srgb,var(--p-glow)_16%,var(--v-surface))]" : "bg-[color-mix(in_srgb,var(--v-sk-schreiben)_16%,var(--v-surface))]")}>
       <p className="font-semibold">{title}</p>
@@ -414,7 +418,7 @@ export function DataTable({ head, rows, caption }: { head: string[]; rows: React
 export type StripPart = { part: PartId; label: string; minutes: number; approx?: boolean; note?: string }
 
 /** An explainer figure: one bar per exam, each part as wide as its time. Several exams share one time axis. */
-export function ExamStrip({ title, intro, exams, source }: { title: string; intro?: string; exams: { name: string; parts: StripPart[] }[]; source: React.ReactNode }) {
+export function ExamStrip({ title, intro, exams, source, l = "de" }: { title: string; intro?: string; exams: { name: string; parts: StripPart[] }[]; source: React.ReactNode; l?: SiteLocale }) {
   const max = Math.max(...exams.map((e) => e.parts.reduce((n, p) => n + p.minutes, 0)))
   return (
     <figure className="my-10 rounded-[24px] bg-v-soft/60 p-5 sm:p-6">
@@ -427,7 +431,7 @@ export function ExamStrip({ title, intro, exams, source }: { title: string; intr
             <div key={e.name}>
               <div className="flex items-baseline justify-between gap-4">
                 <p className="font-semibold">{e.name}</p>
-                <p className="v-num shrink-0 text-[12.5px] text-v-muted">ca. {total} Min.</p>
+                <p className="v-num shrink-0 text-[12.5px] text-v-muted">{UI[l].blog.stripMinutes(total, true)}</p>
               </div>
               <div className="mt-2.5 flex h-3 gap-1" style={{ width: `${(total / max) * 100}%` }} aria-hidden="true">
                 {e.parts.map((p) => <span key={p.part} className="rounded-full" style={{ flexGrow: p.minutes, background: `var(--v-sk-${p.part})` }} />)}
@@ -438,7 +442,7 @@ export function ExamStrip({ title, intro, exams, source }: { title: string; intr
                     <PartIcon part={p.part} size="sm" />
                     <div className="min-w-0">
                       <dt className="text-[13.5px] font-medium">{p.label}</dt>
-                      <dd className="v-num text-[12.5px] text-v-muted">{p.approx ? "ca. " : ""}{p.minutes} Min.</dd>
+                      <dd className="v-num text-[12.5px] text-v-muted">{UI[l].blog.stripMinutes(p.minutes, p.approx)}</dd>
                       {p.note ? <dd className="text-[12.5px] leading-snug text-v-muted">{p.note}</dd> : null}
                     </div>
                   </div>
@@ -454,7 +458,7 @@ export function ExamStrip({ title, intro, exams, source }: { title: string; intr
 }
 
 /** A model letter with numbered marks in the margin, explained below. Each line is a paragraph; `join` keeps it on the line above. Written by us, never taken from an official test. */
-export function LetterSample({ title, lines, notes }: { title: string; lines: { text: string; mark?: number; join?: boolean }[]; notes: { n: number; text: React.ReactNode }[] }) {
+export function LetterSample({ title, lines, notes, l: locale = "de" }: { title: string; lines: { text: string; mark?: number; join?: boolean }[]; notes: { n: number; text: React.ReactNode }[]; l?: SiteLocale }) {
   return (
     <figure className="my-10 overflow-hidden rounded-[24px] bg-v-soft/60 p-2">
       <figcaption className="px-4 pt-3 pb-3 text-[15px] font-semibold">{title}</figcaption>
@@ -462,7 +466,7 @@ export function LetterSample({ title, lines, notes }: { title: string; lines: { 
         {lines.map((l, i) => (
           <p key={i} className={cn("relative grid grid-cols-[minmax(0,1fr)_28px] gap-3", i > 0 && !l.join && "mt-3.5")}>
             <span className="text-pretty">{l.text}</span>
-            {l.mark ? <span className="v-num mt-0.5 grid size-6 place-items-center justify-self-end rounded-full bg-(--p-glow) text-[12px] font-semibold text-[#0A0D18]" aria-label={`Hinweis ${l.mark}`}>{l.mark}</span> : <span />}
+            {l.mark ? <span className="v-num mt-0.5 grid size-6 place-items-center justify-self-end rounded-full bg-(--p-glow) text-[12px] font-semibold text-[#0A0D18]" aria-label={UI[locale].blog.noteMark(l.mark)}>{l.mark}</span> : <span />}
           </p>
         ))}
       </div>

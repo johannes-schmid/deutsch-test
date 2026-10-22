@@ -30,11 +30,3 @@ export async function portalSkills(exam: ExamId): Promise<PortalSkill[]> {
   const live = examLive(exam) ? liveSkills(exam) : []
   return SKILLS.map((skill) => ({ skill, href: portalPath(exam, skill), free: live.includes(skill) ? `${examPath(exam)}/${skill}` : null }))
 }
-
-export type ModelltestSlot = { n: number; href: string | null }
-
-/** The ten Modelltest slots of one skill. None is built yet, so none has a link. */
-export function modelltests(): ModelltestSlot[] {
-  return Array.from({ length: MODELLTESTS }, (_, i) => ({ n: i + 1, href: null }))
-}
-

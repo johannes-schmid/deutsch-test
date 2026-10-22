@@ -1,5 +1,8 @@
 // UI chrome for the exam components. Exam content stays German in every locale.
 
+import { uk } from "./copy.uk"
+import { ru } from "./copy.ru"
+
 const de = {
   exit: "Test beenden",
   overview: "Übersicht",
@@ -12,14 +15,16 @@ const de = {
   task: "Aufgabe",
   part: "Teil",
   minutes: "Min",
-  items: "Aufgaben",
+  items: (n: number) => `${n} ${n === 1 ? "Aufgabe" : "Aufgaben"}`,
   play: "Abspielen",
   heard: "Gehört",
   hearOnce: "einmal hören",
   hearTwice: "zweimal hören",
   playsLeft: (n: number) => `noch ${n}×`,
   noReplay: "Fertig. Keine Wiederholung.",
+  switchLanguage: "Erklärung in der anderen Sprache zeigen",
   transcriptLocked: "Das Transkript siehst du nach deiner Antwort.",
+  track: { start: "Hören starten", startNote: "Der Track läuft ohne Pause, jeder Text einmal.", phase: { instruction: "Ansage", reading: "Lesezeit", clip: "Hörtext", answer: "Antwortzeit" } as Record<"instruction" | "reading" | "clip" | "answer", string>, item: (ns: number[]) => (ns.length === 1 ? (ns[0] === 0 ? "Beispiel" : `Nummer ${ns[0]}`) : ns.length === 2 ? `Nummer ${ns[0]} und ${ns[1]}` : ""), left: "noch", ended: "Hören ist zu Ende." },
   richtig: "Richtig",
   falsch: "Falsch",
   right: "Richtig!",
@@ -82,14 +87,16 @@ const en: ExamCopy = {
   task: "Task",
   part: "Part",
   minutes: "min",
-  items: "tasks",
+  items: (n: number) => `${n} ${n === 1 ? "task" : "tasks"}`,
   play: "Play",
   heard: "Played",
   hearOnce: "played once",
   hearTwice: "played twice",
   playsLeft: (n) => `${n}× left`,
   noReplay: "Done. No replay, as in the exam.",
+  switchLanguage: "Show the explanation in the other language",
   transcriptLocked: "You see the transcript after you answer.",
+  track: { start: "Start listening", startNote: "The track runs without a pause, every text once.", phase: { instruction: "Instructions", reading: "Reading time", clip: "Recording", answer: "Answer time" }, item: (ns: number[]) => (ns.length === 1 ? (ns[0] === 0 ? "Example" : `Number ${ns[0]}`) : ns.length === 2 ? `Numbers ${ns[0]} and ${ns[1]}` : ""), left: "left", ended: "Listening is over." },
   richtig: "Richtig",
   falsch: "Falsch",
   right: "Correct!",
@@ -138,5 +145,5 @@ const en: ExamCopy = {
   partsTitle: "Your parts",
 }
 
-export const EXAM_COPY = { de, en }
+export const EXAM_COPY = { de, en, uk, ru }
 export type ExamLocale = keyof typeof EXAM_COPY

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { ChoiceItem } from "@/components/exam/items"
 import type { ChoiceData } from "@/lib/exam/types"
+import type { SiteLocale } from "@/lib/i18n/locale"
+import { UI } from "@/lib/i18n/ui"
 import { cn } from "@/lib/utils"
 
 type TocSection = { id: string; title: string }
@@ -77,16 +79,17 @@ export function ArticleTocFold({ sections, label = "In diesem Artikel" }: { sect
 }
 
 /** One practice question inside an article. It uses the exam's own ChoiceItem, and the answer shows right after the tap. */
-export function QuizCard({ prompt, options, correct, explain }: { prompt: string; options: { key: string; label: string }[]; correct: string; explain: string }) {
+export function QuizCard({ prompt, options, correct, explain, l = "de" }: { prompt: string; options: { key: string; label: string }[]; correct: string; explain: string; l?: SiteLocale }) {
+  const t = UI[l].blog
   const [value, setValue] = useState<string | null>(null)
   const item: ChoiceData = { n: 0, prompt, options }
   return (
     <figure className="my-10 rounded-[24px] bg-v-soft/60 p-5 sm:p-6">
-      <figcaption className="v-eyebrow mb-4">Teste dich</figcaption>
+      <figcaption className="v-eyebrow mb-4">{t.quiz}</figcaption>
       <ChoiceItem item={item} value={value} onChange={setValue} review={value ? { correct } : undefined} />
       {value ? (
         <p className="nz-screen mt-4 rounded-[16px] bg-v-surface p-4 text-[15.5px] leading-relaxed" role="status">
-          <strong>{value === correct ? "Richtig. " : `Richtig ist ${correct.toUpperCase()}. `}</strong>
+          <strong>{value === correct ? t.quizRight : t.quizAnswer(correct.toUpperCase())}</strong>
           {explain}
         </p>
       ) : null}
@@ -95,7 +98,7 @@ export function QuizCard({ prompt, options, correct, explain }: { prompt: string
 }
 
 /** Category chips over the index. "Alle" shows the feature layout; a category shows its cards in the grid. */
-export function BlogFilter({ categories, feature, cards }: { categories: { id: string; label: string; count: number }[]; feature: React.ReactNode; cards: { id: string; category: string; node: React.ReactNode; inFeature: boolean }[] }) {
+export function BlogFilter({ categories, feature, cards, l = "de" }: { categories: { id: string; label: string; count: number }[]; feature: React.ReactNode; cards: { id: string; category: string; node: React.ReactNode; inFeature: boolean }[]; l?: SiteLocale }) {
   const [cat, setCat] = useState<string | null>(null)
   const total = cards.length
   const shown = cat ? cards.filter((c) => c.category === cat) : cards.filter((c) => !c.inFeature)
@@ -116,8 +119,8 @@ export function BlogFilter({ categories, feature, cards }: { categories: { id: s
   )
   return (
     <>
-      <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label="Nach Thema filtern">
-        {chip(null, "Alle", total)}
+      <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label={UI[l].blog.filterAria}>
+        {chip(null, UI[l].blog.all, total)}
         {categories.filter((c) => c.count > 0).map((c) => chip(c.id, c.label, c.count))}
       </div>
       {cat ? null : feature}

@@ -1,8 +1,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
-import { FORMAT_STAND, LANGUAGES } from "@/lib/design/content"
+import { FORMAT_STAND } from "@/lib/design/content"
 import { PLANS, formatEuro } from "@/lib/pricing"
-import { LANDING, NUMBER_LOCALE, type LandingCopy, type Locale } from "@/lib/i18n/landing"
+import { LANDING, type LandingCopy } from "@/lib/i18n/landing"
+import { LOCALE_NAMES, NUMBER_LOCALE, lp, siteLocale, type Locale } from "@/lib/i18n/locale"
 import { Check, Clock as ClockIcon, Headphones, Lock } from "lucide-react"
 import { LevelScale, Photo, PhotoCard, VButton } from "../kit"
 import { PlatformDemo } from "./nachtzug-demo"
@@ -19,9 +20,11 @@ const HOME_EXAMS: { brand: Exclude<Brand, "sd1">; photo: string; main: ExamId; l
   { brand: "telc", photo: "--g-photo-6", main: "telc-b1", levels: [["A2", "telc-a2"], ["B1", "telc-b1"]] },
   { brand: "oesd", photo: "--g-photo-4", main: "oesd-b1", levels: [["A1", "oesd-a1"], ["A2", "oesd-a2"], ["B1", "oesd-b1"]] },
 ]
+const LANG_STRIP: Locale[] = ["de", "en", "uk", "ru"]
 const isLive = (id: ExamId) => !!EXAM_PAGES[id] && liveSkills(id).length > 0
 
-function ExamsSection({ t }: { t: LandingCopy }) {
+function ExamsSection({ t, locale }: { t: LandingCopy; locale: Locale }) {
+  const at = (id: ExamId) => lp(siteLocale(locale), examPath(id))
   const x = t.examsSection
   return (
     <section className="py-24 sm:py-32">
@@ -44,7 +47,7 @@ function ExamsSection({ t }: { t: LandingCopy }) {
                   chip={live ? x.live : undefined}
                   tags={e.levels.map(([label, id]) =>
                     isLive(id) ? (
-                      <Link key={id} href={examPath(id)} className="rounded underline decoration-v-ink/30 decoration-[1.5px] underline-offset-4 transition-colors hover:decoration-v-ink">{label}</Link>
+                      <Link key={id} href={at(id)} className="rounded underline decoration-v-ink/30 decoration-[1.5px] underline-offset-4 transition-colors hover:decoration-v-ink">{label}</Link>
                     ) : (
                       <span key={id} className="text-v-muted">{label}</span>
                     )
@@ -52,7 +55,7 @@ function ExamsSection({ t }: { t: LandingCopy }) {
                   title={c.title}
                   text={c.text}
                   cta={x.cta}
-                  href={live ? examPath(e.main) : null}
+                  href={live ? at(e.main) : null}
                   headClassName="sm:min-h-40"
                 />
               </li>
@@ -226,8 +229,8 @@ export function Nachtzug({ locale }: { locale: Locale }) {
             </h1>
             <p className="max-w-[48ch] text-lg text-v-muted">{t.hero.lead}</p>
             <div className="flex flex-wrap gap-3">
-              <VButton size="lg" render={<Link href="/gratis-test" />} nativeButton={false}>{t.hero.cta}</VButton>
-              <VButton size="lg" kind="ghost" render={<Link href="/preise" />} nativeButton={false}>{t.hero.cta2}</VButton>
+              <VButton size="lg" render={<Link href={lp(siteLocale(locale), "/gratis-test")} />} nativeButton={false}>{t.hero.cta}</VButton>
+              <VButton size="lg" kind="ghost" render={<Link href={lp(siteLocale(locale), "/preise")} />} nativeButton={false}>{t.hero.cta2}</VButton>
             </div>
             <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] text-v-muted">
               {t.hero.proof.map((p) => (
@@ -245,11 +248,15 @@ export function Nachtzug({ locale }: { locale: Locale }) {
       <section className="border-y border-v-line py-6">
         <div className="v-container flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[14px] text-v-muted">
           <span className="text-v-ink">{t.langStrip}</span>
-          {LANGUAGES.map((l) => <span key={l}>{l}</span>)}
+          {LANG_STRIP.filter((l) => l !== locale).map((l) => (
+            <Link key={l} href={l === "en" ? "/en" : lp(l, "/")} hrefLang={l} lang={l} className="rounded underline decoration-v-ink/20 decoration-[1.5px] underline-offset-4 transition-colors hover:text-v-ink hover:decoration-v-ink">
+              {LOCALE_NAMES[l]}
+            </Link>
+          ))}
         </div>
       </section>
 
-      <ExamsSection t={t} />
+      <ExamsSection t={t} locale={locale} />
 
       <section className="pb-24 sm:pb-32">
         <div className="v-container flex flex-col items-center gap-14">
@@ -364,7 +371,7 @@ export function Nachtzug({ locale }: { locale: Locale }) {
         <Photo token="--g-photo-6" className="flex min-h-[420px] flex-col items-center justify-center gap-6 rounded-[28px] px-6 text-center">
           <h2 className="font-[family-name:var(--v-font-display)] text-[clamp(40px,6vw,80px)] leading-none tracking-[-0.02em] text-balance">{t.cta.h2}</h2>
           <p className="max-w-[40ch] text-lg text-v-muted">{t.cta.text}</p>
-          <VButton size="lg" render={<Link href="/gratis-test" />} nativeButton={false}>{t.cta.button}</VButton>
+          <VButton size="lg" render={<Link href={lp(siteLocale(locale), "/gratis-test")} />} nativeButton={false}>{t.cta.button}</VButton>
         </Photo>
       </section>
 

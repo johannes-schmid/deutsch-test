@@ -5,9 +5,8 @@ import Link from "next/link"
 import { AlertDialog } from "@base-ui/react/alert-dialog"
 import { Check } from "lucide-react"
 import { GoogleButton, GoogleButtonFallback } from "@/components/auth/google-button"
-import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
+import { useKurztest } from "./locale"
 
-const T = KURZTEST_COPY.wall
 
 /**
  * The sign-up card over the free test once a guest finishes Teil 1, after inburgeringoefenen.nl's GuestSignupOverlay.
@@ -15,6 +14,7 @@ const T = KURZTEST_COPY.wall
  * No close button: forward is the account; back is the browser or the site nav. Answers wait in sessionStorage (runner).
  */
 export function GuestWall({ open, answered, nextTeil, returnTo }: { open: boolean; answered: number; nextTeil: number; returnTo: string }) {
+  const T = useKurztest().T.wall
   const anchor = useRef<HTMLSpanElement>(null)
   const [frame, setFrame] = useState<HTMLElement | null>(null)
   useEffect(() => setFrame(anchor.current?.closest<HTMLElement>(".v-frame") ?? null), [])
@@ -36,8 +36,8 @@ export function GuestWall({ open, answered, nextTeil, returnTo }: { open: boolea
               <AlertDialog.Description className="text-[15.5px] leading-relaxed text-v-muted text-pretty">{T.lead(nextTeil)}</AlertDialog.Description>
             </div>
             <div className="w-full">
-              <Suspense fallback={<GoogleButtonFallback mode="register" />}>
-                <GoogleButton mode="register" next={returnTo} />
+              <Suspense fallback={<GoogleButtonFallback mode="register" label={T.google.label} />}>
+                <GoogleButton mode="register" next={returnTo} labels={T.google} />
               </Suspense>
             </div>
             <p className="text-[13.5px] leading-relaxed text-v-muted">

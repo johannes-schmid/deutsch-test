@@ -9,13 +9,13 @@ import { LevelScale } from "@/components/design/kit"
 import { LevelSeal, ScoreSeal } from "@/components/design/variants/nachtzug-icons"
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { EXAMS, examPath, portalPath, type ExamId } from "@/lib/exams"
-import { KURZTEST_COPY, type ExamPage } from "@/lib/i18n/kurztest"
+import type { ExamPage } from "@/lib/i18n/kurztest"
 import type { Level } from "@/lib/exam/types"
 import type { PublicBlock } from "@/lib/kurztest/data"
 import type { ClosedResult, KurztestResult } from "@/lib/kurztest/types"
 import { BlockItems, type Values } from "./items"
+import { useKurztest } from "./locale"
 
-const T = KURZTEST_COPY.result
 type Skill = PublicBlock["skill"]
 const SEAL = { B1: "b1", A2: "a2", "unter A2": "unter-a2" } as const
 
@@ -51,13 +51,14 @@ function Headline({ text, level }: { text: string; level?: Level }) {
 }
 
 /** Where points went: the text or clip each block is built on (its source or situation), in test order. */
-const weakSpots = (blocks: PublicBlock[], result: ClosedResult) => {
+const weakSpots = (blocks: PublicBlock[], result: ClosedResult, teil: (n: number) => string) => {
   const right = new Map(result.teile.flatMap((t) => t.items).map((m) => [m.n, m.right]))
-  const names = blocks.filter((b) => itemNumbers(b.display.items).some((n) => !right.get(n))).map((b) => b.display.reading?.source ?? b.display.clip?.situation ?? `Teil ${b.teil}`)
+  const names = blocks.filter((b) => itemNumbers(b.display.items).some((n) => !right.get(n))).map((b) => b.display.reading?.source ?? b.display.clip?.situation ?? teil(b.teil))
   return [...new Set(names)]
 }
 
 function Solutions({ blocks, values, result }: { blocks: PublicBlock[]; values: Values; result: ClosedResult }) {
+  const T = useKurztest().T.result
   const [open, setOpen] = useState(false)
   const hits = result.keys.map((k) => k.evidence?.hit).filter((h): h is string => !!h)
   return (
@@ -102,12 +103,14 @@ function Solutions({ blocks, values, result }: { blocks: PublicBlock[]; values: 
 export function ResultView({ exam, page, skill, blocks, values, result, signedIn, seconds, onRetry }: { exam: ExamId; page: ExamPage; skill: Skill; blocks: PublicBlock[]; values: Values; result: KurztestResult; signedIn: boolean; seconds?: { used: number; budget?: number }; onRetry: () => void }) {
   const router = useRouter()
   const t = useExamCopy()
-  const name = KURZTEST_COPY.names[skill]
+  const { T: K, at } = useKurztest()
+  const T = K.result
+  const name = K.names[skill]
   const pass = EXAMS[exam].pass
   const portal = portalPath(exam, skill)
 
   const sections = result.kind === "closed" ? result.teile.map((x) => ({ id: x.label, label: x.label, count: x.items.length, done: x.items.length })) : [{ id: skill, label: name, count: 1, done: 1 }]
-  const bar = <ExamBar part={skill} sections={sections} label={KURZTEST_COPY.run.progress(name)} onExit={() => router.push(examPath(exam))} />
+  const bar = <ExamBar part={skill} sections={sections} label={K.run.progress(name)} onExit={() => router.push(at(examPath(exam)))} />
 
   const next = (
     <ContinueCard
@@ -126,7 +129,7 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
       links={
         <>
           <button type="button" onClick={onRetry} className="underline decoration-v-ink/30 underline-offset-4 hover:decoration-v-ink">{T.retry}</button>
-          <Link href={examPath(exam)} className="underline decoration-v-ink/30 underline-offset-4 hover:decoration-v-ink">{T.nextCta}</Link>
+          <Link href={at(examPath(exam))} className="underline decoration-v-ink/30 underline-offset-4 hover:decoration-v-ink">{T.nextCta}</Link>
         </>
       }
     />
@@ -182,7 +185,7 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
     )
   }
 
-  const weak = weakSpots(blocks, result)
+  const weak = weakSpots(blocks, result, K.teil)
   return (
     <>
       {bar}

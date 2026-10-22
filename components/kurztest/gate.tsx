@@ -5,15 +5,15 @@ import Link from "next/link"
 import { ArrowRight, Check, LoaderCircle, Lock } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ExamButton } from "@/components/exam"
-import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
+import { useKurztest } from "./locale"
 
-const T = KURZTEST_COPY.gate
 
 /**
  * Email in, full result out. Marketing consent is separate and optional.
  * `before`: Schreiben/Sprechen ask for it before the test starts, so the API limits apply before any paid work.
  */
 export function EmailGate({ before, speaking, onUnlock }: { before?: boolean; speaking?: boolean; onUnlock: (email: string, marketing: boolean) => Promise<string | null> }) {
+  const T = useKurztest().T.gate
   const [email, setEmail] = useState("")
   const [marketing, setMarketing] = useState(false)
   const [busy, setBusy] = useState(false)

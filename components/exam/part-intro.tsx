@@ -18,7 +18,7 @@ export function PartIntro({ part, name, minutes, count, teile, rules, about, act
         <PartIcon part={part} size="lg" />
         <div className="flex flex-col">
           <h2 className="text-[30px] leading-none font-semibold tracking-[-0.03em]">{name}</h2>
-          <span className="v-num mt-1.5 text-[14px] text-v-muted">{minutes} {t.minutes} · {count} {t.items}</span>
+          <span className="v-num mt-1.5 text-[14px] text-v-muted">{minutes} {t.minutes} · {t.items(count)}</span>
         </div>
       </div>
       {about ? <div className="flex flex-col gap-2 text-[15.5px] leading-relaxed">{about}</div> : null}

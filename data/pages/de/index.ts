@@ -1,0 +1,5 @@
+export { page as a2zuB1 } from "./a2-zu-b1"
+export { page as b1Einbuergerung } from "./b1-einbuergerung"
+export { page as ueberUns } from "./ueber-uns"
+export { page as kontakt } from "./kontakt"
+export { page as preise } from "./preise"

@@ -22,17 +22,17 @@ function GoogleG() {
   )
 }
 
-function Button({ label, pending, onClick, disabled }: { label: string; pending?: boolean; onClick?: () => void; disabled?: boolean }) {
+function Button({ label, pending, pendingLabel = T.pending, onClick, disabled }: { label: string; pending?: boolean; pendingLabel?: string; onClick?: () => void; disabled?: boolean }) {
   return (
     <VButton kind="ink" size="lg" onClick={onClick} disabled={disabled || pending} aria-busy={pending} className="w-full gap-3 disabled:opacity-70">
       {pending ? <Loader2 className="size-5 animate-spin" aria-hidden="true" /> : <GoogleG />}
-      {pending ? T.pending : label}
+      {pending ? pendingLabel : label}
     </VButton>
   )
 }
 
-/** The one Supabase Auth caller. Reads ?next and ?error, so it renders inside <Suspense> (fallback: GoogleButtonFallback). `next` overrides ?next. */
-export function GoogleButton({ mode, next: nextPath }: { mode: "register" | "login"; next?: string }) {
+/** The one Supabase Auth caller. Reads ?next and ?error, so it renders inside <Suspense> (fallback: GoogleButtonFallback). `next` overrides ?next; `labels` replaces the German button text on translated pages. */
+export function GoogleButton({ mode, next: nextPath, labels }: { mode: "register" | "login"; next?: string; labels?: { label: string; pending: string } }) {
   const params = useSearchParams()
   const [pending, setPending] = useState(false)
   const [error, setError] = useState(() => authError(params.get("error")))
@@ -53,7 +53,7 @@ export function GoogleButton({ mode, next: nextPath }: { mode: "register" | "log
 
   return (
     <div className="flex flex-col gap-3">
-      <Button label={T[mode]} pending={pending} onClick={signIn} />
+      <Button label={labels?.label ?? T[mode]} pendingLabel={labels?.pending} pending={pending} onClick={signIn} />
       {error ? (
         <p role="alert" className="rounded-2xl bg-[color-mix(in_srgb,var(--v-sk-schreiben)_22%,var(--v-surface))] px-4 py-3 text-[14.5px] leading-snug text-v-ink">
           {error}
@@ -63,6 +63,6 @@ export function GoogleButton({ mode, next: nextPath }: { mode: "register" | "log
   )
 }
 
-export function GoogleButtonFallback({ mode }: { mode: "register" | "login" }) {
-  return <Button label={T[mode]} disabled />
+export function GoogleButtonFallback({ mode, label }: { mode: "register" | "login"; label?: string }) {
+  return <Button label={label ?? T[mode]} disabled />
 }

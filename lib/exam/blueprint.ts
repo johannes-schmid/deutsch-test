@@ -1,7 +1,8 @@
 // DTZ part specs the generator and validator work from.
-// Source until research/dtz-blueprint.md exists: TestGerman's 4 DTZ mocks, measured in
-// testgerman/mock-exams.md (checked 2026-10-12). Their mocks are AI-made, so every number
-// here is provisional. Structure only; their texts are never reused.
+// `full` on each Teil is the official format from research/dtz-blueprint.md (g.a.s.t. Übungssätze 1 and 2, checked
+// 2026-10-22); full Modelltests are built and validated against it. The top-level fields describe the free-test
+// blocks, which are shortened tasters (first measured on TestGerman's mocks, testgerman/mock-exams.md). Never derive
+// real counts or timings from them. Structure only; no official or competitor text is ever reused.
 
 import type { ExamId } from "@/lib/exams"
 import { EXAM_KURZTEST, EXAM_OPEN, EXAM_PARTS, EXAM_TASTER } from "./exam-blueprints"
@@ -9,6 +10,34 @@ import type { PartId } from "./types"
 
 /** "pic": a/b/c with picture options (Start Deutsch 1 Hören Teil 1). */
 export type AnswerFormat = "abc" | "pic" | "rf+abc" | "rf" | "match" | "gap"
+
+/** The real Teil as it appears in the exam. Lengths are per text or clip unless `perItem` says otherwise. */
+export type FullSpec = {
+  /** Scored items in this Teil and the exam's item numbers. */
+  items: number
+  first: number
+  /** Texts or clips, and items per text or clip. */
+  blocks: number
+  itemsPerBlock: number
+  length: { min: number; max: number; unit: "words" | "seconds" }
+  /** A solved item 0 opens the Teil. */
+  example: boolean
+  /** Listening: seconds to read the tasks before the audio starts. */
+  readingSeconds?: number
+  /** Matching: options shown (ads, sentences) including the ones the example uses. */
+  options?: number
+  /** a/b/c where option c is always this text (Lesen Teil 1: "anderes Stockwerk"). */
+  fixedLast?: string
+  /** Listening: each item has its own clip (Hören Teil 4), not one clip per block. */
+  clipPerItem?: boolean
+  /** Listening: speaking rate of the clips in words per minute, measured on the official audio. */
+  pace?: { min: number; max: number }
+  /** Listening: silence before each clip (read the question) and after it (answer), in seconds. */
+  pauses?: { before: number; after: number }
+  /** Listening: sound design the clips carry (beeps, gongs, jingles, ambience). */
+  sound?: string
+  source: string
+}
 
 export type PartSpec = {
   skill: PartId
@@ -41,67 +70,77 @@ export type PartSpec = {
   hint?: string
   /** Shown instead of "Lesen · Teil n" (e.g. telc's Sprachbausteine). */
   label?: string
+  /** The official Teil (DTZ so far). */
+  full?: FullSpec
 }
+
+const U = "research/dtz-blueprint.md (g.a.s.t. Übungssatz 1 + 2, 06/2024)"
 
 export const PARTS: PartSpec[] = [
   {
     skill: "hoeren", teil: 1, answer: "abc", itemsReal: 4, itemsPerBlock: 1,
-    textTypes: ["Durchsage am Bahnhof oder in der S-Bahn", "Ansage auf dem Anrufbeantworter (Arztpraxis, Friseur, Werkstatt)", "Durchsage im Supermarkt oder Kaufhaus"],
+    textTypes: ["Durchsage am Bahnhof, in der U-Bahn oder im Zug", "Ansage auf dem Anrufbeantworter (Arztpraxis, Friseur, Werkstatt, Bürgerbüro, Versicherung)", "Bandansage einer Einrichtung (Öffnungszeiten, Preise)", "private Nachricht auf der Mailbox (du)"],
     length: { min: 19, max: 25, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 1,
-    instruction: "Sie hören eine kurze Ansage. Lesen Sie zuerst die Frage. Wählen Sie dann die richtige Antwort: a, b oder c.",
-    todo: "TODO(hannes): play count. TestGerman plays once; confirm against the official Modelltest.",
+    instruction: "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+    full: { items: 4, first: 1, blocks: 4, itemsPerBlock: 1, length: { min: 20, max: 35, unit: "seconds" }, example: true, pace: { min: 105, max: 155 }, pauses: { before: 12, after: 15 }, sound: "Anrufbeantworter: Piepton, Wähltasten; Bahnhof: Gong, Zuggeräusche", source: U },
   },
   {
     skill: "hoeren", teil: 2, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
-    textTypes: ["Radioansage zu einer Veranstaltung (Stadtfest, Markt, Konzert)", "Verkehrsmeldung im Radio", "Wetterbericht im Radio"],
+    textTypes: ["Radioansage zu einer Veranstaltung (Stadtfest, Markt, Konzert, Kino)", "Verkehrsmeldung oder Fahrplanänderung", "Radiowerbung oder Gewinnspiel", "Durchsage im Zug"],
     length: { min: 28, max: 36, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 1,
-    instruction: "Sie hören eine Ansage im Radio. Lesen Sie zuerst die Frage. Wählen Sie dann die richtige Antwort: a, b oder c.",
-    todo: "TODO(hannes): play count, confirm against the official Modelltest.",
+    instruction: "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+    full: { items: 5, first: 5, blocks: 5, itemsPerBlock: 1, length: { min: 22, max: 36, unit: "seconds" }, example: false, pace: { min: 105, max: 160 }, pauses: { before: 12, after: 15 }, sound: "Radio-Jingle oder Musikbett; Durchsage im Zug mit Signalton", source: U },
   },
   {
     skill: "hoeren", teil: 3, answer: "rf+abc", itemsReal: 8, itemsPerBlock: 2,
-    textTypes: ["Alltagsgespräch beim Arzt oder in der Apotheke", "Gespräch unter Nachbarn oder Kollegen", "Gespräch im Geschäft oder am Schalter"],
+    textTypes: ["Alltagsgespräch beim Arzt oder in der Praxis", "Gespräch unter Nachbarn", "Gespräch mit Chef oder Kollegen", "Gespräch im Geschäft, am Schalter oder auf der Straße"],
     length: { min: 29, max: 40, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 1,
-    instruction: "Sie hören ein Gespräch. Zu jedem Gespräch gibt es zwei Aufgaben. Ist die Aussage richtig oder falsch? Und welche Antwort passt: a, b oder c?",
-    todo: "TODO(hannes): play count, confirm against the official Modelltest.",
+    instruction: "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+    full: { items: 8, first: 10, blocks: 4, itemsPerBlock: 2, length: { min: 48, max: 70, unit: "seconds" }, example: true, pace: { min: 140, max: 165 }, pauses: { before: 12, after: 15 }, sound: "leise Umgebung (Laden, Straße, Praxis), z. B. Klopfen an der Tür", source: U },
   },
   {
     skill: "hoeren", teil: 4, answer: "match", itemsReal: 3, itemsPerBlock: 3,
     textTypes: ["Radiosendung mit Hörermeinungen zu einem Alltagsthema"],
-    // One clip with all three opinions, ~25–30 s each.
+    // Free test: one clip with all three opinions, ~25–30 s each.
     length: { min: 70, max: 95, unit: "seconds" }, voices: { min: 3, max: 3 }, plays: 1,
-    instruction: "Sie hören drei Meinungen. Welche Aussage passt zu welcher Person? Es gibt mehr Aussagen als Personen.",
-    todo: "TODO(hannes): play count (one TestGerman mock plays twice).",
+    instruction: "Sie hören Aussagen zu einem Thema. Welcher der Sätze a–f passt zu den Aussagen? Lesen Sie jetzt die Sätze a–f. Dazu haben Sie eine Minute Zeit.",
+    // Real: host intro, then the example statement and three statements, each its own clip and voice.
+    full: { items: 3, first: 18, blocks: 1, itemsPerBlock: 3, length: { min: 20, max: 34, unit: "seconds" }, example: true, readingSeconds: 60, options: 6, clipPerItem: true, pace: { min: 140, max: 190 }, pauses: { before: 4, after: 15 }, source: U },
   },
   {
     skill: "lesen", teil: 1, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
-    textTypes: ["Wegweiser im Bürgerbüro oder Rathaus", "Übersicht eines Stellenportals", "Stadtportal mit Rubriken"],
+    textTypes: ["Wegweiser im Rathaus oder Bürgerbüro (Stockwerke)", "Inhaltsverzeichnis eines Ratgebers (Kapitel)", "Übersicht eines Stadtportals (Rubriken)"],
     length: { min: 90, max: 150, unit: "words" },
-    instruction: "Lesen Sie die Situation und die Übersicht. Wo finden Sie die Information? Wählen Sie a, b oder c.",
+    instruction: "Lesen Sie die Aufgaben und die Übersicht. Wo (a, b oder c) finden Sie die Information?",
+    full: { items: 5, first: 21, blocks: 1, itemsPerBlock: 5, length: { min: 120, max: 170, unit: "words" }, example: true, fixedLast: "anderes Stockwerk / anderes Kapitel / andere Rubrik", source: U },
   },
   {
     skill: "lesen", teil: 2, answer: "match", itemsReal: 5, itemsPerBlock: 5,
-    textTypes: ["Kleinanzeigen (Kurse, Wohnungen, Dienstleistungen, Freizeit)"],
+    textTypes: ["Kleinanzeigen (Wohnungen, Versicherungen, Kurse, Jobs, Dienstleistungen, Freizeit)"],
     length: { min: 300, max: 430, unit: "words" },
-    instruction: "Welche Anzeige passt zu welcher Situation? Für eine Situation gibt es keine passende Anzeige. Dann schreiben Sie x.",
+    instruction: "Lesen Sie die Situationen und die Anzeigen a–h. Finden Sie für jede Situation die passende Anzeige. Für eine Aufgabe gibt es keine Lösung. Markieren Sie in diesem Fall ein X.",
+    full: { items: 5, first: 26, blocks: 1, itemsPerBlock: 5, length: { min: 380, max: 520, unit: "words" }, example: false, options: 8, source: U },
   },
   {
     skill: "lesen", teil: 3, answer: "rf+abc", itemsReal: 6, itemsPerBlock: 2,
-    textTypes: ["Aushang im Haus oder in einer Einrichtung", "E-Mail von einer Behörde, Schule oder Firma", "Information zu Bauarbeiten im Nahverkehr", "Terminbrief"],
+    textTypes: ["Kurze Pressemeldung aus der Stadt", "Brief einer Kita, Schule oder eines Vereins", "E-Mail von einer Behörde, Sprachschule oder Firma", "Aushang im Haus", "Information zu Bauarbeiten im Nahverkehr"],
     length: { min: 80, max: 120, unit: "words" },
-    instruction: "Lesen Sie den Text. Ist die Aussage richtig oder falsch? Welche Antwort passt: a, b oder c?",
+    instruction: "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+    full: { items: 6, first: 31, blocks: 3, itemsPerBlock: 2, length: { min: 90, max: 130, unit: "words" }, example: false, source: U },
   },
   {
     skill: "lesen", teil: 4, answer: "rf", itemsReal: 3, itemsPerBlock: 3,
-    textTypes: ["Hausordnung", "Nutzungsbedingungen (Bibliothek, Schwimmbad, Fitnessstudio)", "Teilnahmebedingungen für einen Kurs"],
+    textTypes: ["Regeln für Fahrgäste im Nahverkehr", "Elterninformation (Mittagsbetreuung, Kita)", "Hausordnung", "Nutzungsbedingungen (Bibliothek, Schwimmbad, Fitnessstudio)"],
     length: { min: 165, max: 230, unit: "words" },
-    instruction: "Lesen Sie den Text. Sind die Aussagen richtig oder falsch?",
+    instruction: "Lesen Sie den Text. Entscheiden Sie, ob die Aussagen richtig oder falsch sind.",
+    full: { items: 3, first: 37, blocks: 1, itemsPerBlock: 3, length: { min: 200, max: 260, unit: "words" }, example: false, source: U },
   },
   {
     skill: "lesen", teil: 5, answer: "gap", itemsReal: 6, itemsPerBlock: 6,
-    textTypes: ["Formeller Brief: Kündigung", "Formeller Brief: Lieferung fehlt", "Formeller Brief: Termin absagen"],
+    textTypes: ["Formeller Brief: Beschwerde", "Formeller Brief: Bestätigung (Abo, Anmeldung, Vertrag)", "Formeller Brief: Kündigung", "Formeller Brief: Termin absagen"],
     length: { min: 95, max: 105, unit: "words" },
-    instruction: "Lesen Sie den Brief. Welches Wort passt in die Lücke? Wählen Sie a, b oder c.",
+    instruction: "Lesen Sie den Text und schließen Sie die Lücken. Welche Lösung (a, b oder c) passt am besten?",
+    full: { items: 6, first: 40, blocks: 1, itemsPerBlock: 6, length: { min: 85, max: 110, unit: "words" }, example: true, source: U },
   },
 ]
 
@@ -123,29 +162,41 @@ export type OpenSpec = {
   accents?: ("de" | "at" | "ch")[]
 }
 
-// Real DTZ: Schreiben is one letter (choice of two tasks), Sprechen is a pair exam in three parts.
-// Source: CLAUDE.md §2 exam facts; TestGerman's mocks lack the pair format, so they are no reference here.
+// Real DTZ: Schreiben is one letter (choice of two tasks), Sprechen is a pair exam in three parts with no preparation
+// time. Source: research/dtz-blueprint.md §4–5.
 export const OPEN_PARTS: OpenSpec[] = [
   {
     skill: "schreiben", teil: 1, title: "Brief oder E-Mail", minutes: 30,
-    instruction: "Wählen Sie Aufgabe A oder B. Schreiben Sie zu allen vier Punkten. Vergessen Sie Anrede und Gruß nicht.",
-    todo: "TODO(hannes): expected length and whether both tasks are always formal. Confirm with the Modelltest.",
+    instruction: "Wählen Sie Aufgabe A oder Aufgabe B. Zeigen Sie, was Sie können. Schreiben Sie möglichst viel. Vergessen Sie nicht die Anrede und den Gruß.",
+    hint: "Eine Aufgabe halbformell (E-Mail an Bekannte), eine formell (an Vermieter, Behörde, Firma). Keine Wortzahl vorgeben.",
   },
   {
-    skill: "sprechen", teil: 1, title: "Über sich sprechen", minutes: 3,
-    instruction: "Stellen Sie sich vor. Ihre Partnerin oder Ihr Partner stellt sich auch vor.",
-    todo: "TODO(hannes): timings per Teil (~16 min total for the pair).",
+    skill: "sprechen", teil: 1, title: "Über sich sprechen", minutes: 4,
+    instruction: "Stellen Sie sich vor: Name, Geburtsort, Wohnort, Arbeit/Beruf, Familie, Sprachen. Danach stellt die Prüferin oder der Prüfer Fragen.",
   },
   {
     skill: "sprechen", teil: 2, title: "Über Erfahrungen sprechen", minutes: 6,
-    instruction: "Beschreiben Sie Ihr Bild. Erzählen Sie dann von Ihren Erfahrungen mit dem Thema.",
-    todo: "TODO(hannes): picture asset per task; the kit has no picture slot yet.",
+    instruction: "Was sehen Sie auf dem Foto? Was für eine Situation zeigt dieses Bild? Erzählen Sie dann: Welche Erfahrungen haben Sie damit?",
   },
   {
     skill: "sprechen", teil: 3, title: "Gemeinsam etwas planen", minutes: 6,
     instruction: "Planen Sie gemeinsam. Machen Sie Vorschläge und reagieren Sie auf die Vorschläge Ihrer Partnerin oder Ihres Partners.",
   },
 ]
+
+/** Official DTZ Schreiben criteria, 0–5 points each (research/dtz-blueprint.md §4). */
+export const DTZ_WRITING_CRITERIA = [
+  { name: "Aufgabenbewältigung", about: "alle vier Leitpunkte inhaltlich präzise bearbeitet" },
+  { name: "Kommunikative Gestaltung", about: "passende Redemittel, Anrede und Gruß, Sätze verbunden" },
+  { name: "Korrektheit", about: "Grammatik, Rechtschreibung; klar, was gemeint ist" },
+  { name: "Wortschatz", about: "genug Wörter für das Thema, Umschreibungen" },
+] as const
+
+/** Official DTZ Sprechen points (research/dtz-blueprint.md §5): task per Teil plus language over the whole talk. */
+export const DTZ_SPEAKING_POINTS = {
+  task: { "1A": 5, "1B": 5, "2A": 10, "2B": 10, "3": 20 },
+  language: { "Aussprache/Intonation": 10, "Flüssigkeit": 10, "Korrektheit": 15, "Wortschatz": 15 },
+} as const
 
 export type KurztestPlan = Record<"lesen" | "hoeren", { teil: number; blocks: number; items: number }[]>
 

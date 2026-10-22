@@ -6,7 +6,7 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { Cookie } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { Switch } from "@/components/ui/switch"
-import type { Locale } from "@/lib/i18n/landing"
+import type { Locale } from "@/lib/i18n/locale"
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 const KEY = "dtu-consent-v2"
@@ -41,6 +41,30 @@ const COPY: Record<Locale, {
     settings: "Cookie settings",
     necessary: { name: "Necessary", desc: "Keep the site running, e.g. remember your choice.", badge: "Always on" },
     analytics: { name: "Analytics", desc: "Show us which pages are used (Google Analytics)." },
+  },
+  uk: {
+    title: "Ми використовуємо cookies",
+    body: "Деякі потрібні, щоб сайт працював. Інші допомагають нам його покращувати. Їх ми ставимо, тільки якщо ви погоджуєтеся.",
+    privacy: "Захист даних",
+    acceptAll: "Прийняти всі",
+    necessaryOnly: "Лише необхідні",
+    customize: "Налаштування",
+    save: "Зберегти вибір",
+    settings: "Налаштування cookies",
+    necessary: { name: "Необхідні", desc: "Для роботи сайту, наприклад щоб запам'ятати ваш вибір.", badge: "Завжди активні" },
+    analytics: { name: "Статистика", desc: "Показує нам, які сторінки відвідують (Google Analytics)." },
+  },
+  ru: {
+    title: "Мы используем cookies",
+    body: "Некоторые нужны, чтобы сайт работал. Другие помогают нам его улучшать. Их мы ставим, только если вы согласны.",
+    privacy: "Защита данных",
+    acceptAll: "Принять все",
+    necessaryOnly: "Только нужные",
+    customize: "Настройки",
+    save: "Сохранить выбор",
+    settings: "Настройки cookies",
+    necessary: { name: "Необходимые", desc: "Для работы сайта, например чтобы запомнить ваш выбор.", badge: "Всегда активны" },
+    analytics: { name: "Статистика", desc: "Показывает нам, какие страницы посещают (Google Analytics)." },
   },
 }
 

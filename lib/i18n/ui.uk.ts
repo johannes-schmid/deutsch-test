@@ -1,0 +1,50 @@
+// Ukrainian, machine-translated from `de` in ./ui.ts. Keep keys in sync.
+
+import type { UiCopy } from "./ui"
+
+export const uk: UiCopy = {
+  crumbsAria: "Навігаційний ланцюжок",
+  home: "Головна",
+  /** The notice on machine-translated pages (AI Act art. 50), with a link to the German original. */
+  machine: { text: "Цю сторінку машинно перекладено з німецької.", original: "Оригінал німецькою" },
+  langMenu: "Мова",
+  footerCitizenship: "B1 для натуралізації",
+  vat: "USt-IdNr.",
+  byline: { responsible: "Відповідальний", stand: "Станом на", sources: "Джерела" },
+  testCta: "Почати безкоштовний тест",
+  blog: {
+    crumb: "Блог",
+    faq: "Часті питання",
+    reviewed: (name: string, date: string) => `Перевірено: ${name}, ${date}. Кожне число подано з джерелом; список ви знайдете тут.`,
+    draft: "Чернетка: ще не перевірено людиною. Видно лише локально.",
+    sources: "Джерела",
+    more: "Читати далі",
+    source: "Джерело",
+    stand: "Станом на",
+    notes: { tipp: "Порада", info: "Корисно знати", wichtig: "Важливо" },
+    stripLink: "Спробувати безкоштовно",
+    stripMinutes: (min: number, approx?: boolean) => `${approx ? "бл. " : ""}${min} хв`,
+    noteMark: (n: number) => `Примітка ${n}`,
+    dont: "Так не треба",
+    do: "Так правильно",
+    toc: "У цій статті",
+    quiz: "Перевірте себе",
+    quizRight: "Правильно. ",
+    quizAnswer: (key: string) => `Правильна відповідь: ${key}. `,
+    filterAria: "Фільтрувати за темою",
+    all: "Усі",
+    readingTime: (min: number) => `${min} хв читання`,
+    minutesShort: (min: number) => `${min} хв`,
+    authorFallback: (role: string) => `${role}. Кожне число в наших статтях подано з джерелом і датою.`,
+    categories: { pruefungen: "Іспити й результат", schreiben: "Письмо й говоріння", tipps: "Поради й підготовка" },
+    index: {
+      title: "Блог: іспити з німецької — розуміти й готуватися",
+      description: "Чіткі відповіді про DTZ, telc, Goethe і ÖSD: структура, результат, письмо і говоріння. Кожне число з джерелом і датою.",
+      h1: "Блог про",
+      h1Muted: "іспити з німецької",
+      ctaH2: "Тренуйтеся безкоштовно у форматі справжнього іспиту",
+      ctaText: "Оберіть свій іспит і пройдіть тест за 5 хвилин. Без реєстрації.",
+      ctaButton: "Почати безкоштовний тест",
+    },
+  },
+}

@@ -2,6 +2,7 @@ import "server-only"
 import Anthropic from "@anthropic-ai/sdk"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
+import { DTZ_WRITING_CRITERIA } from "@/lib/exam/blueprint"
 import { EXAM_CONTEXT, EXAM_RUBRICS, type RubricLine } from "@/lib/exam/exam-blueprints"
 import type { CriterionResult } from "@/lib/exam/types"
 import type { ExamId } from "@/lib/exams"
@@ -24,9 +25,8 @@ const PointsGrade = z.object({
   criteria: z.array(z.object({ name: z.string(), points: z.number(), comment: z.string(), quote: Quote })),
 })
 
-// TODO(hannes): replace with the official DTZ Bewertungskriterien once they are in research/.
-// Until then these are our practice criteria, named in plain words.
-const WRITING_CRITERIA = ["Aufgabe erfüllt", "Anrede, Gruß und Form", "Zusammenhang", "Wortschatz", "Grammatik"]
+// The official DTZ Schreiben criteria (research/dtz-blueprint.md §4, g.a.s.t. Übungssatz 2 pp. 42–43).
+const WRITING_CRITERIA = DTZ_WRITING_CRITERIA.map((c) => `${c.name} (${c.about})`)
 
 const RULES = `Das ist Übungsfeedback, keine offizielle Bewertung. Sei ehrlich und genau, nicht zu streng und nicht zu großzügig.
 Schreibe Kommentare in einfachem Deutsch, in der du-Form, höchstens zwei kurze Sätze pro Kriterium.

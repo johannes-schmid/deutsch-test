@@ -1,16 +1,36 @@
 "use client"
 
+import { useState } from "react"
 import { ChoiceItem, FeedbackSheet, GapItem, MatchItem, PictureItem, TrueFalseItem } from "@/components/exam"
-import type { ItemKey, KurztestBlock, KurztestItem } from "@/lib/exam/kurztest"
+import { itemNumbers, type ItemKey, type KurztestBlock, type KurztestItem } from "@/lib/exam/kurztest"
 import type { TrueFalse } from "@/lib/exam/types"
+import { LOCALE_SHORT } from "@/lib/i18n/locale"
+import { useKurztest } from "./locale"
 
 export type Values = Record<number, string>
+
+/** A solved item's explanation; a translated one can flip to the German original and back. */
+function Feedback({ k, value }: { k: ItemKey; value?: string }) {
+  const { locale } = useKurztest()
+  const [german, setGerman] = useState(false)
+  const toggle = k.explanationDe ? () => setGerman((g) => !g) : undefined
+  return (
+    <FeedbackSheet
+      right={value === k.correct}
+      solution={k.correct}
+      explanation={german && k.explanationDe ? k.explanationDe : k.explanation}
+      evidence={k.evidence}
+      language={LOCALE_SHORT[german ? locale : "de"]}
+      onLanguage={toggle}
+    />
+  )
+}
 
 function Item({ it, label, keys, values, onChange }: { it: KurztestItem; label?: string; keys?: ItemKey[]; values: Values; onChange?: (n: number, v: string) => void }) {
   const keyOf = (n: number) => keys?.find((a) => a.n === n)
   const feedback = (n: number) => {
     const k = keyOf(n)
-    return k ? <FeedbackSheet key={n} right={values[n] === k.correct} solution={k.correct} explanation={k.explanation} evidence={k.evidence} /> : null
+    return k ? <Feedback key={n} k={k} value={values[n]} /> : null
   }
   const reviewMap = (ns: number[]) => (keys ? Object.fromEntries(ns.map((n) => [n, keyOf(n)?.correct ?? ""])) : undefined)
 
@@ -46,16 +66,23 @@ function Item({ it, label, keys, values, onChange }: { it: KurztestItem; label?:
   )
 }
 
-const SKILL = { hoeren: "Hören", lesen: "Lesen", schreiben: "Schreiben", sprechen: "Sprechen" } as const
-
-/** A block's tasks. Without `keys` it is exam mode; with `keys` it shows solutions and explanations. */
-export function BlockItems({ block, values, onChange, keys }: { block: Pick<KurztestBlock, "skill" | "teil" | "display">; values: Values; onChange?: (n: number, v: string) => void; keys?: ItemKey[] }) {
-  const label = `${SKILL[block.skill]} · Teil ${block.teil}`
+/**
+ * A block's tasks. Without `keys` it is exam mode; with `keys` it shows solutions and explanations.
+ * `examples`: the solved answers of the block's Beispiel items (n = 0, Modelltests), shown filled in and read-only.
+ */
+export function BlockItems({ block, values, onChange, keys, examples }: { block: Pick<KurztestBlock, "skill" | "teil" | "display">; values: Values; onChange?: (n: number, v: string) => void; keys?: ItemKey[]; examples?: string[] }) {
+  const T = useKurztest().T
+  const label = `${T.names[block.skill]} · ${T.teil(block.teil)}`
+  let k = 0
   return (
     <div className="flex flex-col gap-8">
-      {block.display.items.map((it, i) => (
-        <Item key={i} it={it} label={i === 0 ? label : undefined} keys={keys} values={values} onChange={onChange} />
-      ))}
+      {block.display.items.map((it, i) => {
+        const ns = itemNumbers([it])
+        const ex = examples && ns.includes(0) ? examples[k++] : undefined
+        if (ex === undefined) return <Item key={i} it={it} label={i === 0 ? label : undefined} keys={keys} values={values} onChange={onChange} />
+        const onlyExample = ns.every((n) => n === 0)
+        return <Item key={i} it={it} label={onlyExample ? T.example : i === 0 ? label : undefined} keys={keys} values={{ ...values, 0: ex }} onChange={onlyExample || !onChange ? undefined : (n, v) => n !== 0 && onChange(n, v)} />
+      })}
     </div>
   )
 }

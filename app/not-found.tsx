@@ -24,7 +24,7 @@ export default function NotFound() {
       <DesignShell id="nachtzug" lang="de">
         <div className="relative overflow-clip">
           <SiteGlow />
-          <SiteNav locale="de" switchLang={false} />
+          <SiteNav locale="de" />
           <main className="v-container relative z-10 flex flex-col items-center gap-6 pt-20 pb-24 text-center sm:pt-28 sm:pb-32">
             <p className="v-display text-[clamp(96px,16vw,180px)] tabular-nums leading-none font-semibold tracking-[-0.06em]" aria-hidden="true">404</p>
             <h1 className="v-display text-[clamp(32px,4.4vw,56px)] leading-[1.06]">Seite nicht gefunden</h1>

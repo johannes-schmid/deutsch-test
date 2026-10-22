@@ -42,7 +42,8 @@ export async function POST(req: Request) {
   if (!attempt.email) await claimLead(attemptId, email, marketing)
 
   if (attempt.skill === "lesen" || attempt.skill === "hoeren") {
-    return NextResponse.json(scoreClosed(exam, attempt.skill, attempt.answers ?? {}))
+    const locale = field("locale")
+    return NextResponse.json(scoreClosed(exam, attempt.skill, attempt.answers ?? {}, locale === "uk" || locale === "ru" ? locale : "de"))
   }
 
   if (attempt.grade) return NextResponse.json(attempt.grade)

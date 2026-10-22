@@ -2,6 +2,9 @@
 // Shared strings here; per-exam page copy (hub, skills) in EXAM_PAGES below (newer exams in ./exam-pages/<exam>.ts).
 
 import type { ExamId } from "@/lib/exams"
+import type { SiteLocale } from "./locale"
+import { uk, ukPages } from "./kurztest.uk"
+import { ru, ruPages } from "./kurztest.ru"
 import { page as oesdA1 } from "./exam-pages/oesd-a1"
 import { page as goetheA2 } from "./exam-pages/goethe-a2"
 import { page as telcA2 } from "./exam-pages/telc-a2"
@@ -10,7 +13,7 @@ import { page as goetheB1 } from "./exam-pages/goethe-b1"
 import { page as oesdB1 } from "./exam-pages/oesd-b1"
 import { page as telcB1 } from "./exam-pages/telc-b1"
 
-export const KURZTEST_COPY = {
+const de = {
   crumbs: { home: "Startseite", overview: "Gratis-Tests" },
   chips: { free: "Gratis", noAccount: "Ohne Anmeldung", solutions: "Mit Lösungen" },
   overview: {
@@ -31,6 +34,24 @@ export const KURZTEST_COPY = {
     disclaimer: "Übungstests im Format der Prüfungen. Wir sind nicht mit dem Goethe-Institut, telc, ÖSD, g.a.s.t. oder dem BAMF verbunden.",
   },
   names: { hoeren: "Hören", lesen: "Lesen", schreiben: "Schreiben", sprechen: "Sprechen" },
+  /** Teil label in results ("Teil 2"). */
+  teil: (n: number) => `Teil ${n}`,
+  example: "Beispiel",
+  task: (key: string) => `Aufgabe ${key}`,
+  taskCount: (n: number) => `${n} ${n === 1 ? "Aufgabe" : "Aufgaben"}`,
+  kurztest: (skill: string) => `${skill}: Kurztest`,
+  minutes: (n: number) => `${n} Minuten`,
+  examSummary: {
+    "start-deutsch-1": "Goethe-Zertifikat A1 und telc Deutsch A1: gemeinsam entwickelt, gleiche Aufgaben",
+    "oesd-a1": "Mit Sprecherinnen und Sprechern aus Österreich, Deutschland und der Schweiz",
+    "goethe-a2": "Hören, Lesen, Schreiben und Sprechen zu zweit",
+    "telc-a2": "Auch Start Deutsch 2 genannt. Lesen und Schreiben in einem Block",
+    "oesd-a2": "Mit Sprecherinnen und Sprechern aus Österreich, Deutschland und der Schweiz",
+    "goethe-b1": "Vier Module, die du einzeln machen kannst. Gleiche Aufgaben wie das ÖSD Zertifikat B1",
+    "oesd-b1": "Mit Stimmen aus Österreich und der Schweiz. Gleiche Aufgaben wie das Goethe-Zertifikat B1",
+    "telc-b1": "Auch Zertifikat Deutsch genannt. Mit Sprachbausteinen",
+    dtz: "Die Prüfung am Ende vom Integrationskurs",
+  } satisfies Record<ExamId, string>,
   rules: {
     noFeedback: "Lösungen siehst du erst am Ende",
     plays: "Jede Aufnahme läuft so oft wie in der Prüfung: einmal oder zweimal",
@@ -70,6 +91,7 @@ export const KURZTEST_COPY = {
     lead: (teil: number) => `Teil ${teil} wartet schon. Melde dich mit Google an. Dann machst du genau hier weiter.`,
     free: "Gratis · keine Zahlungsdaten nötig",
     login: ["Schon ein Konto?", "Anmelden"],
+    google: { label: "Mit Google registrieren", pending: "Google wird geöffnet …" },
   },
   gate: {
     h: "Geschafft!",
@@ -128,6 +150,9 @@ export const KURZTEST_COPY = {
   },
 }
 
+export type KurztestCopy = typeof de
+export const KURZTEST_COPY = de
+
 type SkillPage = { summary: string; detail: string; title: string; description: string; eyebrow?: string; h1: string; lead: string; count: string }
 
 export type ExamPage = {
@@ -139,8 +164,10 @@ export type ExamPage = {
   nextText: string
 }
 
+export type ExamPages = Partial<Record<ExamId, ExamPage>>
+
 /** Page copy per exam. An exam gets an entry when its content is built; titles follow seo/keyword-strategy.md. */
-export const EXAM_PAGES: Partial<Record<ExamId, ExamPage>> = {
+export const EXAM_PAGES: ExamPages = {
   dtz: {
     crumb: "DTZ",
     short: "DTZ",
@@ -246,3 +273,6 @@ export const EXAM_PAGES: Partial<Record<ExamId, ExamPage>> = {
   ...(oesdB1 && { "oesd-b1": oesdB1 }),
   ...(telcB1 && { "telc-b1": telcB1 }),
 }
+
+export const KURZTEST: Record<SiteLocale, KurztestCopy> = { de, uk, ru }
+export const EXAM_PAGES_BY: Record<SiteLocale, ExamPages> = { de: EXAM_PAGES, uk: ukPages, ru: ruPages }
