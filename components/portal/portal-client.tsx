@@ -47,10 +47,10 @@ export function SideGroup({ href, levelHrefs, label, head, children }: { href: s
   )
 }
 
-/** A sidebar or tab-bar link lit on its own route (`nested`: and on the routes below it). Reads the pathname, so it renders inside <Suspense>. */
-export function PortalLink({ href, className, activeClassName, nested, children }: { href: string; className: string; activeClassName: string; nested?: boolean; children: React.ReactNode }) {
+/** A sidebar or tab-bar link lit on its own route (`nested`: and on the routes below it, except those in `except`). Reads the pathname, so it renders inside <Suspense>. */
+export function PortalLink({ href, className, activeClassName, nested, except, children }: { href: string; className: string; activeClassName: string; nested?: boolean; except?: string[]; children: React.ReactNode }) {
   const path = usePathname()
-  const active = path === href || (!!nested && path.startsWith(`${href}/`))
+  const active = path === href || (!!nested && path.startsWith(`${href}/`) && !except?.some((e) => under(path, e)))
   return (
     <Link href={href} aria-current={path === href ? "page" : active ? "true" : undefined} className={cn(className, active && activeClassName)}>
       {children}

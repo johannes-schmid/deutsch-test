@@ -29,7 +29,7 @@ ${tests.join("\n")}
 
 ## Angebot
 
-- [Preise](${u("/preise")}): ein Paket für alle vier Teile vom DTZ, Preise inkl. MwSt.
+- [Preise](${u("/preise")}): der Prüfungspass für alle Teile und Modelltests, Einmalzahlung ohne Abo, Preise inkl. MwSt.
 - [Über uns](${u("/ueber-uns")}): wer die Seite macht, wie Aufgaben entstehen und wo KI eingesetzt wird
 
 ## Optional

@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import { FamilyCard, ScoreCard, WeekCard } from "@/components/portal/portal-overview"
-import { Avatar } from "@/components/portal/portal-shell"
-import { SignOutButton } from "@/components/portal/portal-client"
 import { getSessionUser, type SessionUser } from "@/lib/supabase/server"
 import { portalFamilies, type PortalFamily } from "@/lib/portal"
 import { portalStats, type PortalStats } from "@/lib/modelltest/portal"
@@ -24,21 +22,6 @@ function Greeting({ user, date, sub }: { user: SessionUser | null; date: string 
       <h1 className="v-display pb-1 text-[clamp(34px,4.6vw,52px)] leading-[1.05]">{T.hello(user?.firstName ?? null)}</h1>
       <p className="text-[17px] text-v-muted sm:text-lg">{sub}</p>
     </header>
-  )
-}
-
-function AccountCard({ user }: { user: SessionUser | null }) {
-  return (
-    <section id="konto" aria-label={T.nav.account} className="nz-paper flex scroll-mt-24 flex-col gap-4 rounded-[24px] p-5 lg:hidden">
-      <div className="flex items-center gap-3">
-        <Avatar user={user} size={48} />
-        <span className="flex min-w-0 flex-col leading-tight">
-          <b className="truncate text-[16px] font-semibold">{user?.name ?? user?.email ?? " "}</b>
-          {user?.name ? <span className="truncate text-[14px] text-v-muted">{user.email}</span> : null}
-        </span>
-      </div>
-      {user ? <SignOutButton variant="full" /> : null}
-    </section>
   )
 }
 
@@ -78,12 +61,12 @@ async function UserOverview({ families }: { families: PortalFamily[] }) {
   return (
     <>
       <Greeting user={user} date={today()} sub={started ? T.started(started) : T.sub} />
-      <Body families={families} stats={stats} account={<AccountCard user={user} />} />
+      <Body families={families} stats={stats} />
     </>
   )
 }
 
-function Body({ families, stats, account }: { families: PortalFamily[]; stats: PortalStats; account: React.ReactNode }) {
+function Body({ families, stats }: { families: PortalFamily[]; stats: PortalStats }) {
   return (
     <section id="pruefungen" aria-labelledby="exams-h" className="mt-10 flex scroll-mt-24 flex-col gap-6">
       <h2 id="exams-h" className="text-[clamp(24px,2.6vw,30px)] leading-tight font-semibold tracking-[-0.02em]">
@@ -94,7 +77,6 @@ function Body({ families, stats, account }: { families: PortalFamily[]; stats: P
         <Families families={families} stats={stats} />
         <aside className="flex flex-col gap-4 xl:sticky xl:top-8 xl:self-start">
           <Stats stats={stats} />
-          {account}
         </aside>
       </div>
     </section>
@@ -109,7 +91,7 @@ export default async function DashboardPage() {
         fallback={
           <>
             <Greeting user={null} date={null} sub={T.sub} />
-            <Body families={families} stats={EMPTY} account={<AccountCard user={null} />} />
+            <Body families={families} stats={EMPTY} />
           </>
         }
       >

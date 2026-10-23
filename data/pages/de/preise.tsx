@@ -1,30 +1,23 @@
 import type { PricePage } from "@/lib/pages/types"
 
 export const page: PricePage = {
-  title: "Preise: DTZ-Paket mit allen vier Teilen",
-  description: "Ein Paket für den ganzen DTZ: Hören, Lesen, Schreiben und Sprechen. Preise inkl. MwSt. Der Gratis-Test kostet nichts.",
+  title: "Preise: der Prüfungspass für alle Teile",
+  description: "Ein Prüfungspass für Hören, Lesen, Schreiben und Sprechen. Einmal zahlen, kein Abo. Preise inkl. MwSt. Der Gratis-Test kostet nichts.",
   crumb: "Preise",
-  h1: "Ein Paket",
-  h1Muted: "für den ganzen DTZ.",
-  lead: "Am Prüfungstag machst du alle vier Teile. Darum gibt es bei uns ein Paket mit allen Teilen.",
-  planName: (months) => (months === 1 ? "1 Monat" : `${months} Monate`),
-  recommended: "Empfohlen",
-  perMonth: (price, saving) => <>{price} im Monat{saving > 0 ? <>, du sparst {saving}{" "}%</> : null}</>,
-  trial: "Zum Ausprobieren",
-  soon: "Bald verfügbar",
-  features: ["Alle Modelltests für Hören, Lesen, Schreiben, Sprechen", "Feedback für Schreiben und Sprechen", "Erklärungen auf Ukrainisch und Russisch"],
-  freeTitle: "Gratis",
-  free: ["Ein Gratis-Test für jeden Teil vom DTZ", "Ergebnis wie in der Prüfung: B1, A2 oder unter A2", "Ohne Anmeldung, ohne Zahlungsdaten"],
-  freeCta: "Gratis Test starten",
-  vatNote: "Alle Preise in Euro, inklusive 19 % MwSt. Das Paket kannst du bald hier kaufen.",
+  h1: "Ein Pass",
+  h1Muted: "für deine ganze Prüfung.",
+  lead: "Am Prüfungstag machst du alle Teile. Darum bekommst du mit dem Prüfungspass alles. Du zahlst einmal. Es gibt kein Abo.",
+  vatNote: "Alle Preise in Euro, inklusive 19 % MwSt. Der Pass ist eine Einmalzahlung und verlängert sich nicht.",
   faq: (
     <>
       <h2>Häufige Fragen zu den Preisen</h2>
+      <h3>Ist das ein Abo?</h3>
+      <p>Nein. Du zahlst einmal. Der Pass endet nach 1 oder 3 Monaten von selbst. Du musst nichts kündigen.</p>
       <h3>Warum keine einzelnen Teile?</h3>
-      <p>Der DTZ ist eine Prüfung an einem Tag. Du brauchst alle vier Teile. Ein Paket ist einfacher und günstiger.</p>
+      <p>Am Prüfungstag machst du alle Teile. Du brauchst also alle. Ein Pass ist einfacher und günstiger.</p>
       <h3>Ist das die offizielle Prüfung?</h3>
       <p>
-        Nein. Du übst mit Modelltests im Format vom DTZ. Die echte Prüfung machst du bei einem Prüfungszentrum.
+        Nein. Du übst mit Modelltests im Format der Prüfung. Die echte Prüfung machst du bei einem Prüfungszentrum.
         Wir sind nicht mit dem BAMF, telc oder g.a.s.t. verbunden.
       </p>
     </>

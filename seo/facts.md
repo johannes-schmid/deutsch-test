@@ -12,7 +12,7 @@ If it isn't in this file, it doesn't ship.
 | Exceptions for illness, disability, age | /b1-einbuergerung | StAG § 10 Abs. 6 (same link) | 2026-10-12 |
 | Timings: Hören ca. 25, Lesen 45, Schreiben 30, Sprechen ca. 16 Min | /blog/dtz-pruefung, landing | CLAUDE.md §2. TODO(hannes): official source (telc DTZ Modelltest / Handbuch) | unverified |
 | VAT 19% included in prices | /preise | German standard rate (UStG § 12 Abs. 1) | 2026-10-12 |
-| Placeholder prices 19.90 / 44.90 / 74.90 € | /preise | TestGerman benchmark, `lib/pricing.ts`. TODO(hannes): real prices | 2026-10-12 |
+| Prüfungspass 24.90 € (1 Monat) / 39.90 € (3 Monate), one-time, incl. VAT | /preise, /dashboard/preise | Set by Hannes, `lib/pricing.ts` | 2026-10-23 |
 
 ## Free tests: exam formats (`lib/exams.ts`, `/gratis-test`)
 

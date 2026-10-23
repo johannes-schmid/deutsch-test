@@ -6,7 +6,7 @@ import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { PortalLink, SideGroup, SignOutButton } from "@/components/portal/portal-client"
 import type { SessionUser } from "@/lib/supabase/server"
 import type { Brand } from "@/lib/exams"
-import { PORTAL_HOME } from "@/lib/auth/redirect"
+import { PORTAL_ACCOUNT, PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { cn } from "@/lib/utils"
 
@@ -33,24 +33,26 @@ export function Avatar({ user, size = 40 }: { user: SessionUser | null; size?: n
   )
 }
 
-/** Name, email and sign-out. Pass the user from a Suspense-wrapped server component. */
+/** Name, email (both open the account page) and sign-out. Pass the user from a Suspense-wrapped server component. */
 export function AccountRow({ user }: { user: SessionUser | null }) {
   return (
-    <div className="flex items-center gap-3 rounded-[20px] p-2">
-      <Avatar user={user} />
-      <span className="flex min-w-0 flex-1 flex-col leading-tight">
-        {user ? (
-          <>
-            <b className="truncate text-[14px] font-semibold">{user.name ?? user.email}</b>
-            {user.name ? <span className="truncate text-[12.5px] text-v-muted">{user.email}</span> : null}
-          </>
-        ) : (
-          <>
-            <span className="h-3.5 w-24 rounded-full bg-v-soft" />
-            <span className="mt-1.5 h-3 w-32 rounded-full bg-v-soft" />
-          </>
-        )}
-      </span>
+    <div className="flex items-center gap-1">
+      <Link href={PORTAL_ACCOUNT} className="flex min-w-0 flex-1 items-center gap-3 rounded-[20px] p-2 transition-colors duration-150 ease-out hover:bg-v-ink/5">
+        <Avatar user={user} />
+        <span className="flex min-w-0 flex-1 flex-col leading-tight">
+          {user ? (
+            <>
+              <b className="truncate text-[14px] font-semibold">{user.name ?? user.email}</b>
+              {user.name ? <span className="truncate text-[12.5px] text-v-muted">{user.email}</span> : null}
+            </>
+          ) : (
+            <>
+              <span className="h-3.5 w-24 rounded-full bg-v-soft" />
+              <span className="mt-1.5 h-3 w-32 rounded-full bg-v-soft" />
+            </>
+          )}
+        </span>
+      </Link>
       {user ? <SignOutButton /> : null}
     </div>
   )
@@ -138,7 +140,7 @@ export function PortalSidebar({ groups, account, className }: { groups: NavFamil
       <div className="flex flex-col gap-1 rounded-[20px] bg-v-soft/70 p-4">
         <span className="text-[12.5px] text-v-muted">{T.plan.label}</span>
         <b className="text-[17px] font-semibold">{T.plan.name}</b>
-        <Link href="/preise" className="group mt-1 flex w-fit items-center gap-1.5 text-[14px] font-semibold">
+        <Link href={PORTAL_PASS} className="group mt-1 flex w-fit items-center gap-1.5 text-[14px] font-semibold">
           {T.plan.cta}
           <ArrowRight className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
         </Link>
@@ -156,7 +158,7 @@ export function PortalMobileHeader({ avatar }: { avatar: React.ReactNode }) {
         <Link href="/" className="rounded-lg">
           <NzLogo className="text-[17px]" />
         </Link>
-        <Link href={`${PORTAL_HOME}#konto`} aria-label={T.nav.account} className="grid size-11 place-items-center rounded-full transition-transform duration-150 ease-out active:scale-[0.95]">
+        <Link href={PORTAL_ACCOUNT} aria-label={T.nav.account} className="grid size-11 place-items-center rounded-full transition-transform duration-150 ease-out active:scale-[0.95]">
           {avatar}
         </Link>
       </header>
@@ -171,8 +173,8 @@ const TAB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
 export function PortalTabBar({ className }: { className?: string }) {
   const tabs = [
     { href: `${PORTAL_HOME}#pruefungen`, label: T.nav.exams, icon: ListChecks },
-    { href: "/preise", label: T.nav.pricing, icon: Euro },
-    { href: `${PORTAL_HOME}#konto`, label: T.nav.account, icon: UserRound },
+    { href: PORTAL_PASS, label: T.nav.pricing, icon: Euro },
+    { href: PORTAL_ACCOUNT, label: T.nav.account, icon: UserRound },
   ]
   const overview = (
     <>
@@ -184,14 +186,21 @@ export function PortalTabBar({ className }: { className?: string }) {
     <nav aria-label={T.nav.overview} className={cn("fixed inset-x-0 bottom-[max(10px,env(safe-area-inset-bottom))] z-30 mx-auto w-[calc(100%-24px)] max-w-[440px] lg:hidden", className)}>
       <div className="nz-chrome flex h-16 items-stretch gap-1 rounded-full p-1.5">
         <Suspense fallback={<Link href={PORTAL_HOME} className={TAB}>{overview}</Link>}>
-          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE} nested>{overview}</PortalLink>
+          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE} nested except={[PORTAL_PASS, PORTAL_ACCOUNT]}>{overview}</PortalLink>
         </Suspense>
-        {tabs.map(({ href, label, icon: Icon }) => (
-          <Link key={href} href={href} className={TAB}>
-            <Icon className="size-5" strokeWidth={2} aria-hidden="true" />
-            {label}
-          </Link>
-        ))}
+        {tabs.map(({ href, label, icon: Icon }) => {
+          const body = (
+            <>
+              <Icon className="size-5" strokeWidth={2} aria-hidden="true" />
+              {label}
+            </>
+          )
+          return (
+            <Suspense key={href} fallback={<Link href={href} className={TAB}>{body}</Link>}>
+              <PortalLink href={href} className={TAB} activeClassName={TAB_ACTIVE}>{body}</PortalLink>
+            </Suspense>
+          )
+        })}
       </div>
     </nav>
   )

@@ -20,15 +20,6 @@ export type TextPage = {
 export type ContactPage = TextPage & { emailLabel: string }
 
 export type PricePage = Omit<TextPage, "body" | "byline"> & {
-  planName: (months: number) => string
-  recommended: string
-  perMonth: (price: string, saving: number) => ReactNode
-  trial: string
-  soon: string
-  features: string[]
-  freeTitle: string
-  free: string[]
-  freeCta: string
   vatNote: string
   faq: ReactNode
   cta: { h2: string; text: string }

@@ -465,3 +465,13 @@
 **Outcome:** SUCCESS
 **What worked / went wrong:** Level hrefs (`/dashboard/goethe-a2`) don't sit under their family href (`/dashboard/goethe`), so "is this group active" must check every level href, not a path prefix of the family.
 **Lesson:** Derive sidebar open state from the pathname with a per-path manual override (`{ path, open }`) instead of an effect; navigation resets it for free.
+
+## 2026-10-23 — Prüfungspass pricing, PassBuilder, /dashboard/preise and /dashboard/konto
+**Changed:** `lib/pricing.ts` (one-time Prüfungspass: 1 Monat €24.90, 3 Monate €39.90; savings vs n × 1 month), `components/design/pass-builder.tsx` + `lib/i18n/pass.ts` (configurator after inburgering's ModulePicker, on `/preise` in de/uk/ru and in the portal), `app/(app)/dashboard/{preise,konto}/page.tsx`, `components/portal/portal-account.tsx`, portal shell links (`PORTAL_PASS`, `PORTAL_ACCOUNT` in lib/auth/redirect.ts), `/design/portal`, DESIGN.md, CLAUDE.md §3.
+**Outcome:** SUCCESS (tsc clean, `next build` passes in a scratch copy; checked /preise, /dashboard/preise and /dashboard/konto at 1440 and 390 with a throwaway local user, deleted afterwards).
+**What worked / went wrong:**
+- Copy objects with functions (`planName`, `perMonth`) can't be passed from a server page to a client component: every /preise route 500'd. Client components import their copy module by locale instead (`PASS_COPY[locale]`).
+- `.nz-night` (unlayered CSS) sets `position: relative`, which beats Tailwind's `lg:sticky` and turned `top-8` into a 32px offset. Put sticky on a wrapper.
+- The overview tab is `nested`, so it also lit on `/dashboard/konto`; `PortalLink` got an `except` list.
+- A date in a client component (pass end date) uses `useSyncExternalStore` with a null server snapshot: no hydration mismatch, no setState in an effect.
+**Lesson:** Server → client props must be plain data; keep localized copy with functions in a module the client imports. Check unlayered utility classes (`.nz-*`) before combining them with Tailwind position utilities.

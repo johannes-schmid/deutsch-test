@@ -5,6 +5,8 @@ import { ExamCard } from "@/components/kurztest/exam-card"
 import { AccountRow, Avatar, PortalSidebar, PortalTabBar } from "@/components/portal/portal-shell"
 import { ModelltestRow, PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
 import { FamilyCard, LevelCard, ScoreCard, WeekCard } from "@/components/portal/portal-overview"
+import { AccountCard, PassCard, ProgressCard } from "@/components/portal/portal-account"
+import { PassBuilder } from "@/components/design/pass-builder"
 import { EXAMS, FAMILIES, FAMILY_IDS } from "@/lib/exams"
 import type { SessionUser } from "@/lib/supabase/server"
 
@@ -108,6 +110,29 @@ export default function PortalDesignPage() {
             <li><ModelltestRow slot={{ n: 4, state: "locked", href: null, free: false, result: null }} /></li>
             <li><ModelltestRow slot={{ n: 5, state: "soon", href: null, free: false, result: null }} /></li>
           </ol>
+        </Spec>
+
+        <Spec name="PassBuilder" note="/preise und /dashboard/preise: der Prüfungspass, nach dem ModulePicker von inburgeringoefenen.nl. Links die Wahl (Prüfungstermin → empfohlene Laufzeit, Laufzeit als Radio-Kacheln, was drin ist, was gratis bleibt), rechts die Zusammenfassung auf Nacht (ab lg sticky, auf dem Handy darunter): Preis einmalig, pro Monat, Ersparnis gegenüber Einzelmonaten, Enddatum, Vertrauenszeilen, Kauf-Knopf (bis Stripe: „Bald verfügbar“).">
+          <PassBuilder locale="de" freeHref="#" />
+        </Spec>
+
+        <Spec name="PassCard · ProgressCard · AccountCard" note="/dashboard/konto, nach /dashboard/profiel von inburgeringoefenen.nl. PassCard: gratis (Papier, Tinten-Knopf zum Pass) oder aktiv (Nacht, Glut-Pille, Enddatum, Verlängern). ProgressCard: je DTZ-Teil und jede andere gestartete Prüfung eine Zeile mit Balken; ohne Versuch ein Hinweis darüber. AccountCard: E-Mail und Anmeldung als Einstellungszeilen, Abmelden darunter.">
+          <div className="grid max-w-[1000px] grid-cols-[minmax(0,1fr)] items-start gap-4 lg:grid-cols-[minmax(0,1fr)_340px]">
+            <ProgressCard
+              empty={null}
+              items={[
+                { id: "h", part: "hoeren", label: "DTZ · Hören", href: "#", done: 3, total: 10 },
+                { id: "l", part: "lesen", label: "DTZ · Lesen", href: "#", done: 1, total: 10 },
+                { id: "s", part: "schreiben", label: "DTZ · Schreiben", href: "#", done: 0, total: 10 },
+                { id: "g", brand: "goethe", label: "Goethe B1", href: "#", done: 2, total: 40 },
+              ]}
+            />
+            <div className="flex flex-col gap-4">
+              <PassCard until={null} />
+              <PassCard until="23. Januar 2027" />
+              <AccountCard user={USER} signOut={null} />
+            </div>
+          </div>
         </Spec>
       </div>
     </DesignShell>

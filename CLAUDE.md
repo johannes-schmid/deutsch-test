@@ -124,11 +124,14 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
 
 - **Free first:** at least one full mock exam per skill without an account, plus the full
   Einbürgerungstest. The paywall comes after value.
-- **Sell one DTZ bundle, not four modules.** Candidates take all four parts on one day.
-  This deliberately differs from inburgeringoefenen.nl, which sells per module.
-- **Pricing: TODO(hannes).** Benchmark: TestGerman charges €19.90/month, €44.90 for 3 months,
-  €74.90 for 6 and €119.90 for 12, sold per goal ("Visa & Family", "Citizenship") rather than per
-  level. Offer a 3-month plan. Prices are always a concrete € amount, never "ab X".
+- **Sell one Prüfungspass, not modules** (Hannes, 2026-10-23). One pass unlocks every exam, level and part on
+  the platform; candidates take all parts on one day. This deliberately differs from inburgeringoefenen.nl,
+  which sells per module. Only list exams as included once they have reviewed Modelltests; never promise
+  future ones ("Neue Modelltests während deiner Laufzeit sind inklusive" is fine).
+- **Pricing (Hannes, 2026-10-23):** a one-time payment for a fixed term, **no subscription**: 1 Monat €24.90,
+  3 Monate €39.90 (recommended). Benchmark: TestGerman €19.90/month, €44.90 / 3 months, auto-renewing.
+  Savings are shown against n × the 1-month price, never as a struck-through "old" price.
+  Prices are always a concrete € amount, never "ab X".
 - **Prices include 19% VAT** for German consumers (OSS). Never show prices excluding VAT to
   consumers.
 - **One source of truth for prices** (`lib/pricing.ts`). Derived numbers (savings %, per-month
@@ -230,7 +233,7 @@ All audio on `eleven_v4_turbo`. Voice IDs live only in `data/tts-voices.json`; c
 /einbuergerungstest       free: all 310 BAMF questions incl. Bundesland questions
 /leben-in-deutschland     free civic test practice (see the TODO in §4)
 /blog/...                 guides (data/blog/<slug>.tsx; drafts 404 outside `next dev`)
-/preise                   pricing
+/preise                   pricing: PassBuilder (exam date → plan, summary on Nacht); /dashboard/preise = same offer in the portal
 /impressum · /datenschutz mandatory
 ```
 
@@ -291,7 +294,8 @@ app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}  # bra
 lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
 app/(main)/(site)/                   # German text pages on one layout: dtz, preise, a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, impressum, datenschutz
 components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/sources), TestCta, Todo marker
-lib/pricing.ts · seo/facts.md        # the one price source (placeholders) · every number/legal fact with source + date
+lib/pricing.ts · seo/facts.md        # the one price source (Prüfungspass 1/3 Monate, one-time) · every number/legal fact with source + date
+lib/i18n/pass.ts                     # PassBuilder copy (de/uk/ru); components/design/pass-builder.tsx = the configurator
 app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
 app/(admin)/admin/                   # /admin = signups per week, /admin/kurztest = funnel + leads + CSV; Google login + `admin_users` allowlist (lib/admin/guard.ts, checked in proxy.ts and every page/route; also guards /design/kurztest)
@@ -300,10 +304,10 @@ lib/supabase/{client,server}.ts      # @supabase/ssr clients (publishable key, n
 lib/auth/redirect.ts                 # safeNext() (same-site paths only), PORTAL_HOME, auth error copy
 app/auth/callback/route.ts           # Google → Supabase PKCE code exchange → ?next
 app/(auth)/{registrieren,anmelden}/  # Google-only sign-up/sign-in (noindex); components/auth/ = GoogleButton + AuthHeader
-app/(app)/dashboard/                 # portal (login-only): overview by level → [exam] (4 skill cards) → [exam]/[skill] (10 Modelltests); components/portal/ = sidebar, tab bar, account, exam pages
+app/(app)/dashboard/                 # portal (login-only): overview by level → [exam] (4 skill cards) → [exam]/[skill] (10 Modelltests); components/portal/ = sidebar, tab bar, account, exam pages; /dashboard/preise (Prüfungspass) and /dashboard/konto (account: progress, pass, sign-in; portal-account.tsx)
 app/(app)/dashboard/[exam]/[skill]/[n]/ # ★ the Modelltest runner page + actions.ts (startAttempt, submitClosed, submitWriting, finishSpeaking; session + ownership checked in each)
 components/modelltest/               # runner.tsx (intro → test → result; Hören follows the one track, Lesen/Schreiben timed) · speaking.tsx (live pair exam)
-lib/entitlements.ts                  # ownsExam(): the one paid-access check; false until Stripe (Modelltest 1 per skill is free)
+lib/entitlements.ts                  # ownsExam(): the one paid-access check; one active Prüfungspass = every exam; false until Stripe (Modelltest 1 per skill is free)
 lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
 lib/modelltest/{grade,speaking,sprechen-run}.ts # official DTZ steps: Schreiben 4×0–5, Sprechen 5/5/10/10/20 + 10/10/15/15 · live lines (Haiku) + voice (eleven_v4_turbo) · run state + FREE_SPEAKING_SECONDS cap
 app/api/modelltest/sprechen/turn/    # one answer: private recording → Scribe → next live line as audio (or null = pre-rendered fallback)

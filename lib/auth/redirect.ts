@@ -1,4 +1,6 @@
 export const PORTAL_HOME = "/dashboard"
+export const PORTAL_PASS = "/dashboard/preise"
+export const PORTAL_ACCOUNT = "/dashboard/konto"
 
 /** Only same-site paths: "/x" passes, "//evil.com", "/\\evil.com" and absolute URLs fall back. */
 export function safeNext(raw: string | null | undefined, fallback = PORTAL_HOME): string {

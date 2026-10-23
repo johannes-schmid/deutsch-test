@@ -8,7 +8,7 @@ import { PortalCrumbs } from "@/components/portal/portal-exam"
 import { EXAMS, EXAM_IDS, familyCrumb } from "@/lib/exams"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
-import { PORTAL_HOME } from "@/lib/auth/redirect"
+import { PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
 import { SKILLS, isExam, isSkill } from "@/lib/kurztest/data"
 import { loadRunnerSet } from "@/lib/modelltest/runner"
 import { MODELLTESTS, portalPath } from "@/lib/portal"
@@ -49,7 +49,7 @@ async function Run({ params }: { params: PageProps<"/dashboard/[exam]/[skill]/[n
   if (!user) redirect(`/anmelden?next=${encodeURIComponent(`${portalPath(exam, skill)}/${n}`)}`)
   const crumbs = [{ label: T.exam.back, href: PORTAL_HOME }, ...familyCrumb(exam), { label: EXAMS[exam].short ?? EXAMS[exam].name, href: portalPath(exam) }, { label: KURZTEST_COPY.names[skill], href: portalPath(exam, skill) }, { label: T.run.crumb(n) }]
   const access = await loadRunnerSet(exam, skill, n, user.id)
-  if (!access.ok) return access.reason === "locked" ? <Notice crumbs={crumbs} h={T.run.locked.h} lead={T.run.locked.lead} cta={{ href: "/preise", label: T.skill.lockedCta }} /> : <Notice crumbs={crumbs} h={T.run.missing.h} lead={T.run.missing.lead} />
+  if (!access.ok) return access.reason === "locked" ? <Notice crumbs={crumbs} h={T.run.locked.h} lead={T.run.locked.lead} cta={{ href: PORTAL_PASS, label: T.skill.lockedCta }} /> : <Notice crumbs={crumbs} h={T.run.missing.h} lead={T.run.missing.lead} />
   return (
     <div className="px-3 py-4 sm:px-6 sm:py-8">
       <ModelltestRunner set={access.set} />

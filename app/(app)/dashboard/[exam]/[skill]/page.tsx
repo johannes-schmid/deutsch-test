@@ -14,7 +14,7 @@ import type { ExamId } from "@/lib/exams"
 import type { Skill } from "@/lib/kurztest/data"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
-import { PORTAL_HOME } from "@/lib/auth/redirect"
+import { PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
 
 const T = PORTAL_COPY
 
@@ -79,7 +79,7 @@ async function Slots({ exam, skill, free }: { exam: ExamId; skill: Skill; free: 
   const locked = slots.some((s) => s.state === "locked")
   return (
     <>
-      {noneOpen ? <Note text={free ? T.skill.soonNote : T.skill.soonNoteNoFree} cta={free ? { href: free, label: T.skill.freeCta } : undefined} /> : locked ? <Note text={T.skill.lockedNote} cta={{ href: "/preise", label: T.skill.lockedCta }} /> : null}
+      {noneOpen ? <Note text={free ? T.skill.soonNote : T.skill.soonNoteNoFree} cta={free ? { href: free, label: T.skill.freeCta } : undefined} /> : locked ? <Note text={T.skill.lockedNote} cta={{ href: PORTAL_PASS, label: T.skill.lockedCta }} /> : null}
       <SlotList slots={slots} />
     </>
   )
