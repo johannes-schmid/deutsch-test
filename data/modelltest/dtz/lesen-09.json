@@ -1,0 +1,795 @@
+{
+  "exam": "dtz",
+  "skill": "lesen",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "dtz-lesen-09-t1-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:20:16.526Z",
+        "textType": "Wegweiser im Ärztehaus (Stockwerke, Praxen)"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben und die Übersicht. Wo (a, b oder c) finden Sie die Information?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ihr Sohn ist zwei Jahre alt und muss bald zur nächsten Früherkennungsuntersuchung.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "3. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 21,
+              "prompt": "Ihre Nachbarin kann nach einer Operation nicht mehr sicher laufen und braucht etwas, worauf sie sich stützen kann.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "UG"
+                },
+                {
+                  "key": "b",
+                  "label": "EG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 22,
+              "prompt": "Sie bekommen jeden Frühling rote Flecken auf der Haut und möchten testen lassen, worauf Sie reagieren.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "EG"
+                },
+                {
+                  "key": "b",
+                  "label": "4. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Die Zähne Ihrer Tochter stehen schief. Die Zahnärztin sagt, man soll sie korrigieren lassen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "2. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Sie können Schilder in der Ferne nicht mehr gut erkennen und möchten Ihre Augen untersuchen lassen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "1. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Die Erzieherin sagt, Ihr Sohn spricht viele Laute noch falsch und soll regelmäßig mit einer Fachkraft üben.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "UG"
+                },
+                {
+                  "key": "b",
+                  "label": "2. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ärztehaus am Marktbrunnen – Kastanienweg 7, Brunnfeld",
+          "source": "Wegweiser im Eingangsbereich (Stockwerke und Praxen)",
+          "paragraphs": [
+            "UG – Physiotherapie Krause: Krankengymnastik, Massagen, Rückenschule, Fango · Tiefgarage",
+            "EG – Apotheke am Marktbrunnen: Medikamente, Blutdruck messen, Reiseapotheke · Sanitätshaus Weber: Rollatoren, Gehhilfen, Bandagen, Kompressionsstrümpfe",
+            "1. OG – Dr. med. Petra Albers, Allgemeinmedizin: Hausarztpraxis, Impfungen, Gesundheits-Check ab 35, Krankschreibung, Hausbesuche · Labor: Blutabnahme (nur 7:30–10:00 Uhr)",
+            "2. OG – Dr. med. Yusuf Demir, Kinder- und Jugendmedizin: Vorsorgeuntersuchungen, Kinderimpfungen, Bescheinigungen für Kita und Schule, Notfallsprechstunde für Kinder",
+            "3. OG – Zahnarztpraxis Dr. Lena Hoffmann: Kontrolle, professionelle Zahnreinigung, Füllungen, Zahnersatz · Kieferorthopädie Dr. Jan Petersen: Zahnspangen für Kinder und Erwachsene",
+            "4. OG – Augenarztpraxis Dr. Karl Brandt: Sehtest, Brillenrezept, Kontaktlinsen, grüner Star · Hautarztpraxis Dr. Simone Reiter: Hautkrebs-Vorsorge, Allergietests, Ekzeme, Akne",
+            "5. OG – Praxis für Logopädie Anna Wolf: Sprach- und Stimmtherapie für Kinder und Erwachsene · Ergotherapie Lindner · Verwaltung und Hausmeister"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 21,
+            "correct": "b",
+            "explanation": "Das Sanitätshaus im EG verkauft Rollatoren und Gehhilfen. Im UG gibt es nur Krankengymnastik, aber keine Hilfsmittel.",
+            "evidence": {
+              "text": "EG – Apotheke am Marktbrunnen: Medikamente, Blutdruck messen, Reiseapotheke · Sanitätshaus Weber: Rollatoren, Gehhilfen, Bandagen, Kompressionsstrümpfe",
+              "hit": "Sanitätshaus Weber: Rollatoren, Gehhilfen"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "b",
+            "explanation": "Die Hautarztpraxis im 4. OG macht Allergietests. Die Apotheke im EG verkauft Medikamente, sie testet aber nicht.",
+            "evidence": {
+              "text": "4. OG – Augenarztpraxis Dr. Karl Brandt: Sehtest, Brillenrezept, Kontaktlinsen, grüner Star · Hautarztpraxis Dr. Simone Reiter: Hautkrebs-Vorsorge, Allergietests, Ekzeme, Akne",
+              "hit": "Hautarztpraxis Dr. Simone Reiter: Hautkrebs-Vorsorge, Allergietests"
+            }
+          },
+          {
+            "n": 23,
+            "correct": "a",
+            "explanation": "Zahnspangen gibt es bei der Kieferorthopädie im 3. OG. Der Kinderarzt im 2. OG ist nicht für Zähne zuständig.",
+            "evidence": {
+              "text": "3. OG – Zahnarztpraxis Dr. Lena Hoffmann: Kontrolle, professionelle Zahnreinigung, Füllungen, Zahnersatz · Kieferorthopädie Dr. Jan Petersen: Zahnspangen für Kinder und Erwachsene",
+              "hit": "Kieferorthopädie Dr. Jan Petersen: Zahnspangen für Kinder und Erwachsene"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "a",
+            "explanation": "Die Augenarztpraxis im 4. OG macht Sehtests. Der Gesundheits-Check im 1. OG ist eine allgemeine Untersuchung, kein Augentest.",
+            "evidence": {
+              "text": "4. OG – Augenarztpraxis Dr. Karl Brandt: Sehtest, Brillenrezept, Kontaktlinsen, grüner Star · Hautarztpraxis Dr. Simone Reiter: Hautkrebs-Vorsorge, Allergietests, Ekzeme, Akne",
+              "hit": "Augenarztpraxis Dr. Karl Brandt: Sehtest, Brillenrezept"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Sprachtherapie gibt es bei der Logopädie im 5. OG. Im 2. OG ist der Kinderarzt, und im UG gibt es nur Krankengymnastik.",
+            "evidence": {
+              "text": "5. OG – Praxis für Logopädie Anna Wolf: Sprach- und Stimmtherapie für Kinder und Erwachsene · Ergotherapie Lindner · Verwaltung und Hausmeister",
+              "hit": "Praxis für Logopädie Anna Wolf: Sprach- und Stimmtherapie für Kinder und Erwachsene"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "dtz-lesen-09-t2-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:28:33.217Z",
+        "textType": "Kleinanzeigen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen und die Anzeigen a–h. Finden Sie für jede Situation die passende Anzeige. Für eine Aufgabe gibt es keine Lösung. Markieren Sie in diesem Fall ein X.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Transporter für einen Tag",
+                  "text": "Autovermietung Brenner, Industriestraße 14, Gießen: Sie brauchen mehr Platz als im Kofferraum? Wir vermieten Transporter bis 3,5 Tonnen, fahrbar mit dem normalen Pkw-Führerschein. Ideal für Umzüge, Möbelkauf oder Sperrmüll. Tagespreis 69 Euro inklusive 150 Kilometer, Wochenendpauschale von Samstag 8 Uhr bis Sonntag 18 Uhr nur 99 Euro. Decken und Spanngurte gibt es gratis dazu. Reservierung unter 0641 / 38 27 19."
+                },
+                {
+                  "key": "b",
+                  "title": "Ankauf von Gebrauchtwagen – jeder Zustand",
+                  "text": "Ihr Auto springt nicht mehr an, hat einen Unfallschaden oder keinen TÜV mehr? Kein Problem! Autohandel Yilmaz kauft alle Marken und Modelle, egal wie alt. Wir holen das Fahrzeug kostenlos bei Ihnen ab, übernehmen die Abmeldung und zahlen sofort in bar. Nennen Sie uns Marke, Baujahr und Kilometerstand – Sie bekommen noch am selben Tag ein Angebot. Tel. 0170 / 552 81 36."
+                },
+                {
+                  "key": "c",
+                  "title": "Carsharing im Quartier",
+                  "text": "Sie brauchen nur ab und zu ein Auto? Mit „StadtFlitzer“ teilen Sie sich Kleinwagen und Kombis mit Ihren Nachbarn. Zwölf Stationen im Stadtgebiet, Buchung rund um die Uhr per App. Ab 3,50 Euro pro Stunde plus 0,30 Euro pro Kilometer, Benzin inklusive. Einmalige Anmeldegebühr 30 Euro, keine Monatsgebühr. Führerschein seit mindestens einem Jahr erforderlich."
+                },
+                {
+                  "key": "d",
+                  "title": "Endlich sicher auf dem Rad",
+                  "text": "Der Verein „Mobil im Viertel“ bietet Kurse für Erwachsene, die das Radfahren von Anfang an lernen möchten. In kleinen Gruppen üben Sie zuerst auf einem ruhigen Schulhof, später auch im Straßenverkehr. Räder und Helme stellen wir. Sechs Termine, jeweils dienstags von 17 bis 19 Uhr, Kosten 40 Euro. Anmeldung im Stadtteilbüro, Lindenplatz 3."
+                },
+                {
+                  "key": "e",
+                  "title": "E-Bikes ausleihen am Seeufer",
+                  "text": "Entdecken Sie die Region bequem mit Rückenwind! Bei der „Radstation Möhnesee“ bekommen Sie moderne Elektrofahrräder für Erwachsene und Jugendliche ab 14 Jahren. Halber Tag 18 Euro, ganzer Tag 29 Euro, eine Woche 120 Euro. Helm und Schloss sind im Preis enthalten. Bitte beachten Sie: Unsere Räder werden nur vermietet, wir verkaufen keine Fahrzeuge. Geöffnet April bis Oktober, täglich 9 bis 18 Uhr."
+                },
+                {
+                  "key": "f",
+                  "title": "Winterreifen jetzt wechseln lassen",
+                  "text": "Reifen-Center Kaplan: Bevor der erste Schnee kommt, montieren wir Ihre Winterreifen schnell und günstig. Wechsel inklusive Auswuchten 35 Euro, Einlagerung Ihrer Sommerreifen 25 Euro pro Saison. Ohne Termin von Montag bis Freitag 7:30 bis 17 Uhr, samstags bis 13 Uhr. Neue Reifen aller Marken auf Bestellung. Schillerstraße 102, Fulda."
+                },
+                {
+                  "key": "g",
+                  "title": "Garage zu vermieten",
+                  "text": "Einzelgarage in der Bergstraße 27, Marburg, ab dem 1. des nächsten Monats frei. Trocken, mit Stromanschluss und elektrischem Tor. Geeignet für Pkw oder Motorrad, nicht für Transporter (Höhe 2 Meter). Miete 75 Euro im Monat, drei Monatsmieten Kaution. Nur langfristige Vermietung, mindestens ein Jahr. Besichtigung nach Absprache, bitte abends anrufen: 06421 / 91 33 07."
+                },
+                {
+                  "key": "h",
+                  "title": "Platten? Kette gerissen? Wir kommen zu Ihnen!",
+                  "text": "Der mobile Radservice „Speiche & Co.“ repariert Ihr Fahrrad direkt vor Ihrer Haustür oder an Ihrem Arbeitsplatz – Sie müssen es nirgendwohin bringen. Unser Service-Bus hat alle wichtigen Ersatzteile dabei. Termine Montag bis Samstag, auch abends bis 20 Uhr. Anfahrt im Stadtgebiet Kassel kostenlos. Einfach online buchen auf www.speiche-und-co.de oder anrufen: 0561 / 70 44 82."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 26,
+                  "text": "Sie möchten Ihren alten Wagen loswerden, der nach einem Zusammenstoß nicht mehr fährt."
+                },
+                {
+                  "n": 27,
+                  "text": "Ihre Nachbarin hat in ihrer Kindheit nie gelernt, auf zwei Rädern zu fahren, und möchte das jetzt nachholen."
+                },
+                {
+                  "n": 28,
+                  "text": "Ihr Kollege möchte ein gebrauchtes Rad mit Elektromotor günstig erwerben."
+                },
+                {
+                  "n": 29,
+                  "text": "Sie bringen am Samstag einen Schrank, ein Sofa und viele Kartons in Ihre neue Wohnung und brauchen dafür ein großes Fahrzeug."
+                },
+                {
+                  "n": 30,
+                  "text": "Ihre Freundin hat ein Loch im Reifen und möchte, dass jemand das Problem bei ihr zu Hause löst."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 26,
+            "correct": "b",
+            "explanation": "Der Autohandel Yilmaz kauft auch kaputte Autos und holt sie kostenlos ab. Beim Reifen-Center Kaplan kann man kein Auto verkaufen.",
+            "evidence": {
+              "text": "Ihr Auto springt nicht mehr an, hat einen Unfallschaden oder keinen TÜV mehr? Kein Problem! Autohandel Yilmaz kauft alle Marken und Modelle, egal wie alt. Wir holen das Fahrzeug kostenlos bei Ihnen ab, übernehmen die Abmeldung und zahlen sofort in bar. Nennen Sie uns Marke, Baujahr und Kilometerstand – Sie bekommen noch am selben Tag ein Angebot. Tel. 0170 / 552 81 36.",
+              "hit": "Ihr Auto springt nicht mehr an, hat einen Unfallschaden oder keinen TÜV mehr? Kein Problem!"
+            }
+          },
+          {
+            "n": 27,
+            "correct": "d",
+            "explanation": "Der Verein „Mobil im Viertel“ hat Kurse für Erwachsene, die ganz neu anfangen. Bei den E-Bikes am Seeufer kann man Räder nur ausleihen, aber nichts lernen.",
+            "evidence": {
+              "text": "Der Verein „Mobil im Viertel“ bietet Kurse für Erwachsene, die das Radfahren von Anfang an lernen möchten. In kleinen Gruppen üben Sie zuerst auf einem ruhigen Schulhof, später auch im Straßenverkehr. Räder und Helme stellen wir. Sechs Termine, jeweils dienstags von 17 bis 19 Uhr, Kosten 40 Euro. Anmeldung im Stadtteilbüro, Lindenplatz 3.",
+              "hit": "bietet Kurse für Erwachsene, die das Radfahren von Anfang an lernen möchten"
+            }
+          },
+          {
+            "n": 28,
+            "correct": "x",
+            "explanation": "Die Radstation Möhnesee hat zwar E-Bikes, aber sie verkauft keine. Keine andere Anzeige bietet ein E-Bike zum Kauf an.",
+            "evidence": {
+              "text": "Entdecken Sie die Region bequem mit Rückenwind! Bei der „Radstation Möhnesee“ bekommen Sie moderne Elektrofahrräder für Erwachsene und Jugendliche ab 14 Jahren. Halber Tag 18 Euro, ganzer Tag 29 Euro, eine Woche 120 Euro. Helm und Schloss sind im Preis enthalten. Bitte beachten Sie: Unsere Räder werden nur vermietet, wir verkaufen keine Fahrzeuge. Geöffnet April bis Oktober, täglich 9 bis 18 Uhr.",
+              "hit": "Unsere Räder werden nur vermietet, wir verkaufen keine Fahrzeuge."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "a",
+            "explanation": "Die Autovermietung Brenner verleiht große Transporter, auch am Wochenende. Beim Carsharing gibt es nur Kleinwagen und Kombis.",
+            "evidence": {
+              "text": "Autovermietung Brenner, Industriestraße 14, Gießen: Sie brauchen mehr Platz als im Kofferraum? Wir vermieten Transporter bis 3,5 Tonnen, fahrbar mit dem normalen Pkw-Führerschein. Ideal für Umzüge, Möbelkauf oder Sperrmüll. Tagespreis 69 Euro inklusive 150 Kilometer, Wochenendpauschale von Samstag 8 Uhr bis Sonntag 18 Uhr nur 99 Euro. Decken und Spanngurte gibt es gratis dazu. Reservierung unter 0641 / 38 27 19.",
+              "hit": "Wir vermieten Transporter bis 3,5 Tonnen, fahrbar mit dem normalen Pkw-Führerschein."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "h",
+            "explanation": "„Speiche & Co.“ kommt zu dir nach Hause und repariert dort. Das Reifen-Center Kaplan wechselt nur Autoreifen in der eigenen Werkstatt.",
+            "evidence": {
+              "text": "Der mobile Radservice „Speiche & Co.“ repariert Ihr Fahrrad direkt vor Ihrer Haustür oder an Ihrem Arbeitsplatz – Sie müssen es nirgendwohin bringen. Unser Service-Bus hat alle wichtigen Ersatzteile dabei. Termine Montag bis Samstag, auch abends bis 20 Uhr. Anfahrt im Stadtgebiet Kassel kostenlos. Einfach online buchen auf www.speiche-und-co.de oder anrufen: 0561 / 70 44 82.",
+              "hit": "repariert Ihr Fahrrad direkt vor Ihrer Haustür oder an Ihrem Arbeitsplatz"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-09-t3-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:37:24.432Z",
+        "textType": "Pressemeldung: Nachtbus-Linien"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 31,
+              "statement": "Die Nachtbuslinien werden ab März anders bezeichnet."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 32,
+              "prompt": "In Zukunft können Fahrgäste am späten Abend …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Hauptbahnhof in alle Nachtbusse umsteigen."
+                },
+                {
+                  "key": "b",
+                  "label": "auch außerhalb einer Haltestelle aussteigen."
+                },
+                {
+                  "key": "c",
+                  "label": "schon im Januar die neuen Fahrpläne bekommen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitungsmeldung",
+          "paragraphs": [
+            "Falkenau – Neue Nummern und neuer Treffpunkt für die Nachtbusse",
+            "Ab dem 1. März bekommen die Nachtbusse der Verkehrsbetriebe Falkenau neue Liniennummern. Statt N1 bis N5 heißen sie dann 91 bis 95, damit Fahrgäste sie besser von den Tageslinien unterscheiden können. Auch der zentrale Umsteigepunkt ändert sich: Bisher trafen sich alle Nachtbusse am Hauptbahnhof, künftig warten sie am Marktplatz aufeinander.",
+            "Neu ist außerdem ein Angebot für mehr Sicherheit: Wer nach 22 Uhr unterwegs ist, kann dem Fahrer sagen, dass er zwischen zwei Haltestellen aussteigen möchte. Der Bus hält dann so nah wie möglich an der Wohnung, wenn es der Verkehr erlaubt. Die neuen Fahrpläne liegen ab Mitte Februar in allen Bussen und im Kundenzentrum am Marktplatz aus."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 31,
+            "correct": "richtig",
+            "explanation": "Die Linien heißen ab März 91 bis 95 statt N1 bis N5. Sie haben also neue Namen.",
+            "evidence": {
+              "text": "Ab dem 1. März bekommen die Nachtbusse der Verkehrsbetriebe Falkenau neue Liniennummern. Statt N1 bis N5 heißen sie dann 91 bis 95, damit Fahrgäste sie besser von den Tageslinien unterscheiden können. Auch der zentrale Umsteigepunkt ändert sich: Bisher trafen sich alle Nachtbusse am Hauptbahnhof, künftig warten sie am Marktplatz aufeinander.",
+              "hit": "Ab dem 1. März bekommen die Nachtbusse der Verkehrsbetriebe Falkenau neue Liniennummern."
+            }
+          },
+          {
+            "n": 32,
+            "correct": "b",
+            "explanation": "Nach 22 Uhr hält der Bus auf Wunsch auch zwischen zwei Haltestellen. Der Hauptbahnhof ist nicht mehr der Umsteigepunkt, jetzt ist es der Marktplatz.",
+            "evidence": {
+              "text": "Neu ist außerdem ein Angebot für mehr Sicherheit: Wer nach 22 Uhr unterwegs ist, kann dem Fahrer sagen, dass er zwischen zwei Haltestellen aussteigen möchte. Der Bus hält dann so nah wie möglich an der Wohnung, wenn es der Verkehr erlaubt. Die neuen Fahrpläne liegen ab Mitte Februar in allen Bussen und im Kundenzentrum am Marktplatz aus.",
+              "hit": "Wer nach 22 Uhr unterwegs ist, kann dem Fahrer sagen, dass er zwischen zwei Haltestellen aussteigen möchte."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-09-t3-02",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:37:24.432Z",
+        "textType": "E-Mail des Elternbeirats: Schulweg"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 33,
+              "statement": "Während der Bauarbeiten können die Kinder die Ampel an der Bahnhofstraße weiter benutzen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 34,
+              "prompt": "Der Elternbeirat bittet die Eltern, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sich für eine Aufsicht bis neun Uhr zu melden."
+                },
+                {
+                  "key": "b",
+                  "label": "morgens ab halb acht an der Kreuzung zu stehen."
+                },
+                {
+                  "key": "c",
+                  "label": "ihre Kinder mit dem Auto zur Schule zu bringen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ayşe Demir, Elternbeirat der Grundschule am Lerchenfeld",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Eltern,",
+            "wie Sie vielleicht schon wissen, wird die Bahnhofstraße ab dem 14. April für etwa sechs Wochen gesperrt. In dieser Zeit funktioniert auch die Fußgängerampel vor der Bäckerei nicht. Viele Kinder müssen deshalb einen anderen Weg zur Schule nehmen.",
+            "Die Stadt hat uns versprochen, dass morgens ein Mitarbeiter des Ordnungsamts an der Kreuzung Gartenweg steht. Das gilt aber nur von 7:30 bis 8:00 Uhr. Für die Kinder, die erst zur zweiten Stunde kommen, suchen wir deshalb Eltern, die bis 9 Uhr helfen. Bitte bringen Sie Ihr Kind in dieser Zeit nicht mit dem Auto bis vor die Schule, dort wird es sonst zu eng.",
+            "Wer mithelfen kann, trägt sich bitte bis Freitag in die Liste im Sekretariat ein.",
+            "Viele Grüße",
+            "Ayşe Demir",
+            "Elternbeirat der Grundschule am Lerchenfeld"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 33,
+            "correct": "falsch",
+            "explanation": "Die Ampel funktioniert während der Sperrung nicht. Die Kinder müssen einen anderen Weg nehmen.",
+            "evidence": {
+              "text": "wie Sie vielleicht schon wissen, wird die Bahnhofstraße ab dem 14. April für etwa sechs Wochen gesperrt. In dieser Zeit funktioniert auch die Fußgängerampel vor der Bäckerei nicht. Viele Kinder müssen deshalb einen anderen Weg zur Schule nehmen.",
+              "hit": "In dieser Zeit funktioniert auch die Fußgängerampel vor der Bäckerei nicht."
+            }
+          },
+          {
+            "n": 34,
+            "correct": "a",
+            "explanation": "Eltern sollen später helfen, bis 9 Uhr, und sich in die Liste eintragen. Von 7:30 bis 8:00 Uhr steht schon ein Mitarbeiter der Stadt dort.",
+            "evidence": {
+              "text": "Die Stadt hat uns versprochen, dass morgens ein Mitarbeiter des Ordnungsamts an der Kreuzung Gartenweg steht. Das gilt aber nur von 7:30 bis 8:00 Uhr. Für die Kinder, die erst zur zweiten Stunde kommen, suchen wir deshalb Eltern, die bis 9 Uhr helfen. Bitte bringen Sie Ihr Kind in dieser Zeit nicht mit dem Auto bis vor die Schule, dort wird es sonst zu eng.",
+              "hit": "Für die Kinder, die erst zur zweiten Stunde kommen, suchen wir deshalb Eltern, die bis 9 Uhr helfen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-09-t3-03",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:37:24.433Z",
+        "textType": "Brief der Versicherung: Vertragsänderung"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 35,
+              "statement": "Für den besseren Schutz muss Herr Kaya nicht mehr bezahlen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 36,
+              "prompt": "Was passiert, wenn Herr Kaya widerspricht?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Der Vertrag wird zum Jahresende gekündigt."
+                },
+                {
+                  "key": "b",
+                  "label": "Er bekommt einen neuen Vertrag zugeschickt."
+                },
+                {
+                  "key": "c",
+                  "label": "Er behält seinen Vertrag wie bisher."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Claudia Wendt, Kundenservice, Elbmark Versicherung AG",
+          "source": "Brief",
+          "paragraphs": [
+            "Ihre Hausratversicherung Nr. HR 4471-208",
+            "Sehr geehrter Herr Kaya,",
+            "ab dem 1. Januar 20.. verbessern wir den Schutz Ihrer Hausratversicherung. Fahrräder sind dann auch versichert, wenn sie nachts abgeschlossen vor dem Haus stehen. Bisher galt der Schutz nur, wenn das Fahrrad in einem verschlossenen Keller oder einer Garage stand. Ihr Beitrag erhöht sich dadurch nicht.",
+            "Neu ist außerdem: Schäden können Sie ab sofort auch online in unserem Kundenportal melden. Natürlich erreichen Sie uns weiterhin telefonisch unter 040 55 83 120.",
+            "Wenn Sie mit den neuen Bedingungen nicht einverstanden sind, können Sie innerhalb von vier Wochen schriftlich widersprechen. Ihr Vertrag läuft dann zu den alten Bedingungen weiter.",
+            "Mit freundlichen Grüßen",
+            "Claudia Wendt",
+            "Kundenservice, Elbmark Versicherung AG"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 35,
+            "correct": "richtig",
+            "explanation": "Der Schutz wird besser, aber der Beitrag bleibt gleich. Herr Kaya zahlt also nicht mehr.",
+            "evidence": {
+              "text": "ab dem 1. Januar 20.. verbessern wir den Schutz Ihrer Hausratversicherung. Fahrräder sind dann auch versichert, wenn sie nachts abgeschlossen vor dem Haus stehen. Bisher galt der Schutz nur, wenn das Fahrrad in einem verschlossenen Keller oder einer Garage stand. Ihr Beitrag erhöht sich dadurch nicht.",
+              "hit": "Ihr Beitrag erhöht sich dadurch nicht."
+            }
+          },
+          {
+            "n": 36,
+            "correct": "c",
+            "explanation": "Nach einem Widerspruch gelten die alten Bedingungen weiter. Von einer Kündigung steht nichts im Brief.",
+            "evidence": {
+              "text": "Wenn Sie mit den neuen Bedingungen nicht einverstanden sind, können Sie innerhalb von vier Wochen schriftlich widersprechen. Ihr Vertrag läuft dann zu den alten Bedingungen weiter.",
+              "hit": "Ihr Vertrag läuft dann zu den alten Bedingungen weiter."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-09-t4-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:41:04.438Z",
+        "textType": "Informationstext"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text. Entscheiden Sie, ob die Aussagen richtig oder falsch sind.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 37,
+              "statement": "Ein alter Kühlschrank wird nicht mit dem Sperrmüll abgeholt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 38,
+              "statement": "Wer im Jahr dreimal Sperrmüll abholen lässt, muss nichts extra bezahlen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 39,
+              "statement": "Man darf den Sperrmüll schon am Abend vor dem Termin an die Straße stellen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Abfallwirtschaft Stadt Talheim",
+          "source": "Faltblatt",
+          "paragraphs": [
+            "Sperrmüll-Abholung im Stadtgebiet Talheim",
+            "Was ist Sperrmüll?\nSperrmüll sind große Gegenstände aus dem Haushalt, die nicht in die Restmülltonne passen, zum Beispiel:\n• Möbel wie Schränke, Tische, Stühle und Sofas\n• Matratzen und Teppiche\n• Fahrräder und Kinderwagen\nNicht zum Sperrmüll gehören Elektrogeräte (z. B. Kühlschränke, Waschmaschinen, Fernseher), Bauschutt, Autoreifen und Farbeimer. Diese Dinge können Sie kostenlos beim Wertstoffhof in der Industriestraße 14 abgeben.",
+            "Termin anmelden\nBitte melden Sie die Abholung mindestens zwei Wochen vorher an – online unter www.abfall-talheim.de oder telefonisch unter 07136 48 22 90 (Mo–Do 8–16 Uhr, Fr 8–12 Uhr). Sie bekommen dann eine Abholkarte mit Ihrem Termin per Post.",
+            "Kosten\nZwei Abholungen pro Jahr sind in der Müllgebühr schon enthalten. Jede weitere Abholung kostet 35 Euro. Pro Abholung dürfen Sie höchstens 3 Kubikmeter Sperrmüll bereitstellen. Für jeden zusätzlichen Kubikmeter berechnen wir 20 Euro.",
+            "Am Abholtag\nStellen Sie den Sperrmüll am Abholtag bis 6 Uhr morgens an den Straßenrand. Bitte nicht früher als am Abend vorher! Gehwege und Einfahrten müssen frei bleiben. Kleine Teile packen Sie bitte in Kartons. Die Abholkarte kleben Sie gut sichtbar auf einen der Gegenstände.",
+            "Sie können nicht zu Hause sein?\nKein Problem: Sie müssen bei der Abholung nicht anwesend sein. Bei Fragen hilft Ihnen unser Kundenservice gern weiter."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 37,
+            "correct": "richtig",
+            "explanation": "Kühlschränke sind Elektrogeräte und gehören nicht zum Sperrmüll. Du bringst sie selbst zum Wertstoffhof.",
+            "evidence": {
+              "text": "Was ist Sperrmüll?\nSperrmüll sind große Gegenstände aus dem Haushalt, die nicht in die Restmülltonne passen, zum Beispiel:\n• Möbel wie Schränke, Tische, Stühle und Sofas\n• Matratzen und Teppiche\n• Fahrräder und Kinderwagen\nNicht zum Sperrmüll gehören Elektrogeräte (z. B. Kühlschränke, Waschmaschinen, Fernseher), Bauschutt, Autoreifen und Farbeimer. Diese Dinge können Sie kostenlos beim Wertstoffhof in der Industriestraße 14 abgeben.",
+              "hit": "Nicht zum Sperrmüll gehören Elektrogeräte (z. B. Kühlschränke, Waschmaschinen, Fernseher)"
+            }
+          },
+          {
+            "n": 38,
+            "correct": "falsch",
+            "explanation": "Nur zwei Abholungen sind in der Müllgebühr enthalten. Die dritte Abholung kostet 35 Euro.",
+            "evidence": {
+              "text": "Kosten\nZwei Abholungen pro Jahr sind in der Müllgebühr schon enthalten. Jede weitere Abholung kostet 35 Euro. Pro Abholung dürfen Sie höchstens 3 Kubikmeter Sperrmüll bereitstellen. Für jeden zusätzlichen Kubikmeter berechnen wir 20 Euro.",
+              "hit": "Jede weitere Abholung kostet 35 Euro."
+            }
+          },
+          {
+            "n": 39,
+            "correct": "richtig",
+            "explanation": "Der Abend vorher ist erlaubt, nur früher nicht. Spätestens um 6 Uhr am Abholtag muss alles draußen stehen.",
+            "evidence": {
+              "text": "Am Abholtag\nStellen Sie den Sperrmüll am Abholtag bis 6 Uhr morgens an den Straßenrand. Bitte nicht früher als am Abend vorher! Gehwege und Einfahrten müssen frei bleiben. Kleine Teile packen Sie bitte in Kartons. Die Abholkarte kleben Sie gut sichtbar auf einen der Gegenstände.",
+              "hit": "Bitte nicht früher als am Abend vorher!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-09-t5-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:45:15.006Z",
+        "textType": "Einladung des Arbeitgebers zur Betriebsversammlung (formeller Brief)"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text und schließen Sie die Lücken. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "parts": [
+                "Bäckerei Hollmann GmbH\nPersonalabteilung\nLindenstraße 14\n34117 Kassel\n\nKassel, 03.11.20..\n\nEINLADUNG ZUR BETRIEBSVERSAMMLUNG\n\n",
+                {
+                  "n": 0,
+                  "options": [
+                    "Lieber",
+                    "Lieben",
+                    "Liebe"
+                  ]
+                },
+                " Mitarbeiterinnen und Mitarbeiter,\n\nam Donnerstag, den 20.11.20.., findet unsere jährliche Betriebsversammlung statt. Sie beginnt ",
+                {
+                  "n": 40,
+                  "options": [
+                    "um",
+                    "im",
+                    "am"
+                  ]
+                },
+                " 15 Uhr in der Kantine. Wir informieren Sie über die neuen Arbeitszeiten und ",
+                {
+                  "n": 41,
+                  "options": [
+                    "unser",
+                    "unsere",
+                    "unseren"
+                  ]
+                },
+                " Pläne für das nächste Jahr. Die Versammlung dauert zwei Stunden und zählt als Arbeitszeit. ",
+                {
+                  "n": 42,
+                  "options": [
+                    "Trotzdem",
+                    "Deshalb",
+                    "Obwohl"
+                  ]
+                },
+                " müssen Sie an diesem Tag keinen Urlaub nehmen. ",
+                {
+                  "n": 43,
+                  "options": [
+                    "Ob",
+                    "Denn",
+                    "Wenn"
+                  ]
+                },
+                " Sie in der Frühschicht arbeiten, können Sie nach Schichtende in der Kantine warten. Bitte sagen Sie Ihrer Teamleitung bis Freitag Bescheid, ob Sie teilnehmen. Für Kaffee und Kuchen ",
+                {
+                  "n": 44,
+                  "options": [
+                    "kümmern",
+                    "freuen",
+                    "sorgen"
+                  ]
+                },
+                " wir.\n\nWir freuen uns auf Ihr Kommen.\n\nMit freundlichen ",
+                {
+                  "n": 45,
+                  "options": [
+                    "Grüßen",
+                    "Gruß",
+                    "Grüße"
+                  ]
+                },
+                "\nPetra Hollmann\nGeschäftsführung"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 40,
+            "correct": "um",
+            "explanation": "Bei einer Uhrzeit sagst du „um 15 Uhr“. „Am“ benutzt du für Tage, zum Beispiel „am Donnerstag“."
+          },
+          {
+            "n": 41,
+            "correct": "unsere",
+            "explanation": "„Pläne“ ist Plural und Akkusativ nach „über“, deshalb heißt es „unsere“. „Unseren“ wäre Dativ Plural und passt hier nicht."
+          },
+          {
+            "n": 42,
+            "correct": "Deshalb",
+            "explanation": "Die Versammlung ist Arbeitszeit, das ist der Grund: Man braucht keinen Urlaub. „Trotzdem“ passt nicht, weil es einen Gegensatz ausdrückt."
+          },
+          {
+            "n": 43,
+            "correct": "Wenn",
+            "explanation": "Hier geht es um eine Bedingung, und das Verb steht am Ende: „Wenn Sie … arbeiten“. Nach „Denn“ müsste das Verb an zweiter Stelle stehen."
+          },
+          {
+            "n": 44,
+            "correct": "sorgen",
+            "explanation": "Die feste Wendung heißt „für etwas sorgen“. „Kümmern“ braucht „sich … um“, nicht „für“."
+          },
+          {
+            "n": 45,
+            "correct": "Grüßen",
+            "explanation": "Der Gruß im Brief heißt immer „Mit freundlichen Grüßen“. Nach „mit“ steht der Dativ Plural, also nicht „Grüße“."
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Liebe"
+      ]
+    }
+  ]
+}

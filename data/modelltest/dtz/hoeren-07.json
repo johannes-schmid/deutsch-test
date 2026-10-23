@@ -1,0 +1,2340 @@
+{
+  "exam": "dtz",
+  "skill": "hoeren",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "dtz-hoeren-07-t1-bsp",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:26:50.516Z",
+        "textType": "info"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Wie melden sich einzelne Besucher für die Führung an?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Über die Internetseite."
+                },
+                {
+                  "key": "b",
+                  "label": "Direkt im Museum."
+                },
+                {
+                  "key": "c",
+                  "label": "Per Telefon."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 31.32,
+          "plays": 1,
+          "situation": "Bandansage im Museum",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Ansage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t1-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_ela",
+            "text": "Herzlich willkommen beim Stadtmuseum Lindenberg. Unsere Sonderausstellung „Spielzeug aus hundert Jahren“ ist bis Ende Mai zu sehen. Zur Ausstellung gibt es jeden Sonntag eine Führung. Die Teilnahme ist kostenlos, aber die Plätze sind begrenzt. Bitte melden Sie sich dafür am selben Tag an der Museumskasse an. Gruppen ab zehn Personen buchen ihre Führung bitte online auf unserer Internetseite. Am Telefon können wir leider keine Anmeldungen annehmen.",
+            "delivery": "[calm, recorded announcement]"
+          }
+        ]
+      },
+      "example": true,
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "dtz-hoeren-07-t1-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:26:50.516Z",
+        "textType": "anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Wann kann die Katze geimpft werden?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Am Donnerstag."
+                },
+                {
+                  "key": "b",
+                  "label": "Am Freitag oder Montag."
+                },
+                {
+                  "key": "c",
+                  "label": "Am Montagnachmittag."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 30.96,
+          "plays": 1,
+          "situation": "Nachricht der Tierarztpraxis",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Mitarbeiter Tierarztpraxis",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t1-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Die Praxis bietet zwei Termine an: Freitag oder Montag früh. Am Donnerstag ist schon alles voll.",
+            "evidence": {
+              "text": "Guten Tag, Frau Kowalski, hier ist Jonas Brandt von der Tierarztpraxis Doktor Heller. Sie wollten für Ihre Katze Mimi einen Termin für die Impfung. Am Donnerstag ist leider schon alles voll. Wir können Ihnen aber Freitag um halb fünf anbieten oder Montag früh um acht. Bitte rufen Sie uns kurz zurück und sagen Sie, welcher Termin Ihnen passt. Und bringen Sie bitte den Impfpass von Mimi mit. Danke und tschüs.",
+              "hit": "Wir können Ihnen aber Freitag um halb fünf anbieten oder Montag früh um acht."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Guten Tag, Frau Kowalski, hier ist Jonas Brandt von der Tierarztpraxis Doktor Heller. Sie wollten für Ihre Katze Mimi einen Termin für die Impfung. Am Donnerstag ist leider schon alles voll. Wir können Ihnen aber Freitag um halb fünf anbieten oder Montag früh um acht. Bitte rufen Sie uns kurz zurück und sagen Sie, welcher Termin Ihnen passt. Und bringen Sie bitte den Impfpass von Mimi mit. Danke und tschüs.",
+            "delivery": "[friendly, professional]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "dtz-hoeren-07-t1-02",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:26:50.516Z",
+        "textType": "anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Wo ist der Kurs ab nächster Woche?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Im Haus in der Bahnhofstraße."
+                },
+                {
+                  "key": "b",
+                  "label": "Im Raum 204 im Hauptgebäude."
+                },
+                {
+                  "key": "c",
+                  "label": "Im Raum 107 im Hauptgebäude."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 31.76,
+          "plays": 1,
+          "situation": "Nachricht der Volkshochschule",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Mitarbeiterin Volkshochschule",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t1-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Der Kurs zieht in das Gebäude in der Bahnhofstraße um. Raum 107 ist dort und nicht im Hauptgebäude.",
+            "evidence": {
+              "text": "Hallo, Herr Demir, hier spricht Sabine Wolter von der Volkshochschule Kirchheim. Es geht um Ihren Computerkurs am Mittwochabend. Der Raum zwei null vier im Hauptgebäude ist ab nächster Woche leider nicht mehr frei. Der Kurs findet deshalb im Gebäude in der Bahnhofstraße statt, im Raum eins null sieben im ersten Stock. Die Uhrzeit bleibt gleich, also achtzehn Uhr. Bis dann und einen schönen Tag noch.",
+              "hit": "Der Kurs findet deshalb im Gebäude in der Bahnhofstraße statt"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Hallo, Herr Demir, hier spricht Sabine Wolter von der Volkshochschule Kirchheim. Es geht um Ihren Computerkurs am Mittwochabend. Der Raum zwei null vier im Hauptgebäude ist ab nächster Woche leider nicht mehr frei. Der Kurs findet deshalb im Gebäude in der Bahnhofstraße statt, im Raum eins null sieben im ersten Stock. Die Uhrzeit bleibt gleich, also achtzehn Uhr. Bis dann und einen schönen Tag noch.",
+            "delivery": "[friendly, clear]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "dtz-hoeren-07-t1-03",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:26:50.516Z",
+        "textType": "bahnhof"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Wo hält die Regionalbahn um 9:17 Uhr heute nicht?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "In Hollbach."
+                },
+                {
+                  "key": "b",
+                  "label": "In Moorfeld."
+                },
+                {
+                  "key": "c",
+                  "label": "In Eichenau."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 35.13,
+          "plays": 1,
+          "situation": "Durchsage am Bahnhof",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Ansage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t1-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "c",
+            "explanation": "Wegen der Verspätung fährt der Zug ohne Halt durch Eichenau. In Hollbach und Moorfeld hält er wie immer.",
+            "evidence": {
+              "text": "Gleis vier, bitte Vorsicht bei der Einfahrt. Es fährt ein die Regionalbahn nach Steinfurt über Hollbach, Eichenau und Moorfeld, Abfahrt neun Uhr siebzehn. Achtung, heute gibt es eine Änderung: Der Zug hat zehn Minuten Verspätung und hält deshalb nicht in Eichenau. Fahrgäste nach Eichenau nehmen bitte die nächste Regionalbahn um neun Uhr siebenundvierzig. Sie hält dort wie gewohnt. In Hollbach und Moorfeld hält dieser Zug normal.",
+              "hit": "Der Zug hat zehn Minuten Verspätung und hält deshalb nicht in Eichenau."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Gleis vier, bitte Vorsicht bei der Einfahrt. Es fährt ein die Regionalbahn nach Steinfurt über Hollbach, Eichenau und Moorfeld, Abfahrt neun Uhr siebzehn. Achtung, heute gibt es eine Änderung: Der Zug hat zehn Minuten Verspätung und hält deshalb nicht in Eichenau. Fahrgäste nach Eichenau nehmen bitte die nächste Regionalbahn um neun Uhr siebenundvierzig. Sie hält dort wie gewohnt. In Hollbach und Moorfeld hält dieser Zug normal.",
+            "delivery": "[calm, announcer]"
+          }
+        ]
+      },
+      "sound": "station"
+    },
+    {
+      "id": "dtz-hoeren-07-t1-04",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:26:50.516Z",
+        "textType": "privat"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Was soll Elif mitbringen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Einen Salat."
+                },
+                {
+                  "key": "b",
+                  "label": "Etwas zu trinken."
+                },
+                {
+                  "key": "c",
+                  "label": "Einen Kuchen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 29.49,
+          "plays": 1,
+          "situation": "Nachricht von der Schwester",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Schwester",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t1-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Derya bittet Elif um einen großen Salat. Die Getränke kauft jetzt Murat, und den Kuchen hat die Tante bestellt.",
+            "evidence": {
+              "text": "Hi Elif, ich bin's, Derya. Wegen Mamas Geburtstag am Sonntag: Wir essen um eins bei mir. Den Kuchen hat Tante Hülya schon bestellt, darum musst du dich nicht kümmern. Ich mache Suppe und Reis. Eigentlich wolltest du ja Getränke mitbringen, aber die kauft jetzt Murat. Kannst du stattdessen einen großen Salat mitbringen? Das wäre super. Bis Sonntag, tschüs!",
+              "hit": "Kannst du stattdessen einen großen Salat mitbringen?"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_ela",
+            "text": "Hi Elif, ich bin's, Derya. Wegen Mamas Geburtstag am Sonntag: Wir essen um eins bei mir. Den Kuchen hat Tante Hülya schon bestellt, darum musst du dich nicht kümmern. Ich mache Suppe und Reis. Eigentlich wolltest du ja Getränke mitbringen, aber die kauft jetzt Murat. Kannst du stattdessen einen großen Salat mitbringen? Das wäre super. Bis Sonntag, tschüs!",
+            "delivery": "[cheerful, casual]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "dtz-hoeren-07-t2-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:27:55.143Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Was kann man auf der Messe umsonst machen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Den Blutzucker prüfen lassen."
+                },
+                {
+                  "key": "b",
+                  "label": "Die Messe als Erwachsener besuchen."
+                },
+                {
+                  "key": "c",
+                  "label": "An einem Kochkurs teilnehmen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 38.53,
+          "plays": 1,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Moderatorin Lokalradio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t2-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Am Stand der Krankenkasse misst man den Blutzucker kostenlos. Der Eintritt ist nur für Kinder unter zwölf frei, Erwachsene zahlen drei Euro.",
+            "evidence": {
+              "text": "Und jetzt noch ein Tipp fürs Wochenende: Am Samstag und Sonntag ist in der Stadthalle Lindenau die Gesundheitsmesse, jeweils von zehn bis siebzehn Uhr. Über sechzig Aussteller informieren über Ernährung, Bewegung und Vorsorge. Der Eintritt kostet drei Euro, Kinder unter zwölf Jahren kommen umsonst rein. Am Stand der Krankenkasse Vitalis können Sie Ihren Blutzucker kostenlos messen lassen. Und für alle, die gern kochen: Der Kurs „Gesund und schnell“ kostet fünf Euro, bitte vorher online anmelden.",
+              "hit": "können Sie Ihren Blutzucker kostenlos messen lassen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_irene",
+            "text": "Und jetzt noch ein Tipp fürs Wochenende: Am Samstag und Sonntag ist in der Stadthalle Lindenau die Gesundheitsmesse, jeweils von zehn bis siebzehn Uhr. Über sechzig Aussteller informieren über Ernährung, Bewegung und Vorsorge. Der Eintritt kostet drei Euro, Kinder unter zwölf Jahren kommen umsonst rein. Am Stand der Krankenkasse Vitalis können Sie Ihren Blutzucker kostenlos messen lassen. Und für alle, die gern kochen: Der Kurs „Gesund und schnell“ kostet fünf Euro, bitte vorher online anmelden.",
+            "delivery": "[friendly, radio host]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-07-t2-02",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:27:55.143Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Was sollen Allergiker heute tun?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Bis Donnerstag in der Wohnung bleiben."
+                },
+                {
+                  "key": "b",
+                  "label": "Früh am Tag die Fenster öffnen."
+                },
+                {
+                  "key": "c",
+                  "label": "Erst am Nachmittag lüften."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 33.59,
+          "plays": 1,
+          "situation": "Pollenflug im Radio",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Sprecher Wetterdienst",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t2-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Man soll morgens lüften, also früh am Tag die Fenster öffnen. Am Nachmittag fliegen die Gräserpollen besonders stark.",
+            "evidence": {
+              "text": "Und hier wie jeden Morgen der Pollenflug für heute, Dienstag. Die Birkenpollen sind fast vorbei, da gibt es nur noch eine schwache Belastung. Dafür fliegen jetzt die Gräser richtig stark, vor allem am Nachmittag und am Abend. Allergiker sollten deshalb lieber morgens lüften und nach dem Spaziergang die Kleidung wechseln. Ab Donnerstag wird es dann besser: Es soll regnen, und der Regen wäscht die Pollen aus der Luft.",
+              "hit": "Allergiker sollten deshalb lieber morgens lüften"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Und hier wie jeden Morgen der Pollenflug für heute, Dienstag. Die Birkenpollen sind fast vorbei, da gibt es nur noch eine schwache Belastung. Dafür fliegen jetzt die Gräser richtig stark, vor allem am Nachmittag und am Abend. Allergiker sollten deshalb lieber morgens lüften und nach dem Spaziergang die Kleidung wechseln. Ab Donnerstag wird es dann besser: Es soll regnen, und der Regen wäscht die Pollen aus der Luft.",
+            "delivery": "[calm, informative]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-07-t2-03",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:27:55.143Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Was ist bei diesem Angebot richtig?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Man bekommt ein neues Handy dazu."
+                },
+                {
+                  "key": "b",
+                  "label": "Für den Anschluss zahlt man nichts."
+                },
+                {
+                  "key": "c",
+                  "label": "Man zahlt neunundzwanzig Euro im Monat."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 38.5,
+          "plays": 1,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Sprecherin Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t2-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Bis Ende Mai muss man keine Anschlussgebühr bezahlen. Die neunundzwanzig Euro sind diese Gebühr, nicht der Monatspreis.",
+            "evidence": {
+              "text": "Sie telefonieren viel und surfen gern? Dann ist FunkFlex Smart genau richtig für Sie! Für nur neun Euro neunundneunzig im Monat telefonieren Sie so viel Sie wollen und bekommen zwanzig Gigabyte Datenvolumen. Der Vertrag ist jeden Monat kündbar. Und nur bis Ende Mai: Die Anschlussgebühr von neunundzwanzig Euro fällt komplett weg! Ein neues Handy ist nicht dabei, aber Ihre alte Nummer nehmen Sie einfach mit. Mehr Infos in allen FunkFlex-Shops oder unter funkflex punkt de.",
+              "hit": "Die Anschlussgebühr von neunundzwanzig Euro fällt komplett weg!"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_ela",
+            "text": "Sie telefonieren viel und surfen gern? Dann ist FunkFlex Smart genau richtig für Sie! Für nur neun Euro neunundneunzig im Monat telefonieren Sie so viel Sie wollen und bekommen zwanzig Gigabyte Datenvolumen. Der Vertrag ist jeden Monat kündbar. Und nur bis Ende Mai: Die Anschlussgebühr von neunundzwanzig Euro fällt komplett weg! Ein neues Handy ist nicht dabei, aber Ihre alte Nummer nehmen Sie einfach mit. Mehr Infos in allen FunkFlex-Shops oder unter funkflex punkt de.",
+            "delivery": "[energetic, commercial]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-07-t2-04",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:27:55.143Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Wann ist die Lindenallee gesperrt?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nur zwei Stunden am Vormittag."
+                },
+                {
+                  "key": "b",
+                  "label": "Von acht bis vierzehn Uhr."
+                },
+                {
+                  "key": "c",
+                  "label": "Ab dem Start um neun Uhr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 33.99,
+          "plays": 1,
+          "situation": "Verkehrsmeldung im Radio",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Verkehrsmoderator",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t2-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Die Lindenallee ist nur von zehn bis zwölf Uhr gesperrt. Von acht bis vierzehn Uhr gilt für die Bahnhofstraße.",
+            "evidence": {
+              "text": "Achtung, liebe Autofahrerinnen und Autofahrer: Am Sonntag ist wieder Wallbacher Stadtlauf. Start ist um neun Uhr am Marktplatz. Deshalb ist die Bahnhofstraße von acht bis vierzehn Uhr komplett gesperrt. Die Lindenallee ist nur zwischen zehn und zwölf Uhr zu, dann laufen dort die Kinder. Wer zum Krankenhaus will, fährt bitte über die Ringstraße. Und die Buslinien drei und fünf fahren an diesem Tag eine Umleitung.",
+              "hit": "Die Lindenallee ist nur zwischen zehn und zwölf Uhr zu"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Achtung, liebe Autofahrerinnen und Autofahrer: Am Sonntag ist wieder Wallbacher Stadtlauf. Start ist um neun Uhr am Marktplatz. Deshalb ist die Bahnhofstraße von acht bis vierzehn Uhr komplett gesperrt. Die Lindenallee ist nur zwischen zehn und zwölf Uhr zu, dann laufen dort die Kinder. Wer zum Krankenhaus will, fährt bitte über die Ringstraße. Und die Buslinien drei und fünf fahren an diesem Tag eine Umleitung.",
+            "delivery": "[clear, radio announcer]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-07-t2-05",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:27:55.143Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Was gilt für die neue Linie zwölf?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Am Wochenende fährt sie alle zwanzig Minuten."
+                },
+                {
+                  "key": "b",
+                  "label": "Man muss in der Innenstadt umsteigen."
+                },
+                {
+                  "key": "c",
+                  "label": "Die Fahrt ist anfangs kostenlos."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 35.87,
+          "plays": 1,
+          "situation": "Meldung im Radio",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Moderatorin Regionalnachrichten",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t2-05.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "In der ersten Woche kostet die Fahrt nichts. Alle zwanzig Minuten fährt der Bus nur von Montag bis Freitag.",
+            "evidence": {
+              "text": "Gute Nachrichten für alle in Wallbach-Süd: Ab dem ersten März fährt die neue Buslinie zwölf. Sie verbindet das Wohngebiet Am Sonnenhang direkt mit dem Hauptbahnhof. Bisher mussten die Fahrgäste in der Innenstadt umsteigen. Montag bis Freitag kommt der Bus alle zwanzig Minuten, am Wochenende nur einmal pro Stunde. Und in der ersten Woche ist die Fahrt mit der Linie zwölf sogar gratis. Danach gelten die normalen Preise der Stadtwerke.",
+              "hit": "in der ersten Woche ist die Fahrt mit der Linie zwölf sogar gratis"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_ela",
+            "text": "Gute Nachrichten für alle in Wallbach-Süd: Ab dem ersten März fährt die neue Buslinie zwölf. Sie verbindet das Wohngebiet Am Sonnenhang direkt mit dem Hauptbahnhof. Bisher mussten die Fahrgäste in der Innenstadt umsteigen. Montag bis Freitag kommt der Bus alle zwanzig Minuten, am Wochenende nur einmal pro Stunde. Und in der ersten Woche ist die Fahrt mit der Linie zwölf sogar gratis. Danach gelten die normalen Preise der Stadtwerke.",
+            "delivery": "[cheerful, news presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-07-t3-bsp",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:29:48.587Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Der Mann hat seinen Bibliotheksausweis verloren."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Der Mann bezahlt die Verlängerung …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bar bei der Mitarbeiterin an der Theke."
+                },
+                {
+                  "key": "b",
+                  "label": "mit seiner Bankkarte am Automaten am Eingang."
+                },
+                {
+                  "key": "c",
+                  "label": "zum halben Preis mit einem Nachweis."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 54.91,
+          "plays": 1,
+          "situation": "Gespräch in der Bibliothek",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Bibliotheksmitarbeiterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Leser",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t3-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Guten Tag, was kann ich für Sie tun?",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Hallo, ich wollte eigentlich diese drei Bücher hier ausleihen, aber der Automat da drüben sagt, mein Ausweis ist gesperrt.",
+            "delivery": "[slightly confused]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Moment, ich schau mal... Ah ja, Ihr Ausweis ist seit letzter Woche abgelaufen. Den muss man jedes Jahr verlängern.",
+            "delivery": "[helpful]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Ach so, das wusste ich gar nicht. Und was kostet das?",
+            "delivery": "[surprised]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Für Erwachsene achtzehn Euro im Jahr. Wenn Sie aber Bürgergeld bekommen oder studieren, zahlen Sie nur die Hälfte. Dafür bräuchte ich dann einen Nachweis.",
+            "delivery": "[explaining]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Nein, ich arbeite ganz normal. Kann ich mit Karte zahlen?",
+            "delivery": "[neutral]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Leider nein, hier an der Theke geht nur bar. Aber Sie können am Kassenautomaten neben dem Eingang auch mit Karte bezahlen.",
+            "delivery": "[apologetic]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Gut, dann mach ich das. Und die Bücher?",
+            "delivery": "[relieved]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Die lege ich Ihnen hier zurück. Wenn Sie bezahlt haben, kommen Sie einfach wieder zu mir.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Super, danke.",
+            "delivery": "[cheerful]"
+          }
+        ]
+      },
+      "example": true,
+      "exampleAnswers": [
+        "falsch",
+        "b"
+      ]
+    },
+    {
+      "id": "dtz-hoeren-07-t3-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:29:48.587Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Herr Petrović bekommt heute Arbeitsschuhe und eine Jacke von der Firma."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Morgen beginnt Herr Petrović …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "um neun Uhr dreißig."
+                },
+                {
+                  "key": "b",
+                  "label": "um sechs Uhr in der Frühschicht."
+                },
+                {
+                  "key": "c",
+                  "label": "um sieben Uhr wie heute."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 53.71,
+          "plays": 1,
+          "situation": "Erster Arbeitstag im Lager",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Schichtleiterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "neuer Mitarbeiter",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t3-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Frau Albrecht geht mit ihm zur Kleiderkammer. Dort bekommt er Schuhe und eine Jacke.",
+            "evidence": {
+              "text": "Ach, das ist kein Problem. Ich bin Frau Albrecht, die Schichtleiterin hier im Lager. Also, zuerst gehen wir zur Kleiderkammer. Da kriegen Sie Ihre Sicherheitsschuhe und die Jacke.",
+              "hit": "Da kriegen Sie Ihre Sicherheitsschuhe und die Jacke."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Diese Woche arbeitet er in der Mittelschicht ab halb zehn. Die Frühschicht um sechs ist erst später für ihn.",
+            "evidence": {
+              "text": "Nein, heute ist eine Ausnahme wegen der Einführung. Normalerweise beginnt die Frühschicht um sechs. Aber diese Woche sind Sie noch in der Mittelschicht, also ab halb zehn.",
+              "hit": "Aber diese Woche sind Sie noch in der Mittelschicht, also ab halb zehn."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Guten Morgen! Sie sind bestimmt Herr Petrović, oder?",
+            "delivery": "[warm, welcoming]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Ja, genau. Guten Morgen. Ich bin ein bisschen zu früh, glaube ich.",
+            "delivery": "[slightly nervous]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Ach, das ist kein Problem. Ich bin Frau Albrecht, die Schichtleiterin hier im Lager. Also, zuerst gehen wir zur Kleiderkammer. Da kriegen Sie Ihre Sicherheitsschuhe und die Jacke.",
+            "delivery": "[friendly, brisk]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Okay. Muss ich die Sachen selbst waschen?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Keine Sorge, die Wäsche macht die Firma. Sie werfen die Jacke einfach freitags in den Korb. Heute arbeiten Sie dann mit Herrn Kaya zusammen, der zeigt Ihnen alles.",
+            "delivery": "[reassuring]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Gut. Und wann fange ich morgen an? Auch um sieben?",
+            "delivery": "[neutral]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Nein, heute ist eine Ausnahme wegen der Einführung. Normalerweise beginnt die Frühschicht um sechs. Aber diese Woche sind Sie noch in der Mittelschicht, also ab halb zehn.",
+            "delivery": "[explaining]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Halb zehn, alles klar. Das ist mir ganz recht.",
+            "delivery": "[pleased]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Schön. Dann kommen Sie mal mit.",
+            "delivery": "[friendly]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-07-t3-02",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:29:48.587Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Die Krankenkasse übernimmt die Kosten für die Krone komplett."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Frau Nowak will …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sich gleich für eine Keramikkrone entscheiden."
+                },
+                {
+                  "key": "b",
+                  "label": "ihr Bonusheft heute noch in die Praxis bringen."
+                },
+                {
+                  "key": "c",
+                  "label": "vorher selbst bei ihrer Versicherung nachfragen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 58.12,
+          "plays": 1,
+          "situation": "Gespräch beim Zahnarzt",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Zahnarzt",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Patientin",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t3-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Die Kasse gibt nur einen Zuschuss. Frau Nowak muss auch selbst etwas bezahlen.",
+            "evidence": {
+              "text": "Das hängt vom Material ab. Eine Metallkrone ist am günstigsten, da zahlen Sie etwa hundertachtzig Euro selbst. Mit Keramik sind es eher sechshundert.",
+              "hit": "da zahlen Sie etwa hundertachtzig Euro selbst"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Sie möchte die Kasse anrufen und erst dann entscheiden. Das Bonusheft liegt zu Hause, sie will es nicht sofort bringen.",
+            "evidence": {
+              "text": "Gut. Ich ruf da aber vorher selbst noch mal an und frag, wie viel genau die zahlen. Dann entscheide ich mich.",
+              "hit": "Ich ruf da aber vorher selbst noch mal an und frag, wie viel genau die zahlen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "So, Frau Nowak, ich hab mir das Röntgenbild angeschaut. Der Zahn hier unten links ist leider schon sehr kaputt. Da brauchen Sie eine Krone.",
+            "delivery": "[calm, professional]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_laura",
+            "text": "Oh nein. Und was kostet das ungefähr?",
+            "delivery": "[worried]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Das hängt vom Material ab. Eine Metallkrone ist am günstigsten, da zahlen Sie etwa hundertachtzig Euro selbst. Mit Keramik sind es eher sechshundert.",
+            "delivery": "[explaining]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_laura",
+            "text": "Sechshundert? Hm. Übernimmt die Kasse denn gar nichts?",
+            "delivery": "[shocked]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Doch, natürlich. Die Kasse gibt einen festen Zuschuss. Und wenn Sie Ihr Bonusheft regelmäßig haben stempeln lassen, bekommen Sie noch etwas mehr.",
+            "delivery": "[reassuring]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_laura",
+            "text": "Ach, das Bonusheft, das liegt irgendwo zu Hause. Ich bin eigentlich jedes Jahr hier gewesen.",
+            "delivery": "[thoughtful]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Dann sieht's gut aus. Wir schicken erst mal einen Kostenplan an Ihre Krankenkasse.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_laura",
+            "text": "Gut. Ich ruf da aber vorher selbst noch mal an und frag, wie viel genau die zahlen. Dann entscheide ich mich.",
+            "delivery": "[determined]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Machen Sie das. Der Plan ist in zwei, drei Tagen bei der Kasse.",
+            "delivery": "[friendly]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-07-t3-03",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:29:48.588Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Jonas hat seine Aufgabe im Bad diese Woche nicht erledigt."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Mira möchte, dass …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sie zusammen eine Putzhilfe bezahlen."
+                },
+                {
+                  "key": "b",
+                  "label": "jeder immer dieselbe Aufgabe übernimmt."
+                },
+                {
+                  "key": "c",
+                  "label": "Jonas in Zukunft den Müll runterbringt."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 55.72,
+          "plays": 1,
+          "situation": "Gespräch in der WG",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Mitbewohnerin Mira",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Mitbewohner Jonas",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t3-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Jonas hatte Stress und hat das Bad nicht geputzt. Er sagt selbst, dass er es vergessen hat.",
+            "evidence": {
+              "text": "Ja, ich weiß, sorry. Ich hatte so viel Stress mit den Prüfungen, ich hab's echt total vergessen.",
+              "hit": "Ja, ich weiß, sorry. Ich hatte so viel Stress mit den Prüfungen, ich hab's echt total vergessen."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Mira schlägt feste Aufgaben vor: Jonas macht immer die Küche, sie das Bad. Eine Putzhilfe findet sie zu teuer.",
+            "evidence": {
+              "text": "Nee, das ist mir zu teuer. Ich hab 'ne andere Idee: Du übernimmst einfach immer die Küche, die machst du eh gern, und ich das Bad. Dann gibt's keinen Wechsel mehr und keiner vergisst was.",
+              "hit": "Du übernimmst einfach immer die Küche, die machst du eh gern, und ich das Bad."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Jonas, hast du kurz Zeit? Ich muss mal was wegen dem Putzplan sagen.",
+            "delivery": "[casual, a bit serious]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Oh oh. Klingt nicht gut. Was is denn?",
+            "delivery": "[joking]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Na ja, laut Plan warst du diese Woche mit dem Bad dran. Und... guck's dir mal an.",
+            "delivery": "[slightly annoyed]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Ja, ich weiß, sorry. Ich hatte so viel Stress mit den Prüfungen, ich hab's echt total vergessen.",
+            "delivery": "[apologetic]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Passiert. Aber letzte Woche war's mit dem Müll genauso. Ich hab ihn dann runtergebracht.",
+            "delivery": "[calm]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Stimmt. Hm. Sollen wir vielleicht 'ne Putzhilfe nehmen? Paul hat gemeint, das kostet gar nicht so viel.",
+            "delivery": "[thoughtful]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Nee, das ist mir zu teuer. Ich hab 'ne andere Idee: Du übernimmst einfach immer die Küche, die machst du eh gern, und ich das Bad. Dann gibt's keinen Wechsel mehr und keiner vergisst was.",
+            "delivery": "[friendly, decisive]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Echt? Das wär mir sogar lieber. Okay, abgemacht. Und das Bad mach ich heute Abend noch.",
+            "delivery": "[relieved]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Super, danke dir.",
+            "delivery": "[cheerful]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-07-t3-04",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:29:48.588Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Die Frau hat zum Schluss noch ein Dessert gegessen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 17,
+              "prompt": "Der Kellner …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schenkt der Frau ihren Kaffee."
+                },
+                {
+                  "key": "b",
+                  "label": "gibt der Frau ein Tiramisu aus."
+                },
+                {
+                  "key": "c",
+                  "label": "zieht eine Apfelschorle von der Rechnung ab."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 51.02,
+          "plays": 1,
+          "situation": "Gespräch im Restaurant",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Kellner",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Gast",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t3-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Die Frau war zu satt und hatte keinen Nachtisch. Das Tiramisu war für einen anderen Tisch.",
+            "evidence": {
+              "text": "Ja, genau. Aber kein Nachtisch. Ich hab überlegt, aber ich war einfach zu satt.",
+              "hit": "Aber kein Nachtisch. Ich hab überlegt, aber ich war einfach zu satt."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "a",
+            "explanation": "Als Entschuldigung muss die Frau den Espresso nicht bezahlen. Die zwei Apfelschorlen stimmen auf der Rechnung.",
+            "evidence": {
+              "text": "Und als kleine Entschuldigung müssen Sie den Espresso nicht bezahlen, der geht aufs Haus.",
+              "hit": "Und als kleine Entschuldigung müssen Sie den Espresso nicht bezahlen, der geht aufs Haus."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_ben",
+            "text": "So, bitte schön, Ihre Rechnung.",
+            "delivery": "[polite]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_irene",
+            "text": "Danke. Moment mal... Entschuldigung, da stimmt was nicht. Hier steht ein Tiramisu drauf. Das hatte ich gar nicht.",
+            "delivery": "[polite, puzzled]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_ben",
+            "text": "Oh, darf ich mal sehen? Hm, Sie hatten das Schnitzel, den gemischten Salat, zwei Apfelschorlen und einen Espresso, richtig?",
+            "delivery": "[attentive]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_irene",
+            "text": "Ja, genau. Aber kein Nachtisch. Ich hab überlegt, aber ich war einfach zu satt.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_ben",
+            "text": "Dann tut mir das wirklich leid. Das Tiramisu war für den Tisch nebenan, da hab ich mich vertippt. Ich mach Ihnen sofort eine neue Rechnung.",
+            "delivery": "[apologetic]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_irene",
+            "text": "Okay, kein Problem, kann ja mal passieren.",
+            "delivery": "[relaxed]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_ben",
+            "text": "Und als kleine Entschuldigung müssen Sie den Espresso nicht bezahlen, der geht aufs Haus.",
+            "delivery": "[warm]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_irene",
+            "text": "Oh, das ist aber nett. Kann ich dann mit Karte zahlen?",
+            "delivery": "[pleased]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_ben",
+            "text": "Natürlich, ich bring Ihnen gleich das Gerät. Und den Beleg drucke ich dann neu aus.",
+            "delivery": "[polite]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-07-t4-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:31:02.575Z",
+        "textType": "Radiosendung: Hörerumfrage"
+      },
+      "display": {
+        "instruction": "Sie hören Aussagen zu einem Thema. Welcher der Sätze a–f passt zu den Aussagen? Lesen Sie jetzt die Sätze a–f. Dazu haben Sie eine Minute Zeit.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "",
+                  "text": "Das eigene Land bietet viele lohnende Ziele."
+                },
+                {
+                  "key": "b",
+                  "title": "",
+                  "text": "Zu Hause erholt man sich am besten."
+                },
+                {
+                  "key": "c",
+                  "title": "",
+                  "text": "Weite Reisen machen Menschen toleranter."
+                },
+                {
+                  "key": "d",
+                  "title": "",
+                  "text": "Eine Auslandsreise ist für Familien oft unbezahlbar."
+                },
+                {
+                  "key": "e",
+                  "title": "",
+                  "text": "Fürs Klima sollte man aufs Fliegen verzichten."
+                },
+                {
+                  "key": "f",
+                  "title": "",
+                  "text": "Kinder sollten die Herkunft ihrer Familie kennen."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Beispiel"
+                },
+                {
+                  "n": 18,
+                  "text": "Aussage 18"
+                },
+                {
+                  "n": 19,
+                  "text": "Aussage 19"
+                },
+                {
+                  "n": 20,
+                  "text": "Aussage 20"
+                }
+              ]
+            },
+            "noMatch": false
+          }
+        ],
+        "clip": {
+          "duration": 140.64,
+          "plays": 1,
+          "situation": "Radiosendung: Hörerumfrage",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Dragana",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "s2": {
+              "name": "Hildegard",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "s3": {
+              "name": "Markus",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "s4": {
+              "name": "Jannik",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-07/dtz-hoeren-07-t4-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 18,
+            "correct": "a",
+            "explanation": "Hildegard findet, dass es in Deutschland sehr viel Schönes zu entdecken gibt. Sie fliegt nicht wegen des Klimas nicht, sondern weil es hier für sie bequemer ist.",
+            "evidence": {
+              "text": "Früher, als mein Mann noch gelebt hat, waren wir oft in Spanien oder in der Türkei. Das war auch schön. Aber heute bleibe ich lieber hier. Letztes Jahr war ich an der Ostsee, und im Herbst fahre ich mit meiner Freundin in den Schwarzwald. Diese Wälder, diese kleinen Städtchen – da muss man doch nicht stundenlang fliegen! Ich verstehe die Leute, ich kann alles lesen, und ehrlich, es gibt hier noch so einiges zu entdecken, das schaffe ich in meinem Leben gar nicht mehr alles.",
+              "hit": "es gibt hier noch so einiges zu entdecken, das schaffe ich in meinem Leben gar nicht mehr alles"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "d",
+            "explanation": "Markus sagt, eine Woche Mallorca in den Schulferien kostet für seine Familie zu viel Geld. Er zeltet in Brandenburg, aber er sagt, dass das nicht immer erholsam ist.",
+            "evidence": {
+              "text": "Na ja, wir sind zu viert, die Kinder sind acht und elf. Und wir können nur in den Schulferien weg. Genau dann verlangen die Fluggesellschaften und Hotels das Doppelte. Ich hab mal für Mallorca gerechnet: über viertausend Euro für eine Woche! Das ist bei einem normalen Gehalt einfach nicht drin. Deshalb zelten wir an einem See in Brandenburg. Erholsam ist das nicht immer, die Kinder streiten, es regnet … Aber anders geht es halt nicht.",
+              "hit": "Das ist bei einem normalen Gehalt einfach nicht drin."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "c",
+            "explanation": "Jannik hat in Südamerika gelernt, dass man ganz unterschiedlich leben kann, und urteilt jetzt nicht mehr so schnell. Das heißt: Die Reise hat ihn toleranter gemacht.",
+            "evidence": {
+              "text": "Für mich ist das gar keine Frage. Hier kenne ich doch schon alles. Ich arbeite ein bisschen mehr, spare, und dann geht's mit dem Rucksack los. Letztes Jahr war ich drei Monate in Südamerika. Da hab ich gemerkt, wie unterschiedlich man leben kann. In Bolivien haben mich wildfremde Leute zum Essen eingeladen, obwohl sie selbst kaum was hatten. Seitdem urteile ich nicht mehr so schnell über andere. Das lernt man an der Ostsee nicht, sorry.",
+              "hit": "Seitdem urteile ich nicht mehr so schnell über andere."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "moderation",
+            "voice": "man_mark",
+            "text": "Guten Abend und willkommen bei „Radio Mittelland – Hörer am Mikrofon“. Die Sommerferien stehen vor der Tür, und viele planen gerade ihren Urlaub. Fliegen Sie lieber in die Ferne, oder bleiben Sie in Deutschland – und warum?"
+          },
+          {
+            "speaker": "s1",
+            "voice": "woman_kathi",
+            "text": "Also, bei uns ist das ganz klar: Wir fahren jeden Sommer nach Serbien, in das Dorf, wo ich aufgewachsen bin. Das sind fast zwölf Stunden mit dem Auto, ehrlich gesagt ziemlich anstrengend. Und am Meer liegen wir da auch nicht. Aber meine Eltern sind schon alt, und mein Sohn und meine Tochter sollen ihre Oma und ihren Opa richtig erleben. Sie sollen wissen, wo ihre Wurzeln sind, und auch die Sprache nicht vergessen. Das ist mir viel wichtiger als ein Hotel mit Pool.",
+            "item": 0
+          },
+          {
+            "speaker": "s2",
+            "voice": "woman_lisa",
+            "text": "Früher, als mein Mann noch gelebt hat, waren wir oft in Spanien oder in der Türkei. Das war auch schön. Aber heute bleibe ich lieber hier. Letztes Jahr war ich an der Ostsee, und im Herbst fahre ich mit meiner Freundin in den Schwarzwald. Diese Wälder, diese kleinen Städtchen – da muss man doch nicht stundenlang fliegen! Ich verstehe die Leute, ich kann alles lesen, und ehrlich, es gibt hier noch so einiges zu entdecken, das schaffe ich in meinem Leben gar nicht mehr alles.",
+            "item": 18
+          },
+          {
+            "speaker": "s3",
+            "voice": "man_christian",
+            "text": "Na ja, wir sind zu viert, die Kinder sind acht und elf. Und wir können nur in den Schulferien weg. Genau dann verlangen die Fluggesellschaften und Hotels das Doppelte. Ich hab mal für Mallorca gerechnet: über viertausend Euro für eine Woche! Das ist bei einem normalen Gehalt einfach nicht drin. Deshalb zelten wir an einem See in Brandenburg. Erholsam ist das nicht immer, die Kinder streiten, es regnet … Aber anders geht es halt nicht.",
+            "item": 19
+          },
+          {
+            "speaker": "s4",
+            "voice": "man_ben",
+            "text": "Für mich ist das gar keine Frage. Hier kenne ich doch schon alles. Ich arbeite ein bisschen mehr, spare, und dann geht's mit dem Rucksack los. Letztes Jahr war ich drei Monate in Südamerika. Da hab ich gemerkt, wie unterschiedlich man leben kann. In Bolivien haben mich wildfremde Leute zum Essen eingeladen, obwohl sie selbst kaum was hatten. Seitdem urteile ich nicht mehr so schnell über andere. Das lernt man an der Ostsee nicht, sorry.",
+            "item": 20
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "f"
+      ]
+    }
+  ],
+  "track": {
+    "src": "dtz/hoeren-07/track.mp3",
+    "duration": 1444.91,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 6.27,
+        "to": 17.01
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 20.04,
+        "to": 20.72
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 20.72,
+        "to": 32.76
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 32.76,
+        "to": 64.08
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 64.08,
+        "to": 79.12
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 80.17,
+        "to": 81.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1
+        ],
+        "from": 81.14,
+        "to": 93.18
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 93.18,
+        "to": 124.13
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1
+        ],
+        "from": 124.13,
+        "to": 139.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 140.23,
+        "to": 141.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          2
+        ],
+        "from": 141.14,
+        "to": 153.18
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 153.18,
+        "to": 184.95
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          2
+        ],
+        "from": 184.95,
+        "to": 199.99
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 201.04,
+        "to": 201.87
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3
+        ],
+        "from": 201.87,
+        "to": 213.92
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 213.92,
+        "to": 249.05
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3
+        ],
+        "from": 249.05,
+        "to": 264.1
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 265.14,
+        "to": 265.95
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          4
+        ],
+        "from": 265.95,
+        "to": 278
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 278,
+        "to": 307.49
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          4
+        ],
+        "from": 307.49,
+        "to": 322.53
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 331.31,
+        "to": 343.48
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 347.56,
+        "to": 348.42
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5
+        ],
+        "from": 348.42,
+        "to": 360.46
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 360.46,
+        "to": 398.99
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5
+        ],
+        "from": 398.99,
+        "to": 414.04
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6
+        ],
+        "from": 415.09,
+        "to": 415.95
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6
+        ],
+        "from": 415.95,
+        "to": 427.99
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6
+        ],
+        "from": 427.99,
+        "to": 461.58
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6
+        ],
+        "from": 461.58,
+        "to": 476.63
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          7
+        ],
+        "from": 477.68,
+        "to": 478.51
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          7
+        ],
+        "from": 478.51,
+        "to": 490.55
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          7
+        ],
+        "from": 490.55,
+        "to": 529.06
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          7
+        ],
+        "from": 529.06,
+        "to": 544.1
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          8
+        ],
+        "from": 545.15,
+        "to": 545.96
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          8
+        ],
+        "from": 545.96,
+        "to": 558
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          8
+        ],
+        "from": 558,
+        "to": 591.99
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          8
+        ],
+        "from": 591.99,
+        "to": 607.03
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          9
+        ],
+        "from": 608.08,
+        "to": 608.91
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          9
+        ],
+        "from": 608.91,
+        "to": 620.96
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          9
+        ],
+        "from": 620.96,
+        "to": 656.82
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          9
+        ],
+        "from": 656.82,
+        "to": 671.87
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          0,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "from": 680.62,
+        "to": 697.6
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 700.63,
+        "to": 701.31
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 701.31,
+        "to": 713.35
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 713.35,
+        "to": 768.26
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 768.26,
+        "to": 783.31
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11
+        ],
+        "from": 784.35,
+        "to": 786.08
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11
+        ],
+        "from": 786.08,
+        "to": 798.12
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11
+        ],
+        "from": 798.12,
+        "to": 851.83
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11
+        ],
+        "from": 851.83,
+        "to": 866.87
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12,
+          13
+        ],
+        "from": 867.92,
+        "to": 869.88
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          12,
+          13
+        ],
+        "from": 869.88,
+        "to": 881.92
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12,
+          13
+        ],
+        "from": 881.92,
+        "to": 940.04
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          12,
+          13
+        ],
+        "from": 940.04,
+        "to": 955.09
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14,
+          15
+        ],
+        "from": 956.13,
+        "to": 958.04
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          14,
+          15
+        ],
+        "from": 958.04,
+        "to": 970.08
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14,
+          15
+        ],
+        "from": 970.08,
+        "to": 1025.8
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          14,
+          15
+        ],
+        "from": 1025.8,
+        "to": 1040.85
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1041.89,
+        "to": 1043.88
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1043.88,
+        "to": 1055.92
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1055.92,
+        "to": 1106.94
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1106.94,
+        "to": 1121.99
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          18,
+          19,
+          20
+        ],
+        "from": 1130.76,
+        "to": 1146.28
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          0,
+          18,
+          19,
+          20
+        ],
+        "from": 1149.31,
+        "to": 1219.34
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          18,
+          19,
+          20
+        ],
+        "from": 1219.34,
+        "to": 1235.88
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 1238.91,
+        "to": 1239.59
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 1243.64,
+        "to": 1274.44
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 1274.44,
+        "to": 1289.48
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          18
+        ],
+        "from": 1290.53,
+        "to": 1291.57
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          18
+        ],
+        "from": 1295.62,
+        "to": 1327.26
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          18
+        ],
+        "from": 1327.26,
+        "to": 1342.3
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          19
+        ],
+        "from": 1343.35,
+        "to": 1344.47
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          19
+        ],
+        "from": 1348.52,
+        "to": 1376.42
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          19
+        ],
+        "from": 1376.42,
+        "to": 1391.46
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          20
+        ],
+        "from": 1392.51,
+        "to": 1393.61
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          20
+        ],
+        "from": 1397.66,
+        "to": 1425.55
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          20
+        ],
+        "from": 1425.55,
+        "to": 1440.6
+      }
+    ]
+  }
+}

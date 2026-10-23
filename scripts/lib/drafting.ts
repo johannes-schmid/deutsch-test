@@ -9,7 +9,11 @@ import { EXAM_CONTEXT } from "@/lib/exam/exam-blueprints"
 import { PICTO_KEYS } from "@/lib/exam/pictos"
 import type { ExamId } from "@/lib/exams"
 
-export const MODEL = "claude-opus-5-5"
+export const MODEL = process.env.DRAFT_MODEL ?? "claude-opus-5-5"
+/** medium beat high in the 2026-10-23 blind eval (LEARNINGS.md), at ~12% less cost. */
+const EFFORT = (process.env.DRAFT_EFFORT ?? "medium") as "low" | "medium" | "high" | "xhigh" | "max"
+/** $ per million tokens (input, output), for the cost line. */
+const PRICE: Record<string, [number, number]> = { "claude-opus-5-5": [4, 20], "claude-sonnet-5-5": [2, 10], "claude-haiku-5-5": [0.1, 0.5], "claude-fable-5-1": [10, 50] }
 export const TONES = ["var(--v-sk-lesen)", "var(--v-sk-schreiben)", "var(--v-sk-sprechen)"]
 export const letters = "abcdefgh"
 const client = new Anthropic()
@@ -101,20 +105,71 @@ export const SpeakingOutput = z.object({
   pictureBrief: z.string().nullable(),
 })
 
+type Usage = { input_tokens: number; output_tokens: number }
+type Done = { stop_reason: string | null; text: string; usage: Usage; refusal?: string }
+
+/** DRAFT_BATCH=1: requests go through the Message Batches API at 50% of the price; slower (minutes per round trip). */
+const BATCH = process.env.DRAFT_BATCH === "1"
+const queue: { id: string; params: Anthropic.MessageCreateParamsNonStreaming; resolve: (d: Done) => void; reject: (e: unknown) => void }[] = []
+let flushTimer: NodeJS.Timeout | undefined
+let seq = 0
+
+/** Sends everything queued within 3 s as one batch, then polls until it ends. */
+async function flush() {
+  const jobs = queue.splice(0)
+  try {
+    const batch = await client.messages.batches.create({ requests: jobs.map((j) => ({ custom_id: j.id, params: j.params })) })
+    console.log(`    batch ${batch.id}: ${jobs.length} request(s)`)
+    let status = batch.processing_status
+    while (status !== "ended") {
+      await new Promise((r) => setTimeout(r, 30_000))
+      status = (await client.messages.batches.retrieve(batch.id)).processing_status
+    }
+    const byId = new Map(jobs.map((j) => [j.id, j]))
+    for await (const r of await client.messages.batches.results(batch.id)) {
+      const job = byId.get(r.custom_id)
+      if (!job) continue
+      byId.delete(r.custom_id)
+      if (r.result.type !== "succeeded") { job.reject(new Error(`Batch request ${r.result.type}${r.result.type === "errored" ? `: ${r.result.error.error.message}` : ""}`)); continue }
+      const m = r.result.message
+      job.resolve({ stop_reason: m.stop_reason, usage: m.usage, text: m.content.flatMap((c) => (c.type === "text" ? [c.text] : [])).join(""), refusal: m.stop_details?.explanation ?? undefined })
+    }
+    for (const job of byId.values()) job.reject(new Error("Batch request missing from results"))
+  } catch (e) {
+    for (const job of jobs) job.reject(e)
+  }
+}
+
+function viaBatch(params: Anthropic.MessageCreateParamsNonStreaming): Promise<Done> {
+  return new Promise((resolve, reject) => {
+    queue.push({ id: `r${process.pid}-${++seq}`, params, resolve, reject })
+    clearTimeout(flushTimer)
+    flushTimer = setTimeout(flush, 3000)
+  })
+}
+
+async function viaStream(params: Anthropic.MessageCreateParamsNonStreaming): Promise<Done> {
+  const m = await client.messages.stream(params).finalMessage()
+  return { stop_reason: m.stop_reason, usage: m.usage, text: m.content.flatMap((c) => (c.type === "text" ? [c.text] : [])).join(""), refusal: m.stop_details?.explanation ?? undefined }
+}
+
 /** `image`: an optional picture the model looks at before answering (base64, e.g. a Sprechen photo). */
-export const makeAsk = (system: string) => async function ask<T extends z.ZodType>(schema: T, prompt: string, image?: { data: string; mediaType: "image/webp" | "image/jpeg" | "image/png" }): Promise<z.infer<T>> {
-  const res = await client.messages.parse({
-    model: MODEL,
-    max_tokens: 16000,
-    output_config: { effort: "high", format: zodOutputFormat(schema) },
+export const makeAsk = (system: string, model = MODEL) => async function ask<T extends z.ZodType>(schema: T, prompt: string, image?: { data: string; mediaType: "image/webp" | "image/jpeg" | "image/png" }): Promise<z.infer<T>> {
+  const format = zodOutputFormat(schema)
+  const params: Anthropic.MessageCreateParamsNonStreaming = {
+    model,
+    max_tokens: 32000,
+    output_config: { effort: EFFORT, format: { type: format.type, schema: format.schema } },
     system,
     messages: [{ role: "user", content: image ? [{ type: "image", source: { type: "base64", media_type: image.mediaType, data: image.data } }, { type: "text", text: prompt }] : prompt }],
-  })
-  if (res.stop_reason === "refusal") throw new Error(`Refused: ${res.stop_details?.explanation ?? ""}`)
-  if (!res.parsed_output) throw new Error(`Unparseable output (stop_reason ${res.stop_reason})`)
-  const cost = (res.usage.input_tokens * 4 + res.usage.output_tokens * 20) / 1e6
-  console.log(`    in=${res.usage.input_tokens} out=${res.usage.output_tokens} ~$${cost.toFixed(3)}`)
-  return res.parsed_output
+  }
+  const res = await (BATCH ? viaBatch(params) : viaStream(params))
+  if (res.stop_reason === "refusal") throw new Error(`Refused: ${res.refusal ?? ""}`)
+  if (res.stop_reason === "max_tokens" || !res.text) throw new Error(`Unparseable output (stop_reason ${res.stop_reason})`)
+  const [pin, pout] = PRICE[model] ?? [4, 20]
+  const cost = ((res.usage.input_tokens * pin + res.usage.output_tokens * pout) / 1e6) * (BATCH ? 0.5 : 1)
+  console.log(`    in=${res.usage.input_tokens} out=${res.usage.output_tokens} ~$${cost.toFixed(3)}${BATCH ? " (batch)" : ""}`)
+  return format.parse(res.text) as z.infer<T>
 }
 
 /** Picks a free voice per speaker. `pool` restricts the choice to approved voice keys (e.g. per DTZ Teil). */

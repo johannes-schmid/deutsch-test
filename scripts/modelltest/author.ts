@@ -32,13 +32,15 @@ if (!["lesen", "hoeren", "schreiben", "sprechen"].includes(SKILL) || !(SET >= 1 
 if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY missing (run with --env-file=.env.local)")
 
 const NN = String(SET).padStart(2, "0")
-const DIR = `data/modelltest/${EXAM}`
+const DIR = `${process.env.MT_OUT ?? "data/modelltest"}/${EXAM}`
 const FILE = path.join(DIR, `${SKILL}-${NN}.json`)
-const CACHE = `.unit-cache/modelltest/${EXAM}`
+const CACHE = `${process.env.MT_OUT ? `${process.env.MT_OUT}/cache` : ".unit-cache/modelltest"}/${EXAM}`
 const ask = makeAsk(`${DTZ_SYSTEM}
 - Das ist ein vollständiger Modelltest, keine gekürzte Übung: genau so viele Texte, Aufgaben und Wörter wie in der echten Prüfung.
 - Schreibe die Lösung nicht immer an dieselbe Stelle; wo eine Zielantwort vorgegeben ist, halte dich daran.
 - Daten ohne Jahreszahl oder mit "20.." (z. B. "12.03.20.."), damit der Test nicht veraltet.`)
+/** The originality check stays on Opus whichever model drafts. */
+const judge = makeAsk(DTZ_SYSTEM, "claude-opus-5-5")
 
 /** Approved voices per role (Hannes, 2026-10-22, CLAUDE.md "Voice cast"). DTZ is German-only; Mark is the narrator. */
 const POOL = ["man_ben", "man_christian", "man_simon", "woman_ela", "woman_irene", "woman_laura"]
@@ -151,7 +153,7 @@ const Overlaps = z.object({ overlaps: z.array(z.object({ ours: z.string(), offic
 /** A second pass that compares situations, not words: the set 1 Hören re-skinned Übungssatz 2 item by item without copying a sentence. */
 async function originality(teil: number, blocks: MtBlock[]) {
   const content = blocks.map((b) => ({ text: b.display.reading?.paragraphs ?? b.key.script?.map((t) => t.text) ?? b.display.writing ?? b.display.speaking?.turns.filter((t) => t.who !== "du").map((t) => t.text), items: b.display.items, statements: b.display.items }))
-  const o = await ask(Overlaps, `Prüfe einen neuen Prüfungsteil auf zu große Nähe zu offiziellem Material.
+  const o = await judge(Overlaps, `Prüfe einen neuen Prüfungsteil auf zu große Nähe zu offiziellem Material.
 ${officialNote(teil)}
 
 Neuer Teil (JSON):
@@ -379,6 +381,7 @@ const Sprechen3 = z.object({
 })
 
 const SPRECHEN_ROLES = `Paarprüfung DTZ: eine Prüferin (spricht beide mit Sie an, freundlich, ruhig, kurze klare Sätze), ein Partner (anderer Prüfungsteilnehmer, männlich, duzt die andere Person nur in Teil 3) und "du" (die Person, die übt).
+Die Prüferin spricht "du" nie mit Namen an (die übende Person hat ihren eigenen Namen); mit Namen nur den Partner ("Herr <Nachname>") und ihre Kollegin.
 Der Partner ist ein echter Lerner zwischen A2 und B1, kein Muttersprachler: kurze, einfache Sätze, Alltagswortschatz, keine B2-Wendungen; ab und zu "äh" oder eine kurze Pause; in etwa jedem zweiten Beitrag ein kleiner typischer Lernerfehler (Verb im Nebensatz nicht am Ende, falscher Artikel oder falsche Endung, "mehr gut"), nie mehr als einer pro Beitrag und nie so, dass man ihn nicht versteht.
 Alles ist gesprochene Sprache: Zahlen ausgeschrieben, keine Aufzählungszeichen, keine Klammern.`
 
@@ -510,6 +513,7 @@ async function unit(teil: number, set: MtSet): Promise<MtBlock[]> {
       feedback.push(...copiedPhrases(blocks))
       if (!feedback.length) feedback = await originality(teil, blocks)
     } catch (e) {
+      if (e instanceof Error && /credit balance/i.test(e.message)) throw new Error("Anthropic credit balance too low, stopping")
       feedback = [e instanceof Error ? e.message : String(e)]
     }
     if (!feedback.length) break

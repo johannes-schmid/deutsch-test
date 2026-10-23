@@ -1,0 +1,802 @@
+{
+  "exam": "dtz",
+  "skill": "lesen",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "dtz-lesen-06-t1-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:18:38.490Z",
+        "textType": "Wegweiser im Kaufhaus (Stockwerke, Abteilungen)"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben und die Übersicht. Wo (a, b oder c) finden Sie die Information?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ihre Tochter kommt im Sommer in die erste Klasse. Sie braucht noch eine Tasche für ihre Bücher und Hefte.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "EG"
+                },
+                {
+                  "key": "b",
+                  "label": "3. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 21,
+              "prompt": "Bei Ihren Stiefeln ist der Absatz abgebrochen. Sie möchten die Stiefel reparieren lassen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "2. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 22,
+              "prompt": "Ihr Mann hat eine neue Hose gekauft. Leider ist sie zu lang und muss kürzer gemacht werden.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "2. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Sie haben gestern im Kaufhaus Ihren Schal liegen lassen. Sie möchten fragen, ob ihn jemand abgegeben hat.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "EG"
+                },
+                {
+                  "key": "b",
+                  "label": "1. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Sie sind mit Ihrem kleinen Sohn beim Einkaufen. Er braucht dringend eine frische Windel.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "5. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "3. OG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Das Ladekabel für Ihr Smartphone ist kaputt. Sie möchten ein neues kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. OG"
+                },
+                {
+                  "key": "b",
+                  "label": "EG"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Kaufhaus Hellmann – Bahnhofstraße 18, Kornstadt",
+          "source": "Wegweiser im Kaufhaus (Stockwerke und Abteilungen)",
+          "paragraphs": [
+            "UG – Lebensmittel: Feinkost, Obst und Gemüse, Backshop, Getränke, Weine, Drogerieartikel; Service: Schuhreparatur, Schlüsseldienst, Pfandautomat",
+            "EG – Kosmetik und Parfümerie, Schmuck, Uhren, Lederwaren, Taschen, Regenschirme, Sonnenbrillen; Service: Kundeninformation mit Fundbüro, Geschenkgutscheine, Kasse für Rücknahmen",
+            "1. OG – Damenmode: Mäntel, Jacken, Kleider, Hosen, Blusen, Wäsche, Bademode, Umstandsmode, Damenschuhe, Accessoires (Schals, Mützen, Handschuhe)",
+            "2. OG – Herrenmode: Anzüge, Hemden, Krawatten, Jeans, Herrenschuhe, Sportbekleidung, Sportschuhe; Service: Änderungsschneiderei für Damen- und Herrenkleidung",
+            "3. OG – Kinderwelt: Babyausstattung, Kinderwagen, Autositze, Spielwaren, Bastelbedarf, Schulranzen und Schulbedarf, Kindermode von 0 bis 14 Jahre",
+            "4. OG – Haushalt und Wohnen: Geschirr, Gläser, Töpfe und Pfannen, Elektrokleingeräte, Bettwaren, Handtücher, Vorhänge, Dekoration",
+            "5. OG – Multimedia: Handys und Zubehör, Computer, Drucker, Fernseher, Spielkonsolen, Fotoservice; Restaurant „Dachgarten“ mit Terrasse, Kundentoiletten, Wickelraum"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 21,
+            "correct": "c",
+            "explanation": "Im 1. und 2. OG kann man Schuhe nur kaufen. Die Schuhreparatur ist im UG, also auf einem anderen Stockwerk.",
+            "evidence": {
+              "text": "UG – Lebensmittel: Feinkost, Obst und Gemüse, Backshop, Getränke, Weine, Drogerieartikel; Service: Schuhreparatur, Schlüsseldienst, Pfandautomat",
+              "hit": "Service: Schuhreparatur, Schlüsseldienst"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "b",
+            "explanation": "Kleidung ändern lassen kann man in der Änderungsschneiderei im 2. OG. Im 1. OG gibt es Hosen nur zu kaufen.",
+            "evidence": {
+              "text": "2. OG – Herrenmode: Anzüge, Hemden, Krawatten, Jeans, Herrenschuhe, Sportbekleidung, Sportschuhe; Service: Änderungsschneiderei für Damen- und Herrenkleidung",
+              "hit": "Service: Änderungsschneiderei für Damen- und Herrenkleidung"
+            }
+          },
+          {
+            "n": 23,
+            "correct": "a",
+            "explanation": "Vergessene Sachen sind im Fundbüro, das ist bei der Kundeninformation im EG. Im 1. OG kann man nur neue Schals kaufen.",
+            "evidence": {
+              "text": "EG – Kosmetik und Parfümerie, Schmuck, Uhren, Lederwaren, Taschen, Regenschirme, Sonnenbrillen; Service: Kundeninformation mit Fundbüro, Geschenkgutscheine, Kasse für Rücknahmen",
+              "hit": "Kundeninformation mit Fundbüro"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "a",
+            "explanation": "Den Wickelraum findest du im 5. OG. Im 3. OG gibt es Babysachen nur zu kaufen.",
+            "evidence": {
+              "text": "5. OG – Multimedia: Handys und Zubehör, Computer, Drucker, Fernseher, Spielkonsolen, Fotoservice; Restaurant „Dachgarten“ mit Terrasse, Kundentoiletten, Wickelraum",
+              "hit": "Kundentoiletten, Wickelraum"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Zubehör für Handys gibt es bei Multimedia im 5. OG. Im 4. OG gibt es nur Elektrogeräte für den Haushalt.",
+            "evidence": {
+              "text": "5. OG – Multimedia: Handys und Zubehör, Computer, Drucker, Fernseher, Spielkonsolen, Fotoservice; Restaurant „Dachgarten“ mit Terrasse, Kundentoiletten, Wickelraum",
+              "hit": "Handys und Zubehör"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "dtz-lesen-06-t2-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:21:36.009Z",
+        "textType": "Kleinanzeigen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen und die Anzeigen a–h. Finden Sie für jede Situation die passende Anzeige. Für eine Aufgabe gibt es keine Lösung. Markieren Sie in diesem Fall ein X.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "FitPoint Lindenau – rund um die Uhr geöffnet",
+                  "text": "Bei uns trainieren Sie, wann Sie wollen: Unser Studio in der Merseburger Straße 41 ist an sieben Tagen in der Woche 24 Stunden geöffnet. Mit Ihrer Mitgliedskarte kommen Sie jederzeit hinein. Moderne Geräte, Kurse am Abend und kostenlose Parkplätze. Ab 24,90 Euro im Monat, keine Aufnahmegebühr bis Ende des Monats. Probetraining: 0341 / 58 72 19."
+                },
+                {
+                  "key": "b",
+                  "title": "Fit mit Kinderwagen",
+                  "text": "Ein Sportkurs für junge Mütter und Väter: Wir treffen uns im Clara-Zetkin-Park und trainieren Bauch, Beine und Po, während die Kleinen im Wagen dabei sind. Geeignet ab etwa acht Wochen nach der Geburt. Montags und freitags, 10 bis 11 Uhr, bei jedem Wetter. Fünferkarte 40 Euro. Leitung: Hebamme und Fitnesstrainerin Nadine Kroll, Anmeldung per SMS: 0162 / 58 03 74 11."
+                },
+                {
+                  "key": "c",
+                  "title": "Gesunder Rücken – Kurs im Gesundheitszentrum Vita",
+                  "text": "Sie sitzen viel am Schreibtisch und haben oft Verspannungen? In unserem Kurs lernen Sie einfache Übungen, die Sie auch zu Hause oder im Büro machen können. Acht Treffen, immer mittwochs um 18:30 Uhr, Gruppe mit maximal zwölf Personen. Der Kurs ist von den Krankenkassen anerkannt: Die meisten Kassen zahlen bis zu 80 Prozent zurück. Infos: Physiotherapie Vita, Karl-Heine-Straße 12."
+                },
+                {
+                  "key": "d",
+                  "title": "Lauftreff Auenwald – Laufen in der Gruppe",
+                  "text": "Joggen macht zusammen mehr Spaß! Jeden Sonntag um 9 Uhr treffen wir uns am Eingang Auenwald, Ecke Gustav-Esche-Straße. Wir laufen in zwei Gruppen: langsam (5 km) und schneller (10 km). Mitmachen kann jeder ab 16 Jahren, das Angebot ist kostenlos. Einfach vorbeikommen, Anmeldung ist nicht nötig. Fragen an Torsten: 0176 / 33 81 05 27."
+                },
+                {
+                  "key": "e",
+                  "title": "Heimtrainer zu verkaufen",
+                  "text": "Verkaufe wegen Umzug meinen Crosstrainer, Marke Kettner, drei Jahre alt und in sehr gutem Zustand. Mit Display für Puls, Zeit und Kalorien, zwölf Stufen. Neupreis 600 Euro, jetzt für 180 Euro. Das Gerät ist zusammengebaut und muss in Gohlis abgeholt werden, Lieferung leider nicht möglich. Bitte nur ernst gemeinte Anrufe abends ab 19 Uhr: 0157 / 22 64 91 38."
+                },
+                {
+                  "key": "f",
+                  "title": "Seepferdchen-Kurse im Hallenbad Nord",
+                  "text": "Ab dem 3. März starten neue Anfängerkurse für Kinder von 5 bis 10 Jahren. In kleinen Gruppen mit höchstens acht Kindern lernen die Kleinen ohne Angst schwimmen. Zehn Termine, jeweils dienstags oder donnerstags von 16 bis 16:45 Uhr. Die Eltern warten im Café. Kosten: 85 Euro inklusive Eintritt. Anmeldung an der Kasse oder unter 0341 / 90 44 63."
+                },
+                {
+                  "key": "g",
+                  "title": "Ernährungsberatung Grünkern",
+                  "text": "Sie möchten abnehmen oder sich einfach gesünder ernähren? Unsere Ernährungsberaterin Sabine Wollny hilft Ihnen mit einem persönlichen Plan, der zu Ihrem Alltag passt. Auch bei Diabetes oder Lebensmittelallergien. Erstgespräch (60 Minuten) für 45 Euro. Termine nach Vereinbarung, auch samstags. Praxis Grünkern, Lützner Straße 88, Telefon 0341 / 47 15 92."
+                },
+                {
+                  "key": "h",
+                  "title": "TTV Leutzsch sucht Mitspieler",
+                  "text": "Unser Tischtennisverein sucht neue Mitglieder für die Hobbymannschaft. Training ist dienstags und donnerstags ab 19:30 Uhr in der Sporthalle der Schule am Rathenaupark. Anfänger sind willkommen, Schläger können am Anfang ausgeliehen werden. Jahresbeitrag 60 Euro für Erwachsene, Jugendliche zahlen die Hälfte. Kommen Sie einfach vorbei! Kontakt: ttv-leutzsch@mailbox.de"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 26,
+                  "text": "Weil Sie im Job den ganzen Tag vor dem Computer sitzen, tut Ihnen abends das Kreuz weh, und Sie suchen ein Gruppenangebot, das Ihre Versicherung zum Teil bezahlt."
+                },
+                {
+                  "n": 27,
+                  "text": "Ihre Freundin hat vor drei Monaten ein Baby bekommen und möchte wieder in Form kommen, ohne jemanden zu suchen, der in dieser Zeit auf das Kind aufpasst."
+                },
+                {
+                  "n": 28,
+                  "text": "Sie sind 35 Jahre alt und können sich im Wasser nicht über Wasser halten, deshalb möchten Sie das jetzt endlich lernen."
+                },
+                {
+                  "n": 29,
+                  "text": "Sie möchten bei Regen und Kälte in Ihrem Wohnzimmer Sport machen und suchen dafür etwas Gebrauchtes, das nicht viel kostet."
+                },
+                {
+                  "n": 30,
+                  "text": "Sie arbeiten oft bis spät in die Nacht und möchten auch nach Feierabend um zwei Uhr morgens noch Sport treiben können."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 26,
+            "correct": "c",
+            "explanation": "Der Kurs „Gesunder Rücken“ ist für Menschen, die viel sitzen, und die Krankenkasse zahlt einen Teil. Bei der Ernährungsberatung geht es um Essen, nicht um Schmerzen.",
+            "evidence": {
+              "text": "Sie sitzen viel am Schreibtisch und haben oft Verspannungen? In unserem Kurs lernen Sie einfache Übungen, die Sie auch zu Hause oder im Büro machen können. Acht Treffen, immer mittwochs um 18:30 Uhr, Gruppe mit maximal zwölf Personen. Der Kurs ist von den Krankenkassen anerkannt: Die meisten Kassen zahlen bis zu 80 Prozent zurück. Infos: Physiotherapie Vita, Karl-Heine-Straße 12.",
+              "hit": "Der Kurs ist von den Krankenkassen anerkannt: Die meisten Kassen zahlen bis zu 80 Prozent zurück."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "b",
+            "explanation": "Bei „Fit mit Kinderwagen“ sind die Babys beim Training dabei. Beim Lauftreff Auenwald steht nichts von Kindern.",
+            "evidence": {
+              "text": "Ein Sportkurs für junge Mütter und Väter: Wir treffen uns im Clara-Zetkin-Park und trainieren Bauch, Beine und Po, während die Kleinen im Wagen dabei sind. Geeignet ab etwa acht Wochen nach der Geburt. Montags und freitags, 10 bis 11 Uhr, bei jedem Wetter. Fünferkarte 40 Euro. Leitung: Hebamme und Fitnesstrainerin Nadine Kroll, Anmeldung per SMS: 0162 / 58 03 74 11.",
+              "hit": "trainieren Bauch, Beine und Po, während die Kleinen im Wagen dabei sind"
+            }
+          },
+          {
+            "n": 28,
+            "correct": "x",
+            "explanation": "Die Seepferdchen-Kurse im Hallenbad Nord sind nur für Kinder von 5 bis 10 Jahren. Für Erwachsene gibt es kein passendes Angebot.",
+            "evidence": {
+              "text": "Ab dem 3. März starten neue Anfängerkurse für Kinder von 5 bis 10 Jahren. In kleinen Gruppen mit höchstens acht Kindern lernen die Kleinen ohne Angst schwimmen. Zehn Termine, jeweils dienstags oder donnerstags von 16 bis 16:45 Uhr. Die Eltern warten im Café. Kosten: 85 Euro inklusive Eintritt. Anmeldung an der Kasse oder unter 0341 / 90 44 63.",
+              "hit": "Ab dem 3. März starten neue Anfängerkurse für Kinder von 5 bis 10 Jahren."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "e",
+            "explanation": "Der Crosstrainer ist gebraucht, billig und für zu Hause. Das Fitnessstudio FitPoint ist kein Gerät für die eigene Wohnung.",
+            "evidence": {
+              "text": "Verkaufe wegen Umzug meinen Crosstrainer, Marke Kettner, drei Jahre alt und in sehr gutem Zustand. Mit Display für Puls, Zeit und Kalorien, zwölf Stufen. Neupreis 600 Euro, jetzt für 180 Euro. Das Gerät ist zusammengebaut und muss in Gohlis abgeholt werden, Lieferung leider nicht möglich. Bitte nur ernst gemeinte Anrufe abends ab 19 Uhr: 0157 / 22 64 91 38.",
+              "hit": "Neupreis 600 Euro, jetzt für 180 Euro."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "a",
+            "explanation": "FitPoint Lindenau hat Tag und Nacht offen. Der TTV Leutzsch trainiert nur abends ab 19:30 Uhr, nicht mitten in der Nacht.",
+            "evidence": {
+              "text": "Bei uns trainieren Sie, wann Sie wollen: Unser Studio in der Merseburger Straße 41 ist an sieben Tagen in der Woche 24 Stunden geöffnet. Mit Ihrer Mitgliedskarte kommen Sie jederzeit hinein. Moderne Geräte, Kurse am Abend und kostenlose Parkplätze. Ab 24,90 Euro im Monat, keine Aufnahmegebühr bis Ende des Monats. Probetraining: 0341 / 58 72 19.",
+              "hit": "ist an sieben Tagen in der Woche 24 Stunden geöffnet"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-06-t3-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:23:42.106Z",
+        "textType": "Pressemeldung: Bauarbeiten am Bahnhof"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 31,
+              "statement": "Am Bahnhof Lindenau wird mehrere Monate lang gebaut."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 32,
+              "prompt": "Während der Bauarbeiten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "fahren die Züge nach Bergheim an einem anderen Gleis ab."
+                },
+                {
+                  "key": "b",
+                  "label": "ist der Haupteingang des Bahnhofs geschlossen."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man das Parkhaus am Bahnhof gar nicht benutzen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Pressemeldung",
+          "paragraphs": [
+            "Lindenau – Bauarbeiten am Hauptbahnhof",
+            "Ab Montag, dem 14. Juli, wird am Hauptbahnhof Lindenau gebaut. Die Bahn erneuert die Gleise 3 und 4 und baut an beiden Bahnsteigen neue Aufzüge ein. Die Arbeiten dauern voraussichtlich bis Ende Oktober.",
+            "In dieser Zeit fahren die Regionalzüge nach Bergheim und Talstadt nicht ab Gleis 3, sondern ab Gleis 7. Reisende sollten mehr Zeit zum Umsteigen einplanen. Der Haupteingang bleibt geöffnet, der Seiteneingang an der Bahnhofstraße ist jedoch gesperrt.",
+            "Wer mit dem Auto kommt, muss mit weniger Parkplätzen rechnen: Das Parkhaus am Bahnhof ist während der gesamten Bauzeit nur zur Hälfte nutzbar. Die Stadt empfiehlt, mit dem Bus oder dem Fahrrad zum Bahnhof zu fahren. Aktuelle Informationen gibt es in der App „Bahn aktuell“ und an den Infotafeln im Bahnhof."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 31,
+            "correct": "richtig",
+            "explanation": "Die Bauarbeiten beginnen im Juli und dauern bis Ende Oktober. Das sind mehrere Monate.",
+            "evidence": {
+              "text": "Ab Montag, dem 14. Juli, wird am Hauptbahnhof Lindenau gebaut. Die Bahn erneuert die Gleise 3 und 4 und baut an beiden Bahnsteigen neue Aufzüge ein. Die Arbeiten dauern voraussichtlich bis Ende Oktober.",
+              "hit": "Die Arbeiten dauern voraussichtlich bis Ende Oktober."
+            }
+          },
+          {
+            "n": 32,
+            "correct": "a",
+            "explanation": "Die Züge nach Bergheim fahren ab Gleis 7 statt ab Gleis 3. Das Parkhaus ist nicht ganz gesperrt, man kann die Hälfte benutzen.",
+            "evidence": {
+              "text": "In dieser Zeit fahren die Regionalzüge nach Bergheim und Talstadt nicht ab Gleis 3, sondern ab Gleis 7. Reisende sollten mehr Zeit zum Umsteigen einplanen. Der Haupteingang bleibt geöffnet, der Seiteneingang an der Bahnhofstraße ist jedoch gesperrt.",
+              "hit": "In dieser Zeit fahren die Regionalzüge nach Bergheim und Talstadt nicht ab Gleis 3, sondern ab Gleis 7."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-06-t3-02",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:23:42.106Z",
+        "textType": "Aushang in der Arztpraxis: Urlaub und Vertretung"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 33,
+              "statement": "Wer während des Urlaubs dringend einen Arzt braucht, kann in eine andere Praxis gehen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 34,
+              "prompt": "Was müssen Patienten tun, die regelmäßig ein Rezept brauchen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sie müssen das Rezept bei Dr. Yilmaz abholen."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie müssen es noch vor dem Praxisurlaub bestellen."
+                },
+                {
+                  "key": "c",
+                  "label": "Sie können es nur vormittags im Internet bestellen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Praxisteam Dr. Hartwig",
+          "source": "Aushang",
+          "paragraphs": [
+            "Liebe Patientinnen und Patienten,",
+            "unsere Praxis bleibt vom 4. bis zum 22. August wegen Urlaub geschlossen. Ab Montag, dem 25. August, sind wir zu den üblichen Sprechzeiten wieder für Sie da.",
+            "In dringenden Fällen übernimmt die Hausarztpraxis Dr. Yilmaz in der Gartenstraße 12 die Vertretung (Telefon 0751 48 29 60). Bitte bringen Sie dorthin Ihre Versichertenkarte mit.",
+            "Rezepte für Medikamente, die Sie regelmäßig nehmen, können Sie noch bis Donnerstag, den 31. Juli, bei uns bestellen. Bestellungen per Telefon sind nur vormittags möglich, über unsere Internetseite jederzeit. Die Rezepte liegen dann ab dem nächsten Werktag am Empfang für Sie bereit.",
+            "Nachts und am Wochenende erreichen Sie den ärztlichen Bereitschaftsdienst unter der Nummer 116 117.",
+            "Wir wünschen Ihnen einen schönen Sommer!",
+            "Ihr Praxisteam Dr. Hartwig"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 33,
+            "correct": "richtig",
+            "explanation": "Die Praxis Dr. Yilmaz macht in dringenden Fällen die Vertretung. Du kannst also dorthin gehen.",
+            "evidence": {
+              "text": "In dringenden Fällen übernimmt die Hausarztpraxis Dr. Yilmaz in der Gartenstraße 12 die Vertretung (Telefon 0751 48 29 60). Bitte bringen Sie dorthin Ihre Versichertenkarte mit.",
+              "hit": "In dringenden Fällen übernimmt die Hausarztpraxis Dr. Yilmaz in der Gartenstraße 12 die Vertretung"
+            }
+          },
+          {
+            "n": 34,
+            "correct": "b",
+            "explanation": "Rezepte kann man nur bis zum 31. Juli bestellen, also vor dem Urlaub. Nur am Telefon geht es vormittags, im Internet jederzeit.",
+            "evidence": {
+              "text": "Rezepte für Medikamente, die Sie regelmäßig nehmen, können Sie noch bis Donnerstag, den 31. Juli, bei uns bestellen. Bestellungen per Telefon sind nur vormittags möglich, über unsere Internetseite jederzeit. Die Rezepte liegen dann ab dem nächsten Werktag am Empfang für Sie bereit.",
+              "hit": "Rezepte für Medikamente, die Sie regelmäßig nehmen, können Sie noch bis Donnerstag, den 31. Juli, bei uns bestellen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-06-t3-03",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:23:42.106Z",
+        "textType": "E-Mail des Kindergartens: Schließtage im August"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 35,
+              "statement": "Der Kindergarten ist im August den ganzen Monat geschlossen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 36,
+              "prompt": "Die Notgruppe …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "findet im Kindergarten Regenbogen statt."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man bis Ende August beantragen."
+                },
+                {
+                  "key": "c",
+                  "label": "ist nur für Kinder von berufstätigen Eltern."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Petra Lehmkuhl, Leitung Kindergarten Regenbogen",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Eltern,",
+            "wie jedes Jahr schließt unser Kindergarten im Sommer für drei Wochen. In diesem Jahr ist er vom 11. bis zum 29. August geschlossen. Diese Termine haben wir mit dem Elternbeirat abgestimmt.",
+            "Eltern, die in dieser Zeit keine Betreuung für ihr Kind finden, können einen Platz in der Notgruppe im Kindergarten Kastanienhof beantragen. Die Notgruppe ist allerdings nur für Kinder gedacht, deren Eltern beide berufstätig sind. Bitte füllen Sie dafür das Formular im Anhang aus und geben Sie es bis zum 30. Juni bei uns im Büro ab.",
+            "Am Montag, dem 1. September, beginnt dann das neue Kindergartenjahr. An diesem Tag öffnen wir ausnahmsweise erst um 9 Uhr, weil wir morgens eine Teambesprechung haben.",
+            "Viele Grüße",
+            "Petra Lehmkuhl",
+            "Leitung Kindergarten Regenbogen"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 35,
+            "correct": "falsch",
+            "explanation": "Der Kindergarten ist nur drei Wochen zu, vom 11. bis zum 29. August. Anfang August ist er noch offen.",
+            "evidence": {
+              "text": "wie jedes Jahr schließt unser Kindergarten im Sommer für drei Wochen. In diesem Jahr ist er vom 11. bis zum 29. August geschlossen. Diese Termine haben wir mit dem Elternbeirat abgestimmt.",
+              "hit": "In diesem Jahr ist er vom 11. bis zum 29. August geschlossen."
+            }
+          },
+          {
+            "n": 36,
+            "correct": "c",
+            "explanation": "Nur Kinder, deren Eltern beide arbeiten, dürfen in die Notgruppe. Sie ist im Kindergarten Kastanienhof, nicht im Kindergarten Regenbogen.",
+            "evidence": {
+              "text": "Eltern, die in dieser Zeit keine Betreuung für ihr Kind finden, können einen Platz in der Notgruppe im Kindergarten Kastanienhof beantragen. Die Notgruppe ist allerdings nur für Kinder gedacht, deren Eltern beide berufstätig sind. Bitte füllen Sie dafür das Formular im Anhang aus und geben Sie es bis zum 30. Juni bei uns im Büro ab.",
+              "hit": "Die Notgruppe ist allerdings nur für Kinder gedacht, deren Eltern beide berufstätig sind."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-06-t4-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:24:59.779Z",
+        "textType": "Teilnahmebedingungen eines Integrationskurses"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text. Entscheiden Sie, ob die Aussagen richtig oder falsch sind.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 37,
+              "statement": "Für den Test vor dem Kurs muss man nichts bezahlen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 38,
+              "statement": "Die Kursgebühr kann man auch bar im Büro bezahlen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 39,
+              "statement": "Wer länger als zwei Tage krank ist, muss ein Attest vom Arzt abgeben."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Volkshochschule Reinsberg – Fachbereich Deutsch",
+          "source": "Merkblatt für Kursteilnehmende",
+          "paragraphs": [
+            "Teilnahmebedingungen für unsere Integrationskurse",
+            "Anmeldung",
+            "Bitte melden Sie sich persönlich im Kursbüro an (Raum 012, Erdgeschoss). Bringen Sie Ihren Pass oder Ihre Aufenthaltserlaubnis und, falls vorhanden, Ihren Berechtigungsschein mit. Vor Kursbeginn machen alle Teilnehmenden einen Einstufungstest. Der Test ist kostenlos und dauert etwa zwei Stunden.",
+            "Kurszeiten",
+            "– Vormittagskurse: Montag bis Freitag, 8:30 bis 12:45 Uhr",
+            "– Abendkurse: Montag bis Donnerstag, 17:30 bis 21:00 Uhr",
+            "In den Schulferien findet kein Unterricht statt. Eine Kinderbetreuung gibt es nur für die Vormittagskurse. Bitte melden Sie Ihr Kind spätestens eine Woche vor Kursbeginn an.",
+            "Kosten",
+            "Pro Unterrichtsstunde zahlen Sie 2,29 Euro. Wer Bürgergeld oder Sozialhilfe bekommt, kann sich von den Kosten befreien lassen. Den Antrag dafür stellen Sie bitte vor Kursbeginn. Die Gebühr überweisen Sie monatlich auf unser Konto. Barzahlung im Kursbüro ist leider nicht möglich.",
+            "Anwesenheit",
+            "Die regelmäßige Teilnahme am Unterricht ist Pflicht. Wenn Sie krank sind, rufen Sie bitte vor Unterrichtsbeginn im Kursbüro an (Tel. 07123 48 59 60). Ab dem dritten Krankheitstag brauchen Sie eine ärztliche Bescheinigung. Wer an mindestens 80 Prozent des Unterrichts teilnimmt, kann einen Teil der Kosten zurückbekommen.",
+            "Prüfung",
+            "Am Ende des Kurses machen Sie den Deutsch-Test für Zuwanderer und den Test „Leben in Deutschland“. Die Prüfungstermine finden Sie am Schwarzen Brett im Flur neben dem Kursbüro."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 37,
+            "correct": "richtig",
+            "explanation": "Im Text steht, dass der Einstufungstest kostenlos ist. Kosten gibt es nur für die Unterrichtsstunden.",
+            "evidence": {
+              "text": "Bitte melden Sie sich persönlich im Kursbüro an (Raum 012, Erdgeschoss). Bringen Sie Ihren Pass oder Ihre Aufenthaltserlaubnis und, falls vorhanden, Ihren Berechtigungsschein mit. Vor Kursbeginn machen alle Teilnehmenden einen Einstufungstest. Der Test ist kostenlos und dauert etwa zwei Stunden.",
+              "hit": "Der Test ist kostenlos und dauert etwa zwei Stunden."
+            }
+          },
+          {
+            "n": 38,
+            "correct": "falsch",
+            "explanation": "Du musst die Gebühr jeden Monat überweisen. Bar bezahlen im Kursbüro geht nicht.",
+            "evidence": {
+              "text": "Pro Unterrichtsstunde zahlen Sie 2,29 Euro. Wer Bürgergeld oder Sozialhilfe bekommt, kann sich von den Kosten befreien lassen. Den Antrag dafür stellen Sie bitte vor Kursbeginn. Die Gebühr überweisen Sie monatlich auf unser Konto. Barzahlung im Kursbüro ist leider nicht möglich.",
+              "hit": "Barzahlung im Kursbüro ist leider nicht möglich."
+            }
+          },
+          {
+            "n": 39,
+            "correct": "richtig",
+            "explanation": "Ab dem dritten Krankheitstag brauchst du eine Bescheinigung vom Arzt. Am ersten Tag reicht ein Anruf im Kursbüro.",
+            "evidence": {
+              "text": "Die regelmäßige Teilnahme am Unterricht ist Pflicht. Wenn Sie krank sind, rufen Sie bitte vor Unterrichtsbeginn im Kursbüro an (Tel. 07123 48 59 60). Ab dem dritten Krankheitstag brauchen Sie eine ärztliche Bescheinigung. Wer an mindestens 80 Prozent des Unterrichts teilnimmt, kann einen Teil der Kosten zurückbekommen.",
+              "hit": "Ab dem dritten Krankheitstag brauchen Sie eine ärztliche Bescheinigung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-06-t5-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T06:25:31.169Z",
+        "textType": "Formeller Brief: Absage eines Arzttermins durch die Hausarztpraxis"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text und schließen Sie die Lücken. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "parts": [
+                "Hausarztpraxis Dr. Miriam Kessler\nLindenstraße 27\n45127 Essen\nTel. 0201 4833920\n\nEssen, 14.05.20..\n\nABSAGE IHRES TERMINS AM 21.05.20..\n\n",
+                {
+                  "n": 0,
+                  "options": [
+                    "Sehr geehrte",
+                    "Liebe",
+                    "Sehr geehrter"
+                  ]
+                },
+                " Herr Yilmaz,\n\nleider müssen wir Ihren Termin am Mittwoch, 21.05., um 9:30 Uhr absagen. Frau Dr. Kessler ist ",
+                {
+                  "n": 40,
+                  "options": [
+                    "in",
+                    "um",
+                    "an"
+                  ]
+                },
+                " dieser Woche krank. Dr. Brandt vertritt sie zwar, ",
+                {
+                  "n": 41,
+                  "options": [
+                    "oder",
+                    "aber",
+                    "denn"
+                  ]
+                },
+                " er hat an diesem Vormittag keine freien Termine mehr.\n\nWir können Ihnen einen neuen Termin am Dienstag, 27.05., um 10:15 Uhr anbieten. ",
+                {
+                  "n": 42,
+                  "options": [
+                    "Wenn",
+                    "Obwohl",
+                    "Weil"
+                  ]
+                },
+                " Ihnen der Termin nicht passt, rufen Sie uns bitte an. Bitte bringen Sie dann ",
+                {
+                  "n": 43,
+                  "options": [
+                    "Ihren",
+                    "Ihr",
+                    "Ihre"
+                  ]
+                },
+                " Versichertenkarte und die Laborergebnisse mit. Wir entschuldigen uns ",
+                {
+                  "n": 44,
+                  "options": [
+                    "an",
+                    "für",
+                    "über"
+                  ]
+                },
+                " die Unannehmlichkeiten.\n\nMit ",
+                {
+                  "n": 45,
+                  "options": [
+                    "freundlicher",
+                    "freundliche",
+                    "freundlichen"
+                  ]
+                },
+                " Grüßen\n\nSabine Roth\nPraxisteam"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 40,
+            "correct": "in",
+            "explanation": "Bei einer Woche sagst du „in dieser Woche“. „An“ benutzt du für einen Tag, zum Beispiel „am Mittwoch“."
+          },
+          {
+            "n": 41,
+            "correct": "aber",
+            "explanation": "„Zwar … aber“ ist eine feste Verbindung und zeigt einen Gegensatz. „Denn“ nennt einen Grund und passt hier nicht."
+          },
+          {
+            "n": 42,
+            "correct": "Wenn",
+            "explanation": "Hier geht es um eine Bedingung: Nur falls der Termin nicht passt, soll Herr Yilmaz anrufen. „Weil“ würde bedeuten, dass der Termin sicher nicht passt."
+          },
+          {
+            "n": 43,
+            "correct": "Ihre",
+            "explanation": "„Die Versichertenkarte“ ist feminin, im Akkusativ heißt es „Ihre“. „Ihren“ passt nur zu maskulinen Nomen."
+          },
+          {
+            "n": 44,
+            "correct": "für",
+            "explanation": "Die feste Wendung heißt „sich für etwas entschuldigen“. „Über“ passt zum Beispiel zu „sich ärgern“, nicht zu „entschuldigen“."
+          },
+          {
+            "n": 45,
+            "correct": "freundlichen",
+            "explanation": "Der feste Gruß am Ende heißt „Mit freundlichen Grüßen“. Nach „mit“ steht der Dativ Plural, deshalb endet das Wort auf -en."
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Sehr geehrter"
+      ]
+    }
+  ]
+}

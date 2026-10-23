@@ -318,6 +318,8 @@ scripts/{generate,tts,validate}-kurztest.ts  # Claude drafts → eleven_v4 audio
 supabase/migrations/*_mt_set_track.sql # mt_sets.track: the Hören set as one track { src, duration, cues }
 scripts/lib/drafting.ts              # shared Claude call (direct API, optional image), system prompts, output schemas, voice casting
 scripts/modelltest/                  # ★ Modelltest pipeline: plan-dtz (topics per set) → author (Claude per Teil, validated) → audio (eleven_v4_turbo, Hören track / Sprechen lines) → images (Pexels → WebP, Claude refits text to the photo) → seed (local mt_* + Storage; never touches review_status)
+                                     # batch.sh <sets…> runs all of it (author → images → audio → local seed) with Claude on the Message Batches API (50% off), logs in .unit-cache/batch/
+                                     # drafting model: Opus 5.5, effort medium (DRAFT_MODEL / DRAFT_EFFORT override; blind eval 2026-10-23 in LEARNINGS.md)
 data/modelltest/<exam>/<skill>-NN.json # Modelltest drafts (MtSet); photos.lock.json = Pexels ids in use. Rendered media lives in .unit-cache/ (gitignored) until seeded
 lib/modelltest/types.ts              # MtSet/MtBlock (+ Hören track cues, Sprechen turns with phase/live, photos, live key)
 lib/exam/validate-modelltest.ts      # validateTeil (closed Teile vs `full`), validateSprechen, validateWriting, validateSet (whole set, used by author.ts and the admin publish gate)

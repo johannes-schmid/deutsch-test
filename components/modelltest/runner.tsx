@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import { ChevronDown, Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
-import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamShell, ExamTrack, PartIntro, PartResultCard, ReadingLayout, ReadingText, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack } from "@/components/exam"
+import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamInstructions, ExamShell, ExamTrack, PartIntro, PartResultCard, ReadingLayout, ReadingText, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack } from "@/components/exam"
 import { LevelScale } from "@/components/design/kit"
 import { LevelSeal } from "@/components/design/variants/nachtzug-icons"
 import { KurztestFrame } from "@/components/kurztest/frame"
@@ -13,6 +13,7 @@ import { itemNumbers } from "@/lib/exam/kurztest"
 import type { Level } from "@/lib/exam/types"
 import { portalPath } from "@/lib/exams"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
+import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
 import type { MtGradedResult } from "@/lib/modelltest/grade"
 import type { MtClosedResult, PublicMtBlock, RunnerSet } from "@/lib/modelltest/runner"
 import type { MtSpeakingResult } from "@/lib/modelltest/speaking"
@@ -23,7 +24,7 @@ const P = PORTAL_COPY.run
 const SEAL = { B1: "b1", A2: "a2", "unter A2": "unter-a2" } as const
 const MAX_TEXT = 3000
 
-type Phase = "intro" | "test" | "sending" | "result" | "error"
+type Phase = "intro" | "anleitung" | "test" | "sending" | "result" | "error"
 type Result = MtClosedResult | MtGradedResult | MtSpeakingResult
 
 /** A Modelltest from the portal: intro, the full timed part, then the result with every solution. German UI. */
@@ -49,7 +50,7 @@ const scoredItems = (b: PublicMtBlock) => itemNumbers(b.display.items).filter((n
 
 function Runner({ set }: { set: RunnerSet }) {
   const C = useKurztest().T
-  const startLabel = useExamCopy().start
+  const { start: startLabel, next: nextLabel } = useExamCopy()
   const router = useRouter()
   const [phase, setPhase] = useState<Phase>("intro")
   const [attemptId, setAttemptId] = useState<string | null>(null)
@@ -63,6 +64,7 @@ function Runner({ set }: { set: RunnerSet }) {
   const name = C.names[skill]
   const minutes = Math.round(set.seconds / 60)
   const back = portalPath(set.exam, set.skill)
+  const anleitung = set.exam === "dtz" ? DTZ_ANLEITUNG[skill] : null
 
   const start = async () => {
     setBusy(true)
@@ -127,6 +129,22 @@ function Runner({ set }: { set: RunnerSet }) {
               teile={teile}
               rules={rules}
               about={[...(set.preview ? [P.preview] : []), ...P.about[skill](minutes)].map((p) => <p key={p}>{p}</p>)}
+              action={<ExamButton onClick={() => (anleitung ? setPhase("anleitung") : void start())} disabled={busy} className="w-full">{anleitung ? nextLabel : busy ? P.starting : startLabel}</ExamButton>}
+            />
+            {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
+          </div>
+        </div>
+      </KurztestFrame>
+    )
+  }
+
+  if (phase === "anleitung" && anleitung) {
+    return (
+      <KurztestFrame scene={skill}>
+        <div className="mx-auto flex w-full max-w-[600px] flex-col gap-4">
+          <div className="nz-app rounded-[24px] p-6 sm:p-8">
+            <ExamInstructions
+              {...anleitung}
               action={<ExamButton onClick={() => void start()} disabled={busy} className="w-full">{busy ? P.starting : startLabel}</ExamButton>}
             />
             {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}

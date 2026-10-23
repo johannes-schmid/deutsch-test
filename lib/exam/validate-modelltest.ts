@@ -134,6 +134,11 @@ export function validateSprechen(b: MtBlock | undefined): string[] {
   }
   if ((b.key.speaking?.sampleAnswers.length ?? 0) !== du.length) out.push(`${du.length} du turns but ${b.key.speaking?.sampleAnswers.length ?? 0} sample answers`)
   if (b.key.speaking?.sampleAnswers.some((s) => !s.trim())) out.push("empty sample answer")
+  const duText = (b.key.speaking?.sampleAnswers ?? []).join(" ")
+  const othersText = [...turns.filter((t) => t.who === "partner").map((t) => t.text), b.key.live?.persona ?? ""].join(" ")
+  for (const t of turns.filter((t) => t.who === "pruefer"))
+    for (const [, name] of t.text.matchAll(/\b(?:Frau|Herr) ([A-ZÄÖÜ][\wäöüß-]+)/g))
+      if (duText.includes(name) && !othersText.includes(name)) out.push(`the examiner calls the candidate "${name}"; the person practising has their own name`)
   if (b.key.speaking?.voices.pruefer !== "woman_ela" || b.key.speaking?.voices.partner !== "man_ben") out.push("voices must be woman_ela (examiner) and man_ben (partner)")
   const live = b.key.live
   const fu = live?.followups ?? []

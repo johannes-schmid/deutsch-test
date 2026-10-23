@@ -1,0 +1,809 @@
+{
+  "exam": "dtz",
+  "skill": "lesen",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "dtz-lesen-08-t1-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T09:56:51.188Z",
+        "textType": "Inhaltsverzeichnis: Elternbroschüre der Stadt (Kapitel)"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben und die Übersicht. Wo (a, b oder c) finden Sie die Information?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ihre Tochter ist zwei Jahre alt. Sie suchen eine Frau, die tagsüber bei sich zu Hause auf Ihr Kind aufpasst.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Schule"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Kinderbetreuung"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Kapitel"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 21,
+              "prompt": "Ihr Sohn ist sieben und kann noch nicht schwimmen. Er soll es im Sommer lernen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "5. Freizeit und Ferien"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Gesundheit"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Kapitel"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 22,
+              "prompt": "Sie möchten Deutsch lernen. Ihr Baby soll während des Unterrichts betreut werden.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Kinderbetreuung"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Schule"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Kapitel"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Ihre Nachbarin bekommt bald ein Baby. Sie will ein Jahr zu Hause bleiben und fragt, ob sie in dieser Zeit Geld bekommt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Rund um die Geburt"
+                },
+                {
+                  "key": "b",
+                  "label": "7. Geld und Unterstützung"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Kapitel"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Ihr Sohn ist vierzehn. Zu Hause gibt es ständig Streit und Sie wissen nicht mehr, was Sie tun sollen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Schule"
+                },
+                {
+                  "key": "b",
+                  "label": "6. Beratung und Hilfe"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Kapitel"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Sie gehen mit Ihren drei Kindern oft ins Hallenbad. Sie möchten weniger Eintritt bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "5. Freizeit und Ferien"
+                },
+                {
+                  "key": "b",
+                  "label": "6. Beratung und Hilfe"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Kapitel"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Familienratgeber „Groß werden in Birkenstadt“ – Stadt Birkenstadt",
+          "source": "Inhaltsverzeichnis der Elternbroschüre",
+          "paragraphs": [
+            "1. Rund um die Geburt: Hebammen und Babykurse, Geburtsurkunde beim Standesamt, Elterngeld und Elternzeit, Kindergeld beantragen",
+            "2. Kinderbetreuung: Krippe und Kita, Tagesmütter und Tagesväter, Anmeldung über das Kita-Portal, Gebühren",
+            "3. Schule: Anmeldung zur Grundschule, weiterführende Schulen, Ganztagsangebote, Schulweg und Schulbus, Hausaufgabenhilfe",
+            "4. Gesundheit: Kinderärztinnen und Kinderärzte, Vorsorgeuntersuchungen, Impfungen, gesunde Zähne, Ernährung",
+            "5. Freizeit und Ferien: Spielplätze, Jugendzentren, Ferienprogramm, Schwimmkurse, Sportvereine für Kinder",
+            "6. Beratung und Hilfe: Erziehungsberatung, Probleme in der Pubertät, Trennung und Scheidung, Hilfe bei Gewalt",
+            "7. Geld und Unterstützung: Kinderzuschlag, Bildungs- und Teilhabepaket, Familienpass mit Ermäßigungen für Bäder und Museen",
+            "8. Deutsch lernen und Kontakte: Sprachkurse mit Kinderbetreuung, Elterncafés, Treffpunkte für Familien aus aller Welt",
+            "9. Wichtige Adressen: Ämter, Notrufnummern, kinderärztlicher Notdienst, Stadtplan mit allen Kitas und Schulen"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 21,
+            "correct": "a",
+            "explanation": "Schwimmkurse stehen bei Freizeit und Ferien. Bei Gesundheit geht es um Ärzte und Impfungen.",
+            "evidence": {
+              "text": "5. Freizeit und Ferien: Spielplätze, Jugendzentren, Ferienprogramm, Schwimmkurse, Sportvereine für Kinder",
+              "hit": "5. Freizeit und Ferien: Spielplätze, Jugendzentren, Ferienprogramm, Schwimmkurse"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "c",
+            "explanation": "Sprachkurse mit Kinderbetreuung findest du in Kapitel 8. In Kapitel 2 geht es nur um Kita, Krippe und Tagesmütter.",
+            "evidence": {
+              "text": "8. Deutsch lernen und Kontakte: Sprachkurse mit Kinderbetreuung, Elterncafés, Treffpunkte für Familien aus aller Welt",
+              "hit": "8. Deutsch lernen und Kontakte: Sprachkurse mit Kinderbetreuung"
+            }
+          },
+          {
+            "n": 23,
+            "correct": "a",
+            "explanation": "Elterngeld und Elternzeit stehen im Kapitel über die Geburt. In Kapitel 7 gibt es anderes Geld, zum Beispiel den Kinderzuschlag.",
+            "evidence": {
+              "text": "1. Rund um die Geburt: Hebammen und Babykurse, Geburtsurkunde beim Standesamt, Elterngeld und Elternzeit, Kindergeld beantragen",
+              "hit": "Elterngeld und Elternzeit"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "b",
+            "explanation": "Hilfe bei Problemen mit Jugendlichen gibt es bei der Erziehungsberatung. Im Kapitel Schule geht es um Anmeldung und Hausaufgaben.",
+            "evidence": {
+              "text": "6. Beratung und Hilfe: Erziehungsberatung, Probleme in der Pubertät, Trennung und Scheidung, Hilfe bei Gewalt",
+              "hit": "6. Beratung und Hilfe: Erziehungsberatung, Probleme in der Pubertät"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Ermäßigungen für Bäder gibt es mit dem Familienpass in Kapitel 7. Kapitel 5 nennt Schwimmkurse, aber keine günstigeren Preise.",
+            "evidence": {
+              "text": "7. Geld und Unterstützung: Kinderzuschlag, Bildungs- und Teilhabepaket, Familienpass mit Ermäßigungen für Bäder und Museen",
+              "hit": "Familienpass mit Ermäßigungen für Bäder und Museen"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "dtz-lesen-08-t2-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:01:01.568Z",
+        "textType": "Kleinanzeigen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen und die Anzeigen a–h. Finden Sie für jede Situation die passende Anzeige. Für eine Aufgabe gibt es keine Lösung. Markieren Sie in diesem Fall ein X.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Elektro Yilmaz",
+                  "text": "Ihr Meisterbetrieb für alle Elektroarbeiten: Wir schließen Lampen und Herde an, verlegen neue Steckdosen und prüfen alte Leitungen. Wir arbeiten für Mieter, Vermieter und Firmen. Auch kleine Aufträge sind bei uns kein Problem. Termine Montag bis Freitag von 7 bis 16 Uhr, einen Notdienst am Wochenende bieten wir leider nicht an. Kaiserstraße 82, Tel. 069 2240 5567"
+                },
+                {
+                  "key": "b",
+                  "title": "Grünschnitt Lehmann",
+                  "text": "Ihre Hecke wächst über den Zaun, der Rasen ist viel zu hoch? Wir übernehmen alle Arbeiten in Ihrem Garten: Rasen mähen, Hecken und Bäume schneiden, Laub entfernen, Beete pflegen. Gerne auch für ältere Menschen, die die schwere Arbeit nicht mehr selbst machen können. Den Grünschnitt nehmen wir natürlich mit. Von März bis November, Termine nach Vereinbarung. Tel. 06104 77 2310"
+                },
+                {
+                  "key": "c",
+                  "title": "Möbelmontage Petrović",
+                  "text": "Neue Küche, Kleiderschrank oder Regal gekauft und keine Zeit oder kein Werkzeug? Wir bauen Möbel aller Hersteller fachgerecht bei Ihnen auf – schnell, sauber und zuverlässig. Auf Wunsch holen wir die Ware auch direkt im Möbelhaus ab und nehmen das Verpackungsmaterial wieder mit. Stundenpreis 35 €, Anfahrt im Stadtgebiet kostenlos. Rufen Sie an: 0176 5523 8810 (auch per WhatsApp)."
+                },
+                {
+                  "key": "d",
+                  "title": "Digital-Hilfe für Senioren",
+                  "text": "Das Smartphone oder der Computer macht Probleme? Sie möchten Fotos verschicken, online einkaufen oder mit Ihrer Familie Videoanrufe machen? Unsere geduldigen Helferinnen und Helfer erklären Ihnen alles Schritt für Schritt – bei Ihnen zu Hause und in Ihrem Tempo. Speziell für Menschen ab 60. Eine Stunde kostet 25 €. Ein Angebot der Nachbarschaftshilfe Offenbach e. V., Tel. 069 8812 0045."
+                },
+                {
+                  "key": "e",
+                  "title": "Glanzwerk Reinigungsservice",
+                  "text": "Wir sorgen für Sauberkeit in Büros, Arztpraxen, Geschäften und Treppenhäusern. Regelmäßig – täglich, wöchentlich oder monatlich – oder einmalig nach Renovierungen. Unser erfahrenes Team arbeitet gründlich und auch außerhalb Ihrer Öffnungszeiten, zum Beispiel abends. Bitte beachten Sie: Wir arbeiten ausschließlich für Firmen und Hausverwaltungen, nicht für Privathaushalte. Ein kostenloses Angebot erhalten Sie unter Tel. 069 3390 1178."
+                },
+                {
+                  "key": "f",
+                  "title": "Schlüsselnotdienst Brandt",
+                  "text": "Tür zugefallen, Schlüssel verloren oder abgebrochen? Wir sind rund um die Uhr für Sie da – auch an Sonn- und Feiertagen. In der Regel sind wir innerhalb von 30 Minuten bei Ihnen in Offenbach und Umgebung. Wir öffnen Ihre Tür ohne Schaden und tauschen auf Wunsch auch gleich das Schloss aus. Festpreis für eine Türöffnung tagsüber: 69 €, nachts ab 22 Uhr: 99 €. Tel. 069 4471 2290"
+                },
+                {
+                  "key": "g",
+                  "title": "Änderungsschneiderei Nadel & Faden",
+                  "text": "Hosen kürzen, Reißverschlüsse ersetzen, Kleider enger machen: Wir ändern Ihre Kleidung schnell und sorgfältig. Normale Aufträge sind nach einer Woche fertig. Haben Sie es eilig? Mit unserem Express-Service bekommen Sie Ihr Kleidungsstück schon am nächsten Tag zurück (Aufpreis 8 €). Mo–Fr 9–18 Uhr, Sa 9–13 Uhr, Marktstraße 14, im Hinterhof. Kommen Sie einfach vorbei, ein Termin ist nicht nötig."
+                },
+                {
+                  "key": "h",
+                  "title": "Rad-Mobil Kaya",
+                  "text": "Ihr Fahrrad hat einen Platten oder die Bremsen funktionieren nicht mehr? Sie müssen es nicht in die Werkstatt bringen: Wir kommen mit unserem Werkstattwagen zu Ihnen nach Hause oder zur Arbeit. Kleine Reparaturen erledigen wir sofort vor Ort, alle anderen innerhalb von drei Tagen. Wir reparieren auch E-Bikes. Termine Montag bis Samstag zwischen 8 und 18 Uhr. Online buchen: www.rad-mobil-kaya.de"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 26,
+                  "text": "Ihre Freundin hat ein neues Bett und eine Kommode bestellt, schafft es aber nicht, die vielen Einzelteile allein zusammenzusetzen."
+                },
+                {
+                  "n": 27,
+                  "text": "Sie kommen spät am Abend nach Hause und können nicht in Ihre Wohnung, weil Ihr Schlüssel drinnen liegt."
+                },
+                {
+                  "n": 28,
+                  "text": "Ihr Großvater möchte lernen, wie er auf seinem neuen Handy mit seinen Enkeln sprechen und sie dabei sehen kann."
+                },
+                {
+                  "n": 29,
+                  "text": "Sie suchen jemanden, der einmal pro Woche zu Ihnen nach Hause kommt und Ihre Wohnung putzt."
+                },
+                {
+                  "n": 30,
+                  "text": "Die Ärmel Ihres neuen Wintermantels sind zu lang, und Sie möchten ihn schon übermorgen auf einer Feier tragen."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 26,
+            "correct": "c",
+            "explanation": "Möbelmontage Petrović baut neue Möbel bei dir zu Hause auf. Elektro Yilmaz schließt nur Lampen und Herde an, keine Möbel.",
+            "evidence": {
+              "text": "Neue Küche, Kleiderschrank oder Regal gekauft und keine Zeit oder kein Werkzeug? Wir bauen Möbel aller Hersteller fachgerecht bei Ihnen auf – schnell, sauber und zuverlässig. Auf Wunsch holen wir die Ware auch direkt im Möbelhaus ab und nehmen das Verpackungsmaterial wieder mit. Stundenpreis 35 €, Anfahrt im Stadtgebiet kostenlos. Rufen Sie an: 0176 5523 8810 (auch per WhatsApp).",
+              "hit": "Wir bauen Möbel aller Hersteller fachgerecht bei Ihnen auf"
+            }
+          },
+          {
+            "n": 27,
+            "correct": "f",
+            "explanation": "Der Schlüsselnotdienst Brandt kommt rund um die Uhr, also auch nachts. Elektro Yilmaz arbeitet nur bis 16 Uhr.",
+            "evidence": {
+              "text": "Tür zugefallen, Schlüssel verloren oder abgebrochen? Wir sind rund um die Uhr für Sie da – auch an Sonn- und Feiertagen. In der Regel sind wir innerhalb von 30 Minuten bei Ihnen in Offenbach und Umgebung. Wir öffnen Ihre Tür ohne Schaden und tauschen auf Wunsch auch gleich das Schloss aus. Festpreis für eine Türöffnung tagsüber: 69 €, nachts ab 22 Uhr: 99 €. Tel. 069 4471 2290",
+              "hit": "Wir sind rund um die Uhr für Sie da – auch an Sonn- und Feiertagen."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "d",
+            "explanation": "Die Digital-Hilfe für Senioren erklärt älteren Menschen zu Hause, wie Videoanrufe funktionieren. Grünschnitt Lehmann hilft älteren Menschen nur im Garten.",
+            "evidence": {
+              "text": "Das Smartphone oder der Computer macht Probleme? Sie möchten Fotos verschicken, online einkaufen oder mit Ihrer Familie Videoanrufe machen? Unsere geduldigen Helferinnen und Helfer erklären Ihnen alles Schritt für Schritt – bei Ihnen zu Hause und in Ihrem Tempo. Speziell für Menschen ab 60. Eine Stunde kostet 25 €. Ein Angebot der Nachbarschaftshilfe Offenbach e. V., Tel. 069 8812 0045.",
+              "hit": "Sie möchten Fotos verschicken, online einkaufen oder mit Ihrer Familie Videoanrufe machen?"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "x",
+            "explanation": "Der Glanzwerk Reinigungsservice putzt zwar wöchentlich, aber nur für Firmen und nicht in Privatwohnungen. Keine andere Anzeige bietet das an.",
+            "evidence": {
+              "text": "Wir sorgen für Sauberkeit in Büros, Arztpraxen, Geschäften und Treppenhäusern. Regelmäßig – täglich, wöchentlich oder monatlich – oder einmalig nach Renovierungen. Unser erfahrenes Team arbeitet gründlich und auch außerhalb Ihrer Öffnungszeiten, zum Beispiel abends. Bitte beachten Sie: Wir arbeiten ausschließlich für Firmen und Hausverwaltungen, nicht für Privathaushalte. Ein kostenloses Angebot erhalten Sie unter Tel. 069 3390 1178.",
+              "hit": "Wir arbeiten ausschließlich für Firmen und Hausverwaltungen, nicht für Privathaushalte."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "g",
+            "explanation": "Die Änderungsschneiderei Nadel & Faden ändert Kleidung mit Express schon bis zum nächsten Tag. Normale Aufträge dauern dort eine Woche, das wäre zu spät.",
+            "evidence": {
+              "text": "Hosen kürzen, Reißverschlüsse ersetzen, Kleider enger machen: Wir ändern Ihre Kleidung schnell und sorgfältig. Normale Aufträge sind nach einer Woche fertig. Haben Sie es eilig? Mit unserem Express-Service bekommen Sie Ihr Kleidungsstück schon am nächsten Tag zurück (Aufpreis 8 €). Mo–Fr 9–18 Uhr, Sa 9–13 Uhr, Marktstraße 14, im Hinterhof. Kommen Sie einfach vorbei, ein Termin ist nicht nötig.",
+              "hit": "Mit unserem Express-Service bekommen Sie Ihr Kleidungsstück schon am nächsten Tag zurück"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-08-t3-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:05:42.423Z",
+        "textType": "Pressemeldung: neues Familienzentrum"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 31,
+              "statement": "Für alle Angebote im Familienzentrum muss man nichts bezahlen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 32,
+              "prompt": "Wer das Elterncafé besuchen möchte, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss vorher einen Termin vereinbaren."
+                },
+                {
+                  "key": "b",
+                  "label": "muss einen kleinen Beitrag zahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "kann einfach vormittags vorbeikommen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitungsmeldung",
+          "paragraphs": [
+            "Gerlingen-Ost – Familienzentrum öffnet im alten Postgebäude",
+            "Ab dem 2. Oktober hat der Stadtteil Gerlingen-Ost ein eigenes Familienzentrum. In dem renovierten Gebäude in der Lindenstraße 14 gibt es ein Elterncafé, einen Spielraum für Kinder bis sechs Jahre und Räume für Beratung. Fachleute helfen dort zum Beispiel bei Fragen zu Erziehung, Kindergeld oder Kita-Plätzen. Die Beratung ist kostenlos, man muss aber vorher einen Termin vereinbaren.",
+            "Das Elterncafé ist montags bis freitags von 9 bis 12 Uhr geöffnet, dafür braucht man keine Anmeldung. Außerdem bietet das Zentrum Kurse an, etwa Babymassage oder Kochen für Familien. Für die Kurse zahlt man einen kleinen Beitrag. Die Stadt sucht noch Ehrenamtliche, die bei der Hausaufgabenhilfe mitmachen möchten. Interessierte melden sich unter 07156 48 23 90."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 31,
+            "correct": "falsch",
+            "explanation": "Nur die Beratung ist kostenlos. Für die Kurse musst du einen kleinen Beitrag zahlen.",
+            "evidence": {
+              "text": "Das Elterncafé ist montags bis freitags von 9 bis 12 Uhr geöffnet, dafür braucht man keine Anmeldung. Außerdem bietet das Zentrum Kurse an, etwa Babymassage oder Kochen für Familien. Für die Kurse zahlt man einen kleinen Beitrag. Die Stadt sucht noch Ehrenamtliche, die bei der Hausaufgabenhilfe mitmachen möchten. Interessierte melden sich unter 07156 48 23 90.",
+              "hit": "Für die Kurse zahlt man einen kleinen Beitrag."
+            }
+          },
+          {
+            "n": 32,
+            "correct": "c",
+            "explanation": "Das Café ist vormittags offen und du musst dich nicht anmelden. Einen Termin brauchst du nur für die Beratung.",
+            "evidence": {
+              "text": "Das Elterncafé ist montags bis freitags von 9 bis 12 Uhr geöffnet, dafür braucht man keine Anmeldung. Außerdem bietet das Zentrum Kurse an, etwa Babymassage oder Kochen für Familien. Für die Kurse zahlt man einen kleinen Beitrag. Die Stadt sucht noch Ehrenamtliche, die bei der Hausaufgabenhilfe mitmachen möchten. Interessierte melden sich unter 07156 48 23 90.",
+              "hit": "Das Elterncafé ist montags bis freitags von 9 bis 12 Uhr geöffnet, dafür braucht man keine Anmeldung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-08-t3-02",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:05:42.423Z",
+        "textType": "Aushang im Supermarkt: Pfandautomat"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 33,
+              "statement": "Während der Bauarbeiten kann man Leergut an einer Kasse zurückgeben."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 34,
+              "prompt": "Getränkekisten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kann man nach dem Umbau im Automaten zurückgeben."
+                },
+                {
+                  "key": "b",
+                  "label": "kann man ab dem 14. Juli an Kasse 1 abgeben."
+                },
+                {
+                  "key": "c",
+                  "label": "muss man in einer anderen Filiale abgeben."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ihr Team vom FrischeMarkt Hollmann",
+          "source": "Aushang",
+          "paragraphs": [
+            "Liebe Kundinnen und Kunden,",
+            "vom 14. bis 18. Juli bauen wir einen neuen Pfandautomaten ein. In dieser Zeit ist der alte Automat neben dem Eingang außer Betrieb. Leere Flaschen und Dosen können Sie trotzdem abgeben: Bitte gehen Sie damit zur Kasse 1. Unsere Mitarbeiter zählen das Leergut und geben Ihnen einen Pfandbon. Getränkekisten können wir in diesen Tagen leider nicht zurücknehmen.",
+            "Ab dem 19. Juli nimmt der neue Automat auch ganze Kisten an, Sie müssen die Flaschen also nicht mehr einzeln einlegen. Bitte beachten Sie: Den Pfandbon können Sie nur in unserer Filiale in der Bahnhofstraße einlösen, und zwar innerhalb von drei Monaten.",
+            "Vielen Dank für Ihr Verständnis!",
+            "Ihr Team vom FrischeMarkt Hollmann"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 33,
+            "correct": "richtig",
+            "explanation": "Der Automat ist kaputt, aber du kannst Flaschen und Dosen an Kasse 1 abgeben.",
+            "evidence": {
+              "text": "vom 14. bis 18. Juli bauen wir einen neuen Pfandautomaten ein. In dieser Zeit ist der alte Automat neben dem Eingang außer Betrieb. Leere Flaschen und Dosen können Sie trotzdem abgeben: Bitte gehen Sie damit zur Kasse 1. Unsere Mitarbeiter zählen das Leergut und geben Ihnen einen Pfandbon. Getränkekisten können wir in diesen Tagen leider nicht zurücknehmen.",
+              "hit": "Leere Flaschen und Dosen können Sie trotzdem abgeben: Bitte gehen Sie damit zur Kasse 1."
+            }
+          },
+          {
+            "n": 34,
+            "correct": "a",
+            "explanation": "Der neue Automat nimmt ab dem 19. Juli ganze Kisten an. An Kasse 1 gibt es während des Umbaus nur Flaschen und Dosen zurück.",
+            "evidence": {
+              "text": "Ab dem 19. Juli nimmt der neue Automat auch ganze Kisten an, Sie müssen die Flaschen also nicht mehr einzeln einlegen. Bitte beachten Sie: Den Pfandbon können Sie nur in unserer Filiale in der Bahnhofstraße einlösen, und zwar innerhalb von drei Monaten.",
+              "hit": "Ab dem 19. Juli nimmt der neue Automat auch ganze Kisten an"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-08-t3-03",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:05:42.423Z",
+        "textType": "Brief der Bank: neue Karte"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 35,
+              "statement": "Frau Yıldız muss für die neue Karte nichts bezahlen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 36,
+              "prompt": "Was muss Frau Yıldız tun, bevor sie mit der neuen Karte im Laden bezahlt?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sie muss zuerst ihre alte Karte durchschneiden."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie muss die Karte einmal an einem Automaten der Bank benutzen."
+                },
+                {
+                  "key": "c",
+                  "label": "Sie muss bei der Bank eine neue PIN beantragen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Daniel Vogt, Kundenservice, Nordtal Bank eG",
+          "source": "Brief",
+          "paragraphs": [
+            "Sehr geehrte Frau Yıldız,",
+            "Ihre Girocard ist nur noch bis zum 30.11. gültig. Deshalb schicken wir Ihnen in den nächsten Tagen automatisch eine neue Karte zu. Sie kommt mit getrennter Post, Ihre PIN bleibt aber gleich. Für die neue Karte entstehen Ihnen keine zusätzlichen Kosten.",
+            "Bevor Sie mit der Karte im Geschäft bezahlen können, müssen Sie sie einmal an einem Geldautomaten unserer Bank benutzen, zum Beispiel für eine Kontoabfrage. Danach ist die Karte freigeschaltet. Ihre alte Karte können Sie bis zum Ende des Monats weiter verwenden. Schneiden Sie sie danach bitte durch.",
+            "Sollte die neue Karte bis zum 20.11. nicht bei Ihnen sein, rufen Sie uns bitte unter 0800 336 41 70 an.",
+            "Mit freundlichen Grüßen",
+            "Daniel Vogt",
+            "Kundenservice, Nordtal Bank eG"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 35,
+            "correct": "richtig",
+            "explanation": "Die Bank schreibt, dass es keine zusätzlichen Kosten gibt. Die Karte ist also kostenlos.",
+            "evidence": {
+              "text": "Ihre Girocard ist nur noch bis zum 30.11. gültig. Deshalb schicken wir Ihnen in den nächsten Tagen automatisch eine neue Karte zu. Sie kommt mit getrennter Post, Ihre PIN bleibt aber gleich. Für die neue Karte entstehen Ihnen keine zusätzlichen Kosten.",
+              "hit": "Für die neue Karte entstehen Ihnen keine zusätzlichen Kosten."
+            }
+          },
+          {
+            "n": 36,
+            "correct": "b",
+            "explanation": "Die Karte wird erst nach einer Nutzung am Geldautomaten freigeschaltet. Die alte Karte schneidet sie erst nach Monatsende durch, und die PIN bleibt gleich.",
+            "evidence": {
+              "text": "Bevor Sie mit der Karte im Geschäft bezahlen können, müssen Sie sie einmal an einem Geldautomaten unserer Bank benutzen, zum Beispiel für eine Kontoabfrage. Danach ist die Karte freigeschaltet. Ihre alte Karte können Sie bis zum Ende des Monats weiter verwenden. Schneiden Sie sie danach bitte durch.",
+              "hit": "Bevor Sie mit der Karte im Geschäft bezahlen können, müssen Sie sie einmal an einem Geldautomaten unserer Bank benutzen"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-08-t4-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:10:23.488Z",
+        "textType": "Regeln für den Gemeinschaftsgarten"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text. Entscheiden Sie, ob die Aussagen richtig oder falsch sind.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 37,
+              "statement": "Für das Wasser im Garten muss man zusätzlich zum Beet bezahlen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 38,
+              "statement": "Wer beim Gartentag nicht mithelfen kann, muss Geld bezahlen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 39,
+              "statement": "Kinder dürfen nicht ohne einen Erwachsenen in den Garten kommen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Verein Grünes Viertel e. V.",
+          "source": "Aushang im Gemeinschaftsgarten Am Mühlbach",
+          "paragraphs": [
+            "Gemeinschaftsgarten Am Mühlbach – Regeln für alle Gärtnerinnen und Gärtner",
+            "Herzlich willkommen in unserem Garten! Damit sich alle wohlfühlen, bitten wir Sie, die folgenden Regeln zu beachten.",
+            "Öffnungszeiten",
+            "Der Garten ist von April bis Oktober täglich von 8 bis 20 Uhr geöffnet. Von November bis März ist das Tor nur samstags von 10 bis 16 Uhr offen. Einen Schlüssel für das Tor bekommen nur Mitglieder mit eigenem Beet.",
+            "Beete und Kosten",
+            "Ein eigenes Beet kostet 35 Euro pro Saison. Für Familien mit Kinderpass und für Rentner kostet es 20 Euro. Wasser ist im Preis enthalten. Wer sein Beet länger als vier Wochen nicht pflegt, bekommt eine Erinnerung. Danach kann das Beet an eine andere Person gehen.",
+            "Werkzeug und Wasser",
+            "– Werkzeug finden Sie im Geräteschuppen. Bitte reinigen Sie es nach der Arbeit und bringen Sie es sofort zurück.\n– Gießen Sie bitte nur am Morgen oder am Abend, nicht in der Mittagshitze.\n– Schläuche dürfen nicht über Nacht laufen.",
+            "Gemeinsame Arbeit",
+            "Jedes Mitglied hilft zweimal im Jahr bei einem Gartentag mit. Die Termine hängen am Schwarzen Brett neben dem Schuppen. Wer nicht kommen kann, zahlt 15 Euro in die Gartenkasse.",
+            "Was nicht erlaubt ist",
+            "– Hunde (Ausnahme: Blindenhunde)\n– Grillen und offenes Feuer\n– chemische Pflanzenschutzmittel",
+            "Kinder sind herzlich willkommen, müssen aber von einem Erwachsenen begleitet werden.",
+            "Fragen? Schreiben Sie uns an garten@gruenes-viertel-mb.de oder rufen Sie Frau Okafor an: 0421 6683 217 (dienstags und donnerstags von 17 bis 19 Uhr)."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 37,
+            "correct": "falsch",
+            "explanation": "Das Wasser kostet nichts extra, es ist schon im Preis für das Beet dabei. Nur das Beet selbst kostet 35 oder 20 Euro.",
+            "evidence": {
+              "text": "Ein eigenes Beet kostet 35 Euro pro Saison. Für Familien mit Kinderpass und für Rentner kostet es 20 Euro. Wasser ist im Preis enthalten. Wer sein Beet länger als vier Wochen nicht pflegt, bekommt eine Erinnerung. Danach kann das Beet an eine andere Person gehen.",
+              "hit": "Wasser ist im Preis enthalten."
+            }
+          },
+          {
+            "n": 38,
+            "correct": "richtig",
+            "explanation": "Wer nicht zum Gartentag kommt, zahlt 15 Euro in die Gartenkasse. Die Termine findest du am Schwarzen Brett.",
+            "evidence": {
+              "text": "Jedes Mitglied hilft zweimal im Jahr bei einem Gartentag mit. Die Termine hängen am Schwarzen Brett neben dem Schuppen. Wer nicht kommen kann, zahlt 15 Euro in die Gartenkasse.",
+              "hit": "Wer nicht kommen kann, zahlt 15 Euro in die Gartenkasse."
+            }
+          },
+          {
+            "n": 39,
+            "correct": "richtig",
+            "explanation": "Kinder sind willkommen, aber nur mit einem Erwachsenen. Verboten sind nur Hunde, Grillen und Chemie, nicht Kinder.",
+            "evidence": {
+              "text": "Kinder sind herzlich willkommen, müssen aber von einem Erwachsenen begleitet werden.",
+              "hit": "Kinder sind herzlich willkommen, müssen aber von einem Erwachsenen begleitet werden."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-08-t5-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T10:15:04.048Z",
+        "textType": "Einladung zum Vorstellungsgespräch"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text und schließen Sie die Lücken. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "parts": [
+                "Logistik Brandt GmbH\nHafenstraße 27\n28217 Bremen\n\nBremen, 14.05.20..\n\nEINLADUNG ZUM VORSTELLUNGSGESPRÄCH\n\n",
+                {
+                  "n": 0,
+                  "options": [
+                    "Sehr geehrte",
+                    "Liebe",
+                    "b",
+                    "Sehr geehrter"
+                  ]
+                },
+                " Frau Petrović,\n\nvielen Dank für ",
+                {
+                  "n": 40,
+                  "options": [
+                    "a",
+                    "Ihren",
+                    "Ihrer",
+                    "Ihre"
+                  ]
+                },
+                " Bewerbung als Lagermitarbeiterin. Wir möchten Sie gern kennenlernen und laden Sie deshalb zu einem Gespräch ein. Der Termin ist am Dienstag, 27.05.20.., ",
+                {
+                  "n": 41,
+                  "options": [
+                    "bis",
+                    "um",
+                    "c",
+                    "am"
+                  ]
+                },
+                " 10:00 Uhr.\n\nBringen Sie bitte Ihre Zeugnisse und einen gültigen Ausweis mit. ",
+                {
+                  "n": 42,
+                  "options": [
+                    "Wenn",
+                    "b",
+                    "Weil",
+                    "Obwohl"
+                  ]
+                },
+                " Sie mit dem Auto kommen, können Sie auf unserem Parkplatz parken. Das Gespräch dauert etwa eine Stunde, ",
+                {
+                  "n": 43,
+                  "options": [
+                    "a",
+                    "deshalb",
+                    "weil",
+                    "obwohl"
+                  ]
+                },
+                " wir Ihnen auch das Lager zeigen möchten.\n\nSollten Sie an diesem Tag keine Zeit haben, rufen Sie uns bitte ",
+                {
+                  "n": 44,
+                  "options": [
+                    "so lange",
+                    "möglichst viel",
+                    "c",
+                    "möglichst bald"
+                  ]
+                },
+                " unter 0421 5583910 an.\n\nWir freuen uns auf ",
+                {
+                  "n": 45,
+                  "options": [
+                    "Ihren",
+                    "b",
+                    "Ihre",
+                    "Ihrem"
+                  ]
+                },
+                " Besuch.\n\nMit freundlichen Grüßen\n\nSandra Köhler"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 40,
+            "correct": "a",
+            "explanation": "„für“ braucht den Akkusativ, und „Bewerbung“ ist feminin: „für Ihre Bewerbung“. „Ihren“ wäre maskulin."
+          },
+          {
+            "n": 41,
+            "correct": "c",
+            "explanation": "Vor einer Uhrzeit steht „um“. „am“ benutzt du für Tage, nicht für Uhrzeiten."
+          },
+          {
+            "n": 42,
+            "correct": "b",
+            "explanation": "Das ist eine Bedingung: Nur falls Frau Petrović mit dem Auto kommt, kann sie parken. „Weil“ passt nicht, denn man weiß noch nicht, ob sie mit dem Auto kommt."
+          },
+          {
+            "n": 43,
+            "correct": "a",
+            "explanation": "Der Satz nennt den Grund für die lange Dauer, und das Verb steht am Ende: Das passt zu „weil“. Nach „deshalb“ müsste das Verb direkt folgen."
+          },
+          {
+            "n": 44,
+            "correct": "c",
+            "explanation": "Die Firma möchte schnell informiert werden, wenn der Termin nicht passt. „möglichst viel“ ergibt bei einem Anruf keinen Sinn."
+          },
+          {
+            "n": 45,
+            "correct": "b",
+            "explanation": "„sich freuen auf“ braucht den Akkusativ, und „Besuch“ ist maskulin: „auf Ihren Besuch“. „Ihrem“ wäre Dativ."
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

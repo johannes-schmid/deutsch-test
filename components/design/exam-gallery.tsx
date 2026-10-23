@@ -7,10 +7,11 @@ import { cn } from "@/lib/utils"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
-  ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
+  ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
   ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, type ShellSection,
 } from "@/components/exam"
 import type { TrueFalse } from "@/lib/exam/types"
+import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
 import {
   DURCHSAGE, APOTHEKE, GAP, GAP_SOLUTION, HOEREN_CHOICE, HOEREN_FEEDBACK, HOEREN_TEILE, HOEREN_TF, HOEREN_TF_SOLUTION, MATCH, MATCH_SOLUTION,
   CARD_TURNS, PEOPLE, PICTO_PICTURE, PICTURE, TRACK, READING, READING_CHOICE, READING_TF, SPEAKING, SPEAKING_CARDS, TURNS, WRITING, WRITING_SINGLE,
@@ -233,6 +234,14 @@ export function ExamGallery() {
         <ExamStage scene="ergebnis" framed className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
           <Panel><ExamAudio clip={DURCHSAGE} /></Panel>
           <Panel><ExamAudio clip={APOTHEKE} /></Panel>
+        </ExamStage>
+      </Block>
+
+      <Block title="Anleitung (Modelltest)" note="Vor jedem Prüfungsteil, wie das Deckblatt der echten Prüfung: in der Sie-Form, die Regeln als nummerierte Schritte. Die gesprochene Fassung (Erzähler Mark) lässt sich pausieren und wiederholen; sie ist keine Prüfungsaudio.">
+        <ExamStage scene="hoeren" framed>
+          <div className="nz-app mx-auto flex max-w-[600px] flex-col rounded-[24px] p-6 sm:p-8">
+            <ExamInstructions {...DTZ_ANLEITUNG.hoeren} action={<ExamButton className="w-full">Starten</ExamButton>} />
+          </div>
         </ExamStage>
       </Block>
 

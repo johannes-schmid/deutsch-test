@@ -1,0 +1,801 @@
+{
+  "exam": "dtz",
+  "skill": "lesen",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "dtz-lesen-03-t1-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:37:36.858Z",
+        "textType": "Wegweiser im Krankenhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben und die Übersicht. Wo (a, b oder c) finden Sie die Information?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie waren vier Tage im Krankenhaus. Jetzt müssen Sie noch zehn Euro pro Tag selbst bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. OG – Chirurgie und Unfallchirurgie"
+                },
+                {
+                  "key": "b",
+                  "label": "5. OG – Verwaltung"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 21,
+              "prompt": "Ihre Schwester bekommt im Sommer ihr erstes Kind. Sie möchte vorher lernen, was bei der Entbindung passiert und wie sie richtig atmet.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. OG – Kinderklinik"
+                },
+                {
+                  "key": "b",
+                  "label": "3. OG – Frauenklinik"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 22,
+              "prompt": "Ihre Mutter liegt nach einem Herzinfarkt im Krankenhaus. Danach soll sie sich noch einige Wochen in einer Kurklinik erholen. Sie brauchen Hilfe beim Antrag.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. OG – Innere Medizin"
+                },
+                {
+                  "key": "b",
+                  "label": "5. OG – Verwaltung"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Sie hatten vor zwei Wochen eine Operation am Knie. Jetzt sollen Sie regelmäßig mit einer Therapeutin Übungen für Ihr Bein machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "UG – Radiologie / Physiotherapie"
+                },
+                {
+                  "key": "b",
+                  "label": "1. OG – Chirurgie und Unfallchirurgie"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Ihre Kollegin hat gestern im Krankenhaus ein Baby bekommen. Bevor Sie sie besuchen, möchten Sie noch einen Strauß und eine Karte für sie kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. OG – Frauenklinik"
+                },
+                {
+                  "key": "b",
+                  "label": "4. OG – Kinderklinik"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Ihr Nachbar hat seit Kurzem Zucker. Er möchte wissen, welche Lebensmittel gut für ihn sind und wie er sein Essen planen soll.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. OG – Innere Medizin"
+                },
+                {
+                  "key": "b",
+                  "label": "EG – Notaufnahme / Cafeteria"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Klinikum St. Elisabeth Rottenau – Haus A",
+          "source": "Wegweiser am Haupteingang",
+          "paragraphs": [
+            "UG – Radiologie: Röntgen, Computertomografie (CT), Kernspin (MRT), Ultraschall · Physiotherapie: Krankengymnastik, Massagen, Bewegungsbad, Rückenschule",
+            "EG – Zentrale Notaufnahme (24 Stunden geöffnet) · Information und Patientenaufnahme · Kasse: Zuzahlungen, Parkscheine · Cafeteria · Kiosk: Zeitschriften, Blumen, Glückwunschkarten · Kapelle",
+            "1. OG – Chirurgie und Unfallchirurgie: Operationen, Sprechstunde nach Sport- und Arbeitsunfällen, Gips- und Verbandwechsel · Zentrallabor: Blutabnahme",
+            "2. OG – Innere Medizin: Herz und Kreislauf, Magen und Darm, Lunge · Diabetesberatung · Ernährungsberatung · Schlaflabor",
+            "3. OG – Frauenklinik: Kreißsaal, Wochenstation, Stillberatung, Frauenarzt-Sprechstunde · Elternschule: Kurse zur Geburtsvorbereitung, Babymassage, Säuglingspflege",
+            "4. OG – Kinderklinik: Kinderstation, Kinderambulanz, Spielzimmer, Krankenhausschule, Übernachtung für Mütter und Väter",
+            "5. OG – Verwaltung: Sozialdienst (Pflege zu Hause, Reha-Anträge, Rollstuhl und andere Hilfsmittel) · Patientenfürsprecherin: Lob und Beschwerden · Personalabteilung: Bewerbungen, Ausbildung zur Pflegefachkraft",
+            "6. OG – Augenheilkunde und Hals-Nasen-Ohren-Heilkunde: Sprechstunde, Sehtest, Hörtest, Station"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 21,
+            "correct": "b",
+            "explanation": "Die Elternschule mit Kursen zur Geburtsvorbereitung ist im 3. OG. Die Kinderklinik ist für kranke Kinder, nicht für die Vorbereitung auf die Geburt.",
+            "evidence": {
+              "text": "3. OG – Frauenklinik: Kreißsaal, Wochenstation, Stillberatung, Frauenarzt-Sprechstunde · Elternschule: Kurse zur Geburtsvorbereitung, Babymassage, Säuglingspflege",
+              "hit": "Elternschule: Kurse zur Geburtsvorbereitung"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "b",
+            "explanation": "Der Sozialdienst im 5. OG hilft bei Reha-Anträgen. Auf der Station für Herz und Kreislauf im 2. OG wird deine Mutter nur behandelt.",
+            "evidence": {
+              "text": "5. OG – Verwaltung: Sozialdienst (Pflege zu Hause, Reha-Anträge, Rollstuhl und andere Hilfsmittel) · Patientenfürsprecherin: Lob und Beschwerden · Personalabteilung: Bewerbungen, Ausbildung zur Pflegefachkraft",
+              "hit": "Sozialdienst (Pflege zu Hause, Reha-Anträge"
+            }
+          },
+          {
+            "n": 23,
+            "correct": "a",
+            "explanation": "Übungen mit einer Therapeutin sind Krankengymnastik, und die gibt es im Untergeschoss. In der Chirurgie im 1. OG wird operiert, aber nicht trainiert.",
+            "evidence": {
+              "text": "UG – Radiologie: Röntgen, Computertomografie (CT), Kernspin (MRT), Ultraschall · Physiotherapie: Krankengymnastik, Massagen, Bewegungsbad, Rückenschule",
+              "hit": "Physiotherapie: Krankengymnastik, Massagen, Bewegungsbad, Rückenschule"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "c",
+            "explanation": "Blumen und Karten kannst du im Kiosk im Erdgeschoss kaufen. Im 3. OG liegt deine Kollegin, aber dort gibt es keinen Laden.",
+            "evidence": {
+              "text": "EG – Zentrale Notaufnahme (24 Stunden geöffnet) · Information und Patientenaufnahme · Kasse: Zuzahlungen, Parkscheine · Cafeteria · Kiosk: Zeitschriften, Blumen, Glückwunschkarten · Kapelle",
+              "hit": "Kiosk: Zeitschriften, Blumen, Glückwunschkarten"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "a",
+            "explanation": "Im 2. OG gibt es Diabetesberatung und Ernährungsberatung. In der Cafeteria im Erdgeschoss kann man nur essen, aber man bekommt keine Beratung.",
+            "evidence": {
+              "text": "2. OG – Innere Medizin: Herz und Kreislauf, Magen und Darm, Lunge · Diabetesberatung · Ernährungsberatung · Schlaflabor",
+              "hit": "Diabetesberatung · Ernährungsberatung"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "dtz-lesen-03-t2-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:38:58.913Z",
+        "textType": "Kleinanzeigen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen und die Anzeigen a–h. Finden Sie für jede Situation die passende Anzeige. Für eine Aufgabe gibt es keine Lösung. Markieren Sie in diesem Fall ein X.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Vereinsheim des Kleingartenvereins Sonnenblick",
+                  "text": "Unser Saal steht auch Nichtmitgliedern für private Feiern zur Verfügung. Bis zu 80 Personen finden hier Platz. Eine große Küche mit Herd, Backofen und Spülmaschine kann mitbenutzt werden, Sie bringen also Ihr eigenes Essen mit. Tische und Stühle sind vorhanden, Geschirr bitte selbst mitbringen. Miete: 250 Euro pro Tag inkl. Endreinigung. Musik nur bis 22 Uhr. Kontakt: Herr Kowalski, 0231 7754 330."
+                },
+                {
+                  "key": "b",
+                  "title": "Partyraum „Kellerlounge Westpark“",
+                  "text": "Sie suchen einen Ort für Ihre Geburtstagsparty oder Ihren Junggesellenabschied? Unsere gemütliche Kellerlounge bietet Platz für bis zu 35 Gäste, mit Bar, Musikanlage und Discolicht. Mitgebrachtes Essen ist leider nicht erlaubt – Snacks und Buffets bestellen Sie direkt bei uns. Vermietung nur an Personen ab 18 Jahren. Freitag und Samstag bis 3 Uhr geöffnet. Infos unter 0231 4478 902."
+                },
+                {
+                  "key": "c",
+                  "title": "Partyservice Sultan – türkische und internationale Küche",
+                  "text": "Ob Hochzeit, Taufe oder Firmenfeier: Wir liefern warme und kalte Buffets direkt zu Ihnen nach Hause oder in Ihren Festsaal. Auf Wunsch auch vegetarisch. Mindestbestellung 20 Personen. Wärmebehälter bringen wir mit und holen sie am nächsten Tag wieder ab. Geschirr und Besteck können wir leider nicht stellen. Bitte bestellen Sie mindestens eine Woche vorher. Telefon 0231 5583 217, www.partyservice-sultan.de"
+                },
+                {
+                  "key": "d",
+                  "title": "Zeltverleih Brandt – Feiern bei jedem Wetter",
+                  "text": "Sie planen ein Gartenfest, aber der Wetterbericht ist unsicher? Wir vermieten Partyzelte in drei Größen (für 20, 50 oder 100 Personen), dazu passende Tische, Bänke und Heizstrahler. Aufbau und Abbau übernehmen unsere Mitarbeiter. Mietdauer: ab einem Tag. Geschirr verleihen wir nicht. Anfragen bitte telefonisch unter 0172 6630 418 (Mo–Fr 8–18 Uhr)."
+                },
+                {
+                  "key": "e",
+                  "title": "DJ Marco – Musik für Ihre Party",
+                  "text": "Professioneller DJ mit eigener Musik- und Lichtanlage legt bei Hochzeiten, Geburtstagen und Firmenfeiern auf. Von Schlager über aktuelle Charts bis zu arabischer und türkischer Musik – ich spiele, was Ihre Gäste hören wollen. Die Anlage kann auch ohne DJ ab 80 Euro pro Wochenende gemietet werden. Auch kurzfristig buchbar. Handy: 0157 3328 9045"
+                },
+                {
+                  "key": "f",
+                  "title": "Konditorei Hoffmann – Torten für jeden Anlass",
+                  "text": "Hochzeit, Taufe oder Jubiläum? Wir backen Ihre Wunschtorte nach Ihren Ideen – mit Foto, Namen oder in Herzform. Für Gäste mit Unverträglichkeiten bieten wir auch Torten ohne Gluten, ohne Laktose oder ganz vegan an. Bitte bestellen Sie zwei Wochen vor Ihrem Fest. Kostenlose Beratung und Probierstück in unserem Café, Marktplatz 5, Di–So 9–18 Uhr."
+                },
+                {
+                  "key": "g",
+                  "title": "Restaurant schließt – Geschirr abzugeben",
+                  "text": "Wegen Geschäftsaufgabe verkaufen wir unser komplettes Geschirr: Teller, Suppenschüsseln, Wein- und Wassergläser sowie Besteck für ca. 120 Personen. Alles in sehr gutem Zustand, ideal für Vereine oder große Familienfeiern. Nur komplett abzugeben, Preis 450 Euro. Abholung in Herne, Bahnhofstraße 27, nach Absprache. Tel. 02323 418 76"
+                },
+                {
+                  "key": "h",
+                  "title": "Spielscheune Kunterbunt – Kindergeburtstage ohne Stress",
+                  "text": "Feiern Sie den Geburtstag Ihres Kindes bei uns! Für Kinder von 4 bis 10 Jahren bieten wir Pakete mit Spielen, Bastelaktion und Schatzsuche. Zwei Betreuerinnen kümmern sich drei Stunden lang um die kleinen Gäste, die Eltern können sich entspannen. Kuchen und Getränke sind im Preis enthalten. Maximal 12 Kinder. Buchung unter 0231 9912 064 oder info@spielscheune-kunterbunt.de"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 26,
+                  "text": "Ihre Nachbarin möchte ihren 60. Geburtstag mit etwa 70 Gästen feiern, wohnt aber in einer kleinen Wohnung ohne Garten und will alle Speisen selbst kochen."
+                },
+                {
+                  "n": 27,
+                  "text": "Sie wollen im Sommer auf Ihrem eigenen Grundstück mit vielen Gästen feiern und brauchen ein Dach über dem Kopf, falls es regnet."
+                },
+                {
+                  "n": 28,
+                  "text": "Ihr Bruder heiratet, und Sie suchen für die Feier mit 100 Gästen alles, was man zum Essen und Trinken auf dem Tisch braucht, nur für ein Wochenende zum Zurückgeben."
+                },
+                {
+                  "n": 29,
+                  "text": "Ihre Kollegin heiratet bald, ihr Verlobter verträgt kein Weizenmehl, und sie sucht jemanden, der für den großen Tag etwas Süßes und Besonderes herstellt."
+                },
+                {
+                  "n": 30,
+                  "text": "Ihr Sohn wird sieben, und Sie möchten mit seinen Freunden feiern, wollen sich aber nicht selbst um die Unterhaltung der Jungen und Mädchen kümmern."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 26,
+            "correct": "a",
+            "explanation": "Im Vereinsheim Sonnenblick ist Platz für 80 Personen und du darfst die Küche benutzen. In der Kellerlounge Westpark ist eigenes Essen verboten und es passen nur 35 Gäste hinein.",
+            "evidence": {
+              "text": "Unser Saal steht auch Nichtmitgliedern für private Feiern zur Verfügung. Bis zu 80 Personen finden hier Platz. Eine große Küche mit Herd, Backofen und Spülmaschine kann mitbenutzt werden, Sie bringen also Ihr eigenes Essen mit. Tische und Stühle sind vorhanden, Geschirr bitte selbst mitbringen. Miete: 250 Euro pro Tag inkl. Endreinigung. Musik nur bis 22 Uhr. Kontakt: Herr Kowalski, 0231 7754 330.",
+              "hit": "Eine große Küche mit Herd, Backofen und Spülmaschine kann mitbenutzt werden, Sie bringen also Ihr eigenes Essen mit."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "d",
+            "explanation": "Der Zeltverleih Brandt vermietet Partyzelte, die bei Regen schützen und bei dir zu Hause stehen können. Das Vereinsheim Sonnenblick ist ein Saal an einem anderen Ort.",
+            "evidence": {
+              "text": "Sie planen ein Gartenfest, aber der Wetterbericht ist unsicher? Wir vermieten Partyzelte in drei Größen (für 20, 50 oder 100 Personen), dazu passende Tische, Bänke und Heizstrahler. Aufbau und Abbau übernehmen unsere Mitarbeiter. Mietdauer: ab einem Tag. Geschirr verleihen wir nicht. Anfragen bitte telefonisch unter 0172 6630 418 (Mo–Fr 8–18 Uhr).",
+              "hit": "Wir vermieten Partyzelte in drei Größen (für 20, 50 oder 100 Personen), dazu passende Tische, Bänke und Heizstrahler."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "x",
+            "explanation": "Das Restaurant verkauft sein Geschirr nur komplett, man kann es nicht ausleihen. Der Zeltverleih Brandt und der Partyservice Sultan bieten kein Geschirr an, deshalb X.",
+            "evidence": {
+              "text": "Wegen Geschäftsaufgabe verkaufen wir unser komplettes Geschirr: Teller, Suppenschüsseln, Wein- und Wassergläser sowie Besteck für ca. 120 Personen. Alles in sehr gutem Zustand, ideal für Vereine oder große Familienfeiern. Nur komplett abzugeben, Preis 450 Euro. Abholung in Herne, Bahnhofstraße 27, nach Absprache. Tel. 02323 418 76",
+              "hit": "Nur komplett abzugeben, Preis 450 Euro."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "f",
+            "explanation": "Die Konditorei Hoffmann macht Hochzeitstorten auch ohne Gluten. Der Partyservice Sultan liefert nur Buffets, keine besonderen Torten.",
+            "evidence": {
+              "text": "Hochzeit, Taufe oder Jubiläum? Wir backen Ihre Wunschtorte nach Ihren Ideen – mit Foto, Namen oder in Herzform. Für Gäste mit Unverträglichkeiten bieten wir auch Torten ohne Gluten, ohne Laktose oder ganz vegan an. Bitte bestellen Sie zwei Wochen vor Ihrem Fest. Kostenlose Beratung und Probierstück in unserem Café, Marktplatz 5, Di–So 9–18 Uhr.",
+              "hit": "Für Gäste mit Unverträglichkeiten bieten wir auch Torten ohne Gluten, ohne Laktose oder ganz vegan an."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "h",
+            "explanation": "In der Spielscheune Kunterbunt machen zwei Betreuerinnen das Programm für die Kinder. Die Kellerlounge Westpark vermietet nur an Erwachsene ab 18 Jahren.",
+            "evidence": {
+              "text": "Feiern Sie den Geburtstag Ihres Kindes bei uns! Für Kinder von 4 bis 10 Jahren bieten wir Pakete mit Spielen, Bastelaktion und Schatzsuche. Zwei Betreuerinnen kümmern sich drei Stunden lang um die kleinen Gäste, die Eltern können sich entspannen. Kuchen und Getränke sind im Preis enthalten. Maximal 12 Kinder. Buchung unter 0231 9912 064 oder info@spielscheune-kunterbunt.de",
+              "hit": "Zwei Betreuerinnen kümmern sich drei Stunden lang um die kleinen Gäste, die Eltern können sich entspannen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-03-t3-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:40:03.542Z",
+        "textType": "Pressemeldung: Schwimmbad wird saniert"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 31,
+              "statement": "Im Hallenbad am Stadtpark kann man im Sommer weiter schwimmen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 32,
+              "prompt": "Was gilt für die Schwimmkurse für Kinder?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sie finden im Freibad in der Ahornstraße statt."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie werden vorübergehend in einem Nachbarort angeboten."
+                },
+                {
+                  "key": "c",
+                  "label": "Man muss die Kinder dafür noch einmal anmelden."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Pressemeldung",
+          "paragraphs": [
+            "Lindenfeld – Hallenbad am Stadtpark wird saniert",
+            "Das Hallenbad am Stadtpark bleibt ab dem 1. Juni für etwa sechs Monate geschlossen. Das Dach und die Lüftung sind alt und müssen erneuert werden. Außerdem bekommt das Bad ein neues Kinderbecken. Die Stadt rechnet mit Kosten von rund 2,4 Millionen Euro.",
+            "Wer in dieser Zeit schwimmen möchte, kann das Freibad in der Ahornstraße besuchen. Es ist im Sommer täglich von 7 bis 20 Uhr geöffnet. Die Schwimmkurse für Kinder finden während der Bauarbeiten im Hallenbad der Nachbargemeinde Kirchdorf statt. Eltern müssen ihre Kinder dafür nicht neu anmelden. Jahreskarten für das Hallenbad werden automatisch um sechs Monate verlängert. Nähere Informationen gibt es auf der Internetseite der Stadtwerke Lindenfeld."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 31,
+            "correct": "falsch",
+            "explanation": "Das Hallenbad ist ab Juni etwa sechs Monate geschlossen. Im Sommer ist nur das Freibad offen.",
+            "evidence": {
+              "text": "Das Hallenbad am Stadtpark bleibt ab dem 1. Juni für etwa sechs Monate geschlossen. Das Dach und die Lüftung sind alt und müssen erneuert werden. Außerdem bekommt das Bad ein neues Kinderbecken. Die Stadt rechnet mit Kosten von rund 2,4 Millionen Euro.",
+              "hit": "Das Hallenbad am Stadtpark bleibt ab dem 1. Juni für etwa sechs Monate geschlossen."
+            }
+          },
+          {
+            "n": 32,
+            "correct": "b",
+            "explanation": "Die Kurse finden im Hallenbad in Kirchdorf statt, also in einem anderen Ort. Das Freibad ist nur für alle anderen Schwimmer gedacht, und eine neue Anmeldung ist nicht nötig.",
+            "evidence": {
+              "text": "Wer in dieser Zeit schwimmen möchte, kann das Freibad in der Ahornstraße besuchen. Es ist im Sommer täglich von 7 bis 20 Uhr geöffnet. Die Schwimmkurse für Kinder finden während der Bauarbeiten im Hallenbad der Nachbargemeinde Kirchdorf statt. Eltern müssen ihre Kinder dafür nicht neu anmelden. Jahreskarten für das Hallenbad werden automatisch um sechs Monate verlängert. Nähere Informationen gibt es auf der Internetseite der Stadtwerke Lindenfeld.",
+              "hit": "Die Schwimmkurse für Kinder finden während der Bauarbeiten im Hallenbad der Nachbargemeinde Kirchdorf statt."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-03-t3-02",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:40:03.542Z",
+        "textType": "Brief der Schule: Projektwoche"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 33,
+              "statement": "In der Projektwoche ist der Schultag kürzer als sonst."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 34,
+              "prompt": "Was sollen die Eltern tun?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sie sollen gemeinsam mit dem Kind Projekte aussuchen."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie sollen ihrem Kind Geld für den Bus mitgeben."
+                },
+                {
+                  "key": "c",
+                  "label": "Sie sollen am Freitag um 8 Uhr zur Schule kommen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ralf Brenner, Schulleiter",
+          "source": "Brief",
+          "paragraphs": [
+            "Liebe Eltern,",
+            "vom 16. bis 20. März findet an unserer Schule eine Projektwoche zum Thema „Gesund leben“ statt. In dieser Woche gibt es keinen normalen Unterricht. Die Kinder kochen, machen Sport, besuchen einen Bauernhof oder lernen etwas über Zähne. Bitte wählen Sie mit Ihrem Kind bis zum 6. März zwei Projekte auf dem beiliegenden Zettel aus und geben Sie ihn der Klassenlehrerin.",
+            "Der Schultag beginnt in der Projektwoche wie immer um 8 Uhr, endet aber schon um 12:30 Uhr. Die Nachmittagsbetreuung findet normal statt. Für den Ausflug zum Bauernhof bezahlen wir den Bus aus der Schulkasse. Am Freitag zeigen die Kinder ab 11 Uhr ihre Ergebnisse. Dazu sind Sie herzlich eingeladen.",
+            "Mit freundlichen Grüßen",
+            "Ralf Brenner",
+            "Schulleiter"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 33,
+            "correct": "richtig",
+            "explanation": "Der Schultag beginnt wie immer, endet aber schon um 12:30 Uhr. Nur die Betreuung am Nachmittag läuft normal weiter.",
+            "evidence": {
+              "text": "Der Schultag beginnt in der Projektwoche wie immer um 8 Uhr, endet aber schon um 12:30 Uhr. Die Nachmittagsbetreuung findet normal statt. Für den Ausflug zum Bauernhof bezahlen wir den Bus aus der Schulkasse. Am Freitag zeigen die Kinder ab 11 Uhr ihre Ergebnisse. Dazu sind Sie herzlich eingeladen.",
+              "hit": "Der Schultag beginnt in der Projektwoche wie immer um 8 Uhr, endet aber schon um 12:30 Uhr."
+            }
+          },
+          {
+            "n": 34,
+            "correct": "a",
+            "explanation": "Die Eltern wählen mit ihrem Kind zwei Projekte auf dem Zettel aus. Den Bus bezahlt die Schule, und die Präsentation am Freitag beginnt erst um 11 Uhr.",
+            "evidence": {
+              "text": "vom 16. bis 20. März findet an unserer Schule eine Projektwoche zum Thema „Gesund leben“ statt. In dieser Woche gibt es keinen normalen Unterricht. Die Kinder kochen, machen Sport, besuchen einen Bauernhof oder lernen etwas über Zähne. Bitte wählen Sie mit Ihrem Kind bis zum 6. März zwei Projekte auf dem beiliegenden Zettel aus und geben Sie ihn der Klassenlehrerin.",
+              "hit": "Bitte wählen Sie mit Ihrem Kind bis zum 6. März zwei Projekte auf dem beiliegenden Zettel aus"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-03-t3-03",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:40:03.542Z",
+        "textType": "E-Mail der Krankenkasse: Bonusprogramm"
+      },
+      "display": {
+        "instruction": "Lesen Sie die drei Texte. Zu jedem Text gibt es zwei Aufgaben. Entscheiden Sie bei jedem Text, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 35,
+              "statement": "Auch Kinder können am Bonusprogramm teilnehmen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 36,
+              "prompt": "Frau Yilmaz bekommt ihr Geld schneller, wenn sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "das Bonusheft am Jahresende per Post schickt."
+                },
+                {
+                  "key": "b",
+                  "label": "ihre Punkte in einem Sportverein sammelt."
+                },
+                {
+                  "key": "c",
+                  "label": "ihre Nachweise digital an die Kasse sendet."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Jana Petersen, Vitalis BKK – Kundenservice",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Sehr geehrte Frau Yilmaz,",
+            "vielen Dank für Ihr Interesse an unserem Bonusprogramm „Fit mit Vitalis“. Für gesundes Verhalten bekommen Sie bei uns Punkte, zum Beispiel für die jährliche Zahnkontrolle, einen Gesundheitskurs oder die Mitgliedschaft in einem Sportverein. Für 1.000 Punkte zahlen wir Ihnen 50 Euro aus. Ihre Kinder können ebenfalls mitmachen und eigene Punkte sammeln.",
+            "Bitte lassen Sie sich jede Maßnahme im Bonusheft bestätigen. Das Heft schicken wir Ihnen in den nächsten Tagen per Post. Sie können es am Jahresende an uns zurückschicken oder die Seiten in unserer App hochladen. Die App ist der schnellere Weg: Das Geld ist dann schon nach etwa zwei Wochen auf Ihrem Konto.",
+            "Mit freundlichen Grüßen",
+            "Jana Petersen",
+            "Vitalis BKK – Kundenservice"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 35,
+            "correct": "richtig",
+            "explanation": "In der E-Mail steht, dass die Kinder mitmachen und eigene Punkte sammeln können.",
+            "evidence": {
+              "text": "vielen Dank für Ihr Interesse an unserem Bonusprogramm „Fit mit Vitalis“. Für gesundes Verhalten bekommen Sie bei uns Punkte, zum Beispiel für die jährliche Zahnkontrolle, einen Gesundheitskurs oder die Mitgliedschaft in einem Sportverein. Für 1.000 Punkte zahlen wir Ihnen 50 Euro aus. Ihre Kinder können ebenfalls mitmachen und eigene Punkte sammeln.",
+              "hit": "Ihre Kinder können ebenfalls mitmachen und eigene Punkte sammeln."
+            }
+          },
+          {
+            "n": 36,
+            "correct": "c",
+            "explanation": "Wer die Seiten in der App hochlädt, hat das Geld nach etwa zwei Wochen. Der Weg per Post ist langsamer.",
+            "evidence": {
+              "text": "Bitte lassen Sie sich jede Maßnahme im Bonusheft bestätigen. Das Heft schicken wir Ihnen in den nächsten Tagen per Post. Sie können es am Jahresende an uns zurückschicken oder die Seiten in unserer App hochladen. Die App ist der schnellere Weg: Das Geld ist dann schon nach etwa zwei Wochen auf Ihrem Konto.",
+              "hit": "oder die Seiten in unserer App hochladen. Die App ist der schnellere Weg: Das Geld ist dann schon nach etwa zwei Wochen auf Ihrem Konto."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-03-t4-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:40:45.909Z",
+        "textType": "Hausordnung"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text. Entscheiden Sie, ob die Aussagen richtig oder falsch sind.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 37,
+              "statement": "Am Sonntagvormittag darf man in der Wohnung staubsaugen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 38,
+              "statement": "Wer in seiner Putzwoche nicht zu Hause ist, soll das vorher mit anderen Mietern regeln."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 39,
+              "statement": "Einen neuen Haustürschlüssel müssen die Mieter selbst bezahlen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Kessler Immobilien GmbH",
+          "source": "Aushang im Treppenhaus",
+          "paragraphs": [
+            "Hausordnung für das Haus Lindenstraße 14",
+            "Liebe Mieterinnen und Mieter, damit sich alle im Haus wohlfühlen, bitten wir Sie, die folgenden Regeln zu beachten.",
+            "Ruhezeiten",
+            "– Montag bis Samstag: 13 bis 15 Uhr und 22 bis 7 Uhr",
+            "– Sonn- und Feiertage: den ganzen Tag",
+            "In dieser Zeit sind laute Arbeiten wie Bohren oder Staubsaugen nicht erlaubt. Musik und Fernseher stellen Sie bitte auf Zimmerlautstärke.",
+            "Reinigung des Treppenhauses",
+            "Die Mieter jeder Etage putzen abwechselnd jede Woche die Treppe und den Flur vor ihrer Wohnung. Wer dran ist, sehen Sie auf dem Plan neben den Briefkästen. Wenn Sie in Ihrer Woche nicht da sind, tauschen Sie bitte vorher mit Nachbarn oder bitten Sie jemanden, die Reinigung für Sie zu übernehmen. Möchten Sie nicht selbst putzen, kann die Firma Glanzwerk das für 18 Euro im Monat machen. Melden Sie sich dafür bei der Hausverwaltung.",
+            "Fahrräder und Kinderwagen",
+            "Fahrräder gehören in den Fahrradkeller. Kinderwagen und Rollatoren dürfen in der Nische unter der Treppe im Erdgeschoss stehen, aber nicht vor den Wohnungstüren.",
+            "Müll",
+            "Bitte trennen Sie Papier, Verpackungen, Bio- und Restmüll. Sperrmüll darf nicht im Hof abgestellt werden. Die Stadt holt ihn zweimal im Jahr kostenlos ab; einen Termin bekommen Sie unter 0621 448 790.",
+            "Schlüssel",
+            "Jede Wohnung erhält zwei Haustürschlüssel. Wenn Sie einen Schlüssel verlieren, informieren Sie sofort die Hausverwaltung. Einen Ersatzschlüssel bestellen wir für Sie; die Kosten von 32 Euro tragen Sie selbst."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 37,
+            "correct": "falsch",
+            "explanation": "Am Sonntag ist den ganzen Tag Ruhezeit, also ist Staubsaugen verboten. Die Zeit von 13 bis 15 Uhr gilt nur von Montag bis Samstag.",
+            "evidence": {
+              "text": "– Sonn- und Feiertage: den ganzen Tag",
+              "hit": "Sonn- und Feiertage: den ganzen Tag"
+            }
+          },
+          {
+            "n": 38,
+            "correct": "richtig",
+            "explanation": "Du sollst vorher mit Nachbarn tauschen oder jemanden um Hilfe bitten. Die Firma Glanzwerk ist nur für Mieter, die nie selbst putzen möchten.",
+            "evidence": {
+              "text": "Die Mieter jeder Etage putzen abwechselnd jede Woche die Treppe und den Flur vor ihrer Wohnung. Wer dran ist, sehen Sie auf dem Plan neben den Briefkästen. Wenn Sie in Ihrer Woche nicht da sind, tauschen Sie bitte vorher mit Nachbarn oder bitten Sie jemanden, die Reinigung für Sie zu übernehmen. Möchten Sie nicht selbst putzen, kann die Firma Glanzwerk das für 18 Euro im Monat machen. Melden Sie sich dafür bei der Hausverwaltung.",
+              "hit": "Wenn Sie in Ihrer Woche nicht da sind, tauschen Sie bitte vorher mit Nachbarn oder bitten Sie jemanden, die Reinigung für Sie zu übernehmen."
+            }
+          },
+          {
+            "n": 39,
+            "correct": "richtig",
+            "explanation": "Die Hausverwaltung bestellt den Schlüssel, aber die 32 Euro zahlst du selbst. Kostenlos ist nur die Abholung vom Sperrmüll.",
+            "evidence": {
+              "text": "Jede Wohnung erhält zwei Haustürschlüssel. Wenn Sie einen Schlüssel verlieren, informieren Sie sofort die Hausverwaltung. Einen Ersatzschlüssel bestellen wir für Sie; die Kosten von 32 Euro tragen Sie selbst.",
+              "hit": "Einen Ersatzschlüssel bestellen wir für Sie; die Kosten von 32 Euro tragen Sie selbst."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-lesen-03-t5-01",
+      "exam": "dtz",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:41:15.608Z",
+        "textType": "Brief des Schwimmvereins zur Anmeldung eines Kindes"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text und schließen Sie die Lücken. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "parts": [
+                "Schwimmverein Delphin Rheinfelden e. V.\nUferstraße 14\n79618 Rheinfelden\n\nRheinfelden, 18.09.20..\n\nANMELDUNG ZUM SCHWIMMKURS\n\n",
+                {
+                  "n": 0,
+                  "options": [
+                    "Sehr geehrter",
+                    "Sehr geehrte",
+                    "Lieber"
+                  ]
+                },
+                " Frau Petrović,\n\nvielen Dank für Ihre Anmeldung. Leider ist der Anfängerkurs am Dienstag schon voll. ",
+                {
+                  "n": 40,
+                  "options": [
+                    "Obwohl",
+                    "Deshalb",
+                    "Weil"
+                  ]
+                },
+                " können wir Ihrer Tochter Lina nur einen Platz am Donnerstag anbieten. Der Kurs beginnt ",
+                {
+                  "n": 41,
+                  "options": [
+                    "um",
+                    "im",
+                    "am"
+                  ]
+                },
+                " 7. Oktober und findet jede Woche von 16:00 bis 16:45 Uhr im Hallenbad statt. Bitte bringen Sie ",
+                {
+                  "n": 42,
+                  "options": [
+                    "Ihre",
+                    "Ihrer",
+                    "Ihren"
+                  ]
+                },
+                " Tochter beim ersten Mal zehn Minuten früher, ",
+                {
+                  "n": 43,
+                  "options": [
+                    "weil",
+                    "denn",
+                    "deshalb"
+                  ]
+                },
+                " die Trainerin sie kennenlernen möchte. Die Kursgebühr von 60 Euro überweisen Sie bitte bis zum 30. September. ",
+                {
+                  "n": 44,
+                  "options": [
+                    "Damit",
+                    "Wenn",
+                    "Ob"
+                  ]
+                },
+                " Lina donnerstags nicht kann, rufen Sie uns bitte an: 07623 489175.\n\nMit ",
+                {
+                  "n": 45,
+                  "options": [
+                    "freundlicher",
+                    "freundliche",
+                    "freundlichen"
+                  ]
+                },
+                " Grüßen\nJürgen Albrecht\nKursleitung"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 40,
+            "correct": "Deshalb",
+            "explanation": "Der Dienstagskurs ist voll, das ist der Grund für das andere Angebot. Nach „Deshalb“ steht das Verb direkt danach, nach „Weil“ und „Obwohl“ müsste es am Ende stehen."
+          },
+          {
+            "n": 41,
+            "correct": "am",
+            "explanation": "Vor einem Datum benutzt man „am“, also „am 7. Oktober“. „Im“ steht vor einem Monat ohne Tag, „um“ vor einer Uhrzeit."
+          },
+          {
+            "n": 42,
+            "correct": "Ihre",
+            "explanation": "„Tochter“ ist feminin und hier Akkusativ: Sie bringen Ihre Tochter. „Ihren“ passt nur zu maskulinen Wörtern wie „Ihren Sohn“."
+          },
+          {
+            "n": 43,
+            "correct": "weil",
+            "explanation": "Das Verb „möchte“ steht am Satzende, das passt nur nach „weil“. Nach „denn“ müsste das Verb an zweiter Stelle stehen."
+          },
+          {
+            "n": 44,
+            "correct": "Wenn",
+            "explanation": "Hier geht es um eine Bedingung: Nur wenn Lina nicht kann, soll Frau Petrović anrufen. „Damit“ nennt ein Ziel und passt hier nicht."
+          },
+          {
+            "n": 45,
+            "correct": "freundlichen",
+            "explanation": "Die feste Grußformel im Brief heißt „Mit freundlichen Grüßen“. Die anderen Endungen sind nach „mit“ falsch."
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Sehr geehrte"
+      ]
+    }
+  ]
+}

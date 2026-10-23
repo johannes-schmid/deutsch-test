@@ -475,3 +475,64 @@
 - The overview tab is `nested`, so it also lit on `/dashboard/konto`; `PortalLink` got an `except` list.
 - A date in a client component (pass end date) uses `useSyncExternalStore` with a null server snapshot: no hydration mismatch, no setState in an effect.
 **Lesson:** Server → client props must be plain data; keep localized copy with functions in a module the client imports. Check unlayered utility classes (`.nz-*`) before combining them with Tailwind position utilities.
+
+## 2026-10-23 — DTZ Modelltest "Anleitung" step
+**Changed:** new `ExamInstructions` (components/exam/part-intro.tsx, on /design/pruefung + DESIGN.md) shown between the intro and the test in components/modelltest/runner.tsx; text in lib/modelltest/anleitung.ts (Sie-form, like the official front page), spoken version by Mark rendered with scripts/modelltest/anleitung.ts to public/audio/modelltest/ (3,217 characters).
+**Outcome:** SUCCESS
+**What worked / went wrong:** pattern taken from inburgering's LuisterInstructie (numbered rules + spoken explanation). After adding an export to the components/exam barrel, the running dev server kept logging "Element type is invalid" for /design/pruefung, although the page rendered; a clean build and restart (rm .next/dev) cleared it.
+**Lesson:** after changing a barrel export, trust `next build` plus a clean dev restart over the dev log; instruction audio is not exam audio, so it may pause and replay.
+**Follow-up (same day):** the Anleitung now also lists the Teile (from the official "Prüfungsteile im Überblick") and a "So zählt …" box (Hören+Lesen 45 points, written part 100 min without a break, overall B1 = Sprechen B1 + Schreiben or Hören/Lesen B1; all in seo/facts.md). Official front matter lives in .unit-cache/official/ms.txt (Modellsatz pp. 3–5) and u2.txt (pp. 6–7, 28). Spoken text needs "a/b/c" and "Richtig/Falsch" rewritten before TTS.
+
+## 2026-10-23 — Portal overview: exam first, level second
+**Changed:** `FAMILIES` + `familyPath/familyCrumb` in lib/exams.ts; `portalFamilies()` replaces `portalExamGroups()` (lib/portal.ts); `portalStats()` in lib/modelltest/portal.ts; new components/portal/portal-overview.tsx (FamilyCard, LevelCard, ScoreCard, WeekCard, ProgressBar; on /design/portal + DESIGN.md); /dashboard rebuilt as family cards + stats column; /dashboard/{goethe,telc,oesd} served by the `[exam]` route as level pickers; sidebar grouped by family with nested levels; breadcrumbs gain the family.
+**Outcome:** SUCCESS (tsc + eslint clean, `next build` passes; checked at 1440 and 390 with a throwaway local user and 4 seeded attempts, deleted afterwards).
+**What worked / went wrong:**
+- A magic-link session for local UI checks: admin `generate_link` → `POST /auth/v1/verify` with the `hashed_token` returns a full session; the `sb-127-auth-token` cookie is `base64-` + base64url(JSON). No JWT signing or `auth.sessions` insert needed. Set it in an *isolated* chrome-devtools context; script files for `evaluate_script` must sit inside the project (gitignored `.unit-cache/`).
+- `next build` without touching the running dev server: build in a scratch copy with `cp -c -R node_modules` (APFS clone); a symlinked node_modules fails Turbopack's root check.
+- A sparkline scaled 0–100 looks flat for typical results; scale to the data range.
+**Lesson:** Start Deutsch 1 belongs to two families, so anything keyed "exam → family" must allow none (no family crumb) rather than pick one.
+
+## 2026-10-23 — Collapsible portal sidebar + compact page header
+**Changed:** `SideGroup` in `components/portal/portal-client.tsx` folds each multi-level family (open on the family or any of its level routes, chevron toggles until the next navigation); `PortalHeader` in `components/portal/portal-exam.tsx` puts mark + title on one line and replaces three hand-rolled headers in `app/(app)/dashboard/[exam]/page.tsx` and `[exam]/[skill]/page.tsx`.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Level hrefs (`/dashboard/goethe-a2`) don't sit under their family href (`/dashboard/goethe`), so "is this group active" must check every level href, not a path prefix of the family.
+**Lesson:** Derive sidebar open state from the pathname with a per-path manual override (`{ path, open }`) instead of an effect; navigation resets it for free.
+
+## 2026-10-23 — DTZ Modelltests 2–4 drafted, rendered and seeded (M5 batch 1)
+**Changed:** `data/modelltest/dtz/{hoeren,lesen,schreiben,sprechen}-0{2,3,4}.json`, `data/modelltest/photos.lock.json`; audio and photos in `.unit-cache/`; all seeded locally as draft. No code changed.
+**Outcome:** SUCCESS. All 12 files pass `validateSet`; `mt_publish_issues` only lists "not reviewed". ≈ $9.40 Claude for three sets (incl. photo refits), ≈ 47.6k ElevenLabs characters (Hören tracks 24.0–24.1 min, Sprechen 38 lines each).
+**What worked / went wrong:**
+- The Anthropic credit ran out mid-run; every call then failed with a 400 and each Teil burned its 3 attempts in seconds. The Teil cache meant nothing was paid twice after the top-up.
+- `author.ts` writes the set file after every finished Teil, so "file exists" is not "set done": a resume loop that skipped existing files left Lesen 2 without Teil 5 and Hören 2 with only Teil 1. Re-run author for the set; cached Teile cost nothing.
+- Sprechen Teil 3 tripped the 6-gram check three times on the examiner's closing rubric ("hier sind einige Notizen als Hilfe", "wir sind nun am Ende der Prüfung"); a plain re-run passed.
+- In zsh, `set -- $a` inside a loop clobbers the positional args and broke a seeding loop; use `read s n <<< "$a"`.
+- Run sets of one skill sequentially (the prompt lists names/places used by the other sets of that skill); skills can run in parallel.
+**Lesson:** check completeness by content (Teile per file / the validator), not by file existence; stop a batch on a billing error instead of letting the retry loop spend its attempts.
+
+## 2026-10-23 — Prüfungspass pricing, PassBuilder, /dashboard/preise and /dashboard/konto
+**Changed:** `lib/pricing.ts` (one-time Prüfungspass: 1 Monat €24.90, 3 Monate €39.90; savings vs n × 1 month), `components/design/pass-builder.tsx` + `lib/i18n/pass.ts` (configurator after inburgering's ModulePicker, on `/preise` in de/uk/ru and in the portal), `app/(app)/dashboard/{preise,konto}/page.tsx`, `components/portal/portal-account.tsx`, portal shell links (`PORTAL_PASS`, `PORTAL_ACCOUNT` in lib/auth/redirect.ts), `/design/portal`, DESIGN.md, CLAUDE.md §3.
+**Outcome:** SUCCESS (tsc clean, `next build` passes in a scratch copy; checked /preise, /dashboard/preise and /dashboard/konto at 1440 and 390 with a throwaway local user, deleted afterwards).
+**What worked / went wrong:**
+- Copy objects with functions (`planName`, `perMonth`) can't be passed from a server page to a client component: every /preise route 500'd. Client components import their copy module by locale instead (`PASS_COPY[locale]`).
+- `.nz-night` (unlayered CSS) sets `position: relative`, which beats Tailwind's `lg:sticky` and turned `top-8` into a 32px offset. Put sticky on a wrapper.
+- The overview tab is `nested`, so it also lit on `/dashboard/konto`; `PortalLink` got an `except` list.
+- A date in a client component (pass end date) uses `useSyncExternalStore` with a null server snapshot: no hydration mismatch, no setState in an effect.
+**Lesson:** Server → client props must be plain data; keep localized copy with functions in a module the client imports. Check unlayered utility classes (`.nz-*`) before combining them with Tailwind position utilities.
+
+## 2026-10-23 — DTZ Modelltests 5–7 + first model comparison
+**Changed:** drafted, voiced and seeded (locally) all 12 skills of sets 5–7; `scripts/modelltest/author.ts` prompts no longer quote official examiner wording; `plan-dtz.ts` set 6 Hören 1 slot replaced; `scripts/lib/drafting.ts` takes `DRAFT_MODEL`/`DRAFT_EFFORT`, `author.ts` takes `MT_OUT`, the originality judge stays on Opus.
+**Outcome:** SUCCESS (sets 5–7), FAILURE (model eval, ran out of API credit)
+**What worked / went wrong:** Sprechen Teil 2 failed the 6-gram check 3× in sets 5–7 because our own prompt quoted "Was sehen Sie auf dem Foto?" and "Wie ist das in Ihrem Heimatland?" — the model copied them. A plan slot (Kurs fällt aus → Ersatz) repeated an official twist. One Pexels photo for set 7 shows a US station with $ prices. In the eval, Opus at medium effort matched high on Hören T3 at ~25% less cost; Sonnet 5.5 and Haiku 5.5 hit the 16k output cap (thinking counts against it) before finishing; the Anthropic balance ran out mid-run.
+**Lesson:** never put official rubric wording into a generator prompt, describe it instead; check plan slots against `research/dtz-official-situations.md`; look at every stock photo for non-German settings; give smaller models a higher max_tokens (stream) before judging them, and check API credit before a batch.
+
+## 2026-10-23 — Model eval v2: Opus/Sonnet/Haiku 5.5 drafting DTZ set 8
+**Changed:** `scripts/lib/drafting.ts` `ask()` now streams (`messages.stream().finalMessage()`) with `max_tokens: 32000`; eval runner + blind judge (Fable 5.1, JSON schema output) in the session scratchpad.
+**Outcome:** SUCCESS
+**What worked / went wrong:** With 32k + streaming, Sonnet no longer truncates. Haiku 5.5 at high effort still hit `max_tokens` on Hören T3 (runaway thinking) and failed after 3 attempts. Blind ranking: Opus medium first in Hören, Lesen and Sprechen; Sonnet first in Schreiben; Haiku last everywhere. Opus medium cost ~$1.15 vs $1.30 for high on the same units. The first judge pass crashed: free-text JSON broke on German „…" quotes — always use `output_config.format` json_schema for judges. Opus high hard-coded the sample persona's name ("Frau Ferreira") into an examiner line addressed to the candidate; sets 1–7 don't have this, but no validator catches it.
+**Lesson:** Non-streaming calls cap around 21k max_tokens in the SDK; stream anything bigger. Judge with a model outside the family under test, labels shuffled, schema-enforced output.
+
+## 2026-10-23 — Modelltest drafting on the Message Batches API
+**Changed:** `scripts/lib/drafting.ts` `ask()` gets a `DRAFT_BATCH=1` path (requests queued for 3 s, sent as one batch, polled every 30 s, parsed with the same zod format); default effort now medium; `scripts/modelltest/batch.sh <sets…>` runs author → images → audio → local seed with batching on; Sprechen prompt + `validateSprechen` forbid the examiner naming the candidate.
+**Outcome:** SUCCESS (smoke test: 2 requests, one batch, ~2 min round trip, parsed)
+**What worked / went wrong:** The first launch ran at full price because I read "batch mode" as "generate in batches"; stopped before any unit finished. The batch discount applies per request, so even small per-process batches get 50% off; the cost is latency (minutes per call, author is sequential per Teil).
+**Lesson:** "Batch" from Hannes means the Batches API (cost). Content generation isn't latency-sensitive: draft with DRAFT_BATCH=1 by default.

@@ -1,0 +1,2364 @@
+{
+  "exam": "dtz",
+  "skill": "hoeren",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "dtz-hoeren-02-t1-bsp",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:34:23.040Z",
+        "textType": "info"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ab wann ist das Bad in den Ferien unter der Woche geöffnet?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ab 10 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "Ab 7 Uhr."
+                },
+                {
+                  "key": "c",
+                  "label": "Ab 9 Uhr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 30.9,
+          "plays": 1,
+          "situation": "Ansage vom Hallenbad",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Ansage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t1-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Herzlich willkommen beim Hallenbad Sonnenwiese. In den Sommerferien gelten bei uns geänderte Öffnungszeiten. Von Montag bis Freitag ist das Bad von zehn bis einundzwanzig Uhr geöffnet, am Wochenende von neun bis achtzehn Uhr. Das Frühschwimmen um sieben Uhr fällt in den Ferien leider aus. Am Dienstag ist das Sportbecken ab sechzehn Uhr für Vereine reserviert. Vielen Dank für Ihren Anruf und viel Spaß beim Schwimmen!",
+            "delivery": "[calm, recorded announcement]"
+          }
+        ]
+      },
+      "example": true,
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "dtz-hoeren-02-t1-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:34:23.041Z",
+        "textType": "anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Was passiert mit dem Hochzeitstermin?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Er findet Ende Mai statt."
+                },
+                {
+                  "key": "b",
+                  "label": "Er wurde schon abgesagt."
+                },
+                {
+                  "key": "c",
+                  "label": "Er wird vorerst freigehalten."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 33.04,
+          "plays": 1,
+          "situation": "Nachricht vom Standesamt",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Mitarbeiter Standesamt",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t1-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "Das Standesamt reserviert den Termin im Juni noch bis Ende Mai. Ende Mai ist nur die Frist für die Urkunde, nicht der Hochzeitstag.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Thomas Brenner vom Standesamt Wettersfeld. Ich rufe an wegen Ihrer Anmeldung zur Eheschließung, Frau Kaya. Leider fehlt uns noch die Geburtsurkunde von Ihrem Verlobten. Keine Sorge: Ihren Wunschtermin am vierzehnten Juni halten wir für Sie frei, und zwar bis Ende Mai. Wenn wir die Urkunde bis dahin nicht haben, müssen wir den Termin wieder freigeben. Sie können sie uns auch per Post schicken. Auf Wiederhören.",
+              "hit": "Ihren Wunschtermin am vierzehnten Juni halten wir für Sie frei, und zwar bis Ende Mai."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Guten Tag, hier spricht Thomas Brenner vom Standesamt Wettersfeld. Ich rufe an wegen Ihrer Anmeldung zur Eheschließung, Frau Kaya. Leider fehlt uns noch die Geburtsurkunde von Ihrem Verlobten. Keine Sorge: Ihren Wunschtermin am vierzehnten Juni halten wir für Sie frei, und zwar bis Ende Mai. Wenn wir die Urkunde bis dahin nicht haben, müssen wir den Termin wieder freigeben. Sie können sie uns auch per Post schicken. Auf Wiederhören.",
+            "delivery": "[friendly, professional]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "dtz-hoeren-02-t1-02",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:34:23.041Z",
+        "textType": "bahnhof"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Wann kommt der Zug heute in Kassel an?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Um 11:50 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "Um 11:25 Uhr."
+                },
+                {
+                  "key": "c",
+                  "label": "Um 10:37 Uhr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 30.75,
+          "plays": 1,
+          "situation": "Durchsage am Bahnhof",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Ansage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t1-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Wegen der Verspätung kommt der Zug erst um elf Uhr fünfzig in Kassel an. Elf Uhr fünfundzwanzig war die alte Ankunftszeit, und zehn Uhr siebenunddreißig ist die neue Abfahrt.",
+            "evidence": {
+              "text": "Gleis drei. Information zum Regionalexpress RE sieben nach Kassel, planmäßige Abfahrt zehn Uhr zwölf. Wegen einer Weichenstörung vor dem Bahnhof Neustadt hat der Zug zurzeit etwa fünfundzwanzig Minuten Verspätung. Die neue Abfahrtszeit ist voraussichtlich zehn Uhr siebenunddreißig. In Kassel kommt der Zug dann um elf Uhr fünfzig an statt um elf Uhr fünfundzwanzig. Wir bitten um Entschuldigung.",
+              "hit": "In Kassel kommt der Zug dann um elf Uhr fünfzig an statt um elf Uhr fünfundzwanzig."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Gleis drei. Information zum Regionalexpress RE sieben nach Kassel, planmäßige Abfahrt zehn Uhr zwölf. Wegen einer Weichenstörung vor dem Bahnhof Neustadt hat der Zug zurzeit etwa fünfundzwanzig Minuten Verspätung. Die neue Abfahrtszeit ist voraussichtlich zehn Uhr siebenunddreißig. In Kassel kommt der Zug dann um elf Uhr fünfzig an statt um elf Uhr fünfundzwanzig. Wir bitten um Entschuldigung.",
+            "delivery": "[calm, announcer, station PA]"
+          }
+        ]
+      },
+      "sound": "station"
+    },
+    {
+      "id": "dtz-hoeren-02-t1-03",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:34:23.041Z",
+        "textType": "privat"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Was soll Aylin am Freitag machen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Marek ins Krankenhaus fahren."
+                },
+                {
+                  "key": "b",
+                  "label": "Am Vormittag arbeiten."
+                },
+                {
+                  "key": "c",
+                  "label": "Am Nachmittag arbeiten."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 28.21,
+          "plays": 1,
+          "situation": "Nachricht von einem Kollegen",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Kollege",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t1-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "b",
+            "explanation": "Aylin soll am Freitag Mareks Frühschicht machen, also morgens arbeiten. Die Spätschicht ist am Montag, und die übernimmt Marek.",
+            "evidence": {
+              "text": "Hallo Aylin, hier ist Marek aus dem Lager. Du, ich hab eine Bitte. Am Freitag habe ich Frühschicht, aber meine Tochter hat vormittags einen Termin im Krankenhaus, und ich will sie begleiten. Könntest du am Freitag meine Frühschicht übernehmen? Dafür mach ich deine Spätschicht am Montag. Die Chefin hat schon gesagt, das ist okay. Ruf mich doch heute Abend kurz an. Danke dir!",
+              "hit": "Könntest du am Freitag meine Frühschicht übernehmen?"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Hallo Aylin, hier ist Marek aus dem Lager. Du, ich hab eine Bitte. Am Freitag habe ich Frühschicht, aber meine Tochter hat vormittags einen Termin im Krankenhaus, und ich will sie begleiten. Könntest du am Freitag meine Frühschicht übernehmen? Dafür mach ich deine Spätschicht am Montag. Die Chefin hat schon gesagt, das ist okay. Ruf mich doch heute Abend kurz an. Danke dir!",
+            "delivery": "[casual, friendly]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "dtz-hoeren-02-t1-04",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:34:23.041Z",
+        "textType": "anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören vier Ansagen. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Wie bekommt Herr Lindqvist die PIN?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Zusammen mit der neuen Karte."
+                },
+                {
+                  "key": "b",
+                  "label": "In einem separaten Schreiben."
+                },
+                {
+                  "key": "c",
+                  "label": "Persönlich in der Filiale."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 29.7,
+          "plays": 1,
+          "situation": "Nachricht von der Bank",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Bankberaterin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t1-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Die PIN kommt in einem eigenen Brief, einige Tage nach der Karte. In die Filiale muss er nicht gehen.",
+            "evidence": {
+              "text": "Guten Tag, Herr Lindqvist, hier ist Sabine Ortmann von der Kreissparkasse Hohenfeld. Ihre neue Girocard ist bestellt und kommt in den nächsten Tagen per Post zu Ihnen nach Hause. Die PIN schicken wir Ihnen aus Sicherheitsgründen in einem eigenen Brief, etwa zwei bis drei Tage später. Sie müssen also nicht in die Filiale kommen. Ihre alte Karte können Sie bis zum Monatsende weiter benutzen. Schönen Tag noch.",
+              "hit": "Die PIN schicken wir Ihnen aus Sicherheitsgründen in einem eigenen Brief, etwa zwei bis drei Tage später."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Guten Tag, Herr Lindqvist, hier ist Sabine Ortmann von der Kreissparkasse Hohenfeld. Ihre neue Girocard ist bestellt und kommt in den nächsten Tagen per Post zu Ihnen nach Hause. Die PIN schicken wir Ihnen aus Sicherheitsgründen in einem eigenen Brief, etwa zwei bis drei Tage später. Sie müssen also nicht in die Filiale kommen. Ihre alte Karte können Sie bis zum Monatsende weiter benutzen. Schönen Tag noch.",
+            "delivery": "[friendly, professional]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "dtz-hoeren-02-t2-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:51:32.920Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Wie sollen Autofahrer in die Innenstadt fahren?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sie fahren über die Brücke."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie fahren am Bahnhof vorbei."
+                },
+                {
+                  "key": "c",
+                  "label": "Sie nehmen den Westring."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 36.28,
+          "plays": 1,
+          "situation": "Verkehrsmeldung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Verkehrsredakteurin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t2-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Autos sollen über den Westring und die Hafenstraße fahren. Über die Brücke dürfen nur Fußgänger und Radfahrer, und über den Bahnhof fährt nur der Bus.",
+            "evidence": {
+              "text": "Hier ist die Verkehrslage um halb acht. In Lindenfeld ist die Albertbrücke ab heute bis Freitag für Autos gesperrt, dort wird die Fahrbahn erneuert. Fußgänger und Radfahrer können die Brücke weiter benutzen. Wer mit dem Auto in die Innenstadt will, fährt bitte über den Westring und dann über die Hafenstraße. Die Buslinie zwölf fährt in dieser Zeit eine Umleitung über den Bahnhof. Rechnen Sie auf dem Ring mit etwa zehn Minuten mehr Fahrzeit.",
+              "hit": "Wer mit dem Auto in die Innenstadt will, fährt bitte über den Westring und dann über die Hafenstraße."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Hier ist die Verkehrslage um halb acht. In Lindenfeld ist die Albertbrücke ab heute bis Freitag für Autos gesperrt, dort wird die Fahrbahn erneuert. Fußgänger und Radfahrer können die Brücke weiter benutzen. Wer mit dem Auto in die Innenstadt will, fährt bitte über den Westring und dann über die Hafenstraße. Die Buslinie zwölf fährt in dieser Zeit eine Umleitung über den Bahnhof. Rechnen Sie auf dem Ring mit etwa zehn Minuten mehr Fahrzeit.",
+            "delivery": "[clear, radio traffic report]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-02-t2-02",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:51:32.921Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Was bekommt man am Dienstag?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Eine günstigere Autowäsche."
+                },
+                {
+                  "key": "b",
+                  "label": "Ein Eis für die Kinder."
+                },
+                {
+                  "key": "c",
+                  "label": "Eine kostenlose Innenreinigung."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 36.7,
+          "plays": 1,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbestimme",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t2-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Am Dienstag gibt es zwanzig Prozent Rabatt, die Wäsche ist also billiger. Das Eis für Kinder gibt es nur am Samstag.",
+            "evidence": {
+              "text": "Ihr Auto braucht mal wieder Pflege? Dann kommen Sie zur Waschstraße Glanzpunkt in der Industriestraße vierzehn in Hollbach! Wir haben montags bis samstags von sieben bis zwanzig Uhr für Sie geöffnet. Die Wäsche mit Innenreinigung kostet normalerweise vierzehn Euro neunzig. Und jetzt aufgepasst: Jeden Dienstag bekommen Sie auf alle Waschprogramme zwanzig Prozent Rabatt. Und am Samstag gibt es für die Kinder ein Eis gratis. Glanzpunkt – damit Ihr Auto wieder strahlt!",
+              "hit": "Jeden Dienstag bekommen Sie auf alle Waschprogramme zwanzig Prozent Rabatt."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_ben",
+            "text": "Ihr Auto braucht mal wieder Pflege? Dann kommen Sie zur Waschstraße Glanzpunkt in der Industriestraße vierzehn in Hollbach! Wir haben montags bis samstags von sieben bis zwanzig Uhr für Sie geöffnet. Die Wäsche mit Innenreinigung kostet normalerweise vierzehn Euro neunzig. Und jetzt aufgepasst: Jeden Dienstag bekommen Sie auf alle Waschprogramme zwanzig Prozent Rabatt. Und am Samstag gibt es für die Kinder ein Eis gratis. Glanzpunkt – damit Ihr Auto wieder strahlt!",
+            "delivery": "[upbeat, energetic advertising]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-02-t2-03",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:51:32.921Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "An welchem Tag kann man gut baden gehen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nur am Freitag."
+                },
+                {
+                  "key": "b",
+                  "label": "Nur am Samstag."
+                },
+                {
+                  "key": "c",
+                  "label": "Nur am Sonntag."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 35.71,
+          "plays": 1,
+          "situation": "Wetterbericht im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Wetterreporterin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t2-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Nur am Samstag wird es heiß und sonnig, deshalb soll man ins Schwimmbad gehen. Am Sonntag ist es kühler und windig.",
+            "evidence": {
+              "text": "Und nun das Wetter fürs Wochenende. Am Freitag ist es noch bewölkt, ab und zu fällt etwas Regen, bei höchstens neunzehn Grad. Am Samstag zeigt sich dann endlich die Sonne, und es wird richtig heiß: bis zu dreißig Grad. Also ab ins Schwimmbad oder an den See! Lange hält das aber nicht: Schon in der Nacht zum Sonntag ziehen Gewitter auf, und der Sonntag wird mit zweiundzwanzig Grad deutlich kühler und windig.",
+              "hit": "Am Samstag zeigt sich dann endlich die Sonne, und es wird richtig heiß: bis zu dreißig Grad. Also ab ins Schwimmbad oder an den See!"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_irene",
+            "text": "Und nun das Wetter fürs Wochenende. Am Freitag ist es noch bewölkt, ab und zu fällt etwas Regen, bei höchstens neunzehn Grad. Am Samstag zeigt sich dann endlich die Sonne, und es wird richtig heiß: bis zu dreißig Grad. Also ab ins Schwimmbad oder an den See! Lange hält das aber nicht: Schon in der Nacht zum Sonntag ziehen Gewitter auf, und der Sonntag wird mit zweiundzwanzig Grad deutlich kühler und windig.",
+            "delivery": "[cheerful, radio host]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-02-t2-04",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:51:32.921Z",
+        "textType": "zug"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Wo ist heute der Ruhebereich?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Im dritten Wagen."
+                },
+                {
+                  "key": "b",
+                  "label": "Im ersten Wagen."
+                },
+                {
+                  "key": "c",
+                  "label": "Im fünften Wagen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 32.91,
+          "plays": 1,
+          "situation": "Durchsage im Zug",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Zugchef",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t2-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Heute ist Wagen drei der Ruhebereich. Wagen fünf ist es nur normalerweise, und im ersten Wagen stehen Fahrräder.",
+            "evidence": {
+              "text": "Sehr geehrte Fahrgäste, herzlich willkommen im Regionalexpress nach Kesselbrunn. Eine Information für Sie: Heute ist ausnahmsweise Wagen drei unser Ruhebereich, nicht wie sonst Wagen fünf. Bitte telefonieren Sie dort nicht und hören Sie Musik nur mit Kopfhörern. Fahrräder und Kinderwagen stellen Sie bitte im ersten Wagen ab. Getränke und kleine Snacks bekommen Sie bei unserem Service am Platz. Unser nächster Halt ist Bad Ostrach. Vielen Dank.",
+              "hit": "Heute ist ausnahmsweise Wagen drei unser Ruhebereich, nicht wie sonst Wagen fünf."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Sehr geehrte Fahrgäste, herzlich willkommen im Regionalexpress nach Kesselbrunn. Eine Information für Sie: Heute ist ausnahmsweise Wagen drei unser Ruhebereich, nicht wie sonst Wagen fünf. Bitte telefonieren Sie dort nicht und hören Sie Musik nur mit Kopfhörern. Fahrräder und Kinderwagen stellen Sie bitte im ersten Wagen ab. Getränke und kleine Snacks bekommen Sie bei unserem Service am Platz. Unser nächster Halt ist Bad Ostrach. Vielen Dank.",
+            "delivery": "[calm, train announcement]"
+          }
+        ]
+      },
+      "sound": "train"
+    },
+    {
+      "id": "dtz-hoeren-02-t2-05",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:51:32.921Z",
+        "textType": "radio"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Ansagen aus dem Radio. Zu jeder Ansage gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Wie meldet man sich für den Kochabend an?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Man schreibt eine E-Mail."
+                },
+                {
+                  "key": "b",
+                  "label": "Man ruft im Zentrum an."
+                },
+                {
+                  "key": "c",
+                  "label": "Man kommt einfach am Abend."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 39.94,
+          "plays": 1,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Kulturredakteurin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t2-05.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Man muss sich bis Dienstag telefonisch anmelden. Per E-Mail geht es nicht, und am Abend bezahlt man nur die Zutaten.",
+            "evidence": {
+              "text": "Sie kochen gern und lernen gern neue Leute kennen? Dann ist dieser Tipp für Sie: Am Donnerstag um achtzehn Uhr gibt es im Nachbarschaftszentrum Am Lindenhof einen internationalen Kochabend. Gemeinsam kochen Sie Gerichte aus Syrien, Polen und der Türkei. Die Zutaten kosten fünf Euro, die zahlen Sie direkt am Abend. Die Plätze sind begrenzt, deshalb melden Sie sich bitte bis Dienstag telefonisch an, unter null fünf eins, vier vier, zwei acht null. Per E-Mail geht das leider nicht.",
+              "hit": "deshalb melden Sie sich bitte bis Dienstag telefonisch an"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_ela",
+            "text": "Sie kochen gern und lernen gern neue Leute kennen? Dann ist dieser Tipp für Sie: Am Donnerstag um achtzehn Uhr gibt es im Nachbarschaftszentrum Am Lindenhof einen internationalen Kochabend. Gemeinsam kochen Sie Gerichte aus Syrien, Polen und der Türkei. Die Zutaten kosten fünf Euro, die zahlen Sie direkt am Abend. Die Plätze sind begrenzt, deshalb melden Sie sich bitte bis Dienstag telefonisch an, unter null fünf eins, vier vier, zwei acht null. Per E-Mail geht das leider nicht.",
+            "delivery": "[friendly, warm radio host]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "dtz-hoeren-02-t3-bsp",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:53:45.134Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Herr Brandt ist gerade im Urlaub."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Der Paketbote …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bringt das Paket am Abend noch einmal."
+                },
+                {
+                  "key": "b",
+                  "label": "stellt das Paket vor Herrn Brandts Tür."
+                },
+                {
+                  "key": "c",
+                  "label": "informiert Herrn Brandt mit einer Karte."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 58.85,
+          "plays": 1,
+          "situation": "Gespräch an der Haustür",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Paketzusteller",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "f": {
+              "name": "Anwohnerin",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t3-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_simon",
+            "text": "Guten Tag! Entschuldigung, dass ich störe. Ich hab hier ein Paket für Herrn Brandt aus dem zweiten Stock, aber da macht keiner auf. Könnten Sie das vielleicht für ihn annehmen?",
+            "delivery": "[friendly, slightly hurried]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Für Herrn Brandt? Ja, klar, kein Problem. Der ist sicher noch bei der Arbeit, der kommt meistens erst so gegen sieben.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_simon",
+            "text": "Ah, prima. Das Paket ist allerdings ziemlich schwer. Soll ich es Ihnen in die Wohnung stellen?",
+            "delivery": "[relieved]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Ja, gern, einfach hier in den Flur. Muss ich irgendwas unterschreiben?",
+            "delivery": "[helpful]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_simon",
+            "text": "Ja, genau, hier auf dem Gerät, mit dem Finger. Und Ihren Namen bitte noch mal?",
+            "delivery": "[businesslike]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Kowalski.",
+            "delivery": "[clear]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_simon",
+            "text": "Danke schön. Ich werf Herrn Brandt dann eine Karte in den Briefkasten, damit er weiß, dass sein Paket bei Ihnen ist.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Gut. Ich bin aber heute Abend erst ab acht wieder zu Hause, dann kann er's holen.",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_simon",
+            "text": "Das schreib ich gleich mit auf die Karte. Vielen Dank und schönen Tag noch!",
+            "delivery": "[cheerful]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Ihnen auch, tschüss!",
+            "delivery": "[cheerful]"
+          }
+        ]
+      },
+      "example": true,
+      "exampleAnswers": [
+        "falsch",
+        "c"
+      ]
+    },
+    {
+      "id": "dtz-hoeren-02-t3-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:53:45.136Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Der Mann ist mit den Schuhen schon gelaufen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Der Mann …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommt sein Geld zurück."
+                },
+                {
+                  "key": "b",
+                  "label": "probiert Schuhe in Blau an."
+                },
+                {
+                  "key": "c",
+                  "label": "nimmt lieber einen Gutschein."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 56.58,
+          "plays": 1,
+          "situation": "Gespräch im Sportgeschäft",
+          "segments": [],
+          "speakers": {
+            "f": {
+              "name": "Fachberaterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "m": {
+              "name": "Käufer",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t3-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Er hat die Schuhe nur einmal zu Hause anprobiert. Darum sehen sie noch neu aus.",
+            "evidence": {
+              "text": "Nein, ich hab sie nur einmal kurz zu Hause anprobiert, auf dem Teppich.",
+              "hit": "Nein, ich hab sie nur einmal kurz zu Hause anprobiert, auf dem Teppich."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "In Grau gibt es seine Größe nicht mehr, deshalb probiert er die blauen Schuhe. Geld zurück bekommt er nicht.",
+            "evidence": {
+              "text": "Na gut, dann probier ich die blauen mal an.",
+              "hit": "Na gut, dann probier ich die blauen mal an."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Guten Tag, kann ich Ihnen helfen?",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_ben",
+            "text": "Ja, hallo. Ich hab letzte Woche diese Laufschuhe hier gekauft, in Größe zweiundvierzig. Aber die sind mir leider zu klein, die drücken vorne total.",
+            "delivery": "[slightly annoyed]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Oh, das ist ärgerlich. Haben Sie den Kassenbon dabei?",
+            "delivery": "[sympathetic]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_ben",
+            "text": "Ja, hier, bitte.",
+            "delivery": "[neutral]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Danke. Sind Sie damit schon gelaufen? Die Sohle sieht ja noch ganz neu aus.",
+            "delivery": "[checking]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_ben",
+            "text": "Nein, ich hab sie nur einmal kurz zu Hause anprobiert, auf dem Teppich.",
+            "delivery": "[reassuring]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Gut, dann ist ein Umtausch kein Problem. Sie möchten also eine Nummer größer, dreiundvierzig?",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_ben",
+            "text": "Genau. Am liebsten wieder in Grau.",
+            "delivery": "[neutral]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Moment, ich schau mal im Computer … Hm, in Grau haben wir dreiundvierzig leider nicht mehr. Aber in Blau ist das Modell noch da.",
+            "delivery": "[thoughtful]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_ben",
+            "text": "Ach so. Hm, und kann ich nicht einfach das Geld zurückbekommen?",
+            "delivery": "[disappointed]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_ela",
+            "text": "Das geht leider nicht, nur Umtausch oder ein Gutschein.",
+            "delivery": "[polite, apologetic]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_ben",
+            "text": "Na gut, dann probier ich die blauen mal an.",
+            "delivery": "[resigned]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-02-t3-02",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:53:45.136Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Der Wasserkocher wird zum Hersteller geschickt."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Was ist das Problem mit dem Wasserkocher?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Er geht nicht mehr automatisch aus."
+                },
+                {
+                  "key": "b",
+                  "label": "Er verliert beim Kochen Wasser."
+                },
+                {
+                  "key": "c",
+                  "label": "Er macht das Wasser nicht heiß."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 58.46,
+          "plays": 1,
+          "situation": "Reklamation im Elektromarkt",
+          "segments": [],
+          "speakers": {
+            "f": {
+              "name": "Kundin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "m": {
+              "name": "Mitarbeiter Kundenservice",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t3-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Das macht man nur normalerweise. Weil die Frau ihn erst seit zehn Tagen hat, bekommt sie sofort ein neues Gerät.",
+            "evidence": {
+              "text": "Danke. Also, normalerweise schicken wir so ein Gerät zum Hersteller, das dauert dann zwei, drei Wochen. Aber Sie haben ihn ja erst seit zehn Tagen. Da bekommen Sie direkt ein neues Gerät.",
+              "hit": "Da bekommen Sie direkt ein neues Gerät."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Der Wasserkocher schaltet sich nicht selbst ab. Das Wasser wird heiß und er ist auch nicht undicht.",
+            "evidence": {
+              "text": "Doch, doch, heiß wird es schon. Aber er schaltet sich nicht mehr von allein ab. Das Wasser kocht und kocht, und ich muss immer daneben stehen und den Knopf drücken.",
+              "hit": "Aber er schaltet sich nicht mehr von allein ab."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "f",
+            "voice": "woman_irene",
+            "text": "Guten Tag. Ich hab hier einen Wasserkocher, den hab ich vor zehn Tagen bei Ihnen gekauft. Und der funktioniert nicht richtig.",
+            "delivery": "[polite, a bit frustrated]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Guten Tag. Oh, das tut mir leid. Was ist denn genau das Problem? Wird das Wasser nicht heiß?",
+            "delivery": "[friendly, helpful]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_irene",
+            "text": "Doch, doch, heiß wird es schon. Aber er schaltet sich nicht mehr von allein ab. Das Wasser kocht und kocht, und ich muss immer daneben stehen und den Knopf drücken.",
+            "delivery": "[annoyed]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Hm, das ist natürlich gefährlich. Ist er vielleicht irgendwo undicht?",
+            "delivery": "[concerned]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_irene",
+            "text": "Nein, Wasser verliert er nicht.",
+            "delivery": "[neutral]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Gut. Haben Sie die Rechnung dabei?",
+            "delivery": "[businesslike]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_irene",
+            "text": "Ja, hier.",
+            "delivery": "[neutral]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Danke. Also, normalerweise schicken wir so ein Gerät zum Hersteller, das dauert dann zwei, drei Wochen. Aber Sie haben ihn ja erst seit zehn Tagen. Da bekommen Sie direkt ein neues Gerät.",
+            "delivery": "[explaining, friendly]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_irene",
+            "text": "Oh, super.",
+            "delivery": "[pleasantly surprised]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Ja. Holen Sie sich einfach den gleichen Wasserkocher aus dem Regal da hinten, und ich mach Ihnen hier den Umtausch fertig.",
+            "delivery": "[friendly]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-02-t3-03",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:53:45.136Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Der Mann hat heute schon im Studio trainiert."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Der Mann wählt den Vertrag, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "den er monatlich kündigen kann."
+                },
+                {
+                  "key": "b",
+                  "label": "der zwölf Monate lang läuft."
+                },
+                {
+                  "key": "c",
+                  "label": "bei dem Kurse extra kosten."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 54.96,
+          "plays": 1,
+          "situation": "Anmeldung im Fitnessstudio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Neukunde",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "f": {
+              "name": "Trainerin",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t3-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Er hat vorhin ein Probetraining gemacht. Es hat ihm gut gefallen.",
+            "evidence": {
+              "text": "Hallo, guten Abend. Ich hätte gern Infos zur Anmeldung. Das Probetraining vorhin hat mir echt gut gefallen.",
+              "hit": "Das Probetraining vorhin hat mir echt gut gefallen."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Er weiß nicht, ob er im Sommer noch in der Stadt ist, deshalb nimmt er den Vertrag ohne feste Laufzeit. Der Jahresvertrag ist billiger, aber zu lang für ihn.",
+            "evidence": {
+              "text": "Okay, dann nehm ich das ohne feste Laufzeit. Muss ich sonst noch was zahlen?",
+              "hit": "Okay, dann nehm ich das ohne feste Laufzeit."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Hallo, guten Abend. Ich hätte gern Infos zur Anmeldung. Das Probetraining vorhin hat mir echt gut gefallen.",
+            "delivery": "[enthusiastic]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Das freut mich! Dann setzen Sie sich doch kurz. Also, wir haben zwei Angebote. Mit einem Vertrag über zwölf Monate zahlen Sie neunundzwanzig Euro neunzig im Monat.",
+            "delivery": "[friendly, energetic]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Mhm. Und die andere Möglichkeit?",
+            "delivery": "[interested]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Ohne feste Laufzeit kostet es neununddreißig neunzig. Dafür können Sie jeden Monat kündigen.",
+            "delivery": "[explaining]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Hm. Das Jahresangebot ist natürlich günstiger. Aber ich weiß noch nicht, ob ich nächsten Sommer noch in der Stadt bin. Vielleicht wechsel ich die Arbeitsstelle.",
+            "delivery": "[thoughtful]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Dann würd ich Ihnen das flexible Angebot empfehlen. Die Kurse, also Yoga, Rückenfit und so weiter, sind bei beiden dabei.",
+            "delivery": "[helpful]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Okay, dann nehm ich das ohne feste Laufzeit. Muss ich sonst noch was zahlen?",
+            "delivery": "[decisive]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Einmal neunzehn Euro für die Mitgliedskarte. Und ich bräuchte Ihren Ausweis und Ihre Bankverbindung.",
+            "delivery": "[businesslike]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Klar, Moment, hier.",
+            "delivery": "[casual]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-02-t3-04",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:53:45.136Z",
+        "textType": "gespraech"
+      },
+      "display": {
+        "instruction": "Sie hören vier Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Entscheiden Sie bei jedem Gespräch, ob die Aussage richtig oder falsch ist und welche Antwort (a, b oder c) am besten passt.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Deryas Schwester heiratet am Wochenende."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 17,
+              "prompt": "Derya arbeitet für Jana …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Sonntag in der Frühschicht."
+                },
+                {
+                  "key": "b",
+                  "label": "am Dienstag in der Spätschicht."
+                },
+                {
+                  "key": "c",
+                  "label": "am Samstag in der Frühschicht."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 51.8,
+          "plays": 1,
+          "situation": "Gespräch unter Kolleginnen",
+          "segments": [],
+          "speakers": {
+            "d": {
+              "name": "Kollegin Derya",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "j": {
+              "name": "Kollegin Jana",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t3-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "richtig",
+            "explanation": "Die Hochzeit ist am Samstag, also am Wochenende. Deshalb braucht Derya frei.",
+            "evidence": {
+              "text": "Ich hab 'ne große Bitte. Meine Schwester heiratet am Samstag, und ich hab ausgerechnet da Frühschicht. Könntest du vielleicht für mich einspringen?",
+              "hit": "Meine Schwester heiratet am Samstag"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "b",
+            "explanation": "Jana hat am Dienstag Spätschicht und muss zum Elternabend, deshalb übernimmt Derya diese Schicht. Am Sonntag hat Jana sowieso frei.",
+            "evidence": {
+              "text": "Dienstag spät? Das passt. Das mach ich gern.",
+              "hit": "Dienstag spät? Das passt. Das mach ich gern."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "d",
+            "voice": "woman_irene",
+            "text": "Du, Jana, hast du mal kurz 'ne Minute?",
+            "delivery": "[casual, a bit hesitant]"
+          },
+          {
+            "speaker": "j",
+            "voice": "woman_ela",
+            "text": "Klar. Was gibt's denn?",
+            "delivery": "[relaxed]"
+          },
+          {
+            "speaker": "d",
+            "voice": "woman_irene",
+            "text": "Ich hab 'ne große Bitte. Meine Schwester heiratet am Samstag, und ich hab ausgerechnet da Frühschicht. Könntest du vielleicht für mich einspringen?",
+            "delivery": "[pleading]"
+          },
+          {
+            "speaker": "j",
+            "voice": "woman_ela",
+            "text": "Oh, wie schön, herzlichen Glückwunsch an deine Schwester! Hm, Samstag … da hab ich eigentlich frei. Ich wollt mal richtig ausschlafen.",
+            "delivery": "[warm, then hesitant]"
+          },
+          {
+            "speaker": "d",
+            "voice": "woman_irene",
+            "text": "Ich weiß, sorry. Aber ich übernehm dafür natürlich 'ne Schicht von dir. Vielleicht am Sonntag?",
+            "delivery": "[apologetic]"
+          },
+          {
+            "speaker": "j",
+            "voice": "woman_ela",
+            "text": "Nee, Sonntag hab ich auch frei. Aber am Dienstag hab ich Spätschicht, und da is der Elternabend in der Schule von meinem Sohn.",
+            "delivery": "[casual, thinking]"
+          },
+          {
+            "speaker": "d",
+            "voice": "woman_irene",
+            "text": "Dienstag spät? Das passt. Das mach ich gern.",
+            "delivery": "[relieved]"
+          },
+          {
+            "speaker": "j",
+            "voice": "woman_ela",
+            "text": "Super, dann tauschen wir. Aber sag's bitte heute noch der Chefin, damit sie den Plan ändert.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "d",
+            "voice": "woman_irene",
+            "text": "Mach ich gleich nach der Pause. Danke dir, du bist echt die Beste!",
+            "delivery": "[happy, grateful]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dtz-hoeren-02-t4-01",
+      "exam": "dtz",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T05:54:55.145Z",
+        "textType": "Radiosendung"
+      },
+      "display": {
+        "instruction": "Sie hören Aussagen zu einem Thema. Welcher der Sätze a–f passt zu den Aussagen? Lesen Sie jetzt die Sätze a–f. Dazu haben Sie eine Minute Zeit.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "",
+                  "text": "Firmen sparen durch Homeoffice viel Geld."
+                },
+                {
+                  "key": "b",
+                  "title": "",
+                  "text": "Viele Berufe lassen sich nicht daheim ausüben."
+                },
+                {
+                  "key": "c",
+                  "title": "",
+                  "text": "Im Homeoffice fehlt der Austausch mit Kollegen."
+                },
+                {
+                  "key": "d",
+                  "title": "",
+                  "text": "Beruf und Privatleben vermischen sich dabei leicht."
+                },
+                {
+                  "key": "e",
+                  "title": "",
+                  "text": "Im Homeoffice entfällt der lange Arbeitsweg."
+                },
+                {
+                  "key": "f",
+                  "title": "",
+                  "text": "Für Homeoffice braucht man ein eigenes Zimmer."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Beispiel"
+                },
+                {
+                  "n": 18,
+                  "text": "Aussage 18"
+                },
+                {
+                  "n": 19,
+                  "text": "Aussage 19"
+                },
+                {
+                  "n": 20,
+                  "text": "Aussage 20"
+                }
+              ]
+            },
+            "noMatch": false
+          }
+        ],
+        "clip": {
+          "duration": 137.33,
+          "plays": 1,
+          "situation": "Radiosendung",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Sabine",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "s2": {
+              "name": "Niklas",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "s3": {
+              "name": "Werner",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "s4": {
+              "name": "Ewa",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "dtz/hoeren-02/dtz-hoeren-02-t4-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 18,
+            "correct": "c",
+            "explanation": "Niklas fühlt sich zu Hause allein und möchte mit den Leuten aus seinem Team zusammen sein. Den langen Weg zur Arbeit erwähnt er nicht.",
+            "evidence": {
+              "text": "Hm, ehrlich gesagt bin ich da skeptisch. Ich hab vor einem Jahr meine erste Stelle bei einer Softwarefirma angefangen, und am Anfang war ich fast nur zu Hause. Das war echt komisch. Man sitzt den ganzen Tag vor dem Bildschirm, hat niemanden zum Reden, und wenn man eine Frage hat, muss man erst eine Nachricht schreiben und warten. Jetzt gehe ich lieber jeden Tag in die Firma. Da trinkt man mal zusammen einen Kaffee, lernt die Leute vom Team kennen und lernt viel schneller.",
+              "hit": "Da trinkt man mal zusammen einen Kaffee, lernt die Leute vom Team kennen"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "d",
+            "explanation": "Werner sieht, dass sein Sohn auch abends und sonntags arbeitet und nie richtig frei hat. Der Laptop im Wohnzimmer ist nur ein Beispiel, es geht ihm nicht um ein eigenes Zimmer.",
+            "evidence": {
+              "text": "Wissen Sie, ich bin seit sechs Jahren in Rente, und zu meiner Zeit gab es so was nicht. Wenn ich um fünf aus der Werkstatt kam, hatte ich frei. Mein Sohn arbeitet jetzt oft von zu Hause, und ich sehe, wie das läuft: Der Laptop steht im Wohnzimmer, und abends um neun schaut er noch schnell in seine Mails. Auch am Sonntag klingelt manchmal das Diensthandy. Richtig abschalten kann er eigentlich nie. Das finde ich nicht gesund.",
+              "hit": "abends um neun schaut er noch schnell in seine Mails"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "b",
+            "explanation": "Ewa sagt, dass man ihre Arbeit in der Pflege und viele andere Arbeiten nicht von zu Hause machen kann. Sie spricht nicht über fehlende Kontakte im Homeoffice.",
+            "evidence": {
+              "text": "Na ja, das klingt alles schön, aber bei mir geht das gar nicht. Ich bin vor fünfzehn Jahren aus Polen gekommen und arbeite als Altenpflegerin in einem Heim. Ich muss die Menschen waschen, ihnen beim Essen helfen, Medikamente geben. Das kann ich doch nicht am Computer machen! Meine Freundin ist Verkäuferin, mein Mann fährt Bus, auch die müssen jeden Tag hin. Ich finde, man redet immer so, als ob alle im Büro sitzen. Aber das stimmt einfach nicht.",
+              "hit": "Das kann ich doch nicht am Computer machen!"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "moderation",
+            "voice": "man_mark",
+            "text": "Guten Morgen, liebe Hörerinnen und Hörer! Seit ein paar Jahren arbeiten viele Menschen in Deutschland nicht mehr jeden Tag im Büro, sondern im Homeoffice. Wir wollten wissen: Was halten Sie vom Arbeiten von zu Hause?"
+          },
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Also, für mich ist das ein echter Gewinn. Ich arbeite bei einer Versicherung in der Innenstadt und wohne ziemlich weit draußen. Früher war ich jeden Tag fast zwei Stunden unterwegs, erst mit dem Bus, dann mit der S-Bahn, und die war oft voll oder hatte Verspätung. Jetzt bin ich drei Tage die Woche zu Hause, mache morgens den Laptop an und fange gleich an. Die Zeit im Zug vermisse ich wirklich nicht.",
+            "item": 0
+          },
+          {
+            "speaker": "s2",
+            "voice": "man_ben",
+            "text": "Hm, ehrlich gesagt bin ich da skeptisch. Ich hab vor einem Jahr meine erste Stelle bei einer Softwarefirma angefangen, und am Anfang war ich fast nur zu Hause. Das war echt komisch. Man sitzt den ganzen Tag vor dem Bildschirm, hat niemanden zum Reden, und wenn man eine Frage hat, muss man erst eine Nachricht schreiben und warten. Jetzt gehe ich lieber jeden Tag in die Firma. Da trinkt man mal zusammen einen Kaffee, lernt die Leute vom Team kennen und lernt viel schneller.",
+            "item": 18
+          },
+          {
+            "speaker": "s3",
+            "voice": "man_michael",
+            "text": "Wissen Sie, ich bin seit sechs Jahren in Rente, und zu meiner Zeit gab es so was nicht. Wenn ich um fünf aus der Werkstatt kam, hatte ich frei. Mein Sohn arbeitet jetzt oft von zu Hause, und ich sehe, wie das läuft: Der Laptop steht im Wohnzimmer, und abends um neun schaut er noch schnell in seine Mails. Auch am Sonntag klingelt manchmal das Diensthandy. Richtig abschalten kann er eigentlich nie. Das finde ich nicht gesund.",
+            "item": 19
+          },
+          {
+            "speaker": "s4",
+            "voice": "woman_kathi",
+            "text": "Na ja, das klingt alles schön, aber bei mir geht das gar nicht. Ich bin vor fünfzehn Jahren aus Polen gekommen und arbeite als Altenpflegerin in einem Heim. Ich muss die Menschen waschen, ihnen beim Essen helfen, Medikamente geben. Das kann ich doch nicht am Computer machen! Meine Freundin ist Verkäuferin, mein Mann fährt Bus, auch die müssen jeden Tag hin. Ich finde, man redet immer so, als ob alle im Büro sitzen. Aber das stimmt einfach nicht.",
+            "item": 20
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "e"
+      ]
+    }
+  ],
+  "track": {
+    "src": "dtz/hoeren-02/track.mp3",
+    "duration": 1443.84,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 6.27,
+        "to": 17.01
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 20.04,
+        "to": 20.72
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 20.72,
+        "to": 32.76
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 32.76,
+        "to": 63.66
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 63.66,
+        "to": 78.71
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 79.75,
+        "to": 80.72
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1
+        ],
+        "from": 80.72,
+        "to": 92.76
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 92.76,
+        "to": 125.81
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1
+        ],
+        "from": 125.81,
+        "to": 140.85
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 141.9,
+        "to": 142.81
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          2
+        ],
+        "from": 142.81,
+        "to": 154.85
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 154.85,
+        "to": 185.6
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          2
+        ],
+        "from": 185.6,
+        "to": 200.65
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 201.69,
+        "to": 202.53
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3
+        ],
+        "from": 202.53,
+        "to": 214.57
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 214.57,
+        "to": 242.78
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3
+        ],
+        "from": 242.78,
+        "to": 257.83
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 258.87,
+        "to": 259.68
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          4
+        ],
+        "from": 259.68,
+        "to": 271.73
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 271.73,
+        "to": 301.43
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          4
+        ],
+        "from": 301.43,
+        "to": 316.47
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 325.25,
+        "to": 337.42
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 341.5,
+        "to": 342.36
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5
+        ],
+        "from": 342.36,
+        "to": 354.4
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 354.4,
+        "to": 390.69
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5
+        ],
+        "from": 390.69,
+        "to": 405.73
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6
+        ],
+        "from": 406.78,
+        "to": 407.64
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6
+        ],
+        "from": 407.64,
+        "to": 419.68
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6
+        ],
+        "from": 419.68,
+        "to": 456.39
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6
+        ],
+        "from": 456.39,
+        "to": 471.43
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          7
+        ],
+        "from": 472.48,
+        "to": 473.31
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          7
+        ],
+        "from": 473.31,
+        "to": 485.36
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          7
+        ],
+        "from": 485.36,
+        "to": 521.06
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          7
+        ],
+        "from": 521.06,
+        "to": 536.11
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          8
+        ],
+        "from": 537.16,
+        "to": 537.97
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          8
+        ],
+        "from": 537.97,
+        "to": 550.01
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          8
+        ],
+        "from": 550.01,
+        "to": 582.92
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          8
+        ],
+        "from": 582.92,
+        "to": 597.97
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          9
+        ],
+        "from": 599.01,
+        "to": 599.85
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          9
+        ],
+        "from": 599.85,
+        "to": 611.89
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          9
+        ],
+        "from": 611.89,
+        "to": 651.83
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          9
+        ],
+        "from": 651.83,
+        "to": 666.88
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          0,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "from": 675.63,
+        "to": 692.61
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 695.64,
+        "to": 696.32
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 696.32,
+        "to": 708.36
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 708.36,
+        "to": 767.22
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 767.22,
+        "to": 782.26
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11
+        ],
+        "from": 783.31,
+        "to": 785.03
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11
+        ],
+        "from": 785.03,
+        "to": 797.07
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11
+        ],
+        "from": 797.07,
+        "to": 853.66
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11
+        ],
+        "from": 853.66,
+        "to": 868.7
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12,
+          13
+        ],
+        "from": 869.75,
+        "to": 871.71
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          12,
+          13
+        ],
+        "from": 871.71,
+        "to": 883.75
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12,
+          13
+        ],
+        "from": 883.75,
+        "to": 942.21
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          12,
+          13
+        ],
+        "from": 942.21,
+        "to": 957.26
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14,
+          15
+        ],
+        "from": 958.3,
+        "to": 960.21
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          14,
+          15
+        ],
+        "from": 960.21,
+        "to": 972.25
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14,
+          15
+        ],
+        "from": 972.25,
+        "to": 1027.21
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          14,
+          15
+        ],
+        "from": 1027.21,
+        "to": 1042.26
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1043.3,
+        "to": 1045.29
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1045.29,
+        "to": 1057.33
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1057.33,
+        "to": 1109.13
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17
+        ],
+        "from": 1109.13,
+        "to": 1124.18
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          18,
+          19,
+          20
+        ],
+        "from": 1132.96,
+        "to": 1148.47
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          0,
+          18,
+          19,
+          20
+        ],
+        "from": 1151.5,
+        "to": 1221.54
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          18,
+          19,
+          20
+        ],
+        "from": 1221.54,
+        "to": 1237.42
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 1240.45,
+        "to": 1241.13
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 1245.18,
+        "to": 1272.06
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 1272.06,
+        "to": 1287.11
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          18
+        ],
+        "from": 1288.15,
+        "to": 1289.2
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          18
+        ],
+        "from": 1293.24,
+        "to": 1324.43
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          18
+        ],
+        "from": 1324.43,
+        "to": 1339.48
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          19
+        ],
+        "from": 1340.53,
+        "to": 1341.65
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          19
+        ],
+        "from": 1345.7,
+        "to": 1374.25
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          19
+        ],
+        "from": 1374.25,
+        "to": 1389.3
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          20
+        ],
+        "from": 1390.34,
+        "to": 1391.44
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          20
+        ],
+        "from": 1395.49,
+        "to": 1424.51
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          20
+        ],
+        "from": 1424.51,
+        "to": 1439.56
+      }
+    ]
+  }
+}
