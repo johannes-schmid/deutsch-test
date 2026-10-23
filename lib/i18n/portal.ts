@@ -91,14 +91,20 @@ export const PORTAL_COPY = {
       schreiben: (min: number) => [`Du wählst Aufgabe A oder B und schreibst ${min} Minuten lang, wie in der Prüfung.`, "Danach bewerten wir deinen Text nach den vier offiziellen DTZ-Kriterien und zeigen dir eine Musterlösung."],
       schreibenTelc: (min: number) => [`Du beantwortest eine E-Mail und schreibst zu allen vier Punkten, ${min} Minuten lang, wie in der Prüfung.`, "Danach bewerten wir deinen Text nach den drei offiziellen telc-Kriterien und zeigen dir eine Musterlösung."],
       sprechenTelc: (min: number) => [`Die mündliche Prüfung zu zweit wie bei telc: zuerst 20 Minuten Vorbereitung mit allen Aufgabenblättern, dann etwa ${min} Minuten Gespräch in drei Teilen. Dein Partner reagiert auf das, was du sagst; die Prüferin leitet durch die Teile.`, "Danach bekommst du Punkte nach den vier offiziellen telc-Kriterien, für jeden Teil einzeln, und siehst, was wir verstanden haben."],
+      // Start Deutsch 1 / telc A2: Lesen and Schreiben share one block in the exam (45 / 50 minutes).
+      lesenStart: (min: number, block: number) => [`Der ganze Prüfungsteil Lesen mit allen drei Teilen. Du hast ${min} Minuten. In der Prüfung hast du für Lesen und Schreiben zusammen ${block} Minuten.`, "Du kannst zwischen den Aufgaben hin und her springen. Am Ende siehst du alle Lösungen mit Erklärung."],
+      schreibenStart: (min: number, block: number) => [`Teil 1: Du füllst ein Formular aus. Teil 2: Du schreibst eine kurze Nachricht. Du hast ${min} Minuten, in der Prüfung zusammen mit Lesen ${block} Minuten.`, "Danach zählen wir das Formular aus und bewerten deine Nachricht nach den offiziellen Kriterien. Du siehst auch eine Musterlösung."],
+      sprechenStart: (min: number) => [`Die mündliche Prüfung wie bei telc, ungefähr ${min} Minuten, ohne Vorbereitung. Die Prüferin leitet durch drei Teile, dein Partner fragt dich und antwortet dir.`, "Danach bekommst du Punkte für jede Aufgabe nach den offiziellen Kriterien und siehst, was wir verstanden haben."],
       sprechen: (min: number) => [`Die mündliche Prüfung zu zweit, ungefähr ${min} Minuten: Die Prüferin stellt Fragen, dein Partner spricht auch. Bei den Nachfragen und beim Planen reagieren beide auf das, was du sagst.`, "Danach bekommst du Punkte nach den offiziellen DTZ-Kriterien und siehst, was wir verstanden haben."],
     },
     rules: {
       track: "Ein Track ohne Pause, jeder Text einmal",
       trackTelc: "Ein Track ohne Pause: Teil 1 einmal, Teil 2 und 3 zweimal",
+      trackStart: "Ein Track ohne Pause: Teil 1 und 3 zweimal, Teil 2 einmal",
       noFeedback: "Lösungen siehst du erst am Ende",
       time: (min: number) => `${min} Minuten, die Zeit läuft sichtbar mit`,
       writing: "Schreib zu allen vier Punkten, mit Anrede und Gruß",
+      writingStart: "Zuerst das Formular, dann die Nachricht mit Anrede und Gruß",
       headphones: "Am besten mit Kopfhörern",
       pair: "Zu zweit wie in der Prüfung, mit Prüferin und Partner",
       prep: (min: number) => `${min} Minuten Vorbereitung mit Notizen, dann geht es los`,
@@ -138,6 +144,12 @@ export const PORTAL_COPY = {
       partial: "Du hast nicht alle Teile gemacht. Fehlende Teile zählen 0 Punkte.",
       // Exams scored in points (telc B1, research/telc-b1.md §4).
       pointsHeadline: (passed: boolean) => (passed ? "Genug Punkte zum Bestehen." : "Noch nicht genug Punkte zum Bestehen."),
+      /** Start Deutsch 1 / telc A2 (research/start-deutsch-1.md §4, research/telc-a2.md §6): 15 per skill, 60 in all. */
+      startLead: (skill: string) => `In der Prüfung zählen alle vier Teile zusammen: Ab 36 von 60 Punkten gibt es eine Note, darunter steht „teilgenommen“. Dieses Ergebnis gilt nur für ${skill} und ist ein Richtwert.`,
+      startWritingNote: "Teil 1: ein Punkt für jede richtige Angabe, kleine Rechtschreibfehler zählen nicht, Zahlen müssen stimmen. Teil 2: jeder Inhaltspunkt 3, 1,5 oder 0 Punkte, Anrede und Gruß 1 Punkt. Höchstens 15 Punkte. Übungsfeedback, kein offizielles telc-Ergebnis.",
+      startSpeakingNote: "Bewertet nach den offiziellen Kriterien: jede Aufgabe ganz, halb oder gar nicht erfüllt. Teil 1 gibt bis zu 3 Punkte, Teil 2 und 3 je bis zu 6. Wichtig ist, dass man dich versteht, nicht dass du keine Fehler machst. Übungsfeedback, kein offizielles telc-Ergebnis.",
+      formH: "Teil 1: Dein Formular",
+      formName: "Formular ausfüllen",
       pointsLead: { hoeren: "Bei telc Deutsch B1 zählen Lesen, Sprachbausteine, Hören und Schreiben zusammen: Bestanden ist die schriftliche Prüfung ab 135 von 225 Punkten. Dieses Ergebnis gilt nur für Hören und ist ein Richtwert.", lesen: "Bei telc Deutsch B1 zählen Lesen, Sprachbausteine, Hören und Schreiben zusammen: Bestanden ist die schriftliche Prüfung ab 135 von 225 Punkten. Dieses Ergebnis gilt nur für Lesen und Sprachbausteine und ist ein Richtwert." } as Record<string, string>,
       perTeil: "Punkte pro Teil",
       telcWritingNote: "Bewertet nach den drei offiziellen telc-Kriterien: Aufgabenbewältigung, Kommunikative Gestaltung und Formale Richtigkeit, je Stufe A bis D (5, 3, 1 oder 0 Punkte), die Summe mal 3. Höchstens 45 Punkte. Übungsfeedback, kein offizielles telc-Ergebnis.",

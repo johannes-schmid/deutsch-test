@@ -1,0 +1,191 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-01-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Formular ausfüllen: Anmeldung für einen Kurs"
+      },
+      "exampleAnswers": [
+        "Nguyen, Lan"
+      ],
+      "display": {
+        "instruction": "Ihre Kollegin möchte sich für einen Kochkurs anmelden. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Kollegin Lan Nguyen möchte im Stadtteilzentrum Nord einen Kochkurs machen. Sie isst kein Fleisch. Deshalb möchte sie in den vegetarischen Kurs.",
+            "Es gibt zwei Termine: am Montagnachmittag und am Donnerstagabend. Am Montag arbeitet Lan, also nimmt sie den Kurs am Donnerstag.",
+            "Lan wohnt in der Ringstraße 17 in Gießen. Ihre Handynummer ist 0152 6631 840."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Stadtteilzentrum Nord · Anmeldung Kochkurs\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nHandynummer: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nKurs: ",
+                {
+                  "n": 4,
+                  "options": [
+                    "vegetarisch",
+                    "mit Fleisch"
+                  ]
+                },
+                "\nKurstag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Ringstraße 17",
+            "accept": [
+              "Ringstr. 17",
+              "Ringstrasse 17",
+              "Ringstraße 17, Gießen",
+              "Ringstraße 17 in Gießen"
+            ],
+            "explanation": "Lan wohnt in der Ringstraße 17. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Kollegin Lan Nguyen möchte im Stadtteilzentrum Nord einen Kochkurs machen. Sie isst kein Fleisch. Deshalb möchte sie in den vegetarischen Kurs. Es gibt zwei Termine: am Montagnachmittag und am Donnerstagabend. Am Montag arbeitet Lan, also nimmt sie den Kurs am Donnerstag. Lan wohnt in der Ringstraße 17 in Gießen. Ihre Handynummer ist 0152 6631 840.",
+              "hit": "Lan wohnt in der Ringstraße 17 in Gießen."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "Gießen",
+            "accept": [
+              "Giessen",
+              "in Gießen"
+            ],
+            "explanation": "Lan wohnt in Gießen.",
+            "evidence": {
+              "text": "Ihre Kollegin Lan Nguyen möchte im Stadtteilzentrum Nord einen Kochkurs machen. Sie isst kein Fleisch. Deshalb möchte sie in den vegetarischen Kurs. Es gibt zwei Termine: am Montagnachmittag und am Donnerstagabend. Am Montag arbeitet Lan, also nimmt sie den Kurs am Donnerstag. Lan wohnt in der Ringstraße 17 in Gießen. Ihre Handynummer ist 0152 6631 840.",
+              "hit": "Lan wohnt in der Ringstraße 17 in Gießen."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "0152 6631 840",
+            "accept": [
+              "01526631840",
+              "0152 6631840",
+              "0152-6631 840",
+              "0152-6631840",
+              "0152/6631840",
+              "0152/6631 840"
+            ],
+            "explanation": "Die Nummer muss genau stimmen: 0152 6631 840.",
+            "evidence": {
+              "text": "Ihre Kollegin Lan Nguyen möchte im Stadtteilzentrum Nord einen Kochkurs machen. Sie isst kein Fleisch. Deshalb möchte sie in den vegetarischen Kurs. Es gibt zwei Termine: am Montagnachmittag und am Donnerstagabend. Am Montag arbeitet Lan, also nimmt sie den Kurs am Donnerstag. Lan wohnt in der Ringstraße 17 in Gießen. Ihre Handynummer ist 0152 6631 840.",
+              "hit": "Ihre Handynummer ist 0152 6631 840."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "vegetarisch",
+            "explanation": "Lan isst kein Fleisch. Sie möchte in den vegetarischen Kurs.",
+            "evidence": {
+              "text": "Ihre Kollegin Lan Nguyen möchte im Stadtteilzentrum Nord einen Kochkurs machen. Sie isst kein Fleisch. Deshalb möchte sie in den vegetarischen Kurs. Es gibt zwei Termine: am Montagnachmittag und am Donnerstagabend. Am Montag arbeitet Lan, also nimmt sie den Kurs am Donnerstag. Lan wohnt in der Ringstraße 17 in Gießen. Ihre Handynummer ist 0152 6631 840.",
+              "hit": "Deshalb möchte sie in den vegetarischen Kurs."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "Donnerstag",
+            "accept": [
+              "donnerstags",
+              "Donnerstagabend",
+              "donnerstagabends",
+              "am Donnerstag",
+              "Donnerstag Abend"
+            ],
+            "explanation": "Am Montag arbeitet Lan. Sie nimmt den Kurs am Donnerstagabend.",
+            "evidence": {
+              "text": "Ihre Kollegin Lan Nguyen möchte im Stadtteilzentrum Nord einen Kochkurs machen. Sie isst kein Fleisch. Deshalb möchte sie in den vegetarischen Kurs. Es gibt zwei Termine: am Montagnachmittag und am Donnerstagabend. Am Montag arbeitet Lan, also nimmt sie den Kurs am Donnerstag. Lan wohnt in der Ringstraße 17 in Gießen. Ihre Handynummer ist 0152 6631 840.",
+              "hit": "also nimmt sie den Kurs am Donnerstag"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-01-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Kurze E-Mail an die Nachbarin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an die Nachbarin",
+            "situation": "Sie fahren für eine Woche zu Ihrer Schwester nach Rostock. Schreiben Sie Ihrer Nachbarin, Frau Brandt, eine E-Mail.",
+            "points": [
+              "Warum schreiben Sie?",
+              "Bitte: Post aus dem Briefkasten nehmen",
+              "Wann sind Sie wieder zu Hause?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Liebe Frau Brandt,\nich fahre morgen für eine Woche zu meiner Schwester nach Rostock. Können Sie bitte meine Post aus dem Briefkasten nehmen? Am Sonntag bin ich wieder zu Hause.\nVielen Dank und viele Grüße\nAmira Said"
+          }
+        ]
+      }
+    }
+  ]
+}

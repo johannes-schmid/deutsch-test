@@ -2,6 +2,7 @@ import "server-only"
 import { requireAdmin } from "@/lib/admin/guard"
 import { ownsExam } from "@/lib/entitlements"
 import { indicativeLevel } from "@/lib/exam/band"
+import { isStartExam, typedRight } from "@/lib/exam/scoring/start"
 import { closedScore, type PartPoints } from "@/lib/exam/scoring/telc-b1"
 import type { ItemKey } from "@/lib/exam/kurztest"
 import type { PartId } from "@/lib/exam/types"
@@ -53,7 +54,7 @@ export type MtClosedResult = {
   total: number
   teile: { label: string; items: { n: number; right: boolean }[] }[]
   keys: ItemKey[]
-  /** Exams scored in points (telc B1): the official weighted points, per Teil and in all. */
+  /** Exams scored in points (telc B1 weighted; Start Deutsch 1 and telc A2 one point per item): per Teil and in all. */
   points?: { points: number; max: number; parts: PartPoints[] }
   transcripts: Record<string, { speaker: string; text: string }[]>
 }
@@ -66,18 +67,39 @@ type QuestionRow = { id: string; n: number; example: boolean; explanation: strin
  */
 export async function scoreClosed(attemptId: string, setId: string, exam: ExamId, skill: PartId, answers: Record<number, string>): Promise<MtClosedResult> {
   const db = createAdminClient()
-  const { data, error } = await db.from("mt_questions").select("id, n, example, explanation, evidence, mt_stimuli!inner(teil), mt_options(label, is_correct)").eq("set_id", setId).eq("example", false).order("n")
+  const [{ data, error }, blocks] = await Promise.all([
+    db.from("mt_questions").select("id, n, example, explanation, evidence, mt_stimuli!inner(teil), mt_options(label, is_correct)").eq("set_id", setId).eq("example", false).order("n"),
+    loadKeyedBlocks(setId, exam, skill),
+  ])
   if (error) throw error
   const qs = data as unknown as QuestionRow[]
-  const keys: ItemKey[] = qs.map((q) => ({ n: q.n, correct: q.mt_options.find((o) => o.is_correct)?.label ?? "", explanation: q.explanation ?? "", ...(q.evidence ? { evidence: q.evidence } : {}) }))
-  const right = (n: number) => answers[n] !== undefined && answers[n] === keys.find((k) => k.n === n)?.correct
+  // Typed answers (gaps without options) are scored with spelling tolerance against the key and its accepted forms.
+  const typed = new Map<number, string[]>()
+  for (const { block: b } of blocks)
+    for (const it of b.display.items)
+      if (it.type === "gap") for (const p of it.data.parts) if (typeof p !== "string" && !p.options.length) typed.set(p.n, b.key.answers.find((a) => a.n === p.n)?.accept ?? [])
+  const keys: ItemKey[] = qs.map((q) => ({ n: q.n, correct: q.mt_options.find((o) => o.is_correct)?.label ?? "", explanation: q.explanation ?? "", ...(q.evidence ? { evidence: q.evidence } : {}), ...(typed.get(q.n)?.length ? { accept: typed.get(q.n) } : {}) }))
+  const right = (n: number) => {
+    const k = keys.find((x) => x.n === n)
+    if (answers[n] === undefined || !k) return false
+    return typed.has(n) ? typedRight(answers[n], String(k.correct), typed.get(n)) : answers[n] === k.correct
+  }
   const { error: insErr } = await db.from("mt_answers").upsert(qs.map((q) => ({ attempt_id: attemptId, question_id: q.id, chosen: answers[q.n] ?? null, correct: right(q.n) })), { onConflict: "attempt_id,question_id" })
   if (insErr) throw insErr
   const correct = keys.filter((k) => right(k.n)).length
-  const points = exam === "telc-b1" ? closedScore(skill, new Set(keys.filter((k) => right(k.n)).map((k) => k.n))) : undefined
-  const teile = [...new Set(qs.map((q) => q.mt_stimuli.teil))].map((teil, i) => ({ label: points?.parts[i]?.label ?? `Teil ${teil}`, items: qs.filter((q) => q.mt_stimuli.teil === teil).map((q) => ({ n: q.n, right: right(q.n) })) }))
+  const byTeil = [...new Set(qs.map((q) => q.mt_stimuli.teil))].map((teil) => ({ teil, items: qs.filter((q) => q.mt_stimuli.teil === teil).map((q) => ({ n: q.n, right: right(q.n) })) }))
+  const points =
+    exam === "telc-b1"
+      ? closedScore(skill, new Set(keys.filter((k) => right(k.n)).map((k) => k.n)))
+      : isStartExam(exam)
+        ? (() => {
+            const parts = byTeil.map((t) => ({ label: `Teil ${t.teil}`, points: t.items.filter((i) => i.right).length, max: t.items.length }))
+            return { points: correct, max: keys.length, parts }
+          })()
+        : undefined
+  const teile = byTeil.map((t, i) => ({ label: points?.parts[i]?.label ?? `Teil ${t.teil}`, items: t.items }))
   const transcripts = Object.fromEntries(
-    (await loadKeyedBlocks(setId, exam, skill)).filter(({ block: b }) => b.key.script && b.display.clip).map(({ block: b }) => [b.id, b.key.script!.map((t) => ({ speaker: b.display.clip!.speakers[t.speaker]?.name ?? (t.speaker === "moderation" ? "Moderation" : t.speaker), text: t.text }))])
+    blocks.filter(({ block: b }) => b.key.script && b.display.clip).map(({ block: b }) => [b.id, b.key.script!.map((t) => ({ speaker: b.display.clip!.speakers[t.speaker]?.name ?? (t.speaker === "moderation" ? "Moderation" : t.speaker), text: t.text }))])
   )
   return { kind: "closed", level: indicativeLevel(correct, keys.length), correct, total: keys.length, teile, keys, ...(points ? { points } : {}), transcripts }
 }

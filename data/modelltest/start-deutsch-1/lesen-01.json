@@ -1,0 +1,685 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-01-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Kurze Notiz an eine Kollegin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Sandra geht heute früher nach Hause."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Olga soll mit Herrn Brenner sprechen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Der Drucker wird heute noch repariert."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Sandra",
+          "source": "Notiz",
+          "paragraphs": [
+            "Liebe Olga,",
+            "mein Sohn ist krank. Ich gehe heute schon um 14 Uhr nach Hause. Um 15 Uhr ruft Herr Brenner an. Bitte sag ihm: Seine Bestellung kommt am Montag. Und der Drucker geht nicht. Der Techniker kommt morgen um 9 Uhr.",
+            "Danke!",
+            "Sandra"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Herr Brenner ruft um 15 Uhr an. Dann ist Sandra nicht mehr da. Olga soll ihm etwas sagen.",
+            "evidence": {
+              "text": "mein Sohn ist krank. Ich gehe heute schon um 14 Uhr nach Hause. Um 15 Uhr ruft Herr Brenner an. Bitte sag ihm: Seine Bestellung kommt am Montag. Und der Drucker geht nicht. Der Techniker kommt morgen um 9 Uhr.",
+              "hit": "Bitte sag ihm: Seine Bestellung kommt am Montag."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "falsch",
+            "explanation": "Der Drucker geht nicht. Aber der Techniker kommt erst morgen um 9 Uhr, nicht heute.",
+            "evidence": {
+              "text": "mein Sohn ist krank. Ich gehe heute schon um 14 Uhr nach Hause. Um 15 Uhr ruft Herr Brenner an. Bitte sag ihm: Seine Bestellung kommt am Montag. Und der Drucker geht nicht. Der Techniker kommt morgen um 9 Uhr.",
+              "hit": "Der Techniker kommt morgen um 9 Uhr."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Kurze E-Mail an eine Freundin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Der Flohmarkt fängt um 7 Uhr an."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Mirela braucht Tüten von Rana."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Rana und Mirela fahren mit dem Auto zum Flohmarkt."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Mirela",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Rana,",
+            "am Samstag ist im Hof von der Schillerschule ein Kinderflohmarkt. Ich möchte dort Kinderkleidung und Spielsachen verkaufen. Hilfst du mir? Der Flohmarkt beginnt um 8 Uhr, aber wir treffen uns schon um 7 Uhr bei mir. Mein Mann bringt die Sachen mit dem Auto zur Schule. Wir zwei gehen zu Fuß, es ist ja nicht weit. Kannst du bitte ein paar Tüten mitbringen? Ich habe keine mehr.",
+            "Bis Samstag!",
+            "Mirela"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Um 7 Uhr treffen sich Rana und Mirela. Der Flohmarkt beginnt erst um 8 Uhr.",
+            "evidence": {
+              "text": "am Samstag ist im Hof von der Schillerschule ein Kinderflohmarkt. Ich möchte dort Kinderkleidung und Spielsachen verkaufen. Hilfst du mir? Der Flohmarkt beginnt um 8 Uhr, aber wir treffen uns schon um 7 Uhr bei mir. Mein Mann bringt die Sachen mit dem Auto zur Schule. Wir zwei gehen zu Fuß, es ist ja nicht weit. Kannst du bitte ein paar Tüten mitbringen? Ich habe keine mehr.",
+              "hit": "Der Flohmarkt beginnt um 8 Uhr"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "Mirela hat keine Tüten mehr. Sie fragt Rana: Kannst du ein paar Tüten mitbringen?",
+            "evidence": {
+              "text": "am Samstag ist im Hof von der Schillerschule ein Kinderflohmarkt. Ich möchte dort Kinderkleidung und Spielsachen verkaufen. Hilfst du mir? Der Flohmarkt beginnt um 8 Uhr, aber wir treffen uns schon um 7 Uhr bei mir. Mein Mann bringt die Sachen mit dem Auto zur Schule. Wir zwei gehen zu Fuß, es ist ja nicht weit. Kannst du bitte ein paar Tüten mitbringen? Ich habe keine mehr.",
+              "hit": "Kannst du bitte ein paar Tüten mitbringen?"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Nur Mirelas Mann fährt mit dem Auto und bringt die Sachen. Rana und Mirela gehen zu Fuß.",
+            "evidence": {
+              "text": "am Samstag ist im Hof von der Schillerschule ein Kinderflohmarkt. Ich möchte dort Kinderkleidung und Spielsachen verkaufen. Hilfst du mir? Der Flohmarkt beginnt um 8 Uhr, aber wir treffen uns schon um 7 Uhr bei mir. Mein Mann bringt die Sachen mit dem Auto zur Schule. Wir zwei gehen zu Fuß, es ist ja nicht weit. Kannst du bitte ein paar Tüten mitbringen? Ich habe keine mehr.",
+              "hit": "Wir zwei gehen zu Fuß"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "a"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten am Sonntag in ein Museum gehen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.museum-wasserburg.de · Öffnungszeiten: Dienstag bis Sonntag 10–17 Uhr, Montag geschlossen. Eintritt 5 €, Kinder frei."
+                },
+                {
+                  "key": "b",
+                  "label": "www.kunsthalle-am-fluss.de · Die Kunsthalle ist im Moment geschlossen. Ab 1. Oktober sind wir wieder für Sie da."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie haben ein Baby und brauchen einen Kinderwagen. Er soll nicht viel kosten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.babywelt-shop.de · Neue Kinderwagen von bekannten Marken, ab 399 €. Lieferung in zwei Tagen."
+                },
+                {
+                  "key": "b",
+                  "label": "www.kleinanzeigen-nordstadt.de · Kinderwagen, blau, zwei Jahre alt, sehr gut. Nur 60 €. Tel. 0151 2238 470"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "In b gibt es einen gebrauchten Kinderwagen für nur 60 €. In a sind die Kinderwagen neu und kosten ab 399 €."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Ihr Sohn ist sechs Jahre alt. Er möchte Fußball spielen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.sv-eintracht-nord.de · Fußball für Kinder von 5 bis 8 Jahren: dienstags und donnerstags, 16–17 Uhr. Komm vorbei!"
+                },
+                {
+                  "key": "b",
+                  "label": "www.fc-wiesengrund.de · Fußball für Jugendliche von 12 bis 16 Jahren. Training montags um 18 Uhr. Neue Spieler willkommen!"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "a ist für Kinder von 5 bis 8 Jahren, also passt es für einen Sechsjährigen. b ist nur für Jugendliche ab 12."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Es ist Sonntag. Sie brauchen Medikamente.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.apotheke-am-ring.de · Wir sind für Sie da: Montag bis Freitag 8–19 Uhr, Samstag 9–14 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "www.notdienst-apotheken.de · Welche Apotheke hat heute Notdienst? Geben Sie Ihre Postleitzahl ein. Jeden Tag, auch am Wochenende."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Die Apotheke in a ist am Sonntag geschlossen. In b finden Sie eine Apotheke mit Notdienst, auch am Wochenende."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie haben ein altes Sofa. Sie möchten es nicht mehr haben.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.moebel-kraft.de · Neue Sofas in 20 Farben! Diese Woche 20 % billiger. Wir liefern kostenlos."
+                },
+                {
+                  "key": "b",
+                  "label": "www.stadtwerke-abfall.de · Sperrmüll: Wir holen Schränke, Betten, Sessel und andere große Möbel kostenlos bei Ihnen ab. Termin online oder Tel. 0800 123 45 67."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "In b holt die Stadt große alte Möbel kostenlos ab, also auch ein Sofa. In a kann man nur neue Sofas kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ihre Tochter wird sieben. Für das Fest soll ein Bäcker einen großen Kuchen machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.baeckerei-hofmann.de · Torten für Hochzeit, Geburtstag und Taufe. Sagen Sie uns zwei Tage vorher, was Sie möchten: im Laden oder online."
+                },
+                {
+                  "key": "b",
+                  "label": "www.cafe-zimt.de · Kaffee und Kuchen im Café, täglich 9–18 Uhr. Kein Platz? Reservieren Sie: Tel. 0341 77 20 15."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Die Bäckerei in a macht Torten für einen Geburtstag. Man muss nur zwei Tage vorher sagen, was man möchte. In b kann man nur im Café Kuchen essen und einen Platz reservieren."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Schild am Eingang"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Sie können heute im großen Becken schwimmen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Eingang vom Hallenbad",
+          "source": "Schild",
+          "paragraphs": [
+            "Hallenbad Süd",
+            "Heute nur das Kinderbecken offen.",
+            "Das große Becken: ab Montag wieder geöffnet."
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Aushang im Treppenhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Am Freitag um 10 Uhr können Sie zu Hause nicht duschen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Treppenhaus",
+          "source": "Schild",
+          "paragraphs": [
+            "Freitag, 8–12 Uhr:",
+            "kein Wasser im Haus (Reparatur)",
+            "Ihre Hausverwaltung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Am Freitag von 8 bis 12 Uhr gibt es im Haus kein Wasser. Um 10 Uhr kann man also nicht duschen.",
+            "evidence": {
+              "text": "Freitag, 8–12 Uhr: kein Wasser im Haus (Reparatur) Ihre Hausverwaltung",
+              "hit": "Freitag, 8–12 Uhr: kein Wasser im Haus"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Schild im Bus"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Im Bus können Sie die Fahrkarte bar bezahlen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Bus",
+          "source": "Schild",
+          "paragraphs": [
+            "Fahrkarten beim Fahrer:",
+            "nur mit Karte oder Handy bezahlen.",
+            "Kein Bargeld!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Im Bus geht kein Bargeld. Sie bezahlen mit Karte oder mit dem Handy.",
+            "evidence": {
+              "text": "Fahrkarten beim Fahrer: nur mit Karte oder Handy bezahlen. Kein Bargeld!",
+              "hit": "Kein Bargeld!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Schild am Parkeingang"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Im Park dürfen Hunde frei laufen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Eingang vom Stadtpark",
+          "source": "Schild",
+          "paragraphs": [
+            "Stadtpark",
+            "Hunde bitte immer an der Leine führen!",
+            "Spielplatz: keine Hunde"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "falsch",
+            "explanation": "Hunde müssen im Park immer an der Leine sein. Auf den Spielplatz dürfen sie gar nicht.",
+            "evidence": {
+              "text": "Stadtpark Hunde bitte immer an der Leine führen! Spielplatz: keine Hunde",
+              "hit": "Hunde bitte immer an der Leine führen!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Schild im Amt"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Im Bürgerbüro holen Sie sich als Erstes einen Zettel mit einer Zahl."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Bürgerbüro",
+          "source": "Schild",
+          "paragraphs": [
+            "Bitte zuerst eine Wartenummer ziehen!",
+            "Ihre Nummer sehen Sie dann auf dem Bildschirm."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Auf dem Schild steht: zuerst eine Wartenummer ziehen. Das ist ein Zettel mit einer Zahl. Dann warten Sie, bis die Nummer auf dem Bildschirm steht.",
+            "evidence": {
+              "text": "Bitte zuerst eine Wartenummer ziehen! Ihre Nummer sehen Sie dann auf dem Bildschirm.",
+              "hit": "Bitte zuerst eine Wartenummer ziehen!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-01-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:42:08.822Z",
+        "textType": "Schild an der Tür"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Sie können hier um halb zehn am Abend noch eine Wäsche waschen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür vom Waschsalon",
+          "source": "Schild",
+          "paragraphs": [
+            "Waschsalon Blitzblank",
+            "Täglich 7–22 Uhr",
+            "Letzte Wäsche: 21 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "falsch",
+            "explanation": "Der Waschsalon ist bis 22 Uhr offen, aber die letzte Wäsche ist um 21 Uhr. Um 21.30 Uhr ist es zu spät.",
+            "evidence": {
+              "text": "Waschsalon Blitzblank Täglich 7–22 Uhr Letzte Wäsche: 21 Uhr",
+              "hit": "Letzte Wäsche: 21 Uhr"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -26,9 +26,9 @@ export function letterParagraphs(parts: GapData["parts"]) {
     .map((para) => para.map((x, i) => (typeof x !== "string" ? x : i === 0 ? x.replace(/^\s+/, "") : i === para.length - 1 ? x.replace(/\s+$/, "") : x)))
 }
 
-export function LetterSheet({ parts, children, className }: { parts: GapData["parts"]; children: (para: GapData["parts"], i: number) => ReactNode; className?: string }) {
+export function LetterSheet({ parts, children, className, kind: named }: { parts: GapData["parts"]; children: (para: GapData["parts"], i: number) => ReactNode; className?: string; kind?: string }) {
   const first = parts.find((p): p is string => typeof p === "string") ?? ""
-  const kind = /^\s*(Sehr geehrte|Betreff|[A-ZÄÖÜ][^\n]*\n[^\n]*\d{5})/.test(first) ? "Brief" : "E-Mail"
+  const kind = named ?? (/^\s*(Sehr geehrte|Betreff|[A-ZÄÖÜ][^\n]*\n[^\n]*\d{5})/.test(first) ? "Brief" : "E-Mail")
   return (
     <article lang="de" className={cn("flex max-w-[68ch] flex-col gap-4 rounded-[14px] bg-v-surface p-5 ring-1 ring-v-line sm:p-8", className)}>
       <span className="v-num text-[11.5px] tracking-[0.08em] text-v-muted uppercase">{kind}</span>

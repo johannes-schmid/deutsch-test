@@ -163,18 +163,156 @@ export function MatchItem({ data, value, onChange, review, noMatch = true }: { d
   )
 }
 
-/** A letter with gaps. Tapping a gap opens its options under the text. */
-export function GapItem({ data, value, onChange, review }: { data: GapData; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string> }) {
+type Gap = { n: number; options: string[] }
+const isTyped = (g: Gap) => g.options.length === 0
+
+/** One line of a form: the label before the field, the field, and what follows it on the line ("Uhr"). */
+type FormRow = { label: string; gap?: Gap; after: string }
+function formRows(parts: GapData["parts"]) {
+  const rows: FormRow[] = [{ label: "", after: "" }]
+  for (const p of parts) {
+    if (typeof p !== "string") {
+      rows.at(-1)!.gap = p
+      continue
+    }
+    p.split("\n").forEach((chunk, i) => {
+      if (i > 0) rows.push({ label: "", after: "" })
+      const row = rows.at(-1)!
+      if (row.gap) row.after += chunk
+      else row.label += chunk
+    })
+  }
+  return rows.filter((r) => r.gap || r.label.trim())
+}
+
+/** Graded state of a gap in review: `marks` (typed answers, scored with tolerance) wins over plain equality. */
+const gradedOf = (n: number, value: Record<number, string>, review?: Record<number, string>, marks?: Record<number, boolean>) =>
+  review ? ((marks?.[n] ?? value[n] === review[n]) ? "right" : "wrong") : null
+
+/** A typed field: an underline on paper, the candidate's text in ink. Enter moves to the next field. */
+function TypedField({ gap, value, onChange, review, marks, inline }: { gap: Gap; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string>; marks?: Record<number, boolean>; inline?: boolean }) {
+  const t = useExamCopy()
+  const graded = gradedOf(gap.n, value, review, marks)
+  if (graded) {
+    return (
+      <span className={cn("inline-flex min-h-9 flex-wrap items-center gap-x-2 rounded-lg px-2.5 align-middle text-[16px] font-semibold", graded === "right" ? "bg-(--p-glow) text-[#0A0D18]" : "bg-[color-mix(in_srgb,var(--v-sk-schreiben)_30%,var(--v-surface))]")}>
+        {graded === "wrong" ? <span className="line-through opacity-60">{value[gap.n] || "–"}</span> : value[gap.n]}
+        {graded === "wrong" ? <span>{review![gap.n]}</span> : null}
+      </span>
+    )
+  }
+  return (
+    <input
+      type="text"
+      data-typed-gap
+      value={value[gap.n] ?? ""}
+      readOnly={!onChange}
+      onChange={(e) => onChange?.(gap.n, e.target.value.slice(0, 60))}
+      onKeyDown={(e) => {
+        if (e.key !== "Enter") return
+        e.preventDefault()
+        const all = [...document.querySelectorAll<HTMLInputElement>("input[data-typed-gap]")]
+        all[all.indexOf(e.currentTarget) + 1]?.focus()
+      }}
+      aria-label={t.gap(gap.n)}
+      autoComplete="off"
+      autoCorrect="off"
+      spellCheck={false}
+      enterKeyHint="next"
+      className={cn(
+        "border-b-2 border-dashed border-v-ink/35 bg-transparent px-1 font-semibold text-v-ink caret-(--p-ember) outline-none transition-colors duration-150 read-only:cursor-default focus:border-solid focus:border-v-ink",
+        value[gap.n] && "border-solid border-v-ink/60",
+        inline ? "mx-0.5 h-9 w-[9.5em] max-w-full align-baseline text-[17px]" : "h-11 w-full text-[17px]"
+      )}
+    />
+  )
+}
+
+/** Pick fields of a form (ja / nein): inline toggles, no tray. */
+function PickField({ gap, value, onChange, review }: { gap: Gap; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string> }) {
+  const t = useExamCopy()
+  return (
+    <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t.gap(gap.n)}>
+      {gap.options.map((o) => {
+        const s = optionState(o, value[gap.n], review ? { correct: review[gap.n] } : undefined)
+        return (
+          <button
+            key={o}
+            type="button"
+            role="radio"
+            aria-checked={isChosen(s)}
+            disabled={!!review || !onChange}
+            onClick={() => onChange?.(gap.n, o)}
+            className={cn("flex h-11 min-w-20 cursor-pointer items-center justify-center gap-2 rounded-full border px-5 text-[15.5px] font-semibold transition-[background-color,border-color,transform] duration-150 ease-out active:scale-[0.97] disabled:cursor-default disabled:active:scale-100", s === "selected" ? "border-v-ink bg-v-ink text-v-bg" : stateSurface[s])}
+          >
+            {s === "right" ? <Mark kind="right" inverse className="size-4" /> : s === "solution" ? <Mark kind="right" className="size-4" /> : s === "wrong" ? <Mark kind="wrong" className="size-4" /> : null}
+            {o}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+/** A form to fill in (Schreiben Teil 1): the form's title, then one row per line with its label and the field. */
+function FormSheet({ data, value, onChange, review, marks }: { data: GapData; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string>; marks?: Record<number, boolean> }) {
+  const rows = formRows(data.parts)
+  const head = rows.findIndex((r) => r.gap || r.label.includes(":"))
+  const title = rows.slice(0, Math.max(0, head))
+  return (
+    <article lang="de" className="flex max-w-[68ch] flex-col gap-4 rounded-[14px] bg-v-surface p-5 ring-1 ring-v-line sm:p-8">
+      <span className="v-num text-[11.5px] tracking-[0.08em] text-v-muted uppercase">Formular</span>
+      {title.length ? (
+        <div className="flex flex-col gap-0.5">
+          <h3 className="text-[18px] leading-snug font-semibold text-balance">{title[0].label.trim()}</h3>
+          {title.slice(1).map((r, i) => <p key={i} className="text-[14.5px] text-v-muted">{r.label.trim()}</p>)}
+        </div>
+      ) : null}
+      <dl className="flex flex-col">
+        {rows.slice(Math.max(0, head)).map((r, i) => {
+          const [label, rest] = r.label.includes(":") ? [r.label.slice(0, r.label.indexOf(":")), r.label.slice(r.label.indexOf(":") + 1)] : [r.label, ""]
+          return (
+            <div key={i} className="grid grid-cols-[minmax(0,1fr)] gap-x-6 gap-y-1 border-t border-v-line py-3 first:border-t-0 sm:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] sm:items-center">
+              <dt className="text-[14px] text-v-muted">{label.trim()}</dt>
+              <dd className="flex min-h-11 flex-wrap items-center gap-2 text-[17px]">
+                {rest.trim() ? <span>{rest.trim()}</span> : null}
+                {r.gap ? (
+                  r.gap.n === 0 ? (
+                    <span className="font-semibold">{value[0]}</span>
+                  ) : isTyped(r.gap) ? (
+                    <TypedField gap={r.gap} value={value} onChange={onChange} review={review} marks={marks} />
+                  ) : (
+                    <PickField gap={r.gap} value={value} onChange={onChange} review={review} />
+                  )
+                ) : null}
+                {r.after.trim() ? <span>{r.after.trim()}</span> : null}
+              </dd>
+            </div>
+          )
+        })}
+      </dl>
+    </article>
+  )
+}
+
+/**
+ * A letter with gaps. Tapping a pick gap opens its options under the text; a typed gap (no options) is written in
+ * place. `sheet: "Formular"` lays the gaps out as a form, `sheet: "Notiz"` as a short note.
+ */
+export function GapItem({ data, value, onChange, review, marks }: { data: GapData; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string>; marks?: Record<number, boolean> }) {
   const t = useExamCopy()
   const gaps = data.parts.filter((p) => typeof p !== "string")
-  const [open, setOpen] = useState<number | null>(review ? null : gaps.find((g) => !value[g.n])?.n ?? null)
-  const active = gaps.find((g) => g.n === open)
+  const picks = gaps.filter((g) => !isTyped(g))
+  const [open, setOpen] = useState<number | null>(review ? null : picks.find((g) => !value[g.n])?.n ?? null)
+  if (data.sheet === "Formular") return <FormSheet data={data} value={value} onChange={onChange} review={review} marks={marks} />
+  const active = picks.find((g) => g.n === open)
   return (
     <div className="flex flex-col gap-4">
-      <LetterSheet parts={data.parts}>
+      <LetterSheet parts={data.parts} kind={data.sheet}>
         {(para) => para.map((p, i) => {
           if (typeof p === "string") return <span key={i}>{p}</span>
-          const graded = review ? (value[p.n] === review[p.n] ? "right" : "wrong") : null
+          if (isTyped(p)) return p.n === 0 ? <b key={i} className="font-semibold">{value[0]}</b> : <TypedField key={i} gap={p} value={value} onChange={onChange} review={review} marks={marks} inline />
+          const graded = gradedOf(p.n, value, review, marks)
           return (
             <button
               key={i}
@@ -207,7 +345,7 @@ export function GapItem({ data, value, onChange, review }: { data: GapData; valu
               aria-checked={value[active.n] === o}
               onClick={() => {
                 onChange?.(active.n, o)
-                setOpen(gaps.find((g) => g.n !== active.n && !value[g.n])?.n ?? null)
+                setOpen(picks.find((g) => g.n !== active.n && !value[g.n])?.n ?? null)
               }}
               className={cn("h-11 cursor-pointer rounded-full px-5 text-[15.5px] font-medium transition-[background-color,transform] duration-150 active:scale-[0.97]", value[active.n] === o ? "bg-v-ink text-v-bg" : "bg-v-soft hover:bg-v-line")}
             >

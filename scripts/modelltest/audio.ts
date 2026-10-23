@@ -33,7 +33,7 @@ const EXAM = arg("exam") ?? "dtz"
 const SKILL = arg("skill") ?? "hoeren"
 const FORCE = process.argv.includes("--force")
 const NN = String(SET).padStart(2, "0")
-if (!["hoeren", "sprechen"].includes(SKILL) || !(SET >= 1 && SET <= 10) || !["dtz", "telc-b1"].includes(EXAM)) throw new Error("Usage: --set 1..10 [--skill hoeren|sprechen] [--exam dtz|telc-b1]")
+if (!["hoeren", "sprechen"].includes(SKILL) || !(SET >= 1 && SET <= 10) || !["dtz", "telc-b1", "start-deutsch-1", "telc-a2"].includes(EXAM)) throw new Error("Usage: --set 1..10 [--skill hoeren|sprechen] [--exam dtz|telc-b1|start-deutsch-1|telc-a2]")
 const FILE = `data/modelltest/${EXAM}/${SKILL}-${NN}.json`
 const OUT = `.unit-cache/audio/${EXAM}/${SKILL}-${NN}`
 const SRC = `${EXAM}/${SKILL}-${NN}`
@@ -95,7 +95,7 @@ async function converse(file: string, turns: { voice: string; text: string }[], 
 }
 
 /** telc speaks faster than the voices do by default (~185 words/min measured), so telc may speed up (pitch kept). */
-const MAX_SPEEDUP = EXAM === "telc-b1" ? 1.35 : 1
+const MAX_SPEEDUP: number = { "telc-b1": 1.35, "telc-a2": 1.25, "start-deutsch-1": 1.15 }[EXAM] ?? 1
 
 /** Brings speech to the target rate (DTZ: only slows down; telc: up to ×1.35 faster), trims silence, levels loudness. */
 function retime(src: string, dst: string, wpm: number, pace: number) {
@@ -228,8 +228,10 @@ async function telcTrack(set: MtSet) {
     const blocks = set.blocks.filter((b) => b.teil === teil)
     const all = blocks.flatMap((b) => itemNumbers(b.display.items))
     push(await narr(`Hörverstehen, Teil ${NUM[teil]}. ${spoken(blocks[0].display.instruction)}`), { teil, phase: "instruction", items: all })
-    if (full.readingSeconds) gap(full.readingSeconds, { teil, phase: "reading", items: all })
-    else gap(3)
+    // Every official Teil also names the answer sheet (+ / –). Teil 3 has no shared reading time, only per text.
+    push(await narr("Markieren Sie Ihre Lösungen auf dem Antwortbogen: Plus für richtig, Minus für falsch."), { teil, phase: "instruction", items: all })
+    if (full.readingSeconds && teil < 3) gap(full.readingSeconds, { teil, phase: "reading", items: all })
+    else gap(1.5)
     if (teil === 1) {
       const b = blocks[0]
       const host = b.key.script!.find((s) => s.item === undefined)!
@@ -264,16 +266,21 @@ async function telcTrack(set: MtSet) {
         // Official framing: Teil 2 "Hören Sie jetzt das Gespräch"; Teil 3 per text a reading prompt, ~5 s, then
         // "Hören Sie jetzt den Text" and the narrator's situation sentence before each of the two plays.
         const lead = b.display.clip?.lead ? await narr(b.display.clip.lead) : null
+        // The official narrator leaves ~1.5 s after each framing line (silence detection, 2026-10-23).
+        const say = (file: string) => {
+          push(file, { teil, phase: "instruction", items: ns })
+          gap(1.5)
+        }
         if (teil === 3) {
-          push(await narr(`Lesen Sie jetzt die Aufgabe ${spell(ns[0])}.`), { teil, phase: "instruction", items: ns })
+          say(await narr(`Lesen Sie jetzt die Aufgabe ${spell(ns[0])}.`))
           gap(full.pauses!.before, { teil, phase: "reading", items: ns })
         }
-        push(await narr(teil === 2 ? "Hören Sie jetzt das Gespräch." : "Hören Sie jetzt den Text."), { teil, phase: "instruction", items: ns })
-        if (lead) push(lead, { teil, phase: "instruction", items: ns })
+        say(await narr(teil === 2 ? "Hören Sie jetzt das Gespräch." : "Hören Sie jetzt den Text."))
+        if (lead) say(lead)
         push(clip, { teil, phase: "clip", items: ns })
         gap(full.pauses!.after, { teil, phase: "answer", items: ns })
-        push(await narr(teil === 2 ? "Sie hören das Gespräch noch einmal." : "Sie hören den Text noch einmal."), { teil, phase: "instruction", items: ns })
-        if (lead) push(lead, { teil, phase: "instruction", items: ns })
+        say(await narr(teil === 2 ? "Sie hören das Gespräch noch einmal." : "Sie hören den Text noch einmal."))
+        if (lead) say(lead)
         push(clip, { teil, phase: "clip", items: ns })
         gap(full.pauses!.after, { teil, phase: "answer", items: ns })
       }
@@ -290,8 +297,78 @@ async function telcTrack(set: MtSet) {
   console.log(`→ ${track}: ${(set.track.duration / 60).toFixed(1)} min, ${cues.length} cues, ${characters} characters rendered (${MODEL})`)
 }
 
+/**
+ * Start Deutsch 1 and telc A2: measured on the official Übungstest MP3s (2026-10-23, silencedetect + Scribe). A jingle
+ * and "Teil n" + instruction open each Teil; per text "Beispiel"/"Nummer n", ~7 s to read, the clip, ~1.5 s + chime
+ * + ~1.5 s and the repeat where played twice, then ~16 s to answer. Official totals: A1 16:54, A2 18:23.
+ * A2 Teil 3 is one conversation for items 11–15 (its Beispiel is part of it, printed solved).
+ */
+const LEVEL_PACE: Record<string, Record<number, number>> = { "start-deutsch-1": { 1: 120, 2: 115, 3: 140 }, "telc-a2": { 1: 160, 2: 160, 3: 175 } }
+const LEVEL_NAME: Record<string, string> = { "start-deutsch-1": "Start Deutsch 1", "telc-a2": "telc Deutsch A2" }
+
+async function levelTrack(set: MtSet) {
+  const seq: string[] = []
+  const cues: TrackCue[] = []
+  let t = 0
+  const push = (file: string, cue?: Omit<TrackCue, "from" | "to">) => {
+    const d = seconds(file)
+    if (cue) cues.push({ ...cue, from: +t.toFixed(2), to: +(t + d).toFixed(2) })
+    seq.push(file)
+    t += d
+  }
+  const gap = (sec: number, cue?: Omit<TrackCue, "from" | "to">) => push(silence(sec), cue)
+  const pace = LEVEL_PACE[EXAM]
+
+  push(await narr(`${LEVEL_NAME[EXAM]}. Modelltest ${NUM[SET] ?? SET}. Hören. Es gibt drei Teile. Zu jedem Text gibt es eine Aufgabe. Lesen Sie immer zuerst die Aufgabe. Hören Sie dann den Text und wählen Sie die richtige Lösung.`))
+  gap(2)
+  for (const teil of [1, 2, 3]) {
+    const blocks = set.blocks.filter((b) => b.teil === teil)
+    const all = blocks.flatMap((b) => itemNumbers(b.display.items))
+    push(await sfx("jingle"))
+    push(await narr(`Teil ${NUM[teil]}. ${spoken(blocks[0].display.instruction)}`), { teil, phase: "instruction", items: all })
+    gap(2)
+    for (const b of blocks) {
+      const ns = itemNumbers(b.display.items)
+      const script = b.key.script!
+      const voiceFile = path.join(OUT, `${b.id}.voice.mp3`)
+      if (new Set(script.map((s) => s.speaker)).size === 1) await speak(voiceFile, script[0].voice, script.map((s) => s.text).join(" "), pace[teil])
+      else await converse(voiceFile, script.map((s) => ({ voice: s.voice, text: s.text })), pace[teil])
+      const clip = path.join(OUT, `${b.id}.mp3`)
+      if (FORCE || !fs.existsSync(clip)) await design(voiceFile, b.sound, clip)
+      b.display.clip = { ...b.display.clip!, src: `${SRC}/${b.id}.mp3`, duration: +seconds(clip).toFixed(2), segments: [] }
+      const scored = ns.filter((n) => n > 0)
+      const label = b.example ? "Beispiel." : scored.length > 1 ? `Nummer ${spell(scored[0])} bis ${spell(scored.at(-1)!)}.` : `Nummer ${spell(scored[0])}.`
+      push(await narr(label), { teil, phase: "instruction", items: ns })
+      gap(7, { teil, phase: "reading", items: ns })
+      push(clip, { teil, phase: "clip", items: ns })
+      if ((b.display.clip.plays ?? 1) > 1) {
+        gap(1.5)
+        push(await sfx("number"))
+        gap(1.5)
+        push(clip, { teil, phase: "clip", items: ns })
+      }
+      gap(16, { teil, phase: "answer", items: ns })
+    }
+  }
+  push(await sfx("jingle"))
+  push(await narr("Ende des Prüfungsteils Hören."))
+  gap(2)
+  const list = path.join(OUT, "track.txt")
+  fs.writeFileSync(list, seq.map((f) => `file '${path.resolve(f)}'`).join("\n"))
+  const track = path.join(OUT, "track.mp3")
+  ff("-f", "concat", "-safe", "0", "-i", list, "-ac", "1", "-ar", "44100", "-b:a", "64k", track)
+  set.track = { src: `${SRC}/track.mp3`, duration: +seconds(track).toFixed(2), cues } satisfies HoerTrack
+  fs.writeFileSync(FILE, JSON.stringify(set, null, 2) + "\n")
+  console.log(`→ ${track}: ${(set.track.duration / 60).toFixed(1)} min, ${cues.length} cues, ${characters} characters rendered (${MODEL})`)
+}
+
 async function main() {
   if (SKILL === "sprechen") return sprechen()
+  if (EXAM in LEVEL_PACE) {
+    fs.mkdirSync(OUT, { recursive: true })
+    fs.mkdirSync(COMMON, { recursive: true })
+    return levelTrack(JSON.parse(fs.readFileSync(FILE, "utf8")) as MtSet)
+  }
   if (EXAM === "telc-b1") {
     fs.mkdirSync(OUT, { recursive: true })
     fs.mkdirSync(COMMON, { recursive: true })

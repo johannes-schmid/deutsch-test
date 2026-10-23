@@ -317,10 +317,11 @@ export function MatchTask({ skill, data, noMatch, value, onChange, review }: { s
 }
 
 /** A gap text: one shared word pool (telc Sprachbausteine Teil 2) or a/b/c per gap. */
-export function GapTask({ data, value, onChange, review }: { data: GapData; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string> }) {
+/** `marks`: right/wrong per typed gap, scored with spelling tolerance. */
+export function GapTask({ data, value, onChange, review, marks }: { data: GapData; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string>; marks?: Record<number, boolean> }) {
   const gaps = data.parts.filter((p) => typeof p !== "string")
   const pool = gaps.length > 1 && gaps[0].options.length > 3 && gaps.every((g) => g.options === gaps[0].options || g.options.join("|") === gaps[0].options.join("|"))
-  return pool ? <WordPoolGap data={data} value={value} onChange={onChange} review={review} /> : <GapItem data={data} value={value} onChange={onChange} review={review} />
+  return pool ? <WordPoolGap data={data} value={value} onChange={onChange} review={review} /> : <GapItem data={data} value={value} onChange={onChange} review={review} marks={marks} />
 }
 
 /** The reading text: telc Leseverstehen Teil 2 is a magazine article, everything else a plain text. */

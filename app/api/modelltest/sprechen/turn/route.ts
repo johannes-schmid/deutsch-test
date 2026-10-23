@@ -3,6 +3,8 @@ import { transcribe } from "@/lib/kurztest/stt"
 import { loadKeyedBlocks } from "@/lib/modelltest/runner"
 import { followup, partnerLine, speak, SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking"
 import { rescueLine, telcFollowup, telcPartnerLine, TELC_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-telc"
+import { startFollowup, startPartnerLine, START_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-start"
+import { isStartExam } from "@/lib/exam/scoring/start"
 import type { ExamId } from "@/lib/exams"
 import { capped, emptyState, FREE_SPEAKING_SECONDS, freeSecondsUsed, playedBefore, type RunState } from "@/lib/modelltest/sprechen-run"
 import { createAdminClient } from "@/lib/supabase/admin"
@@ -62,11 +64,12 @@ export async function POST(req: Request) {
   }
 
   const telc = attempt.exam === "telc-b1"
+  const start = isStartExam(attempt.exam) ? attempt.exam : null
   const state: RunState = attempt.conversation ?? emptyState()
   state.lines.push(...playedBefore(state, block, turn), { teil, phase: turns[turn].phase, who: "du", text })
   state.upTo[teil] = turn
 
-  await db.from("mt_submissions").upsert({ attempt_id: attempt.id, task_id: entry.rowId, turn, audio_path: up.error ? null : path, audio_seconds: seconds, transcript: text, rubric_version: telc ? TELC_SPEAKING_RUBRIC_VERSION : SPEAKING_RUBRIC_VERSION }, { onConflict: "attempt_id,task_id,turn" })
+  await db.from("mt_submissions").upsert({ attempt_id: attempt.id, task_id: entry.rowId, turn, audio_path: up.error ? null : path, audio_seconds: seconds, transcript: text, rubric_version: telc ? TELC_SPEAKING_RUBRIC_VERSION : start ? START_SPEAKING_RUBRIC_VERSION : SPEAKING_RUBRIC_VERSION }, { onConflict: "attempt_id,task_id,turn" })
 
   // telc: the Interlokutor steps in once per turn when the candidate said (almost) nothing; the turn is then repeated.
   const rescueKey = `${teil}-${turn}`
@@ -89,13 +92,17 @@ export async function POST(req: Request) {
   if (next?.live) {
     const lastPartner = next.live === "partner" && !turns.slice(nextIndex + 1).some((t) => t.live === "partner")
     const duAfter = turns.slice(nextIndex + 1).some((t) => t.who === "du")
-    const nextText = telc
+    const nextText = start
       ? next.live === "followup"
-        ? await telcFollowup(block, state.lines, text)
-        : await telcPartnerLine(block, state.lines, text, { last: lastPartner, duAfter, hurry: Number.isFinite(left) && left < 50 })
-      : next.live === "followup"
-        ? await followup(block, state.lines, text)
-        : await partnerLine(block, state.lines, text, lastPartner)
+        ? await startFollowup(start, block, state.lines, text)
+        : await startPartnerLine(start, block, state.lines, text, { cue: turns[turn].text, last: lastPartner })
+      : telc
+        ? next.live === "followup"
+          ? await telcFollowup(block, state.lines, text)
+          : await telcPartnerLine(block, state.lines, text, { last: lastPartner, duAfter, hurry: Number.isFinite(left) && left < 50 })
+        : next.live === "followup"
+          ? await followup(block, state.lines, text)
+          : await partnerLine(block, state.lines, text, lastPartner)
     const voice = block.key.speaking?.voices[next.who as "pruefer" | "partner"]
     const audio = nextText && voice ? await speak(voice, nextText) : null
     if (nextText && audio) {

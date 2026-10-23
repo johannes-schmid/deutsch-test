@@ -30,7 +30,8 @@ export type MatchData = {
   ads: { key: string; title: string; text: string }[]
   situations: { n: number; text: string }[]
 }
-export type GapData = { parts: (string | { n: number; options: string[] })[] }
+/** A gap with no options is typed (forms, phone notes); `sheet` names a form or note instead of a letter. */
+export type GapData = { parts: (string | { n: number; options: string[] })[]; sheet?: "Formular" | "Notiz" }
 
 export type TrueFalse = "richtig" | "falsch"
 

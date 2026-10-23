@@ -61,7 +61,7 @@ export const EXAMS: Record<ExamId, Exam> = {
     brand: "telc",
     levels: ["A2"],
     summary: "Auch Start Deutsch 2 genannt. Lesen und Schreiben in einem Block",
-    result: "bestanden / nicht bestanden",
+    result: "Note ab 36 von 60 Punkten, sonst „teilgenommen“",
     // research/telc-a2.md §6: 36 of 60.
     pass: 0.6,
   },

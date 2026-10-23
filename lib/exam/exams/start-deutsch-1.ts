@@ -3,11 +3,14 @@
 
 import type { ExamSpec } from "../exam-blueprints"
 
+const U = "research/start-deutsch-1.md §3 (telc Übungstest 1, 2017; Goethe Übungssätze 01/02, 2024; audio measured 2026-10-23)"
+
 export const spec: ExamSpec = {
   context: { name: "Start Deutsch 1 (Goethe-Zertifikat A1 / telc Deutsch A1)", level: "A1", setting: "Alltag in Deutschland", copyright: "Goethe-Institut, telc" },
   parts: [
     {
       skill: "lesen", teil: 1, answer: "rf", itemsReal: 5, itemsPerBlock: 2,
+      full: { items: 5, first: 1, blocks: 2, itemsPerBlock: 3, length: { min: 35, max: 85, unit: "words" }, example: true, source: U },
       textTypes: ["Kurze E-Mail an eine Freundin oder einen Freund", "Kurze Nachricht an eine Kollegin oder einen Kollegen"],
       length: { min: 50, max: 80, unit: "words" },
       instruction: "Lesen Sie den Text. Sind die Aussagen richtig oder falsch?",
@@ -16,6 +19,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 2, answer: "abc", options: 2, noText: true, itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 6, blocks: 5, itemsPerBlock: 1, length: { min: 10, max: 25, unit: "words" }, example: true, options: 2, source: U },
       textTypes: ["Zwei Anzeigen oder Webseiten-Ausschnitte zu einer Alltagssituation"],
       length: { min: 10, max: 25, unit: "words" },
       instruction: "Lesen Sie die Situation und die zwei Texte. Wo finden Sie die Information? Wählen Sie a oder b.",
@@ -23,6 +27,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 3, answer: "rf", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 11, blocks: 5, itemsPerBlock: 1, length: { min: 5, max: 20, unit: "words" }, example: true, source: U },
       textTypes: ["Schild an einer Tür (Arztpraxis, Geschäft, Schule, Amt)", "Aushang an der Haltestelle oder am Bahnhof", "Schild im Restaurant, im Schwimmbad oder bei der Post"],
       length: { min: 5, max: 25, unit: "words" },
       instruction: "Lesen Sie das Schild. Ist die Aussage richtig oder falsch?",
@@ -30,6 +35,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 1, answer: "pic", itemsReal: 6, itemsPerBlock: 1,
+      full: { items: 6, first: 1, blocks: 6, itemsPerBlock: 1, length: { min: 10, max: 25, unit: "seconds" }, example: true, pace: { min: 100, max: 150 }, pauses: { before: 7, after: 16 }, source: U },
       textTypes: ["Gespräch auf der Straße", "Gespräch unter Freunden am Telefon", "Gespräch im Deutschkurs", "Gespräch bei der Arbeit", "Gespräch im Geschäft"],
       length: { min: 10, max: 25, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 2,
       instruction: "Sie hören ein kurzes Gespräch. Was ist richtig? Wählen Sie das passende Bild: a, b oder c. Sie hören jeden Text zweimal.",
@@ -38,6 +44,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 2, answer: "rf", itemsReal: 4, itemsPerBlock: 1,
+      full: { items: 4, first: 7, blocks: 4, itemsPerBlock: 1, length: { min: 14, max: 22, unit: "seconds" }, example: true, pace: { min: 95, max: 150 }, pauses: { before: 7, after: 16 }, sound: "Gong vor der Durchsage (Bahnhof, Flughafen, Kaufhaus)", source: U },
       textTypes: ["Durchsage am Flughafen", "Durchsage im Supermarkt oder Kaufhaus", "Durchsage am Bahnhof oder in der U-Bahn", "Durchsage im Zug"],
       length: { min: 14, max: 23, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 1,
       instruction: "Sie hören eine Durchsage. Ist die Aussage richtig oder falsch? Sie hören jeden Text einmal.",
@@ -45,6 +52,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 3, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 11, blocks: 5, itemsPerBlock: 1, length: { min: 8, max: 18, unit: "seconds" }, example: false, pace: { min: 110, max: 165 }, pauses: { before: 7, after: 16 }, sound: "Anrufbeantworter: Piepton", source: U },
       textTypes: ["Nachricht auf dem Anrufbeantworter (privat)", "Telefonansage einer Arztpraxis oder Firma"],
       length: { min: 8, max: 17, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 2,
       instruction: "Sie hören eine Nachricht am Telefon. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text zweimal.",

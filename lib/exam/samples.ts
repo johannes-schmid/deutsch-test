@@ -90,6 +90,24 @@ export const GAP: GapData = {
 }
 export const GAP_SOLUTION: Record<number, string> = { 21: "zum", 22: "Bestätigung" }
 
+/** Start Deutsch 1 / telc A2 Schreiben Teil 1: a form with typed fields and one tick choice. */
+export const FORM: GapData = {
+  sheet: "Formular",
+  parts: [
+    "Anmeldung Schwimmkurs\nVolkshochschule Lindenau\nName, Vorname: ",
+    { n: 0, options: [] },
+    "\nStraße, Hausnummer: Gartenweg 4\nTelefon: ",
+    { n: 1, options: [] },
+    "\nKurstag: ",
+    { n: 2, options: [] },
+    "\nAnfänger: ",
+    { n: 3, options: ["ja", "nein"] },
+  ],
+}
+export const FORM_SOLUTION: Record<number, string> = { 1: "0151 2238 470", 2: "Dienstag", 3: "ja" }
+/** telc A2 Hören Teil 1: a phone note with one word or number to write in. */
+export const NOTE: GapData = { sheet: "Notiz", parts: ["Praxis Dr. Albers\nTermin am Montag fällt aus\nneuer Termin: Donnerstag, ", { n: 4, options: [] }, " Uhr"] }
+
 export const READING: ReadingData = {
   sender: "Stadtbibliothek Lindenau",
   source: "Aushang in der Bibliothek",

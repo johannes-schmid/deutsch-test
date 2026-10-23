@@ -1,0 +1,197 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-01-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:40:00.000Z",
+        "textType": "Formular: Anmeldung in der Bibliothek"
+      },
+      "display": {
+        "instruction": "Ihre Bekannte Leyla möchte einen Ausweis für die Stadtbibliothek. Sie helfen ihr bei der Anmeldung. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Stadtbibliothek Osnabrück – Anmeldung für einen Leseausweis\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: Leyla\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStaatsangehörigkeit: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: Hafenstraße 12\nPLZ, Ort: 49074 Osnabrück\nHandynummer: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nBeruf: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nFamilienstand: verheiratet\nInteressen: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Leyla Aydin",
+          "source": "Pass und Notiz",
+          "paragraphs": [
+            "Reisepass – Name: AYDIN · Vorname: LEYLA · Staatsangehörigkeit: TÜRKISCH · Geburtsdatum: 03.07.1991 · Geburtsort: IZMIR · ausgestellt am: 12.05.2019 · gültig bis: 11.05.2029",
+            "Leyla wohnt seit zwei Jahren mit ihrem Mann Emre und ihrem Sohn in Osnabrück, in der Hafenstraße 12. In der Türkei war sie Verkäuferin, hier arbeitet sie als Krankenpflegerin im Klinikum. Im Klinikum erreicht man sie unter 0541 980 4411. Für die Bibliothek gibt sie lieber ihre Handynummer an: 0157 3398 2140. Ihr Sohn leiht gern Comics aus, aber Leyla selbst liest am liebsten Krimis."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "03.07.1991",
+            "explanation": "Das Geburtsdatum steht im Pass. Die anderen Daten sind Ausstellungsdatum und Gültigkeit des Passes. Zahlen müssen genau stimmen.",
+            "evidence": {
+              "text": "Reisepass – Name: AYDIN · Vorname: LEYLA · Staatsangehörigkeit: TÜRKISCH · Geburtsdatum: 03.07.1991 · Geburtsort: IZMIR · ausgestellt am: 12.05.2019 · gültig bis: 11.05.2029",
+              "hit": "Geburtsdatum: 03.07.1991"
+            },
+            "accept": [
+              "3.7.1991",
+              "03.07.91",
+              "3.7.91",
+              "03.7.1991",
+              "3.07.1991",
+              "3. Juli 1991",
+              "03. Juli 1991"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "türkisch",
+            "explanation": "Im Pass steht die Staatsangehörigkeit: türkisch. Izmir ist der Geburtsort, Osnabrück der Wohnort.",
+            "evidence": {
+              "text": "Reisepass – Name: AYDIN · Vorname: LEYLA · Staatsangehörigkeit: TÜRKISCH · Geburtsdatum: 03.07.1991 · Geburtsort: IZMIR · ausgestellt am: 12.05.2019 · gültig bis: 11.05.2029",
+              "hit": "Staatsangehörigkeit: TÜRKISCH"
+            },
+            "accept": [
+              "Türkei",
+              "türkische",
+              "Türkin"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "0157 3398 2140",
+            "explanation": "Für die Bibliothek gibt Leyla ihre Handynummer an. Die Nummer mit 0541 ist das Klinikum. Zahlen müssen genau stimmen.",
+            "evidence": {
+              "text": "Leyla wohnt seit zwei Jahren mit ihrem Mann Emre und ihrem Sohn in Osnabrück, in der Hafenstraße 12. In der Türkei war sie Verkäuferin, hier arbeitet sie als Krankenpflegerin im Klinikum. Im Klinikum erreicht man sie unter 0541 980 4411. Für die Bibliothek gibt sie lieber ihre Handynummer an: 0157 3398 2140. Ihr Sohn leiht gern Comics aus, aber Leyla selbst liest am liebsten Krimis.",
+              "hit": "0157 3398 2140"
+            },
+            "accept": [
+              "015733982140",
+              "0157 33982140",
+              "0157-3398 2140",
+              "0157/3398 2140",
+              "0157-33982140",
+              "0157/33982140"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "Krankenpflegerin",
+            "explanation": "Heute arbeitet Leyla als Krankenpflegerin. Verkäuferin war sie früher in der Türkei.",
+            "evidence": {
+              "text": "Leyla wohnt seit zwei Jahren mit ihrem Mann Emre und ihrem Sohn in Osnabrück, in der Hafenstraße 12. In der Türkei war sie Verkäuferin, hier arbeitet sie als Krankenpflegerin im Klinikum. Im Klinikum erreicht man sie unter 0541 980 4411. Für die Bibliothek gibt sie lieber ihre Handynummer an: 0157 3398 2140. Ihr Sohn leiht gern Comics aus, aber Leyla selbst liest am liebsten Krimis.",
+              "hit": "hier arbeitet sie als Krankenpflegerin"
+            },
+            "accept": [
+              "Krankenschwester",
+              "Pflegerin",
+              "Pflegefachfrau",
+              "Krankenpflegerin im Klinikum"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "Krimis",
+            "explanation": "Unter „Interessen“ steht, was Leyla gern liest: Krimis. Comics leiht ihr Sohn aus.",
+            "evidence": {
+              "text": "Leyla wohnt seit zwei Jahren mit ihrem Mann Emre und ihrem Sohn in Osnabrück, in der Hafenstraße 12. In der Türkei war sie Verkäuferin, hier arbeitet sie als Krankenpflegerin im Klinikum. Im Klinikum erreicht man sie unter 0541 980 4411. Für die Bibliothek gibt sie lieber ihre Handynummer an: 0157 3398 2140. Ihr Sohn leiht gern Comics aus, aber Leyla selbst liest am liebsten Krimis.",
+              "hit": "liest am liebsten Krimis"
+            },
+            "accept": [
+              "Krimi",
+              "Krimis lesen",
+              "Kriminalromane",
+              "Kriminalromane lesen"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Aydin"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-01-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:40:00.000Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Bekannte Ines hat Sie zu einer Fahrradtour eingeladen. Antworten Sie Ines mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Fahrradtour am Sonntag",
+            "situation": "Ihre Bekannte Ines fährt am Sonntag mit ein paar Freunden mit dem Fahrrad zum Kiessee. Sie hat Sie eingeladen mitzukommen.",
+            "points": [
+              "Fahrrad leihen",
+              "Weg zum See",
+              "Essen mitbringen",
+              "Kinder mitnehmen"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Ines,\nvielen Dank für die Einladung, ich komme gern mit! Leider habe ich kein Fahrrad. Kann ich vielleicht eins von dir leihen? Wie weit ist es bis zum See? Ich bringe einen Kartoffelsalat und Obst mit.\nViele Grüße\nNadia"
+          }
+        ]
+      }
+    }
+  ]
+}

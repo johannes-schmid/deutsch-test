@@ -12,8 +12,8 @@ export type KurztestItem =
   | { type: "match"; data: MatchData; noMatch: boolean }
   | { type: "gap"; data: GapData }
 
-/** `explanationDe` is the German original, set when `explanation` was swapped for a translation. */
-export type ItemKey = { n: number; correct: string | TrueFalse; explanation: string; explanationDe?: string; evidence?: Evidence }
+/** `explanationDe` is the German original, set when `explanation` was swapped for a translation. `accept`: other right forms of a typed answer. */
+export type ItemKey = { n: number; correct: string | TrueFalse; explanation: string; explanationDe?: string; evidence?: Evidence; accept?: string[] }
 
 /** `item`: in a Modelltest Hören Teil 4, the statement this turn is (0 = Beispiel); unset for the host intro. */
 export type ScriptTurn = { speaker: string; voice: string; text: string; delivery?: string; item?: number }
@@ -42,6 +42,8 @@ export type KurztestBlock = {
     writing?: { key: string; register: "formell" | "informell"; modelAnswer: string }[]
     speaking?: { voices: { pruefer: string; partner: string }; sampleAnswers: string[]; pictureBrief?: string }
     tts?: { model: string; characters: number; at: string }
+    /** Start Deutsch 1 Hören Teil 1: what each picture option should show, for the drawings that replace the pictograms. */
+    pictureBrief?: string
   }
 }
 

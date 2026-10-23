@@ -14,7 +14,7 @@ import {
 import type { TrueFalse } from "@/lib/exam/types"
 import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
 import {
-  DURCHSAGE, APOTHEKE, GAP, GAP_SOLUTION, HOEREN_CHOICE, HOEREN_FEEDBACK, HOEREN_TEILE, HOEREN_TF, HOEREN_TF_SOLUTION, MATCH, MATCH_SOLUTION,
+  DURCHSAGE, APOTHEKE, FORM, FORM_SOLUTION, GAP, GAP_SOLUTION, NOTE, HOEREN_CHOICE, HOEREN_FEEDBACK, HOEREN_TEILE, HOEREN_TF, HOEREN_TF_SOLUTION, MATCH, MATCH_SOLUTION,
   ADS_BOARD, ADS_BOARD_SOLUTION, ARTICLE, HEADLINES, HEADLINES_SOLUTION, POOL_GAP, POOL_GAP_SOLUTION,
   CARD_TURNS, PEOPLE, PICTO_PICTURE, PICTURE, TRACK, READING, READING_CHOICE, READING_TF, SPEAKING, SPEAKING_CARDS, TURNS, WRITING, WRITING_SINGLE,
 } from "@/lib/exam/samples"
@@ -163,6 +163,8 @@ export function ExamGallery() {
   const [pool, setPool] = useState<Record<number, string>>({ 31: "für" })
   const [sheet, setSheet] = useState<"exit" | "time" | null>(null)
   const [note, setNote] = useState("Liebe Frau Brandt,\n\nich kann am Samstag leider nicht kommen. ")
+  const [form, setForm] = useState<Record<number, string>>({ 0: "Haddad, Amina", 1: "0151 2238 470" })
+  const [noteGap, setNoteGap] = useState<Record<number, string>>({})
   const [prepNotes, setPrepNotes] = useState("Teil 1: Fragen – Familie? Arbeit?\nTeil 2: Rad = gesund, kein Stau\nTeil 3: Samstag, Kantine, Kuchen")
   return (
     <div className="v-container flex flex-col gap-12 py-10 sm:py-14">
@@ -323,6 +325,15 @@ export function ExamGallery() {
             <SpeakingTask data={SPEAKING_CARDS} people={PEOPLE} turns={CARD_TURNS} />
           </div>
           <Panel className="lg:col-span-2"><WritingTask options={WRITING_SINGLE} chosen="A" onChoose={() => {}} value={note} onChange={setNote} /></Panel>
+        </ExamStage>
+      </Block>
+
+      <Block title="Formular und Notiz (Start Deutsch 1, telc A2)" note="Lücken ohne Auswahl schreibt man selbst: im Formular (Schreiben Teil 1) als Zeile mit Feld, in der Telefonnotiz (telc A2 Hören Teil 1) mitten im Text. Enter springt ins nächste Feld. Ja/nein bleibt eine Wahl. In der Auswertung zählen kleine Schreibfehler nicht, Zahlen müssen stimmen.">
+        <ExamStage scene="schreiben" framed className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:grid-cols-2">
+          <Panel><GapItem data={FORM} value={form} onChange={(n, v) => setForm((m) => ({ ...m, [n]: v }))} /></Panel>
+          <Panel><GapItem data={FORM} value={{ 0: "Haddad, Amina", 1: "0151 2238 470", 2: "Dinstag", 3: "nein" }} review={FORM_SOLUTION} marks={{ 1: true, 2: true }} /></Panel>
+          <Panel><GapItem data={NOTE} value={noteGap} onChange={(n, v) => setNoteGap((m) => ({ ...m, [n]: v }))} /></Panel>
+          <Panel><GapItem data={NOTE} value={{ 4: "10:30" }} review={{ 4: "11:30" }} marks={{ 4: false }} /></Panel>
         </ExamStage>
       </Block>
     </div>

@@ -2,10 +2,12 @@
 
 import { isExam } from "@/lib/kurztest/data"
 import type { PartId } from "@/lib/exam/types"
-import { gradeDtzWriting, gradeTelcWriting, RUBRIC_VERSION, TELC_RUBRIC_VERSION, type MtGradedResult } from "@/lib/modelltest/grade"
+import { isStartExam, typedRight } from "@/lib/exam/scoring/start"
+import { gradeDtzWriting, gradeStartWriting, gradeTelcWriting, RUBRIC_VERSION, START_RUBRIC_VERSION, TELC_RUBRIC_VERSION, type MtGradedResult } from "@/lib/modelltest/grade"
 import { loadKeyedBlocks, loadRunnerSet, scoreClosed, type MtClosedResult } from "@/lib/modelltest/runner"
 import { gradeSpeaking, type MtSpeakingResult } from "@/lib/modelltest/speaking"
 import { gradeTelcSpeaking } from "@/lib/modelltest/speaking-telc"
+import { gradeStartSpeaking } from "@/lib/modelltest/speaking-start"
 import { emptyState, phasesDone, playedBefore, skipTo, type RunState } from "@/lib/modelltest/sprechen-run"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { getSessionUser } from "@/lib/supabase/server"
@@ -63,7 +65,8 @@ export async function submitClosed(attemptId: string, answers: Record<string, st
   }
 }
 
-export async function submitWriting(attemptId: string, taskKey: string, text: string): Promise<WritingSubmit> {
+/** `form`: Start Deutsch 1 / telc A2 Teil 1, the typed form fields by item number. */
+export async function submitWriting(attemptId: string, taskKey: string, text: string, form?: Record<string, string>): Promise<WritingSubmit> {
   const o = await openAttempt(attemptId, ["schreiben"])
   if ("error" in o) return { ok: false, error: o.error! }
   const db = createAdminClient()
@@ -71,17 +74,36 @@ export async function submitWriting(attemptId: string, taskKey: string, text: st
   const { count } = await db.from("mt_attempts").select("id", { count: "exact", head: true }).eq("user_id", o.user.id).eq("skill", "schreiben").gte("graded_at", since)
   if ((count ?? 0) >= WRITING_PER_DAY) return { ok: false, error: "limit" }
   try {
-    const [{ rowId, block }] = await loadKeyedBlocks(o.attempt.set_id, o.attempt.exam, "schreiben")
-    const task = block.display.writing?.find((t) => t.key === taskKey)
-    const model = block.key.writing?.find((m) => m.key === taskKey)
-    if (!task || !model) return { ok: false, error: "attempt" }
+    const keyed = await loadKeyedBlocks(o.attempt.set_id, o.attempt.exam, "schreiben")
+    const letter = keyed.find((k) => k.block.display.writing?.length)
+    const task = letter?.block.display.writing?.find((t) => t.key === taskKey)
+    const model = letter?.block.key.writing?.find((m) => m.key === taskKey)
+    if (!letter || !task || !model) return { ok: false, error: "attempt" }
     const body = String(text ?? "").slice(0, MAX_TEXT)
-    const telc = o.attempt.exam === "telc-b1"
-    const result = await (telc ? gradeTelcWriting : gradeDtzWriting)(task, model.modelAnswer, model.register, body)
-    const now = new Date().toISOString()
-    const sub = await db.from("mt_submissions").insert({ attempt_id: o.attempt.id, task_id: rowId, turn: 0, text: body, rubric_version: telc ? TELC_RUBRIC_VERSION : RUBRIC_VERSION })
+    const exam = o.attempt.exam
+    const start = isStartExam(exam)
+    const telc = exam === "telc-b1"
+    const version = start ? START_RUBRIC_VERSION : telc ? TELC_RUBRIC_VERSION : RUBRIC_VERSION
+    let result = await (start ? gradeStartWriting.bind(null, exam === "telc-a2" ? "A2" : "A1") : telc ? gradeTelcWriting : gradeDtzWriting)(task, model.modelAnswer, model.register, body)
+    const rows: { attempt_id: string; task_id: string; turn: number; text: string; rubric_version: string }[] = [{ attempt_id: o.attempt.id, task_id: letter.rowId, turn: 0, text: body, rubric_version: version }]
+    // Teil 1 (form): one point per field, typed fields with spelling tolerance, numbers exact.
+    const sheet = start ? keyed.find((k) => k.block.display.items.some((it) => it.type === "gap")) : undefined
+    if (sheet) {
+      const fields = sheet.block.display.items.flatMap((it) => (it.type === "gap" ? it.data.parts.flatMap((p) => (typeof p !== "string" && p.n > 0 ? [p] : [])) : []))
+      const given = Object.fromEntries(fields.map((f) => [f.n, String(form?.[f.n] ?? "").slice(0, 60)]))
+      const keys = sheet.block.key.answers.filter((a) => fields.some((f) => f.n === a.n))
+      const right = keys.filter((k) => (fields.find((f) => f.n === k.n)!.options.length ? given[k.n] === k.correct : typedRight(given[k.n], String(k.correct), k.accept))).length
+      rows.push({ attempt_id: o.attempt.id, task_id: sheet.rowId, turn: 0, text: JSON.stringify(given), rubric_version: version })
+      const parts = [
+        { label: `Teil ${sheet.block.teil}: Formular`, points: right, max: keys.length },
+        { label: `Teil ${letter.block.teil}: ${task.title}`, points: result.score.points, max: result.score.max },
+      ]
+      result = { ...result, parts, form: { keys }, score: { points: right + result.score.points, max: keys.length + result.score.max } }
+    }
+    const sub = await db.from("mt_submissions").insert(rows)
     if (sub.error) throw sub.error
-    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, result: { level: result.level, score: result.score, task: taskKey, grade: result } }).eq("id", o.attempt.id)
+    const now = new Date().toISOString()
+    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, result: { level: result.level ?? null, score: result.score, task: taskKey, grade: result } }).eq("id", o.attempt.id)
     if (error) throw error
     return { ok: true, result }
   } catch (e) {
@@ -107,10 +129,14 @@ export async function finishSpeaking(attemptId: string): Promise<SpeakingSubmit>
     // Closing lines of Teile that ran out of time are added here; keep each Teil's lines together, in order.
     state.lines = state.lines.map((l, i) => ({ l, i })).sort((a, b) => a.l.teil - b.l.teil || a.i - b.i).map(({ l }) => l)
     const partner = keyed[0]?.block.display.speaking?.people.partner.name ?? "Partner"
+    const teileDone = [...new Set(state.lines.filter((l) => l.who === "du" && l.text.trim()).map((l) => l.teil))]
+    const exam = o.attempt.exam
     const result =
-      o.attempt.exam === "telc-b1"
-        ? await gradeTelcSpeaking(state.lines, partner, [...new Set(state.lines.filter((l) => l.who === "du" && l.text.trim()).map((l) => l.teil))])
-        : await gradeSpeaking(state.lines, partner, phasesDone(state.lines))
+      exam === "telc-b1"
+        ? await gradeTelcSpeaking(state.lines, partner, teileDone)
+        : isStartExam(exam)
+          ? await gradeStartSpeaking(exam, state.lines, partner, teileDone)
+          : await gradeSpeaking(state.lines, partner, phasesDone(state.lines))
     const now = new Date().toISOString()
     const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, conversation: state, result: { level: result.level ?? null, score: result.score, grade: result } }).eq("id", o.attempt.id)
     if (error) throw error

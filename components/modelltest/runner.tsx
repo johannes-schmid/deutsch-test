@@ -10,6 +10,7 @@ import { KurztestFrame } from "@/components/kurztest/frame"
 import { BlockItems, type Values } from "@/components/kurztest/items"
 import { KurztestLocale, useKurztest } from "@/components/kurztest/locale"
 import { itemNumbers } from "@/lib/exam/kurztest"
+import { isStartExam, START_BLOCK_MINUTES, START_SPEAKING_TEILE } from "@/lib/exam/scoring/start"
 import { TELC_B1_SPEAKING_PREP_MINUTES, TELC_B1_SPEAKING_TEILE, TELC_B1_TEILE } from "@/lib/exam/scoring/telc-b1"
 import type { Level } from "@/lib/exam/types"
 import { EXAMS, portalPath } from "@/lib/exams"
@@ -70,6 +71,7 @@ function Runner({ set }: { set: RunnerSet }) {
   const back = portalPath(set.exam, set.skill)
   const anleitung = set.exam === "dtz" ? DTZ_ANLEITUNG[skill] : set.exam === "telc-b1" ? TELC_B1_ANLEITUNG[skill] : null
   const telc = set.exam === "telc-b1"
+  const startExam = isStartExam(set.exam) ? set.exam : null
 
   const start = async () => {
     setBusy(true)
@@ -109,19 +111,21 @@ function Runner({ set }: { set: RunnerSet }) {
     const scored = set.blocks.filter((b) => !b.example)
     const teile =
       skill === "schreiben"
-        ? set.blocks[0].display.writing!.map((w) => ({ label: C.task(w.key), detail: w.title }))
+        ? startExam
+          ? set.blocks.map((b) => ({ label: C.teil(b.teil), detail: b.display.writing?.[0]?.title ?? P.result.formName }))
+          : set.blocks[0].display.writing!.map((w) => ({ label: C.task(w.key), detail: w.title }))
         : skill === "sprechen"
-          ? [...(telc ? [{ label: P.speaking.prep.title, detail: P.rules.prepMinutes(TELC_B1_SPEAKING_PREP_MINUTES) }] : []), ...set.blocks.map((b) => ({ label: C.teil(b.teil), detail: telc ? TELC_B1_SPEAKING_TEILE[b.teil as 1 | 2 | 3] : b.display.speaking!.data.title }))]
+          ? [...(telc ? [{ label: P.speaking.prep.title, detail: P.rules.prepMinutes(TELC_B1_SPEAKING_PREP_MINUTES) }] : []), ...set.blocks.map((b) => ({ label: C.teil(b.teil), detail: telc ? TELC_B1_SPEAKING_TEILE[b.teil as 1 | 2 | 3] : startExam ? START_SPEAKING_TEILE[startExam][b.teil as 1 | 2 | 3] : b.display.speaking!.data.title }))]
         : [...new Set(scored.map((b) => b.teil))].map((teil) => ({ label: teilName(set.exam, skill, teil, C.teil(teil)), detail: C.taskCount(scored.filter((b) => b.teil === teil).reduce((n, b) => n + scoredItems(b).length, 0)) }))
     const rules =
       skill === "hoeren"
-        ? [{ icon: Headphones, text: set.exam === "telc-b1" ? P.rules.trackTelc : P.rules.track }, { icon: EyeOff, text: P.rules.noFeedback }]
+        ? [{ icon: Headphones, text: set.exam === "telc-b1" ? P.rules.trackTelc : set.exam === "start-deutsch-1" || set.exam === "telc-a2" ? P.rules.trackStart : P.rules.track }, { icon: EyeOff, text: P.rules.noFeedback }]
         : skill === "lesen"
           ? [{ icon: Clock, text: P.rules.time(minutes) }, { icon: EyeOff, text: P.rules.noFeedback }]
           : skill === "sprechen"
             ? [...(telc ? [{ icon: NotebookPen, text: P.rules.prep(TELC_B1_SPEAKING_PREP_MINUTES) }] : []), { icon: Users, text: P.rules.pair }, { icon: Mic, text: P.rules.mic }]
-            : [{ icon: PenLine, text: P.rules.writing }, { icon: Clock, text: P.rules.time(minutes) }]
-    const count = skill === "schreiben" ? 1 : skill === "sprechen" ? set.blocks.length : scored.reduce((n, b) => n + scoredItems(b).length, 0)
+            : [{ icon: PenLine, text: startExam ? P.rules.writingStart : P.rules.writing }, { icon: Clock, text: P.rules.time(minutes) }]
+    const count = skill === "schreiben" ? (startExam ? set.blocks.length : 1) : skill === "sprechen" ? set.blocks.length : scored.reduce((n, b) => n + scoredItems(b).length, 0)
     return (
       <KurztestFrame scene={skill}>
         <div className="mx-auto flex w-full max-w-[560px] flex-col gap-4">
@@ -133,7 +137,7 @@ function Runner({ set }: { set: RunnerSet }) {
               count={count}
               teile={teile}
               rules={rules}
-              about={[...(set.preview ? [P.preview] : []), ...(telc && skill === "schreiben" ? P.about.schreibenTelc : telc && skill === "sprechen" ? P.about.sprechenTelc : P.about[skill])(minutes)].map((p) => <p key={p}>{p}</p>)}
+              about={[...(set.preview ? [P.preview] : []), ...about(skill, telc, startExam, minutes)].map((p) => <p key={p}>{p}</p>)}
               action={<ExamButton onClick={() => (anleitung ? setPhase("anleitung") : void start())} disabled={busy} className="w-full">{anleitung ? nextLabel : busy ? P.starting : startLabel}</ExamButton>}
             />
             {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
@@ -162,7 +166,17 @@ function Runner({ set }: { set: RunnerSet }) {
   if (phase === "test" && attemptId) {
     if (skill === "sprechen") return <SpeakingRun attemptId={attemptId} exam={set.exam} blocks={set.blocks} onExit={() => router.push(back)} onFinish={() => void handIn(() => finishSpeaking(attemptId))} />
     if (skill === "schreiben")
-      return <WritingTest set={set} text={text} onText={setText} onFinish={(task, body) => void handIn(() => submitWriting(attemptId, task, body))} back={back} />
+      return (
+        <WritingTest
+          set={set}
+          text={text}
+          onText={setText}
+          values={values}
+          onValue={(n, v) => setValues((m) => ({ ...m, [n]: v }))}
+          onFinish={(task, body) => void handIn(() => submitWriting(attemptId, task, body, Object.fromEntries(Object.entries(values).map(([k, v]) => [k, v]))))}
+          back={back}
+        />
+      )
     return (
       <ClosedTest
         set={set}
@@ -193,6 +207,16 @@ function Runner({ set }: { set: RunnerSet }) {
       )}
     </KurztestFrame>
   )
+}
+
+/** The "what happens" lines of the intro: the exam's own variant where it has one. */
+function about(skill: "hoeren" | "lesen" | "schreiben" | "sprechen", telc: boolean, start: "start-deutsch-1" | "telc-a2" | null, minutes: number) {
+  if (telc && skill === "schreiben") return P.about.schreibenTelc(minutes)
+  if (telc && skill === "sprechen") return P.about.sprechenTelc(minutes)
+  if (start && skill === "lesen") return P.about.lesenStart(minutes, START_BLOCK_MINUTES[start])
+  if (start && skill === "schreiben") return P.about.schreibenStart(minutes, START_BLOCK_MINUTES[start])
+  if (start && skill === "sprechen") return P.about.sprechenStart(minutes)
+  return P.about[skill](minutes)
 }
 
 function TimeUp({ left, onFinish }: { left: number; onFinish: () => void }) {
@@ -288,12 +312,15 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
   )
 }
 
-function WritingTest({ set, text, onText, onFinish, back }: { set: RunnerSet; text: string; onText: (t: string) => void; onFinish: (task: string, text: string) => void; back: string }) {
+/** Schreiben on one clock. Start Deutsch 1 / telc A2 have two Teile: the form (typed fields) and the message. */
+function WritingTest({ set, text, onText, values, onValue, onFinish, back }: { set: RunnerSet; text: string; onText: (t: string) => void; values: Values; onValue: (n: number, v: string) => void; onFinish: (task: string, text: string) => void; back: string }) {
   const C = useKurztest().T
   const [exit, exitSheet] = useExit(back)
-  const block = set.blocks[0]
-  const tasks = block.display.writing!
-  const [chosen, setChosen] = useState<string | null>(null)
+  const [i, setI] = useState(0)
+  const blocks = set.blocks
+  const letter = blocks.find((b) => b.display.writing?.length)!
+  const tasks = letter.display.writing!
+  const [chosen, setChosen] = useState<string | null>(tasks.length === 1 ? tasks[0].key : null)
   const left = useExamTimer(set.seconds, true)
   const finished = useRef(false)
   const finish = () => {
@@ -301,19 +328,38 @@ function WritingTest({ set, text, onText, onFinish, back }: { set: RunnerSet; te
     finished.current = true
     onFinish(chosen ?? tasks[0].key, text)
   }
+  useEffect(() => {
+    document.getElementById("test")?.scrollIntoView({ behavior: "instant", block: "start" })
+  }, [i])
+  const block = blocks[i]
+  const last = i === blocks.length - 1
+  const fields = (b: PublicMtBlock) => scoredItems(b)
+  const sections = blocks.map((b) => (b === letter ? { id: b.id, label: C.teil(b.teil), count: 1, done: text.trim() ? 1 : 0 } : { id: b.id, label: C.teil(b.teil), count: fields(b).length, done: fields(b).filter((n) => values[n]?.trim()).length }))
+  const items = <BlockItems block={block} values={values} onChange={onValue} examples={block.exampleAnswers} />
   return (
     <KurztestFrame scene="schreiben" focus label={C.run.progress(C.names.schreiben)}>
       <ExamShell
         part="schreiben"
         wide
-        sections={[{ id: "s", label: C.names.schreiben, count: 1, done: text.trim() ? 1 : 0 }]}
+        sections={blocks.length > 1 ? sections : [{ id: "s", label: C.names.schreiben, count: 1, done: text.trim() ? 1 : 0 }]}
         progressLabel={C.run.progress(C.names.schreiben)}
         seconds={left}
         onExit={exit}
-        action={<ExamButton disabled={!chosen || !text.trim()} onClick={finish}>{C.run.finish}</ExamButton>}
+        action={
+          <>
+            {i > 0 ? <ExamButton kind="soft" onClick={() => setI(i - 1)}>{C.run.back}</ExamButton> : null}
+            {last ? <ExamButton disabled={!chosen || !text.trim()} onClick={finish}>{C.run.finish}</ExamButton> : <ExamButton onClick={() => setI(i + 1)}>{C.run.next}</ExamButton>}
+          </>
+        }
       >
         <p className="text-[15px] leading-relaxed text-v-muted">{block.display.instruction}</p>
-        <WritingTask options={tasks} chosen={chosen} onChoose={setChosen} value={text} onChange={(v) => onText(v.slice(0, MAX_TEXT))} />
+        {block === letter ? (
+          <WritingTask options={tasks} chosen={chosen} onChoose={setChosen} value={text} onChange={(v) => onText(v.slice(0, MAX_TEXT))} />
+        ) : block.display.reading ? (
+          <ReadingLayout key={block.id} answered={fields(block).filter((n) => values[n]?.trim()).length} total={fields(block).length} text={<ExamReading exam={set.exam} skill={set.skill} teil={block.teil} data={block.display.reading} />} tasks={items} />
+        ) : (
+          items
+        )}
       </ExamShell>
       {exitSheet}
       <TimeUp left={left} onFinish={finish} />
@@ -427,13 +473,15 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
       }
     />
   )
+  const start = isStartExam(set.exam)
+  const formBlock = set.blocks.find((b) => b.display.items.some((it) => it.type === "gap") && !b.display.writing?.length)
   const bar = <ExamBar part={set.skill} sections={sections} label={K.run.progress(name)} onExit={() => router.push(back)} />
 
   if (result.kind === "graded" && "heard" in result) {
     return (
       <>
         {bar}
-        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${P.result.points(result.score.points, result.score.max)}`} headline={headline} lead={result.partial ? `${result.summary} ${P.result.partial}` : result.summary} scale={scale} note={pass !== undefined ? P.result.telcSpeakingNote : P.result.speakingNote} />
+        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${P.result.points(result.score.points, result.score.max)}`} headline={headline} lead={result.partial ? `${result.summary} ${P.result.partial}` : result.summary} scale={scale} note={start ? P.result.startSpeakingNote : pass !== undefined ? P.result.telcSpeakingNote : P.result.speakingNote} />
         {next}
         {result.parts ? <PerTeil parts={result.parts} /> : null}
         <PartResultCard result={{ part: "sprechen", name, level: result.level, score: result.score, ...(pass !== undefined ? { passed } : {}), criteria: result.criteria }} defaultOpen />
@@ -453,8 +501,14 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
     return (
       <>
         {bar}
-        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${t.points(result.score.points, result.score.max)}`} headline={headline} lead={result.summary} scale={scale} note={pass !== undefined ? P.result.telcWritingNote : P.result.writingNote} />
+        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${t.points(result.score.points, result.score.max)}`} headline={headline} lead={result.summary} scale={scale} note={start ? P.result.startWritingNote : pass !== undefined ? P.result.telcWritingNote : P.result.writingNote} />
         {next}
+        {result.parts ? <PerTeil parts={result.parts} /> : null}
+        {result.form && formBlock ? (
+          <Panel title={P.result.formH}>
+            <BlockItems block={formBlock} values={values} keys={result.form.keys} examples={formBlock.exampleAnswers} />
+          </Panel>
+        ) : null}
         <PartResultCard result={{ part: "schreiben", name, level: result.level, score: result.score, ...(pass !== undefined ? { passed } : {}), criteria: result.criteria }} defaultOpen />
         <Panel title={P.result.yourText}>
           <p className="text-[16px] leading-relaxed whitespace-pre-line">{text}</p>
@@ -475,7 +529,7 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
         visual={<ScoreRing correct={result.correct} total={result.total} caption={K.result.ringCaption} />}
         eyebrow={result.points ? `${K.result.eyebrow(result.correct, result.total)} · ${t.points(result.points.points, result.points.max)}` : K.result.eyebrow(result.correct, result.total)}
         headline={headline}
-        lead={result.points ? P.result.pointsLead[set.skill] : P.result.closedLead[set.skill]}
+        lead={start ? P.result.startLead(name) : result.points ? P.result.pointsLead[set.skill] : P.result.closedLead[set.skill]}
         scale={scale}
         time={time}
         note={result.points ? t.resultNotePoints : t.resultNote}

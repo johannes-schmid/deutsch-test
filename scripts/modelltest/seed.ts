@@ -12,7 +12,7 @@ import fs from "node:fs"
 import path from "node:path"
 import { createClient } from "@supabase/supabase-js"
 import { isDeepStrictEqual } from "node:util"
-import { itemNumbers, type KurztestItem } from "@/lib/exam/kurztest"
+import type { KurztestItem } from "@/lib/exam/kurztest"
 import type { MtBlock, MtSet } from "@/lib/modelltest/types"
 
 const arg = (name: string) => {
@@ -37,8 +37,18 @@ console.log(`Seeding ${PROD ? "PRODUCTION" : "local"}: ${URL_}`)
 const db = createClient(URL_, KEY, { auth: { persistSession: false, autoRefreshToken: false }, realtime: { transport: class {} as never } })
 
 const FILE = `data/modelltest/${EXAM}/${SKILL}-${NN}.json`
-/** Section time per exam: DTZ (research/dtz-blueprint.md); telc B1 Lesen = Leseverstehen + Sprachbausteine in one 90-minute block, Sprechen ~15 min after 20 min preparation (research/telc-b1.md). */
-const MINUTES: Record<string, Record<string, number>> = { dtz: { lesen: 45, schreiben: 30, sprechen: 16 }, "telc-b1": { lesen: 90, schreiben: 30, sprechen: 15 } }
+/**
+ * Section time per exam: DTZ (research/dtz-blueprint.md); telc B1 Lesen = Leseverstehen + Sprachbausteine in one
+ * 90-minute block, Sprechen ~15 min after 20 min preparation (research/telc-b1.md). Start Deutsch 1 runs Lesen and
+ * Schreiben in one 45-minute block, telc's suggested split 25 + 20 (research/start-deutsch-1.md §2). telc A2 gives one
+ * 50-minute block with no official split; 30 + 20 is ours (TODO(hannes): confirm). A simulation runs the block as one.
+ */
+const MINUTES: Record<string, Record<string, number>> = {
+  dtz: { lesen: 45, schreiben: 30, sprechen: 16 },
+  "telc-b1": { lesen: 90, schreiben: 30, sprechen: 15 },
+  "start-deutsch-1": { lesen: 25, schreiben: 20, sprechen: 15 },
+  "telc-a2": { lesen: 30, schreiben: 20, sprechen: 15 },
+}
 const warnings: string[] = []
 const must = <T>(r: { data: T; error: { message: string } | null }, what: string) => {
   if (r.error) throw new Error(`${what}: ${r.error.message}`)
@@ -108,7 +118,8 @@ function questions(b: MtBlock): Q[] {
       for (const p of it.data.parts) {
         if (typeof p === "string") continue
         const c = correctOf(p.n)
-        out.push({ n: p.n, format: "gap", prompt: null, options: p.options.map((o) => ({ label: o, body: null, correct: o === c })) })
+        // A typed gap has no options: its one option is the key's answer (accepted forms stay in the key).
+        out.push({ n: p.n, format: "gap", prompt: null, options: p.options.length ? p.options.map((o) => ({ label: o, body: null, correct: o === c })) : [{ label: c ?? "", body: null, correct: true }] })
       }
     }
   }

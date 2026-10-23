@@ -1,0 +1,480 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-01-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:40:00.000Z",
+        "textType": "Wegweiser in einem Kaufhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie brauchen neue Handtücher.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Das Glas von Ihrem Smartphone ist kaputt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Ihre neue Hose ist zu lang. Sie möchten sie kürzer machen lassen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Ihr Sohn braucht Turnschuhe für den Sportunterricht.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Sie möchten ein Päckchen an Ihre Schwester schicken.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Abends ist es in Ihrem Wohnzimmer zu dunkel. Sie brauchen mehr Licht.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Kaufhaus Sonnenhof",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "4. Stock: Restaurant mit Dachterrasse · Kundenservice · Friseur · Toiletten",
+            "3. Stock: Elektro · Handys und Zubehör · Handy-Reparatur · Lampen · Haushaltsgeräte · Fotoservice",
+            "2. Stock: Kindermode · Spielwaren · Schulbedarf · Sportbekleidung · Sportschuhe",
+            "1. Stock: Damenmode · Herrenmode · Änderungsschneiderei · Wäsche · Bettwäsche · Handtücher",
+            "Erdgeschoss: Parfüm · Kosmetik · Schmuck · Uhren · Lederwaren · Zeitschriften",
+            "Untergeschoss: Supermarkt · Getränke · Haushaltswaren · Schuhreparatur · Postfiliale"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Handys werden im 3. Stock repariert. Im Untergeschoss gibt es nur eine Reparatur für Schuhe.",
+            "evidence": {
+              "text": "3. Stock: Elektro · Handys und Zubehör · Handy-Reparatur · Lampen · Haushaltsgeräte · Fotoservice",
+              "hit": "Handy-Reparatur"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Die Änderungsschneiderei ist im 1. Stock. Im 2. Stock gibt es Sportbekleidung, aber dort ändert niemand Hosen.",
+            "evidence": {
+              "text": "1. Stock: Damenmode · Herrenmode · Änderungsschneiderei · Wäsche · Bettwäsche · Handtücher",
+              "hit": "Änderungsschneiderei"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Sportschuhe gibt es im 2. Stock. Im Erdgeschoss gibt es Lederwaren, aber keine Schuhe.",
+            "evidence": {
+              "text": "2. Stock: Kindermode · Spielwaren · Schulbedarf · Sportbekleidung · Sportschuhe",
+              "hit": "Sportschuhe"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Die Postfiliale ist im Untergeschoss. Der Kundenservice im 4. Stock verschickt keine Päckchen.",
+            "evidence": {
+              "text": "Untergeschoss: Supermarkt · Getränke · Haushaltswaren · Schuhreparatur · Postfiliale",
+              "hit": "Postfiliale"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Für mehr Licht brauchen Sie eine Lampe. Lampen gibt es im 3. Stock. Im Untergeschoss gibt es Haushaltswaren, im 1. Stock Wäsche, aber keine Lampen.",
+            "evidence": {
+              "text": "3. Stock: Elektro · Handys und Zubehör · Handy-Reparatur · Lampen · Haushaltsgeräte · Fotoservice",
+              "hit": "Lampen"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-01-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:40:00.000Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Jonas Kraus spielt in einer Fernsehserie mit."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Der Schauspieler kommt aus Hamburg."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Kraus hat für den Film gelernt, einen Bus zu fahren."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Kraus musste die Fahrprüfung nur einmal machen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Im Bus wollten viele Leute ein Bild mit dem Schauspieler machen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Die Söhne von Kraus freuen sich über seinen neuen Führerschein."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Vom Filmset ans Lenkrad",
+            "Jonas Kraus (41) kennen viele aus dem Fernsehen. In der Serie „Revier Nord“ spielt er seit sechs Jahren einen Polizisten. Jetzt hat der Schauspieler aus Kiel eine neue Rolle: In seinem nächsten Kinofilm ist er Busfahrer in Hamburg.",
+            "Danach ist er vier Wochen lang mit einem echten Busfahrer mitgefahren. Die Fahrgäste haben ihn oft erkannt und wollten ein Foto mit ihm. Seine Frau Tanja ist Ärztin. Sie findet die Idee ein bisschen verrückt. Die zwei Söhne sind dagegen begeistert: „Papa darf jetzt einen richtigen Bus fahren!“",
+            "Danach ist er vier Wochen lang mit einem echten Busfahrer mitgefahren. Die Fahrgäste haben ihn oft erkannt und wollten ein Foto mit ihm. Seine Frau Tanja ist Ärztin und findet die Idee lustig. Die zwei Söhne finden ihren Vater jetzt „richtig cool“.",
+            "Der Film kommt im Herbst in die Kinos. Danach möchte Kraus erst einmal eine Pause machen – ganz ohne Bus: Die Familie fliegt nach Portugal."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Kraus kommt aus Kiel. Hamburg ist nur die Stadt, in der er im Film Bus fährt.",
+            "evidence": {
+              "text": "Jonas Kraus (41) kennen viele aus dem Fernsehen. In der Serie „Revier Nord“ spielt er seit sechs Jahren einen Polizisten. Jetzt hat der Schauspieler aus Kiel eine neue Rolle: In seinem nächsten Kinofilm ist er Busfahrer in Hamburg.",
+              "hit": "der Schauspieler aus Kiel"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Für die Rolle hat er im Frühling den Führerschein für den Bus gemacht.",
+            "evidence": {
+              "text": "Für die Rolle wollte Kraus alles richtig machen. Deshalb hat er im Frühling den Führerschein für den Bus gemacht. „Die Theorie war leicht, aber das Fahren war schwer“, erzählt er. „Beim ersten Mal hatte ich große Angst.“ Erst beim zweiten Versuch hat er die Prüfung bestanden.",
+              "hit": "Deshalb hat er im Frühling den Führerschein für den Bus gemacht."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Beim ersten Mal hatte er Angst. Bestanden hat er erst beim zweiten Versuch. Er musste die Prüfung also zweimal machen.",
+            "evidence": {
+              "text": "Für die Rolle wollte Kraus alles richtig machen. Deshalb hat er im Frühling den Führerschein für den Bus gemacht. „Die Theorie war leicht, aber das Fahren war schwer“, erzählt er. „Beim ersten Mal hatte ich große Angst.“ Erst beim zweiten Versuch hat er die Prüfung bestanden.",
+              "hit": "Erst beim zweiten Versuch hat er die Prüfung bestanden."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Die Fahrgäste haben ihn erkannt und wollten ein Foto mit ihm.",
+            "evidence": {
+              "text": "Danach ist er vier Wochen lang mit einem echten Busfahrer mitgefahren. Die Fahrgäste haben ihn oft erkannt und wollten ein Foto mit ihm. Seine Frau Tanja ist Ärztin. Sie findet die Idee ein bisschen verrückt. Die zwei Söhne sind dagegen begeistert: „Papa darf jetzt einen richtigen Bus fahren!“",
+              "hit": "Die Fahrgäste haben ihn oft erkannt und wollten ein Foto mit ihm."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Die Söhne sind begeistert, dass ihr Vater jetzt einen Bus fahren darf. Nur die Frau findet die Idee ein bisschen verrückt.",
+            "evidence": {
+              "text": "Danach ist er vier Wochen lang mit einem echten Busfahrer mitgefahren. Die Fahrgäste haben ihn oft erkannt und wollten ein Foto mit ihm. Seine Frau Tanja ist Ärztin. Sie findet die Idee ein bisschen verrückt. Die zwei Söhne sind dagegen begeistert: „Papa darf jetzt einen richtigen Bus fahren!“",
+              "hit": "Die zwei Söhne sind dagegen begeistert"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-01-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-23T14:40:00.000Z",
+        "textType": "Anzeigen und Webseiten: rund ums Wohnen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "www.kleintransporter-mieten.de",
+                  "text": "Transporter für Ihren Umzug: selbst fahren und sparen! Ab 49 € pro Tag, Führerschein Klasse B reicht."
+                },
+                {
+                  "key": "b",
+                  "title": "Mieterverein Nordstadt",
+                  "text": "Ärger mit dem Vermieter? Fragen zu Nebenkosten oder Reparaturen? Beratung für Mitglieder kostenlos, Mi 17–19 Uhr, Lindenplatz 4."
+                },
+                {
+                  "key": "c",
+                  "title": "www.putzperle.de",
+                  "text": "Keine Zeit zum Putzen? Wir machen Ihre Wohnung sauber – einmal oder jede Woche. Auf Wunsch auch die Fenster."
+                },
+                {
+                  "key": "d",
+                  "title": "www.umzug-fix.de",
+                  "text": "Neue Wohnung? Unsere starken Helfer tragen Schränke, Kisten und Sofas für Sie. Mit Lkw. Angebot kostenlos am Telefon."
+                },
+                {
+                  "key": "e",
+                  "title": "www.wg-zimmer-24.de",
+                  "text": "WG-Zimmer für Studierende und Azubis in über 80 Städten. Kostenlos suchen, Zimmer schon ab 250 € im Monat."
+                },
+                {
+                  "key": "f",
+                  "title": "Gartenhilfe Grünfink",
+                  "text": "Rasen mähen, Hecke schneiden, Laub sammeln: Wir pflegen Ihren Garten. Für Seniorinnen und Senioren 10 % günstiger."
+                },
+                {
+                  "key": "g",
+                  "title": "Möbel – zweite Chance",
+                  "text": "Gebrauchte Möbel günstig: Schränke, Tische, Betten, Regale. Lieferung nach Hause möglich. Di–Sa 10–18 Uhr."
+                },
+                {
+                  "key": "h",
+                  "title": "Repair-Café im Bürgerhaus Süd",
+                  "text": "Kaputte Elektrogeräte? Bringen Sie sie mit! Ehrenamtliche zeigen Ihnen, wie Sie selbst reparieren. Jeden ersten Samstag im Monat."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Sie ziehen in eine andere Wohnung und möchten Ihre Möbel nicht selbst tragen."
+                },
+                {
+                  "n": 11,
+                  "text": "Ihre Kaffeemaschine funktioniert nicht mehr. Sie möchten sie nicht wegwerfen."
+                },
+                {
+                  "n": 12,
+                  "text": "Ihre Freundin beginnt eine Ausbildung in Leipzig und sucht dort eine billige Unterkunft."
+                },
+                {
+                  "n": 13,
+                  "text": "Ihre Waschmaschine ist kaputt. Sie brauchen schnell eine neue."
+                },
+                {
+                  "n": 14,
+                  "text": "Der Vermieter repariert seit drei Wochen die Heizung nicht. Sie möchten wissen, was Sie tun können."
+                },
+                {
+                  "n": 15,
+                  "text": "Sie machen Ihren Umzug allein mit Freunden und brauchen dafür einen Tag lang ein großes Auto."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "h",
+            "explanation": "Im Repair-Café helfen Ehrenamtliche, kaputte Elektrogeräte selbst zu reparieren. So muss man die Kaffeemaschine nicht wegwerfen.",
+            "evidence": {
+              "text": "Repair-Café im Bürgerhaus Süd. Kaputte Elektrogeräte? Bringen Sie sie mit! Ehrenamtliche zeigen Ihnen, wie Sie selbst reparieren. Jeden ersten Samstag im Monat.",
+              "hit": "Kaputte Elektrogeräte?"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "e",
+            "explanation": "Die Seite mit WG-Zimmern ist für Studierende und Azubis, also auch für Ihre Freundin in der Ausbildung.",
+            "evidence": {
+              "text": "www.wg-zimmer-24.de. WG-Zimmer für Studierende und Azubis in über 80 Städten. Kostenlos suchen, Zimmer schon ab 250 € im Monat.",
+              "hit": "WG-Zimmer für Studierende und Azubis"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "x",
+            "explanation": "Keine Anzeige verkauft Waschmaschinen. Der Laden „Möbel – zweite Chance“ hat nur Möbel, und das Repair-Café repariert nur einmal im Monat und verkauft nichts.",
+            "evidence": {
+              "text": "Möbel – zweite Chance. Gebrauchte Möbel günstig: Schränke, Tische, Betten, Regale. Lieferung nach Hause möglich. Di–Sa 10–18 Uhr.",
+              "hit": "Gebrauchte Möbel günstig"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Der Mieterverein berät bei Ärger mit dem Vermieter, auch bei Reparaturen.",
+            "evidence": {
+              "text": "Mieterverein Nordstadt. Ärger mit dem Vermieter? Fragen zu Nebenkosten oder Reparaturen? Beratung für Mitglieder kostenlos, Mi 17–19 Uhr, Lindenplatz 4.",
+              "hit": "Ärger mit dem Vermieter?"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Den Transporter kann man für einen Tag mieten und selbst fahren. Die Umzugsfirma mit Lkw trägt die Möbel, das möchten Sie nicht.",
+            "evidence": {
+              "text": "www.kleintransporter-mieten.de. Transporter für Ihren Umzug: selbst fahren und sparen! Ab 49 € pro Tag, Führerschein Klasse B reicht.",
+              "hit": "Transporter für Ihren Umzug: selbst fahren und sparen!"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "d"
+      ]
+    }
+  ]
+}

@@ -3,11 +3,23 @@
 
 import type { ExamSpec } from "../exam-blueprints"
 
+const U = "research/telc-a2.md §2–4 (telc Übungstest 1, 2017 and 2024; audio measured 2026-10-23)"
+
 export const spec: ExamSpec = {
   context: { name: "telc Deutsch A2 (Start Deutsch 2)", level: "A2", setting: "Alltag in Deutschland", copyright: "telc" },
   parts: [
     {
+      // Full Modelltest only (research/telc-a2.md §2); the 5-minute taster leaves it out.
+      skill: "hoeren", teil: 3, answer: "match", ads: 9, noMatch: false, itemsReal: 5, itemsPerBlock: 5,
+      full: { items: 5, first: 11, blocks: 1, itemsPerBlock: 5, length: { min: 95, max: 150, unit: "seconds" }, example: true, options: 9, pace: { min: 150, max: 200 }, pauses: { before: 7, after: 17 }, source: U },
+      textTypes: ["Gespräch zwischen zwei Personen: eine Person zeigt der anderen einen Ort oder erzählt von Plänen (Firma, Verein, Umzug, Woche)"],
+      length: { min: 95, max: 150, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 2,
+      instruction: "Sie hören ein Gespräch. Was passt zu wem? Ordnen Sie zu. Sie hören das Gespräch zweimal.",
+      hint: "Zwei Stimmen, etwa 350 Wörter, A2. Fünf Personen oder Tage werden je einer von neun Möglichkeiten zugeordnet; das Beispiel nimmt eine weg.",
+    },
+    {
       skill: "hoeren", teil: 1, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 1, blocks: 5, itemsPerBlock: 1, length: { min: 12, max: 25, unit: "seconds" }, example: true, pace: { min: 120, max: 185 }, pauses: { before: 7, after: 16 }, sound: "Anrufbeantworter: Piepton", source: U },
       textTypes: ["Nachricht von einer Freundin oder einem Freund auf dem Anrufbeantworter", "Nachricht vom Arbeitgeber oder einer Firma auf dem Anrufbeantworter", "Telefonansage: Auskunft oder Fahrplaninformation"],
       length: { min: 15, max: 45, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 2,
       instruction: "Sie hören eine Nachricht am Telefon. Ergänzen Sie die Notiz: Welche Information fehlt? Wählen Sie a, b oder c. Sie hören jeden Text zweimal.",
@@ -17,6 +29,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 2, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 6, blocks: 5, itemsPerBlock: 1, length: { min: 14, max: 27, unit: "seconds" }, example: true, pace: { min: 120, max: 185 }, pauses: { before: 7, after: 16 }, sound: "Radio-Jingle", source: U },
       textTypes: ["Radio: Programmhinweis", "Radio: Wetterbericht", "Radio: Verkehrsmeldung", "Radio: Gewinnspiel", "Radio: Grüße von Hörerinnen und Hörern"],
       length: { min: 15, max: 45, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 1,
       instruction: "Sie hören eine Meldung im Radio. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text einmal.",
@@ -24,6 +37,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 1, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 1, blocks: 1, itemsPerBlock: 5, length: { min: 55, max: 100, unit: "words" }, example: true, fixedLast: "anderes Stockwerk", source: U },
       textTypes: ["Wegweiser in einem Kaufhaus", "Wegweiser in einem Einkaufszentrum"],
       length: { min: 55, max: 100, unit: "words" },
       instruction: "Lesen Sie die Situation und den Wegweiser. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
@@ -31,6 +45,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 2, answer: "rf", itemsReal: 5, itemsPerBlock: 2,
+      full: { items: 5, first: 6, blocks: 1, itemsPerBlock: 5, length: { min: 120, max: 175, unit: "words" }, example: true, source: U },
       textTypes: ["Kurzer Zeitungsartikel über eine Person aus der Region", "Meldung in einer Zeitschrift über eine bekannte Person"],
       length: { min: 120, max: 170, unit: "words" },
       instruction: "Lesen Sie den Artikel. Sind die Aussagen richtig oder falsch?",
@@ -38,6 +53,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 3, answer: "match", ads: 8, noMatch: true, itemsReal: 5, itemsPerBlock: 5, sample: 3,
+      full: { items: 5, first: 11, blocks: 1, itemsPerBlock: 5, length: { min: 110, max: 190, unit: "words" }, example: true, options: 8, source: U },
       textTypes: ["Kurze Anzeigen und Webseiten-Teaser (Kurse, Freizeit, Dienstleistungen, Einkaufen)"],
       length: { min: 110, max: 190, unit: "words" },
       instruction: "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt? Für eine Situation gibt es keine passende Anzeige. Dann wählen Sie x.",

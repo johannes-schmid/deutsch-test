@@ -569,3 +569,30 @@
 **Outcome:** SUCCESS
 **What worked / went wrong:** Live lines on `claude-haiku-5-5` with `max_tokens: 400` came back empty: the model spent the budget on thinking, so every live turn (DTZ too) silently fell back to the pre-rendered line. `effort: "low"` + 2000 tokens: ~1.4 s per line. The Teil clock was tested in minutes, not real time, by speeding up `Date.now` with an `initScript` in Chrome DevTools.
 **Lesson:** A silent fallback hides a dead feature: test the live path itself, not just the run. Give Claude 5.x calls with tight budgets an explicit low effort.
+
+## 2026-10-23 — telc B1 Hören track timing, batch runner for telc
+**Changed:** `scripts/modelltest/audio.ts` (telc track: answer-sheet line per Teil, no shared reading time in Teil 3, 1.5 s after each framing line), set 1 Teil 3 situation sentences in `data/modelltest/telc-b1/hoeren-01.json`, `scripts/modelltest/batch.sh --exam telc-b1` (author → check-set + one redraft per flagged Teil → audio → local seed).
+**Outcome:** SUCCESS (set 1 track 22.1 → 24.4 min vs official 25:00; Teil 1/2/3 each within seconds of the official).
+**What worked / went wrong:** comparing per-Teil spans instead of the total showed the whole gap sat in Teil 3: set 1 was rendered before the per-text framing existed, and the narrator lines ran back to back. Scribe on 60 s excerpts of the official MP3 confirmed the wording of each Teil's framing.
+**Lesson:** Diff audio timing per Teil against the official silence map before re-rendering anything; a stale render looks like a pacing bug.
+
+## 2026-10-23 — Start Deutsch 1 and telc A2 Modelltest 1 drafted by agents
+**Changed:** new drafts `data/modelltest/{start-deutsch-1,telc-a2}/{hoeren,lesen,schreiben,sprechen}-01.json` (status draft, not seeded, no audio); official Übungstest text cached in `.unit-cache/official-{start-deutsch-1,telc-a2}/`.
+**Outcome:** SUCCESS (drafts), both rated 7/10 for realism by independent reviewers against the official Übungstests
+**What worked / went wrong:** Skeletons (item counts, play counts, Beispiele, x-option) were right first time. Realism lost points on kit gaps, not content: no typed-answer/form item (A2 Hören T1 and both Schreiben T1 became multiple choice, several guessable), no card draw, pair instead of A1 group, no A1/A2 track/validator/Sprechen engine. Content defects: A1 Schreiben T1 too close to the official ÜT1 situation; planted distractors sound scripted; Lesen statements repeat the source words; Sprechen fallback lines assume what the candidate said; native voice delivering learner errors.
+**Lesson:** Build the typed-field item and per-exam `full` specs before drafting A1/A2 sets 2–10; fallback lines must be neutral; paraphrase in Lesen statements; distractors in only 2–3 of 5 clips at A1/A2.
+
+## 2026-10-23 — Start Deutsch 1 / telc A2 Modelltest 1 locked in: typed fields, two-Teil Schreiben, A1/A2 Sprechen
+**Changed:**
+- Kit: typed gaps (`options: []`) with `sheet: "Formular" | "Notiz"` in `components/exam/items.tsx`, on /design/pruefung and in DESIGN.md.
+- Scoring: `lib/exam/scoring/start.ts` (+ tests): typed answers with spelling slack and exact digits, Schreiben T2 3/1.5/0 + 1, Sprechen tasks 3/6/6, telc grades /60.
+- Runner: Schreiben as form + message on one clock (`components/modelltest/runner.tsx`, `submitWriting`, `gradeStartWriting`); closed results in points for A1/A2.
+- Sprechen: live partner + examiner prompts and grading (`lib/modelltest/speaking-start.ts`), partner recast to Kathi (learner voice).
+- Format: `full` specs for A1/A2 Hören/Lesen, A1/A2 validators (Schreiben, Sprechen), seed minutes (A1 25+20, A2 30+20).
+- Content: set 1 fixes and generation guides `research/{start-deutsch-1,telc-a2}-authoring.md` + `scripts/modelltest/check-start.ts` (subagent).
+**Outcome:** SUCCESS (tsc, 20 unit tests, `next build`; A2 Schreiben run end-to-end in the browser: form 4/5 with "tuerkisch" and "Krankenpflegrin" accepted, letter 7/10; live lines and grading smoke-tested against the API).
+**What worked / went wrong:**
+- The Schreiben crash came from the runner assuming one writing block; a second exam shape exposed it at once.
+- Typed answers needed no migration: the canonical answer is the one option, the accepted forms stay in the server-only key and `scoreClosed` reads them from the keyed blocks.
+- The first A2 live lines were wrong in ways only a real call shows: the examiner commented and said "Frau Amira", and the Teil 3 partner talked for 70 words. Explicit "nur die Frage, ohne Namen" and a word range per turn fixed both.
+**Lesson:** Before drafting a new exam, run its set 1 through every runner path (closed, writing, speaking, result); call the live prompts once with a scripted transcript before rendering audio.
