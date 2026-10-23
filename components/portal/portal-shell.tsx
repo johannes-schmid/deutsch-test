@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils"
 
 const T = PORTAL_COPY
 
-export type NavExam = { id: string; label: string; brand: Brand; href: string }
-export type NavGroup = { level: string; exams: NavExam[] }
+export type NavLevel = { id: string; level: string; label: string; href: string }
+export type NavFamily = { id: string; label: string; brand: Brand; href: string; levels: NavLevel[] }
 
 const initials = (u: SessionUser) => (u.name ?? u.email).split(/[\s@.]+/).filter(Boolean).slice(0, 2).map((p) => p[0]!.toUpperCase()).join("")
 
@@ -59,24 +59,42 @@ export function AccountRow({ user }: { user: SessionUser | null }) {
 const SIDE_LINK = "flex min-h-11 items-center gap-3 rounded-full px-3 text-[14.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
 const SIDE_ACTIVE = "bg-v-ink font-semibold text-v-bg hover:bg-v-ink hover:text-v-bg"
 
-/** One exam in the sidebar, lit on its page and its skill pages. */
-function SideExam({ exam }: { exam: NavExam }) {
+/** One exam family in the sidebar, lit on its page (and, for the DTZ, its skill pages). */
+function SideFamily({ family }: { family: NavFamily }) {
   const body = (
     <>
-      <ExamMark brand={exam.brand} size="sm" />
-      <span className="truncate">{exam.label}</span>
+      <ExamMark brand={family.brand} size="sm" />
+      <span className="truncate">{family.label}</span>
     </>
   )
   const cls = cn(SIDE_LINK, "text-v-ink")
   return (
-    <Suspense fallback={<Link href={exam.href} className={cls}>{body}</Link>}>
-      <PortalLink href={exam.href} className={cls} activeClassName={SIDE_ACTIVE} nested>{body}</PortalLink>
+    <Suspense fallback={<Link href={family.href} className={cls}>{body}</Link>}>
+      <PortalLink href={family.href} className={cls} activeClassName={SIDE_ACTIVE} nested>{body}</PortalLink>
     </Suspense>
   )
 }
 
-/** The floating glass sidebar from lg up: overview, the exams by level, the plan card and the account row. */
-export function PortalSidebar({ groups, account, className }: { groups: NavGroup[]; account: React.ReactNode; className?: string }) {
+const SIDE_SUB = "flex min-h-9 items-center gap-2.5 rounded-full px-3 text-[13.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
+const SIDE_SUB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
+
+/** One level under its family: level pill and exam name, lit on the exam and its skill pages. */
+function SideLevel({ level }: { level: NavLevel }) {
+  const body = (
+    <>
+      <span className="v-num w-[42px] shrink-0 text-[11.5px] font-semibold text-v-ink">{level.level}</span>
+      <span className="truncate">{level.label}</span>
+    </>
+  )
+  return (
+    <Suspense fallback={<Link href={level.href} className={SIDE_SUB}>{body}</Link>}>
+      <PortalLink href={level.href} className={SIDE_SUB} activeClassName={SIDE_SUB_ACTIVE} nested>{body}</PortalLink>
+    </Suspense>
+  )
+}
+
+/** The floating glass sidebar from lg up: overview, the exam families with their levels, the plan card and the account row. */
+export function PortalSidebar({ groups, account, className }: { groups: NavFamily[]; account: React.ReactNode; className?: string }) {
   const overview = (
     <>
       <LayoutGrid className="size-[18px]" strokeWidth={2} aria-hidden="true" />
@@ -92,22 +110,24 @@ export function PortalSidebar({ groups, account, className }: { groups: NavGroup
         <Suspense fallback={<Link href={PORTAL_HOME} className={SIDE_LINK}>{overview}</Link>}>
           <PortalLink href={PORTAL_HOME} className={SIDE_LINK} activeClassName={SIDE_ACTIVE}>{overview}</PortalLink>
         </Suspense>
-        <div className="-mx-1 mt-2 flex min-h-0 flex-col gap-3 overflow-y-auto px-1 pb-1">
-          {groups.map((g) => (
-            <section key={g.level} aria-labelledby={`side-${g.level}`} className="flex flex-col gap-0.5">
-              <h2 id={`side-${g.level}`} aria-label={`${T.nav.exams} ${g.level}`} className="flex items-center gap-2 px-3 pt-2 pb-1">
-                <span className="rounded-full bg-v-ink/7 px-2 py-px text-[12px] font-semibold text-v-ink">{g.level}</span>
-                <span className="h-px flex-1 bg-v-line" aria-hidden="true" />
-              </h2>
-              <ul className="flex flex-col gap-0.5">
-                {g.exams.map((e) => (
-                  <li key={e.id}>
-                    <SideExam exam={e} />
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
+        <div className="-mx-1 mt-2 flex min-h-0 flex-col gap-1 overflow-y-auto px-1 pb-1">
+          <h2 className="px-3 pt-2 pb-1 font-[family-name:var(--v-font-mono)] text-[11px] tracking-[0.08em] text-v-muted uppercase">{T.nav.exams}</h2>
+          <ul className="flex flex-col gap-1">
+            {groups.map((f) => (
+              <li key={f.id} className="flex flex-col gap-0.5">
+                <SideFamily family={f} />
+                {f.levels.length > 1 ? (
+                  <ul className="ms-[30px] flex flex-col border-s border-v-line ps-1.5">
+                    {f.levels.map((l) => (
+                      <li key={l.id}>
+                        <SideLevel level={l} />
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
       <div className="flex flex-col gap-1 rounded-[20px] bg-v-soft/70 p-4">

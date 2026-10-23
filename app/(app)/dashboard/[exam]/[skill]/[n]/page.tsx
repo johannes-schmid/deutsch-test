@@ -5,7 +5,7 @@ import { notFound, redirect } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 import { ModelltestRunner } from "@/components/modelltest/runner"
 import { PortalCrumbs } from "@/components/portal/portal-exam"
-import { EXAMS, EXAM_IDS } from "@/lib/exams"
+import { EXAMS, EXAM_IDS, familyCrumb } from "@/lib/exams"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { PORTAL_HOME } from "@/lib/auth/redirect"
@@ -47,7 +47,7 @@ async function Run({ params }: { params: PageProps<"/dashboard/[exam]/[skill]/[n
   if (!isExam(exam) || !isSkill(skill) || !Number.isInteger(n) || n < 1 || n > MODELLTESTS) notFound()
   const user = await getSessionUser()
   if (!user) redirect(`/anmelden?next=${encodeURIComponent(`${portalPath(exam, skill)}/${n}`)}`)
-  const crumbs = [{ label: T.exam.back, href: PORTAL_HOME }, { label: EXAMS[exam].short ?? EXAMS[exam].name, href: portalPath(exam) }, { label: KURZTEST_COPY.names[skill], href: portalPath(exam, skill) }, { label: T.run.crumb(n) }]
+  const crumbs = [{ label: T.exam.back, href: PORTAL_HOME }, ...familyCrumb(exam), { label: EXAMS[exam].short ?? EXAMS[exam].name, href: portalPath(exam) }, { label: KURZTEST_COPY.names[skill], href: portalPath(exam, skill) }, { label: T.run.crumb(n) }]
   const access = await loadRunnerSet(exam, skill, n, user.id)
   if (!access.ok) return access.reason === "locked" ? <Notice crumbs={crumbs} h={T.run.locked.h} lead={T.run.locked.lead} cta={{ href: "/preise", label: T.skill.lockedCta }} /> : <Notice crumbs={crumbs} h={T.run.missing.h} lead={T.run.missing.lead} />
   return (

@@ -5,7 +5,7 @@ import { DesignShell } from "@/components/design/shell"
 import { SiteGlow } from "@/components/design/site-chrome"
 import { AccountRow, Avatar, PortalMobileHeader, PortalSidebar, PortalTabBar } from "@/components/portal/portal-shell"
 import { getSessionUser } from "@/lib/supabase/server"
-import { portalExamGroups } from "@/lib/portal"
+import { portalFamilies } from "@/lib/portal"
 import "../(main)/landing.css"
 
 const hostGrotesk = Host_Grotesk({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-host" })
@@ -23,7 +23,7 @@ async function HeaderAvatar() {
 
 /** The portal: proxy.ts already sent anyone without a session to /anmelden. Only the user-specific bits wait for cookies. */
 export default async function PortalLayout({ children }: { children: React.ReactNode }) {
-  const groups = (await portalExamGroups()).map((g) => ({ level: g.level, exams: g.exams.map((e) => ({ id: e.id, label: e.short ?? e.name, brand: e.brand, href: e.href })) }))
+  const groups = (await portalFamilies()).map((f) => ({ id: f.id, label: f.id === "dtz" ? "DTZ" : f.name, brand: f.brand, href: f.href, levels: f.exams.map((e) => ({ id: e.id, level: e.levels.join("–"), label: e.short ?? e.name, href: e.href })) }))
   return (
     <div className={`${hostGrotesk.variable} ${redditMono.variable}`}>
       <DesignShell id="nachtzug" lang="de">

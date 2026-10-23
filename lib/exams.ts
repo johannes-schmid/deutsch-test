@@ -119,3 +119,35 @@ export const examPath = (id: ExamId) => `/gratis-test/${id}`
 
 /** The portal page for an exam, or one of its skills. Client-safe, unlike the rest of lib/portal.ts. */
 export const portalPath = (exam: ExamId, skill?: string) => (skill ? `/dashboard/${exam}/${skill}` : `/dashboard/${exam}`)
+
+/** The portal overview groups exams by who runs them; the level is picked inside. Start Deutsch 1 is Goethe A1 and telc A1 at once. */
+export const FAMILY_IDS = ["dtz", "goethe", "telc", "oesd"] as const
+export type FamilyId = (typeof FAMILY_IDS)[number]
+
+export type Family = { name: string; brand: Brand; summary: string; exams: ExamId[] }
+
+export const FAMILIES: Record<FamilyId, Family> = {
+  dtz: { name: "Deutsch-Test für Zuwanderer", brand: "dtz", summary: "Die Prüfung am Ende vom Integrationskurs", exams: ["dtz"] },
+  goethe: { name: "Goethe-Zertifikat", brand: "goethe", summary: "Start Deutsch 1, Goethe-Zertifikat A2 und B1", exams: ["start-deutsch-1", "goethe-a2", "goethe-b1"] },
+  telc: { name: "telc Deutsch", brand: "telc", summary: "Start Deutsch 1, telc Deutsch A2 und B1", exams: ["start-deutsch-1", "telc-a2", "telc-b1"] },
+  oesd: { name: "ÖSD Zertifikat", brand: "oesd", summary: "Mit Sprecherinnen und Sprechern aus Österreich, Deutschland und der Schweiz", exams: ["oesd-a1", "oesd-a2", "oesd-b1"] },
+}
+
+export const isFamily = (id: string): id is FamilyId => (FAMILY_IDS as readonly string[]).includes(id)
+
+export const familyLevels = (f: FamilyId): Level[] => LEVELS.filter((l) => FAMILIES[f].exams.some((e) => EXAMS[e].levels.includes(l)))
+
+/** A one-exam family (the DTZ) opens its exam page directly. */
+export const familyPath = (f: FamilyId) => (FAMILIES[f].exams.length === 1 ? portalPath(FAMILIES[f].exams[0]) : `/dashboard/${f}`)
+
+/** The family an exam page sits under, or null when it belongs to several (Start Deutsch 1). */
+export const familyOf = (exam: ExamId): FamilyId | null => {
+  const hits = FAMILY_IDS.filter((f) => FAMILIES[f].exams.includes(exam))
+  return hits.length === 1 ? hits[0] : null
+}
+
+/** The family crumb between Übersicht and an exam, when the exam has one family with several levels. */
+export const familyCrumb = (exam: ExamId): { label: string; href: string }[] => {
+  const f = familyOf(exam)
+  return f && FAMILIES[f].exams.length > 1 ? [{ label: FAMILIES[f].name, href: familyPath(f) }] : []
+}

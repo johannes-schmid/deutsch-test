@@ -1,5 +1,5 @@
 import "server-only"
-import { EXAMS, EXAM_IDS, LEVELS, examPath, portalPath, type Exam, type ExamId, type Level } from "@/lib/exams"
+import { EXAMS, FAMILIES, FAMILY_IDS, examPath, familyLevels, familyPath, portalPath, type Brand, type Exam, type ExamId, type FamilyId, type Level } from "@/lib/exams"
 import { SKILLS, examLive, liveSkills, type Skill } from "@/lib/kurztest/data"
 
 export type PortalExam = Exam & { id: ExamId; href: string; free: string | null }
@@ -11,15 +11,15 @@ export { portalPath }
 
 export const portalExam = (id: ExamId): PortalExam => ({ ...EXAMS[id], id, href: portalPath(id), free: examLive(id) ? examPath(id) : null })
 
-/** Cached: it reads the content files, which only change with a deploy. Lowest level first; an exam sits under every level it certifies (the DTZ under A2 and B1) and leads its group. */
-export async function portalExamGroups(): Promise<{ level: Level; exams: PortalExam[] }[]> {
+export type PortalFamily = { id: FamilyId; name: string; brand: Brand; summary: string; levels: Level[]; href: string; exams: PortalExam[]; total: number }
+
+/** Cached: it reads the content files, which only change with a deploy. The overview's exam families, DTZ first, each with its exams lowest level first. */
+export async function portalFamilies(): Promise<PortalFamily[]> {
   "use cache"
-  return LEVELS.map((level) => ({
-    level,
-    exams: EXAM_IDS.filter((id) => EXAMS[id].levels.includes(level))
-      .sort((a, b) => Number(b === "dtz") - Number(a === "dtz"))
-      .map(portalExam),
-  }))
+  return FAMILY_IDS.map((id) => {
+    const f = FAMILIES[id]
+    return { id, name: f.name, brand: f.brand, summary: f.summary, levels: familyLevels(id), href: familyPath(id), exams: f.exams.map(portalExam), total: f.exams.length * SKILLS.length * MODELLTESTS }
+  })
 }
 
 export type PortalSkill = { skill: Skill; href: string; free: string | null }

@@ -450,3 +450,12 @@
 - Hand-inserted `auth.users` rows make local GoTrue answer 500; create the test user through the admin API, then insert the `auth.sessions` row and sign the JWT.
 - A full Sprechen run is ≈ 9 min of candidate speech, so the agreed 300 s free cap ends a free run in Teil 2; the result grades what was said and missing Teile score 0.
 **Lesson:** Never stack env files in a script that writes: one env file, plus an explicit local-URL guard. Don't run `next build` against a live dev server's `.next`.
+
+## 2026-10-23 — Portal overview: exam first, level second
+**Changed:** `FAMILIES` + `familyPath/familyCrumb` in lib/exams.ts; `portalFamilies()` replaces `portalExamGroups()` (lib/portal.ts); `portalStats()` in lib/modelltest/portal.ts; new components/portal/portal-overview.tsx (FamilyCard, LevelCard, ScoreCard, WeekCard, ProgressBar; on /design/portal + DESIGN.md); /dashboard rebuilt as family cards + stats column; /dashboard/{goethe,telc,oesd} served by the `[exam]` route as level pickers; sidebar grouped by family with nested levels; breadcrumbs gain the family.
+**Outcome:** SUCCESS (tsc + eslint clean, `next build` passes; checked at 1440 and 390 with a throwaway local user and 4 seeded attempts, deleted afterwards).
+**What worked / went wrong:**
+- A magic-link session for local UI checks: admin `generate_link` → `POST /auth/v1/verify` with the `hashed_token` returns a full session; the `sb-127-auth-token` cookie is `base64-` + base64url(JSON). No JWT signing or `auth.sessions` insert needed. Set it in an *isolated* chrome-devtools context; script files for `evaluate_script` must sit inside the project (gitignored `.unit-cache/`).
+- `next build` without touching the running dev server: build in a scratch copy with `cp -c -R node_modules` (APFS clone); a symlinked node_modules fails Turbopack's root check.
+- A sparkline scaled 0–100 looks flat for typical results; scale to the data range.
+**Lesson:** Start Deutsch 1 belongs to two families, so anything keyed "exam → family" must allow none (no family crumb) rather than pick one.

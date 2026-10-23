@@ -4,7 +4,8 @@ import { GoogleButtonFallback } from "@/components/auth/google-button"
 import { ExamCard } from "@/components/kurztest/exam-card"
 import { AccountRow, Avatar, PortalSidebar, PortalTabBar } from "@/components/portal/portal-shell"
 import { ModelltestRow, PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
-import { EXAMS, EXAM_IDS, LEVELS } from "@/lib/exams"
+import { FamilyCard, LevelCard, ScoreCard, WeekCard } from "@/components/portal/portal-overview"
+import { EXAMS, FAMILIES, FAMILY_IDS } from "@/lib/exams"
 import type { SessionUser } from "@/lib/supabase/server"
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 const USER: SessionUser = { id: "design-preview", email: "amina@example.com", name: "Amina Rahimi", firstName: "Amina", avatar: null }
-const NAV = LEVELS.map((level) => ({ level, exams: EXAM_IDS.filter((id) => EXAMS[id].levels.includes(level)).map((id) => ({ id, label: EXAMS[id].short ?? EXAMS[id].name, brand: EXAMS[id].brand, href: `#${id}` })) }))
+const NAV = FAMILY_IDS.map((f) => ({ id: f, label: f === "dtz" ? "DTZ" : FAMILIES[f].name, brand: FAMILIES[f].brand, href: `#${f}`, levels: FAMILIES[f].exams.map((id) => ({ id, level: EXAMS[id].levels.join("–"), label: EXAMS[id].short ?? EXAMS[id].name, href: `#${id}` })) }))
 
 function Spec({ name, note, children }: { name: string; note: string; children: React.ReactNode }) {
   return (
@@ -35,7 +36,7 @@ export default function PortalDesignPage() {
           Aufbau wie das Portal von inburgeringoefenen.nl, gebaut aus Nachtzug. Komponenten in components/portal/ und components/auth/. Daten hier sind Muster.
         </p>
 
-        <Spec name="PortalSidebar" note="Ab lg: schwebende Glas-Leiste, 280px. Übersicht (aktiv = Tinte), dann die Prüfungen nach Niveau (A1, A2, B1) mit ExamMark; der DTZ steht unter A2 und B1. Eine Prüfung leuchtet auch auf ihren Teil-Seiten. Paket-Karte, Konto-Zeile.">
+        <Spec name="PortalSidebar" note="Ab lg: schwebende Glas-Leiste, 280px. Übersicht (aktiv = Tinte), dann die Prüfungsfamilien (DTZ, Goethe, telc, ÖSD) mit ExamMark und darunter ihre Niveaus an einer Haarlinie. Ein Niveau leuchtet auch auf seinen Teil-Seiten. Paket-Karte, Konto-Zeile.">
           <div className="photo rounded-[32px] p-6" style={{ ["--photo" as string]: "var(--g-photo-1)" }}>
             <PortalSidebar groups={NAV} account={<AccountRow user={USER} />} className="static m-0 flex h-[720px]" />
           </div>
@@ -64,6 +65,28 @@ export default function PortalDesignPage() {
             <li><ExamCard exam={EXAMS["telc-b1"]} href={null} /></li>
             <li><ExamCard exam={EXAMS.dtz} href="#" cta="Zur Prüfung" chip="A2–B1" /></li>
           </ul>
+        </Spec>
+
+        <Spec name="FamilyCard" note="/dashboard: eine Prüfungsfamilie. ExamMark, Niveau-Spanne, zuletzt gemachter Modelltest (sonst Kurzbeschreibung), Fortschritt über alle Niveaus. Gestartet: Tinten-Knopf „Weiter“, sonst „Beginnen“ als Umriss. Die ganze Karte öffnet die Familie; der DTZ öffnet direkt seine Prüfung.">
+          <ul className="grid max-w-[760px] grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+            <li><FamilyCard name="Deutsch-Test für Zuwanderer" brand="dtz" levels="A2–B1" href="#" line="Zuletzt: Modelltest 3 · Hören" done={7} total={40} /></li>
+            <li><FamilyCard name="ÖSD Zertifikat" brand="oesd" levels="A1–B1" href="#" line={FAMILIES.oesd.summary} done={0} total={120} /></li>
+          </ul>
+        </Spec>
+
+        <Spec name="LevelCard" note="/dashboard/goethe (telc, oesd): ein Niveau der Familie. Niveau als Tinten-Kachel, Name, Kurzbeschreibung, Fortschritt. Öffnet /dashboard/[exam].">
+          <ul className="grid max-w-[760px] grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+            <li><LevelCard level="A2" name={EXAMS["goethe-a2"].name} summary={EXAMS["goethe-a2"].summary} href="#" done={3} total={40} /></li>
+            <li><LevelCard level="B1" name={EXAMS["goethe-b1"].name} summary={EXAMS["goethe-b1"].summary} href="#" done={0} total={40} /></li>
+          </ul>
+        </Spec>
+
+        <Spec name="ScoreCard · WeekCard" note="Rechte Spalte der Übersicht. Schnitt = Anteil der Punkte aller Modelltests (Übungswert), Änderung seit letzter Woche, Linie der letzten 12 Ergebnisse. Woche: Modelltests der letzten 7 Tage, heute zuletzt. Ohne Versuche: Hinweis statt Zahl.">
+          <div className="grid max-w-[640px] grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+            <ScoreCard average={64} delta={6} trend={[48, 52, 51, 58, 55, 61, 64]} />
+            <WeekCard week={["Sa", "So", "Mo", "Di", "Mi", "Do", "Fr"].map((day, i) => ({ day, count: [0, 0, 1, 0, 1, 0, 0][i] }))} />
+            <ScoreCard average={null} delta={null} trend={[]} />
+          </div>
         </Spec>
 
         <Spec name="PortalCrumbs" note="Übersicht › Prüfung › Teil. Das letzte Glied ist die aktuelle Seite; der Pfeil spiegelt sich in RTL.">

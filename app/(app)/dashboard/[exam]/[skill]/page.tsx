@@ -5,7 +5,7 @@ import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { ModelltestRow, PortalCrumbs } from "@/components/portal/portal-exam"
-import { EXAMS, EXAM_IDS } from "@/lib/exams"
+import { EXAMS, EXAM_IDS, familyCrumb } from "@/lib/exams"
 import { SKILLS, isExam, isSkill } from "@/lib/kurztest/data"
 import { MODELLTESTS, portalPath, portalSkills } from "@/lib/portal"
 import { modelltestSlots, type ModelltestSlot } from "@/lib/modelltest/portal"
@@ -34,7 +34,7 @@ export default async function PortalSkillPage({ params }: PageProps<"/dashboard/
   const free = (await portalSkills(id)).find((s) => s.skill === skill)?.free ?? null
   return (
     <main className="mx-auto w-full max-w-[820px] px-4 pt-6 pb-32 sm:px-6 lg:px-10 lg:pt-12 lg:pb-16">
-      <PortalCrumbs items={[{ label: T.exam.back, href: PORTAL_HOME }, { label: exam.short ?? exam.name, href: portalPath(id) }, { label: name }]} />
+      <PortalCrumbs items={[{ label: T.exam.back, href: PORTAL_HOME }, ...familyCrumb(id), { label: exam.short ?? exam.name, href: portalPath(id) }, { label: name }]} />
 
       <header className="mt-8 flex flex-col gap-5">
         <PartIcon part={skill} size="lg" />
