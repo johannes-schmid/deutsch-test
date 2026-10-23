@@ -70,7 +70,8 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
 - **Exam conditions:** a real timer per section, the same flow between parts, and a scaled result
   (B1 / A2 / unter A2), never a percentage or "bestanden". Other exams show their **own official
   result format** (e.g. Goethe/telc/ÖSD: bestanden / nicht bestanden with points), as set in
-  `research/<exam>.md` and `lib/exams.ts`. Decided by Hannes 2026-10-12.
+  `research/<exam>.md` and `lib/exams.ts`. Decided by Hannes 2026-10-12; reconfirmed 2026-10-23 for every
+  official exam (telc table: `research/telc-overview.md` §2). Never copy a competitor's scoring.
 - **Sprechen simulates the pair exam,** including the partner's turns. It is never a series of
   solo prompts.
 - **Schreiben/Sprechen feedback** uses the official DTZ assessment criteria.
@@ -132,6 +133,21 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   3 Monate €39.90 (recommended). Benchmark: TestGerman €19.90/month, €44.90 / 3 months, auto-renewing.
   Savings are shown against n × the 1-month price, never as a struck-through "old" price.
   Prices are always a concrete € amount, never "ab X".
+- **Prüfungssimulation (Hannes, 2026-10-23):** every exam also gets 10 full simulations (all four skills in one go).
+  Simulation *n* = the reviewed Modelltests *n* of each skill, assembled, **never generated**: no extra Claude or TTS
+  for content, nothing reviewed twice. Only exam-level framing is rendered once per exam (Anleitung, transitions,
+  closing). **Every simulation runs in its exam's official format:** official section order, shared timers, breaks,
+  preparation, play counts, section lock and the official overall result, never a generic or competitor flow.
+  Binding table per exam: `research/telc-plan.md` §7; an exam with an open `TODO(hannes)` in its row gets no simulation.
+- **Generate every Modelltest as part of its simulation from day one** (Hannes, 2026-10-23), so sets can be patched
+  together later with zero regeneration:
+  - **One plan per exam covers all skills of set *n* together** (like `scripts/modelltest/plan-dtz.ts`): no topic,
+    situation, name or place repeats across Hören *n*, Lesen *n*, Schreiben *n* and Sprechen *n*.
+  - **Casting is planned per set *n* across skills:** no voice twice in a row at a section boundary.
+  - **Each set already has the official structure of its section in the full exam** (e.g. telc B1 Lesen *n* includes
+    the Sprachbausteine; a shared-timer block like Lesen + Schreiben is drafted to fit that one timer).
+  - **Exam-wide framing** (Anleitung, transitions, closing) lives outside the sets and is rendered once per exam.
+  - Never draft a single skill of set *n* without the plan entries for the other skills of *n*.
 - **Prices include 19% VAT** for German consumers (OSS). Never show prices excluding VAT to
   consumers.
 - **One source of truth for prices** (`lib/pricing.ts`). Derived numbers (savings %, per-month
@@ -249,6 +265,9 @@ deutsch-test/
 ├── CLAUDE.md                        # this file
 ├── LEARNINGS.md                     # success/failure log (create with the first code session)
 ├── research/dtz-blueprint.md        # ★ the real DTZ format, sourced and dated (g.a.s.t. Übungssätze 1+2); encoded as `full` in lib/exam/blueprint.ts
+├── research/telc-overview.md         # all 24 telc German exams: official result modes (§2), skeletons, recognition, A1→C1 ladder; blueprints in research/{start-deutsch-1,telc-a2,telc-b1,telc-b2,telc-c1}.md
+├── research/telc-plan.md             # ★ telc build plan (all exams, telc B1 first), audio standard, cited Anleitung drafts, Prüfungssimulation (§7)
+├── research/telc-anleitung/          # draft Anleitung (intro) text per telc exam, cited to the official Übungstest pages; moves to lib/modelltest/ when built
 ├── research/dtz-official-situations.md # every situation of the official DTZ sets (paraphrased): the generator's do-not-reuse list; official texts for the 6-word overlap check live only in .unit-cache/official/ (gitignored)
 └── testgerman/                       # competitor research, sorted by level; README.md in every folder
     ├── analysis.md · examples.md    #   full teardown (B1 in §2b) · structural examples (≤20-word excerpts)
@@ -320,6 +339,7 @@ scripts/lib/drafting.ts              # shared Claude call (direct API, optional 
 scripts/modelltest/                  # ★ Modelltest pipeline: plan-dtz (topics per set) → author (Claude per Teil, validated) → audio (eleven_v4_turbo, Hören track / Sprechen lines) → images (Pexels → WebP, Claude refits text to the photo) → seed (local mt_* + Storage; never touches review_status)
                                      # batch.sh <sets…> runs all of it (author → images → audio → local seed) with Claude on the Message Batches API (50% off), logs in .unit-cache/batch/
                                      # drafting model: Opus 5.5, effort medium (DRAFT_MODEL / DRAFT_EFFORT override; blind eval 2026-10-23 in LEARNINGS.md)
+scripts/modelltest/{plan,author}-telc-b1.ts # telc B1: one plan entry per set covers all skills (= Simulation n) → author (Teile batched together; Lesen Teil 4–5 = Sprachbausteine); audio.ts/seed.ts take --exam telc-b1; do-not-reuse list research/telc-b1-official-situations.md, official text for the overlap check only in .unit-cache/official-telc-b1/
 data/modelltest/<exam>/<skill>-NN.json # Modelltest drafts (MtSet); photos.lock.json = Pexels ids in use. Rendered media lives in .unit-cache/ (gitignored) until seeded
 lib/modelltest/types.ts              # MtSet/MtBlock (+ Hören track cues, Sprechen turns with phase/live, photos, live key)
 lib/exam/validate-modelltest.ts      # validateTeil (closed Teile vs `full`), validateSprechen, validateWriting, validateSet (whole set, used by author.ts and the admin publish gate)

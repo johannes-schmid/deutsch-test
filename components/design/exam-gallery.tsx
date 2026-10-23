@@ -9,11 +9,13 @@ import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
   ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
   ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, type ShellSection,
+  AdBoard, ArticleText, HeadlineMatch, WordPoolGap,
 } from "@/components/exam"
 import type { TrueFalse } from "@/lib/exam/types"
 import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
 import {
   DURCHSAGE, APOTHEKE, GAP, GAP_SOLUTION, HOEREN_CHOICE, HOEREN_FEEDBACK, HOEREN_TEILE, HOEREN_TF, HOEREN_TF_SOLUTION, MATCH, MATCH_SOLUTION,
+  ADS_BOARD, ADS_BOARD_SOLUTION, ARTICLE, HEADLINES, HEADLINES_SOLUTION, POOL_GAP, POOL_GAP_SOLUTION,
   CARD_TURNS, PEOPLE, PICTO_PICTURE, PICTURE, TRACK, READING, READING_CHOICE, READING_TF, SPEAKING, SPEAKING_CARDS, TURNS, WRITING, WRITING_SINGLE,
 } from "@/lib/exam/samples"
 
@@ -156,6 +158,9 @@ export function ExamGallery() {
   const [match, setMatch] = useState<Record<number, string>>({ 6: "a" })
   const [gap, setGap] = useState<Record<number, string>>({ 21: "zum" })
   const [time, setTime] = useState<string | null>(null)
+  const [heads, setHeads] = useState<Record<number, string>>({ 2: "e" })
+  const [board, setBoard] = useState<Record<number, string>>({ 11: "a" })
+  const [pool, setPool] = useState<Record<number, string>>({ 31: "für" })
   const [sheet, setSheet] = useState<"exit" | "time" | null>(null)
   const [note, setNote] = useState("Liebe Frau Brandt,\n\nich kann am Samstag leider nicht kommen. ")
   return (
@@ -208,6 +213,18 @@ export function ExamGallery() {
           <Panel className="lg:col-span-2"><MatchItem data={MATCH} value={{ 6: "a", 7: "c", 8: "x" }} review={MATCH_SOLUTION} /></Panel>
           <Panel className="lg:col-span-2"><GapItem data={GAP} value={{ 21: "am", 22: "Bestätigung" }} review={GAP_SOLUTION} /></Panel>
         </ExamStage>
+      </Block>
+
+      <Block title="Prüfungsheft: telc B1 (Entwurf)" note="Lesen und Sprachbausteine wie im gedruckten Heft: Zeitungsmeldungen in schmaler Spalte mit leerer Überschriftenzeile, ein Zeitschriftenartikel mit Vorspann, eine Anzeigenseite in fünf Druckstilen (nur Tinte, damit Glut für den Zustand frei bleibt) und ein Brief mit einem einzigen Wortpool a–o darunter. Benutzte Wörter werden blass und zeigen ihre Lücke. Noch nicht im Modelltest.">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
+          <Panel><HeadlineMatch data={HEADLINES} value={heads} onChange={(n, k) => setHeads((m) => ({ ...m, [n]: k }))} /></Panel>
+          <Panel><div className="max-w-[640px]"><ArticleText data={ARTICLE} /></div></Panel>
+          <Panel><AdBoard data={ADS_BOARD} value={board} onChange={(n, k) => setBoard((m) => ({ ...m, [n]: k }))} /></Panel>
+          <Panel><WordPoolGap data={POOL_GAP} value={pool} onChange={(n, v) => setPool((m) => ({ ...m, [n]: v }))} /></Panel>
+          <Panel><HeadlineMatch data={HEADLINES} value={{ 1: "d", 2: "e" }} review={HEADLINES_SOLUTION} /></Panel>
+          <Panel><AdBoard data={ADS_BOARD} value={{ 11: "a", 12: "d", 13: "x" }} review={ADS_BOARD_SOLUTION} /></Panel>
+          <Panel><WordPoolGap data={POOL_GAP} value={{ 31: "für", 32: "seit", 33: "wann", 34: "deshalb", 35: "dankbar" }} review={POOL_GAP_SOLUTION} /></Panel>
+        </div>
       </Block>
 
       <Block title="Prüfungs-Marken" note="Unsere eigenen Marken, nie die Logos der Anbieter: Name des Anbieters in unserer Schrift, ein Ton pro Anbieter und die Flagge des Herkunftslands. So unterscheiden sich Goethe B1 und ÖSD B1 auf einen Blick.">

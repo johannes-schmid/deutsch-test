@@ -2,6 +2,7 @@ import "server-only"
 import { requireAdmin } from "@/lib/admin/guard"
 import { ownsExam } from "@/lib/entitlements"
 import { indicativeLevel } from "@/lib/exam/band"
+import { closedScore, type PartPoints } from "@/lib/exam/scoring/telc-b1"
 import type { ItemKey } from "@/lib/exam/kurztest"
 import type { PartId } from "@/lib/exam/types"
 import type { ExamId } from "@/lib/exams"
@@ -52,6 +53,8 @@ export type MtClosedResult = {
   total: number
   teile: { label: string; items: { n: number; right: boolean }[] }[]
   keys: ItemKey[]
+  /** Exams scored in points (telc B1): the official weighted points, per Teil and in all. */
+  points?: { points: number; max: number; parts: PartPoints[] }
   transcripts: Record<string, { speaker: string; text: string }[]>
 }
 
@@ -70,10 +73,11 @@ export async function scoreClosed(attemptId: string, setId: string, exam: ExamId
   const right = (n: number) => answers[n] !== undefined && answers[n] === keys.find((k) => k.n === n)?.correct
   const { error: insErr } = await db.from("mt_answers").upsert(qs.map((q) => ({ attempt_id: attemptId, question_id: q.id, chosen: answers[q.n] ?? null, correct: right(q.n) })), { onConflict: "attempt_id,question_id" })
   if (insErr) throw insErr
-  const teile = [...new Set(qs.map((q) => q.mt_stimuli.teil))].map((teil) => ({ label: `Teil ${teil}`, items: qs.filter((q) => q.mt_stimuli.teil === teil).map((q) => ({ n: q.n, right: right(q.n) })) }))
   const correct = keys.filter((k) => right(k.n)).length
+  const points = exam === "telc-b1" ? closedScore(skill, new Set(keys.filter((k) => right(k.n)).map((k) => k.n))) : undefined
+  const teile = [...new Set(qs.map((q) => q.mt_stimuli.teil))].map((teil, i) => ({ label: points?.parts[i]?.label ?? `Teil ${teil}`, items: qs.filter((q) => q.mt_stimuli.teil === teil).map((q) => ({ n: q.n, right: right(q.n) })) }))
   const transcripts = Object.fromEntries(
     (await loadKeyedBlocks(setId, exam, skill)).filter(({ block: b }) => b.key.script && b.display.clip).map(({ block: b }) => [b.id, b.key.script!.map((t) => ({ speaker: b.display.clip!.speakers[t.speaker]?.name ?? (t.speaker === "moderation" ? "Moderation" : t.speaker), text: t.text }))])
   )
-  return { kind: "closed", level: indicativeLevel(correct, keys.length), correct, total: keys.length, teile, keys, transcripts }
+  return { kind: "closed", level: indicativeLevel(correct, keys.length), correct, total: keys.length, teile, keys, ...(points ? { points } : {}), transcripts }
 }

@@ -37,7 +37,8 @@ console.log(`Seeding ${PROD ? "PRODUCTION" : "local"}: ${URL_}`)
 const db = createClient(URL_, KEY, { auth: { persistSession: false, autoRefreshToken: false }, realtime: { transport: class {} as never } })
 
 const FILE = `data/modelltest/${EXAM}/${SKILL}-${NN}.json`
-const MINUTES: Record<string, number> = { lesen: 45, schreiben: 30, sprechen: 16 }
+/** Section time per exam: DTZ (research/dtz-blueprint.md); telc B1 Lesen = Leseverstehen + Sprachbausteine in one 90-minute block, Sprechen ~15 min after 20 min preparation (research/telc-b1.md). */
+const MINUTES: Record<string, Record<string, number>> = { dtz: { lesen: 45, schreiben: 30, sprechen: 16 }, "telc-b1": { lesen: 90, schreiben: 30, sprechen: 15 } }
 const warnings: string[] = []
 const must = <T>(r: { data: T; error: { message: string } | null }, what: string) => {
   if (r.error) throw new Error(`${what}: ${r.error.message}`)
@@ -151,7 +152,7 @@ async function seedQuestions(setId: string, stimulusId: string, b: MtBlock) {
 
 async function main() {
   const set = JSON.parse(fs.readFileSync(FILE, "utf8")) as MtSet
-  const duration = set.track ? Math.round(set.track.duration) : MINUTES[SKILL] * 60
+  const duration = set.track ? Math.round(set.track.duration) : (MINUTES[EXAM] ?? MINUTES.dtz)[SKILL] * 60
   const setRow = must(await db.from("mt_sets").upsert({ exam: EXAM, skill: SKILL, number: SET, title: set.title, is_free: SET === 1, duration_seconds: duration, track: set.track ?? null }, { onConflict: "exam,skill,number" }).select("id").single(), "upsert set") as { id: string }
 
   const { audio, images } = media(set)

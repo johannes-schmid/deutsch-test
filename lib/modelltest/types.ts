@@ -21,8 +21,8 @@ export type MtBlock = Omit<KurztestBlock, "display" | "key"> & {
   key: KurztestBlock["key"] & { live?: MtLive }
 }
 
-/** Sprechen: the official order of a pair exam (research/dtz-blueprint.md §5). */
-export type SpeakPhase = "1A" | "1B" | "2A" | "2B" | "3"
+/** Sprechen: the official order of a pair exam. DTZ: 1A–3 (research/dtz-blueprint.md §5); telc B1: one phase per Teil. */
+export type SpeakPhase = "1A" | "1B" | "2A" | "2B" | "3" | "1" | "2"
 /**
  * One turn of the Sprechen run. `du` turns carry a hint in `text` and a speaking time in `seconds`.
  * `live`: generated during the run (examiner follow-up, Teil 3 partner); `text`/`src` are the pre-rendered fallback.

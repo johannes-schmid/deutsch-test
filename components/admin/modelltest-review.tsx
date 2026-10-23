@@ -115,7 +115,7 @@ export function TrackReview({ track }: { track: HoerTrack }) {
     <section aria-label="Hörtrack" className="flex flex-col gap-4 rounded-[24px] border border-v-line bg-v-surface p-5 sm:p-6">
       <div className="flex flex-col gap-1">
         <h2 className="text-[19px] font-semibold tracking-[-0.01em]">Ganzer Hörtrack</h2>
-        <p className="text-[15px] text-v-muted">So läuft Hören in der Prüfung: ein Track, jeder Text einmal. <span className="v-num">{fmt(track.duration)}</span> min.</p>
+        <p className="text-[15px] text-v-muted">So läuft Hören in der Prüfung: ein Track ohne Pause. <span className="v-num">{fmt(track.duration)}</span> min.</p>
       </div>
       <audio ref={audio} controls preload="none" src={track.src} onTimeUpdate={(e) => setT(e.currentTarget.currentTime)} className="w-full" />
       <div className="flex flex-wrap items-center gap-2">

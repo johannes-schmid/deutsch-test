@@ -1,6 +1,7 @@
 # telc Deutsch B1 (Zertifikat Deutsch): exam format blueprint
 
-**Stand: 10/2026** · all facts checked 2026-10-12 · format only, no exam content reproduced (CLAUDE.md §4)
+**Stand: 10/2026** · all facts checked 2026-10-12, recognition and retake rules re-checked 2026-10-23 · format only, no exam content reproduced (CLAUDE.md §4)
+Overview of all telc exams and result modes: [`telc-overview.md`](telc-overview.md). Build plan (B1 first): [`telc-plan.md`](telc-plan.md).
 
 | | |
 |---|---|
@@ -8,11 +9,11 @@
 | **Level** | CEFR B1, single level (not a scaled A2/B1 test). [S1][s1] |
 | **Provider** | telc gGmbH, Frankfurt. The format was originally developed jointly by telc, ÖSD, the Swiss EDK and the Goethe-Institut. [S1][s1] Goethe now runs its own, different Goethe-Zertifikat B1 (see §2). [S9][s9] |
 | **Delivery** | Paper or computer-based. [S2][s2] |
-| **Who takes it** | Adults who need a general B1 certificate. For our audience the key use is **Einbürgerung**: § 10 Abs. 4 StAG defines "ausreichende Kenntnisse der deutschen Sprache" as meeting the requirements of a B1 language exam [S11][s11], and BAMF's list of accepted B1 certificates names "Zertifikat Deutsch / telc Deutsch B1" (list dated Juli 2023). [S10][s10] Other uses (jobs, residence) are mentioned only generically by telc ("recognised by employers and government authorities"). [S2][s2] |
+| **Who takes it** | Adults who need a general B1 certificate. For our audience the key use is **Einbürgerung**: § 10 Abs. 4 StAG defines "ausreichende Kenntnisse der deutschen Sprache" as meeting the requirements of a B1 language exam [S11][s11], and the Bavarian Positivliste von Sprachnachweisen (Stand 27.06.2024, the most current official list found) names Zertifikat Deutsch (telc Deutsch B1), B1 Schule, B1+ Beruf, and telc A2·B1 only when B1 is certified. [S12][s12] No BAMF-published list of accepted B1 certificates was found on 2026-10-23; the PDF cited as [S10] is older and its status is unclear. Other uses (jobs, residence) are mentioned only generically by telc ("recognised by employers and government authorities"). [S2][s2] |
 | **Total duration** | Written exam **150 min** (Lesen + Sprachbausteine 90 min, Hören ~30 min, Schreiben 30 min). Oral exam **~15 min** per pair, after **20 min** preparation. [S1][s1] About 185 min of candidate time in all (our sum, not an official figure). |
 
-`TODO(hannes): unverified — the BAMF B1 list is "Stand: Juli 2023". Check that a newer version exists and still lists ZD before we cite it on the site.`
-`TODO(hannes): unverified — the newest official mock is Übungstest 1, 13. Auflage 2020 (in a zip dated 2023-03). I found no telc notice of a format revision since then, but no telc page states the format is still current either. Confirm before we publish.`
+`TODO(hannes): unverified — whether other Länder use a different list than Bavaria's. Cite the Bavarian list with its Stand on the site.`
+Format current: the newest official mock is Übungstest 1, 13. Auflage 2020 (zip dated 2023-03); the telc product page (checked 2026-10-23) lists the same structure and no revision was announced 2024–2026 (see `telc-overview.md` §6).
 
 ---
 
@@ -55,7 +56,7 @@ Lengths are measured from one official mock (Übungstest 1 [S1][s1]) unless stat
 | Teil | Task | Text type / situation | Length | Items · answer format | Plays | Time | Source |
 |---|---|---|---|---|---|---|---|
 | 1 Globalverstehen | Match a headline to each short text | 5 short press items/notices (studies, consumer tips, travel offers, book tips) | ~65 words per text (5 texts ≈ 340 words) + 10 headlines a–j | **5 · matching from 10 headlines** (each used once, 5 left over) | – | shared 90 min | [S1][s1] p. 5–7 |
-| 2 Detailverstehen | Read one article, answer a/b/c | Press/magazine article (social or work topic) | ~320 words | **5 · a/b/c** | – | shared | [S1][s1] p. 5, 8–9 |
+| 2 Detailverstehen | Read one article, answer a/b/c | Press/magazine article (social or work topic) | ~320–370 words (Übungstest 1: 323, Übungstest 2: 365) | **5 · a/b/c** | – | shared | [S1][s1] p. 5, 8–9 |
 | 3 Selektives Verstehen | Find the ad that fits each situation | 10 short situations (1–2 sentences) + 12 small ads a–l (restaurants, travel, tutoring, courses, clubs) | Ads ~15–50 words each | **10 · matching from 12 ads + "x"** (no fitting ad). Each ad used once. 2 of 10 were "x" in the mock. | – | shared | [S1][s1] p. 5, 10–11, 41 |
 
 `TODO(hannes): unverified — whether the number of "x" answers in Lesen Teil 3 is fixed (2 in Übungstest 1). No official spec for ZD found; the B1+ Beruf handbook is a different exam.`
@@ -83,8 +84,10 @@ Lengths are measured from one official mock (Übungstest 1 [S1][s1]) unless stat
 - The audio is **not stopped** during the subtest. [S1][s1] p. 29
 - The official mock audio file runs **25:00 min** in all, including instructions, reading pauses and repeats (measured). [S3][s3]
 
-`TODO(hannes): unverified — the reading time before Hören Teil 3 is not printed in the task sheet. Check it in the audio.`
-`TODO(hannes): unverified — the official zip pairs the Übungstest 1 PDF with an MP3 named "uebungstest_4". The audio timings above may belong to Übungstest 4; spot-check one clip against the transcript.`
+- **Checked in the official audio (2026-10-23, silence detection + speech-to-text of excerpts):** the MP3 named "uebungstest_4" **is the Übungstest 1 audio** (the narrator says "Übungstest eins" and the texts match p. 42–44).
+- **Speaking rate is ~180–190 words/min**, not ~140: Teil 1 statements run 15–27 s, the Teil 2 interview ~2:38 per play, Teil 3 texts ~18–35 s. The lengths in the table above came from word counts at 140 words/min and are too long in seconds (the word counts hold).
+- **Teil 3 per text:** "Lesen Sie jetzt die Aufgabe N" + ~5 s reading time, "Hören Sie jetzt den Text", a spoken **situation sentence**, the text, "Sie hören den Text noch einmal", situation sentence + text again, ~6 s. Teil 2 opens with "Hören Sie jetzt das Gespräch"; Teil 1 announces each number.
+- The official key is not "balanced" in runs: Hören items 48–50 are three "falsch" in a row. Our generator's "no three in a row" is a house rule for practice, not an official property.
 
 **Instruction style:** you now hear N short texts/a conversation and solve N tasks. You hear them once/twice. Decide while listening whether statements X–Y are right or wrong. You first get N seconds to read the statements.
 
@@ -107,7 +110,7 @@ Lengths are measured from one official mock (Übungstest 1 [S1][s1]) unless stat
 |---|---|---|---|---|---|---|---|
 | Vorbereitung | Prepare all three parts alone. Notes only on stamped sheets; don't read them out | All task sheets handed out | – | – | – | **20 min** | [S1][s1] p. 30 |
 | 1 Einander kennenlernen | Talk about yourself and ask your partner questions | Sheet with ~7 cue topics (name, origin, housing, family, where German was learned, work/study, languages). Examiner may add an extra topic | – | Spoken dialogue · max 15 pts | – | **~3 min** | [S1][s1] p. 18, 30 |
-| 2 Über ein Thema sprechen | Report the opinion on your sheet, hear the partner's **opposing** opinion, then discuss with own experience and view | A and B get **different** sheets: one short quoted opinion (~45–50 words) with name, age, job, on one topic | – | Spoken dialogue · max 30 pts | – | **~6 min** | [S1][s1] p. 19–20, 30 |
+| 2 Über ein Thema sprechen (2019 editions: "Gespräch über ein Thema") | Report the opinion on your sheet, hear the partner's **opposing** opinion, then discuss with own experience and view | A and B get **different** sheets: one short quoted opinion (~45–50 words) with name, age, job, on one topic | – | Spoken dialogue · max 30 pts | – | **~6 min** | [S1][s1] p. 19–20, 30 |
 | 3 Gemeinsam etwas planen | Plan an event together: what to do, who does what, agree on a plan | Shared sheet: situation + list of cue points ending in "…" (when, where, food, drinks, who pays) | – | Spoken dialogue · max 30 pts | – | **~6 min** | [S1][s1] p. 21, 30 |
 
 ---
@@ -140,10 +143,9 @@ Lengths are measured from one official mock (Übungstest 1 [S1][s1]) unless stat
 | 180–209.5 | ausreichend |
 | 0–179.5 | nicht bestanden |
 
-A pass gets a certificate. A fail gets a Ergebnisbogen. A failed or missed part (written or oral) can be retaken alone in the same or the following calendar year. Only the retake result counts. [S1][s1] p. 40
+A pass gets a certificate. A fail gets an Ergebnisbogen. A failed or missed part (written or oral) can be retaken alone **within 12 months of the result sheet** (telc Prüfungsregularien valid from 15.04.2025; the 2020 Übungstest still says "same or following calendar year"). Single subtests can't be retaken. Only the retake result counts. [S1][s1] p. 40, [S13][s13]
 
-`TODO(hannes): unverified — the retake rule comes from the 2020 Übungstest, not the current telc Prüfungsordnung, which I did not check.`
-`TODO(hannes): product decision — CLAUDE.md bans "bestanden" for DTZ results because the DTZ is scaled. The real telc B1 IS pass/fail with grades, so realism points the other way here. Decide how we word a telc practice result (e.g. "Praxis-Ergebnis: x/225 schriftlich, y/75 mündlich", plus whether the 60 % thresholds are met). Never call it an official result.`
+**Result screen (decided by Hannes 2026-10-23):** show the official telc result exactly: points written /225 and oral /75, whether each 60 % threshold is met, the total /300 and the telc grade, with **bestanden / nicht bestanden** as telc uses it. Label it as a practice result, never an official telc result.
 
 ---
 
@@ -233,6 +235,8 @@ All checked 2026-10-12.
 - **[S9]** Goethe-Institut, *Goethe-Zertifikat B1 Durchführungsbestimmungen*, Stand 1. September 2025. https://www.goethe.de/pro/relaunch/prf/de/Durchfuehrungsbestimmungen_B1.pdf
 - **[S10]** BAMF, *Übersicht der vom BAMF anerkannten B1-Sprachnachweise*, Stand Juli 2023. https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/SprachnachweiseZertifikate/nachweis-b1-zertifkat.pdf?__blob=publicationFile&v=6
 - **[S11]** § 10 StAG (Abs. 1 Satz 1 Nr. 6, Abs. 4). https://www.gesetze-im-internet.de/stag/__10.html
+- **[S12]** Bayerisches Staatsministerium des Innern, *Positivliste von Sprachnachweisen*, Stand 27.06.2024. https://www.kitzingen.de/fileadmin/Medien_Landratsamt/322_Buergerrechte_Auslaenderbehoerde/Positivliste_2024.pdf
+- **[S13]** telc gGmbH, *Prüfungsregularien*, valid from 15.04.2025 (rule on repeating exams no. 3; Anhang 1). https://www.telc.net/fileadmin/user_upload/pdfs/AGB_Pruefungsordnung/9994-P00-150010.pdf
 - Also seen (format tables identical to S1): Übungstest 2 and 5 excerpts, https://shop.telc.net/media/catalog/product/file/201907015061B00020301BiB.pdf · https://shop.telc.net/media/catalog/product/file/201906285061B00050201BiB.pdf
 
 [s1]: https://shop.telc.net/media/catalog/product/file/telc_deutsch_b1_zd_uebungstest_1.pdf
@@ -246,3 +250,5 @@ All checked 2026-10-12.
 [s9]: https://www.goethe.de/pro/relaunch/prf/de/Durchfuehrungsbestimmungen_B1.pdf
 [s10]: https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/SprachnachweiseZertifikate/nachweis-b1-zertifkat.pdf?__blob=publicationFile&v=6
 [s11]: https://www.gesetze-im-internet.de/stag/__10.html
+[s12]: https://www.kitzingen.de/fileadmin/Medien_Landratsamt/322_Buergerrechte_Auslaenderbehoerde/Positivliste_2024.pdf
+[s13]: https://www.telc.net/fileadmin/user_upload/pdfs/AGB_Pruefungsordnung/9994-P00-150010.pdf

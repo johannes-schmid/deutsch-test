@@ -2,7 +2,7 @@
 
 import { isExam } from "@/lib/kurztest/data"
 import type { PartId } from "@/lib/exam/types"
-import { gradeDtzWriting, RUBRIC_VERSION, type MtGradedResult } from "@/lib/modelltest/grade"
+import { gradeDtzWriting, gradeTelcWriting, RUBRIC_VERSION, TELC_RUBRIC_VERSION, type MtGradedResult } from "@/lib/modelltest/grade"
 import { loadKeyedBlocks, loadRunnerSet, scoreClosed, type MtClosedResult } from "@/lib/modelltest/runner"
 import { gradeSpeaking, type MtSpeakingResult } from "@/lib/modelltest/speaking"
 import { emptyState, phasesDone, playedBefore, type RunState } from "@/lib/modelltest/sprechen-run"
@@ -53,7 +53,7 @@ export async function submitClosed(attemptId: string, answers: Record<string, st
   for (const [k, v] of Object.entries(answers ?? {})) if (/^\d{1,2}$/.test(k) && Number(k) > 0 && typeof v === "string" && v.length <= 60) clean[Number(k)] = v
   try {
     const result = await scoreClosed(o.attempt.id, o.attempt.set_id, o.attempt.exam, o.attempt.skill, clean)
-    const { error } = await createAdminClient().from("mt_attempts").update({ completed_at: new Date().toISOString(), score: result.correct, max_score: result.total, result: { level: result.level, correct: result.correct, total: result.total } }).eq("id", o.attempt.id)
+    const { error } = await createAdminClient().from("mt_attempts").update({ completed_at: new Date().toISOString(), score: result.points?.points ?? result.correct, max_score: result.points?.max ?? result.total, result: { level: result.level, correct: result.correct, total: result.total, ...(result.points ? { points: result.points } : {}) } }).eq("id", o.attempt.id)
     if (error) throw error
     return { ok: true, result }
   } catch (e) {
@@ -75,9 +75,10 @@ export async function submitWriting(attemptId: string, taskKey: string, text: st
     const model = block.key.writing?.find((m) => m.key === taskKey)
     if (!task || !model) return { ok: false, error: "attempt" }
     const body = String(text ?? "").slice(0, MAX_TEXT)
-    const result = await gradeDtzWriting(task, model.modelAnswer, model.register, body)
+    const telc = o.attempt.exam === "telc-b1"
+    const result = await (telc ? gradeTelcWriting : gradeDtzWriting)(task, model.modelAnswer, model.register, body)
     const now = new Date().toISOString()
-    const sub = await db.from("mt_submissions").insert({ attempt_id: o.attempt.id, task_id: rowId, turn: 0, text: body, rubric_version: RUBRIC_VERSION })
+    const sub = await db.from("mt_submissions").insert({ attempt_id: o.attempt.id, task_id: rowId, turn: 0, text: body, rubric_version: telc ? TELC_RUBRIC_VERSION : RUBRIC_VERSION })
     if (sub.error) throw sub.error
     const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, result: { level: result.level, score: result.score, task: taskKey, grade: result } }).eq("id", o.attempt.id)
     if (error) throw error

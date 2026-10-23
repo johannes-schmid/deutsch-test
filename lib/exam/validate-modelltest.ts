@@ -9,7 +9,7 @@ const words = (s: string) => s.split(/\s+/).filter(Boolean).length
 const range = (n: number, min: number, max: number, what: string) => (n < min || n > max ? [`${what} is ${n}, blueprint ${min}–${max}`] : [])
 
 /** Hören Teile whose Beispiel has its own clip, so the Teil carries one extra block. */
-const OWN_EXAMPLE_BLOCK = new Set(["hoeren-1", "hoeren-3"])
+const OWN_EXAMPLE_BLOCK = new Set(["dtz-hoeren-1", "dtz-hoeren-3"])
 
 /** Spoken words per clip, from the official clip length and speaking rate (research/dtz-blueprint.md §2.1). */
 const spokenWords = (sec: { min: number; max: number }, pace: { min: number; max: number }) => ({
@@ -23,7 +23,7 @@ export function validateTeil(exam: ExamId, skill: PartId, teil: number, blocks: 
   const full = spec.full
   if (!full) return [`${skill} Teil ${teil}: no official format (full) in the blueprint`]
   const out: string[] = []
-  const ownExample = full.example && OWN_EXAMPLE_BLOCK.has(`${skill}-${teil}`)
+  const ownExample = full.example && OWN_EXAMPLE_BLOCK.has(`${exam}-${skill}-${teil}`)
   const scored = blocks.filter((b) => !b.example)
   if (scored.length !== full.blocks) out.push(`${scored.length} blocks, blueprint ${full.blocks}`)
   if (ownExample && blocks.filter((b) => b.example).length !== 1) out.push("Beispiel block missing")
@@ -60,12 +60,25 @@ export function validateTeil(exam: ExamId, skill: PartId, teil: number, blocks: 
         for (const [i, s] of it.data.situations.entries()) if (!allowed.includes(used[i] ?? "")) out.push(`item ${s.n}: "${used[i]}" is not an option`)
         const real = used.filter((k) => k !== "x")
         if (new Set(real).size !== real.length) out.push("two items share one answer")
-        if (skill === "lesen" && used.filter((k) => k === "x").length !== 1) out.push(`${used.filter((k) => k === "x").length} situations without a match, blueprint 1`)
-        if (skill === "lesen") out.push(...range(words(it.data.ads.map((a) => `${a.title} ${a.text}`).join(" ")), full.length.min, full.length.max, "ads word count"))
+        const xs = used.filter((k) => k === "x").length
+        // DTZ Lesen Teil 2: exactly one x. telc B1 Lesen Teil 3: 2 in Übungstest 1; the count is not fixed officially.
+        const [xMin, xMax] = exam === "dtz" ? [1, 1] : it.noMatch ? [1, 3] : [0, 0]
+        if (skill === "lesen" && (xs < xMin || xs > xMax)) out.push(`${xs} situations without a match, blueprint ${xMin === xMax ? xMin : `${xMin}–${xMax}`}`)
+        // Headline matching (telc Lesen Teil 1): the texts are the situations, the headlines carry no text.
+        const headlines = it.data.ads.every((a) => !a.text)
+        if (skill === "lesen" && headlines) for (const s of it.data.situations) out.push(...range(words(s.text), full.length.min, full.length.max, `text ${s.n} word count`))
+        else if (skill === "lesen") out.push(...range(words(it.data.ads.map((a) => `${a.title} ${a.text}`).join(" ")), full.length.min, full.length.max, "ads word count"))
       }
       if (it.type === "gap") {
         const answerOf = (n: number) => (n === 0 ? b.exampleAnswers?.[0] : keyOf(n)) ?? ""
         for (const p of it.data.parts) if (typeof p !== "string" && !p.options.includes(answerOf(p.n))) out.push(`gap ${p.n}: correct is not one of its options`)
+        // Word pool (telc Sprachbausteine Teil 2): every gap offers the same pool, each word fits once.
+        if (full.options) {
+          const gaps = it.data.parts.filter((p) => typeof p !== "string")
+          if (gaps.some((g) => g.options.length !== full.options)) out.push(`word pool is not ${full.options} words`)
+          const answers = gaps.map((g) => answerOf(g.n))
+          if (new Set(answers).size !== answers.length) out.push("two gaps share one word of the pool")
+        }
         const text = it.data.parts.map((p) => (typeof p === "string" ? p : answerOf(p.n))).join("")
         out.push(...range(words(text), full.length.min, full.length.max, "letter word count"))
       }
@@ -94,7 +107,7 @@ export function validateTeil(exam: ExamId, skill: PartId, teil: number, blocks: 
   const letters = blocks.flatMap((b) => b.display.items.flatMap((it) => {
     const keyOf = (n: number) => b.key.answers.find((a) => a.n === n)?.correct
     if (it.type === "choice") return it.item.n > 0 ? [keyOf(it.item.n)] : []
-    if (it.type === "gap") return it.data.parts.flatMap((p) => (typeof p !== "string" && p.n > 0 ? ["abc"[p.options.indexOf(String(keyOf(p.n)))]] : []))
+    if (it.type === "gap") return it.data.parts.flatMap((p) => (typeof p !== "string" && p.n > 0 && p.options.length === 3 ? ["abc"[p.options.indexOf(String(keyOf(p.n)))]] : []))
     return []
   }))
   if (letters.length >= 4 && new Set(letters).size === 1) out.push(`every a/b/c answer is "${letters[0]}"`)
@@ -104,15 +117,17 @@ export function validateTeil(exam: ExamId, skill: PartId, teil: number, blocks: 
   const rf = blocks.flatMap((b) => b.display.items.flatMap((it) => (it.type === "rf" && it.item.n > 0 ? [b.key.answers.find((a) => a.n === it.item.n)?.correct] : [])))
   const richtig = rf.filter((c) => c === "richtig").length
   if (rf.length >= 4 && Math.abs(richtig - (rf.length - richtig)) > 1) out.push(`${richtig} richtig and ${rf.length - richtig} falsch; balance them`)
+  // telc: no three identical answers in a row within a Teil (Hannes 2026-10-23: R R R F F read as "everything is right").
+  if (exam !== "dtz" && rf.some((c, i) => i >= 2 && c === rf[i - 1] && c === rf[i - 2])) out.push(`richtig/falsch has three of the same in a row (${rf.map((c) => c?.[0]).join(" ")}); mix them`)
 
   // Matching: explanations name ads and sentences by content, never by letter. The letters are shuffled after drafting
   // (set 1 shipped four explanations pointing at the wrong ad).
   for (const b of blocks.filter((b) => b.display.items.some((it) => it.type === "match")))
     for (const a of b.key.answers) if (/\b(?:Anzeige|Satz|in|bei)\s+[a-h]\b(?![-\w])/.test(a.explanation ?? "")) out.push(`item ${a.n}: explanation names an ad or sentence by its letter; name it by its content`)
 
-  if (skill === "hoeren" && teil === 4)
+  if (exam === "dtz" && skill === "hoeren" && teil === 4)
     for (const it of blocks[0]?.display.items ?? []) if (it.type === "match") for (const ad of it.data.ads) if (/^(ich|mein\w*|wir|uns\w*)\b/i.test(ad.text)) out.push(`sentence ${ad.key} is first person; the sentences a–f are general opinions ("Man sollte …", "X ist …")`)
-  if (skill === "hoeren" && teil === 3 && !scored.some((b) => (b.key.script ?? []).some((t) => /\b(du|dich|dir)\b/i.test(t.text)))) out.push("no dialogue between friends or family (du); the official sets mix du and Sie conversations")
+  if (exam === "dtz" && skill === "hoeren" && teil === 3 && !scored.some((b) => (b.key.script ?? []).some((t) => /\b(du|dich|dir)\b/i.test(t.text)))) out.push("no dialogue between friends or family (du); the official sets mix du and Sie conversations")
   return out
 }
 
@@ -166,20 +181,55 @@ export function validateSprechen(b: MtBlock | undefined): string[] {
   return out
 }
 
+/** telc B1 Sprechen (research/telc-b1.md §3e, §5): a pair exam; the partner talks in every Teil, the Interlokutor as little as possible. */
+export function validateSprechenTelc(b: MtBlock | undefined): string[] {
+  const sp = b?.display.speaking
+  if (!b || !sp) return ["speaking block missing"]
+  const out: string[] = []
+  const turns = sp.turns
+  for (const who of ["du", "partner", "pruefer"]) if (!turns.some((t) => t.who === who)) out.push(`no ${who} turn`)
+  for (const [i, t] of turns.entries()) {
+    if (!t.text.trim()) out.push(`turn ${i} (${t.who}) is empty`)
+    if (t.who === "du" && !t.seconds) out.push(`turn ${i}: du turn without speaking time`)
+    if (t.who === "pruefer" && SIE_ONLY.test(t.text)) out.push(`turn ${i}: the examiner says "du"; she says Sie to both`)
+  }
+  const du = turns.filter((t) => t.who === "du")
+  if ((b.key.speaking?.sampleAnswers.length ?? 0) !== du.length) out.push(`${du.length} du turns but ${b.key.speaking?.sampleAnswers.length ?? 0} sample answers`)
+  if (b.key.speaking?.sampleAnswers.some((s) => !s.trim())) out.push("empty sample answer")
+  if (b.key.speaking?.voices.pruefer !== "woman_ela" || b.key.speaking?.voices.partner !== "man_ben") out.push("voices must be woman_ela (examiner) and man_ben (partner)")
+  const examiner = turns.filter((t) => t.who === "pruefer").length
+  if (examiner > Math.ceil(turns.length / 3)) out.push(`the examiner has ${examiner} of ${turns.length} turns; she speaks as little as possible`)
+  const live = b.key.live
+  if (!live?.persona) out.push("partner persona missing")
+  const secs = du.reduce((n, t) => n + (t.seconds ?? 0), 0)
+  const want: Record<number, [number, number]> = { 1: [60, 150], 2: [120, 270], 3: [120, 270] }
+  out.push(...range(secs, ...want[b.teil], "du speaking seconds"))
+  if (b.teil === 1 && sp.data.points.length < 6) out.push(`${sp.data.points.length} topics on the sheet, blueprint ~7`)
+  if (b.teil === 2) {
+    out.push(...range(words(sp.data.points[0] ?? ""), 35, 70, "your opinion sheet words"))
+    if (!/Blatt von/.test(live?.persona ?? "")) out.push("the partner's opinion sheet is missing from the persona")
+  }
+  if (b.teil === 3 && sp.data.points.at(-1) !== "…") out.push(`planning sheet must end with "…"`)
+  if (b.teil > 1 && (live?.partnerLines?.length ?? 0) < 4) out.push("fewer than 4 partner fallback lines")
+  return out
+}
+
 /** Schreiben: Aufgabe A and B, 4 Leitpunkte each, no word count (research/dtz-blueprint.md §4). */
-export function validateWriting(blocks: MtBlock[]) {
+export function validateWriting(blocks: MtBlock[], exam: ExamId = "dtz") {
   const w = blocks[0]?.display.writing ?? []
   const out: string[] = []
-  if (w.length !== 2) out.push(`${w.length} tasks, blueprint 2 (A and B)`)
+  // telc B1: one email reply, no choice of tasks (research/telc-b1.md §3d).
+  const tasks = exam === "dtz" ? 2 : 1
+  if (w.length !== tasks) out.push(`${w.length} tasks, blueprint ${tasks}${tasks === 2 ? " (A and B)" : ""}`)
   for (const t of w) if (t.points.length !== 4) out.push(`task ${t.key}: ${t.points.length} Leitpunkte, blueprint 4`)
-  if (/\b\d+\s*Wörter\b/.test(JSON.stringify(w))) out.push("the task names a word count; the DTZ gives none")
+  if (/\b\d+\s*Wörter\b/.test(JSON.stringify(w))) out.push("the task names a word count; the official task gives none")
   return out
 }
 
 /** Every format deviation of a whole Modelltest set, labelled per Teil. Empty means it matches the blueprint. */
 export function validateSet(exam: ExamId, skill: PartId, blocks: MtBlock[]): string[] {
-  if (skill === "schreiben") return validateWriting(blocks)
-  if (skill === "sprechen") return blocks.flatMap((b) => validateSprechen(b).map((i) => `Teil ${b.teil}: ${i}`))
+  if (skill === "schreiben") return validateWriting(blocks, exam)
+  if (skill === "sprechen") return blocks.flatMap((b) => (exam === "telc-b1" ? validateSprechenTelc(b) : validateSprechen(b)).map((i) => `Teil ${b.teil}: ${i}`))
   const teile = [...new Set(blocks.map((b) => b.teil))].sort()
   return teile.flatMap((t) => validateTeil(exam, skill, t, blocks.filter((b) => b.teil === t)).map((i) => `Teil ${t}: ${i}`))
 }

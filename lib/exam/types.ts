@@ -19,6 +19,8 @@ export type AudioClip = {
   situation: string
   speakers: Record<string, Speaker>
   segments: { speaker: string; from: number; to: number }[]
+  /** A narrator sentence that sets the scene before the clip (telc Hören Teil 3: "Sie rufen in einer Praxis an."). */
+  lead?: string
 }
 
 export type ChoiceData = { n: number; prompt: string; options: Option[] }

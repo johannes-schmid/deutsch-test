@@ -95,6 +95,32 @@ export function PictureItem({ item, label, value, onChange, review }: { item: Pi
   )
 }
 
+/** Numbered tabs for the situations or texts of a matching task, with what was chosen and, in review, right/wrong. */
+export function SituationTabs({ items, active, onActive, value, review, label }: { items: { n: number }[]; active: number; onActive: (i: number) => void; value: Record<number, string>; review?: Record<number, string>; label: string }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2" role="tablist" aria-label={label}>
+      {items.map((x, j) => {
+        const graded = review ? (value[x.n] === review[x.n] ? "right" : "wrong") : null
+        return (
+          <button
+            key={x.n}
+            type="button"
+            role="tab"
+            aria-selected={j === active}
+            onClick={() => onActive(j)}
+            className={cn(
+              "v-num flex h-9 cursor-pointer items-center gap-1.5 rounded-full px-3.5 text-[13.5px] transition-colors",
+              j === active ? "bg-v-ink text-v-bg" : graded === "right" ? "bg-(--p-glow) text-[#0A0D18]" : graded === "wrong" ? "bg-[color-mix(in_srgb,var(--v-sk-schreiben)_30%,var(--v-surface))]" : value[x.n] ? "bg-v-soft" : "border border-v-line text-v-muted"
+            )}
+          >
+            {x.n}{value[x.n] ? ` · ${value[x.n]}` : ""}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 /** Situations to ads (+ x for "no match"). One situation at a time; the ads scroll sideways. */
 export function MatchItem({ data, value, onChange, review, noMatch = true }: { data: MatchData; value: Record<number, string>; onChange?: (n: number, k: string) => void; review?: Record<number, string>; noMatch?: boolean }) {
   const t = useExamCopy()
@@ -103,26 +129,7 @@ export function MatchItem({ data, value, onChange, review, noMatch = true }: { d
   const ads = noMatch ? [...data.ads, { key: "x", title: t.noMatch, text: t.noMatchText }] : data.ads
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center gap-2" role="tablist" aria-label={t.situations}>
-        {data.situations.map((x, j) => {
-          const graded = review ? (value[x.n] === review[x.n] ? "right" : "wrong") : null
-          return (
-            <button
-              key={x.n}
-              type="button"
-              role="tab"
-              aria-selected={j === i}
-              onClick={() => setI(j)}
-              className={cn(
-                "v-num flex h-9 cursor-pointer items-center gap-1.5 rounded-full px-3.5 text-[13.5px] transition-colors",
-                j === i ? "bg-v-ink text-v-bg" : graded === "right" ? "bg-(--p-glow) text-[#0A0D18]" : graded === "wrong" ? "bg-[color-mix(in_srgb,var(--v-sk-schreiben)_30%,var(--v-surface))]" : value[x.n] ? "bg-v-soft" : "border border-v-line text-v-muted"
-              )}
-            >
-              {x.n}{value[x.n] ? ` · ${value[x.n]}` : ""}
-            </button>
-          )
-        })}
-      </div>
+      <SituationTabs items={data.situations} active={i} onActive={setI} value={value} review={review} label={t.situations} />
       <ItemHeader>{s.text}</ItemHeader>
       <div className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-2 overflow-x-auto px-5 pb-1" role="radiogroup" aria-label={s.text}>
         {ads.map((a) => {

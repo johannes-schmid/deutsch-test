@@ -3,15 +3,16 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import { ChevronDown, Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
-import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamInstructions, ExamShell, ExamTrack, PartIntro, PartResultCard, ReadingLayout, ReadingText, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack } from "@/components/exam"
+import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamInstructions, ExamShell, ExamTrack, PartIntro, PartResultCard, PointsBar, ReadingLayout, ReadingText, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack } from "@/components/exam"
 import { LevelScale } from "@/components/design/kit"
-import { LevelSeal } from "@/components/design/variants/nachtzug-icons"
+import { LevelSeal, ScoreSeal } from "@/components/design/variants/nachtzug-icons"
 import { KurztestFrame } from "@/components/kurztest/frame"
 import { BlockItems, type Values } from "@/components/kurztest/items"
 import { KurztestLocale, useKurztest } from "@/components/kurztest/locale"
 import { itemNumbers } from "@/lib/exam/kurztest"
+import { TELC_B1_TEILE } from "@/lib/exam/scoring/telc-b1"
 import type { Level } from "@/lib/exam/types"
-import { portalPath } from "@/lib/exams"
+import { EXAMS, portalPath } from "@/lib/exams"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
 import type { MtGradedResult } from "@/lib/modelltest/grade"
@@ -46,6 +47,8 @@ function useExit(href: string) {
   return [() => setOpen(true), sheet] as const
 }
 
+/** telc names its Teile officially ("Sprachbausteine Teil 1" is Lesen Teil 4 in our data). */
+const teilName = (exam: string, skill: string, teil: number, fallback: string) => (exam === "telc-b1" ? TELC_B1_TEILE.find((t) => t.skill === skill && t.teil === teil)?.label ?? fallback : fallback)
 const scoredItems = (b: PublicMtBlock) => itemNumbers(b.display.items).filter((n) => n > 0)
 
 function Runner({ set }: { set: RunnerSet }) {
@@ -107,10 +110,10 @@ function Runner({ set }: { set: RunnerSet }) {
         ? set.blocks[0].display.writing!.map((w) => ({ label: C.task(w.key), detail: w.title }))
         : skill === "sprechen"
           ? set.blocks.map((b) => ({ label: C.teil(b.teil), detail: b.display.speaking!.data.title }))
-        : [...new Set(scored.map((b) => b.teil))].map((teil) => ({ label: C.teil(teil), detail: C.taskCount(scored.filter((b) => b.teil === teil).reduce((n, b) => n + scoredItems(b).length, 0)) }))
+        : [...new Set(scored.map((b) => b.teil))].map((teil) => ({ label: teilName(set.exam, skill, teil, C.teil(teil)), detail: C.taskCount(scored.filter((b) => b.teil === teil).reduce((n, b) => n + scoredItems(b).length, 0)) }))
     const rules =
       skill === "hoeren"
-        ? [{ icon: Headphones, text: P.rules.track }, { icon: EyeOff, text: P.rules.noFeedback }]
+        ? [{ icon: Headphones, text: set.exam === "telc-b1" ? P.rules.trackTelc : P.rules.track }, { icon: EyeOff, text: P.rules.noFeedback }]
         : skill === "lesen"
           ? [{ icon: Clock, text: P.rules.time(minutes) }, { icon: EyeOff, text: P.rules.noFeedback }]
           : skill === "sprechen"
@@ -128,7 +131,7 @@ function Runner({ set }: { set: RunnerSet }) {
               count={count}
               teile={teile}
               rules={rules}
-              about={[...(set.preview ? [P.preview] : []), ...P.about[skill](minutes)].map((p) => <p key={p}>{p}</p>)}
+              about={[...(set.preview ? [P.preview] : []), ...(set.exam === "telc-b1" && skill === "schreiben" ? P.about.schreibenTelc : P.about[skill])(minutes)].map((p) => <p key={p}>{p}</p>)}
               action={<ExamButton onClick={() => (anleitung ? setPhase("anleitung") : void start())} disabled={busy} className="w-full">{anleitung ? nextLabel : busy ? P.starting : startLabel}</ExamButton>}
             />
             {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
@@ -240,7 +243,7 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
   const reading = block.display.reading
   const sections = [...new Set(blocks.map((b) => b.teil))].map((t) => {
     const inTeil = blocks.filter((b) => b.teil === t)
-    return { id: `t${t}`, label: C.teil(t), count: Math.max(1, inTeil.reduce((n, b) => n + scoredItems(b).length, 0)), done: inTeil.reduce((n, b) => n + answered(b), 0) }
+    return { id: `t${t}`, label: teilName(set.exam, set.skill, t, C.teil(t)), count: Math.max(1, inTeil.reduce((n, b) => n + scoredItems(b).length, 0)), done: inTeil.reduce((n, b) => n + answered(b), 0) }
   })
   const items = <BlockItems block={block} values={values} onChange={onChange} examples={block.exampleAnswers} />
   const trackDone = player.state === "ended"
@@ -385,8 +388,13 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
   const name = K.names[set.skill as "hoeren" | "lesen" | "schreiben" | "sprechen"]
   const back = portalPath(set.exam, set.skill)
   const sections = result.kind === "closed" ? result.teile.map((x) => ({ id: x.label, label: x.label, count: x.items.length, done: x.items.length })) : [{ id: "s", label: name, count: 1, done: 1 }]
-  const scale = <LevelScale level={result.level} belowLabel={t.belowA2} ariaLabel={t.resultTitle} className="max-w-[420px]" />
-  const headline = <Headline text={K.result.headline[result.level]} level={result.level} />
+  // Exams scored in points (telc B1) show points against the pass mark instead of a DTZ level.
+  const pass = result.kind === "closed" ? (result.points ? (EXAMS[set.exam].pass ?? 0.6) : undefined) : "pass" in result ? result.pass : undefined
+  const score = result.kind === "closed" ? (result.points ? { points: result.points.points, max: result.points.max } : undefined) : result.score
+  const passed = pass !== undefined && !!score?.max && score.points / score.max >= pass
+  const scale = pass !== undefined && score ? <PointsBar score={score} pass={pass} /> : <LevelScale level={result.level!} belowLabel={t.belowA2} ariaLabel={t.resultTitle} className="max-w-[420px]" />
+  const headline = pass !== undefined ? <>{P.result.pointsHeadline(passed)}</> : <Headline text={K.result.headline[result.level!]} level={result.level} />
+  const seal = pass !== undefined && score ? <ScoreSeal share={score.points / score.max} pass={pass} passed={passed} size={150} ariaLabel={t.scoreAria} /> : <LevelSeal level={SEAL[result.level!]} size={150} ariaLabel={t.levelAria} />
   const time = used !== undefined ? K.result.time(fmt(used), fmt(set.seconds)) : undefined
   const next = (
     <ContinueCard
@@ -406,7 +414,7 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
     return (
       <>
         {bar}
-        <ResultSummary visual={<LevelSeal level={SEAL[result.level]} size={150} ariaLabel={t.levelAria} />} eyebrow={`${P.name(set.number, name)} · ${P.result.points(result.score.points, result.score.max)}`} headline={headline} lead={result.partial ? `${result.summary} ${P.result.partial}` : result.summary} scale={scale} note={P.result.speakingNote} />
+        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${P.result.points(result.score.points, result.score.max)}`} headline={headline} lead={result.partial ? `${result.summary} ${P.result.partial}` : result.summary} scale={scale} note={P.result.speakingNote} />
         {next}
         <PartResultCard result={{ part: "sprechen", name, level: result.level, score: result.score, criteria: result.criteria }} defaultOpen />
         <Panel title={P.result.heardH}>
@@ -425,9 +433,9 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
     return (
       <>
         {bar}
-        <ResultSummary visual={<LevelSeal level={SEAL[result.level]} size={150} ariaLabel={t.levelAria} />} eyebrow={`${P.name(set.number, name)} · ${P.result.points(result.score.points, result.score.max)}`} headline={headline} lead={result.summary} scale={scale} note={P.result.writingNote} />
+        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${t.points(result.score.points, result.score.max)}`} headline={headline} lead={result.summary} scale={scale} note={pass !== undefined ? P.result.telcWritingNote : P.result.writingNote} />
         {next}
-        <PartResultCard result={{ part: "schreiben", name, level: result.level, score: result.score, criteria: result.criteria }} defaultOpen />
+        <PartResultCard result={{ part: "schreiben", name, level: result.level, score: result.score, ...(pass !== undefined ? { passed } : {}), criteria: result.criteria }} defaultOpen />
         <Panel title={P.result.yourText}>
           <p className="text-[16px] leading-relaxed whitespace-pre-line">{text}</p>
         </Panel>
@@ -445,14 +453,26 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
       {bar}
       <ResultSummary
         visual={<ScoreRing correct={result.correct} total={result.total} caption={K.result.ringCaption} />}
-        eyebrow={K.result.eyebrow(result.correct, result.total)}
+        eyebrow={result.points ? `${K.result.eyebrow(result.correct, result.total)} · ${t.points(result.points.points, result.points.max)}` : K.result.eyebrow(result.correct, result.total)}
         headline={headline}
-        lead={P.result.closedLead[set.skill]}
+        lead={result.points ? P.result.pointsLead[set.skill] : P.result.closedLead[set.skill]}
         scale={scale}
         time={time}
-        note={t.resultNote}
+        note={result.points ? t.resultNotePoints : t.resultNote}
       />
       {next}
+      {result.points ? (
+        <Panel title={P.result.perTeil}>
+          <ul className="flex flex-col">
+            {result.points.parts.map((p) => (
+              <li key={p.label} className="flex items-baseline justify-between gap-4 border-t border-v-line py-3 text-[15.5px] first:border-t-0 first:pt-0 last:pb-0">
+                <span>{p.label}</span>
+                <span className="v-num shrink-0 text-[14px] text-v-muted">{t.points(p.points, p.max)}</span>
+              </li>
+            ))}
+          </ul>
+        </Panel>
+      ) : null}
       <Solutions set={set} values={values} result={result} />
     </>
   )

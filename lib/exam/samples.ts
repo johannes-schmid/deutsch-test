@@ -250,3 +250,67 @@ export const TRACK = {
     { teil: 2, phase: "answer" as const, items: [5], from: 20, to: 22.8 },
   ],
 }
+
+// telc B1 booklet specimens (components/exam/print.tsx). Design samples only, not reviewed content.
+export const HEADLINES: MatchData = {
+  ads: [
+    { key: "a", title: "Mehr Busse in der Nacht", text: "" },
+    { key: "b", title: "Wer früh aufsteht, lernt besser", text: "" },
+    { key: "c", title: "Bibliothek öffnet auch am Sonntag", text: "" },
+    { key: "d", title: "Studie: Schüler schlafen zu wenig", text: "" },
+    { key: "e", title: "Neue Fahrpläne ab Dezember", text: "" },
+    { key: "f", title: "Lesen am Wochenende wird beliebter", text: "" },
+  ],
+  situations: [
+    { n: 1, text: "Jugendliche zwischen 13 und 17 Jahren schlafen unter der Woche im Schnitt nur knapp sieben Stunden. Das zeigt eine Befragung der Universität Göttingen unter 3.000 Schülerinnen und Schülern. Empfohlen sind neun Stunden. Die Forscher raten, das Handy eine Stunde vor dem Schlafen wegzulegen." },
+    { n: 2, text: "Ab dem ersten Advent fahren die Linien 4 und 9 am Freitag und Samstag bis drei Uhr morgens im Halbstundentakt. Die Stadtwerke reagieren damit auf viele Wünsche von Fahrgästen, die nach Konzerten oder Schichtende bisher lange warten mussten." },
+  ],
+}
+export const HEADLINES_SOLUTION: Record<number, string> = { 1: "d", 2: "a" }
+
+export const ARTICLE: ReadingData = {
+  sender: "",
+  source: "Zeitschrift",
+  paragraphs: [
+    "Ein Laden, der allen gehört",
+    "Als der letzte Supermarkt schloss, wollten die Menschen in Hollerbach nicht aufgeben. Heute führen sie ihr Geschäft selbst.",
+    "Zwei Jahre lang mussten die 900 Einwohner von Hollerbach für jedes Brot zwölf Kilometer fahren. Wer kein Auto hatte, war auf Nachbarn angewiesen. „Das war besonders für die Älteren ein Problem“, erzählt Petra Wilms, die damals die Idee für einen Dorfladen hatte.",
+    "Gemeinsam gründeten 140 Bürgerinnen und Bürger eine Genossenschaft. Jedes Mitglied zahlte 250 Euro. Mit dem Geld wurde ein leeres Gasthaus umgebaut, die Regale bauten Freiwillige an drei Wochenenden.",
+    "Inzwischen arbeiten im Laden zwei Verkäuferinnen in Teilzeit, dazu kommen Ehrenamtliche. Brot, Milch und Gemüse stammen zum großen Teil von Höfen aus der Umgebung.",
+  ],
+}
+
+export const ADS_BOARD: MatchData = {
+  ads: [
+    { key: "a", title: "Trattoria da Lino", text: "Hausgem. Pasta, Mittagstisch Mo–Fr 11.30–14.30 ab 8,90 €. Bei schönem Wetter Terrasse. Kein Ruhetag. Tel. 0611 48 22 19" },
+    { key: "b", title: "Pizza-Express Nord", text: "Lieferung bis 23 Uhr, ab 15 € frei Haus. Nur Abholung oder Lieferung, keine Plätze." },
+    { key: "c", title: "Nachhilfe Mathe & Physik", text: "Erf. Lehrerin, Kl. 5–10, auch Prüfungsvorb. Hausbesuche im Stadtgebiet. 22 €/Std." },
+    { key: "d", title: "Sprachschule Lingua", text: "Deutsch A1–C1, Abendkurse, Prüfungskurse telc. Kleine Gruppen. Einstufung kostenlos." },
+    { key: "e", title: "Café am Markt", text: "Frühstück bis 14 Uhr, hausgemachte Kuchen. Mo Ruhetag." },
+    { key: "f", title: "Musikschule Takt", text: "Gitarre, Klavier, Gesang für Kinder ab 6 J. und Erwachsene. Probestunde gratis." },
+  ],
+  situations: [
+    { n: 11, text: "Sie möchten mittags mit Kollegen günstig essen und draußen sitzen." },
+    { n: 12, text: "Ihr Sohn braucht vor der Abschlussprüfung Hilfe in Mathematik." },
+    { n: 13, text: "Ihre Nachbarin möchte als Erwachsene Schlagzeug lernen." },
+  ],
+}
+export const ADS_BOARD_SOLUTION: Record<number, string> = { 11: "a", 12: "c", 13: "x" }
+
+const POOL = ["damit", "für", "ob", "dankbar", "könnten", "deshalb", "seit", "wann", "trotzdem", "gern"]
+export const POOL_GAP: GapData = {
+  parts: [
+    "Sehr geehrte Frau Albrecht,\nich habe Ihre Anzeige gelesen und interessiere mich ",
+    { n: 31, options: POOL },
+    " den Gitarrenkurs für Erwachsene. Ich spiele ",
+    { n: 32, options: POOL },
+    " zwei Jahren ein bisschen, aber nur nach Gehör. Können Sie mir sagen, ",
+    { n: 33, options: POOL },
+    " der Kurs am Abend stattfindet? Ich arbeite tagsüber, ",
+    { n: 34, options: POOL },
+    " habe ich erst ab 18 Uhr Zeit.\nIch wäre Ihnen sehr ",
+    { n: 35, options: POOL },
+    ", wenn Sie mir bald antworten.\nMit freundlichen Grüßen\nSamir Haddad",
+  ],
+}
+export const POOL_GAP_SOLUTION: Record<number, string> = { 31: "für", 32: "seit", 33: "ob", 34: "deshalb", 35: "dankbar" }

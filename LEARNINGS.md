@@ -451,31 +451,6 @@
 - A full Sprechen run is ≈ 9 min of candidate speech, so the agreed 300 s free cap ends a free run in Teil 2; the result grades what was said and missing Teile score 0.
 **Lesson:** Never stack env files in a script that writes: one env file, plus an explicit local-URL guard. Don't run `next build` against a live dev server's `.next`.
 
-## 2026-10-23 — Portal overview: exam first, level second
-**Changed:** `FAMILIES` + `familyPath/familyCrumb` in lib/exams.ts; `portalFamilies()` replaces `portalExamGroups()` (lib/portal.ts); `portalStats()` in lib/modelltest/portal.ts; new components/portal/portal-overview.tsx (FamilyCard, LevelCard, ScoreCard, WeekCard, ProgressBar; on /design/portal + DESIGN.md); /dashboard rebuilt as family cards + stats column; /dashboard/{goethe,telc,oesd} served by the `[exam]` route as level pickers; sidebar grouped by family with nested levels; breadcrumbs gain the family.
-**Outcome:** SUCCESS (tsc + eslint clean, `next build` passes; checked at 1440 and 390 with a throwaway local user and 4 seeded attempts, deleted afterwards).
-**What worked / went wrong:**
-- A magic-link session for local UI checks: admin `generate_link` → `POST /auth/v1/verify` with the `hashed_token` returns a full session; the `sb-127-auth-token` cookie is `base64-` + base64url(JSON). No JWT signing or `auth.sessions` insert needed. Set it in an *isolated* chrome-devtools context; script files for `evaluate_script` must sit inside the project (gitignored `.unit-cache/`).
-- `next build` without touching the running dev server: build in a scratch copy with `cp -c -R node_modules` (APFS clone); a symlinked node_modules fails Turbopack's root check.
-- A sparkline scaled 0–100 looks flat for typical results; scale to the data range.
-**Lesson:** Start Deutsch 1 belongs to two families, so anything keyed "exam → family" must allow none (no family crumb) rather than pick one.
-
-## 2026-10-23 — Collapsible portal sidebar + compact page header
-**Changed:** `SideGroup` in `components/portal/portal-client.tsx` folds each multi-level family (open on the family or any of its level routes, chevron toggles until the next navigation); `PortalHeader` in `components/portal/portal-exam.tsx` puts mark + title on one line and replaces three hand-rolled headers in `app/(app)/dashboard/[exam]/page.tsx` and `[exam]/[skill]/page.tsx`.
-**Outcome:** SUCCESS
-**What worked / went wrong:** Level hrefs (`/dashboard/goethe-a2`) don't sit under their family href (`/dashboard/goethe`), so "is this group active" must check every level href, not a path prefix of the family.
-**Lesson:** Derive sidebar open state from the pathname with a per-path manual override (`{ path, open }`) instead of an effect; navigation resets it for free.
-
-## 2026-10-23 — Prüfungspass pricing, PassBuilder, /dashboard/preise and /dashboard/konto
-**Changed:** `lib/pricing.ts` (one-time Prüfungspass: 1 Monat €24.90, 3 Monate €39.90; savings vs n × 1 month), `components/design/pass-builder.tsx` + `lib/i18n/pass.ts` (configurator after inburgering's ModulePicker, on `/preise` in de/uk/ru and in the portal), `app/(app)/dashboard/{preise,konto}/page.tsx`, `components/portal/portal-account.tsx`, portal shell links (`PORTAL_PASS`, `PORTAL_ACCOUNT` in lib/auth/redirect.ts), `/design/portal`, DESIGN.md, CLAUDE.md §3.
-**Outcome:** SUCCESS (tsc clean, `next build` passes in a scratch copy; checked /preise, /dashboard/preise and /dashboard/konto at 1440 and 390 with a throwaway local user, deleted afterwards).
-**What worked / went wrong:**
-- Copy objects with functions (`planName`, `perMonth`) can't be passed from a server page to a client component: every /preise route 500'd. Client components import their copy module by locale instead (`PASS_COPY[locale]`).
-- `.nz-night` (unlayered CSS) sets `position: relative`, which beats Tailwind's `lg:sticky` and turned `top-8` into a 32px offset. Put sticky on a wrapper.
-- The overview tab is `nested`, so it also lit on `/dashboard/konto`; `PortalLink` got an `except` list.
-- A date in a client component (pass end date) uses `useSyncExternalStore` with a null server snapshot: no hydration mismatch, no setState in an effect.
-**Lesson:** Server → client props must be plain data; keep localized copy with functions in a module the client imports. Check unlayered utility classes (`.nz-*`) before combining them with Tailwind position utilities.
-
 ## 2026-10-23 — DTZ Modelltest "Anleitung" step
 **Changed:** new `ExamInstructions` (components/exam/part-intro.tsx, on /design/pruefung + DESIGN.md) shown between the intro and the test in components/modelltest/runner.tsx; text in lib/modelltest/anleitung.ts (Sie-form, like the official front page), spoken version by Mark rendered with scripts/modelltest/anleitung.ts to public/audio/modelltest/ (3,217 characters).
 **Outcome:** SUCCESS
@@ -536,3 +511,40 @@
 **Outcome:** SUCCESS (smoke test: 2 requests, one batch, ~2 min round trip, parsed)
 **What worked / went wrong:** The first launch ran at full price because I read "batch mode" as "generate in batches"; stopped before any unit finished. The batch discount applies per request, so even small per-process batches get 50% off; the cost is latency (minutes per call, author is sequential per Teil).
 **Lesson:** "Batch" from Hannes means the Batches API (cost). Content generation isn't latency-sensitive: draft with DRAFT_BATCH=1 by default.
+
+## 2026-10-23 — telc research: all exams, official result modes, TestGerman audio teardown
+**Changed:** new `research/telc-overview.md`, `research/telc-b2.md`, `research/telc-c1.md`, `research/telc-plan.md`; `research/telc-b1.md` (recognition source, 2025 retake rule, result decision); CLAUDE.md §2 and directory map. No code changed.
+**Outcome:** SUCCESS
+**What worked / went wrong:**
+- TestGerman's raw exam JSON (`testgerman/data/raw/*mock-exams-full.json`) already held the intro ("instruction") and closing ("submission") screens with their TTS URLs; no new login was needed. The live API token in localStorage (`session.access`) had expired and returned 401.
+- Audio analysis without extra installs: ffmpeg decode to 16 kHz PCM + numpy autocorrelation pitch per clip/segment and `ebur128` loudness. It showed their speaker labels don't match the voices, one female guest voiced by a man, fixed 0.3–0.6 s turn gaps and a 19 LU loudness spread.
+- No public BAMF list of accepted B1 certificates exists; the Bavarian Positivliste (Stand 27.06.2024) is the current official list. The DTZ has been run by g.a.s.t., not telc, since 01.01.2023.
+**Lesson:** pitch-check every rendered dialogue segment against the role's gender before publishing; a speaker label is not proof of the voice.
+
+## 2026-10-23 — Prüfungssimulation plan
+**Changed:** `research/telc-plan.md` §7 (full-exam simulation for every exam), CLAUDE.md §3 rule + directory map. No code changed.
+**Outcome:** SUCCESS
+**What worked / went wrong:** TestGerman's simulation (checked live) is their only mock format, generated as one bundle with a fixed Hören → Lesen → Schreiben → Sprechen order; it loses telc B1's shared 90-min Lesen + Sprachbausteine block, the break and the preparation time.
+**Lesson:** compose simulations from reviewed single-skill Modelltests (set n of each skill); the only new content per exam is the framing, rendered once.
+**Follow-up (same day):** simulations follow each exam's official format (binding table in `research/telc-plan.md` §7), and every Modelltest is planned per set *n* across all skills so simulations assemble without regeneration (CLAUDE.md §3).
+
+## 2026-10-23 — telc B1 Modelltest 1 drafted (all four skills)
+**Changed:** telc B1 pipeline: `scripts/modelltest/{plan,author}-telc-b1.ts`, `full` specs in `lib/exam/exams/telc-b1.ts` (+ Sprachbausteine Teil 2 as Lesen Teil 5), telc rules in `lib/exam/validate-modelltest.ts`, `--exam` in `audio.ts`/`seed.ts`, helpers in `scripts/modelltest/util.ts`, do-not-reuse list `research/telc-b1-official-situations.md`; set 1 seeded locally as draft.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Running all Teile of a skill at once put them into one Message Batch: 4 batches, $0.99 in all, ~20 min. The checks fixed three drafts on their own (Lesen 2 at 375 words, a Hören 3 that re-skinned the official cinema/weather items, the copied phrase "die mündliche Prüfung hat drei Teile"). Official audio silences (silencedetect) gave the track timing: 30 s / 60 s reading, ~16 s after each Teil 1 statement, 60 s after each Teil 2 play. Our track is 22.1 min against 25:00 official.
+**Lesson:** Measure the official audio's pauses before building a track; pass the other skills' plan topics into every prompt so set n stays clash-free as a simulation.
+
+## 2026-10-23 — telc B1 official scoring, booklet design draft, independent review
+**Changed:** official telc B1 scoring in `lib/exam/scoring/telc-b1.ts` (+ first unit tests, `npx tsx --test`), wired into `scoreClosed`, `submitClosed`, a telc Schreiben grader (`gradeTelcWriting`) and the points variant of the Modelltest result; draft booklet components in `components/exam/print.tsx` on /design/pruefung; Hören keys reordered in the data; SB1 item 21 options fixed; Sprechen plan in research/telc-plan.md §8.
+**Outcome:** SUCCESS
+**What worked / went wrong:** A separate review agent with the official PDF and MP3 found what self-review missed:
+- an ambiguous key (denn/aber both correct);
+- Hören rendered ~20 % slower than the real exam (180–190 words/min, not 140);
+- Teil 3 framing lines missing;
+- names and themes repeating across skills inside one set.
+
+"Balanced" R/F still read as non-random (R R R F F); a strict alternation looks just as artificial.
+**Lesson:**
+- Measure pace from the official audio, never from word counts at an assumed rate.
+- Grammar-gap distractors must be ungrammatical, not just less fitting.
+- Run an independent review against the official material before drafting sets 2–10.

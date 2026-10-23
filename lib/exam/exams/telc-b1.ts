@@ -4,6 +4,9 @@
 
 import type { ExamSpec } from "../exam-blueprints"
 
+// Hören timings and pace measured on the official Übungstest 1 MP3 (2026-10-23): ~180–190 words/min.
+const U = "research/telc-b1.md (telc Übungstest 1, 2020; audio measured 2026-10-23)"
+
 export const spec: ExamSpec = {
   context: { name: "telc Deutsch B1 (Zertifikat Deutsch)", level: "B1", setting: "Alltag und Arbeit in Deutschland", copyright: "telc" },
   parts: [
@@ -14,6 +17,7 @@ export const spec: ExamSpec = {
       instruction: "Lesen Sie die Überschriften und die Texte. Welche Überschrift passt zu welchem Text? Jede Überschrift passt nur einmal.",
       hint: `Kurze Meldungen aus Zeitung oder Zeitschrift, je etwa 65 Wörter, B1, sachlicher Pressestil (Studie, Verbrauchertipp, Reiseangebot, Buchtipp, Neues aus der Stadt). Die Überschriften sind kurz (3–7 Wörter) wie in der Zeitung. Genau eine Überschrift passt zu jeder Meldung; die übrigen Überschriften greifen ein Wort oder Thema aus einer Meldung auf, treffen aber nicht den Kern. Die Überschrift fasst die Meldung zusammen, sie wiederholt nicht ihre Wörter.`,
       todo: "TODO(hannes): the real Teil 1 has 5 texts and 10 headlines; the taster keeps the 2:1 ratio with 2 texts and 4 headlines.",
+      full: { items: 5, first: 1, blocks: 1, itemsPerBlock: 5, length: { min: 50, max: 90, unit: "words" }, example: false, options: 10, source: U },
     },
     {
       skill: "lesen", teil: 2, answer: "abc", itemsReal: 5, itemsPerBlock: 5,
@@ -21,6 +25,7 @@ export const spec: ExamSpec = {
       length: { min: 290, max: 350, unit: "words" },
       instruction: "Lesen Sie den Artikel. Welche Antwort passt: a, b oder c?",
       todo: "TODO(hannes): not in the taster: a ~320-word article does not fit the 5-minute timer next to the other Teile.",
+      full: { items: 5, first: 6, blocks: 1, itemsPerBlock: 5, length: { min: 280, max: 370, unit: "words" }, example: false, source: U },
     },
     {
       skill: "lesen", teil: 3, answer: "match", noMatch: true, ads: 3, itemsReal: 10, itemsPerBlock: 10, sample: 2,
@@ -30,6 +35,8 @@ export const spec: ExamSpec = {
       instruction: "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Situation? Jede Anzeige passt nur einmal. Passt keine Anzeige, wählen Sie x.",
       hint: `Kleinanzeigen wie in der Zeitung oder im Internet, je 20–45 Wörter, mit Titel. Die Situationen: 1–2 Sätze über eine Person mit einem konkreten Wunsch ("Ihre Nachbarin sucht …", "Sie möchten …"). Die Anzeigen enthalten Details (Tage, Uhrzeiten, Preise, Zielgruppe, Ort). Die Anzeige, die fast passt, scheitert an genau einem Detail.`,
       todo: "TODO(hannes): the real Teil 3 has 10 situations, 12 ads and 2 \"x\" answers (Übungstest 1); the taster uses 2 situations and 3 ads with one \"x\", so x is overrepresented here.",
+      // Modelltest: all 12 ads together (~15–50 words each).
+      full: { items: 10, first: 11, blocks: 1, itemsPerBlock: 10, length: { min: 250, max: 520, unit: "words" }, example: false, options: 12, source: U },
     },
     {
       skill: "lesen", teil: 4, label: "Sprachbausteine · Teil 1", answer: "gap", itemsReal: 10, itemsPerBlock: 10, sample: 2,
@@ -38,6 +45,15 @@ export const spec: ExamSpec = {
       instruction: "Lesen Sie die E-Mail. Welches Wort passt in die Lücke? Wählen Sie a, b oder c.",
       hint: "Informelle E-Mail (du), mit Anrede und Gruß. Die Lücken prüfen Grammatik: Konnektoren, Artikel und Kasus, Hilfsverben, Adjektivendungen, Präpositionen, Relativpronomen, Pronomen. Die drei Optionen sind grammatische Varianten (z. B. \"weil / denn / deshalb\", \"dem / den / der\"). Die zwei Lücken prüfen zwei verschiedene Bereiche.",
       todo: "TODO(hannes): Sprachbausteine Teil 2 (10 gaps from a pool of 15 words) is left out: the kit has no shared word pool for gaps.",
+      full: { items: 10, first: 21, blocks: 1, itemsPerBlock: 10, length: { min: 140, max: 195, unit: "words" }, example: false, source: U },
+    },
+    {
+      skill: "lesen", teil: 5, label: "Sprachbausteine · Teil 2", answer: "gap", itemsReal: 10, itemsPerBlock: 10,
+      textTypes: ["Halbformeller oder formeller Brief: Anfrage, Antwort auf eine Anzeige, Bitte um Information"],
+      length: { min: 150, max: 200, unit: "words" },
+      instruction: "Lesen Sie den Text und schließen Sie die Lücken 31–40. Benutzen Sie die Wörter a–o. Jedes Wort passt nur einmal.",
+      todo: "TODO(hannes): not in the free test. In the Modelltest each gap shows the whole 15-word pool until the word-pool component exists (research/telc-plan.md Phase 2).",
+      full: { items: 10, first: 31, blocks: 1, itemsPerBlock: 10, length: { min: 150, max: 205, unit: "words" }, example: false, options: 15, source: U },
     },
     {
       skill: "hoeren", teil: 1, answer: "rf", itemsReal: 5, itemsPerBlock: 5, sample: 3,
@@ -48,6 +64,8 @@ export const spec: ExamSpec = {
       hint: `Eine Radiomoderatorin (Sprecherin "M", female) stellt in 1–2 Sätzen die Frage der Umfrage vor. Dann sagen genau drei Personen nacheinander ihre Meinung, jede einmal, 45–65 Wörter: zuerst ein Mann, dann eine Frau, dann ein Mann (genau 2 Frauen und 2 Männer insgesamt). Jede Person nennt am Anfang ihren Vornamen ("Ich bin Jonas …"); role ist der Vorname. Spontan gesprochen, mit Füllwörtern ("also", "na ja"), B1.
 Genau eine Aussage pro Person, in der Reihenfolge der Personen, beginnend mit dem Vornamen ("Jonas findet …"). Die Aussage prüft die Meinung oder Haltung der Person, nicht ein einzelnes Wort. Mindestens eine Aussage ist richtig und mindestens eine falsch; eine falsche Aussage nimmt etwas auf, das die Person erwähnt, aber anders meint.`,
       todo: "TODO(hannes): the real Teil 1 has 5 speakers and 30 s reading time before the clip; the taster has 3 and no reading pause.",
+      // Modelltest: a host intro, then each statement its own clip (5 voices), ~16 s pause after each.
+      full: { items: 5, first: 41, blocks: 1, itemsPerBlock: 5, length: { min: 15, max: 28, unit: "seconds" }, example: false, readingSeconds: 30, clipPerItem: true, pace: { min: 170, max: 195 }, pauses: { before: 2, after: 16 }, source: U },
     },
     {
       skill: "hoeren", teil: 2, answer: "rf", itemsReal: 10, itemsPerBlock: 10,
@@ -55,6 +73,7 @@ Genau eine Aussage pro Person, in der Reihenfolge der Personen, beginnend mit de
       length: { min: 160, max: 210, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 2,
       instruction: "Sie hören ein Interview im Radio. Sind die Aussagen richtig oder falsch? Sie hören das Interview zweimal.",
       todo: "TODO(hannes): not in the taster: a ~3-minute interview played twice takes 6 minutes alone.",
+      full: { items: 10, first: 46, blocks: 1, itemsPerBlock: 10, length: { min: 140, max: 175, unit: "seconds" }, example: false, readingSeconds: 60, pace: { min: 170, max: 195 }, pauses: { before: 0, after: 60 }, source: U },
     },
     {
       skill: "hoeren", teil: 3, answer: "rf", itemsReal: 5, itemsPerBlock: 1,
@@ -62,6 +81,7 @@ Genau eine Aussage pro Person, in der Reihenfolge der Personen, beginnend mit de
       length: { min: 20, max: 40, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 2,
       instruction: "Sie hören fünf kurze Texte. Ist die Aussage richtig oder falsch? Sie hören jeden Text zweimal.",
       hint: "Ein Monolog, 45–95 Wörter, B1. Die Aussage prüft ein konkretes Detail (Zeit, Ort, Zahl, Bedingung).",
+      full: { items: 5, first: 56, blocks: 5, itemsPerBlock: 1, length: { min: 16, max: 36, unit: "seconds" }, example: false, readingSeconds: 5, pace: { min: 165, max: 195 }, pauses: { before: 5, after: 6 }, sound: "Anrufbeantworter: Piepton; Radio: Jingle; Zug: Signalton; Kaufhaus: Gong", source: U },
     },
   ],
   // What the generator drafts; research/telc-b1.md §6 has the longer 10-item proposal for a full mock.

@@ -18,6 +18,7 @@ import type { ExamId } from "@/lib/exams"
 import type { MtBlock, MtSet, MtSpeakTurn, SoundKey } from "@/lib/modelltest/types"
 import { AdsOutput, cast, ChoiceOutput, DTZ_SYSTEM, GapOutput, letters, makeAsk, MODEL, TONES, WritingOutput } from "../lib/drafting"
 import * as PLAN from "./plan-dtz"
+import { grams, place, rfPattern, rng, shuffle, targets } from "./util"
 
 const arg = (name: string) => {
   const i = process.argv.indexOf(`--${name}`)
@@ -60,38 +61,6 @@ function voxPop(r: () => number) {
 }
 const SOUND: Partial<Record<PLAN.Kind, SoundKey>> = { anrufbeantworter: "beep", privat: "beep", bahnhof: "station", radio: "radio", zug: "train" }
 
-// Seeded, so a re-run of the same set reshuffles the same way.
-function rng(seed: string) {
-  let h = 2166136261
-  for (const c of seed) h = Math.imul(h ^ c.charCodeAt(0), 16777619)
-  return () => {
-    h = Math.imul(h ^ (h >>> 15), 2246822507)
-    h = Math.imul(h ^ (h >>> 13), 3266489909)
-    return ((h ^= h >>> 16) >>> 0) / 4294967296
-  }
-}
-const shuffle = <T>(xs: T[], r: () => number) => {
-  const a = [...xs]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(r() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-/** Balanced target letters for k a/b/c items. */
-const targets = (k: number, r: () => number) => shuffle(Array.from({ length: k }, (_, i) => "abc"[i % 3]), r)
-/** Balanced richtig/falsch pattern. */
-const rfPattern = (k: number, r: () => number) => shuffle(Array.from({ length: k }, (_, i) => (i % 2 ? "falsch" : "richtig")), r)
-
-/** Moves the correct option to `to` and keeps the others in order. */
-function place(options: string[], correct: string, to: string) {
-  const i = letters.indexOf(correct)
-  const right = options[i]
-  const rest = options.filter((_, j) => j !== i)
-  const t = letters.indexOf(to)
-  return [...rest.slice(0, t), right, ...rest.slice(t)]
-}
-
 const id = (teil: number, i: number | "bsp") => `${EXAM}-${SKILL}-${NN}-t${teil}-${i === "bsp" ? "bsp" : String(i + 1).padStart(2, "0")}`
 
 function blockBase(teil: number, blockId: string, textType: string, instruction: string, example = false): MtBlock {
@@ -128,11 +97,6 @@ ${avoid.length ? `Andere Modelltests verwenden schon (wähle andere Namen, Orte,
 ${feedback.length ? `Der letzte Entwurf hatte diese Fehler. Behebe sie alle:\n- ${feedback.join("\n- ")}` : ""}`
 }
 
-const norm = (t: string) => t.toLowerCase().replace(/-\s*\n\s*/g, "").replace(/[^a-zäöüß0-9]+/g, " ").trim().split(" ")
-const grams = (t: string, n = 6) => {
-  const w = norm(t)
-  return new Set(w.slice(0, Math.max(0, w.length - n + 1)).map((_, i) => w.slice(i, i + n).join(" ")))
-}
 /** Official texts, local only (.unit-cache/official, gitignored): any 6 words in a row we share with them, minus the instructions. */
 const OFFICIAL_DIR = ".unit-cache/official"
 const officialGrams = fs.existsSync(OFFICIAL_DIR) ? grams(fs.readdirSync(OFFICIAL_DIR).map((f) => fs.readFileSync(path.join(OFFICIAL_DIR, f), "utf8")).join("\n")) : null
@@ -449,12 +413,12 @@ ${fix}`)
 ${who}
 Thema: ${PLAN.SPRECHEN_2[SET - 1]}. Jede Person bekommt ein anderes Foto zum selben Thema. Ablauf wie in der echten Prüfung: zuerst der Partner (B), dann "du" (A).
 photoDu, photoPartner: je ein Foto, das man bei Pexels findet. query: englische Suchwörter (3–6 Wörter, konkrete Szene mit Menschen, Alltag, z. B. "neighbor helping elderly woman carry groceries"); alt: deutscher Alternativtext, 1 Satz. Zwei verschiedene Szenen.
-intro: Die Prüferin leitet zu Teil 2 über, gibt dem Partner sein Foto und sagt sinngemäß wie im Prüfungsheft: Er hat das Foto in einer Zeitschrift gefunden und soll seinem Gesprächspartner kurz berichten: Was sehen Sie auf dem Foto? Was für eine Situation zeigt dieses Bild? 35–60 Wörter. Sie nennt das Thema NICHT; der Prüfling soll die Situation selbst deuten.
+intro: Die Prüferin leitet zu Teil 2 über, gibt dem Partner sein Foto und sagt in eigenen Worten (nie wörtlich wie im Prüfungsheft): Er hat das Foto in einer Zeitschrift gefunden und soll kurz beschreiben, was darauf zu sehen ist und was für eine Situation es zeigt. 35–60 Wörter. Sie nennt das Thema NICHT; der Prüfling soll die Situation selbst deuten.
 partnerDescription: der Partner beschreibt sein Foto (Personen, Ort, was passiert, Vermutung), 60–90 Wörter, passend zu photoPartner.
-partnerQA: genau 2 Fragen der Prüferin zu seinen eigenen Erfahrungen mit dem Thema (q; die erste wie "Erzählen Sie bitte: Welche Erfahrungen haben Sie damit?") und seine Antworten (a, 25–45 Wörter).
-toDu: Die Prüferin dankt, gibt "du" das andere Foto: "Bitte sehen Sie sich das Bild an und sagen Sie etwas dazu.", 1–2 Sätze.
+partnerQA: genau 2 Fragen der Prüferin zu seinen eigenen Erfahrungen mit dem Thema (q; die erste fragt in eigenen Worten nach seinen Erfahrungen mit dem Thema) und seine Antworten (a, 25–45 Wörter).
+toDu: Die Prüferin dankt, gibt "du" das andere Foto und bittet, es zu beschreiben (in eigenen Worten, nicht die Formulierung aus dem Prüfungsheft), 1–2 Sätze.
 duSample: gute Bildbeschreibung auf B1 zu photoDu, 60–90 Wörter.
-followups: Fragen der Prüferin zu den eigenen Erfahrungen mit dem Thema (Teil 2B): genau 4 auf B1 (Erfahrung, Vergleich mit dem Heimatland, Meinung mit Begründung) und 3 auf A2 (einfacher: Wie oft? Mit wem? Was machen Sie gern?). Je 1 Satz. sample: Beispielantwort auf B1, 2–4 Sätze.
+followups: Fragen der Prüferin zu den eigenen Erfahrungen mit dem Thema (Teil 2B): genau 4 auf B1 (Erfahrung, Vergleich mit dem Heimatland in eigenen Worten, nicht "Wie ist das in Ihrem Heimatland?", Meinung mit Begründung) und 3 auf A2 (einfacher: Wie oft? Mit wem? Was machen Sie gern?). Je 1 Satz. sample: Beispielantwort auf B1, 2–4 Sätze.
 close: Die Prüferin beendet Teil 2, ein Satz.
 ${officialNote(2)}
 ${fix}`)
@@ -479,12 +443,12 @@ ${who} Jetzt duzen sich die beiden.
 Aufgabe: ${PLAN.SPRECHEN_3[SET - 1]}.
 situation: der Text auf dem Aufgabenblatt, 1–2 Sätze in Sie-Form ("Sie und Ihre Partnerin / Ihr Partner …"), endet mit "Planen Sie, was Sie machen."
 points: genau 5 Notizpunkte wie auf dem Blatt, je 1–3 Wörter mit Fragezeichen (z. B. "Wann?", "Was kaufen?", "Wer macht was?").
-intro: Die Prüferin leitet zum letzten Teil über, gibt beiden das Blatt, umschreibt die Aufgabe ("Planen Sie, was Sie tun möchten. Hier sind einige Notizen als Hilfe.") und lässt kurz Zeit zum Lesen, 30–50 Wörter.
+intro: Die Prüferin leitet zum letzten Teil über, gibt beiden das Blatt, umschreibt die Aufgabe in eigenen Worten (nicht die Formulierung aus dem Prüfungsheft) und lässt kurz Zeit zum Lesen, 30–50 Wörter.
 partnerOpening: der Partner beginnt das Gespräch mit "du" und einem ersten Vorschlag zum ersten Punkt, 15–30 Wörter.
 persona: was der Partner bei jedem Punkt möchte, kann oder nicht kann, und wo er Kompromisse macht (5–7 Sätze, für eine KI, die ihn live spricht). Mindestens zwei Punkte, bei denen er zuerst etwas anderes möchte als die meisten.
 partnerLines: genau 6 Beiträge des Partners (15–35 Wörter): je einer zu Punkt 2 bis 5 in Reihenfolge, dann einer mit einer eigenen zusätzlichen Idee (für "…?"), dann einer, der alles kurz zusammenfasst und fragt, ob "du" einverstanden ist. Das sind Ersatzsätze, falls die Live-Antwort ausfällt: Jeder beginnt mit einer neutralen Reaktion ("Okay.", "Hm, ich weiß nicht.", "Ja, gut.") und geht dann zum nächsten Punkt; er nimmt NIE Bezug auf einen bestimmten Inhalt, den "du" gesagt haben könnte (keine Vermutungen wie "Blumen sind …" oder "Samstag kann ich nicht"), und endet mit einer Frage an "du".
 duSamples: genau 7 gute Beiträge von "du" auf B1 (20–40 Wörter): Reaktion auf den Eröffnungsvorschlag (Punkt 1), dann je einer zu Punkt 2 bis 5, zur zusätzlichen Idee und zur Zusammenfassung.
-close: Die Prüferin beendet die Prüfung und dankt beiden, 1–2 Sätze ("Vielen Dank. Wir sind nun am Ende der Prüfung."). Kein Hinweis auf das Ergebnis.
+close: Die Prüferin beendet die Prüfung und dankt beiden in eigenen Worten, 1–2 Sätze. Kein Hinweis auf das Ergebnis.
 ${officialNote(3)}
 ${fix}`)
   const turns: MtSpeakTurn[] = [P("pruefer", "3", o.intro), P("partner", "3", o.partnerOpening)]
