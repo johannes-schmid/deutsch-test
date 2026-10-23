@@ -3,12 +3,49 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { Loader2, LogOut } from "lucide-react"
+import { ChevronDown, Loader2, LogOut } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { cn } from "@/lib/utils"
 
 const T = PORTAL_COPY.account
+
+const under = (path: string, href: string) => path === href || path.startsWith(`${href}/`)
+
+/** A sidebar family with its levels: unfolded while you are on the family or one of its levels, folded elsewhere. The chevron toggles it until the next navigation. */
+export function SideGroup({ href, levelHrefs, label, head, children }: { href: string; levelHrefs: string[]; label: string; head: React.ReactNode; children: React.ReactNode }) {
+  const path = usePathname()
+  const auto = under(path, href) || levelHrefs.some((h) => under(path, h))
+  const [toggled, setToggled] = useState<{ path: string; open: boolean } | null>(null)
+  const open = toggled?.path === path ? toggled.open : auto
+  const lit = under(path, href)
+  return (
+    <>
+      <div className="relative">
+        {head}
+        <button
+          type="button"
+          onClick={() => setToggled({ path, open: !open })}
+          aria-expanded={open}
+          aria-label={label}
+          className={cn(
+            "absolute end-1 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full transition-[background-color,color] duration-150 ease-out",
+            lit ? "text-v-bg/75 hover:bg-v-bg/15 hover:text-v-bg" : "text-v-muted hover:bg-v-ink/6 hover:text-v-ink",
+          )}
+        >
+          <ChevronDown className={cn("size-4 transition-transform duration-200 ease-[var(--ease-out-strong)] motion-reduce:transition-none", !open && "-rotate-90 rtl:rotate-90")} aria-hidden="true" />
+        </button>
+      </div>
+      <div
+        data-open={open}
+        inert={!open}
+        className="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-200 ease-[var(--ease-out-strong)] data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-[opacity]"
+      >
+        <div className="min-h-0 overflow-hidden">{children}</div>
+      </div>
+    </>
+  )
+}
 
 /** A sidebar or tab-bar link lit on its own route (`nested`: and on the routes below it). Reads the pathname, so it renders inside <Suspense>. */
 export function PortalLink({ href, className, activeClassName, nested, children }: { href: string; className: string; activeClassName: string; nested?: boolean; children: React.ReactNode }) {

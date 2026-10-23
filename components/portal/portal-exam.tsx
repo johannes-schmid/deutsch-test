@@ -30,6 +30,20 @@ export function PortalCrumbs({ items }: { items: { label: string; href?: string 
   )
 }
 
+/** Page header: mark and title on one line, then the lead and optional facts. */
+export function PortalHeader({ mark, title, lead, children }: { mark: React.ReactNode; title: string; lead: string; children?: React.ReactNode }) {
+  return (
+    <header className="mt-6 flex flex-col gap-4">
+      <div className="flex items-center gap-4">
+        {mark}
+        <h1 className="v-display text-[clamp(28px,3.6vw,42px)] leading-[1.08] text-balance">{title}</h1>
+      </div>
+      <p className="max-w-[60ch] text-[16px] text-v-muted text-pretty sm:text-[17px]">{lead}</p>
+      {children}
+    </header>
+  )
+}
+
 /** One skill of an exam: icon, name, Modelltest count, and the free test where one exists. The whole card opens the skill page. */
 export function SkillCard({ skill, name, href, free, count, status }: { skill: PartId; name: string; href: string; free: string | null; count: string; status: string }) {
   return (

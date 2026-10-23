@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Suspense } from "react"
 import { notFound } from "next/navigation"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
-import { PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
+import { PortalCrumbs, PortalHeader, SkillCard } from "@/components/portal/portal-exam"
 import { LevelCard } from "@/components/portal/portal-overview"
 import { EXAMS, EXAM_IDS, FAMILIES, FAMILY_IDS, familyCrumb, isFamily, type FamilyId } from "@/lib/exams"
 import { isExam } from "@/lib/kurztest/data"
@@ -35,12 +35,7 @@ export default async function PortalExamPage({ params }: PageProps<"/dashboard/[
     <main className="mx-auto w-full max-w-[1000px] px-4 pt-6 pb-32 sm:px-6 lg:px-10 lg:pt-12 lg:pb-16">
       <PortalCrumbs items={[{ label: T.exam.back, href: PORTAL_HOME }, ...familyCrumb(id), { label: exam.short ?? exam.name }]} />
 
-      <header className="mt-8 flex flex-col gap-5">
-        <ExamMark brand={exam.brand} size="lg" />
-        <div className="flex flex-col gap-3">
-          <h1 className="v-display text-[clamp(32px,4.4vw,50px)] leading-[1.05] text-balance">{exam.name}</h1>
-          <p className="max-w-[60ch] text-[17px] text-v-muted text-pretty sm:text-lg">{exam.summary}</p>
-        </div>
+      <PortalHeader mark={<ExamMark brand={exam.brand} />} title={exam.name} lead={exam.summary}>
         <dl className="flex flex-wrap gap-x-6 gap-y-2 text-[14px]">
           {[
             [T.exam.facts.level, exam.levels.join("–")],
@@ -53,9 +48,9 @@ export default async function PortalExamPage({ params }: PageProps<"/dashboard/[
             </div>
           ))}
         </dl>
-      </header>
+      </PortalHeader>
 
-      <section aria-labelledby="skills-h" className="mt-12 flex flex-col gap-5">
+      <section aria-labelledby="skills-h" className="mt-10 flex flex-col gap-5">
         <h2 id="skills-h" className="text-[clamp(22px,2.4vw,28px)] leading-tight font-semibold tracking-[-0.02em]">
           {T.exam.skillsH}
           <span className="text-v-muted"> {T.exam.skillsMuted}</span>
@@ -95,15 +90,9 @@ async function FamilyPage({ id }: { id: FamilyId }) {
     <main className="mx-auto w-full max-w-[1000px] px-4 pt-6 pb-32 sm:px-6 lg:px-10 lg:pt-12 lg:pb-16">
       <PortalCrumbs items={[{ label: T.exam.back, href: PORTAL_HOME }, { label: family.name }]} />
 
-      <header className="mt-8 flex flex-col gap-5">
-        <ExamMark brand={family.brand} size="lg" />
-        <div className="flex flex-col gap-3">
-          <h1 className="v-display text-[clamp(32px,4.4vw,50px)] leading-[1.05] text-balance">{family.name}</h1>
-          <p className="max-w-[60ch] text-[17px] text-v-muted text-pretty sm:text-lg">{family.summary}</p>
-        </div>
-      </header>
+      <PortalHeader mark={<ExamMark brand={family.brand} />} title={family.name} lead={family.summary} />
 
-      <section aria-labelledby="levels-h" className="mt-12 flex flex-col gap-5">
+      <section aria-labelledby="levels-h" className="mt-10 flex flex-col gap-5">
         <h2 id="levels-h" className="text-[clamp(22px,2.4vw,28px)] leading-tight font-semibold tracking-[-0.02em]">
           {T.family.levelsH}
           <span className="text-v-muted"> {T.family.levelsMuted}</span>

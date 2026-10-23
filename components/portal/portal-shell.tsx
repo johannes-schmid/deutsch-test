@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRight, Euro, LayoutGrid, ListChecks, UserRound } from "lucide-react"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
-import { PortalLink, SignOutButton } from "@/components/portal/portal-client"
+import { PortalLink, SideGroup, SignOutButton } from "@/components/portal/portal-client"
 import type { SessionUser } from "@/lib/supabase/server"
 import type { Brand } from "@/lib/exams"
 import { PORTAL_HOME } from "@/lib/auth/redirect"
@@ -60,14 +60,14 @@ const SIDE_LINK = "flex min-h-11 items-center gap-3 rounded-full px-3 text-[14.5
 const SIDE_ACTIVE = "bg-v-ink font-semibold text-v-bg hover:bg-v-ink hover:text-v-bg"
 
 /** One exam family in the sidebar, lit on its page (and, for the DTZ, its skill pages). */
-function SideFamily({ family }: { family: NavFamily }) {
+function SideFamily({ family, grouped }: { family: NavFamily; grouped?: boolean }) {
   const body = (
     <>
       <ExamMark brand={family.brand} size="sm" />
       <span className="truncate">{family.label}</span>
     </>
   )
-  const cls = cn(SIDE_LINK, "text-v-ink")
+  const cls = cn(SIDE_LINK, "text-v-ink", grouped && "pe-11")
   return (
     <Suspense fallback={<Link href={family.href} className={cls}>{body}</Link>}>
       <PortalLink href={family.href} className={cls} activeClassName={SIDE_ACTIVE} nested>{body}</PortalLink>
@@ -114,17 +114,22 @@ export function PortalSidebar({ groups, account, className }: { groups: NavFamil
           <h2 className="px-3 pt-2 pb-1 font-[family-name:var(--v-font-mono)] text-[11px] tracking-[0.08em] text-v-muted uppercase">{T.nav.exams}</h2>
           <ul className="flex flex-col gap-1">
             {groups.map((f) => (
-              <li key={f.id} className="flex flex-col gap-0.5">
-                <SideFamily family={f} />
+              <li key={f.id} className="flex flex-col">
                 {f.levels.length > 1 ? (
-                  <ul className="ms-[30px] flex flex-col border-s border-v-line ps-1.5">
-                    {f.levels.map((l) => (
-                      <li key={l.id}>
-                        <SideLevel level={l} />
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+                  <Suspense fallback={<SideFamily family={f} grouped />}>
+                    <SideGroup href={f.href} levelHrefs={f.levels.map((l) => l.href)} label={T.nav.levels(f.label)} head={<SideFamily family={f} grouped />}>
+                      <ul className="ms-[30px] mt-0.5 flex flex-col border-s border-v-line ps-1.5">
+                        {f.levels.map((l) => (
+                          <li key={l.id}>
+                            <SideLevel level={l} />
+                          </li>
+                        ))}
+                      </ul>
+                    </SideGroup>
+                  </Suspense>
+                ) : (
+                  <SideFamily family={f} />
+                )}
               </li>
             ))}
           </ul>

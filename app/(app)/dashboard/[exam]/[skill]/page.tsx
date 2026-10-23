@@ -4,7 +4,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
-import { ModelltestRow, PortalCrumbs } from "@/components/portal/portal-exam"
+import { ModelltestRow, PortalCrumbs, PortalHeader } from "@/components/portal/portal-exam"
 import { EXAMS, EXAM_IDS, familyCrumb } from "@/lib/exams"
 import { SKILLS, isExam, isSkill } from "@/lib/kurztest/data"
 import { MODELLTESTS, portalPath, portalSkills } from "@/lib/portal"
@@ -36,13 +36,7 @@ export default async function PortalSkillPage({ params }: PageProps<"/dashboard/
     <main className="mx-auto w-full max-w-[820px] px-4 pt-6 pb-32 sm:px-6 lg:px-10 lg:pt-12 lg:pb-16">
       <PortalCrumbs items={[{ label: T.exam.back, href: PORTAL_HOME }, ...familyCrumb(id), { label: exam.short ?? exam.name, href: portalPath(id) }, { label: name }]} />
 
-      <header className="mt-8 flex flex-col gap-5">
-        <PartIcon part={skill} size="lg" />
-        <div className="flex flex-col gap-3">
-          <h1 className="v-display text-[clamp(32px,4.4vw,50px)] leading-[1.05]">{name}</h1>
-          <p className="max-w-[60ch] text-[17px] text-v-muted text-pretty sm:text-lg">{T.skill.lead(MODELLTESTS, exam.name)}</p>
-        </div>
-      </header>
+      <PortalHeader mark={<PartIcon part={skill} />} title={name} lead={T.skill.lead(MODELLTESTS, exam.name)} />
 
       <Suspense fallback={<SlotList slots={Array.from({ length: MODELLTESTS }, (_, i) => ({ n: i + 1, state: "soon", href: null, free: false, result: null }))} />}>
         <Slots exam={id} skill={skill} free={free} />

@@ -26,7 +26,7 @@ export const AUTH_COPY = {
 
 export const PORTAL_COPY = {
   title: "Übersicht | deutschtest üben",
-  nav: { overview: "Übersicht", exams: "Prüfungen", pricing: "Preise", account: "Konto" },
+  nav: { overview: "Übersicht", exams: "Prüfungen", pricing: "Preise", account: "Konto", levels: (name: string) => `Niveaus von ${name}` },
   hello: (name: string | null) => (name ? `Hallo ${name}` : "Hallo"),
   sub: "Wähl deine Prüfung. Das Niveau wählst du danach.",
   started: (n: number) => `${n} ${n === 1 ? "Prüfung" : "Prüfungen"} gestartet. Mach weiter, wo du aufgehört hast.`,

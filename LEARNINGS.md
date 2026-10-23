@@ -459,3 +459,9 @@
 - `next build` without touching the running dev server: build in a scratch copy with `cp -c -R node_modules` (APFS clone); a symlinked node_modules fails Turbopack's root check.
 - A sparkline scaled 0–100 looks flat for typical results; scale to the data range.
 **Lesson:** Start Deutsch 1 belongs to two families, so anything keyed "exam → family" must allow none (no family crumb) rather than pick one.
+
+## 2026-10-23 — Collapsible portal sidebar + compact page header
+**Changed:** `SideGroup` in `components/portal/portal-client.tsx` folds each multi-level family (open on the family or any of its level routes, chevron toggles until the next navigation); `PortalHeader` in `components/portal/portal-exam.tsx` puts mark + title on one line and replaces three hand-rolled headers in `app/(app)/dashboard/[exam]/page.tsx` and `[exam]/[skill]/page.tsx`.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Level hrefs (`/dashboard/goethe-a2`) don't sit under their family href (`/dashboard/goethe`), so "is this group active" must check every level href, not a path prefix of the family.
+**Lesson:** Derive sidebar open state from the pathname with a per-path manual override (`{ path, open }`) instead of an effect; navigation resets it for free.
