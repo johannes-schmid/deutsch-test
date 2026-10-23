@@ -548,3 +548,24 @@
 - Measure pace from the official audio, never from word counts at an assumed rate.
 - Grammar-gap distractors must be ungrammatical, not just less fitting.
 - Run an independent review against the official material before drafting sets 2–10.
+
+## 2026-10-23 — telc B1 set 1 live as draft; generator fixes for sets 2–10
+**Changed:**
+- Set 1 committed (1f02050), deployed via GitHub → Vercel (main) and seeded to production as unpublished drafts.
+- Generator: official Hören pace (~185 words/min, telc may speed up ×1.35), Teil 3 situation lines and track announcements, ads in clusters in short ad style, a harder Lesen Teil 2, Sprechen Teil 3 led by the candidate, and the name/theme repeat check (`scripts/modelltest/clash.ts`, `check-set.ts`).
+
+**Outcome:** SUCCESS (set 1 kept as drafted, by Hannes's choice)
+
+**What worked / went wrong:**
+- The repeat check found what the review agent found in set 1 (Albers twice, the wedding theme) on its first run.
+- The first version missed a surname after a first name ("Doktor Henrike Albers") and flagged generic words like "Innenstadt".
+
+**Lesson:**
+- Skills draft in parallel, so the in-draft check only sees finished files. Always run `check-set.ts` after a whole set.
+- Theme words need a stoplist of generic nouns.
+
+## 2026-10-23 — telc B1 Sprechen in the official format
+**Changed:** prep screen + Teil clocks + live partner/grading for telc (`components/modelltest/speaking.tsx`, `lib/modelltest/speaking-telc.ts`, `components/exam/speaking.tsx`), telc Anleitung, set 1 Sprechen aligned (T1 cue words, T2 "Wie sehen Sie beide das?" line, T3 reply turn).
+**Outcome:** SUCCESS
+**What worked / went wrong:** Live lines on `claude-haiku-5-5` with `max_tokens: 400` came back empty: the model spent the budget on thinking, so every live turn (DTZ too) silently fell back to the pre-rendered line. `effort: "low"` + 2000 tokens: ~1.4 s per line. The Teil clock was tested in minutes, not real time, by speeding up `Date.now` with an `initScript` in Chrome DevTools.
+**Lesson:** A silent fallback hides a dead feature: test the live path itself, not just the run. Give Claude 5.x calls with tight budgets an explicit low effort.

@@ -90,6 +90,7 @@ export const PORTAL_COPY = {
       lesen: (min: number) => [`Der ganze Prüfungsteil Lesen mit allen fünf Teilen. Du hast ${min} Minuten.`, "Du kannst zwischen den Aufgaben hin und her springen. Am Ende siehst du alle Lösungen mit Erklärung."],
       schreiben: (min: number) => [`Du wählst Aufgabe A oder B und schreibst ${min} Minuten lang, wie in der Prüfung.`, "Danach bewerten wir deinen Text nach den vier offiziellen DTZ-Kriterien und zeigen dir eine Musterlösung."],
       schreibenTelc: (min: number) => [`Du beantwortest eine E-Mail und schreibst zu allen vier Punkten, ${min} Minuten lang, wie in der Prüfung.`, "Danach bewerten wir deinen Text nach den drei offiziellen telc-Kriterien und zeigen dir eine Musterlösung."],
+      sprechenTelc: (min: number) => [`Die mündliche Prüfung zu zweit wie bei telc: zuerst 20 Minuten Vorbereitung mit allen Aufgabenblättern, dann etwa ${min} Minuten Gespräch in drei Teilen. Dein Partner reagiert auf das, was du sagst; die Prüferin leitet durch die Teile.`, "Danach bekommst du Punkte nach den vier offiziellen telc-Kriterien, für jeden Teil einzeln, und siehst, was wir verstanden haben."],
       sprechen: (min: number) => [`Die mündliche Prüfung zu zweit, ungefähr ${min} Minuten: Die Prüferin stellt Fragen, dein Partner spricht auch. Bei den Nachfragen und beim Planen reagieren beide auf das, was du sagst.`, "Danach bekommst du Punkte nach den offiziellen DTZ-Kriterien und siehst, was wir verstanden haben."],
     },
     rules: {
@@ -100,6 +101,8 @@ export const PORTAL_COPY = {
       writing: "Schreib zu allen vier Punkten, mit Anrede und Gruß",
       headphones: "Am besten mit Kopfhörern",
       pair: "Zu zweit wie in der Prüfung, mit Prüferin und Partner",
+      prep: (min: number) => `${min} Minuten Vorbereitung mit Notizen, dann geht es los`,
+      prepMinutes: (min: number) => `${min} Minuten, mit Notizen`,
       mic: "Du brauchst ein Mikrofon. Deine Aufnahmen speichern wir privat in deinem Konto, damit wir dein Ergebnis auswerten können.",
     },
     speaking: {
@@ -109,6 +112,12 @@ export const PORTAL_COPY = {
       play: "Abspielen",
       yourPhoto: "Dein Foto",
       partnerPhoto: (name: string) => `Das Foto von ${name}`,
+      // telc B1: 20 minutes with all three sheets before the talk (research/telc-b1.md §3e).
+      prep: {
+        title: "Vorbereitung",
+        lead: (min: number) => `Wie in der Prüfung hast du ${min} Minuten. Lies alle drei Aufgabenblätter und schreib dir Stichpunkte auf. Wenn die Zeit um ist, beginnt das Gespräch. Bist du früher fertig, kannst du schon anfangen.`,
+        ready: "Ich bin bereit",
+      },
       limit: { title: "Deine Gratis-Minuten sind um.", text: "Im Gratis-Modelltest kannst du ein paar Minuten sprechen. Wir werten jetzt aus, was du schon gesagt hast. Die ganze Prüfung gibt es im Prüfungspass.", confirm: "Zur Auswertung" },
     },
     starting: "Wird gestartet …",
@@ -132,6 +141,7 @@ export const PORTAL_COPY = {
       pointsLead: { hoeren: "Bei telc Deutsch B1 zählen Lesen, Sprachbausteine, Hören und Schreiben zusammen: Bestanden ist die schriftliche Prüfung ab 135 von 225 Punkten. Dieses Ergebnis gilt nur für Hören und ist ein Richtwert.", lesen: "Bei telc Deutsch B1 zählen Lesen, Sprachbausteine, Hören und Schreiben zusammen: Bestanden ist die schriftliche Prüfung ab 135 von 225 Punkten. Dieses Ergebnis gilt nur für Lesen und Sprachbausteine und ist ein Richtwert." } as Record<string, string>,
       perTeil: "Punkte pro Teil",
       telcWritingNote: "Bewertet nach den drei offiziellen telc-Kriterien: Aufgabenbewältigung, Kommunikative Gestaltung und Formale Richtigkeit, je Stufe A bis D (5, 3, 1 oder 0 Punkte), die Summe mal 3. Höchstens 45 Punkte. Übungsfeedback, kein offizielles telc-Ergebnis.",
+      telcSpeakingNote: "Bewertet nach den vier offiziellen telc-Kriterien, für jeden Teil einzeln: Ausdrucksfähigkeit, Aufgabenbewältigung, Formale Richtigkeit und Aussprache/Intonation, je Stufe A bis D. Teil 1 gibt bis zu 15 Punkte, Teil 2 und 3 je bis zu 30. Bestanden ab 45 von 75 Punkten. Die Aussprache schätzen wir aus dem Transkript. Übungsfeedback, kein offizielles telc-Ergebnis.",
       heardH: "Das haben wir verstanden",
       grading: "Dein Gespräch wird ausgewertet. Das dauert bis zu einer Minute …",
       points: (p: number, m: number) => `${p} von ${m} Punkten`,

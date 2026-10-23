@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { ChoiceItem, FeedbackSheet, GapItem, MatchItem, PictureItem, TrueFalseItem } from "@/components/exam"
+import { ChoiceItem, FeedbackSheet, GapTask, MatchTask, PictureItem, TrueFalseItem } from "@/components/exam"
 import { itemNumbers, type ItemKey, type KurztestBlock, type KurztestItem } from "@/lib/exam/kurztest"
-import type { TrueFalse } from "@/lib/exam/types"
+import type { PartId, TrueFalse } from "@/lib/exam/types"
 import { LOCALE_SHORT } from "@/lib/i18n/locale"
 import { useKurztest } from "./locale"
 
@@ -26,7 +26,7 @@ function Feedback({ k, value }: { k: ItemKey; value?: string }) {
   )
 }
 
-function Item({ it, label, keys, values, onChange }: { it: KurztestItem; label?: string; keys?: ItemKey[]; values: Values; onChange?: (n: number, v: string) => void }) {
+function Item({ it, skill, label, keys, values, onChange }: { it: KurztestItem; skill: PartId; label?: string; keys?: ItemKey[]; values: Values; onChange?: (n: number, v: string) => void }) {
   const keyOf = (n: number) => keys?.find((a) => a.n === n)
   const feedback = (n: number) => {
     const k = keyOf(n)
@@ -57,9 +57,9 @@ function Item({ it, label, keys, values, onChange }: { it: KurztestItem; label?:
     <div className="flex flex-col gap-3">
       {label ? <span className="text-[13px] text-v-muted">{label}</span> : null}
       {it.type === "match" ? (
-        <MatchItem data={it.data} noMatch={it.noMatch} value={values} onChange={change} review={reviewMap(ns)} />
+        <MatchTask skill={skill} data={it.data} noMatch={it.noMatch} value={values} onChange={change} review={reviewMap(ns)} />
       ) : (
-        <GapItem data={it.data} value={values} onChange={change} review={reviewMap(ns)} />
+        <GapTask data={it.data} value={values} onChange={change} review={reviewMap(ns)} />
       )}
       {ns.map(feedback)}
     </div>
@@ -70,18 +70,19 @@ function Item({ it, label, keys, values, onChange }: { it: KurztestItem; label?:
  * A block's tasks. Without `keys` it is exam mode; with `keys` it shows solutions and explanations.
  * `examples`: the solved answers of the block's Beispiel items (n = 0, Modelltests), shown filled in and read-only.
  */
-export function BlockItems({ block, values, onChange, keys, examples }: { block: Pick<KurztestBlock, "skill" | "teil" | "display">; values: Values; onChange?: (n: number, v: string) => void; keys?: ItemKey[]; examples?: string[] }) {
+/** `name`: the Teil's official name when it has one (telc "Sprachbausteine Teil 1"). */
+export function BlockItems({ block, values, onChange, keys, examples, name }: { block: Pick<KurztestBlock, "skill" | "teil" | "display">; values: Values; onChange?: (n: number, v: string) => void; keys?: ItemKey[]; examples?: string[]; name?: string }) {
   const T = useKurztest().T
-  const label = `${T.names[block.skill]} · ${T.teil(block.teil)}`
+  const label = name ?? `${T.names[block.skill]} · ${T.teil(block.teil)}`
   let k = 0
   return (
     <div className="flex flex-col gap-8">
       {block.display.items.map((it, i) => {
         const ns = itemNumbers([it])
         const ex = examples && ns.includes(0) ? examples[k++] : undefined
-        if (ex === undefined) return <Item key={i} it={it} label={i === 0 ? label : undefined} keys={keys} values={values} onChange={onChange} />
+        if (ex === undefined) return <Item key={i} it={it} skill={block.skill} label={i === 0 ? label : undefined} keys={keys} values={values} onChange={onChange} />
         const onlyExample = ns.every((n) => n === 0)
-        return <Item key={i} it={it} label={onlyExample ? T.example : i === 0 ? label : undefined} keys={keys} values={{ ...values, 0: ex }} onChange={onlyExample || !onChange ? undefined : (n, v) => n !== 0 && onChange(n, v)} />
+        return <Item key={i} it={it} skill={block.skill} label={onlyExample ? T.example : i === 0 ? label : undefined} keys={keys} values={{ ...values, 0: ex }} onChange={onlyExample || !onChange ? undefined : (n, v) => n !== 0 && onChange(n, v)} />
       })}
     </div>
   )

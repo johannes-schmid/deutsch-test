@@ -328,6 +328,8 @@ app/(app)/dashboard/[exam]/[skill]/[n]/ # ★ the Modelltest runner page + actio
 components/modelltest/               # runner.tsx (intro → test → result; Hören follows the one track, Lesen/Schreiben timed) · speaking.tsx (live pair exam)
 lib/entitlements.ts                  # ownsExam(): the one paid-access check; one active Prüfungspass = every exam; false until Stripe (Modelltest 1 per skill is free)
 lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
+lib/modelltest/speaking-telc.ts      # telc B1 Sprechen live: partner per Teil, Teil-1 extra topic, examiner rescue line, grading per Teil on the 4 official criteria (/75)
+lib/modelltest/anleitung-telc-b1.ts  # telc B1 Anleitung per skill (audio: scripts/modelltest/anleitung.ts --exam telc-b1)
 lib/modelltest/{grade,speaking,sprechen-run}.ts # official DTZ steps: Schreiben 4×0–5, Sprechen 5/5/10/10/20 + 10/10/15/15 · live lines (Haiku) + voice (eleven_v4_turbo) · run state + FREE_SPEAKING_SECONDS cap
 app/api/modelltest/sprechen/turn/    # one answer: private recording → Scribe → next live line as audio (or null = pre-rendered fallback)
 lib/portal.ts · lib/i18n/portal.ts   # exam groups for the portal ("use cache") · auth + portal copy
@@ -339,7 +341,7 @@ scripts/lib/drafting.ts              # shared Claude call (direct API, optional 
 scripts/modelltest/                  # ★ Modelltest pipeline: plan-dtz (topics per set) → author (Claude per Teil, validated) → audio (eleven_v4_turbo, Hören track / Sprechen lines) → images (Pexels → WebP, Claude refits text to the photo) → seed (local mt_* + Storage; never touches review_status)
                                      # batch.sh <sets…> runs all of it (author → images → audio → local seed) with Claude on the Message Batches API (50% off), logs in .unit-cache/batch/
                                      # drafting model: Opus 5.5, effort medium (DRAFT_MODEL / DRAFT_EFFORT override; blind eval 2026-10-23 in LEARNINGS.md)
-scripts/modelltest/{plan,author}-telc-b1.ts # telc B1: one plan entry per set covers all skills (= Simulation n) → author (Teile batched together; Lesen Teil 4–5 = Sprachbausteine); audio.ts/seed.ts take --exam telc-b1; do-not-reuse list research/telc-b1-official-situations.md, official text for the overlap check only in .unit-cache/official-telc-b1/
+scripts/modelltest/{plan,author}-telc-b1.ts # telc B1: one plan entry per set covers all skills (= Simulation n) → author (Teile batched together; Lesen Teil 4–5 = Sprachbausteine; rejects names/themes repeated in the set via clash.ts) → check-set.ts --set n after all four skills (re-run flagged Teile with --teil --force) → audio.ts/seed.ts --exam telc-b1 (official pace ~185 wpm, Teil 3 situation lines); do-not-reuse list research/telc-b1-official-situations.md, official text for the overlap check only in .unit-cache/official-telc-b1/
 data/modelltest/<exam>/<skill>-NN.json # Modelltest drafts (MtSet); photos.lock.json = Pexels ids in use. Rendered media lives in .unit-cache/ (gitignored) until seeded
 lib/modelltest/types.ts              # MtSet/MtBlock (+ Hören track cues, Sprechen turns with phase/live, photos, live key)
 lib/exam/validate-modelltest.ts      # validateTeil (closed Teile vs `full`), validateSprechen, validateWriting, validateSet (whole set, used by author.ts and the admin publish gate)

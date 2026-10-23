@@ -5,7 +5,8 @@ import type { PartId } from "@/lib/exam/types"
 import { gradeDtzWriting, gradeTelcWriting, RUBRIC_VERSION, TELC_RUBRIC_VERSION, type MtGradedResult } from "@/lib/modelltest/grade"
 import { loadKeyedBlocks, loadRunnerSet, scoreClosed, type MtClosedResult } from "@/lib/modelltest/runner"
 import { gradeSpeaking, type MtSpeakingResult } from "@/lib/modelltest/speaking"
-import { emptyState, phasesDone, playedBefore, type RunState } from "@/lib/modelltest/sprechen-run"
+import { gradeTelcSpeaking } from "@/lib/modelltest/speaking-telc"
+import { emptyState, phasesDone, playedBefore, skipTo, type RunState } from "@/lib/modelltest/sprechen-run"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { getSessionUser } from "@/lib/supabase/server"
 
@@ -103,10 +104,15 @@ export async function finishSpeaking(attemptId: string): Promise<SpeakingSubmit>
     const state = (data?.conversation as RunState | null) ?? emptyState()
     const keyed = await loadKeyedBlocks(o.attempt.set_id, o.attempt.exam, "sprechen")
     for (const { block } of keyed) if (state.upTo[block.teil] !== undefined) state.lines.push(...playedBefore(state, block, block.display.speaking!.turns.length))
+    // Closing lines of Teile that ran out of time are added here; keep each Teil's lines together, in order.
+    state.lines = state.lines.map((l, i) => ({ l, i })).sort((a, b) => a.l.teil - b.l.teil || a.i - b.i).map(({ l }) => l)
     const partner = keyed[0]?.block.display.speaking?.people.partner.name ?? "Partner"
-    const result = await gradeSpeaking(state.lines, partner, phasesDone(state.lines))
+    const result =
+      o.attempt.exam === "telc-b1"
+        ? await gradeTelcSpeaking(state.lines, partner, [...new Set(state.lines.filter((l) => l.who === "du" && l.text.trim()).map((l) => l.teil))])
+        : await gradeSpeaking(state.lines, partner, phasesDone(state.lines))
     const now = new Date().toISOString()
-    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, conversation: state, result: { level: result.level, score: result.score, grade: result } }).eq("id", o.attempt.id)
+    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, conversation: state, result: { level: result.level ?? null, score: result.score, grade: result } }).eq("id", o.attempt.id)
     if (error) throw error
     return { ok: true, result }
   } catch (e) {
@@ -114,4 +120,20 @@ export async function finishSpeaking(attemptId: string): Promise<SpeakingSubmit>
     await db.from("mt_attempts").update({ grade_error: e instanceof Error ? e.message.slice(0, 200) : "failed" }).eq("id", o.attempt.id)
     return { ok: false, error: "failed" }
   }
+}
+
+/** telc: the Teil's time is up before its last turn. The runner jumps to the examiner's closing line. */
+export async function skipSpeaking(attemptId: string, teil: number, from: number): Promise<{ ok: boolean }> {
+  const o = await openAttempt(attemptId, ["sprechen"])
+  if ("error" in o || !Number.isInteger(teil) || !Number.isInteger(from)) return { ok: false }
+  const db = createAdminClient()
+  const keyed = await loadKeyedBlocks(o.attempt.set_id, o.attempt.exam, "sprechen")
+  const block = keyed.find((k) => k.block.teil === teil)?.block
+  if (!block?.display.speaking) return { ok: false }
+  const { data } = await db.from("mt_attempts").select("conversation").eq("id", o.attempt.id).single()
+  const state = (data?.conversation as RunState | null) ?? emptyState()
+  if (from <= (state.upTo[teil] ?? -1)) return { ok: true }
+  skipTo(state, block, from)
+  const { error } = await db.from("mt_attempts").update({ conversation: state }).eq("id", o.attempt.id)
+  return { ok: !error }
 }

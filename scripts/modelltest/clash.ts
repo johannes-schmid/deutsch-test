@@ -21,23 +21,35 @@ export function blockText(b: MtBlock) {
 /** Surnames after a title and first names after a greeting or in a persona: the names people would recognise. */
 export function names(text: string) {
   const out = new Set<string>()
-  for (const [, n] of text.matchAll(/\b(?:Herr|Herrn|Frau|Familie|Dr\.|Doktor)\s+([A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)?)/g)) out.add(n)
+  // "Frau Albers", "Doktor Henrike Albers": the surname (and a first name in between).
+  for (const [, a, b] of text.matchAll(/\b(?:Herr|Herrn|Frau|Familie|Dr\.|Doktor)\s+([A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)?)(?:\s+([A-ZÄÖÜ][a-zäöüß]+))?/g)) {
+    out.add(b ?? a)
+    if (b) out.add(a)
+  }
   for (const [, n] of text.matchAll(/\b(?:Liebe|Lieber|Hallo|Hi|Servus)\s+([A-ZÄÖÜ][a-zäöüß]+)\b/g)) out.add(n)
   for (const [, n] of text.matchAll(/^([A-ZÄÖÜ][a-zäöüß]+) [A-ZÄÖÜ][a-zäöüß]+:/gm)) out.add(n)
   return out
 }
 
 /** Nouns of a plan entry that carry its theme (skips generic exam words). */
-const GENERIC = new Set(["Anfrage", "Antwort", "Durchsage", "Nachricht", "Programm", "Interview", "Umfrage", "Freundin", "Kollegin", "Kollegen", "Kollege", "Freund", "Familie", "Kinder", "Stadt", "Studie", "Verbrauchertipp", "Reiseangebot", "Buchtipp", "Wochenende", "Sommer", "Winter", "Monat", "Woche", "Fragen", "Information", "Informationen", "Termin", "Termine", "Zeiten", "Angebote", "Erfahrungen", "Tipps", "Deutsch", "Deutschland"])
+const GENERIC = new Set(["Innenstadt", "Anfrage", "Antwort", "Durchsage", "Nachricht", "Programm", "Interview", "Umfrage", "Freundin", "Kollegin", "Kollegen", "Kollege", "Freund", "Familie", "Kinder", "Stadt", "Studie", "Verbrauchertipp", "Reiseangebot", "Buchtipp", "Wochenende", "Sommer", "Winter", "Monat", "Woche", "Fragen", "Information", "Informationen", "Termin", "Termine", "Zeiten", "Angebote", "Erfahrungen", "Tipps", "Deutsch", "Deutschland"])
 export function themeWords(entry: string) {
   return [...entry.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{6,})\b/g)].map(([, w]) => w).filter((w) => !GENERIC.has(w))
 }
 
-/** Repeats between `mine` (blocks of one skill) and the other skills' files and plan entries of the same set. */
-export function clashes(dir: string, skill: string, nn: string, mine: MtBlock[], otherPlan: Record<string, string[]>) {
+/**
+ * Repeats between `mine` (one Teil) and the rest of the same set: the other Teile of this skill (`siblings`, names
+ * only) and the other skills' files (names) and plan entries (themes).
+ */
+export function clashes(dir: string, skill: string, nn: string, mine: MtBlock[], otherPlan: Record<string, string[]>, siblings: MtBlock[] = []) {
   const text = mine.map(blockText).join("\n")
   const ours = names(text)
   const out: string[] = []
+  const near = names(siblings.map(blockText).join("\n"))
+  // The Sprechen partner is the same person in all three Teile on purpose.
+  const partner = new Set(mine.map((b) => b.display.speaking?.people.partner.name).filter(Boolean))
+  const inSkill = [...ours].filter((n) => near.has(n) && !partner.has(n))
+  if (inSkill.length) out.push(`the name(s) ${inSkill.join(", ")} already appear in another Teil of ${skill}; choose other names`)
   for (const other of ["lesen", "hoeren", "schreiben", "sprechen"].filter((s) => s !== skill)) {
     const file = path.join(dir, `${other}-${nn}.json`)
     if (fs.existsSync(file)) {

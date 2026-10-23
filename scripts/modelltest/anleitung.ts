@@ -1,13 +1,14 @@
 // Renders the spoken "Anleitung" of each DTZ Modelltest part (lib/modelltest/anleitung.ts) with the narrator voice,
 // eleven_v4_turbo, slowed to the narrator pace of the official audio (≈ 125 words/min), loudness levelled.
 //
-// npx tsx --env-file=.env.local scripts/modelltest/anleitung.ts [--skill hoeren] [--force]
-// Files go to public/audio/modelltest/dtz-anleitung-<skill>.mp3.
+// npx tsx --env-file=.env.local scripts/modelltest/anleitung.ts [--exam dtz|telc-b1] [--skill hoeren] [--force]
+// Files go to public/audio/modelltest/<exam>-anleitung-<skill>.mp3.
 
 import { execFileSync } from "node:child_process"
 import fs from "node:fs"
 import voices from "@/data/tts-voices.json"
 import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
+import { TELC_B1_ANLEITUNG } from "@/lib/modelltest/anleitung-telc-b1"
 
 const MODEL = "eleven_v4_turbo"
 const NARRATOR = "man_mark"
@@ -17,13 +18,17 @@ if (!KEY) throw new Error("ELEVENLABS_API_KEY missing (run with --env-file=.env.
 const i = process.argv.indexOf("--skill")
 const only = i > -1 ? process.argv[i + 1] : undefined
 const FORCE = process.argv.includes("--force")
+const e = process.argv.indexOf("--exam")
+const EXAM = e > -1 ? process.argv[e + 1] : "dtz"
+const TEXTS = { dtz: DTZ_ANLEITUNG, "telc-b1": TELC_B1_ANLEITUNG }[EXAM]
+if (!TEXTS) throw new Error("Usage: --exam dtz|telc-b1")
 
 const ff = (...args: string[]) => execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args])
 const words = (s: string) => s.split(/\s+/).filter(Boolean).length
 
 async function main() {
   let characters = 0
-  for (const [skill, a] of Object.entries(DTZ_ANLEITUNG)) {
+  for (const [skill, a] of Object.entries(TEXTS!)) {
     if (only && skill !== only) continue
     const file = `public${a.audio}`
     if (!FORCE && fs.existsSync(file)) continue

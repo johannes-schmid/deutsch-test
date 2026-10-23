@@ -2,19 +2,20 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
-import { ChevronDown, Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
-import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamInstructions, ExamShell, ExamTrack, PartIntro, PartResultCard, PointsBar, ReadingLayout, ReadingText, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack } from "@/components/exam"
+import { ChevronDown, Clock, EyeOff, Headphones, Mic, NotebookPen, PenLine, Users } from "lucide-react"
+import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamInstructions, ExamShell, ExamTrack, PartIntro, PartResultCard, PointsBar, ExamReading, ReadingLayout, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack } from "@/components/exam"
 import { LevelScale } from "@/components/design/kit"
 import { LevelSeal, ScoreSeal } from "@/components/design/variants/nachtzug-icons"
 import { KurztestFrame } from "@/components/kurztest/frame"
 import { BlockItems, type Values } from "@/components/kurztest/items"
 import { KurztestLocale, useKurztest } from "@/components/kurztest/locale"
 import { itemNumbers } from "@/lib/exam/kurztest"
-import { TELC_B1_TEILE } from "@/lib/exam/scoring/telc-b1"
+import { TELC_B1_SPEAKING_PREP_MINUTES, TELC_B1_SPEAKING_TEILE, TELC_B1_TEILE } from "@/lib/exam/scoring/telc-b1"
 import type { Level } from "@/lib/exam/types"
 import { EXAMS, portalPath } from "@/lib/exams"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
+import { TELC_B1_ANLEITUNG } from "@/lib/modelltest/anleitung-telc-b1"
 import type { MtGradedResult } from "@/lib/modelltest/grade"
 import type { MtClosedResult, PublicMtBlock, RunnerSet } from "@/lib/modelltest/runner"
 import type { MtSpeakingResult } from "@/lib/modelltest/speaking"
@@ -67,7 +68,8 @@ function Runner({ set }: { set: RunnerSet }) {
   const name = C.names[skill]
   const minutes = Math.round(set.seconds / 60)
   const back = portalPath(set.exam, set.skill)
-  const anleitung = set.exam === "dtz" ? DTZ_ANLEITUNG[skill] : null
+  const anleitung = set.exam === "dtz" ? DTZ_ANLEITUNG[skill] : set.exam === "telc-b1" ? TELC_B1_ANLEITUNG[skill] : null
+  const telc = set.exam === "telc-b1"
 
   const start = async () => {
     setBusy(true)
@@ -109,7 +111,7 @@ function Runner({ set }: { set: RunnerSet }) {
       skill === "schreiben"
         ? set.blocks[0].display.writing!.map((w) => ({ label: C.task(w.key), detail: w.title }))
         : skill === "sprechen"
-          ? set.blocks.map((b) => ({ label: C.teil(b.teil), detail: b.display.speaking!.data.title }))
+          ? [...(telc ? [{ label: P.speaking.prep.title, detail: P.rules.prepMinutes(TELC_B1_SPEAKING_PREP_MINUTES) }] : []), ...set.blocks.map((b) => ({ label: C.teil(b.teil), detail: telc ? TELC_B1_SPEAKING_TEILE[b.teil as 1 | 2 | 3] : b.display.speaking!.data.title }))]
         : [...new Set(scored.map((b) => b.teil))].map((teil) => ({ label: teilName(set.exam, skill, teil, C.teil(teil)), detail: C.taskCount(scored.filter((b) => b.teil === teil).reduce((n, b) => n + scoredItems(b).length, 0)) }))
     const rules =
       skill === "hoeren"
@@ -117,7 +119,7 @@ function Runner({ set }: { set: RunnerSet }) {
         : skill === "lesen"
           ? [{ icon: Clock, text: P.rules.time(minutes) }, { icon: EyeOff, text: P.rules.noFeedback }]
           : skill === "sprechen"
-            ? [{ icon: Users, text: P.rules.pair }, { icon: Mic, text: P.rules.mic }]
+            ? [...(telc ? [{ icon: NotebookPen, text: P.rules.prep(TELC_B1_SPEAKING_PREP_MINUTES) }] : []), { icon: Users, text: P.rules.pair }, { icon: Mic, text: P.rules.mic }]
             : [{ icon: PenLine, text: P.rules.writing }, { icon: Clock, text: P.rules.time(minutes) }]
     const count = skill === "schreiben" ? 1 : skill === "sprechen" ? set.blocks.length : scored.reduce((n, b) => n + scoredItems(b).length, 0)
     return (
@@ -131,7 +133,7 @@ function Runner({ set }: { set: RunnerSet }) {
               count={count}
               teile={teile}
               rules={rules}
-              about={[...(set.preview ? [P.preview] : []), ...(set.exam === "telc-b1" && skill === "schreiben" ? P.about.schreibenTelc : P.about[skill])(minutes)].map((p) => <p key={p}>{p}</p>)}
+              about={[...(set.preview ? [P.preview] : []), ...(telc && skill === "schreiben" ? P.about.schreibenTelc : telc && skill === "sprechen" ? P.about.sprechenTelc : P.about[skill])(minutes)].map((p) => <p key={p}>{p}</p>)}
               action={<ExamButton onClick={() => (anleitung ? setPhase("anleitung") : void start())} disabled={busy} className="w-full">{anleitung ? nextLabel : busy ? P.starting : startLabel}</ExamButton>}
             />
             {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
@@ -158,7 +160,7 @@ function Runner({ set }: { set: RunnerSet }) {
   }
 
   if (phase === "test" && attemptId) {
-    if (skill === "sprechen") return <SpeakingRun attemptId={attemptId} blocks={set.blocks} onExit={() => router.push(back)} onFinish={() => void handIn(() => finishSpeaking(attemptId))} />
+    if (skill === "sprechen") return <SpeakingRun attemptId={attemptId} exam={set.exam} blocks={set.blocks} onExit={() => router.push(back)} onFinish={() => void handIn(() => finishSpeaking(attemptId))} />
     if (skill === "schreiben")
       return <WritingTest set={set} text={text} onText={setText} onFinish={(task, body) => void handIn(() => submitWriting(attemptId, task, body))} back={back} />
     return (
@@ -245,14 +247,15 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
     const inTeil = blocks.filter((b) => b.teil === t)
     return { id: `t${t}`, label: teilName(set.exam, set.skill, t, C.teil(t)), count: Math.max(1, inTeil.reduce((n, b) => n + scoredItems(b).length, 0)), done: inTeil.reduce((n, b) => n + answered(b), 0) }
   })
-  const items = <BlockItems block={block} values={values} onChange={onChange} examples={block.exampleAnswers} />
+  const official = teilName(set.exam, set.skill, block.teil, "")
+  const items = <BlockItems block={block} values={values} onChange={onChange} examples={block.exampleAnswers} name={official || undefined} />
   const trackDone = player.state === "ended"
 
   return (
     <KurztestFrame scene={set.skill as "hoeren" | "lesen"} focus label={C.run.progress(name)}>
       <ExamShell
         part={set.skill}
-        wide={!!reading}
+        wide={!!reading || set.skill === "lesen"}
         sections={sections}
         progressLabel={C.run.progress(name)}
         seconds={hoeren ? (player.state === "idle" ? undefined : Math.round(player.left)) : left}
@@ -276,7 +279,7 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
         {hoeren ? <ExamTrack track={track} player={player} /> : null}
         {trackDone ? <p className="rounded-2xl bg-v-soft p-4 text-[15px]">{P.trackEnded}</p> : null}
         <p className="text-[15px] leading-relaxed text-v-muted">{block.display.instruction}</p>
-        {reading ? <ReadingLayout key={block.id} answered={answered(block)} total={scoredItems(block).length} text={<ReadingText data={reading} />} tasks={items} /> : items}
+        {reading ? <ReadingLayout key={block.id} answered={answered(block)} total={scoredItems(block).length} text={<ExamReading exam={set.exam} skill={set.skill} teil={block.teil} data={reading} />} tasks={items} /> : items}
       </ExamShell>
       {exitSheet}
       <ConfirmSheet open={confirm} onOpenChange={setConfirm} {...C.run.finishConfirm} text={C.run.finishConfirm.text(open)} onConfirm={finish} />
@@ -361,7 +364,7 @@ function Solutions({ set, values, result }: { set: RunnerSet; values: Values; re
             return (
               <Panel key={b.id}>
                 <p className="text-[15px] leading-relaxed text-v-muted">{b.display.instruction}</p>
-                {reading ? <ReadingText data={reading} highlight={hits.find((h) => reading.paragraphs.some((p) => p.includes(h)))} /> : null}
+                {reading ? <ExamReading exam={set.exam} skill={set.skill} teil={b.teil} data={reading} highlight={hits.find((h) => reading.paragraphs.some((p) => p.includes(h)))} /> : null}
                 {transcript ? (
                   <div className="flex flex-col gap-2 rounded-2xl bg-v-soft p-4 text-[15px] leading-relaxed">
                     <b className="text-[13px] font-semibold text-v-muted">{`${C.transcript} · ${b.display.clip?.situation ?? ""}`}</b>
@@ -378,6 +381,22 @@ function Solutions({ set, values, result }: { set: RunnerSet; values: Values; re
           })
         : null}
     </>
+  )
+}
+
+function PerTeil({ parts }: { parts: { label: string; points: number; max: number }[] }) {
+  const t = useExamCopy()
+  return (
+    <Panel title={P.result.perTeil}>
+      <ul className="flex flex-col">
+        {parts.map((p) => (
+          <li key={p.label} className="flex items-baseline justify-between gap-4 border-t border-v-line py-3 text-[15.5px] first:border-t-0 first:pt-0 last:pb-0">
+            <span>{p.label}</span>
+            <span className="v-num shrink-0 text-[14px] text-v-muted">{t.points(p.points, p.max)}</span>
+          </li>
+        ))}
+      </ul>
+    </Panel>
   )
 }
 
@@ -414,9 +433,10 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
     return (
       <>
         {bar}
-        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${P.result.points(result.score.points, result.score.max)}`} headline={headline} lead={result.partial ? `${result.summary} ${P.result.partial}` : result.summary} scale={scale} note={P.result.speakingNote} />
+        <ResultSummary visual={seal} eyebrow={`${P.name(set.number, name)} · ${P.result.points(result.score.points, result.score.max)}`} headline={headline} lead={result.partial ? `${result.summary} ${P.result.partial}` : result.summary} scale={scale} note={pass !== undefined ? P.result.telcSpeakingNote : P.result.speakingNote} />
         {next}
-        <PartResultCard result={{ part: "sprechen", name, level: result.level, score: result.score, criteria: result.criteria }} defaultOpen />
+        {result.parts ? <PerTeil parts={result.parts} /> : null}
+        <PartResultCard result={{ part: "sprechen", name, level: result.level, score: result.score, ...(pass !== undefined ? { passed } : {}), criteria: result.criteria }} defaultOpen />
         <Panel title={P.result.heardH}>
           {result.heard.map((h, i) => (
             <div key={i} className="flex flex-col gap-1 border-t border-v-line pt-3 first:border-t-0 first:pt-0">
@@ -461,18 +481,7 @@ function ResultView({ set, values, text, result, used, onRetry }: { set: RunnerS
         note={result.points ? t.resultNotePoints : t.resultNote}
       />
       {next}
-      {result.points ? (
-        <Panel title={P.result.perTeil}>
-          <ul className="flex flex-col">
-            {result.points.parts.map((p) => (
-              <li key={p.label} className="flex items-baseline justify-between gap-4 border-t border-v-line py-3 text-[15.5px] first:border-t-0 first:pt-0 last:pb-0">
-                <span>{p.label}</span>
-                <span className="v-num shrink-0 text-[14px] text-v-muted">{t.points(p.points, p.max)}</span>
-              </li>
-            ))}
-          </ul>
-        </Panel>
-      ) : null}
+      {result.points ? <PerTeil parts={result.points.parts} /> : null}
       <Solutions set={set} values={values} result={result} />
     </>
   )

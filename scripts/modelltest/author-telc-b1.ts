@@ -19,7 +19,8 @@ import { validateSprechenTelc, validateTeil, validateWriting } from "@/lib/exam/
 import type { ExamId } from "@/lib/exams"
 import type { MtBlock, MtSet, MtSpeakTurn, SoundKey } from "@/lib/modelltest/types"
 import { AdsOutput, ChoiceOutput, examSystem, makeAsk, MODEL, TONES, WritingOutput } from "../lib/drafting"
-import { SETS, type H3Kind } from "./plan-telc-b1"
+import { clashes } from "./clash"
+import { planBySkill, SETS, type H3Kind } from "./plan-telc-b1"
 import { grams, mixedPattern, place, rng, shuffle, targets } from "./util"
 
 const arg = (name: string) => {
@@ -203,14 +204,16 @@ explanation: nenne Überschriften nur mit ihrem Inhalt, nie mit Buchstaben. evid
   if (teil === 2) {
     const o = await ask(ChoiceOutput, head(2, `Thema: ${PLAN.lesen2}.
 Ein Artikel aus einer Zeitschrift oder Zeitung, ${full.length.min + 20}–${full.length.max - 20} Wörter: "reading.paragraphs" beginnt mit der Überschrift, dann ein kurzer Vorspann (1–2 Sätze), dann 4–6 Absätze. Menschen mit Namen, Alter oder Beruf, Zitate, Zahlen. "sender" leer, "source" = "Zeitschrift" oder "Zeitung". "audio" = null.
-Genau 5 Aufgaben vom Typ "choice" in der Reihenfolge des Textes: "prompt" ist meist ein Satzanfang ("In dem Kurs können die Teilnehmer …"), die drei Optionen beenden den Satz. Die falschen Optionen nehmen Wörter oder Details aus dem Text auf, sagen aber etwas anderes. "pictos" leer.`, feedback))
+Sprache wie in einer echten Zeitschrift auf B1+: Nebensätze, Passiv, indirekte Rede, ein oder zwei Fachbegriffe, die der Text selbst kurz erklärt; nicht vereinfacht.
+Genau 5 Aufgaben vom Typ "choice" in der Reihenfolge des Textes: "prompt" ist meist ein Satzanfang ("In dem Kurs können die Teilnehmer …"), die drei Optionen beenden den Satz. Mindestens zwei Aufgaben verlangen, zwei Stellen des Textes zu verbinden oder eine Aussage zu verstehen, die anders formuliert ist. Die falschen Optionen nehmen Wörter oder Details aus dem Text auf, sagen aber etwas anderes. "pictos" leer.`, feedback))
     return [choiceBlock(o, 2, id(2), full.first, targets(5, r))]
   }
   if (teil === 3) {
     const o = await ask(AdsOutput, head(3, `Welt der Anzeigen: ${PLAN.lesen3}.
-Genau 12 kleine Anzeigen ("ads", title + text, je 15–45 Wörter, zusammen ${full.length.min + 30}–${full.length.max - 40} Wörter) wie in einer Stadtzeitung oder im Internet: Name, Angebot, Zeiten, Preise, Adresse oder Telefon, Zielgruppe.
+Genau 12 kleine Anzeigen ("ads", title + text, je 15–45 Wörter, zusammen ${full.length.min + 30}–${full.length.max - 40} Wörter) wie in einer Stadtzeitung: knapper Anzeigenstil mit Abkürzungen (Mo–Fr, tägl., ca., inkl., Std., Tel., z. B. "Erf. Lehrerin gibt Nachhilfe, Kl. 5–10"), Stichworte statt ganzer Sätze, Zeiten, Preise, Adresse oder Telefon, Zielgruppe.
+Die Anzeigen kommen in 3–4 thematischen Gruppen (z. B. 3 Restaurants, 3 Reiseangebote, 3 Kurse, 3 Dienstleistungen): Innerhalb einer Gruppe unterscheiden sich die Anzeigen nur in Details (Tag, Uhrzeit, Zielgruppe, Ort, Preis, Lieferung oder nicht), sodass zu jeder Situation mindestens eine andere Anzeige fast passt.
 Genau 10 Situationen (1–2 Sätze: "Sie möchten …", "Ihr Sohn …", "Eine Freundin sucht …").
-correct = Buchstabe der passenden Anzeige (a–l, in der Reihenfolge deiner Liste) oder "x". Genau 2 Situationen haben "x": für sie gibt es eine Anzeige zum Thema, die aber an einem Detail scheitert (andere Zielgruppe, falscher Ort oder Tag, nur Verkauf statt Kurs). Jede Anzeige passt höchstens zu einer Situation; vier Anzeigen passen zu keiner.
+correct = Buchstabe der passenden Anzeige (a–l, in der Reihenfolge deiner Liste) oder "x". Genau 2 Situationen haben "x": für sie gibt es eine Anzeige zum Thema, die aber an einem Detail scheitert (andere Zielgruppe, falscher Ort oder Tag, nur Verkauf statt Kurs). Jede Anzeige passt höchstens zu einer Situation; vier Anzeigen passen zu keiner. Die Situationen verteilen sich auf alle Gruppen.
 Die Situationen umschreiben das Bedürfnis mit eigenen Worten; sie wiederholen keine Schlüsselwörter der passenden Anzeige.
 explanation: nenne andere Anzeigen nur mit Titel oder Namen, nie mit Buchstaben. evidence: Ausschnitt aus der passenden Anzeige; bei "x" aus der fast passenden.`, feedback))
     const order = shuffle(Array.from({ length: o.ads.length }, (_, i) => i), r)
@@ -272,6 +275,8 @@ const Vox = z.object({
   items: z.array(z.object({ statement: z.string(), correct: z.string(), explanation: z.string(), evidence: z.string() })),
 })
 const Clips = z.object({ clips: z.array(ChoiceOutput) })
+/** Hören Teil 3 clips carry the narrator's situation sentence, as in the official audio. */
+const LeadClips = z.object({ clips: z.array(ChoiceOutput.extend({ lead: z.string() })) })
 const SOUND: Record<H3Kind, SoundKey> = { anrufbeantworter: "beep", programm: "radio", wetter: "radio", verkehr: "radio", zug: "train", geschaeft: "store" }
 
 async function hoeren(teil: number, feedback: string[]): Promise<MtBlock[]> {
@@ -290,7 +295,7 @@ async function hoeren(teil: number, feedback: string[]): Promise<MtBlock[]> {
     const rf = mixedPattern(5, r)
     const o = await ask(Vox, head(1, `Eine Radiosendung: Umfrage zur Frage "${PLAN.hoeren1}".
 intro: die Moderation (${who(host)}), 30–50 Wörter: stellt das Thema vor, sagt, wen man gefragt hat, und kündigt die Antworten an.
-statements: genau 5 Personen in dieser Reihenfolge: ${five.map((k, i) => `${i + 1}. ${who(k)}`).join("; ")}. Jede sagt spontan ihre Meinung oder erzählt, wie es bei ihr ist: 55–85 Wörter, ich-Form, gesprochen mit Füllwörtern ("also", "na ja", "ähm"), passend zu Alter und Lebenssituation, OHNE ihren Namen zu nennen. Die Personen sind verschieden: Zustimmung, Ablehnung, "kommt drauf an". delivery: kurzer englischer Audio-Tag.
+statements: genau 5 Personen in dieser Reihenfolge: ${five.map((k, i) => `${i + 1}. ${who(k)}`).join("; ")}. Jede sagt spontan ihre Meinung oder erzählt, wie es bei ihr ist: 50–80 Wörter, ich-Form, gesprochen mit Füllwörtern ("also", "na ja", "ähm"), passend zu Alter und Lebenssituation, OHNE ihren Namen zu nennen. Die Personen sind verschieden: Zustimmung, Ablehnung, "kommt drauf an". delivery: kurzer englischer Audio-Tag.
 items: genau 5 Aussagen, eine pro Person in derselben Reihenfolge, beginnend mit "Der Sprecher …" oder "Die Sprecherin …" (passend zum Geschlecht). Jede prüft die Haltung oder das Wesentliche, nicht ein einzelnes Wort. correct in dieser Reihenfolge: ${rf.join(", ")}. Eine falsche Aussage nimmt etwas auf, das die Person erwähnt, aber anders meint.`, feedback))
     const block = blockBase(1, id(1), o.textType, INSTRUCTION["hoeren-1"])
     const ns = five.map((_, i) => full.first + i)
@@ -305,7 +310,7 @@ items: genau 5 Aussagen, eine pro Person in derselben Reihenfolge, beginnend mit
     const cast = shuffle(POOL.filter((k) => k.startsWith(presenter)), r).slice(0, 1).concat(shuffle(POOL.filter((k) => k.startsWith(guest)), r).slice(0, 1))
     const rf = mixedPattern(10, r)
     const o = await ask(ChoiceOutput, head(2, `Ein Interview im Radio: ${PLAN.hoeren2}.
-"audio": genau 2 Sprecher, zuerst die Moderation (${presenter === "woman" ? "female" : "male"}, role = "Moderatorin" oder "Moderator"), dann der Gast (${guest === "woman" ? "female" : "male"}, role = Vorname und Beruf). Die Moderation begrüßt, stellt den Gast vor, fragt nach; der Gast erzählt ausführlich mit Beispielen, Zahlen und eigenen Erfahrungen. Zusammen ${Math.round(full.length.min * 2.5) + 20}–${Math.round(full.length.max * 2.5) - 20} Wörter, natürlich gesprochen (kurze Reaktionen, "ja, genau", "also"), am Ende Dank und Verabschiedung. situation: "Interview im Radio". "reading" = null.
+"audio": genau 2 Sprecher, zuerst die Moderation (${presenter === "woman" ? "female" : "male"}, role = "Moderatorin" oder "Moderator"), dann der Gast (${guest === "woman" ? "female" : "male"}, role = Vorname und Beruf). Die Moderation begrüßt, stellt den Gast vor, fragt nach; der Gast erzählt ausführlich mit Beispielen, Zahlen und eigenen Erfahrungen. Zusammen 430–520 Wörter, natürlich gesprochen (kurze Reaktionen, "ja, genau", "also"), am Ende Dank und Verabschiedung. situation: "Interview im Radio". "reading" = null.
 Genau 10 Aufgaben vom Typ "rf" in der Reihenfolge des Gesprächs, über das ganze Interview verteilt ("prompt" = Aussage, options leer, "pictos" leer). correct in dieser Reihenfolge: ${rf.join(", ")}. Falsche Aussagen verändern ein Detail, das im Gespräch vorkommt (andere Zahl, andere Person, Gegenteil).`, feedback))
     const block = choiceBlock(o, 2, id(2), full.first, [])
     clipOf(block, o.audio!, cast, 2)
@@ -322,13 +327,15 @@ Genau 10 Aufgaben vom Typ "rf" in der Reihenfolge des Gesprächs, über das ganz
     zug: "Durchsage im Zug oder am Bahnhof",
     geschaeft: "Durchsage in einem Geschäft oder Kaufhaus",
   }
-  const o = await ask(Clips, head(3, `Genau 5 kurze Hörtexte als "clips", in dieser Reihenfolge:
+  const o = await ask(LeadClips, head(3, `Genau 5 kurze Hörtexte als "clips", in dieser Reihenfolge:
 ${slots.map(([k, t], i) => `${i + 1}. ${KIND[k]}: ${t} (Sprecher: ${who(cast[i])}; Aussage: ${rf[i]})`).join("\n")}
-Jeder Hörtext: genau ein Sprecher (gender wie angegeben), 55–85 Wörter, gesprochen, mit mehreren Details (Zeiten, Orte, Zahlen, Preise); nur eines davon wird gefragt, die anderen sind Distraktoren. "reading" = null. situation: Etikett mit 2–4 Wörtern.
+lead: der Satz, den der Sprecher der Prüfung vor dem Text sagt und der die Situation erklärt, in Sie-Form, 8–16 Wörter (z. B. "Sie sind im Zug und hören eine Durchsage." oder "Sie rufen bei Ihrer Zahnärztin an und hören eine Ansage."). Er verrät die Lösung nicht.
+Jeder Hörtext: genau ein Sprecher (gender wie angegeben), 50–90 Wörter, gesprochen, mit mehreren Details (Zeiten, Orte, Zahlen, Preise); nur eines davon wird gefragt, die anderen sind Distraktoren. "reading" = null. situation: Etikett mit 2–4 Wörtern.
 Je Hörtext genau 1 Aufgabe "rf": eine Aussage zu einem konkreten Detail (Zeit, Ort, Zahl, Bedingung), correct wie angegeben. options und pictos leer.`, feedback))
   return o.clips.map((c, i) => {
     const block = choiceBlock(c, 3, id(3, i), full.first + i, [])
     clipOf(block, c.audio!, [cast[i]], 2)
+    block.display.clip!.lead = c.lead
     block.sound = SOUND[slots[i][0]]
     return block
   })
@@ -364,7 +371,7 @@ const Sprechen1 = z.object({
   welcome: z.string(), partnerLines: z.array(z.string()), extra: z.object({ text: z.string(), sample: z.string() }), duSamples: z.array(z.string()), close: z.string(),
 })
 const Sheet = z.object({ name: z.string(), age: z.number(), job: z.string(), opinion: z.string() })
-const Sprechen2 = z.object({ topic: z.string(), duSheet: Sheet, partnerSheet: Sheet, partnerView: z.string(), intro: z.string(), partnerReport: z.string(), toDu: z.string(), partnerLines: z.array(z.string()), duSamples: z.array(z.string()), close: z.string() })
+const Sprechen2 = z.object({ topic: z.string(), duSheet: Sheet, partnerSheet: Sheet, partnerView: z.string(), intro: z.string(), partnerReport: z.string(), toDu: z.string(), invite: z.string(), partnerLines: z.array(z.string()), duSamples: z.array(z.string()), close: z.string() })
 const Sprechen3 = z.object({ situation: z.string(), title: z.string(), points: z.array(z.string()), intro: z.string(), persona: z.string(), partnerLines: z.array(z.string()), duSamples: z.array(z.string()), close: z.string() })
 
 function partnerOf(set: MtSet) {
@@ -392,7 +399,7 @@ async function sprechen(teil: number, feedback: string[], set: MtSet): Promise<M
   const T = (who: MtSpeakTurn["who"], text: string, extra: Partial<MtSpeakTurn> = {}): MtSpeakTurn => ({ who, phase: String(teil) as MtSpeakTurn["phase"], text, ...extra })
   const others = `Andere Prüfungsteile dieses Modelltests behandeln schon: ${otherSkills().join("; ")}`
   if (teil === 1) {
-    const points = ["Name", "Herkunft", "Wohnung oder Haus", "Familie", "Wo hast du Deutsch gelernt?", "Arbeit, Ausbildung oder Schule", "Sprachen"]
+    const points = ["Name", "Herkunft", "Wohnen (Wohnung, Haus …)", "Familie", "Deutsch gelernt (wo?)", "Arbeit, Ausbildung oder Schule", "Sprachen (welche? wie lange?)"]
     const o = await ask(Sprechen1, `Modelltest ${SET}, Sprechen Teil 1 "Einander kennenlernen" (ca. 3 Minuten für beide). ${SPRECHEN_ROLES}
 Auf dem Blatt stehen diese Themen: ${points.join(", ")}. Die beiden stellen sich gegenseitig Fragen dazu und erzählen von sich.
 partner: ein Mann, der in Deutschland lebt und Deutsch lernt; Vor- und Nachname aus seinem Herkunftsland${avoid.length ? ` (nicht: ${avoid.join(", ")})` : ""}. bio: 3–4 Sätze (Herkunft, seit wann hier, Wohnort und Wohnung, Familie, wo er Deutsch gelernt hat, Beruf, Sprachen). Er bleibt in Teil 2 und 3 dieselbe Person.
@@ -428,6 +435,7 @@ partnerView: was der Partner selbst denkt und erlebt hat (2–3 Sätze, für ein
 intro: Die Prüferin leitet zu Teil 2 über und bittet zuerst den Partner ("Herr <Nachname>"), zu erzählen, was er gelesen hat. 20–40 Wörter, in eigenen Worten.
 partnerReport: der Partner berichtet in eigenen Worten (3. Person), was auf seinem Blatt steht, 40–60 Wörter.
 toDu: Die Prüferin bittet "du", von seinem Blatt zu berichten, 1 Satz.
+invite: Die Prüferin dankt und bittet beide, jetzt miteinander über das Thema zu sprechen und ihre Meinung zu sagen, 1–2 kurze Sätze in eigenen Worten.
 partnerLines: genau 4 Beiträge (30–50 Wörter): 1. reagiert auf das Gehörte und sagt seine eigene Meinung mit einer Erfahrung, Frage an "du" nach der Meinung; 2. widerspricht teilweise höflich mit einem Beispiel, fragt nach Erfahrungen von "du"; 3. erzählt, wie das in seinem Herkunftsland ist, und fragt zurück; 4. fasst zusammen, wo man einig ist und wo nicht.
 duSamples: genau 4 gute Beiträge von "du" auf B1 (35–60 Wörter): 1. Bericht über das eigene Blatt (3. Person), 2. eigene Meinung mit Grund, 3. eigene Erfahrung, 4. Reaktion auf die Zusammenfassung.
 close: Die Prüferin dankt und beendet Teil 2, ein Satz.
@@ -439,6 +447,7 @@ ${fix}`)
       T("partner", o.partnerReport),
       T("pruefer", o.toDu),
       T("du", "Berichte, was auf deinem Blatt steht.", { seconds: 45 }),
+      T("pruefer", o.invite),
       T("partner", o.partnerLines[0] ?? "", { live: "partner" }),
       T("du", "Sag deine Meinung und begründe sie.", { seconds: 50 }),
       T("partner", o.partnerLines[1] ?? "", { live: "partner" }),
@@ -460,16 +469,33 @@ situation: der Text auf dem Aufgabenblatt, 2–3 Sätze in Sie-Form: was der Anl
 title: Überschrift der Liste (1–3 Wörter).
 points: genau 5 Notizpunkte wie auf dem Blatt, je 1–4 Wörter (z. B. "Wann?", "Wo?", "Essen", "Wer bezahlt wofür?"), ohne den Punkt "…".
 intro: Die Prüferin leitet zum letzten Teil über, umschreibt die Aufgabe in eigenen Worten und bittet "du", anzufangen. 25–45 Wörter.
-persona: was der Partner bei jedem Punkt möchte, kann oder nicht kann, und wo er Kompromisse macht (5–7 Sätze, für eine KI, die ihn live spricht). Bei mindestens zwei Punkten möchte er zuerst etwas anderes als die meisten.
-partnerLines: genau 6 Beiträge (20–40 Wörter): je einer zu Punkt 1 bis 5 in Reihenfolge (Vorschlag mit Grund und Frage an "du"), dann einer, der die Aufgaben verteilt und den Plan zusammenfasst und fragt, ob "du" einverstanden ist.
-duSamples: genau 6 gute Beiträge von "du" auf B1 (25–45 Wörter): erster Vorschlag zu Punkt 1, dann Reaktion und eigener Vorschlag zu Punkt 2 bis 5, zuletzt Zustimmung und eine eigene Aufgabe.
+persona: was der Partner bei jedem Punkt möchte, kann oder nicht kann, und wo er Kompromisse macht (5–7 Sätze, für eine KI, die ihn live spricht). Bei mindestens zwei Punkten möchte er zuerst etwas anderes als die meisten. Er führt nicht: "du" eröffnet die Punkte 1, 3 und 5 und fasst am Ende zusammen.
+partnerLines: genau 7 Beiträge (15–35 Wörter), in dieser Reihenfolge:
+1. reagiert auf den Vorschlag von "du" zu Punkt 1: hat Bedenken, nennt eine Alternative mit Grund und fragt "du".
+2. eröffnet Punkt 2 mit einem eigenen Vorschlag und Grund und fragt "du".
+3. einigt sich bei Punkt 2 (Zustimmung oder Kompromiss) und fragt "du" nach Punkt 3.
+4. reagiert kurz auf Punkt 3 und eröffnet Punkt 4 mit einem eigenen Vorschlag; fragt, was "du" übernimmt.
+5. reagiert und fragt "du" nach Punkt 5 und einer eigenen Idee für "…".
+6. findet die Idee gut und bittet "du", den Plan zusammenzufassen: wer macht was.
+7. sehr kurze Zustimmung zur Zusammenfassung (höchstens 12 Wörter).
+duSamples: genau 7 gute Beiträge von "du" auf B1 (30–55 Wörter): Vorschlag zu Punkt 1 · Reaktion und Einigung zu Punkt 1 · Reaktion auf Punkt 2 · Vorschlag zu Punkt 3 · Reaktion auf Punkt 4 und eigene Aufgabe · Vorschlag zu Punkt 5 und eigene Idee · Zusammenfassung, wer was macht.
 close: Die Prüferin beendet die Prüfung und dankt beiden, 1–2 Sätze. Kein Hinweis auf das Ergebnis.
 ${others}
 ${officialNote(3)}
 ${fix}`)
+  // Official Teil 3 is ~6 minutes for both; the candidate opens points 1, 3 and 5 and sums up (Gesprächsbeteiligung).
+  const cues: [string, number][] = [
+    ["Mach einen Vorschlag zu Punkt 1 und begründe ihn.", 45],
+    ["Reagiere und einigt euch.", 40],
+    ["Reagiere auf den Vorschlag.", 40],
+    ["Mach einen Vorschlag zu Punkt 3.", 45],
+    ["Reagiere und sag, was du übernimmst.", 40],
+    ["Mach einen Vorschlag zu Punkt 5 und eine eigene Idee.", 45],
+    ["Fasse den Plan zusammen: Wer macht was?", 45],
+  ]
   const turns: MtSpeakTurn[] = [T("pruefer", o.intro)]
   o.partnerLines.forEach((line, i) => {
-    turns.push(T("du", i === 0 ? "Mach einen ersten Vorschlag und begründe ihn." : "Reagiere, mach Vorschläge, einigt euch.", { seconds: 30 }))
+    turns.push(T("du", cues[i]?.[0] ?? "Reagiere und einigt euch.", { seconds: cues[i]?.[1] ?? 40 }))
     turns.push(T("partner", line, { live: "partner" }))
   })
   turns.push(T("pruefer", o.close))
@@ -480,9 +506,11 @@ ${fix}`)
 }
 
 function validate(teil: number, blocks: MtBlock[]) {
-  if (SKILL === "schreiben") return validateWriting(blocks, EXAM)
-  if (SKILL === "sprechen") return validateSprechenTelc(blocks[0])
-  return validateTeil(EXAM, SKILL, teil, blocks).filter((i) => !/^clip seconds/.test(i))
+  const done = fs.existsSync(FILE) ? (JSON.parse(fs.readFileSync(FILE, "utf8")) as MtSet).blocks.filter((b) => b.teil !== teil) : []
+  const repeats = clashes(DIR, SKILL, NN, blocks, planBySkill(SET), done)
+  if (SKILL === "schreiben") return [...validateWriting(blocks, EXAM), ...repeats]
+  if (SKILL === "sprechen") return [...validateSprechenTelc(blocks[0]), ...repeats]
+  return [...validateTeil(EXAM, SKILL, teil, blocks).filter((i) => !/^clip seconds/.test(i)), ...repeats]
 }
 
 async function unit(teil: number, set: MtSet): Promise<MtBlock[]> {

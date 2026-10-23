@@ -204,7 +204,9 @@ Each row comes from the exam's blueprint; the source pages are cited there. A ti
 3. **Portal:** a fifth card "Prüfungssimulation" on each exam page with its 10 slots, route `/dashboard/[exam]/simulation/[n]`; admin preview of unpublished simulations as for sets.
 4. **Launch DTZ first** (its 10 sets per skill already exist), then every exam gets its simulations automatically once its sets are reviewed.
 
-## 8. telc B1 Sprechen: build plan (proposed 23.10.2026, not built)
+## 8. telc B1 Sprechen: build plan (proposed 23.10.2026; built 23.10.2026)
+
+**Built:** Anleitung (`lib/modelltest/anleitung-telc-b1.ts`, spoken by Mark) · 20-min preparation with all sheets and notes, early start allowed (practice only) · official order (A opens Teil 1 and 3, B reports first in Teil 2, examiner invites the discussion) · clock per Teil 3/6/6 min, the examiner closes a Teil when time is up and the next starts by itself · live partner in all three Teile (`lib/modelltest/speaking-telc.ts`) · examiner steps in once on a (nearly) silent answer · grading per Teil on the four criteria (`gradeTelcSpeaking`), result /75 with 45 to pass. Still open: role B (`TODO(hannes)`), the free-minutes cap (`FREE_SPEAKING_SECONDS`, 300 s) is shorter than a full telc talk.
 
 Source for the flow: telc Übungstest 1, p. 30–35 (research/telc-b1.md §3e, §5). Scoring is already built and tested:
 `lib/exam/scoring/telc-b1.ts` (`speakingTeilScore`, 15/30/30, pass 45/75).

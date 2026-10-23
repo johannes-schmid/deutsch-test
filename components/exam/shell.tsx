@@ -74,9 +74,10 @@ export function useExamTimer(seconds: number, running: boolean) {
   return left
 }
 
-export function TimerChip({ seconds }: { seconds: number }) {
+/** `lowAt`: from how many seconds left the chip lights up (default 5 minutes; a 3-minute Teil clock uses less). */
+export function TimerChip({ seconds, lowAt = 300 }: { seconds: number; lowAt?: number }) {
   const t = useExamCopy()
-  const low = seconds < 300
+  const low = seconds < lowAt
   return (
     <span
       role="timer"
@@ -145,7 +146,7 @@ function OverviewSheet({ open, onClose, title, items, onJump }: { open: boolean;
  * The glass bar above every exam screen: exit, the skill, progress per Teil, done/total, and the timer.
  * Sticky, so the clock and the way out stay in view over a long text.
  */
-export function ExamBar({ part, sections, label, seconds, onExit, className }: { part?: PartId; sections: ShellSection[]; label: string; seconds?: number; onExit?: () => void; className?: string }) {
+export function ExamBar({ part, sections, label, seconds, lowAt, onExit, className }: { part?: PartId; sections: ShellSection[]; label: string; seconds?: number; lowAt?: number; onExit?: () => void; className?: string }) {
   const t = useExamCopy()
   const done = sections.reduce((n, x) => n + x.done, 0)
   const total = sections.reduce((n, x) => n + x.count, 0)
@@ -157,7 +158,7 @@ export function ExamBar({ part, sections, label, seconds, onExit, className }: {
       {part ? <span className="max-sm:hidden"><PartIcon part={part} size="sm" /></span> : null}
       <Progress sections={sections} label={label} />
       <span className="v-num shrink-0 text-[12.5px] text-v-muted" aria-hidden="true">{done}/{total}</span>
-      {seconds !== undefined ? <TimerChip seconds={seconds} /> : null}
+      {seconds !== undefined ? <TimerChip seconds={seconds} lowAt={lowAt} /> : null}
     </div>
   )
 }
@@ -171,6 +172,7 @@ export function ExamShell({
   sections,
   progressLabel,
   seconds,
+  lowAt,
   onExit,
   overview,
   action,
@@ -181,6 +183,7 @@ export function ExamShell({
   sections: ShellSection[]
   progressLabel: string
   seconds?: number
+  lowAt?: number
   onExit?: () => void
   overview?: { title: string; items: OverviewItem[]; onJump?: (n: number) => void }
   action?: ReactNode
@@ -191,8 +194,9 @@ export function ExamShell({
   const [open, setOpen] = useState(false)
   return (
     <div className={cn("mx-auto flex w-full flex-col gap-3", wide ? "max-w-[1040px]" : "max-w-[560px]")}>
-      <ExamBar part={part} sections={sections} label={progressLabel} seconds={seconds} onExit={onExit} />
-      <div className="nz-app relative flex w-full flex-col overflow-clip rounded-[24px]">
+      <ExamBar part={part} sections={sections} label={progressLabel} seconds={seconds} lowAt={lowAt} onExit={onExit} />
+      {/* --exam-dock: where docked option trays (gaps, word pool) stop, just above the sticky action bar. */}
+      <div className={cn("nz-app relative flex w-full flex-col overflow-clip rounded-[24px]", (action || overview) && "[--exam-dock:84px]")}>
         <div className="flex flex-col gap-5 px-5 pt-6 pb-5">{children}</div>
         {action || overview ? (
           <div className="sticky bottom-0 mt-auto flex items-center gap-2 border-t border-v-line bg-v-surface/70 p-3 backdrop-blur-md">

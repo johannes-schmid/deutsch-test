@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
-import { ConfirmSheet, ExamAudio, ExamButton, ExamCopyProvider, ExamShell, PartIntro, ReadingLayout, ReadingText, SpeakingTask, WritingTask, useExamTimer } from "@/components/exam"
+import { ConfirmSheet, ExamAudio, ExamButton, ExamCopyProvider, ExamReading, ExamShell, PartIntro, ReadingLayout, SpeakingTask, WritingTask, useExamTimer } from "@/components/exam"
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { examPath, type ExamId } from "@/lib/exams"
 import { createClient } from "@/lib/supabase/client"
@@ -91,7 +91,7 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish, 
     <KurztestFrame scene={skill} focus label={C.run.progress(name)}>
       <ExamShell
         part={skill}
-        wide={!!reading}
+        wide={!!reading || block.skill === "lesen"}
         sections={teilSections(blocks, answered, C.teil)}
         progressLabel={C.run.progress(name)}
         seconds={timed ? left : undefined}
@@ -118,7 +118,7 @@ function ClosedTest({ exam, skill, minutes, blocks, values, onChange, onFinish, 
       >
         <p className="text-[15px] leading-relaxed text-v-muted">{block.display.instruction}</p>
         {block.display.clip ? <ExamAudio key={block.id} clip={block.display.clip} /> : null}
-        {reading ? <ReadingLayout key={block.id} answered={answered(block)} total={itemNumbers(block.display.items).length} text={<ReadingText data={reading} />} tasks={items} /> : items}
+        {reading ? <ReadingLayout key={block.id} answered={answered(block)} total={itemNumbers(block.display.items).length} text={<ExamReading skill={block.skill} teil={block.teil} data={reading} />} tasks={items} /> : items}
       </ExamShell>
       {exitSheet}
       <ConfirmSheet open={confirmFinish} onOpenChange={setConfirmFinish} {...C.run.finishConfirm} text={C.run.finishConfirm.text(open)} onConfirm={finish} />

@@ -25,7 +25,7 @@ for (const skill of ["lesen", "hoeren", "schreiben", "sprechen"]) {
   }
   const set = JSON.parse(fs.readFileSync(file, "utf8")) as MtSet
   for (const teil of [...new Set(set.blocks.map((b) => b.teil))]) {
-    const issues = clashes(DIR, skill, NN, set.blocks.filter((b) => b.teil === teil), plan)
+    const issues = clashes(DIR, skill, NN, set.blocks.filter((b) => b.teil === teil), plan, set.blocks.filter((b) => b.teil < teil))
     for (const x of issues) console.log(`${skill} Teil ${teil}: ${x}`)
     found += issues.length
   }

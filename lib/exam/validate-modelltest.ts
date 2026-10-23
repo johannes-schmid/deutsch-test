@@ -202,7 +202,7 @@ export function validateSprechenTelc(b: MtBlock | undefined): string[] {
   const live = b.key.live
   if (!live?.persona) out.push("partner persona missing")
   const secs = du.reduce((n, t) => n + (t.seconds ?? 0), 0)
-  const want: Record<number, [number, number]> = { 1: [60, 150], 2: [120, 270], 3: [120, 270] }
+  const want: Record<number, [number, number]> = { 1: [60, 150], 2: [120, 270], 3: [120, 320] }
   out.push(...range(secs, ...want[b.teil], "du speaking seconds"))
   if (b.teil === 1 && sp.data.points.length < 6) out.push(`${sp.data.points.length} topics on the sheet, blueprint ~7`)
   if (b.teil === 2) {
@@ -210,6 +210,17 @@ export function validateSprechenTelc(b: MtBlock | undefined): string[] {
     if (!/Blatt von/.test(live?.persona ?? "")) out.push("the partner's opinion sheet is missing from the persona")
   }
   if (b.teil === 3 && sp.data.points.at(-1) !== "…") out.push(`planning sheet must end with "…"`)
+  // Official order (Übungstest 1 p. 33): A opens Teil 1 and Teil 3; in Teil 2 the examiner asks B first, then A, then
+  // invites both to discuss. The candidate is always A; the examiner opens and closes every Teil.
+  const first = turns.find((t, i) => i > 0 && t.who !== "pruefer")
+  if (turns[0]?.who !== "pruefer" || turns.at(-1)?.who !== "pruefer") out.push("the examiner opens and closes every Teil")
+  if (b.teil !== 2 && first?.who !== "du") out.push(`in Teil ${b.teil} the candidate (A) speaks first`)
+  if (b.teil === 2) {
+    if (first?.who !== "partner") out.push("in Teil 2 the partner (B) reports first")
+    const report = turns.findIndex((t) => t.who === "du")
+    const next = turns.findIndex((t, i) => i > report && t.who !== "du")
+    if (report < 0 || turns[next]?.who !== "pruefer") out.push("in Teil 2 the examiner invites both to discuss after the two reports")
+  }
   if (b.teil > 1 && (live?.partnerLines?.length ?? 0) < 4) out.push("fewer than 4 partner fallback lines")
   return out
 }

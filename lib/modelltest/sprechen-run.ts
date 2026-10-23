@@ -7,7 +7,8 @@ import type { MtBlock, SpeakPhase } from "./types"
 // Server state of one Sprechen run, kept in mt_attempts.conversation: the lines as played (pre-rendered or live)
 // and the candidate's transcripts, in order. The browser never sends text that ends up in the transcript.
 
-export type RunState = { lines: ConvoLine[]; live: Record<string, string>; upTo: Record<string, number> }
+/** `rescued`: turns where the examiner already stepped in (telc), as "teil-turn". */
+export type RunState = { lines: ConvoLine[]; live: Record<string, string>; upTo: Record<string, number>; rescued?: string[] }
 
 export const emptyState = (): RunState => ({ lines: [], live: {}, upTo: {} })
 
@@ -16,6 +17,18 @@ export function playedBefore(state: RunState, block: MtBlock, i: number): ConvoL
   const turns = block.display.speaking!.turns
   const from = (state.upTo[block.teil] ?? -1) + 1
   return turns.slice(from, i).filter((t) => t.who !== "du").map((t, j) => ({ teil: block.teil, phase: t.phase, who: t.who, text: state.live[`${block.teil}-${from + j}`] ?? t.text }))
+}
+
+/**
+ * The Teil's time is up (telc): records the lines played before turn `from`, then skips to the examiner's closing line,
+ * so the transcript never contains turns that were not played.
+ */
+export function skipTo(state: RunState, block: MtBlock, from: number) {
+  const turns = block.display.speaking!.turns
+  const close = turns.length - 1
+  if (from >= close) return
+  state.lines.push(...playedBefore(state, block, from))
+  state.upTo[block.teil] = close - 1
 }
 
 /** Free Modelltest Sprechen: seconds recorded so far by this user on free sets (FREE_SPEAKING_SECONDS caps it). */

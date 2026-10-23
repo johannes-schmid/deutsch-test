@@ -79,3 +79,8 @@ export function telcB1Result({ written, oral }: { written: number; oral: number 
   const grade: TelcGrade = !passed ? "nicht bestanden" : total >= 270 ? "sehr gut" : total >= 240 ? "gut" : total >= 210 ? "befriedigend" : "ausreichend"
   return { written, oral, total, writtenPassed, oralPassed, passed, grade }
 }
+
+/** Mündlicher Ausdruck timing (p. 5, 30): 20 minutes preparation with all sheets, then ca. 3 / 6 / 6 minutes per Teil. */
+export const TELC_B1_SPEAKING_PREP_MINUTES = 20
+export const TELC_B1_SPEAKING_MINUTES: Record<1 | 2 | 3, number> = { 1: 3, 2: 6, 3: 6 }
+export const TELC_B1_SPEAKING_TEILE: Record<1 | 2 | 3, string> = { 1: "Einander kennenlernen", 2: "Über ein Thema sprechen", 3: "Gemeinsam etwas planen" }

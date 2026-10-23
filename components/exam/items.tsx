@@ -5,6 +5,7 @@ import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { pictoIcon } from "@/lib/exam/pictos"
 import type { ChoiceData, GapData, MatchData, PictureData, TrueFalse, TrueFalseData } from "@/lib/exam/types"
+import { LetterSheet } from "./sheet"
 import { ItemHeader, Mark, OptionCard, isChosen, optionState, stateSurface, useExamCopy } from "./primitives"
 
 type Review = { correct: string }
@@ -170,8 +171,8 @@ export function GapItem({ data, value, onChange, review }: { data: GapData; valu
   const active = gaps.find((g) => g.n === open)
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-[17px] leading-[2] whitespace-pre-line">
-        {data.parts.map((p, i) => {
+      <LetterSheet parts={data.parts}>
+        {(para) => para.map((p, i) => {
           if (typeof p === "string") return <span key={i}>{p}</span>
           const graded = review ? (value[p.n] === review[p.n] ? "right" : "wrong") : null
           return (
@@ -191,10 +192,13 @@ export function GapItem({ data, value, onChange, review }: { data: GapData; valu
             </button>
           )
         })}
-      </p>
+      </LetterSheet>
       {active && !review ? (
-        <div key={active.n} className="nz-screen flex flex-wrap items-center gap-2 rounded-2xl bg-v-soft p-2" role="radiogroup" aria-label={t.gap(active.n)}>
-          <span className="v-num px-2 text-[13px] text-v-muted">{active.n}</span>
+        // Docked above the action bar, so the options stay in view while the letter scrolls. No entrance animation:
+        // it changes with every pick, dozens of times per test.
+        <div className="sticky bottom-[var(--exam-dock,12px)] z-10 flex flex-col gap-2.5 rounded-2xl bg-v-surface p-3 shadow-[0_8px_30px_-12px_rgb(14_19_34/0.35)] ring-1 ring-v-ink/15 backdrop-blur-md" role="radiogroup" aria-label={t.gap(active.n)}>
+          <span className="px-1 text-[14px] font-semibold">{t.pickWord(active.n)}</span>
+          <div className="flex flex-wrap gap-2">
           {active.options.map((o) => (
             <button
               key={o}
@@ -205,11 +209,12 @@ export function GapItem({ data, value, onChange, review }: { data: GapData; valu
                 onChange?.(active.n, o)
                 setOpen(gaps.find((g) => g.n !== active.n && !value[g.n])?.n ?? null)
               }}
-              className={cn("h-11 cursor-pointer rounded-full px-5 text-[15.5px] font-medium transition-[background-color,transform] duration-150 active:scale-[0.97]", value[active.n] === o ? "bg-v-ink text-v-bg" : "bg-v-surface")}
+              className={cn("h-11 cursor-pointer rounded-full px-5 text-[15.5px] font-medium transition-[background-color,transform] duration-150 active:scale-[0.97]", value[active.n] === o ? "bg-v-ink text-v-bg" : "bg-v-soft hover:bg-v-line")}
             >
               {o}
             </button>
           ))}
+          </div>
         </div>
       ) : null}
     </div>

@@ -3,9 +3,9 @@
 import { useRef, useState, type ReactNode } from "react"
 import { Eye, EyeOff, Image as ImageIcon, Play, Square } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { ChoiceItem, ExamAudio, ExamButton, ExamStage, FeedbackSheet, GapItem, MatchItem, PictureItem, ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, fmt } from "@/components/exam"
+import { ChoiceItem, ExamAudio, ExamButton, ExamReading, ExamStage, FeedbackSheet, GapTask, MatchTask, PictureItem, ReadingLayout, SpeakingTask, TrueFalseItem, WritingTask, fmt } from "@/components/exam"
 import type { ItemKey, KurztestBlock, KurztestItem } from "@/lib/exam/kurztest"
-import type { TrueFalse } from "@/lib/exam/types"
+import type { PartId, TrueFalse } from "@/lib/exam/types"
 import { EXAMS, EXAM_IDS, type ExamId } from "@/lib/exams"
 import { partSpec } from "@/lib/exam/blueprint"
 
@@ -17,7 +17,7 @@ function Feedback({ k, value }: { k: ItemKey; value: string | undefined }) {
   return <FeedbackSheet right={value === k.correct} solution={k.correct} explanation={k.explanation} evidence={k.evidence} />
 }
 
-function Item({ it, label, keys, values, onChange, reveal }: { it: KurztestItem; label?: string; keys: ItemKey[]; values: Values; onChange: (n: number, v: string) => void; reveal: boolean }) {
+function Item({ it, skill, label, keys, values, onChange, reveal }: { it: KurztestItem; skill: PartId; label?: string; keys: ItemKey[]; values: Values; onChange: (n: number, v: string) => void; reveal: boolean }) {
   const keyOf = (n: number) => keys.find((a) => a.n === n)!
   const reviewMap = (ns: number[]) => Object.fromEntries(ns.map((n) => [n, keyOf(n).correct]))
   if (it.type === "rf" || it.type === "choice" || it.type === "picture") {
@@ -41,9 +41,9 @@ function Item({ it, label, keys, values, onChange, reveal }: { it: KurztestItem;
     <div className="flex flex-col gap-3">
       {label ? <span className="text-[13px] text-v-muted">{label}</span> : null}
       {it.type === "match" ? (
-        <MatchItem data={it.data} noMatch={it.noMatch} value={values} onChange={onChange} review={reveal ? reviewMap(ns) : undefined} />
+        <MatchTask skill={skill} data={it.data} noMatch={it.noMatch} value={values} onChange={onChange} review={reveal ? reviewMap(ns) : undefined} />
       ) : (
-        <GapItem data={it.data} value={values} onChange={onChange} review={reveal ? reviewMap(ns) : undefined} />
+        <GapTask data={it.data} value={values} onChange={onChange} review={reveal ? reviewMap(ns) : undefined} />
       )}
       {reveal ? ns.map((n) => <Feedback key={n} k={keyOf(n)} value={values[n]} />) : null}
     </div>
@@ -57,7 +57,7 @@ function Items({ block, values, onChange, reveal }: { block: KurztestBlock; valu
   return (
     <div className="flex flex-col gap-8">
       {block.display.items.map((it, i) => (
-        <Item key={i} it={it} label={i === 0 ? label : undefined} keys={block.key.answers} values={values} onChange={onChange} reveal={reveal} />
+        <Item key={i} it={it} skill={block.skill} label={i === 0 ? label : undefined} keys={block.key.answers} values={values} onChange={onChange} reveal={reveal} />
       ))}
     </div>
   )
@@ -161,7 +161,7 @@ export function BlockReview({ block, actions, extra }: { block: KurztestBlock; a
   const onChange = (n: number, v: string) => setValues((m) => ({ ...m, [n]: v }))
   const items = <Items block={block} values={values} onChange={onChange} reveal={reveal} />
   const { reading, clip, writing, speaking } = block.display
-  const wide = !!reading || !!writing
+  const wide = !!reading || !!writing || block.skill === "lesen"
   const facts = [
     block.generated.textType,
     clip?.src ? `${clip.duration.toFixed(1)} s` : null,
@@ -198,7 +198,7 @@ export function BlockReview({ block, actions, extra }: { block: KurztestBlock; a
             <ReadingLayout
               answered={Object.keys(values).length}
               total={block.key.answers.length}
-              text={<ReadingText data={reading} highlight={reveal ? block.key.answers.map((a) => a.evidence?.hit).find((h) => h && reading.paragraphs.some((p) => p.includes(h))) : undefined} />}
+              text={<ExamReading exam={block.exam} skill={block.skill} teil={block.teil} data={reading} highlight={reveal ? block.key.answers.map((a) => a.evidence?.hit).find((h) => h && reading.paragraphs.some((p) => p.includes(h))) : undefined} />}
               tasks={items}
             />
           ) : clip ? (

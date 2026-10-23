@@ -8,7 +8,7 @@ import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
   ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
-  ReadingLayout, ReadingText, SpeakingTask, TrueFalseItem, WritingTask, type ShellSection,
+  ReadingLayout, ReadingText, SpeakingTask, SpeakingSheet, SheetPeek, SpeakingPrep, NotesPeek, TrueFalseItem, WritingTask, type ShellSection,
   AdBoard, ArticleText, HeadlineMatch, WordPoolGap,
 } from "@/components/exam"
 import type { TrueFalse } from "@/lib/exam/types"
@@ -163,6 +163,7 @@ export function ExamGallery() {
   const [pool, setPool] = useState<Record<number, string>>({ 31: "für" })
   const [sheet, setSheet] = useState<"exit" | "time" | null>(null)
   const [note, setNote] = useState("Liebe Frau Brandt,\n\nich kann am Samstag leider nicht kommen. ")
+  const [prepNotes, setPrepNotes] = useState("Teil 1: Fragen – Familie? Arbeit?\nTeil 2: Rad = gesund, kein Stau\nTeil 3: Samstag, Kantine, Kuchen")
   return (
     <div className="v-container flex flex-col gap-12 py-10 sm:py-14">
       <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -215,7 +216,7 @@ export function ExamGallery() {
         </ExamStage>
       </Block>
 
-      <Block title="Prüfungsheft: telc B1 (Entwurf)" note="Lesen und Sprachbausteine wie im gedruckten Heft: Zeitungsmeldungen in schmaler Spalte mit leerer Überschriftenzeile, ein Zeitschriftenartikel mit Vorspann, eine Anzeigenseite in fünf Druckstilen (nur Tinte, damit Glut für den Zustand frei bleibt) und ein Brief mit einem einzigen Wortpool a–o darunter. Benutzte Wörter werden blass und zeigen ihre Lücke. Noch nicht im Modelltest.">
+      <Block title="Prüfungsheft: Zeitung, Artikel, Anzeigen, Wortpool" note="Lesen und Sprachbausteine wie im gedruckten Heft: Zeitungsmeldungen in schmaler Spalte mit leerer Überschriftenzeile, ein Zeitschriftenartikel mit Vorspann, eine Anzeigenseite in fünf Druckstilen (nur Tinte, damit Glut für den Zustand frei bleibt) und ein Brief mit einem einzigen Wortpool a–o darunter. Benutzte Wörter werden blass und zeigen ihre Lücke. Im Modelltest, im Gratis-Test und in der Prüfansicht automatisch nach der Form der Aufgabe gewählt.">
         <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
           <Panel><HeadlineMatch data={HEADLINES} value={heads} onChange={(n, k) => setHeads((m) => ({ ...m, [n]: k }))} /></Panel>
           <Panel><div className="max-w-[640px]"><ArticleText data={ARTICLE} /></div></Panel>
@@ -287,6 +288,29 @@ export function ExamGallery() {
           </div>
         </ExamStage>
         <p className="flex items-center gap-2 text-[13.5px] text-v-muted"><Users className="size-4" aria-hidden="true" /> Ela ist eine echte Stimme aus der Besetzung in <code className="v-num">data/tts-voices.json</code>.</p>
+      </Block>
+
+      <Block title="Sprechen telc: Aufgabenblätter, Vorbereitung, Notizen" note="telc Mündlicher Ausdruck: jedes Teil hat ein gedrucktes Blatt (Papier, Teil als Mono-Label, wem es gehört rechts): Themen (Teil 1), eine Meinung aus einer Zeitschrift mit Name, Alter, Beruf (Teil 2, nur das eigene Blatt) und die Planungsliste mit „…“ (Teil 3). Vorher 20 Minuten Vorbereitung mit allen Blättern und einem Notizblock; im Gespräch sind Blatt und Notizen eingeklappt, damit Gespräch und Mikrofon sichtbar bleiben.">
+        <ExamStage scene="sprechen" framed>
+          <div className="nz-app mx-auto flex max-w-[1040px] flex-col rounded-[24px] px-5 pt-6 pb-5">
+            <SpeakingPrep
+              lead="Wie in der Prüfung hast du 20 Minuten. Lies alle drei Aufgabenblätter und schreib dir Stichpunkte auf."
+              notes={prepNotes}
+              onNotes={setPrepNotes}
+              sheets={<>
+                <SpeakingSheet label="Teil 1 · Einander kennenlernen" task="Unterhalten Sie sich mit Ihrer Partnerin oder Ihrem Partner über diese Themen." kind="topics" title="Einander kennenlernen" points={["Name", "Herkunft", "Wohnen", "Familie", "Deutsch gelernt (wo?)", "Arbeit oder Schule", "Sprachen"]} tag="Für euch beide" />
+                <SpeakingSheet label="Teil 2 · Über ein Thema sprechen" task="Sie haben in einer Zeitschrift eine Meinung gelesen. Berichten Sie davon und sprechen Sie dann zusammen über das Thema." kind="opinion" title="Fahrrad statt Auto" points={["Ilse Brandt, 61 Jahre, Apothekerin: „Ich fahre jeden Tag mit dem Rad zur Arbeit. Das hält mich fit, und ich stehe nie im Stau. Bei Regen ziehe ich eben eine Jacke an.“"]} tag="Nur dein Blatt" />
+                <SpeakingSheet label="Teil 3 · Gemeinsam etwas planen" task="Ein Kollege geht in Rente. Planen Sie zusammen eine kleine Feier." kind="plan" title="Abschiedsfeier" points={["Wann?", "Wo?", "Essen", "Geschenk", "…"]} tag="Für euch beide" />
+              </>}
+            />
+          </div>
+        </ExamStage>
+        <ExamStage scene="sprechen" framed>
+          <div className="nz-app mx-auto flex max-w-[560px] flex-col gap-3 rounded-[24px] px-5 pt-6 pb-5">
+            <NotesPeek notes={"Teil 2: Rad = gesund, kein Stau\nAuto: Kinder, Einkauf"} />
+            <SheetPeek label="Teil 2 · Über ein Thema sprechen" task="Sie haben in einer Zeitschrift eine Meinung gelesen." kind="opinion" title="Fahrrad statt Auto" points={["Ilse Brandt, 61 Jahre, Apothekerin: „Ich fahre jeden Tag mit dem Rad zur Arbeit.“"]} tag="Nur dein Blatt" />
+          </div>
+        </ExamStage>
       </Block>
 
       <Block title="Start Deutsch 1" note="Bilder als Piktogramm mit Beschriftung (lib/exam/pictos.ts, bis es Zeichnungen gibt). Gezogene Karten stehen über dem Gespräch. Gibt es nur eine Schreibaufgabe, entfällt die Wahl.">
