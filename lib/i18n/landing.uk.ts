@@ -94,7 +94,7 @@ export const uk: LandingCopy = {
     ],
   },
   cta: { h2: "Готові до дня іспиту?", text: "Пройдіть свій перший пробний іспит зараз. Безкоштовно і без реєстрації.", button: "Почати безкоштовний тест" },
-  footer: { blurb: "Реалістичні пробні іспити Goethe, telc, DTZ і ÖSD. Ті самі частини, той самий час.", disclaimer: "Не пов’язано з BAMF, telc, g.a.s.t., Goethe-Institut чи ÖSD", imprint: "Impressum", privacy: "Захист даних", about: "Про нас", blog: "Блог", contact: "Контакти", groups: { exam: "Іспит", info: "Інфо" } },
+  footer: { blurb: "Реалістичні пробні іспити Goethe, telc, DTZ і ÖSD. Ті самі частини, той самий час.", disclaimer: "Не пов’язано з BAMF, telc, g.a.s.t., Goethe-Institut чи ÖSD", imprint: "Impressum", privacy: "Захист даних", terms: "Умови (AGB)", withdrawal: "Право на відмову", cancel: "Скасувати договір тут", about: "Про нас", blog: "Блог", contact: "Контакти", groups: { exam: "Іспит", info: "Інфо" } },
   parts: {
     hoeren: { name: "Аудіювання", meta: "бл. 25 хв" },
     lesen: { name: "Читання", meta: "45 хв" },

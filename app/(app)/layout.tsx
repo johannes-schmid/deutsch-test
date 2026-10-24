@@ -3,7 +3,8 @@ import { Suspense } from "react"
 import { Host_Grotesk, Reddit_Mono } from "next/font/google"
 import { DesignShell } from "@/components/design/shell"
 import { SiteGlow } from "@/components/design/site-chrome"
-import { AccountRow, Avatar, PortalMobileHeader, PortalSidebar, PortalTabBar } from "@/components/portal/portal-shell"
+import { AccountRow, Avatar, PortalMobileHeader, PortalSidebar, PortalTabBar, SidePlan } from "@/components/portal/portal-shell"
+import { passView } from "@/lib/billing/view"
 import { getSessionUser } from "@/lib/supabase/server"
 import { portalFamilies } from "@/lib/portal"
 import "../(main)/landing.css"
@@ -15,6 +16,12 @@ export const metadata: Metadata = { robots: { index: false, follow: false } }
 
 async function Account() {
   return <AccountRow user={await getSessionUser()} />
+}
+
+async function Plan() {
+  const user = await getSessionUser()
+  const pass = user ? await passView(user.id) : null
+  return <SidePlan until={pass && (pass.state === "renewing" || pass.state === "canceled") ? pass.until : null} />
 }
 
 async function HeaderAvatar() {
@@ -31,6 +38,11 @@ export default async function PortalLayout({ children }: { children: React.React
           <SiteGlow />
           <PortalSidebar
             groups={groups}
+            plan={
+              <Suspense fallback={<SidePlan until={null} />}>
+                <Plan />
+              </Suspense>
+            }
             account={
               <Suspense fallback={<AccountRow user={null} />}>
                 <Account />

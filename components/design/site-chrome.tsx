@@ -74,7 +74,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
   const sl = siteLocale(locale)
   const u = UI[sl]
   const at = (path: string) => lp(sl, path)
-  // Impressum and Datenschutz exist in German only: they are the legally binding texts.
+  // Impressum, Datenschutz, AGB and Widerruf exist in German only: they are the legally binding texts.
   const groups = [
     { title: f.groups.exam, links: [{ label: "DTZ", href: at("/blog/dtz-pruefung") }, { label: t.nav.links[1].label, href: at("/gratis-test") }, { label: "A2 → B1", href: at("/a2-zu-b1") }, { label: u.footerCitizenship, href: at("/b1-einbuergerung") }, { label: t.nav.links[2].label, href: at("/preise") }] },
     { title: f.groups.info, links: [...(livePosts().length ? [{ label: f.blog, href: at("/blog") }] : []), { label: f.about, href: at("/ueber-uns") }, { label: f.contact, href: at("/kontakt") }, { label: f.imprint, href: "/impressum" }, { label: f.privacy, href: "/datenschutz" }] },
@@ -110,6 +110,11 @@ export function SiteFooter({ locale }: { locale: Locale }) {
       </div>
       <div className="flex flex-col gap-1.5 px-2 pt-5 text-[12.5px] text-v-muted sm:flex-row sm:justify-between sm:gap-6">
         <span>{OPERATOR.company} · KvK {OPERATOR.kvk} · {locale === "en" ? "VAT" : u.vat} {OPERATOR.vatId}</span>
+        <span className="flex flex-wrap gap-x-4 gap-y-1">
+          <Link href="/agb" className="rounded transition-colors hover:text-v-ink">{f.terms}</Link>
+          <Link href="/widerruf" className="rounded transition-colors hover:text-v-ink">{f.withdrawal}</Link>
+          <Link href="/dashboard/konto/kuendigen" className="rounded font-semibold text-v-ink underline-offset-4 hover:underline">{f.cancel}</Link>
+        </span>
         <span>{f.disclaimer}</span>
       </div>
       <Consent locale={locale} />

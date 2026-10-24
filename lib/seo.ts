@@ -36,7 +36,9 @@ export const OPERATOR = {
   person: "Amber van der Zalm",
   kvk: "77533216",
   vatId: "NL003205081B10",
-  address: null as string | null,
+  // Same company and address as inburgeringoefenen.nl (its /terugbetalingsbeleid), checked 2026-10-24.
+  address: "van Naeltwijckstraat 13, 2274 NV Voorburg, Niederlande" as string | null,
+  phone: "+31 6 57587278",
   email: "kontakt@deutschtest-ueben.de",
 }
 export const CONTACT_EMAIL = OPERATOR.email

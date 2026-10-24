@@ -596,3 +596,23 @@
 - Typed answers needed no migration: the canonical answer is the one option, the accepted forms stay in the server-only key and `scoreClosed` reads them from the keyed blocks.
 - The first A2 live lines were wrong in ways only a real call shows: the examiner commented and said "Frau Amira", and the Teil 3 partner talked for 70 words. Explicit "nur die Frage, ohne Namen" and a word range per turn fixed both.
 **Lesson:** Before drafting a new exam, run its set 1 through every runner path (closed, writing, speaking, result); call the live prompts once with a scripted transcript before rendering audio.
+
+## 2026-10-24 — Prüfungspass payments on Mollie (subscription)
+**Changed:** Mollie checkout → mandate → monthly subscription (`lib/billing/{period,process,mollie,view}.ts`, `app/api/mollie/{checkout,webhook,status,cancel}`, `app/api/cron/reconcile-payments` + `vercel.json`), `payments` + `mollie_customers` tables (`supabase/migrations/20261024120000_payments.sql`, applied locally via psql), `ownsExam()` from `payments`, new prices 19.95 / 44.95 then 19.95 monthly (`lib/pricing.ts`), PassBuilder checkout mode, `/dashboard/zahlung`, `/dashboard/konto/kuendigen`, PassCard/sidebar pass states, activation + cancellation email drafts (`lib/email/`), copy de/uk/ru.
+**Outcome:** SUCCESS (23 vitest tests, tsc, eslint, `next build`; real Mollie test-mode round trip: card payment → paid → period to +3 months → subscription €19.95 "1 month" starting at the period end → Kündigung cancels it in Mollie, access kept to the end)
+**What worked / went wrong:** Writing `processPayment()` pure with injected store/API made the idempotency rules testable before any route existed. The long-running dev server (started the day before) served a stale chunk of `lib/pricing.ts` without the new export: "Cannot read properties of undefined" at runtime while `next build` passed; a restart fixed it. A server page can't pass a lucide icon into a component from a `"use client"` file: the shared panel moved to a server-safe `billing-panel.tsx`. In a 390px viewport the fixed tab bar covers a bottom button, so a Playwright/devtools click hits the tab bar unless the button is scrolled to centre first.
+**Lesson:** Payment state changes go through one idempotent, unit-tested function called from every entry point (webhook, return poll, cron). If dev shows an undefined export the build doesn't, restart the dev server before debugging the code. Icons and other components only cross into client files as rendered elements.
+
+## 2026-10-24 — Billing emails in the Nachtzug style, approved
+**Changed:** `lib/email/templates/billing.ts` rebuilt on the design tokens: logo tile + wordmark, a Nacht hero card (pill, heading, big date, white pill button), a paper facts card with a mist note; Hannes approved both drafts.
+**Outcome:** SUCCESS (tsc, eslint; checked at 390 in Chrome)
+**What worked / went wrong:** Email-safe tables with a solid `background-color` under every gradient keep the look in Gmail, which drops gradients. The logo is the live `icon-192.png`, since SVG doesn't render in Gmail.
+**Lesson:** Build emails from the site's tokens and card shapes, not a generic receipt layout; a plain first draft read as off-brand.
+
+## 2026-10-24 — Legal blockers for payments
+**Changed:** Impressum address + phone (`lib/seo.ts`, same operator as inburgeringoefenen.nl), new `/agb`, `/widerruf` (statutory model + § 356 Abs. 5 + Muster-Formular), public `/kuendigen` + `app/api/kuendigung` (`cancellation_requests`, `user_id_by_email()`, migration `20261024150000`), `lib/billing/cancel.ts`, footer legal line, AGB/Widerruf links under the order button, consent confirmation in the activation email, receipt email for unmatched Kündigungen, Datenschutz sections for account, Mollie, Resend, Kündigung.
+**Outcome:** SUCCESS (tsc, eslint, 23 tests, `next build`; public form cancelled a live Mollie test subscription; validation, rate limit at 5/IP/day and unknown-email path checked)
+**What worked / went wrong:** The public form answers the same for known and unknown emails, so it can't be used to find out who has an account. Resend returns 403/422 until the domain is verified, which the senders log and swallow.
+**Lesson:** Legal texts are drafts until reviewed: keep `TODO(hannes)` in code comments, never as visible page text, except where a decision is genuinely missing.
+**Follow-up (same day):** Hannes dropped the public cancellation form: cancelling is the one-click button in the account (`/dashboard/konto/kuendigen`), linked from the footer as "Verträge hier kündigen". `/kuendigen`, `app/api/kuendigung`, the receipt email and `cancellation_requests` were removed (the migration had only run locally; table dropped there).
+

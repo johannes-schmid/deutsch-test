@@ -29,7 +29,7 @@ ${tests.join("\n")}
 
 ## Angebot
 
-- [Preise](${u("/preise")}): der Prüfungspass für alle Teile und Modelltests, Einmalzahlung ohne Abo, Preise inkl. MwSt.
+- [Preise](${u("/preise")}): der Prüfungspass für alle Teile und Modelltests, 1 oder 3 Monate, danach monatlich und jederzeit kündbar, Preise inkl. MwSt.
 - [Über uns](${u("/ueber-uns")}): wer die Seite macht, wie Aufgaben entstehen und wo KI eingesetzt wird
 
 ## Optional

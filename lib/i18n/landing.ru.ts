@@ -94,7 +94,7 @@ export const ru: LandingCopy = {
     ],
   },
   cta: { h2: "Готовы к дню экзамена?", text: "Пройдите свой первый пробный экзамен прямо сейчас. Бесплатно и без регистрации.", button: "Начать бесплатный тест" },
-  footer: { blurb: "Реалистичные пробные экзамены Goethe, telc, DTZ и ÖSD. Те же части, то же время.", disclaimer: "Не связаны с BAMF, telc, g.a.s.t., Goethe-Institut или ÖSD", imprint: "Impressum", privacy: "Защита данных", about: "О нас", blog: "Блог", contact: "Контакты", groups: { exam: "Экзамен", info: "Инфо" } },
+  footer: { blurb: "Реалистичные пробные экзамены Goethe, telc, DTZ и ÖSD. Те же части, то же время.", disclaimer: "Не связаны с BAMF, telc, g.a.s.t., Goethe-Institut или ÖSD", imprint: "Impressum", privacy: "Защита данных", terms: "Условия (AGB)", withdrawal: "Право на отказ", cancel: "Расторгнуть договор здесь", about: "О нас", blog: "Блог", contact: "Контакты", groups: { exam: "Экзамен", info: "Инфо" } },
   parts: {
     hoeren: { name: "Аудирование", meta: "ок. 25 мин" },
     lesen: { name: "Чтение", meta: "45 мин" },

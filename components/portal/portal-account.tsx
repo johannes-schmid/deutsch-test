@@ -7,7 +7,7 @@ import { ProgressBar } from "@/components/portal/portal-overview"
 import type { Brand } from "@/lib/exams"
 import type { PartId } from "@/lib/exam/types"
 import type { SessionUser } from "@/lib/supabase/server"
-import { PORTAL_PASS } from "@/lib/auth/redirect"
+import { PORTAL_CANCEL, PORTAL_PASS } from "@/lib/auth/redirect"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 
 const T = PORTAL_COPY.konto
@@ -56,9 +56,13 @@ export function AccountCard({ user, signOut }: { user: SessionUser | null; signO
   )
 }
 
-/** The learner's Prüfungspass: free (what is free, the way to the pass) or active (until when, extend). */
-export function PassCard({ until }: { until: string | null }) {
-  const active = until != null
+export type PassView = { state: "free" | "renewing" | "canceled" | "ended"; until: string | null; renewal: string }
+
+/** The learner's Prüfungspass: free, renewing (paid until, monthly price, cancel link), cancelled (runs until) or ended. */
+export function PassCard({ pass }: { pass: PassView }) {
+  const active = pass.state === "renewing" || pass.state === "canceled"
+  const lead =
+    pass.state === "renewing" ? T.passRenews(pass.until!, pass.renewal) : pass.state === "canceled" ? T.passCanceled(pass.until!) : pass.state === "ended" ? T.passEnded : T.passFreeLead
   return (
     <section aria-labelledby="pass-h" className={active ? "nz-night flex flex-col gap-4 rounded-[24px] p-5 shadow-[0_40px_80px_-44px_rgba(8,10,30,0.7)] sm:p-6" : `${PANEL} gap-4`}>
       <div className="flex items-center justify-between gap-3">
@@ -66,20 +70,32 @@ export function PassCard({ until }: { until: string | null }) {
           <Ticket className="size-[18px]" strokeWidth={1.85} aria-hidden="true" />
           {T.passH}
         </h2>
-        {active ? (
+        {pass.state === "renewing" ? (
           <span className="flex items-center gap-1 rounded-full bg-(--p-glow) px-2.5 py-1 text-[12.5px] font-semibold text-[#0A0D18]">
             <Check className="size-3.5" strokeWidth={3} aria-hidden="true" />
             {T.passActive}
           </span>
+        ) : pass.state === "canceled" ? (
+          <span className="rounded-full bg-white/15 px-2.5 py-1 text-[12.5px] font-semibold">{T.passCanceledChip}</span>
         ) : (
           <span className="v-num rounded-full bg-v-soft px-2.5 py-1 text-[12.5px] font-medium">{T.passFree}</span>
         )}
       </div>
-      <p className={active ? "text-[15px] text-white/80 text-pretty" : "text-[15px] text-v-muted text-pretty"}>{active ? T.passUntil(until) : T.passFreeLead}</p>
-      <VButton kind={active ? "light" : "ink"} render={<Link href={PORTAL_PASS} />} nativeButton={false} className="w-full">
-        {active ? T.passExtend : T.passCta}
-        <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
-      </VButton>
+      <p className={active ? "text-[15px] text-white/80 text-pretty" : "text-[15px] text-v-muted text-pretty"}>{lead}</p>
+      {pass.state === "renewing" ? (
+        <Link
+          id="kuendigen"
+          href={PORTAL_CANCEL}
+          className="w-fit rounded-full text-[14.5px] font-semibold text-white underline decoration-white/40 underline-offset-4 transition-[text-decoration-color] duration-150 ease-out hover:decoration-white"
+        >
+          {T.passCancel}
+        </Link>
+      ) : (
+        <VButton kind={active ? "light" : "ink"} render={<Link href={PORTAL_PASS} />} nativeButton={false} className="w-full">
+          {pass.state === "free" ? T.passCta : T.passBuyAgain}
+          <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+        </VButton>
+      )}
     </section>
   )
 }

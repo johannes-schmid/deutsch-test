@@ -1,5 +1,7 @@
 export const PORTAL_HOME = "/dashboard"
 export const PORTAL_PASS = "/dashboard/preise"
+export const PORTAL_CANCEL = "/dashboard/konto/kuendigen"
+export const PORTAL_PAYMENT = "/dashboard/zahlung"
 export const PORTAL_ACCOUNT = "/dashboard/konto"
 
 /** Only same-site paths: "/x" passes, "//evil.com", "/\\evil.com" and absolute URLs fall back. */

@@ -43,6 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...livePosts().flatMap((p) => everyLocale(`/blog/${p.slug}`, "monthly", 0.7, (l) => livePosts(l).some((x) => x.slug === p.slug), p.reviewed)),
     ...["/ueber-uns", "/kontakt"].flatMap((p) => everyLocale(p, "yearly", 0.3)),
     // Impressum and Datenschutz are German only (the binding texts) and noindex until the operator's address is filled in.
-    ...(LEGAL_COMPLETE ? ["/impressum", "/datenschutz"].map((p) => ({ url: absUrl(p), changeFrequency: "yearly" as const, priority: 0.2 })) : []),
+    ...(LEGAL_COMPLETE ? ["/impressum", "/datenschutz", "/agb", "/widerruf"].map((p) => ({ url: absUrl(p), changeFrequency: "yearly" as const, priority: 0.2 })) : []),
   ]
 }

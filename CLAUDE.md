@@ -27,7 +27,7 @@ that looks like Docker is broken. Don't move this one back to the defaults.
 - `.env.development.local` points at the local stack, so `npm run dev` can never write to production.
 - Local Google sign-in needs `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` in `supabase/.env` before
   `supabase start`; the Google OAuth client must list `http://127.0.0.1:54521/auth/v1/callback`.
-- Build: `npx next build` · Types: `npx tsc --noEmit` (both verified). Unit/E2E: not set up yet.
+- Build: `npx next build` · Types: `npx tsc --noEmit` (both verified). Unit: `npm test` (vitest, billing logic in `lib/billing/`). E2E: not set up yet.
 - `next.config.ts` has `cacheComponents` + `partialPrefetching` on. Don't read `params` or call
   `usePathname` outside `<Suspense>`; prefer static routes (see LEARNINGS.md).
 
@@ -129,8 +129,10 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   the platform; candidates take all parts on one day. This deliberately differs from inburgeringoefenen.nl,
   which sells per module. Only list exams as included once they have reviewed Modelltests; never promise
   future ones ("Neue Modelltests während deiner Laufzeit sind inklusive" is fine).
-- **Pricing (Hannes, 2026-10-23):** a one-time payment for a fixed term, **no subscription**: 1 Monat €24.90,
-  3 Monate €39.90 (recommended). Benchmark: TestGerman €19.90/month, €44.90 / 3 months, auto-renewing.
+- **Pricing (Hannes, 2026-10-24; replaces the one-time pass of 2026-10-23):** first term 1 Monat €19.95 or
+  3 Monate €44.95 (recommended), then it **renews monthly at €19.95**, cancellable any time to the end of the paid
+  period (Kündigungsbutton, § 312k BGB). Same gross price in DE and AT. Benchmark: TestGerman €19.90/month,
+  €44.90 / 3 months, auto-renewing.
   Savings are shown against n × the 1-month price, never as a struck-through "old" price.
   Prices are always a concrete € amount, never "ab X".
 - **Prüfungssimulation (Hannes, 2026-10-23):** every exam also gets 10 full simulations (all four skills in one go).
@@ -199,15 +201,16 @@ most likely because most of its content was AI-written. Don't repeat that here.
 ## 5. Stack
 
 **Default: the same as inburgering-website** (both Dutch sites run on Next.js, not vanilla JS), so
-the exam engine, admin, TTS pipeline and funnel can be ported. **Payments differ: Stripe, not
-Mollie.** Don't port the Dutch sites' Mollie routes; rebuild that layer on Stripe.
+the exam engine, admin, TTS pipeline and funnel can be ported. **Payments: Mollie** (Hannes, 2026-10-24), on the
+same Mollie organisation as the Dutch sites with its own website profile. Ported from inburgering's flow
+(first payment → mandate → subscription), but access lives in our `payments` table, never in `user_metadata`.
 
 - **Next.js 16** (App Router, TypeScript strict) · **Tailwind v4** + **shadcn/ui** · **next-intl**
   (de + 6 explanation locales)
 - **Supabase:** Postgres, RLS, Auth, Storage, **EU region**
-- **Stripe** for payments: Checkout + Billing subscriptions, Customer Portal for cancel/plan
-  changes, **Stripe Tax** for the 19% German VAT (OSS). For DE, enable cards, SEPA Direct Debit,
-  PayPal, Klarna, Apple Pay and Google Pay. Read the official Stripe docs before building.
+- **Mollie** for payments: hosted checkout with a `first` payment (mandate), then a monthly subscription
+  (`lib/billing/`). Recurring works with cards (incl. Apple/Google Pay), PayPal and EPS (needs SEPA Direct Debit on the
+  profile); Klarna can't recur. Mollie computes no VAT: we store the detected country per payment for the OSS return.
 - **Resend** · **Vercel** hosting + crons
 - **PostHog** (+ Meta Pixel for ads) and GA4. **TODO(hannes):** use the shared PostHog project
   split by `$host` (as the Dutch sites do), or a separate one?
@@ -313,7 +316,13 @@ app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}  # bra
 lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
 app/(main)/(site)/                   # German text pages on one layout: dtz, preise, a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, impressum, datenschutz
 components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/sources), TestCta, Todo marker
-lib/pricing.ts · seo/facts.md        # the one price source (Prüfungspass 1/3 Monate, one-time) · every number/legal fact with source + date
+lib/pricing.ts · seo/facts.md        # the one price source (Prüfungspass 1/3 Monate, then RENEWAL monthly) · every number/legal fact with source + date
+lib/billing/                         # ★ payments: period.ts (terms, grace), process.ts (idempotent payment → state, *.test.ts), mollie.ts (server adapters, syncPayment), view.ts (portal PassView)
+app/api/mollie/{checkout,webhook,status,cancel} · app/api/cron/reconcile-payments  # checkout (plan id + consent only) · webhook · return poll · Kündigung · daily re-sync (vercel.json)
+lib/email/{billing.ts,templates/billing.ts}  # activation + cancellation emails via Resend REST; nothing sends without RESEND_API_KEY
+app/(main)/(site)/{agb,widerruf}/    # AGB, Widerrufsbelehrung + Muster-Formular; German only, linked in the footer legal line with "Verträge hier kündigen" (→ /dashboard/konto/kuendigen)
+lib/billing/cancel.ts                # cancelForUser(): the one cancel path (portal button)
+supabase/migrations/*_payments.sql   # payments (one row per Mollie payment, period, country, revoked) + mollie_customers (customer, subscription, canceled_at); server writes only
 lib/i18n/pass.ts                     # PassBuilder copy (de/uk/ru); components/design/pass-builder.tsx = the configurator
 app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
@@ -326,7 +335,7 @@ app/(auth)/{registrieren,anmelden}/  # Google-only sign-up/sign-in (noindex); co
 app/(app)/dashboard/                 # portal (login-only): overview by level → [exam] (4 skill cards) → [exam]/[skill] (10 Modelltests); components/portal/ = sidebar, tab bar, account, exam pages; /dashboard/preise (Prüfungspass) and /dashboard/konto (account: progress, pass, sign-in; portal-account.tsx)
 app/(app)/dashboard/[exam]/[skill]/[n]/ # ★ the Modelltest runner page + actions.ts (startAttempt, submitClosed, submitWriting, finishSpeaking; session + ownership checked in each)
 components/modelltest/               # runner.tsx (intro → test → result; Hören follows the one track, Lesen/Schreiben timed) · speaking.tsx (live pair exam)
-lib/entitlements.ts                  # ownsExam(): the one paid-access check; one active Prüfungspass = every exam; false until Stripe (Modelltest 1 per skill is free)
+lib/entitlements.ts                  # ownsExam() + passStatus(): the one paid-access check, from `payments`; one active Prüfungspass = every exam (Modelltest 1 per skill is free)
 lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
 lib/modelltest/speaking-telc.ts      # telc B1 Sprechen live: partner per Teil, Teil-1 extra topic, examiner rescue line, grading per Teil on the 4 official criteria (/75)
 lib/modelltest/anleitung-telc-b1.ts  # telc B1 Anleitung per skill (audio: scripts/modelltest/anleitung.ts --exam telc-b1)
@@ -387,14 +396,15 @@ app/(main)/(site)/blog/              # /blog index + one static route per post; 
   (the KNM key leaked that way). **Never log personal data.**
 - **GDPR:** EU hosting. Cookie consent before Meta Pixel and PostHog marketing events.
   Datenschutzerklärung and Impressum (§ 5 DDG) are mandatory.
-- **Stripe webhooks:**
-  - Verify the signature (`stripe.webhooks.constructEvent` on the raw body).
-  - Make them idempotent by storing processed `event.id`s.
-  - Handle events arriving out of order.
-  - Grant access from the webhook, never from the success-page redirect.
-  - Webhook reliability was an issue on the Dutch site (with Mollie).
-- **Stripe keys:** test-mode keys locally, live keys only on Vercel production. The secret key and
-  webhook secret are server-only env vars.
+- **Mollie webhooks** post only an id: always fetch the payment from the API, never trust a posted status.
+  - Every sync (webhook, `/api/mollie/status` return poll, daily reconcile cron) runs `processPayment()`, which is
+    idempotent (claim on `status <> 'paid'`) and unit-tested (`npm test`). Keep changes test-first.
+  - The subscription starts one term after the first payment (`startDate`), never today: inburgering charged month one twice.
+  - Never create a subscription from a payment that has `subscriptionId` (renewals would compound).
+  - Webhook reliability was an issue on the Dutch site: the return poll and the cron are the safety nets, keep both.
+- **Mollie keys:** `test_` key locally (`.env.development.local`), `live_` only on Vercel production. `MOLLIE_WEBHOOK_URL`
+  is unset in production (falls back to SITE_URL); locally Mollie rejects localhost, so only the return poll runs.
+  `CRON_SECRET` is required for the reconcile cron (it fails closed).
 - **Every route that spends credits** (TTS, grading) checks auth/admin and is capped.
   - Free tests: Schreiben/Sprechen take the email **before** the test, then `lib/kurztest/limits.ts` caps runs per IP,
     per email and per day. Sprechen in the free test is **transcribe-only** (ElevenLabs Scribe, direct), no model

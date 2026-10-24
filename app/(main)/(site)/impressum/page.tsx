@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { PageHeader, Prose, Todo } from "@/components/design/content-page"
 import { LEGAL_COMPLETE, OPERATOR } from "@/lib/seo"
 
@@ -26,6 +27,8 @@ export default function ImpressumPage() {
         <h2>Kontakt</h2>
         <p>
           E-Mail: <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>
+          <br />
+          Telefon: <a href={`tel:${OPERATOR.phone.replace(/\s/g, "")}`}>{OPERATOR.phone}</a>
         </p>
 
         <h2>Register und Umsatzsteuer</h2>
@@ -48,6 +51,12 @@ export default function ImpressumPage() {
         <p>
           Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
           Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h2>Verträge und Widerruf</h2>
+        <p>
+          Es gelten unsere <a href="/agb">AGB</a>. Hier findest du die <a href="/widerruf">Widerrufsbelehrung</a> und
+          kannst deinen <Link href="/dashboard/konto/kuendigen">Vertrag kündigen</Link>.
         </p>
       </Prose>
     </>

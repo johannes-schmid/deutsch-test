@@ -97,7 +97,7 @@ const de = {
     ],
   },
   cta: { h2: "Bereit für den Prüfungstag?", text: "Mach jetzt deinen ersten Modelltest. Gratis und ohne Anmeldung.", button: "Gratis Test starten" },
-  footer: { blurb: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Gleiche Teile, gleiche Zeiten.", disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", about: "Über uns", blog: "Blog", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
+  footer: { blurb: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Gleiche Teile, gleiche Zeiten.", disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", terms: "AGB", withdrawal: "Widerrufsbelehrung", cancel: "Verträge hier kündigen", about: "Über uns", blog: "Blog", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
   parts: {
     hoeren: { name: "Hören", meta: "ca. 25 Min" },
     lesen: { name: "Lesen", meta: "45 Min" },
@@ -251,7 +251,7 @@ const en: LandingCopy = {
     ],
   },
   cta: { h2: "Ready for exam day?", text: "Take your first mock exam now. Free, no account needed.", button: "Start free test" },
-  footer: { blurb: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Same parts, same timing.", disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", about: "About us", blog: "Blog", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
+  footer: { blurb: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Same parts, same timing.", disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", terms: "Terms (AGB)", withdrawal: "Right of withdrawal", cancel: "Cancel contracts here", about: "About us", blog: "Blog", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
   parts: {
     hoeren: { name: "Listening", meta: "approx. 25 min" },
     lesen: { name: "Reading", meta: "45 min" },

@@ -11,8 +11,8 @@ If it isn't in this file, it doesn't ship.
 | Einbürgerung needs "ausreichende Kenntnisse der deutschen Sprache" = B1 | /b1-einbuergerung | [StAG § 10 Abs. 1 Nr. 6, Abs. 4](https://www.gesetze-im-internet.de/stag/__10.html) | 2026-10-12 |
 | Exceptions for illness, disability, age | /b1-einbuergerung | StAG § 10 Abs. 6 (same link) | 2026-10-12 |
 | Timings: Hören ca. 25, Lesen 45, Schreiben 30, Sprechen ca. 16 Min | /blog/dtz-pruefung, landing | CLAUDE.md §2. TODO(hannes): official source (telc DTZ Modelltest / Handbuch) | unverified |
-| VAT 19% included in prices | /preise | German standard rate (UStG § 12 Abs. 1) | 2026-10-12 |
-| Prüfungspass 24.90 € (1 Monat) / 39.90 € (3 Monate), one-time, incl. VAT | /preise, /dashboard/preise | Set by Hannes, `lib/pricing.ts` | 2026-10-23 |
+| VAT included in prices (DE 19 %, AT 20 %, same gross price) | /preise | UStG § 12 Abs. 1; AT UStG § 10 Abs. 1. TODO(hannes): confirm OSS setup with the tax advisor | 2026-10-24 |
+| Prüfungspass 19.95 € (1 Monat) / 44.95 € (3 Monate), then 19.95 € per month, cancellable any time, incl. VAT | /preise, /dashboard/preise | Set by Hannes, `lib/pricing.ts` | 2026-10-24 |
 
 ## Free tests: exam formats (`lib/exams.ts`, `/gratis-test`)
 

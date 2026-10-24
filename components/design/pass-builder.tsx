@@ -1,12 +1,13 @@
 "use client"
 
-import { useState, useSyncExternalStore } from "react"
+import { useId, useRef, useState, useSyncExternalStore } from "react"
 import Link from "next/link"
-import { ArrowRight, CalendarCheck, CalendarClock, Check, Lock } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { ArrowRight, CalendarCheck, CalendarClock, Check, LoaderCircle, Repeat } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { PASS_COPY } from "@/lib/i18n/pass"
 import { NUMBER_LOCALE, type SiteLocale } from "@/lib/i18n/locale"
-import { PLANS, formatEuro, passEnds, perMonthCents, savingCents, savingsPercent, singleMonthsCents } from "@/lib/pricing"
+import { PLANS, RENEWAL, formatEuro, passEnds, perMonthCents, savingCents, savingsPercent, singleMonthsCents } from "@/lib/pricing"
 import { cn } from "@/lib/utils"
 
 const H = "text-[19px] leading-tight font-semibold tracking-[-0.01em]"
@@ -19,9 +20,11 @@ const todayKey = () => new Date().toDateString()
 /**
  * The Prüfungspass configurator, after inburgeringoefenen.nl's ModulePicker: the choices on the left, the running
  * summary on a Nacht card on the right (sticky from lg, below the choices on phones). The exam date only recommends a
- * plan; the learner can still pick freely. Prices come from `lib/pricing.ts`; checkout will recompute them server-side.
+ * plan; the learner can still pick freely. Prices come from `lib/pricing.ts`; /api/mollie/checkout recomputes them.
+ * `checkout` (portal): consent + "Zahlungspflichtig bestellen" → Mollie. Otherwise (public /preise) the button leads to
+ * `buyHref`, the portal page behind the Google sign-in. `renewing`: the learner already has a renewing pass.
  */
-export function PassBuilder({ locale, freeHref }: { locale: SiteLocale; freeHref: string }) {
+export function PassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref }: { locale: SiteLocale; freeHref: string; buyHref?: string; checkout?: boolean; renewing?: boolean; accountHref?: string }) {
   const T = PASS_COPY[locale]
   const numberLocale = NUMBER_LOCALE[locale]
   const [when, setWhen] = useState<string | null>(null)
@@ -91,7 +94,7 @@ export function PassBuilder({ locale, freeHref }: { locale: SiteLocale; freeHref
                   </span>
                   <span className="flex items-baseline gap-2">
                     <span className="v-display text-[38px] leading-none tabular-nums">{euro(p.cents)}</span>
-                    <span className="text-[14px] text-v-muted">{T.oneTime}</span>
+                    <span className="text-[14px] text-v-muted">{T.forTerm(T.planName(p.months))}</span>
                   </span>
                   {pct > 0 ? (
                     <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[14px] text-v-muted">
@@ -104,6 +107,10 @@ export function PassBuilder({ locale, freeHref }: { locale: SiteLocale; freeHref
               )
             })}
           </div>
+          <p className="mt-4 flex items-start gap-2 text-[14.5px] text-v-muted">
+            <Repeat className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+            {T.renews(euro(RENEWAL.cents))}
+          </p>
         </fieldset>
 
         <section aria-labelledby="pass-inc" className="mt-7 border-t border-v-line pt-7">
@@ -141,10 +148,11 @@ export function PassBuilder({ locale, freeHref }: { locale: SiteLocale; freeHref
           <div aria-live="polite" className="flex flex-col gap-1.5">
             <p className="flex items-baseline gap-2">
               <span className="v-display text-[52px] leading-none tabular-nums">{euro(plan.cents)}</span>
-              <span className="text-[15px] text-white/70">{T.oneTime}</span>
+              <span className="text-[15px] text-white/70">{T.forTerm(T.planName(plan.months))}</span>
             </p>
             {plan.months > 1 ? <p className="v-num text-[13.5px] text-white/70">{T.perMonth(euro(perMonthCents(plan)))}</p> : null}
             {saving > 0 ? <p className="text-[15px] font-semibold text-(--p-glow)">{T.saving(euro(saving))}</p> : null}
+            <p className="text-[14.5px] text-white/85">{T.renews(euro(RENEWAL.cents))}</p>
           </div>
           <p className="flex items-center gap-2 text-[14.5px] text-white/85">
             <CalendarClock className="size-4 shrink-0" aria-hidden="true" />
@@ -158,15 +166,95 @@ export function PassBuilder({ locale, freeHref }: { locale: SiteLocale; freeHref
               </li>
             ))}
           </ul>
-          <div className="flex flex-col gap-3">
-            <VButton kind="light" size="lg" disabled className="w-full">
-              <Lock className="size-4" aria-hidden="true" />
-              {T.soon}
-            </VButton>
-            <p className="text-[13.5px] text-white/70">{T.soonNote}</p>
-          </div>
+          {renewing ? (
+            <div className="flex flex-col gap-3">
+              <p className="text-[14.5px] text-white/85">{T.renewing}</p>
+              <VButton kind="light" size="lg" render={<Link href={accountHref ?? "/dashboard/konto"} />} nativeButton={false} className="w-full">
+                {T.renewingCta}
+                <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+              </VButton>
+            </div>
+          ) : checkout ? (
+            <Checkout planId={plan.id} T={T} />
+          ) : (
+            <div className="flex flex-col gap-3">
+              <VButton kind="light" size="lg" render={<Link href={buyHref ?? "/dashboard/preise"} />} nativeButton={false} className="w-full">
+                {T.buy}
+                <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+              </VButton>
+              <p className="text-[13.5px] text-white/70">{T.buyNote}</p>
+            </div>
+          )}
         </div>
       </aside>
+    </div>
+  )
+}
+
+/** Consent (required before paying), the order button, and the hand-off to Mollie's hosted checkout. */
+function Checkout({ planId, T }: { planId: string; T: (typeof PASS_COPY)[SiteLocale] }) {
+  const [consent, setConsent] = useState(false)
+  const [state, setState] = useState<"idle" | "busy" | "consent" | "error">("idle")
+  const box = useRef<HTMLInputElement>(null)
+  const id = useId()
+  const router = useRouter()
+
+  async function order() {
+    if (!consent) {
+      setState("consent")
+      box.current?.focus()
+      return
+    }
+    setState("busy")
+    try {
+      const res = await fetch("/api/mollie/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ planId, consent: true }) })
+      const data = await res.json().catch(() => ({}))
+      if (res.status === 409) return router.push("/dashboard/konto")
+      if (!res.ok || !data.checkoutUrl) throw new Error(data.error ?? "failed")
+      window.location.assign(data.checkoutUrl)
+    } catch {
+      setState("error")
+    }
+  }
+
+  const message = state === "consent" ? T.consentNeeded : state === "error" ? T.error : null
+  return (
+    <div className="flex flex-col gap-3">
+      <label htmlFor={id} className="group flex cursor-pointer items-start gap-3 rounded-[16px] bg-white/8 p-3.5 text-[14px] leading-snug text-white/90 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-white">
+        <input
+          ref={box}
+          id={id}
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => { setConsent(e.target.checked); if (e.target.checked && state === "consent") setState("idle") }}
+          aria-invalid={state === "consent"}
+          aria-describedby={message ? `${id}-msg` : undefined}
+          className="peer sr-only"
+        />
+        <span
+          aria-hidden="true"
+          className={cn(
+            "mt-px grid size-5 shrink-0 place-items-center rounded-[6px] shadow-[inset_0_0_0_1.5px_rgba(255,255,255,0.45)] transition-[background-color,box-shadow,transform] duration-150 ease-out group-active:scale-[0.92] peer-checked:bg-(--p-glow) peer-checked:shadow-none [&>svg]:scale-75 [&>svg]:opacity-0 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100",
+            state === "consent" && "shadow-[inset_0_0_0_2px_var(--p-glow)]"
+          )}
+        >
+          <Check className="size-3.5 text-[#0A0D18] transition-[opacity,transform] duration-150 ease-out" strokeWidth={3.25} />
+        </span>
+        {T.consent}
+      </label>
+      <VButton kind="light" size="lg" onClick={order} disabled={state === "busy"} aria-busy={state === "busy"} className="w-full disabled:opacity-80">
+        {state === "busy" ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" /> : null}
+        {state === "busy" ? T.ordering : T.order}
+      </VButton>
+      <p id={`${id}-msg`} aria-live="polite" className={cn("text-[13.5px]", message ? "font-semibold text-(--p-glow)" : "text-white/70")}>
+        {message ?? T.payNote}
+      </p>
+      <p className="text-[13.5px] text-white/70">
+        {T.legal.pre}{" "}
+        <a href="/agb" target="_blank" className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">{T.legal.terms}</a>
+        {T.legal.mid}{" "}
+        <a href="/widerruf" target="_blank" className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">{T.legal.withdrawal}</a>.
+      </p>
     </div>
   )
 }

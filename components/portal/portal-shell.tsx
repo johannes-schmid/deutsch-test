@@ -96,7 +96,22 @@ function SideLevel({ level }: { level: NavLevel }) {
 }
 
 /** The floating glass sidebar from lg up: overview, the exam families with their levels, the plan card and the account row. */
-export function PortalSidebar({ groups, account, className }: { groups: NavFamily[]; account: React.ReactNode; className?: string }) {
+/** The plan card at the foot of the sidebar: "Gratis" with the way to the pass, or the active pass with its end date. */
+export function SidePlan({ until }: { until: string | null }) {
+  return (
+    <div className="flex flex-col gap-1 rounded-[20px] bg-v-soft/70 p-4">
+      <span className="text-[12.5px] text-v-muted">{T.plan.label}</span>
+      <b className="text-[17px] font-semibold">{until ? T.plan.active : T.plan.name}</b>
+      {until ? <span className="text-[14px] text-v-muted">{T.plan.until(until)}</span> : null}
+      <Link href={until ? PORTAL_ACCOUNT : PORTAL_PASS} className="group mt-1 flex w-fit items-center gap-1.5 text-[14px] font-semibold">
+        {until ? T.plan.manage : T.plan.cta}
+        <ArrowRight className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
+      </Link>
+    </div>
+  )
+}
+
+export function PortalSidebar({ groups, account, plan, className }: { groups: NavFamily[]; account: React.ReactNode; plan?: React.ReactNode; className?: string }) {
   const overview = (
     <>
       <LayoutGrid className="size-[18px]" strokeWidth={2} aria-hidden="true" />
@@ -137,14 +152,7 @@ export function PortalSidebar({ groups, account, className }: { groups: NavFamil
           </ul>
         </div>
       </nav>
-      <div className="flex flex-col gap-1 rounded-[20px] bg-v-soft/70 p-4">
-        <span className="text-[12.5px] text-v-muted">{T.plan.label}</span>
-        <b className="text-[17px] font-semibold">{T.plan.name}</b>
-        <Link href={PORTAL_PASS} className="group mt-1 flex w-fit items-center gap-1.5 text-[14px] font-semibold">
-          {T.plan.cta}
-          <ArrowRight className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
-        </Link>
-      </div>
+      {plan ?? <SidePlan until={null} />}
       <div className="border-t border-v-line pt-2">{account}</div>
     </aside>
   )

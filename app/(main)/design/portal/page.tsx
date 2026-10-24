@@ -112,11 +112,14 @@ export default function PortalDesignPage() {
           </ol>
         </Spec>
 
-        <Spec name="PassBuilder" note="/preise und /dashboard/preise: der Prüfungspass, nach dem ModulePicker von inburgeringoefenen.nl. Links die Wahl (Prüfungstermin → empfohlene Laufzeit, Laufzeit als Radio-Kacheln, was drin ist, was gratis bleibt), rechts die Zusammenfassung auf Nacht (ab lg sticky, auf dem Handy darunter): Preis einmalig, pro Monat, Ersparnis gegenüber Einzelmonaten, Enddatum, Vertrauenszeilen, Kauf-Knopf (bis Stripe: „Bald verfügbar“).">
-          <PassBuilder locale="de" freeHref="#" />
+        <Spec name="PassBuilder" note="/preise und /dashboard/preise: der Prüfungspass, nach dem ModulePicker von inburgeringoefenen.nl. Links die Wahl (Prüfungstermin → empfohlene Laufzeit, Laufzeit als Radio-Kacheln, was drin ist, was gratis bleibt), rechts die Zusammenfassung auf Nacht (ab lg sticky, auf dem Handy darunter): Preis für die erste Laufzeit, pro Monat, Ersparnis gegenüber Einzelmonaten, danach monatlich, Ende der ersten Laufzeit, Vertrauenszeilen. Öffentlich: „Pass kaufen“ ins Portal. Im Portal (checkout): Einwilligung (Häkchen in Glut) und „Zahlungspflichtig bestellen“ → Mollie; läuft schon ein Pass, ein Hinweis mit Link zum Konto.">
+          <PassBuilder locale="de" freeHref="#" buyHref="#" />
+          <div className="mt-6">
+            <PassBuilder locale="de" freeHref="#" checkout />
+          </div>
         </Spec>
 
-        <Spec name="PassCard · ProgressCard · AccountCard" note="/dashboard/konto, nach /dashboard/profiel von inburgeringoefenen.nl. PassCard: gratis (Papier, Tinten-Knopf zum Pass) oder aktiv (Nacht, Glut-Pille, Enddatum, Verlängern). ProgressCard: je DTZ-Teil und jede andere gestartete Prüfung eine Zeile mit Balken; ohne Versuch ein Hinweis darüber. AccountCard: E-Mail und Anmeldung als Einstellungszeilen, Abmelden darunter.">
+        <Spec name="PassCard · ProgressCard · AccountCard" note="/dashboard/konto, nach /dashboard/profiel von inburgeringoefenen.nl. PassCard: gratis oder abgelaufen (Papier, Tinten-Knopf zum Pass), verlängert sich (Nacht, Glut-Pille „Aktiv“, bezahlt bis, Monatspreis, Link „Vertrag kündigen“) oder gekündigt (Nacht, Pille „Gekündigt“, läuft bis, „Neuen Pass kaufen“). ProgressCard: je DTZ-Teil und jede andere gestartete Prüfung eine Zeile mit Balken; ohne Versuch ein Hinweis darüber. AccountCard: E-Mail und Anmeldung als Einstellungszeilen, Abmelden darunter.">
           <div className="grid max-w-[1000px] grid-cols-[minmax(0,1fr)] items-start gap-4 lg:grid-cols-[minmax(0,1fr)_340px]">
             <ProgressCard
               empty={null}
@@ -128,8 +131,9 @@ export default function PortalDesignPage() {
               ]}
             />
             <div className="flex flex-col gap-4">
-              <PassCard until={null} />
-              <PassCard until="23. Januar 2027" />
+              <PassCard pass={{ state: "free", until: null, renewal: "19,95 €" }} />
+              <PassCard pass={{ state: "renewing", until: "24. Januar 2027", renewal: "19,95 €" }} />
+              <PassCard pass={{ state: "canceled", until: "24. Januar 2027", renewal: "19,95 €" }} />
               <AccountCard user={USER} signOut={null} />
             </div>
           </div>

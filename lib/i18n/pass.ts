@@ -9,7 +9,10 @@ export type PassCopy = {
   planH: string
   planName: (months: number) => string
   recommended: string
-  oneTime: string
+  /** Under a price: what the first payment covers. */
+  forTerm: (plan: string) => string
+  /** What follows the first term (monthly renewal at the 1-month price, cancellable). */
+  renews: (price: string) => string
   perMonth: (price: string) => string
   save: (pct: number) => string
   compare: (months: number, price: string) => string
@@ -25,8 +28,20 @@ export type PassCopy = {
   ends: (date: string) => string
   endsAfter: (plan: string) => string
   trust: string[]
-  soon: string
-  soonNote: string
+  /** Public /preise: the button leads into the portal (Google sign-in first). */
+  buy: string
+  buyNote: string
+  /** Portal checkout. TODO(hannes): have the consent wording (§ 356 Abs. 5 / § 357a BGB) checked before going live. */
+  consent: string
+  consentNeeded: string
+  order: string
+  ordering: string
+  payNote: string
+  /** Under the order button: the AGB and the Widerrufsbelehrung (German-only pages). */
+  legal: { pre: string; terms: string; mid: string; withdrawal: string }
+  error: string
+  renewing: string
+  renewingCta: string
 }
 
 const planName = (months: number) => (months === 1 ? "1 Monat" : `${months} Monate`)
@@ -42,7 +57,8 @@ const de: PassCopy = {
   planH: "Wie lange willst du üben?",
   planName,
   recommended: "Empfohlen",
-  oneTime: "einmalig",
+  forTerm: (plan) => `für ${plan}`,
+  renews: (price) => `Danach ${price} im Monat. Jederzeit kündbar.`,
   perMonth: (price) => `${price} im Monat`,
   save: (pct) => `−${pct} %`,
   compare: (months, price) => `statt ${months} × ${price}`,
@@ -61,11 +77,20 @@ const de: PassCopy = {
   summaryH: "Dein Prüfungspass",
   summaryScope: "Alle Teile, alle Modelltests",
   saving: (amount) => `Du sparst ${amount}`,
-  ends: (date) => `Endet am ${date}`,
-  endsAfter: (plan) => `Endet nach ${plan}`,
-  trust: ["Einmal zahlen, kein Abo", "Endet von selbst, keine Kündigung", "Preis inkl. 19 % MwSt."],
-  soon: "Bald verfügbar",
-  soonNote: "Den Pass kannst du bald hier kaufen. Bis dahin ist Modelltest 1 in jedem Teil gratis.",
+  ends: (date) => `Erste Laufzeit bis ${date}`,
+  endsAfter: (plan) => `Erste Laufzeit: ${plan}`,
+  trust: ["Kündigen mit einem Klick im Konto", "Preis inkl. MwSt."],
+  buy: "Pass kaufen",
+  buyNote: "Du meldest dich mit Google an. Dann geht es zur Zahlung.",
+  consent: "Mein Pass soll sofort starten. Mir ist bekannt, dass mein Widerrufsrecht damit erlischt.",
+  consentNeeded: "Bitte bestätige zuerst, dass dein Pass sofort starten soll.",
+  order: "Zahlungspflichtig bestellen",
+  ordering: "Weiter zur Zahlung …",
+  payNote: "Du zahlst sicher über Mollie. Danach bist du sofort wieder hier.",
+  legal: { pre: "Es gelten unsere", terms: "AGB", mid: ". Mehr zum Widerruf in der", withdrawal: "Widerrufsbelehrung" },
+  error: "Die Zahlung konnte nicht starten. Versuch es noch einmal.",
+  renewing: "Dein Pass läuft schon und verlängert sich jeden Monat.",
+  renewingCta: "Zu deinem Konto",
 }
 
 function monthLabel(n: number) {
@@ -87,7 +112,8 @@ const uk: PassCopy = {
   planH: "Скільки часу ви хочете тренуватися?",
   planName: monthLabel,
   recommended: "Рекомендовано",
-  oneTime: "одноразово",
+  forTerm: (plan) => `за ${plan}`,
+  renews: (price) => `Далі ${price} на місяць. Скасувати можна будь-коли.`,
   perMonth: (price) => `${price} на місяць`,
   save: (pct) => `−${pct} %`,
   compare: (months, price) => `замість ${months} × ${price}`,
@@ -106,11 +132,20 @@ const uk: PassCopy = {
   summaryH: "Ваш екзаменаційний пропуск",
   summaryScope: "Усі частини, усі пробні іспити",
   saving: (amount) => `Ви заощаджуєте ${amount}`,
-  ends: (date) => `Діє до ${date}`,
-  endsAfter: (plan) => `Закінчується через ${plan}`,
-  trust: ["Одноразова оплата, без підписки", "Закінчується сам, скасовувати не треба", "Ціна з 19 % ПДВ"],
-  soon: "Незабаром",
-  soonNote: "Незабаром пропуск можна буде купити тут. До того часу пробний іспит 1 у кожній частині безкоштовний.",
+  ends: (date) => `Перший період до ${date}`,
+  endsAfter: (plan) => `Перший період: ${plan}`,
+  trust: ["Скасування одним кліком в акаунті", "Ціна з ПДВ"],
+  buy: "Купити пропуск",
+  buyNote: "Ви входите через Google. Потім переходите до оплати.",
+  consent: "Мій пропуск має почати діяти одразу. Я знаю, що через це втрачаю право на відмову.",
+  consentNeeded: "Спочатку підтвердьте, що пропуск має почати діяти одразу.",
+  order: "Замовити з оплатою",
+  ordering: "Перехід до оплати …",
+  payNote: "Ви безпечно платите через Mollie. Потім одразу повертаєтеся сюди.",
+  legal: { pre: "Діють наші", terms: "умови (AGB)", mid: ". Про відмову від договору:", withdrawal: "Widerrufsbelehrung" },
+  error: "Не вдалося почати оплату. Спробуйте ще раз.",
+  renewing: "Ваш пропуск уже діє і продовжується щомісяця.",
+  renewingCta: "До акаунта",
 }
 
 function monthsRu(n: number) {
@@ -132,7 +167,8 @@ const ru: PassCopy = {
   planH: "Сколько времени вы хотите тренироваться?",
   planName: (months) => `${months} ${monthsRu(months)}`,
   recommended: "Рекомендуем",
-  oneTime: "разово",
+  forTerm: (plan) => `на ${plan}`,
+  renews: (price) => `Затем ${price} в месяц. Отменить можно в любой момент.`,
   perMonth: (price) => `${price} в месяц`,
   save: (pct) => `−${pct} %`,
   compare: (months, price) => `вместо ${months} × ${price}`,
@@ -151,11 +187,20 @@ const ru: PassCopy = {
   summaryH: "Ваш экзаменационный пропуск",
   summaryScope: "Все части, все пробные экзамены",
   saving: (amount) => `Вы экономите ${amount}`,
-  ends: (date) => `Действует до ${date}`,
-  endsAfter: (plan) => `Заканчивается через ${plan}`,
-  trust: ["Разовая оплата, без подписки", "Заканчивается сам, отменять не нужно", "Цена с 19 % НДС"],
-  soon: "Скоро в продаже",
-  soonNote: "Скоро пропуск можно будет купить здесь. До тех пор пробный экзамен 1 в каждой части бесплатный.",
+  ends: (date) => `Первый период до ${date}`,
+  endsAfter: (plan) => `Первый период: ${plan}`,
+  trust: ["Отмена одним кликом в аккаунте", "Цена с НДС"],
+  buy: "Купить пропуск",
+  buyNote: "Вы входите через Google. Затем переходите к оплате.",
+  consent: "Мой пропуск должен начать действовать сразу. Я знаю, что из-за этого теряю право на отказ.",
+  consentNeeded: "Сначала подтвердите, что пропуск должен начать действовать сразу.",
+  order: "Заказать с оплатой",
+  ordering: "Переход к оплате …",
+  payNote: "Вы безопасно платите через Mollie. Затем сразу возвращаетесь сюда.",
+  legal: { pre: "Действуют наши", terms: "условия (AGB)", mid: ". Об отказе от договора:", withdrawal: "Widerrufsbelehrung" },
+  error: "Не удалось начать оплату. Попробуйте ещё раз.",
+  renewing: "Ваш пропуск уже действует и продлевается каждый месяц.",
+  renewingCta: "В аккаунт",
 }
 
 export const PASS_COPY: Record<SiteLocale, PassCopy> = { de, uk, ru }

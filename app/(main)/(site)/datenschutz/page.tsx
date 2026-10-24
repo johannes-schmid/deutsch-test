@@ -9,8 +9,9 @@ export const metadata: Metadata = {
   robots: { index: LEGAL_COMPLETE, follow: true },
 }
 
-// Mirrors what the code does today: Google Analytics only after opt-in (components/design/consent.tsx), Kurztest data in a private Vercel Blob store,
-// Schreiben graded by Anthropic, Sprechen transcribed by ElevenLabs. Update this page before adding a tracker or payments.
+// Mirrors what the code does today: Google Analytics only after opt-in (components/design/consent.tsx), Kurztest data and accounts in
+// Supabase (EU), Google sign-in, payments via Mollie (lib/billing/), billing emails via Resend,
+// Schreiben graded by Anthropic, Sprechen transcribed by ElevenLabs. Update this page before adding a tracker or a new service.
 export default function DatenschutzPage() {
   const mail = <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>
   return (
@@ -19,7 +20,7 @@ export default function DatenschutzPage() {
         crumbs={[{ name: "Start", path: "/" }, { name: "Datenschutz", path: "/datenschutz" }]}
         h1="Datenschutzerklärung"
         lead="Hier steht, welche Daten wir verarbeiten, warum wir das tun und welche Rechte du hast."
-        meta="Stand: 13. Oktober 2026"
+        meta="Stand: 24. Oktober 2026"
       />
       <Prose>
         <h2>1. Wer ist verantwortlich?</h2>
@@ -85,7 +86,35 @@ export default function DatenschutzPage() {
           Art. 6 Abs. 1 lit. a DSGVO). Du kannst die Einwilligung jederzeit widerrufen, zum Beispiel per E-Mail an {mail}.
         </p>
 
-        <h2>4. Feedback mit KI</h2>
+        <h2>4. Dein Konto</h2>
+        <p>
+          Für Modelltests meldest du dich mit Google an. Google schickt uns dabei deinen Namen, deine E-Mail-Adresse und
+          dein Profilbild. Wir speichern dein Konto, deine Antworten in den Modelltests, deine Ergebnisse und bei Sprechen
+          deine Aufnahmen in einem geschützten Speicher, auf den nur du und wir zugreifen.
+        </p>
+        <p>Rechtsgrundlage: Wir brauchen die Daten, damit du die Plattform nutzen kannst (Art. 6 Abs. 1 lit. b DSGVO).</p>
+
+        <h2>5. Wenn du den Prüfungspass kaufst</h2>
+        <p>
+          Du zahlst über <strong>Mollie B.V.</strong>, Keizersgracht 126, 1015 CW Amsterdam, Niederlande. Mollie verarbeitet deine
+          Zahlungsdaten (zum Beispiel Karte, PayPal-Konto oder IBAN) als eigener Verantwortlicher. Mehr dazu:{" "}
+          <a href="https://www.mollie.com/de/privacy" rel="noopener">Datenschutzerklärung von Mollie</a>.
+        </p>
+        <p>
+          Wir bekommen von Mollie keine Kartennummer und kein Passwort. Wir speichern: welchen Pass du gekauft hast, Betrag,
+          Datum, Status der Zahlung, wie lange dein Pass läuft, das Land, das Mollie bei der Zahlung erkennt (für die
+          Umsatzsteuer), und wann du zugestimmt hast, dass dein Pass sofort startet.
+        </p>
+        <p>
+          Wir schicken dir E-Mails zu deinem Vertrag: die Bestätigung des Kaufs und die Bestätigung einer Kündigung. Dafür
+          nutzen wir <strong>Resend</strong>. Das sind keine Werbe-E-Mails.
+        </p>
+        <p>
+          Rechtsgrundlage: Vertrag (Art. 6 Abs. 1 lit. b DSGVO) und gesetzliche Aufbewahrungspflichten für Rechnungs- und
+          Zahlungsdaten (Art. 6 Abs. 1 lit. c DSGVO).
+        </p>
+
+        <h2>6. Feedback mit KI</h2>
         <p>
           Bei Schreiben schicken wir deinen Text an ein Sprachmodell von Anthropic (Claude). Es bewertet den Text
           nach den Kriterien der Prüfung. Bei Sprechen wandelt ElevenLabs deine Aufnahmen in Text um. Deine
@@ -96,10 +125,12 @@ export default function DatenschutzPage() {
           dich davon ab. Eine automatisierte Entscheidung im Sinne von Art. 22 DSGVO findet nicht statt.
         </p>
 
-        <h2>5. Wer deine Daten bekommt</h2>
+        <h2>7. Wer deine Daten bekommt</h2>
         <p>Wir arbeiten mit diesen Dienstleistern. Sie verarbeiten Daten nur in unserem Auftrag (Art. 28 DSGVO).</p>
         <ul>
-          <li><strong>Vercel Inc.</strong>: Hosting der Website und Speicher für Testergebnisse.</li>
+          <li><strong>Vercel Inc.</strong>: Hosting der Website.</li>
+          <li><strong>Supabase Inc.</strong>: Datenbank, Anmeldung und Speicher, mit Servern in der EU.</li>
+          <li><strong>Resend Inc.</strong>: Versand der E-Mails zu deinem Vertrag.</li>
           <li><strong>Anthropic PBC</strong>: Feedback für Schreiben.</li>
           <li><strong>ElevenLabs Inc.</strong>: Umwandlung von Sprachaufnahmen in Text, und die Stimmen in den Hörtexten.</li>
           <li><strong>Google Ireland Limited</strong>: Statistik mit Google Analytics, nur mit deiner Einwilligung.</li>
@@ -109,13 +140,19 @@ export default function DatenschutzPage() {
           die Standardvertragsklauseln der EU-Kommission. Wir verkaufen deine Daten nie.
         </p>
 
-        <h2>6. Wie lange wir Daten speichern</h2>
         <p>
-          Wir speichern deine E-Mail-Adresse und dein Ergebnis, bis du die Löschung verlangst oder deine Einwilligung
-          widerrufst. <Todo>TODO(hannes): feste Höchstdauer festlegen, z. B. 24 Monate</Todo>
+          Mollie verarbeitet Zahlungen als eigener Verantwortlicher, nicht in unserem Auftrag (siehe Nr. 5).
         </p>
 
-        <h2>7. Deine Rechte</h2>
+        <h2>8. Wie lange wir Daten speichern</h2>
+        <p>
+          Zahlungs- und Vertragsdaten bewahren wir so lange auf, wie das Steuerrecht es verlangt (in den Niederlanden
+          7 Jahre), danach löschen wir sie. Dein Konto und deine Ergebnisse löschen wir, wenn du es verlangst. Deine
+          E-Mail-Adresse aus dem Gratis-Test und dein Ergebnis speichern wir höchstens 24 Monate. Früher löschen wir sie,
+          wenn du die Löschung verlangst oder deine Einwilligung widerrufst.
+        </p>
+
+        <h2>9. Deine Rechte</h2>
         <p>Du hast das Recht auf:</p>
         <ul>
           <li>Auskunft über deine Daten (Art. 15 DSGVO),</li>
@@ -134,10 +171,9 @@ export default function DatenschutzPage() {
           dich aber auch an die Behörde in deinem Bundesland wenden.
         </p>
 
-        <h2>8. Änderungen</h2>
+        <h2>10. Änderungen</h2>
         <p>
-          Wenn sich unser Angebot ändert, zum Beispiel durch Konten oder Zahlungen, passen wir diese Erklärung an. Das
-          Datum oben zeigt den aktuellen Stand.
+          Wenn sich unser Angebot ändert, passen wir diese Erklärung an. Das Datum oben zeigt den aktuellen Stand.
         </p>
       </Prose>
     </>
