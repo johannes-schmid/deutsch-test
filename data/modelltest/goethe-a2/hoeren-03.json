@@ -399,7 +399,8 @@
                 {
                   "key": "b",
                   "title": "",
-                  "text": "Escape Room"
+                  "text": "Escape Room",
+                  "image": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t2-01-0-b.webp"
                 },
                 {
                   "key": "c",
@@ -422,7 +423,8 @@
                 {
                   "key": "f",
                   "title": "",
-                  "text": "Karaoke"
+                  "text": "Karaoke",
+                  "image": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t2-01-0-f.webp"
                 },
                 {
                   "key": "g",
@@ -658,8 +660,13 @@
             }
           },
           "b": {
-            "query": "escape room door with padlocks",
-            "alt": "Eine alte Tür mit mehreren Schlössern in einem Escape Room."
+            "query": "escape game",
+            "alt": "Eine Frau öffnet ein Vorhängeschloss an einer alten Holztür mit Ketten und Riegeln.",
+            "src": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t2-01-0-b.webp",
+            "generated": {
+              "model": "gpt-image-2.5-flare",
+              "prompt": "A photorealistic, unposed documentary photograph of an everyday scene in Germany, the kind printed as a picture option in a language exam.\nScene: Escape Room. Eine alte Tür mit mehreren Schlössern in einem Escape Room.\nThe place and the key object are obvious at first glance.\nIt must be clearly different from these other pictures in the same task: a: Spaghetti kochen | c: Achterbahn | d: Fitnessstudio | e: Videospiel | f: Karaoke | g: Restaurant | h: Tischtennis | i: Angeln.\nSquare frame with the main subject in the centre. Natural available light, eye-level 35 mm look, real textures, slight everyday clutter. No readable text, signs, labels, logos or brand names anywhere. Not glossy, no studio light, no illustration, no film-look filter."
+            }
           },
           "c": {
             "query": "roller coaster in amusement park",
@@ -692,8 +699,14 @@
             }
           },
           "f": {
-            "query": "karaoke microphone on stage with colorful lights",
-            "alt": "Ein Mikrofon steht auf einer Bühne mit bunten Lichtern."
+            "query": "karaoke microphone",
+            "alt": "Ein lachender Mann hält ein Mikrofon, neben ihm stehen eine Frau mit Sonnenbrille und ein weiterer Mann in einer Bar.",
+            "src": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t2-01-0-f.webp",
+            "credit": {
+              "name": "pedro furtado",
+              "url": "https://www.pexels.com/photo/friends-singing-karaoke-at-stylish-indoor-party-30489716/",
+              "pexelsId": 30489716
+            }
           },
           "g": {
             "query": "restaurant table set with glasses and plates",
@@ -758,7 +771,8 @@
                 },
                 {
                   "key": "b",
-                  "label": "Flyer"
+                  "label": "Flyer",
+                  "image": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-01-11-b.webp"
                 },
                 {
                   "key": "c",
@@ -852,8 +866,14 @@
             }
           },
           "b": {
-            "query": "stack of printed flyers on table",
-            "alt": "Ein Stapel kleine Flyer liegt auf einem Tisch."
+            "query": "flyers",
+            "alt": "Eine Frau in blauem Kapuzenpulli hält an einer Haustür einen gelben Flyer in der Hand.",
+            "src": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-01-11-b.webp",
+            "credit": {
+              "name": "Caleb Oquendo",
+              "url": "https://www.pexels.com/photo/woman-distributing-flyers-in-urban-neighborhood-40436802/",
+              "pexelsId": 40436802
+            }
           },
           "c": {
             "query": "stack of business cards on desk",
@@ -1186,15 +1206,18 @@
               "options": [
                 {
                   "key": "a",
-                  "label": "Einzelfahrschein"
+                  "label": "Einzelfahrschein",
+                  "image": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-04-14-a.webp"
                 },
                 {
                   "key": "b",
-                  "label": "Tageskarte"
+                  "label": "Tageskarte",
+                  "image": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-04-14-b.webp"
                 },
                 {
                   "key": "c",
-                  "label": "Wochenkarte"
+                  "label": "Wochenkarte",
+                  "image": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-04-14-c.webp"
                 }
               ]
             }
@@ -1279,16 +1302,22 @@
       "photos": {
         "14": {
           "a": {
-            "query": "single paper bus ticket in hand",
-            "alt": "Eine Hand hält eine kleine Fahrkarte aus Papier."
+            "query": "bus ticket",
+            "alt": "Eine Hand hält eine kleine Fahrkarte aus Papier.",
+            "draw": "ticket Einzelfahrschein",
+            "src": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-04-14-a.webp"
           },
           "b": {
-            "query": "day pass ticket public transport",
-            "alt": "Eine Tageskarte für Bus und Bahn liegt auf einem Tisch."
+            "query": "train ticket",
+            "alt": "Eine Tageskarte für Bus und Bahn liegt auf einem Tisch.",
+            "draw": "ticket Tageskarte",
+            "src": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-04-14-b.webp"
           },
           "c": {
-            "query": "weekly transit pass card",
-            "alt": "Eine Wochenkarte für den Nahverkehr in einer Hülle."
+            "query": "transit card",
+            "alt": "Eine Wochenkarte für den Nahverkehr in einer Hülle.",
+            "draw": "ticket Wochenkarte",
+            "src": "goethe-a2/hoeren-03/goethe-a2-hoeren-03-t3-04-14-c.webp"
           }
         }
       }

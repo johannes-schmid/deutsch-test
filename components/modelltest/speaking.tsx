@@ -2,9 +2,11 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Headphones, RotateCcw } from "lucide-react"
-import { ConfirmSheet, ExamButton, ExamShell, NotesPeek, SheetPeek, SpeakingPrep, SpeakingSheet, SpeakingTask, useExamCopy, useExamTimer, type SheetKind } from "@/components/exam"
+import { ConfirmSheet, ExamButton, ExamShell, NotesPeek, PlanningSheet, SceneChoice, SheetPeek, SpeakingPrep, SpeakingSheet, SpeakingTask, TopicCard, useExamCopy, useExamTimer, type SheetKind } from "@/components/exam"
 import { KurztestFrame } from "@/components/kurztest/frame"
 import { useKurztest } from "@/components/kurztest/locale"
+import { B1_SPEAKING_TEILE, GOETHE_SPEAKING_PREP_MINUTES, isGoetheB1, isGoetheExam } from "@/lib/exam/scoring/goethe"
+import { isOesdExam, OESD_SPEAKING_PREP_MINUTES } from "@/lib/exam/scoring/oesd"
 import { TELC_B1_SPEAKING_MINUTES, TELC_B1_SPEAKING_PREP_MINUTES, TELC_B1_SPEAKING_TEILE } from "@/lib/exam/scoring/telc-b1"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import type { PublicMtBlock } from "@/lib/modelltest/runner"
@@ -31,6 +33,30 @@ function TelcSheet({ block, peek }: { block: PublicMtBlock; peek?: boolean }) {
   return <Sheet label={`Teil ${teil} · ${TELC_B1_SPEAKING_TEILE[teil]}`} task={sp.data.task} kind={SHEET[teil]} title={sp.data.title} points={sp.data.points} tag={teil === 2 ? t.onlyYours : t.forBoth} />
 }
 
+/** Preparation before Sprechen, alone with the sheets and notes: telc B1 20, Goethe/ÖSD B1 15, ÖSD A1/A2 10 minutes. */
+export function speakingPrep(exam: string) {
+  if (exam === "telc-b1") return TELC_B1_SPEAKING_PREP_MINUTES
+  if (isGoetheExam(exam)) return GOETHE_SPEAKING_PREP_MINUTES[exam]
+  if (isOesdExam(exam)) return OESD_SPEAKING_PREP_MINUTES
+  return 0
+}
+
+const B1_SLIDES_TASK = "Präsentieren Sie Ihr Thema. Die fünf Folien helfen Ihnen. Sprechen Sie frei und vergessen Sie Einleitung und Schluss nicht."
+
+/**
+ * Goethe/ÖSD B1: the planning card (Teil 1) and the candidate's five slides (Teil 2). The slide lines repeat the topic
+ * ("Thema – Meine persönlichen Erfahrungen"); the sheet names the topic once and lists what each slide asks for.
+ */
+function B1Sheet({ block, peek }: { block: PublicMtBlock; peek?: boolean }) {
+  const sp = block.display.speaking!
+  const teil = block.teil as Teil
+  const Sheet = peek ? SheetPeek : SpeakingSheet
+  if (teil === 1) return <Sheet label={`Teil 1 · ${B1_SPEAKING_TEILE[1]}`} task={sp.data.task} kind="plan" title={sp.data.title} points={sp.data.points} />
+  const topic = sp.data.cards?.[0]?.label ?? sp.data.title
+  const slides = sp.data.points.map((p) => p.replace(`${topic} – `, "").replace(` – ${topic}`, "").trim())
+  return <Sheet label={`Teil 2 · ${B1_SPEAKING_TEILE[2]}`} task={B1_SLIDES_TASK} kind="plan" title={topic} points={slides} />
+}
+
 /**
  * The pair exam, live: examiner and partner lines play in the official order; after each answer the server
  * transcribes it and, where the next turn is live, sends the examiner's follow-up or the partner's reply as audio.
@@ -39,13 +65,26 @@ function TelcSheet({ block, peek }: { block: PublicMtBlock; peek?: boolean }) {
  * telc B1 (research/telc-b1.md §3e, §5): 20 minutes of preparation with all sheets and a notes pad first; then the
  * Teile run straight on, each on its official clock (3 / 6 / 6 min). When a Teil's time is up, the examiner closes it.
  * When the candidate says (almost) nothing, the examiner asks once more and the turn repeats.
+ *
+ * Goethe/ÖSD B1: 15 minutes of preparation with the planning card and the slides. ÖSD A1/A2 (individual exam): 10 minutes
+ * to pick the topics (and, A1, the photo); the picks go to the server with every answer, so the Interlokutorin asks about
+ * them and plays the right role. A1 Aufgabe 3 starts once the candidate has picked a role.
  */
 export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { attemptId: string; exam: string; blocks: PublicMtBlock[]; onFinish: () => void; onExit: () => void }) {
   const C = useKurztest().T
   const telc = exam === "telc-b1"
-  const [stage, setStage] = useState<"prep" | "talk">(telc ? "prep" : "talk")
+  const b1 = isGoetheB1(exam)
+  const oesd = isOesdExam(exam) ? exam : null
+  const prepMinutes = speakingPrep(exam)
+  const [stage, setStage] = useState<"prep" | "talk">(prepMinutes ? "prep" : "talk")
   const [notes, setNotes] = useState("")
-  const prepLeft = useExamTimer(TELC_B1_SPEAKING_PREP_MINUTES * 60, stage === "prep")
+  const prepLeft = useExamTimer(prepMinutes * 60, stage === "prep")
+  const [topics, setTopics] = useState<string[]>([])
+  const [scene, setScene] = useState<string>()
+  const [role, setRole] = useState<string>()
+  const topicData = blocks.find((bl) => bl.display.speaking?.data.choose)?.display.speaking!.data
+  const scenes = blocks.find((bl) => bl.display.speaking?.data.scenes?.length)?.display.speaking!.data.scenes
+  const sheet = blocks.find((bl) => bl.display.speaking?.data.sheet)?.display.speaking!.data.sheet
   const [b, setB] = useState(0)
   const [t, setT] = useState(0)
   const [live, setLive] = useState<Record<string, Live>>({})
@@ -71,7 +110,7 @@ export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { att
   const teilDone = t >= turns.length
   const lastTeil = b === blocks.length - 1
   const key = (i: number) => `${block.teil}-${i}`
-  // telc: the preparation ends when the 20 minutes are up, or earlier with "Ich bin bereit".
+  // The preparation ends when its time is up, or earlier with "Ich bin bereit".
   const talking = stage === "talk" || prepLeft === 0
   const left = telc && clock?.teil === block.teil ? clock.left : undefined
   const over = left === 0
@@ -168,16 +207,20 @@ export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { att
     form.append("teil", String(block.teil))
     form.append("turn", String(at))
     form.append("seconds", String(Math.round(seconds)))
+    if (topics.length) form.append("topics", JSON.stringify(topics))
+    if (scene) form.append("scene", scene)
+    if (role) form.append("role", role)
     if (left !== undefined) form.append("left", String(left))
     form.append("audio", blob, `answer.${blob.type.includes("mp4") ? "m4a" : "webm"}`)
     try {
       const res = await fetch("/api/modelltest/sprechen/turn", { method: "POST", body: form })
-      const body = (await res.json().catch(() => ({}))) as { error?: string; transcript?: string; next?: { index: number; text: string; audio: string } | null; rescue?: { text: string; audio: string } }
+      const body = (await res.json().catch(() => ({}))) as { error?: string; transcript?: string; next?: { teil?: number; index: number; text: string; audio: string } | null; rescue?: { text: string; audio: string } }
       if (res.status === 402 || body.error === "free_limit") return setLimit(true)
       if (!res.ok) throw new Error(body.error)
       setHeard((h) => ({ ...h, [key(at)]: body.transcript ?? "" }))
       if (body.rescue && !overRef.current) return playRescue(at, body.rescue.text, body.rescue.audio)
-      if (body.next) setLive((l) => ({ ...l, [key(body.next!.index)]: { text: body.next!.text, audio: body.next!.audio } }))
+      // Goethe/ÖSD B1: the partner's feedback on the presentation is written after its last slide, for the next Teil.
+      if (body.next) setLive((l) => ({ ...l, [`${body.next!.teil ?? block.teil}-${body.next!.index}`]: { text: body.next!.text, audio: body.next!.audio } }))
       go(at + 1)
     } catch {
       setError(S.uploadFailed)
@@ -233,7 +276,24 @@ export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { att
           action={<ExamButton onClick={() => setStage("talk")}>{S.prep.ready}</ExamButton>}
         >
           <h2 className="text-[22px] leading-tight font-semibold tracking-[-0.015em]">{S.prep.title}</h2>
-          <SpeakingPrep lead={S.prep.lead(TELC_B1_SPEAKING_PREP_MINUTES)} notes={notes} onNotes={setNotes} sheets={blocks.map((bl) => <TelcSheet key={bl.id} block={bl} />)} />
+          <SpeakingPrep
+            lead={telc ? S.prep.lead(prepMinutes) : b1 ? S.prep.leadB1(prepMinutes) : S.prep.leadOesd(prepMinutes, !!scenes)}
+            notes={notes}
+            onNotes={setNotes}
+            sheets={
+              telc ? (
+                blocks.map((bl) => <TelcSheet key={bl.id} block={bl} />)
+              ) : b1 ? (
+                blocks.filter((bl) => bl.teil < 3).map((bl) => <B1Sheet key={bl.id} block={bl} />)
+              ) : (
+                <>
+                  {topicData ? <TopicCard data={topicData} picked={topics} onPick={setTopics} /> : null}
+                  {scenes ? <SceneChoice scenes={scenes} value={scene} onChange={setScene} /> : null}
+                  {sheet ? <PlanningSheet sheet={sheet} /> : null}
+                </>
+              )
+            }
+          />
         </ExamShell>
       </KurztestFrame>
     )
@@ -249,6 +309,22 @@ export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { att
   const firstMine = turns.findIndex((x) => x.who === "du" && x.phase === "2A")
   const ph = sp.photos ? (firstMine >= 0 && t >= firstMine - 1 ? sp.photos.du : sp.photos.partner) : undefined
   const photo = ph && { src: ph.src, alt: ph.alt, caption: ph === sp.photos?.du ? S.yourPhoto : S.partnerPhoto(sp.people.partner.name), credit: ph.credit }
+
+  // ÖSD: the candidate's own material in the task panel. The topic card and the planning sheet replace the point chips.
+  // Once a photo is picked (in the preparation or in Aufgabe 2) only that photo stays, with its two roles in Aufgabe 3;
+  // the photos come from Aufgabe 2, which carries the images.
+  const data = sp.data
+  const material = oesd
+    ? data.choose
+      ? <TopicCard data={data} picked={topics} onPick={setTopics} />
+      : data.scenes
+        ? <SceneChoice scenes={(scenes ?? data.scenes).filter((x) => !scene || x.key === scene)} value={scene} onChange={scene ? undefined : setScene} role={role} onRole={block.teil === 3 ? setRole : undefined} />
+        : data.sheet
+          ? <PlanningSheet sheet={data.sheet} />
+          : undefined
+    : undefined
+  const shownData = oesd && (data.choose || data.sheet) ? { ...data, points: [] } : data
+  const pick = oesd && turn?.who === "du" && data.scenes ? (!scene ? S.pickScene : block.teil === 3 && !role ? S.pickRole : null) : null
 
   return (
     <KurztestFrame scene="sprechen" focus label={C.run.progress(C.names.sprechen)}>
@@ -273,16 +349,17 @@ export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { att
           ) : undefined
         }
       >
-        {telc ? <NotesPeek notes={notes} /> : null}
+        {prepMinutes ? <NotesPeek notes={notes} /> : null}
         <SpeakingTask
           key={`${b}-${t}-${reset}`}
-          data={sp.data}
+          data={shownData}
           people={sp.people}
           turns={shown}
           photo={photo}
-          sheet={telc ? <TelcSheet block={block} peek /> : undefined}
-          canRecord={turn?.who === "du" && !waiting}
-          idleLabel={waiting ? S.thinking(turns[t + 1]?.who === "partner" ? sp.people.partner.name : "Die Prüferin") : turn?.who === "du" ? S.yourTurn(turn.seconds ?? 60) : teilDone ? " " : C.speaking.listen}
+          sheet={telc ? <TelcSheet block={block} peek /> : b1 && block.teil < 3 ? <B1Sheet block={block} peek /> : undefined}
+          material={material}
+          canRecord={turn?.who === "du" && !waiting && !pick}
+          idleLabel={pick ?? (waiting ? S.thinking(turns[t + 1]?.who === "partner" ? sp.people.partner.name : sp.people.pruefer.name === "Prüferin" ? "Die Prüferin" : sp.people.pruefer.name) : turn?.who === "du" ? S.yourTurn(turn.seconds ?? 60) : teilDone ? " " : C.speaking.listen)}
           onRecordStart={() => void startRec()}
           onRecordStop={stopRec}
         />

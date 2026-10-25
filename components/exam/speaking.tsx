@@ -12,7 +12,8 @@ const LEVEL = [4, 9, 14, 20, 26, 18, 10, 22, 30, 16, 8, 12]
 /** Pair exam: examiner and partner are people with turns; the learner answers with the mic. */
 /** `photo`: DTZ Teil 2, the picture the current speaker talks about (each candidate has a different one). */
 /** `sheet`: a printed task sheet (telc, `SpeakingSheet`) in place of the task line and point chips. */
-export function SpeakingTask({ data, people, turns, covered = [], onRecordStart, onRecordStop, canRecord = true, idleLabel, photo, sheet }: { data: SpeakingData; people: Record<Turn["who"], Person>; turns: Turn[]; covered?: string[]; onRecordStart?: () => void; onRecordStop?: () => void; canRecord?: boolean; idleLabel?: string; photo?: { src?: string; alt: string; caption?: string; credit?: { name: string; url: string } }; sheet?: ReactNode }) {
+/** `material`: the candidate's own task material under the task line (ÖSD: `TopicCard`, `SceneChoice`, `PlanningSheet`). */
+export function SpeakingTask({ data, people, turns, covered = [], onRecordStart, onRecordStop, canRecord = true, idleLabel, photo, sheet, material }: { data: SpeakingData; people: Record<Turn["who"], Person>; turns: Turn[]; covered?: string[]; onRecordStart?: () => void; onRecordStop?: () => void; canRecord?: boolean; idleLabel?: string; photo?: { src?: string; alt: string; caption?: string; credit?: { name: string; url: string } }; sheet?: ReactNode; material?: ReactNode }) {
   const t = useExamCopy()
   const [rec, setRec] = useState(false)
   const [secs, setSecs] = useState(0)
@@ -54,6 +55,7 @@ export function SpeakingTask({ data, people, turns, covered = [], onRecordStart,
             </figcaption>
           </figure>
         ) : null}
+        {material ? <div className="mt-2">{material}</div> : null}
         {data.cards?.length ? (
           <div className="mt-2 flex flex-col gap-2">
             <span className="text-[13px] text-v-muted">{t.cards}</span>
@@ -198,7 +200,7 @@ export function SpeakingPrep({ sheets, notes, onNotes, lead }: { sheets: ReactNo
     <div className="flex flex-col gap-5">
       <p className="text-[15px] leading-relaxed text-v-muted">{lead}</p>
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
-        <div className="flex flex-col gap-4">{sheets}</div>
+        <div className="flex min-w-0 flex-col gap-4">{sheets}</div>
         <label className="flex flex-col gap-2 lg:sticky lg:top-20">
           <span className="flex items-center gap-2 text-[15px] font-semibold">
             <NotebookPen className="size-4" aria-hidden="true" /> {t.notes}

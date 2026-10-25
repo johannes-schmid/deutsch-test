@@ -4,8 +4,9 @@
 // keeps a reviewed photo stable and never uses one photo twice. Uploaded by the seeder.
 //
 // ÖSD A1 Sprechen (--skill sprechen): the three photos to choose from (speaking scenes, item 0).
+// Clocks and tickets are drawn instead (draw-options.ts); slots no stock photo fit are generated (images-generate.ts).
 //
-// npx tsx --env-file=.env.local scripts/modelltest/images-options.ts --exam goethe-a2 --set 1 [--skill hoeren|sprechen] [--next <blockId>/<n>/<key>]
+// npx tsx --env-file=.env.local scripts/modelltest/images-options.ts --exam goethe-a2 --set 1 [--skill hoeren|sprechen] [--scene] [--next <blockId>/<n>/<key>]
 
 import { execFileSync } from "node:child_process"
 import fs from "node:fs"
@@ -25,6 +26,9 @@ const SET = Number(arg("set"))
 const NEXT = arg("next")
 const NN = String(SET).padStart(2, "0")
 const SKILL = arg("skill") ?? "hoeren"
+// --scene: the photo shows a dialogue's setting (ÖSD A1 Hören Aufgabe 1). Place and key object must be clear and
+// tell it apart from the other photos; who stands where and the exact action may differ from the planned scene.
+const SCENE = process.argv.includes("--scene")
 const FILE = `data/modelltest/${EXAM}/${SKILL}-${NN}.json`
 const DIR = `${EXAM}/${SKILL}-${NN}`
 const OUT = `.unit-cache/images/${DIR}`
@@ -62,6 +66,11 @@ async function main() {
     for (const t of targets(b)) {
       const ph = b.photos?.[t.n]?.[t.key]
       if (!ph) continue
+      if (ph.draw || ph.generated) {
+        if (!ph.src) throw new Error(`${b.id}/${t.n}/${t.key}: run ${ph.draw ? "draw-options" : "images-generate"}.ts first`)
+        t.set(ph.src)
+        continue
+      }
       const slot = `${b.id}/${t.n}/${t.key}`
       const name = `${b.id}-${t.n}-${t.key}.webp`
       const file = path.join(OUT, name)
@@ -80,7 +89,12 @@ async function main() {
         fs.writeFileSync(raw, Buffer.from(await (await fetch(pick.src.large)).arrayBuffer()))
         execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", raw, "-vf", "scale=800:800:force_original_aspect_ratio=increase,crop=800:800", "-c:v", "libwebp", "-quality", "72", file])
         fs.rmSync(raw)
-        const o = await ask(Fit, `Bildoption "${t.key}" zur Aufgabe: soll klar zeigen: "${t.label}" (gesucht war: "${ph.query}"; geplante Beschreibung: "${ph.alt}").
+        const others = targets(b).filter((o) => o.n === t.n && o.key !== t.key).map((o) => `"${o.label}"`).join(", ")
+        const o = await ask(Fit, SCENE
+          ? `Foto "${t.key}" zu einer Höraufgabe: Ein kurzer Dialog spielt in dieser Situation: "${t.label}". Die anderen Fotos zeigen: ${others}.
+fits: Erkennt man den Ort und den wichtigsten Gegenstand der Situation klar, so dass man das Foto keiner der anderen Situationen zuordnen würde? Personen (Anzahl, Geschlecht, wer was tut) und die genaue Handlung müssen nicht stimmen. Nein, wenn das Foto vor allem etwas anderes zeigt oder Text die Lösung verrät.
+alt: deutscher Alternativtext, ein kurzer Satz, nur was zu sehen ist.`
+          : `Bildoption "${t.key}" zur Aufgabe: soll klar zeigen: "${t.label}" (gesucht war: "${ph.query}"; geplante Beschreibung: "${ph.alt}").
 fits: Erkennt man die Option auf dem Foto eindeutig, so dass man es nicht mit den anderen Optionen verwechselt? Nur das zählt: Farbe, Ort, Anzahl der Personen und andere Details der geplanten Beschreibung sind egal, wenn die Option klar zu sehen ist.
 alt: deutscher Alternativtext, ein kurzer Satz, nur was zu sehen ist.`, { data: fs.readFileSync(file).toString("base64"), mediaType: "image/webp" })
         if (!o.fits) {

@@ -39,8 +39,9 @@ export function WritingTask({ options, chosen, onChoose, value, onChange }: { op
         </div>
       )}
       {task ? (
-        <div key={task.key} className="nz-screen grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-          <div className="flex flex-col gap-3">
+        <div key={task.key} className={cn("nz-screen grid grid-cols-[minmax(0,1fr)] gap-5", task.points.length && "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]")}>
+          {/* Goethe/ÖSD B1 Aufgabe 2 (an opinion post) has no points to tick. */}
+          <div className={cn("flex flex-col gap-3", !task.points.length && "hidden")}>
             <span className="text-[14px] font-semibold">{t.writeAbout}</span>
             <ul className="flex flex-col gap-1">
               {task.points.map((p) => {

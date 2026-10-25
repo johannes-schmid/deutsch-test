@@ -5,6 +5,7 @@ import { indicativeLevel } from "@/lib/exam/band"
 import { isStartExam, typedRight } from "@/lib/exam/scoring/start"
 import { closedScore, type PartPoints } from "@/lib/exam/scoring/telc-b1"
 import { isOesdExam, scoreOesdClosed, type OesdItem } from "@/lib/exam/scoring/oesd"
+import { goetheClosed, isGoetheExam } from "@/lib/exam/scoring/goethe"
 import type { ItemKey } from "@/lib/exam/kurztest"
 import type { PartId } from "@/lib/exam/types"
 import type { ExamId } from "@/lib/exams"
@@ -55,7 +56,7 @@ export type MtClosedResult = {
   total: number
   teile: { label: string; items: { n: number; right: boolean }[] }[]
   keys: ItemKey[]
-  /** Exams scored in points (telc B1 weighted; Start Deutsch 1 and telc A2 one point per item): per Teil and in all. */
+  /** Exams scored in points (telc B1 weighted; Start Deutsch 1, telc A2 and Goethe one point per item, Goethe A2 × 1.25, B1 → /100): per Teil and in all. */
   points?: { points: number; max: number; parts: PartPoints[] }
   transcripts: Record<string, { speaker: string; text: string }[]>
 }
@@ -107,16 +108,19 @@ export async function scoreClosed(attemptId: string, setId: string, exam: ExamId
   if (insErr) throw insErr
   const correct = keys.filter((k) => right(k.n)).length
   const byTeil = [...new Set(qs.map((q) => q.mt_stimuli.teil))].map((teil) => ({ teil, items: qs.filter((q) => q.mt_stimuli.teil === teil).map((q) => ({ n: q.n, right: right(q.n) })) }))
+  const rightSet = new Set(keys.filter((k) => right(k.n)).map((k) => k.n))
   const points = oesd
     ? { points: oesd.points, max: oesd.max, parts: oesd.parts }
     : exam === "telc-b1"
-      ? closedScore(skill, new Set(keys.filter((k) => right(k.n)).map((k) => k.n)))
-      : isStartExam(exam)
-        ? (() => {
-            const parts = byTeil.map((t) => ({ label: `Teil ${t.teil}`, points: t.items.filter((i) => i.right).length, max: t.items.length }))
-            return { points: correct, max: keys.length, parts }
-          })()
-        : undefined
+      ? closedScore(skill, rightSet)
+      : isGoetheExam(exam) && (skill === "lesen" || skill === "hoeren")
+        ? goetheClosed(exam, skill, rightSet)
+        : isStartExam(exam)
+          ? (() => {
+              const parts = byTeil.map((t) => ({ label: `Teil ${t.teil}`, points: t.items.filter((i) => i.right).length, max: t.items.length }))
+              return { points: correct, max: keys.length, parts }
+            })()
+          : undefined
   const teile = byTeil.map((t, i) => ({ label: points?.parts[i]?.label ?? `Teil ${t.teil}`, items: t.items }))
   const transcripts = Object.fromEntries(
     blocks.filter(({ block: b }) => b.key.script && b.display.clip).map(({ block: b }) => [b.id, b.key.script!.map((t) => ({ speaker: b.display.clip!.speakers[t.speaker]?.name ?? (t.speaker === "moderation" ? "Moderation" : t.speaker), text: t.text }))])

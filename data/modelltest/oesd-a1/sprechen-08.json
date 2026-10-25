@@ -210,12 +210,23 @@
             }
           },
           "2": {
-            "query": "drugstore saleswoman showing shampoo bottle to woman customer at shelf",
-            "alt": "In einer Drogerie zeigt eine Verkäuferin einer Kundin vor einem Regal eine Flasche Shampoo."
+            "query": "drugstore",
+            "alt": "Eine Verkäuferin zeigt einer Kundin mit Einkaufskorb in einer Drogerie eine Flasche vor einem Regal.",
+            "src": "oesd-a1/sprechen-08/oesd-a1-sprechen-08-t2-0-2.webp",
+            "generated": {
+              "model": "gpt-image-2.5-flare",
+              "prompt": "A photorealistic, unposed documentary photograph of an everyday scene in Austria, the kind printed as a picture option in a language exam.\nScene: In der Drogerie. In einer Drogerie zeigt eine Verkäuferin einer Kundin vor einem Regal eine Flasche Shampoo.\nThe people are clearly visible: faces, what they wear, what they do. Ordinary people of different ages and backgrounds, not models.\nIt must be clearly different from these other pictures in the same task: 1: In der Touristeninformation | 3: Im Fotogeschäft.\nSquare frame with the main subject in the centre. Natural available light, eye-level 35 mm look, real textures, slight everyday clutter. No readable text, signs, labels, logos or brand names anywhere. Not glossy, no studio light, no illustration, no film-look filter."
+            }
           },
           "3": {
-            "query": "camera shop salesman showing small camera to woman at glass counter",
-            "alt": "In einem Fotogeschäft zeigt ein Verkäufer einer Frau an einer Glastheke eine kleine Kamera."
+            "query": "camera shop",
+            "alt": "Ein Schaufenster mit vielen gebrauchten Kameras und Objektiven, an denen Preisschilder hängen.",
+            "src": "oesd-a1/sprechen-08/oesd-a1-sprechen-08-t2-0-3.webp",
+            "credit": {
+              "name": "Maria Orlova",
+              "url": "https://www.pexels.com/photo/assorted-photo-cameras-represented-on-showcase-4916532/",
+              "pexelsId": 4916532
+            }
           }
         }
       },
@@ -249,7 +260,8 @@
                 "roles": [
                   "Verkäuferin oder Verkäufer",
                   "Kundin oder Kunde"
-                ]
+                ],
+                "image": "oesd-a1/sprechen-08/oesd-a1-sprechen-08-t2-0-2.webp"
               },
               {
                 "key": "3",
@@ -257,7 +269,8 @@
                 "roles": [
                   "Verkäuferin oder Verkäufer",
                   "Kundin oder Kunde"
-                ]
+                ],
+                "image": "oesd-a1/sprechen-08/oesd-a1-sprechen-08-t2-0-3.webp"
               }
             ]
           },

@@ -4,9 +4,13 @@ import { loadKeyedBlocks } from "@/lib/modelltest/runner"
 import { followup, partnerLine, speak, SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking"
 import { rescueLine, telcFollowup, telcPartnerLine, TELC_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-telc"
 import { startFollowup, startPartnerLine, START_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-start"
+import { goetheLine, GOETHE_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-goethe"
+import { oesdLine, OESD_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-oesd"
+import { isGoetheB1, isGoetheExam } from "@/lib/exam/scoring/goethe"
+import { isOesdExam } from "@/lib/exam/scoring/oesd"
 import { isStartExam } from "@/lib/exam/scoring/start"
 import type { ExamId } from "@/lib/exams"
-import { capped, emptyState, FREE_SPEAKING_SECONDS, freeSecondsUsed, playedBefore, type RunState } from "@/lib/modelltest/sprechen-run"
+import { capped, cleanChoice, emptyState, FREE_SPEAKING_SECONDS, freeSecondsUsed, nextLive, playedBefore, spokenOnly, type RunState } from "@/lib/modelltest/sprechen-run"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { getSessionUser } from "@/lib/supabase/server"
 
@@ -31,6 +35,14 @@ export async function POST(req: Request) {
   // Seconds left in this Teil (telc keeps time per Teil): the partner wraps up when it runs short.
   const left = form.has("left") ? Number(form.get("left")) : NaN
   const file = form.get("audio")
+  // What the candidate picked on the sheets (ÖSD topics, photo, role); checked against the set below.
+  const picked = (() => {
+    try {
+      return { topics: form.has("topics") ? JSON.parse(String(form.get("topics"))) : undefined, scene: form.get("scene") ?? undefined, role: form.get("role") ?? undefined }
+    } catch {
+      return {}
+    }
+  })()
   if (!/^[0-9a-f-]{36}$/.test(attemptId) || !Number.isInteger(teil) || !Number.isInteger(turn) || !(file instanceof File)) return fail("bad_request")
   if (file.size > MAX_FILE) return fail("too_large", 413)
 
@@ -57,7 +69,7 @@ export async function POST(req: Request) {
 
   let text = ""
   try {
-    text = file.size > 1000 ? await transcribe(file) : ""
+    text = file.size > 1000 ? spokenOnly(await transcribe(file)) : ""
   } catch (e) {
     console.error("sprechen transcribe failed", e instanceof Error ? e.message : e)
     return fail("transcribe_failed", 502)
@@ -65,11 +77,16 @@ export async function POST(req: Request) {
 
   const telc = attempt.exam === "telc-b1"
   const start = isStartExam(attempt.exam) ? attempt.exam : null
+  const goethe = isGoetheExam(attempt.exam) ? attempt.exam : null
+  const oesd = isOesdExam(attempt.exam) ? attempt.exam : null
   const state: RunState = attempt.conversation ?? emptyState()
   state.lines.push(...playedBefore(state, block, turn), { teil, phase: turns[turn].phase, who: "du", text })
   state.upTo[teil] = turn
+  const choice = cleanChoice(keyed.map((k) => k.block), picked, state.choice)
+  if (Object.keys(choice).length) state.choice = choice
 
-  await db.from("mt_submissions").upsert({ attempt_id: attempt.id, task_id: entry.rowId, turn, audio_path: up.error ? null : path, audio_seconds: seconds, transcript: text, rubric_version: telc ? TELC_SPEAKING_RUBRIC_VERSION : start ? START_SPEAKING_RUBRIC_VERSION : SPEAKING_RUBRIC_VERSION }, { onConflict: "attempt_id,task_id,turn" })
+  const rubric = telc ? TELC_SPEAKING_RUBRIC_VERSION : start ? START_SPEAKING_RUBRIC_VERSION : goethe ? GOETHE_SPEAKING_RUBRIC_VERSION : oesd ? OESD_SPEAKING_RUBRIC_VERSION : SPEAKING_RUBRIC_VERSION
+  await db.from("mt_submissions").upsert({ attempt_id: attempt.id, task_id: entry.rowId, turn, audio_path: up.error ? null : path, audio_seconds: seconds, transcript: text, rubric_version: rubric }, { onConflict: "attempt_id,task_id,turn" })
 
   // telc: the Interlokutor steps in once per turn when the candidate said (almost) nothing; the turn is then repeated.
   const rescueKey = `${teil}-${turn}`
@@ -83,6 +100,25 @@ export async function POST(req: Request) {
       await db.from("mt_attempts").update({ conversation: state }).eq("id", attempt.id)
       return NextResponse.json({ transcript: text, next: null, rescue: { text: ask, audio: `data:audio/mpeg;base64,${audio.toString("base64")}` } })
     }
+  }
+
+  // Goethe/ÖSD: the first live turn before the candidate speaks again; B1 also across the Teil boundary.
+  if (goethe || oesd) {
+    const at = nextLive(keyed.map((k) => k.block), teil, turn, isGoetheB1(attempt.exam))
+    let line: { teil: number; index: number; text: string; audio: string } | null = null
+    if (at) {
+      const t = at.block.display.speaking!.turns
+      const live = { turn: t[at.index], index: at.index, cue: turns[turn].text, last: !t.slice(at.index + 1).some((x) => x.live === t[at.index].live), afterDu: t[at.index - 1]?.who === "du" }
+      const nextText = goethe ? await goetheLine(goethe, at.block, state.lines, text, live) : await oesdLine(oesd!, at.block, state.lines, text, live, state.choice ?? {})
+      const voice = at.block.key.speaking?.voices[t[at.index].who as "pruefer" | "partner"]
+      const audio = nextText && voice ? await speak(voice, nextText) : null
+      if (nextText && audio) {
+        state.live[`${at.block.teil}-${at.index}`] = nextText
+        line = { teil: at.block.teil, index: at.index, text: nextText, audio: `data:audio/mpeg;base64,${audio.toString("base64")}` }
+      }
+    }
+    await db.from("mt_attempts").update({ conversation: state }).eq("id", attempt.id)
+    return NextResponse.json({ transcript: text, next: line })
   }
 
   // The next turn, when it is generated live: the examiner's follow-up (1B/2B) or the partner in Teil 3.

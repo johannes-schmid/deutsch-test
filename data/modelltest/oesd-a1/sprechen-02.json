@@ -210,12 +210,23 @@
             }
           },
           "2": {
-            "query": "customer paying cashier at petrol station shop counter",
-            "alt": "Ein Kunde bezahlt an der Kassa einer Tankstelle bei einer Kassiererin."
+            "query": "gas station checkout",
+            "alt": "Ein Mann bezahlt mit Karte an der Kassa, eine Frau steht lächelnd hinter der Theke eines Geschäfts.",
+            "src": "oesd-a1/sprechen-02/oesd-a1-sprechen-02-t2-0-2.webp",
+            "generated": {
+              "model": "gpt-image-2.5-flare",
+              "prompt": "A photorealistic, unposed documentary photograph of an everyday scene in Austria, the kind printed as a picture option in a language exam.\nScene: An der Kassa der Tankstelle. Ein Kunde bezahlt an der Kassa einer Tankstelle bei einer Kassiererin.\nThe people are clearly visible: faces, what they wear, what they do. Ordinary people of different ages and backgrounds, not models.\nIt must be clearly different from these other pictures in the same task: 1: Beim Uhrmacher | 3: Am Schalter auf der Post.\nSquare frame with the main subject in the centre. Natural available light, eye-level 35 mm look, real textures, slight everyday clutter. No readable text, signs, labels, logos or brand names anywhere. Not glossy, no studio light, no illustration, no film-look filter."
+            }
           },
           "3": {
-            "query": "post office clerk serving woman with letters at counter",
-            "alt": "Eine Frau mit Briefen steht am Schalter, ein Postangestellter gibt ihr Briefmarken."
+            "query": "post office counter",
+            "alt": "Mehrere Menschen stehen in einer prunkvollen Halle mit goldenen Schaltern und Marmorboden.",
+            "src": "oesd-a1/sprechen-02/oesd-a1-sprechen-02-t2-0-3.webp",
+            "credit": {
+              "name": "Oscar  Dominguez",
+              "url": "https://www.pexels.com/photo/the-interior-of-the-palacio-de-correos-de-mexico-13070744/",
+              "pexelsId": 13070744
+            }
           }
         }
       },
@@ -249,7 +260,8 @@
                 "roles": [
                   "Kassiererin oder Kassierer",
                   "Kundin oder Kunde"
-                ]
+                ],
+                "image": "oesd-a1/sprechen-02/oesd-a1-sprechen-02-t2-0-2.webp"
               },
               {
                 "key": "3",
@@ -257,7 +269,8 @@
                 "roles": [
                   "Postangestellte oder Postangestellter",
                   "Kundin oder Kunde"
-                ]
+                ],
+                "image": "oesd-a1/sprechen-02/oesd-a1-sprechen-02-t2-0-3.webp"
               }
             ]
           },

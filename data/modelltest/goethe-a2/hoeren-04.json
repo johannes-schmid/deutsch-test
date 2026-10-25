@@ -1061,11 +1061,13 @@
                 },
                 {
                   "key": "b",
-                  "label": "Briefkastenschlüssel"
+                  "label": "Briefkastenschlüssel",
+                  "image": "goethe-a2/hoeren-04/goethe-a2-hoeren-04-t3-03-13-b.webp"
                 },
                 {
                   "key": "c",
-                  "label": "Kellerschlüssel"
+                  "label": "Kellerschlüssel",
+                  "image": "goethe-a2/hoeren-04/goethe-a2-hoeren-04-t3-03-13-c.webp"
                 }
               ]
             }
@@ -1148,12 +1150,23 @@
             }
           },
           "b": {
-            "query": "row of metal mailboxes in apartment building hallway",
-            "alt": "Mehrere Briefkästen aus Metall hängen im Flur eines Wohnhauses."
+            "query": "mailboxes",
+            "alt": "Eine Reihe grauer Briefkästen aus Metall mit kleinen Schlössern und roten Nummernschildern.",
+            "src": "goethe-a2/hoeren-04/goethe-a2-hoeren-04-t3-03-13-b.webp",
+            "credit": {
+              "name": "Stephen Andrews",
+              "url": "https://www.pexels.com/photo/lockers-of-a-mailbox-9305105/",
+              "pexelsId": 9305105
+            }
           },
           "c": {
-            "query": "old basement door in cellar",
-            "alt": "Eine alte Kellertür in einem dunklen Keller."
+            "query": "basement door",
+            "alt": "Eine Hand hält einen alten Schlüssel vor eine dunkle Holztür in einem Keller.",
+            "src": "goethe-a2/hoeren-04/goethe-a2-hoeren-04-t3-03-13-c.webp",
+            "generated": {
+              "model": "gpt-image-2.5-flare",
+              "prompt": "A photorealistic, unposed documentary photograph of an everyday scene in Germany, the kind printed as a picture option in a language exam.\nScene: Kellerschlüssel. Eine alte Kellertür in einem dunklen Keller.\nThe place and the key object are obvious at first glance.\nIt must be clearly different from these other pictures in the same task: a: Haustürschlüssel | b: Briefkastenschlüssel.\nSquare frame with the main subject in the centre. Natural available light, eye-level 35 mm look, real textures, slight everyday clutter. No readable text, signs, labels, logos or brand names anywhere. Not glossy, no studio light, no illustration, no film-look filter."
+            }
           }
         }
       },

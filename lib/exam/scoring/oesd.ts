@@ -43,6 +43,18 @@ export function tickGroupPoints(chosen: string[], correct: string[]) {
   return chosen.filter((c) => correct.includes(c)).length
 }
 
+/** ZA1 Schreiben Aufgabe 1, the raw count: one per field, a two-tick group (`pick`) one per right box (10 in all). */
+export function formRight(fields: { n: number; options: string[]; pick?: number }[], keys: Pick<ItemKey, "n" | "correct" | "accept" | "exact">[], given: Record<number, string>) {
+  return keys.reduce((sum, k) => {
+    const f = fields.find((x) => x.n === k.n)
+    if (!f) return sum
+    const a = given[k.n] ?? ""
+    if (f.pick) return sum + tickGroupPoints(ticks(a), ticks(String(k.correct)))
+    if (f.options.length) return sum + (a === k.correct ? 1 : 0)
+    return sum + (typedOesd(a, k) ? 1 : 0)
+  }, 0)
+}
+
 /** ZA1 Schreiben Aufgabe 1 (max 5 of 10 form points): 10 → 5, 9–8 → 4, 7–6 → 3, 5–4 → 2, 3–2 → 1, 1–0 → 0. */
 export const formPoints = (right: number) => Math.floor(Math.max(0, Math.min(10, right)) / 2)
 
@@ -189,6 +201,12 @@ export function oralModule(exam: OesdExam, points: number): ModuleResult {
   const passed = points >= m.pass
   return { points, max: m.max, passed, grade: passed ? grade(points, [...m.bands]) : "nicht bestanden", missed: passed ? [] : [`sprechen ${points} < ${m.pass}`] }
 }
+
+/** A module's pass mark as a share of its points (ZA1 written 38/75, oral 12/25; ZA2 35/70, 10/20). */
+export const moduleShare = (exam: OesdExam, module: "written" | "oral") => MODULES[exam][module].pass / MODULES[exam][module].max
+
+/** Preparation before the oral module, alone with notes (ZA1 and ZA2: 10 minutes). */
+export const OESD_SPEAKING_PREP_MINUTES = 10
 
 /** The optional overall result: both modules passed and the overall minimum reached. */
 export function overallResult(exam: OesdExam, written: ModuleResult, oral: ModuleResult): ModuleResult {

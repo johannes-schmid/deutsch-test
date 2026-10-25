@@ -32,8 +32,8 @@ export type SpeakPhase = "1A" | "1B" | "2A" | "2B" | "3" | "1" | "2"
  * `live`: generated during the run (examiner follow-up, Teil 3 partner); `text`/`src` are the pre-rendered fallback.
  */
 export type MtSpeakTurn = SpeakingTurn & { phase: SpeakPhase; live?: "followup" | "partner"; seconds?: number }
-/** A Pexels photo, re-encoded into our Storage. Pexels asks for a photographer credit and a link. */
-export type MtPhoto = { query: string; alt: string; src?: string; credit?: { name: string; url: string; pexelsId: number } }
+/** A Pexels photo, re-encoded into our Storage. Pexels asks for a photographer credit and a link. `draw`: drawn by draw-options.ts instead ("clock 8:00", "ticket Tageskarte"), never searched. `generated`: made by images-generate.ts where no stock photo fit, never searched. */
+export type MtPhoto = { query: string; alt: string; src?: string; draw?: string; generated?: { model: string; prompt: string }; credit?: { name: string; url: string; pexelsId: number } }
 /** A photo for a picture option or a picture to match (Goethe A2 Hören Teil 2–3), by option key; `src` lands in the option. */
 export type MtOptionPhotos = Record<string, MtPhoto>
 export type MtSpeaking = Omit<NonNullable<KurztestBlock["display"]["speaking"]>, "turns"> & {

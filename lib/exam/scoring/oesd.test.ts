@@ -1,7 +1,7 @@
 // npx tsx --test lib/exam/scoring/oesd.test.ts
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { exactRight, formPoints, gridRowPoints, marksPoints, oralModule, overallResult, scoreOesdClosed, speakingPoints, tickGroupPoints, writtenModule, za1Writing, za2Writing } from "./oesd"
+import { exactRight, formPoints, formRight, gridRowPoints, marksPoints, moduleShare, oralModule, overallResult, scoreOesdClosed, speakingPoints, tickGroupPoints, writtenModule, za1Writing, za2Writing } from "./oesd"
 
 test("exact: a spelled name or phone number must be fully right", () => {
   assert.ok(exactRight("Lerchengasse", "Lerchengasse"))
@@ -111,4 +111,26 @@ test("ZA2 modules: 70 / 20 / 90", () => {
   assert.equal(oralModule("oesd-a2", 17).grade, "gut")
   assert.equal(speakingPoints("oesd-a2", [3, 3, 5, 4, 5]), 20)
   assert.equal(overallResult("oesd-a2", w, oralModule("oesd-a2", 9)).passed, false)
+})
+
+test("module pass shares: ZA1 written 38/75, oral 12/25; ZA2 written 35/70, oral 10/20", () => {
+  assert.equal(moduleShare("oesd-a1", "written"), 38 / 75)
+  assert.equal(moduleShare("oesd-a1", "oral"), 12 / 25)
+  assert.equal(moduleShare("oesd-a2", "written"), 0.5)
+  assert.equal(moduleShare("oesd-a2", "oral"), 0.5)
+})
+
+test("ZA1 form: typed fields with tolerance, numbers exact, single ticks, the two-tick group per right box", () => {
+  const fields = [{ n: 1, options: [] }, { n: 2, options: [] }, { n: 4, options: [] }, { n: 6, options: ["Samstag", "Sonntag"] }, { n: 8, options: ["Führerschein", "Arbeit", "Kinder", "Sport"], pick: 2 }]
+  const keys = [
+    { n: 1, correct: "Nadia" },
+    { n: 2, correct: "3.1.1994", accept: ["3. Jänner 1994"] },
+    { n: 4, correct: "0664 285 90 17", exact: true },
+    { n: 6, correct: "Samstag" },
+    { n: 8, correct: "Führerschein,Kinder" },
+  ]
+  assert.equal(formRight(fields, keys, { 1: "Nadia", 2: "3. Jänner 1994", 4: "06642859017", 6: "Samstag", 8: "Führerschein,Kinder" }), 6)
+  assert.equal(formRight(fields, keys, { 1: "Nadja", 2: "4.1.1994", 4: "0664 285 90 71", 6: "Sonntag", 8: "Kinder" }), 2)
+  assert.equal(formRight(fields, keys, { 8: "Kinder,Sport" }), 0)
+  assert.equal(formPoints(formRight(fields, keys, {})), 0)
 })
