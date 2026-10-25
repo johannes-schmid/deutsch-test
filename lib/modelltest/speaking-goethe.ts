@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import {
@@ -27,8 +27,7 @@ import type { MtBlock, MtSpeakTurn } from "./types"
 // gives feedback and asks a question about the candidate's actual presentation, and answers the candidate's question
 // about his own; examiner 2 asks one question about the talk. Calls go directly to the provider; null = pre-rendered.
 
-const GRADE_MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const GRADE_MODEL = OPUS
 
 const NAME: Record<GoetheExam, string> = { "goethe-a2": "Goethe-Zertifikat A2", "goethe-b1": "Goethe-Zertifikat B1", "oesd-b1": "ÖSD Zertifikat B1" }
 

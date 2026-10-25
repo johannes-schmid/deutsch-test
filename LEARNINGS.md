@@ -679,3 +679,9 @@
 **What worked / went wrong:** Before this, all five exams fell through to the DTZ prompts and the DTZ scale; Schreiben graded only the first letter. Scribe tags noise as "[Ticken]", and the live partner answered it ("du tippst gerade"); the transcripts now drop bracketed tags. A lookahead to the next Teil's live turn is right only for B1 (feedback on the presentation); for ÖSD A2 it made the planning opener react to the last Aufgabe 1 answer. A test script that waits for "Dein Text" matched the loading line "Dein Text wird bewertet" and burned graded runs against the daily cap.
 **Lesson:** Strip sound-event tags before any transcript reaches a prompt or a word count. A live line generated across a Teil boundary must be about the previous Teil on purpose. In browser tests, wait for a result-only element, not a phrase the loading state shares.
 
+
+## 2026-10-25 — Live Claude calls via Vercel AI Gateway
+**Changed:** new `lib/ai/claude.ts` (Anthropic SDK, baseURL `https://ai-gateway.vercel.sh`, `AI_GATEWAY_API_KEY`, model ids `anthropic/claude-opus-5.5` / `anthropic/claude-haiku-5.5`); the 9 grading/speaking files in `lib/kurztest/` and `lib/modelltest/` import it; CLAUDE.md §5 rule updated.
+**Outcome:** SUCCESS (tsc, lint, build, unit tests); no live Gateway call tested yet (no key in this project).
+**What worked / went wrong:** Production Schreiben/Sprechen failed because `ANTHROPIC_API_KEY` and a valid `ELEVENLABS_API_KEY` were missing on Vercel. The Gateway accepts the Anthropic SDK unchanged incl. `messages.parse` + `output_config.format`/`effort`; only base URL, key and model id format (dots, `anthropic/` prefix) differ.
+**Lesson:** The "no Gateway" rule covers content generation only; live-site model calls use `lib/ai/claude.ts`. ElevenLabs is not on the Gateway and stays direct.

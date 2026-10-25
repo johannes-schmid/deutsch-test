@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import { za1Writing, za2Writing, type OesdExam } from "@/lib/exam/scoring/oesd"
@@ -10,8 +10,7 @@ import type { TaskGrade } from "./grade-goethe"
 // (Vers. 4.0, research/oesd-a2.md §4): word count and content deductions plus Kommunikative Angemessenheit, Textaufbau,
 // Lexik and Formale Richtigkeit, computed by za1Writing / za2Writing. The model only rates; the sheet does the sums.
 
-const MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const MODEL = OPUS
 
 export const OESD_WRITING_RUBRIC_VERSION = "oesd-schreiben-2026-10-25"
 

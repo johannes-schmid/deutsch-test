@@ -215,8 +215,9 @@ same Mollie organisation as the Dutch sites with its own website profile. Ported
 - **PostHog** (+ Meta Pixel for ads) and GA4. **TODO(hannes):** use the shared PostHog project
   split by `$host` (as the Dutch sites do), or a separate one?
 - **ElevenLabs:** a designed German voice cast for Hören monologues and dialogues
-- **Model calls go directly to the provider. Never via Vercel AI Gateway** (global rule).
-  inburgering-website's exception does not carry over.
+- **Live-site Claude calls (grading, Sprechen partner) go through Vercel AI Gateway** (`lib/ai/claude.ts`, `AI_GATEWAY_API_KEY`;
+  Hannes, 2026-10-25, for cost control). **Content generation** (`scripts/`, Batches API) stays on the direct Anthropic API, never the Gateway.
+  ElevenLabs (TTS, Scribe) stays direct: the Gateway has no ElevenLabs.
 
 ### Voice cast (approved by Hannes after listening, 2026-10-22)
 
@@ -418,7 +419,7 @@ app/(main)/(site)/blog/              # /blog index + one static route per post; 
 - **Every route that spends credits** (TTS, grading) checks auth/admin and is capped.
   - Free tests: Schreiben/Sprechen take the email **before** the test, then `lib/kurztest/limits.ts` caps runs per IP,
     per email and per day. Sprechen in the free test is **transcribe-only** (ElevenLabs Scribe, direct), no model
-    scoring. Decided by Hannes 2026-10-12. No Vercel AI Gateway, not even for this.
+    scoring. Decided by Hannes 2026-10-12.
 
 ### Inherited traps (each has bitten the Dutch sites)
 

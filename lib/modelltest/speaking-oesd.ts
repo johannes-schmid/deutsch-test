@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import { moduleShare, OESD_SPEAKING, speakingPoints, type OesdExam } from "@/lib/exam/scoring/oesd"
@@ -14,8 +14,7 @@ import type { LiveAt } from "./speaking-goethe"
 // photo), plays the other role of the chosen photo (A1 Aufgabe 3) and plans with the candidate, per du (A2 Aufgabe 2).
 // Austrian-coloured standard German. Calls go directly to the provider; null = the pre-rendered fallback plays.
 
-const GRADE_MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const GRADE_MODEL = OPUS
 
 const LEVEL: Record<OesdExam, string> = { "oesd-a1": "A1", "oesd-a2": "A2" }
 const NAME: Record<OesdExam, string> = { "oesd-a1": "ÖSD Zertifikat A1", "oesd-a2": "ÖSD Zertifikat A2" }

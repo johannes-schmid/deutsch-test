@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import { DTZ_WRITING_CRITERIA } from "@/lib/exam/blueprint"
@@ -10,8 +10,7 @@ import { loadSet } from "./data"
 import { outcome } from "./score"
 import type { GradedResult, TranscriptResult } from "./types"
 
-const MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const MODEL = OPUS
 
 const Level = z.enum(["B1", "A2", "unter A2"])
 const Quote = z.object({ yours: z.string(), better: z.string() }).nullable()

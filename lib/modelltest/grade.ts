@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import { writingLevel } from "@/lib/exam/band"
@@ -12,10 +12,9 @@ import { aufgabeStep, TELC_B1_WRITING_CRITERIA, writingScore, type Step } from "
 
 // Modelltest grading on the official DTZ scale (g.a.s.t. Übungssatz 2 pp. 42–47, paraphrased in
 // research/dtz-blueprint.md §4–5). Every criterion takes one of six fixed steps; the level follows from the total.
-// Called directly with the Anthropic key, never via a gateway. Practice feedback, not an official result.
+// Called via Vercel AI Gateway (lib/ai/claude.ts). Practice feedback, not an official result.
 
-const MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const MODEL = OPUS
 
 export const RUBRIC_VERSION = "dtz-schreiben-2026-10-22"
 

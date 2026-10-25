@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS, HAIKU } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import voices from "@/data/tts-voices.json"
@@ -9,13 +9,12 @@ import type { CriterionResult, Level, Score } from "@/lib/exam/types"
 import type { MtBlock, SpeakPhase } from "./types"
 
 // Live Sprechen: the examiner's follow-ups (1B/2B) and the Teil 3 partner react to what the candidate said.
-// Transcript (Scribe) → next line (Claude Haiku) → voice (eleven_v4_turbo). Every call goes directly to its
-// provider, never via a gateway. Any failure returns null and the runner plays the pre-rendered fallback.
+// Transcript (Scribe) → next line (Claude Haiku) → voice (eleven_v4_turbo). Claude goes via Vercel AI Gateway
+// (lib/ai/claude.ts), ElevenLabs directly. Any failure returns null and the runner plays the pre-rendered fallback.
 
-const LIVE_MODEL = "claude-haiku-5-5"
-const GRADE_MODEL = "claude-opus-5-5"
+const LIVE_MODEL = HAIKU
+const GRADE_MODEL = OPUS
 const TTS_MODEL = "eleven_v4_turbo"
-const client = new Anthropic()
 
 export type ConvoLine = { teil: number; phase: SpeakPhase; who: "pruefer" | "partner" | "du"; text: string }
 

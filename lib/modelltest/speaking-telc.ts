@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import { speakingTeilScore, TELC_B1_SPEAKING_CRITERIA, TELC_B1_SPEAKING_MAX, TELC_B1_SPEAKING_TEILE, type SpeakingSteps, type Step } from "@/lib/exam/scoring/telc-b1"
@@ -10,10 +10,9 @@ import type { MtBlock } from "./types"
 // telc Deutsch B1 Mündlicher Ausdruck, live (telc Übungstest 1, 2020, p. 30–35; research/telc-b1.md §3e, §5).
 // The partner is the other candidate (B): he reacts to what the candidate said in every Teil. The examiner
 // (Interlokutor) speaks as little as possible; live she only adds the extra topic in Teil 1 and steps in when the
-// candidate says (almost) nothing. Calls go directly to the provider, never via a gateway; null = pre-rendered fallback.
+// candidate says (almost) nothing. Calls go via Vercel AI Gateway (lib/ai/claude.ts); null = pre-rendered fallback.
 
-const GRADE_MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const GRADE_MODEL = OPUS
 
 const GOAL: Record<number, string> = {
   1: `Teil 1 "Einander kennenlernen": Ihr lernt euch kennen. Reagiere kurz und konkret auf das, was die andere Person gerade erzählt hat (nachfragen, kommentieren, Gemeinsamkeit), erzähl dann etwas über dich passend zu deiner Person, zu einem Thema vom Blatt, das noch nicht besprochen ist, und frag die andere Person dazu.`,

@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import { ratedPoints, START_SPEAKING, START_SPEAKING_TEILE, type StartExam } from "@/lib/exam/scoring/start"
@@ -12,8 +12,7 @@ import type { MtBlock } from "./types"
 // hidden sheet. The examiner's follow-ups in A2 Teil 1 pick up the introduction. Calls go directly to the provider;
 // null = the pre-rendered fallback plays.
 
-const GRADE_MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const GRADE_MODEL = OPUS
 
 const LEVEL: Record<StartExam, string> = { "start-deutsch-1": "A1", "telc-a2": "A2" }
 const NAME: Record<StartExam, string> = { "start-deutsch-1": "Start Deutsch 1", "telc-a2": "telc Deutsch A2" }

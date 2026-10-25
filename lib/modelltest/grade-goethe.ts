@@ -1,5 +1,5 @@
 import "server-only"
-import Anthropic from "@anthropic-ai/sdk"
+import { claude as client, OPUS } from "@/lib/ai/claude"
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod"
 import { z } from "zod"
 import { a2WritingPoints, B1_WRITING_CRITERIA, B1_WRITING_MAX, B1_WRITING_WORDS, b1CriterionPoints, goetheA2Task, goetheB1Task, type B1WritingSteps, type Step } from "@/lib/exam/scoring/goethe"
@@ -7,10 +7,9 @@ import type { CriterionResult, WritingOption } from "@/lib/exam/types"
 
 // Goethe-Zertifikat A2 Schreiben (research/goethe-a2.md §4, §11.1: ÜS S. 37–38) and Goethe-/ÖSD-Zertifikat B1 Schreiben
 // (research/goethe-oesd-b1.md §3.3, §4, §8.5: ÜS S. 43–44). One call per task; the module total is added up by the
-// caller. Called directly with the Anthropic key, never via a gateway. Practice feedback, not an official result.
+// caller. Called via Vercel AI Gateway (lib/ai/claude.ts). Practice feedback, not an official result.
 
-const MODEL = "claude-opus-5-5"
-const client = new Anthropic()
+const MODEL = OPUS
 
 export const GOETHE_WRITING_RUBRIC_VERSION = "goethe-schreiben-2026-10-25"
 
