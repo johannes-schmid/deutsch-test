@@ -685,3 +685,9 @@
 **Outcome:** SUCCESS (tsc, lint, build, unit tests); no live Gateway call tested yet (no key in this project).
 **What worked / went wrong:** Production Schreiben/Sprechen failed because `ANTHROPIC_API_KEY` and a valid `ELEVENLABS_API_KEY` were missing on Vercel. The Gateway accepts the Anthropic SDK unchanged incl. `messages.parse` + `output_config.format`/`effort`; only base URL, key and model id format (dots, `anthropic/` prefix) differ.
 **Lesson:** The "no Gateway" rule covers content generation only; live-site model calls use `lib/ai/claude.ts`. ElevenLabs is not on the Gateway and stays direct.
+
+## 2026-10-25 — Free Schreiben/Sprechen need an account, 10 per skill
+**Changed:** `lib/kurztest/quota.ts` (+ test) decides the limit; `limits.ts` counts graded attempts per account email and skill (lifetime) and skips the free cap for pass holders; `/api/kurztest/{quota,unlock}` require a session; runner shows `SignUpCard` (guest-wall.tsx) instead of the email gate and links `/preise` at the limit; copy in de/uk/ru.
+**Outcome:** SUCCESS (tsc, 28 tests, build, guest 401s, count query on local DB). Signed-in flow not clicked through (Google-only login locally).
+**What worked / went wrong:** The running dev server kept serving the old copy module ("limitFree is not a function") until restarted.
+**Lesson:** After adding keys to the i18n copy objects, restart `next dev` if the page throws "X is not a function" for a new key.

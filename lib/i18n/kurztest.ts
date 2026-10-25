@@ -62,8 +62,8 @@ const de = {
   },
   about: {
     closed: (min: number) => [`Ein Kurztest: ungefähr ${min} Minuten, ein paar Aufgaben aus jedem Teil der Prüfung.`, "Danach gibst du deine E-Mail-Adresse ein. Dann siehst du dein Ergebnis mit allen Lösungen und Erklärungen."],
-    schreiben: (min: number) => [`Du schreibst ${min} Minuten lang einen kurzen Text, wie in der Prüfung.`, "Danach bekommst du Feedback zu deinem Text und eine Musterlösung. Dafür brauchen wir vorher deine E-Mail-Adresse."],
-    sprechen: (min: number) => [`Ungefähr ${min} Minuten. Du hörst die Prüferin und deinen Partner und antwortest mit dem Mikrofon.`, "Danach siehst du, was wir verstanden haben, neben einer Beispielantwort. Dafür brauchen wir vorher deine E-Mail-Adresse."],
+    schreiben: (min: number) => [`Du schreibst ${min} Minuten lang einen kurzen Text, wie in der Prüfung.`, "Danach bekommst du Feedback zu deinem Text und eine Musterlösung. Dafür brauchst du ein Gratis-Konto."],
+    sprechen: (min: number) => [`Ungefähr ${min} Minuten. Du hörst die Prüferin und deinen Partner und antwortest mit dem Mikrofon.`, "Danach siehst du, was wir verstanden haben, neben einer Beispielantwort. Dafür brauchst du ein Gratis-Konto."],
   },
   run: {
     progress: (skill: string) => `Fortschritt ${skill}`,
@@ -92,6 +92,11 @@ const de = {
     free: "Gratis · keine Zahlungsdaten nötig",
     login: ["Schon ein Konto?", "Anmelden"],
     google: { label: "Mit Google registrieren", pending: "Google wird geöffnet …" },
+    hGraded: "Starte mit einem Gratis-Konto",
+    leadGraded: (speaking: boolean, n: number) =>
+      speaking
+        ? `Deine Antworten werden in Text umgewandelt. Dafür brauchst du ein Konto. Du hast ${n} Sprechen-Tests gratis.`
+        : `Dein Text bekommt Feedback nach den Prüfungskriterien. Dafür brauchst du ein Konto. Du hast ${n} Schreiben-Tests gratis.`,
   },
   gate: {
     h: "Geschafft!",
@@ -113,6 +118,8 @@ const de = {
     busy: "Gerade sind sehr viele Auswertungen. Versuch es bitte morgen noch einmal.",
     limit: "Du hast heute schon alle Gratis-Auswertungen benutzt. Versuch es bitte morgen noch einmal.",
     failed: "Das hat leider nicht geklappt. Versuch es bitte noch einmal.",
+    limitFree: (n: number) => `Du hast deine ${n} Gratis-Tests für diesen Teil benutzt. Mit dem Prüfungspass übst du mit allen Modelltests weiter.`,
+    pass: "Prüfungspass ansehen",
   },
   result: {
     meta: (exam: string, skill: string, n: number) => `${exam} · Kurztest ${skill} · ${n} Aufgaben`,

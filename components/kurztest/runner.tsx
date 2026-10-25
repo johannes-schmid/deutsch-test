@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
 import { ConfirmSheet, ExamAudio, ExamButton, ExamCopyProvider, ExamReading, ExamShell, PartIntro, ReadingLayout, SpeakingTask, WritingTask, useExamTimer } from "@/components/exam"
@@ -10,10 +11,11 @@ import { createClient } from "@/lib/supabase/client"
 import type { ExamPage } from "@/lib/i18n/kurztest"
 import type { SiteLocale } from "@/lib/i18n/locale"
 import type { PublicBlock } from "@/lib/kurztest/data"
+import { FREE_PER_SKILL } from "@/lib/kurztest/quota"
 import { MAX_RECORDING_SECONDS, MAX_TEXT, type KurztestResult } from "@/lib/kurztest/types"
 import { FRAME_ID, KurztestFrame } from "./frame"
 import { EmailGate } from "./gate"
-import { GuestWall } from "./guest-wall"
+import { GuestWall, SignUpCard } from "./guest-wall"
 import { BlockItems, type Values } from "./items"
 import { KurztestLocale, useKurztest } from "./locale"
 import { ResultView } from "./result-view"
@@ -297,21 +299,20 @@ export function KurztestRunner({ locale, ...props }: RunnerProps & { locale: Sit
 type RunnerProps = { exam: ExamId; page: ExamPage; skill: Skill; minutes: number; blocks: PublicBlock[] }
 
 function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
-  const { T: C, locale } = useKurztest()
+  const { T: C, locale, at } = useKurztest()
   const [phase, setPhase] = useState<Phase>("intro")
   const [startedAt, setStartedAt] = useState("")
   const [values, setValues] = useState<Values>({})
   const [attemptId, setAttemptId] = useState<string | null>(null)
   const [result, setResult] = useState<KurztestResult | null>(null)
   const [error, setError] = useState<string | null>(null)
-  // Free tests: a guest gets Teil 1, then the sign-up wall. Signed-in users skip the email gate; the server takes the account's email.
+  // Free tests need an account: Lesen/Hören guests get Teil 1, then the sign-up wall; Schreiben/Sprechen guests sign up before
+  // they start (10 graded runs per skill, lib/kurztest/quota.ts). The server takes the account's email.
   const [signedIn, setSignedIn] = useState(false)
   const [resumed, setResumed] = useState<{ i: number; left: number } | undefined>()
   const [used, setUsed] = useState<number | undefined>()
   const recordings = useRef<Blob[]>([])
   const lastPayload = useRef<Record<string, unknown>>({})
-  // Schreiben/Sprechen take the email before the test: the limits are checked first, and the result unlocks by itself.
-  const contact = useRef<{ email: string; marketing: boolean } | null>(null)
   const name = C.names[skill]
   const graded = skill === "schreiben" || skill === "sprechen"
 
@@ -348,8 +349,9 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
     }
   }
 
+  const limitFree = C.gate.limitFree(FREE_PER_SKILL)
   const errorText = (code?: string) =>
-    code === "bad_email" ? C.gate.badEmail : code === "busy" ? C.gate.busy : code === "limit_ip" || code === "limit_email" ? C.gate.limit : C.gate.failed
+    code === "bad_email" ? C.gate.badEmail : code === "busy" ? C.gate.busy : code === "limit_ip" ? C.gate.limit : code === "limit_free" ? limitFree : C.gate.failed
 
   const unlock = async (id: string, email: string, marketing: boolean): Promise<string | null> => {
     let res: Response
@@ -388,33 +390,25 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
       setError(C.gate.failed)
       return setPhase("gate")
     }
-    if (!contact.current && !signedIn) return setPhase("gate")
+    if (!signedIn) return setPhase("gate")
     setPhase("grading")
-    const err = await unlock(id, contact.current?.email ?? "", contact.current?.marketing ?? false)
+    const err = await unlock(id, "", false)
     if (err) {
       setError(err)
       setPhase("gate")
     }
   }
 
-  /** Before a graded test: check the limits for this email and IP, then start. */
-  const register = async (email: string, marketing: boolean): Promise<string | null> => {
-    try {
-      const res = await fetch("/api/kurztest/quota", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) })
-      if (!res.ok) return errorText(((await res.json().catch(() => ({}))) as { error?: string }).error)
-    } catch {
-      return C.gate.failed
-    }
-    contact.current = { email, marketing }
-    start()
-    return null
-  }
-
-  /** Graded test, signed in: the limits are checked against the account's email on the server. */
+  /** Graded test, signed in: the limits are checked against the account on the server before any paid work. */
   const startSignedIn = async () => {
     setError(null)
-    const err = await register("", false)
-    if (err) setError(err)
+    try {
+      const res = await fetch("/api/kurztest/quota", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ skill }) })
+      if (!res.ok) return setError(errorText(((await res.json().catch(() => ({}))) as { error?: string }).error))
+    } catch {
+      return setError(C.gate.failed)
+    }
+    start()
   }
 
   /** From the end screen: Lesen/Hören start over at once; Schreiben/Sprechen go back through the intro and its limit check. */
@@ -426,7 +420,6 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
     setResumed(undefined)
     setUsed(undefined)
     recordings.current = []
-    contact.current = null
     if (graded) return setPhase("intro")
     start()
   }
@@ -462,9 +455,14 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
           <div className="mx-auto flex w-full max-w-[560px] flex-col gap-4">
             <div className="nz-app rounded-[24px] p-6 sm:p-8">
               <PartIntro part={skill} name={C.kurztest(name)} minutes={minutes} count={count} teile={teile} rules={rules} about={about} onStart={graded && !signedIn ? undefined : graded ? startSignedIn : start} />
-              {error ? <p role="alert" className="mt-4 rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
+              {error ? (
+                <div role="alert" className="mt-4 flex flex-col gap-3 rounded-2xl bg-v-soft p-4 text-[14.5px]">
+                  <p>{error}</p>
+                  {error === limitFree ? <PassLink href={at("/preise")} label={C.gate.pass} /> : null}
+                </div>
+              ) : null}
             </div>
-            {graded && !signedIn ? <EmailGate before speaking={skill === "sprechen"} onUnlock={register} /> : null}
+            {graded && !signedIn ? <SignUpCard speaking={skill === "sprechen"} free={FREE_PER_SKILL} returnTo={at(`${examPath(exam)}/${skill}`)} /> : null}
           </div>
         </KurztestFrame>
       </ExamCopyProvider>
@@ -499,13 +497,15 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
             <div className="nz-app mx-auto w-full max-w-[560px] rounded-[24px] p-8 text-[16px] text-v-muted" role="status">
               {phase === "sending" ? C.gate.sending : skill === "sprechen" ? C.gate.transcribing : C.gate.grading}
             </div>
-          ) : attemptId && !contact.current && !signedIn ? (
+          ) : attemptId && !signedIn ? (
             <EmailGate speaking={skill === "sprechen"} onUnlock={(email, marketing) => unlock(attemptId, email, marketing)} />
           ) : (
             <div className="nz-app mx-auto flex w-full max-w-[560px] flex-col gap-4 rounded-[24px] p-8" role="alert">
               <p className="text-[16px]">{error ?? C.gate.failed}</p>
-              {error === C.gate.limit || error === C.gate.busy ? null : (
-                <ExamButton onClick={() => (attemptId && (contact.current || signedIn) ? void retryUnlock(attemptId) : submit(lastPayload.current))}>{C.result.again}</ExamButton>
+              {error === limitFree ? (
+                <PassLink href={at("/preise")} label={C.gate.pass} />
+              ) : error === C.gate.limit || error === C.gate.busy ? null : (
+                <ExamButton onClick={() => (attemptId && signedIn ? void retryUnlock(attemptId) : submit(lastPayload.current))}>{C.result.again}</ExamButton>
               )}
             </div>
           )}
@@ -516,10 +516,19 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
 
   async function retryUnlock(id: string) {
     setPhase("grading")
-    const err = await unlock(id, contact.current?.email ?? "", contact.current?.marketing ?? false)
+    const err = await unlock(id, "", false)
     if (err) {
       setError(err)
       setPhase("gate")
     }
   }
+}
+
+/** Out of free tests: the way on is the Prüfungspass. Styled as the primary ExamButton. */
+function PassLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link href={href} className="inline-flex h-12 items-center justify-center rounded-full bg-v-ink px-6 text-[16px] font-semibold text-v-bg transition-transform duration-150 ease-out active:scale-[0.97]">
+      {label}
+    </Link>
+  )
 }

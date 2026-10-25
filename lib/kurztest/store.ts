@@ -61,9 +61,10 @@ export async function selectAll<T>(columns: string, build: (q: ReturnType<Return
 }
 
 /** Graded runs since `since` matching one column, for the daily caps. */
-export async function countGradedSince(since: string, match?: { column: "ip_hash" | "email"; value: string }) {
+export async function countGradedSince(since: string, match?: { column: "ip_hash" | "email"; value: string }, skill?: string) {
   let q = table().select("id", { count: "exact", head: true }).gte("graded_at", since)
   if (match) q = q.eq(match.column, match.value)
+  if (skill) q = q.eq("skill", skill)
   const { count, error } = await q
   if (error) throw new Error(`kurztest_attempts: ${error.message}`)
   return count ?? 0
