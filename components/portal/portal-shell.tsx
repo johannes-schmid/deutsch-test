@@ -58,8 +58,8 @@ export function AccountRow({ user }: { user: SessionUser | null }) {
   )
 }
 
-const SIDE_LINK = "flex min-h-11 items-center gap-3 rounded-full px-3 text-[14.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
-const SIDE_ACTIVE = "bg-v-ink font-semibold text-v-bg hover:bg-v-ink hover:text-v-bg"
+export const SIDE_LINK = "flex min-h-11 items-center gap-3 rounded-full px-3 text-[14.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
+export const SIDE_ACTIVE = "bg-v-ink font-semibold text-v-bg hover:bg-v-ink hover:text-v-bg"
 
 /** One exam family in the sidebar, lit on its page (and, for the DTZ, its skill pages). */
 function SideFamily({ family, grouped }: { family: NavFamily; grouped?: boolean }) {
@@ -77,8 +77,8 @@ function SideFamily({ family, grouped }: { family: NavFamily; grouped?: boolean 
   )
 }
 
-const SIDE_SUB = "flex min-h-9 items-center gap-2.5 rounded-full px-3 text-[13.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
-const SIDE_SUB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
+export const SIDE_SUB = "flex min-h-9 items-center gap-2.5 rounded-full px-3 text-[13.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
+export const SIDE_SUB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
 
 /** One level under its family: level pill and exam name, lit on the exam and its skill pages. */
 function SideLevel({ level }: { level: NavLevel }) {

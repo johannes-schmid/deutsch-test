@@ -329,7 +329,8 @@ supabase/migrations/*_payments.sql   # payments (one row per Mollie payment, per
 lib/i18n/pass.ts                     # PassBuilder copy (de/uk/ru); components/design/pass-builder.tsx = the configurator
 app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
-app/(admin)/admin/                   # /admin = signups per week, /admin/kurztest = funnel + leads + CSV; Google login + `admin_users` allowlist (lib/admin/guard.ts, checked in proxy.ts and every page/route; also guards /design/kurztest)
+app/(admin)/admin/                   # /admin = stats + signups per week, /admin/kurztest = funnel, /admin/kurztest/emails = latest leads + CSV, /admin/modelltests = per-exam overview → [exam] slot grid → [exam]/[skill]/[n] review; Google login + `admin_users` allowlist (lib/admin/guard.ts, checked in proxy.ts and every page/route; also guards /design/kurztest)
+components/admin/                    # admin-shell (sidebar + mobile nav, from lib/admin/nav.ts), admin-drawer (client), admin-ui (AdminPage, Panel, DataTable, skeletons), modelltest-review
 proxy.ts                             # also: Supabase session refresh on /dashboard + auth pages; no session → /anmelden, session on auth pages → /dashboard
 lib/supabase/{client,server}.ts      # @supabase/ssr clients (publishable key, never the service key); getSessionUser() = Google profile only
 lib/auth/redirect.ts                 # safeNext() (same-site paths only), PORTAL_HOME, auth error copy

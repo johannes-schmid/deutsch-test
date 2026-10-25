@@ -321,8 +321,18 @@ missing, add it to `components/exam/`, show it on `/design/pruefung`, and list i
   surface card with the open points, an ember progress line (reviewed / all) and the only publish
   button, behind a `ConfirmSheet`. `TrackReview`: the Hören track with a jump per Teil and the current
   cue. `SpeakingExtra`: both photos with Pexels credit, the follow-up bank, persona and fallbacks.
-- The overview stays on the plain admin look (shadcn tokens): 10 slots per skill, dashed = not made,
-  `x/y` = reviewed Teile, check = ready, ink fill = published.
+- Per exam (`/admin/modelltests/[exam]`): 10 slots per skill, dashed = not made, `x/y` = reviewed Teile,
+  ink ring + check = ready, ink fill = published, with a legend above the grid.
+
+**Admin shell** (`app/(admin)/layout.tsx`, `components/admin/admin-{shell,drawer,ui}.tsx`, nav in `lib/admin/nav.ts`)
+- The whole admin sits on the Nachtzug tokens (`DesignShell`). From `lg`: the portal's floating glass sidebar
+  (same `SIDE_*` link styles, `PortalLink`, `SideGroup`), sections Übersicht / Inhalte / Gratis-Test, Modelltests
+  unfolds to one link per exam; foot = "Website ansehen", admin email, sign-out. Below `lg`: a glass top bar and a
+  left drawer (260ms iOS drawer curve, closes on navigation, Escape and scrim) with the same nav.
+- Pages compose `AdminPage` (crumbs, title, description, actions), `Section`, `Panel` (`.nz-paper`), `DataTable`
+  with the `TH`/`TD`/`THEAD`/`TBODY`/`TOTAL` classes (mono heads, soft row lines, tabular numbers), `Empty`,
+  `PanelSkeleton` (loading shape, never a bare "Lädt …") and `Progress` (ember line). No one-off tables.
+- Overview stats: one panel split into four linked cells by 1px `v-line` gaps, not four cards.
 
 ## Do's and Don'ts
 

@@ -691,3 +691,9 @@
 **Outcome:** SUCCESS (tsc, 28 tests, build, guest 401s, count query on local DB). Signed-in flow not clicked through (Google-only login locally).
 **What worked / went wrong:** The running dev server kept serving the old copy module ("limitFree is not a function") until restarted.
 **Lesson:** After adding keys to the i18n copy objects, restart `next dev` if the page throws "X is not a function" for a new key.
+
+## 2026-10-25 — Admin panel restructured (inburgering-style shell)
+**Changed:** `app/(admin)/layout.tsx` on `DesignShell` with `components/admin/admin-{shell,drawer,ui}.tsx` and one nav config `lib/admin/nav.ts` (replaces `components/admin/admin-nav.tsx` and `modelltests/layout.tsx`); `/admin` gets a stat panel; Kurztest split into `/admin/kurztest` (funnel) and `/admin/kurztest/emails`; Modelltests split into a per-exam overview and `/admin/modelltests/[exam]`; set review uses `AdminPage` crumbs; `signupsPerWeek` wrapped in `cache`; portal `SIDE_*` classes exported for reuse.
+**Outcome:** SUCCESS (tsc, eslint, `next build`; screenshots at 390 + 1440 of every admin page and the drawer with a throwaway local admin, deleted afterwards)
+**What worked / went wrong:** Reusing the portal's `PortalLink` / `SideGroup` gave the admin sidebar active states and folding for free. The Funnel table clipped its last two columns at 1440 until cells went to px-3 and the DTZ used its short name.
+**Lesson:** One nav definition feeds desktop and mobile. Local admin screenshots: magic-link session + a temporary `admin_users` row via the secret key, Playwright from `../inburgering-website/node_modules` (this repo has none).

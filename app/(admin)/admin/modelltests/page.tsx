@@ -1,81 +1,81 @@
 import { Suspense } from "react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Check, Globe } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { AdminPage, Panel, PanelSkeleton, Progress } from "@/components/admin/admin-ui"
+import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { requireAdmin } from "@/lib/admin/guard"
-import { EXAMS, type ExamId } from "@/lib/exams"
-import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
-import { SKILLS, setOverview, type SetSummary } from "@/lib/modelltest/admin"
-import { cn } from "@/lib/utils"
+import { ADMIN_EXAMS, modelltestPath } from "@/lib/admin/nav"
+import { EXAMS } from "@/lib/exams"
+import { SKILLS, setOverview } from "@/lib/modelltest/admin"
+import { MODELLTESTS } from "@/lib/portal"
 
-export const metadata = { title: "Modelltests · Admin" }
+export const metadata = { title: "Modelltests" }
 
-const SLOTS = Array.from({ length: 10 }, (_, i) => i + 1)
+const SLOTS = SKILLS.length * MODELLTESTS
 
-function Slot({ exam, skill, n, set }: { exam: string; skill: string; n: number; set?: SetSummary }) {
-  if (!set) {
-    return (
-      <span className="flex h-14 flex-col items-center justify-center rounded-lg border border-dashed text-muted-foreground/60" title={`Modelltest ${n}: noch nicht erstellt`}>
-        <span className="text-sm tabular-nums">{n}</span>
-      </span>
-    )
-  }
-  const ready = set.total > 0 && set.reviewed === set.total
-  const state = set.published ? "veröffentlicht" : ready ? "geprüft, nicht veröffentlicht" : `${set.reviewed} von ${set.total} Teilen geprüft`
+function Figure({ label, value, of }: { label: string; value: number; of: number }) {
   return (
-    <Link
-      href={`/admin/modelltests/${exam}/${skill}/${n}`}
-      aria-label={`Modelltest ${n}: ${state}`}
-      title={state}
-      className={cn(
-        "flex h-14 flex-col items-center justify-center gap-0.5 rounded-lg border transition-[transform,background-color] duration-150 ease-out focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none active:scale-[0.97]",
-        set.published ? "border-foreground bg-foreground text-background" : ready ? "border-foreground bg-background" : "bg-background hover:bg-muted"
-      )}
-    >
-      <span className="text-sm font-semibold tabular-nums">{n}</span>
-      <span className={cn("flex items-center gap-1 text-[11px] tabular-nums", set.published ? "text-background/75" : "text-muted-foreground")}>
-        {set.published ? <Globe className="size-3" aria-hidden="true" /> : ready ? <Check className="size-3 text-foreground" strokeWidth={3} aria-hidden="true" /> : `${set.reviewed}/${set.total}`}
+    <span className="flex flex-col gap-0.5">
+      <span className="text-[12px] text-v-muted">{label}</span>
+      <span className="text-[15px] font-semibold tabular-nums">
+        {value}
+        <span className="font-normal text-v-muted"> / {of}</span>
       </span>
-    </Link>
+    </span>
   )
 }
 
-async function Overview() {
+async function Exams() {
   if (!(await requireAdmin())) notFound()
-  const sets = await setOverview()
-  const exams = [...new Set<ExamId>(["dtz", ...sets.map((s) => s.exam)])]
+  const sets = (await setOverview()).filter((s) => s.number > 0)
   return (
-    <>
-      {exams.map((exam) => (
-        <section key={exam} className="flex flex-col gap-4">
-          <h2 className="text-lg font-semibold">{EXAMS[exam]?.name ?? exam}</h2>
-          <div className="flex flex-col divide-y rounded-xl border">
-            {SKILLS.map((skill) => (
-              <div key={skill} className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:gap-6">
-                <span className="w-24 shrink-0 text-sm font-medium">{KURZTEST_COPY.names[skill]}</span>
-                <div className="grid flex-1 grid-cols-5 gap-2 sm:grid-cols-10">
-                  {SLOTS.map((n) => <Slot key={n} exam={exam} skill={skill} n={n} set={sets.find((s) => s.exam === exam && s.skill === skill && s.number === n)} />)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      ))}
-      <p className="text-xs leading-relaxed text-muted-foreground">
-        Zahl unten: geprüfte Teile von allen. Haken: alles geprüft, noch nicht veröffentlicht. Schwarz: veröffentlicht. Gestrichelt: noch nicht erstellt
-        (<code>scripts/modelltest/</code>, dann <code>seed.ts</code>). Modelltest 1 ist kostenlos.
-      </p>
-    </>
+    <Panel>
+      <ul className="divide-y divide-v-line">
+        {ADMIN_EXAMS.map((exam) => {
+          const mine = sets.filter((s) => s.exam === exam)
+          const total = mine.reduce((s, x) => s + x.total, 0)
+          const reviewed = mine.reduce((s, x) => s + x.reviewed, 0)
+          return (
+            <li key={exam}>
+              <Link
+                href={modelltestPath(exam)}
+                className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-3 px-5 py-4 transition-colors duration-150 ease-out outline-none hover:bg-v-bg/70 focus-visible:bg-v-bg/70 focus-visible:ring-2 focus-visible:ring-v-ink focus-visible:ring-inset md:grid-cols-[minmax(0,1.4fr)_96px_96px_minmax(0,1fr)_20px]"
+              >
+                <span className="flex min-w-0 items-center gap-3">
+                  <ExamMark brand={EXAMS[exam].brand} size="sm" />
+                  <span className="flex min-w-0 flex-col">
+                    <b className="truncate text-[15px] font-semibold">{EXAMS[exam].name}</b>
+                    <span className="v-num text-[12px] text-v-muted">{EXAMS[exam].levels.join(" – ")}</span>
+                  </span>
+                </span>
+                <ArrowRight className="size-4 text-v-muted transition-transform duration-150 ease-out group-hover:translate-x-0.5 md:order-last" aria-hidden="true" />
+                <span className="col-span-2 grid grid-cols-2 items-center gap-x-4 gap-y-3 md:col-span-3 md:grid-cols-subgrid">
+                  <Figure label="Angelegt" value={mine.length} of={SLOTS} />
+                  <Figure label="Veröffentlicht" value={mine.filter((s) => s.published).length} of={SLOTS} />
+                  <span className="col-span-2 flex flex-col gap-1.5 md:col-span-1">
+                    <span className="flex items-baseline justify-between gap-2 text-[12px] text-v-muted">
+                      Teile geprüft
+                      <span className="tabular-nums">{reviewed} / {total}</span>
+                    </span>
+                    <Progress value={reviewed} total={total} label={`${EXAMS[exam].name}: geprüfte Teile`} />
+                  </span>
+                </span>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </Panel>
   )
 }
 
 export default function ModelltestsAdminPage() {
   return (
-    <main className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-10">
-      <h1 className="text-2xl font-semibold tracking-tight">Modelltests</h1>
-      <Suspense fallback={<p className="text-sm text-muted-foreground">Lädt …</p>}>
-        <Overview />
+    <AdminPage title="Modelltests" description={`Zehn Modelltests pro Teil und Prüfung, also ${SLOTS} pro Prüfung. Wähle eine Prüfung, um die Sets zu prüfen und zu veröffentlichen.`}>
+      <Suspense fallback={<PanelSkeleton rows={ADMIN_EXAMS.length} />}>
+        <Exams />
       </Suspense>
-    </main>
+    </AdminPage>
   )
 }
