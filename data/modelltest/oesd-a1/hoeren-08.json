@@ -1,0 +1,1138 @@
+{
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "oesd-a1-hoeren-08-t1",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.658Z",
+        "textType": "Kurze Alltagsgespräche (Foto zuordnen)"
+      },
+      "photos": {
+        "0": {
+          "A": {
+            "query": "man and woman hanging striped wallpaper in bedroom with small roller",
+            "alt": "Ein Mann und eine Frau kleben ein Stück Tapete mit Streifen an die Wand. Die Frau hat eine kleine Rolle in der Hand."
+          },
+          "B": {
+            "query": "knife sharpener at outdoor market stall grinding kitchen knife woman waiting",
+            "alt": "Zwei Hände halten ein Messer an eine sich drehende Schleifscheibe, dabei fliegen kleine Funken.",
+            "src": "oesd-a1/hoeren-08/oesd-a1-hoeren-08-t1-0-B.webp",
+            "credit": {
+              "name": "Raghav Modi",
+              "url": "https://www.pexels.com/photo/knife-sharpening-3893789/",
+              "pexelsId": 3893789
+            }
+          },
+          "C": {
+            "query": "spa reception desk woman handing towel and wristband to man",
+            "alt": "Eine Frau an der Rezeption einer Therme gibt einem Mann ein Handtuch und ein Armband."
+          },
+          "D": {
+            "query": "woman selling kitchen knives to man at stall inside train station hall",
+            "alt": "Eine Frau verkauft einem Mann an einem Stand in einer Bahnhofshalle Küchenmesser."
+          },
+          "E": {
+            "query": "older mother hugging young adult son in front of open train door",
+            "alt": "Eine ältere Frau umarmt einen jungen Mann vor einer offenen Zugtür."
+          },
+          "F": {
+            "query": "woman painting at easel by river man looking at painting",
+            "alt": "Eine Frau in einer dicken Jacke malt an einer Staffelei am Wasser ein Bild.",
+            "src": "oesd-a1/hoeren-08/oesd-a1-hoeren-08-t1-0-F.webp",
+            "credit": {
+              "name": "@coldbeer",
+              "url": "https://www.pexels.com/photo/woman-working-on-painting-on-easel-13048451/",
+              "pexelsId": 13048451
+            }
+          }
+        }
+      },
+      "display": {
+        "instruction": "Situation: Sie hören fünf kurze Gespräche. Welches Foto passt zu welchem Gespräch? Schreiben Sie die Nummer des Textes unter das Foto. Achtung: Ein Foto passt nicht. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "layout": "textNumber",
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "",
+                  "text": "Zwei Personen kleben eine Tapete mit Streifen an die Wand."
+                },
+                {
+                  "key": "B",
+                  "title": "",
+                  "text": "Am Marktstand: Ein Mann schleift ein Messer, eine Frau wartet.",
+                  "image": "oesd-a1/hoeren-08/oesd-a1-hoeren-08-t1-0-B.webp"
+                },
+                {
+                  "key": "C",
+                  "title": "",
+                  "text": "An der Rezeption einer Therme bekommt ein Mann ein Handtuch."
+                },
+                {
+                  "key": "D",
+                  "title": "",
+                  "text": "In einer Bahnhofshalle verkauft eine Frau Küchenmesser an einen Mann."
+                },
+                {
+                  "key": "E",
+                  "title": "",
+                  "text": "Eine Mutter umarmt ihren Sohn vor der Tür von einem Zug."
+                },
+                {
+                  "key": "F",
+                  "title": "",
+                  "text": "Eine Frau malt am Fluss ein Bild, ein Mann schaut zu.",
+                  "image": "oesd-a1/hoeren-08/oesd-a1-hoeren-08-t1-0-F.webp"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 2,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 3,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 4,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 5,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fünf kurze Gespräche",
+          "speakers": {
+            "c1a": {
+              "name": "Messerschleifer",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c1b": {
+              "name": "Kundin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c2a": {
+              "name": "Mutter",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2b": {
+              "name": "Sohn",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c3a": {
+              "name": "Freundin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c3b": {
+              "name": "Freund",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c4a": {
+              "name": "Spaziergänger",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c4b": {
+              "name": "Malerin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c5a": {
+              "name": "Rezeptionistin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c5b": {
+              "name": "Gast",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-08/oesd-a1-hoeren-08-t1.review.mp3",
+          "duration": 101.2
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "B",
+            "explanation": "Der Mann auf dem Markt schleift die zwei Küchenmesser der Frau. Er verkauft keine Messer, darum passt das Foto in der Bahnhofshalle nicht.",
+            "evidence": {
+              "text": "Grüß Gott! Was kann ich für Sie tun? Ich habe zwei Küchenmesser. Können Sie die schleifen? Was kostet das? Ein Messer kostet drei Euro. In zehn Minuten sind beide fertig. Gut, dann gehe ich zuerst einkaufen und komme gleich wieder.",
+              "hit": "Können Sie die schleifen?"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "E",
+            "explanation": "Eine Mutter sagt ihrem Sohn am Zug Tschüss. Niemand kauft hier etwas, also passt das Foto mit dem Messerstand im Bahnhof nicht.",
+            "evidence": {
+              "text": "So, der Zug fährt bald. Hast du dein Billett? Ja, Mama, keine Sorge. Es ist hier in meiner Jackentasche. Gut. Ruf mich bitte gleich an, wenn du in Chur ankommst. Mach ich, versprochen. Merci, Mama, tschüss!",
+              "hit": "Ruf mich bitte gleich an, wenn du in Chur ankommst."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "A",
+            "explanation": "Die zwei Freunde kleben eine Tapete mit Streifen an die Wand. Sie malen kein Bild, darum passt das Foto am Fluss nicht.",
+            "evidence": {
+              "text": "Achtung, die Streifen müssen gerade sein. Ist das so gut? Ja, das passt. Ich drücke jetzt mit der Rolle die Luft raus. Super. Wie viele Stücke kommen noch? Nur noch zwei, dann sind wir fertig. Die Tapete sieht toll aus!",
+              "hit": "Die Tapete sieht toll aus!"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "F",
+            "explanation": "Die Frau malt am Fluss ein Bild von der Mühle, und der Mann schaut zu. Das ist das Foto mit der Staffelei.",
+            "evidence": {
+              "text": "Grüezi! Darf ich kurz schauen? Das ist ja die alte Mühle. Ja, gern. Ich male hier jeden Sonntag am Fluss. In etwa zwei Stunden ist das Bild fertig. Es ist wirklich schön. Merci und viel Spass noch!",
+              "hit": "Ich male hier jeden Sonntag am Fluss."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "C",
+            "explanation": "Der Mann kauft in der Therme eine Karte und ein Handtuch. Das passt zum Foto an der Rezeption.",
+            "evidence": {
+              "text": "Grüß Gott, willkommen in der Therme! Guten Tag. Ich möchte eine Karte für drei Stunden, bitte. Aber ohne Sauna. Gern, das macht einundzwanzig Euro. Ein Handtuch kostet drei Euro extra. Ihr Schrank hat die Nummer achtundvierzig. Ja, ein Handtuch nehme ich, bitte.",
+              "hit": "Ein Handtuch kostet drei Euro extra."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1a",
+            "voice": "man_martin_at",
+            "text": "Grüß Gott! Was kann ich für Sie tun?",
+            "delivery": "[friendly, market stall]",
+            "clip": 1,
+            "sound": "market"
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_alexandra_at",
+            "text": "Ich habe zwei Küchenmesser. Können Sie die schleifen? Was kostet das?",
+            "delivery": "[polite]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1a",
+            "voice": "man_martin_at",
+            "text": "Ein Messer kostet drei Euro. In zehn Minuten sind beide fertig.",
+            "delivery": "[friendly]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_alexandra_at",
+            "text": "Gut, dann gehe ich zuerst einkaufen und komme gleich wieder.",
+            "delivery": "[pleased]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "So, der Zug fährt bald. Hast du dein Billett?",
+            "delivery": "[warm, a bit worried]",
+            "clip": 2,
+            "sound": "station"
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_andres_ch",
+            "text": "Ja, Mama, keine Sorge. Es ist hier in meiner Jackentasche.",
+            "delivery": "[relaxed, smiling]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Gut. Ruf mich bitte gleich an, wenn du in Chur ankommst.",
+            "delivery": "[warm]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_andres_ch",
+            "text": "Mach ich, versprochen. Merci, Mama, tschüss!",
+            "delivery": "[warm, hurried]",
+            "clip": 2
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_emilia_at",
+            "text": "Achtung, die Streifen müssen gerade sein. Ist das so gut?",
+            "delivery": "[concentrated]",
+            "clip": 3,
+            "sound": "roller"
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_gruber_at",
+            "text": "Ja, das passt. Ich drücke jetzt mit der Rolle die Luft raus.",
+            "delivery": "[casual]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_emilia_at",
+            "text": "Super. Wie viele Stücke kommen noch?",
+            "delivery": "[casual]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_gruber_at",
+            "text": "Nur noch zwei, dann sind wir fertig. Die Tapete sieht toll aus!",
+            "delivery": "[pleased]",
+            "clip": 3
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_thomas_ch",
+            "text": "Grüezi! Darf ich kurz schauen? Das ist ja die alte Mühle.",
+            "delivery": "[polite, curious, outdoors]",
+            "clip": 4,
+            "sound": "river"
+          },
+          {
+            "speaker": "c4b",
+            "voice": "woman_mia_ch",
+            "text": "Ja, gern. Ich male hier jeden Sonntag am Fluss. In etwa zwei Stunden ist das Bild fertig.",
+            "delivery": "[calm, friendly]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_thomas_ch",
+            "text": "Es ist wirklich schön. Merci und viel Spass noch!",
+            "delivery": "[warm]",
+            "clip": 4
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_alexandra_at",
+            "text": "Grüß Gott, willkommen in der Therme!",
+            "delivery": "[friendly, reception]",
+            "clip": 5,
+            "sound": "lobby"
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_gruber_at",
+            "text": "Guten Tag. Ich möchte eine Karte für drei Stunden, bitte. Aber ohne Sauna.",
+            "delivery": "[polite]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_alexandra_at",
+            "text": "Gern, das macht einundzwanzig Euro. Ein Handtuch kostet drei Euro extra. Ihr Schrank hat die Nummer achtundvierzig.",
+            "delivery": "[friendly, routine]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_gruber_at",
+            "text": "Ja, ein Handtuch nehme ich, bitte.",
+            "delivery": "[relaxed]",
+            "clip": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-08-t2",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.658Z",
+        "textType": "Nachricht auf der Sprachbox (Kletterzentrum)"
+      },
+      "sound": "beep",
+      "exampleAnswers": [
+        "Probetraining Klettern"
+      ],
+      "display": {
+        "instruction": "Situation: Sie hören eine Nachricht auf Ihrer Sprachbox. Schreiben Sie die wichtigen Informationen auf den Zettel. Die erste Zeile ist ein Beispiel. Sie hören den Text zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Notizen\n",
+                "Was: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nWann: am ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                ", ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                ". September, um ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                " Uhr\nWo: ",
+                {
+                  "n": 9,
+                  "options": []
+                },
+                "gasse 6\nTelefon: 0699 / ",
+                {
+                  "n": 10,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Sprachbox",
+          "speakers": {
+            "kainz": {
+              "name": "Frau Kainz",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-08/oesd-a1-hoeren-08-t2.mp3",
+          "duration": 51.67
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "Dienstag",
+            "accept": [
+              "am Dienstag"
+            ],
+            "explanation": "Du kannst am Dienstag zum Probetraining kommen. Der Kurs am Montag ist schon voll.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Kainz vom Kletterzentrum Felsblock in Hollabrunn. Danke für Ihre Anfrage. Sie haben nach einem Probetraining für Anfänger gefragt. Der Kurs am Montag ist leider schon voll. Aber Sie können am Dienstag kommen, am sechzehnten September. Das Training beginnt um neun Uhr und dauert bis elf Uhr. Das Probetraining kostet nichts. Unsere Adresse ist Tulpengasse sechs. Ich buchstabiere: T, U, L, P, E, N. Ihre Kursnummer ist zweiunddreißig. Bitte bringen Sie Sportschuhe und etwas zu trinken mit. Rufen Sie mich bitte zurück: null sechs neun neun, neunundvierzig, zwanzig, sechs, achtzehn. Danke und auf Wiederhören!",
+              "hit": "Aber Sie können am Dienstag kommen"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "16",
+            "accept": [
+              "16.",
+              "sechzehn",
+              "sechzehnten"
+            ],
+            "explanation": "Der Tag ist der sechzehnte September.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Kainz vom Kletterzentrum Felsblock in Hollabrunn. Danke für Ihre Anfrage. Sie haben nach einem Probetraining für Anfänger gefragt. Der Kurs am Montag ist leider schon voll. Aber Sie können am Dienstag kommen, am sechzehnten September. Das Training beginnt um neun Uhr und dauert bis elf Uhr. Das Probetraining kostet nichts. Unsere Adresse ist Tulpengasse sechs. Ich buchstabiere: T, U, L, P, E, N. Ihre Kursnummer ist zweiunddreißig. Bitte bringen Sie Sportschuhe und etwas zu trinken mit. Rufen Sie mich bitte zurück: null sechs neun neun, neunundvierzig, zwanzig, sechs, achtzehn. Danke und auf Wiederhören!",
+              "hit": "am sechzehnten September"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "9",
+            "accept": [
+              "9:00",
+              "09:00",
+              "9.00",
+              "neun"
+            ],
+            "explanation": "Das Training beginnt um neun Uhr. Elf Uhr ist das Ende vom Training.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Kainz vom Kletterzentrum Felsblock in Hollabrunn. Danke für Ihre Anfrage. Sie haben nach einem Probetraining für Anfänger gefragt. Der Kurs am Montag ist leider schon voll. Aber Sie können am Dienstag kommen, am sechzehnten September. Das Training beginnt um neun Uhr und dauert bis elf Uhr. Das Probetraining kostet nichts. Unsere Adresse ist Tulpengasse sechs. Ich buchstabiere: T, U, L, P, E, N. Ihre Kursnummer ist zweiunddreißig. Bitte bringen Sie Sportschuhe und etwas zu trinken mit. Rufen Sie mich bitte zurück: null sechs neun neun, neunundvierzig, zwanzig, sechs, achtzehn. Danke und auf Wiederhören!",
+              "hit": "Das Training beginnt um neun Uhr"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Tulpen",
+            "accept": [
+              "Tulpengasse",
+              "Tulpengasse 6"
+            ],
+            "exact": true,
+            "explanation": "Frau Kainz buchstabiert den Namen: T, U, L, P, E, N. Der Name muss genau richtig sein.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Kainz vom Kletterzentrum Felsblock in Hollabrunn. Danke für Ihre Anfrage. Sie haben nach einem Probetraining für Anfänger gefragt. Der Kurs am Montag ist leider schon voll. Aber Sie können am Dienstag kommen, am sechzehnten September. Das Training beginnt um neun Uhr und dauert bis elf Uhr. Das Probetraining kostet nichts. Unsere Adresse ist Tulpengasse sechs. Ich buchstabiere: T, U, L, P, E, N. Ihre Kursnummer ist zweiunddreißig. Bitte bringen Sie Sportschuhe und etwas zu trinken mit. Rufen Sie mich bitte zurück: null sechs neun neun, neunundvierzig, zwanzig, sechs, achtzehn. Danke und auf Wiederhören!",
+              "hit": "Ich buchstabiere: T, U, L, P, E, N."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "4920618",
+            "accept": [
+              "49 20 6 18",
+              "49 20 618",
+              "492 06 18",
+              "4 9 2 0 6 1 8"
+            ],
+            "exact": true,
+            "explanation": "Nach null sechs neun neun kommt neunundvierzig, zwanzig, sechs, achtzehn. Zweiunddreißig ist nur deine Kursnummer.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Kainz vom Kletterzentrum Felsblock in Hollabrunn. Danke für Ihre Anfrage. Sie haben nach einem Probetraining für Anfänger gefragt. Der Kurs am Montag ist leider schon voll. Aber Sie können am Dienstag kommen, am sechzehnten September. Das Training beginnt um neun Uhr und dauert bis elf Uhr. Das Probetraining kostet nichts. Unsere Adresse ist Tulpengasse sechs. Ich buchstabiere: T, U, L, P, E, N. Ihre Kursnummer ist zweiunddreißig. Bitte bringen Sie Sportschuhe und etwas zu trinken mit. Rufen Sie mich bitte zurück: null sechs neun neun, neunundvierzig, zwanzig, sechs, achtzehn. Danke und auf Wiederhören!",
+              "hit": "neunundvierzig, zwanzig, sechs, achtzehn"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "kainz",
+            "voice": "woman_emilia_at",
+            "text": "Guten Tag, hier spricht Kainz vom Kletterzentrum Felsblock in Hollabrunn. Danke für Ihre Anfrage. Sie haben nach einem Probetraining für Anfänger gefragt. Der Kurs am Montag ist leider schon voll. Aber Sie können am Dienstag kommen, am sechzehnten September. Das Training beginnt um neun Uhr und dauert bis elf Uhr. Das Probetraining kostet nichts. Unsere Adresse ist Tulpengasse sechs. Ich buchstabiere: T, U, L, P, E, N. Ihre Kursnummer ist zweiunddreißig. Bitte bringen Sie Sportschuhe und etwas zu trinken mit. Rufen Sie mich bitte zurück: null sechs neun neun, neunundvierzig, zwanzig, sechs, achtzehn. Danke und auf Wiederhören!",
+            "delivery": "[friendly, clear, voicemail, slow]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-08-t3",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.658Z",
+        "textType": "Umfrage auf der Straße (Kurzinterviews)"
+      },
+      "sound": "street",
+      "display": {
+        "instruction": "Situation: Eine Reporterin fragt Leute auf der Straße. Was essen die Personen am liebsten als Nachspeise? Kreuzen Sie für jeden Text eine Antwort an. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Was essen Sie am liebsten als Nachspeise?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Kuchen"
+                },
+                {
+                  "key": "b",
+                  "label": "Eis"
+                },
+                {
+                  "key": "c",
+                  "label": "Schokolade"
+                },
+                {
+                  "key": "d",
+                  "label": "Pudding"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 11,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 12,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 13,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 14,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 15,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "reporterin": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Text 1",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p2": {
+              "name": "Text 2",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p3": {
+              "name": "Text 3",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p4": {
+              "name": "Text 4",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p5": {
+              "name": "Text 5",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-08/oesd-a1-hoeren-08-t3.review.mp3",
+          "duration": 100.1
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Kuchen isst die Frau nur am Sonntag, und Eis ist ihr im Winter zu kalt. Am liebsten isst sie Schokolade.",
+            "evidence": {
+              "text": "Also, ich bin aus Kreuzlingen, in der Schweiz. Kuchen esse ich nur am Sonntag, bei meiner Schwester. Und Eis? Nein, im Winter ist mir das zu kalt. Ich esse am liebsten Schokolade. Nach dem Abendessen immer ein Stück dunkle Schokolade, äh, das ist perfekt.",
+              "hit": "Ich esse am liebsten Schokolade."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Pudding essen nur seine Kinder, und Schokolade ist ihm zu süß. Er mag Kuchen am liebsten.",
+            "evidence": {
+              "text": "Hm, Schokolade ist mir zu süß. Meine Kinder essen gern Pudding, fast jeden Tag. Das ist nichts für mich. Aber ich, also ich mag Kuchen am liebsten. Ein Stück Apfelkuchen mit einem Kaffee am Nachmittag, das ist für mich das Beste. Ja, Kuchen.",
+              "hit": "also ich mag Kuchen am liebsten."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Kuchen isst die Frau nur manchmal. Am liebsten isst sie Eis, sogar im Winter.",
+            "evidence": {
+              "text": "Oh, das ist eine gute Frage. Ich komme aus Chemnitz, ich bin nur zu Besuch hier. Kuchen ist okay, den esse ich manchmal. Schokolade esse ich nicht so viel. Aber Eis, äh, Eis esse ich am liebsten. Sogar im Winter! Erdbeereis mag ich besonders.",
+              "hit": "Eis esse ich am liebsten."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Pudding mag der Mann gar nicht. Im Sommer isst er jeden Tag ein Eis.",
+            "evidence": {
+              "text": "Meine Frau macht oft Kaiserschmarrn, der ist super. Pudding? Nein, den mag ich gar nicht. Aber im Sommer, da esse ich jeden Tag ein Eis. Ich gehe zum Eissalon bei uns um die Ecke, äh, und hole mir zwei Kugeln. Also Eis, ganz klar.",
+              "hit": "Also Eis, ganz klar."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "d",
+            "explanation": "Kuchen und Schokolade isst die Frau auch gern. Aber am liebsten isst sie Pudding wie bei ihrer Oma.",
+            "evidence": {
+              "text": "Hm, Kuchen kaufe ich ab und zu beim Bäcker. Und Schokolade, ja, die esse ich auch gern. Aber am liebsten esse ich Pudding. Vanillepudding, so wie bei meiner Oma früher. Sie hat ihn jeden Sonntag gekocht. Den mache ich jetzt selbst, das ist ganz einfach.",
+              "hit": "Aber am liebsten esse ich Pudding."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "reporterin",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott, wir machen eine Umfrage für die Zeitung. Was essen Sie am liebsten als Nachspeise?",
+            "delivery": "[friendly reporter, outdoors]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_mia_ch",
+            "text": "Also, ich bin aus Kreuzlingen, in der Schweiz. Kuchen esse ich nur am Sonntag, bei meiner Schwester. Und Eis? Nein, im Winter ist mir das zu kalt. Ich esse am liebsten Schokolade. Nach dem Abendessen immer ein Stück dunkle Schokolade, äh, das ist perfekt.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Hm, Schokolade ist mir zu süß. Meine Kinder essen gern Pudding, fast jeden Tag. Das ist nichts für mich. Aber ich, also ich mag Kuchen am liebsten. Ein Stück Apfelkuchen mit einem Kaffee am Nachmittag, das ist für mich das Beste. Ja, Kuchen.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_irene",
+            "text": "Oh, das ist eine gute Frage. Ich komme aus Chemnitz, ich bin nur zu Besuch hier. Kuchen ist okay, den esse ich manchmal. Schokolade esse ich nicht so viel. Aber Eis, äh, Eis esse ich am liebsten. Sogar im Winter! Erdbeereis mag ich besonders.",
+            "delivery": "[spontaneous, cheerful]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Meine Frau macht oft Kaiserschmarrn, der ist super. Pudding? Nein, den mag ich gar nicht. Aber im Sommer, da esse ich jeden Tag ein Eis. Ich gehe zum Eissalon bei uns um die Ecke, äh, und hole mir zwei Kugeln. Also Eis, ganz klar.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_alexandra_at",
+            "text": "Hm, Kuchen kaufe ich ab und zu beim Bäcker. Und Schokolade, ja, die esse ich auch gern. Aber am liebsten esse ich Pudding. Vanillepudding, so wie bei meiner Oma früher. Sie hat ihn jeden Sonntag gekocht. Den mache ich jetzt selbst, das ist ganz einfach.",
+            "delivery": "[spontaneous, warm]",
+            "clip": 5
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "oesd-a1/hoeren-08/track.mp3",
+    "duration": 625.92,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 9.67,
+        "to": 16.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 16.14,
+        "to": 46.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 46.18,
+        "to": 60.76
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 66.27,
+        "to": 67.13
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 67.76,
+        "to": 87.51
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 89.55,
+        "to": 90.44
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 91.06,
+        "to": 108.54
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 110.58,
+        "to": 111.44
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 112.07,
+        "to": 131.55
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 133.59,
+        "to": 134.35
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 134.97,
+        "to": 153.31
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 155.35,
+        "to": 156.21
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 156.84,
+        "to": 177.14
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 184.69,
+        "to": 190.69
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 190.69,
+        "to": 220.73
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 220.73,
+        "to": 233.33
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 240.33,
+        "to": 292
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 299,
+        "to": 302.21
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 309.21,
+        "to": 360.88
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 367.88,
+        "to": 372.43
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 372.43,
+        "to": 392.46
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 397.98,
+        "to": 403.96
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 403.96,
+        "to": 413.99
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 413.99,
+        "to": 427.6
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 433.11,
+        "to": 439.07
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 440.61,
+        "to": 441.47
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 442.1,
+        "to": 459.57
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 461.61,
+        "to": 462.5
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 463.12,
+        "to": 480.13
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 482.17,
+        "to": 483.03
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 483.66,
+        "to": 501.03
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 503.07,
+        "to": 503.82
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 504.45,
+        "to": 521.77
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 523.81,
+        "to": 524.67
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 525.3,
+        "to": 543.01
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 550.56,
+        "to": 555.05
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 555.05,
+        "to": 615.08
+      }
+    ]
+  }
+}

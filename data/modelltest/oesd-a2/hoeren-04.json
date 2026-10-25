@@ -1,0 +1,783 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-04-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.689Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Sternenabend",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Mittwoch"
+                },
+                {
+                  "key": "b",
+                  "label": "Donnerstag"
+                },
+                {
+                  "key": "c",
+                  "label": "ab 21 Uhr"
+                },
+                {
+                  "key": "d",
+                  "label": "ab 20 Uhr"
+                },
+                {
+                  "key": "e",
+                  "label": "Anmeldung"
+                },
+                {
+                  "key": "f",
+                  "label": "Fernrohre"
+                },
+                {
+                  "key": "g",
+                  "label": "Kinder gratis"
+                },
+                {
+                  "key": "h",
+                  "label": "Konzert"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Veranstaltungstipp im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Mühlviertel",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Radio Böhmerwald",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-04/oesd-a2-hoeren-04-t1.review.mp3",
+          "duration": 49.55
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Beide Sender sagen: Der Sternenabend ist am Mittwoch. Donnerstag hörst du gar nicht.",
+            "evidence": {
+              "text": "Radio Mühlviertel, unser Tipp für diese Woche. Am Mittwoch lädt die Volkssternwarte in Freistadt zum Sternenabend ein. Los geht es um zwanzig Uhr. Die Besucherinnen und Besucher dürfen selbst durch die großen Fernrohre schauen und den Mond und die Planeten beobachten. Kinder haben freien Eintritt, Erwachsene zahlen einen kleinen Betrag an der Kassa. Eine Anmeldung braucht man heuer nicht. Der Abend endet dann gegen dreiundzwanzig Uhr.",
+              "hit": "Am Mittwoch lädt die Volkssternwarte in Freistadt zum Sternenabend ein."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "d",
+            "explanation": "Der Abend beginnt um acht am Abend, also um 20 Uhr. Von 21 Uhr sagt niemand etwas.",
+            "evidence": {
+              "text": "Radio Mühlviertel, unser Tipp für diese Woche. Am Mittwoch lädt die Volkssternwarte in Freistadt zum Sternenabend ein. Los geht es um zwanzig Uhr. Die Besucherinnen und Besucher dürfen selbst durch die großen Fernrohre schauen und den Mond und die Planeten beobachten. Kinder haben freien Eintritt, Erwachsene zahlen einen kleinen Betrag an der Kassa. Eine Anmeldung braucht man heuer nicht. Der Abend endet dann gegen dreiundzwanzig Uhr.",
+              "hit": "Los geht es um zwanzig Uhr."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "f",
+            "explanation": "Die Gäste dürfen selbst durch die Fernrohre schauen. Ein Konzert kommt in den Texten nicht vor.",
+            "evidence": {
+              "text": "Radio Mühlviertel, unser Tipp für diese Woche. Am Mittwoch lädt die Volkssternwarte in Freistadt zum Sternenabend ein. Los geht es um zwanzig Uhr. Die Besucherinnen und Besucher dürfen selbst durch die großen Fernrohre schauen und den Mond und die Planeten beobachten. Kinder haben freien Eintritt, Erwachsene zahlen einen kleinen Betrag an der Kassa. Eine Anmeldung braucht man heuer nicht. Der Abend endet dann gegen dreiundzwanzig Uhr.",
+              "hit": "Die Besucherinnen und Besucher dürfen selbst durch die großen Fernrohre schauen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "g",
+            "explanation": "Kinder zahlen nichts. Eine Anmeldung braucht man heuer aber nicht.",
+            "evidence": {
+              "text": "Radio Mühlviertel, unser Tipp für diese Woche. Am Mittwoch lädt die Volkssternwarte in Freistadt zum Sternenabend ein. Los geht es um zwanzig Uhr. Die Besucherinnen und Besucher dürfen selbst durch die großen Fernrohre schauen und den Mond und die Planeten beobachten. Kinder haben freien Eintritt, Erwachsene zahlen einen kleinen Betrag an der Kassa. Eine Anmeldung braucht man heuer nicht. Der Abend endet dann gegen dreiundzwanzig Uhr.",
+              "hit": "Kinder haben freien Eintritt"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_emilia_at",
+            "text": "Radio Mühlviertel, unser Tipp für diese Woche. Am Mittwoch lädt die Volkssternwarte in Freistadt zum Sternenabend ein. Los geht es um zwanzig Uhr. Die Besucherinnen und Besucher dürfen selbst durch die großen Fernrohre schauen und den Mond und die Planeten beobachten. Kinder haben freien Eintritt, Erwachsene zahlen einen kleinen Betrag an der Kassa. Eine Anmeldung braucht man heuer nicht. Der Abend endet dann gegen dreiundzwanzig Uhr.",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_martin_at",
+            "text": "Radio Böhmerwald, ein Tipp für alle Sternfans! Ihr wollt einmal die Sterne ganz nah sehen? Dann kommt zur Volkssternwarte nach Freistadt. Dort dürft ihr beim Sternenabend durch die großen Teleskope schauen. Anmelden müsst ihr euch heuer nicht, kommt einfach vorbei. Die Kinder zahlen gar nichts, für euch Erwachsene kostet es nur ein bisschen. Wann? Diesen Mittwoch, ab acht am Abend, und um elf ist dann Schluss. Viel Spaß!",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-04-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.689Z",
+        "textType": "Sprachnachricht von einem Freund"
+      },
+      "display": {
+        "instruction": "Situation: Ein Freund hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Escape Room\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTreffen um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nPreis pro Person: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nLukas' Telefon: 0660 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Handy",
+          "speakers": {
+            "lukas": {
+              "name": "Lukas",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-04/oesd-a2-hoeren-04-t2.mp3",
+          "duration": 41.09
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Freitag",
+            "accept": [
+              "am Freitag",
+              "Fr."
+            ],
+            "explanation": "Am Samstag ist alles ausgebucht, darum geht ihr am Freitag.",
+            "evidence": {
+              "text": "Servus, Lukas hier. Äh, du, es geht um den Escape Room „Tresor dreizehn“ in Wiener Neustadt. Am Samstag ist leider schon alles ausgebucht, na ja, darum gehen wir jetzt am Freitag. Das Spiel selbst fängt um neun an, aber wir treffen uns schon um halb neun am Abend beim Eingang. Es kostet achtzehn Euro pro Person. Studenten zahlen fünfzehn, aber das sind wir ja nicht mehr. Und, äh, ganz wichtig: Nimm bitte deinen Ausweis mit. Den lässt man an der Kassa, dann bekommt man den Schlüssel für den Kasten. Ruf mich bitte kurz an, ob du dabei bist. Meine Nummer ist null sechs sechs null, fünf drei null, acht zwei, sieben vier. Also noch einmal: fünf drei null, acht zwei, sieben vier. Bis dann!",
+              "hit": "darum gehen wir jetzt am Freitag"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "20.30",
+            "accept": [
+              "20:30",
+              "20.30 Uhr",
+              "8.30",
+              "8:30",
+              "halb neun",
+              "halb 9"
+            ],
+            "explanation": "Ihr trefft euch um halb neun am Abend. Um neun beginnt erst das Spiel.",
+            "evidence": {
+              "text": "Servus, Lukas hier. Äh, du, es geht um den Escape Room „Tresor dreizehn“ in Wiener Neustadt. Am Samstag ist leider schon alles ausgebucht, na ja, darum gehen wir jetzt am Freitag. Das Spiel selbst fängt um neun an, aber wir treffen uns schon um halb neun am Abend beim Eingang. Es kostet achtzehn Euro pro Person. Studenten zahlen fünfzehn, aber das sind wir ja nicht mehr. Und, äh, ganz wichtig: Nimm bitte deinen Ausweis mit. Den lässt man an der Kassa, dann bekommt man den Schlüssel für den Kasten. Ruf mich bitte kurz an, ob du dabei bist. Meine Nummer ist null sechs sechs null, fünf drei null, acht zwei, sieben vier. Also noch einmal: fünf drei null, acht zwei, sieben vier. Bis dann!",
+              "hit": "aber wir treffen uns schon um halb neun am Abend beim Eingang"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "18",
+            "accept": [
+              "18 Euro",
+              "achtzehn"
+            ],
+            "explanation": "Ihr zahlt 18 Euro pro Person. 15 Euro zahlen nur Studenten.",
+            "evidence": {
+              "text": "Servus, Lukas hier. Äh, du, es geht um den Escape Room „Tresor dreizehn“ in Wiener Neustadt. Am Samstag ist leider schon alles ausgebucht, na ja, darum gehen wir jetzt am Freitag. Das Spiel selbst fängt um neun an, aber wir treffen uns schon um halb neun am Abend beim Eingang. Es kostet achtzehn Euro pro Person. Studenten zahlen fünfzehn, aber das sind wir ja nicht mehr. Und, äh, ganz wichtig: Nimm bitte deinen Ausweis mit. Den lässt man an der Kassa, dann bekommt man den Schlüssel für den Kasten. Ruf mich bitte kurz an, ob du dabei bist. Meine Nummer ist null sechs sechs null, fünf drei null, acht zwei, sieben vier. Also noch einmal: fünf drei null, acht zwei, sieben vier. Bis dann!",
+              "hit": "Es kostet achtzehn Euro pro Person."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Ausweis",
+            "accept": [
+              "den Ausweis",
+              "einen Ausweis",
+              "Lichtbildausweis",
+              "Pass",
+              "Reisepass"
+            ],
+            "explanation": "Du sollst deinen Ausweis mitnehmen. Den Schlüssel für den Kasten bekommst du erst dort.",
+            "evidence": {
+              "text": "Servus, Lukas hier. Äh, du, es geht um den Escape Room „Tresor dreizehn“ in Wiener Neustadt. Am Samstag ist leider schon alles ausgebucht, na ja, darum gehen wir jetzt am Freitag. Das Spiel selbst fängt um neun an, aber wir treffen uns schon um halb neun am Abend beim Eingang. Es kostet achtzehn Euro pro Person. Studenten zahlen fünfzehn, aber das sind wir ja nicht mehr. Und, äh, ganz wichtig: Nimm bitte deinen Ausweis mit. Den lässt man an der Kassa, dann bekommt man den Schlüssel für den Kasten. Ruf mich bitte kurz an, ob du dabei bist. Meine Nummer ist null sechs sechs null, fünf drei null, acht zwei, sieben vier. Also noch einmal: fünf drei null, acht zwei, sieben vier. Bis dann!",
+              "hit": "Nimm bitte deinen Ausweis mit."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "5308274",
+            "accept": [
+              "530 82 74",
+              "5308 274",
+              "530 8274"
+            ],
+            "exact": true,
+            "explanation": "Lukas sagt die Nummer zweimal: fünf drei null, acht zwei, sieben vier. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Servus, Lukas hier. Äh, du, es geht um den Escape Room „Tresor dreizehn“ in Wiener Neustadt. Am Samstag ist leider schon alles ausgebucht, na ja, darum gehen wir jetzt am Freitag. Das Spiel selbst fängt um neun an, aber wir treffen uns schon um halb neun am Abend beim Eingang. Es kostet achtzehn Euro pro Person. Studenten zahlen fünfzehn, aber das sind wir ja nicht mehr. Und, äh, ganz wichtig: Nimm bitte deinen Ausweis mit. Den lässt man an der Kassa, dann bekommt man den Schlüssel für den Kasten. Ruf mich bitte kurz an, ob du dabei bist. Meine Nummer ist null sechs sechs null, fünf drei null, acht zwei, sieben vier. Also noch einmal: fünf drei null, acht zwei, sieben vier. Bis dann!",
+              "hit": "fünf drei null, acht zwei, sieben vier"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "lukas",
+            "voice": "man_gruber_at",
+            "text": "Servus, Lukas hier. Äh, du, es geht um den Escape Room „Tresor dreizehn“ in Wiener Neustadt. Am Samstag ist leider schon alles ausgebucht, na ja, darum gehen wir jetzt am Freitag. Das Spiel selbst fängt um neun an, aber wir treffen uns schon um halb neun am Abend beim Eingang. Es kostet achtzehn Euro pro Person. Studenten zahlen fünfzehn, aber das sind wir ja nicht mehr. Und, äh, ganz wichtig: Nimm bitte deinen Ausweis mit. Den lässt man an der Kassa, dann bekommt man den Schlüssel für den Kasten. Ruf mich bitte kurz an, ob du dabei bist. Meine Nummer ist null sechs sechs null, fünf drei null, acht zwei, sieben vier. Also noch einmal: fünf drei null, acht zwei, sieben vier. Bis dann!",
+            "delivery": "[casual, friendly, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-04-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.689Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, wie sie Kontakt zu Familie und Freunden halten, die weit weg wohnen. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Wie halten Sie Kontakt zu Familie und Freunden, die weit weg wohnen?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Anrufen"
+                },
+                {
+                  "key": "b",
+                  "label": "Videoanruf"
+                },
+                {
+                  "key": "c",
+                  "label": "Sprachnachrichten"
+                },
+                {
+                  "key": "d",
+                  "label": "Briefe und Karten"
+                },
+                {
+                  "key": "e",
+                  "label": "Besuche"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-04/oesd-a2-hoeren-04-t3.review.mp3",
+          "duration": 115.51
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b,c",
+            "explanation": "Sie macht sonntags einen Videoanruf und schickt unter der Woche Sprachnachrichten. Telefonieren tut sie wegen der Zeitverschiebung fast nie.",
+            "evidence": {
+              "text": "Also, ich arbeite in einem Büro in Aarau, und meine Schwester lebt seit drei Jahren in Australien. Wir telefonieren fast nie, wegen der Zeitverschiebung: Wenn ich Feierabend habe, schläft sie schon. Darum machen wir jeden Sonntag einen Videoanruf, das ist super. Und unter der Woche schicken wir uns Sprachnachrichten, das geht ganz einfach.",
+              "hit": "Darum machen wir jeden Sonntag einen Videoanruf"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "a,c",
+            "explanation": "Er ruft seine Frau jeden Abend an und schickt den Kindern Sprachnachrichten. Briefe schreibt er keine.",
+            "evidence": {
+              "text": "Ich bin Monteur und arbeite gerade auf einer Baustelle in Bayern, äh, meine Familie ist daheim in Wels. Meine Frau rufe ich jeden Abend an, so um acht, dann reden wir eine halbe Stunde. Meinen Kindern schicke ich Sprachnachrichten, die hören sie am Morgen beim Frühstück. Briefe schreib ich keine, dafür hab ich keine Geduld.",
+              "hit": "Meine Frau rufe ich jeden Abend an"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "d",
+            "explanation": "Sie schreibt den Enkelkindern Briefe und schickt Karten. Videoanrufe kann sie nicht gut.",
+            "evidence": {
+              "text": "Meine Enkelkinder wohnen in Schweden, in Göteborg. Ich arbeite noch halbtags in einem Geschäft, äh, und am Nachmittag schreibe ich ihnen oft Briefe oder schicke eine Karte mit lustigen Bildern. Die Kinder freuen sich so über die Post! Mein Sohn sagt immer, mach doch einen Videoanruf. Aber Videoanrufe kann ich nicht gut, da drücke ich immer den falschen Knopf.",
+              "hit": "am Nachmittag schreibe ich ihnen oft Briefe oder schicke eine Karte mit lustigen Bildern"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "d,e",
+            "explanation": "Er schickt Postkarten aus dem Urlaub, und die Freunde besuchen sich zweimal im Jahr. Sprachnachrichten mag er nicht.",
+            "evidence": {
+              "text": "Ich bin Lehrer, und mein bester Freund ist vor fünf Jahren nach Tirol gezogen. Wir sehen uns zweimal im Jahr: Einmal besucht er mich in Wien, einmal fahre ich zu ihm. Und wenn ich auf Urlaub bin, schreibe ich ihm immer eine Postkarte, äh, das ist bei uns so eine Tradition. Sprachnachrichten mag ich nicht, die sind mir zu lang.",
+              "hit": "Einmal besucht er mich in Wien, einmal fahre ich zu ihm."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a,b,e",
+            "explanation": "Sie besucht ihre Eltern, ruft die Mutter an und macht Videoanrufe mit dem Vater. Briefe schreibt sie nie.",
+            "evidence": {
+              "text": "Ich studiere in Münster, aber meine Eltern wohnen in Rostock. Einmal im Monat fahre ich mit dem Zug zu ihnen, das dauert zwar, äh, lange, aber das ist es mir wert. Dazwischen rufe ich meine Mutter fast jeden Tag an. Und mit meinem Vater mache ich am Wochenende oft einen Videoanruf, dann sieht er mich auch. Briefe schreibe ich nie.",
+              "hit": "Dazwischen rufe ich meine Mutter fast jeden Tag an."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Guten Tag! Wir machen heute eine kleine Umfrage für das Radio. Wie halten Sie Kontakt zu Familie und Freunden, die weit weg wohnen?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_heidi_ch",
+            "text": "Also, ich arbeite in einem Büro in Aarau, und meine Schwester lebt seit drei Jahren in Australien. Wir telefonieren fast nie, wegen der Zeitverschiebung: Wenn ich Feierabend habe, schläft sie schon. Darum machen wir jeden Sonntag einen Videoanruf, das ist super. Und unter der Woche schicken wir uns Sprachnachrichten, das geht ganz einfach.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Ich bin Monteur und arbeite gerade auf einer Baustelle in Bayern, äh, meine Familie ist daheim in Wels. Meine Frau rufe ich jeden Abend an, so um acht, dann reden wir eine halbe Stunde. Meinen Kindern schicke ich Sprachnachrichten, die hören sie am Morgen beim Frühstück. Briefe schreib ich keine, dafür hab ich keine Geduld.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_alexandra_at",
+            "text": "Meine Enkelkinder wohnen in Schweden, in Göteborg. Ich arbeite noch halbtags in einem Geschäft, äh, und am Nachmittag schreibe ich ihnen oft Briefe oder schicke eine Karte mit lustigen Bildern. Die Kinder freuen sich so über die Post! Mein Sohn sagt immer, mach doch einen Videoanruf. Aber Videoanrufe kann ich nicht gut, da drücke ich immer den falschen Knopf.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich bin Lehrer, und mein bester Freund ist vor fünf Jahren nach Tirol gezogen. Wir sehen uns zweimal im Jahr: Einmal besucht er mich in Wien, einmal fahre ich zu ihm. Und wenn ich auf Urlaub bin, schreibe ich ihm immer eine Postkarte, äh, das ist bei uns so eine Tradition. Sprachnachrichten mag ich nicht, die sind mir zu lang.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_laura",
+            "text": "Ich studiere in Münster, aber meine Eltern wohnen in Rostock. Einmal im Monat fahre ich mit dem Zug zu ihnen, das dauert zwar, äh, lange, aber das ist es mir wert. Dazwischen rufe ich meine Mutter fast jeden Tag an. Und mit meinem Vater mache ich am Wochenende oft einen Videoanruf, dann sieht er mich auch. Briefe schreibe ich nie.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-04/track.mp3",
+    "duration": 591.41,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.25,
+        "to": 15.28
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.28,
+        "to": 45.32
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.32,
+        "to": 58.49
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.66,
+        "to": 91.38
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 95.66,
+        "to": 120.06
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 129.23,
+        "to": 135.24
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 135.24,
+        "to": 165.28
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 165.28,
+        "to": 176.48
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 183.95,
+        "to": 225.04
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 231,
+        "to": 234.21
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 241.68,
+        "to": 282.78
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 288.73,
+        "to": 293.28
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 293.28,
+        "to": 313.31
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 318.82,
+        "to": 324.83
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 324.83,
+        "to": 354.87
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 354.87,
+        "to": 374.23
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 379.74,
+        "to": 387.4
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 388.94,
+        "to": 407.61
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 411.66,
+        "to": 430.86
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 434.91,
+        "to": 455.55
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 459.6,
+        "to": 480.63
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 484.68,
+        "to": 505.68
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 515.24,
+        "to": 519.73
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 519.73,
+        "to": 579.76
+      }
+    ]
+  }
+}

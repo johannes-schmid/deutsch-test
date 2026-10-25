@@ -1,0 +1,1729 @@
+{
+  "exam": "telc-a2",
+  "skill": "hoeren",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "telc-a2-hoeren-06-t1-bsp",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Nachricht einer Goldschmiede auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Goldschmiede Funkel\nRing ist fertig\nabholen am: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Goldschmiede",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Goldschmiede",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t1-bsp.mp3",
+          "duration": 16.51
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_michael",
+            "text": "Guten Tag, Frau Haas, hier ist die Goldschmiede Funkel. Wir haben Ihren Ring ein bisschen größer gemacht, jetzt passt er bestimmt. Sie können ihn am Montag bei uns abholen. Wir haben von neun bis achtzehn Uhr geöffnet. Auf Wiederhören!",
+            "delivery": "[friendly, calm, older shopkeeper]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "Montag"
+      ]
+    },
+    {
+      "id": "telc-a2-hoeren-06-t1-01",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Nachricht einer Sprachschule auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Sprachschule Wortschatz\nEinstufungstest am Montag\nBeginn: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                " Uhr"
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Sprachschule",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Sprachschule",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t1-01.mp3",
+          "duration": 21.47
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "8:30",
+            "explanation": "Der Test beginnt um halb neun, also um 8:30 Uhr. Die zehn Uhr auf der Internetseite sind falsch.",
+            "evidence": {
+              "text": "Guten Tag, Herr Ndiaye, hier ist die Sprachschule Wortschatz. Es geht um Ihren Einstufungstest am Montag. Auf unserer Internetseite steht leider eine falsche Zeit, nämlich zehn Uhr. Das stimmt nicht. Der Test beginnt schon um halb neun. Bitte kommen Sie pünktlich und bringen Sie einen Kuli mit. Vielen Dank und auf Wiederhören!",
+              "hit": "Der Test beginnt schon um halb neun."
+            },
+            "accept": [
+              "8.30",
+              "8:30 Uhr",
+              "8.30 Uhr",
+              "08:30",
+              "08.30",
+              "halb neun",
+              "8 Uhr 30"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_irene",
+            "text": "Guten Tag, Herr Ndiaye, hier ist die Sprachschule Wortschatz. Es geht um Ihren Einstufungstest am Montag. Auf unserer Internetseite steht leider eine falsche Zeit, nämlich zehn Uhr. Das stimmt nicht. Der Test beginnt schon um halb neun. Bitte kommen Sie pünktlich und bringen Sie einen Kuli mit. Vielen Dank und auf Wiederhören!",
+            "delivery": "[friendly, professional phone message]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t1-02",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Nachricht einer Freundin auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Alina\nmorgen bitte mitbringen: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von einer Freundin",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Freundin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t1-02.mp3",
+          "duration": 17.82
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 2,
+            "correct": "Ladekabel",
+            "explanation": "Alina hat ihr Ladekabel bei Jule vergessen. Jule soll es morgen zur Arbeit mitbringen.",
+            "evidence": {
+              "text": "Hallo Jule, hier ist Alina. Du, ich glaube, ich habe gestern mein Ladekabel bei dir vergessen. Es liegt bestimmt neben dem Sofa. Mein Handy ist schon fast leer! Kannst du es morgen zur Arbeit mitbringen? Das wäre super. Danke und bis morgen!",
+              "hit": "ich habe gestern mein Ladekabel bei dir vergessen"
+            },
+            "accept": [
+              "Kabel",
+              "Handykabel",
+              "Handy-Ladekabel",
+              "das Ladekabel"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_kathi",
+            "text": "Hallo Jule, hier ist Alina. Du, ich glaube, ich habe gestern mein Ladekabel bei dir vergessen. Es liegt bestimmt neben dem Sofa. Mein Handy ist schon fast leer! Kannst du es morgen zur Arbeit mitbringen? Das wäre super. Danke und bis morgen!",
+            "delivery": "[warm, casual, slight accent]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t1-03",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Nachricht einer Pizzeria auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Pizzeria Da Gianni\n2 Pizzen\nLieferung in ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                " Minuten"
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Pizzeria",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Pizzeria",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t1-03.mp3",
+          "duration": 20.01
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "45",
+            "explanation": "Heute dauert die Lieferung etwa fünfundvierzig Minuten. Dreißig Minuten sind es nur an normalen Abenden.",
+            "evidence": {
+              "text": "Guten Abend, hier ist die Pizzeria Da Gianni. Sie haben vorhin bei uns zwei Pizzen bestellt. Normalerweise sind wir in dreißig Minuten bei Ihnen. Aber heute Abend haben wir sehr viele Bestellungen. Es dauert leider länger, ungefähr fünfundvierzig Minuten. Entschuldigung! Sie bezahlen dann bar beim Fahrer. Bis später!",
+              "hit": "Es dauert leider länger, ungefähr fünfundvierzig Minuten."
+            },
+            "accept": [
+              "45 Minuten",
+              "fünfundvierzig",
+              "fünfundvierzig Minuten",
+              "eine Dreiviertelstunde",
+              "Dreiviertelstunde"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_simon",
+            "text": "Guten Abend, hier ist die Pizzeria Da Gianni. Sie haben vorhin bei uns zwei Pizzen bestellt. Normalerweise sind wir in dreißig Minuten bei Ihnen. Aber heute Abend haben wir sehr viele Bestellungen. Es dauert leider länger, ungefähr fünfundvierzig Minuten. Entschuldigung! Sie bezahlen dann bar beim Fahrer. Bis später!",
+            "delivery": "[friendly, a little hurried, busy restaurant]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t1-04",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Nachricht einer Handwerksfirma auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Fensterbau Lehmkuhl\nDonnerstag ab 8 Uhr\nzuerst das Fenster im ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht vom Fensterbauer",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Fensterbau",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t1-04.mp3",
+          "duration": 25.23
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 4,
+            "correct": "Schlafzimmer",
+            "explanation": "Die Firma macht zuerst das Fenster im Schlafzimmer. Das Wohnzimmer war zuerst geplant, aber das Glas dafür kommt später.",
+            "evidence": {
+              "text": "Guten Tag, Familie Sommer, hier spricht Lehmkuhl von Fensterbau Lehmkuhl. Ich möchte den Termin am Donnerstag bestätigen. Wir kommen um acht Uhr. Eigentlich wollten wir mit dem Wohnzimmer anfangen. Aber das Glas für das große Fenster dort kommt erst nächste Woche. Darum machen wir zuerst das Fenster im Schlafzimmer. Bitte stellen Sie die Möbel ein bisschen weg vom Fenster. Danke, bis Donnerstag!",
+              "hit": "Darum machen wir zuerst das Fenster im Schlafzimmer."
+            },
+            "accept": [
+              "im Schlafzimmer",
+              "Schlafzimmerfenster"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Guten Tag, Familie Sommer, hier spricht Lehmkuhl von Fensterbau Lehmkuhl. Ich möchte den Termin am Donnerstag bestätigen. Wir kommen um acht Uhr. Eigentlich wollten wir mit dem Wohnzimmer anfangen. Aber das Glas für das große Fenster dort kommt erst nächste Woche. Darum machen wir zuerst das Fenster im Schlafzimmer. Bitte stellen Sie die Möbel ein bisschen weg vom Fenster. Danke, bis Donnerstag!",
+            "delivery": "[friendly, businesslike craftsman]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t1-05",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Ansage auf dem Anrufbeantworter eines Gemeindebüros"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Gemeindebüro St. Paulus\nneue Adresse: Lindenstraße ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Ansage des Gemeindebüros",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Ansage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t1-05.mp3",
+          "duration": 18.86
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "27",
+            "explanation": "Das Büro ist jetzt in der Lindenstraße siebenundzwanzig. Bei Zahlen zählt nur die genaue Nummer.",
+            "evidence": {
+              "text": "Sie sind verbunden mit dem Gemeindebüro Sankt Paulus. Bitte beachten Sie: Unser Büro ist umgezogen. Sie finden uns jetzt in der Lindenstraße siebenundzwanzig, direkt neben dem Kindergarten. Die Öffnungszeiten sind gleich geblieben: Dienstag und Donnerstag von neun bis zwölf Uhr. Vielen Dank für Ihren Anruf.",
+              "hit": "Sie finden uns jetzt in der Lindenstraße siebenundzwanzig"
+            },
+            "accept": [
+              "Nr. 27",
+              "Nummer 27",
+              "siebenundzwanzig",
+              "Lindenstraße 27"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Sie sind verbunden mit dem Gemeindebüro Sankt Paulus. Bitte beachten Sie: Unser Büro ist umgezogen. Sie finden uns jetzt in der Lindenstraße siebenundzwanzig, direkt neben dem Kindergarten. Die Öffnungszeiten sind gleich geblieben: Dienstag und Donnerstag von neun bis zwölf Uhr. Vielen Dank für Ihren Anruf.",
+            "delivery": "[calm, clear recorded message]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t2-bsp",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Radio: Veranstaltungstipp"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Wann feiert man in Goslar die Walpurgisnacht?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Mittwochabend"
+                },
+                {
+                  "key": "b",
+                  "label": "am Freitagabend"
+                },
+                {
+                  "key": "c",
+                  "label": "am Donnerstagabend"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Tipp für die Woche",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t2-bsp.mp3",
+          "duration": 23.88
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Radio Harzfunk, schönen guten Morgen! Hier unser Tipp für diese Woche: In Goslar feiern wir die Walpurgisnacht dieses Jahr nicht am Freitag, sondern schon am Donnerstagabend. Am Mittwoch bauen die Helfer die Bühnen auf. Und am Donnerstag gibt es ab neunzehn Uhr in der Altstadt Musik, Feuer und viele Hexen. Kommen Sie vorbei!",
+            "delivery": "[upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio",
+      "example": true,
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "telc-a2-hoeren-06-t2-01",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Radio: Programmhinweis"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Wann kann man den ersten Teil vom Krimi noch einmal hören?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Sonntagvormittag"
+                },
+                {
+                  "key": "b",
+                  "label": "am Samstagabend"
+                },
+                {
+                  "key": "c",
+                  "label": "jeden Abend um zehn"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Programm am Abend",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t2-01.mp3",
+          "duration": 24.19
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Der erste Teil kommt am Sonntag um elf Uhr noch einmal, also am Vormittag. Neue Teile gibt es nur am Dienstag, nicht jeden Abend.",
+            "evidence": {
+              "text": "Und jetzt ein Hinweis auf unser Programm: Heute Abend um zweiundzwanzig Uhr beginnt unsere neue Reihe „Krimi zur Nacht“. Es geht um einen Kommissar in einem kleinen Dorf im Harz. Es gibt sechs Teile, jeden Dienstag einen. Sie haben heute keine Zeit? Kein Problem: Den ersten Teil wiederholen wir am Sonntag um elf Uhr.",
+              "hit": "Den ersten Teil wiederholen wir am Sonntag um elf Uhr."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Und jetzt ein Hinweis auf unser Programm: Heute Abend um zweiundzwanzig Uhr beginnt unsere neue Reihe „Krimi zur Nacht“. Es geht um einen Kommissar in einem kleinen Dorf im Harz. Es gibt sechs Teile, jeden Dienstag einen. Sie haben heute keine Zeit? Kein Problem: Den ersten Teil wiederholen wir am Sonntag um elf Uhr.",
+            "delivery": "[upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t2-02",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Radio: Wetterbericht"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Wie wird das Wetter heute am Abend?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sonnig und heiß"
+                },
+                {
+                  "key": "b",
+                  "label": "mit Gewittern"
+                },
+                {
+                  "key": "c",
+                  "label": "deutlich kühler"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Wetter",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t2-02.mp3",
+          "duration": 23.41
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Am Abend kann es blitzen und donnern, also gibt es Gewitter. Die Sonne scheint nur am Vormittag, und kühler wird es erst am Freitag.",
+            "evidence": {
+              "text": "Das Wetter für den Harz und das Harzvorland: Heute wird es heiß, bis einunddreißig Grad. Am Vormittag scheint überall die Sonne. Am Nachmittag kommen dann Wolken, und am Abend kann es blitzen und donnern, auch mit starkem Regen. Morgen bleibt es warm. Erst am Freitag wird es etwas kühler, mit zweiundzwanzig Grad.",
+              "hit": "am Abend kann es blitzen und donnern, auch mit starkem Regen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_irene",
+            "text": "Das Wetter für den Harz und das Harzvorland: Heute wird es heiß, bis einunddreißig Grad. Am Vormittag scheint überall die Sonne. Am Nachmittag kommen dann Wolken, und am Abend kann es blitzen und donnern, auch mit starkem Regen. Morgen bleibt es warm. Erst am Freitag wird es etwas kühler, mit zweiundzwanzig Grad.",
+            "delivery": "[calm, clear weather report]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t2-03",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Radio: Verkehrsmeldung"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Was ist an der Kreuzung in Halberstadt los?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Die Ampeln funktionieren wieder."
+                },
+                {
+                  "key": "b",
+                  "label": "Die Straße ist ganz gesperrt."
+                },
+                {
+                  "key": "c",
+                  "label": "Die Polizei regelt den Verkehr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Verkehr",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t2-03.mp3",
+          "duration": 19.72
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Die Ampeln sind kaputt, darum zeigt ein Polizist den Autofahrern, wann sie fahren dürfen. Die Straße ist nicht gesperrt, es gibt nur kleine Staus.",
+            "evidence": {
+              "text": "Und jetzt der Verkehr. In Halberstadt funktionieren seit heute Morgen die Ampeln an der großen Kreuzung am Holzmarkt nicht. Dort steht jetzt ein Polizist und zeigt den Autofahrern, wann sie fahren dürfen. Bitte fahren Sie langsam und vorsichtig. Es gibt kleine Staus.",
+              "hit": "Dort steht jetzt ein Polizist und zeigt den Autofahrern, wann sie fahren dürfen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Und jetzt der Verkehr. In Halberstadt funktionieren seit heute Morgen die Ampeln an der großen Kreuzung am Holzmarkt nicht. Dort steht jetzt ein Polizist und zeigt den Autofahrern, wann sie fahren dürfen. Bitte fahren Sie langsam und vorsichtig. Es gibt kleine Staus.",
+            "delivery": "[clear, brisk traffic report]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t2-04",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Radio: Grüße von Hörerinnen und Hörern"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Was macht Larissa heute?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sie macht ihre Fahrprüfung."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie macht eine Deutschprüfung."
+                },
+                {
+                  "key": "c",
+                  "label": "Sie feiert ihren Geburtstag."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Hörergruß",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t2-04.mp3",
+          "duration": 24.19
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Larissa hat heute ihren Test in Deutsch. Die Fahrprüfung war letztes Jahr, und am Samstag hat ihre Mutter Geburtstag, nicht sie.",
+            "evidence": {
+              "text": "Jetzt ein Gruß von Sergej aus Wernigerode. Er schreibt: Liebe Larissa, letztes Jahr hast du die Fahrprüfung geschafft, und heute schaffst du auch deinen Test in Deutsch! Ich drücke dir ganz fest die Daumen. Und am Samstag feiern wir dann den Geburtstag von deiner Mutter. Dein Sergej. Liebe Larissa, auch von uns viel Glück!",
+              "hit": "heute schaffst du auch deinen Test in Deutsch!"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Jetzt ein Gruß von Sergej aus Wernigerode. Er schreibt: Liebe Larissa, letztes Jahr hast du die Fahrprüfung geschafft, und heute schaffst du auch deinen Test in Deutsch! Ich drücke dir ganz fest die Daumen. Und am Samstag feiern wir dann den Geburtstag von deiner Mutter. Dein Sergej. Liebe Larissa, auch von uns viel Glück!",
+            "delivery": "[warm radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t2-05",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Radio: Gewinnspiel"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Wie kann man beim Harz-Rätsel mitmachen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Man schickt eine SMS."
+                },
+                {
+                  "key": "b",
+                  "label": "Man ruft im Studio an."
+                },
+                {
+                  "key": "c",
+                  "label": "Man schreibt eine E-Mail."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Harz-Rätsel",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t2-05.mp3",
+          "duration": 26.2
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Ab heute schickt man die Antwort als Kurznachricht, also per SMS. Anrufen konnte man nur letzte Woche, und E-Mails nimmt das Radio nicht an.",
+            "evidence": {
+              "text": "Und jetzt unser Harz-Rätsel! Die Frage heute: Wie heißt der höchste Berg im Harz? Letzte Woche konnten Sie uns noch anrufen, aber ab heute geht das anders: Schicken Sie die Antwort als Kurznachricht an die Nummer fünf fünf drei null drei. E-Mails können wir leider nicht annehmen. Zu gewinnen gibt es einen großen Korb mit Spezialitäten aus dem Harz.",
+              "hit": "Schicken Sie die Antwort als Kurznachricht an die Nummer fünf fünf drei null drei."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Und jetzt unser Harz-Rätsel! Die Frage heute: Wie heißt der höchste Berg im Harz? Letzte Woche konnten Sie uns noch anrufen, aber ab heute geht das anders: Schicken Sie die Antwort als Kurznachricht an die Nummer fünf fünf drei null drei. E-Mails können wir leider nicht annehmen. Zu gewinnen gibt es einen großen Korb mit Spezialitäten aus dem Harz.",
+            "delivery": "[cheerful, energetic presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-06-t3-01",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.351Z",
+        "textType": "Gespräch unter Nachbarn"
+      },
+      "display": {
+        "instruction": "Sie hören ein Gespräch zwischen zwei Nachbarn. Welche Sprache spricht welche Person? Wählen Sie für die Aufgaben 11–15 einen Buchstaben (a–i). Sie hören das Gespräch zweimal.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "",
+                  "text": "Arabisch"
+                },
+                {
+                  "key": "b",
+                  "title": "",
+                  "text": "Türkisch"
+                },
+                {
+                  "key": "c",
+                  "title": "",
+                  "text": "Rumänisch"
+                },
+                {
+                  "key": "d",
+                  "title": "",
+                  "text": "Russisch"
+                },
+                {
+                  "key": "e",
+                  "title": "",
+                  "text": "Spanisch"
+                },
+                {
+                  "key": "f",
+                  "title": "",
+                  "text": "Französisch"
+                },
+                {
+                  "key": "g",
+                  "title": "",
+                  "text": "Italienisch"
+                },
+                {
+                  "key": "h",
+                  "title": "",
+                  "text": "Englisch"
+                },
+                {
+                  "key": "i",
+                  "title": "",
+                  "text": "Persisch"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Herr Yüce"
+                },
+                {
+                  "n": 11,
+                  "text": "Frau Moreno"
+                },
+                {
+                  "n": 12,
+                  "text": "Herr Lammert"
+                },
+                {
+                  "n": 13,
+                  "text": "Emma Fischer"
+                },
+                {
+                  "n": 14,
+                  "text": "Herr Karimi"
+                },
+                {
+                  "n": 15,
+                  "text": "Frau Rademacher"
+                }
+              ]
+            },
+            "noMatch": false
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Gespräch im Treppenhaus",
+          "segments": [],
+          "speakers": {
+            "nicole": {
+              "name": "Nicole",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "andreas": {
+              "name": "Andreas",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "src": "telc-a2/hoeren-06/telc-a2-hoeren-06-t3-01.mp3",
+          "duration": 115.62
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "e",
+            "explanation": "Frau Moreno kommt aus Spanien, ihre Muttersprache ist Spanisch. Französisch hat sie nur ein bisschen in der Schule gelernt.",
+            "evidence": {
+              "text": "Nein, Französisch nur ein bisschen, das hat sie mal in der Schule gelernt. Sie kommt doch aus Spanien. Spanisch ist ihre Muttersprache.",
+              "hit": "Spanisch ist ihre Muttersprache."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "h",
+            "explanation": "Herr Lammert hat zwanzig Jahre bei einer Firma aus Amerika gearbeitet. Dort hat er jeden Tag Englisch gesprochen.",
+            "evidence": {
+              "text": "Ja, er hat zwanzig Jahre bei einer Firma aus Amerika gearbeitet. Da hat er jeden Tag Englisch gesprochen. Und der Vater von der neuen Familie kann auch ein bisschen Englisch.",
+              "hit": "Da hat er jeden Tag Englisch gesprochen."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "f",
+            "explanation": "Emma Fischer studiert Französisch und war ein Jahr in Frankreich.",
+            "evidence": {
+              "text": "Emma? Die studiert Französisch an der Uni. Sie war sogar ein Jahr in Lyon.",
+              "hit": "Die studiert Französisch an der Uni."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "i",
+            "explanation": "Andreas denkt zuerst an Arabisch, aber das stimmt nicht. Herr Karimi kommt aus dem Iran und spricht Persisch.",
+            "evidence": {
+              "text": "Nein, nein. Herr Karimi kommt aus dem Iran. Er spricht Persisch. Und die Familie spricht Dari, das ist ganz ähnlich. Sie können sich also gut verstehen.",
+              "hit": "Er spricht Persisch."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "d",
+            "explanation": "Frau Rademacher hat Russisch in der DDR in der Schule gelernt. Sie kann es noch ganz gut.",
+            "evidence": {
+              "text": "Sie hat in der DDR in der Schule Russisch gelernt. Sie sagt, sie kann es noch ganz gut.",
+              "hit": "Sie hat in der DDR in der Schule Russisch gelernt."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Hallo Andreas! Hast du schon gesehen? Im dritten Stock wohnt jetzt eine neue Familie."
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Ja, gestern habe ich den Vater kurz im Treppenhaus getroffen. Sie kommen aus Afghanistan, oder?"
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Genau. Die Eltern sprechen noch nicht so viel Deutsch. Ich habe gedacht, wir schreiben mal auf, wer im Haus welche Sprache spricht. Dann kann die Familie fragen, wenn sie mal Hilfe braucht. Zum Beispiel bei Briefen oder in der Schule."
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Gute Idee! Also, Herr Yüce aus dem ersten Stock spricht Türkisch, das weiß ich sicher.",
+            "item": 0
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Okay, ich schreibe es auf. Und Frau Moreno? Die spricht doch Französisch, oder?"
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Nein, Französisch nur ein bisschen, das hat sie mal in der Schule gelernt. Sie kommt doch aus Spanien. Spanisch ist ihre Muttersprache.",
+            "item": 11
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Ach so, stimmt. Und Herr Lammert? Der war doch beruflich oft im Ausland, oder?"
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Ja, er hat zwanzig Jahre bei einer Firma aus Amerika gearbeitet. Da hat er jeden Tag Englisch gesprochen. Und der Vater von der neuen Familie kann auch ein bisschen Englisch.",
+            "item": 12
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Super, das hilft bestimmt. Und die junge Frau im Erdgeschoss, Emma Fischer?"
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Emma? Die studiert Französisch an der Uni. Sie war sogar ein Jahr in Lyon.",
+            "item": 13
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Na ja, ich glaube, Französisch spricht die Familie nicht. Aber ich schreibe es trotzdem auf. Und Herr Karimi aus dem zweiten Stock?"
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Hm, Herr Karimi spricht Arabisch, glaube ich."
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Nein, nein. Herr Karimi kommt aus dem Iran. Er spricht Persisch. Und die Familie spricht Dari, das ist ganz ähnlich. Sie können sich also gut verstehen.",
+            "item": 14
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Ach, das wusste ich nicht. Dann ist er ja der beste Helfer im Haus!"
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Genau. Und dann ist da noch Frau Rademacher. Spricht sie eine andere Sprache? Sie ist ja schon über siebzig."
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Sie hat in der DDR in der Schule Russisch gelernt. Sie sagt, sie kann es noch ganz gut.",
+            "item": 15
+          },
+          {
+            "speaker": "nicole",
+            "voice": "woman_irene",
+            "text": "Toll. Vielleicht sprechen die Eltern auch ein bisschen Russisch, man weiß ja nie. Also, ich schreibe die Liste heute Abend schön am Computer und bringe sie morgen zur Familie. Kommst du mit?"
+          },
+          {
+            "speaker": "andreas",
+            "voice": "man_simon",
+            "text": "Ja, klar, gern. Dann können wir uns auch gleich richtig vorstellen."
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ],
+  "track": {
+    "src": "telc-a2/hoeren-06/track.mp3",
+    "duration": 1031.21,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 21.08,
+        "to": 34.25
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 36.28,
+        "to": 36.96
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 36.96,
+        "to": 43.99
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 43.99,
+        "to": 60.5
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 64.63,
+        "to": 81.14
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 81.14,
+        "to": 97.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 97.18,
+        "to": 98.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1
+        ],
+        "from": 98.14,
+        "to": 105.17
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 105.17,
+        "to": 126.64
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 130.77,
+        "to": 152.24
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1
+        ],
+        "from": 152.24,
+        "to": 168.28
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 168.28,
+        "to": 169.2
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          2
+        ],
+        "from": 169.2,
+        "to": 176.22
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 176.22,
+        "to": 194.04
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 198.16,
+        "to": 215.98
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          2
+        ],
+        "from": 215.98,
+        "to": 232.02
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 232.02,
+        "to": 232.86
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3
+        ],
+        "from": 232.86,
+        "to": 239.88
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 239.88,
+        "to": 259.89
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 264.02,
+        "to": 284.03
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3
+        ],
+        "from": 284.03,
+        "to": 300.07
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 300.07,
+        "to": 300.88
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          4
+        ],
+        "from": 300.88,
+        "to": 307.91
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 307.91,
+        "to": 333.14
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 337.27,
+        "to": 362.5
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          4
+        ],
+        "from": 362.5,
+        "to": 378.54
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 378.54,
+        "to": 379.4
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5
+        ],
+        "from": 379.4,
+        "to": 386.43
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 386.43,
+        "to": 405.29
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 409.42,
+        "to": 428.28
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5
+        ],
+        "from": 428.28,
+        "to": 444.32
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          0,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 447.35,
+        "to": 460.51
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 462.55,
+        "to": 463.23
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 463.23,
+        "to": 470.26
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 470.26,
+        "to": 494.13
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 494.13,
+        "to": 510.17
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6
+        ],
+        "from": 510.17,
+        "to": 511.03
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6
+        ],
+        "from": 511.03,
+        "to": 518.06
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6
+        ],
+        "from": 518.06,
+        "to": 542.25
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6
+        ],
+        "from": 542.25,
+        "to": 558.29
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          7
+        ],
+        "from": 558.29,
+        "to": 559.12
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          7
+        ],
+        "from": 559.12,
+        "to": 566.15
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          7
+        ],
+        "from": 566.15,
+        "to": 589.56
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          7
+        ],
+        "from": 589.56,
+        "to": 605.6
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          8
+        ],
+        "from": 605.6,
+        "to": 606.41
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          8
+        ],
+        "from": 606.41,
+        "to": 613.43
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          8
+        ],
+        "from": 613.43,
+        "to": 633.16
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          8
+        ],
+        "from": 633.16,
+        "to": 649.2
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          9
+        ],
+        "from": 649.2,
+        "to": 650.03
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          9
+        ],
+        "from": 650.03,
+        "to": 657.06
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          9
+        ],
+        "from": 657.06,
+        "to": 681.25
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          9
+        ],
+        "from": 681.25,
+        "to": 697.29
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          10
+        ],
+        "from": 697.29,
+        "to": 698.07
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          10
+        ],
+        "from": 698.07,
+        "to": 705.1
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 705.1,
+        "to": 731.3
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          10
+        ],
+        "from": 731.3,
+        "to": 747.34
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 750.37,
+        "to": 765.47
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 767.5,
+        "to": 769.18
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 769.18,
+        "to": 776.2
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 776.2,
+        "to": 891.82
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 895.95,
+        "to": 1011.57
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 1011.57,
+        "to": 1027.6
+      }
+    ]
+  }
+}

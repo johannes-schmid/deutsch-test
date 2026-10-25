@@ -1,0 +1,683 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-09-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Kurze Notiz an einen Auszubildenden"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Jessica arbeitet heute an einem anderen Ort."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Herr Ott kommt am Nachmittag."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Kai soll die Kataloge in den Raum legen, wo die Kunden warten."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Jessica",
+          "source": "Notiz",
+          "paragraphs": [
+            "Lieber Kai,",
+            "ich arbeite heute in der anderen Filiale. Um 10 Uhr kommt Herr Ott. Er bringt die neuen Kataloge. Bitte leg sie ins Wartezimmer. Ab 13 Uhr ist Mittagspause. Bitte schließ dann das Büro ab. Du kannst mich in der Filiale anrufen, wenn du Fragen hast.",
+            "Danke und bis morgen!",
+            "Jessica"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Herr Ott kommt um 10 Uhr, also am Vormittag. Um 13 Uhr beginnt nur die Mittagspause.",
+            "evidence": {
+              "text": "ich arbeite heute in der anderen Filiale. Um 10 Uhr kommt Herr Ott. Er bringt die neuen Kataloge. Bitte leg sie ins Wartezimmer. Ab 13 Uhr ist Mittagspause. Bitte schließ dann das Büro ab. Du kannst mich in der Filiale anrufen, wenn du Fragen hast.",
+              "hit": "Um 10 Uhr kommt Herr Ott."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Kai soll die Kataloge ins Wartezimmer legen. Dort warten die Kunden.",
+            "evidence": {
+              "text": "ich arbeite heute in der anderen Filiale. Um 10 Uhr kommt Herr Ott. Er bringt die neuen Kataloge. Bitte leg sie ins Wartezimmer. Ab 13 Uhr ist Mittagspause. Bitte schließ dann das Büro ab. Du kannst mich in der Filiale anrufen, wenn du Fragen hast.",
+              "hit": "Bitte leg sie ins Wartezimmer."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Kurze E-Mail mit einer Einladung"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Die Fotos kann man nur an einem Tag sehen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Für die Ausstellung muss man bezahlen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Olena darf mit ihrem Mann kommen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Christiane",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Olena,",
+            "ich habe eine tolle Nachricht: Meine Fotos hängen jetzt vier Wochen lang im Café Kranich! Am Samstag um 17 Uhr ist die Eröffnung. Hast du Zeit? Der Eintritt ist frei. Du kannst gern deinen Mann mitbringen. Ich bin schon ab 16 Uhr dort und helfe noch beim Aufhängen. Das Café ist am Marktplatz 3. Schreib mir bitte kurz, ob ihr kommt. Ich freue mich sehr!",
+            "Liebe Grüße",
+            "Christiane"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Die Fotos hängen vier Wochen lang im Café. Am Samstag ist nur die Eröffnung.",
+            "evidence": {
+              "text": "ich habe eine tolle Nachricht: Meine Fotos hängen jetzt vier Wochen lang im Café Kranich! Am Samstag um 17 Uhr ist die Eröffnung. Hast du Zeit? Der Eintritt ist frei. Du kannst gern deinen Mann mitbringen. Ich bin schon ab 16 Uhr dort und helfe noch beim Aufhängen. Das Café ist am Marktplatz 3. Schreib mir bitte kurz, ob ihr kommt. Ich freue mich sehr!",
+              "hit": "Meine Fotos hängen jetzt vier Wochen lang im Café Kranich!"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Der Eintritt ist frei. Du musst also nichts bezahlen.",
+            "evidence": {
+              "text": "ich habe eine tolle Nachricht: Meine Fotos hängen jetzt vier Wochen lang im Café Kranich! Am Samstag um 17 Uhr ist die Eröffnung. Hast du Zeit? Der Eintritt ist frei. Du kannst gern deinen Mann mitbringen. Ich bin schon ab 16 Uhr dort und helfe noch beim Aufhängen. Das Café ist am Marktplatz 3. Schreib mir bitte kurz, ob ihr kommt. Ich freue mich sehr!",
+              "hit": "Der Eintritt ist frei."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Christiane schreibt: Olena kann gern ihren Mann mitbringen.",
+            "evidence": {
+              "text": "ich habe eine tolle Nachricht: Meine Fotos hängen jetzt vier Wochen lang im Café Kranich! Am Samstag um 17 Uhr ist die Eröffnung. Hast du Zeit? Der Eintritt ist frei. Du kannst gern deinen Mann mitbringen. Ich bin schon ab 16 Uhr dort und helfe noch beim Aufhängen. Das Café ist am Marktplatz 3. Schreib mir bitte kurz, ob ihr kommt. Ich freue mich sehr!",
+              "hit": "Du kannst gern deinen Mann mitbringen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "b"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten mit fünf Freunden zusammen in einem Zimmer Rätsel lösen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.raetselspass-online.de · Jeden Tag neue Rätsel für Sie zu Hause: Kreuzworträtsel, Sudoku und mehr. Alles kostenlos!"
+                },
+                {
+                  "key": "b",
+                  "label": "www.exit-zimmer-mitte.de · Eine Stunde Zeit, ein Raum, viele Rätsel. Für Gruppen von 2 bis 6 Personen. Jetzt online buchen!"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie möchten eine neue Arbeit. Jemand soll Ihnen beim Brief an die Firma helfen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.jobtreff-nord.de · Bewerbung schreiben? Wir helfen Ihnen kostenlos. Jeden Mittwoch 10–13 Uhr, ohne Termin."
+                },
+                {
+                  "key": "b",
+                  "label": "www.stellenmarkt-regio.de · Über 2.000 Stellen in Ihrer Region: Lager, Büro, Pflege. Jeden Tag neue Angebote."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "In a hilft man dir kostenlos bei der Bewerbung. In b findest du nur Stellen, aber keine Hilfe beim Schreiben."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie haben viele alte Bücher. Sie möchten dafür Geld bekommen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.buchhandlung-seitenweise.de · Neue Romane und Kinderbücher. Heute bestellen, morgen im Laden abholen."
+                },
+                {
+                  "key": "b",
+                  "label": "www.buecher-ankauf24.de · Wir kaufen Ihre gebrauchten Bücher! Titel eingeben, Preis sehen, Paket kostenlos schicken."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "In b kaufen sie gebrauchte Bücher, also bekommst du Geld. In a kannst du nur neue Bücher kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Es ist Sonntag. Ihre Kinder möchten in einer Halle springen und spielen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.sprungwerk-halle.de · Trampolinhalle für Kinder ab 4 Jahren. Geöffnet Mittwoch bis Sonntag, 10–19 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "www.huepfwelt-kinder.de · Trampoline und Hüpfburgen für Kinder. Montag bis Samstag 14–18 Uhr, sonntags geschlossen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Die Halle in a ist auch am Sonntag offen. Die Halle in b ist am Sonntag geschlossen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Ihr Opa kann nicht mehr gut laufen. Sie möchten eine Gehhilfe für ihn kaufen, aber keine neue.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.gebraucht-und-gut.de · Rollator, grau, ein Jahr alt, wie neu. Nur 45 €. Tel. 0176 4419 208"
+                },
+                {
+                  "key": "b",
+                  "label": "www.sanitaetshaus-mitte.de · Neue Rollatoren, Rollstühle und Gehstöcke. Beratung im Geschäft, Montag bis Freitag 9–18 Uhr."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "In a gibt es einen gebrauchten Rollator für 45 €. In b sind alle Rollatoren neu."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ihr Vermieter möchte jetzt mehr Geld für Ihre Wohnung. Sie haben Fragen und brauchen Hilfe.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.wohnungsboerse-stadt.de · Wohnungen zur Miete: 1 bis 4 Zimmer, mit Balkon oder Garten. Suchen Sie jetzt!"
+                },
+                {
+                  "key": "b",
+                  "label": "www.mieterverein-ost.de · Ihre Miete wird teurer? Wir beraten Mieter. Termin unter Tel. 0561 33 08 12."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Der Verein in b berät Mieter, wenn die Miete teurer wird. In a kannst du nur eine neue Wohnung suchen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Schild im Krankenhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Um 11 Uhr kann man hier jemanden besuchen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür von Station 4 im Krankenhaus",
+          "source": "Schild",
+          "paragraphs": [
+            "Station 4",
+            "Besuchszeit: täglich 14–19 Uhr",
+            "Bitte nur zwei Besucher pro Zimmer."
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Zettel an der Kiosktür"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Der Verkäufer ist bald wieder im Kiosk."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür vom Kiosk",
+          "source": "Schild",
+          "paragraphs": [
+            "Kurze Pause!",
+            "Bin in 10 Minuten zurück."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Auf dem Zettel steht: in 10 Minuten zurück. Der Verkäufer kommt also bald wieder.",
+            "evidence": {
+              "text": "Kurze Pause! Bin in 10 Minuten zurück.",
+              "hit": "Bin in 10 Minuten zurück."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Schild im Einkaufszentrum"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Die Rolltreppe funktioniert heute."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Einkaufszentrum, vor der Rolltreppe",
+          "source": "Schild",
+          "paragraphs": [
+            "Rolltreppe heute kaputt!",
+            "Bitte nehmen Sie den Aufzug hinten links."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Die Rolltreppe ist heute kaputt. Du musst den Aufzug nehmen.",
+            "evidence": {
+              "text": "Rolltreppe heute kaputt! Bitte nehmen Sie den Aufzug hinten links.",
+              "hit": "Rolltreppe heute kaputt!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Schild am Bauzaun"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Kinder dürfen hier spielen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Zaun von einer Baustelle",
+          "source": "Schild",
+          "paragraphs": [
+            "Baustelle",
+            "Betreten verboten!",
+            "Eltern haften für ihre Kinder."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "falsch",
+            "explanation": "Auf der Baustelle darf niemand hineingehen. Auch Kinder dürfen dort nicht spielen.",
+            "evidence": {
+              "text": "Baustelle Betreten verboten! Eltern haften für ihre Kinder.",
+              "hit": "Betreten verboten!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Schild im Café"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Wer im Café nichts kauft, darf nicht auf die Toilette."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Toilettentür im Café",
+          "source": "Schild",
+          "paragraphs": [
+            "WC nur für Gäste",
+            "Den Schlüssel bekommen Sie an der Theke."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Das WC ist nur für Gäste. Wer nichts kauft oder trinkt, ist kein Gast.",
+            "evidence": {
+              "text": "WC nur für Gäste Den Schlüssel bekommen Sie an der Theke.",
+              "hit": "WC nur für Gäste"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-09-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Schild an einer Brücke"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Auf der Brücke soll man das Fahrrad schieben."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Fußgängerbrücke",
+          "source": "Schild",
+          "paragraphs": [
+            "Fußgängerbrücke",
+            "Radfahrer bitte absteigen!",
+            "Vielen Dank, Ihre Stadtverwaltung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "richtig",
+            "explanation": "Radfahrer sollen absteigen. Dann gehst du zu Fuß und schiebst das Fahrrad.",
+            "evidence": {
+              "text": "Fußgängerbrücke Radfahrer bitte absteigen! Vielen Dank, Ihre Stadtverwaltung",
+              "hit": "Radfahrer bitte absteigen!"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

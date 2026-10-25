@@ -1,0 +1,684 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-06-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Notiz am Kühlschrank"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Doris ist heute erst spät zu Hause."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Reinhard soll den Müll heute Abend vor das Haus bringen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Frau Kurz kommt am Vormittag."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Doris",
+          "source": "Notiz",
+          "paragraphs": [
+            "Lieber Reinhard,",
+            "ich muss heute länger arbeiten, bis 20 Uhr. Bitte stell morgen früh die Mülltonne an die Straße. Frau Kurz von nebenan bringt heute gegen 17 Uhr unser Waffeleisen zurück. Bist du dann zu Hause?",
+            "Bis heute Abend!",
+            "Doris"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Reinhard soll die Mülltonne an die Straße stellen. Aber das soll er morgen früh machen, nicht heute Abend.",
+            "evidence": {
+              "text": "ich muss heute länger arbeiten, bis 20 Uhr. Bitte stell morgen früh die Mülltonne an die Straße. Frau Kurz von nebenan bringt heute gegen 17 Uhr unser Waffeleisen zurück. Bist du dann zu Hause?",
+              "hit": "Bitte stell morgen früh die Mülltonne an die Straße."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "falsch",
+            "explanation": "Frau Kurz kommt gegen 17 Uhr. Das ist am Nachmittag, nicht am Vormittag.",
+            "evidence": {
+              "text": "ich muss heute länger arbeiten, bis 20 Uhr. Bitte stell morgen früh die Mülltonne an die Straße. Frau Kurz von nebenan bringt heute gegen 17 Uhr unser Waffeleisen zurück. Bist du dann zu Hause?",
+              "hit": "Frau Kurz von nebenan bringt heute gegen 17 Uhr unser Waffeleisen zurück."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Kurze E-Mail an eine Kollegin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Sophie nimmt Aylin morgens im Auto mit."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Aylin bezahlt Sophie jeden Monat etwas."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Am Freitag holt Sophie Aylin auch ab."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Sophie",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Aylin,",
+            "ab Montag können wir zusammen mit meinem Auto zur Arbeit fahren. Ich hole dich jeden Morgen um 7.15 Uhr ab, an der Ecke bei der Bäckerei. Du gibst mir 20 Euro im Monat für das Benzin, okay? Nur am Freitag geht es nicht. Da arbeite ich immer zu Hause. Dann musst du mit dem Bus fahren. Sag mir bitte bis Sonntag, ob das für dich gut ist.",
+            "Viele Grüße",
+            "Sophie"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Sophie holt Aylin am Morgen ab. Dann fahren beide mit Sophies Auto zur Arbeit.",
+            "evidence": {
+              "text": "ab Montag können wir zusammen mit meinem Auto zur Arbeit fahren. Ich hole dich jeden Morgen um 7.15 Uhr ab, an der Ecke bei der Bäckerei. Du gibst mir 20 Euro im Monat für das Benzin, okay? Nur am Freitag geht es nicht. Da arbeite ich immer zu Hause. Dann musst du mit dem Bus fahren. Sag mir bitte bis Sonntag, ob das für dich gut ist.",
+              "hit": "ab Montag können wir zusammen mit meinem Auto zur Arbeit fahren."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "Aylin gibt Sophie 20 Euro im Monat. Das Geld ist für das Benzin.",
+            "evidence": {
+              "text": "ab Montag können wir zusammen mit meinem Auto zur Arbeit fahren. Ich hole dich jeden Morgen um 7.15 Uhr ab, an der Ecke bei der Bäckerei. Du gibst mir 20 Euro im Monat für das Benzin, okay? Nur am Freitag geht es nicht. Da arbeite ich immer zu Hause. Dann musst du mit dem Bus fahren. Sag mir bitte bis Sonntag, ob das für dich gut ist.",
+              "hit": "Du gibst mir 20 Euro im Monat für das Benzin"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Am Freitag arbeitet Sophie zu Hause. Dann fährt Aylin mit dem Bus.",
+            "evidence": {
+              "text": "ab Montag können wir zusammen mit meinem Auto zur Arbeit fahren. Ich hole dich jeden Morgen um 7.15 Uhr ab, an der Ecke bei der Bäckerei. Du gibst mir 20 Euro im Monat für das Benzin, okay? Nur am Freitag geht es nicht. Da arbeite ich immer zu Hause. Dann musst du mit dem Bus fahren. Sag mir bitte bis Sonntag, ob das für dich gut ist.",
+              "hit": "Nur am Freitag geht es nicht. Da arbeite ich immer zu Hause."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "b"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie haben einen neuen Kleiderschrank. Sie können ihn nicht allein zusammenbauen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.moebelhaus-linde.de · Kleiderschränke in vielen Größen, diese Woche 15 % billiger. Abholung im Lager."
+                },
+                {
+                  "key": "b",
+                  "label": "www.montage-profi.de · Wir bauen Ihre Möbel auf: Schränke, Betten, Regale. Schnell und günstig. Tel. 0172 449 3016"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie haben neue Fenster im Wohnzimmer. Jemand soll Ihnen dafür Vorhänge machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.naehstube-fadenwerk.de · Wir nähen Gardinen nach Ihren Maßen. Den Stoff suchen Sie bei uns im Laden aus. Fertig in einer Woche."
+                },
+                {
+                  "key": "b",
+                  "label": "www.textilreinigung-frisch.de · Wir waschen Ihre Gardinen und hängen sie wieder auf. Abholen und Bringen kostenlos."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "In a nähen sie neue Gardinen genau für Ihre Fenster. In b waschen sie nur alte Gardinen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Ihr Sohn liest sehr gern. Sie suchen billige Bücher für ihn, sie müssen nicht neu sein.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.buecherflohmarkt-west.de · Gebrauchte Kinder- und Jugendbücher, jedes Buch 1 €. Jeden Samstag 10–14 Uhr im Gemeindehaus."
+                },
+                {
+                  "key": "b",
+                  "label": "www.lesespass-verlag.de · Neue Bilderbücher für Kinder von 3 bis 10 Jahren. Online bestellen, Lieferung in zwei Tagen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "In a gibt es gebrauchte Kinderbücher für nur 1 €. In b sind alle Bücher neu."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Sie sind eine Frau und möchten lernen: Wie kann ich mich schützen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.kampfsport-zentrum.de · Karate für Kinder ab 6 Jahren, montags um 16 Uhr. Das erste Training ist kostenlos."
+                },
+                {
+                  "key": "b",
+                  "label": "www.frauentreff-mitte.de · Selbstverteidigung nur für Frauen: vier Abende, immer donnerstags um 19 Uhr. Anmeldung im Büro."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "In b gibt es einen Kurs für Frauen. Dort lernt man, wie man sich verteidigt. Das Karate in a ist nur für Kinder."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie möchten am Wochenende etwas Geld verdienen. Sie stehen gern früh auf.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.tagblatt-zusteller.de · Wir suchen Austräger für unsere Zeitung, Samstag und Sonntag ab 5 Uhr. Gut für Schüler und Rentner."
+                },
+                {
+                  "key": "b",
+                  "label": "www.tagblatt-abo.de · Die Zeitung jeden Morgen an Ihrer Tür! Am Wochenende mit Extra-Teil. Vier Wochen gratis lesen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "In a sucht die Zeitung Leute für Samstag und Sonntag früh. Das ist Arbeit mit Geld. In b kann man die Zeitung nur lesen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Im Winter haben Sie morgens keine Zeit. Jemand soll vor Ihrem Haus den Weg frei machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.gartenhilfe-gruen.de · Rasen mähen, Hecke schneiden, Blätter wegmachen: von März bis November sind wir für Sie da."
+                },
+                {
+                  "key": "b",
+                  "label": "www.hausdienst-blitz.de · Winterdienst: Wir räumen Schnee und streuen Salz vor Ihrem Haus, jeden Morgen bis 7 Uhr."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "In b räumen sie im Winter den Schnee vor dem Haus weg. Die Gartenhilfe in a arbeitet nur von März bis November."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Schild an der Ladentür"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Am Sonntag kann man um zehn Uhr Brötchen kaufen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür von der Bäckerei",
+          "source": "Schild",
+          "paragraphs": [
+            "Bäckerei Sonnenkorn",
+            "Mo–Sa 6–18 Uhr",
+            "So 7–11 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Schild am Seeufer"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Man darf hier schwimmen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Ufer vom See",
+          "source": "Schild",
+          "paragraphs": [
+            "Achtung!",
+            "Baden verboten!",
+            "Das Wasser ist hier sehr tief."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "falsch",
+            "explanation": "Auf dem Schild steht: Baden verboten. Man darf hier also nicht ins Wasser gehen.",
+            "evidence": {
+              "text": "Achtung! Baden verboten! Das Wasser ist hier sehr tief.",
+              "hit": "Baden verboten!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Schild am Brunnen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Aus diesem Brunnen kann man Wasser trinken."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Brunnen im Park",
+          "source": "Schild",
+          "paragraphs": [
+            "Kein Trinkwasser!",
+            "Bitte Kinder nicht aus dem Brunnen trinken lassen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Das Wasser im Brunnen ist kein Trinkwasser. Man soll es nicht trinken.",
+            "evidence": {
+              "text": "Kein Trinkwasser! Bitte Kinder nicht aus dem Brunnen trinken lassen.",
+              "hit": "Kein Trinkwasser!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Schild an der Autowaschanlage"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Bevor das Auto gewaschen wird, muss man die Spiegel an das Auto klappen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Einfahrt zur Waschanlage",
+          "source": "Schild",
+          "paragraphs": [
+            "Bitte vor der Einfahrt:",
+            "Spiegel einklappen!",
+            "Antenne abnehmen!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "richtig",
+            "explanation": "Vor der Einfahrt in die Waschanlage soll man die Spiegel einklappen. Dann wird das Auto gewaschen.",
+            "evidence": {
+              "text": "Bitte vor der Einfahrt: Spiegel einklappen! Antenne abnehmen!",
+              "hit": "Bitte vor der Einfahrt: Spiegel einklappen!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Schild im Theater"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Man darf die Jacke mit in den Saal nehmen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Theater, vor dem Saal",
+          "source": "Schild",
+          "paragraphs": [
+            "Jacken, Mäntel und große Taschen",
+            "bitte an der Garderobe abgeben.",
+            "Vielen Dank!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "falsch",
+            "explanation": "Jacken soll man an der Garderobe abgeben. Man nimmt sie also nicht mit in den Saal.",
+            "evidence": {
+              "text": "Jacken, Mäntel und große Taschen bitte an der Garderobe abgeben. Vielen Dank!",
+              "hit": "Jacken, Mäntel und große Taschen bitte an der Garderobe abgeben."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-06-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.326Z",
+        "textType": "Schild im Supermarkt"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Heute bekommen Sie das Pfand für Ihre Flaschen an der Kasse."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Supermarkt, am Pfandautomaten",
+          "source": "Schild",
+          "paragraphs": [
+            "Der Automat ist leider kaputt.",
+            "Bitte geben Sie Ihre Flaschen heute an der Kasse ab."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "richtig",
+            "explanation": "Der Automat geht nicht. Darum nimmt heute die Kasse die Flaschen zurück.",
+            "evidence": {
+              "text": "Der Automat ist leider kaputt. Bitte geben Sie Ihre Flaschen heute an der Kasse ab.",
+              "hit": "Bitte geben Sie Ihre Flaschen heute an der Kasse ab."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

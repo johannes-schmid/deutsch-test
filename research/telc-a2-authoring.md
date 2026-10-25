@@ -202,7 +202,7 @@ Local only; Hannes seeds production. Review in `/admin/modelltests`. Drafts stay
 Bavaria weather, A7 Hamburg, Kaufhaus Brenner, Lena Brandt café, Schwimmschule/Fahrradladen ads, Timo's move,
 partner Tomasz, topic Einkaufen, picnic/Flohmarkt.
 
-**Sets used** (add a row per finished set):
+**Sets used** (set 1 below; sets 2–10 are in `research/telc-a2-plan.md`, one `## Set n` section each with its cross-skill name list. `scripts/modelltest/author-start.ts` plans and drafts them and feeds every earlier plan into the next one):
 
 | Set | Hören | Lesen | Schreiben | Sprechen |
 |---|---|---|---|---|

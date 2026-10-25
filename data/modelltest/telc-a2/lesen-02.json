@@ -1,0 +1,480 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-02-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.533Z",
+        "textType": "Wegweiser in einer Volkshochschule"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten das Geld für Ihren Kurs bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Sie fahren bald nach Madrid und möchten dort mit den Leuten sprechen können.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Sie möchten selbst eine Schüssel aus Ton machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Sie suchen eine neue Arbeit. Jemand soll Ihnen bei Ihrem Lebenslauf helfen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Sie möchten lernen, wie man ein Curry aus Thailand kocht.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Ihre Urlaubsbilder sind oft dunkel oder unscharf. Sie möchten mit der Kamera bessere Bilder machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Volkshochschule Bamberg",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "4. Stock: Kunst und Foto · Malen und Zeichnen · Fotografie für Anfänger · Ausstellungsraum",
+            "3. Stock: Lehrküche · Kochkurse aus aller Welt · Gesundheit · Yoga · Rückengymnastik",
+            "2. Stock: Computer und Beruf · PC-Kurse · Bewerbungstraining · Bildbearbeitung am PC · Buchhaltung",
+            "1. Stock: Fremdsprachen · Englisch · Französisch · Spanisch · Italienisch · Selbstlernzentrum",
+            "Erdgeschoss: Anmeldung · Kasse · Information · Café · Garderobe",
+            "Untergeschoss: Werkstatt für Holz und Metall · Töpferei · Nähwerkstatt · Fahrradkeller"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "In Madrid spricht man Spanisch, und Sprachkurse sind im 1. Stock. Im Erdgeschoss ist nur die Anmeldung, im 2. Stock gibt es Computerkurse.",
+            "evidence": {
+              "text": "1. Stock: Fremdsprachen · Englisch · Französisch · Spanisch · Italienisch · Selbstlernzentrum",
+              "hit": "Spanisch"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Schüsseln aus Ton macht man in der Töpferei im Untergeschoss. Im 3. Stock ist die Lehrküche, dort kocht man nur.",
+            "evidence": {
+              "text": "Untergeschoss: Werkstatt für Holz und Metall · Töpferei · Nähwerkstatt · Fahrradkeller",
+              "hit": "Töpferei"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "b",
+            "explanation": "Hilfe für die Bewerbung bekommst du im Bewerbungstraining im 2. Stock. Im 1. Stock ist das Selbstlernzentrum für Sprachen.",
+            "evidence": {
+              "text": "2. Stock: Computer und Beruf · PC-Kurse · Bewerbungstraining · Bildbearbeitung am PC · Buchhaltung",
+              "hit": "Bewerbungstraining"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Kochkurse aus aller Welt gibt es in der Lehrküche im 3. Stock. Im Erdgeschoss ist nur ein Café, dort lernst du nicht kochen.",
+            "evidence": {
+              "text": "3. Stock: Lehrküche · Kochkurse aus aller Welt · Gesundheit · Yoga · Rückengymnastik",
+              "hit": "Kochkurse aus aller Welt"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Fotokurse gibt es im 4. Stock. Im 2. Stock bearbeitet man Bilder nur am Computer, man lernt dort nicht fotografieren.",
+            "evidence": {
+              "text": "4. Stock: Kunst und Foto · Malen und Zeichnen · Fotografie für Anfänger · Ausstellungsraum",
+              "hit": "Fotografie für Anfänger"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-02-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.533Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Frau Kämmerer hat an einem Lauf in Münster teilgenommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Frau Kämmerer hat erst als Rentnerin mit dem Laufen begonnen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Ihre Enkelin läuft ab und zu mit ihr zusammen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Für die Strecke in Münster hat sie weniger als fünf Stunden gebraucht."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Auch ihr Mann ist in Münster mitgelaufen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Nach diesem Lauf möchte Frau Kämmerer keinen Marathon mehr laufen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Hundert Mal 42 Kilometer",
+            "Am Sonntag war Ursula Kämmerer (71) aus Lüneburg beim Stadtmarathon in Münster am Start. Für die Rentnerin war es ein ganz besonderer Tag: Es war ihr hundertster Marathon.",
+            "Mit dem Laufen hat sie spät angefangen. „Mit 52 hatte ich oft Rückenschmerzen. Mein Arzt hat gesagt: Sie müssen sich mehr bewegen!“, erzählt sie. Damals hat sie noch in einer Buchhandlung gearbeitet. Vor der Arbeit ist sie jeden Morgen eine halbe Stunde gelaufen.",
+            "Heute trainiert sie viermal pro Woche. Am Wochenende kommt manchmal ihre Enkelin Mia (17) mit. In Münster war Kämmerer nach 4 Stunden und 52 Minuten im Ziel. Dort hat ihr Mann Klaus mit Blumen gewartet. Er selbst läuft nicht: „Ich fahre lieber Fahrrad“, sagt er.",
+            "Aufhören möchte Ursula Kämmerer noch lange nicht. Im Mai steht schon der nächste Marathon in ihrem Kalender – Nummer 101."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Sie hat mit 52 angefangen. Damals hat sie noch in einer Buchhandlung gearbeitet, sie war also noch keine Rentnerin.",
+            "evidence": {
+              "text": "Mit dem Laufen hat sie spät angefangen. „Mit 52 hatte ich oft Rückenschmerzen. Mein Arzt hat gesagt: Sie müssen sich mehr bewegen!“, erzählt sie. Damals hat sie noch in einer Buchhandlung gearbeitet. Vor der Arbeit ist sie jeden Morgen eine halbe Stunde gelaufen.",
+              "hit": "Damals hat sie noch in einer Buchhandlung gearbeitet."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Am Wochenende kommt Mia manchmal mit. Ab und zu heißt manchmal.",
+            "evidence": {
+              "text": "Heute trainiert sie viermal pro Woche. Am Wochenende kommt manchmal ihre Enkelin Mia (17) mit. In Münster war Kämmerer nach 4 Stunden und 52 Minuten im Ziel. Dort hat ihr Mann Klaus mit Blumen gewartet. Er selbst läuft nicht: „Ich fahre lieber Fahrrad“, sagt er.",
+              "hit": "Am Wochenende kommt manchmal ihre Enkelin Mia (17) mit."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "richtig",
+            "explanation": "Sie war nach 4 Stunden und 52 Minuten im Ziel. Das ist weniger als fünf Stunden.",
+            "evidence": {
+              "text": "Heute trainiert sie viermal pro Woche. Am Wochenende kommt manchmal ihre Enkelin Mia (17) mit. In Münster war Kämmerer nach 4 Stunden und 52 Minuten im Ziel. Dort hat ihr Mann Klaus mit Blumen gewartet. Er selbst läuft nicht: „Ich fahre lieber Fahrrad“, sagt er.",
+              "hit": "nach 4 Stunden und 52 Minuten im Ziel"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Ihr Mann Klaus hat am Ziel mit Blumen gewartet. Er läuft nicht, er fährt lieber Fahrrad.",
+            "evidence": {
+              "text": "Heute trainiert sie viermal pro Woche. Am Wochenende kommt manchmal ihre Enkelin Mia (17) mit. In Münster war Kämmerer nach 4 Stunden und 52 Minuten im Ziel. Dort hat ihr Mann Klaus mit Blumen gewartet. Er selbst läuft nicht: „Ich fahre lieber Fahrrad“, sagt er.",
+              "hit": "Er selbst läuft nicht"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Sie möchte noch lange nicht aufhören. Im Mai plant sie schon ihren 101. Marathon.",
+            "evidence": {
+              "text": "Aufhören möchte Ursula Kämmerer noch lange nicht. Im Mai steht schon der nächste Marathon in ihrem Kalender – Nummer 101.",
+              "hit": "Aufhören möchte Ursula Kämmerer noch lange nicht."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-02-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.533Z",
+        "textType": "Anzeigen und Webseiten: rund ums Haustier"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Hundeschule Pfotenglück",
+                  "text": "Welpenkurs für Hunde bis sechs Monate: Ihr junger Hund lernt Sitz, Platz und Kommen. Kleine Gruppen, samstags auf unserer Wiese in Gießen-Wieseck."
+                },
+                {
+                  "key": "b",
+                  "title": "Tiersitterin Nina",
+                  "text": "Sie sind im Urlaub? Ich versorge Katzen, Kaninchen und Vögel bei Ihnen zu Hause: füttern, sauber machen, spielen. Tel. 0641 5583217"
+                },
+                {
+                  "key": "c",
+                  "title": "Katzenpension am Waldrand",
+                  "text": "Ferien für Ihre Katze: helle Zimmer, großer Garten und liebevolle Betreuung. Auch für mehrere Wochen."
+                },
+                {
+                  "key": "d",
+                  "title": "Tierbedarf Hesse",
+                  "text": "Futter, Käfige, Spielzeug und Körbchen für Hund, Katze, Vogel und Fisch. Bitte beachten Sie: Wir verkaufen keine Tiere."
+                },
+                {
+                  "key": "e",
+                  "title": "www.fell-und-feder-foto.de",
+                  "text": "Schöne Bilder von Ihrem Liebling – im Studio oder draußen im Park. Auch als Gutschein zum Verschenken."
+                },
+                {
+                  "key": "f",
+                  "title": "Tierheim Gießen",
+                  "text": "Viele Hunde und Katzen warten bei uns auf ein neues Zuhause. Besuchen Sie uns: Mi–So 14–17 Uhr."
+                },
+                {
+                  "key": "g",
+                  "title": "Hundesalon Schnipp & Schnauz",
+                  "text": "Baden, bürsten, schneiden: Bei uns wird Ihr Hund wieder schön. Termine auch am Samstag."
+                },
+                {
+                  "key": "h",
+                  "title": "www.mittagsrunde-giessen.de",
+                  "text": "Sie arbeiten den ganzen Tag? Wir holen Ihren Hund mittags ab und gehen eine Stunde mit ihm spazieren."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Ihr Hund ist erst vier Monate alt und hört nicht, wenn Sie ihn rufen."
+                },
+                {
+                  "n": 11,
+                  "text": "Sie verreisen für 14 Tage. Ihre Katze soll in dieser Zeit in der eigenen Wohnung bleiben."
+                },
+                {
+                  "n": 12,
+                  "text": "Sie möchten einer Katze ohne Besitzer einen Platz bei sich geben."
+                },
+                {
+                  "n": 13,
+                  "text": "Ihre Tochter wünscht sich einen Wellensittich. Sie möchten einen kaufen."
+                },
+                {
+                  "n": 14,
+                  "text": "Sie sind von acht bis fünf im Büro. Ihr Hund soll aber auch um zwölf Uhr nach draußen."
+                },
+                {
+                  "n": 15,
+                  "text": "Die Haare von Ihrem Hund sind viel zu lang."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Nina kommt zu dir nach Hause und versorgt die Katze dort. Die Katzenpension passt nicht, denn dort wohnt die Katze woanders.",
+            "evidence": {
+              "text": "Tiersitterin Nina. Sie sind im Urlaub? Ich versorge Katzen, Kaninchen und Vögel bei Ihnen zu Hause: füttern, sauber machen, spielen. Tel. 0641 5583217",
+              "hit": "bei Ihnen zu Hause"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "f",
+            "explanation": "Im Tierheim warten Katzen auf ein neues Zuhause. Dort kannst du eine Katze ohne Besitzer zu dir nehmen.",
+            "evidence": {
+              "text": "Tierheim Gießen. Viele Hunde und Katzen warten bei uns auf ein neues Zuhause. Besuchen Sie uns: Mi–So 14–17 Uhr.",
+              "hit": "Viele Hunde und Katzen warten bei uns auf ein neues Zuhause."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "x",
+            "explanation": "Tierbedarf Hesse hat Sachen für Vögel, verkauft aber keine Tiere. Im Tierheim gibt es nur Hunde und Katzen.",
+            "evidence": {
+              "text": "Tierbedarf Hesse. Futter, Käfige, Spielzeug und Körbchen für Hund, Katze, Vogel und Fisch. Bitte beachten Sie: Wir verkaufen keine Tiere.",
+              "hit": "Wir verkaufen keine Tiere."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "h",
+            "explanation": "Dieser Service holt den Hund am Mittag ab und geht mit ihm spazieren. Die Hundeschule ist nur samstags.",
+            "evidence": {
+              "text": "www.mittagsrunde-giessen.de. Sie arbeiten den ganzen Tag? Wir holen Ihren Hund mittags ab und gehen eine Stunde mit ihm spazieren.",
+              "hit": "Wir holen Ihren Hund mittags ab"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "g",
+            "explanation": "Im Hundesalon schneidet man die Haare von Hunden. Die Fotografin macht nur Bilder von Tieren.",
+            "evidence": {
+              "text": "Hundesalon Schnipp & Schnauz. Baden, bürsten, schneiden: Bei uns wird Ihr Hund wieder schön. Termine auch am Samstag.",
+              "hit": "Baden, bürsten, schneiden"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2361 @@
+{
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "goethe-b1-hoeren-05-t1-bsp",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Merles Band spielt am Samstag."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Das Konzert fängt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "um halb acht an."
+                },
+                {
+                  "key": "b",
+                  "label": "um acht Uhr an."
+                },
+                {
+                  "key": "c",
+                  "label": "um neun Uhr an."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Merle",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t1-bsp.mp3",
+          "duration": 32.52
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_lisa",
+            "text": "Hey Jonas, hier ist Merle. Du, kommst du am Freitag zu unserem Konzert im Jugendzentrum? Am Samstag wär's ja besser gewesen, ich weiß, aber da war der Saal schon weg. Und pass auf: Auf dem Plakat steht acht Uhr, das ist leider falsch. Wir fangen erst um neun an. Um halb acht ist nur der Soundcheck, da musst du nicht dabei sein. Bring doch Lea mit, die wollte uns auch mal hören. Meld dich, ja? Bis dann!",
+            "delivery": "[cheerful, casual voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "falsch",
+        "c"
+      ]
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t1-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Copyshop)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Ein Teil der Karten wird neu gedruckt."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Frau Aksoy kann die Karten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "morgen ab zehn Uhr abholen."
+                },
+                {
+                  "key": "b",
+                  "label": "schon heute Abend abholen."
+                },
+                {
+                  "key": "c",
+                  "label": "erst am Freitag abholen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Copyshop Druckpunkt",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t1-01.mp3",
+          "duration": 36.31
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Nur bei fünfzehn von vierzig Karten ist das Datum falsch. Nur diese Karten druckt der Copyshop kostenlos neu.",
+            "evidence": {
+              "text": "Guten Tag, Frau Aksoy, hier ist Jens Wolter vom Copyshop Druckpunkt in Coburg. Es geht um Ihre vierzig Einladungen zur Taufe. Die sind gedruckt, aber leider ist bei fünfzehn Karten auf der Rückseite das Datum falsch. Das war unser Fehler, darum drucken wir diese Karten natürlich kostenlos neu. Heute Abend wird das aber nichts mehr. Sie müssen aber auch nicht bis Freitag warten: Morgen ab zehn Uhr liegt alles für Sie bereit. Bezahlen können Sie dann beim Abholen. Entschuldigung und auf Wiederhören!",
+              "hit": "darum drucken wir diese Karten natürlich kostenlos neu"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Die Karten liegen morgen ab zehn Uhr bereit. Heute Abend klappt es nicht, und bis Freitag musst du nicht warten.",
+            "evidence": {
+              "text": "Guten Tag, Frau Aksoy, hier ist Jens Wolter vom Copyshop Druckpunkt in Coburg. Es geht um Ihre vierzig Einladungen zur Taufe. Die sind gedruckt, aber leider ist bei fünfzehn Karten auf der Rückseite das Datum falsch. Das war unser Fehler, darum drucken wir diese Karten natürlich kostenlos neu. Heute Abend wird das aber nichts mehr. Sie müssen aber auch nicht bis Freitag warten: Morgen ab zehn Uhr liegt alles für Sie bereit. Bezahlen können Sie dann beim Abholen. Entschuldigung und auf Wiederhören!",
+              "hit": "Morgen ab zehn Uhr liegt alles für Sie bereit."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Guten Tag, Frau Aksoy, hier ist Jens Wolter vom Copyshop Druckpunkt in Coburg. Es geht um Ihre vierzig Einladungen zur Taufe. Die sind gedruckt, aber leider ist bei fünfzehn Karten auf der Rückseite das Datum falsch. Das war unser Fehler, darum drucken wir diese Karten natürlich kostenlos neu. Heute Abend wird das aber nichts mehr. Sie müssen aber auch nicht bis Freitag warten: Morgen ab zehn Uhr liegt alles für Sie bereit. Bezahlen können Sie dann beim Abholen. Entschuldigung und auf Wiederhören!",
+            "delivery": "[polite, apologetic shop voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t1-02",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Für das Turnier kann man sich noch am Samstag anmelden."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Für das Turnier meldet man sich …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "über das Internet an."
+                },
+                {
+                  "key": "b",
+                  "label": "beim Schachclub Ried an."
+                },
+                {
+                  "key": "c",
+                  "label": "persönlich bei der Gemeinde an."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t1-02.mp3",
+          "duration": 36.52
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Für das Turnier muss man sich bis Freitag anmelden. Ohne Anmeldung kann man nur am Riesenschach mitspielen.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp fürs Wochenende: Am Samstag wird der Hauptplatz in Ried im Innkreis zum Schachbrett. Der Schachclub Ried stellt ein Riesenschach mit Figuren so groß wie Kinder auf. Mitspielen kann jeder, ganz ohne Anmeldung, einfach vorbeikommen. Wer beim Turnier am Nachmittag dabei sein will, muss sich aber bis Freitag anmelden, und zwar nicht online, sondern persönlich im Gemeindeamt. Und heuer gibt's zum ersten Mal eine eigene Gruppe für Kinder. Los geht's um zehn Uhr!",
+              "hit": "muss sich aber bis Freitag anmelden"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Man meldet sich persönlich im Gemeindeamt an, nicht online. Der Schachclub stellt nur das Riesenschach auf.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp fürs Wochenende: Am Samstag wird der Hauptplatz in Ried im Innkreis zum Schachbrett. Der Schachclub Ried stellt ein Riesenschach mit Figuren so groß wie Kinder auf. Mitspielen kann jeder, ganz ohne Anmeldung, einfach vorbeikommen. Wer beim Turnier am Nachmittag dabei sein will, muss sich aber bis Freitag anmelden, und zwar nicht online, sondern persönlich im Gemeindeamt. Und heuer gibt's zum ersten Mal eine eigene Gruppe für Kinder. Los geht's um zehn Uhr!",
+              "hit": "sondern persönlich im Gemeindeamt"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Und jetzt ein Tipp fürs Wochenende: Am Samstag wird der Hauptplatz in Ried im Innkreis zum Schachbrett. Der Schachclub Ried stellt ein Riesenschach mit Figuren so groß wie Kinder auf. Mitspielen kann jeder, ganz ohne Anmeldung, einfach vorbeikommen. Wer beim Turnier am Nachmittag dabei sein will, muss sich aber bis Freitag anmelden, und zwar nicht online, sondern persönlich im Gemeindeamt. Und heuer gibt's zum ersten Mal eine eigene Gruppe für Kinder. Los geht's um zehn Uhr!",
+            "delivery": "[warm, upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t1-03",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Durchsage im Krankenhaus"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Die Besuchszeiten ändern sich nicht."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Besucherinnen und Besucher kommen jetzt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "durch den Haupteingang hinein."
+                },
+                {
+                  "key": "b",
+                  "label": "durch einen Eingang beim Parkhaus."
+                },
+                {
+                  "key": "c",
+                  "label": "durch den Notfalleingang hinein."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage im Krankenhaus",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage im Krankenhaus.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t1-03.mp3",
+          "duration": 32.57
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Richtig: „Die Besuchszeiten bleiben aber gleich.“ Nur der Haupteingang ist geschlossen.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher, bitte beachten Sie: Wegen Bauarbeiten ist der Haupteingang des Kantonsspitals Frauenfeld ab heute geschlossen. Die Besuchszeiten bleiben aber gleich. Bitte benützen Sie den Eingang Ost beim Parkhaus B. Dort können Sie auch parkieren. Der Notfalleingang ist nur für Patientinnen und Patienten im Notfall und für die Ambulanz da, nicht für Besucher. Die Cafeteria im Erdgeschoss ist wie gewohnt geöffnet. Vielen Dank für Ihr Verständnis.",
+              "hit": "Die Besuchszeiten bleiben aber gleich."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Besucher sollen den Eingang Ost beim Parkhaus B nehmen. Der Notfalleingang ist nur für Notfälle.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher, bitte beachten Sie: Wegen Bauarbeiten ist der Haupteingang des Kantonsspitals Frauenfeld ab heute geschlossen. Die Besuchszeiten bleiben aber gleich. Bitte benützen Sie den Eingang Ost beim Parkhaus B. Dort können Sie auch parkieren. Der Notfalleingang ist nur für Patientinnen und Patienten im Notfall und für die Ambulanz da, nicht für Besucher. Die Cafeteria im Erdgeschoss ist wie gewohnt geöffnet. Vielen Dank für Ihr Verständnis.",
+              "hit": "Bitte benützen Sie den Eingang Ost beim Parkhaus B."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Liebe Besucherinnen und Besucher, bitte beachten Sie: Wegen Bauarbeiten ist der Haupteingang des Kantonsspitals Frauenfeld ab heute geschlossen. Die Besuchszeiten bleiben aber gleich. Bitte benützen Sie den Eingang Ost beim Parkhaus B. Dort können Sie auch parkieren. Der Notfalleingang ist nur für Patientinnen und Patienten im Notfall und für die Ambulanz da, nicht für Besucher. Die Cafeteria im Erdgeschoss ist wie gewohnt geöffnet. Vielen Dank für Ihr Verständnis.",
+            "delivery": "[calm, clear public announcement]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t1-04",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Blumengeschäft)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Die Blumen werden nach Hause gebracht."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Statt der Rosen schlägt das Geschäft …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Tulpen in derselben Farbe vor."
+                },
+                {
+                  "key": "b",
+                  "label": "einen Strauß Sonnenblumen vor."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Strauß Lilien vor."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Blumen Pernthaler",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t1-04.mp3",
+          "duration": 36.62
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Herr Gasser muss die Blumen am Samstag selbst abholen. Liefern kann das Geschäft diese Woche nicht.",
+            "evidence": {
+              "text": "Grüß Gott, Herr Gasser, hier ist Blumen Pernthaler in Schwaz. Leider haben wir eine schlechte Nachricht: Die weißen Rosen für Samstag sind nicht gekommen. Lilien hätten wir zwar, aber die riechen ja sehr stark. Darum unser Vorschlag: weiße Tulpen, zum selben Preis. Die passen auch gut zu den Sonnenblumen, die Sie schon bestellt haben. Abholen können Sie alles am Samstag bis zwölf, zu Mittag sperren wir zu. Liefern können wir diese Woche leider nicht. Bitte rufen Sie uns kurz zurück. Danke!",
+              "hit": "Liefern können wir diese Woche leider nicht."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Das Geschäft schlägt weiße Tulpen zum selben Preis vor. Lilien riechen zu stark, und die Sonnenblumen hat Herr Gasser schon bestellt.",
+            "evidence": {
+              "text": "Grüß Gott, Herr Gasser, hier ist Blumen Pernthaler in Schwaz. Leider haben wir eine schlechte Nachricht: Die weißen Rosen für Samstag sind nicht gekommen. Lilien hätten wir zwar, aber die riechen ja sehr stark. Darum unser Vorschlag: weiße Tulpen, zum selben Preis. Die passen auch gut zu den Sonnenblumen, die Sie schon bestellt haben. Abholen können Sie alles am Samstag bis zwölf, zu Mittag sperren wir zu. Liefern können wir diese Woche leider nicht. Bitte rufen Sie uns kurz zurück. Danke!",
+              "hit": "Darum unser Vorschlag: weiße Tulpen, zum selben Preis."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_ela",
+            "text": "Grüß Gott, Herr Gasser, hier ist Blumen Pernthaler in Schwaz. Leider haben wir eine schlechte Nachricht: Die weißen Rosen für Samstag sind nicht gekommen. Lilien hätten wir zwar, aber die riechen ja sehr stark. Darum unser Vorschlag: weiße Tulpen, zum selben Preis. Die passen auch gut zu den Sonnenblumen, die Sie schon bestellt haben. Abholen können Sie alles am Samstag bis zwölf, zu Mittag sperren wir zu. Liefern können wir diese Woche leider nicht. Bitte rufen Sie uns kurz zurück. Danke!",
+            "delivery": "[friendly, slightly apologetic shop voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t1-05",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Eine Reparatur dauert ungefähr eine Stunde."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Was bekommt man nur bis Samstag kostenlos?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Eine Hülle für das Handy."
+                },
+                {
+                  "key": "b",
+                  "label": "Eine Folie für das Display."
+                },
+                {
+                  "key": "c",
+                  "label": "Einen Test für den Akku."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t1-05.mp3",
+          "duration": 37.43
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Richtig: „Wir reparieren Ihr Handy in nur einer Stunde.“",
+            "evidence": {
+              "text": "Display kaputt? Kein Problem! Beim Displaydoktor in Bayreuth reparieren wir Ihr Handy in nur einer Stunde. Und das ganz ohne Termin: einfach vorbeikommen, Kaffee trinken, fertig. Den Akku-Test machen wir bei jedem Besuch kostenlos, das ganze Jahr. Und nur bis Samstag gibt's zu jeder Reparatur eine Schutzfolie gratis dazu, damit Ihr neues Display auch neu bleibt. Schöne Handyhüllen finden Sie bei uns natürlich auch, schon ab neun Euro neunzig. Displaydoktor, Kanalstraße acht. Wir machen Ihr Handy wieder gesund!",
+              "hit": "Und das ganz ohne Termin: einfach vorbeikommen"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Bis Samstag gibt es zu jeder Reparatur eine Schutzfolie gratis. Den Akku-Test gibt es das ganze Jahr kostenlos, und Hüllen muss man kaufen.",
+            "evidence": {
+              "text": "Display kaputt? Kein Problem! Beim Displaydoktor in Bayreuth reparieren wir Ihr Handy in nur einer Stunde. Und das ganz ohne Termin: einfach vorbeikommen, Kaffee trinken, fertig. Den Akku-Test machen wir bei jedem Besuch kostenlos, das ganze Jahr. Und nur bis Samstag gibt's zu jeder Reparatur eine Schutzfolie gratis dazu, damit Ihr neues Display auch neu bleibt. Schöne Handyhüllen finden Sie bei uns natürlich auch, schon ab neun Euro neunzig. Displaydoktor, Kanalstraße acht. Wir machen Ihr Handy wieder gesund!",
+              "hit": "Und nur bis Samstag gibt's zu jeder Reparatur eine Schutzfolie gratis dazu"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Display kaputt? Kein Problem! Beim Displaydoktor in Bayreuth reparieren wir Ihr Handy in nur einer Stunde. Und das ganz ohne Termin: einfach vorbeikommen, Kaffee trinken, fertig. Den Akku-Test machen wir bei jedem Besuch kostenlos, das ganze Jahr. Und nur bis Samstag gibt's zu jeder Reparatur eine Schutzfolie gratis dazu, damit Ihr neues Display auch neu bleibt. Schöne Handyhüllen finden Sie bei uns natürlich auch, schon ab neun Euro neunzig. Displaydoktor, Kanalstraße acht. Wir machen Ihr Handy wieder gesund!",
+            "delivery": "[energetic radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t2-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Führung durch eine Schaukäserei"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Bevor die Gäste in die Produktion gehen, müssen sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sich die Hände waschen."
+                },
+                {
+                  "key": "b",
+                  "label": "ihre Taschen abgeben."
+                },
+                {
+                  "key": "c",
+                  "label": "Kopf und Schuhe bedecken."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Beim Käsemachen zuschauen kann man heute …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur noch ungefähr dreißig Minuten."
+                },
+                {
+                  "key": "b",
+                  "label": "wie an jedem Tag bis zum Mittag."
+                },
+                {
+                  "key": "c",
+                  "label": "auch noch am Nachmittag."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Im Käsekeller …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf man keine Fotos machen."
+                },
+                {
+                  "key": "b",
+                  "label": "braucht man warme Kleidung."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man den Käse probieren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Am Ende der Führung können Kinder …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ihren eigenen Käse herstellen."
+                },
+                {
+                  "key": "b",
+                  "label": "ihre eigene Butter herstellen."
+                },
+                {
+                  "key": "c",
+                  "label": "die Kühe im Stall füttern."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Im Laden der Käserei …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kann man Käse verschicken lassen."
+                },
+                {
+                  "key": "b",
+                  "label": "kann man nur mit Bargeld zahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "spart man mit der Eintrittskarte."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Führung in einer Käserei",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Ruedi Aebersold, Gästeführer",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie machen eine Führung durch eine Schaukäserei in Langnau im Emmental mit.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t2-01.mp3",
+          "duration": 170.29
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Alle müssen eine Haube und Überschuhe anziehen. Hände waschen ist nicht nötig, und Taschen darf man mitnehmen.",
+            "evidence": {
+              "text": "Grüezi und herzlich willkommen in unserer Schaukäserei hier in Langnau im Emmental! Mein Name ist Ruedi Aebersold, und ich führe Sie heute etwa eine Stunde durch unser Haus. Schön, dass Sie trotz dem Regen den Weg zu uns gefunden haben. Ihre Schirme stellen Sie bitte hier vorne in den Ständer. Bevor wir anfangen, noch etwas Wichtiges. Gleich gehen wir in die Produktion, und dort gelten strenge Hygieneregeln. Darum ziehen Sie bitte alle diese Haube und die blauen Überschuhe an. Die liegen hier in der Kiste. Die Hände müssen Sie nicht extra waschen, Sie dürfen dort ja nichts anfassen. Und Ihre Rucksäcke und Taschen können Sie ruhig mitnehmen. So. In der Produktion sehen Sie, wie aus Milch Emmentaler wird. Jeden Morgen bringen die Bauern aus der Umgebung frische Milch, etwa sechstausend Liter. Unser Senn, also der Käsermeister, arbeitet normalerweise bis Mittag, und man kann ihm die ganze Zeit zuschauen. Heute ist er aber schon früher fertig, weil er am Nachmittag einen Termin hat. Wir haben also nur noch etwa eine halbe Stunde. Am Nachmittag wird bei uns sowieso nie gekäst. Also, wir müssen uns ein bisschen beeilen. Danach gehen wir in den Käsekeller. Dort liegen über tausend Laibe, und jeder ist fast hundert Kilo schwer. Die Laibe werden übrigens jede Woche gewendet und mit Salzwasser gewaschen. Im Keller hat es nur etwa zwölf Grad. Wer schnell friert, nimmt bitte eine Jacke mit, unten gibt es keine. Fotografieren dürfen Sie überall, auch im Keller, nur bitte ohne Blitz. Probieren können Sie den Käse dort noch nicht, das kommt später. Für die Kinder haben wir am Ende der Führung etwas Besonderes. Käse selber machen, das dauert leider viel zu lange, mehrere Monate. Aber in unserer kleinen Küche dürfen die Kinder selbst Butter machen, und die nehmen sie dann mit nach Hause. Die Kühe im Stall nebenan dürfen Sie gern anschauen, aber bitte nicht füttern, die bekommen spezielles Futter. Zum Schluss kommen wir in unseren Laden. Dort gibt es eine kleine Degustation, also Sie können verschiedene Käse probieren. Unser Bergkäse ist übrigens besonders beliebt. Wenn Sie etwas kaufen, zeigen Sie bitte Ihr Eintrittsbillett an der Kasse. Dann bekommen Sie zehn Prozent Rabatt auf alles. Bezahlen können Sie bar oder mit Karte. Käse nach Hause schicken, das machen wir leider nicht mehr, die Post war einfach zu teuer. Gut, haben Sie alle Ihre Haube an? Ja? Dann kommen Sie bitte mit, hier entlang.",
+              "hit": "Darum ziehen Sie bitte alle diese Haube und die blauen Überschuhe an."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Der Senn ist heute früher fertig, deshalb bleibt nur noch eine halbe Stunde. Normalerweise kann man bis Mittag zuschauen, am Nachmittag nie.",
+            "evidence": {
+              "text": "Grüezi und herzlich willkommen in unserer Schaukäserei hier in Langnau im Emmental! Mein Name ist Ruedi Aebersold, und ich führe Sie heute etwa eine Stunde durch unser Haus. Schön, dass Sie trotz dem Regen den Weg zu uns gefunden haben. Ihre Schirme stellen Sie bitte hier vorne in den Ständer. Bevor wir anfangen, noch etwas Wichtiges. Gleich gehen wir in die Produktion, und dort gelten strenge Hygieneregeln. Darum ziehen Sie bitte alle diese Haube und die blauen Überschuhe an. Die liegen hier in der Kiste. Die Hände müssen Sie nicht extra waschen, Sie dürfen dort ja nichts anfassen. Und Ihre Rucksäcke und Taschen können Sie ruhig mitnehmen. So. In der Produktion sehen Sie, wie aus Milch Emmentaler wird. Jeden Morgen bringen die Bauern aus der Umgebung frische Milch, etwa sechstausend Liter. Unser Senn, also der Käsermeister, arbeitet normalerweise bis Mittag, und man kann ihm die ganze Zeit zuschauen. Heute ist er aber schon früher fertig, weil er am Nachmittag einen Termin hat. Wir haben also nur noch etwa eine halbe Stunde. Am Nachmittag wird bei uns sowieso nie gekäst. Also, wir müssen uns ein bisschen beeilen. Danach gehen wir in den Käsekeller. Dort liegen über tausend Laibe, und jeder ist fast hundert Kilo schwer. Die Laibe werden übrigens jede Woche gewendet und mit Salzwasser gewaschen. Im Keller hat es nur etwa zwölf Grad. Wer schnell friert, nimmt bitte eine Jacke mit, unten gibt es keine. Fotografieren dürfen Sie überall, auch im Keller, nur bitte ohne Blitz. Probieren können Sie den Käse dort noch nicht, das kommt später. Für die Kinder haben wir am Ende der Führung etwas Besonderes. Käse selber machen, das dauert leider viel zu lange, mehrere Monate. Aber in unserer kleinen Küche dürfen die Kinder selbst Butter machen, und die nehmen sie dann mit nach Hause. Die Kühe im Stall nebenan dürfen Sie gern anschauen, aber bitte nicht füttern, die bekommen spezielles Futter. Zum Schluss kommen wir in unseren Laden. Dort gibt es eine kleine Degustation, also Sie können verschiedene Käse probieren. Unser Bergkäse ist übrigens besonders beliebt. Wenn Sie etwas kaufen, zeigen Sie bitte Ihr Eintrittsbillett an der Kasse. Dann bekommen Sie zehn Prozent Rabatt auf alles. Bezahlen können Sie bar oder mit Karte. Käse nach Hause schicken, das machen wir leider nicht mehr, die Post war einfach zu teuer. Gut, haben Sie alle Ihre Haube an? Ja? Dann kommen Sie bitte mit, hier entlang.",
+              "hit": "Wir haben also nur noch etwa eine halbe Stunde."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Im Keller sind es nur zwölf Grad, darum soll man eine Jacke mitnehmen. Fotos sind erlaubt, und probieren kann man erst später.",
+            "evidence": {
+              "text": "Grüezi und herzlich willkommen in unserer Schaukäserei hier in Langnau im Emmental! Mein Name ist Ruedi Aebersold, und ich führe Sie heute etwa eine Stunde durch unser Haus. Schön, dass Sie trotz dem Regen den Weg zu uns gefunden haben. Ihre Schirme stellen Sie bitte hier vorne in den Ständer. Bevor wir anfangen, noch etwas Wichtiges. Gleich gehen wir in die Produktion, und dort gelten strenge Hygieneregeln. Darum ziehen Sie bitte alle diese Haube und die blauen Überschuhe an. Die liegen hier in der Kiste. Die Hände müssen Sie nicht extra waschen, Sie dürfen dort ja nichts anfassen. Und Ihre Rucksäcke und Taschen können Sie ruhig mitnehmen. So. In der Produktion sehen Sie, wie aus Milch Emmentaler wird. Jeden Morgen bringen die Bauern aus der Umgebung frische Milch, etwa sechstausend Liter. Unser Senn, also der Käsermeister, arbeitet normalerweise bis Mittag, und man kann ihm die ganze Zeit zuschauen. Heute ist er aber schon früher fertig, weil er am Nachmittag einen Termin hat. Wir haben also nur noch etwa eine halbe Stunde. Am Nachmittag wird bei uns sowieso nie gekäst. Also, wir müssen uns ein bisschen beeilen. Danach gehen wir in den Käsekeller. Dort liegen über tausend Laibe, und jeder ist fast hundert Kilo schwer. Die Laibe werden übrigens jede Woche gewendet und mit Salzwasser gewaschen. Im Keller hat es nur etwa zwölf Grad. Wer schnell friert, nimmt bitte eine Jacke mit, unten gibt es keine. Fotografieren dürfen Sie überall, auch im Keller, nur bitte ohne Blitz. Probieren können Sie den Käse dort noch nicht, das kommt später. Für die Kinder haben wir am Ende der Führung etwas Besonderes. Käse selber machen, das dauert leider viel zu lange, mehrere Monate. Aber in unserer kleinen Küche dürfen die Kinder selbst Butter machen, und die nehmen sie dann mit nach Hause. Die Kühe im Stall nebenan dürfen Sie gern anschauen, aber bitte nicht füttern, die bekommen spezielles Futter. Zum Schluss kommen wir in unseren Laden. Dort gibt es eine kleine Degustation, also Sie können verschiedene Käse probieren. Unser Bergkäse ist übrigens besonders beliebt. Wenn Sie etwas kaufen, zeigen Sie bitte Ihr Eintrittsbillett an der Kasse. Dann bekommen Sie zehn Prozent Rabatt auf alles. Bezahlen können Sie bar oder mit Karte. Käse nach Hause schicken, das machen wir leider nicht mehr, die Post war einfach zu teuer. Gut, haben Sie alle Ihre Haube an? Ja? Dann kommen Sie bitte mit, hier entlang.",
+              "hit": "Wer schnell friert, nimmt bitte eine Jacke mit, unten gibt es keine."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Die Kinder machen in der Küche Butter und nehmen sie mit. Käse machen dauert zu lange, und die Kühe darf man nicht füttern.",
+            "evidence": {
+              "text": "Grüezi und herzlich willkommen in unserer Schaukäserei hier in Langnau im Emmental! Mein Name ist Ruedi Aebersold, und ich führe Sie heute etwa eine Stunde durch unser Haus. Schön, dass Sie trotz dem Regen den Weg zu uns gefunden haben. Ihre Schirme stellen Sie bitte hier vorne in den Ständer. Bevor wir anfangen, noch etwas Wichtiges. Gleich gehen wir in die Produktion, und dort gelten strenge Hygieneregeln. Darum ziehen Sie bitte alle diese Haube und die blauen Überschuhe an. Die liegen hier in der Kiste. Die Hände müssen Sie nicht extra waschen, Sie dürfen dort ja nichts anfassen. Und Ihre Rucksäcke und Taschen können Sie ruhig mitnehmen. So. In der Produktion sehen Sie, wie aus Milch Emmentaler wird. Jeden Morgen bringen die Bauern aus der Umgebung frische Milch, etwa sechstausend Liter. Unser Senn, also der Käsermeister, arbeitet normalerweise bis Mittag, und man kann ihm die ganze Zeit zuschauen. Heute ist er aber schon früher fertig, weil er am Nachmittag einen Termin hat. Wir haben also nur noch etwa eine halbe Stunde. Am Nachmittag wird bei uns sowieso nie gekäst. Also, wir müssen uns ein bisschen beeilen. Danach gehen wir in den Käsekeller. Dort liegen über tausend Laibe, und jeder ist fast hundert Kilo schwer. Die Laibe werden übrigens jede Woche gewendet und mit Salzwasser gewaschen. Im Keller hat es nur etwa zwölf Grad. Wer schnell friert, nimmt bitte eine Jacke mit, unten gibt es keine. Fotografieren dürfen Sie überall, auch im Keller, nur bitte ohne Blitz. Probieren können Sie den Käse dort noch nicht, das kommt später. Für die Kinder haben wir am Ende der Führung etwas Besonderes. Käse selber machen, das dauert leider viel zu lange, mehrere Monate. Aber in unserer kleinen Küche dürfen die Kinder selbst Butter machen, und die nehmen sie dann mit nach Hause. Die Kühe im Stall nebenan dürfen Sie gern anschauen, aber bitte nicht füttern, die bekommen spezielles Futter. Zum Schluss kommen wir in unseren Laden. Dort gibt es eine kleine Degustation, also Sie können verschiedene Käse probieren. Unser Bergkäse ist übrigens besonders beliebt. Wenn Sie etwas kaufen, zeigen Sie bitte Ihr Eintrittsbillett an der Kasse. Dann bekommen Sie zehn Prozent Rabatt auf alles. Bezahlen können Sie bar oder mit Karte. Käse nach Hause schicken, das machen wir leider nicht mehr, die Post war einfach zu teuer. Gut, haben Sie alle Ihre Haube an? Ja? Dann kommen Sie bitte mit, hier entlang.",
+              "hit": "Aber in unserer kleinen Küche dürfen die Kinder selbst Butter machen"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Mit dem Eintrittsbillett bekommt man zehn Prozent Rabatt. Man kann auch mit Karte zahlen, und Käse verschickt die Käserei nicht mehr.",
+            "evidence": {
+              "text": "Grüezi und herzlich willkommen in unserer Schaukäserei hier in Langnau im Emmental! Mein Name ist Ruedi Aebersold, und ich führe Sie heute etwa eine Stunde durch unser Haus. Schön, dass Sie trotz dem Regen den Weg zu uns gefunden haben. Ihre Schirme stellen Sie bitte hier vorne in den Ständer. Bevor wir anfangen, noch etwas Wichtiges. Gleich gehen wir in die Produktion, und dort gelten strenge Hygieneregeln. Darum ziehen Sie bitte alle diese Haube und die blauen Überschuhe an. Die liegen hier in der Kiste. Die Hände müssen Sie nicht extra waschen, Sie dürfen dort ja nichts anfassen. Und Ihre Rucksäcke und Taschen können Sie ruhig mitnehmen. So. In der Produktion sehen Sie, wie aus Milch Emmentaler wird. Jeden Morgen bringen die Bauern aus der Umgebung frische Milch, etwa sechstausend Liter. Unser Senn, also der Käsermeister, arbeitet normalerweise bis Mittag, und man kann ihm die ganze Zeit zuschauen. Heute ist er aber schon früher fertig, weil er am Nachmittag einen Termin hat. Wir haben also nur noch etwa eine halbe Stunde. Am Nachmittag wird bei uns sowieso nie gekäst. Also, wir müssen uns ein bisschen beeilen. Danach gehen wir in den Käsekeller. Dort liegen über tausend Laibe, und jeder ist fast hundert Kilo schwer. Die Laibe werden übrigens jede Woche gewendet und mit Salzwasser gewaschen. Im Keller hat es nur etwa zwölf Grad. Wer schnell friert, nimmt bitte eine Jacke mit, unten gibt es keine. Fotografieren dürfen Sie überall, auch im Keller, nur bitte ohne Blitz. Probieren können Sie den Käse dort noch nicht, das kommt später. Für die Kinder haben wir am Ende der Führung etwas Besonderes. Käse selber machen, das dauert leider viel zu lange, mehrere Monate. Aber in unserer kleinen Küche dürfen die Kinder selbst Butter machen, und die nehmen sie dann mit nach Hause. Die Kühe im Stall nebenan dürfen Sie gern anschauen, aber bitte nicht füttern, die bekommen spezielles Futter. Zum Schluss kommen wir in unseren Laden. Dort gibt es eine kleine Degustation, also Sie können verschiedene Käse probieren. Unser Bergkäse ist übrigens besonders beliebt. Wenn Sie etwas kaufen, zeigen Sie bitte Ihr Eintrittsbillett an der Kasse. Dann bekommen Sie zehn Prozent Rabatt auf alles. Bezahlen können Sie bar oder mit Karte. Käse nach Hause schicken, das machen wir leider nicht mehr, die Post war einfach zu teuer. Gut, haben Sie alle Ihre Haube an? Ja? Dann kommen Sie bitte mit, hier entlang.",
+              "hit": "Wenn Sie etwas kaufen, zeigen Sie bitte Ihr Eintrittsbillett an der Kasse. Dann bekommen Sie zehn Prozent Rabatt auf alles."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Grüezi und herzlich willkommen in unserer Schaukäserei hier in Langnau im Emmental! Mein Name ist Ruedi Aebersold, und ich führe Sie heute etwa eine Stunde durch unser Haus. Schön, dass Sie trotz dem Regen den Weg zu uns gefunden haben. Ihre Schirme stellen Sie bitte hier vorne in den Ständer. Bevor wir anfangen, noch etwas Wichtiges. Gleich gehen wir in die Produktion, und dort gelten strenge Hygieneregeln. Darum ziehen Sie bitte alle diese Haube und die blauen Überschuhe an. Die liegen hier in der Kiste. Die Hände müssen Sie nicht extra waschen, Sie dürfen dort ja nichts anfassen. Und Ihre Rucksäcke und Taschen können Sie ruhig mitnehmen. So. In der Produktion sehen Sie, wie aus Milch Emmentaler wird. Jeden Morgen bringen die Bauern aus der Umgebung frische Milch, etwa sechstausend Liter. Unser Senn, also der Käsermeister, arbeitet normalerweise bis Mittag, und man kann ihm die ganze Zeit zuschauen. Heute ist er aber schon früher fertig, weil er am Nachmittag einen Termin hat. Wir haben also nur noch etwa eine halbe Stunde. Am Nachmittag wird bei uns sowieso nie gekäst. Also, wir müssen uns ein bisschen beeilen. Danach gehen wir in den Käsekeller. Dort liegen über tausend Laibe, und jeder ist fast hundert Kilo schwer. Die Laibe werden übrigens jede Woche gewendet und mit Salzwasser gewaschen. Im Keller hat es nur etwa zwölf Grad. Wer schnell friert, nimmt bitte eine Jacke mit, unten gibt es keine. Fotografieren dürfen Sie überall, auch im Keller, nur bitte ohne Blitz. Probieren können Sie den Käse dort noch nicht, das kommt später. Für die Kinder haben wir am Ende der Führung etwas Besonderes. Käse selber machen, das dauert leider viel zu lange, mehrere Monate. Aber in unserer kleinen Küche dürfen die Kinder selbst Butter machen, und die nehmen sie dann mit nach Hause. Die Kühe im Stall nebenan dürfen Sie gern anschauen, aber bitte nicht füttern, die bekommen spezielles Futter. Zum Schluss kommen wir in unseren Laden. Dort gibt es eine kleine Degustation, also Sie können verschiedene Käse probieren. Unser Bergkäse ist übrigens besonders beliebt. Wenn Sie etwas kaufen, zeigen Sie bitte Ihr Eintrittsbillett an der Kasse. Dann bekommen Sie zehn Prozent Rabatt auf alles. Bezahlen können Sie bar oder mit Karte. Käse nach Hause schicken, das machen wir leider nicht mehr, die Post war einfach zu teuer. Gut, haben Sie alle Ihre Haube an? Ja? Dann kommen Sie bitte mit, hier entlang.",
+            "delivery": "[friendly tour guide addressing a group, relaxed, clear]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t3-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Gespräch zwischen Freunden im Park"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Kai hat die Briefe im Keller seiner Eltern gefunden."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Die Briefe waren für Kai schwer zu lesen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Leonie interessiert sich nicht für die Geschichte ihrer Familie."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Kais Urgroßvater hat einige Jahre in Amerika gelebt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Kai ist schon einmal dorthin gereist."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Leonie kennt jemanden, der Kai helfen kann."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Kai wird Leonie Fotos von den Briefen schicken."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch im Park",
+          "segments": [],
+          "speakers": {
+            "l": {
+              "name": "Leonie",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "k": {
+              "name": "Kai",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie sind in einem Park in Wuppertal und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t3-01.mp3",
+          "duration": 189.02
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Seine Tante hat ihm die Briefe in einem Paket geschickt. Im Keller seiner Eltern war nie etwas.",
+            "evidence": {
+              "text": "Also, meine Tante Hildegard zieht gerade um und räumt ihre ganze Wohnung aus. Und sie hat mir ein Paket geschickt, mit einer alten Schuhschachtel drin. Voll mit Briefen von meinem Urgroßvater.",
+              "hit": "Und sie hat mir ein Paket geschickt, mit einer alten Schuhschachtel drin."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "richtig",
+            "explanation": "Die Briefe sind in einer alten Handschrift geschrieben. Für einen Brief hat Kai eine Stunde gebraucht.",
+            "evidence": {
+              "text": "Tja, das ist das Problem. Die sind alle mit der Hand geschrieben, in so einer alten Schrift. Am Anfang hab ich fast kein Wort verstanden. Dann hab ich im Internet eine Tabelle mit den alten Buchstaben gefunden, und so ging's langsam. Aber für einen Brief hab ich trotzdem eine Stunde gebraucht.",
+              "hit": "Am Anfang hab ich fast kein Wort verstanden."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "falsch",
+            "explanation": "Leonie hat einen Stammbaum für ihre Oma gemacht. Sie findet Familiengeschichte sehr spannend.",
+            "evidence": {
+              "text": "Genau. Da hab ich wochenlang dran gesessen, und ehrlich, das hat mich total gepackt. Ich find so was super spannend. Also, sag schon, was schreibt dein Urgroßvater?",
+              "hit": "Ich find so was super spannend."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Der Urgroßvater war ungefähr sechs Jahre in Amerika. Er hat in Chicago in einer Fabrik gearbeitet.",
+            "evidence": {
+              "text": "Also, das ist die eigentliche Überraschung. Er war in Amerika! In den Zwanzigerjahren, so ungefähr sechs Jahre lang. Er hat in Chicago in einer Fabrik gearbeitet und von dort an seine Verlobte geschrieben, also an meine Urgroßmutter.",
+              "hit": "Er war in Amerika! In den Zwanzigerjahren, so ungefähr sechs Jahre lang."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Kai war noch nie in Chicago. Er möchte erst nächstes Jahr hinfahren.",
+            "evidence": {
+              "text": "Nee, noch nie. Aber jetzt will ich unbedingt hin. Nächstes Jahr im Herbst vielleicht, wenn ich genug gespart hab. Ich will die Straße sehen, wo er gewohnt hat. Die Adresse steht auf ein paar Umschlägen.",
+              "hit": "Nee, noch nie."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Leonies Onkel arbeitet im Stadtarchiv und liest alte Schriften. Er kann Kai bei den Briefen helfen.",
+            "evidence": {
+              "text": "Warte mal … mein Onkel! Der arbeitet doch im Stadtarchiv hier in Wuppertal. Der liest so alte Schriften jeden Tag.",
+              "hit": "Der arbeitet doch im Stadtarchiv hier in Wuppertal."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "Kai fotografiert die Briefe am Abend und schickt sie Leonie aufs Handy. Sie gibt sie dann ihrem Onkel.",
+            "evidence": {
+              "text": "Mach ich. Ich fotografier sie heute Abend und schick sie dir gleich aufs Handy, okay?",
+              "hit": "Ich fotografier sie heute Abend und schick sie dir gleich aufs Handy"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Kai! Hey, hier drüben! Ich dachte schon, du kommst nicht mehr.",
+            "delivery": "[calling out, friendly]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Sorry, sorry, die Schwebebahn war total voll. Und ich hab heute Nacht kaum geschlafen.",
+            "delivery": "[slightly out of breath, apologetic]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Oh, warum das denn? Stress bei der Arbeit?",
+            "delivery": "[concerned]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Nee, gar nicht. Ich hab gelesen. Die ganze Nacht. Du glaubst nicht, was ich bekommen hab.",
+            "delivery": "[excited, mysterious]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Na, erzähl!",
+            "delivery": "[curious, quick]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Also, meine Tante Hildegard zieht gerade um und räumt ihre ganze Wohnung aus. Und sie hat mir ein Paket geschickt, mit einer alten Schuhschachtel drin. Voll mit Briefen von meinem Urgroßvater.",
+            "delivery": "[enthusiastic]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Echt jetzt? Wie alt sind die denn?",
+            "delivery": "[surprised]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Die ältesten sind fast hundert Jahre alt. Und meine Eltern wussten gar nichts davon. Die haben ihren Keller schon zigmal ausgeräumt und nie was Altes gefunden.",
+            "delivery": "[animated]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Wahnsinn. Und, was steht drin?",
+            "delivery": "[impressed]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Tja, das ist das Problem. Die sind alle mit der Hand geschrieben, in so einer alten Schrift. Am Anfang hab ich fast kein Wort verstanden. Dann hab ich im Internet eine Tabelle mit den alten Buchstaben gefunden, und so ging's langsam. Aber für einen Brief hab ich trotzdem eine Stunde gebraucht.",
+            "delivery": "[sighing, then lively]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Mhm, das kenn ich. Ich hab doch letztes Jahr diesen Stammbaum gemacht, für meine Oma zum Neunzigsten.",
+            "delivery": "[nodding, recalling]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Stimmt, mit ganz vielen Fotos, oder?",
+            "delivery": "[remembering]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Genau. Da hab ich wochenlang dran gesessen, und ehrlich, das hat mich total gepackt. Ich find so was super spannend. Also, sag schon, was schreibt dein Urgroßvater?",
+            "delivery": "[eager, impatient]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Also, das ist die eigentliche Überraschung. Er war in Amerika! In den Zwanzigerjahren, so ungefähr sechs Jahre lang. Er hat in Chicago in einer Fabrik gearbeitet und von dort an seine Verlobte geschrieben, also an meine Urgroßmutter.",
+            "delivery": "[building suspense, excited]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Nein! Und davon wusste keiner in deiner Familie?",
+            "delivery": "[astonished, overlapping]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Na ja, meine Oma hat mal gesagt, er war früher „ein bisschen unterwegs“. Mehr nicht. Danach ist er zurückgekommen und hat hier in Wuppertal geheiratet.",
+            "delivery": "[amused]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Wie romantisch! Und, warst du schon mal in Chicago?",
+            "delivery": "[warm]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Nee, noch nie. Aber jetzt will ich unbedingt hin. Nächstes Jahr im Herbst vielleicht, wenn ich genug gespart hab. Ich will die Straße sehen, wo er gewohnt hat. Die Adresse steht auf ein paar Umschlägen.",
+            "delivery": "[dreamy, determined]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Klar, das musst du machen. Aber sag mal, kannst du denn alle Briefe lesen?",
+            "delivery": "[encouraging, then curious]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Leider nicht. Bei manchen ist die Tinte total verblasst, und ein paar sind auf Englisch, mit vielen Fehlern. Da komm ich echt nicht weiter.",
+            "delivery": "[frustrated]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Warte mal … mein Onkel! Der arbeitet doch im Stadtarchiv hier in Wuppertal. Der liest so alte Schriften jeden Tag.",
+            "delivery": "[sudden idea, excited]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Echt? Meinst du, der würde mir helfen?",
+            "delivery": "[hopeful]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Bestimmt. Der freut sich über so was. Der erzählt auf jedem Familienfest nur von alten Akten.",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Das wär ja genial.",
+            "delivery": "[laughing along]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Am besten machst du Fotos von den Briefen, die du nicht lesen kannst. Die schick ich ihm dann.",
+            "delivery": "[practical]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Mach ich. Ich fotografier sie heute Abend und schick sie dir gleich aufs Handy, okay?",
+            "delivery": "[agreeing quickly]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Super. Und wenn du alles gelesen hast, will ich die ganze Geschichte hören.",
+            "delivery": "[cheerful]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_ben",
+            "text": "Versprochen. Komm, gehen wir ein Stück.",
+            "delivery": "[relaxed, getting up]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-05-t4-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.020Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "An einer Kasse mit Personal kann man sich auch kurz unterhalten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Kunden haben in der Filiale immer die Möglichkeit, bei einer Person zu bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Viele Beschäftigte an der Kasse machen sich Sorgen um ihren Job.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Wegen eines Problems am Automaten hat er selbst lange auf Hilfe gewartet.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Wer nur wenig einkauft, ist an den Automaten deutlich schneller.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Die Unternehmen haben geringere Kosten, weil die Kunden selbst arbeiten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Das Personal kann sich jetzt mehr um die Beratung kümmern.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Trotz langer Erfahrung mit diesen Kassen vermissen viele Menschen in der Schweiz die Bedienung.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Beim eigenen Einkauf wartet man lieber länger, um bei einem Menschen zu bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Patrick Lindner, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Gernot Pfister, Filialleiter"
+                },
+                {
+                  "key": "c",
+                  "label": "Nadja Imhof, Gewerkschaftssekretärin"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Patrick Lindner, Moderator",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p": {
+              "name": "Gernot Pfister, Filialleiter",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "n": {
+              "name": "Nadja Imhof, Gewerkschaftssekretärin",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Der Moderator der Radiosendung „Zur Sache“, Patrick Lindner, diskutiert mit Mag. Gernot Pfister, Leiter einer Supermarktfiliale in Telfs, und Nadja Imhof, Gewerkschaftssekretärin aus Sarnen, über das Thema „Selbstbedienungskassen – praktisch oder unpersönlich?“",
+          "src": "goethe-b1/hoeren-05/goethe-b1-hoeren-05-t4-01.mp3",
+          "duration": 294.4
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "b",
+            "explanation": "Herr Pfister sagt, dass bei ihm immer eine Kasse mit einer Mitarbeiterin offen ist. Frau Imhof spricht nur von langen Schlangen an dieser Kasse.",
+            "evidence": {
+              "text": "Da muss ich widersprechen. Niemand muss bei uns an den Automaten. Bei uns ist immer mindestens eine Kassa mit einer Mitarbeiterin besetzt, auch am Samstag, wenn viel los ist. Die Kunden können also wählen.",
+              "hit": "Bei uns ist immer mindestens eine Kassa mit einer Mitarbeiterin besetzt"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "c",
+            "explanation": "Frau Imhof erzählt, dass viele Kassiererinnen Angst um ihre Stelle haben. Herr Pfister versteht die Sorge, aber bei ihm wurde niemand entlassen.",
+            "evidence": {
+              "text": "Das klingt schön, Herr Pfister. Aber in vielen Filialen sieht es anders aus. Ich spreche jede Woche mit Kassiererinnen, und viele fragen mich: Wie lange gibt es meine Stelle noch? Die haben echt Angst. Denn wenn zehn Automaten laufen, braucht man eben nicht mehr zehn Leute, sondern vielleicht zwei, die aufpassen.",
+              "hit": "Wie lange gibt es meine Stelle noch? Die haben echt Angst."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "a",
+            "explanation": "Der Moderator erzählt, dass er an einem gesperrten Gerät fast zehn Minuten gewartet hat. Herr Pfister sagt nur, dass es am Anfang oft Probleme gab.",
+            "evidence": {
+              "text": "Ich muss gestehen, ich bin da manchmal etwas ungeschickt. Letzte Woche wollte ich nur Bananen kaufen, und plötzlich stand da: „Unerwarteter Artikel im Ablagebereich“. Das Gerät war gesperrt, und ich habe fast zehn Minuten gewartet, bis endlich jemand kam. Herr Pfister, passiert so was oft?",
+              "hit": "Das Gerät war gesperrt, und ich habe fast zehn Minuten gewartet, bis endlich jemand kam."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "b",
+            "explanation": "Herr Pfister sagt, dass man mit wenigen Sachen am Automaten in einer Minute fertig ist. Frau Imhof zweifelt, ob man wirklich Zeit spart.",
+            "evidence": {
+              "text": "Wir haben sie seit eineinhalb Jahren, vier Stück. Und ich muss sagen, die werden sehr gut angenommen. Vor allem in der Mittagspause, wenn jemand nur schnell eine Semmel und ein Getränk holt. Wer nur ein paar Sachen hat, ist am Automaten in einer Minute fertig. An der normalen Kassa steht er sonst zehn Minuten hinter jemandem mit einem vollen Wagen.",
+              "hit": "Wer nur ein paar Sachen hat, ist am Automaten in einer Minute fertig."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Frau Imhof sagt, dass die Kunden die Arbeit gratis machen und die Firmen Lohn sparen. Herr Pfister spricht nicht über Kosten.",
+            "evidence": {
+              "text": "Und es gibt noch einen Punkt, über den kaum jemand spricht. Wer an so einem Automaten steht, scannt, wiegt und packt ein. Das ist Arbeit, die früher eine bezahlte Angestellte gemacht hat. Die Firmen sparen also Lohnkosten, und die Kundschaft macht die Arbeit gratis. Billiger wird der Einkauf dadurch aber nicht, keinen Franken.",
+              "hit": "Die Firmen sparen also Lohnkosten, und die Kundschaft macht die Arbeit gratis."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Herr Pfister sagt, dass seine Mitarbeiter jetzt Zeit haben, Kunden zu beraten. Frau Imhof meint, dass es in vielen Filialen anders aussieht.",
+            "evidence": {
+              "text": "Am Anfang schon, das gebe ich zu. Da haben die Waagen oft gestreikt. Heute ist das viel seltener. Und wichtig ist: Unsere Mitarbeiter sitzen jetzt nicht mehr den ganzen Tag an der Kassa. Sie stehen im Geschäft und haben endlich Zeit, Kunden zu beraten, zum Beispiel beim Wein oder an der Feinkosttheke. Das war früher fast nicht möglich.",
+              "hit": "Sie stehen im Geschäft und haben endlich Zeit, Kunden zu beraten"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Frau Imhof erzählt, dass es die Kassen in der Schweiz seit über zehn Jahren gibt. Trotzdem fehlt vielen der persönliche Service.",
+            "evidence": {
+              "text": "Bei uns gibt es diese Kassen schon seit über zehn Jahren, in fast jedem grösseren Laden. Man könnte also denken, die Leute haben sich längst daran gewöhnt. Aber in Umfragen sagen immer noch viele, dass ihnen der persönliche Service fehlt. Eine Kassiererin merkt, wenn jemand Hilfe braucht. Ein Automat merkt das nicht.",
+              "hit": "Aber in Umfragen sagen immer noch viele, dass ihnen der persönliche Service fehlt."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "c",
+            "explanation": "Frau Imhof geht bewusst zu einer Kasse mit einer Person, auch bei einer langen Schlange. Herr Pfister nimmt fast immer den Automaten.",
+            "evidence": {
+              "text": "Ganz klar: Ich stelle mich bewusst bei einer Kasse mit einer Person an, auch wenn die Schlange länger ist. Das ist meine kleine Art, die Arbeitsplätze zu unterstützen. Und ehrlich gesagt geniesse ich das kurze Gespräch.",
+              "hit": "Ich stelle mich bewusst bei einer Kasse mit einer Person an, auch wenn die Schlange länger ist."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Guten Abend und willkommen bei „Zur Sache“. Wer heute einkaufen geht, steht immer öfter nicht mehr an der Kasse, sondern vor einem Bildschirm: Man scannt seine Waren selbst und bezahlt am Automaten. Selbstbedienungskassen – praktisch oder unpersönlich? Darüber spreche ich heute mit zwei Gästen. Gernot Pfister leitet eine Supermarktfiliale in Telfs in Tirol. Guten Abend, Herr Pfister.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Grüß Gott, guten Abend.",
+            "delivery": "[friendly, confident]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Und Nadja Imhof ist Gewerkschaftssekretärin für die Angestellten im Einzelhandel in der Schweiz. Sie ist aus Sarnen zugeschaltet. Guten Abend, Frau Imhof.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_laura",
+            "text": "Guten Abend.",
+            "delivery": "[calm, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Pfister, seit wann haben Sie diese Kassen, und wie kommen sie bei Ihren Kunden an?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Wir haben sie seit eineinhalb Jahren, vier Stück. Und ich muss sagen, die werden sehr gut angenommen. Vor allem in der Mittagspause, wenn jemand nur schnell eine Semmel und ein Getränk holt. Wer nur ein paar Sachen hat, ist am Automaten in einer Minute fertig. An der normalen Kassa steht er sonst zehn Minuten hinter jemandem mit einem vollen Wagen.",
+            "delivery": "[enthusiastic, businesslike]",
+            "item": 26
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Frau Imhof, Sie sehen das kritischer, oder?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_laura",
+            "text": "Ja, schon. Ob man da wirklich Zeit spart, weiss ich nicht. Aber man darf nicht vergessen, was dabei verloren geht. An einer normalen Kasse sagt man Grüezi, man wechselt ein paar Worte über das Wetter, vielleicht lacht man zusammen. Für manche Leute, die allein leben, ist das der einzige Kontakt am ganzen Tag. Das kann kein Bildschirm ersetzen.",
+            "delivery": "[thoughtful, firm]",
+            "item": 0
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Da muss ich widersprechen. Niemand muss bei uns an den Automaten. Bei uns ist immer mindestens eine Kassa mit einer Mitarbeiterin besetzt, auch am Samstag, wenn viel los ist. Die Kunden können also wählen.",
+            "delivery": "[quick, defensive]",
+            "item": 23
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_laura",
+            "text": "Theoretisch, ja. Aber wenn an der einzigen Kasse eine lange Schlange ist, gehen viele dann eben doch zum Automaten.",
+            "delivery": "[dry, sceptical]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Ich muss gestehen, ich bin da manchmal etwas ungeschickt. Letzte Woche wollte ich nur Bananen kaufen, und plötzlich stand da: „Unerwarteter Artikel im Ablagebereich“. Das Gerät war gesperrt, und ich habe fast zehn Minuten gewartet, bis endlich jemand kam. Herr Pfister, passiert so was oft?",
+            "delivery": "[self-ironic, amused]",
+            "item": 25
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Am Anfang schon, das gebe ich zu. Da haben die Waagen oft gestreikt. Heute ist das viel seltener. Und wichtig ist: Unsere Mitarbeiter sitzen jetzt nicht mehr den ganzen Tag an der Kassa. Sie stehen im Geschäft und haben endlich Zeit, Kunden zu beraten, zum Beispiel beim Wein oder an der Feinkosttheke. Das war früher fast nicht möglich.",
+            "delivery": "[laughing briefly, then convinced]",
+            "item": 28
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_laura",
+            "text": "Das klingt schön, Herr Pfister. Aber in vielen Filialen sieht es anders aus. Ich spreche jede Woche mit Kassiererinnen, und viele fragen mich: Wie lange gibt es meine Stelle noch? Die haben echt Angst. Denn wenn zehn Automaten laufen, braucht man eben nicht mehr zehn Leute, sondern vielleicht zwei, die aufpassen.",
+            "delivery": "[serious, engaged]",
+            "item": 24
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Pfister, wurden bei Ihnen Leute entlassen?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Nein, bei uns nicht. Die Kolleginnen arbeiten jetzt in anderen Bereichen, im Lager oder eben in der Beratung. Aber ich verstehe die Sorge, das muss man ernst nehmen.",
+            "delivery": "[calm, conciliatory]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_laura",
+            "text": "Und es gibt noch einen Punkt, über den kaum jemand spricht. Wer an so einem Automaten steht, scannt, wiegt und packt ein. Das ist Arbeit, die früher eine bezahlte Angestellte gemacht hat. Die Firmen sparen also Lohnkosten, und die Kundschaft macht die Arbeit gratis. Billiger wird der Einkauf dadurch aber nicht, keinen Franken.",
+            "delivery": "[pointed, a little indignant]",
+            "item": 27
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Frau Imhof, wie ist denn die Situation in der Schweiz?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_laura",
+            "text": "Bei uns gibt es diese Kassen schon seit über zehn Jahren, in fast jedem grösseren Laden. Man könnte also denken, die Leute haben sich längst daran gewöhnt. Aber in Umfragen sagen immer noch viele, dass ihnen der persönliche Service fehlt. Eine Kassiererin merkt, wenn jemand Hilfe braucht. Ein Automat merkt das nicht.",
+            "delivery": "[measured, clear]",
+            "item": 29
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Pfister, wie bezahlen die Leute denn an Ihren Automaten?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Die meisten mit der Bankomatkarte oder mit dem Handy. Bargeld nehmen zwei von unseren vier Geräten. Das war uns wichtig, weil gerade bei uns am Land noch viele gern bar zahlen.",
+            "delivery": "[matter-of-fact]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Und das Bargeld bleibt?",
+            "delivery": "[short follow-up]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Solange die Kunden es wollen, ja.",
+            "delivery": "[firm]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Zum Schluss eine persönliche Frage an Sie beide. Wo bezahlen Sie selbst, wenn Sie einkaufen gehen? Frau Imhof?",
+            "delivery": "[playful host]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_laura",
+            "text": "Ganz klar: Ich stelle mich bewusst bei einer Kasse mit einer Person an, auch wenn die Schlange länger ist. Das ist meine kleine Art, die Arbeitsplätze zu unterstützen. Und ehrlich gesagt geniesse ich das kurze Gespräch.",
+            "delivery": "[warm, decided]",
+            "item": 30
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Und Sie, Herr Pfister?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_michael",
+            "text": "Ehrlich gesagt kaufe ich meistens in meiner eigenen Filiale ein, und da nehme ich fast immer den Automaten. Das ist für mich auch ein Test, ob alles funktioniert.",
+            "delivery": "[laughing, honest]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Ein Test jeden Tag, also. Ich danke Ihnen beiden für das Gespräch: Gernot Pfister aus Telfs und Nadja Imhof aus Sarnen. Und Ihnen, liebe Hörerinnen und Hörer, einen schönen Abend. Und beim nächsten Einkauf: Entscheiden Sie selbst, wo Sie bezahlen.",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ],
+  "track": {
+    "src": "goethe-b1/hoeren-05/track.mp3",
+    "duration": 2227.38,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.16,
+        "to": 19.85
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.89,
+        "to": 26.83
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.83,
+        "to": 37.36
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.36,
+        "to": 40.49
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 42.03,
+        "to": 74.55
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 76.59,
+        "to": 78.92
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 79.96,
+        "to": 112.48
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 112.48,
+        "to": 115.02
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 115.02,
+        "to": 121.21
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 121.21,
+        "to": 131.74
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 131.74,
+        "to": 134.87
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 136.41,
+        "to": 172.72
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 174.76,
+        "to": 177.08
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 178.13,
+        "to": 214.44
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 214.44,
+        "to": 216.97
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 216.97,
+        "to": 223.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 223.14,
+        "to": 233.67
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 233.67,
+        "to": 236.36
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 237.9,
+        "to": 274.42
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 276.45,
+        "to": 278.78
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 279.82,
+        "to": 316.34
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 316.34,
+        "to": 318.88
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 318.88,
+        "to": 325.22
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 325.22,
+        "to": 335.75
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 335.75,
+        "to": 338.42
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 339.96,
+        "to": 372.53
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 374.57,
+        "to": 376.89
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 377.94,
+        "to": 410.51
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 410.51,
+        "to": 413.05
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 413.05,
+        "to": 419.34
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 419.34,
+        "to": 429.87
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 429.87,
+        "to": 433.01
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 434.55,
+        "to": 471.17
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 473.21,
+        "to": 475.53
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 476.58,
+        "to": 513.2
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 513.2,
+        "to": 515.74
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 515.74,
+        "to": 521.87
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 521.87,
+        "to": 532.4
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 532.4,
+        "to": 534.54
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 536.08,
+        "to": 573.52
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 575.56,
+        "to": 577.88
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 578.93,
+        "to": 616.36
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 616.36,
+        "to": 618.89
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 626.16,
+        "to": 640.31
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 642.35,
+        "to": 648.8
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 648.8,
+        "to": 708.83
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 708.83,
+        "to": 714.19
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 715.73,
+        "to": 886.02
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 886.02,
+        "to": 895.06
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 902.35,
+        "to": 914.52
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 916.56,
+        "to": 923.04
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 923.04,
+        "to": 983.07
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 983.07,
+        "to": 989.13
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 990.67,
+        "to": 1179.69
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1179.69,
+        "to": 1188.73
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1195.94,
+        "to": 1208.14
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1210.17,
+        "to": 1216.68
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1216.68,
+        "to": 1276.71
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1276.71,
+        "to": 1291.91
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1297.5,
+        "to": 1591.9
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1595.95,
+        "to": 1598.98
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1598.98,
+        "to": 1601.72
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1607.31,
+        "to": 1901.71
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1905.76,
+        "to": 1914.8
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1922.06,
+        "to": 1927.86
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1927.86,
+        "to": 2227.91
+      }
+    ]
+  }
+}

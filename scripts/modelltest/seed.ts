@@ -48,6 +48,13 @@ const MINUTES: Record<string, Record<string, number>> = {
   "telc-b1": { lesen: 90, schreiben: 30, sprechen: 15 },
   "start-deutsch-1": { lesen: 25, schreiben: 20, sprechen: 15 },
   "telc-a2": { lesen: 30, schreiben: 20, sprechen: 15 },
+  // research/goethe-a2.md §11, research/goethe-oesd-b1.md §8: A2 30/30/15 (no preparation); B1 modules 65/60, Sprechen ~15 after 15 preparation.
+  "goethe-a2": { lesen: 30, schreiben: 30, sprechen: 15 },
+  "goethe-b1": { lesen: 65, schreiben: 60, sprechen: 15 },
+  "oesd-b1": { lesen: 65, schreiben: 60, sprechen: 15 },
+  // research/oesd-a1.md / oesd-a2.md §9: written module L 25 / S 20 (A1), L 30 / S 30 (A2); Sprechen 10 min preparation + ~10 min.
+  "oesd-a1": { lesen: 25, schreiben: 20, sprechen: 20 },
+  "oesd-a2": { lesen: 30, schreiben: 30, sprechen: 20 },
 }
 const warnings: string[] = []
 const must = <T>(r: { data: T; error: { message: string } | null }, what: string) => {
@@ -71,6 +78,12 @@ function media(set: MtSet) {
     for (const t of b.display.speaking?.turns ?? []) if (t.src) audio.add(t.src)
     for (const l of [...(b.key.live?.followups ?? []), ...(b.key.live?.partnerLines ?? [])]) if (l.src) audio.add(l.src)
     for (const p of Object.values(b.display.speaking?.photos ?? {})) if (p.src) images.add(p.src)
+    for (const sc of b.display.speaking?.data.scenes ?? []) if (sc.image) images.add(sc.image)
+    for (const r of b.display.speaking?.data.sheet?.rows ?? []) for (const pic of r.pictures) if (pic.image) images.add(pic.image)
+    for (const it of b.display.items) {
+      if (it.type === "picture") for (const o of it.item.options) if (o.image) images.add(o.image)
+      if (it.type === "match") for (const a of it.data.ads) if (a.image) images.add(a.image)
+    }
   }
   return { audio: [...audio], images: [...images] }
 }
@@ -118,8 +131,20 @@ function questions(b: MtBlock): Q[] {
       for (const p of it.data.parts) {
         if (typeof p === "string") continue
         const c = correctOf(p.n)
-        // A typed gap has no options: its one option is the key's answer (accepted forms stay in the key).
-        out.push({ n: p.n, format: "gap", prompt: null, options: p.options.length ? p.options.map((o) => ({ label: o, body: null, correct: o === c })) : [{ label: c ?? "", body: null, correct: true }] })
+        // A typed gap or a tick group (several boxes) has one option: the key's answer ("a,c" for a group).
+        out.push({ n: p.n, format: "gap", prompt: null, options: p.options.length && !(p.pick && p.pick > 1) ? p.options.map((o) => ({ label: o, body: null, correct: o === c })) : [{ label: c ?? "", body: null, correct: true }] })
+      }
+    } else if (it.type === "grid") {
+      // One question per row: one tick per row has the columns as options; several ticks store the right set as one option.
+      for (const r of it.data.rows) {
+        const c = correctOf(r.n)
+        out.push({ n: r.n, format: "choice", prompt: r.text, options: it.data.multi ? [{ label: c ?? "", body: null, correct: true }] : it.data.columns.map((o) => ({ label: o.key, body: o.label, correct: o.key === c })) })
+      }
+    } else if (it.type === "marks") {
+      // Each item of a mark-N-of-M group is one of the right boxes; the options are all boxes.
+      for (const n of it.data.ns) {
+        const c = correctOf(n)
+        out.push({ n, format: "choice", prompt: it.data.title, options: it.data.options.map((o) => ({ label: o.key, body: o.label, correct: o.key === c })) })
       }
     }
   }

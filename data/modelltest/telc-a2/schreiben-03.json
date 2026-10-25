@@ -1,0 +1,181 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-03-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.128Z",
+        "textType": "Formular: Anmeldung im Sportverein"
+      },
+      "display": {
+        "instruction": "Ihr Bekannter Ahmad möchte Mitglied in einem Sportverein werden. Sie helfen ihm bei der Anmeldung. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "TuS Nordstadt Hildesheim – Aufnahmeantrag\n\nFamilienname: Rahimi\nVorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: Lindenweg 7\nPLZ, Ort: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                " Hildesheim\nE-Mail: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nAbteilung: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nBeruf: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nZahlung: Lastschrift"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ahmad Rahimi",
+          "source": "Aufenthaltstitel, Bankkarte und Notiz",
+          "paragraphs": [
+            "Aufenthaltstitel – Name: RAHIMI · Vornamen: AHMAD · Geburtsdatum: 02.11.1994 · Geburtsort: KABUL · Staatsangehörigkeit: AFGHANISCH · gültig bis: 30.09.2028",
+            "Bankkarte – Stadtbank Hildesheim · AHMAD RAHIMI · gültig bis 08/29",
+            "Notiz von Mariam: Hallo! Hier sind die Infos von meinem Bruder für den Verein. Ahmad wohnt jetzt im Lindenweg 7 in 31137 Hildesheim. Seine alte E-Mail-Adresse ahmad.r94@webpost-mail.de benutzt er nicht mehr, die neue ist a.rahimi@mailbox-nord.de. In Kabul hat er viel Volleyball gespielt. Hier möchte er aber lieber Badminton spielen, weil zwei Kollegen das auch machen. Ahmad ist Bäcker in einer Bäckerei am Markt. Er fängt sehr früh an, darum kann er nur am Nachmittag trainieren."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "02.11.1994",
+            "explanation": "Das Geburtsdatum steht im Aufenthaltstitel. Das Datum 30.09.2028 zeigt nur, wie lange das Dokument gültig ist.",
+            "evidence": {
+              "text": "Aufenthaltstitel – Name: RAHIMI · Vornamen: AHMAD · Geburtsdatum: 02.11.1994 · Geburtsort: KABUL · Staatsangehörigkeit: AFGHANISCH · gültig bis: 30.09.2028",
+              "hit": "Geburtsdatum: 02.11.1994"
+            },
+            "accept": [
+              "2.11.1994",
+              "02.11.94",
+              "2.11.94",
+              "2. November 1994",
+              "02. November 1994"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "31137",
+            "explanation": "Mariam schreibt die neue Adresse mit der Postleitzahl 31137. Hildesheim steht schon im Formular.",
+            "evidence": {
+              "text": "Notiz von Mariam: Hallo! Hier sind die Infos von meinem Bruder für den Verein. Ahmad wohnt jetzt im Lindenweg 7 in 31137 Hildesheim. Seine alte E-Mail-Adresse ahmad.r94@webpost-mail.de benutzt er nicht mehr, die neue ist a.rahimi@mailbox-nord.de. In Kabul hat er viel Volleyball gespielt. Hier möchte er aber lieber Badminton spielen, weil zwei Kollegen das auch machen. Ahmad ist Bäcker in einer Bäckerei am Markt. Er fängt sehr früh an, darum kann er nur am Nachmittag trainieren.",
+              "hit": "31137 Hildesheim"
+            },
+            "accept": [
+              "31137 Hildesheim"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "a.rahimi@mailbox-nord.de",
+            "explanation": "Ins Formular kommt die neue E-Mail-Adresse. Die alte Adresse benutzt Ahmad nicht mehr.",
+            "evidence": {
+              "text": "Notiz von Mariam: Hallo! Hier sind die Infos von meinem Bruder für den Verein. Ahmad wohnt jetzt im Lindenweg 7 in 31137 Hildesheim. Seine alte E-Mail-Adresse ahmad.r94@webpost-mail.de benutzt er nicht mehr, die neue ist a.rahimi@mailbox-nord.de. In Kabul hat er viel Volleyball gespielt. Hier möchte er aber lieber Badminton spielen, weil zwei Kollegen das auch machen. Ahmad ist Bäcker in einer Bäckerei am Markt. Er fängt sehr früh an, darum kann er nur am Nachmittag trainieren.",
+              "hit": "die neue ist a.rahimi@mailbox-nord.de"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "Badminton",
+            "explanation": "Im Verein möchte Ahmad Badminton spielen. Volleyball hat er früher in Kabul gespielt.",
+            "evidence": {
+              "text": "Notiz von Mariam: Hallo! Hier sind die Infos von meinem Bruder für den Verein. Ahmad wohnt jetzt im Lindenweg 7 in 31137 Hildesheim. Seine alte E-Mail-Adresse ahmad.r94@webpost-mail.de benutzt er nicht mehr, die neue ist a.rahimi@mailbox-nord.de. In Kabul hat er viel Volleyball gespielt. Hier möchte er aber lieber Badminton spielen, weil zwei Kollegen das auch machen. Ahmad ist Bäcker in einer Bäckerei am Markt. Er fängt sehr früh an, darum kann er nur am Nachmittag trainieren.",
+              "hit": "möchte er aber lieber Badminton spielen"
+            },
+            "accept": [
+              "Badminton spielen"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "Bäcker",
+            "explanation": "Mariam schreibt, dass Ahmad Bäcker ist. Die Bäckerei am Markt ist sein Arbeitsplatz, nicht sein Beruf.",
+            "evidence": {
+              "text": "Notiz von Mariam: Hallo! Hier sind die Infos von meinem Bruder für den Verein. Ahmad wohnt jetzt im Lindenweg 7 in 31137 Hildesheim. Seine alte E-Mail-Adresse ahmad.r94@webpost-mail.de benutzt er nicht mehr, die neue ist a.rahimi@mailbox-nord.de. In Kabul hat er viel Volleyball gespielt. Hier möchte er aber lieber Badminton spielen, weil zwei Kollegen das auch machen. Ahmad ist Bäcker in einer Bäckerei am Markt. Er fängt sehr früh an, darum kann er nur am Nachmittag trainieren.",
+              "hit": "Ahmad ist Bäcker"
+            },
+            "accept": [
+              "Baecker",
+              "Bäcker in einer Bäckerei"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Ahmad"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-03-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.128Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Freundin Clara hat ein Baby bekommen und Sie zu einem Besuch eingeladen. Antworten Sie Clara mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Besuch bei Clara und Ida",
+            "situation": "Ihre Freundin Clara hat vor drei Wochen eine Tochter bekommen, die kleine Ida. Jetzt möchte Clara, dass Sie die beiden zu Hause besuchen.",
+            "points": [
+              "Tag und Uhrzeit",
+              "Geschenk mitbringen",
+              "Dauer des Besuchs",
+              "Wie geht es Clara und Ida?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Clara,\nherzlichen Glückwunsch zu Ida! Ich besuche euch sehr gern. Passt es am Samstag um drei Uhr? Ich bringe einen Kuchen und ein kleines Geschenk für Ida mit. Wie geht es dir und Ida? Schläft die Kleine schon gut?\nViele Grüße\nSara"
+          }
+        ]
+      }
+    }
+  ]
+}

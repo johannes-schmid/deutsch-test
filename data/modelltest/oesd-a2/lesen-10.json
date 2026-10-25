@@ -1,0 +1,384 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-10-t1",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.715Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Trachten wieder modern",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Neue Lampen für die Hauptstraße",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Kirchturmuhr geht wieder richtig",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Kleidertausch im Jugendzentrum",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Mehr Licht im Stadtpark",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Sommerzeit: Das sagen die Leser",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Wie viel Kleidung kaufen wir?",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Lichterfest am Fluss",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Uhrmacherin repariert alte Uhren",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Junge Leute stricken wieder",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Osnabrück. Eine Hochschule hat 1.500 Menschen aus der Region gefragt: Wie viele Hosen, Pullover, Hemden oder Jacken kaufen Sie in einem Jahr? Das Ergebnis: Junge Leute kaufen am meisten. Viele Sachen tragen sie aber nur wenige Male. Ältere Menschen kaufen weniger und tragen ihre Kleidung länger.",
+                  "origin": "aus einer deutschen Zeitung",
+                  "table": [
+                    [
+                      "Alter",
+                      "Kleidungsstücke pro Jahr"
+                    ],
+                    [
+                      "16–29",
+                      "48"
+                    ],
+                    [
+                      "30–49",
+                      "35"
+                    ],
+                    [
+                      "ab 50",
+                      "22"
+                    ]
+                  ]
+                },
+                {
+                  "n": 2,
+                  "text": "Ternitz. Ab nächstem Monat ist es in der Hauptstraße am Abend nicht mehr so dunkel. Die Gemeinde stellt dort 120 neue Straßenlampen auf. Sie sind heller als die alten und brauchen weniger Strom. Viele Fußgängerinnen und Fußgänger fühlen sich in der Nacht dann sicherer, sagt der Bürgermeister. Im Stadtpark ändert sich nichts.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Sursee. Monatelang hat die Uhr am Kirchturm die falsche Zeit gezeigt. Viele Leute sind deshalb zu spät zum Bus gekommen. Jetzt hat eine Firma aus Luzern die alte Uhr repariert. Die Stadt hat dafür CHF 18'000 bezahlt. Seit dieser Woche schlägt sie wieder jede Stunde. «Endlich stimmt die Zeit wieder», heisst es im Stadthaus.",
+                  "origin": "aus einer Schweizer Zeitung"
+                },
+                {
+                  "n": 4,
+                  "text": "Wörgl. Jeden Mittwoch um 18 Uhr treffen sich im Gemeindezentrum junge Menschen zwischen 15 und 25 Jahren. Sie machen mit Nadeln und Wolle Schals und Hauben für den Winter. Die Gruppe hat schon 14 Mitglieder, und neue sind herzlich willkommen. Wolle gibt es vor Ort, Vorkenntnisse braucht man keine.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Koblenz. Am Samstagabend wird das Rheinufer hell: 2.000 Laternen leuchten dann direkt am Wasser. Das Fest beginnt, wenn es dunkel wird, etwa um 20 Uhr. Kinder können auch eine eigene Laterne mitbringen. Der Eintritt ist frei. Parkplätze gibt es nur wenige, kommen Sie lieber mit dem Bus.",
+                  "origin": "aus einer deutschen Zeitung"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "G",
+            "explanation": "Die Hochschule hat gefragt, wie viel Kleidung die Menschen in einem Jahr kaufen. Um Trachten oder einen Kleidertausch geht es nicht.",
+            "evidence": {
+              "text": "Osnabrück. Eine Hochschule hat 1.500 Menschen aus der Region gefragt: Wie viele Hosen, Pullover, Hemden oder Jacken kaufen Sie in einem Jahr? Das Ergebnis: Junge Leute kaufen am meisten. Viele Sachen tragen sie aber nur wenige Male. Ältere Menschen kaufen weniger und tragen ihre Kleidung länger.",
+              "hit": "Wie viele Hosen, Pullover, Hemden oder Jacken kaufen Sie in einem Jahr?"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "B",
+            "explanation": "Die Gemeinde stellt in der Hauptstraße neue Lampen auf. Im Stadtpark ändert sich nichts, darum passt E nicht.",
+            "evidence": {
+              "text": "Ternitz. Ab nächstem Monat ist es in der Hauptstraße am Abend nicht mehr so dunkel. Die Gemeinde stellt dort 120 neue Straßenlampen auf. Sie sind heller als die alten und brauchen weniger Strom. Viele Fußgängerinnen und Fußgänger fühlen sich in der Nacht dann sicherer, sagt der Bürgermeister. Im Stadtpark ändert sich nichts.",
+              "hit": "Die Gemeinde stellt dort 120 neue Straßenlampen auf."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "C",
+            "explanation": "Die Uhr am Kirchturm ist repariert und zeigt jetzt die richtige Zeit. Eine Firma hat sie repariert, keine Uhrmacherin.",
+            "evidence": {
+              "text": "Sursee. Monatelang hat die Uhr am Kirchturm die falsche Zeit gezeigt. Viele Leute sind deshalb zu spät zum Bus gekommen. Jetzt hat eine Firma aus Luzern die alte Uhr repariert. Die Stadt hat dafür CHF 18'000 bezahlt. Seit dieser Woche schlägt sie wieder jede Stunde. «Endlich stimmt die Zeit wieder», heisst es im Stadthaus.",
+              "hit": "Jetzt hat eine Firma aus Luzern die alte Uhr repariert."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "K",
+            "explanation": "Junge Menschen machen mit Nadeln und Wolle Schals und Hauben, also stricken sie. Kleider tauschen sie nicht, und es ist kein Jugendzentrum.",
+            "evidence": {
+              "text": "Wörgl. Jeden Mittwoch um 18 Uhr treffen sich im Gemeindezentrum junge Menschen zwischen 15 und 25 Jahren. Sie machen mit Nadeln und Wolle Schals und Hauben für den Winter. Die Gruppe hat schon 14 Mitglieder, und neue sind herzlich willkommen. Wolle gibt es vor Ort, Vorkenntnisse braucht man keine.",
+              "hit": "Sie machen mit Nadeln und Wolle Schals und Hauben für den Winter."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "H",
+            "explanation": "Am Rheinufer leuchten 2.000 Laternen, das ist ein Lichterfest am Fluss. Neue Lampen in einer Straße oder im Park kommen nicht vor.",
+            "evidence": {
+              "text": "Koblenz. Am Samstagabend wird das Rheinufer hell: 2.000 Laternen leuchten dann direkt am Wasser. Das Fest beginnt, wenn es dunkel wird, etwa um 20 Uhr. Kinder können auch eine eigene Laterne mitbringen. Der Eintritt ist frei. Parkplätze gibt es nur wenige, kommen Sie lieber mit dem Bus.",
+              "hit": "Am Samstagabend wird das Rheinufer hell: 2.000 Laternen leuchten dann direkt am Wasser."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-10-t2",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.715Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Weinviertler Rundschau",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Der Tüftler aus Wolkersdorf",
+            "Rudolf Eichinger ist 71 Jahre alt. 40 Jahre lang hat er als Schlosser in einer Fabrik gearbeitet. Jetzt ist er in Pension, aber in seiner Werkstatt im Keller ist er fast jeden Tag.",
+            "Schon als Bub hat er gern gebastelt. „Jedes Gerät im Haus habe ich auseinandergenommen, das Radio, den Föhn, sogar den Wecker“, erzählt er. Seine Mutter war darüber oft böse. Der Vater wollte, dass er später das Auto der Familie repariert. „Das habe ich aber nie gemacht“, sagt er und lacht.",
+            "Seine Frau Inge sitzt seit einem Sturz vor acht Jahren im Rollstuhl. Die beiden gehen sehr gern auf Feldwegen spazieren. Mit einem normalen Rollstuhl geht das aber nicht. Die Idee hatte kein Arzt, sondern das Paar selbst. Rudolf Eichinger hat also einen Rollstuhl mit großen Rädern gebaut. „Ich habe gedacht, ich brauche dafür einen Sommer“, sagt er. Es hat aber nur einen Winter gedauert, im Jänner war er fertig.",
+            "Bald haben die Nachbarn den besonderen Rollstuhl gesehen. Seitdem hat er zwölf weitere gebaut, für andere Menschen. Geld will er dafür nicht, nur das Material müssen sie bezahlen. Eine Firma wollte seine Idee kaufen, aber er hat Nein gesagt.",
+            "Und was kommt als Nächstes? „Ein ganz kleiner Rollstuhl für ein Mädchen aus dem Dorf“, sagt er. „Damit sie mit ihren Freundinnen in den Wald kann.“"
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Rudolf Eichinger hat früher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "als Mechaniker Autos repariert."
+                },
+                {
+                  "key": "b",
+                  "label": "als Metallarbeiter in einer Fabrik gearbeitet."
+                },
+                {
+                  "key": "c",
+                  "label": "in einem Geschäft für Rollstühle gearbeitet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Als Kind hat Rudolf Eichinger …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Geräte im Haus auseinandergenommen."
+                },
+                {
+                  "key": "b",
+                  "label": "oft das Auto der Familie repariert."
+                },
+                {
+                  "key": "c",
+                  "label": "seiner Mutter viel im Haus geholfen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Das Paar wollte einen neuen Rollstuhl, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "weil ein Arzt es so gesagt hat."
+                },
+                {
+                  "key": "b",
+                  "label": "weil der alte Rollstuhl kaputt war."
+                },
+                {
+                  "key": "c",
+                  "label": "weil es auf Feldwegen spazieren will."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Für den ersten Rollstuhl hat er …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Winter gebraucht."
+                },
+                {
+                  "key": "b",
+                  "label": "einen ganzen Sommer gebraucht."
+                },
+                {
+                  "key": "c",
+                  "label": "acht Jahre lang gebraucht."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Andere Menschen bezahlen ihm …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "so viel Geld wie eine Firma."
+                },
+                {
+                  "key": "b",
+                  "label": "nur das Material für den Rollstuhl."
+                },
+                {
+                  "key": "c",
+                  "label": "den Preis für einen normalen Rollstuhl."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Als Nächstes möchte er …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen kleinen Rollstuhl für ein Mädchen bauen."
+                },
+                {
+                  "key": "b",
+                  "label": "seine Idee doch an eine Firma verkaufen."
+                },
+                {
+                  "key": "c",
+                  "label": "mit seiner Frau oft in den Wald fahren."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Als Bub hat er jedes Gerät im Haus auseinandergenommen. Das Auto der Familie hat er nie repariert, das wollte nur der Vater.",
+            "evidence": {
+              "text": "Der Tüftler aus Wolkersdorf Rudolf Eichinger ist 71 Jahre alt. 40 Jahre lang hat er als Schlosser in einer Fabrik gearbeitet. Jetzt ist er in Pension, aber in seiner Werkstatt im Keller ist er fast jeden Tag. Schon als Bub hat er gern gebastelt. „Jedes Gerät im Haus habe ich auseinandergenommen, das Radio, den Föhn, sogar den Wecker“, erzählt er. Seine Mutter war darüber oft böse. Der Vater wollte, dass er später das Auto der Familie repariert. „Das habe ich aber nie gemacht“, sagt er und lacht. Seine Frau Inge sitzt seit einem Sturz vor acht Jahren im Rollstuhl. Die beiden gehen sehr gern auf Feldwegen spazieren. Mit einem normalen Rollstuhl geht das aber nicht. Die Idee hatte kein Arzt, sondern das Paar selbst. Rudolf Eichinger hat also einen Rollstuhl mit großen Rädern gebaut. „Ich habe gedacht, ich brauche dafür einen Sommer“, sagt er. Es hat aber nur einen Winter gedauert, im Jänner war er fertig. Bald haben die Nachbarn den besonderen Rollstuhl gesehen. Seitdem hat er zwölf weitere gebaut, für andere Menschen. Geld will er dafür nicht, nur das Material müssen sie bezahlen. Eine Firma wollte seine Idee kaufen, aber er hat Nein gesagt. Und was kommt als Nächstes? „Ein ganz kleiner Rollstuhl für ein Mädchen aus dem Dorf“, sagt er. „Damit sie mit ihren Freundinnen in den Wald kann.“",
+              "hit": "„Jedes Gerät im Haus habe ich auseinandergenommen, das Radio, den Föhn, sogar den Wecker“, erzählt er."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Mit einem normalen Rollstuhl können die beiden nicht auf Feldwegen spazieren gehen. Die Idee kam nicht von einem Arzt.",
+            "evidence": {
+              "text": "Der Tüftler aus Wolkersdorf Rudolf Eichinger ist 71 Jahre alt. 40 Jahre lang hat er als Schlosser in einer Fabrik gearbeitet. Jetzt ist er in Pension, aber in seiner Werkstatt im Keller ist er fast jeden Tag. Schon als Bub hat er gern gebastelt. „Jedes Gerät im Haus habe ich auseinandergenommen, das Radio, den Föhn, sogar den Wecker“, erzählt er. Seine Mutter war darüber oft böse. Der Vater wollte, dass er später das Auto der Familie repariert. „Das habe ich aber nie gemacht“, sagt er und lacht. Seine Frau Inge sitzt seit einem Sturz vor acht Jahren im Rollstuhl. Die beiden gehen sehr gern auf Feldwegen spazieren. Mit einem normalen Rollstuhl geht das aber nicht. Die Idee hatte kein Arzt, sondern das Paar selbst. Rudolf Eichinger hat also einen Rollstuhl mit großen Rädern gebaut. „Ich habe gedacht, ich brauche dafür einen Sommer“, sagt er. Es hat aber nur einen Winter gedauert, im Jänner war er fertig. Bald haben die Nachbarn den besonderen Rollstuhl gesehen. Seitdem hat er zwölf weitere gebaut, für andere Menschen. Geld will er dafür nicht, nur das Material müssen sie bezahlen. Eine Firma wollte seine Idee kaufen, aber er hat Nein gesagt. Und was kommt als Nächstes? „Ein ganz kleiner Rollstuhl für ein Mädchen aus dem Dorf“, sagt er. „Damit sie mit ihren Freundinnen in den Wald kann.“",
+              "hit": "Die beiden gehen sehr gern auf Feldwegen spazieren. Mit einem normalen Rollstuhl geht das aber nicht."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Der Rollstuhl war nach einem Winter fertig. Einen Sommer hat er nur am Anfang gedacht.",
+            "evidence": {
+              "text": "Der Tüftler aus Wolkersdorf Rudolf Eichinger ist 71 Jahre alt. 40 Jahre lang hat er als Schlosser in einer Fabrik gearbeitet. Jetzt ist er in Pension, aber in seiner Werkstatt im Keller ist er fast jeden Tag. Schon als Bub hat er gern gebastelt. „Jedes Gerät im Haus habe ich auseinandergenommen, das Radio, den Föhn, sogar den Wecker“, erzählt er. Seine Mutter war darüber oft böse. Der Vater wollte, dass er später das Auto der Familie repariert. „Das habe ich aber nie gemacht“, sagt er und lacht. Seine Frau Inge sitzt seit einem Sturz vor acht Jahren im Rollstuhl. Die beiden gehen sehr gern auf Feldwegen spazieren. Mit einem normalen Rollstuhl geht das aber nicht. Die Idee hatte kein Arzt, sondern das Paar selbst. Rudolf Eichinger hat also einen Rollstuhl mit großen Rädern gebaut. „Ich habe gedacht, ich brauche dafür einen Sommer“, sagt er. Es hat aber nur einen Winter gedauert, im Jänner war er fertig. Bald haben die Nachbarn den besonderen Rollstuhl gesehen. Seitdem hat er zwölf weitere gebaut, für andere Menschen. Geld will er dafür nicht, nur das Material müssen sie bezahlen. Eine Firma wollte seine Idee kaufen, aber er hat Nein gesagt. Und was kommt als Nächstes? „Ein ganz kleiner Rollstuhl für ein Mädchen aus dem Dorf“, sagt er. „Damit sie mit ihren Freundinnen in den Wald kann.“",
+              "hit": "Es hat aber nur einen Winter gedauert, im Jänner war er fertig."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Er will kein Geld, die Leute zahlen nur das Material. Die Firma wollte die Idee kaufen, aber er hat Nein gesagt.",
+            "evidence": {
+              "text": "Der Tüftler aus Wolkersdorf Rudolf Eichinger ist 71 Jahre alt. 40 Jahre lang hat er als Schlosser in einer Fabrik gearbeitet. Jetzt ist er in Pension, aber in seiner Werkstatt im Keller ist er fast jeden Tag. Schon als Bub hat er gern gebastelt. „Jedes Gerät im Haus habe ich auseinandergenommen, das Radio, den Föhn, sogar den Wecker“, erzählt er. Seine Mutter war darüber oft böse. Der Vater wollte, dass er später das Auto der Familie repariert. „Das habe ich aber nie gemacht“, sagt er und lacht. Seine Frau Inge sitzt seit einem Sturz vor acht Jahren im Rollstuhl. Die beiden gehen sehr gern auf Feldwegen spazieren. Mit einem normalen Rollstuhl geht das aber nicht. Die Idee hatte kein Arzt, sondern das Paar selbst. Rudolf Eichinger hat also einen Rollstuhl mit großen Rädern gebaut. „Ich habe gedacht, ich brauche dafür einen Sommer“, sagt er. Es hat aber nur einen Winter gedauert, im Jänner war er fertig. Bald haben die Nachbarn den besonderen Rollstuhl gesehen. Seitdem hat er zwölf weitere gebaut, für andere Menschen. Geld will er dafür nicht, nur das Material müssen sie bezahlen. Eine Firma wollte seine Idee kaufen, aber er hat Nein gesagt. Und was kommt als Nächstes? „Ein ganz kleiner Rollstuhl für ein Mädchen aus dem Dorf“, sagt er. „Damit sie mit ihren Freundinnen in den Wald kann.“",
+              "hit": "Geld will er dafür nicht, nur das Material müssen sie bezahlen."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Sein nächster Plan ist ein kleiner Rollstuhl für ein Mädchen aus dem Dorf. Die Idee verkauft er nicht.",
+            "evidence": {
+              "text": "Der Tüftler aus Wolkersdorf Rudolf Eichinger ist 71 Jahre alt. 40 Jahre lang hat er als Schlosser in einer Fabrik gearbeitet. Jetzt ist er in Pension, aber in seiner Werkstatt im Keller ist er fast jeden Tag. Schon als Bub hat er gern gebastelt. „Jedes Gerät im Haus habe ich auseinandergenommen, das Radio, den Föhn, sogar den Wecker“, erzählt er. Seine Mutter war darüber oft böse. Der Vater wollte, dass er später das Auto der Familie repariert. „Das habe ich aber nie gemacht“, sagt er und lacht. Seine Frau Inge sitzt seit einem Sturz vor acht Jahren im Rollstuhl. Die beiden gehen sehr gern auf Feldwegen spazieren. Mit einem normalen Rollstuhl geht das aber nicht. Die Idee hatte kein Arzt, sondern das Paar selbst. Rudolf Eichinger hat also einen Rollstuhl mit großen Rädern gebaut. „Ich habe gedacht, ich brauche dafür einen Sommer“, sagt er. Es hat aber nur einen Winter gedauert, im Jänner war er fertig. Bald haben die Nachbarn den besonderen Rollstuhl gesehen. Seitdem hat er zwölf weitere gebaut, für andere Menschen. Geld will er dafür nicht, nur das Material müssen sie bezahlen. Eine Firma wollte seine Idee kaufen, aber er hat Nein gesagt. Und was kommt als Nächstes? „Ein ganz kleiner Rollstuhl für ein Mädchen aus dem Dorf“, sagt er. „Damit sie mit ihren Freundinnen in den Wald kann.“",
+              "hit": "„Ein ganz kleiner Rollstuhl für ein Mädchen aus dem Dorf“, sagt er."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

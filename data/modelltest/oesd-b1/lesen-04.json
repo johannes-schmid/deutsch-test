@@ -1,0 +1,959 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-04-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.453Z",
+        "textType": "E-Mail"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Bettina erzählt von ihrem Kurs, weil Nadine danach gefragt hat."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Bettinas Chef hatte die Idee, dass sie Gebärdensprache lernt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Bettinas Kurs findet an der Volkshochschule statt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Oskar hat positiv reagiert, als Bettina zum ersten Mal mit ihm gebärdet hat."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Bettina trainiert die Gebärden auch mit ihrer Familie."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Bettina besucht inzwischen schon den zweiten Kurs."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Bettina möchte Nadine einmal zu einem Treffen mitnehmen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Bettina",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Nadine,",
+            "vielen Dank für deine lange Nachricht! Du wolltest wissen, wo ich jeden Dienstagabend bin, weil ich dann nie ans Telefon gehe. Jetzt verrate ich es dir: Seit vier Monaten lerne ich Deutsche Gebärdensprache.",
+            "Angefangen hat alles im Herbst. In unserem Büro arbeitet seit letztem Jahr Oskar, und Oskar ist gehörlos. Bei einer Teambesprechung habe ich gesehen, dass er nur still dasaß und die Notizen erst am nächsten Tag bekommen hat. Das fand ich furchtbar. Noch am selben Abend habe ich selbst nach einem Kurs gesucht. Mein Chef war überrascht, aber er fand die Idee gut, und jetzt bezahlt die Firma sogar die Hälfte der Kursgebühr.",
+            "Eigentlich wollte ich den Kurs an der Volkshochschule machen, aber der war leider schon voll. Jetzt lerne ich im Vereinsraum des Gehörlosenvereins hier in Krefeld. Unsere Lehrerin ist selbst gehörlos, deshalb sprechen wir im Unterricht kein einziges Wort. Am Anfang war mir das wahnsinnig peinlich. Ich habe ständig falsche Zeichen gemacht und einmal statt „Danke“ etwas ganz anderes gesagt. Alle haben gelacht, und ich bin knallrot geworden.",
+            "Nach drei Wochen habe ich mich dann getraut, Oskar in der Kaffeeküche „Guten Morgen“ zu zeigen. Er hat gelacht, aber nicht über mich. Er hat sich wirklich gefreut und mir gleich gezeigt, wie ich meine Hände besser halte. Seitdem unterhalten wir uns in jeder Kaffeepause ein bisschen. Ich verstehe noch lange nicht alles, aber ich bin richtig stolz auf mich.",
+            "Zu Hause übe ich auch, und zwar mit meinem Sohn Paul. Er lernt mit einer App neue Gebärden, und beim Abendessen fragen wir uns gegenseitig ab. Inzwischen ist er schneller als ich!",
+            "Der erste Kurs ist im Mai zu Ende, dann gibt es einen kleinen Abschlussabend. Den zweiten Kurs habe ich schon gebucht, aber der fängt erst nach den Sommerferien an.",
+            "Und jetzt zu meiner Idee: Am letzten Freitag im Monat gibt es im Verein einen Gebärden-Stammtisch, da treffen sich Gehörlose und Hörende. Hast du Lust, einmal mitzukommen? Du musst nichts können, ich übersetze für dich – so gut es eben geht.",
+            "Liebe Grüße",
+            "Bettina"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Bettina hat die Idee nach einer Teambesprechung selbst gehabt und den Kurs selbst gesucht. Ihr Chef war überrascht und fand die Idee nur gut.",
+            "evidence": {
+              "text": "Angefangen hat alles im Herbst. In unserem Büro arbeitet seit letztem Jahr Oskar, und Oskar ist gehörlos. Bei einer Teambesprechung habe ich gesehen, dass er nur still dasaß und die Notizen erst am nächsten Tag bekommen hat. Das fand ich furchtbar. Noch am selben Abend habe ich selbst nach einem Kurs gesucht. Mein Chef war überrascht, aber er fand die Idee gut, und jetzt bezahlt die Firma sogar die Hälfte der Kursgebühr.",
+              "hit": "Noch am selben Abend habe ich selbst nach einem Kurs gesucht. Mein Chef war überrascht"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "falsch",
+            "explanation": "Der Kurs an der Volkshochschule war schon voll. Bettina lernt deshalb im Raum des Gehörlosenvereins.",
+            "evidence": {
+              "text": "Eigentlich wollte ich den Kurs an der Volkshochschule machen, aber der war leider schon voll. Jetzt lerne ich im Vereinsraum des Gehörlosenvereins hier in Krefeld. Unsere Lehrerin ist selbst gehörlos, deshalb sprechen wir im Unterricht kein einziges Wort. Am Anfang war mir das wahnsinnig peinlich. Ich habe ständig falsche Zeichen gemacht und einmal statt „Danke“ etwas ganz anderes gesagt. Alle haben gelacht, und ich bin knallrot geworden.",
+              "hit": "aber der war leider schon voll"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Oskar hat sich gefreut und ihr gleich geholfen. Er hat nicht über sie gelacht, nur die anderen im Kurs haben am Anfang gelacht.",
+            "evidence": {
+              "text": "Nach drei Wochen habe ich mich dann getraut, Oskar in der Kaffeeküche „Guten Morgen“ zu zeigen. Er hat gelacht, aber nicht über mich. Er hat sich wirklich gefreut und mir gleich gezeigt, wie ich meine Hände besser halte. Seitdem unterhalten wir uns in jeder Kaffeepause ein bisschen. Ich verstehe noch lange nicht alles, aber ich bin richtig stolz auf mich.",
+              "hit": "Er hat sich wirklich gefreut"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "Bettina übt zu Hause mit ihrem Sohn Paul. Beim Abendessen fragen sie sich gegenseitig ab.",
+            "evidence": {
+              "text": "Zu Hause übe ich auch, und zwar mit meinem Sohn Paul. Er lernt mit einer App neue Gebärden, und beim Abendessen fragen wir uns gegenseitig ab. Inzwischen ist er schneller als ich!",
+              "hit": "Zu Hause übe ich auch, und zwar mit meinem Sohn Paul."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Den zweiten Kurs hat sie nur gebucht. Er beginnt erst nach den Sommerferien.",
+            "evidence": {
+              "text": "Der erste Kurs ist im Mai zu Ende, dann gibt es einen kleinen Abschlussabend. Den zweiten Kurs habe ich schon gebucht, aber der fängt erst nach den Sommerferien an.",
+              "hit": "aber der fängt erst nach den Sommerferien an"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Bettina fragt Nadine, ob sie einmal zum Gebärden-Stammtisch mitkommt.",
+            "evidence": {
+              "text": "Und jetzt zu meiner Idee: Am letzten Freitag im Monat gibt es im Verein einen Gebärden-Stammtisch, da treffen sich Gehörlose und Hörende. Hast du Lust, einmal mitzukommen? Du musst nichts können, ich übersetze für dich – so gut es eben geht.",
+              "hit": "Hast du Lust, einmal mitzukommen?"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-04-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.453Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "c"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die Azubi-Woche gibt es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit über zehn Jahren."
+                },
+                {
+                  "key": "b",
+                  "label": "seit diesem Frühjahr."
+                },
+                {
+                  "key": "c",
+                  "label": "seit vier Jahren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Auszubildende, die eine Woche lang einen Betrieb führen."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Firma, die keine Lehrlinge mehr findet."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Preis für eine besonders gute Ausbildung."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Während dieser Woche …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "arbeiten die Meister in einem anderen Betrieb."
+                },
+                {
+                  "key": "b",
+                  "label": "helfen die Meister nur, wenn es wirklich nötig ist."
+                },
+                {
+                  "key": "c",
+                  "label": "bekommen die Azubis mehr Lohn als sonst."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Die Kunden …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dürfen ihren Termin kostenlos verschieben."
+                },
+                {
+                  "key": "b",
+                  "label": "zahlen in dieser Woche weniger als sonst."
+                },
+                {
+                  "key": "c",
+                  "label": "werden vorher über die Aktion informiert."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Eine Woche lang sind die Azubis die Chefs",
+            "Bei Holtkamp Haustechnik in Gütersloh ist in dieser Woche vieles anders. Die 14 Auszubildenden des Familienbetriebs planen die Einsätze, schreiben Angebote, telefonieren mit Kunden und reparieren Heizungen und Bäder – ganz ohne Chef. Die Azubi-Woche findet einmal im Jahr statt, in diesem Herbst schon zum vierten Mal. Seit dem Frühjahr gehören auch zwei angehende Kauffrauen für Büromanagement zum Team.",
+            "„Viele Betriebe finden heute kaum noch Lehrlinge. Wir haben dieses Problem nicht“, sagt Inhaber Markus Holtkamp, dessen Vater die Firma 1987 gegründet hat. „Die jungen Leute erzählen ihren Freunden von der Woche, und das spricht sich herum.“ In diesem Jahr kamen auf vier freie Ausbildungsplätze über 40 Bewerbungen.",
+            "Die vier Meister des Betriebs sitzen während der Woche in einem eigenen Büro im ersten Stock. Dort bleiben sie im Hintergrund und greifen nur ein, wenn es auf einer Baustelle wirklich nicht mehr weitergeht. „Das passiert erstaunlich selten“, sagt Holtkamp. Mehr Geld bekommen die Azubis für die Woche nicht, am Ende lädt der Chef aber alle zum Essen ein.",
+            "Und die Kunden? Sie bekommen schon einige Wochen vorher einen Brief, in dem die Firma die Aktion erklärt. Einen Rabatt gibt es nicht, denn die Arbeit soll genauso gut sein wie sonst. Beschwerden habe es bisher keine gegeben, erzählt Holtkamp. Im Gegenteil: Viele Kunden bringen den jungen Handwerkern sogar Kuchen mit.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "Die Auszubildenden machen eine Woche lang alle Arbeiten im Betrieb, ganz ohne Chef. Die Firma hat keine Probleme, Lehrlinge zu finden.",
+            "evidence": {
+              "text": "Bei Holtkamp Haustechnik in Gütersloh ist in dieser Woche vieles anders. Die 14 Auszubildenden des Familienbetriebs planen die Einsätze, schreiben Angebote, telefonieren mit Kunden und reparieren Heizungen und Bäder – ganz ohne Chef. Die Azubi-Woche findet einmal im Jahr statt, in diesem Herbst schon zum vierten Mal. Seit dem Frühjahr gehören auch zwei angehende Kauffrauen für Büromanagement zum Team.",
+              "hit": "Die 14 Auszubildenden des Familienbetriebs planen die Einsätze, schreiben Angebote, telefonieren mit Kunden und reparieren Heizungen und Bäder – ganz ohne Chef."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Die Meister bleiben im Hintergrund und helfen nur, wenn es nicht mehr weitergeht. Sie sitzen im eigenen Büro im Haus, nicht in einem anderen Betrieb.",
+            "evidence": {
+              "text": "Die vier Meister des Betriebs sitzen während der Woche in einem eigenen Büro im ersten Stock. Dort bleiben sie im Hintergrund und greifen nur ein, wenn es auf einer Baustelle wirklich nicht mehr weitergeht. „Das passiert erstaunlich selten“, sagt Holtkamp. Mehr Geld bekommen die Azubis für die Woche nicht, am Ende lädt der Chef aber alle zum Essen ein.",
+              "hit": "greifen nur ein, wenn es auf einer Baustelle wirklich nicht mehr weitergeht"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "Die Kunden bekommen einige Wochen vorher einen Brief. Einen Rabatt gibt es ausdrücklich nicht.",
+            "evidence": {
+              "text": "Und die Kunden? Sie bekommen schon einige Wochen vorher einen Brief, in dem die Firma die Aktion erklärt. Einen Rabatt gibt es nicht, denn die Arbeit soll genauso gut sein wie sonst. Beschwerden habe es bisher keine gegeben, erzählt Holtkamp. Im Gegenteil: Viele Kunden bringen den jungen Handwerkern sogar Kuchen mit.",
+              "hit": "Sie bekommen schon einige Wochen vorher einen Brief, in dem die Firma die Aktion erklärt."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-04-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.453Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Gemeinde, die alte Häuser renoviert."
+                },
+                {
+                  "key": "b",
+                  "label": "Hausbesitzer, die Brutplätze für Vögel schaffen."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Verein, der Vogelfutter verkauft."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Nistkästen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bezahlt die Gemeinde ganz allein."
+                },
+                {
+                  "key": "b",
+                  "label": "bezahlen die Besitzer zur Hälfte selbst."
+                },
+                {
+                  "key": "c",
+                  "label": "baut eine Klasse der Primarschule."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Im letzten Sommer …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "waren mehr Nester besetzt als im Vorjahr."
+                },
+                {
+                  "key": "b",
+                  "label": "sind viele Vögel früher weggeflogen."
+                },
+                {
+                  "key": "c",
+                  "label": "hat der Verein einen Preis bekommen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Neue Wohnungen für die Mauersegler",
+            "Jedes Jahr Anfang Mai kehren sie aus Afrika zurück: die Mauersegler. Die schnellen Vögel bauen ihre Nester am liebsten in kleinen Löchern unter alten Dächern. Doch wenn ein Haus renoviert wird, verschwinden diese Löcher oft. «Viele Vögel finden dann im Frühling ihren Brutplatz nicht mehr», sagt Andrea Wyss vom Natur- und Vogelschutzverein Zofingen.",
+            "Deshalb hilft der Verein seit drei Jahren Hausbesitzerinnen und Hausbesitzern, die ihr Dach erneuern. Freiwillige beraten sie kostenlos und montieren spezielle Nistkästen aus Holz direkt unter dem Dach oder im Estrich*. Von aussen sieht man nur ein kleines Loch. Ein Kasten kostet rund 120 Franken. Die Hälfte davon übernimmt die Gemeinde, den Rest bezahlen die Besitzer selbst.",
+            "Inzwischen hängen in Zofingen schon über 90 solche Kästen. Ob sie auch genutzt werden, kontrolliert eine fünfte Klasse der Primarschule Bühl: Die Kinder beobachten im Juni die Dächer und zählen, wie oft Vögel hinein- und hinausfliegen. Im letzten Sommer kamen sie auf 64 besetzte Nester, zwölf mehr als im Jahr davor.",
+            "Für die Hausbesitzer ist der Aufwand klein. «Die Vögel machen keinen Schmutz und keinen Lärm», erzählt Peter Lüscher, der sein Haus im letzten Jahr renoviert hat. «Und wenn sie abends um das Dach fliegen, ist das wunderschön.» Anfang August fliegen die Mauersegler dann wieder nach Süden.",
+            "*Estrich = Schweizer Standard für «Dachboden»",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Der Verein hilft Hausbesitzern, unter ihren Dächern Nistkästen für Mauersegler anzubringen. Die Häuser renoviert nicht die Gemeinde, sondern die Besitzer.",
+            "evidence": {
+              "text": "Deshalb hilft der Verein seit drei Jahren Hausbesitzerinnen und Hausbesitzern, die ihr Dach erneuern. Freiwillige beraten sie kostenlos und montieren spezielle Nistkästen aus Holz direkt unter dem Dach oder im Estrich*. Von aussen sieht man nur ein kleines Loch. Ein Kasten kostet rund 120 Franken. Die Hälfte davon übernimmt die Gemeinde, den Rest bezahlen die Besitzer selbst.",
+              "hit": "Deshalb hilft der Verein seit drei Jahren Hausbesitzerinnen und Hausbesitzern, die ihr Dach erneuern."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Die Gemeinde zahlt die Hälfte, den Rest zahlen die Besitzer. Die Schulklasse zählt nur die Nester, sie baut keine Kästen.",
+            "evidence": {
+              "text": "Deshalb hilft der Verein seit drei Jahren Hausbesitzerinnen und Hausbesitzern, die ihr Dach erneuern. Freiwillige beraten sie kostenlos und montieren spezielle Nistkästen aus Holz direkt unter dem Dach oder im Estrich*. Von aussen sieht man nur ein kleines Loch. Ein Kasten kostet rund 120 Franken. Die Hälfte davon übernimmt die Gemeinde, den Rest bezahlen die Besitzer selbst.",
+              "hit": "Die Hälfte davon übernimmt die Gemeinde, den Rest bezahlen die Besitzer selbst."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Die Kinder haben 64 besetzte Nester gezählt, zwölf mehr als im Jahr davor. Dass die Vögel Anfang August wegfliegen, ist normal und nicht früher.",
+            "evidence": {
+              "text": "Inzwischen hängen in Zofingen schon über 90 solche Kästen. Ob sie auch genutzt werden, kontrolliert eine fünfte Klasse der Primarschule Bühl: Die Kinder beobachten im Juni die Dächer und zählen, wie oft Vögel hinein- und hinausfliegen. Im letzten Sommer kamen sie auf 64 besetzte Nester, zwölf mehr als im Jahr davor.",
+              "hit": "Im letzten Sommer kamen sie auf 64 besetzte Nester, zwölf mehr als im Jahr davor."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-04-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.453Z",
+        "textType": "Anzeigen: Freizeit am und im Wasser"
+      },
+      "exampleAnswers": [
+        "c"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten möchten im Sommer etwas am oder im Wasser unternehmen.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Wasserski am Baggersee Lingen",
+                  "text": "Mit unserer Seilbahn ziehen wir Sie mit bis zu 30 km/h über den See. Für alle ab 12 Jahren, Anfänger bekommen eine kurze Einweisung. Neoprenanzüge können Sie bei uns leihen. Täglich 11–20 Uhr, www.wasserski-lingen.de"
+                },
+                {
+                  "key": "b",
+                  "title": "Rafting auf der Enns",
+                  "text": "Wildwasser pur! Mit erfahrenen Guides fahren Sie im Schlauchboot die Enns bei Liezen hinunter. Mitfahren dürfen alle ab 14 Jahren, die gut schwimmen können. Ausrüstung inklusive, € 59 pro Person."
+                },
+                {
+                  "key": "c",
+                  "title": "Stand-up-Paddling am Sempachersee",
+                  "text": "Zum ersten Mal auf dem Brett? In unserem Schnupperkurs für Anfängerinnen und Anfänger lernen Sie in zwei Stunden, sicher zu stehen und zu paddeln. CHF 75.– inkl. Brett und Paddel. Treffpunkt: Strandbad Sursee, www.sup-sursee.ch"
+                },
+                {
+                  "key": "d",
+                  "title": "Ruderclub Minden: Schnuppertage",
+                  "text": "Rudern einmal ausprobieren? An zwei Samstagen im Juni zeigen wir Erwachsenen, wie man im Ruderboot auf der Weser fährt. Sie brauchen keine Mitgliedschaft und keine Erfahrung. Anmeldung bis 31. Mai: info@ruderclub-minden.de"
+                },
+                {
+                  "key": "e",
+                  "title": "Mondscheinschwimmen im Freibad",
+                  "text": "Jeden Freitag im Juli und August hat unser Freibad bis Mitternacht geöffnet. Schwimmen Sie unter Sternen: Das Becken ist beleuchtet und auf 24 Grad geheizt. Eintritt ab 20 Uhr nur 3 Euro. Freibad Kempten-Nord"
+                },
+                {
+                  "key": "f",
+                  "title": "Fischerkurs am Ossiacher See",
+                  "text": "Sie möchten in Kärnten fischen? In unserem Kurs lernen Sie an zwei Abenden alles über Fische, Gewässer und Regeln. Am Ende legen Sie die Prüfung ab und bekommen die amtliche Fischerkarte. € 85, Gasthof Seeblick, Bodensdorf."
+                },
+                {
+                  "key": "g",
+                  "title": "Schnuppertauchen im Hallenbad",
+                  "text": "Einmal wie ein Fisch unter Wasser atmen! Der Tauchclub Saarlouis bietet Schnuppertauchen im warmen Hallenbad an, für alle ab 10 Jahren. Wir stellen die komplette Ausrüstung, ein Tauchlehrer ist immer dabei. Sonntags 9–12 Uhr, 25 €. www.tauchclub-saarlouis.de"
+                },
+                {
+                  "key": "h",
+                  "title": "Drachenboot-Team sucht Verstärkung",
+                  "text": "Die «Seedrachen Rapperswil» suchen neue Paddlerinnen und Paddler. Wir trainieren zweimal pro Woche auf dem Zürichsee, dienstags und donnerstags ab 18.30 Uhr, und fahren im Sommer an Rennen mit. Vorkenntnisse sind nicht nötig. Kontakt: www.seedrachen-rapperswil.ch"
+                },
+                {
+                  "key": "i",
+                  "title": "Familienstrand am Waldsee",
+                  "text": "Am Waldsee bei Rheine ist das Ufer flach und sandig, ideal für kleine Kinder. Rettungsschwimmer passen von 10 bis 19 Uhr auf. Direkt am Strand gibt es einen Spielplatz und einen Kiosk. Erwachsene 4 €, Kinder unter 6 Jahren frei."
+                },
+                {
+                  "key": "j",
+                  "title": "Floßbau für Kinder in Lienz",
+                  "text": "Kinder von 8 bis 12 Jahren bauen bei uns aus Holz und Seilen ihr eigenes Floß und fahren damit ein Stück auf der Drau – natürlich mit Schwimmweste und Betreuern. Die Eltern warten inzwischen beim Kiosk. Mittwochs 14–17 Uhr, € 25."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Mira möchte zum ersten Mal auf einem Brett stehen und über das Wasser paddeln."
+                },
+                {
+                  "n": 13,
+                  "text": "Joachim möchte mit einer Mannschaft regelmäßig auf dem Wasser trainieren."
+                },
+                {
+                  "n": 14,
+                  "text": "Wiebke möchte mit ihrer zehnjährigen Tochter gemeinsam im Schlauchboot einen wilden Fluss hinunterfahren."
+                },
+                {
+                  "n": 15,
+                  "text": "Lennart ist elf Jahre alt und möchte einmal das Tauchen mit Ausrüstung ausprobieren."
+                },
+                {
+                  "n": 16,
+                  "text": "Gudrun kann nur spät am Abend nach der Arbeit schwimmen gehen."
+                },
+                {
+                  "n": 17,
+                  "text": "Benedikt möchte angeln, braucht dafür aber zuerst eine offizielle Erlaubnis."
+                },
+                {
+                  "n": 18,
+                  "text": "Carmen sucht für ihre zwei kleinen Kinder einen Badeplatz, an dem das Wasser nicht tief ist und jemand aufpasst."
+                },
+                {
+                  "n": 19,
+                  "text": "Rainer möchte sich mit hoher Geschwindigkeit über einen See ziehen lassen."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "h",
+            "explanation": "Das Drachenboot-Team trainiert zweimal pro Woche und sucht neue Leute. Der Ruderclub bietet nur zwei Schnuppertage an, kein regelmäßiges Training.",
+            "evidence": {
+              "text": "Die «Seedrachen Rapperswil» suchen neue Paddlerinnen und Paddler. Wir trainieren zweimal pro Woche auf dem Zürichsee, dienstags und donnerstags ab 18.30 Uhr, und fahren im Sommer an Rennen mit. Vorkenntnisse sind nicht nötig. Kontakt: www.seedrachen-rapperswil.ch",
+              "hit": "Wir trainieren zweimal pro Woche auf dem Zürichsee"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "x",
+            "explanation": "Beim Rafting auf der Enns dürfen Kinder erst ab 14 Jahren mitfahren, die Tochter ist aber zehn. Beim Floßbau in Lienz fahren nur die Kinder, die Eltern warten am Kiosk.",
+            "evidence": {
+              "text": "Wildwasser pur! Mit erfahrenen Guides fahren Sie im Schlauchboot die Enns bei Liezen hinunter. Mitfahren dürfen alle ab 14 Jahren, die gut schwimmen können. Ausrüstung inklusive, € 59 pro Person.",
+              "hit": "Mitfahren dürfen alle ab 14 Jahren, die gut schwimmen können."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "g",
+            "explanation": "Beim Schnuppertauchen in Saarlouis dürfen Kinder ab 10 Jahren mitmachen, die Ausrüstung bekommt man dort.",
+            "evidence": {
+              "text": "Einmal wie ein Fisch unter Wasser atmen! Der Tauchclub Saarlouis bietet Schnuppertauchen im warmen Hallenbad an, für alle ab 10 Jahren. Wir stellen die komplette Ausrüstung, ein Tauchlehrer ist immer dabei. Sonntags 9–12 Uhr, 25 €. www.tauchclub-saarlouis.de",
+              "hit": "für alle ab 10 Jahren"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "e",
+            "explanation": "Das Freibad in Kempten hat freitags bis Mitternacht geöffnet. Der Familienstrand am Waldsee hat nur bis 19 Uhr Aufsicht.",
+            "evidence": {
+              "text": "Jeden Freitag im Juli und August hat unser Freibad bis Mitternacht geöffnet. Schwimmen Sie unter Sternen: Das Becken ist beleuchtet und auf 24 Grad geheizt. Eintritt ab 20 Uhr nur 3 Euro. Freibad Kempten-Nord",
+              "hit": "hat unser Freibad bis Mitternacht geöffnet"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "f",
+            "explanation": "Im Fischerkurs macht man eine Prüfung und bekommt die amtliche Fischerkarte. Das ist die Erlaubnis, die Benedikt braucht.",
+            "evidence": {
+              "text": "Sie möchten in Kärnten fischen? In unserem Kurs lernen Sie an zwei Abenden alles über Fische, Gewässer und Regeln. Am Ende legen Sie die Prüfung ab und bekommen die amtliche Fischerkarte. € 85, Gasthof Seeblick, Bodensdorf.",
+              "hit": "Am Ende legen Sie die Prüfung ab und bekommen die amtliche Fischerkarte."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "i",
+            "explanation": "Am Waldsee ist das Ufer flach, und Rettungsschwimmer passen auf.",
+            "evidence": {
+              "text": "Am Waldsee bei Rheine ist das Ufer flach und sandig, ideal für kleine Kinder. Rettungsschwimmer passen von 10 bis 19 Uhr auf. Direkt am Strand gibt es einen Spielplatz und einen Kiosk. Erwachsene 4 €, Kinder unter 6 Jahren frei.",
+              "hit": "ist das Ufer flach und sandig, ideal für kleine Kinder. Rettungsschwimmer passen von 10 bis 19 Uhr auf."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "a",
+            "explanation": "Beim Wasserski in Lingen zieht eine Seilbahn die Leute schnell über den See.",
+            "evidence": {
+              "text": "Mit unserer Seilbahn ziehen wir Sie mit bis zu 30 km/h über den See. Für alle ab 12 Jahren, Anfänger bekommen eine kurze Einweisung. Neoprenanzüge können Sie bei uns leihen. Täglich 11–20 Uhr, www.wasserski-lingen.de",
+              "hit": "Mit unserer Seilbahn ziehen wir Sie mit bis zu 30 km/h über den See."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-04-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.453Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für die Abschaffung der Zeitumstellung?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Hartmut, 61, Gotha",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Kerstin, 44, Schwerin",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Leopold, 50, Wolfsberg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Dilara, 29, Recklinghausen",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Beat, 57, Uster",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Friederike, 36, Lübeck",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Raphael, 24, Ingolstadt",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Seraina, 42, Herisau",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Nach der letzten Zeitumstellung hat eine Wochenzeitschrift ihre Leserinnen und Leser gefragt: Soll die Zeitumstellung abgeschafft werden?",
+            "Nach jeder Zeitumstellung schlafe ich eine ganze Woche lang schlecht. Ich wache nachts auf und bin morgens im Büro todmüde. Mit über sechzig gewöhnt man sich eben nicht mehr so schnell an eine neue Uhrzeit. Ich verstehe auch nicht, wem das Ganze eigentlich nützt. Eine Zeit für das ganze Jahr wäre viel gesünder, und zwar je früher, desto besser.",
+            "Hartmut, 61, Gotha",
+            "Ich weiß, viele schimpfen jedes Jahr über die Zeitumstellung. Aber für mich sind die langen, hellen Sommerabende das Schönste am ganzen Jahr. Nach der Arbeit kann ich noch mit dem Hund durch den Park gehen oder mit Freunden auf dem Balkon sitzen, und um zehn ist es noch hell. Ein bisschen Müdigkeit im März nehme ich dafür gern in Kauf. Lasst alles, wie es ist!",
+            "Kerstin, 44, Schwerin",
+            "Ich führe ein Gasthaus mit einer großen Terrasse in Wolfsberg. Im Sommer sitzen meine Gäste bis spät am Abend draußen, weil es so lange hell ist. Heuer war wieder ein sehr gutes Jahr für mein Geschäft. Wenn man die Umstellung abschafft, bleibt am Ende vielleicht die Winterzeit, und dann wird es im Juli schon um halb neun dunkel. Das wäre für Betriebe wie meinen eine Katastrophe.",
+            "Leopold, 50, Wolfsberg",
+            "Seit ich Mutter bin, ärgere ich mich zweimal im Jahr über die Zeitumstellung. Unser Sohn ist acht Monate alt, und ein Baby kann man nicht einfach eine Stunde früher ins Bett schicken. Nach jeder Umstellung dauert es fast eine Woche, bis er wieder zur gewohnten Zeit schläft und isst. Für uns Eltern bedeutet das viele anstrengende Nächte. Bitte weg damit!",
+            "Dilara, 29, Recklinghausen",
+            "In der Schweiz wollte man die Sommerzeit zuerst gar nicht. Die Stimmbürger haben sie sogar abgelehnt, eingeführt wurde sie erst, weil alle Nachbarländer sie schon hatten. Man hat uns damals versprochen, dass wir damit viel Energie sparen. Davon merkt man bis heute nichts. Wenn Europa die Umstellung abschafft, bin ich der Erste, der sich freut.",
+            "Beat, 57, Uster",
+            "Ehrlich gesagt nervt mich die Zeitumstellung auch. Aber was passiert, wenn Deutschland allein Schluss damit macht und die Nachbarländer nicht? Dann hätten wir plötzlich eine andere Uhrzeit als Polen oder Dänemark, und für Züge, Flüge und Firmen wäre das ein großes Durcheinander. Solange es keine Lösung für ganz Europa gibt, sollten wir die Umstellung also lieber behalten.",
+            "Friederike, 36, Lübeck",
+            "Ich arbeite bei einer Versicherung und sehe es jedes Jahr in unseren Zahlen: In der Woche nach der Zeitumstellung passieren mehr Unfälle auf den Straßen. Viele Autofahrer sind müde und unkonzentriert, und morgens ist es plötzlich wieder dunkel, wenn die Kinder zur Schule gehen. Für ein bisschen mehr Licht am Abend ist mir dieses Risiko zu hoch. Die Umstellung gehört abgeschafft.",
+            "Raphael, 24, Ingolstadt",
+            "Ich verstehe die ganze Aufregung nicht. Im Herbst bekommen wir eine Stunde mehr Schlaf geschenkt, und darauf freue ich mich jedes Jahr. Im Frühling ist man vielleicht zwei, drei Tage etwas müde, aber das ist doch kein grosses Problem. Meine Kinder gewöhnen sich jedes Mal schneller an die neue Zeit als ich. Von mir aus kann es so bleiben.",
+            "Seraina, 42, Herisau"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Kerstin liebt die hellen Sommerabende und nimmt die Müdigkeit im März gern in Kauf. Sie möchte, dass alles so bleibt.",
+            "evidence": {
+              "text": "Ich weiß, viele schimpfen jedes Jahr über die Zeitumstellung. Aber für mich sind die langen, hellen Sommerabende das Schönste am ganzen Jahr. Nach der Arbeit kann ich noch mit dem Hund durch den Park gehen oder mit Freunden auf dem Balkon sitzen, und um zehn ist es noch hell. Ein bisschen Müdigkeit im März nehme ich dafür gern in Kauf. Lasst alles, wie es ist!",
+              "hit": "Lasst alles, wie es ist!"
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Leopold hat Angst, dass ohne Umstellung die Winterzeit bleibt und es im Sommer früh dunkel wird. Das wäre schlecht für sein Gasthaus.",
+            "evidence": {
+              "text": "Ich führe ein Gasthaus mit einer großen Terrasse in Wolfsberg. Im Sommer sitzen meine Gäste bis spät am Abend draußen, weil es so lange hell ist. Heuer war wieder ein sehr gutes Jahr für mein Geschäft. Wenn man die Umstellung abschafft, bleibt am Ende vielleicht die Winterzeit, und dann wird es im Juli schon um halb neun dunkel. Das wäre für Betriebe wie meinen eine Katastrophe.",
+              "hit": "Das wäre für Betriebe wie meinen eine Katastrophe."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "Dilaras Baby braucht nach jeder Umstellung fast eine Woche, um sich daran zu gewöhnen. Sie möchte die Umstellung loswerden.",
+            "evidence": {
+              "text": "Seit ich Mutter bin, ärgere ich mich zweimal im Jahr über die Zeitumstellung. Unser Sohn ist acht Monate alt, und ein Baby kann man nicht einfach eine Stunde früher ins Bett schicken. Nach jeder Umstellung dauert es fast eine Woche, bis er wieder zur gewohnten Zeit schläft und isst. Für uns Eltern bedeutet das viele anstrengende Nächte. Bitte weg damit!",
+              "hit": "Bitte weg damit!"
+            }
+          },
+          {
+            "n": 23,
+            "correct": "richtig",
+            "explanation": "Beat sagt, das Energiesparen hat nie funktioniert. Er würde sich über eine Abschaffung sehr freuen.",
+            "evidence": {
+              "text": "In der Schweiz wollte man die Sommerzeit zuerst gar nicht. Die Stimmbürger haben sie sogar abgelehnt, eingeführt wurde sie erst, weil alle Nachbarländer sie schon hatten. Man hat uns damals versprochen, dass wir damit viel Energie sparen. Davon merkt man bis heute nichts. Wenn Europa die Umstellung abschafft, bin ich der Erste, der sich freut.",
+              "hit": "Wenn Europa die Umstellung abschafft, bin ich der Erste, der sich freut."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "falsch",
+            "explanation": "Die Umstellung nervt Friederike zwar, aber sie will sie behalten, solange es keine Lösung für ganz Europa gibt. Im Moment ist sie also dagegen.",
+            "evidence": {
+              "text": "Ehrlich gesagt nervt mich die Zeitumstellung auch. Aber was passiert, wenn Deutschland allein Schluss damit macht und die Nachbarländer nicht? Dann hätten wir plötzlich eine andere Uhrzeit als Polen oder Dänemark, und für Züge, Flüge und Firmen wäre das ein großes Durcheinander. Solange es keine Lösung für ganz Europa gibt, sollten wir die Umstellung also lieber behalten.",
+              "hit": "Solange es keine Lösung für ganz Europa gibt, sollten wir die Umstellung also lieber behalten."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "richtig",
+            "explanation": "Raphael sieht nach jeder Umstellung mehr Unfälle. Das Risiko ist ihm zu hoch, deshalb will er die Umstellung abschaffen.",
+            "evidence": {
+              "text": "Ich arbeite bei einer Versicherung und sehe es jedes Jahr in unseren Zahlen: In der Woche nach der Zeitumstellung passieren mehr Unfälle auf den Straßen. Viele Autofahrer sind müde und unkonzentriert, und morgens ist es plötzlich wieder dunkel, wenn die Kinder zur Schule gehen. Für ein bisschen mehr Licht am Abend ist mir dieses Risiko zu hoch. Die Umstellung gehört abgeschafft.",
+              "hit": "Die Umstellung gehört abgeschafft."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "falsch",
+            "explanation": "Seraina freut sich über die zusätzliche Stunde Schlaf im Herbst. Sie findet die Müdigkeit im Frühling kein Problem und will nichts ändern.",
+            "evidence": {
+              "text": "Ich verstehe die ganze Aufregung nicht. Im Herbst bekommen wir eine Stunde mehr Schlaf geschenkt, und darauf freue ich mich jedes Jahr. Im Frühling ist man vielleicht zwei, drei Tage etwas müde, aber das ist doch kein grosses Problem. Meine Kinder gewöhnen sich jedes Mal schneller an die neue Zeit als ich. Von mir aus kann es so bleiben.",
+              "hit": "Von mir aus kann es so bleiben."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-04-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.453Z",
+        "textType": "Nutzungsbedingungen Coworking-Space"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie haben für einen Monat einen Arbeitsplatz in einem Coworking-Space gemietet und lesen jetzt die Nutzungsbedingungen.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Gäste, die man zu einem Termin einlädt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "müssen an der Theke etwas bezahlen."
+                },
+                {
+                  "key": "b",
+                  "label": "dürfen bis zu zwei Stunden kostenlos bleiben."
+                },
+                {
+                  "key": "c",
+                  "label": "brauchen einen eigenen Chip für die Tür."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Lange Telefongespräche …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "führt man in den Telefonkabinen."
+                },
+                {
+                  "key": "b",
+                  "label": "sind im ganzen Haus verboten."
+                },
+                {
+                  "key": "c",
+                  "label": "sind nur in der Küche erlaubt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Den Besprechungsraum …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kann man jederzeit spontan nutzen."
+                },
+                {
+                  "key": "b",
+                  "label": "müssen Mitglieder extra bezahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "muss man vorher online reservieren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Wer den Vertrag beenden will, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss das eine Woche vor Monatsende schriftlich mitteilen."
+                },
+                {
+                  "key": "b",
+                  "label": "ruft am besten direkt bei der Leitung an."
+                },
+                {
+                  "key": "c",
+                  "label": "gibt einfach seinen Chip an der Theke zurück."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Nutzungsbedingungen",
+          "paragraphs": [
+            "Nutzungsbedingungen der Werkbank Potsdam",
+            "**Zugang**",
+            "Mit Ihrem persönlichen Chip kommen Sie montags bis freitags von 7 bis 22 Uhr ins Haus, am Wochenende von 9 bis 18 Uhr. Bitte geben Sie den Chip nicht an andere Personen weiter. Wenn Sie ihn verlieren, kostet ein neuer Chip 20 Euro.",
+            "**Arbeitsplätze**",
+            "Mit einem Monatsvertrag können Sie jeden freien Schreibtisch im offenen Arbeitsbereich nutzen. Am Abend räumen Sie Ihren Platz bitte vollständig auf; persönliche Sachen können Sie in einem Schließfach lassen. Im Arbeitsbereich ist es ruhig: Kurze Telefonate sind in der Küche erlaubt, längere Gespräche und Videokonferenzen führen Sie bitte in einer unserer drei Telefonkabinen.",
+            "**Besprechungsräume**",
+            "Für Termine mit Kunden gibt es zwei Besprechungsräume für bis zu acht Personen. Vier Stunden pro Monat sind in Ihrem Vertrag enthalten. Bitte buchen Sie den Raum immer vorher über den Online-Kalender, auch wenn er gerade leer ist. Spontane Nutzung ohne Buchung ist leider nicht möglich.",
+            "**Gäste**",
+            "Ihre Gäste melden sich bitte an der Theke im Eingangsbereich an, dort holen Sie sie ab. Für Besuche bis zu zwei Stunden zahlen Gäste nichts. Wer länger bleibt, braucht ein Tagesticket für 15 Euro.",
+            "**Kündigung**",
+            "Ihr Vertrag verlängert sich automatisch um einen weiteren Monat. Wenn Sie ihn beenden möchten, schreiben Sie uns spätestens sieben Tage vor Monatsende eine E-Mail an kontakt@werkbank-potsdam.de. Eine Kündigung am Telefon ist nicht möglich. Den Chip geben Sie bitte an Ihrem letzten Tag an der Theke ab."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "b",
+            "explanation": "Für Besuche bis zu zwei Stunden zahlen Gäste nichts. Ein Tagesticket brauchen sie erst, wenn sie länger bleiben.",
+            "evidence": {
+              "text": "Ihre Gäste melden sich bitte an der Theke im Eingangsbereich an, dort holen Sie sie ab. Für Besuche bis zu zwei Stunden zahlen Gäste nichts. Wer länger bleibt, braucht ein Tagesticket für 15 Euro.",
+              "hit": "Für Besuche bis zu zwei Stunden zahlen Gäste nichts."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "a",
+            "explanation": "Längere Gespräche führt man in den Telefonkabinen. In der Küche sind nur kurze Telefonate erlaubt.",
+            "evidence": {
+              "text": "Mit einem Monatsvertrag können Sie jeden freien Schreibtisch im offenen Arbeitsbereich nutzen. Am Abend räumen Sie Ihren Platz bitte vollständig auf; persönliche Sachen können Sie in einem Schließfach lassen. Im Arbeitsbereich ist es ruhig: Kurze Telefonate sind in der Küche erlaubt, längere Gespräche und Videokonferenzen führen Sie bitte in einer unserer drei Telefonkabinen.",
+              "hit": "längere Gespräche und Videokonferenzen führen Sie bitte in einer unserer drei Telefonkabinen"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Man muss den Raum immer vorher im Online-Kalender buchen, auch wenn er leer ist. Vier Stunden im Monat sind schon im Vertrag enthalten.",
+            "evidence": {
+              "text": "Für Termine mit Kunden gibt es zwei Besprechungsräume für bis zu acht Personen. Vier Stunden pro Monat sind in Ihrem Vertrag enthalten. Bitte buchen Sie den Raum immer vorher über den Online-Kalender, auch wenn er gerade leer ist. Spontane Nutzung ohne Buchung ist leider nicht möglich.",
+              "hit": "Bitte buchen Sie den Raum immer vorher über den Online-Kalender"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "a",
+            "explanation": "Man kündigt per E-Mail spätestens sieben Tage vor Monatsende. Am Telefon geht es nicht, und den Chip gibt man erst am letzten Tag zurück.",
+            "evidence": {
+              "text": "Ihr Vertrag verlängert sich automatisch um einen weiteren Monat. Wenn Sie ihn beenden möchten, schreiben Sie uns spätestens sieben Tage vor Monatsende eine E-Mail an kontakt@werkbank-potsdam.de. Eine Kündigung am Telefon ist nicht möglich. Den Chip geben Sie bitte an Ihrem letzten Tag an der Theke ab.",
+              "hit": "schreiben Sie uns spätestens sieben Tage vor Monatsende eine E-Mail"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

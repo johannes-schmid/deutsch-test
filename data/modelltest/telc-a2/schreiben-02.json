@@ -1,0 +1,193 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-02-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:43:56.716Z",
+        "textType": "Formular: Aufnahmebogen in der Arztpraxis"
+      },
+      "display": {
+        "instruction": "Ihre Bekannte Hoa geht zum ersten Mal zu einer Hausärztin. Sie helfen ihr beim Aufnahmebogen. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Hausarztpraxis Dr. Kühn, Erfurt – Aufnahmebogen für neue Patienten\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: Thi Hoa\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: Magdeburger Allee 41\nPLZ, Ort: 99086 Erfurt\nKrankenversicherung: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nAllergien: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nBeruf: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Pham Thi Hoa",
+          "source": "Aufenthaltstitel, Karte und Notiz",
+          "paragraphs": [
+            "Aufenthaltstitel – Name: NGUYEN · Vorname: THI LAN · Geburtsdatum: 14.03.1991 · Staatsangehörigkeit: VNM · ausgestellt am: 02.10.2023 · gültig bis: 01.10.2028",
+            "Versichertenkarte – AKS Gesundheitskasse · Pham, Thi Hoa · Versichertennummer: L482913057 · Karte gültig bis 12/2027",
+            "Hallo! Hier sind meine Infos für die Praxis. Ich wohne mit meinem Mann Minh in der Magdeburger Allee 41. Ich arbeite als Schneiderin in einer kleinen Werkstatt in der Altstadt, Minh ist Koch. Für die Praxis gib bitte meine Handynummer an: 0176 44289031. Die Nummer von Minh ist 0176 44289077, aber bei der Arbeit hört er sein Handy oft nicht. Und ganz wichtig: Ich vertrage kein Penicillin, davon bekomme ich roten Ausschlag. Danke für deine Hilfe! Hoa"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "14.03.1991",
+            "explanation": "Das Geburtsdatum steht im Aufenthaltstitel. Die anderen Daten sind Ausstellung und Gültigkeit, und Zahlen müssen genau stimmen.",
+            "evidence": {
+              "text": "Aufenthaltstitel – Name: NGUYEN · Vorname: THI LAN · Geburtsdatum: 14.03.1991 · Staatsangehörigkeit: VNM · ausgestellt am: 02.10.2023 · gültig bis: 01.10.2028",
+              "hit": "Geburtsdatum: 14.03.1991"
+            },
+            "accept": [
+              "14.3.1991",
+              "14.03.91",
+              "14.3.91",
+              "14. März 1991"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "AKS Gesundheitskasse",
+            "explanation": "Der Name der Krankenkasse steht auf der Versichertenkarte. Die Versichertennummer ist hier nicht gefragt.",
+            "evidence": {
+              "text": "Versichertenkarte – AKS Gesundheitskasse · Pham, Thi Hoa · Versichertennummer: L482913057 · Karte gültig bis 12/2027",
+              "hit": "AKS Gesundheitskasse"
+            },
+            "accept": [
+              "AKS",
+              "AKS-Gesundheitskasse",
+              "Gesundheitskasse AKS"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "0176 44289031",
+            "explanation": "Hoa möchte, dass die Praxis ihre eigene Handynummer bekommt. Die Nummer mit 77 am Ende gehört ihrem Mann Minh.",
+            "evidence": {
+              "text": "Hallo! Hier sind meine Infos für die Praxis. Ich wohne mit meinem Mann Minh in der Magdeburger Allee 41. Ich arbeite als Schneiderin in einer kleinen Werkstatt in der Altstadt, Minh ist Koch. Für die Praxis gib bitte meine Handynummer an: 0176 44289031. Die Nummer von Minh ist 0176 44289077, aber bei der Arbeit hört er sein Handy oft nicht. Und ganz wichtig: Ich vertrage kein Penicillin, davon bekomme ich roten Ausschlag. Danke für deine Hilfe! Hoa",
+              "hit": "0176 44289031"
+            },
+            "accept": [
+              "017644289031",
+              "0176-44289031",
+              "0176/44289031",
+              "0176 4428 9031",
+              "0176 442 890 31"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "Penicillin",
+            "explanation": "Hoa verträgt kein Penicillin und bekommt davon Ausschlag. Das ist ihre Allergie.",
+            "evidence": {
+              "text": "Hallo! Hier sind meine Infos für die Praxis. Ich wohne mit meinem Mann Minh in der Magdeburger Allee 41. Ich arbeite als Schneiderin in einer kleinen Werkstatt in der Altstadt, Minh ist Koch. Für die Praxis gib bitte meine Handynummer an: 0176 44289031. Die Nummer von Minh ist 0176 44289077, aber bei der Arbeit hört er sein Handy oft nicht. Und ganz wichtig: Ich vertrage kein Penicillin, davon bekomme ich roten Ausschlag. Danke für deine Hilfe! Hoa",
+              "hit": "Ich vertrage kein Penicillin"
+            },
+            "accept": [
+              "Penizillin",
+              "gegen Penicillin",
+              "Penicillinallergie",
+              "Penicillin-Allergie"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "Schneiderin",
+            "explanation": "Hoa arbeitet als Schneiderin. Koch ist der Beruf von ihrem Mann Minh.",
+            "evidence": {
+              "text": "Hallo! Hier sind meine Infos für die Praxis. Ich wohne mit meinem Mann Minh in der Magdeburger Allee 41. Ich arbeite als Schneiderin in einer kleinen Werkstatt in der Altstadt, Minh ist Koch. Für die Praxis gib bitte meine Handynummer an: 0176 44289031. Die Nummer von Minh ist 0176 44289077, aber bei der Arbeit hört er sein Handy oft nicht. Und ganz wichtig: Ich vertrage kein Penicillin, davon bekomme ich roten Ausschlag. Danke für deine Hilfe! Hoa",
+              "hit": "Ich arbeite als Schneiderin"
+            },
+            "accept": [
+              "Schneider",
+              "Änderungsschneiderin",
+              "Damenschneiderin"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Pham"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-02-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:43:56.716Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Teamleiterin Frau Kessler hat Sie zu ihrem Geburtstag eingeladen. Antworten Sie Frau Kessler mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Gartenfest zum 50. Geburtstag",
+            "situation": "Ihre Teamleiterin Frau Kessler wird 50 Jahre alt. Sie feiert am Samstag um 14 Uhr in ihrem Garten und hat das ganze Team eingeladen.",
+            "points": [
+              "Partner oder Kinder mitbringen",
+              "etwas zum Essen mitbringen",
+              "später kommen – warum?",
+              "beim Aufbauen helfen"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Liebe Frau Kessler,\nvielen Dank für Ihre Einladung! Ich komme gern, aber erst um vier Uhr, weil mein Sohn am Samstag ein Fußballspiel hat. Darf ich meinen Mann mitbringen? Ich kann gern einen Kuchen backen und mitbringen.\nViele Grüße\nIhre Sofia Berger"
+          }
+        ]
+      }
+    }
+  ]
+}

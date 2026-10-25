@@ -4,12 +4,17 @@
 // Instructions are our own wording of what the real task asks; never the official text.
 
 import type { ExamSpec } from "../exam-blueprints"
+import type { PartSpec } from "../blueprint"
+import { spec as goethe, withFull } from "./goethe-b1"
 
 const SHORT_CLIP = "TODO(hannes): shortened clip (research §6.2 option b) so Hören stays a ~4-minute taster; the page says the clips are shorter than in the exam."
 
+/** The Modelltests are the Goethe sets with Austrian voices (Hannes, 2026-10-24), so every Teil ÖSD has no taster spec for comes from Goethe. */
+const sameAsGoethe = (own: PartSpec[]) => [...own, ...goethe.parts.filter((g) => !own.some((o) => o.skill === g.skill && o.teil === g.teil))]
+
 export const spec: ExamSpec = {
   context: { name: "ÖSD Zertifikat B1", level: "B1", setting: "Alltag, Arbeit und Ausbildung in Österreich, Deutschland und der Schweiz; viele Texte aus Österreich (Preise in Euro oder Franken). Standardsprache, regionale Wörter nur, wenn sie aus dem Zusammenhang klar sind", copyright: "ÖSD, Goethe-Institut" },
-  parts: [
+  parts: withFull(sameAsGoethe([
     {
       skill: "lesen", teil: 1, answer: "rf", itemsReal: 6, itemsPerBlock: 6,
       textTypes: ["Persönliche E-Mail an eine Freundin oder einen Freund", "Blogeintrag über ein Erlebnis"],
@@ -61,7 +66,7 @@ export const spec: ExamSpec = {
       hint: `Zwei Personen, eine Frau und ein Mann, unterhalten sich locker an einem öffentlichen Ort über ein Alltagsthema (Wohnung, Urlaub, Arbeit, Familie, Freizeit). "role" ist der Vorname. Die erste Person lebt in Österreich (z. B. Wien, Graz), die zweite kommt aus der Schweiz. Natürlich gesprochen, mit Füllwörtern, B1, 140–210 Wörter, 8–12 Beiträge. Die Aussagen folgen der Reihenfolge des Gesprächs und prüfen Details oder Meinungen.`,
       todo: `${SHORT_CLIP} Real Teil 3: one ~480-word dialogue (~3.5 min) with 7 items; taster: ~80 s with 2 items.`,
     },
-  ],
+  ])),
   // What the generator drafts. research §6 proposes 10 items per skill; the free test is capped at ~5 minutes per skill.
   // Hören Teil 4 (radio discussion, 3 speakers, 8 statements → a/b/c speaker) is left out: too long for the taster, and
   // the kit's listening match is the DTZ opinions format, not the B1 one.

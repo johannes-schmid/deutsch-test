@@ -92,6 +92,17 @@ const de = {
   showAll: "Alle Kriterien",
   showLess: "Weniger",
   partsTitle: "Deine Teile",
+  textNo: "Text Nr.",
+  pickTextNo: (photo: string) => `Foto ${photo}: Welcher Text passt?`,
+  noText: "Kein Text",
+  marked: (n: number, of: number) => `${n} von ${of} markiert`,
+  tooMany: "Zu viele Kreuze kosten Punkte.",
+  tickMany: "Mehrere Antworten möglich",
+  chooseTopics: (n: number, of: number) => `Wähle ${n} von ${of} Themen`,
+  choosePhoto: "Wähle ein Foto",
+  chooseRole: "Deine Rolle",
+  planSheet: "Angabenblatt",
+  sheetMore: "noch etwas?",
 }
 
 export type ExamCopy = typeof de
@@ -185,6 +196,17 @@ const en: ExamCopy = {
   showAll: "All criteria",
   showLess: "Less",
   partsTitle: "Your parts",
+  textNo: "Text no.",
+  pickTextNo: (photo) => `Photo ${photo}: which text fits?`,
+  noText: "No text",
+  marked: (n, of) => `${n} of ${of} marked`,
+  tooMany: "Too many ticks cost points.",
+  tickMany: "Several answers possible",
+  chooseTopics: (n, of) => `Choose ${n} of ${of} topics`,
+  choosePhoto: "Choose a photo",
+  chooseRole: "Your role",
+  planSheet: "Task sheet",
+  sheetMore: "anything else?",
 }
 
 export const EXAM_COPY = { de, en, uk, ru }

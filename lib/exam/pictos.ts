@@ -3,12 +3,12 @@
 // TODO(hannes): the real exams use drawings. Pictograms stand in until we commission illustrations.
 
 import {
-  AlarmClock, Apple, Armchair, Backpack, Banana, Banknote, Bath, Bed, Beer, Bike, BookOpen, Briefcase, Building2, Bus, CakeSlice, CalendarDays, Camera, Car, Carrot,
+  AlarmClock, Apple, Armchair, Baby, Backpack, Banana, Banknote, Bath, Bed, Beer, Bike, BookOpen, Briefcase, Building2, Bus, CakeSlice, CalendarDays, Camera, Car, CarTaxiFront, Carrot,
   Cat, Cherry, Church, CigaretteOff, CircleParking, Clapperboard, Clock, CloudRain, Coffee, Cookie, CookingPot, CreditCard, Croissant, CupSoda, Dog, DoorOpen, Dumbbell,
   Egg, Fish, Flower2, Footprints, Fuel, Gamepad2, Gift, Glasses, GlassWater, Globe, Grape, Guitar, Hospital, Hotel, House, IceCreamCone, Key, Lamp, Landmark,
   Laptop, Library, Luggage, Mail, Mailbox, Map, MapPin, Milk, Mountain, Music, Newspaper, Palette, PartyPopper, Pen, Phone, Pill, Pizza, Plane, Popcorn, Printer,
-  Refrigerator, Salad, Sandwich, School, Scissors, ShoppingBag, ShoppingCart, Shirt, ShowerHead, Smartphone, Snowflake, Sofa, Soup, Stethoscope, Store, Sun, Tent,
-  Theater, Thermometer, Ticket, Toilet, TrainFront, TramFront, TreePine, Trophy, Tv, Umbrella, UtensilsCrossed, Volleyball, Wallet, WashingMachine, Watch, Waves,
+  Recycle, Refrigerator, Salad, Sandwich, School, Scissors, ShoppingBag, ShoppingCart, Shirt, ShowerHead, Smartphone, Snowflake, Sofa, Soup, Stethoscope, Store, Sun, Tent,
+  Theater, Thermometer, Ticket, Toilet, TrainFront, TramFront, Trash, TreePine, Trophy, Tv, Umbrella, UtensilsCrossed, Volleyball, VolumeX, Wallet, WashingMachine, Watch, Waves,
   Wine, Wrench, type LucideIcon,
 } from "lucide-react"
 
@@ -25,6 +25,8 @@ export const PICTOS = {
   schnee: Snowflake, sofa: Sofa, suppe: Soup, arzt: Stethoscope, geschaeft: Store, sonne: Sun, zelt: Tent, theater: Theater, fieber: Thermometer, ticket: Ticket,
   toilette: Toilet, zug: TrainFront, strassenbahn: TramFront, baum: TreePine, pokal: Trophy, fernseher: Tv, regenschirm: Umbrella, restaurant: UtensilsCrossed,
   volleyball: Volleyball, geldbeutel: Wallet, waschmaschine: WashingMachine, armbanduhr: Watch, schwimmen: Waves, wein: Wine, werkzeug: Wrench,
+  // ÖSD A1 Lesen Aufgabe 3 (signs and notices).
+  baby: Baby, altglas: Recycle, muell: Trash, taxi: CarTaxiFront, ruhe: VolumeX,
 } satisfies Record<string, LucideIcon>
 
 export type Picto = keyof typeof PICTOS

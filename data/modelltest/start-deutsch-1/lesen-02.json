@@ -1,0 +1,683 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-02-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Kurze Notiz an einen Mitbewohner"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Karin ist am Wochenende weg."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Tobias soll die Pflanzen jeden Tag gießen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Für Tobias gibt es schon etwas zu essen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Karin",
+          "source": "Notiz",
+          "paragraphs": [
+            "Hallo Tobias,",
+            "ich bin bis Sonntagabend bei meinen Eltern in Bamberg. Kannst du bitte meine Blumen gießen? Zweimal reicht: am Dienstag und am Freitag. Die Gießkanne ist im Bad. Im Kühlschrank steht noch Suppe für dich. Du musst sie nur warm machen.",
+            "Danke und viele Grüße",
+            "Karin"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Karin schreibt: Zweimal reicht, am Dienstag und am Freitag. Tobias muss also nicht jeden Tag gießen.",
+            "evidence": {
+              "text": "ich bin bis Sonntagabend bei meinen Eltern in Bamberg. Kannst du bitte meine Blumen gießen? Zweimal reicht: am Dienstag und am Freitag. Die Gießkanne ist im Bad. Im Kühlschrank steht noch Suppe für dich. Du musst sie nur warm machen.",
+              "hit": "Zweimal reicht: am Dienstag und am Freitag."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Im Kühlschrank steht Suppe für Tobias. Er muss sie nur warm machen.",
+            "evidence": {
+              "text": "ich bin bis Sonntagabend bei meinen Eltern in Bamberg. Kannst du bitte meine Blumen gießen? Zweimal reicht: am Dienstag und am Freitag. Die Gießkanne ist im Bad. Im Kühlschrank steht noch Suppe für dich. Du musst sie nur warm machen.",
+              "hit": "Im Kühlschrank steht noch Suppe für dich."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Kurze E-Mail an einen Kollegen"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Mehmet kann seine Frau mitbringen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Mit 10 Euro sind Essen und Getränke bezahlt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Mehmet soll bis Donnerstag antworten."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Anja",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Lieber Mehmet,",
+            "am Freitag geht unser Team zusammen kegeln. Hast du Lust? Wir treffen uns um 18.30 Uhr an der Kegelbahn „Goldener Hirsch“. Wir spielen ungefähr zwei Stunden. Das kostet 10 Euro pro Person, das Essen ist dabei. Getränke bezahlt jeder selbst. Partner und Partnerinnen sind auch herzlich willkommen. Bitte schreib mir bis Mittwoch, ob du kommst. Dann reserviere ich die Bahn.",
+            "Viele Grüße",
+            "Anja"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Anja schreibt: Partner und Partnerinnen sind auch willkommen. Mehmet darf also seine Frau mitbringen.",
+            "evidence": {
+              "text": "am Freitag geht unser Team zusammen kegeln. Hast du Lust? Wir treffen uns um 18.30 Uhr an der Kegelbahn „Goldener Hirsch“. Wir spielen ungefähr zwei Stunden. Das kostet 10 Euro pro Person, das Essen ist dabei. Getränke bezahlt jeder selbst. Partner und Partnerinnen sind auch herzlich willkommen. Bitte schreib mir bis Mittwoch, ob du kommst. Dann reserviere ich die Bahn.",
+              "hit": "Partner und Partnerinnen sind auch herzlich willkommen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Für 10 Euro bekommst du nur das Essen. Die Getränke bezahlt jeder selbst.",
+            "evidence": {
+              "text": "am Freitag geht unser Team zusammen kegeln. Hast du Lust? Wir treffen uns um 18.30 Uhr an der Kegelbahn „Goldener Hirsch“. Wir spielen ungefähr zwei Stunden. Das kostet 10 Euro pro Person, das Essen ist dabei. Getränke bezahlt jeder selbst. Partner und Partnerinnen sind auch herzlich willkommen. Bitte schreib mir bis Mittwoch, ob du kommst. Dann reserviere ich die Bahn.",
+              "hit": "Getränke bezahlt jeder selbst."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Mehmet soll schon bis Mittwoch schreiben. Donnerstag ist zu spät.",
+            "evidence": {
+              "text": "am Freitag geht unser Team zusammen kegeln. Hast du Lust? Wir treffen uns um 18.30 Uhr an der Kegelbahn „Goldener Hirsch“. Wir spielen ungefähr zwei Stunden. Das kostet 10 Euro pro Person, das Essen ist dabei. Getränke bezahlt jeder selbst. Partner und Partnerinnen sind auch herzlich willkommen. Bitte schreib mir bis Mittwoch, ob du kommst. Dann reserviere ich die Bahn.",
+              "hit": "Bitte schreib mir bis Mittwoch, ob du kommst."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "a"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten Bilder malen lernen. Der Kurs soll für Erwachsene sein.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.malschule-farbklecks.de · Malkurs für Erwachsene: mittwochs 19–21 Uhr. Anfänger sind willkommen, die Farben bekommen Sie bei uns."
+                },
+                {
+                  "key": "b",
+                  "label": "www.kinderatelier-pinsel.de · Malen und Basteln für Kinder von 6 bis 10 Jahren, freitags 15–16.30 Uhr. Bitte alte Kleidung mitbringen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihr Telefon ist auf den Boden gefallen. Jetzt hat das Glas einen Riss.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.handy-discount24.de · Neue Smartphones ab 99 €. Mit Vertrag noch billiger! Lieferung in zwei Tagen."
+                },
+                {
+                  "key": "b",
+                  "label": "www.flinke-reparatur.de · Display kaputt? Wir machen Ihr Handy in einer Stunde wieder gut. Ohne Termin, Mo–Sa 10–19 Uhr."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "In b repariert man ein kaputtes Display in einer Stunde. In a kannst du nur ein neues Handy kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie gehen am Samstagabend ins Theater. Jemand soll bei Ihren Kindern bleiben.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.babysitter-vor-ort.de · Studentin (22) sucht Arbeit als Babysitterin, am liebsten abends und am Wochenende. Tel. 0176 4419 832"
+                },
+                {
+                  "key": "b",
+                  "label": "www.kita-sonnenblume.de · Wir betreuen Kinder von 1 bis 6 Jahren, Montag bis Freitag 7–17 Uhr. Freie Plätze ab September."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "Die Studentin in a passt abends und am Wochenende auf Kinder auf. Die Kita in b ist am Samstag geschlossen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihre Lieblingsschuhe sind kaputt. Sie möchten sie nicht wegwerfen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.schuhmacher-albrecht.de · Wir machen alte Schuhe wieder schön. Neue Sohlen in 24 Stunden, auch für Taschen und Gürtel."
+                },
+                {
+                  "key": "b",
+                  "label": "www.schuhhaus-meyer.de · Die neuen Frühlingsschuhe sind da! Für Damen, Herren und Kinder. Diese Woche 15 % billiger."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Der Schuhmacher in a repariert alte Schuhe. In b kannst du nur neue Schuhe kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie feiern Ihren 40. Geburtstag mit 30 Gästen. Ihre Wohnung ist zu klein.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.partyservice-lecker.de · Buffet für Ihr Fest: warme und kalte Speisen, ab 10 Personen. Wir liefern bis zu Ihnen nach Hause."
+                },
+                {
+                  "key": "b",
+                  "label": "www.saal-am-markt.de · Unseren Saal für bis zu 50 Personen können Sie am Wochenende mieten. Mit Küche, 150 € pro Abend."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "In b kannst du einen großen Saal für 50 Personen mieten. In a bekommst du nur Essen nach Hause, aber keinen Raum."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ihre Tochter ist neun und liebt Pferde. Sie soll jede Woche Unterricht bekommen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.reiterhof-wiesental.de · Reitstunden für Kinder ab 7 Jahren, jeden Samstag. Ruhige Ponys für Anfänger. Tel. 05921 38 44 0"
+                },
+                {
+                  "key": "b",
+                  "label": "www.pferdemarkt-online.de · Pferde und Ponys zu verkaufen. Auch Sättel und Reitstiefel, gebraucht und günstig."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Der Reiterhof in a hat jeden Samstag Reitstunden für Kinder ab 7. In b kann man Pferde nur kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Schild an der Ladentür"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Sie können Ihre Kleidung am Samstagnachmittag abholen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür von der Reinigung",
+          "source": "Schild",
+          "paragraphs": [
+            "Reinigung Weiß",
+            "Mo–Fr 8–18 Uhr",
+            "Sa 8–12 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Schild im Fitnessstudio"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Beim Sport müssen Sie hier ein Handtuch benutzen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Fitnessstudio",
+          "source": "Schild",
+          "paragraphs": [
+            "Bitte legen Sie immer ein Handtuch auf die Geräte!",
+            "Danke, Ihr Team"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Auf dem Schild steht: immer ein Handtuch auf die Geräte legen. Du brauchst also beim Training ein Handtuch.",
+            "evidence": {
+              "text": "Bitte legen Sie immer ein Handtuch auf die Geräte! Danke, Ihr Team",
+              "hit": "Bitte legen Sie immer ein Handtuch auf die Geräte!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Schild im Zoo"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Besucher dürfen den Tieren Brot geben."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Zoo, bei den Ziegen",
+          "source": "Schild",
+          "paragraphs": [
+            "Bitte die Tiere nicht füttern!",
+            "Sie bekommen von uns gesundes Futter."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Du darfst den Tieren nichts zu essen geben. Das Futter bekommen sie vom Zoo.",
+            "evidence": {
+              "text": "Bitte die Tiere nicht füttern! Sie bekommen von uns gesundes Futter.",
+              "hit": "Bitte die Tiere nicht füttern!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Schild im Parkhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Sie bezahlen das Parken an der Ausfahrt."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Parkhaus, am Aufzug",
+          "source": "Schild",
+          "paragraphs": [
+            "Parkhaus Mitte",
+            "Bitte zuerst am Automaten bezahlen!",
+            "An der Ausfahrt gibt es keine Kasse."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "falsch",
+            "explanation": "Du bezahlst vorher am Automaten. An der Ausfahrt gibt es keine Kasse.",
+            "evidence": {
+              "text": "Parkhaus Mitte Bitte zuerst am Automaten bezahlen! An der Ausfahrt gibt es keine Kasse.",
+              "hit": "An der Ausfahrt gibt es keine Kasse."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Schild an der Kinokasse"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Ein Junge mit fünf Jahren darf mit seiner Mutter in den Film."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Kinokasse",
+          "source": "Schild",
+          "paragraphs": [
+            "Kinder unter 6 Jahren:",
+            "nur mit Mama, Papa oder einer anderen erwachsenen Person!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Kinder unter 6 Jahren dürfen mit einem Erwachsenen ins Kino. Die Mutter ist erwachsen, also darf der Junge mit ihr hinein.",
+            "evidence": {
+              "text": "Kinder unter 6 Jahren: nur mit Mama, Papa oder einer anderen erwachsenen Person!",
+              "hit": "nur mit Mama, Papa oder einer anderen erwachsenen Person!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-02-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:35:14.527Z",
+        "textType": "Schild am Kirchturm"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Am Sonntag können Sie oben auf den Turm gehen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür vom Kirchturm",
+          "source": "Schild",
+          "paragraphs": [
+            "Kirchturm St. Martin",
+            "Geöffnet: Samstag und Sonntag 10–17 Uhr",
+            "Eintritt 2 €"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "richtig",
+            "explanation": "Der Turm ist am Samstag und am Sonntag von 10 bis 17 Uhr offen. Am Sonntag kannst du also hinaufgehen.",
+            "evidence": {
+              "text": "Kirchturm St. Martin Geöffnet: Samstag und Sonntag 10–17 Uhr Eintritt 2 €",
+              "hit": "Geöffnet: Samstag und Sonntag 10–17 Uhr"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

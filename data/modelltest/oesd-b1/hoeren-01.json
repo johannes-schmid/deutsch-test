@@ -1,0 +1,2379 @@
+{
+  "exam": "oesd-b1",
+  "skill": "hoeren",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "oesd-b1-hoeren-01-t1-bsp",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Miriam schlägt vor, gemeinsam zum Konzert zu fahren."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Miriam möchte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "mit dem Zug fahren."
+                },
+                {
+                  "key": "b",
+                  "label": "das Auto ihres Bruders nehmen."
+                },
+                {
+                  "key": "c",
+                  "label": "bei Jana übernachten."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 29.99,
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Miriam",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t1-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Hallo Jana, hier ist Miriam. Du, ich hab gerade gesehen, dass du am Samstag auch zum Konzert nach Mannheim fährst. Wollen wir nicht zusammen fahren? Ich nehme das Auto von meinem Bruder, da ist noch Platz für zwei. Mit dem Zug wär's viel teurer, und nach dem Konzert fährt sowieso keiner mehr zurück. Ich könnte dich um fünf abholen, oder wir treffen uns am Parkplatz beim Schwimmbad. Ruf mich einfach an, ja? Tschüss!",
+            "delivery": "[friendly, casual voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "richtig",
+        "b"
+      ]
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t1-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die Bibliothek sucht Autoren, die bei einer Lesenacht lesen möchten."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Wenn es regnet, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "fällt die Lesenacht aus."
+                },
+                {
+                  "key": "b",
+                  "label": "findet die Lesenacht später statt."
+                },
+                {
+                  "key": "c",
+                  "label": "findet die Lesenacht im Haus statt."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 37.8,
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t1-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Die Autorinnen und Autoren stehen schon fest. Die Hörer sollen zuhören und sich dafür anmelden.",
+            "evidence": {
+              "text": "Und jetzt noch ein Tipp für Freitagabend: Die Stadtbibliothek Göttingen lädt zur ersten Sommerlesenacht ein. Ab neunzehn Uhr lesen Autorinnen und Autoren aus der Region im Innenhof, dazu gibt es Livemusik und kühle Getränke. Der Eintritt ist frei, aber die Plätze sind begrenzt. Melden Sie sich also vorher an, online oder direkt an der Ausleihe. Und wenn es regnet? Keine Sorge, abgesagt wird nichts, und verschoben auch nicht. Dann geht's einfach rein in den großen Lesesaal im ersten Stock.",
+              "hit": "Ab neunzehn Uhr lesen Autorinnen und Autoren aus der Region im Innenhof"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Bei Regen geht man in den Lesesaal der Bibliothek. Die Lesenacht wird nicht abgesagt und nicht verschoben.",
+            "evidence": {
+              "text": "Und jetzt noch ein Tipp für Freitagabend: Die Stadtbibliothek Göttingen lädt zur ersten Sommerlesenacht ein. Ab neunzehn Uhr lesen Autorinnen und Autoren aus der Region im Innenhof, dazu gibt es Livemusik und kühle Getränke. Der Eintritt ist frei, aber die Plätze sind begrenzt. Melden Sie sich also vorher an, online oder direkt an der Ausleihe. Und wenn es regnet? Keine Sorge, abgesagt wird nichts, und verschoben auch nicht. Dann geht's einfach rein in den großen Lesesaal im ersten Stock.",
+              "hit": "Dann geht's einfach rein in den großen Lesesaal im ersten Stock."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_emilia_at",
+            "text": "Und jetzt noch ein Tipp für Freitagabend: Die Stadtbibliothek Göttingen lädt zur ersten Sommerlesenacht ein. Ab neunzehn Uhr lesen Autorinnen und Autoren aus der Region im Innenhof, dazu gibt es Livemusik und kühle Getränke. Der Eintritt ist frei, aber die Plätze sind begrenzt. Melden Sie sich also vorher an, online oder direkt an der Ausleihe. Und wenn es regnet? Keine Sorge, abgesagt wird nichts, und verschoben auch nicht. Dann geht's einfach rein in den großen Lesesaal im ersten Stock.",
+            "delivery": "[warm, upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t1-02",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Nachricht auf der Mailbox (Volkshochschule)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Der Kurs findet ab jetzt in einem anderen Raum statt."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Was sollen die Teilnehmenden mitbringen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Die Anmeldebestätigung."
+                },
+                {
+                  "key": "b",
+                  "label": "Das Kursbuch."
+                },
+                {
+                  "key": "c",
+                  "label": "Einen Ausweis."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 35.42,
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Volkshochschule",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t1-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Ab dieser Woche ist der Kurs in Raum 31 und nicht mehr in Raum 14. Der Tag und die Uhrzeit bleiben gleich.",
+            "evidence": {
+              "text": "Grüß Gott, hier spricht Karin Aigner von der Volkshochschule Linz. Ich rufe wegen Ihres Italienischkurses am Mittwochabend an. Ab dieser Woche findet der Kurs nicht mehr im Raum vierzehn statt, sondern im Raum einunddreißig im dritten Stock. Am besten nehmen Sie die Stiege gleich neben der Kassa. Bitte bringen Sie am Mittwoch Ihre Anmeldebestätigung mit, die müssen wir noch kontrollieren. Einen Ausweis brauchen Sie nicht, und das Kursbuch bekommen Sie direkt von der Kursleiterin. Danke und auf Wiederhören!",
+              "hit": "Ab dieser Woche findet der Kurs nicht mehr im Raum vierzehn statt, sondern im Raum einunddreißig im dritten Stock."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Die Anmeldebestätigung soll man mitbringen. Einen Ausweis braucht man nicht, und das Kursbuch gibt die Kursleiterin.",
+            "evidence": {
+              "text": "Grüß Gott, hier spricht Karin Aigner von der Volkshochschule Linz. Ich rufe wegen Ihres Italienischkurses am Mittwochabend an. Ab dieser Woche findet der Kurs nicht mehr im Raum vierzehn statt, sondern im Raum einunddreißig im dritten Stock. Am besten nehmen Sie die Stiege gleich neben der Kassa. Bitte bringen Sie am Mittwoch Ihre Anmeldebestätigung mit, die müssen wir noch kontrollieren. Einen Ausweis brauchen Sie nicht, und das Kursbuch bekommen Sie direkt von der Kursleiterin. Danke und auf Wiederhören!",
+              "hit": "Bitte bringen Sie am Mittwoch Ihre Anmeldebestätigung mit"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Grüß Gott, hier spricht Karin Aigner von der Volkshochschule Linz. Ich rufe wegen Ihres Italienischkurses am Mittwochabend an. Ab dieser Woche findet der Kurs nicht mehr im Raum vierzehn statt, sondern im Raum einunddreißig im dritten Stock. Am besten nehmen Sie die Stiege gleich neben der Kassa. Bitte bringen Sie am Mittwoch Ihre Anmeldebestätigung mit, die müssen wir noch kontrollieren. Einen Ausweis brauchen Sie nicht, und das Kursbuch bekommen Sie direkt von der Kursleiterin. Danke und auf Wiederhören!",
+            "delivery": "[polite, efficient office voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t1-03",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Durchsage auf einem Schiff"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Wegen schlechten Wetters fährt das Schiff heute nicht."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Fahrgäste nach Diessenhofen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "müssen ein neues Billett kaufen."
+                },
+                {
+                  "key": "b",
+                  "label": "fahren mit dem Bus weiter."
+                },
+                {
+                  "key": "c",
+                  "label": "warten auf das nächste Schiff."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 36.75,
+          "plays": 2,
+          "situation": "Durchsage auf dem Schiff",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage auf einem Schiff.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t1-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Das Schiff fährt, es hält nur nicht in Diessenhofen. Der Grund ist das tiefe Wasser im Rhein, nicht das Wetter.",
+            "evidence": {
+              "text": "Geschätzte Fahrgäste, bitte beachten Sie: Wegen des tiefen Wasserstands im Rhein kann unser Schiff heute nicht in Diessenhofen anlegen. Auch die späteren Schiffe halten dort heute leider nicht. Reisende nach Diessenhofen fahren bitte mit uns weiter bis Stein am Rhein. Dort wartet um vierzehn Uhr zehn ein Bus, der Sie direkt nach Diessenhofen bringt. Ihr Billett gilt auch im Bus, Sie müssen also kein neues lösen. Bei Fragen hilft Ihnen unser Personal auf dem Oberdeck gern weiter. Besten Dank.",
+              "hit": "Wegen des tiefen Wasserstands im Rhein kann unser Schiff heute nicht in Diessenhofen anlegen."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Ab Stein am Rhein fährt ein Bus nach Diessenhofen. Das alte Billett gilt, und die späteren Schiffe halten dort auch nicht.",
+            "evidence": {
+              "text": "Geschätzte Fahrgäste, bitte beachten Sie: Wegen des tiefen Wasserstands im Rhein kann unser Schiff heute nicht in Diessenhofen anlegen. Auch die späteren Schiffe halten dort heute leider nicht. Reisende nach Diessenhofen fahren bitte mit uns weiter bis Stein am Rhein. Dort wartet um vierzehn Uhr zehn ein Bus, der Sie direkt nach Diessenhofen bringt. Ihr Billett gilt auch im Bus, Sie müssen also kein neues lösen. Bei Fragen hilft Ihnen unser Personal auf dem Oberdeck gern weiter. Besten Dank.",
+              "hit": "Dort wartet um vierzehn Uhr zehn ein Bus, der Sie direkt nach Diessenhofen bringt."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_gruber_at",
+            "text": "Geschätzte Fahrgäste, bitte beachten Sie: Wegen des tiefen Wasserstands im Rhein kann unser Schiff heute nicht in Diessenhofen anlegen. Auch die späteren Schiffe halten dort heute leider nicht. Reisende nach Diessenhofen fahren bitte mit uns weiter bis Stein am Rhein. Dort wartet um vierzehn Uhr zehn ein Bus, der Sie direkt nach Diessenhofen bringt. Ihr Billett gilt auch im Bus, Sie müssen also kein neues lösen. Bei Fragen hilft Ihnen unser Personal auf dem Oberdeck gern weiter. Besten Dank.",
+            "delivery": "[calm, clear onboard announcement]"
+          }
+        ]
+      },
+      "sound": "boat"
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t1-04",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Nachricht auf der Mailbox (Kita)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Die Kita ist an einem Tag geschlossen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Für die Notbetreuung muss man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Bescheinigung vom Arbeitgeber zeigen."
+                },
+                {
+                  "key": "b",
+                  "label": "Essen für das Kind mitbringen."
+                },
+                {
+                  "key": "c",
+                  "label": "das Kind rechtzeitig anmelden."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 36.83,
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Kita",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t1-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Am Freitag, den zwölften, ist die Kita wegen einer Fortbildung zu. Es geht nur um diesen einen Tag.",
+            "evidence": {
+              "text": "Guten Tag, Frau Yilmaz, hier ist Sabine Krüger von der Kita Sonnenblume. Nur zur Erinnerung: Am Freitag, den zwölften, bleibt die Kita zu, weil das ganze Team eine Fortbildung macht. Wenn Sie an dem Tag arbeiten müssen, gibt es eine Notbetreuung in der Kita am Lindenplatz. Dafür melden Sie Ihren Sohn bitte bis Mittwoch an, per E-Mail oder bei mir im Büro. Eine Bescheinigung vom Arbeitgeber brauchen wir nicht. Und Mittagessen gibt's dort auch, das müssen Sie nicht mitgeben. Danke und bis bald!",
+              "hit": "Am Freitag, den zwölften, bleibt die Kita zu"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Man muss das Kind bis Mittwoch anmelden. Eine Bescheinigung braucht man nicht, und das Mittagessen gibt es dort.",
+            "evidence": {
+              "text": "Guten Tag, Frau Yilmaz, hier ist Sabine Krüger von der Kita Sonnenblume. Nur zur Erinnerung: Am Freitag, den zwölften, bleibt die Kita zu, weil das ganze Team eine Fortbildung macht. Wenn Sie an dem Tag arbeiten müssen, gibt es eine Notbetreuung in der Kita am Lindenplatz. Dafür melden Sie Ihren Sohn bitte bis Mittwoch an, per E-Mail oder bei mir im Büro. Eine Bescheinigung vom Arbeitgeber brauchen wir nicht. Und Mittagessen gibt's dort auch, das müssen Sie nicht mitgeben. Danke und bis bald!",
+              "hit": "Dafür melden Sie Ihren Sohn bitte bis Mittwoch an"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Guten Tag, Frau Yilmaz, hier ist Sabine Krüger von der Kita Sonnenblume. Nur zur Erinnerung: Am Freitag, den zwölften, bleibt die Kita zu, weil das ganze Team eine Fortbildung macht. Wenn Sie an dem Tag arbeiten müssen, gibt es eine Notbetreuung in der Kita am Lindenplatz. Dafür melden Sie Ihren Sohn bitte bis Mittwoch an, per E-Mail oder bei mir im Büro. Eine Bescheinigung vom Arbeitgeber brauchen wir nicht. Und Mittagessen gibt's dort auch, das müssen Sie nicht mitgeben. Danke und bis bald!",
+            "delivery": "[friendly, slightly hurried daycare staff voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t1-05",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Das Möbelhaus verkauft wegen eines Umzugs alles billiger."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Was ist zur Wiedereröffnung billiger?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Matratzen und Betten."
+                },
+                {
+                  "key": "b",
+                  "label": "Küchen."
+                },
+                {
+                  "key": "c",
+                  "label": "Sofas."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 39.65,
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t1-05.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Das Möbelhaus zieht nicht um. Es öffnet nach einem Umbau wieder und hat nur einige Angebote.",
+            "evidence": {
+              "text": "Endlich ist es so weit: Möbel Wendt in Erfurt öffnet wieder! Nach drei Monaten Umbau finden Sie bei uns jetzt alles auf zwei Etagen, vom Sofa bis zur Küche. Und zur Wiedereröffnung am Samstag gibt es Angebote, die Sie nicht verpassen sollten: zwanzig Prozent auf alle Matratzen und Betten! Und wenn wir liefern, zahlen Sie diese Woche nichts für den Aufbau. Für die Kleinen gibt's eine Spielecke, und der erste Kaffee geht auf uns. Möbel Wendt, Industriestraße zwölf. Wir freuen uns auf Sie!",
+              "hit": "Nach drei Monaten Umbau finden Sie bei uns jetzt alles auf zwei Etagen"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Zwanzig Prozent gibt es auf Matratzen und Betten. Sofas und Küchen nennt die Werbung nur als Teil des Sortiments.",
+            "evidence": {
+              "text": "Endlich ist es so weit: Möbel Wendt in Erfurt öffnet wieder! Nach drei Monaten Umbau finden Sie bei uns jetzt alles auf zwei Etagen, vom Sofa bis zur Küche. Und zur Wiedereröffnung am Samstag gibt es Angebote, die Sie nicht verpassen sollten: zwanzig Prozent auf alle Matratzen und Betten! Und wenn wir liefern, zahlen Sie diese Woche nichts für den Aufbau. Für die Kleinen gibt's eine Spielecke, und der erste Kaffee geht auf uns. Möbel Wendt, Industriestraße zwölf. Wir freuen uns auf Sie!",
+              "hit": "zwanzig Prozent auf alle Matratzen und Betten!"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_martin_at",
+            "text": "Endlich ist es so weit: Möbel Wendt in Erfurt öffnet wieder! Nach drei Monaten Umbau finden Sie bei uns jetzt alles auf zwei Etagen, vom Sofa bis zur Küche. Und zur Wiedereröffnung am Samstag gibt es Angebote, die Sie nicht verpassen sollten: zwanzig Prozent auf alle Matratzen und Betten! Und wenn wir liefern, zahlen Sie diese Woche nichts für den Aufbau. Für die Kleinen gibt's eine Spielecke, und der erste Kaffee geht auf uns. Möbel Wendt, Industriestraße zwölf. Wir freuen uns auf Sie!",
+            "delivery": "[energetic radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t2-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Informationen für Helfer vor einem Festival"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Helferinnen und Helfer bekommen ihr T-Shirt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "heute beim Treffen."
+                },
+                {
+                  "key": "b",
+                  "label": "per Post nach Hause."
+                },
+                {
+                  "key": "c",
+                  "label": "vor der ersten Schicht am Info-Zelt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Wer seine Schicht tauschen möchte, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schreibt in die Chatgruppe."
+                },
+                {
+                  "key": "b",
+                  "label": "ruft Frau Wimmer an."
+                },
+                {
+                  "key": "c",
+                  "label": "spricht mit dem Schichtleiter."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Mit den Essensgutscheinen kann man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "auch Getränke bezahlen."
+                },
+                {
+                  "key": "b",
+                  "label": "Freunden etwas kaufen."
+                },
+                {
+                  "key": "c",
+                  "label": "an allen Essensständen essen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Vor jeder Schicht treffen sich die Helfer …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Haupteingang."
+                },
+                {
+                  "key": "b",
+                  "label": "im Zelt hinter der Bühne."
+                },
+                {
+                  "key": "c",
+                  "label": "auf dem Parkplatz."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Was sollen die Helfer bei einem Notfall tun?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Selbst Erste Hilfe leisten."
+                },
+                {
+                  "key": "b",
+                  "label": "Die Rettung rufen."
+                },
+                {
+                  "key": "c",
+                  "label": "Der Schichtleitung Bescheid sagen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 170.97,
+          "plays": 1,
+          "situation": "Helfertreffen vor einem Festival",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Claudia Wimmer, Organisatorin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie sind bei einem Treffen für Helferinnen und Helfer eines Musikfestivals in Wels. Die Organisatorin gibt Informationen.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t2-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Die T-Shirts kommen erst morgen. Man holt sie am Freitag vor der ersten Schicht am Info-Zelt ab, sie kommen nicht per Post.",
+            "evidence": {
+              "text": "So, hallo zusammen, könnt ihr mich alle hören? Auch ganz hinten? Super. Also, herzlich willkommen beim Helfertreffen für das Sommerklang-Festival! Mein Name ist Claudia Wimmer, und ich kümmere mich heuer zum dritten Mal um die Helferinnen und Helfer. Schön, dass so viele von euch da sind, auch einige neue Gesichter. Das freut mich wirklich. Und wer am Sonntag noch Zeit hat: Beim Abbau brauchen wir immer Leute, und danach gibt's für alle eine kleine Feier. Ich erklär euch jetzt kurz das Wichtigste, damit am Freitag alles klappt. Zuerst zu den T-Shirts. Ihr wisst ja, während der Schicht tragt ihr immer euer gelbes Helfer-T-Shirt, damit euch die Besucher sofort erkennen. Leider sind die T-Shirts noch nicht da, die Lieferung kommt erst morgen. Wir schicken sie euch aber nicht nach Hause, das wäre viel zu teuer. Ihr holt sie euch am Freitag vor eurer ersten Schicht am Info-Zelt ab. Dann zu den Schichten. Jede Schicht dauert vier Stunden, euren Plan habt ihr ja schon per E-Mail bekommen. Wenn ihr tauschen müsst, ruft bitte nicht mich an, ich hab in diesen drei Tagen echt keine ruhige Minute. Und die Schichtleiter haben auch genug zu tun. Schreibt einfach in unsere Chatgruppe, da findet sich fast immer jemand, der mit euch tauscht. Ganz wichtig, das Essen. Pro Schicht bekommt ihr zwei Essensgutscheine. Die gelten nicht nur für die Jause im Helferzelt, sondern an allen Essensständen auf dem ganzen Gelände. Getränke sind extra, aber Wasser gibt's für euch gratis im Helferzelt. Und bitte, die Gutscheine sind nur für euch, nicht für Freunde oder Familie. Treffpunkt vor jeder Schicht ist immer das Helferzelt hinter der großen Bühne. Nicht der Haupteingang, da ist viel zu viel los, da findet ihr euch nie. Und seid bitte pünktlich, also eine Viertelstunde vor Schichtbeginn. Und noch was: Für Helfer gibt's heuer keine eigenen Parkplätze. Kommt also lieber mit dem Rad oder mit dem Bus, der fährt alle zehn Minuten vom Bahnhof. So, und zum Schluss noch das Thema Notfall. Hoffentlich passiert nichts, aber bei so vielen Leuten kann immer mal jemand umkippen oder sich verletzen. Bitte helft dann nicht selbst, wenn ihr keine Ausbildung habt. Und ruft auch nicht gleich die Rettung an. Sagt sofort eurer Schichtleitung Bescheid. Die hat ein Funkgerät und holt das Sanitätsteam, und das ist in zwei Minuten da. Gut, das war's eigentlich schon. Habt ihr noch Fragen? Nein? Dann sehen wir uns am Freitag. Danke euch!",
+              "hit": "Ihr holt sie euch am Freitag vor eurer ersten Schicht am Info-Zelt ab."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Frau Wimmer möchte keine Anrufe, und die Schichtleiter haben keine Zeit. Man soll in die Chatgruppe schreiben.",
+            "evidence": {
+              "text": "So, hallo zusammen, könnt ihr mich alle hören? Auch ganz hinten? Super. Also, herzlich willkommen beim Helfertreffen für das Sommerklang-Festival! Mein Name ist Claudia Wimmer, und ich kümmere mich heuer zum dritten Mal um die Helferinnen und Helfer. Schön, dass so viele von euch da sind, auch einige neue Gesichter. Das freut mich wirklich. Und wer am Sonntag noch Zeit hat: Beim Abbau brauchen wir immer Leute, und danach gibt's für alle eine kleine Feier. Ich erklär euch jetzt kurz das Wichtigste, damit am Freitag alles klappt. Zuerst zu den T-Shirts. Ihr wisst ja, während der Schicht tragt ihr immer euer gelbes Helfer-T-Shirt, damit euch die Besucher sofort erkennen. Leider sind die T-Shirts noch nicht da, die Lieferung kommt erst morgen. Wir schicken sie euch aber nicht nach Hause, das wäre viel zu teuer. Ihr holt sie euch am Freitag vor eurer ersten Schicht am Info-Zelt ab. Dann zu den Schichten. Jede Schicht dauert vier Stunden, euren Plan habt ihr ja schon per E-Mail bekommen. Wenn ihr tauschen müsst, ruft bitte nicht mich an, ich hab in diesen drei Tagen echt keine ruhige Minute. Und die Schichtleiter haben auch genug zu tun. Schreibt einfach in unsere Chatgruppe, da findet sich fast immer jemand, der mit euch tauscht. Ganz wichtig, das Essen. Pro Schicht bekommt ihr zwei Essensgutscheine. Die gelten nicht nur für die Jause im Helferzelt, sondern an allen Essensständen auf dem ganzen Gelände. Getränke sind extra, aber Wasser gibt's für euch gratis im Helferzelt. Und bitte, die Gutscheine sind nur für euch, nicht für Freunde oder Familie. Treffpunkt vor jeder Schicht ist immer das Helferzelt hinter der großen Bühne. Nicht der Haupteingang, da ist viel zu viel los, da findet ihr euch nie. Und seid bitte pünktlich, also eine Viertelstunde vor Schichtbeginn. Und noch was: Für Helfer gibt's heuer keine eigenen Parkplätze. Kommt also lieber mit dem Rad oder mit dem Bus, der fährt alle zehn Minuten vom Bahnhof. So, und zum Schluss noch das Thema Notfall. Hoffentlich passiert nichts, aber bei so vielen Leuten kann immer mal jemand umkippen oder sich verletzen. Bitte helft dann nicht selbst, wenn ihr keine Ausbildung habt. Und ruft auch nicht gleich die Rettung an. Sagt sofort eurer Schichtleitung Bescheid. Die hat ein Funkgerät und holt das Sanitätsteam, und das ist in zwei Minuten da. Gut, das war's eigentlich schon. Habt ihr noch Fragen? Nein? Dann sehen wir uns am Freitag. Danke euch!",
+              "hit": "Schreibt einfach in unsere Chatgruppe"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Die Gutscheine gelten an allen Essensständen. Getränke kosten extra, und die Gutscheine sind nicht für Freunde.",
+            "evidence": {
+              "text": "So, hallo zusammen, könnt ihr mich alle hören? Auch ganz hinten? Super. Also, herzlich willkommen beim Helfertreffen für das Sommerklang-Festival! Mein Name ist Claudia Wimmer, und ich kümmere mich heuer zum dritten Mal um die Helferinnen und Helfer. Schön, dass so viele von euch da sind, auch einige neue Gesichter. Das freut mich wirklich. Und wer am Sonntag noch Zeit hat: Beim Abbau brauchen wir immer Leute, und danach gibt's für alle eine kleine Feier. Ich erklär euch jetzt kurz das Wichtigste, damit am Freitag alles klappt. Zuerst zu den T-Shirts. Ihr wisst ja, während der Schicht tragt ihr immer euer gelbes Helfer-T-Shirt, damit euch die Besucher sofort erkennen. Leider sind die T-Shirts noch nicht da, die Lieferung kommt erst morgen. Wir schicken sie euch aber nicht nach Hause, das wäre viel zu teuer. Ihr holt sie euch am Freitag vor eurer ersten Schicht am Info-Zelt ab. Dann zu den Schichten. Jede Schicht dauert vier Stunden, euren Plan habt ihr ja schon per E-Mail bekommen. Wenn ihr tauschen müsst, ruft bitte nicht mich an, ich hab in diesen drei Tagen echt keine ruhige Minute. Und die Schichtleiter haben auch genug zu tun. Schreibt einfach in unsere Chatgruppe, da findet sich fast immer jemand, der mit euch tauscht. Ganz wichtig, das Essen. Pro Schicht bekommt ihr zwei Essensgutscheine. Die gelten nicht nur für die Jause im Helferzelt, sondern an allen Essensständen auf dem ganzen Gelände. Getränke sind extra, aber Wasser gibt's für euch gratis im Helferzelt. Und bitte, die Gutscheine sind nur für euch, nicht für Freunde oder Familie. Treffpunkt vor jeder Schicht ist immer das Helferzelt hinter der großen Bühne. Nicht der Haupteingang, da ist viel zu viel los, da findet ihr euch nie. Und seid bitte pünktlich, also eine Viertelstunde vor Schichtbeginn. Und noch was: Für Helfer gibt's heuer keine eigenen Parkplätze. Kommt also lieber mit dem Rad oder mit dem Bus, der fährt alle zehn Minuten vom Bahnhof. So, und zum Schluss noch das Thema Notfall. Hoffentlich passiert nichts, aber bei so vielen Leuten kann immer mal jemand umkippen oder sich verletzen. Bitte helft dann nicht selbst, wenn ihr keine Ausbildung habt. Und ruft auch nicht gleich die Rettung an. Sagt sofort eurer Schichtleitung Bescheid. Die hat ein Funkgerät und holt das Sanitätsteam, und das ist in zwei Minuten da. Gut, das war's eigentlich schon. Habt ihr noch Fragen? Nein? Dann sehen wir uns am Freitag. Danke euch!",
+              "hit": "sondern an allen Essensständen auf dem ganzen Gelände"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Treffpunkt ist das Helferzelt hinter der großen Bühne. Am Haupteingang ist zu viel los, und Parkplätze für Helfer gibt es nicht.",
+            "evidence": {
+              "text": "So, hallo zusammen, könnt ihr mich alle hören? Auch ganz hinten? Super. Also, herzlich willkommen beim Helfertreffen für das Sommerklang-Festival! Mein Name ist Claudia Wimmer, und ich kümmere mich heuer zum dritten Mal um die Helferinnen und Helfer. Schön, dass so viele von euch da sind, auch einige neue Gesichter. Das freut mich wirklich. Und wer am Sonntag noch Zeit hat: Beim Abbau brauchen wir immer Leute, und danach gibt's für alle eine kleine Feier. Ich erklär euch jetzt kurz das Wichtigste, damit am Freitag alles klappt. Zuerst zu den T-Shirts. Ihr wisst ja, während der Schicht tragt ihr immer euer gelbes Helfer-T-Shirt, damit euch die Besucher sofort erkennen. Leider sind die T-Shirts noch nicht da, die Lieferung kommt erst morgen. Wir schicken sie euch aber nicht nach Hause, das wäre viel zu teuer. Ihr holt sie euch am Freitag vor eurer ersten Schicht am Info-Zelt ab. Dann zu den Schichten. Jede Schicht dauert vier Stunden, euren Plan habt ihr ja schon per E-Mail bekommen. Wenn ihr tauschen müsst, ruft bitte nicht mich an, ich hab in diesen drei Tagen echt keine ruhige Minute. Und die Schichtleiter haben auch genug zu tun. Schreibt einfach in unsere Chatgruppe, da findet sich fast immer jemand, der mit euch tauscht. Ganz wichtig, das Essen. Pro Schicht bekommt ihr zwei Essensgutscheine. Die gelten nicht nur für die Jause im Helferzelt, sondern an allen Essensständen auf dem ganzen Gelände. Getränke sind extra, aber Wasser gibt's für euch gratis im Helferzelt. Und bitte, die Gutscheine sind nur für euch, nicht für Freunde oder Familie. Treffpunkt vor jeder Schicht ist immer das Helferzelt hinter der großen Bühne. Nicht der Haupteingang, da ist viel zu viel los, da findet ihr euch nie. Und seid bitte pünktlich, also eine Viertelstunde vor Schichtbeginn. Und noch was: Für Helfer gibt's heuer keine eigenen Parkplätze. Kommt also lieber mit dem Rad oder mit dem Bus, der fährt alle zehn Minuten vom Bahnhof. So, und zum Schluss noch das Thema Notfall. Hoffentlich passiert nichts, aber bei so vielen Leuten kann immer mal jemand umkippen oder sich verletzen. Bitte helft dann nicht selbst, wenn ihr keine Ausbildung habt. Und ruft auch nicht gleich die Rettung an. Sagt sofort eurer Schichtleitung Bescheid. Die hat ein Funkgerät und holt das Sanitätsteam, und das ist in zwei Minuten da. Gut, das war's eigentlich schon. Habt ihr noch Fragen? Nein? Dann sehen wir uns am Freitag. Danke euch!",
+              "hit": "Treffpunkt vor jeder Schicht ist immer das Helferzelt hinter der großen Bühne."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Man soll sofort der Schichtleitung Bescheid sagen. Ohne Ausbildung soll man nicht selbst helfen und auch nicht die Rettung anrufen.",
+            "evidence": {
+              "text": "So, hallo zusammen, könnt ihr mich alle hören? Auch ganz hinten? Super. Also, herzlich willkommen beim Helfertreffen für das Sommerklang-Festival! Mein Name ist Claudia Wimmer, und ich kümmere mich heuer zum dritten Mal um die Helferinnen und Helfer. Schön, dass so viele von euch da sind, auch einige neue Gesichter. Das freut mich wirklich. Und wer am Sonntag noch Zeit hat: Beim Abbau brauchen wir immer Leute, und danach gibt's für alle eine kleine Feier. Ich erklär euch jetzt kurz das Wichtigste, damit am Freitag alles klappt. Zuerst zu den T-Shirts. Ihr wisst ja, während der Schicht tragt ihr immer euer gelbes Helfer-T-Shirt, damit euch die Besucher sofort erkennen. Leider sind die T-Shirts noch nicht da, die Lieferung kommt erst morgen. Wir schicken sie euch aber nicht nach Hause, das wäre viel zu teuer. Ihr holt sie euch am Freitag vor eurer ersten Schicht am Info-Zelt ab. Dann zu den Schichten. Jede Schicht dauert vier Stunden, euren Plan habt ihr ja schon per E-Mail bekommen. Wenn ihr tauschen müsst, ruft bitte nicht mich an, ich hab in diesen drei Tagen echt keine ruhige Minute. Und die Schichtleiter haben auch genug zu tun. Schreibt einfach in unsere Chatgruppe, da findet sich fast immer jemand, der mit euch tauscht. Ganz wichtig, das Essen. Pro Schicht bekommt ihr zwei Essensgutscheine. Die gelten nicht nur für die Jause im Helferzelt, sondern an allen Essensständen auf dem ganzen Gelände. Getränke sind extra, aber Wasser gibt's für euch gratis im Helferzelt. Und bitte, die Gutscheine sind nur für euch, nicht für Freunde oder Familie. Treffpunkt vor jeder Schicht ist immer das Helferzelt hinter der großen Bühne. Nicht der Haupteingang, da ist viel zu viel los, da findet ihr euch nie. Und seid bitte pünktlich, also eine Viertelstunde vor Schichtbeginn. Und noch was: Für Helfer gibt's heuer keine eigenen Parkplätze. Kommt also lieber mit dem Rad oder mit dem Bus, der fährt alle zehn Minuten vom Bahnhof. So, und zum Schluss noch das Thema Notfall. Hoffentlich passiert nichts, aber bei so vielen Leuten kann immer mal jemand umkippen oder sich verletzen. Bitte helft dann nicht selbst, wenn ihr keine Ausbildung habt. Und ruft auch nicht gleich die Rettung an. Sagt sofort eurer Schichtleitung Bescheid. Die hat ein Funkgerät und holt das Sanitätsteam, und das ist in zwei Minuten da. Gut, das war's eigentlich schon. Habt ihr noch Fragen? Nein? Dann sehen wir uns am Freitag. Danke euch!",
+              "hit": "Sagt sofort eurer Schichtleitung Bescheid."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "So, hallo zusammen, könnt ihr mich alle hören? Auch ganz hinten? Super. Also, herzlich willkommen beim Helfertreffen für das Sommerklang-Festival! Mein Name ist Claudia Wimmer, und ich kümmere mich heuer zum dritten Mal um die Helferinnen und Helfer. Schön, dass so viele von euch da sind, auch einige neue Gesichter. Das freut mich wirklich. Und wer am Sonntag noch Zeit hat: Beim Abbau brauchen wir immer Leute, und danach gibt's für alle eine kleine Feier. Ich erklär euch jetzt kurz das Wichtigste, damit am Freitag alles klappt. Zuerst zu den T-Shirts. Ihr wisst ja, während der Schicht tragt ihr immer euer gelbes Helfer-T-Shirt, damit euch die Besucher sofort erkennen. Leider sind die T-Shirts noch nicht da, die Lieferung kommt erst morgen. Wir schicken sie euch aber nicht nach Hause, das wäre viel zu teuer. Ihr holt sie euch am Freitag vor eurer ersten Schicht am Info-Zelt ab. Dann zu den Schichten. Jede Schicht dauert vier Stunden, euren Plan habt ihr ja schon per E-Mail bekommen. Wenn ihr tauschen müsst, ruft bitte nicht mich an, ich hab in diesen drei Tagen echt keine ruhige Minute. Und die Schichtleiter haben auch genug zu tun. Schreibt einfach in unsere Chatgruppe, da findet sich fast immer jemand, der mit euch tauscht. Ganz wichtig, das Essen. Pro Schicht bekommt ihr zwei Essensgutscheine. Die gelten nicht nur für die Jause im Helferzelt, sondern an allen Essensständen auf dem ganzen Gelände. Getränke sind extra, aber Wasser gibt's für euch gratis im Helferzelt. Und bitte, die Gutscheine sind nur für euch, nicht für Freunde oder Familie. Treffpunkt vor jeder Schicht ist immer das Helferzelt hinter der großen Bühne. Nicht der Haupteingang, da ist viel zu viel los, da findet ihr euch nie. Und seid bitte pünktlich, also eine Viertelstunde vor Schichtbeginn. Und noch was: Für Helfer gibt's heuer keine eigenen Parkplätze. Kommt also lieber mit dem Rad oder mit dem Bus, der fährt alle zehn Minuten vom Bahnhof. So, und zum Schluss noch das Thema Notfall. Hoffentlich passiert nichts, aber bei so vielen Leuten kann immer mal jemand umkippen oder sich verletzen. Bitte helft dann nicht selbst, wenn ihr keine Ausbildung habt. Und ruft auch nicht gleich die Rettung an. Sagt sofort eurer Schichtleitung Bescheid. Die hat ein Funkgerät und holt das Sanitätsteam, und das ist in zwei Minuten da. Gut, das war's eigentlich schon. Habt ihr noch Fragen? Nein? Dann sehen wir uns am Freitag. Danke euch!",
+            "delivery": "[lively organiser addressing a crowd of volunteers, friendly, informal]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t3-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Gespräch zwischen Bekannten im Zug"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Heike fährt nach Zürich, weil sie sich eine Wohnung ansehen möchte."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Heike hat ihre Stelle im Hotel aufgegeben."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Heike fällt es schwer, so früh mit der Arbeit anzufangen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Heike darf in der Bäckerei inzwischen auch beim Backen helfen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Reto braucht zurzeit lange für den Weg zur Arbeit."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Reto möchte auf jeden Fall allein wohnen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Heike will ihre Tochter wegen einer Wohnung fragen."
+            }
+          }
+        ],
+        "clip": {
+          "duration": 185.03,
+          "plays": 1,
+          "situation": "Gespräch im Zug",
+          "segments": [],
+          "speakers": {
+            "h": {
+              "name": "Heike",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "r": {
+              "name": "Reto",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie sitzen im Zug nach Zürich und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t3-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Heike besucht ihre Tochter in Zürich. Die Wohnung möchte Reto besichtigen.",
+            "evidence": {
+              "text": "Ah, spannend! Ich besuche nur meine Tochter, die studiert seit Herbst dort. Ich hab ihr einen Kuchen mitgebracht, schau mal.",
+              "hit": "Ich besuche nur meine Tochter"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "richtig",
+            "explanation": "Sie hat nach fünfzehn Jahren an der Rezeption gekündigt und arbeitet jetzt in einer Bäckerei.",
+            "evidence": {
+              "text": "Fünfzehn Jahre, ja. Aber letzten Frühling hab ich gekündigt. Jetzt arbeite ich in einer kleinen Bäckerei in der Altstadt. Nur wir drei, der Chef, seine Frau und ich.",
+              "hit": "Aber letzten Frühling hab ich gekündigt."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "falsch",
+            "explanation": "Sie dachte zuerst, es wird schlimm. Aber sie ist immer früh wach, und es macht ihr nichts aus.",
+            "evidence": {
+              "text": "Ich fang um halb sechs an, im Verkauf. Und weißt du was? Ich dachte, das wird schlimm. Aber ich bin ja sowieso immer früh wach. Ehrlich, das macht mir gar nichts aus. Und um zwei hab ich frei. Und ehrlich, es ist viel ruhiger als an der Rezeption, keine Beschwerden um Mitternacht.",
+              "hit": "Ehrlich, das macht mir gar nichts aus."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Am Anfang hat sie nur verkauft. Seit ein paar Wochen hilft sie auch in der Backstube.",
+            "evidence": {
+              "text": "Am Anfang hab ich nur verkauft. Aber seit ein paar Wochen darf ich hinten in der Backstube mithelfen. Den Kuchen hier, den hab ich heute früh dort gemacht. Zusammen mit dem Chef, aber trotzdem.",
+              "hit": "Aber seit ein paar Wochen darf ich hinten in der Backstube mithelfen."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "Er wohnt noch in Schaffhausen und fährt jeden Tag eine Stunde hin und eine Stunde zurück.",
+            "evidence": {
+              "text": "Danke. Nur, ich wohne immer noch in Schaffhausen. Also jeden Tag eine Stunde hin und eine zurück, mit dem Zug und dann noch mit dem Velo zum Hotel.",
+              "hit": "Also jeden Tag eine Stunde hin und eine zurück"
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Eine WG findet er auch gut. Wichtig ist ihm nur ein kurzer Weg zur Arbeit.",
+            "evidence": {
+              "text": "Doch, warum nicht? Ich hab früher auch in einer WG gewohnt, das war super. Hauptsache, ich muss nicht mehr so lange fahren.",
+              "hit": "Doch, warum nicht? Ich hab früher auch in einer WG gewohnt, das war super."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "Im Haus der Tochter zieht jemand aus. Heike will ihr gleich schreiben und Reto die Infos schicken.",
+            "evidence": {
+              "text": "Warte mal … Meine Tochter hat erzählt, dass bei ihr im Haus jemand auszieht. Ich glaub, im Dezember. Soll ich sie mal fragen?",
+              "hit": "Soll ich sie mal fragen?"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Heike? Bist du das? Nein, das gibt's ja nicht!",
+            "delivery": "[surprised, delighted]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Reto! Ach, wie schön! Was machst du denn hier? Setz dich, setz dich, hier ist noch frei.",
+            "delivery": "[warm, excited]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Danke. Mensch, wie lange haben wir uns nicht gesehen? Zwei Jahre?",
+            "delivery": "[sitting down, cheerful]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Mindestens. Seit deinem Abschiedsfest im Hotel. Und, wohin fährst du?",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Nach Zürich, wie du wahrscheinlich auch. Ich hab heute Nachmittag eine Wohnungsbesichtigung.",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Ah, spannend! Ich besuche nur meine Tochter, die studiert seit Herbst dort. Ich hab ihr einen Kuchen mitgebracht, schau mal.",
+            "delivery": "[proud, lively]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Mmh, der riecht aber gut. Selbst gebacken?",
+            "delivery": "[impressed]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Ja … also, sozusagen beruflich. Ich bin nämlich nicht mehr im Hotel.",
+            "delivery": "[a bit coy, laughing]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Echt? Du warst doch so lange an der Rezeption.",
+            "delivery": "[surprised]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Fünfzehn Jahre, ja. Aber letzten Frühling hab ich gekündigt. Jetzt arbeite ich in einer kleinen Bäckerei in der Altstadt. Nur wir drei, der Chef, seine Frau und ich.",
+            "delivery": "[relaxed, content]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Wow. Und, ist das nicht hart? Bäcker fangen doch mitten in der Nacht an.",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Ich fang um halb sechs an, im Verkauf. Und weißt du was? Ich dachte, das wird schlimm. Aber ich bin ja sowieso immer früh wach. Ehrlich, das macht mir gar nichts aus. Und um zwei hab ich frei. Und ehrlich, es ist viel ruhiger als an der Rezeption, keine Beschwerden um Mitternacht.",
+            "delivery": "[cheerful, matter-of-fact]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Mhm, nicht schlecht. Dann hast du ja den ganzen Nachmittag.",
+            "delivery": "[short back-channel]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Am Anfang hab ich nur verkauft. Aber seit ein paar Wochen darf ich hinten in der Backstube mithelfen. Den Kuchen hier, den hab ich heute früh dort gemacht. Zusammen mit dem Chef, aber trotzdem.",
+            "delivery": "[proud]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Das freut mich für dich, wirklich. Du hast ja schon damals immer von einem eigenen Café geträumt.",
+            "delivery": "[sincere]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Ach, ein Café … mal sehen. Und du? Erzähl mal, wo arbeitest du jetzt?",
+            "delivery": "[laughing it off, curious]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "In einem Hotel am Zürichsee. Auch an der Rezeption, aber jetzt leite ich das Team.",
+            "delivery": "[modest]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Gratuliere!",
+            "delivery": "[quick, overlapping]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Danke. Nur, ich wohne immer noch in Schaffhausen. Also jeden Tag eine Stunde hin und eine zurück, mit dem Zug und dann noch mit dem Velo zum Hotel.",
+            "delivery": "[sighing]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Puh, das ist viel.",
+            "delivery": "[sympathetic]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Ja, eben. Darum will ich nach Zürich zügeln. Aber die Wohnungen dort! Für eine kleine Zweieinhalb-Zimmer-Wohnung zahlst du locker zweitausend Franken.",
+            "delivery": "[exasperated]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Echt? So viel?",
+            "delivery": "[shocked]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Mindestens. Heute schau ich mir eine an, aber ehrlich gesagt, ich hab nicht viel Hoffnung. Letzte Woche waren bei einer Besichtigung über vierzig Leute.",
+            "delivery": "[resigned]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Und eine WG? Wäre das nichts für dich?",
+            "delivery": "[thoughtful]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Doch, warum nicht? Ich hab früher auch in einer WG gewohnt, das war super. Hauptsache, ich muss nicht mehr so lange fahren.",
+            "delivery": "[open, easygoing]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Warte mal … Meine Tochter hat erzählt, dass bei ihr im Haus jemand auszieht. Ich glaub, im Dezember. Soll ich sie mal fragen?",
+            "delivery": "[remembering, eager]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Das wär super! Wirklich?",
+            "delivery": "[hopeful]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Klar. Ich schreib ihr gleich. Gib mir mal deine Nummer, dann schick ich dir die Infos.",
+            "delivery": "[decisive]"
+          },
+          {
+            "speaker": "r",
+            "voice": "man_andres_ch",
+            "text": "Gern. Null sieben neun …",
+            "delivery": "[dictating]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_emilia_at",
+            "text": "Moment, Moment, mein Handy ist noch in der Tasche … So. Jetzt.",
+            "delivery": "[rummaging, laughing]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-01-t4-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Seit es die Vier-Tage-Woche gibt, findet der Betrieb leichter Nachwuchs.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Ob eine kürzere Arbeitswoche gesund ist, hängt davon ab, wie lang ein Arbeitstag ist.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Die Kunden haben sich nach kurzer Zeit an die neuen Arbeitszeiten gewöhnt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Laut einer Umfrage würden viele für mehr Freizeit auch auf Geld verzichten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Für Eltern mit kleinen Kindern ist ein ganzer freier Tag nicht immer die beste Lösung.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Seit der Umstellung fehlen weniger Mitarbeiter wegen Krankheit.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Viele Menschen erholen sich am freien Tag gar nicht richtig.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Es gibt einen Bereich im Betrieb, in dem das neue Modell noch nicht gut funktioniert.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Firmen sollten die Vier-Tage-Woche zuerst eine Zeit lang testen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Böhm, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Franz Leitner, Tischlereibesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Regula Brunner, Arbeitspsychologin"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "duration": 298.55,
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Jan Böhm, Moderator",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "l": {
+              "name": "Franz Leitner, Tischlereibesitzer",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "b": {
+              "name": "Regula Brunner, Arbeitspsychologin",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Der Moderator der Radiosendung „Arbeitswelten“, Jan Böhm, diskutiert mit Franz Leitner, Besitzer einer Tischlerei in Oberösterreich, und Regula Brunner, Arbeitspsychologin aus Bern, über das Thema „Vier-Tage-Woche: gut für alle?“",
+          "src": "oesd-b1/hoeren-01/oesd-b1-hoeren-01-t4-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "c",
+            "explanation": "Frau Brunner sagt, dass zehn Stunden am Tag sehr anstrengend sind. Herr Leitner stimmt nur zu und erzählt von seinem Betrieb.",
+            "evidence": {
+              "text": "Nein, gar nicht. Viele Menschen wünschen sich mehr Zeit für sich. Aber ich möchte gleich etwas dazu sagen: Vier-Tage-Woche ist nicht gleich Vier-Tage-Woche. Wenn man die gleichen Stunden einfach auf vier Tage verteilt, dann arbeitet man zehn Stunden am Tag. Und das ist für den Körper und für den Kopf sehr anstrengend. Ob so ein Modell gesund ist oder nicht, entscheidet sich also an der Länge der einzelnen Tage.",
+              "hit": "entscheidet sich also an der Länge der einzelnen Tage"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "b",
+            "explanation": "Herr Leitner erzählt, dass sich nach ein paar Wochen kein Kunde mehr beschwert hat. Der Moderator stellt nur die Frage.",
+            "evidence": {
+              "text": "Ja, das war meine größte Sorge. Am Anfang haben schon ein paar Kunden geschimpft, das muss ich zugeben. Aber nach ein paar Wochen hat sich niemand mehr beschwert. Freitags läuft jetzt der Anrufbeantworter, und am Montag rufen wir sofort zurück. Das passt für die meisten.",
+              "hit": "Aber nach ein paar Wochen hat sich niemand mehr beschwert."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "a",
+            "explanation": "Der Moderator berichtet von der Umfrage des Senders. Frau Brunner wundert das nicht, aber sie nennt die Umfrage nicht.",
+            "evidence": {
+              "text": "Wir haben dazu übrigens auf unserer Website eine Umfrage gemacht. Und da war ich ehrlich gesagt überrascht: Mehr als die Hälfte unserer Hörerinnen und Hörer hat geschrieben, dass sie für einen zusätzlichen freien Tag sogar weniger verdienen würden. Gut, mitgemacht haben nur ein paar hundert Leute, aber trotzdem: Das hätte ich nicht gedacht.",
+              "hit": "dass sie für einen zusätzlichen freien Tag sogar weniger verdienen würden"
+            }
+          },
+          {
+            "n": 26,
+            "correct": "c",
+            "explanation": "Frau Brunner sagt, dass diese Eltern lieber jeden Tag kürzer arbeiten. Bei Herrn Leitner klappt es mit den Eltern bisher gut.",
+            "evidence": {
+              "text": "Das wundert mich nicht. Aber man muss genau hinschauen, wer da antwortet. Nehmen wir Eltern mit kleinen Kindern. Für die ist ein freier Freitag oft gar nicht so toll. Wenn die Kita um vier zumacht, dann hilft ein Arbeitstag von neun Stunden überhaupt nichts. Diese Eltern brauchen eher jeden Tag etwas kürzere Arbeitszeiten.",
+              "hit": "Für die ist ein freier Freitag oft gar nicht so toll."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "b",
+            "explanation": "Herr Leitner erzählt, dass im Winter früher oft mehrere Leute krank waren und heute kaum jemand. Frau Brunner spricht über Erholung, nicht über Krankheit.",
+            "evidence": {
+              "text": "Ja, sicher, zwei von meinen Leuten haben kleine Kinder. Die haben sich mit ihren Partnerinnen organisiert, und bis jetzt geht das gut. Aber was ich wirklich merke: Die Leute sind viel seltener krank. Früher hatten wir im Winter oft drei, vier Leute gleichzeitig krank zu Hause. Im Jänner war heuer kaum jemand krank. Die sind einfach erholter.",
+              "hit": "Die Leute sind viel seltener krank."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "c",
+            "explanation": "Frau Brunner sagt, dass viele den freien Tag mit Terminen füllen. Herr Leitner macht nur einen Witz über seine Frau.",
+            "evidence": {
+              "text": "Teilweise, ja. Aber wir haben in einer Studie etwas Interessantes gesehen. Viele packen den freien Tag sofort voll: Arzttermine, Einkäufe, Behördengänge, der Handwerker kommt. Am Ende ist der Freitag gar kein freier Tag, sondern ein zweiter Arbeitstag, nur eben privat. Mit Erholung hat das nicht viel zu tun.",
+              "hit": "Mit Erholung hat das nicht viel zu tun."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "b",
+            "explanation": "Herr Leitner sagt, dass es im Büro schwierig ist. In der Werkstatt und auf der Baustelle klappt es.",
+            "evidence": {
+              "text": "Doch, schon. In der Werkstatt und auf der Baustelle funktioniert das wunderbar. Aber im Büro ist es schwierig. Rechnungen, Angebote, Bestellungen, das muss ja jeden Tag jemand machen. Deshalb arbeiten dort zwei Kolleginnen weiter fünf Tage, nur kürzer. Ganz ehrlich, für das Büro haben wir noch keine richtige Lösung.",
+              "hit": "Aber im Büro ist es schwierig."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "c",
+            "explanation": "Frau Brunner empfiehlt, das Modell zuerst ein halbes Jahr auszuprobieren. Herr Leitner hat ohne Test angefangen.",
+            "evidence": {
+              "text": "Nicht einfach von heute auf morgen umstellen. Ich empfehle immer, das zuerst ein halbes Jahr auszuprobieren. Dann fragt man die Mitarbeitenden, schaut sich die Zahlen an und entscheidet erst danach. Und in manchen Branchen, im Spital oder im Detailhandel, geht es sowieso nur mit sehr guter Planung.",
+              "hit": "Ich empfehle immer, das zuerst ein halbes Jahr auszuprobieren."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Guten Abend und herzlich willkommen bei „Arbeitswelten“. Vier Tage arbeiten, drei Tage frei: Für viele klingt das wie ein Traum, und immer mehr Firmen probieren es aus. Aber ist die Vier-Tage-Woche wirklich gut für alle? Darüber spreche ich heute mit zwei Gästen. Franz Leitner hat eine Tischlerei in Oberösterreich mit vierzehn Mitarbeitern. Grüß Gott, Herr Leitner.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Grüß Gott, hallo.",
+            "delivery": "[friendly, down-to-earth]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Und aus Bern ist Regula Brunner zugeschaltet. Sie ist Arbeitspsychologin. Guten Abend, Frau Brunner.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_heidi_ch",
+            "text": "Guten Abend.",
+            "delivery": "[calm, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Herr Leitner, Sie haben die Vier-Tage-Woche vor zwei Jahren eingeführt. Warum eigentlich?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Ganz ehrlich? Aus der Not. Wir haben jahrelang keinen Lehrling gefunden. Null Bewerbungen, nichts. Die jungen Leute wollen heute einfach mehr Freizeit, das ist so. Und seit wir die Vier-Tage-Woche haben, kriegen wir jedes Jahr fünf, sechs Bewerbungen. Heuer haben wir sogar zwei neue Lehrlinge genommen.",
+            "delivery": "[frank, energetic]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Frau Brunner, überrascht Sie das?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_heidi_ch",
+            "text": "Nein, gar nicht. Viele Menschen wünschen sich mehr Zeit für sich. Aber ich möchte gleich etwas dazu sagen: Vier-Tage-Woche ist nicht gleich Vier-Tage-Woche. Wenn man die gleichen Stunden einfach auf vier Tage verteilt, dann arbeitet man zehn Stunden am Tag. Und das ist für den Körper und für den Kopf sehr anstrengend. Ob so ein Modell gesund ist oder nicht, entscheidet sich also an der Länge der einzelnen Tage.",
+            "delivery": "[thoughtful, precise]",
+            "item": 23
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Da haben Sie recht. Bei uns sind es neun Stunden, von Montag bis Donnerstag. Wir haben die Wochenstunden auch ein bisschen reduziert, auf sechsunddreißig. Beim gleichen Lohn, das war mir wichtig.",
+            "delivery": "[agreeing]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Das heißt, Sie zahlen eigentlich mehr pro Stunde. Lohnt sich das für einen kleinen Betrieb überhaupt?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Am Anfang hab ich auch gerechnet und gerechnet. Aber wir schaffen in vier Tagen fast genauso viel wie früher in fünf. Die Leute machen weniger Pausen zwischendurch und auch weniger Fehler.",
+            "delivery": "[confident]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_heidi_ch",
+            "text": "Das zeigen auch viele Studien, zumindest am Anfang. Ob das auf Dauer so bleibt, wissen wir aber noch nicht genau.",
+            "delivery": "[cautious]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Und Ihre Kunden? Die wollen doch auch am Freitag jemanden erreichen.",
+            "delivery": "[slightly challenging]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Ja, das war meine größte Sorge. Am Anfang haben schon ein paar Kunden geschimpft, das muss ich zugeben. Aber nach ein paar Wochen hat sich niemand mehr beschwert. Freitags läuft jetzt der Anrufbeantworter, und am Montag rufen wir sofort zurück. Das passt für die meisten.",
+            "delivery": "[relaxed]",
+            "item": 24
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Wir haben dazu übrigens auf unserer Website eine Umfrage gemacht. Und da war ich ehrlich gesagt überrascht: Mehr als die Hälfte unserer Hörerinnen und Hörer hat geschrieben, dass sie für einen zusätzlichen freien Tag sogar weniger verdienen würden. Gut, mitgemacht haben nur ein paar hundert Leute, aber trotzdem: Das hätte ich nicht gedacht.",
+            "delivery": "[genuinely surprised]",
+            "item": 25
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_heidi_ch",
+            "text": "Das wundert mich nicht. Aber man muss genau hinschauen, wer da antwortet. Nehmen wir Eltern mit kleinen Kindern. Für die ist ein freier Freitag oft gar nicht so toll. Wenn die Kita um vier zumacht, dann hilft ein Arbeitstag von neun Stunden überhaupt nichts. Diese Eltern brauchen eher jeden Tag etwas kürzere Arbeitszeiten.",
+            "delivery": "[measured, firm]",
+            "item": 26
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Herr Leitner, Sie haben ja auch Mitarbeiter mit Familie.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Ja, sicher, zwei von meinen Leuten haben kleine Kinder. Die haben sich mit ihren Partnerinnen organisiert, und bis jetzt geht das gut. Aber was ich wirklich merke: Die Leute sind viel seltener krank. Früher hatten wir im Winter oft drei, vier Leute gleichzeitig krank zu Hause. Im Jänner war heuer kaum jemand krank. Die sind einfach erholter.",
+            "delivery": "[convinced]",
+            "item": 27
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Mhm. Frau Brunner, sind die Leute wirklich erholter?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_heidi_ch",
+            "text": "Teilweise, ja. Aber wir haben in einer Studie etwas Interessantes gesehen. Viele packen den freien Tag sofort voll: Arzttermine, Einkäufe, Behördengänge, der Handwerker kommt. Am Ende ist der Freitag gar kein freier Tag, sondern ein zweiter Arbeitstag, nur eben privat. Mit Erholung hat das nicht viel zu tun.",
+            "delivery": "[thoughtful, a little amused]",
+            "item": 28
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Ja, meine Frau sagt auch immer, der Freitag ist jetzt ihr Putztag.",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Herr Leitner, gibt es bei Ihnen auch Bereiche, wo es nicht so gut klappt?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Doch, schon. In der Werkstatt und auf der Baustelle funktioniert das wunderbar. Aber im Büro ist es schwierig. Rechnungen, Angebote, Bestellungen, das muss ja jeden Tag jemand machen. Deshalb arbeiten dort zwei Kolleginnen weiter fünf Tage, nur kürzer. Ganz ehrlich, für das Büro haben wir noch keine richtige Lösung.",
+            "delivery": "[honest]",
+            "item": 29
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Frau Brunner, zum Schluss: Was würden Sie einer Firma raten, die über die Vier-Tage-Woche nachdenkt?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_heidi_ch",
+            "text": "Nicht einfach von heute auf morgen umstellen. Ich empfehle immer, das zuerst ein halbes Jahr auszuprobieren. Dann fragt man die Mitarbeitenden, schaut sich die Zahlen an und entscheidet erst danach. Und in manchen Branchen, im Spital oder im Detailhandel, geht es sowieso nur mit sehr guter Planung.",
+            "delivery": "[clear, advisory]",
+            "item": 30
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Herr Leitner, würden Sie zurück zur Fünf-Tage-Woche?",
+            "delivery": "[host, playful]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_gruber_at",
+            "text": "Nie im Leben. Und wir haben damals nicht einmal getestet, wir haben einfach angefangen.",
+            "delivery": "[laughing, firm]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Das ist doch ein schönes Schlusswort. Vielen Dank, Frau Brunner, vielen Dank, Herr Leitner, und Ihnen zu Hause noch einen schönen Abend.",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ],
+  "track": {
+    "src": "oesd-b1/hoeren-01/track.mp3",
+    "duration": 2242.98,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.24,
+        "to": 19.8
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.84,
+        "to": 26.85
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.85,
+        "to": 37.38
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.38,
+        "to": 40.44
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 41.98,
+        "to": 71.97
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 74,
+        "to": 76.41
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 77.45,
+        "to": 107.44
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 107.44,
+        "to": 109.98
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 109.98,
+        "to": 116.22
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 116.22,
+        "to": 126.75
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 126.75,
+        "to": 129.38
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 130.93,
+        "to": 168.72
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 170.76,
+        "to": 173.17
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 174.21,
+        "to": 212.01
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 212.01,
+        "to": 214.54
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 214.54,
+        "to": 220.89
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 220.89,
+        "to": 231.42
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 231.42,
+        "to": 234.48
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 236.02,
+        "to": 271.44
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 273.48,
+        "to": 275.88
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 276.92,
+        "to": 312.35
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 312.35,
+        "to": 314.88
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 314.88,
+        "to": 321.36
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 321.36,
+        "to": 331.89
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 331.89,
+        "to": 334.79
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 336.33,
+        "to": 373.08
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 375.12,
+        "to": 377.52
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 378.57,
+        "to": 415.32
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 415.32,
+        "to": 417.85
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 417.85,
+        "to": 424.25
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 424.25,
+        "to": 434.78
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 434.78,
+        "to": 437.84
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 439.38,
+        "to": 476.21
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 478.25,
+        "to": 480.65
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 481.7,
+        "to": 518.53
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 518.53,
+        "to": 521.06
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 521.06,
+        "to": 527.33
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 527.33,
+        "to": 537.86
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 537.86,
+        "to": 539.9
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 541.44,
+        "to": 581.09
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 583.13,
+        "to": 585.53
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 586.58,
+        "to": 626.23
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 626.23,
+        "to": 628.77
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 635.98,
+        "to": 650.06
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 652.09,
+        "to": 658.52
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 658.52,
+        "to": 718.55
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 718.55,
+        "to": 726.41
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 727.95,
+        "to": 898.93
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 898.93,
+        "to": 907.96
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 915.12,
+        "to": 927.32
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 929.36,
+        "to": 935.86
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 935.86,
+        "to": 995.89
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 995.89,
+        "to": 1001.9
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1003.44,
+        "to": 1188.47
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1188.47,
+        "to": 1197.51
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1204.66,
+        "to": 1216.86
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1218.9,
+        "to": 1225.35
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1225.35,
+        "to": 1285.38
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1285.38,
+        "to": 1299.15
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1304.74,
+        "to": 1603.29
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1607.34,
+        "to": 1610.37
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1610.37,
+        "to": 1613.24
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1618.83,
+        "to": 1917.39
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1921.44,
+        "to": 1930.48
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1937.61,
+        "to": 1943.48
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1943.48,
+        "to": 2243.53
+      }
+    ]
+  }
+}

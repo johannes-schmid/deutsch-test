@@ -1,0 +1,781 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-02-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.680Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Museumsnacht",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Freitag"
+                },
+                {
+                  "key": "b",
+                  "label": "Samstag"
+                },
+                {
+                  "key": "c",
+                  "label": "12 Euro"
+                },
+                {
+                  "key": "d",
+                  "label": "20 Euro"
+                },
+                {
+                  "key": "e",
+                  "label": "Bergwerk"
+                },
+                {
+                  "key": "f",
+                  "label": "Führungen"
+                },
+                {
+                  "key": "g",
+                  "label": "bis Mitternacht"
+                },
+                {
+                  "key": "h",
+                  "label": "Parkhaus"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Tipps im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Murtal",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Radio Erzberg",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-02/oesd-a2-hoeren-02-t1.review.mp3",
+          "duration": 54.96
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Beide Sender sagen: Die Museumsnacht ist am Samstag. Freitag hört man gar nicht.",
+            "evidence": {
+              "text": "Radio Murtal, unsere Tipps für das Wochenende. Am Samstag ist in Leoben wieder die Lange Nacht der Museen. Alle Museen der Stadt haben bis Mitternacht geöffnet. Mit einer Eintrittskarte um zwölf Euro können Sie alle Häuser besuchen. Die Karten gibt es an der Kassa jedes Museums. Heuer ist zum ersten Mal auch das alte Bergwerk dabei, das Bergbaumuseum. Führungen gibt es diesmal allerdings keine. Sie können also selbst durch die Ausstellungen gehen. Viel Vergnügen!",
+              "hit": "Am Samstag ist in Leoben wieder die Lange Nacht der Museen."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Eine Karte kostet zwölf Euro und gilt für alle Museen. Von 20 Euro sagt niemand etwas.",
+            "evidence": {
+              "text": "Radio Murtal, unsere Tipps für das Wochenende. Am Samstag ist in Leoben wieder die Lange Nacht der Museen. Alle Museen der Stadt haben bis Mitternacht geöffnet. Mit einer Eintrittskarte um zwölf Euro können Sie alle Häuser besuchen. Die Karten gibt es an der Kassa jedes Museums. Heuer ist zum ersten Mal auch das alte Bergwerk dabei, das Bergbaumuseum. Führungen gibt es diesmal allerdings keine. Sie können also selbst durch die Ausstellungen gehen. Viel Vergnügen!",
+              "hit": "Mit einer Eintrittskarte um zwölf Euro können Sie alle Häuser besuchen."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "e",
+            "explanation": "Das alte Bergwerk ist heuer zum ersten Mal dabei. Führungen gibt es aber diesmal keine.",
+            "evidence": {
+              "text": "Radio Murtal, unsere Tipps für das Wochenende. Am Samstag ist in Leoben wieder die Lange Nacht der Museen. Alle Museen der Stadt haben bis Mitternacht geöffnet. Mit einer Eintrittskarte um zwölf Euro können Sie alle Häuser besuchen. Die Karten gibt es an der Kassa jedes Museums. Heuer ist zum ersten Mal auch das alte Bergwerk dabei, das Bergbaumuseum. Führungen gibt es diesmal allerdings keine. Sie können also selbst durch die Ausstellungen gehen. Viel Vergnügen!",
+              "hit": "Heuer ist zum ersten Mal auch das alte Bergwerk dabei"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "g",
+            "explanation": "Die Museen sind bis zwölf Uhr in der Nacht offen, also bis Mitternacht. Ein Parkhaus kommt in den Texten nicht vor.",
+            "evidence": {
+              "text": "Radio Murtal, unsere Tipps für das Wochenende. Am Samstag ist in Leoben wieder die Lange Nacht der Museen. Alle Museen der Stadt haben bis Mitternacht geöffnet. Mit einer Eintrittskarte um zwölf Euro können Sie alle Häuser besuchen. Die Karten gibt es an der Kassa jedes Museums. Heuer ist zum ersten Mal auch das alte Bergwerk dabei, das Bergbaumuseum. Führungen gibt es diesmal allerdings keine. Sie können also selbst durch die Ausstellungen gehen. Viel Vergnügen!",
+              "hit": "Alle Museen der Stadt haben bis Mitternacht geöffnet."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_emilia_at",
+            "text": "Radio Murtal, unsere Tipps für das Wochenende. Am Samstag ist in Leoben wieder die Lange Nacht der Museen. Alle Museen der Stadt haben bis Mitternacht geöffnet. Mit einer Eintrittskarte um zwölf Euro können Sie alle Häuser besuchen. Die Karten gibt es an der Kassa jedes Museums. Heuer ist zum ersten Mal auch das alte Bergwerk dabei, das Bergbaumuseum. Führungen gibt es diesmal allerdings keine. Sie können also selbst durch die Ausstellungen gehen. Viel Vergnügen!",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_gruber_at",
+            "text": "Servus, liebe Leute, hier ist Radio Erzberg! Habt ihr am Wochenende schon was vor? Heuer könnt ihr in Leoben sogar ins alte Bergwerk hinein, das ist zum ersten Mal mit dabei. Und zwar am Samstag bei der Langen Nacht der Museen! Ihr zahlt nur einmal zwölf Euro und kommt damit in jedes Museum. Bis zwölf Uhr in der Nacht ist alles offen. Eine Führung bekommt ihr diesmal leider nicht. Tickets kauft ihr direkt im Museum.",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-02-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.680Z",
+        "textType": "Sprachnachricht von einer Freundin"
+      },
+      "display": {
+        "instruction": "Situation: Eine Freundin hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Abend beim Heurigen\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTreffpunkt am Bahnhof um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nSammeltaxi: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nSabines Telefon: 0664 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Handy",
+          "speakers": {
+            "sabine": {
+              "name": "Sabine",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-02/oesd-a2-hoeren-02-t2.mp3",
+          "duration": 40.83
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Donnerstag",
+            "accept": [
+              "am Donnerstag",
+              "Do."
+            ],
+            "explanation": "Am Mittwoch ist kein Tisch mehr frei, darum gehen alle am Donnerstag.",
+            "evidence": {
+              "text": "Servus, Sabine hier! Äh, du, wegen unserem Abend beim Heurigen in Gumpoldskirchen. Am Mittwoch haben die leider keinen Tisch mehr frei, also gehen wir am Donnerstag. Wir treffen uns um halb sieben am Abend beim Bahnhof. Zurück fahren wir alle zusammen mit einem Sammeltaxi, das kostet neun Euro pro Person. Letztes Mal waren es ja fünfzehn Euro, also diesmal billiger. Na ja, und wir sitzen im Garten, und am Abend wird's da schnell kalt. Nimm bitte eine warme Jacke mit! Einen Schirm brauchst du nicht, es soll trocken bleiben. Ruf mich bitte kurz an, ob du kommst, ja? Meine Nummer ist null sechs sechs vier, drei acht eins, sieben zwei, null fünf. Noch einmal: drei acht eins, sieben zwei, null fünf. Bis dann!",
+              "hit": "also gehen wir am Donnerstag"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "18.30",
+            "accept": [
+              "18:30",
+              "18.30 Uhr",
+              "18 Uhr 30",
+              "6.30",
+              "6:30",
+              "halb sieben"
+            ],
+            "explanation": "Ihr trefft euch um halb sieben am Abend, also um 18.30 Uhr.",
+            "evidence": {
+              "text": "Servus, Sabine hier! Äh, du, wegen unserem Abend beim Heurigen in Gumpoldskirchen. Am Mittwoch haben die leider keinen Tisch mehr frei, also gehen wir am Donnerstag. Wir treffen uns um halb sieben am Abend beim Bahnhof. Zurück fahren wir alle zusammen mit einem Sammeltaxi, das kostet neun Euro pro Person. Letztes Mal waren es ja fünfzehn Euro, also diesmal billiger. Na ja, und wir sitzen im Garten, und am Abend wird's da schnell kalt. Nimm bitte eine warme Jacke mit! Einen Schirm brauchst du nicht, es soll trocken bleiben. Ruf mich bitte kurz an, ob du kommst, ja? Meine Nummer ist null sechs sechs vier, drei acht eins, sieben zwei, null fünf. Noch einmal: drei acht eins, sieben zwei, null fünf. Bis dann!",
+              "hit": "Wir treffen uns um halb sieben am Abend beim Bahnhof."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "9",
+            "accept": [
+              "9 Euro",
+              "neun"
+            ],
+            "explanation": "Das Sammeltaxi kostet diesmal neun Euro. Fünfzehn Euro war der Preis beim letzten Mal.",
+            "evidence": {
+              "text": "Servus, Sabine hier! Äh, du, wegen unserem Abend beim Heurigen in Gumpoldskirchen. Am Mittwoch haben die leider keinen Tisch mehr frei, also gehen wir am Donnerstag. Wir treffen uns um halb sieben am Abend beim Bahnhof. Zurück fahren wir alle zusammen mit einem Sammeltaxi, das kostet neun Euro pro Person. Letztes Mal waren es ja fünfzehn Euro, also diesmal billiger. Na ja, und wir sitzen im Garten, und am Abend wird's da schnell kalt. Nimm bitte eine warme Jacke mit! Einen Schirm brauchst du nicht, es soll trocken bleiben. Ruf mich bitte kurz an, ob du kommst, ja? Meine Nummer ist null sechs sechs vier, drei acht eins, sieben zwei, null fünf. Noch einmal: drei acht eins, sieben zwei, null fünf. Bis dann!",
+              "hit": "das kostet neun Euro pro Person"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "warme Jacke",
+            "accept": [
+              "Jacke",
+              "eine Jacke",
+              "eine warme Jacke"
+            ],
+            "explanation": "Im Garten wird es kalt, darum sollst du eine warme Jacke mitnehmen. Einen Schirm brauchst du nicht.",
+            "evidence": {
+              "text": "Servus, Sabine hier! Äh, du, wegen unserem Abend beim Heurigen in Gumpoldskirchen. Am Mittwoch haben die leider keinen Tisch mehr frei, also gehen wir am Donnerstag. Wir treffen uns um halb sieben am Abend beim Bahnhof. Zurück fahren wir alle zusammen mit einem Sammeltaxi, das kostet neun Euro pro Person. Letztes Mal waren es ja fünfzehn Euro, also diesmal billiger. Na ja, und wir sitzen im Garten, und am Abend wird's da schnell kalt. Nimm bitte eine warme Jacke mit! Einen Schirm brauchst du nicht, es soll trocken bleiben. Ruf mich bitte kurz an, ob du kommst, ja? Meine Nummer ist null sechs sechs vier, drei acht eins, sieben zwei, null fünf. Noch einmal: drei acht eins, sieben zwei, null fünf. Bis dann!",
+              "hit": "Nimm bitte eine warme Jacke mit!"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "3817205",
+            "accept": [
+              "381 72 05",
+              "381 7205",
+              "3817 205"
+            ],
+            "exact": true,
+            "explanation": "Sabine sagt die Nummer zweimal: drei acht eins, sieben zwei, null fünf. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Servus, Sabine hier! Äh, du, wegen unserem Abend beim Heurigen in Gumpoldskirchen. Am Mittwoch haben die leider keinen Tisch mehr frei, also gehen wir am Donnerstag. Wir treffen uns um halb sieben am Abend beim Bahnhof. Zurück fahren wir alle zusammen mit einem Sammeltaxi, das kostet neun Euro pro Person. Letztes Mal waren es ja fünfzehn Euro, also diesmal billiger. Na ja, und wir sitzen im Garten, und am Abend wird's da schnell kalt. Nimm bitte eine warme Jacke mit! Einen Schirm brauchst du nicht, es soll trocken bleiben. Ruf mich bitte kurz an, ob du kommst, ja? Meine Nummer ist null sechs sechs vier, drei acht eins, sieben zwei, null fünf. Noch einmal: drei acht eins, sieben zwei, null fünf. Bis dann!",
+              "hit": "drei acht eins, sieben zwei, null fünf"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "sabine",
+            "voice": "woman_alexandra_at",
+            "text": "Servus, Sabine hier! Äh, du, wegen unserem Abend beim Heurigen in Gumpoldskirchen. Am Mittwoch haben die leider keinen Tisch mehr frei, also gehen wir am Donnerstag. Wir treffen uns um halb sieben am Abend beim Bahnhof. Zurück fahren wir alle zusammen mit einem Sammeltaxi, das kostet neun Euro pro Person. Letztes Mal waren es ja fünfzehn Euro, also diesmal billiger. Na ja, und wir sitzen im Garten, und am Abend wird's da schnell kalt. Nimm bitte eine warme Jacke mit! Einen Schirm brauchst du nicht, es soll trocken bleiben. Ruf mich bitte kurz an, ob du kommst, ja? Meine Nummer ist null sechs sechs vier, drei acht eins, sieben zwei, null fünf. Noch einmal: drei acht eins, sieben zwei, null fünf. Bis dann!",
+            "delivery": "[casual, friendly, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-02-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.680Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, wie sie sich über die Nachrichten informieren. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Wie informieren Sie sich über die Nachrichten?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Zeitung"
+                },
+                {
+                  "key": "b",
+                  "label": "Radio"
+                },
+                {
+                  "key": "c",
+                  "label": "Fernsehen"
+                },
+                {
+                  "key": "d",
+                  "label": "Internet"
+                },
+                {
+                  "key": "e",
+                  "label": "Freunde und Familie"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-02/oesd-a2-hoeren-02-t3.review.mp3",
+          "duration": 103.86
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a,b,c",
+            "explanation": "Sie liest die Zeitung, hört Radio und schaut am Abend fern. Das Internet ist ihr zu kompliziert.",
+            "evidence": {
+              "text": "Na ja, ich bin schon in Pension, ich habe also viel Zeit. In der Früh lese ich beim Frühstück die Zeitung, das mache ich seit vierzig Jahren. Beim Kochen läuft in der Küche immer das Radio. Und am Abend schaue ich die Nachrichten im Fernsehen. Das Internet? Ach nein, das ist mir viel zu kompliziert.",
+              "hit": "Beim Kochen läuft in der Küche immer das Radio."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b,d",
+            "explanation": "Er hört im Bus Radio und liest zu Hause eine Nachrichten-App. Eine Zeitung kauft er nie.",
+            "evidence": {
+              "text": "Äh, ich bin Busfahrer von Beruf. Während der Arbeit höre ich im Bus Radio, da kommen jede Stunde kurz die Nachrichten. Zu Hause schaue ich dann am Handy in eine Nachrichten-App, das geht schnell. Eine Zeitung kaufe ich nie, die ist mir zu teuer, und ich habe auch keine Zeit zum Lesen.",
+              "hit": "Zu Hause schaue ich dann am Handy in eine Nachrichten-App"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "d,e",
+            "explanation": "Sie liest die Nachrichten im Internet, und ihre Freundinnen erzählen ihr den Rest. Einen Fernseher hat sie nicht.",
+            "evidence": {
+              "text": "Ich studiere in Zürich und wohne in einer WG. Einen Fernseher haben wir nicht, den brauche ich auch nicht. Die wichtigsten Nachrichten lese ich im Internet, meistens am Morgen im Tram. Und beim Abendessen erzählen mir meine Freundinnen aus der WG, was in der Welt passiert ist. So weiss ich eigentlich immer Bescheid.",
+              "hit": "Und beim Abendessen erzählen mir meine Freundinnen aus der WG, was in der Welt passiert ist."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Er liest in der Pause die Zeitung. Radio hört er nicht, das nervt ihn.",
+            "evidence": {
+              "text": "Ich bin Tischler. In der Mittagspause lese ich immer die Zeitung, die liegt bei uns in der Werkstatt. Da steht alles drin, was ich wissen muss. Radio höre ich nicht, äh, das ewige Gerede nervt mich. Und am Abend bin ich müde, da gehe ich früh schlafen.",
+              "hit": "In der Mittagspause lese ich immer die Zeitung"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c,e",
+            "explanation": "Sie schaut am Abend fern, und ihre Mutter erzählt ihr die Neuigkeiten. Die Zeitung hat sie abbestellt.",
+            "evidence": {
+              "text": "Also, ich bin Krankenschwester in Leipzig und arbeite oft im Schichtdienst. Wenn ich abends zu Hause bin, mache ich den Fernseher an und schaue die Nachrichten. Und meine Mutter ruft fast jeden Tag an, die erzählt mir dann alles Neue. Die Zeitung habe ich letztes Jahr abbestellt, ich hatte nie Zeit dafür.",
+              "hit": "Und meine Mutter ruft fast jeden Tag an, die erzählt mir dann alles Neue."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Wir machen heute eine kleine Umfrage für das Radio. Wie informieren Sie sich über die Nachrichten?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_alexandra_at",
+            "text": "Na ja, ich bin schon in Pension, ich habe also viel Zeit. In der Früh lese ich beim Frühstück die Zeitung, das mache ich seit vierzig Jahren. Beim Kochen läuft in der Küche immer das Radio. Und am Abend schaue ich die Nachrichten im Fernsehen. Das Internet? Ach nein, das ist mir viel zu kompliziert.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Äh, ich bin Busfahrer von Beruf. Während der Arbeit höre ich im Bus Radio, da kommen jede Stunde kurz die Nachrichten. Zu Hause schaue ich dann am Handy in eine Nachrichten-App, das geht schnell. Eine Zeitung kaufe ich nie, die ist mir zu teuer, und ich habe auch keine Zeit zum Lesen.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_heidi_ch",
+            "text": "Ich studiere in Zürich und wohne in einer WG. Einen Fernseher haben wir nicht, den brauche ich auch nicht. Die wichtigsten Nachrichten lese ich im Internet, meistens am Morgen im Tram. Und beim Abendessen erzählen mir meine Freundinnen aus der WG, was in der Welt passiert ist. So weiss ich eigentlich immer Bescheid.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich bin Tischler. In der Mittagspause lese ich immer die Zeitung, die liegt bei uns in der Werkstatt. Da steht alles drin, was ich wissen muss. Radio höre ich nicht, äh, das ewige Gerede nervt mich. Und am Abend bin ich müde, da gehe ich früh schlafen.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_laura",
+            "text": "Also, ich bin Krankenschwester in Leipzig und arbeite oft im Schichtdienst. Wenn ich abends zu Hause bin, mache ich den Fernseher an und schaue die Nachrichten. Und meine Mutter ruft fast jeden Tag an, die erzählt mir dann alles Neue. Die Zeitung habe ich letztes Jahr abbestellt, ich hatte nie Zeit dafür.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-02/track.mp3",
+    "duration": 582.22,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.17,
+        "to": 15.2
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.2,
+        "to": 45.24
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.24,
+        "to": 58.41
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.58,
+        "to": 94.12
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 98.4,
+        "to": 125.36
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 134.53,
+        "to": 140.54
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 140.54,
+        "to": 170.58
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 170.58,
+        "to": 181.79
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 189.26,
+        "to": 230.09
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 236.04,
+        "to": 239.26
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 246.73,
+        "to": 287.56
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 293.51,
+        "to": 298.06
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 298.06,
+        "to": 318.09
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 323.6,
+        "to": 329.61
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 329.61,
+        "to": 359.65
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 359.65,
+        "to": 376.63
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 382.15,
+        "to": 388.13
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 389.67,
+        "to": 408.92
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 412.97,
+        "to": 431.15
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 435.2,
+        "to": 453.75
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 457.8,
+        "to": 474.17
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 478.22,
+        "to": 496.46
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 506.02,
+        "to": 510.51
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 510.51,
+        "to": 570.54
+      }
+    ]
+  }
+}

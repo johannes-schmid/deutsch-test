@@ -11,6 +11,7 @@ export { MODELLTESTS }
 /**
  * open: can start · done: finished at least once (best result shown) · locked: published, needs the exam ·
  * soon: not published yet · preview: unpublished, visible to admins only so they can run it before publishing.
+ * Published sets lock for admins too, so the portal shows them what a customer sees.
  */
 export type SlotState = "open" | "done" | "locked" | "soon" | "preview"
 export type ModelltestSlot = { n: number; state: SlotState; href: string | null; free: boolean; result: string | null }
@@ -52,7 +53,7 @@ export async function modelltestSlots(exam: ExamId, skill: PartId, userId: strin
     const mine = (attempts as AttemptRow[]).filter((a) => a.set_id === set.id)
     const result = best(mine)
     if (!set.published) return { n, state: "preview", href, free: set.is_free, result }
-    if (!set.is_free && !owns && !admin) return { n, state: "locked", href: null, free: false, result: null }
+    if (!set.is_free && !owns) return { n, state: "locked", href: null, free: false, result: null }
     return { n, state: mine.length ? "done" : "open", href, free: set.is_free, result }
   })
 }

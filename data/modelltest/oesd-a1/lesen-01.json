@@ -1,0 +1,480 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-01-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Gästehaus am Löwenplatz, Luzern",
+                  "text": "Ruhige Zimmer in der Altstadt, nur fünf Minuten vom See. Einzelzimmer ab CHF 85.– pro Nacht, mit Frühstück. Telefon 041 210 33 48, www.loewenplatz-luzern.ch"
+                },
+                {
+                  "key": "2",
+                  "title": "Volkshochschule Linz: neue Kurse",
+                  "text": "Kuchen backen wie bei Oma, Mathematik für Erwachsene, Nähen für Anfänger. Kurse ab März, am Abend und am Samstag. Anmeldung: www.vhs-linz.at"
+                },
+                {
+                  "key": "3",
+                  "title": "Optik Hofer, Graz",
+                  "text": "Brillen und Kontaktlinsen für die ganze Familie. Der Sehtest ist bei uns gratis! Montag bis Freitag von 9 bis 18 Uhr, Annenstraße 12."
+                },
+                {
+                  "key": "4",
+                  "title": "Nachhilfe Brunner, Rosenheim",
+                  "text": "Ich helfe Schülerinnen und Schülern in Mathematik und Englisch. Bei Ihnen zu Hause, auch am Wochenende. Eine Stunde kostet 20 Euro. E-Mail: nachhilfe.brunner@web.de"
+                },
+                {
+                  "key": "5",
+                  "title": "Konditorei Wagner, Nürnberg",
+                  "text": "Torten und Kuchen auf Bestellung, zum Beispiel unsere Käsesahnetorte. Bestellen Sie zwei Tage vorher, wir backen für Sie! Telefon 0911 445 82 19"
+                },
+                {
+                  "key": "6",
+                  "title": "Second-Hand-Laden Kleiderkiste, Passau",
+                  "text": "Wir kaufen gut erhaltene Kleidung für Damen, Herren und Kinder. Bringen Sie Ihre Sachen von Dienstag bis Samstag vorbei. Ludwigstraße 7."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Sie sehen nicht mehr gut. Sie brauchen eine neue Brille."
+                },
+                {
+                  "n": 2,
+                  "text": "Ihre Tochter hat bald Geburtstag. Sie möchten einen Kuchen kaufen, aber Sie haben keine Zeit zum Backen."
+                },
+                {
+                  "n": 3,
+                  "text": "Sie haben viele Kleider im Schrank. Sie tragen sie nicht mehr und möchten sie verkaufen."
+                },
+                {
+                  "n": 4,
+                  "text": "Ihre Mutter besucht Sie eine Woche lang. Sie braucht ein billiges Zimmer."
+                },
+                {
+                  "n": 5,
+                  "text": "Ihr Sohn hat Probleme in Mathematik. Er braucht Hilfe für die Schule."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "3",
+            "explanation": "Beim Optiker in Graz gibt es Brillen, und der Sehtest kostet nichts.",
+            "evidence": {
+              "text": "Optik Hofer, Graz Brillen und Kontaktlinsen für die ganze Familie. Der Sehtest ist bei uns gratis! Montag bis Freitag von 9 bis 18 Uhr, Annenstraße 12.",
+              "hit": "Brillen und Kontaktlinsen für die ganze Familie."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "5",
+            "explanation": "Die Konditorei in Nürnberg backt Kuchen auf Bestellung. Im Kurs in Linz müsstest du selbst backen.",
+            "evidence": {
+              "text": "Konditorei Wagner, Nürnberg Torten und Kuchen auf Bestellung, zum Beispiel unsere Käsesahnetorte. Bestellen Sie zwei Tage vorher, wir backen für Sie! Telefon 0911 445 82 19",
+              "hit": "Torten und Kuchen auf Bestellung"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "6",
+            "explanation": "Der Second-Hand-Laden kauft Kleidung. Der Nähkurs hilft dir nicht beim Verkaufen.",
+            "evidence": {
+              "text": "Second-Hand-Laden Kleiderkiste, Passau Wir kaufen gut erhaltene Kleidung für Damen, Herren und Kinder. Bringen Sie Ihre Sachen von Dienstag bis Samstag vorbei. Ludwigstraße 7.",
+              "hit": "Wir kaufen gut erhaltene Kleidung"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "1",
+            "explanation": "Das Gästehaus in Luzern hat Zimmer ab 85 Franken mit Frühstück.",
+            "evidence": {
+              "text": "Gästehaus am Löwenplatz, Luzern Ruhige Zimmer in der Altstadt, nur fünf Minuten vom See. Einzelzimmer ab CHF 85.– pro Nacht, mit Frühstück. Telefon 041 210 33 48, www.loewenplatz-luzern.ch",
+              "hit": "Einzelzimmer ab CHF 85.– pro Nacht"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "4",
+            "explanation": "Die Nachhilfe hilft Schülern in Mathematik. Der Mathematikkurs in Linz ist nur für Erwachsene.",
+            "evidence": {
+              "text": "Nachhilfe Brunner, Rosenheim Ich helfe Schülerinnen und Schülern in Mathematik und Englisch. Bei Ihnen zu Hause, auch am Wochenende. Eine Stunde kostet 20 Euro. E-Mail: nachhilfe.brunner@web.de",
+              "hit": "Ich helfe Schülerinnen und Schülern in Mathematik"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-01-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Stadtführungen Salzburg",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Die Altstadt zu Fuß",
+            "Jeden Tag um 11 Uhr: Spaziergang durch die Salzburger Altstadt, 90 Minuten.",
+            "Preis: 14 Euro, Kinder bis 12 Jahre gratis.",
+            "Treffpunkt: beim großen Brunnen am Residenzplatz. Infos: www.salzburg-zu-fuss.at"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Ist die Führung am Abend?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Müssen Kinder für die Führung bezahlen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Die Führung beginnt jeden Tag um 11 Uhr, also am Vormittag.",
+            "evidence": {
+              "text": "Die Altstadt zu Fuß Jeden Tag um 11 Uhr: Spaziergang durch die Salzburger Altstadt, 90 Minuten. Preis: 14 Euro, Kinder bis 12 Jahre gratis. Treffpunkt: beim großen Brunnen am Residenzplatz. Infos: www.salzburg-zu-fuss.at",
+              "hit": "Jeden Tag um 11 Uhr"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Kinder bis 12 Jahre bezahlen nichts. Nur Erwachsene zahlen 14 Euro.",
+            "evidence": {
+              "text": "Die Altstadt zu Fuß Jeden Tag um 11 Uhr: Spaziergang durch die Salzburger Altstadt, 90 Minuten. Preis: 14 Euro, Kinder bis 12 Jahre gratis. Treffpunkt: beim großen Brunnen am Residenzplatz. Infos: www.salzburg-zu-fuss.at",
+              "hit": "Kinder bis 12 Jahre gratis"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-01-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Kindergarten Sonnenblume, Regensburg",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Tag der offenen Tür",
+            "Samstag, 10 bis 14 Uhr: Kommen Sie mit Ihren Kindern!",
+            "Wir spielen, malen und basteln zusammen.",
+            "Sie müssen sich nicht anmelden. Getränke gibt es kostenlos."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Muss man sich für den Tag der offenen Tür anmelden?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Sind die Getränke gratis?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Im Text steht: Sie müssen sich nicht anmelden.",
+            "evidence": {
+              "text": "Tag der offenen Tür Samstag, 10 bis 14 Uhr: Kommen Sie mit Ihren Kindern! Wir spielen, malen und basteln zusammen. Sie müssen sich nicht anmelden. Getränke gibt es kostenlos.",
+              "hit": "Sie müssen sich nicht anmelden."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Die Getränke sind kostenlos, also gratis.",
+            "evidence": {
+              "text": "Tag der offenen Tür Samstag, 10 bis 14 Uhr: Kommen Sie mit Ihren Kindern! Wir spielen, malen und basteln zusammen. Sie müssen sich nicht anmelden. Getränke gibt es kostenlos.",
+              "hit": "Getränke gibt es kostenlos."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-01-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Restaurant Linde, Bern",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Mittagsmenü",
+            "Montag bis Freitag, 11.30 bis 14.00 Uhr",
+            "Menü mit Salat: CHF 18.50",
+            "Zum Mitnehmen kostet das Menü CHF 2.– weniger.",
+            "Spezialitäten aus der Region, grosse Portionen!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Gibt es das Mittagsmenü auch am Samstag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Ist das Menü zum Mitnehmen billiger?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Das Menü gibt es nur von Montag bis Freitag.",
+            "evidence": {
+              "text": "Mittagsmenü Montag bis Freitag, 11.30 bis 14.00 Uhr Menü mit Salat: CHF 18.50 Zum Mitnehmen kostet das Menü CHF 2.– weniger. Spezialitäten aus der Region, grosse Portionen!",
+              "hit": "Montag bis Freitag"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Zum Mitnehmen kostet das Menü zwei Franken weniger.",
+            "evidence": {
+              "text": "Mittagsmenü Montag bis Freitag, 11.30 bis 14.00 Uhr Menü mit Salat: CHF 18.50 Zum Mitnehmen kostet das Menü CHF 2.– weniger. Spezialitäten aus der Region, grosse Portionen!",
+              "hit": "Zum Mitnehmen kostet das Menü CHF 2.– weniger."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-01-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Baby, Wickelraum",
+                  "text": "",
+                  "picto": "baby"
+                },
+                {
+                  "key": "2",
+                  "title": "Altglas-Container",
+                  "text": "",
+                  "picto": "altglas"
+                },
+                {
+                  "key": "3",
+                  "title": "Mülleimer",
+                  "text": "",
+                  "picto": "muell"
+                },
+                {
+                  "key": "4",
+                  "title": "Taxi",
+                  "text": "",
+                  "picto": "taxi"
+                },
+                {
+                  "key": "5",
+                  "title": "Kaffeetasse",
+                  "text": "",
+                  "picto": "kaffee"
+                },
+                {
+                  "key": "6",
+                  "title": "Bitte leise sein",
+                  "text": "",
+                  "picto": "ruhe"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Hausbewohner! Bitte werfen Sie hier nur Flaschen und Gläser aus weißem oder buntem Glas ein. Deckel gehören nicht in den Container. Danke!"
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Besucherinnen und Besucher! Im Lesesaal lernen viele Studentinnen und Studenten. Bitte sprechen Sie nicht laut und telefonieren Sie draußen."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Fahrgäste! Warten Sie hier auf Ihr Taxi. Alle fünf Minuten kommt ein Wagen. Kein Taxi da? Dann rufen Sie die Nummer 31 300 an."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Hotelgäste! Das Frühstück gibt es im ersten Stock, jeden Tag von 7 bis 10 Uhr. Kaffee und Tee stehen auch am Nachmittag bereit."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Eltern! Der Wickelraum für Babys ist jetzt im Erdgeschoß, gleich neben dem Lift. Dort gibt es auch Windeln."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "2",
+            "explanation": "Hier wirft man Flaschen und Gläser ein: Das ist der Altglas-Container. Der Mülleimer ist für anderen Müll.",
+            "evidence": {
+              "text": "Liebe Hausbewohner! Bitte werfen Sie hier nur Flaschen und Gläser aus weißem oder buntem Glas ein. Deckel gehören nicht in den Container. Danke!",
+              "hit": "nur Flaschen und Gläser"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "6",
+            "explanation": "Im Lesesaal soll man leise sein. Das zeigt das Bild mit dem Zeichen für Ruhe.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher! Im Lesesaal lernen viele Studentinnen und Studenten. Bitte sprechen Sie nicht laut und telefonieren Sie draußen.",
+              "hit": "Bitte sprechen Sie nicht laut"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "4",
+            "explanation": "Hier wartet man auf ein Taxi. Das passt zum Taxi-Bild.",
+            "evidence": {
+              "text": "Liebe Fahrgäste! Warten Sie hier auf Ihr Taxi. Alle fünf Minuten kommt ein Wagen. Kein Taxi da? Dann rufen Sie die Nummer 31 300 an.",
+              "hit": "Warten Sie hier auf Ihr Taxi."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "5",
+            "explanation": "Der Text ist über das Frühstück mit Kaffee und Tee. Das passt zur Kaffeetasse.",
+            "evidence": {
+              "text": "Liebe Hotelgäste! Das Frühstück gibt es im ersten Stock, jeden Tag von 7 bis 10 Uhr. Kaffee und Tee stehen auch am Nachmittag bereit.",
+              "hit": "Das Frühstück gibt es im ersten Stock"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "1",
+            "explanation": "Der Text ist für Eltern mit Babys. Das passt zum Bild mit dem Baby.",
+            "evidence": {
+              "text": "Liebe Eltern! Der Wickelraum für Babys ist jetzt im Erdgeschoß, gleich neben dem Lift. Dort gibt es auch Windeln.",
+              "hit": "Der Wickelraum für Babys"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,479 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-08-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.661Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Nähstube Fadenreich, Karlsruhe",
+                  "text": "Vorhänge nach Maß für jedes Fenster. Wir kommen zu Ihnen nach Hause und messen Ihre Fenster. Auch für Küche und Kinderzimmer. Infos: www.fadenreich-karlsruhe.de"
+                },
+                {
+                  "key": "2",
+                  "title": "Hundesalon Struppi, Wuppertal",
+                  "text": "Waschen, schneiden, kämmen: Bei uns wird Ihr Hund wieder schön. Für kleine und große Hunde. Termine nur nach Anruf: Telefon 0202 318 46 70"
+                },
+                {
+                  "key": "3",
+                  "title": "Möbelmarkt Kessler, Magdeburg",
+                  "text": "Großer Ausverkauf! Neue Esstische und Stühle, bequeme Sessel und fertige Vorhänge, alles bis zu 40 Prozent billiger. Nur bis Samstag, Gewerbepark Nord, Halle 3."
+                },
+                {
+                  "key": "4",
+                  "title": "Festverleih Hauser, Schwaz",
+                  "text": "Ein Fest zu Hause? Wir vermieten Tische, Stühle und Gläser für einen Tag oder ein Wochenende. Wir bringen alles zu Ihnen. Telefon 0664 / 382 71 05"
+                },
+                {
+                  "key": "5",
+                  "title": "Coworking Zeitraum, St. Gallen",
+                  "text": "Ruhige Arbeitsplätze mit Schreibtisch und WLAN, mitten in der Stadt. Ein Tag kostet CHF 25.–, eine Woche CHF 110.–. Kaffee inklusive. www.zeitraum-sg.ch"
+                },
+                {
+                  "key": "6",
+                  "title": "Polsterei Weidinger, Gmunden",
+                  "text": "Ihre alten Sofas und Sessel sind nicht mehr schön? Wir machen alles neu, mit neuem Stoff. Sie haben 200 Stoffe zur Auswahl. Kirchengasse 9, Telefon 07612 / 64 398"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Sie feiern zu Hause ein Familienfest. Sie brauchen für einen Tag 20 Stühle und zwei Tische mehr."
+                },
+                {
+                  "n": 2,
+                  "text": "Ihr alter Sessel ist nicht mehr schön. Sie möchten ihn behalten, aber er braucht einen neuen Stoff."
+                },
+                {
+                  "n": 3,
+                  "text": "Ihr Hund hat sehr lange Haare. Er braucht eine Wäsche und einen Haarschnitt."
+                },
+                {
+                  "n": 4,
+                  "text": "Zu Hause ist es sehr laut. Sie brauchen für ein paar Tage einen ruhigen Platz zum Arbeiten."
+                },
+                {
+                  "n": 5,
+                  "text": "Sie haben neue Fenster, aber noch keine Vorhänge. Die Vorhänge sollen genau passen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "4",
+            "explanation": "Der Festverleih in Schwaz vermietet Tische und Stühle für einen Tag. Der Möbelmarkt verkauft Tische und Stühle nur, du brauchst sie aber nur kurz.",
+            "evidence": {
+              "text": "Festverleih Hauser, Schwaz Ein Fest zu Hause? Wir vermieten Tische, Stühle und Gläser für einen Tag oder ein Wochenende. Wir bringen alles zu Ihnen. Telefon 0664 / 382 71 05",
+              "hit": "Wir vermieten Tische, Stühle und Gläser für einen Tag oder ein Wochenende."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "6",
+            "explanation": "Die Polsterei in Gmunden macht alte Sessel mit neuem Stoff wieder schön. Im Möbelmarkt kaufst du einen neuen Sessel, das willst du nicht.",
+            "evidence": {
+              "text": "Polsterei Weidinger, Gmunden Ihre alten Sofas und Sessel sind nicht mehr schön? Wir machen alles neu, mit neuem Stoff. Sie haben 200 Stoffe zur Auswahl. Kirchengasse 9, Telefon 07612 / 64 398",
+              "hit": "Wir machen alles neu, mit neuem Stoff."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "2",
+            "explanation": "Der Hundesalon in Wuppertal wäscht und schneidet Hunde. Keine andere Anzeige ist für Tiere.",
+            "evidence": {
+              "text": "Hundesalon Struppi, Wuppertal Waschen, schneiden, kämmen: Bei uns wird Ihr Hund wieder schön. Für kleine und große Hunde. Termine nur nach Anruf: Telefon 0202 318 46 70",
+              "hit": "Waschen, schneiden, kämmen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "5",
+            "explanation": "Im Coworking in St. Gallen gibt es ruhige Arbeitsplätze, auch für eine Woche. Der Möbelmarkt hat nur Tische zum Kaufen.",
+            "evidence": {
+              "text": "Coworking Zeitraum, St. Gallen Ruhige Arbeitsplätze mit Schreibtisch und WLAN, mitten in der Stadt. Ein Tag kostet CHF 25.–, eine Woche CHF 110.–. Kaffee inklusive. www.zeitraum-sg.ch",
+              "hit": "Ruhige Arbeitsplätze mit Schreibtisch und WLAN"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "1",
+            "explanation": "Die Nähstube misst deine Fenster und macht Vorhänge nach Maß. Die Vorhänge im Möbelmarkt sind fertig und passen vielleicht nicht genau.",
+            "evidence": {
+              "text": "Nähstube Fadenreich, Karlsruhe Vorhänge nach Maß für jedes Fenster. Wir kommen zu Ihnen nach Hause und messen Ihre Fenster. Auch für Küche und Kinderzimmer. Infos: www.fadenreich-karlsruhe.de",
+              "hit": "Vorhänge nach Maß für jedes Fenster."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-08-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.661Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Kulturbüro Cottbus",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Drachenfest auf der Spreewiese",
+            "Sonntag, 14 bis 18 Uhr: Bunte Drachen am Himmel über Cottbus.",
+            "Im Zelt bauen Sie Ihren eigenen Drachen. Das Material bekommen Sie kostenlos.",
+            "Der Eintritt ist frei."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kann man auf dem Fest selbst einen Drachen machen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Ist das Fest am Samstag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Im Zelt baust du deinen eigenen Drachen. Das Material ist sogar gratis.",
+            "evidence": {
+              "text": "Drachenfest auf der Spreewiese Sonntag, 14 bis 18 Uhr: Bunte Drachen am Himmel über Cottbus. Im Zelt bauen Sie Ihren eigenen Drachen. Das Material bekommen Sie kostenlos. Der Eintritt ist frei.",
+              "hit": "Im Zelt bauen Sie Ihren eigenen Drachen."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Das Fest ist am Sonntag, nicht am Samstag.",
+            "evidence": {
+              "text": "Drachenfest auf der Spreewiese Sonntag, 14 bis 18 Uhr: Bunte Drachen am Himmel über Cottbus. Im Zelt bauen Sie Ihren eigenen Drachen. Das Material bekommen Sie kostenlos. Der Eintritt ist frei.",
+              "hit": "Sonntag, 14 bis 18 Uhr"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-08-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.661Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Stadtgemeinde Stockerau",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Ostereier suchen im Stadtpark",
+            "Samstag, 10 Uhr: Wir verstecken bunte Eier im Stadtpark. Für Kinder von 3 bis 8 Jahren.",
+            "Bitte melden Sie Ihr Kind bis Donnerstag an: Telefon 02266 / 695 40.",
+            "Bringen Sie einen kleinen Korb mit!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Können zehnjährige Kinder mitmachen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Muss man sich vorher anmelden?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Das Eiersuchen ist nur für Kinder von 3 bis 8 Jahren. Ein Kind mit zehn Jahren ist zu alt.",
+            "evidence": {
+              "text": "Ostereier suchen im Stadtpark Samstag, 10 Uhr: Wir verstecken bunte Eier im Stadtpark. Für Kinder von 3 bis 8 Jahren. Bitte melden Sie Ihr Kind bis Donnerstag an: Telefon 02266 / 695 40. Bringen Sie einen kleinen Korb mit!",
+              "hit": "Für Kinder von 3 bis 8 Jahren."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Du musst dein Kind bis Donnerstag am Telefon anmelden, also vor dem Samstag.",
+            "evidence": {
+              "text": "Ostereier suchen im Stadtpark Samstag, 10 Uhr: Wir verstecken bunte Eier im Stadtpark. Für Kinder von 3 bis 8 Jahren. Bitte melden Sie Ihr Kind bis Donnerstag an: Telefon 02266 / 695 40. Bringen Sie einen kleinen Korb mit!",
+              "hit": "Bitte melden Sie Ihr Kind bis Donnerstag an"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-08-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.661Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Seeschiff Hallwil",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Mondscheinfahrt auf dem Hallwilersee",
+            "Jeden Freitag im Juli und August, ab Meisterschwanden um 20.30 Uhr. Geniessen Sie den Abend auf dem Wasser.",
+            "Preis: CHF 28.– pro Person",
+            "Tickets gibt es nur online im Voraus: www.seeschiff-hallwil.ch"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Fährt das Schiff auch im September?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Kann man das Ticket auf dem Schiff kaufen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Die Fahrten gibt es nur im Juli und August.",
+            "evidence": {
+              "text": "Mondscheinfahrt auf dem Hallwilersee Jeden Freitag im Juli und August, ab Meisterschwanden um 20.30 Uhr. Geniessen Sie den Abend auf dem Wasser. Preis: CHF 28.– pro Person Tickets gibt es nur online im Voraus: www.seeschiff-hallwil.ch",
+              "hit": "Jeden Freitag im Juli und August"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "falsch",
+            "explanation": "Du kaufst das Ticket nur online und vorher. Auf dem Schiff geht das nicht.",
+            "evidence": {
+              "text": "Mondscheinfahrt auf dem Hallwilersee Jeden Freitag im Juli und August, ab Meisterschwanden um 20.30 Uhr. Geniessen Sie den Abend auf dem Wasser. Preis: CHF 28.– pro Person Tickets gibt es nur online im Voraus: www.seeschiff-hallwil.ch",
+              "hit": "Tickets gibt es nur online im Voraus"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-08-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.661Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Uhr, Öffnungszeiten",
+                  "text": "",
+                  "picto": "uhr"
+                },
+                {
+                  "key": "2",
+                  "title": "Aufzug",
+                  "text": "",
+                  "picto": "lift"
+                },
+                {
+                  "key": "3",
+                  "title": "Hunde verboten",
+                  "text": "",
+                  "picto": "hundeverbot"
+                },
+                {
+                  "key": "4",
+                  "title": "Trinkwasser",
+                  "text": "",
+                  "picto": "trinkwasser"
+                },
+                {
+                  "key": "5",
+                  "title": "Hund mit Kotbeutel",
+                  "text": "",
+                  "picto": "hundekot"
+                },
+                {
+                  "key": "6",
+                  "title": "Achtung, Schulkinder",
+                  "text": "",
+                  "picto": "schulkinder"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Hundebesitzer! Hunde sind in unserem Park willkommen. Bitte nehmen Sie hier ein Sackerl für den Hundekot und werfen Sie es danach in den Abfalleimer. Danke!"
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Wanderinnen und Wanderer! Hier gibt es frisches Trinkwasser aus den Bergen. Füllen Sie Ihre Flasche auf. Das Wasser kostet nichts."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Hotelgäste! Ihre Zimmer sind im vierten Stock. Bitte fahren Sie mit dem Aufzug links neben der Rezeption. Die Treppe ist heute geschlossen."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Autofahrerinnen und Autofahrer! Hier ist eine Schule. Viele Kinder gehen hier über die Straße. Bitte fahren Sie langsam!"
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Kundinnen und Kunden! Ab Montag haben wir neue Öffnungszeiten. Wir sind von Montag bis Samstag von 7 bis 21 Uhr für Sie da."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "5",
+            "explanation": "Hunde sind im Park willkommen, man nimmt ein Sackerl für den Hundekot. Darum passt das Bild mit dem Hund und dem Beutel, nicht das Zeichen „Hunde verboten“.",
+            "evidence": {
+              "text": "Liebe Hundebesitzer! Hunde sind in unserem Park willkommen. Bitte nehmen Sie hier ein Sackerl für den Hundekot und werfen Sie es danach in den Abfalleimer. Danke!",
+              "hit": "Hunde sind in unserem Park willkommen."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "4",
+            "explanation": "Hier füllt man die Flasche mit Wasser zum Trinken. Das passt zum Bild mit dem Wasserhahn und der Flasche.",
+            "evidence": {
+              "text": "Liebe Wanderinnen und Wanderer! Hier gibt es frisches Trinkwasser aus den Bergen. Füllen Sie Ihre Flasche auf. Das Wasser kostet nichts.",
+              "hit": "Füllen Sie Ihre Flasche auf."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "2",
+            "explanation": "Die Gäste sollen mit dem Aufzug fahren. Das passt zum Bild mit dem Aufzug.",
+            "evidence": {
+              "text": "Liebe Hotelgäste! Ihre Zimmer sind im vierten Stock. Bitte fahren Sie mit dem Aufzug links neben der Rezeption. Die Treppe ist heute geschlossen.",
+              "hit": "Bitte fahren Sie mit dem Aufzug"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "6",
+            "explanation": "Hier gehen Kinder von der Schule über die Straße. Das passt zum Zeichen für Schulkinder.",
+            "evidence": {
+              "text": "Liebe Autofahrerinnen und Autofahrer! Hier ist eine Schule. Viele Kinder gehen hier über die Straße. Bitte fahren Sie langsam!",
+              "hit": "Viele Kinder gehen hier über die Straße."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "1",
+            "explanation": "Der Text ist über neue Öffnungszeiten. Das passt zum Bild mit der Uhr.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden! Ab Montag haben wir neue Öffnungszeiten. Wir sind von Montag bis Samstag von 7 bis 21 Uhr für Sie da.",
+              "hit": "Ab Montag haben wir neue Öffnungszeiten."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

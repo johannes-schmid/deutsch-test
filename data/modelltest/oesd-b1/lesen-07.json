@@ -1,0 +1,955 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-07-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.463Z",
+        "textType": "Blogbeitrag"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Romana war nicht zu Hause, als das Wasser in die Wohnung kam."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Das Wasser kam aus Romanas eigenem Badezimmer."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Ein Nachbar hat Romana in der ersten Nacht geholfen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Die Versicherung hat schnell den ganzen Schaden bezahlt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Während der Reparatur hat Romana in einem Hotel gewohnt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Einen Teil ihrer alten Fotos konnte Romana retten."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Wichtige Papiere bewahrt Romana heute anders auf als früher."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Romana",
+          "source": "Blog",
+          "paragraphs": [
+            "Sechs Wochen nach dem Wasserschaden",
+            "Hallo ihr Lieben! Lange habt ihr nichts von mir gehört, und heute erzähle ich euch endlich, warum. Vor sechs Wochen hatte ich die schlimmste Nacht seit Jahren. Als ich kurz vor Mitternacht vom Spätdienst heimkam, stand in meiner Wohnung in Leonding das Wasser schon in der Küche. Zuerst habe ich gar nicht verstanden, was los ist. Dann habe ich gesehen, dass es von der Decke tropft. In der Wohnung über mir war im Badezimmer ein Rohr geplatzt, und die Nachbarin war gerade auf Urlaub.",
+            "Ich stand allein in meiner nassen Wohnung und hätte am liebsten nur geweint. Zum Glück war Herr Wallner, der unter mir wohnt, noch wach. Er ist sofort heraufgekommen, hat das Wasser im Keller abgedreht und mir dann geholfen, meine Sessel* und den Esstisch in seine Wohnung zu tragen. Bis drei Uhr früh haben wir zusammen Handtücher ausgewunden. Ohne ihn hätte ich das nicht geschafft.",
+            "Leider war das erst der Anfang. Mit der Versicherung schreibe ich seit Wochen Briefe und E-Mails hin und her. Ein Gutachter war da, hat alles fotografiert und gemessen. Einen Teil des Geldes habe ich inzwischen bekommen, aber auf den Rest warte ich immer noch.",
+            "In meiner Wohnung konnte ich nicht bleiben, weil die Wände trocknen mussten. Meine Schwester Gerlinde hat mich gleich am nächsten Tag zu sich nach Enns geholt. Sechs Wochen habe ich bei ihr auf dem Sofa geschlafen. Ein Hotel wäre viel zu teuer gewesen, und ehrlich gesagt hätte ich dort nur gegrübelt. Bei ihr gab es jeden Abend ein warmes Essen und lange Gespräche.",
+            "Am meisten haben mir meine alten Fotos leidgetan. Die Kiste mit den Bildern meiner Großeltern stand ganz unten im Schrank und war völlig nass. Viele Fotos waren nicht mehr zu retten. Aber ungefähr die Hälfte habe ich eines nach dem anderen auf dem Wäscheständer getrocknet, und sie sehen fast aus wie früher.",
+            "Was ich daraus gelernt habe? Wichtige Papiere wie Pass, Verträge und Zeugnisse liegen jetzt nicht mehr in einer Schachtel am Boden, sondern in einer Plastikbox ganz oben im Regal. Heuer im Herbst möchte ich außerdem alle Fotos einscannen. Und Herr Wallner bekommt von mir zu Weihnachten den besten Kuchen, den ich backen kann!",
+            "Romana",
+            "*Sessel = österreichischer Standard für „Stuhl“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Das Rohr ist in der Wohnung über Romana kaputtgegangen. Das Badezimmer gehört also der Nachbarin, nicht Romana.",
+            "evidence": {
+              "text": "Hallo ihr Lieben! Lange habt ihr nichts von mir gehört, und heute erzähle ich euch endlich, warum. Vor sechs Wochen hatte ich die schlimmste Nacht seit Jahren. Als ich kurz vor Mitternacht vom Spätdienst heimkam, stand in meiner Wohnung in Leonding das Wasser schon in der Küche. Zuerst habe ich gar nicht verstanden, was los ist. Dann habe ich gesehen, dass es von der Decke tropft. In der Wohnung über mir war im Badezimmer ein Rohr geplatzt, und die Nachbarin war gerade auf Urlaub.",
+              "hit": "In der Wohnung über mir war im Badezimmer ein Rohr geplatzt"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Herr Wallner wohnt unter ihr und hat ihr noch in derselben Nacht geholfen. Sie haben bis drei Uhr früh zusammen gearbeitet.",
+            "evidence": {
+              "text": "Ich stand allein in meiner nassen Wohnung und hätte am liebsten nur geweint. Zum Glück war Herr Wallner, der unter mir wohnt, noch wach. Er ist sofort heraufgekommen, hat das Wasser im Keller abgedreht und mir dann geholfen, meine Sessel* und den Esstisch in seine Wohnung zu tragen. Bis drei Uhr früh haben wir zusammen Handtücher ausgewunden. Ohne ihn hätte ich das nicht geschafft.",
+              "hit": "Er ist sofort heraufgekommen, hat das Wasser im Keller abgedreht und mir dann geholfen"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Romana schreibt seit Wochen mit der Versicherung. Sie hat erst einen Teil des Geldes bekommen und wartet noch auf den Rest.",
+            "evidence": {
+              "text": "Leider war das erst der Anfang. Mit der Versicherung schreibe ich seit Wochen Briefe und E-Mails hin und her. Ein Gutachter war da, hat alles fotografiert und gemessen. Einen Teil des Geldes habe ich inzwischen bekommen, aber auf den Rest warte ich immer noch.",
+              "hit": "aber auf den Rest warte ich immer noch"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Romana hat sechs Wochen bei ihrer Schwester in Enns gewohnt. Ein Hotel war ihr zu teuer.",
+            "evidence": {
+              "text": "In meiner Wohnung konnte ich nicht bleiben, weil die Wände trocknen mussten. Meine Schwester Gerlinde hat mich gleich am nächsten Tag zu sich nach Enns geholt. Sechs Wochen habe ich bei ihr auf dem Sofa geschlafen. Ein Hotel wäre viel zu teuer gewesen, und ehrlich gesagt hätte ich dort nur gegrübelt. Bei ihr gab es jeden Abend ein warmes Essen und lange Gespräche.",
+              "hit": "Sechs Wochen habe ich bei ihr auf dem Sofa geschlafen."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Viele Fotos waren kaputt, aber etwa die Hälfte hat sie getrocknet. Diese sehen fast aus wie früher.",
+            "evidence": {
+              "text": "Am meisten haben mir meine alten Fotos leidgetan. Die Kiste mit den Bildern meiner Großeltern stand ganz unten im Schrank und war völlig nass. Viele Fotos waren nicht mehr zu retten. Aber ungefähr die Hälfte habe ich eines nach dem anderen auf dem Wäscheständer getrocknet, und sie sehen fast aus wie früher.",
+              "hit": "Aber ungefähr die Hälfte habe ich eines nach dem anderen auf dem Wäscheständer getrocknet"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Früher lagen ihre Papiere in einer Schachtel am Boden. Jetzt sind sie in einer Plastikbox oben im Regal.",
+            "evidence": {
+              "text": "Was ich daraus gelernt habe? Wichtige Papiere wie Pass, Verträge und Zeugnisse liegen jetzt nicht mehr in einer Schachtel am Boden, sondern in einer Plastikbox ganz oben im Regal. Heuer im Herbst möchte ich außerdem alle Fotos einscannen. Und Herr Wallner bekommt von mir zu Weihnachten den besten Kuchen, den ich backen kann!",
+              "hit": "liegen jetzt nicht mehr in einer Schachtel am Boden, sondern in einer Plastikbox ganz oben im Regal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-07-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.463Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "c"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Das Projekt gibt es in Plauen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit diesem Sommer."
+                },
+                {
+                  "key": "b",
+                  "label": "seit zehn Jahren."
+                },
+                {
+                  "key": "c",
+                  "label": "seit zwei Jahren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Gaststätten, deren Toiletten jeder gratis benutzen darf."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Stadt, die neue öffentliche Toiletten baut."
+                },
+                {
+                  "key": "c",
+                  "label": "Restaurants, die für die Toilette Geld verlangen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Die Wirte bekommen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "neue Möbel für ihre Toiletten."
+                },
+                {
+                  "key": "b",
+                  "label": "jeden Monat einen festen Betrag von der Stadt."
+                },
+                {
+                  "key": "c",
+                  "label": "kostenlose Werbung im Radio."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Erkennen kann man die Gaststätten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "an einer Fahne vor dem Haus."
+                },
+                {
+                  "key": "b",
+                  "label": "an einem Aufkleber am Eingang und auf einem Stadtplan."
+                },
+                {
+                  "key": "c",
+                  "label": "nur an einer Liste im Internet."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Ein Örtchen für alle",
+            "Wer in der Plauener Innenstadt plötzlich eine Toilette braucht, hatte früher ein Problem: Öffentliche Toiletten gibt es nur wenige, und am Abend sind sie meistens geschlossen. Seit zwei Jahren hilft das Projekt „Offenes Örtchen“. Rund 25 Restaurants, Cafés und Bäckereien lassen jeden Menschen kostenlos auf ihre Toilette – auch wenn er nichts bestellt. In anderen deutschen Städten gibt es solche Projekte schon seit zehn Jahren.",
+            "Die Idee ist einfach: Neue Toiletten zu bauen und sauber zu halten, wäre für die Stadt sehr teuer. Stattdessen bekommen die Wirte jeden Monat 50 Euro aus der Stadtkasse. Dafür kümmern sie sich um Papier, Seife und Sauberkeit. „Am Anfang hatte ich Angst, dass meine Gäste sich gestört fühlen“, sagt Café-Besitzerin Silke Kühn. „Aber das Gegenteil ist passiert. Manche kommen nur wegen der Toilette und bleiben dann auf einen Kaffee.“",
+            "Welche Gaststätten mitmachen, sieht man an einem grünen Aufkleber an der Eingangstür. Außerdem sind alle Adressen auf einem Stadtplan eingezeichnet, den man in der Touristeninformation bekommt. Erst in diesem Sommer ist ein neues Café am Altmarkt dazugekommen. Besonders Familien mit kleinen Kindern und ältere Menschen sind froh über das Angebot. Im Radio hat die Stadt bisher keine Werbung gemacht – das soll sich im nächsten Jahr ändern.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "Restaurants, Cafés und Bäckereien lassen alle Menschen kostenlos auf ihre Toilette. Neue Toiletten baut die Stadt nicht, weil das zu teuer wäre.",
+            "evidence": {
+              "text": "Wer in der Plauener Innenstadt plötzlich eine Toilette braucht, hatte früher ein Problem: Öffentliche Toiletten gibt es nur wenige, und am Abend sind sie meistens geschlossen. Seit zwei Jahren hilft das Projekt „Offenes Örtchen“. Rund 25 Restaurants, Cafés und Bäckereien lassen jeden Menschen kostenlos auf ihre Toilette – auch wenn er nichts bestellt. In anderen deutschen Städten gibt es solche Projekte schon seit zehn Jahren.",
+              "hit": "Rund 25 Restaurants, Cafés und Bäckereien lassen jeden Menschen kostenlos auf ihre Toilette"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Die Wirte bekommen jeden Monat 50 Euro von der Stadt. Werbung im Radio gibt es bis jetzt nicht.",
+            "evidence": {
+              "text": "Die Idee ist einfach: Neue Toiletten zu bauen und sauber zu halten, wäre für die Stadt sehr teuer. Stattdessen bekommen die Wirte jeden Monat 50 Euro aus der Stadtkasse. Dafür kümmern sie sich um Papier, Seife und Sauberkeit. „Am Anfang hatte ich Angst, dass meine Gäste sich gestört fühlen“, sagt Café-Besitzerin Silke Kühn. „Aber das Gegenteil ist passiert. Manche kommen nur wegen der Toilette und bleiben dann auf einen Kaffee.“",
+              "hit": "Stattdessen bekommen die Wirte jeden Monat 50 Euro aus der Stadtkasse."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Ein grüner Aufkleber ist an der Tür, und alle Adressen stehen auf einem Stadtplan. Von einer Fahne oder einer Liste im Internet steht nichts im Text.",
+            "evidence": {
+              "text": "Welche Gaststätten mitmachen, sieht man an einem grünen Aufkleber an der Eingangstür. Außerdem sind alle Adressen auf einem Stadtplan eingezeichnet, den man in der Touristeninformation bekommt. Erst in diesem Sommer ist ein neues Café am Altmarkt dazugekommen. Besonders Familien mit kleinen Kindern und ältere Menschen sind froh über das Angebot. Im Radio hat die Stadt bisher keine Werbung gemacht – das soll sich im nächsten Jahr ändern.",
+              "hit": "Welche Gaststätten mitmachen, sieht man an einem grünen Aufkleber an der Eingangstür. Außerdem sind alle Adressen auf einem Stadtplan eingezeichnet"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-07-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.463Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine neue Jugendherberge in den Bergen."
+                },
+                {
+                  "key": "b",
+                  "label": "Bauernhöfe, die Gästen einen Schlafplatz im Stroh anbieten."
+                },
+                {
+                  "key": "c",
+                  "label": "günstige Ferienwohnungen auf dem Land."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Einen Schlafsack …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommt jeder Gast kostenlos."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man im Hofladen kaufen."
+                },
+                {
+                  "key": "c",
+                  "label": "bringt man selbst mit oder mietet ihn für wenig Geld."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Für viele Bauernfamilien …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist das Angebot eine wichtige zusätzliche Einnahme."
+                },
+                {
+                  "key": "b",
+                  "label": "ist die Arbeit mit den Gästen zu viel."
+                },
+                {
+                  "key": "c",
+                  "label": "sind die Gäste im Stroh nur ein Hobby."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Schlafen, wo sonst die Kühe fressen",
+            "Auf dem Inauenhof oberhalb von Gais riecht es nach Heu. Wo im Winter das Futter für die Kühe liegt, schlafen im Sommer Wanderer und Familien. Der Hof ist einer von über zwanzig Bauernhöfen im Kanton Appenzell Ausserrhoden, die «Schlafen im Stroh» anbieten. Die Idee gibt es in der Schweiz schon lange. Eine Nacht kostet für Erwachsene 30 Franken, Kinder zahlen die Hälfte. Ein grosses Frühstück mit Milch, Käse und Brot vom Hof ist im Preis inbegriffen.",
+            "Komfort darf man nicht erwarten. Geschlafen wird auf einer dicken Schicht Stroh, Duschen und Toiletten gibt es im Nebengebäude. Einen Schlafsack bringen die Gäste selbst mit. Wer keinen hat, kann für ein paar Franken einen mieten. «Ein Leintuch legen wir aber jedem hin», sagt Bäuerin Erika Inauen. Am Abend dürfen die Gäste beim Hof grillieren, das Fleisch und die Würste kann man im Hofladen kaufen.",
+            "Für viele Bauernfamilien ist das Angebot heute ein wichtiger Zusatzverdienst, denn mit Milch allein verdient man immer weniger. Natürlich bedeutet es auch mehr Arbeit. «Manchmal ist es fast zu viel», gibt Erika Inauen zu. «Aber unsere Gäste sind so dankbar, dass wir sicher weitermachen.» Besonders Kinder lieben die Nächte im Stroh – und viele wollen am Morgen beim Melken helfen.",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Der Text erzählt von Bauernhöfen, auf denen Wanderer und Familien im Stroh übernachten. Eine Jugendherberge oder Ferienwohnungen kommen nicht vor.",
+            "evidence": {
+              "text": "Auf dem Inauenhof oberhalb von Gais riecht es nach Heu. Wo im Winter das Futter für die Kühe liegt, schlafen im Sommer Wanderer und Familien. Der Hof ist einer von über zwanzig Bauernhöfen im Kanton Appenzell Ausserrhoden, die «Schlafen im Stroh» anbieten. Die Idee gibt es in der Schweiz schon lange. Eine Nacht kostet für Erwachsene 30 Franken, Kinder zahlen die Hälfte. Ein grosses Frühstück mit Milch, Käse und Brot vom Hof ist im Preis inbegriffen.",
+              "hit": "Der Hof ist einer von über zwanzig Bauernhöfen im Kanton Appenzell Ausserrhoden, die «Schlafen im Stroh» anbieten."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Den Schlafsack bringen die Gäste mit, oder sie mieten ihn für ein paar Franken. Gratis gibt es nur ein Leintuch, und im Hofladen kauft man Fleisch.",
+            "evidence": {
+              "text": "Komfort darf man nicht erwarten. Geschlafen wird auf einer dicken Schicht Stroh, Duschen und Toiletten gibt es im Nebengebäude. Einen Schlafsack bringen die Gäste selbst mit. Wer keinen hat, kann für ein paar Franken einen mieten. «Ein Leintuch legen wir aber jedem hin», sagt Bäuerin Erika Inauen. Am Abend dürfen die Gäste beim Hof grillieren, das Fleisch und die Würste kann man im Hofladen kaufen.",
+              "hit": "Einen Schlafsack bringen die Gäste selbst mit. Wer keinen hat, kann für ein paar Franken einen mieten."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Mit Milch verdienen die Bauern immer weniger, deshalb ist das Geld von den Gästen wichtig. Die Arbeit ist manchmal fast zu viel, aber sie machen trotzdem weiter.",
+            "evidence": {
+              "text": "Für viele Bauernfamilien ist das Angebot heute ein wichtiger Zusatzverdienst, denn mit Milch allein verdient man immer weniger. Natürlich bedeutet es auch mehr Arbeit. «Manchmal ist es fast zu viel», gibt Erika Inauen zu. «Aber unsere Gäste sind so dankbar, dass wir sicher weitermachen.» Besonders Kinder lieben die Nächte im Stroh – und viele wollen am Morgen beim Melken helfen.",
+              "hit": "Für viele Bauernfamilien ist das Angebot heute ein wichtiger Zusatzverdienst"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-07-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.463Z",
+        "textType": "Anzeigen: Angebote rund um Geschichte"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten interessieren sich für Geschichte und suchen passende Angebote.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Mit dem Nachtwächter durch Quedlinburg",
+                  "text": "Wenn es dunkel wird, führt Sie unser Nachtwächter mit seiner Laterne durch die engen Gassen der Altstadt und erzählt spannende und lustige Geschichten aus alten Zeiten. Täglich um 20 Uhr, 12 €."
+                },
+                {
+                  "key": "b",
+                  "title": "Kleine Forscher in Carnuntum",
+                  "text": "Eine Woche lang suchen Kinder von 8 bis 12 Jahren mit Schaufel und Pinsel nach Münzen und Scherben aus der Römerzeit – fast wie bei einer echten Ausgrabung. Ferienwochen im Juli und August, Mo–Fr 9–15 Uhr, € 145."
+                },
+                {
+                  "key": "c",
+                  "title": "Familienforschung für Einsteiger",
+                  "text": "Wer waren Ihre Vorfahren, und woher kamen sie? An vier Kursabenden lernen Sie, wie Sie in Archiven, alten Kirchenbüchern und im Internet nach Ihrer Familie suchen. Mittwochs 19–21 Uhr, CHF 160.–. Volkshochschule Rorschach"
+                },
+                {
+                  "key": "d",
+                  "title": "Burgführungen in Burghausen",
+                  "text": "Erleben Sie eine der längsten Burgen Europas! Führungen jeden Samstag und Sonntag um 11 und 14 Uhr. Bitte beachten Sie: Der Weg führt über viele steile Treppen, für Rollstühle und Kinderwagen ist die Führung leider nicht geeignet. Erwachsene 9 €, Kinder 5 €."
+                },
+                {
+                  "key": "e",
+                  "title": "Freilichtmuseum Hasewiesen, Cloppenburg",
+                  "text": "Spazieren Sie durch ein Dorf wie vor 200 Jahren! In über 50 alten Bauernhäusern zeigen unsere Mitarbeiter, wie man früher gewebt, geschmiedet und Brot gebacken hat. Bitte nur zuschauen: Selbst ausprobieren ist leider nicht möglich. Täglich 9–18 Uhr."
+                },
+                {
+                  "key": "f",
+                  "title": "Zeitzeugen-Café",
+                  "text": "Wie war das Leben nach dem Krieg? Ältere Menschen aus unserer Stadt erzählen, wie sie als Kinder die Jahre nach 1945 erlebt haben. Danach dürfen Sie Fragen stellen. Jeden letzten Donnerstag im Monat, 15 Uhr, Eintritt frei."
+                },
+                {
+                  "key": "g",
+                  "title": "Römer am Niederrhein",
+                  "text": "Wie haben die Römer vor 2000 Jahren am Niederrhein gelebt? Unsere neue Ausstellung zeigt Häuser, Kleidung, Essen und Spiele. Audioguide auf Deutsch, Englisch, Niederländisch und Französisch. Di–So 10–17 Uhr, Eintritt 8 €."
+                },
+                {
+                  "key": "h",
+                  "title": "Schlossführungen in Brig",
+                  "text": "Lernen Sie das Schloss und die Geschichte des reichen Händlers kennen, der es im 17. Jahrhundert bauen liess. Führungen täglich um 10, 14 und 16 Uhr, auf Deutsch, Italienisch und Französisch. Der Rundgang endet oben im Turm (200 Stufen). Billett CHF 12.–"
+                },
+                {
+                  "key": "i",
+                  "title": "Vortragsreihe „Wetzlar erzählt“",
+                  "text": "Jeden Dienstag um 19.30 Uhr spricht eine Historikerin oder ein Historiker über ein Kapitel unserer Stadtgeschichte, vom Mittelalter bis heute. Einzelner Abend 5 €, alle zwölf Abende 45 €. Volkshochschule Wetzlar"
+                },
+                {
+                  "key": "j",
+                  "title": "Schmieden für Anfänger",
+                  "text": "Einmal selbst am Feuer stehen und mit Hammer und Amboss arbeiten! An einem Wochenende schmieden Sie unter Anleitung Ihren eigenen Haken oder ein kleines Messer. € 190 inklusive Material. Schmiedewerkstatt Ybbsitz."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Harald möchte abends eine unterhaltsame Führung durch eine alte Stadt machen."
+                },
+                {
+                  "n": 13,
+                  "text": "Doris' Sohn ist zehn und möchte in den Ferien einmal wie ein Archäologe nach alten Dingen graben."
+                },
+                {
+                  "n": 14,
+                  "text": "Mehmet möchte herausfinden, woher seine Ururgroßeltern kamen."
+                },
+                {
+                  "n": 15,
+                  "text": "Olga möchte mit ihrer Mutter, die im Rollstuhl sitzt, eine Burg besichtigen."
+                },
+                {
+                  "n": 16,
+                  "text": "Wilfried möchte ein altes Handwerk nicht nur sehen, sondern selbst ausprobieren."
+                },
+                {
+                  "n": 17,
+                  "text": "Romy möchte Menschen persönlich zuhören, die die Nachkriegszeit noch selbst erlebt haben."
+                },
+                {
+                  "n": 18,
+                  "text": "Jannik sucht eine historische Führung, bei der auch seine Großeltern, die nur Italienisch sprechen, alles verstehen."
+                },
+                {
+                  "n": 19,
+                  "text": "Gesine möchte regelmäßig Vorträge über die Geschichte ihrer Stadt hören."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "In Carnuntum suchen Kinder von 8 bis 12 Jahren in den Ferien nach Funden aus der Römerzeit. Die Ausstellung in Xanten zeigt nur, wie die Römer gelebt haben.",
+            "evidence": {
+              "text": "Eine Woche lang suchen Kinder von 8 bis 12 Jahren mit Schaufel und Pinsel nach Münzen und Scherben aus der Römerzeit – fast wie bei einer echten Ausgrabung. Ferienwochen im Juli und August, Mo–Fr 9–15 Uhr, € 145.",
+              "hit": "fast wie bei einer echten Ausgrabung"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Im Kurs in Rorschach lernst du, wie man nach seinen Vorfahren sucht. Das passt zu Mehmets Frage, woher seine Familie kommt.",
+            "evidence": {
+              "text": "Wer waren Ihre Vorfahren, und woher kamen sie? An vier Kursabenden lernen Sie, wie Sie in Archiven, alten Kirchenbüchern und im Internet nach Ihrer Familie suchen. Mittwochs 19–21 Uhr, CHF 160.–. Volkshochschule Rorschach",
+              "hit": "Wer waren Ihre Vorfahren, und woher kamen sie?"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "x",
+            "explanation": "Die Burgführung in Burghausen ist nicht für Rollstühle geeignet. Eine andere Burgführung gibt es nicht, deshalb passt keine Anzeige.",
+            "evidence": {
+              "text": "Erleben Sie eine der längsten Burgen Europas! Führungen jeden Samstag und Sonntag um 11 und 14 Uhr. Bitte beachten Sie: Der Weg führt über viele steile Treppen, für Rollstühle und Kinderwagen ist die Führung leider nicht geeignet. Erwachsene 9 €, Kinder 5 €.",
+              "hit": "für Rollstühle und Kinderwagen ist die Führung leider nicht geeignet"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "j",
+            "explanation": "Beim Schmiede-Wochenende in Ybbsitz arbeitest du selbst mit Hammer und Feuer. Im Freilichtmuseum darf man nur zuschauen.",
+            "evidence": {
+              "text": "Einmal selbst am Feuer stehen und mit Hammer und Amboss arbeiten! An einem Wochenende schmieden Sie unter Anleitung Ihren eigenen Haken oder ein kleines Messer. € 190 inklusive Material. Schmiedewerkstatt Ybbsitz.",
+              "hit": "An einem Wochenende schmieden Sie unter Anleitung Ihren eigenen Haken oder ein kleines Messer."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "f",
+            "explanation": "Im Zeitzeugen-Café erzählen ältere Menschen von den Jahren nach 1945. Man kann ihnen auch Fragen stellen.",
+            "evidence": {
+              "text": "Wie war das Leben nach dem Krieg? Ältere Menschen aus unserer Stadt erzählen, wie sie als Kinder die Jahre nach 1945 erlebt haben. Danach dürfen Sie Fragen stellen. Jeden letzten Donnerstag im Monat, 15 Uhr, Eintritt frei.",
+              "hit": "Ältere Menschen aus unserer Stadt erzählen, wie sie als Kinder die Jahre nach 1945 erlebt haben."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "h",
+            "explanation": "Die Schlossführungen in Brig gibt es auch auf Italienisch. Der Audioguide in Xanten hat kein Italienisch und ist keine Führung.",
+            "evidence": {
+              "text": "Lernen Sie das Schloss und die Geschichte des reichen Händlers kennen, der es im 17. Jahrhundert bauen liess. Führungen täglich um 10, 14 und 16 Uhr, auf Deutsch, Italienisch und Französisch. Der Rundgang endet oben im Turm (200 Stufen). Billett CHF 12.–",
+              "hit": "auf Deutsch, Italienisch und Französisch"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "i",
+            "explanation": "Die Volkshochschule Wetzlar bietet jeden Dienstag einen Vortrag zur Stadtgeschichte an. So kann Gesine regelmäßig hingehen.",
+            "evidence": {
+              "text": "Jeden Dienstag um 19.30 Uhr spricht eine Historikerin oder ein Historiker über ein Kapitel unserer Stadtgeschichte, vom Mittelalter bis heute. Einzelner Abend 5 €, alle zwölf Abende 45 €. Volkshochschule Wetzlar",
+              "hit": "Jeden Dienstag um 19.30 Uhr spricht eine Historikerin oder ein Historiker über ein Kapitel unserer Stadtgeschichte"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-07-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.463Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für Bewerbungen ohne Foto und ohne Namen?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Rüdiger, 56, Hof",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Aleksandra, 27, Gladbeck",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Kemal, 34, Offenburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Stefanie, 41, Kaufbeuren",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Hedwig, 62, Weinfelden",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Pascal, 30, Kriens",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Gottfried, 53, Judenburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Josefine, 24, Ilmenau",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Ein Karrieremagazin hat seine Leserinnen und Leser gefragt: Sollen Bewerbungen ohne Foto und ohne Namen verschickt werden?",
+            "Ich habe eine kleine Tischlerei mit sechs Mitarbeitern. Bei uns arbeitet man jeden Tag eng zusammen, manchmal auch am Wochenende. Wenn eine Bewerbung kommt, möchte ich schon vorher wissen, mit wem ich es zu tun habe. Name und Foto sind für mich keine Nebensache, sondern der erste Kontakt. Ein Blatt mit einer Nummer statt einem Namen finde ich ehrlich gesagt kalt.",
+            "Rüdiger, 56, Hof",
+            "Nach meiner Ausbildung habe ich über vierzig Bewerbungen geschrieben, mit sehr guten Noten. Eingeladen wurde ich nur dreimal. Meine Freundin hat mit schlechteren Zeugnissen viel mehr Gespräche bekommen – sie heißt Müller, ich heiße Wiśniewska. Seitdem bin ich sicher: Viele Firmen lesen gar nicht weiter, wenn der Name fremd klingt. Ohne Namen hätte ich wenigstens eine faire Chance gehabt.",
+            "Aleksandra, 27, Gladbeck",
+            "Ein Gesicht sagt doch nichts darüber, ob jemand gut programmieren oder gut mit Kunden umgehen kann. Trotzdem schaut fast jeder Personalchef zuerst auf das Foto. Ich finde, der erste Eindruck sollte von dem kommen, was jemand gelernt hat und kann. Kennenlernen kann man sich später im Gespräch immer noch. Deshalb: Weg mit Foto und Namen!",
+            "Kemal, 34, Offenburg",
+            "Ich bin seit fünfzehn Jahren Personalleiterin, und natürlich will ich fair sein. Aber spätestens beim Vorstellungsgespräch sehe ich die Person ja doch. Wer Vorurteile hat, hat sie dann eben dort. Das Problem wird also nur verschoben. Außerdem kostet das Verfahren viel Zeit, weil jemand vorher in allen Unterlagen die Namen schwärzen muss. Ich halte davon wenig.",
+            "Stefanie, 41, Kaufbeuren",
+            "Auf das Foto kann man meiner Meinung nach gut verzichten. Früher musste man dafür extra zum Fotografen gehen, das war teuer und unnötig. Beim Namen sehe ich es aber anders. Ich habe lange bei einer Stellenvermittlung gearbeitet, und man muss die Leute ja anrufen und ansprechen können. Eine Bewerbung ganz ohne Namen? Das geht für mich zu weit.",
+            "Hedwig, 62, Weinfelden",
+            "In einigen Schweizer Städten hat die Verwaltung anonyme Bewerbungen schon getestet. Das Ergebnis war klar: Es wurden mehr junge Leute mit ausländischen Namen und mehr Frauen eingeladen, und am Ende waren alle zufrieden. Für mich ist das der Beweis, dass dieses Verfahren fairer ist. Ich wünsche mir, dass jetzt auch private Firmen mitmachen.",
+            "Pascal, 30, Kriens",
+            "Ich bin Installateurmeister und suche jedes Jahr einen Lehrling. Mit fünfzehn haben die jungen Leute noch kaum Zeugnisse, die viel aussagen. Da zählt für mich die Persönlichkeit. Auf einem Foto sehe ich, ob sich jemand Mühe gegeben hat und ob er freundlich schaut. Das hilft mir bei der Entscheidung mehr als jede Note.",
+            "Gottfried, 53, Judenburg",
+            "Ich habe gerade mein Studium beendet und bin mitten in den Bewerbungen. Für mein Foto war ich bei einer richtig guten Fotografin, und darauf bin ich stolz. Ich glaube, dass mein offenes Lächeln ein Vorteil für mich ist. Warum soll ich mich verstecken? Ich möchte zeigen, wer ich bin – mit Gesicht und mit Namen.",
+            "Josefine, 24, Ilmenau"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "Aleksandra wurde mit ihrem fremden Namen trotz guter Noten kaum eingeladen. Ohne Namen hätte sie eine faire Chance gehabt, deshalb ist sie dafür.",
+            "evidence": {
+              "text": "Nach meiner Ausbildung habe ich über vierzig Bewerbungen geschrieben, mit sehr guten Noten. Eingeladen wurde ich nur dreimal. Meine Freundin hat mit schlechteren Zeugnissen viel mehr Gespräche bekommen – sie heißt Müller, ich heiße Wiśniewska. Seitdem bin ich sicher: Viele Firmen lesen gar nicht weiter, wenn der Name fremd klingt. Ohne Namen hätte ich wenigstens eine faire Chance gehabt.",
+              "hit": "Ohne Namen hätte ich wenigstens eine faire Chance gehabt."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Kemal findet, dass zuerst zählen soll, was jemand kann, nicht das Gesicht. Er will Foto und Namen weglassen.",
+            "evidence": {
+              "text": "Ein Gesicht sagt doch nichts darüber, ob jemand gut programmieren oder gut mit Kunden umgehen kann. Trotzdem schaut fast jeder Personalchef zuerst auf das Foto. Ich finde, der erste Eindruck sollte von dem kommen, was jemand gelernt hat und kann. Kennenlernen kann man sich später im Gespräch immer noch. Deshalb: Weg mit Foto und Namen!",
+              "hit": "Deshalb: Weg mit Foto und Namen!"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Stefanie will fair sein, aber sie glaubt, das Problem kommt dann im Gespräch. Außerdem kostet es zu viel Zeit, deshalb ist sie dagegen.",
+            "evidence": {
+              "text": "Ich bin seit fünfzehn Jahren Personalleiterin, und natürlich will ich fair sein. Aber spätestens beim Vorstellungsgespräch sehe ich die Person ja doch. Wer Vorurteile hat, hat sie dann eben dort. Das Problem wird also nur verschoben. Außerdem kostet das Verfahren viel Zeit, weil jemand vorher in allen Unterlagen die Namen schwärzen muss. Ich halte davon wenig.",
+              "hit": "Das Problem wird also nur verschoben."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "falsch",
+            "explanation": "Hedwig findet nur das Foto unnötig. Den Namen will sie behalten, eine Bewerbung ganz ohne Namen geht ihr zu weit.",
+            "evidence": {
+              "text": "Auf das Foto kann man meiner Meinung nach gut verzichten. Früher musste man dafür extra zum Fotografen gehen, das war teuer und unnötig. Beim Namen sehe ich es aber anders. Ich habe lange bei einer Stellenvermittlung gearbeitet, und man muss die Leute ja anrufen und ansprechen können. Eine Bewerbung ganz ohne Namen? Das geht für mich zu weit.",
+              "hit": "Eine Bewerbung ganz ohne Namen? Das geht für mich zu weit."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "richtig",
+            "explanation": "Pascal sagt, dass die Tests in der Schweiz fairer waren. Er möchte, dass auch private Firmen so arbeiten.",
+            "evidence": {
+              "text": "In einigen Schweizer Städten hat die Verwaltung anonyme Bewerbungen schon getestet. Das Ergebnis war klar: Es wurden mehr junge Leute mit ausländischen Namen und mehr Frauen eingeladen, und am Ende waren alle zufrieden. Für mich ist das der Beweis, dass dieses Verfahren fairer ist. Ich wünsche mir, dass jetzt auch private Firmen mitmachen.",
+              "hit": "Für mich ist das der Beweis, dass dieses Verfahren fairer ist."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "falsch",
+            "explanation": "Gottfried braucht das Foto, um einen Lehrling auszuwählen. Für ihn sagt das Foto mehr als die Noten.",
+            "evidence": {
+              "text": "Ich bin Installateurmeister und suche jedes Jahr einen Lehrling. Mit fünfzehn haben die jungen Leute noch kaum Zeugnisse, die viel aussagen. Da zählt für mich die Persönlichkeit. Auf einem Foto sehe ich, ob sich jemand Mühe gegeben hat und ob er freundlich schaut. Das hilft mir bei der Entscheidung mehr als jede Note.",
+              "hit": "Das hilft mir bei der Entscheidung mehr als jede Note."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "falsch",
+            "explanation": "Josefine ist stolz auf ihr Foto und sieht es als Vorteil. Sie will sich mit Gesicht und Namen zeigen.",
+            "evidence": {
+              "text": "Ich habe gerade mein Studium beendet und bin mitten in den Bewerbungen. Für mein Foto war ich bei einer richtig guten Fotografin, und darauf bin ich stolz. Ich glaube, dass mein offenes Lächeln ein Vorteil für mich ist. Warum soll ich mich verstecken? Ich möchte zeigen, wer ich bin – mit Gesicht und mit Namen.",
+              "hit": "Ich möchte zeigen, wer ich bin – mit Gesicht und mit Namen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-07-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.463Z",
+        "textType": "Hallenordnung Boulderhalle"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie haben eine Zehnerkarte für die Boulderhalle gekauft und lesen jetzt die Hallenordnung.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Kinder unter 14 Jahren …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dürfen nur mit einem Erwachsenen klettern, der auf sie aufpasst."
+                },
+                {
+                  "key": "b",
+                  "label": "müssen zuerst einen Kurs am Samstagvormittag machen."
+                },
+                {
+                  "key": "c",
+                  "label": "dürfen nur am Vormittag in die Halle kommen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Wer zum ersten Mal kommt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf nur an den gelben Routen klettern."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommt zehn Prozent Rabatt auf den Eintritt."
+                },
+                {
+                  "key": "c",
+                  "label": "muss eine kurze Einweisung mitmachen und unterschreiben."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Kletterschuhe …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sind im Eintrittspreis schon enthalten."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man im Shop der Halle kaufen."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man an der Theke gegen Gebühr leihen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Unter einer Person, die gerade klettert, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf man sich kurz zum Ausruhen hinsetzen."
+                },
+                {
+                  "key": "b",
+                  "label": "darf sich niemand aufhalten, auch nicht kurz."
+                },
+                {
+                  "key": "c",
+                  "label": "sollte man stehen, um sie zu halten."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Hallenordnung",
+          "paragraphs": [
+            "Hallenordnung der Boulderhalle Griffig, Freiburg",
+            "**Eintritt**",
+            "Bitte melden Sie sich bei jedem Besuch an der Theke an und zeigen Sie Ihre Eintrittskarte. Wer zum ersten Mal bei uns ist, nimmt an einer kurzen Einweisung teil (ca. zehn Minuten) und unterschreibt danach unser Anmeldeformular. Ohne Unterschrift ist das Bouldern nicht erlaubt. Zehnerkarten sind ein Jahr lang gültig. Schüler und Studierende erhalten gegen Ausweis zehn Prozent Rabatt.",
+            "**Bouldern**",
+            "Wärmen Sie sich vor dem Klettern gut auf. Unter einer Person, die gerade an der Wand ist, darf sich niemand aufhalten – auch nicht kurz zum Ausruhen oder Vorbeigehen. Springen Sie nicht von ganz oben ab, sondern klettern Sie möglichst weit herunter. Halten oder sichern müssen Sie beim Bouldern niemanden. Die gelben Routen sind besonders für Anfänger geeignet.",
+            "**Kinder**",
+            "Kinder und Jugendliche unter 14 Jahren dürfen nur in Begleitung eines Erwachsenen bouldern. Diese Person ist für die Aufsicht verantwortlich und muss die ganze Zeit in der Halle bleiben. Für Kinder ab sechs Jahren bieten wir außerdem Kurse am Samstagvormittag an.",
+            "**Hygiene**",
+            "Bouldern Sie nur mit Kletterschuhen, nicht barfuß und nicht in Straßenschuhen. Kletterschuhe können Sie an der Theke für 4 Euro leihen, in unserem Shop gibt es auch neue zu kaufen. Bitte benutzen Sie Magnesia nur aus einem Beutel und waschen Sie sich vor dem Bouldern die Hände.",
+            "**Haftung**",
+            "Bouldern ist ein Sport mit Risiko. Sie klettern auf eigene Verantwortung. Für Wertsachen, die nicht in den Schließfächern liegen, übernehmen wir keine Haftung."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "a",
+            "explanation": "Kinder unter 14 brauchen einen Erwachsenen, der die ganze Zeit aufpasst. Die Kurse am Samstag sind nur ein Angebot und keine Pflicht.",
+            "evidence": {
+              "text": "Kinder und Jugendliche unter 14 Jahren dürfen nur in Begleitung eines Erwachsenen bouldern. Diese Person ist für die Aufsicht verantwortlich und muss die ganze Zeit in der Halle bleiben. Für Kinder ab sechs Jahren bieten wir außerdem Kurse am Samstagvormittag an.",
+              "hit": "Kinder und Jugendliche unter 14 Jahren dürfen nur in Begleitung eines Erwachsenen bouldern."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "c",
+            "explanation": "Beim ersten Besuch macht man eine kurze Einweisung und unterschreibt ein Formular. Die gelben Routen sind nur eine Empfehlung, und Rabatt bekommen nur Schüler und Studierende.",
+            "evidence": {
+              "text": "Bitte melden Sie sich bei jedem Besuch an der Theke an und zeigen Sie Ihre Eintrittskarte. Wer zum ersten Mal bei uns ist, nimmt an einer kurzen Einweisung teil (ca. zehn Minuten) und unterschreibt danach unser Anmeldeformular. Ohne Unterschrift ist das Bouldern nicht erlaubt. Zehnerkarten sind ein Jahr lang gültig. Schüler und Studierende erhalten gegen Ausweis zehn Prozent Rabatt.",
+              "hit": "Wer zum ersten Mal bei uns ist, nimmt an einer kurzen Einweisung teil (ca. zehn Minuten) und unterschreibt danach unser Anmeldeformular."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Kletterschuhe kann man an der Theke für 4 Euro leihen. Im Shop kann man auch neue kaufen, muss es aber nicht.",
+            "evidence": {
+              "text": "Bouldern Sie nur mit Kletterschuhen, nicht barfuß und nicht in Straßenschuhen. Kletterschuhe können Sie an der Theke für 4 Euro leihen, in unserem Shop gibt es auch neue zu kaufen. Bitte benutzen Sie Magnesia nur aus einem Beutel und waschen Sie sich vor dem Bouldern die Hände.",
+              "hit": "Kletterschuhe können Sie an der Theke für 4 Euro leihen"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Unter einer kletternden Person darf niemand sein, auch nicht kurz. Halten muss man beim Bouldern niemanden.",
+            "evidence": {
+              "text": "Wärmen Sie sich vor dem Klettern gut auf. Unter einer Person, die gerade an der Wand ist, darf sich niemand aufhalten – auch nicht kurz zum Ausruhen oder Vorbeigehen. Springen Sie nicht von ganz oben ab, sondern klettern Sie möglichst weit herunter. Halten oder sichern müssen Sie beim Bouldern niemanden. Die gelben Routen sind besonders für Anfänger geeignet.",
+              "hit": "Unter einer Person, die gerade an der Wand ist, darf sich niemand aufhalten – auch nicht kurz zum Ausruhen oder Vorbeigehen."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

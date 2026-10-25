@@ -1,0 +1,1146 @@
+{
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "oesd-a1-hoeren-03-t1",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.628Z",
+        "textType": "Kurze Alltagsgespräche (Foto zuordnen)"
+      },
+      "photos": {
+        "0": {
+          "A": {
+            "query": "man and woman sitting on bench by river watching ducks",
+            "alt": "Eine Frau und ein Mann sitzen auf einer Bank an einem Teich, im Wasser schwimmen Enten.",
+            "src": "oesd-a1/hoeren-03/oesd-a1-hoeren-03-t1-0-A.webp",
+            "credit": {
+              "name": "freestocks.org",
+              "url": "https://www.pexels.com/photo/two-girl-and-boy-sitting-on-bench-outdoor-172368/",
+              "pexelsId": 172368
+            }
+          },
+          "B": {
+            "query": "man helping woman put bag into luggage locker at train station",
+            "alt": "Ein Mann hilft einer Frau am Bahnhof. Sie stellt ihre Tasche in ein Schließfach."
+          },
+          "C": {
+            "query": "train attendant with trolley serving coffee to seated woman passenger",
+            "alt": "Ein Mann mit einem Wagen gibt einer Frau im Zug einen Becher Kaffee."
+          },
+          "D": {
+            "query": "two people ordering coffee at train station cafe counter",
+            "alt": "Ein lächelnder Mann hinter einer Theke gibt einem Kunden zwei Kaffeebecher.",
+            "src": "oesd-a1/hoeren-03/oesd-a1-hoeren-03-t1-0-D.webp",
+            "credit": {
+              "name": "Thirdman",
+              "url": "https://www.pexels.com/photo/a-man-standing-in-front-of-the-bar-counter-8936945/",
+              "pexelsId": 8936945
+            }
+          },
+          "E": {
+            "query": "saleswoman showing greeting cards on rack to male customer in stationery shop",
+            "alt": "Eine Verkäuferin zeigt einem Mann Karten an einem Ständer im Geschäft."
+          },
+          "F": {
+            "query": "usher checking ticket of man in concert hall showing way to seat",
+            "alt": "Eine Frau schaut auf die Karte von einem Mann und zeigt ihm im Konzertsaal den Weg zum Platz."
+          }
+        }
+      },
+      "display": {
+        "instruction": "Situation: Sie hören fünf kurze Gespräche. Welches Foto passt zu welchem Gespräch? Schreiben Sie die Nummer des Textes unter das Foto. Achtung: Ein Foto passt nicht. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "layout": "textNumber",
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "",
+                  "text": "Ein Mann und eine Frau sitzen auf einer Bank am Fluss. Im Wasser sind Enten.",
+                  "image": "oesd-a1/hoeren-03/oesd-a1-hoeren-03-t1-0-A.webp"
+                },
+                {
+                  "key": "B",
+                  "title": "",
+                  "text": "Am Bahnhof: Ein Mann hilft einer Frau mit der Tasche am Schließfach."
+                },
+                {
+                  "key": "C",
+                  "title": "",
+                  "text": "Im Zug: Ein Mann mit einem Wagen bringt einer Frau einen Kaffee."
+                },
+                {
+                  "key": "D",
+                  "title": "",
+                  "text": "Zwei Personen kaufen an der Theke von einem Bahnhofscafé einen Kaffee.",
+                  "image": "oesd-a1/hoeren-03/oesd-a1-hoeren-03-t1-0-D.webp"
+                },
+                {
+                  "key": "E",
+                  "title": "",
+                  "text": "Im Geschäft: Eine Verkäuferin zeigt einem Kunden Glückwunschkarten."
+                },
+                {
+                  "key": "F",
+                  "title": "",
+                  "text": "Im Konzertsaal: Eine Frau zeigt einem Mann den Weg zu seinem Platz."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 2,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 3,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 4,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 5,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fünf kurze Gespräche",
+          "speakers": {
+            "c1a": {
+              "name": "Zugbegleiter",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c1b": {
+              "name": "Fahrgast",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c2a": {
+              "name": "Platzanweiserin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2b": {
+              "name": "Besucher",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c3a": {
+              "name": "Reisende",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c3b": {
+              "name": "Bahnhofsmitarbeiter",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c4a": {
+              "name": "Verkäuferin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c4b": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c5a": {
+              "name": "Freundin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c5b": {
+              "name": "Freund",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-03/oesd-a1-hoeren-03-t1.review.mp3",
+          "duration": 101.41
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "C",
+            "explanation": "Der Mann bringt der Frau Kaffee und ein Croissant, und sie sitzt schon im Zug. Im Bahnhofscafé an der Theke steht man, das passt nicht.",
+            "evidence": {
+              "text": "Guten Morgen! Kaffee, Tee, etwas zu essen? Einen Kaffee mit Milch, bitte. Ohne Zucker. Und haben Sie Croissants? Ja, natürlich. Hier, bitte, Ihr Kaffee und ein Croissant. Das macht sechs Euro vierzig. Hier sind zehn Euro. Danke schön!",
+              "hit": "Hier, bitte, Ihr Kaffee und ein Croissant."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "F",
+            "explanation": "Die Frau kontrolliert das Billett und zeigt dem Mann seinen Platz für das Konzert. Das ist das Foto im Konzertsaal, nicht das Geschäft mit den Karten.",
+            "evidence": {
+              "text": "Guten Abend! Ihr Billett, bitte. Hier, bitte. Wo ist mein Platz? Ich finde ihn nicht. Sie haben Reihe zwölf, Platz drei. Gehen Sie hier nach links. Das Konzert beginnt in zehn Minuten. Reihe zwölf, links. Merci, sehr nett.",
+              "hit": "Sie haben Reihe zwölf, Platz drei. Gehen Sie hier nach links."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "B",
+            "explanation": "Die Frau stellt ihre Tasche in ein Schließfach, und der Mann erklärt alles. Sie kauft keinen Kaffee im Bahnhofscafé.",
+            "evidence": {
+              "text": "Entschuldigung, wie funktionieren die Schließfächer hier? Grüß Gott! Für Ihre Tasche reicht ein kleines Fach. Ein Tag kostet drei Euro. Drei Euro, gut. Ich stelle die Tasche hinein. So? Ja, genau. Jetzt Tür zu, und den Schlüssel nehmen Sie bitte mit.",
+              "hit": "wie funktionieren die Schließfächer hier?"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "E",
+            "explanation": "Der Mann kauft eine Geburtstagskarte mit Blumen für seine Großmutter. Das passt zum Foto mit den Karten im Geschäft.",
+            "evidence": {
+              "text": "Guten Tag, kann ich Ihnen helfen? Ja, ich suche eine Karte zum Geburtstag. Für meine Grossmutter, mit Umschlag. Hier sind Karten mit Blumen. Diese kostet drei Franken fünfzig, mit Umschlag. Oh, die ist schön. Meine Grossmutter liebt Blumen. Die nehme ich, merci.",
+              "hit": "ich suche eine Karte zum Geburtstag."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "A",
+            "explanation": "Die zwei Freunde sitzen auf einer Bank und schauen die Enten an. Sie geben den Enten kein Brot, sie schauen nur.",
+            "evidence": {
+              "text": "Schau mal, die Enten! Ich gebe ihnen mein Brot. Nein, lieber nicht. Brot ist nicht gut für Enten. Sie werden davon krank. Wirklich? Das wusste ich nicht. Dann esse ich das Brot selbst. Gute Idee. Wir bleiben auf der Bank und schauen nur.",
+              "hit": "Wir bleiben auf der Bank und schauen nur."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1a",
+            "voice": "man_gruber_at",
+            "text": "Guten Morgen! Kaffee, Tee, etwas zu essen?",
+            "delivery": "[friendly, routine]",
+            "clip": 1,
+            "sound": "train"
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_alexandra_at",
+            "text": "Einen Kaffee mit Milch, bitte. Ohne Zucker. Und haben Sie Croissants?",
+            "delivery": "[polite, a bit sleepy]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1a",
+            "voice": "man_gruber_at",
+            "text": "Ja, natürlich. Hier, bitte, Ihr Kaffee und ein Croissant. Das macht sechs Euro vierzig.",
+            "delivery": "[friendly]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_alexandra_at",
+            "text": "Hier sind zehn Euro. Danke schön!",
+            "delivery": "[polite]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Guten Abend! Ihr Billett, bitte.",
+            "delivery": "[friendly, quiet]",
+            "clip": 2,
+            "sound": "lobby"
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_andres_ch",
+            "text": "Hier, bitte. Wo ist mein Platz? Ich finde ihn nicht.",
+            "delivery": "[a bit unsure]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Sie haben Reihe zwölf, Platz drei. Gehen Sie hier nach links. Das Konzert beginnt in zehn Minuten.",
+            "delivery": "[helpful, calm]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_andres_ch",
+            "text": "Reihe zwölf, links. Merci, sehr nett.",
+            "delivery": "[relieved]",
+            "clip": 2
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_emilia_at",
+            "text": "Entschuldigung, wie funktionieren die Schließfächer hier?",
+            "delivery": "[polite, a bit lost]",
+            "clip": 3,
+            "sound": "station"
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_martin_at",
+            "text": "Grüß Gott! Für Ihre Tasche reicht ein kleines Fach. Ein Tag kostet drei Euro.",
+            "delivery": "[friendly, helpful]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_emilia_at",
+            "text": "Drei Euro, gut. Ich stelle die Tasche hinein. So?",
+            "delivery": "[concentrated]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_martin_at",
+            "text": "Ja, genau. Jetzt Tür zu, und den Schlüssel nehmen Sie bitte mit.",
+            "delivery": "[helpful]",
+            "clip": 3
+          },
+          {
+            "speaker": "c4a",
+            "voice": "woman_mia_ch",
+            "text": "Guten Tag, kann ich Ihnen helfen?",
+            "delivery": "[friendly, shop]",
+            "clip": 4,
+            "sound": "store"
+          },
+          {
+            "speaker": "c4b",
+            "voice": "man_thomas_ch",
+            "text": "Ja, ich suche eine Karte zum Geburtstag. Für meine Grossmutter, mit Umschlag.",
+            "delivery": "[polite]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4a",
+            "voice": "woman_mia_ch",
+            "text": "Hier sind Karten mit Blumen. Diese kostet drei Franken fünfzig, mit Umschlag.",
+            "delivery": "[friendly]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4b",
+            "voice": "man_thomas_ch",
+            "text": "Oh, die ist schön. Meine Grossmutter liebt Blumen. Die nehme ich, merci.",
+            "delivery": "[pleased]",
+            "clip": 4
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_emilia_at",
+            "text": "Schau mal, die Enten! Ich gebe ihnen mein Brot.",
+            "delivery": "[cheerful, outdoors]",
+            "clip": 5,
+            "sound": "river"
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_gruber_at",
+            "text": "Nein, lieber nicht. Brot ist nicht gut für Enten. Sie werden davon krank.",
+            "delivery": "[gentle, casual]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_emilia_at",
+            "text": "Wirklich? Das wusste ich nicht. Dann esse ich das Brot selbst.",
+            "delivery": "[surprised, laughing]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_gruber_at",
+            "text": "Gute Idee. Wir bleiben auf der Bank und schauen nur.",
+            "delivery": "[relaxed]",
+            "clip": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-03-t2",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.628Z",
+        "textType": "Nachricht auf der Sprachbox (Keramikwerkstatt)"
+      },
+      "sound": "beep",
+      "exampleAnswers": [
+        "Teller abholen"
+      ],
+      "display": {
+        "instruction": "Situation: Sie hören eine Nachricht auf Ihrer Sprachbox. Notieren Sie die wichtigen Informationen auf dem Zettel. Die erste Zeile ist ein Beispiel. Sie hören den Text zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Notizen\n",
+                "Was: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nWann: am ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                ", ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                ". April, um ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                " Uhr\nWo: ",
+                {
+                  "n": 9,
+                  "options": []
+                },
+                "gasse 11\nTelefon: 0699 / ",
+                {
+                  "n": 10,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Sprachbox",
+          "speakers": {
+            "kogler": {
+              "name": "Frau Kogler",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-03/oesd-a1-hoeren-03-t2.mp3",
+          "duration": 52.19
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "Freitag",
+            "accept": [
+              "am Freitag"
+            ],
+            "explanation": "Du kannst die Teller am Freitag abholen. Am Donnerstag ist die Werkstatt geschlossen, und am Samstag ist nur der nächste Kurs.",
+            "evidence": {
+              "text": "Grüß Gott, hier ist Kogler von der Keramikwerkstatt Kogler in Steyr. Ihre Teller aus dem Kurs sind fertig. Sie sind sehr schön geworden. Sie können sie am Freitag, dem fünfundzwanzigsten April, abholen. Am Donnerstag ist die Werkstatt leider geschlossen. Kommen Sie bitte um fünfzehn Uhr. Die Adresse ist Holundergasse elf. Ich buchstabiere: H, O, L, U, N, D, E, R. Bitte bringen Sie eine Tasche für die Teller mit. Ihre Kursnummer ist vierundzwanzig. Der nächste Kurs ist am Samstag, vielleicht haben Sie Lust. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, vierundsechzig, null zwei, fünfundachtzig, sieben. Auf Wiederhören!",
+              "hit": "Sie können sie am Freitag"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "25",
+            "accept": [
+              "25.",
+              "fünfundzwanzig",
+              "fünfundzwanzigsten"
+            ],
+            "explanation": "Der Tag ist der fünfundzwanzigste April. Vierundzwanzig ist nur deine Kursnummer.",
+            "evidence": {
+              "text": "Grüß Gott, hier ist Kogler von der Keramikwerkstatt Kogler in Steyr. Ihre Teller aus dem Kurs sind fertig. Sie sind sehr schön geworden. Sie können sie am Freitag, dem fünfundzwanzigsten April, abholen. Am Donnerstag ist die Werkstatt leider geschlossen. Kommen Sie bitte um fünfzehn Uhr. Die Adresse ist Holundergasse elf. Ich buchstabiere: H, O, L, U, N, D, E, R. Bitte bringen Sie eine Tasche für die Teller mit. Ihre Kursnummer ist vierundzwanzig. Der nächste Kurs ist am Samstag, vielleicht haben Sie Lust. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, vierundsechzig, null zwei, fünfundachtzig, sieben. Auf Wiederhören!",
+              "hit": "dem fünfundzwanzigsten April"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "15",
+            "accept": [
+              "15:00",
+              "15.00",
+              "fünfzehn",
+              "3",
+              "drei"
+            ],
+            "explanation": "Du sollst um fünfzehn Uhr kommen, das ist drei Uhr am Nachmittag.",
+            "evidence": {
+              "text": "Grüß Gott, hier ist Kogler von der Keramikwerkstatt Kogler in Steyr. Ihre Teller aus dem Kurs sind fertig. Sie sind sehr schön geworden. Sie können sie am Freitag, dem fünfundzwanzigsten April, abholen. Am Donnerstag ist die Werkstatt leider geschlossen. Kommen Sie bitte um fünfzehn Uhr. Die Adresse ist Holundergasse elf. Ich buchstabiere: H, O, L, U, N, D, E, R. Bitte bringen Sie eine Tasche für die Teller mit. Ihre Kursnummer ist vierundzwanzig. Der nächste Kurs ist am Samstag, vielleicht haben Sie Lust. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, vierundsechzig, null zwei, fünfundachtzig, sieben. Auf Wiederhören!",
+              "hit": "Kommen Sie bitte um fünfzehn Uhr."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Holunder",
+            "accept": [
+              "Holundergasse",
+              "Holundergasse 11"
+            ],
+            "exact": true,
+            "explanation": "Frau Kogler buchstabiert den Namen: H, O, L, U, N, D, E, R. Der Name muss genau richtig sein.",
+            "evidence": {
+              "text": "Grüß Gott, hier ist Kogler von der Keramikwerkstatt Kogler in Steyr. Ihre Teller aus dem Kurs sind fertig. Sie sind sehr schön geworden. Sie können sie am Freitag, dem fünfundzwanzigsten April, abholen. Am Donnerstag ist die Werkstatt leider geschlossen. Kommen Sie bitte um fünfzehn Uhr. Die Adresse ist Holundergasse elf. Ich buchstabiere: H, O, L, U, N, D, E, R. Bitte bringen Sie eine Tasche für die Teller mit. Ihre Kursnummer ist vierundzwanzig. Der nächste Kurs ist am Samstag, vielleicht haben Sie Lust. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, vierundsechzig, null zwei, fünfundachtzig, sieben. Auf Wiederhören!",
+              "hit": "Ich buchstabiere: H, O, L, U, N, D, E, R."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "6402857",
+            "accept": [
+              "64 02 85 7",
+              "640 28 57",
+              "6 4 0 2 8 5 7",
+              "6402 857"
+            ],
+            "exact": true,
+            "explanation": "Nach null sechs neun neun kommt vierundsechzig, null zwei, fünfundachtzig, sieben. Vierundzwanzig ist nur die Kursnummer.",
+            "evidence": {
+              "text": "Grüß Gott, hier ist Kogler von der Keramikwerkstatt Kogler in Steyr. Ihre Teller aus dem Kurs sind fertig. Sie sind sehr schön geworden. Sie können sie am Freitag, dem fünfundzwanzigsten April, abholen. Am Donnerstag ist die Werkstatt leider geschlossen. Kommen Sie bitte um fünfzehn Uhr. Die Adresse ist Holundergasse elf. Ich buchstabiere: H, O, L, U, N, D, E, R. Bitte bringen Sie eine Tasche für die Teller mit. Ihre Kursnummer ist vierundzwanzig. Der nächste Kurs ist am Samstag, vielleicht haben Sie Lust. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, vierundsechzig, null zwei, fünfundachtzig, sieben. Auf Wiederhören!",
+              "hit": "vierundsechzig, null zwei, fünfundachtzig, sieben"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "kogler",
+            "voice": "woman_alexandra_at",
+            "text": "Grüß Gott, hier ist Kogler von der Keramikwerkstatt Kogler in Steyr. Ihre Teller aus dem Kurs sind fertig. Sie sind sehr schön geworden. Sie können sie am Freitag, dem fünfundzwanzigsten April, abholen. Am Donnerstag ist die Werkstatt leider geschlossen. Kommen Sie bitte um fünfzehn Uhr. Die Adresse ist Holundergasse elf. Ich buchstabiere: H, O, L, U, N, D, E, R. Bitte bringen Sie eine Tasche für die Teller mit. Ihre Kursnummer ist vierundzwanzig. Der nächste Kurs ist am Samstag, vielleicht haben Sie Lust. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, vierundsechzig, null zwei, fünfundachtzig, sieben. Auf Wiederhören!",
+            "delivery": "[warm, clear, voicemail, slow]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-03-t3",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.628Z",
+        "textType": "Umfrage auf der Straße (Kurzinterviews)"
+      },
+      "sound": "street",
+      "display": {
+        "instruction": "Situation: Eine Reporterin macht auf der Straße eine Umfrage. Welchen Sport macht jede Person am liebsten? Kreuzen Sie für jeden Text eine Antwort an. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Welchen Sport machen Sie am liebsten?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Schwimmen"
+                },
+                {
+                  "key": "b",
+                  "label": "Laufen"
+                },
+                {
+                  "key": "c",
+                  "label": "Tanzen"
+                },
+                {
+                  "key": "d",
+                  "label": "Fußball"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 11,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 12,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 13,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 14,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 15,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "reporterin": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Text 1",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p2": {
+              "name": "Text 2",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p3": {
+              "name": "Text 3",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p4": {
+              "name": "Text 4",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p5": {
+              "name": "Text 5",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-03/oesd-a1-hoeren-03-t3.review.mp3",
+          "duration": 94.8
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Laufen tut ihrem Knie weh, und tanzen geht sie nur manchmal. Am liebsten schwimmt sie, zweimal pro Woche.",
+            "evidence": {
+              "text": "Hm, Sport … Also, früher bin ich viel gelaufen, aber das tut meinem Knie jetzt weh. Tanzen gehe ich manchmal, so ein-, zweimal im Jahr. Aber am liebsten schwimme ich. Ich gehe zweimal pro Woche ins Hallenbad. Das ist gut für mich.",
+              "hit": "Aber am liebsten schwimme ich."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "d",
+            "explanation": "Der Mann läuft nur manchmal am Sonntag, und Schwimmen findet er langweilig. Sein Sport ist Fußball mit den Kollegen.",
+            "evidence": {
+              "text": "Äh, am Sonntag laufe ich manchmal ein bisschen im Park. Schwimmen finde ich langweilig, immer hin und her. Aber Fußball, das ist mein Sport! Ich spiele jeden Mittwoch mit meinen Kollegen von der Arbeit. Danach trinken wir zusammen etwas. Ja.",
+              "hit": "Aber Fußball, das ist mein Sport!"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Die Frau läuft jeden Morgen, aber am liebsten tanzt sie Salsa. Laufen muss sein, das ist nicht ihr Lieblingssport.",
+            "evidence": {
+              "text": "Ich komme aus Freiburg. Also, ich laufe jeden Morgen eine halbe Stunde, das muss sein. Schwimmen kann ich leider nicht so gut. Aber am liebsten tanze ich, Salsa! Am Freitagabend gehe ich mit Freundinnen tanzen. Das macht so viel Spaß.",
+              "hit": "Aber am liebsten tanze ich, Salsa!"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Fußball schaut der Mann nur im Fernsehen, und seine Frau tanzt. Er selbst läuft dreimal pro Woche im Park.",
+            "evidence": {
+              "text": "Fußball? Den schaue ich nur im Fernsehen, äh, am Samstag. Meine Frau tanzt gern, aber ich tanze nicht gut. Ja, ich laufe. Dreimal pro Woche laufe ich im Park, auch im Winter. Das ist für mich der beste Sport.",
+              "hit": "Dreimal pro Woche laufe ich im Park"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Im Sommer schwimmt die Frau, und Fußball spielt nur ihr Sohn. Am liebsten tanzt sie selbst, in einem Tanzkurs.",
+            "evidence": {
+              "text": "Ich bin aus Biel, in der Schweiz. Im Sommer schwimme ich gern im See, das ist schön. Mein Sohn spielt Fussball, da schaue ich oft zu. Aber ich selbst tanze am liebsten. Ich mache einen Tanzkurs, jeden Dienstag. Das ist super.",
+              "hit": "Aber ich selbst tanze am liebsten."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "reporterin",
+            "voice": "woman_emilia_at",
+            "text": "Hallo, darf ich Sie kurz etwas fragen? Wir machen eine Umfrage zum Thema Sport. Welchen Sport machen Sie am liebsten?",
+            "delivery": "[friendly reporter, outdoors]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_alexandra_at",
+            "text": "Hm, Sport … Also, früher bin ich viel gelaufen, aber das tut meinem Knie jetzt weh. Tanzen gehe ich manchmal, so ein-, zweimal im Jahr. Aber am liebsten schwimme ich. Ich gehe zweimal pro Woche ins Hallenbad. Das ist gut für mich.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Äh, am Sonntag laufe ich manchmal ein bisschen im Park. Schwimmen finde ich langweilig, immer hin und her. Aber Fußball, das ist mein Sport! Ich spiele jeden Mittwoch mit meinen Kollegen von der Arbeit. Danach trinken wir zusammen etwas. Ja.",
+            "delivery": "[spontaneous, enthusiastic]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_irene",
+            "text": "Ich komme aus Freiburg. Also, ich laufe jeden Morgen eine halbe Stunde, das muss sein. Schwimmen kann ich leider nicht so gut. Aber am liebsten tanze ich, Salsa! Am Freitagabend gehe ich mit Freundinnen tanzen. Das macht so viel Spaß.",
+            "delivery": "[spontaneous, cheerful]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Fußball? Den schaue ich nur im Fernsehen, äh, am Samstag. Meine Frau tanzt gern, aber ich tanze nicht gut. Ja, ich laufe. Dreimal pro Woche laufe ich im Park, auch im Winter. Das ist für mich der beste Sport.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_mia_ch",
+            "text": "Ich bin aus Biel, in der Schweiz. Im Sommer schwimme ich gern im See, das ist schön. Mein Sohn spielt Fussball, da schaue ich oft zu. Aber ich selbst tanze am liebsten. Ich mache einen Tanzkurs, jeden Dienstag. Das ist super.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 5
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "oesd-a1/hoeren-03/track.mp3",
+    "duration": 621.9,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 9.67,
+        "to": 16.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 16.14,
+        "to": 46.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 46.18,
+        "to": 60.76
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 66.27,
+        "to": 67.13
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 67.76,
+        "to": 85
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 87.04,
+        "to": 87.93
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 88.56,
+        "to": 107.39
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 109.43,
+        "to": 110.29
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 110.92,
+        "to": 130.4
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 132.44,
+        "to": 133.2
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 133.83,
+        "to": 153.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 155.22,
+        "to": 156.08
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 156.71,
+        "to": 177.4
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 184.95,
+        "to": 190.96
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 190.96,
+        "to": 221
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 221,
+        "to": 233.61
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 240.61,
+        "to": 292.81
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 299.81,
+        "to": 303.02
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 310.02,
+        "to": 362.21
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 369.21,
+        "to": 373.76
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 373.76,
+        "to": 393.8
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 399.31,
+        "to": 405.29
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 405.29,
+        "to": 415.32
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 415.32,
+        "to": 428.88
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 434.39,
+        "to": 441.89
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 443.43,
+        "to": 444.29
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 444.92,
+        "to": 461.51
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 463.54,
+        "to": 464.43
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 465.06,
+        "to": 480.94
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 482.98,
+        "to": 483.84
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 484.47,
+        "to": 500.32
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 502.36,
+        "to": 503.12
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 503.75,
+        "to": 519.21
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 521.25,
+        "to": 522.11
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 522.74,
+        "to": 538.93
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 546.48,
+        "to": 550.97
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 550.97,
+        "to": 611
+      }
+    ]
+  }
+}

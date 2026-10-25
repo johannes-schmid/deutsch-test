@@ -1,0 +1,1768 @@
+{
+  "exam": "telc-a2",
+  "skill": "hoeren",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "telc-a2-hoeren-04-t1-bsp",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Nachricht eines Fotostudios auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Fotostudio Momentaufnahme\nPassfotos sind fertig\nabholen in der Filiale am ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht vom Fotostudio",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Fotostudio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t1-bsp.mp3",
+          "duration": 16.95
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Guten Tag, Herr Ibrahim, hier ist das Fotostudio Momentaufnahme. Ihre Passfotos sind fertig. Bitte holen Sie sie aber nicht bei uns in der Lindenstraße ab, sondern in unserer Filiale am Bahnhof. Dort haben wir bis achtzehn Uhr geöffnet. Auf Wiederhören!",
+            "delivery": "[friendly, professional phone message]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "Bahnhof"
+      ]
+    },
+    {
+      "id": "telc-a2-hoeren-04-t1-01",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Nachricht einer Bank auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Stadtbank Mitte – Konto eröffnen\nTermin bei Herrn Lorenzen\nDonnerstag, ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                " Uhr"
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Bank",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Bank",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t1-01.mp3",
+          "duration": 23.04
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "8:45",
+            "explanation": "Herr Lorenzen sieht Frau Kowalski schon um Viertel vor neun, also 8:45 Uhr. Um neun Uhr öffnet die Bank erst für alle.",
+            "evidence": {
+              "text": "Guten Tag, Frau Kowalski, hier spricht Lorenzen von der Stadtbank Mitte. Es geht um Ihr neues Konto. Wir öffnen zwar erst um neun Uhr, aber ich kann Sie am Donnerstag schon um Viertel vor neun sehen. Dann haben wir mehr Ruhe. Bitte bringen Sie Ihren Pass mit und klingeln Sie am Seiteneingang. Vielen Dank, auf Wiederhören.",
+              "hit": "aber ich kann Sie am Donnerstag schon um Viertel vor neun sehen."
+            },
+            "accept": [
+              "8.45",
+              "8:45 Uhr",
+              "8.45 Uhr",
+              "Viertel vor neun",
+              "Viertel vor 9"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Guten Tag, Frau Kowalski, hier spricht Lorenzen von der Stadtbank Mitte. Es geht um Ihr neues Konto. Wir öffnen zwar erst um neun Uhr, aber ich kann Sie am Donnerstag schon um Viertel vor neun sehen. Dann haben wir mehr Ruhe. Bitte bringen Sie Ihren Pass mit und klingeln Sie am Seiteneingang. Vielen Dank, auf Wiederhören.",
+            "delivery": "[polite, calm bank adviser]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t1-02",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Nachricht einer Freundin auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Oksana – Samstag, 14 Uhr\nzusammen lernen bei Oksana\nmitbringen: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von einer Freundin",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Freundin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t1-02.mp3",
+          "duration": 15.8
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 2,
+            "correct": "Wörterbuch",
+            "explanation": "Oksana bittet Teresa, ihr Wörterbuch mitzubringen. Ihr eigenes liegt noch im Kurs.",
+            "evidence": {
+              "text": "Hallo Teresa, hier ist Oksana. Wegen Samstag: Wir lernen bei mir, um zwei Uhr, ja? Ich mache Kaffee und backe einen Kuchen. Kannst du bitte dein Wörterbuch mitbringen? Meins habe ich im Kurs vergessen. Bis Samstag, tschüss!",
+              "hit": "Kannst du bitte dein Wörterbuch mitbringen?"
+            },
+            "accept": [
+              "ein Wörterbuch",
+              "dein Wörterbuch",
+              "Woerterbuch",
+              "Wörterbücher"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_kathi",
+            "text": "Hallo Teresa, hier ist Oksana. Wegen Samstag: Wir lernen bei mir, um zwei Uhr, ja? Ich mache Kaffee und backe einen Kuchen. Kannst du bitte dein Wörterbuch mitbringen? Meins habe ich im Kurs vergessen. Bis Samstag, tschüss!",
+            "delivery": "[warm, casual, slight accent]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t1-03",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Telefonansage: Infos einer Autowaschanlage"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Waschpark Glanz\nheute: Angebot Komplettwäsche\nPreis: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                " Euro"
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Ansage der Waschanlage",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Ansage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t1-03.mp3",
+          "duration": 17.32
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "9,90",
+            "explanation": "Die Komplettwäsche kostet heute neun Euro neunzig, also 9,90 Euro.",
+            "evidence": {
+              "text": "Herzlich willkommen beim Waschpark Glanz. Wir sind von Montag bis Samstag von sieben bis zwanzig Uhr für Sie da. Unser Angebot heute: die Komplettwäsche mit Trocknen für nur neun Euro neunzig. Bei Fragen zu Ihrer Waschkarte drücken Sie bitte die Zwei.",
+              "hit": "die Komplettwäsche mit Trocknen für nur neun Euro neunzig."
+            },
+            "accept": [
+              "9.90",
+              "9,90 Euro",
+              "9,90 €",
+              "9.90 Euro",
+              "neun Euro neunzig"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_simon",
+            "text": "Herzlich willkommen beim Waschpark Glanz. Wir sind von Montag bis Samstag von sieben bis zwanzig Uhr für Sie da. Unser Angebot heute: die Komplettwäsche mit Trocknen für nur neun Euro neunzig. Bei Fragen zu Ihrer Waschkarte drücken Sie bitte die Zwei.",
+            "delivery": "[neutral, clear recorded announcement]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t1-04",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Nachricht eines Elektrikers auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Elektro Hoffmann – Lampe im Flur\nTermin verschoben\nneuer Tag: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht vom Elektriker",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Elektriker",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t1-04.mp3",
+          "duration": 28.26
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 4,
+            "correct": "Montag",
+            "explanation": "Herr Hoffmann kommt jetzt am Montag. Am Freitag wollte er zuerst kommen, aber da ist er auf einer Baustelle.",
+            "evidence": {
+              "text": "Guten Tag, Familie Arslan, hier ist Hoffmann von Elektro Hoffmann. Es geht um die neue Lampe im Flur. Am Mittwoch kann ich leider nicht kommen, wir haben einen Notfall bei einem anderen Kunden. Ich wollte es dann am Freitag machen, aber da bin ich den ganzen Tag auf einer Baustelle. Also komme ich am Montag, wieder um neun Uhr. Wenn das nicht passt, rufen Sie mich bitte zurück. Auf Wiederhören!",
+              "hit": "Also komme ich am Montag, wieder um neun Uhr."
+            },
+            "accept": [
+              "am Montag"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_michael",
+            "text": "Guten Tag, Familie Arslan, hier ist Hoffmann von Elektro Hoffmann. Es geht um die neue Lampe im Flur. Am Mittwoch kann ich leider nicht kommen, wir haben einen Notfall bei einem anderen Kunden. Ich wollte es dann am Freitag machen, aber da bin ich den ganzen Tag auf einer Baustelle. Also komme ich am Montag, wieder um neun Uhr. Wenn das nicht passt, rufen Sie mich bitte zurück. Auf Wiederhören!",
+            "delivery": "[friendly, a bit gruff, older craftsman]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t1-05",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Nachricht eines Möbelhauses auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Ergänzen Sie in jeder Notiz die fehlende Information. Schreiben Sie ein Wort oder eine Zahl. Sie hören jede Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Möbelhaus Holzwerk – Regal abholen\nLager, Eingang Nord\nAbholnummer: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht vom Möbelhaus",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Möbelhaus",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t1-05.mp3",
+          "duration": 17.74
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "358",
+            "explanation": "Im Lager braucht Herr Bauer die Abholnummer dreihundertachtundfünfzig. Die Zahl 853 ist nur seine Bestellnummer.",
+            "evidence": {
+              "text": "Guten Tag, Herr Bauer, hier ist das Möbelhaus Holzwerk. Ihr Regal ist da. Ihre Bestellnummer ist achthundertdreiundfünfzig, aber im Lager brauchen Sie die Abholnummer. Die ist dreihundertachtundfünfzig. Also noch einmal: Abholnummer dreihundertachtundfünfzig. Das Lager finden Sie am Eingang Nord. Bis bald!",
+              "hit": "Die ist dreihundertachtundfünfzig."
+            },
+            "accept": [
+              "Nr. 358",
+              "Nummer 358",
+              "3 5 8",
+              "Abholnummer 358"
+            ]
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_irene",
+            "text": "Guten Tag, Herr Bauer, hier ist das Möbelhaus Holzwerk. Ihr Regal ist da. Ihre Bestellnummer ist achthundertdreiundfünfzig, aber im Lager brauchen Sie die Abholnummer. Die ist dreihundertachtundfünfzig. Also noch einmal: Abholnummer dreihundertachtundfünfzig. Das Lager finden Sie am Eingang Nord. Bis bald!",
+            "delivery": "[friendly, clear customer service]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t2-bsp",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Radio: Veranstaltungstipp"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Wo ist die Oldtimer-Ausstellung?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "auf dem Messegelände"
+                },
+                {
+                  "key": "b",
+                  "label": "im Stadtpark"
+                },
+                {
+                  "key": "c",
+                  "label": "auf dem Marktplatz"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Tipp fürs Wochenende",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t2-bsp.mp3",
+          "duration": 23.04
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Radio Altmark, schönen guten Morgen! Unser Tipp fürs Wochenende: die große Oldtimer-Ausstellung. Geplant war sie im Stadtpark, aber dort ist der Boden nach dem vielen Regen zu weich. Deshalb stehen die alten Autos jetzt auf dem Messegelände. Parken können Sie am Marktplatz, von dort sind es nur fünf Minuten zu Fuß.",
+            "delivery": "[upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio",
+      "example": true,
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "telc-a2-hoeren-04-t2-01",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Radio: Programmhinweis"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Wann kann man das neue Hörspiel hören?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Sonntagabend"
+                },
+                {
+                  "key": "b",
+                  "label": "am Samstagabend"
+                },
+                {
+                  "key": "c",
+                  "label": "an jedem Abend"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: neue Sendung",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t2-01.mp3",
+          "duration": 23.07
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Das „Hörspiel am Abend“ kommt am Sonntag um einundzwanzig Uhr, also am Sonntagabend. Von Samstag oder von jedem Abend spricht der Moderator nicht.",
+            "evidence": {
+              "text": "Liebe Hörerinnen und Hörer, freuen Sie sich auf etwas Neues: Ab dieser Woche gibt es bei uns immer am Sonntag um einundzwanzig Uhr das „Hörspiel am Abend“. Eine Stunde lang hören Sie spannende Geschichten aus der Altmark. Die erste Folge ist ein Krimi. Also: Machen Sie es sich am Sonntag gemütlich!",
+              "hit": "Ab dieser Woche gibt es bei uns immer am Sonntag um einundzwanzig Uhr das „Hörspiel am Abend“."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Liebe Hörerinnen und Hörer, freuen Sie sich auf etwas Neues: Ab dieser Woche gibt es bei uns immer am Sonntag um einundzwanzig Uhr das „Hörspiel am Abend“. Eine Stunde lang hören Sie spannende Geschichten aus der Altmark. Die erste Folge ist ein Krimi. Also: Machen Sie es sich am Sonntag gemütlich!",
+            "delivery": "[upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t2-02",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Radio: Wetterbericht"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Wie ist das Wetter morgen früh?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Die Sonne scheint."
+                },
+                {
+                  "key": "b",
+                  "label": "Die Straßen sind glatt."
+                },
+                {
+                  "key": "c",
+                  "label": "Es gibt starken Wind."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Wetter",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t2-02.mp3",
+          "duration": 21.63
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Nach der kalten Nacht gibt es morgen früh Glatteis, die Straßen sind also glatt. Der Wind ist nur schwach.",
+            "evidence": {
+              "text": "Und jetzt das Wetter für die Altmark. Die Nacht wird klar und kalt, bis minus vier Grad. Deshalb gibt es morgen früh auf vielen Straßen Glatteis. Fahren Sie bitte vorsichtig! Am Nachmittag wird es etwas wärmer, bis drei Grad, aber es bleibt bewölkt. Der Wind ist schwach.",
+              "hit": "Deshalb gibt es morgen früh auf vielen Straßen Glatteis."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Und jetzt das Wetter für die Altmark. Die Nacht wird klar und kalt, bis minus vier Grad. Deshalb gibt es morgen früh auf vielen Straßen Glatteis. Fahren Sie bitte vorsichtig! Am Nachmittag wird es etwas wärmer, bis drei Grad, aber es bleibt bewölkt. Der Wind ist schwach.",
+            "delivery": "[calm, clear weather report]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t2-03",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Radio: Verkehrsmeldung"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Was ist auf der B 189 passiert?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Zwei Autos sind zusammengestoßen."
+                },
+                {
+                  "key": "b",
+                  "label": "Dort arbeitet man an der Straße."
+                },
+                {
+                  "key": "c",
+                  "label": "Ein Lkw hat Kartoffeln verloren."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Verkehr",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t2-03.mp3",
+          "duration": 19.75
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Ein Lastwagen hat einen Teil von seiner Ladung verloren, jetzt liegen Kartoffeln auf der Straße. Von einem Unfall mit Autos oder einer Baustelle hörst du nichts.",
+            "evidence": {
+              "text": "Die Verkehrsmeldungen. Auf der B hundertneunundachtzig bei Stendal liegen Kartoffeln auf der Fahrbahn. Ein Lastwagen hat einen Teil seiner Ladung verloren. Die Feuerwehr räumt die Straße gerade frei. Bitte fahren Sie dort langsam und rechnen Sie mit etwa zwanzig Minuten mehr Zeit.",
+              "hit": "Ein Lastwagen hat einen Teil seiner Ladung verloren."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Die Verkehrsmeldungen. Auf der B hundertneunundachtzig bei Stendal liegen Kartoffeln auf der Fahrbahn. Ein Lastwagen hat einen Teil seiner Ladung verloren. Die Feuerwehr räumt die Straße gerade frei. Bitte fahren Sie dort langsam und rechnen Sie mit etwa zwanzig Minuten mehr Zeit.",
+            "delivery": "[clear, brisk traffic report]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t2-04",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Radio: Grüße von Hörerinnen und Hörern"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Was macht Doris am Montag?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sie zieht nach Magdeburg um."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie hat ihren ersten Arbeitstag."
+                },
+                {
+                  "key": "c",
+                  "label": "Sie feiert ihren Geburtstag."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Hörergruß",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t2-04.mp3",
+          "duration": 25.31
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Am Montag beginnt Doris in ihrer neuen Firma. Umgezogen ist sie schon letzte Woche, und ihr Geburtstag ist erst im Mai.",
+            "evidence": {
+              "text": "Und hier ist ein Gruß von Marlene aus Tangermünde. Sie schreibt: Liebe Doris, letzte Woche bist du nach Magdeburg gezogen, und du fehlst mir jetzt schon sehr. Am Montag beginnst du in deiner neuen Firma. Ich drücke dir ganz fest die Daumen! Deinen Geburtstag im Mai feiern wir zusammen, versprochen. Liebe Doris, auch von uns alles Gute!",
+              "hit": "Am Montag beginnst du in deiner neuen Firma."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Und hier ist ein Gruß von Marlene aus Tangermünde. Sie schreibt: Liebe Doris, letzte Woche bist du nach Magdeburg gezogen, und du fehlst mir jetzt schon sehr. Am Montag beginnst du in deiner neuen Firma. Ich drücke dir ganz fest die Daumen! Deinen Geburtstag im Mai feiern wir zusammen, versprochen. Liebe Doris, auch von uns alles Gute!",
+            "delivery": "[warm radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t2-05",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Radio: Gewinnspiel"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Meldungen im Radio. Für jede Meldung gibt es eine Frage. Ist a, b oder c richtig? Jede Meldung hören Sie nur einmal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Bis wann muss man die Lösung schicken?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bis Mittwoch"
+                },
+                {
+                  "key": "b",
+                  "label": "bis Donnerstag"
+                },
+                {
+                  "key": "c",
+                  "label": "bis Freitag"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Radio: Rätsel",
+          "segments": [],
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t2-05.mp3",
+          "duration": 31.06
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Diese Woche hat man einen Tag länger Zeit, nämlich bis Freitag um zwölf Uhr. Donnerstag ist sonst der letzte Tag, und am Mittwoch kommt nur der nächste Tipp.",
+            "evidence": {
+              "text": "Und jetzt unser Rätsel „Wer bin ich?“. Der erste Tipp: Ich bin groß und grau, ich lebe in Afrika und ich vergesse nie etwas. Den nächsten Tipp hören Sie am Mittwoch. Normalerweise ist am Donnerstag Schluss, aber diese Woche haben Sie einen Tag länger Zeit: bis Freitag um zwölf Uhr. Schicken Sie uns Ihre Lösung per SMS oder über unsere Webseite. Zu gewinnen gibt es einen Korb mit Spezialitäten aus der Altmark.",
+              "hit": "aber diese Woche haben Sie einen Tag länger Zeit: bis Freitag um zwölf Uhr."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_ben",
+            "text": "Und jetzt unser Rätsel „Wer bin ich?“. Der erste Tipp: Ich bin groß und grau, ich lebe in Afrika und ich vergesse nie etwas. Den nächsten Tipp hören Sie am Mittwoch. Normalerweise ist am Donnerstag Schluss, aber diese Woche haben Sie einen Tag länger Zeit: bis Freitag um zwölf Uhr. Schicken Sie uns Ihre Lösung per SMS oder über unsere Webseite. Zu gewinnen gibt es einen Korb mit Spezialitäten aus der Altmark.",
+            "delivery": "[cheerful, energetic presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "telc-a2-hoeren-04-t3-01",
+      "exam": "telc-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.346Z",
+        "textType": "Telefongespräch in der Familie"
+      },
+      "display": {
+        "instruction": "Sie hören ein Gespräch zwischen einer Mutter und ihrer Tochter. Wer bekommt was vom Dachboden der Oma? Wählen Sie für die Aufgaben 11–15 einen Buchstaben (a–i). Sie hören das Gespräch zweimal.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "",
+                  "text": "die Nähmaschine"
+                },
+                {
+                  "key": "b",
+                  "title": "",
+                  "text": "die Kochbücher"
+                },
+                {
+                  "key": "c",
+                  "title": "",
+                  "text": "den Plattenspieler"
+                },
+                {
+                  "key": "d",
+                  "title": "",
+                  "text": "den Werkzeugkasten"
+                },
+                {
+                  "key": "e",
+                  "title": "",
+                  "text": "das Kinderbett"
+                },
+                {
+                  "key": "f",
+                  "title": "",
+                  "text": "das Geschirr"
+                },
+                {
+                  "key": "g",
+                  "title": "",
+                  "text": "die Brettspiele"
+                },
+                {
+                  "key": "h",
+                  "title": "",
+                  "text": "den Teppich"
+                },
+                {
+                  "key": "i",
+                  "title": "",
+                  "text": "die Gartenstühle"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Onkel Rolf"
+                },
+                {
+                  "n": 11,
+                  "text": "Cousine Anke"
+                },
+                {
+                  "n": 12,
+                  "text": "Tobias"
+                },
+                {
+                  "n": 13,
+                  "text": "Frau Kuhn"
+                },
+                {
+                  "n": 14,
+                  "text": "Papa"
+                },
+                {
+                  "n": 15,
+                  "text": "Herr Seifert"
+                }
+              ]
+            },
+            "noMatch": false
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Gespräch am Telefon",
+          "segments": [],
+          "speakers": {
+            "gabriele": {
+              "name": "Gabriele",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "merle": {
+              "name": "Merle",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "src": "telc-a2/hoeren-04/telc-a2-hoeren-04-t3-01.mp3",
+          "duration": 119.43
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "e",
+            "explanation": "Anke bekommt bald ein Baby, darum gibt Gabriele ihr das alte Kinderbett.",
+            "evidence": {
+              "text": "Genau. Für sie haben wir das alte Kinderbett gefunden. Da hast du früher auch drin geschlafen! Wir müssen es nur noch gut sauber machen.",
+              "hit": "Für sie haben wir das alte Kinderbett gefunden."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Tobias wollte zuerst den Teppich, aber der ist zu groß für sein Zimmer. Er nimmt jetzt den Plattenspieler von Opa.",
+            "evidence": {
+              "text": "Doch, doch. Er hört doch so gern alte Musik. Er nimmt Opas Plattenspieler und die ganzen Schallplatten dazu. Er war ganz glücklich.",
+              "hit": "Er nimmt Opas Plattenspieler und die ganzen Schallplatten dazu."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Die Nachbarin Frau Kuhn bekommt die Nähmaschine, weil sie für ihre Enkel näht.",
+            "evidence": {
+              "text": "Die bekommt Frau Kuhn, die Nachbarin. Sie näht für ihre Enkel Kleider und hat jeden Tag nach Oma geschaut. Oma wollte das unbedingt so.",
+              "hit": "Die bekommt Frau Kuhn, die Nachbarin."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "i",
+            "explanation": "Papa hat sich zuerst das Geschirr angeschaut, aber sie haben genug Teller. Er nimmt die Gartenstühle für die Terrasse.",
+            "evidence": {
+              "text": "Papa hat lange überlegt. Zuerst hat er sich das Geschirr angeschaut, aber wir haben ja genug Teller. Jetzt nimmt er die Gartenstühle. Die stellt er auf unsere Terrasse.",
+              "hit": "Jetzt nimmt er die Gartenstühle."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Omas Kochbücher gehen an Herrn Seifert, weil er früher mit Oma gekocht hat. Die Brettspiele bekommt die Kita, nicht er.",
+            "evidence": {
+              "text": "Die gehen an Herrn Seifert. Kennst du ihn noch? Er und Oma haben früher jeden Donnerstag zusammen gekocht. Er hat sich so gefreut.",
+              "hit": "Die gehen an Herrn Seifert."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Hallo Mama, ich bin's. Wart ihr heute bei Oma auf dem Dachboden?",
+            "delivery": "[friendly, relaxed, on the phone]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Hallo, Merle! Ja, den ganzen Tag. Oma zieht ja nächsten Monat in die kleine Wohnung, und da passt nicht viel rein. Also haben wir alles verteilt.",
+            "delivery": "[warm, a little tired, chatty]"
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Und? Wer bekommt was?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Also, Onkel Rolf hat sofort Opas alten Werkzeugkasten genommen. Er repariert ja so gern, und die Werkzeuge sind noch richtig gut.",
+            "delivery": "[warm, chatty]",
+            "item": 0
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Das passt zu ihm. Und Anke? Sie bekommt doch im Frühling ihr Baby.",
+            "delivery": "[friendly, relaxed]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Genau. Für sie haben wir das alte Kinderbett gefunden. Da hast du früher auch drin geschlafen! Wir müssen es nur noch gut sauber machen.",
+            "delivery": "[warm, chatty]",
+            "item": 11
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Wie süß! Und Tobias? Er hat doch jetzt seine erste eigene Wohnung.",
+            "delivery": "[friendly, relaxed]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Ja, Tobias wollte unbedingt den großen Teppich aus dem Wohnzimmer. Aber der ist vier Meter lang, und sein Zimmer ist ganz klein. Das geht einfach nicht.",
+            "delivery": "[warm, chatty]"
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Der Arme. Bekommt er dann gar nichts?",
+            "delivery": "[sympathetic]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Doch, doch. Er hört doch so gern alte Musik. Er nimmt Opas Plattenspieler und die ganzen Schallplatten dazu. Er war ganz glücklich.",
+            "delivery": "[warm, chatty]",
+            "item": 12
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Schön. Und was ist mit der Nähmaschine? Oma hat doch immer so viel genäht.",
+            "delivery": "[friendly, relaxed]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Die bekommt Frau Kuhn, die Nachbarin. Sie näht für ihre Enkel Kleider und hat jeden Tag nach Oma geschaut. Oma wollte das unbedingt so.",
+            "delivery": "[warm, chatty]",
+            "item": 13
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Das finde ich gut. Und Papa? Will er auch etwas haben?",
+            "delivery": "[friendly, relaxed]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Papa hat lange überlegt. Zuerst hat er sich das Geschirr angeschaut, aber wir haben ja genug Teller. Jetzt nimmt er die Gartenstühle. Die stellt er auf unsere Terrasse.",
+            "delivery": "[warm, amused]",
+            "item": 14
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Die alten Holzstühle? Toll, dann sitzen wir im Sommer draußen. Und Omas Kochbücher? Das sind doch so viele.",
+            "delivery": "[pleased]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Die gehen an Herrn Seifert. Kennst du ihn noch? Er und Oma haben früher jeden Donnerstag zusammen gekocht. Er hat sich so gefreut.",
+            "delivery": "[warm, chatty]",
+            "item": 15
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Ach, der nette Herr mit dem Hut! Und die Brettspiele? Die liegen doch auch noch oben, oder?",
+            "delivery": "[friendly, relaxed]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Die bringen wir in die Kita in Omas Straße. Da freuen sich die Kinder bestimmt.",
+            "delivery": "[warm, chatty]"
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Gute Idee. Und der Teppich?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Den will leider niemand. Vielleicht verkaufen wir ihn im Internet.",
+            "delivery": "[slightly resigned]"
+          },
+          {
+            "speaker": "merle",
+            "voice": "woman_laura",
+            "text": "Okay. Dann komme ich am Wochenende und helfe euch beim Tragen.",
+            "delivery": "[friendly, helpful]"
+          },
+          {
+            "speaker": "gabriele",
+            "voice": "woman_irene",
+            "text": "Prima, danke, mein Schatz! Bis Samstag.",
+            "delivery": "[warm, grateful]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "d"
+      ]
+    }
+  ],
+  "track": {
+    "src": "telc-a2/hoeren-04/track.mp3",
+    "duration": 1042.13,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 21.16,
+        "to": 34.32
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 36.36,
+        "to": 37.04
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 37.04,
+        "to": 44.07
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 44.07,
+        "to": 61.02
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 65.15,
+        "to": 82.1
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 82.1,
+        "to": 98.14
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 98.14,
+        "to": 99.11
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1
+        ],
+        "from": 99.11,
+        "to": 106.14
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 106.14,
+        "to": 129.18
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 133.3,
+        "to": 156.34
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1
+        ],
+        "from": 156.34,
+        "to": 172.38
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 172.38,
+        "to": 173.3
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          2
+        ],
+        "from": 173.3,
+        "to": 180.32
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 180.32,
+        "to": 196.13
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 200.25,
+        "to": 216.06
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          2
+        ],
+        "from": 216.06,
+        "to": 232.1
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 232.1,
+        "to": 232.93
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3
+        ],
+        "from": 232.93,
+        "to": 239.96
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 239.96,
+        "to": 257.28
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 261.41,
+        "to": 278.73
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3
+        ],
+        "from": 278.73,
+        "to": 294.77
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 294.77,
+        "to": 295.58
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          4
+        ],
+        "from": 295.58,
+        "to": 302.6
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 302.6,
+        "to": 330.87
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 334.99,
+        "to": 363.26
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          4
+        ],
+        "from": 363.26,
+        "to": 379.3
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 379.3,
+        "to": 380.16
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5
+        ],
+        "from": 380.16,
+        "to": 387.19
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 387.19,
+        "to": 404.92
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 409.05,
+        "to": 426.79
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5
+        ],
+        "from": 426.79,
+        "to": 442.83
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          0,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 445.86,
+        "to": 459.02
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 461.06,
+        "to": 461.74
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 461.74,
+        "to": 468.77
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 468.77,
+        "to": 491.81
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 491.81,
+        "to": 507.85
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6
+        ],
+        "from": 507.85,
+        "to": 508.71
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6
+        ],
+        "from": 508.71,
+        "to": 515.74
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6
+        ],
+        "from": 515.74,
+        "to": 538.8
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6
+        ],
+        "from": 538.8,
+        "to": 554.84
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          7
+        ],
+        "from": 554.84,
+        "to": 555.68
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          7
+        ],
+        "from": 555.68,
+        "to": 562.7
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          7
+        ],
+        "from": 562.7,
+        "to": 584.33
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          7
+        ],
+        "from": 584.33,
+        "to": 600.37
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          8
+        ],
+        "from": 600.37,
+        "to": 601.18
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          8
+        ],
+        "from": 601.18,
+        "to": 608.21
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          8
+        ],
+        "from": 608.21,
+        "to": 627.96
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          8
+        ],
+        "from": 627.96,
+        "to": 644
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          9
+        ],
+        "from": 644,
+        "to": 644.83
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          9
+        ],
+        "from": 644.83,
+        "to": 651.86
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          9
+        ],
+        "from": 651.86,
+        "to": 677.17
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          9
+        ],
+        "from": 677.17,
+        "to": 693.21
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          10
+        ],
+        "from": 693.21,
+        "to": 694
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          10
+        ],
+        "from": 694,
+        "to": 701.02
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 701.02,
+        "to": 732.08
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          10
+        ],
+        "from": 732.08,
+        "to": 748.12
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 751.15,
+        "to": 768.63
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 770.66,
+        "to": 772.34
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 772.34,
+        "to": 779.36
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 779.36,
+        "to": 898.8
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 902.92,
+        "to": 1022.35
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          0,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 1022.35,
+        "to": 1038.39
+      }
+    ]
+  }
+}

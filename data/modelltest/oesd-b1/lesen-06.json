@@ -1,0 +1,959 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-06-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.460Z",
+        "textType": "E-Mail"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Sandra hat sich lange nicht bei Ivana gemeldet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Sandra hat sich gleich nach der ersten Information an der Schule angemeldet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Sandra hat abends Unterricht, wenn sie mit der Arbeit fertig ist."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "In Mathematik hatte Sandra von Anfang an gute Noten."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Timo nimmt Sandra an Schultagen Arbeit im Haushalt ab."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "In der Praxis darf Sandra an Schultagen früher Feierabend machen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Sandra weiß schon genau, was sie nach dem Abitur machen will."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Sandra",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Ivana,",
+            "entschuldige, dass du so lange nichts von mir gehört hast! Bei mir ist im letzten Jahr viel passiert, und ich hatte kaum Zeit für irgendetwas. Du wirst es nicht glauben: Ich gehe seit einem Jahr aufs Abendgymnasium und hole mein Abitur nach.",
+            "Angefangen hat alles mit einer Patientin bei uns in der Zahnarztpraxis in Göppingen. Sie hat mir erzählt, dass ihr Sohn abends zur Schule geht, und mir eine Broschüre mitgebracht. Ich fand die Idee toll, aber die Broschüre lag dann ein ganzes Jahr in meiner Schublade. Ich hatte einfach Angst, dass ich mit über dreißig zu alt bin. Erst letzten Sommer habe ich mich endlich angemeldet.",
+            "Der Unterricht ist an vier Abenden in der Woche, von sechs bis Viertel nach neun. Am Anfang war das ziemlich anstrengend, denn vorher stehe ich ja schon den ganzen Tag in der Praxis. Mathe war am schlimmsten: Für meinen ersten Test habe ich eine Fünf bekommen, und ich wollte am liebsten sofort aufhören. Zum Glück sitzt Bogdan neben mir. Er ist Elektriker und erklärt mir in der Pause alles, was ich nicht verstehe. Inzwischen schreibe ich in Mathe Dreien.",
+            "Auch mein Freund Timo unterstützt mich sehr. An meinen Schultagen kocht er, und wenn ich um zehn nach Hause komme, steht ein warmes Essen auf dem Tisch. Früher hat er höchstens Nudeln gemacht, jetzt probiert er sogar neue Rezepte aus!",
+            "Und meine Chefin war auch ganz toll. Ich hatte Angst, mit ihr zu sprechen, aber sie hat sofort Ja gesagt: An den Schultagen darf ich schon um vier Uhr gehen statt um halb sechs. Die Stunden arbeite ich am Freitag nach.",
+            "Noch zwei Jahre, dann habe ich hoffentlich mein Abitur. Ob ich danach studiere oder in der Praxis bleibe, weiß ich ehrlich gesagt noch nicht. Am Anfang hatte ich so viel Angst, dass ich zu alt bin. Heute bin ich richtig stolz auf mich, dass ich mich getraut habe.",
+            "Und wie geht es dir? Erzähl mal, was es bei dir Neues gibt! Ich freue mich auf deine Antwort.",
+            "Liebe Grüße",
+            "Sandra"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Die Broschüre lag ein ganzes Jahr in der Schublade. Erst danach hat Sandra sich angemeldet.",
+            "evidence": {
+              "text": "Angefangen hat alles mit einer Patientin bei uns in der Zahnarztpraxis in Göppingen. Sie hat mir erzählt, dass ihr Sohn abends zur Schule geht, und mir eine Broschüre mitgebracht. Ich fand die Idee toll, aber die Broschüre lag dann ein ganzes Jahr in meiner Schublade. Ich hatte einfach Angst, dass ich mit über dreißig zu alt bin. Erst letzten Sommer habe ich mich endlich angemeldet.",
+              "hit": "aber die Broschüre lag dann ein ganzes Jahr in meiner Schublade"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Der Unterricht ist abends von sechs bis Viertel nach neun. Vorher arbeitet Sandra den ganzen Tag in der Praxis.",
+            "evidence": {
+              "text": "Der Unterricht ist an vier Abenden in der Woche, von sechs bis Viertel nach neun. Am Anfang war das ziemlich anstrengend, denn vorher stehe ich ja schon den ganzen Tag in der Praxis. Mathe war am schlimmsten: Für meinen ersten Test habe ich eine Fünf bekommen, und ich wollte am liebsten sofort aufhören. Zum Glück sitzt Bogdan neben mir. Er ist Elektriker und erklärt mir in der Pause alles, was ich nicht verstehe. Inzwischen schreibe ich in Mathe Dreien.",
+              "hit": "denn vorher stehe ich ja schon den ganzen Tag in der Praxis"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Im ersten Mathetest hat Sandra eine Fünf bekommen. Besser ist sie erst später geworden, mit Bogdans Hilfe.",
+            "evidence": {
+              "text": "Der Unterricht ist an vier Abenden in der Woche, von sechs bis Viertel nach neun. Am Anfang war das ziemlich anstrengend, denn vorher stehe ich ja schon den ganzen Tag in der Praxis. Mathe war am schlimmsten: Für meinen ersten Test habe ich eine Fünf bekommen, und ich wollte am liebsten sofort aufhören. Zum Glück sitzt Bogdan neben mir. Er ist Elektriker und erklärt mir in der Pause alles, was ich nicht verstehe. Inzwischen schreibe ich in Mathe Dreien.",
+              "hit": "Für meinen ersten Test habe ich eine Fünf bekommen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "An Schultagen kocht Timo, und Sandra bekommt um zehn ein warmes Essen.",
+            "evidence": {
+              "text": "Auch mein Freund Timo unterstützt mich sehr. An meinen Schultagen kocht er, und wenn ich um zehn nach Hause komme, steht ein warmes Essen auf dem Tisch. Früher hat er höchstens Nudeln gemacht, jetzt probiert er sogar neue Rezepte aus!",
+              "hit": "An meinen Schultagen kocht er"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Die Chefin erlaubt ihr, an Schultagen schon um vier zu gehen. Sonst arbeitet sie bis halb sechs.",
+            "evidence": {
+              "text": "Und meine Chefin war auch ganz toll. Ich hatte Angst, mit ihr zu sprechen, aber sie hat sofort Ja gesagt: An den Schultagen darf ich schon um vier Uhr gehen statt um halb sechs. Die Stunden arbeite ich am Freitag nach.",
+              "hit": "An den Schultagen darf ich schon um vier Uhr gehen statt um halb sechs."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Sandra weiß noch nicht, ob sie studiert oder in der Praxis bleibt.",
+            "evidence": {
+              "text": "Noch zwei Jahre, dann habe ich hoffentlich mein Abitur. Ob ich danach studiere oder in der Praxis bleibe, weiß ich ehrlich gesagt noch nicht. Am Anfang hatte ich so viel Angst, dass ich zu alt bin. Heute bin ich richtig stolz auf mich, dass ich mich getraut habe.",
+              "hit": "Ob ich danach studiere oder in der Praxis bleibe, weiß ich ehrlich gesagt noch nicht."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-06-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.460Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "b"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Den Ruheraum gibt es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit die Firma gegründet wurde."
+                },
+                {
+                  "key": "b",
+                  "label": "seit dem vergangenen Herbst."
+                },
+                {
+                  "key": "c",
+                  "label": "erst seit diesem Monat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Firma, die längere Mittagspausen einführt."
+                },
+                {
+                  "key": "b",
+                  "label": "Mitarbeitende, die bei der Arbeit kurz schlafen dürfen."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Studie über Schlafprobleme im Beruf."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Wer sich hinlegen möchte, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss vorher den Chef um Erlaubnis bitten."
+                },
+                {
+                  "key": "b",
+                  "label": "fährt in der Pause zum Schlafen nach Hause."
+                },
+                {
+                  "key": "c",
+                  "label": "schreibt sich auf und hat zwanzig Minuten Zeit."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Seit es den Raum gibt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "machen die Leute im Lager weniger Fehler."
+                },
+                {
+                  "key": "b",
+                  "label": "kommen die Mitarbeitenden früher zur Arbeit."
+                },
+                {
+                  "key": "c",
+                  "label": "müssen alle jeden Tag etwas länger bleiben."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Zwanzig Minuten Schlaf im Lager",
+            "Bei der Firma Hollerbach Logistik in Reutlingen darf man während der Arbeit schlafen – und zwar ganz offiziell. Seit dem letzten Herbst gibt es neben der Kantine einen Ruheraum mit vier bequemen Liegen, dunklen Vorhängen und leiser Musik. Diesen Monat ist ein zweiter Raum dazugekommen, weil der erste oft besetzt war.",
+            "Die Idee hatte der Chef des Familienunternehmens, das es seit 1998 gibt. „In unserem Lager arbeiten viele Leute im Schichtdienst, oft schon ab fünf Uhr morgens“, sagt er. „Wer müde ist, macht Fehler, und bei schweren Paketen kann das gefährlich sein.“ Er hatte von Studien gelesen, nach denen ein kurzer Schlaf am Tag die Konzentration verbessert.",
+            "Die Regeln sind einfach: Wer sich hinlegen möchte, trägt seinen Namen an der Tür in eine Liste ein. Danach hat er zwanzig Minuten Ruhe. Das geht einmal pro Schicht, zusätzlich zur normalen Pause. Den Vorgesetzten muss man nicht fragen. Früher haben manche in der Pause im Auto geschlafen, heute ist das nicht mehr nötig.",
+            "Nach den ersten Monaten ist der Chef zufrieden: Seitdem gibt es im Lager deutlich weniger Fehler, Pakete gehen seltener an die falsche Adresse. Länger arbeiten muss wegen der Pause übrigens niemand. Jetzt möchten auch andere Firmen in der Region die Idee übernehmen.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Die Mitarbeitenden dürfen während der Arbeit im Ruheraum kurz schlafen. Die Studien sind nur ein Detail, und die normale Pause wird nicht länger.",
+            "evidence": {
+              "text": "Bei der Firma Hollerbach Logistik in Reutlingen darf man während der Arbeit schlafen – und zwar ganz offiziell. Seit dem letzten Herbst gibt es neben der Kantine einen Ruheraum mit vier bequemen Liegen, dunklen Vorhängen und leiser Musik. Diesen Monat ist ein zweiter Raum dazugekommen, weil der erste oft besetzt war.",
+              "hit": "darf man während der Arbeit schlafen – und zwar ganz offiziell"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Man schreibt seinen Namen in eine Liste und hat dann zwanzig Minuten. Den Chef muss man nicht fragen.",
+            "evidence": {
+              "text": "Die Regeln sind einfach: Wer sich hinlegen möchte, trägt seinen Namen an der Tür in eine Liste ein. Danach hat er zwanzig Minuten Ruhe. Das geht einmal pro Schicht, zusätzlich zur normalen Pause. Den Vorgesetzten muss man nicht fragen. Früher haben manche in der Pause im Auto geschlafen, heute ist das nicht mehr nötig.",
+              "hit": "trägt seinen Namen an der Tür in eine Liste ein. Danach hat er zwanzig Minuten Ruhe."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Seit es den Raum gibt, gibt es im Lager weniger Fehler. Länger arbeiten muss niemand.",
+            "evidence": {
+              "text": "Nach den ersten Monaten ist der Chef zufrieden: Seitdem gibt es im Lager deutlich weniger Fehler, Pakete gehen seltener an die falsche Adresse. Länger arbeiten muss wegen der Pause übrigens niemand. Jetzt möchten auch andere Firmen in der Region die Idee übernehmen.",
+              "hit": "Seitdem gibt es im Lager deutlich weniger Fehler"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-06-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.460Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Salon, der neue Lernende für die Lehre sucht."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Schule, in der man Coiffeuse werden kann."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Coiffeuse, die Ärmeren gratis die Haare schneidet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Haare schneidet sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in ihrem eigenen Salon in Emmen."
+                },
+                {
+                  "key": "b",
+                  "label": "jeden Monat in einem Raum der Kirchgemeinde."
+                },
+                {
+                  "key": "c",
+                  "label": "bei den Leuten in ihren Wohnungen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Unterstützung bekommt sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "mit Geld von der Gemeinde Emmen."
+                },
+                {
+                  "key": "b",
+                  "label": "von zwei jungen Leuten aus ihrem Salon."
+                },
+                {
+                  "key": "c",
+                  "label": "durch eine grosse Stiftung aus der Region."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Ein neuer Haarschnitt für alle",
+            "Priska Bachmann ist seit zwanzig Jahren Coiffeuse* in Emmen. Seit letztem Frühling schneidet sie einmal im Monat Haare, ohne dafür Geld zu verlangen – für Menschen, die sich einen Besuch beim Coiffeur nicht leisten können. «Ein guter Haarschnitt kostet bei uns schnell 60 Franken», sagt sie. «Für viele ist das einfach zu viel.»",
+            "Die Idee kam ihr, als eine ältere Kundin ihr erzählte, dass sie sich die Haare seit Monaten selbst schneidet. In ihrem eigenen Salon ist für so eine Aktion aber kein Platz: Er hat nur drei Stühle, und an einem Gratis-Montag kommen oft über vierzig Leute. Deshalb darf Priska Bachmann den Saal der reformierten Kirchgemeinde benutzen. Dort stehen dann Spiegel, Stühle und ein Tisch mit Kaffee und Kuchen.",
+            "Allein schafft sie das nicht. Zwei Lernende aus ihrem Salon helfen jedes Mal mit, freiwillig und in ihrer Freizeit. Bei der Gemeinde hat Priska Bachmann um Geld für Shampoo und Handtücher gebeten, doch die Antwort war Nein. Nun bezahlt sie das Material selbst, und einige Kundinnen legen im Salon etwas in eine Spendenkasse. Auch bei einer Stiftung hat sie angefragt, eine Antwort hat sie noch nicht.",
+            "Hausbesuche macht sie keine, dafür fehlt ihr die Zeit. Ihr Wunsch für die Zukunft: dass andere Coiffeusen in der Region mitmachen.",
+            "*Coiffeuse = Schweizer Standard für «Friseurin»",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Priska Bachmann schneidet Menschen mit wenig Geld die Haare, ohne Geld zu verlangen. Die Lernenden sind nur Helferinnen, gesucht werden keine neuen.",
+            "evidence": {
+              "text": "Priska Bachmann ist seit zwanzig Jahren Coiffeuse* in Emmen. Seit letztem Frühling schneidet sie einmal im Monat Haare, ohne dafür Geld zu verlangen – für Menschen, die sich einen Besuch beim Coiffeur nicht leisten können. «Ein guter Haarschnitt kostet bei uns schnell 60 Franken», sagt sie. «Für viele ist das einfach zu viel.»",
+              "hit": "ohne dafür Geld zu verlangen – für Menschen, die sich einen Besuch beim Coiffeur nicht leisten können"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Sie benutzt den Saal der Kirchgemeinde. Ihr eigener Salon ist für so viele Leute zu klein.",
+            "evidence": {
+              "text": "Die Idee kam ihr, als eine ältere Kundin ihr erzählte, dass sie sich die Haare seit Monaten selbst schneidet. In ihrem eigenen Salon ist für so eine Aktion aber kein Platz: Er hat nur drei Stühle, und an einem Gratis-Montag kommen oft über vierzig Leute. Deshalb darf Priska Bachmann den Saal der reformierten Kirchgemeinde benutzen. Dort stehen dann Spiegel, Stühle und ein Tisch mit Kaffee und Kuchen.",
+              "hit": "Deshalb darf Priska Bachmann den Saal der reformierten Kirchgemeinde benutzen."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Zwei Lernende aus ihrem Salon helfen freiwillig mit. Die Gemeinde hat Nein gesagt, und von der Stiftung gibt es noch keine Antwort.",
+            "evidence": {
+              "text": "Allein schafft sie das nicht. Zwei Lernende aus ihrem Salon helfen jedes Mal mit, freiwillig und in ihrer Freizeit. Bei der Gemeinde hat Priska Bachmann um Geld für Shampoo und Handtücher gebeten, doch die Antwort war Nein. Nun bezahlt sie das Material selbst, und einige Kundinnen legen im Salon etwas in eine Spendenkasse. Auch bei einer Stiftung hat sie angefragt, eine Antwort hat sie noch nicht.",
+              "hit": "Zwei Lernende aus ihrem Salon helfen jedes Mal mit"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-06-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.460Z",
+        "textType": "Anzeigen: Angebote rund um Bücher, Sprache und Schreiben"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten haben Freude an Büchern, Sprache und Schreiben.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Schönschreiben mit Feder",
+                  "text": "Lernen Sie Kalligrafie! An drei Abenden zeigen wir Ihnen, wie Sie Karten und Einladungen von Hand mit Feder und Tinte gestalten. CHF 140.– inkl. Tinte und Papier. Kulturhaus Baden, Badstrasse 18, 5400 Baden"
+                },
+                {
+                  "key": "b",
+                  "title": "Lesekreis im Café am Markt",
+                  "text": "Jeden ersten Mittwoch im Monat sprechen wir ab 19 Uhr über einen Roman, den alle vorher gelesen haben. Neue Mitglieder sind willkommen, der Eintritt ist frei. Wichtig: Wir treffen uns nur persönlich, nicht online. Café am Markt, Gera."
+                },
+                {
+                  "key": "c",
+                  "title": "Poetry-Slam-Werkstatt Wörgl",
+                  "text": "Du bist zwischen 16 und 25 und schreibst gern eigene Texte? In vier Workshops lernst du, wie du sie spannend präsentierst. Zum Schluss zeigst du dein Können beim Abschlussabend auf der Bühne im Jugendzentrum."
+                },
+                {
+                  "key": "d",
+                  "title": "Antiquariat Seitenweise",
+                  "text": "Bei uns finden Sie Tausende gebrauchte Romane, Sach- und Kinderbücher. Sie suchen einen Titel, den es im Buchhandel nicht mehr gibt? Unser Suchdienst findet ihn für Sie, meist innerhalb von zwei Wochen. Celle."
+                },
+                {
+                  "key": "e",
+                  "title": "Texte lebendig lesen – wie im Radio",
+                  "text": "Ein Wochenende mit einem erfahrenen Radiosprecher: Sie üben Atmen und Betonung und lernen, Ihre Stimme gut einzusetzen. Am Sonntag nehmen wir Ihren Lieblingstext auf, die Aufnahme bekommen Sie mit nach Hause. 95 €. Sprechwerkstatt Tübingen, www.sprechwerkstatt-tuebingen.de"
+                },
+                {
+                  "key": "f",
+                  "title": "Mein Leben erzählen",
+                  "text": "Schreibwerkstatt für Erwachsene: An sechs Abenden schreiben Sie Erinnerungen an Kindheit, Familie und wichtige Momente auf – für sich selbst oder für die nächste Generation. Kursbeitrag € 120,–. Bildungshaus Mödling."
+                },
+                {
+                  "key": "g",
+                  "title": "Buchbinden an einem Tag",
+                  "text": "Binden Sie Ihr eigenes Buch mit leeren Seiten – für Notizen, Skizzen oder als Tagebuch. Im Samstagskurs wählen Sie Papier und Stoff aus und nähen alles selbst. Am Abend nehmen Sie es fertig mit nach Hause. 45 €. Papierwerkstatt Lemgo."
+                },
+                {
+                  "key": "h",
+                  "title": "Geschichtenzeit für Kinder",
+                  "text": "Jeden Mittwoch um 15 Uhr lesen wir Kindern von 4 bis 7 Jahren spannende Bilderbücher vor. Die Kleinen sitzen zusammen auf grossen Kissen, danach wird gemalt. Eintritt gratis. Buchhandlung am Bahnhof, Bahnhofstrasse 7, 8620 Wetzikon"
+                },
+                {
+                  "key": "i",
+                  "title": "Literaturtage Landshut",
+                  "text": "Eine Woche lang lesen bekannte Autorinnen und Autoren aus ihren neuen Büchern. Danach können Sie Fragen stellen und Ihr Buch signieren lassen. Lesungen im Rathaussaal und in der Stadtbücherei. Karten ab 8 € unter www.literaturtage-landshut.de"
+                },
+                {
+                  "key": "j",
+                  "title": "Schreibwettbewerb: Krimis aus der Oststeiermark",
+                  "text": "Die Oststeirische Rundschau sucht die beste Krimi-Kurzgeschichte aus der Region! Schicken Sie Ihren Text (höchstens drei Seiten) bis Monatsende in einem Kuvert an: Redaktion, Hauptplatz 5, 8230 Hartberg. Die besten Krimis erscheinen heuer in unserer Sommerbeilage."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Fatma möchte lernen, Glückwunschkarten besonders schön mit der Hand zu schreiben."
+                },
+                {
+                  "n": 13,
+                  "text": "Arne sucht ein Kinderbuch von früher, das man in keinem Geschäft mehr bekommt."
+                },
+                {
+                  "n": 14,
+                  "text": "Yvonne möchte für ihre Enkel ihre Lebensgeschichte aufschreiben."
+                },
+                {
+                  "n": 15,
+                  "text": "Volkan, 19, möchte seine eigenen Texte auf einer Bühne vortragen."
+                },
+                {
+                  "n": 16,
+                  "text": "Ingrid wohnt weit weg auf einem Bauernhof und möchte regelmäßig online mit anderen über Bücher sprechen."
+                },
+                {
+                  "n": 17,
+                  "text": "Carolas Sohn, 5, hört gern Geschichten, am liebsten zusammen mit anderen Kindern."
+                },
+                {
+                  "n": 18,
+                  "text": "Dennis möchte seiner Freundin ein selbst gemachtes Notizbuch schenken."
+                },
+                {
+                  "n": 19,
+                  "text": "Lea hat eine schöne Stimme und möchte lernen, Texte gut vorzulesen."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "d",
+            "explanation": "Das Antiquariat hat auch Kinderbücher und sucht Titel, die es im Handel nicht mehr gibt.",
+            "evidence": {
+              "text": "Bei uns finden Sie Tausende gebrauchte Romane, Sach- und Kinderbücher. Sie suchen einen Titel, den es im Buchhandel nicht mehr gibt? Unser Suchdienst findet ihn für Sie, meist innerhalb von zwei Wochen. Celle.",
+              "hit": "Sie suchen einen Titel, den es im Buchhandel nicht mehr gibt?"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "f",
+            "explanation": "In der Schreibwerkstatt schreibt man Erinnerungen an das eigene Leben auf, auch für die Familie. Beim Wettbewerb in Hartberg geht es nur um Krimis.",
+            "evidence": {
+              "text": "Schreibwerkstatt für Erwachsene: An sechs Abenden schreiben Sie Erinnerungen an Kindheit, Familie und wichtige Momente auf – für sich selbst oder für die nächste Generation. Kursbeitrag € 120,–. Bildungshaus Mödling.",
+              "hit": "schreiben Sie Erinnerungen an Kindheit, Familie und wichtige Momente auf"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Der Workshop ist für 16- bis 25-Jährige, und am Ende tritt man auf einer Bühne auf.",
+            "evidence": {
+              "text": "Du bist zwischen 16 und 25 und schreibst gern eigene Texte? In vier Workshops lernst du, wie du sie spannend präsentierst. Zum Schluss zeigst du dein Können beim Abschlussabend auf der Bühne im Jugendzentrum.",
+              "hit": "Zum Schluss zeigst du dein Können beim Abschlussabend auf der Bühne im Jugendzentrum."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "x",
+            "explanation": "Der Lesekreis in Gera passt fast, aber er trifft sich nur persönlich. Ein Angebot online gibt es nicht, deshalb passt keine Anzeige.",
+            "evidence": {
+              "text": "Jeden ersten Mittwoch im Monat sprechen wir ab 19 Uhr über einen Roman, den alle vorher gelesen haben. Neue Mitglieder sind willkommen, der Eintritt ist frei. Wichtig: Wir treffen uns nur persönlich, nicht online. Café am Markt, Gera.",
+              "hit": "Wichtig: Wir treffen uns nur persönlich, nicht online."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "h",
+            "explanation": "In der Buchhandlung hören Kinder von 4 bis 7 Jahren gemeinsam Geschichten.",
+            "evidence": {
+              "text": "Jeden Mittwoch um 15 Uhr lesen wir Kindern von 4 bis 7 Jahren spannende Bilderbücher vor. Die Kleinen sitzen zusammen auf grossen Kissen, danach wird gemalt. Eintritt gratis. Buchhandlung am Bahnhof, Bahnhofstrasse 7, 8620 Wetzikon",
+              "hit": "lesen wir Kindern von 4 bis 7 Jahren spannende Bilderbücher vor"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "g",
+            "explanation": "Im Kurs in Lemgo bindet man selbst ein Buch mit leeren Seiten für Notizen.",
+            "evidence": {
+              "text": "Binden Sie Ihr eigenes Buch mit leeren Seiten – für Notizen, Skizzen oder als Tagebuch. Im Samstagskurs wählen Sie Papier und Stoff aus und nähen alles selbst. Am Abend nehmen Sie es fertig mit nach Hause. 45 €. Papierwerkstatt Lemgo.",
+              "hit": "Binden Sie Ihr eigenes Buch mit leeren Seiten – für Notizen"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "e",
+            "explanation": "Mit dem Radiosprecher übt man, die Stimme beim Lesen gut einzusetzen. Bei den Literaturtagen hört man nur zu.",
+            "evidence": {
+              "text": "Ein Wochenende mit einem erfahrenen Radiosprecher: Sie üben Atmen und Betonung und lernen, Ihre Stimme gut einzusetzen. Am Sonntag nehmen wir Ihren Lieblingstext auf, die Aufnahme bekommen Sie mit nach Hause. 95 €. Sprechwerkstatt Tübingen, www.sprechwerkstatt-tuebingen.de",
+              "hit": "Sie üben Atmen und Betonung und lernen, Ihre Stimme gut einzusetzen"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-06-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.460Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person dafür, dass Restaurants Leitungswasser kostenlos anbieten müssen?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Heinz, 67, Speyer",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Larissa, 31, Iserlohn",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Alois, 59, Feldbach",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Dirk, 45, Stralsund",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Franziska, 28, Rosenheim",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Nina, 36, Stans",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Marcel, 50, Brugg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Paulina, 22, Halberstadt",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Ein Restaurant in der Stadt verlangt seit Kurzem Geld für Leitungswasser. Das Stadtmagazin fragt seine Leserinnen und Leser: Sollen Restaurants Leitungswasser kostenlos anbieten müssen?",
+            "Ein Glas Leitungswasser kostet ein Restaurant fast nichts, es kommt ja einfach aus dem Hahn. Trotzdem verlangen manche Wirte dafür inzwischen drei Euro. Das finde ich nicht in Ordnung. Niemand sollte durstig am Tisch sitzen müssen, nur weil er kein teures Mineralwasser bezahlen will. Deshalb brauchen wir eine klare Regel für alle Restaurants.",
+            "Heinz, 67, Speyer",
+            "Ich habe ein kleines Café in der Innenstadt. Viele denken, Wasser ist doch gratis. Aber ich muss die Gläser spülen, die Spülmaschine braucht Strom, und meine Mitarbeiterin bekommt ihren Lohn. Mit Kuchen allein verdiene ich kaum etwas, die Getränke sind mein wichtigstes Geschäft. Wenn ich Wasser kostenlos ausgeben muss, kann ich das Café bald schließen.",
+            "Larissa, 31, Iserlohn",
+            "Bei uns in Österreich bekommt man im Kaffeehaus zu jedem Kaffee ganz selbstverständlich ein Glas Wasser dazu, und niemand denkt daran, dafür etwas zu verlangen. Ich habe das in Deutschland vermisst, als ich dort auf Urlaub war. So eine schöne Tradition sollte es überall geben. Wenn es nicht freiwillig geht, dann eben mit einem Gesetz.",
+            "Alois, 59, Feldbach",
+            "Drei Euro für ein Glas Leitungswasser, wie in dem Restaurant aus dem Artikel, sind wirklich frech. Ein fairer Preis wären vielleicht fünfzig Cent. Aber dass der Staat jetzt jedem Wirt vorschreiben soll, Wasser zu verschenken, geht mir zu weit. Ein Restaurant ist ein Geschäft, und das Personal muss bezahlt werden. Billig ja, gratis per Gesetz nein.",
+            "Dirk, 45, Stralsund",
+            "Ich finde, jedes Restaurant sollte selbst entscheiden, ob es für Leitungswasser Geld nimmt oder nicht. Die Preise stehen ja auf der Karte, man weiß also vorher Bescheid. Wem die Regel nicht gefällt, der kann einfach in ein anderes Lokal gehen. Davon gibt es bei uns in der Stadt genug. Ein neues Gesetz brauchen wir dafür wirklich nicht.",
+            "Franziska, 28, Rosenheim",
+            "In der Schweiz stellen viele Restaurants schon heute eine Karaffe mit Hahnenwasser auf den Tisch, oft ohne dass man fragen muss. Das ist gesund, denn viele trinken sonst zu wenig. Ausserdem braucht man weniger Plastikflaschen, die transportiert und entsorgt werden müssen. Ich wäre froh, wenn das überall zur Pflicht würde – dann müsste niemand mehr diskutieren.",
+            "Nina, 36, Stans",
+            "Ich führe seit fünfzehn Jahren ein Restaurant. Wenn Wasser gratis sein muss, bestellen viele Gäste nur noch das Essen und sonst nichts. Ein Teil unserer Einnahmen fällt dann weg, aber Miete, Strom und Löhne bleiben gleich. Am Ende müsste ich die Preise für die Menüs erhöhen, und dann bezahlen alle Gäste mehr – auch die, die gern ein Glas Wein trinken.",
+            "Marcel, 50, Brugg",
+            "Als Studentin habe ich wenig Geld. Wenn ich mit Freunden essen gehe, bestelle ich deshalb oft nur Leitungswasser zum Essen. Wenn das plötzlich drei Euro kostet, gehe ich lieber gar nicht mehr aus. Und im Sommer, wenn es über dreißig Grad heiß ist, braucht einfach jeder Wasser. Das darf kein Luxus sein, deshalb sollte es eine Pflicht für alle Restaurants geben.",
+            "Paulina, 22, Halberstadt"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Larissa verdient mit Getränken ihr Geld und hat Kosten für Gläser und Personal. Mit kostenlosem Wasser müsste sie ihr Café vielleicht schließen.",
+            "evidence": {
+              "text": "Ich habe ein kleines Café in der Innenstadt. Viele denken, Wasser ist doch gratis. Aber ich muss die Gläser spülen, die Spülmaschine braucht Strom, und meine Mitarbeiterin bekommt ihren Lohn. Mit Kuchen allein verdiene ich kaum etwas, die Getränke sind mein wichtigstes Geschäft. Wenn ich Wasser kostenlos ausgeben muss, kann ich das Café bald schließen.",
+              "hit": "Wenn ich Wasser kostenlos ausgeben muss, kann ich das Café bald schließen."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Alois kennt das Gratis-Wasser aus Österreich und möchte es überall. Er ist sogar für ein Gesetz.",
+            "evidence": {
+              "text": "Bei uns in Österreich bekommt man im Kaffeehaus zu jedem Kaffee ganz selbstverständlich ein Glas Wasser dazu, und niemand denkt daran, dafür etwas zu verlangen. Ich habe das in Deutschland vermisst, als ich dort auf Urlaub war. So eine schöne Tradition sollte es überall geben. Wenn es nicht freiwillig geht, dann eben mit einem Gesetz.",
+              "hit": "Wenn es nicht freiwillig geht, dann eben mit einem Gesetz."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Dirk findet drei Euro zu teuer, aber Wasser soll nur billig sein. Ein Gesetz für Gratis-Wasser lehnt er ab.",
+            "evidence": {
+              "text": "Drei Euro für ein Glas Leitungswasser, wie in dem Restaurant aus dem Artikel, sind wirklich frech. Ein fairer Preis wären vielleicht fünfzig Cent. Aber dass der Staat jetzt jedem Wirt vorschreiben soll, Wasser zu verschenken, geht mir zu weit. Ein Restaurant ist ein Geschäft, und das Personal muss bezahlt werden. Billig ja, gratis per Gesetz nein.",
+              "hit": "Billig ja, gratis per Gesetz nein."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "falsch",
+            "explanation": "Franziska will, dass jedes Restaurant selbst entscheidet. Ein Gesetz findet sie unnötig.",
+            "evidence": {
+              "text": "Ich finde, jedes Restaurant sollte selbst entscheiden, ob es für Leitungswasser Geld nimmt oder nicht. Die Preise stehen ja auf der Karte, man weiß also vorher Bescheid. Wem die Regel nicht gefällt, der kann einfach in ein anderes Lokal gehen. Davon gibt es bei uns in der Stadt genug. Ein neues Gesetz brauchen wir dafür wirklich nicht.",
+              "hit": "jedes Restaurant sollte selbst entscheiden"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "richtig",
+            "explanation": "Nina findet Gratis-Wasser gesund und gut für die Umwelt. Sie wäre froh über eine Pflicht.",
+            "evidence": {
+              "text": "In der Schweiz stellen viele Restaurants schon heute eine Karaffe mit Hahnenwasser auf den Tisch, oft ohne dass man fragen muss. Das ist gesund, denn viele trinken sonst zu wenig. Ausserdem braucht man weniger Plastikflaschen, die transportiert und entsorgt werden müssen. Ich wäre froh, wenn das überall zur Pflicht würde – dann müsste niemand mehr diskutieren.",
+              "hit": "Ich wäre froh, wenn das überall zur Pflicht würde"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "falsch",
+            "explanation": "Marcel fürchtet, dass Gäste dann nichts anderes trinken. Er müsste die Preise fürs Essen erhöhen, deshalb ist er dagegen.",
+            "evidence": {
+              "text": "Ich führe seit fünfzehn Jahren ein Restaurant. Wenn Wasser gratis sein muss, bestellen viele Gäste nur noch das Essen und sonst nichts. Ein Teil unserer Einnahmen fällt dann weg, aber Miete, Strom und Löhne bleiben gleich. Am Ende müsste ich die Preise für die Menüs erhöhen, und dann bezahlen alle Gäste mehr – auch die, die gern ein Glas Wein trinken.",
+              "hit": "Am Ende müsste ich die Preise für die Menüs erhöhen"
+            }
+          },
+          {
+            "n": 26,
+            "correct": "richtig",
+            "explanation": "Paulina hat als Studentin wenig Geld, und im Sommer braucht jeder Wasser. Sie wünscht sich eine Pflicht für alle Restaurants.",
+            "evidence": {
+              "text": "Als Studentin habe ich wenig Geld. Wenn ich mit Freunden essen gehe, bestelle ich deshalb oft nur Leitungswasser zum Essen. Wenn das plötzlich drei Euro kostet, gehe ich lieber gar nicht mehr aus. Und im Sommer, wenn es über dreißig Grad heiß ist, braucht einfach jeder Wasser. Das darf kein Luxus sein, deshalb sollte es eine Pflicht für alle Restaurants geben.",
+              "hit": "deshalb sollte es eine Pflicht für alle Restaurants geben"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-06-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.460Z",
+        "textType": "Regeln einer offenen Werkstatt"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie haben einen Einführungskurs gemacht und sind jetzt Mitglied der offenen Werkstatt.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Angefangene Projekte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss man jeden Abend wieder mitnehmen."
+                },
+                {
+                  "key": "b",
+                  "label": "dürfen mit Namen höchstens eine Woche im Regal bleiben."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man im Flur vor der Werkstatt abstellen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Die Kreissäge und die Fräse …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf jedes Mitglied jederzeit benutzen."
+                },
+                {
+                  "key": "b",
+                  "label": "darf man nur samstags mit Betreuer benutzen."
+                },
+                {
+                  "key": "c",
+                  "label": "darf man nur benutzen, wenn noch jemand da ist."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Jugendliche ab 14 Jahren …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dürfen mit einem erwachsenen Mitglied kommen."
+                },
+                {
+                  "key": "b",
+                  "label": "müssen zuerst einen eigenen Kurs machen."
+                },
+                {
+                  "key": "c",
+                  "label": "dürfen die Werkstatt nicht betreten."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Holz und Schrauben aus dem Lager …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sind im Monatsbeitrag schon enthalten."
+                },
+                {
+                  "key": "b",
+                  "label": "notiert man und bezahlt sie am Monatsende."
+                },
+                {
+                  "key": "c",
+                  "label": "muss man eine Woche vorher bestellen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Hausordnung",
+          "paragraphs": [
+            "Regeln der offenen Werkstatt Feilenwerk Esslingen",
+            "**Öffnungszeiten**",
+            "Die Werkstatt ist dienstags bis freitags von 16 bis 21 Uhr und samstags von 10 bis 18 Uhr geöffnet. Mit Ihrem Mitgliedsausweis kommen Sie während dieser Zeiten ohne Anmeldung herein. Eine halbe Stunde vor Schluss werden die Maschinen ausgeschaltet.",
+            "**Maschinen**",
+            "Bohrmaschinen, Schleifgeräte und Handwerkzeug dürfen alle Mitglieder nach dem Einführungskurs benutzen. Für die Kreissäge und die Fräse gilt eine besondere Regel: Sie dürfen nur eingeschaltet werden, wenn mindestens eine weitere Person im Raum ist. Samstags ist außerdem immer ein Werkstattbetreuer da, der Ihnen gern hilft.",
+            "**Material**",
+            "Schleifpapier und Leim sind im Monatsbeitrag enthalten. Holz, Schrauben und Beschläge aus dem Lager tragen Sie bitte mit Menge und Datum in die Materialliste neben der Tür ein. Abgerechnet wird am Ende des Monats. Spezielle Holzarten bestellen wir gern für Sie, das dauert etwa eine Woche.",
+            "**Sicherheit**",
+            "Tragen Sie an allen Maschinen eine Schutzbrille und binden Sie lange Haare zusammen. Kinder unter 14 Jahren dürfen die Werkstatt nicht betreten. Jugendliche ab 14 sind willkommen, wenn ein erwachsenes Mitglied sie begleitet und die ganze Zeit dabeibleibt. Einen eigenen Kurs brauchen sie dann nicht. Den Erste-Hilfe-Kasten finden Sie neben dem Eingang.",
+            "**Aufräumen**",
+            "Bringen Sie Werkzeug nach der Arbeit an seinen Platz zurück und kehren Sie Ihren Arbeitsplatz. Angefangene Projekte müssen Sie nicht jeden Abend mitnehmen: Mit einem Namensschild dürfen sie bis zu sieben Tage im Projektregal bleiben. Danach räumen wir sie weg. Der Flur ist Fluchtweg und muss immer frei bleiben."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "b",
+            "explanation": "Mit einem Namensschild dürfen Projekte bis zu sieben Tage im Regal bleiben. Der Flur muss frei bleiben.",
+            "evidence": {
+              "text": "Bringen Sie Werkzeug nach der Arbeit an seinen Platz zurück und kehren Sie Ihren Arbeitsplatz. Angefangene Projekte müssen Sie nicht jeden Abend mitnehmen: Mit einem Namensschild dürfen sie bis zu sieben Tage im Projektregal bleiben. Danach räumen wir sie weg. Der Flur ist Fluchtweg und muss immer frei bleiben.",
+              "hit": "Mit einem Namensschild dürfen sie bis zu sieben Tage im Projektregal bleiben."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "c",
+            "explanation": "Diese Maschinen darf man nur einschalten, wenn noch eine Person im Raum ist. Der Betreuer am Samstag ist nur eine zusätzliche Hilfe.",
+            "evidence": {
+              "text": "Bohrmaschinen, Schleifgeräte und Handwerkzeug dürfen alle Mitglieder nach dem Einführungskurs benutzen. Für die Kreissäge und die Fräse gilt eine besondere Regel: Sie dürfen nur eingeschaltet werden, wenn mindestens eine weitere Person im Raum ist. Samstags ist außerdem immer ein Werkstattbetreuer da, der Ihnen gern hilft.",
+              "hit": "Sie dürfen nur eingeschaltet werden, wenn mindestens eine weitere Person im Raum ist."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "a",
+            "explanation": "Jugendliche ab 14 dürfen kommen, wenn ein erwachsenes Mitglied dabei ist. Nur Kinder unter 14 dürfen nicht hinein.",
+            "evidence": {
+              "text": "Tragen Sie an allen Maschinen eine Schutzbrille und binden Sie lange Haare zusammen. Kinder unter 14 Jahren dürfen die Werkstatt nicht betreten. Jugendliche ab 14 sind willkommen, wenn ein erwachsenes Mitglied sie begleitet und die ganze Zeit dabeibleibt. Einen eigenen Kurs brauchen sie dann nicht. Den Erste-Hilfe-Kasten finden Sie neben dem Eingang.",
+              "hit": "Jugendliche ab 14 sind willkommen, wenn ein erwachsenes Mitglied sie begleitet"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Holz und Schrauben schreibt man in die Materialliste und bezahlt am Ende des Monats. Im Beitrag sind nur Schleifpapier und Leim enthalten.",
+            "evidence": {
+              "text": "Schleifpapier und Leim sind im Monatsbeitrag enthalten. Holz, Schrauben und Beschläge aus dem Lager tragen Sie bitte mit Menge und Datum in die Materialliste neben der Tür ein. Abgerechnet wird am Ende des Monats. Spezielle Holzarten bestellen wir gern für Sie, das dauert etwa eine Woche.",
+              "hit": "Holz, Schrauben und Beschläge aus dem Lager tragen Sie bitte mit Menge und Datum in die Materialliste neben der Tür ein. Abgerechnet wird am Ende des Monats."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

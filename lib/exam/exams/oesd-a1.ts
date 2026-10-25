@@ -4,12 +4,16 @@
 
 import type { ExamSpec } from "../exam-blueprints"
 
+const U = "research/oesd-a1.md §9 (Modellsatz 2026 = Broschüre 2024, transcript + audio measured, verified 2026-10-24)"
+
 export const spec: ExamSpec = {
   context: { name: "ÖSD Zertifikat A1", level: "A1", setting: "Alltag in Österreich, Deutschland und der Schweiz; Texte aus allen drei Ländern (Preise in Euro oder Franken, Orte aus allen drei Ländern). Standardsprache, regionale Wörter nur, wenn sie aus dem Zusammenhang klar sind", copyright: "ÖSD" },
   parts: [
     {
       // Real: 5 situations, 6 ads (~170 words). Taster cut: 3 situations, 4 ads, still one ad extra.
       skill: "lesen", teil: 1, answer: "match", ads: 4, noMatch: false, itemsReal: 5, itemsPerBlock: 5,
+      // Ads 1–6, one extra; ~160 words of ads in the MS (20–30 each). Length = all six ads together.
+      full: { items: 5, first: 1, blocks: 1, itemsPerBlock: 5, length: { min: 120, max: 200, unit: "words" }, example: false, options: 6, source: U },
       textTypes: ["Zeitungsanzeigen (Arbeit, Dienstleistungen, Geschäfte, Freizeit, Handytarife)"],
       length: { min: 80, max: 150, unit: "words" },
       instruction: "Sie suchen etwas in der Zeitung. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
@@ -17,6 +21,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 2, answer: "rf", itemsReal: 6, itemsPerBlock: 2,
+      full: { items: 6, first: 6, blocks: 3, itemsPerBlock: 2, length: { min: 26, max: 44, unit: "words" }, example: false, source: U },
       textTypes: ["Anzeige: Angebot in einem Geschäft", "Anzeige: Veranstaltung oder Kurs", "Anzeige: Wohnung oder Zimmer"],
       length: { min: 25, max: 40, unit: "words" },
       instruction: "Sie lesen eine Anzeige. Sind die Aussagen richtig oder falsch?",
@@ -25,6 +30,8 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 3, answer: "pic", itemsReal: 5, itemsPerBlock: 1,
+      // Notices 1–5 → pictograms 1–6, one extra; length per notice.
+      full: { items: 5, first: 12, blocks: 1, itemsPerBlock: 5, length: { min: 14, max: 32, unit: "words" }, example: false, options: 6, source: U },
       textTypes: ["Schild im Park", "Aushang im Krankenhaus oder in der Arztpraxis", "Schild in einem Amt", "Schild im Restaurant", "Aushang an der Haltestelle oder im Bahnhof"],
       length: { min: 12, max: 30, unit: "words" },
       instruction: "Sie lesen einen kurzen Text. Welches Bild passt? Wählen Sie a, b oder c.",
@@ -33,24 +40,30 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 1, answer: "pic", itemsReal: 5, itemsPerBlock: 1,
+      // One photo grid A–F over five dialogues (33–45 words, 14–17 s, mean ~154 wpm), once, 30 s to look first.
+      full: { items: 5, first: 1, blocks: 1, itemsPerBlock: 5, length: { min: 14, max: 17, unit: "seconds" }, example: false, readingSeconds: 30, options: 6, clips: 5, pace: { min: 140, max: 160 }, sound: "Gong zwischen den Schritten; vor jedem Text ein Geräusch (2–4 s)", source: U },
       textTypes: ["Gespräch im Urlaub", "Gespräch auf der Reise (Bahnhof, Flughafen, Hotel)", "Gespräch beim Einkaufen", "Gespräch im Restaurant oder Café", "Gespräch zu Hause oder bei Freunden"],
       length: { min: 14, max: 24, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 1,
       accents: ["at", "de"],
       instruction: "Sie hören ein kurzes Gespräch. Welches Bild passt zum Gespräch? Wählen Sie a, b oder c. Sie hören den Text einmal.",
-      hint: `Zwei Personen, ein kurzes Alltagsgespräch mit 4–6 Beiträgen, 35–50 Wörter zusammen, langsam und sehr einfach (A1). Der Ort wird nicht direkt genannt; man hört ihn an Wörtern (z. B. Zimmer, Schlüssel, Frühstück → Hotel). Die Frage ist immer "Welches Bild passt zum Gespräch?". Die Optionen sind Orte oder Situationen als sehr kurze Beschriftung (z. B. "Im Hotel", "Am Bahnhof", "Im Geschäft") mit Piktogramm; die zwei falschen passen zu einem Wort im Gespräch fast.`,
+      hint: `Zwei Personen, ein kurzes Alltagsgespräch mit 4–6 Beiträgen, 33–45 Wörter zusammen, langsam und sehr einfach (A1). Der Ort wird nicht direkt genannt; man hört ihn an Wörtern (z. B. Zimmer, Schlüssel, Frühstück → Hotel). Die Frage ist immer "Welches Bild passt zum Gespräch?". Die Optionen sind Orte oder Situationen als sehr kurze Beschriftung (z. B. "Im Hotel", "Am Bahnhof", "Im Geschäft") mit Piktogramm; die zwei falschen passen zu einem Wort im Gespräch fast.`,
       todo: "TODO(hannes): the real Aufgabe 1 matches 5 dialogues to 6 photos (one extra); the taster shows one dialogue with 3 pictogram options until a picture-matching component and photos exist.",
     },
     {
       skill: "hoeren", teil: 2, answer: "abc", itemsReal: 5, itemsPerBlock: 5, sample: 2,
+      // Voicemail ~96 words at ~112 wpm, twice; "Was:" printed as the Beispiel; 30 s to read, 20 s to check.
+      full: { items: 5, first: 6, blocks: 1, itemsPerBlock: 5, length: { min: 49, max: 53, unit: "seconds" }, example: true, readingSeconds: 30, pace: { min: 112, max: 118 }, sound: "Piepton vor und nach der Nachricht", source: U },
       textTypes: ["Nachricht auf der Sprachbox (privat)", "Ansage einer Arztpraxis, eines Kurses oder einer Firma am Telefon"],
       length: { min: 40, max: 58, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 2,
       accents: ["ch"],
       instruction: "Sie hören eine Nachricht am Telefon. Lesen Sie zuerst die Fragen. Wählen Sie die richtige Antwort: a, b oder c. Sie hören den Text zweimal.",
-      hint: `Eine Person spricht eine Nachricht auf die Sprachbox oder eine Ansage, 100–120 Wörter, langsam und deutlich (A1). Mit Begrüßung, Name, Grund und mehreren Details: Tag oder Datum, Uhrzeit, Straße mit Hausnummer, Telefonnummer (Ziffern einzeln oder in Paaren gesprochen), eventuell ein buchstabierter Name. Die 2 Fragen fragen nach zwei dieser Details (z. B. "Wann ist der Termin?", "Wie ist die Telefonnummer?"). Optionen sehr kurz (1–4 Wörter oder eine Zahl); die falschen kommen im Text auch vor oder sind fast gleich (anderer Tag, Zahlendreher, alte Uhrzeit).`,
+      hint: `Eine Person spricht eine Nachricht auf die Sprachbox oder eine Ansage, 95–100 Wörter, langsam und deutlich (A1). Mit Begrüßung, Name, Grund und mehreren Details: Tag oder Datum, Uhrzeit, Straße mit Hausnummer, Telefonnummer (Ziffern einzeln oder in Paaren gesprochen), eventuell ein buchstabierter Name. Die 2 Fragen fragen nach zwei dieser Details (z. B. "Wann ist der Termin?", "Wie ist die Telefonnummer?"). Optionen sehr kurz (1–4 Wörter oder eine Zahl); die falschen kommen im Text auch vor oder sind fast gleich (anderer Tag, Zahlendreher, alte Uhrzeit).`,
       todo: "TODO(hannes): the real Aufgabe 2 is a note sheet with 5 gaps (write the detail). The kit has no listening gap-fill, so the taster asks 2 a/b/c questions about the same kind of details.",
     },
     {
       skill: "hoeren", teil: 3, answer: "abc", options: 4, itemsReal: 5, itemsPerBlock: 5, sample: 3,
+      // Interviewer asks once, then "Text eins" … five answers (39–54 words, 15–20 s); 10 s to read, 60 s to check.
+      full: { items: 5, first: 11, blocks: 1, itemsPerBlock: 5, length: { min: 15, max: 20, unit: "seconds" }, example: false, readingSeconds: 10, options: 4, clips: 5, pace: { min: 150, max: 165 }, sound: "leichte Straßengeräusche", source: U },
       textTypes: ["Kurzinterviews auf der Straße zu einer Alltagsfrage"],
       length: { min: 45, max: 80, unit: "seconds" }, voices: { min: 4, max: 4 }, plays: 1,
       accents: ["de", "at", "de", "ch"],

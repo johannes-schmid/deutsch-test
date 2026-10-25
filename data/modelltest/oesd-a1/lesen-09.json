@@ -1,0 +1,479 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-09-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.670Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Energiefachstelle Herisau",
+                  "text": "Sie zahlen zu viel für Energie? Wir zeigen Ihnen, wie Sie Strom sparen. Die Beratung ist gratis, am Telefon oder bei Ihnen zu Hause. www.energie-herisau.ch"
+                },
+                {
+                  "key": "2",
+                  "title": "Telefonladen Ritter, Bludenz",
+                  "text": "Einfache Handys für ältere Menschen: große Tasten, große Zahlen, lauter Ton. Wir machen alles für Sie fertig, Sie können sofort telefonieren. Tel. 0676 / 412 58 30"
+                },
+                {
+                  "key": "3",
+                  "title": "Sanitätshaus Rollmobil, Koblenz",
+                  "text": "Rollstühle und Krücken zum Mieten, pro Woche ab 15 Euro. Wir bringen alles zu Ihnen nach Hause. Montag bis Samstag geöffnet. www.rollmobil-koblenz.de"
+                },
+                {
+                  "key": "4",
+                  "title": "Seniorentag im Rathaus Neuss",
+                  "text": "Samstag, 14 Uhr: Vorträge für Seniorinnen und Senioren. Themen: Sicher gehen mit dem Rollator, das Handy für Anfänger, Strom sparen im Haushalt. Eintritt frei."
+                },
+                {
+                  "key": "5",
+                  "title": "Elektro Fasching, Gänserndorf",
+                  "text": "Steckdose kaputt? Licht geht nicht? Wir reparieren Steckdosen, Lampen und Kabel. Schnell und auch am Samstag. Rufen Sie an: 0664 / 237 91 15"
+                },
+                {
+                  "key": "6",
+                  "title": "Pflegedienst Sonnenblick, Hohenems",
+                  "text": "Unsere Pflegerinnen kommen jeden Morgen zu Ihnen nach Hause. Wir helfen beim Waschen und Anziehen und geben Ihnen Ihre Medikamente. Telefon 0699 / 105 44 72"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Ihre Mutter hat ein Bein gebrochen. Sie braucht ein paar Wochen lang einen Rollstuhl."
+                },
+                {
+                  "n": 2,
+                  "text": "In Ihrer Küche geht eine Steckdose nicht mehr. Sie suchen einen Elektriker."
+                },
+                {
+                  "n": 3,
+                  "text": "Ihr Vater wohnt allein. Er braucht jeden Morgen Hilfe beim Waschen und mit seinen Tabletten."
+                },
+                {
+                  "n": 4,
+                  "text": "Ihre Stromrechnung ist sehr hoch. Jemand soll zu Ihnen kommen und zeigen: So brauchen Sie weniger Strom."
+                },
+                {
+                  "n": 5,
+                  "text": "Ihr Großvater möchte ein Handy mit großen Tasten. Er kann es aber nicht selbst einstellen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "3",
+            "explanation": "Beim Sanitätshaus in Koblenz kannst du einen Rollstuhl pro Woche mieten. Beim Seniorentag gibt es nur einen Vortrag über den Rollator.",
+            "evidence": {
+              "text": "Sanitätshaus Rollmobil, Koblenz Rollstühle und Krücken zum Mieten, pro Woche ab 15 Euro. Wir bringen alles zu Ihnen nach Hause. Montag bis Samstag geöffnet. www.rollmobil-koblenz.de",
+              "hit": "Rollstühle und Krücken zum Mieten, pro Woche ab 15 Euro."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "5",
+            "explanation": "Elektro Fasching repariert Steckdosen, schnell und auch am Samstag.",
+            "evidence": {
+              "text": "Elektro Fasching, Gänserndorf Steckdose kaputt? Licht geht nicht? Wir reparieren Steckdosen, Lampen und Kabel. Schnell und auch am Samstag. Rufen Sie an: 0664 / 237 91 15",
+              "hit": "Wir reparieren Steckdosen, Lampen und Kabel."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "6",
+            "explanation": "Der Pflegedienst kommt jeden Morgen nach Hause und hilft beim Waschen und mit den Medikamenten. Das Sanitätshaus bringt nur Rollstühle und Krücken.",
+            "evidence": {
+              "text": "Pflegedienst Sonnenblick, Hohenems Unsere Pflegerinnen kommen jeden Morgen zu Ihnen nach Hause. Wir helfen beim Waschen und Anziehen und geben Ihnen Ihre Medikamente. Telefon 0699 / 105 44 72",
+              "hit": "Unsere Pflegerinnen kommen jeden Morgen zu Ihnen nach Hause."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "1",
+            "explanation": "Die Energiefachstelle berät dich gratis bei dir zu Hause. Der Vortrag beim Seniorentag ist im Rathaus, nicht bei dir.",
+            "evidence": {
+              "text": "Energiefachstelle Herisau Sie zahlen zu viel für Energie? Wir zeigen Ihnen, wie Sie Strom sparen. Die Beratung ist gratis, am Telefon oder bei Ihnen zu Hause. www.energie-herisau.ch",
+              "hit": "Die Beratung ist gratis, am Telefon oder bei Ihnen zu Hause."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "2",
+            "explanation": "Der Telefonladen verkauft Handys mit großen Tasten und macht sie fertig. Beim Seniorentag gibt es nur einen Vortrag, kein Handy.",
+            "evidence": {
+              "text": "Telefonladen Ritter, Bludenz Einfache Handys für ältere Menschen: große Tasten, große Zahlen, lauter Ton. Wir machen alles für Sie fertig, Sie können sofort telefonieren. Tel. 0676 / 412 58 30",
+              "hit": "Wir machen alles für Sie fertig"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-09-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.670Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Hof Ehlers bei Lüneburg",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Weihnachtsbäume vom Hof",
+            "1. bis 23. Dezember, jeden Tag von 9 bis 18 Uhr.",
+            "Suchen Sie Ihren Baum selbst aus und schneiden Sie ihn ab. Sägen gibt es bei uns.",
+            "Wir bringen den Baum auch nach Hause: 10 Euro."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kann man am 24. Dezember einen Baum kaufen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Muss man eine Säge mitbringen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Die Bäume gibt es nur bis zum 23. Dezember. Am 24. ist der Verkauf schon vorbei.",
+            "evidence": {
+              "text": "Weihnachtsbäume vom Hof 1. bis 23. Dezember, jeden Tag von 9 bis 18 Uhr. Suchen Sie Ihren Baum selbst aus und schneiden Sie ihn ab. Sägen gibt es bei uns. Wir bringen den Baum auch nach Hause: 10 Euro.",
+              "hit": "1. bis 23. Dezember"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Du schneidest den Baum selbst ab, aber die Sägen bekommst du auf dem Hof.",
+            "evidence": {
+              "text": "Weihnachtsbäume vom Hof 1. bis 23. Dezember, jeden Tag von 9 bis 18 Uhr. Suchen Sie Ihren Baum selbst aus und schneiden Sie ihn ab. Sägen gibt es bei uns. Wir bringen den Baum auch nach Hause: 10 Euro.",
+              "hit": "Sägen gibt es bei uns."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-09-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.670Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Marktgemeinde Pöchlarn",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Maibaumaufstellen am Hauptplatz",
+            "Am 30. April um 18 Uhr stellen wir den Maibaum auf. Alle sind herzlich eingeladen!",
+            "Bei Regen feiern wir am 1. Mai, zur gleichen Zeit.",
+            "Infos: www.poechlarn-gemeinde.at"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Ist das Fest am Abend?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Feiert man bei Regen in einem Saal?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "richtig",
+            "explanation": "Das Fest beginnt um 18 Uhr, also am Abend.",
+            "evidence": {
+              "text": "Maibaumaufstellen am Hauptplatz Am 30. April um 18 Uhr stellen wir den Maibaum auf. Alle sind herzlich eingeladen! Bei Regen feiern wir am 1. Mai, zur gleichen Zeit. Infos: www.poechlarn-gemeinde.at",
+              "hit": "Am 30. April um 18 Uhr"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Bei Regen gibt es keinen Saal. Das Fest ist dann einen Tag später, am 1. Mai.",
+            "evidence": {
+              "text": "Maibaumaufstellen am Hauptplatz Am 30. April um 18 Uhr stellen wir den Maibaum auf. Alle sind herzlich eingeladen! Bei Regen feiern wir am 1. Mai, zur gleichen Zeit. Infos: www.poechlarn-gemeinde.at",
+              "hit": "Bei Regen feiern wir am 1. Mai, zur gleichen Zeit."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-09-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.670Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Luftseilbahn Sonnenegg, Sarnen",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Herbstangebot im Oktober",
+            "Vom 1. bis 31. Oktober: Berg- und Talfahrt für CHF 24.– statt CHF 32.–",
+            "Kinder bis 16 Jahre fahren mit ihren Eltern gratis.",
+            "Jeden Tag von 8.30 bis 17.30 Uhr. Geniessen Sie die Aussicht!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Muss ein Kind mit zwölf Jahren mit seinen Eltern etwas bezahlen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Ist die Fahrt im Oktober billiger?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Kinder bis 16 Jahre fahren mit den Eltern gratis. Ein Kind mit zwölf zahlt also nichts.",
+            "evidence": {
+              "text": "Herbstangebot im Oktober Vom 1. bis 31. Oktober: Berg- und Talfahrt für CHF 24.– statt CHF 32.– Kinder bis 16 Jahre fahren mit ihren Eltern gratis. Jeden Tag von 8.30 bis 17.30 Uhr. Geniessen Sie die Aussicht!",
+              "hit": "Kinder bis 16 Jahre fahren mit ihren Eltern gratis."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Im Oktober kostet die Fahrt 24 Franken und nicht 32 Franken.",
+            "evidence": {
+              "text": "Herbstangebot im Oktober Vom 1. bis 31. Oktober: Berg- und Talfahrt für CHF 24.– statt CHF 32.– Kinder bis 16 Jahre fahren mit ihren Eltern gratis. Jeden Tag von 8.30 bis 17.30 Uhr. Geniessen Sie die Aussicht!",
+              "hit": "Berg- und Talfahrt für CHF 24.– statt CHF 32.–"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-09-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.670Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Achtung, Steinschlag",
+                  "text": "",
+                  "picto": "steinschlag"
+                },
+                {
+                  "key": "2",
+                  "title": "Feuerlöscher",
+                  "text": "",
+                  "picto": "feuerloescher"
+                },
+                {
+                  "key": "3",
+                  "title": "Videokamera",
+                  "text": "",
+                  "picto": "videokamera"
+                },
+                {
+                  "key": "4",
+                  "title": "Lieferwagen",
+                  "text": "",
+                  "picto": "lieferung"
+                },
+                {
+                  "key": "5",
+                  "title": "Feuermelder",
+                  "text": "",
+                  "picto": "feuermelder"
+                },
+                {
+                  "key": "6",
+                  "title": "Defibrillator, Herz mit Blitz",
+                  "text": "",
+                  "picto": "defibrillator"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Kundinnen und Kunden! Wir bringen Ihren Einkauf auch nach Hause. Ab 50 Euro kostet die Lieferung nichts. Fragen Sie an der Kassa!"
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Mieterinnen und Mieter! Ab Montag gibt es Videokameras an der Haustür und in der Garage. Die Hausverwaltung sieht die Bilder nur bei Problemen."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Wanderinnen und Wanderer! Auf diesem Weg fallen Steine vom Berg. Bitte gehen Sie hier nicht weiter. Nehmen Sie den Weg links zur Hütte."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Mitarbeiterinnen und Mitarbeiter! Das Gerät für Notfälle mit dem Herz, der Defibrillator, hängt jetzt im Erdgeschoß, gleich neben dem Lift."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebes Küchenteam! Brennt es in der Küche? Der Feuerlöscher hängt jetzt neben der Tür, nicht mehr beim Fenster. Bitte merken Sie sich das."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "4",
+            "explanation": "Das Geschäft bringt den Einkauf nach Hause. Das passt zum Lieferwagen.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden! Wir bringen Ihren Einkauf auch nach Hause. Ab 50 Euro kostet die Lieferung nichts. Fragen Sie an der Kassa!",
+              "hit": "Wir bringen Ihren Einkauf auch nach Hause."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "3",
+            "explanation": "An der Haustür und in der Garage gibt es Kameras. Das passt zum Bild mit der Videokamera.",
+            "evidence": {
+              "text": "Liebe Mieterinnen und Mieter! Ab Montag gibt es Videokameras an der Haustür und in der Garage. Die Hausverwaltung sieht die Bilder nur bei Problemen.",
+              "hit": "Ab Montag gibt es Videokameras an der Haustür und in der Garage."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "1",
+            "explanation": "Auf dem Weg fallen Steine vom Berg. Das zeigt das Warnschild für Steinschlag.",
+            "evidence": {
+              "text": "Liebe Wanderinnen und Wanderer! Auf diesem Weg fallen Steine vom Berg. Bitte gehen Sie hier nicht weiter. Nehmen Sie den Weg links zur Hütte.",
+              "hit": "Auf diesem Weg fallen Steine vom Berg."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "6",
+            "explanation": "Der Text ist über das Gerät für Herz-Notfälle. Das passt zum Herz mit dem Blitz.",
+            "evidence": {
+              "text": "Liebe Mitarbeiterinnen und Mitarbeiter! Das Gerät für Notfälle mit dem Herz, der Defibrillator, hängt jetzt im Erdgeschoß, gleich neben dem Lift.",
+              "hit": "Das Gerät für Notfälle mit dem Herz"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "2",
+            "explanation": "Der Text sagt, wo der Feuerlöscher hängt. Der Feuermelder ist ein anderes Gerät, er löscht kein Feuer.",
+            "evidence": {
+              "text": "Liebes Küchenteam! Brennt es in der Küche? Der Feuerlöscher hängt jetzt neben der Tür, nicht mehr beim Fenster. Bitte merken Sie sich das.",
+              "hit": "Der Feuerlöscher hängt jetzt neben der Tür"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

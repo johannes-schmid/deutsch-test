@@ -1,0 +1,959 @@
+{
+  "exam": "goethe-b1",
+  "skill": "lesen",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "goethe-b1-lesen-08-t1-01",
+      "exam": "goethe-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.467Z",
+        "textType": "Persönliche E-Mail"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Ricarda arbeitet seit einigen Monaten anders als früher."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Nach der Geburt ihres zweiten Kindes wollte Ricarda nicht mehr Vollzeit arbeiten."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Ricardas Chef war von der Idee sofort begeistert."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Ricarda und Jochen sind nie am selben Tag im Büro."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "In der ersten Zeit sind wichtige Informationen verloren gegangen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Das Team ist mit der neuen Lösung unzufrieden."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Ricarda und Jochen sollen anderen Kollegen von ihren Erfahrungen berichten."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ricarda",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Leyla,",
+            "danke für deine lange Nachricht! Du fragst, wie es mir bei der Arbeit geht. Seit einem halben Jahr teile ich mir meine Stelle als Teamleiterin bei der Ruhrtal Versicherung mit meinem Kollegen Jochen. Man nennt das Jobsharing, und ich bin wirklich froh, dass wir es ausprobiert haben.",
+            "Du weißt ja, wie es nach der Geburt von unserem zweiten Kind war. Als meine Elternzeit zu Ende war, habe ich schnell gemerkt, dass ich vierzig Stunden pro Woche mit zwei kleinen Kindern nicht schaffe. Gleichzeitig hatte ich große Angst, dass ich meine Teamleitung abgeben muss, wenn ich weniger arbeite. Dann habe ich zufällig in der Kantine mit Jochen gesprochen. Er wollte auch weniger arbeiten, weil er seinen kranken Vater pflegt.",
+            "Unser Chef war am Anfang gar nicht überzeugt. „Zwei Teamleiter für ein Team? Das gibt doch nur Chaos“, hat er gesagt. Am Ende hat er uns eine Probezeit von drei Monaten gegeben. Die ist längst vorbei, und inzwischen erzählt er allen, dass es seine Idee war.",
+            "Ich arbeite von Montag bis Mittwoch, Jochen von Mittwoch bis Freitag. Mittwochs sitzen wir also zusammen im Büro und besprechen alles, was in der Woche passiert ist. Ganz ohne Probleme ging es aber nicht. In den ersten Wochen sind ein paar wichtige E-Mails untergegangen, weil jeder dachte, der andere hat sie schon beantwortet. Seitdem schreiben wir alles in ein gemeinsames Übergabeheft, und das funktioniert prima.",
+            "Und das Team? Ich hatte ein bisschen Sorge, aber die Kolleginnen und Kollegen finden unsere Lösung super. Es ist nämlich immer jemand von uns beiden da, auch in der Urlaubszeit, weil wir nie gleichzeitig freinehmen.",
+            "Jetzt kommt das Beste: Unsere Zentrale hat von unserem Modell gehört. Im Herbst sollen Jochen und ich es bei einer großen Tagung den anderen Teamleitungen vorstellen. Ich bin schon jetzt aufgeregt, aber auch ziemlich stolz. Vor einem Jahr hätte ich nie gedacht, dass ich mich in meinem Job einmal so wohlfühle.",
+            "Wie läuft es eigentlich bei dir mit dem neuen Job? Schreib mir bald!",
+            "Liebe Grüße",
+            "Ricarda"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Nach der Elternzeit hat sie gemerkt, dass sie vierzig Stunden pro Woche mit zwei Kindern nicht schafft. Deshalb wollte sie weniger arbeiten.",
+            "evidence": {
+              "text": "Du weißt ja, wie es nach der Geburt von unserem zweiten Kind war. Als meine Elternzeit zu Ende war, habe ich schnell gemerkt, dass ich vierzig Stunden pro Woche mit zwei kleinen Kindern nicht schaffe. Gleichzeitig hatte ich große Angst, dass ich meine Teamleitung abgeben muss, wenn ich weniger arbeite. Dann habe ich zufällig in der Kantine mit Jochen gesprochen. Er wollte auch weniger arbeiten, weil er seinen kranken Vater pflegt.",
+              "hit": "dass ich vierzig Stunden pro Woche mit zwei kleinen Kindern nicht schaffe"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "falsch",
+            "explanation": "Der Chef war am Anfang nicht überzeugt und hat nur eine Probezeit erlaubt. Dass er heute von seiner Idee spricht, kam erst später.",
+            "evidence": {
+              "text": "Unser Chef war am Anfang gar nicht überzeugt. „Zwei Teamleiter für ein Team? Das gibt doch nur Chaos“, hat er gesagt. Am Ende hat er uns eine Probezeit von drei Monaten gegeben. Die ist längst vorbei, und inzwischen erzählt er allen, dass es seine Idee war.",
+              "hit": "Unser Chef war am Anfang gar nicht überzeugt."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Beide arbeiten am Mittwoch und sitzen dann zusammen im Büro.",
+            "evidence": {
+              "text": "Ich arbeite von Montag bis Mittwoch, Jochen von Mittwoch bis Freitag. Mittwochs sitzen wir also zusammen im Büro und besprechen alles, was in der Woche passiert ist. Ganz ohne Probleme ging es aber nicht. In den ersten Wochen sind ein paar wichtige E-Mails untergegangen, weil jeder dachte, der andere hat sie schon beantwortet. Seitdem schreiben wir alles in ein gemeinsames Übergabeheft, und das funktioniert prima.",
+              "hit": "Mittwochs sitzen wir also zusammen im Büro"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "In den ersten Wochen sind wichtige E-Mails untergegangen. Erst seit dem Übergabeheft klappt es gut.",
+            "evidence": {
+              "text": "Ich arbeite von Montag bis Mittwoch, Jochen von Mittwoch bis Freitag. Mittwochs sitzen wir also zusammen im Büro und besprechen alles, was in der Woche passiert ist. Ganz ohne Probleme ging es aber nicht. In den ersten Wochen sind ein paar wichtige E-Mails untergegangen, weil jeder dachte, der andere hat sie schon beantwortet. Seitdem schreiben wir alles in ein gemeinsames Übergabeheft, und das funktioniert prima.",
+              "hit": "In den ersten Wochen sind ein paar wichtige E-Mails untergegangen"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Ricarda hatte zwar Sorge, aber die Kollegen finden die Lösung super. Es ist immer jemand da.",
+            "evidence": {
+              "text": "Und das Team? Ich hatte ein bisschen Sorge, aber die Kolleginnen und Kollegen finden unsere Lösung super. Es ist nämlich immer jemand von uns beiden da, auch in der Urlaubszeit, weil wir nie gleichzeitig freinehmen.",
+              "hit": "die Kolleginnen und Kollegen finden unsere Lösung super"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Die Zentrale möchte, dass die beiden ihr Modell im Herbst bei einer Tagung vorstellen.",
+            "evidence": {
+              "text": "Jetzt kommt das Beste: Unsere Zentrale hat von unserem Modell gehört. Im Herbst sollen Jochen und ich es bei einer großen Tagung den anderen Teamleitungen vorstellen. Ich bin schon jetzt aufgeregt, aber auch ziemlich stolz. Vor einem Jahr hätte ich nie gedacht, dass ich mich in meinem Job einmal so wohlfühle.",
+              "hit": "Im Herbst sollen Jochen und ich es bei einer großen Tagung den anderen Teamleitungen vorstellen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-lesen-08-t2-01",
+      "exam": "goethe-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.467Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "b"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die „Kühlen Orte“ gibt es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schon seit zehn Jahren."
+                },
+                {
+                  "key": "b",
+                  "label": "seit dem letzten Sommer."
+                },
+                {
+                  "key": "c",
+                  "label": "erst seit diesem Monat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Räume, in denen man sich bei großer Hitze abkühlen kann."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Stadt, die an ihre Bürger Klimageräte verschenkt."
+                },
+                {
+                  "key": "c",
+                  "label": "ein Schwimmbad, das an heißen Tagen länger öffnet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "In den kühlen Räumen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss man ein Getränk bestellen."
+                },
+                {
+                  "key": "b",
+                  "label": "darf man höchstens eine Stunde bleiben."
+                },
+                {
+                  "key": "c",
+                  "label": "gibt es Sitzplätze und Informationen zur Gesundheit."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Besonders oft kamen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Touristen aus anderen Städten."
+                },
+                {
+                  "key": "b",
+                  "label": "Menschen, die in heißen Dachwohnungen leben."
+                },
+                {
+                  "key": "c",
+                  "label": "Schulklassen mit ihren Lehrkräften."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Ein kühler Platz für heiße Tage",
+            "Wenn das Thermometer in Ludwigshafen über 30 Grad steigt, wird es in vielen Wohnungen kaum auszuhalten. Deshalb hat die Stadt im vergangenen Sommer zum ersten Mal sogenannte „Kühle Orte“ eingerichtet. In anderen Städten gibt es solche Angebote schon seit zehn Jahren.",
+            "Kühle Orte sind öffentliche Räume, in denen es auch an sehr heißen Tagen angenehm ist: das Foyer des Rathauses, das Foyer der Volkshochschule, eine Einkaufspassage in der Innenstadt und das Bürgerhaus im Stadtteil Oggersheim. Dort stehen Stühle und Bänke bereit, und an einem Infotisch liegen Broschüren darüber, wie man sich bei Hitze vor Kreislaufproblemen schützt. Niemand muss etwas kaufen, und man kann so lange bleiben, wie man möchte.",
+            "Die Stadt ist mit dem ersten Jahr zufrieden. Am häufigsten kamen ältere Menschen, die in Wohnungen direkt unter dem Dach wohnen. „In meiner Wohnung im vierten Stock hatte ich nachts 32 Grad“, erzählt eine Rentnerin. „Hier kann ich endlich wieder durchatmen.“ Touristen nutzten das Angebot dagegen kaum.",
+            "Seit diesem Monat gibt es zwei weitere Kühle Orte. Im nächsten Sommer möchte die Stadt außerdem Schulklassen einladen, damit die Kinder mehr über Hitze und Gesundheit lernen.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "Die Stadt öffnet öffentliche Räume, in denen es bei Hitze angenehm kühl ist. Von Klimageräten oder einem Schwimmbad steht nichts im Text.",
+            "evidence": {
+              "text": "Kühle Orte sind öffentliche Räume, in denen es auch an sehr heißen Tagen angenehm ist: das Foyer des Rathauses, das Foyer der Volkshochschule, eine Einkaufspassage in der Innenstadt und das Bürgerhaus im Stadtteil Oggersheim. Dort stehen Stühle und Bänke bereit, und an einem Infotisch liegen Broschüren darüber, wie man sich bei Hitze vor Kreislaufproblemen schützt. Niemand muss etwas kaufen, und man kann so lange bleiben, wie man möchte.",
+              "hit": "Kühle Orte sind öffentliche Räume, in denen es auch an sehr heißen Tagen angenehm ist"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Es gibt Stühle und Bänke und Broschüren zum Schutz vor Kreislaufproblemen. Eine Zeitgrenze gibt es nicht, man kann so lange bleiben, wie man möchte.",
+            "evidence": {
+              "text": "Kühle Orte sind öffentliche Räume, in denen es auch an sehr heißen Tagen angenehm ist: das Foyer des Rathauses, das Foyer der Volkshochschule, eine Einkaufspassage in der Innenstadt und das Bürgerhaus im Stadtteil Oggersheim. Dort stehen Stühle und Bänke bereit, und an einem Infotisch liegen Broschüren darüber, wie man sich bei Hitze vor Kreislaufproblemen schützt. Niemand muss etwas kaufen, und man kann so lange bleiben, wie man möchte.",
+              "hit": "Dort stehen Stühle und Bänke bereit, und an einem Infotisch liegen Broschüren darüber, wie man sich bei Hitze vor Kreislaufproblemen schützt."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Am häufigsten kamen ältere Menschen aus Wohnungen direkt unter dem Dach. Touristen kamen kaum, und Schulklassen sollen erst nächsten Sommer kommen.",
+            "evidence": {
+              "text": "Die Stadt ist mit dem ersten Jahr zufrieden. Am häufigsten kamen ältere Menschen, die in Wohnungen direkt unter dem Dach wohnen. „In meiner Wohnung im vierten Stock hatte ich nachts 32 Grad“, erzählt eine Rentnerin. „Hier kann ich endlich wieder durchatmen.“ Touristen nutzten das Angebot dagegen kaum.",
+              "hit": "Am häufigsten kamen ältere Menschen, die in Wohnungen direkt unter dem Dach wohnen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-lesen-08-t2-02",
+      "exam": "goethe-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.467Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Wochenmarkt, der jede Woche im Dorf stattfindet."
+                },
+                {
+                  "key": "b",
+                  "label": "einen Lieferdienst, der Gemüse nach Hause bringt."
+                },
+                {
+                  "key": "c",
+                  "label": "Höfe, auf denen sich die Kunden selbst bedienen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Bezahlt wird …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in eine verschlossene Box direkt bei der Ware."
+                },
+                {
+                  "key": "b",
+                  "label": "an der Kasse im Dorfladen."
+                },
+                {
+                  "key": "c",
+                  "label": "am Monatsende mit einer Rechnung."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Wenn am Abend Geld fehlt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "machen die Bauern ihren Laden zu."
+                },
+                {
+                  "key": "b",
+                  "label": "geht es meistens um wenig Geld."
+                },
+                {
+                  "key": "c",
+                  "label": "rufen die Bauern die Polizei."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Einkaufen ohne Verkäuferin",
+            "Wer an einem Samstagmorgen durch die Gemeinde Amriswil im Thurgau fährt, sieht sie überall: kleine Holzhäuschen am Strassenrand. Darin stehen Kühlschränke und Regale mit Eiern, Käse, Salat oder Rüebli*. Verkaufspersonal gibt es keines. Rund zwanzig Bauernhöfe in der Region bieten ihre Produkte auf diese Weise an.",
+            "Bezahlt wird mit Vertrauen. Auf jedem Verkaufstisch steht eine abgeschlossene Kasse mit einem Schlitz. Die Kundinnen und Kunden werfen das Geld selbst hinein. «Viele Leute kommen nach der Arbeit, wenn der Dorfladen schon geschlossen ist», erzählt eine Bäuerin, die seit acht Jahren einen solchen Hofladen führt.",
+            "Und wird nicht viel gestohlen? «Am Abend zähle ich das Geld, und manchmal fehlen ein paar Franken», sagt sie. «Meistens sind es aber nur kleine Beträge, vielleicht hatte jemand kein Kleingeld.» Die Polizei hat sie deshalb noch nie gerufen. Ein Bauer in der Nachbargemeinde hat seinen Laden nach einem Diebstahl für eine Woche geschlossen. Dann hat er ihn wieder geöffnet, weil die Stammkunden ihn darum gebeten haben.",
+            "Für die Höfe lohnt sich das Modell: Sie verkaufen direkt und brauchen niemanden, der den ganzen Tag im Laden steht. Einen Lieferdienst wollen die meisten Bauern dagegen nicht anbieten, das wäre zu teuer. Und die Kundschaft weiss genau, woher ihr Gemüse kommt.",
+            "aus einer Schweizer Zeitschrift",
+            "*Rüebli = Schweizer Standard für «Karotten»"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Die Bauernhöfe verkaufen ihre Produkte in kleinen Häuschen ohne Personal, die Kunden nehmen und bezahlen selbst. Einen Lieferdienst wollen die Bauern gerade nicht anbieten.",
+            "evidence": {
+              "text": "Wer an einem Samstagmorgen durch die Gemeinde Amriswil im Thurgau fährt, sieht sie überall: kleine Holzhäuschen am Strassenrand. Darin stehen Kühlschränke und Regale mit Eiern, Käse, Salat oder Rüebli*. Verkaufspersonal gibt es keines. Rund zwanzig Bauernhöfe in der Region bieten ihre Produkte auf diese Weise an.",
+              "hit": "Verkaufspersonal gibt es keines."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Auf jedem Verkaufstisch steht eine abgeschlossene Kasse, in die man das Geld wirft. Der Dorfladen ist nur erwähnt, weil er am Abend schon zu ist.",
+            "evidence": {
+              "text": "Bezahlt wird mit Vertrauen. Auf jedem Verkaufstisch steht eine abgeschlossene Kasse mit einem Schlitz. Die Kundinnen und Kunden werfen das Geld selbst hinein. «Viele Leute kommen nach der Arbeit, wenn der Dorfladen schon geschlossen ist», erzählt eine Bäuerin, die seit acht Jahren einen solchen Hofladen führt.",
+              "hit": "Auf jedem Verkaufstisch steht eine abgeschlossene Kasse mit einem Schlitz."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Meistens fehlen nur kleine Beträge. Nur ein Bauer hat seinen Laden einmal für eine Woche geschlossen und dann wieder geöffnet.",
+            "evidence": {
+              "text": "Und wird nicht viel gestohlen? «Am Abend zähle ich das Geld, und manchmal fehlen ein paar Franken», sagt sie. «Meistens sind es aber nur kleine Beträge, vielleicht hatte jemand kein Kleingeld.» Die Polizei hat sie deshalb noch nie gerufen. Ein Bauer in der Nachbargemeinde hat seinen Laden nach einem Diebstahl für eine Woche geschlossen. Dann hat er ihn wieder geöffnet, weil die Stammkunden ihn darum gebeten haben.",
+              "hit": "Meistens sind es aber nur kleine Beträge"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-lesen-08-t3-01",
+      "exam": "goethe-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.467Z",
+        "textType": "Anzeigen: Angebote rund um Technik"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten interessieren sich für Technik.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Programmieren mit Spielen",
+                  "text": "Für Kinder von 9 bis 12 Jahren: An fünf Nachmittagen lernen Mädchen und Jungen die ersten Schritte beim Programmieren und entwickeln am Ende ein kleines Computerspiel. Herbstferien, 14–17 Uhr, 75 €. Jugendhaus Neuwied, Tel. 02631 48 27 50"
+                },
+                {
+                  "key": "b",
+                  "title": "Smart Home für Einsteiger",
+                  "text": "Licht, Heizung und Steckdosen ganz einfach per App steuern: An zwei Abenden zeigen wir Ihnen, welche Geräte Sie brauchen und wie Sie alles einrichten. Für Erwachsene ohne Vorkenntnisse. Neue Termine ab Jänner! Volkshochschule Traun, Tel. 07229 61 44 0"
+                },
+                {
+                  "key": "c",
+                  "title": "Löt-Workshop: Ihr eigenes Radio",
+                  "text": "Wie funktioniert eigentlich ein Radio? Unter Anleitung löten Sie an einem Samstag ein kleines UKW-Radio zusammen und nehmen es mit nach Hause. Für Erwachsene, keine Vorkenntnisse nötig. CHF 95.– inkl. Material. Elektronikwerkstatt Bülach, www.loetwerk-buelach.ch"
+                },
+                {
+                  "key": "d",
+                  "title": "Modellbahnfreunde Schweinfurt",
+                  "text": "Tag der offenen Tür am Samstag von 10 bis 17 Uhr! Erleben Sie unsere 30 Meter lange Anlage mit über 200 Zügen. Neue Mitglieder jeden Alters sind herzlich willkommen. Vereinsheim, Gartenstraße 14"
+                },
+                {
+                  "key": "e",
+                  "title": "3D-Druck zum Ausprobieren",
+                  "text": "Wie funktioniert ein 3D-Drucker? An diesem Abend entwerfen Sie am Computer einen Schlüsselanhänger und drucken ihn gleich selbst aus. Einmaliger Workshop am Donnerstag, 18–21 Uhr, 25 €. Makerspace Landau, www.makerspace-landau.de"
+                },
+                {
+                  "key": "f",
+                  "title": "Roboter bauen – nur für Mädchen",
+                  "text": "Mädchen von 10 bis 14 Jahren bauen und programmieren in kleinen Teams ihren eigenen Roboter. Die Gruppen leiten zwei Technikerinnen. Jeden Mittwoch, 15–17 Uhr, zehn Termine, € 30,–. Jugendzentrum Hohenems, Tel. 05576 72 19 83"
+                },
+                {
+                  "key": "g",
+                  "title": "Computermuseum Deggendorf",
+                  "text": "Erinnern Sie sich an Ihren ersten Heimcomputer? Bei uns stehen über 60 Geräte aus den 1980er-Jahren, und fast alle funktionieren noch. Setzen Sie sich davor und spielen Sie die Spiele von damals! Di–So 10–17 Uhr, Eintritt 6 €"
+                },
+                {
+                  "key": "h",
+                  "title": "Amateurfunk – mit der ganzen Welt sprechen",
+                  "text": "Der Funkclub Spiez bietet wieder einen Kurs für Anfängerinnen und Anfänger an. Sie lernen alles für die Funkprüfung und unterhalten sich bald über Funk mit Menschen von Island bis Australien. Acht Abende ab März, CHF 180.–. www.funkclub-spiez.ch"
+                },
+                {
+                  "key": "i",
+                  "title": "Technik-Sprechstunde",
+                  "text": "Ihr Handy macht Probleme oder Ihr Laptop ist ganz langsam geworden? Studierende der Fachhochschule helfen Ihnen geduldig weiter, und das kostet nichts. Jeden Freitag 14–17 Uhr, ohne Anmeldung. Nachbarschaftstreff Neumünster-Mitte, Kieler Straße 9"
+                },
+                {
+                  "key": "j",
+                  "title": "Führung im Donaukraftwerk",
+                  "text": "Wie wird aus Wasser Strom? Bei einer Führung durch das Kraftwerk an der Donau bei Melk sehen Sie die riesigen Turbinen aus der Nähe. Jeden Sonntag um 14 Uhr, Dauer ca. 90 Minuten, Erwachsene € 8,–. Treffpunkt: Besucherzentrum"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Torbens Sohn ist zehn und möchte lernen, wie man selbst ein Computerspiel macht."
+                },
+                {
+                  "n": 13,
+                  "text": "Mareike möchte Licht und Heizung in ihrer Wohnung mit dem Handy steuern."
+                },
+                {
+                  "n": 14,
+                  "text": "Hauke möchte in einem Kurs ein elektronisches Gerät mit eigenen Händen bauen."
+                },
+                {
+                  "n": 15,
+                  "text": "Eddas Tochter ist zwölf und möchte einen Roboterkurs machen, aber nur zusammen mit anderen Mädchen."
+                },
+                {
+                  "n": 16,
+                  "text": "Ruben möchte mit einem Funkgerät Kontakt zu Menschen in anderen Ländern aufnehmen."
+                },
+                {
+                  "n": 17,
+                  "text": "Gunnar möchte über mehrere Wochen regelmäßig lernen, wie man mit einem 3D-Drucker arbeitet."
+                },
+                {
+                  "n": 18,
+                  "text": "Thedas Laptop braucht für alles sehr lange, und sie sucht Hilfe, die nichts kostet."
+                },
+                {
+                  "n": 19,
+                  "text": "Wendelin möchte die Computer aus seiner Jugend wiedersehen und selbst noch einmal benutzen."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Im Smart-Home-Kurs lernt man, Licht und Heizung mit einer App zu steuern. Die Technik-Sprechstunde hilft nur bei Problemen mit Geräten.",
+            "evidence": {
+              "text": "Licht, Heizung und Steckdosen ganz einfach per App steuern: An zwei Abenden zeigen wir Ihnen, welche Geräte Sie brauchen und wie Sie alles einrichten. Für Erwachsene ohne Vorkenntnisse. Neue Termine ab Jänner! Volkshochschule Traun, Tel. 07229 61 44 0",
+              "hit": "Licht, Heizung und Steckdosen ganz einfach per App steuern"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Im Löt-Workshop baut man selbst ein kleines Radio. Im 3D-Druck-Workshop entsteht nur ein Schlüsselanhänger, kein elektronisches Gerät.",
+            "evidence": {
+              "text": "Wie funktioniert eigentlich ein Radio? Unter Anleitung löten Sie an einem Samstag ein kleines UKW-Radio zusammen und nehmen es mit nach Hause. Für Erwachsene, keine Vorkenntnisse nötig. CHF 95.– inkl. Material. Elektronikwerkstatt Bülach, www.loetwerk-buelach.ch",
+              "hit": "Unter Anleitung löten Sie an einem Samstag ein kleines UKW-Radio zusammen"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "f",
+            "explanation": "Der Roboterkurs in Hohenems ist nur für Mädchen von 10 bis 14 Jahren. Der Programmierkurs in Neuwied ist für Mädchen und Jungen.",
+            "evidence": {
+              "text": "Mädchen von 10 bis 14 Jahren bauen und programmieren in kleinen Teams ihren eigenen Roboter. Die Gruppen leiten zwei Technikerinnen. Jeden Mittwoch, 15–17 Uhr, zehn Termine, € 30,–. Jugendzentrum Hohenems, Tel. 05576 72 19 83",
+              "hit": "Mädchen von 10 bis 14 Jahren bauen und programmieren in kleinen Teams ihren eigenen Roboter."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "h",
+            "explanation": "Im Amateurfunk-Kurs lernt man, über Funk mit Menschen auf der ganzen Welt zu sprechen. Beim Löt-Workshop baut man nur ein Radio zum Hören.",
+            "evidence": {
+              "text": "Der Funkclub Spiez bietet wieder einen Kurs für Anfängerinnen und Anfänger an. Sie lernen alles für die Funkprüfung und unterhalten sich bald über Funk mit Menschen von Island bis Australien. Acht Abende ab März, CHF 180.–. www.funkclub-spiez.ch",
+              "hit": "unterhalten sich bald über Funk mit Menschen von Island bis Australien"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "x",
+            "explanation": "Der 3D-Druck-Workshop in Landau findet nur an einem Abend statt. Gunnar möchte aber mehrere Wochen lernen, deshalb passt keine Anzeige.",
+            "evidence": {
+              "text": "Wie funktioniert ein 3D-Drucker? An diesem Abend entwerfen Sie am Computer einen Schlüsselanhänger und drucken ihn gleich selbst aus. Einmaliger Workshop am Donnerstag, 18–21 Uhr, 25 €. Makerspace Landau, www.makerspace-landau.de",
+              "hit": "Einmaliger Workshop am Donnerstag"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "i",
+            "explanation": "In der Technik-Sprechstunde helfen Studierende bei langsamen Laptops, und es kostet nichts.",
+            "evidence": {
+              "text": "Ihr Handy macht Probleme oder Ihr Laptop ist ganz langsam geworden? Studierende der Fachhochschule helfen Ihnen geduldig weiter, und das kostet nichts. Jeden Freitag 14–17 Uhr, ohne Anmeldung. Nachbarschaftstreff Neumünster-Mitte, Kieler Straße 9",
+              "hit": "Studierende der Fachhochschule helfen Ihnen geduldig weiter, und das kostet nichts."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "g",
+            "explanation": "Im Computermuseum stehen alte Heimcomputer aus den 1980er-Jahren, und man darf sie selbst benutzen.",
+            "evidence": {
+              "text": "Erinnern Sie sich an Ihren ersten Heimcomputer? Bei uns stehen über 60 Geräte aus den 1980er-Jahren, und fast alle funktionieren noch. Setzen Sie sich davor und spielen Sie die Spiele von damals! Di–So 10–17 Uhr, Eintritt 6 €",
+              "hit": "Setzen Sie sich davor und spielen Sie die Spiele von damals!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-lesen-08-t4-01",
+      "exam": "goethe-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.467Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für ein Rauchverbot auf den Terrassen von Restaurants und Cafés?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Gertrud, 69, Worms",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Sascha, 38, Görlitz",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Tabea, 26, Lörrach",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Corsin, 33, Davos",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Rupert, 54, Kitzbühel",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Tobias, 42, Aachen",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Esther, 47, Muttenz",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Niklas, 21, Greifswald",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Nach einer Debatte im Stadtrat fragt die Wochenendbeilage einer Zeitung ihre Leserinnen und Leser: Soll das Rauchen auch auf den Terrassen von Restaurants und Cafés verboten werden?",
+            "Seit einigen Jahren habe ich Asthma. Früher habe ich im Sommer am liebsten draußen vor meinem Lieblingscafé gesessen. Heute geht das fast nie mehr, denn am Nachbartisch raucht immer jemand, und nach zehn Minuten bekomme ich schlecht Luft. Drinnen ist das Rauchen ja schon lange verboten. Ich finde, dasselbe muss endlich auch für die Terrassen gelten.",
+            "Gertrud, 69, Worms",
+            "Wir Raucher sind doch schon aus allen Restaurants verschwunden. Wer eine Zigarette will, muss raus vor die Tür, auch im Winter. Und jetzt soll man uns auch noch die Terrassen wegnehmen? Irgendwo muss das Rauchen ja noch erlaubt sein. Ich setze mich sowieso immer an den Rand der Terrasse, damit niemand gestört wird. Mehr Rücksicht geht kaum.",
+            "Sascha, 38, Görlitz",
+            "Ich jobbe neben dem Studium als Kellnerin in einem Biergarten. Die Gäste können sich ihren Tisch aussuchen, ich nicht: Ich laufe den ganzen Abend zwischen den Tischen hin und her und atme dabei ständig Rauch ein. Wenn ich nach Hause komme, riechen meine Haare und meine Kleidung danach. Ich wünsche mir, dass auch draußen niemand mehr rauchen darf.",
+            "Tabea, 26, Lörrach",
+            "In meinem Kanton sind viele Terrassen schon seit einiger Zeit rauchfrei, weil die Wirte das selbst so entschieden haben. Viele hatten Angst, dass die Gäste wegbleiben. Passiert ist das Gegenteil: Die Terrassen sind im Sommer und im Winter voll. Eine Regel für alle wäre deshalb kein Problem für die Restaurants, sondern einfach fairer.",
+            "Corsin, 33, Davos",
+            "Ich führe seit dreißig Jahren ein Gasthaus. Seit das Rauchen drinnen verboten ist, sitzen meine rauchenden Gäste eben im Gastgarten. Das funktioniert gut, und die Nichtraucher finden genug Platz in der Stube. Heuer hatten wir eine schwierige Saison. Wenn jetzt auch der Gastgarten rauchfrei werden muss, verliere ich viele Stammgäste. Das kann ich mir nicht leisten.",
+            "Rupert, 54, Kitzbühel",
+            "Rauch am Nachbartisch stört mich auch, gerade beim Essen. Trotzdem halte ich nichts davon, das Rauchen draußen ganz zu verbieten. Besser wäre auf jeder Terrasse eine markierte Ecke, die etwas weiter weg von den anderen Tischen liegt. Dort dürfen Raucher rauchen, auf dem Rest der Terrasse nicht. So können beide Gruppen draußen sitzen.",
+            "Tobias, 42, Aachen",
+            "Wenn wir mit unseren Kindern essen gehen, suchen wir immer einen Platz draussen, weil die Kleinen dort mehr Bewegung haben. Aber oft raucht am Nebentisch jemand, und der ganze Rauch zieht zu uns herüber. Viele Familien in meinem Bekanntenkreis meiden solche Lokale deshalb inzwischen ganz. Kinder sollten keinen Rauch einatmen müssen, auch nicht im Freien.",
+            "Esther, 47, Muttenz",
+            "Draußen gibt es doch genug frische Luft, da verteilt sich der Rauch schnell. Ich rauche selbst nicht, aber ich finde, der Staat muss nicht alles regeln. Erwachsene können selbst entscheiden, wo sie sich hinsetzen. Wen der Rauch stört, der sucht sich eben einen Tisch weiter weg oder geht in ein anderes Café. Ein Verbot finde ich übertrieben.",
+            "Niklas, 21, Greifswald"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Sascha findet, dass Raucher wenigstens draußen noch rauchen dürfen müssen. Er ist also gegen ein Verbot auf den Terrassen.",
+            "evidence": {
+              "text": "Wir Raucher sind doch schon aus allen Restaurants verschwunden. Wer eine Zigarette will, muss raus vor die Tür, auch im Winter. Und jetzt soll man uns auch noch die Terrassen wegnehmen? Irgendwo muss das Rauchen ja noch erlaubt sein. Ich setze mich sowieso immer an den Rand der Terrasse, damit niemand gestört wird. Mehr Rücksicht geht kaum.",
+              "hit": "Irgendwo muss das Rauchen ja noch erlaubt sein."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Tabea atmet als Kellnerin den ganzen Abend Rauch ein. Sie wünscht sich, dass man auch draußen nicht mehr rauchen darf.",
+            "evidence": {
+              "text": "Ich jobbe neben dem Studium als Kellnerin in einem Biergarten. Die Gäste können sich ihren Tisch aussuchen, ich nicht: Ich laufe den ganzen Abend zwischen den Tischen hin und her und atme dabei ständig Rauch ein. Wenn ich nach Hause komme, riechen meine Haare und meine Kleidung danach. Ich wünsche mir, dass auch draußen niemand mehr rauchen darf.",
+              "hit": "Ich wünsche mir, dass auch draußen niemand mehr rauchen darf."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "In Corsins Kanton sind rauchfreie Terrassen trotzdem voll. Er findet eine Regel für alle deshalb fair.",
+            "evidence": {
+              "text": "In meinem Kanton sind viele Terrassen schon seit einiger Zeit rauchfrei, weil die Wirte das selbst so entschieden haben. Viele hatten Angst, dass die Gäste wegbleiben. Passiert ist das Gegenteil: Die Terrassen sind im Sommer und im Winter voll. Eine Regel für alle wäre deshalb kein Problem für die Restaurants, sondern einfach fairer.",
+              "hit": "Eine Regel für alle wäre deshalb kein Problem für die Restaurants, sondern einfach fairer."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "falsch",
+            "explanation": "Rupert hat Angst, dass er mit einem Verbot im Gastgarten viele Stammgäste verliert. Darum ist er dagegen.",
+            "evidence": {
+              "text": "Ich führe seit dreißig Jahren ein Gasthaus. Seit das Rauchen drinnen verboten ist, sitzen meine rauchenden Gäste eben im Gastgarten. Das funktioniert gut, und die Nichtraucher finden genug Platz in der Stube. Heuer hatten wir eine schwierige Saison. Wenn jetzt auch der Gastgarten rauchfrei werden muss, verliere ich viele Stammgäste. Das kann ich mir nicht leisten.",
+              "hit": "Wenn jetzt auch der Gastgarten rauchfrei werden muss, verliere ich viele Stammgäste."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "falsch",
+            "explanation": "Der Rauch stört Tobias zwar, aber er möchte kein ganzes Verbot. Er schlägt eine eigene Raucherecke auf der Terrasse vor.",
+            "evidence": {
+              "text": "Rauch am Nachbartisch stört mich auch, gerade beim Essen. Trotzdem halte ich nichts davon, das Rauchen draußen ganz zu verbieten. Besser wäre auf jeder Terrasse eine markierte Ecke, die etwas weiter weg von den anderen Tischen liegt. Dort dürfen Raucher rauchen, auf dem Rest der Terrasse nicht. So können beide Gruppen draußen sitzen.",
+              "hit": "Trotzdem halte ich nichts davon, das Rauchen draußen ganz zu verbieten."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "richtig",
+            "explanation": "Esther möchte, dass Kinder auch im Freien keinen Rauch einatmen müssen. Sie ist also für das Verbot.",
+            "evidence": {
+              "text": "Wenn wir mit unseren Kindern essen gehen, suchen wir immer einen Platz draussen, weil die Kleinen dort mehr Bewegung haben. Aber oft raucht am Nebentisch jemand, und der ganze Rauch zieht zu uns herüber. Viele Familien in meinem Bekanntenkreis meiden solche Lokale deshalb inzwischen ganz. Kinder sollten keinen Rauch einatmen müssen, auch nicht im Freien.",
+              "hit": "Kinder sollten keinen Rauch einatmen müssen, auch nicht im Freien."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "falsch",
+            "explanation": "Niklas raucht selbst nicht, findet ein Verbot aber übertrieben. Erwachsene sollen selbst entscheiden, wo sie sitzen.",
+            "evidence": {
+              "text": "Draußen gibt es doch genug frische Luft, da verteilt sich der Rauch schnell. Ich rauche selbst nicht, aber ich finde, der Staat muss nicht alles regeln. Erwachsene können selbst entscheiden, wo sie sich hinsetzen. Wen der Rauch stört, der sucht sich eben einen Tisch weiter weg oder geht in ein anderes Café. Ein Verbot finde ich übertrieben.",
+              "hit": "Ein Verbot finde ich übertrieben."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-lesen-08-t5-01",
+      "exam": "goethe-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.467Z",
+        "textType": "Benutzungsordnung Gemeinschaftsraum"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie wohnen in einer Genossenschaftswohnung und möchten den Gemeinschaftsraum für ein Familienfest mieten.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Die Miete für den Raum …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zahlt man bar beim Hausmeister."
+                },
+                {
+                  "key": "b",
+                  "label": "ist für Mitglieder kostenlos."
+                },
+                {
+                  "key": "c",
+                  "label": "überweist man vorher mit einer Kaution."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Ab 22 Uhr …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dürfen Fenster und Türen nicht mehr offen sein."
+                },
+                {
+                  "key": "b",
+                  "label": "muss der Raum schon leer sein."
+                },
+                {
+                  "key": "c",
+                  "label": "darf keine Musik mehr laufen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Den Schlüssel …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schickt man Ihnen mit der Post."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommen Sie einen Tag vorher im Büro."
+                },
+                {
+                  "key": "c",
+                  "label": "finden Sie im Briefkasten am Raum."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Geschirr und Gläser …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf man benutzen, muss sie aber sauber zurückstellen."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man für das Fest selbst mitbringen."
+                },
+                {
+                  "key": "c",
+                  "label": "kosten eine zusätzliche Gebühr."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Benutzungsordnung",
+          "paragraphs": [
+            "Benutzungsordnung für den Gemeinschaftsraum der Wohnungsgenossenschaft Lindenhof",
+            "**Reservierung**",
+            "Den Gemeinschaftsraum können alle Mitglieder der Genossenschaft mieten, zum Beispiel für Geburtstage oder Familienfeste. Bitte reservieren Sie mindestens zwei Wochen vorher online oder im Büro der Genossenschaft. Die Miete beträgt 40 Euro pro Tag. Überweisen Sie diesen Betrag und eine Kaution von 100 Euro spätestens eine Woche vor der Veranstaltung. Barzahlung ist nicht möglich, auch nicht beim Hausmeister. Die Kaution bekommen Sie zurück, wenn alles in Ordnung ist.",
+            "**Schlüssel**",
+            "Den Schlüssel holen Sie am Tag vor Ihrer Veranstaltung im Büro der Genossenschaft ab (Lindenstraße 3, Mo–Fr 9–12 Uhr). Fällt Ihre Feier auf einen Montag, bekommen Sie ihn schon am Freitag davor. Wir verschicken keine Schlüssel per Post. Bitte werfen Sie ihn am Tag nach der Feier in den Briefkasten am Büro.",
+            "**Nutzungszeiten**",
+            "Der Raum kann täglich von 10 bis 24 Uhr genutzt werden. Aus Rücksicht auf die Nachbarn müssen ab 22 Uhr alle Fenster und die Tür zum Hof geschlossen bleiben. Leise Musik ist danach weiter erlaubt. Um Mitternacht muss die Feier beendet sein.",
+            "**Reinigung**",
+            "Geschirr, Gläser und Besteck für 40 Personen finden Sie in den Küchenschränken. Die Benutzung ist im Mietpreis enthalten. Bitte spülen Sie alles und stellen Sie es wieder an seinen Platz. Außerdem fegen Sie den Boden und wischen die Tische ab. Ihren Müll nehmen Sie bitte mit.",
+            "**Schäden**",
+            "Wenn etwas kaputtgeht, melden Sie das bitte bei der Rückgabe des Schlüssels. Kleine Schäden ziehen wir von der Kaution ab. Für größere Schäden ist Ihre Haftpflichtversicherung zuständig."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Man überweist die Miete und eine Kaution spätestens eine Woche vorher. Bar zahlen geht nicht, auch nicht beim Hausmeister.",
+            "evidence": {
+              "text": "Den Gemeinschaftsraum können alle Mitglieder der Genossenschaft mieten, zum Beispiel für Geburtstage oder Familienfeste. Bitte reservieren Sie mindestens zwei Wochen vorher online oder im Büro der Genossenschaft. Die Miete beträgt 40 Euro pro Tag. Überweisen Sie diesen Betrag und eine Kaution von 100 Euro spätestens eine Woche vor der Veranstaltung. Barzahlung ist nicht möglich, auch nicht beim Hausmeister. Die Kaution bekommen Sie zurück, wenn alles in Ordnung ist.",
+              "hit": "Überweisen Sie diesen Betrag und eine Kaution von 100 Euro spätestens eine Woche vor der Veranstaltung."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "a",
+            "explanation": "Ab 22 Uhr müssen Fenster und Tür geschlossen bleiben. Leise Musik ist weiter erlaubt, und Schluss ist erst um Mitternacht.",
+            "evidence": {
+              "text": "Der Raum kann täglich von 10 bis 24 Uhr genutzt werden. Aus Rücksicht auf die Nachbarn müssen ab 22 Uhr alle Fenster und die Tür zum Hof geschlossen bleiben. Leise Musik ist danach weiter erlaubt. Um Mitternacht muss die Feier beendet sein.",
+              "hit": "müssen ab 22 Uhr alle Fenster und die Tür zum Hof geschlossen bleiben"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "b",
+            "explanation": "Den Schlüssel holt man am Tag vor der Feier im Büro ab. In den Briefkasten am Büro wirft man ihn erst nach der Feier.",
+            "evidence": {
+              "text": "Den Schlüssel holen Sie am Tag vor Ihrer Veranstaltung im Büro der Genossenschaft ab (Lindenstraße 3, Mo–Fr 9–12 Uhr). Fällt Ihre Feier auf einen Montag, bekommen Sie ihn schon am Freitag davor. Wir verschicken keine Schlüssel per Post. Bitte werfen Sie ihn am Tag nach der Feier in den Briefkasten am Büro.",
+              "hit": "Den Schlüssel holen Sie am Tag vor Ihrer Veranstaltung im Büro der Genossenschaft ab"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "a",
+            "explanation": "Geschirr und Gläser sind in der Küche, man muss sie spülen und zurückstellen. Sie kosten nichts extra, weil sie im Mietpreis enthalten sind.",
+            "evidence": {
+              "text": "Geschirr, Gläser und Besteck für 40 Personen finden Sie in den Küchenschränken. Die Benutzung ist im Mietpreis enthalten. Bitte spülen Sie alles und stellen Sie es wieder an seinen Platz. Außerdem fegen Sie den Boden und wischen die Tische ab. Ihren Müll nehmen Sie bitte mit.",
+              "hit": "Bitte spülen Sie alles und stellen Sie es wieder an seinen Platz."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

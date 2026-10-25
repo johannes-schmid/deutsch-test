@@ -1,0 +1,193 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-08-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Formular ausfüllen: Anmeldung für einen Erste-Hilfe-Kurs"
+      },
+      "exampleAnswers": [
+        "Karimi, Leyla"
+      ],
+      "display": {
+        "instruction": "Ihre Freundin möchte sich für einen Erste-Hilfe-Kurs anmelden. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Leyla Karimi braucht für ihre Arbeit einen Erste-Hilfe-Kurs. Sie möchte den Kurs beim Rettungsdienst Weserland machen.",
+            "Der Kurs ist an einem Samstag oder an einem Sonntag. Leyla arbeitet samstags in einem Geschäft. Deshalb nimmt sie den Kurs am Sonntag.",
+            "Leyla wohnt in der Kampstraße 5, 32423 Minden. Sie ist am 22. November 1995 geboren. Ihre Handynummer ist 0176 4482 193."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Rettungsdienst Weserland · Anmeldung Erste-Hilfe-Kurs\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nPostleitzahl, Wohnort: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nKurstag: ",
+                {
+                  "n": 4,
+                  "options": [
+                    "Samstag",
+                    "Sonntag"
+                  ]
+                },
+                "\nHandynummer: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Kampstraße 5",
+            "accept": [
+              "Kampstr. 5",
+              "Kampstrasse 5",
+              "Kampstraße 5, Minden",
+              "Kampstr 5"
+            ],
+            "explanation": "Leyla wohnt in der Kampstraße 5. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Leyla Karimi braucht für ihre Arbeit einen Erste-Hilfe-Kurs. Sie möchte den Kurs beim Rettungsdienst Weserland machen. Der Kurs ist an einem Samstag oder an einem Sonntag. Leyla arbeitet samstags in einem Geschäft. Deshalb nimmt sie den Kurs am Sonntag. Leyla wohnt in der Kampstraße 5, 32423 Minden. Sie ist am 22. November 1995 geboren. Ihre Handynummer ist 0176 4482 193.",
+              "hit": "Leyla wohnt in der Kampstraße 5, 32423 Minden."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "32423 Minden",
+            "accept": [
+              "32423, Minden",
+              "Minden 32423",
+              "Minden, 32423",
+              "32423 Minden (Westfalen)"
+            ],
+            "explanation": "Leyla wohnt in 32423 Minden. Die Postleitzahl muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Leyla Karimi braucht für ihre Arbeit einen Erste-Hilfe-Kurs. Sie möchte den Kurs beim Rettungsdienst Weserland machen. Der Kurs ist an einem Samstag oder an einem Sonntag. Leyla arbeitet samstags in einem Geschäft. Deshalb nimmt sie den Kurs am Sonntag. Leyla wohnt in der Kampstraße 5, 32423 Minden. Sie ist am 22. November 1995 geboren. Ihre Handynummer ist 0176 4482 193.",
+              "hit": "32423 Minden"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "22. November 1995",
+            "accept": [
+              "22.11.1995",
+              "22. 11. 1995",
+              "22/11/1995",
+              "22-11-1995",
+              "22. Nov. 1995"
+            ],
+            "explanation": "Leyla ist am 22. November 1995 geboren. Tag, Monat und Jahr müssen genau stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Leyla Karimi braucht für ihre Arbeit einen Erste-Hilfe-Kurs. Sie möchte den Kurs beim Rettungsdienst Weserland machen. Der Kurs ist an einem Samstag oder an einem Sonntag. Leyla arbeitet samstags in einem Geschäft. Deshalb nimmt sie den Kurs am Sonntag. Leyla wohnt in der Kampstraße 5, 32423 Minden. Sie ist am 22. November 1995 geboren. Ihre Handynummer ist 0176 4482 193.",
+              "hit": "Sie ist am 22. November 1995 geboren."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "Sonntag",
+            "explanation": "Am Samstag arbeitet Leyla im Geschäft. Darum nimmt sie den Kurs am Sonntag.",
+            "evidence": {
+              "text": "Ihre Freundin Leyla Karimi braucht für ihre Arbeit einen Erste-Hilfe-Kurs. Sie möchte den Kurs beim Rettungsdienst Weserland machen. Der Kurs ist an einem Samstag oder an einem Sonntag. Leyla arbeitet samstags in einem Geschäft. Deshalb nimmt sie den Kurs am Sonntag. Leyla wohnt in der Kampstraße 5, 32423 Minden. Sie ist am 22. November 1995 geboren. Ihre Handynummer ist 0176 4482 193.",
+              "hit": "Deshalb nimmt sie den Kurs am Sonntag."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "0176 4482 193",
+            "accept": [
+              "01764482193",
+              "0176 4482193",
+              "0176-4482 193",
+              "0176-4482193",
+              "0176/4482193",
+              "0176/4482 193"
+            ],
+            "explanation": "Die Nummer muss genau stimmen: 0176 4482 193.",
+            "evidence": {
+              "text": "Ihre Freundin Leyla Karimi braucht für ihre Arbeit einen Erste-Hilfe-Kurs. Sie möchte den Kurs beim Rettungsdienst Weserland machen. Der Kurs ist an einem Samstag oder an einem Sonntag. Leyla arbeitet samstags in einem Geschäft. Deshalb nimmt sie den Kurs am Sonntag. Leyla wohnt in der Kampstraße 5, 32423 Minden. Sie ist am 22. November 1995 geboren. Ihre Handynummer ist 0176 4482 193.",
+              "hit": "Ihre Handynummer ist 0176 4482 193."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-08-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.124Z",
+        "textType": "Kurze E-Mail an eine Freundin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an eine Freundin",
+            "situation": "Ihre Freundin Henrike war am Wochenende bei Ihnen. Heute finden Sie ihre Kuchendose in Ihrer Küche. Schreiben Sie Henrike eine E-Mail.",
+            "points": [
+              "Was haben Sie gefunden?",
+              "Wann bringen Sie die Dose?",
+              "Fragen Sie: Ist Henrike dann zu Hause?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Henrike,\ndeine Kuchendose ist noch bei mir. Ich habe sie heute in meiner Küche gefunden. Ich bringe sie dir am Mittwochabend. Bist du dann zu Hause?\nViele Grüße\nKerstin"
+          }
+        ]
+      }
+    }
+  ]
+}

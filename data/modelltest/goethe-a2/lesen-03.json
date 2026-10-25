@@ -1,0 +1,742 @@
+{
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "goethe-a2-lesen-03-t1-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.431Z",
+        "textType": "Zeitungsartikel: Lokales"
+      },
+      "display": {
+        "instruction": "Sie lesen diesen Text in der Zeitung. Wählen Sie für die Aufgaben 1–5 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die Stadt Lindhausen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schenkt jedem neuen Baby einen Baum."
+                },
+                {
+                  "key": "b",
+                  "label": "verkauft jungen Familien Bäume."
+                },
+                {
+                  "key": "c",
+                  "label": "baut einen neuen Park für Kinder."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Die Bäume für die Babys wachsen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "im Stadtpark von Lindhausen."
+                },
+                {
+                  "key": "b",
+                  "label": "vor den Kindergärten der Stadt."
+                },
+                {
+                  "key": "c",
+                  "label": "auf einer Wiese außerhalb vom Zentrum."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Jede Familie bekommt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Schild mit dem Namen von ihrem Kind."
+                },
+                {
+                  "key": "b",
+                  "label": "einen Baum, den sie selbst aussucht."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Apfelbaum für den eigenen Garten."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Die Familien pflanzen ihre Bäume …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "jedes Jahr im Herbst."
+                },
+                {
+                  "key": "b",
+                  "label": "am Geburtstag von ihrem Kind."
+                },
+                {
+                  "key": "c",
+                  "label": "an einem Sonntag im Frühling."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Bürgermeister Pohl sagt, dass …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Stadtgärtner zu wenig Zeit haben."
+                },
+                {
+                  "key": "b",
+                  "label": "es bald zu wenig Platz für neue Bäume gibt."
+                },
+                {
+                  "key": "c",
+                  "label": "die Stadt kein Geld mehr für Bäume hat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Später sollen die neuen Bäume …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "im Nachbarort Ebersfeld wachsen."
+                },
+                {
+                  "key": "b",
+                  "label": "wieder in den Stadtpark kommen."
+                },
+                {
+                  "key": "c",
+                  "label": "an einem Weg für Fahrräder stehen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Ein Baum für jedes Baby",
+            "In Lindhausen bekommt jedes neue Baby ein besonderes Geschenk von der Stadt: einen eigenen Baum. Die Idee gibt es seit vier Jahren, und bis heute hat die Stadt schon fast 300 Bäume gepflanzt.",
+            "Die Bäume stehen aber nicht im Stadtpark und auch nicht vor den Kindergärten. Sie wachsen auf einer großen Wiese am Stadtrand, direkt neben dem Sportplatz. „Im Park ist leider kein Platz mehr“, erklärt Bürgermeister Uwe Pohl.",
+            "Jede Familie bekommt ein kleines Holzschild. Darauf stehen der Name und der Geburtstag des Kindes. Einen Baum aussuchen können die Eltern aber nicht, denn die Stadt kauft immer Apfel- und Kirschbäume.",
+            "Gepflanzt wird einmal im Jahr, immer an einem Samstag im Oktober. Dann treffen sich alle Familien mit den Babys vom letzten Jahr auf der Wiese. Die Stadtgärtner helfen beim Pflanzen, und danach gibt es Kuchen und warmen Tee.",
+            "Viele Eltern finden die Idee wunderbar. Aber es gibt ein Problem: Die Wiese ist bald voll. „In zwei Jahren haben wir dort keinen Platz mehr“, sagt Pohl. Deshalb hat die Stadt schon einen neuen Plan. Die nächsten Bäume sollen am neuen Radweg nach Ebersfeld wachsen. Der Weg ist im nächsten Sommer fertig."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "Die Bäume wachsen auf einer Wiese am Stadtrand. Im Stadtpark und vor den Kindergärten stehen sie nicht.",
+            "evidence": {
+              "text": "Die Bäume stehen aber nicht im Stadtpark und auch nicht vor den Kindergärten. Sie wachsen auf einer großen Wiese am Stadtrand, direkt neben dem Sportplatz. „Im Park ist leider kein Platz mehr“, erklärt Bürgermeister Uwe Pohl.",
+              "hit": "Sie wachsen auf einer großen Wiese am Stadtrand"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Auf dem Holzschild stehen der Name und der Geburtstag des Kindes. Den Baum können die Eltern nicht selbst aussuchen.",
+            "evidence": {
+              "text": "Jede Familie bekommt ein kleines Holzschild. Darauf stehen der Name und der Geburtstag des Kindes. Einen Baum aussuchen können die Eltern aber nicht, denn die Stadt kauft immer Apfel- und Kirschbäume.",
+              "hit": "Darauf stehen der Name und der Geburtstag des Kindes."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Gepflanzt wird immer an einem Samstag im Oktober, also im Herbst. Der Geburtstag steht nur auf dem Schild.",
+            "evidence": {
+              "text": "Gepflanzt wird einmal im Jahr, immer an einem Samstag im Oktober. Dann treffen sich alle Familien mit den Babys vom letzten Jahr auf der Wiese. Die Stadtgärtner helfen beim Pflanzen, und danach gibt es Kuchen und warmen Tee.",
+              "hit": "Gepflanzt wird einmal im Jahr, immer an einem Samstag im Oktober."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Die Wiese ist bald voll, in zwei Jahren gibt es keinen Platz mehr. Von zu wenig Geld oder Zeit spricht Herr Pohl nicht.",
+            "evidence": {
+              "text": "Viele Eltern finden die Idee wunderbar. Aber es gibt ein Problem: Die Wiese ist bald voll. „In zwei Jahren haben wir dort keinen Platz mehr“, sagt Pohl. Deshalb hat die Stadt schon einen neuen Plan. Die nächsten Bäume sollen am neuen Radweg nach Ebersfeld wachsen. Der Weg ist im nächsten Sommer fertig.",
+              "hit": "„In zwei Jahren haben wir dort keinen Platz mehr“"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Die nächsten Bäume sollen am neuen Radweg wachsen. Der Weg geht nur nach Ebersfeld, die Bäume stehen nicht im Ort.",
+            "evidence": {
+              "text": "Viele Eltern finden die Idee wunderbar. Aber es gibt ein Problem: Die Wiese ist bald voll. „In zwei Jahren haben wir dort keinen Platz mehr“, sagt Pohl. Deshalb hat die Stadt schon einen neuen Plan. Die nächsten Bäume sollen am neuen Radweg nach Ebersfeld wachsen. Der Weg ist im nächsten Sommer fertig.",
+              "hit": "Die nächsten Bäume sollen am neuen Radweg nach Ebersfeld wachsen."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-03-t2-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.431Z",
+        "textType": "Messeprogramm: Jobmesse"
+      },
+      "display": {
+        "instruction": "Sie sind auf der „Jobmesse Ostwestfalen“. Lesen Sie die Aufgaben 6–10 und das Programm. In welche Halle gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie brauchen für Ihre Bewerbung ein neues, schönes Bild von sich.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 4"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 3"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie möchten eine Ausbildung machen und lernen, wie man kranke und alte Menschen versorgt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 2"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 1"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie waren in Ihrem Heimatland Lehrerin. Sie möchten wissen, ob Ihr Diplom in Deutschland gilt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 3"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 4"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Sie haben zwei kleine Kinder und möchten nur halbtags arbeiten. Am Nachmittag möchten Sie einen Vortrag dazu hören.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 5"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 3"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Ihr Lebenslauf ist fertig. Jemand soll ihn lesen und Ihnen sagen, was Sie besser machen können.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 3"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 5"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Sie haben in Ihrer Heimat Lampen und Stromleitungen in Häuser eingebaut. Jetzt suchen Sie hier so eine Arbeit.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 1"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 3"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Jobmesse Ostwestfalen",
+          "source": "Programm",
+          "paragraphs": [
+            "Jobmesse Ostwestfalen – Programm am Samstag, 10 bis 17 Uhr, Eintritt frei",
+            "Halle 1 – Handwerk und Technik: Firmen aus der Region suchen Elektriker, Maler, Tischler und Mechaniker · 10:30 Uhr Vortrag „Eine Ausbildung im Handwerk – auch mit 30“ · 13:00 Uhr Mitmachen: ein Regal selbst bauen · 15:00 Uhr Gespräche mit Chefs aus Handwerksbetrieben",
+            "Halle 2 – Pflege und Gesundheit: Krankenhäuser, Pflegeheime und Arztpraxen stellen sich vor · 10:00 Uhr Infos zur Ausbildung als Pflegefachfrau und Pflegefachmann · 12:30 Uhr Vortrag „Arbeiten in der Zahnarztpraxis“ · 15:30 Uhr Beratung: Arbeit im Rettungsdienst",
+            "Halle 3 – Büro und Handel: Stellen in Supermärkten, Modegeschäften, Banken und Büros · 11:00 Uhr Vortrag „Was macht eine Kauffrau im Einzelhandel?“ · 14:00 Uhr Vortrag „Teilzeit mit Kindern: Arbeitszeiten, die zur Familie passen“ · 16:00 Uhr Gespräche mit Firmen aus der Region",
+            "Halle 4 – Ihre Bewerbung: Lebenslauf-Check: Wir lesen Ihren Lebenslauf und geben Tipps · 10 bis 16 Uhr kostenlose Bewerbungsfotos · 11:30 Uhr Kurs „Das erste Vorstellungsgespräch“ · 14:30 Uhr Hilfe bei der Bewerbung per E-Mail",
+            "Halle 5 – Arbeiten in Deutschland: Beratung zur Anerkennung von Zeugnissen und Berufsabschlüssen aus dem Ausland · 10 bis 17 Uhr Beratung in vielen Sprachen · 13:00 Uhr Vortrag „Deutsch lernen für den Beruf“ · 15:00 Uhr Infos zum Arbeitsvertrag · Café und Kinderecke"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "In Halle 2 gibt es Infos zur Ausbildung in der Pflege. In Halle 1 gibt es nur Berufe aus dem Handwerk.",
+            "evidence": {
+              "text": "Halle 2 – Pflege und Gesundheit: Krankenhäuser, Pflegeheime und Arztpraxen stellen sich vor · 10:00 Uhr Infos zur Ausbildung als Pflegefachfrau und Pflegefachmann · 12:30 Uhr Vortrag „Arbeiten in der Zahnarztpraxis“ · 15:30 Uhr Beratung: Arbeit im Rettungsdienst",
+              "hit": "Infos zur Ausbildung als Pflegefachfrau und Pflegefachmann"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Die Beratung zu Zeugnissen aus dem Ausland ist in Halle 5. In Halle 3 und Halle 4 gibt es keine Beratung dazu.",
+            "evidence": {
+              "text": "Halle 5 – Arbeiten in Deutschland: Beratung zur Anerkennung von Zeugnissen und Berufsabschlüssen aus dem Ausland · 10 bis 17 Uhr Beratung in vielen Sprachen · 13:00 Uhr Vortrag „Deutsch lernen für den Beruf“ · 15:00 Uhr Infos zum Arbeitsvertrag · Café und Kinderecke",
+              "hit": "Beratung zur Anerkennung von Zeugnissen und Berufsabschlüssen aus dem Ausland"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Um 14 Uhr gibt es in Halle 3 einen Vortrag über Teilzeit mit Kindern. In Halle 5 gibt es nur eine Kinderecke, keinen Vortrag dazu.",
+            "evidence": {
+              "text": "Halle 3 – Büro und Handel: Stellen in Supermärkten, Modegeschäften, Banken und Büros · 11:00 Uhr Vortrag „Was macht eine Kauffrau im Einzelhandel?“ · 14:00 Uhr Vortrag „Teilzeit mit Kindern: Arbeitszeiten, die zur Familie passen“ · 16:00 Uhr Gespräche mit Firmen aus der Region",
+              "hit": "14:00 Uhr Vortrag „Teilzeit mit Kindern: Arbeitszeiten, die zur Familie passen“"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "Den Lebenslauf-Check gibt es in Halle 4. In Halle 3 und Halle 5 liest niemand Ihren Lebenslauf.",
+            "evidence": {
+              "text": "Halle 4 – Ihre Bewerbung: Lebenslauf-Check: Wir lesen Ihren Lebenslauf und geben Tipps · 10 bis 16 Uhr kostenlose Bewerbungsfotos · 11:30 Uhr Kurs „Das erste Vorstellungsgespräch“ · 14:30 Uhr Hilfe bei der Bewerbung per E-Mail",
+              "hit": "Wir lesen Ihren Lebenslauf und geben Tipps"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "In Halle 1 suchen Firmen Elektriker. In Halle 3 gibt es Stellen in Büros und Geschäften.",
+            "evidence": {
+              "text": "Halle 1 – Handwerk und Technik: Firmen aus der Region suchen Elektriker, Maler, Tischler und Mechaniker · 10:30 Uhr Vortrag „Eine Ausbildung im Handwerk – auch mit 30“ · 13:00 Uhr Mitmachen: ein Regal selbst bauen · 15:00 Uhr Gespräche mit Chefs aus Handwerksbetrieben",
+              "hit": "Firmen aus der Region suchen Elektriker"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-03-t3-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.431Z",
+        "textType": "Persönliche E-Mail: Schulanfang"
+      },
+      "display": {
+        "instruction": "Sie lesen eine E-Mail. Wählen Sie für die Aufgaben 11–15 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "In der Schultüte gefällt Jonte am besten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Schokolade."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Lampe für den Abend."
+                },
+                {
+                  "key": "c",
+                  "label": "das Buch über Dinosaurier."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Jonte geht jetzt zur Schule …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "mit seiner Mutter."
+                },
+                {
+                  "key": "b",
+                  "label": "mit einem älteren Nachbarjungen."
+                },
+                {
+                  "key": "c",
+                  "label": "allein mit dem Fahrrad."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Jonte findet, dass Frau Oberle …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sehr streng ist."
+                },
+                {
+                  "key": "b",
+                  "label": "zu viele Hausaufgaben gibt."
+                },
+                {
+                  "key": "c",
+                  "label": "schöne Geschichten erzählt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Sabine …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "arbeitet jetzt an mehr Tagen als vorher."
+                },
+                {
+                  "key": "b",
+                  "label": "hat jetzt nur am Wochenende frei."
+                },
+                {
+                  "key": "c",
+                  "label": "arbeitet jetzt nur noch zwei Tage."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Sabine schlägt vor, dass …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Carla sie in den Herbstferien besucht."
+                },
+                {
+                  "key": "b",
+                  "label": "Jonte die Ferien allein bei Carla verbringt."
+                },
+                {
+                  "key": "c",
+                  "label": "sie mit Jonte ein paar Tage zu Carla fährt."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Sabine",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Carla,",
+            "vielen Dank für deine Karte zu Jontes Schulanfang! Er hat sie sofort an seine Zimmertür gehängt. Jetzt ist die erste Schulwoche vorbei, und ich muss dir unbedingt erzählen, wie es war.",
+            "Die Schultüte war fast so groß wie Jonte. Darin waren Buntstifte, ein Buch über Dinosaurier, ein bisschen Schokolade und eine Taschenlampe. Die Schokolade war schon am ersten Abend weg, aber am meisten freut er sich über die Taschenlampe. Damit schaut er jetzt jeden Abend unter der Bettdecke Bücher an.",
+            "Zur Schule sind es nur zehn Minuten zu Fuß. Am Anfang habe ich ihn noch gebracht, aber seit Donnerstag geht er mit Mats. Mats wohnt bei uns im Haus und ist schon in der dritten Klasse. Mit dem Fahrrad darf Jonte erst im nächsten Jahr fahren.",
+            "Seine Lehrerin heißt Frau Oberle. Ich finde sie ein bisschen streng, aber Jonte sagt, sie kann ganz toll Geschichten erzählen. Jeden Morgen singt sie mit der Klasse ein Lied, und jetzt singt Jonte auch zu Hause den ganzen Tag.",
+            "Nach dem Unterricht bleibt Jonte bis drei Uhr in der Betreuung. Dort isst er mit den anderen Kindern zu Mittag und macht seine Hausaufgaben. Für mich ist das eine große Änderung: Ich arbeite jetzt wieder vier Tage in der Woche in der Apotheke und nicht mehr nur zwei. Nur am Freitag habe ich frei.",
+            "Und jetzt meine Frage: In den Herbstferien hat Jonte zwei Wochen frei. Sollen wir euch nicht in Kiel besuchen? Wir könnten mit dem Zug kommen und drei oder vier Tage bleiben. Jonte möchte dir unbedingt seine neue Schultasche zeigen. Schreib mir bald, ob das bei euch passt!",
+            "Liebe Grüße",
+            "Sabine"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Am meisten freut sich Jonte über die Taschenlampe, die er abends im Bett benutzt. Die Schokolade war schnell weg, aber sie war nicht das Beste.",
+            "evidence": {
+              "text": "Die Schultüte war fast so groß wie Jonte. Darin waren Buntstifte, ein Buch über Dinosaurier, ein bisschen Schokolade und eine Taschenlampe. Die Schokolade war schon am ersten Abend weg, aber am meisten freut er sich über die Taschenlampe. Damit schaut er jetzt jeden Abend unter der Bettdecke Bücher an.",
+              "hit": "am meisten freut er sich über die Taschenlampe"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Jonte geht mit Mats, der im selben Haus wohnt und schon in der dritten Klasse ist. Die Mutter hat ihn nur am Anfang gebracht.",
+            "evidence": {
+              "text": "Zur Schule sind es nur zehn Minuten zu Fuß. Am Anfang habe ich ihn noch gebracht, aber seit Donnerstag geht er mit Mats. Mats wohnt bei uns im Haus und ist schon in der dritten Klasse. Mit dem Fahrrad darf Jonte erst im nächsten Jahr fahren.",
+              "hit": "seit Donnerstag geht er mit Mats. Mats wohnt bei uns im Haus und ist schon in der dritten Klasse."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Jonte sagt, Frau Oberle kann toll Geschichten erzählen. Streng findet sie nur seine Mutter Sabine.",
+            "evidence": {
+              "text": "Seine Lehrerin heißt Frau Oberle. Ich finde sie ein bisschen streng, aber Jonte sagt, sie kann ganz toll Geschichten erzählen. Jeden Morgen singt sie mit der Klasse ein Lied, und jetzt singt Jonte auch zu Hause den ganzen Tag.",
+              "hit": "Jonte sagt, sie kann ganz toll Geschichten erzählen"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a",
+            "explanation": "Sabine arbeitet jetzt vier Tage, früher nur zwei. Am Freitag hat sie frei, nicht nur am Wochenende.",
+            "evidence": {
+              "text": "Nach dem Unterricht bleibt Jonte bis drei Uhr in der Betreuung. Dort isst er mit den anderen Kindern zu Mittag und macht seine Hausaufgaben. Für mich ist das eine große Änderung: Ich arbeite jetzt wieder vier Tage in der Woche in der Apotheke und nicht mehr nur zwei. Nur am Freitag habe ich frei.",
+              "hit": "Ich arbeite jetzt wieder vier Tage in der Woche in der Apotheke und nicht mehr nur zwei."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Sabine möchte mit Jonte nach Kiel zu Carla fahren und drei oder vier Tage bleiben. Carla soll nicht zu ihnen kommen.",
+            "evidence": {
+              "text": "Und jetzt meine Frage: In den Herbstferien hat Jonte zwei Wochen frei. Sollen wir euch nicht in Kiel besuchen? Wir könnten mit dem Zug kommen und drei oder vier Tage bleiben. Jonte möchte dir unbedingt seine neue Schultasche zeigen. Schreib mir bald, ob das bei euch passt!",
+              "hit": "Sollen wir euch nicht in Kiel besuchen? Wir könnten mit dem Zug kommen und drei oder vier Tage bleiben."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-lesen-03-t4-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.431Z",
+        "textType": "Anzeigen im Internet: Selbermachen"
+      },
+      "display": {
+        "instruction": "Sechs Personen suchen im Internet nach Kursen zum Selbermachen. Lesen Sie die Aufgaben 16–20 und die Anzeigen a–f. Welche Anzeige passt zu welcher Person? Für eine Aufgabe gibt es keine Lösung. Dann wählen Sie X. Die Anzeige aus dem Beispiel können Sie nicht mehr wählen.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "www.strickcafe-masche.de",
+                  "text": "Stricken macht zusammen mehr Spaß! Jeden Dienstag und Donnerstag von 19 bis 22 Uhr treffen sich bei uns Anfänger und Profis. Wir zeigen Ihnen gern die ersten Maschen. Bitte bringen Sie Wolle und Nadeln selbst mit, verkaufen können wir leider nichts. Tee und Kaffee sind kostenlos."
+                },
+                {
+                  "key": "b",
+                  "title": "www.holzwerkstatt-span.de",
+                  "text": "Sägen, bohren, schrauben: In unserer Werkstatt bauen Eltern und Kinder zusammen kleine Dinge aus Holz, zum Beispiel Futterhäuser für Vögel, Regale oder Spielzeugautos. Jeden Samstag von 10 bis 13 Uhr, für Kinder ab sieben Jahren. Holz und Werkzeug sind im Preis dabei."
+                },
+                {
+                  "key": "c",
+                  "title": "Schmuckatelier Lena Voss",
+                  "text": "In meinem Tageskurs machen Sie Ohrringe, Ketten oder Armbänder aus Silber, ganz nach Ihren Wünschen. Am Abend nehmen Sie Ihren Schmuck gleich mit nach Hause. Kurse jeden zweiten Sonntag, höchstens sechs Personen."
+                },
+                {
+                  "key": "d",
+                  "title": "www.toepferei-am-bach.de",
+                  "text": "Teller, Schalen und Becher aus Ton: Bei uns formen Sie alles selbst. Danach brennen wir Ihre Stücke im Ofen, und nach zwei Wochen können Sie sie abholen. Anfängerkurse jeden Mittwoch ab 18 Uhr."
+                },
+                {
+                  "key": "e",
+                  "title": "www.kerzenwerkstatt-lichtblick.de",
+                  "text": "Nur im November und Dezember! In unserer Werkstatt ziehen und gießen Sie Kerzen in vielen Farben. Ein schönes Geschenk für Weihnachten! Für Erwachsene und Familien, ohne Anmeldung, täglich von 14 bis 19 Uhr."
+                },
+                {
+                  "key": "f",
+                  "title": "www.seifenkueche-online.de",
+                  "text": "Naturseife selbst machen! In unseren Kursen lernen Sie, wie man aus Öl, Kräutern und Blüten feine Seife macht. In unserem Laden verkaufen wir außerdem Seifen, Badesalz und Geschenkkörbe. Kurse freitags um 17 Uhr, 35 Euro."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Frau Behrens möchte ihre Kaffeetassen gern selbst machen."
+                },
+                {
+                  "n": 16,
+                  "text": "Frau Jung möchte ihrer Schwester zum Geburtstag selbst gemachte Ohrringe schenken."
+                },
+                {
+                  "n": 17,
+                  "text": "Herr Brandt möchte mit seinem Sohn ein kleines Haus für die Vögel im Garten bauen."
+                },
+                {
+                  "n": 18,
+                  "text": "Frau Ebert kann noch nicht stricken. Sie möchte es abends zusammen mit anderen Leuten lernen."
+                },
+                {
+                  "n": 19,
+                  "text": "Herr Polat strickt schon viele Jahre. Er sucht ein Geschäft, wo er günstig Wolle kaufen kann."
+                },
+                {
+                  "n": 20,
+                  "text": "Frau Seidl möchte ihren Freundinnen zu Weihnachten selbst gemachte Kerzen schenken."
+                }
+              ],
+              "noMatchLabel": "X"
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "c",
+            "explanation": "Im Schmuckatelier macht man an einem Tag Ohrringe aus Silber. Die anderen Anzeigen haben nichts mit Schmuck zu tun.",
+            "evidence": {
+              "text": "In meinem Tageskurs machen Sie Ohrringe, Ketten oder Armbänder aus Silber, ganz nach Ihren Wünschen. Am Abend nehmen Sie Ihren Schmuck gleich mit nach Hause. Kurse jeden zweiten Sonntag, höchstens sechs Personen.",
+              "hit": "In meinem Tageskurs machen Sie Ohrringe, Ketten oder Armbänder aus Silber"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "b",
+            "explanation": "In der Holzwerkstatt bauen Eltern und Kinder zusammen Futterhäuser für Vögel. Die Töpferei macht nur Dinge aus Ton.",
+            "evidence": {
+              "text": "Sägen, bohren, schrauben: In unserer Werkstatt bauen Eltern und Kinder zusammen kleine Dinge aus Holz, zum Beispiel Futterhäuser für Vögel, Regale oder Spielzeugautos. Jeden Samstag von 10 bis 13 Uhr, für Kinder ab sieben Jahren. Holz und Werkzeug sind im Preis dabei.",
+              "hit": "bauen Eltern und Kinder zusammen kleine Dinge aus Holz, zum Beispiel Futterhäuser für Vögel"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "a",
+            "explanation": "Im Strickcafé treffen sich abends auch Anfänger, und man zeigt ihnen die ersten Maschen. Das passt gut für eine Person, die stricken lernen möchte.",
+            "evidence": {
+              "text": "Stricken macht zusammen mehr Spaß! Jeden Dienstag und Donnerstag von 19 bis 22 Uhr treffen sich bei uns Anfänger und Profis. Wir zeigen Ihnen gern die ersten Maschen. Bitte bringen Sie Wolle und Nadeln selbst mit, verkaufen können wir leider nichts. Tee und Kaffee sind kostenlos.",
+              "hit": "Jeden Dienstag und Donnerstag von 19 bis 22 Uhr treffen sich bei uns Anfänger und Profis. Wir zeigen Ihnen gern die ersten Maschen."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "x",
+            "explanation": "Das Strickcafé passt fast, aber dort verkauft man keine Wolle. Kein anderes Angebot verkauft Wolle.",
+            "evidence": {
+              "text": "Stricken macht zusammen mehr Spaß! Jeden Dienstag und Donnerstag von 19 bis 22 Uhr treffen sich bei uns Anfänger und Profis. Wir zeigen Ihnen gern die ersten Maschen. Bitte bringen Sie Wolle und Nadeln selbst mit, verkaufen können wir leider nichts. Tee und Kaffee sind kostenlos.",
+              "hit": "Bitte bringen Sie Wolle und Nadeln selbst mit, verkaufen können wir leider nichts."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "e",
+            "explanation": "In der Kerzenwerkstatt macht man im November und Dezember Kerzen als Geschenk für Weihnachten. In der Seifenküche macht man Seife, keine Kerzen.",
+            "evidence": {
+              "text": "Nur im November und Dezember! In unserer Werkstatt ziehen und gießen Sie Kerzen in vielen Farben. Ein schönes Geschenk für Weihnachten! Für Erwachsene und Familien, ohne Anmeldung, täglich von 14 bis 19 Uhr.",
+              "hit": "In unserer Werkstatt ziehen und gießen Sie Kerzen in vielen Farben. Ein schönes Geschenk für Weihnachten!"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "d"
+      ]
+    }
+  ]
+}

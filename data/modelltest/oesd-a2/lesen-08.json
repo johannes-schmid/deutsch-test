@@ -1,0 +1,389 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-08-t1",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.706Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Traditionsgeschäft schließt nach 90 Jahren",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Besuchsdienst sucht Freiwillige",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Willkommen für neue Bürgerinnen und Bürger",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Einkaufen ohne Verpackung",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Neue Bänke für Spaziergänger",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Immer mehr Menschen leben allein",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Geschäfte am Samstag länger offen",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Älteren beim Einkaufen helfen",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Die Stadt wächst weiter",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Gutscheine für die Geschäfte der Stadt",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Lüneburg. Viele ältere Menschen in der Stadt fühlen sich oft einsam. Der Nachbarschaftsverein „Miteinander Lüneburg“ sucht deshalb Freiwillige. Sie besuchen einmal pro Woche eine ältere Person, trinken mit ihr Kaffee und plaudern ein bisschen. Einkaufen oder putzen müssen Sie nicht. Interessiert? Rufen Sie an: 04131 58 22 90.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 2,
+                  "text": "Gleisdorf. Gute Nachricht für alle, die am Samstag einkaufen gehen: Ab nächstem Monat haben die Geschäfte in der Innenstadt am Samstag bis 17 Uhr geöffnet. Bisher war schon um 12 Uhr Schluss. Das hat die Gemeinde mit den Geschäftsleuten beschlossen. Von Montag bis Freitag bleibt alles gleich. Die neuen Öffnungszeiten:",
+                  "origin": "aus einer österreichischen Zeitung",
+                  "table": [
+                    [
+                      "Tag",
+                      "bisher",
+                      "neu"
+                    ],
+                    [
+                      "Montag–Freitag",
+                      "8–18 Uhr",
+                      "8–18 Uhr"
+                    ],
+                    [
+                      "Samstag",
+                      "8–12 Uhr",
+                      "8–17 Uhr"
+                    ],
+                    [
+                      "Sonntag",
+                      "zu",
+                      "zu"
+                    ]
+                  ]
+                },
+                {
+                  "n": 3,
+                  "text": "Langenthal. Zum ersten Mal wohnen mehr als 16'000 Menschen in der Stadt. Das hat die Gemeinde mitgeteilt. Der Grund sind vor allem die neuen Wohnungen beim Bahnhof. Dort sind in den letzten zwei Jahren über 300 Wohnungen entstanden. Besonders viele junge Familien sind neu nach Langenthal gezogen. Die Stadt plant deshalb ein grösseres Schulhaus.",
+                  "origin": "aus einer Schweizer Zeitung"
+                },
+                {
+                  "n": 4,
+                  "text": "Paderborn. Wer im Stadtpark spazieren geht, kann sich bald öfter ausruhen. Die Stadt stellt im Frühling 25 neue Bänke an die Wege. Vor allem ältere Menschen haben sich das gewünscht. Sie gehen gern im Park spazieren, müssen aber oft eine Pause machen. Die Bänke stehen etwa alle 200 Meter.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Weiz. Nach 90 Jahren ist Schluss: Das Schuhhaus Kammerhofer in der Herrengasse sperrt Ende Juni zu. Der Besitzer, Franz Kammerhofer, geht in Pension. Einen Nachfolger hat er nicht gefunden. Seine Kinder wollen das Geschäft nicht übernehmen. Wer noch einen alten Gutschein hat, kann ihn bis Ende Juni einlösen. Danach gilt er nicht mehr.",
+                  "origin": "aus einer österreichischen Zeitung"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "B",
+            "explanation": "Ein Verein sucht Leute, die ältere Menschen besuchen. Einkaufen musst du dabei nicht, also passt H nicht.",
+            "evidence": {
+              "text": "Lüneburg. Viele ältere Menschen in der Stadt fühlen sich oft einsam. Der Nachbarschaftsverein „Miteinander Lüneburg“ sucht deshalb Freiwillige. Sie besuchen einmal pro Woche eine ältere Person, trinken mit ihr Kaffee und plaudern ein bisschen. Einkaufen oder putzen müssen Sie nicht. Interessiert? Rufen Sie an: 04131 58 22 90.",
+              "hit": "Der Nachbarschaftsverein „Miteinander Lüneburg“ sucht deshalb Freiwillige."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "G",
+            "explanation": "Am Samstag sind die Geschäfte jetzt bis 17 Uhr offen statt bis 12 Uhr. Von Gutscheinen oder einem Geschäft, das schließt, steht nichts im Text.",
+            "evidence": {
+              "text": "Gleisdorf. Gute Nachricht für alle, die am Samstag einkaufen gehen: Ab nächstem Monat haben die Geschäfte in der Innenstadt am Samstag bis 17 Uhr geöffnet. Bisher war schon um 12 Uhr Schluss. Das hat die Gemeinde mit den Geschäftsleuten beschlossen. Von Montag bis Freitag bleibt alles gleich. Die neuen Öffnungszeiten:",
+              "hit": "Ab nächstem Monat haben die Geschäfte in der Innenstadt am Samstag bis 17 Uhr geöffnet."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "I",
+            "explanation": "In der Stadt wohnen jetzt mehr Menschen als je zuvor. Ein Fest für neue Bürger gibt es aber nicht, also passt C nicht.",
+            "evidence": {
+              "text": "Langenthal. Zum ersten Mal wohnen mehr als 16'000 Menschen in der Stadt. Das hat die Gemeinde mitgeteilt. Der Grund sind vor allem die neuen Wohnungen beim Bahnhof. Dort sind in den letzten zwei Jahren über 300 Wohnungen entstanden. Besonders viele junge Familien sind neu nach Langenthal gezogen. Die Stadt plant deshalb ein grösseres Schulhaus.",
+              "hit": "Zum ersten Mal wohnen mehr als 16'000 Menschen in der Stadt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "E",
+            "explanation": "Im Stadtpark gibt es bald 25 neue Bänke für Leute, die spazieren gehen. Besuche oder Hilfe beim Einkaufen kommen nicht vor.",
+            "evidence": {
+              "text": "Paderborn. Wer im Stadtpark spazieren geht, kann sich bald öfter ausruhen. Die Stadt stellt im Frühling 25 neue Bänke an die Wege. Vor allem ältere Menschen haben sich das gewünscht. Sie gehen gern im Park spazieren, müssen aber oft eine Pause machen. Die Bänke stehen etwa alle 200 Meter.",
+              "hit": "Die Stadt stellt im Frühling 25 neue Bänke an die Wege."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "A",
+            "explanation": "Ein altes Schuhgeschäft macht nach 90 Jahren zu. Die Gutscheine sind nur ein Detail, das Thema ist das Ende des Geschäfts.",
+            "evidence": {
+              "text": "Weiz. Nach 90 Jahren ist Schluss: Das Schuhhaus Kammerhofer in der Herrengasse sperrt Ende Juni zu. Der Besitzer, Franz Kammerhofer, geht in Pension. Einen Nachfolger hat er nicht gefunden. Seine Kinder wollen das Geschäft nicht übernehmen. Wer noch einen alten Gutschein hat, kann ihn bis Ende Juni einlösen. Danach gilt er nicht mehr.",
+              "hit": "Nach 90 Jahren ist Schluss: Das Schuhhaus Kammerhofer in der Herrengasse sperrt Ende Juni zu."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-08-t2",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.706Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Mostviertler Rundschau",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Die Höhlenführerin von Scheibbs",
+            "Barbara Gschwandtner ist 36 Jahre alt. Seit neun Jahren führt sie Besucherinnen und Besucher durch eine Tropfsteinhöhle in der Nähe von Scheibbs. Vorher hat sie als Verkäuferin in einem Möbelhaus gearbeitet.",
+            "Warum gerade eine Höhle? „Als Kind war ich mit meinem Großvater hier. Das habe ich nie vergessen“, erzählt sie. Mit ihrer Schulklasse war sie später noch einmal da, aber der Besuch mit dem Großvater war der Grund für ihren Beruf.",
+            "In der Höhle hat es immer acht Grad, im Sommer und im Winter. Die Besucher brauchen deshalb eine Jacke, auch im August. Über 300 Stufen führen nach unten. „Die Stiege ist lang, aber nicht schwer“, sagt Barbara Gschwandtner.",
+            "Viele Gäste fotografieren gern die lange Stiege. Am besten gefällt ihnen aber eine Minute am Ende der Führung: Dann macht Barbara Gschwandtner alle Lampen aus. „Es ist ganz dunkel und ganz still. Viele sagen, das war das Schönste.“",
+            "Im Winter ist die Höhle geschlossen. Viele Kolleginnen und Kollegen arbeiten dann als Skilehrer. Barbara Gschwandtner bleibt lieber im Büro und schreibt neue Texte für die Infotafeln in der Höhle.",
+            "Und ihr Plan für die Zukunft? Sie möchte bald Führungen für blinde Menschen anbieten. „Sie dürfen dann die Steine mit den Händen berühren. So können auch sie die Höhle erleben.“"
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Bevor sie Höhlenführerin war, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "war sie Skilehrerin."
+                },
+                {
+                  "key": "b",
+                  "label": "hat sie in einer Schule gearbeitet."
+                },
+                {
+                  "key": "c",
+                  "label": "hat sie Möbel verkauft."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Barbara Gschwandtner arbeitet in der Höhle, weil …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sie die Höhle als Kind mit dem Großvater gesehen hat."
+                },
+                {
+                  "key": "b",
+                  "label": "sie mit der Schulklasse zum ersten Mal dort war."
+                },
+                {
+                  "key": "c",
+                  "label": "sie im Möbelhaus keine Arbeit mehr gefunden hat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In der Höhle ist es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "das ganze Jahr gleich kalt."
+                },
+                {
+                  "key": "b",
+                  "label": "im Winter wärmer als im Sommer."
+                },
+                {
+                  "key": "c",
+                  "label": "im August angenehm warm."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Den Besuchern gefällt am besten, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "wenn sie viele Fotos machen dürfen."
+                },
+                {
+                  "key": "b",
+                  "label": "wenn es eine Minute lang ganz dunkel ist."
+                },
+                {
+                  "key": "c",
+                  "label": "wenn sie die lange Treppe hinuntergehen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Im Winter …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "arbeitet sie als Skilehrerin in den Bergen."
+                },
+                {
+                  "key": "b",
+                  "label": "macht sie Führungen in einer anderen Höhle."
+                },
+                {
+                  "key": "c",
+                  "label": "schreibt sie Texte für die Tafeln in der Höhle."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Barbara Gschwandtner möchte bald …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Führungen für Menschen anbieten, die nicht sehen können."
+                },
+                {
+                  "key": "b",
+                  "label": "wieder als Verkäuferin in einem Möbelhaus arbeiten."
+                },
+                {
+                  "key": "c",
+                  "label": "mehr Lampen in der Höhle aufhängen lassen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Der Besuch mit dem Großvater war der Grund für ihren Beruf. Mit der Schulklasse war sie erst später dort.",
+            "evidence": {
+              "text": "Die Höhlenführerin von Scheibbs Barbara Gschwandtner ist 36 Jahre alt. Seit neun Jahren führt sie Besucherinnen und Besucher durch eine Tropfsteinhöhle in der Nähe von Scheibbs. Vorher hat sie als Verkäuferin in einem Möbelhaus gearbeitet. Warum gerade eine Höhle? „Als Kind war ich mit meinem Großvater hier. Das habe ich nie vergessen“, erzählt sie. Mit ihrer Schulklasse war sie später noch einmal da, aber der Besuch mit dem Großvater war der Grund für ihren Beruf. In der Höhle hat es immer acht Grad, im Sommer und im Winter. Die Besucher brauchen deshalb eine Jacke, auch im August. Über 300 Stufen führen nach unten. „Die Stiege ist lang, aber nicht schwer“, sagt Barbara Gschwandtner. Viele Gäste fotografieren gern die lange Stiege. Am besten gefällt ihnen aber eine Minute am Ende der Führung: Dann macht Barbara Gschwandtner alle Lampen aus. „Es ist ganz dunkel und ganz still. Viele sagen, das war das Schönste.“ Im Winter ist die Höhle geschlossen. Viele Kolleginnen und Kollegen arbeiten dann als Skilehrer. Barbara Gschwandtner bleibt lieber im Büro und schreibt neue Texte für die Infotafeln in der Höhle. Und ihr Plan für die Zukunft? Sie möchte bald Führungen für blinde Menschen anbieten. „Sie dürfen dann die Steine mit den Händen berühren. So können auch sie die Höhle erleben.“",
+              "hit": "aber der Besuch mit dem Großvater war der Grund für ihren Beruf."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "In der Höhle hat es immer acht Grad, im Sommer und im Winter. Darum ist es auch im August nicht warm.",
+            "evidence": {
+              "text": "Die Höhlenführerin von Scheibbs Barbara Gschwandtner ist 36 Jahre alt. Seit neun Jahren führt sie Besucherinnen und Besucher durch eine Tropfsteinhöhle in der Nähe von Scheibbs. Vorher hat sie als Verkäuferin in einem Möbelhaus gearbeitet. Warum gerade eine Höhle? „Als Kind war ich mit meinem Großvater hier. Das habe ich nie vergessen“, erzählt sie. Mit ihrer Schulklasse war sie später noch einmal da, aber der Besuch mit dem Großvater war der Grund für ihren Beruf. In der Höhle hat es immer acht Grad, im Sommer und im Winter. Die Besucher brauchen deshalb eine Jacke, auch im August. Über 300 Stufen führen nach unten. „Die Stiege ist lang, aber nicht schwer“, sagt Barbara Gschwandtner. Viele Gäste fotografieren gern die lange Stiege. Am besten gefällt ihnen aber eine Minute am Ende der Führung: Dann macht Barbara Gschwandtner alle Lampen aus. „Es ist ganz dunkel und ganz still. Viele sagen, das war das Schönste.“ Im Winter ist die Höhle geschlossen. Viele Kolleginnen und Kollegen arbeiten dann als Skilehrer. Barbara Gschwandtner bleibt lieber im Büro und schreibt neue Texte für die Infotafeln in der Höhle. Und ihr Plan für die Zukunft? Sie möchte bald Führungen für blinde Menschen anbieten. „Sie dürfen dann die Steine mit den Händen berühren. So können auch sie die Höhle erleben.“",
+              "hit": "In der Höhle hat es immer acht Grad, im Sommer und im Winter."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Am besten gefällt den Gästen die Minute, in der alle Lampen aus sind. Die lange Treppe fotografieren sie nur gern.",
+            "evidence": {
+              "text": "Die Höhlenführerin von Scheibbs Barbara Gschwandtner ist 36 Jahre alt. Seit neun Jahren führt sie Besucherinnen und Besucher durch eine Tropfsteinhöhle in der Nähe von Scheibbs. Vorher hat sie als Verkäuferin in einem Möbelhaus gearbeitet. Warum gerade eine Höhle? „Als Kind war ich mit meinem Großvater hier. Das habe ich nie vergessen“, erzählt sie. Mit ihrer Schulklasse war sie später noch einmal da, aber der Besuch mit dem Großvater war der Grund für ihren Beruf. In der Höhle hat es immer acht Grad, im Sommer und im Winter. Die Besucher brauchen deshalb eine Jacke, auch im August. Über 300 Stufen führen nach unten. „Die Stiege ist lang, aber nicht schwer“, sagt Barbara Gschwandtner. Viele Gäste fotografieren gern die lange Stiege. Am besten gefällt ihnen aber eine Minute am Ende der Führung: Dann macht Barbara Gschwandtner alle Lampen aus. „Es ist ganz dunkel und ganz still. Viele sagen, das war das Schönste.“ Im Winter ist die Höhle geschlossen. Viele Kolleginnen und Kollegen arbeiten dann als Skilehrer. Barbara Gschwandtner bleibt lieber im Büro und schreibt neue Texte für die Infotafeln in der Höhle. Und ihr Plan für die Zukunft? Sie möchte bald Führungen für blinde Menschen anbieten. „Sie dürfen dann die Steine mit den Händen berühren. So können auch sie die Höhle erleben.“",
+              "hit": "Am besten gefällt ihnen aber eine Minute am Ende der Führung: Dann macht Barbara Gschwandtner alle Lampen aus."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "Im Winter schreibt sie im Büro neue Texte für die Infotafeln. Als Skilehrer arbeiten nur viele Kollegen.",
+            "evidence": {
+              "text": "Die Höhlenführerin von Scheibbs Barbara Gschwandtner ist 36 Jahre alt. Seit neun Jahren führt sie Besucherinnen und Besucher durch eine Tropfsteinhöhle in der Nähe von Scheibbs. Vorher hat sie als Verkäuferin in einem Möbelhaus gearbeitet. Warum gerade eine Höhle? „Als Kind war ich mit meinem Großvater hier. Das habe ich nie vergessen“, erzählt sie. Mit ihrer Schulklasse war sie später noch einmal da, aber der Besuch mit dem Großvater war der Grund für ihren Beruf. In der Höhle hat es immer acht Grad, im Sommer und im Winter. Die Besucher brauchen deshalb eine Jacke, auch im August. Über 300 Stufen führen nach unten. „Die Stiege ist lang, aber nicht schwer“, sagt Barbara Gschwandtner. Viele Gäste fotografieren gern die lange Stiege. Am besten gefällt ihnen aber eine Minute am Ende der Führung: Dann macht Barbara Gschwandtner alle Lampen aus. „Es ist ganz dunkel und ganz still. Viele sagen, das war das Schönste.“ Im Winter ist die Höhle geschlossen. Viele Kolleginnen und Kollegen arbeiten dann als Skilehrer. Barbara Gschwandtner bleibt lieber im Büro und schreibt neue Texte für die Infotafeln in der Höhle. Und ihr Plan für die Zukunft? Sie möchte bald Führungen für blinde Menschen anbieten. „Sie dürfen dann die Steine mit den Händen berühren. So können auch sie die Höhle erleben.“",
+              "hit": "Barbara Gschwandtner bleibt lieber im Büro und schreibt neue Texte für die Infotafeln in der Höhle."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Sie plant Führungen für blinde Menschen, also für Menschen, die nicht sehen können. Von neuen Lampen spricht sie nicht.",
+            "evidence": {
+              "text": "Die Höhlenführerin von Scheibbs Barbara Gschwandtner ist 36 Jahre alt. Seit neun Jahren führt sie Besucherinnen und Besucher durch eine Tropfsteinhöhle in der Nähe von Scheibbs. Vorher hat sie als Verkäuferin in einem Möbelhaus gearbeitet. Warum gerade eine Höhle? „Als Kind war ich mit meinem Großvater hier. Das habe ich nie vergessen“, erzählt sie. Mit ihrer Schulklasse war sie später noch einmal da, aber der Besuch mit dem Großvater war der Grund für ihren Beruf. In der Höhle hat es immer acht Grad, im Sommer und im Winter. Die Besucher brauchen deshalb eine Jacke, auch im August. Über 300 Stufen führen nach unten. „Die Stiege ist lang, aber nicht schwer“, sagt Barbara Gschwandtner. Viele Gäste fotografieren gern die lange Stiege. Am besten gefällt ihnen aber eine Minute am Ende der Führung: Dann macht Barbara Gschwandtner alle Lampen aus. „Es ist ganz dunkel und ganz still. Viele sagen, das war das Schönste.“ Im Winter ist die Höhle geschlossen. Viele Kolleginnen und Kollegen arbeiten dann als Skilehrer. Barbara Gschwandtner bleibt lieber im Büro und schreibt neue Texte für die Infotafeln in der Höhle. Und ihr Plan für die Zukunft? Sie möchte bald Führungen für blinde Menschen anbieten. „Sie dürfen dann die Steine mit den Händen berühren. So können auch sie die Höhle erleben.“",
+              "hit": "Sie möchte bald Führungen für blinde Menschen anbieten."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ]
+}

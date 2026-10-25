@@ -1,0 +1,1130 @@
+{
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "oesd-a1-hoeren-10-t1",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.673Z",
+        "textType": "Kurze Alltagsgespräche (Foto zuordnen)"
+      },
+      "photos": {
+        "0": {
+          "A": {
+            "query": "woman handing binoculars to man by river pointing across water",
+            "alt": "Eine Frau steht mit einem Mann an einem Fluss, gibt ihm ein Fernglas und zeigt auf das andere Ufer."
+          },
+          "B": {
+            "query": "ice rink rental counter woman handing ice skates to man",
+            "alt": "Eine Frau hinter der Theke beim Schlittschuhverleih gibt einem Mann ein Paar Schlittschuhe."
+          },
+          "C": {
+            "query": "man buying box of tea at outdoor market stall",
+            "alt": "Ein Mann kauft draußen an einem Marktstand eine Schachtel Tee bei einer Verkäuferin."
+          },
+          "D": {
+            "query": "woman standing up in train carriage pointing at bag on seat man opposite nodding",
+            "alt": "Eine Frau steht im Zug auf und zeigt auf ihre Tasche am Sitz, der Mann gegenüber nickt."
+          },
+          "E": {
+            "query": "saleswoman weighing loose tea for male customer in tea shop with tea tins",
+            "alt": "Eine Verkäuferin wiegt in einem Teegeschäft vor einem Regal mit Teedosen losen Tee für einen Mann ab."
+          },
+          "F": {
+            "query": "farmer putting eggs into egg box for woman at farmers market stall",
+            "alt": "Ein Bauer legt an seinem Marktstand Eier in eine Schachtel für eine Frau."
+          }
+        }
+      },
+      "display": {
+        "instruction": "Sehen Sie zuerst die Fotos an. Sie haben dafür dreißig Sekunden Zeit. Situation: Sie hören fünf kurze Gespräche. Zu welchem Gespräch passt welches Foto? Schreiben Sie die Nummer des Textes unter das Foto. Achtung: Ein Foto passt zu keinem Gespräch. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "layout": "textNumber",
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "",
+                  "text": "Am Fluss: Eine Frau gibt einem Mann ein Fernglas und zeigt über das Wasser."
+                },
+                {
+                  "key": "B",
+                  "title": "",
+                  "text": "Eine Frau gibt einem Mann beim Schlittschuhverleih ein Paar Schlittschuhe."
+                },
+                {
+                  "key": "C",
+                  "title": "",
+                  "text": "Ein Mann kauft draußen an einem Marktstand eine Schachtel Tee."
+                },
+                {
+                  "key": "D",
+                  "title": "",
+                  "text": "Im Zug: Eine Frau steht auf und zeigt auf ihre Tasche, ein Mann nickt."
+                },
+                {
+                  "key": "E",
+                  "title": "",
+                  "text": "Im Teegeschäft: Eine Verkäuferin wiegt losen Tee für einen Mann ab."
+                },
+                {
+                  "key": "F",
+                  "title": "",
+                  "text": "Am Marktstand: Ein Bauer legt Eier in eine Schachtel für eine Frau."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 2,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 3,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 4,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 5,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fünf kurze Gespräche",
+          "speakers": {
+            "c1a": {
+              "name": "Verkäuferin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c1b": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c2a": {
+              "name": "Frau",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2b": {
+              "name": "Mann",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c3a": {
+              "name": "Bauer",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c3b": {
+              "name": "Kundin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c4a": {
+              "name": "Mitarbeiterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c4b": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c5a": {
+              "name": "Reisende",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c5b": {
+              "name": "Fahrgast",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-10/oesd-a1-hoeren-10-t1.review.mp3",
+          "duration": 97.67
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "E",
+            "explanation": "Der Mann kauft hundert Gramm Kräutertee im Geschäft, die Verkäuferin wiegt den Tee ab. Auf dem Foto vom Markt kauft ein Mann draußen eine ganze Schachtel Tee.",
+            "evidence": {
+              "text": "Grüß Gott! Bitte schön? Ich suche einen Tee für den Abend. Schwarzer Tee ist nicht gut für mich. Dann kann ich nicht schlafen. Dann nehmen Sie den Kräutertee mit Melisse. Hundert Gramm kosten vier Euro neunzig. Gut, den nehme ich.",
+              "hit": "Hundert Gramm kosten vier Euro neunzig."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "A",
+            "explanation": "Die Frau sieht einen Reiher am anderen Ufer und gibt dem Mann ihren Feldstecher. Das ist das Foto mit dem Fernglas am Fluss.",
+            "evidence": {
+              "text": "Schau mal, dort drüben am anderen Ufer steht ein Reiher! Wo denn? Ich sehe nur Bäume und Wasser. Hier, nimm meinen Feldstecher. Neben dem grossen Stein, siehst du ihn? Ah ja, jetzt sehe ich den Vogel. Er ist sehr schön. Merci!",
+              "hit": "Hier, nimm meinen Feldstecher."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "F",
+            "explanation": "Die Frau kauft zehn Eier beim Bauern auf dem Markt. Tee kauft hier niemand, darum passt das andere Marktfoto nicht.",
+            "evidence": {
+              "text": "Grüß Gott! Was hätten Sie gern? Zehn Eier, bitte. Sind die von hier? Ja, die sind von meinen eigenen Hühnern. Zehn Stück kosten drei Euro sechzig. Gut. Ich habe eine Schachtel für die Eier dabei. Bitte hier hinein.",
+              "hit": "Zehn Eier, bitte."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "B",
+            "explanation": "Der Mann leiht Schlittschuhe in Größe dreiundvierzig aus. Das passt zum Foto mit dem Schlittschuhverleih.",
+            "evidence": {
+              "text": "Guten Abend. Was brauchen Sie? Ich möchte Schlittschuhe ausleihen, Grösse dreiundvierzig, bitte. Was kostet das? Sieben Franken. Und Sie lassen bitte Ihren Ausweis hier bei mir. Wir schliessen um neun Uhr. Kein Problem, hier ist er. Merci!",
+              "hit": "Ich möchte Schlittschuhe ausleihen"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "D",
+            "explanation": "Die Frau muss auf die Toilette, und der Mann im Zug passt auf ihre Tasche auf. Das ist das Foto, auf dem sie auf die Tasche zeigt.",
+            "evidence": {
+              "text": "Entschuldigung, können Sie kurz auf meine Tasche aufpassen? Ich muss auf die Toilette. Ja, natürlich. Ich passe gut auf. So, da bin ich wieder. Vielen Dank! Gern geschehen. Wir müssen übrigens beim nächsten Halt aussteigen.",
+              "hit": "können Sie kurz auf meine Tasche aufpassen?"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1a",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Bitte schön?",
+            "delivery": "[friendly, shop]",
+            "clip": 1,
+            "sound": "store"
+          },
+          {
+            "speaker": "c1b",
+            "voice": "man_gruber_at",
+            "text": "Ich suche einen Tee für den Abend. Schwarzer Tee ist nicht gut für mich. Dann kann ich nicht schlafen.",
+            "delivery": "[polite, a bit tired]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1a",
+            "voice": "woman_emilia_at",
+            "text": "Dann nehmen Sie den Kräutertee mit Melisse. Hundert Gramm kosten vier Euro neunzig.",
+            "delivery": "[helpful]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1b",
+            "voice": "man_gruber_at",
+            "text": "Gut, den nehme ich.",
+            "delivery": "[pleased]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_mia_ch",
+            "text": "Schau mal, dort drüben am anderen Ufer steht ein Reiher!",
+            "delivery": "[excited, quiet, outdoors]",
+            "clip": 2,
+            "sound": "river"
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_thomas_ch",
+            "text": "Wo denn? Ich sehe nur Bäume und Wasser.",
+            "delivery": "[searching, casual]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_mia_ch",
+            "text": "Hier, nimm meinen Feldstecher. Neben dem grossen Stein, siehst du ihn?",
+            "delivery": "[helpful, quiet]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_thomas_ch",
+            "text": "Ah ja, jetzt sehe ich den Vogel. Er ist sehr schön. Merci!",
+            "delivery": "[delighted]",
+            "clip": 2
+          },
+          {
+            "speaker": "c3a",
+            "voice": "man_martin_at",
+            "text": "Grüß Gott! Was hätten Sie gern?",
+            "delivery": "[cheerful, market stall]",
+            "clip": 3,
+            "sound": "market"
+          },
+          {
+            "speaker": "c3b",
+            "voice": "woman_alexandra_at",
+            "text": "Zehn Eier, bitte. Sind die von hier?",
+            "delivery": "[friendly]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3a",
+            "voice": "man_martin_at",
+            "text": "Ja, die sind von meinen eigenen Hühnern. Zehn Stück kosten drei Euro sechzig.",
+            "delivery": "[proud, cheerful]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3b",
+            "voice": "woman_alexandra_at",
+            "text": "Gut. Ich habe eine Schachtel für die Eier dabei. Bitte hier hinein.",
+            "delivery": "[friendly]",
+            "clip": 3
+          },
+          {
+            "speaker": "c4a",
+            "voice": "woman_heidi_ch",
+            "text": "Guten Abend. Was brauchen Sie?",
+            "delivery": "[friendly, routine]",
+            "clip": 4,
+            "sound": "lobby"
+          },
+          {
+            "speaker": "c4b",
+            "voice": "man_andres_ch",
+            "text": "Ich möchte Schlittschuhe ausleihen, Grösse dreiundvierzig, bitte. Was kostet das?",
+            "delivery": "[polite]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4a",
+            "voice": "woman_heidi_ch",
+            "text": "Sieben Franken. Und Sie lassen bitte Ihren Ausweis hier bei mir. Wir schliessen um neun Uhr.",
+            "delivery": "[friendly, routine]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4b",
+            "voice": "man_andres_ch",
+            "text": "Kein Problem, hier ist er. Merci!",
+            "delivery": "[warm]",
+            "clip": 4
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_emilia_at",
+            "text": "Entschuldigung, können Sie kurz auf meine Tasche aufpassen? Ich muss auf die Toilette.",
+            "delivery": "[polite, a bit hurried]",
+            "clip": 5,
+            "sound": "train"
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_martin_at",
+            "text": "Ja, natürlich. Ich passe gut auf.",
+            "delivery": "[kind]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_emilia_at",
+            "text": "So, da bin ich wieder. Vielen Dank!",
+            "delivery": "[relieved]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_martin_at",
+            "text": "Gern geschehen. Wir müssen übrigens beim nächsten Halt aussteigen.",
+            "delivery": "[friendly, casual]",
+            "clip": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-10-t2",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.673Z",
+        "textType": "Nachricht auf der Sprachbox (Tombola)"
+      },
+      "sound": "beep",
+      "exampleAnswers": [
+        "den Preis abholen"
+      ],
+      "display": {
+        "instruction": "Lesen Sie zuerst den Zettel. Sie haben dafür dreißig Sekunden Zeit. Situation: Auf Ihrer Sprachbox ist eine Nachricht. Notieren Sie die wichtigen Informationen auf dem Zettel. Die erste Zeile ist ein Beispiel. Sie hören den Text zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Notizen\n",
+                "Was: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nWann: am ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                ", ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                ". Juli, um ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                " Uhr\nWo: ",
+                {
+                  "n": 9,
+                  "options": []
+                },
+                "gasse 8\nTelefon: 0699 / ",
+                {
+                  "n": 10,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Sprachbox",
+          "speakers": {
+            "steinwender": {
+              "name": "Herr Steinwender",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-10/oesd-a1-hoeren-10-t2.mp3",
+          "duration": 52.74
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "Donnerstag",
+            "accept": [
+              "am Donnerstag"
+            ],
+            "explanation": "Du sollst am Donnerstag ins Büro kommen. Am Samstag war die Tombola, und am Montag und Dienstag ist Herr Steinwender nicht da.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Steinwender vom Kulturverein Ziegelwerk. Ich habe eine gute Nachricht für Sie. Die Tombola war am Samstag, und Sie haben den dritten Preis gewonnen, eine Kaffeemaschine. Herzlichen Glückwunsch! Sie können den Preis im Vereinsbüro abholen. Am Montag und am Dienstag bin ich nicht im Büro. Kommen Sie bitte am Donnerstag, dem zehnten Juli, um elf Uhr. Ich bin bis halb eins da. Die Adresse ist Fliedergasse acht. Ich buchstabiere: F, L, I, E, D, E, R. Ihre Losnummer ist zweihundertvierzehn. Bei Fragen rufen Sie mich an: null sechs neun neun, fünfunddreißig, zweiundachtzig, vierundsiebzig, eins. Auf Wiederhören!",
+              "hit": "Kommen Sie bitte am Donnerstag"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "10",
+            "accept": [
+              "10.",
+              "zehn",
+              "zehnten"
+            ],
+            "explanation": "Der Tag ist der zehnte Juli.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Steinwender vom Kulturverein Ziegelwerk. Ich habe eine gute Nachricht für Sie. Die Tombola war am Samstag, und Sie haben den dritten Preis gewonnen, eine Kaffeemaschine. Herzlichen Glückwunsch! Sie können den Preis im Vereinsbüro abholen. Am Montag und am Dienstag bin ich nicht im Büro. Kommen Sie bitte am Donnerstag, dem zehnten Juli, um elf Uhr. Ich bin bis halb eins da. Die Adresse ist Fliedergasse acht. Ich buchstabiere: F, L, I, E, D, E, R. Ihre Losnummer ist zweihundertvierzehn. Bei Fragen rufen Sie mich an: null sechs neun neun, fünfunddreißig, zweiundachtzig, vierundsiebzig, eins. Auf Wiederhören!",
+              "hit": "dem zehnten Juli"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "11",
+            "accept": [
+              "11:00",
+              "11.00",
+              "elf"
+            ],
+            "explanation": "Du sollst um elf Uhr kommen. Halb eins ist nur die Zeit, bis Herr Steinwender da ist.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Steinwender vom Kulturverein Ziegelwerk. Ich habe eine gute Nachricht für Sie. Die Tombola war am Samstag, und Sie haben den dritten Preis gewonnen, eine Kaffeemaschine. Herzlichen Glückwunsch! Sie können den Preis im Vereinsbüro abholen. Am Montag und am Dienstag bin ich nicht im Büro. Kommen Sie bitte am Donnerstag, dem zehnten Juli, um elf Uhr. Ich bin bis halb eins da. Die Adresse ist Fliedergasse acht. Ich buchstabiere: F, L, I, E, D, E, R. Ihre Losnummer ist zweihundertvierzehn. Bei Fragen rufen Sie mich an: null sechs neun neun, fünfunddreißig, zweiundachtzig, vierundsiebzig, eins. Auf Wiederhören!",
+              "hit": "um elf Uhr"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Flieder",
+            "accept": [
+              "Fliedergasse",
+              "Fliedergasse 8"
+            ],
+            "exact": true,
+            "explanation": "Herr Steinwender buchstabiert den Namen: F, L, I, E, D, E, R. Der Name muss genau richtig sein.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Steinwender vom Kulturverein Ziegelwerk. Ich habe eine gute Nachricht für Sie. Die Tombola war am Samstag, und Sie haben den dritten Preis gewonnen, eine Kaffeemaschine. Herzlichen Glückwunsch! Sie können den Preis im Vereinsbüro abholen. Am Montag und am Dienstag bin ich nicht im Büro. Kommen Sie bitte am Donnerstag, dem zehnten Juli, um elf Uhr. Ich bin bis halb eins da. Die Adresse ist Fliedergasse acht. Ich buchstabiere: F, L, I, E, D, E, R. Ihre Losnummer ist zweihundertvierzehn. Bei Fragen rufen Sie mich an: null sechs neun neun, fünfunddreißig, zweiundachtzig, vierundsiebzig, eins. Auf Wiederhören!",
+              "hit": "Ich buchstabiere: F, L, I, E, D, E, R."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "3582741",
+            "accept": [
+              "35 82 74 1",
+              "358 27 41",
+              "3 5 8 2 7 4 1",
+              "358 2741"
+            ],
+            "exact": true,
+            "explanation": "Nach null sechs neun neun kommt fünfunddreißig, zweiundachtzig, vierundsiebzig, eins. Zweihundertvierzehn ist nur deine Losnummer.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Steinwender vom Kulturverein Ziegelwerk. Ich habe eine gute Nachricht für Sie. Die Tombola war am Samstag, und Sie haben den dritten Preis gewonnen, eine Kaffeemaschine. Herzlichen Glückwunsch! Sie können den Preis im Vereinsbüro abholen. Am Montag und am Dienstag bin ich nicht im Büro. Kommen Sie bitte am Donnerstag, dem zehnten Juli, um elf Uhr. Ich bin bis halb eins da. Die Adresse ist Fliedergasse acht. Ich buchstabiere: F, L, I, E, D, E, R. Ihre Losnummer ist zweihundertvierzehn. Bei Fragen rufen Sie mich an: null sechs neun neun, fünfunddreißig, zweiundachtzig, vierundsiebzig, eins. Auf Wiederhören!",
+              "hit": "fünfunddreißig, zweiundachtzig, vierundsiebzig, eins"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "steinwender",
+            "voice": "man_gruber_at",
+            "text": "Guten Tag, hier spricht Steinwender vom Kulturverein Ziegelwerk. Ich habe eine gute Nachricht für Sie. Die Tombola war am Samstag, und Sie haben den dritten Preis gewonnen, eine Kaffeemaschine. Herzlichen Glückwunsch! Sie können den Preis im Vereinsbüro abholen. Am Montag und am Dienstag bin ich nicht im Büro. Kommen Sie bitte am Donnerstag, dem zehnten Juli, um elf Uhr. Ich bin bis halb eins da. Die Adresse ist Fliedergasse acht. Ich buchstabiere: F, L, I, E, D, E, R. Ihre Losnummer ist zweihundertvierzehn. Bei Fragen rufen Sie mich an: null sechs neun neun, fünfunddreißig, zweiundachtzig, vierundsiebzig, eins. Auf Wiederhören!",
+            "delivery": "[warm, clear, voicemail, slow]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-10-t3",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.673Z",
+        "textType": "Umfrage auf der Straße (Kurzinterviews)"
+      },
+      "sound": "street",
+      "display": {
+        "instruction": "Lesen Sie zuerst die Aufgabe. Sie haben dafür zehn Sekunden Zeit. Situation: Eine Reporterin macht eine Umfrage auf der Straße. Welche Farbe mag jede Person am liebsten? Kreuzen Sie für jeden Text eine Antwort an. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Welche Farbe mögen Sie am liebsten?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Blau"
+                },
+                {
+                  "key": "b",
+                  "label": "Rot"
+                },
+                {
+                  "key": "c",
+                  "label": "Grün"
+                },
+                {
+                  "key": "d",
+                  "label": "Schwarz"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 11,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 12,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 13,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 14,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 15,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "reporterin": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Text 1",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p2": {
+              "name": "Text 2",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p3": {
+              "name": "Text 3",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p4": {
+              "name": "Text 4",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p5": {
+              "name": "Text 5",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-10/oesd-a1-hoeren-10-t3.review.mp3",
+          "duration": 94.28
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Die Frau findet Blau schön, aber Rot ist ihre Farbe. Schwarz ist ihr zu dunkel.",
+            "evidence": {
+              "text": "Hm, das ist eine gute Frage. Also, Blau ist schön, das stimmt. Schwarz ist mir zu dunkel, das mag ich nicht so. Aber Rot! Rot ist warm und fröhlich, äh, da habe ich gleich gute Laune. Ja, Rot, das ist meine Farbe.",
+              "hit": "Ja, Rot, das ist meine Farbe."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Grün findet der Mann im Wald schön, aber am liebsten mag er Blau. Schwarz trägt er nur bei der Arbeit.",
+            "evidence": {
+              "text": "Also, Grün ist schön, im Wald zum Beispiel. Und Schwarz, äh, das trage ich nur bei der Arbeit. Aber am liebsten mag ich Blau. Blau wie der Himmel und das Meer. Im Urlaub sitze ich gern am Meer und schaue einfach aufs Wasser.",
+              "hit": "Aber am liebsten mag ich Blau."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "d",
+            "explanation": "Die Frau aus Burgdorf findet Rot zu laut und Grün nur okay. Ihre Lieblingsfarbe ist Schwarz.",
+            "evidence": {
+              "text": "Hm, ich bin aus Burgdorf, in der Schweiz. Rot ist mir zu laut, ehrlich gesagt. Grün ist im Sommer schon okay. Aber meine Lieblingsfarbe ist Schwarz. Schwarz ist elegant, und es passt immer. Das ist einfach praktisch, äh, ja, also Schwarz.",
+              "hit": "Aber meine Lieblingsfarbe ist Schwarz."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Als Kind mochte der Mann Blau. Heute mag er Grün am liebsten.",
+            "evidence": {
+              "text": "Also, als Bub war Blau meine Lieblingsfarbe. Rot ist mir zu stark, das ist nichts für mich. Aber heute mag ich Grün am liebsten, äh, so wie die Berge im Frühling. Dann ist alles frisch und grün, das gefällt mir.",
+              "hit": "Aber heute mag ich Grün am liebsten"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Blau hat die Frau zu Hause mit dem Meer genug. Sie mag Grün am liebsten, Schwarz ist ihr zu traurig.",
+            "evidence": {
+              "text": "Hm, schwierig. Ich komme aus Rostock, an der Ostsee. Blau habe ich zu Hause genug, das Meer ist ja immer da. Schwarz finde ich zu traurig. Ich mag Grün am liebsten. Grün ist so ruhig, äh, das tut mir wirklich gut.",
+              "hit": "Ich mag Grün am liebsten."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "reporterin",
+            "voice": "woman_alexandra_at",
+            "text": "Hallo, wir machen eine Umfrage für eine Zeitung. Welche Farbe mögen Sie am liebsten?",
+            "delivery": "[friendly reporter, outdoors]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_emilia_at",
+            "text": "Hm, das ist eine gute Frage. Also, Blau ist schön, das stimmt. Schwarz ist mir zu dunkel, das mag ich nicht so. Aber Rot! Rot ist warm und fröhlich, äh, da habe ich gleich gute Laune. Ja, Rot, das ist meine Farbe.",
+            "delivery": "[spontaneous, cheerful]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Also, Grün ist schön, im Wald zum Beispiel. Und Schwarz, äh, das trage ich nur bei der Arbeit. Aber am liebsten mag ich Blau. Blau wie der Himmel und das Meer. Im Urlaub sitze ich gern am Meer und schaue einfach aufs Wasser.",
+            "delivery": "[spontaneous, relaxed]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_heidi_ch",
+            "text": "Hm, ich bin aus Burgdorf, in der Schweiz. Rot ist mir zu laut, ehrlich gesagt. Grün ist im Sommer schon okay. Aber meine Lieblingsfarbe ist Schwarz. Schwarz ist elegant, und es passt immer. Das ist einfach praktisch, äh, ja, also Schwarz.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Also, als Bub war Blau meine Lieblingsfarbe. Rot ist mir zu stark, das ist nichts für mich. Aber heute mag ich Grün am liebsten, äh, so wie die Berge im Frühling. Dann ist alles frisch und grün, das gefällt mir.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_irene",
+            "text": "Hm, schwierig. Ich komme aus Rostock, an der Ostsee. Blau habe ich zu Hause genug, das Meer ist ja immer da. Schwarz finde ich zu traurig. Ich mag Grün am liebsten. Grün ist so ruhig, äh, das tut mir wirklich gut.",
+            "delivery": "[spontaneous, calm]",
+            "clip": 5
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "oesd-a1/hoeren-10/track.mp3",
+    "duration": 635.64,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 9.85,
+        "to": 16.33
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 16.33,
+        "to": 46.37
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 46.37,
+        "to": 67.63
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 73.14,
+        "to": 74
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 74.63,
+        "to": 93.13
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 95.16,
+        "to": 96.05
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 96.68,
+        "to": 116.66
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 118.7,
+        "to": 119.56
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 120.19,
+        "to": 138.97
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 141.01,
+        "to": 141.77
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 142.39,
+        "to": 160.89
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 162.93,
+        "to": 163.79
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 164.41,
+        "to": 180.48
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 188.03,
+        "to": 194.04
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 194.04,
+        "to": 224.08
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 224.08,
+        "to": 241.48
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 248.48,
+        "to": 301.22
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 308.22,
+        "to": 311.43
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 318.43,
+        "to": 371.17
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 378.17,
+        "to": 382.72
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 382.72,
+        "to": 402.76
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 408.27,
+        "to": 414.25
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 414.25,
+        "to": 424.28
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 424.28,
+        "to": 443.12
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 448.63,
+        "to": 453.85
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 455.39,
+        "to": 456.25
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 456.88,
+        "to": 473.44
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 475.48,
+        "to": 476.37
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 477,
+        "to": 494.03
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 496.07,
+        "to": 496.93
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 497.55,
+        "to": 513.8
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 515.84,
+        "to": 516.6
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 517.22,
+        "to": 533
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 535.04,
+        "to": 535.9
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 536.53,
+        "to": 552.7
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 560.25,
+        "to": 564.74
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 564.74,
+        "to": 624.77
+      }
+    ]
+  }
+}

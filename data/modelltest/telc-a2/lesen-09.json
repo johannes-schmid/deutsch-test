@@ -1,0 +1,478 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-09-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.132Z",
+        "textType": "Wegweiser an einem Flughafen"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie sind gelandet, aber Ihr Koffer ist nicht angekommen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Sie möchten Ihren großen Koffer vor dem Flug abgeben.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Ihre Kinder möchten sehen, wie die Flugzeuge starten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Sie fliegen nach Großbritannien und brauchen noch britisches Geld.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Sie brauchen für eine Woche ein Auto.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Sie möchten vor dem Flug an einem ruhigen Ort beten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Flughafen Rotenstein",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "2. Obergeschoss: Restaurants · Café · Besucherterrasse · Raum der Stille · Konferenzräume · Kinderspielecke · Toiletten",
+            "1. Obergeschoss: Abflug · Check-in · Gepäckaufgabe · Sicherheitskontrolle · Zeitschriften & Bücher · Souvenirs · Duty-free-Shop",
+            "Erdgeschoss: Ankunft · Gepäckermittlung · Information · Fundbüro · Geldwechsel · Bäckerei · Taxistand · Toiletten",
+            "Untergeschoss: S-Bahn · Bushaltestelle · Parkhaus-Kasse · Autovermietung · Fahrradstation · Kiosk"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Die Gepäckaufgabe ist im 1. Obergeschoss. Im 2. Obergeschoss gibt es Restaurants und die Terrasse, aber keine Gepäckaufgabe.",
+            "evidence": {
+              "text": "1. Obergeschoss: Abflug · Check-in · Gepäckaufgabe · Sicherheitskontrolle · Zeitschriften & Bücher · Souvenirs · Duty-free-Shop",
+              "hit": "Gepäckaufgabe"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Von der Besucherterrasse im 2. Obergeschoss sieht man die Flugzeuge. Im Untergeschoss gibt es S-Bahn und Bus, aber keine Terrasse.",
+            "evidence": {
+              "text": "2. Obergeschoss: Restaurants · Café · Besucherterrasse · Raum der Stille · Konferenzräume · Kinderspielecke · Toiletten",
+              "hit": "Besucherterrasse"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "c",
+            "explanation": "Geld wechseln kannst du im Erdgeschoss. Die Parkhaus-Kasse im Untergeschoss ist nur zum Bezahlen für das Parken.",
+            "evidence": {
+              "text": "Erdgeschoss: Ankunft · Gepäckermittlung · Information · Fundbüro · Geldwechsel · Bäckerei · Taxistand · Toiletten",
+              "hit": "Geldwechsel"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Die Autovermietung ist im Untergeschoss. Im Erdgeschoss gibt es Taxis, aber kein Auto für eine Woche.",
+            "evidence": {
+              "text": "Untergeschoss: S-Bahn · Bushaltestelle · Parkhaus-Kasse · Autovermietung · Fahrradstation · Kiosk",
+              "hit": "Autovermietung"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Zum Beten gehst du in den Raum der Stille im 2. Obergeschoss. Im 1. Obergeschoss ist der Abflug, dort ist es nicht ruhig.",
+            "evidence": {
+              "text": "2. Obergeschoss: Restaurants · Café · Besucherterrasse · Raum der Stille · Konferenzräume · Kinderspielecke · Toiletten",
+              "hit": "Raum der Stille"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-09-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.132Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Franziska Ott macht auch alte, kaputte Orgeln wieder heil."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Schon als Kind war es ihr Plan, Orgeln zu bauen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Franziska Ott arbeitet ohne Kollegen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Für ihre Arbeit reist sie manchmal in ein anderes Land."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Die Reparatur einer großen Orgel dauert nur ein paar Tage."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Franziska Ott kann auch selbst Orgel spielen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Sie bringt alte Orgeln wieder zum Klingen",
+            "Franziska Ott (33) hat einen Beruf, den in Deutschland nur wenige Menschen haben: Sie ist Orgelbauerin. In einer Werkstatt in Passau baut sie neue Orgeln und repariert alte Instrumente aus Kirchen.",
+            "Nach der Schule hat sie zuerst zwei Jahre Musik studiert. Erst dann hatte sie die Idee mit dem Orgelbau. „Ich wollte lieber mit den Händen arbeiten“, sagt sie. Ihre Ausbildung hat sie in Bautzen gemacht.",
+            "Heute arbeitet sie mit fünf Kolleginnen und Kollegen zusammen. Die Werkstatt bekommt Aufträge aus ganz Bayern, manchmal auch aus Norwegen. Dann ist Franziska Ott ein paar Wochen dort. Eine große Orgel hat Tausende Pfeifen. „Für so eine Reparatur brauchen wir mehrere Monate“, erzählt sie.",
+            "Und in ihrer Freizeit? Da sitzt sie selbst an der Orgel: Jeden Sonntag spielt sie in der Kirche in ihrem Dorf bei Passau."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Zuerst hat sie zwei Jahre Musik studiert. Die Idee mit dem Orgelbau kam erst danach.",
+            "evidence": {
+              "text": "Nach der Schule hat sie zuerst zwei Jahre Musik studiert. Erst dann hatte sie die Idee mit dem Orgelbau.",
+              "hit": "Erst dann hatte sie die Idee mit dem Orgelbau."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Sie arbeitet nicht allein. In der Werkstatt hat sie fünf Kolleginnen und Kollegen.",
+            "evidence": {
+              "text": "Heute arbeitet sie mit fünf Kolleginnen und Kollegen zusammen.",
+              "hit": "mit fünf Kolleginnen und Kollegen zusammen"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "richtig",
+            "explanation": "Die Werkstatt hat manchmal Aufträge aus Norwegen. Dann ist sie ein paar Wochen dort.",
+            "evidence": {
+              "text": "Die Werkstatt bekommt Aufträge aus ganz Bayern, manchmal auch aus Norwegen. Dann ist Franziska Ott ein paar Wochen dort.",
+              "hit": "manchmal auch aus Norwegen"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Für die Reparatur einer großen Orgel braucht die Werkstatt mehrere Monate. Ein paar Wochen ist sie nur in Norwegen.",
+            "evidence": {
+              "text": "„Für so eine Reparatur brauchen wir mehrere Monate“, erzählt sie.",
+              "hit": "brauchen wir mehrere Monate"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Sie spielt jeden Sonntag in der Kirche in ihrem Dorf Orgel.",
+            "evidence": {
+              "text": "Da sitzt sie selbst an der Orgel: Jeden Sonntag spielt sie in der Kirche in ihrem Dorf bei Passau.",
+              "hit": "Jeden Sonntag spielt sie in der Kirche in ihrem Dorf"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-09-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.132Z",
+        "textType": "Anzeigen und Webseiten: ehrenamtlich helfen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Besuchsdienst Haus Lindenhof",
+                  "text": "Unsere Bewohnerinnen und Bewohner freuen sich über Besuch: vorlesen, erzählen, zusammen spazieren gehen. Eine Stunde pro Woche reicht."
+                },
+                {
+                  "key": "b",
+                  "title": "Einkaufsbegleitung Darmstadt-Ost",
+                  "text": "Menschen, die schlecht sehen, brauchen Hilfe im Supermarkt. Gehen Sie mit ihnen einkaufen! Vormittags, Zeit nach Absprache."
+                },
+                {
+                  "key": "c",
+                  "title": "Darmstädter Tafel",
+                  "text": "Wir suchen Helfer für die Lebensmittelausgabe: Obst und Gemüse sortieren, jeden Samstag von 8 bis 11 Uhr."
+                },
+                {
+                  "key": "d",
+                  "title": "Umweltgruppe „Saubere Ufer“",
+                  "text": "Wir sammeln Müll an Bächen und Seen rund um Darmstadt. Einmal im Monat am Sonntag. Handschuhe bekommen Sie von uns."
+                },
+                {
+                  "key": "e",
+                  "title": "Fahrdienst „Rollmobil“",
+                  "text": "Wir bringen Menschen im Rollstuhl zum Arzt oder zum Einkaufen. Sie fahren unseren Kleinbus. Führerschein Klasse B nötig."
+                },
+                {
+                  "key": "f",
+                  "title": "Kleiderkammer im Martinsviertel",
+                  "text": "Gebrauchte Kleidung annehmen, sortieren und an Familien weitergeben. Dienstag und Donnerstag von 15 bis 18 Uhr."
+                },
+                {
+                  "key": "g",
+                  "title": "Darmstädter Stadtlauf",
+                  "text": "Am 14. September brauchen wir viele Helfer: Wasser an die Läufer geben, Wege zeigen. Nur ein Tag – jede Hilfe zählt!"
+                },
+                {
+                  "key": "h",
+                  "title": "Telefonkette „Hallo Nachbar“",
+                  "text": "Viele ältere Menschen wohnen allein. Rufen Sie einmal pro Woche eine Person an und sprechen Sie mit ihr – ganz bequem von zu Hause."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Sie sind gern mit alten Menschen zusammen und möchten mit ihnen an die frische Luft gehen."
+                },
+                {
+                  "n": 11,
+                  "text": "Sie möchten am Wochenende draußen helfen, damit die Natur sauberer wird."
+                },
+                {
+                  "n": 12,
+                  "text": "Sie fahren gern Auto und möchten Menschen helfen, die nicht laufen können."
+                },
+                {
+                  "n": 13,
+                  "text": "Sie möchten gern helfen, aber dafür Ihre Wohnung nicht verlassen."
+                },
+                {
+                  "n": 14,
+                  "text": "Sie haben nur an einem einzigen Tag im Jahr Zeit zum Helfen."
+                },
+                {
+                  "n": 15,
+                  "text": "Sie möchten sich in Ihrer Freizeit um Hunde und Katzen kümmern."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "d",
+            "explanation": "Die Umweltgruppe sammelt sonntags Müll an Bächen und Seen. Die Tafel arbeitet auch am Samstag, aber nicht draußen in der Natur.",
+            "evidence": {
+              "text": "Umweltgruppe „Saubere Ufer“. Wir sammeln Müll an Bächen und Seen rund um Darmstadt. Einmal im Monat am Sonntag. Handschuhe bekommen Sie von uns.",
+              "hit": "Wir sammeln Müll an Bächen und Seen"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "e",
+            "explanation": "Beim Fahrdienst fährst du Menschen im Rollstuhl mit einem Kleinbus. Bei der Einkaufsbegleitung hilfst du Menschen, die schlecht sehen, und fährst kein Auto.",
+            "evidence": {
+              "text": "Fahrdienst „Rollmobil“. Wir bringen Menschen im Rollstuhl zum Arzt oder zum Einkaufen. Sie fahren unseren Kleinbus. Führerschein Klasse B nötig.",
+              "hit": "Wir bringen Menschen im Rollstuhl zum Arzt oder zum Einkaufen."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "h",
+            "explanation": "Bei der Telefonkette rufst du von zu Hause aus an. Beim Besuchsdienst musst du ins Haus Lindenhof gehen.",
+            "evidence": {
+              "text": "Telefonkette „Hallo Nachbar“. Viele ältere Menschen wohnen allein. Rufen Sie einmal pro Woche eine Person an und sprechen Sie mit ihr – ganz bequem von zu Hause.",
+              "hit": "ganz bequem von zu Hause"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "g",
+            "explanation": "Beim Stadtlauf brauchen sie Helfer nur an einem Tag. Bei der Tafel hilft man jeden Samstag.",
+            "evidence": {
+              "text": "Darmstädter Stadtlauf. Am 14. September brauchen wir viele Helfer: Wasser an die Läufer geben, Wege zeigen. Nur ein Tag – jede Hilfe zählt!",
+              "hit": "Nur ein Tag"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "x",
+            "explanation": "Keine Anzeige sucht Helfer für Tiere. Die Umweltgruppe arbeitet zwar in der Natur, aber sie sammelt nur Müll.",
+            "evidence": {
+              "text": "Umweltgruppe „Saubere Ufer“. Wir sammeln Müll an Bächen und Seen rund um Darmstadt. Einmal im Monat am Sonntag. Handschuhe bekommen Sie von uns.",
+              "hit": "Wir sammeln Müll"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    }
+  ]
+}

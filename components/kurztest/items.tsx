@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChoiceItem, FeedbackSheet, GapTask, MatchTask, PictureItem, TrueFalseItem } from "@/components/exam"
+import { ChoiceItem, FeedbackSheet, GapTask, MarkBoxes, MatchTask, PictureItem, TickGrid, TrueFalseItem } from "@/components/exam"
 import { itemNumbers, type ItemKey, type KurztestBlock, type KurztestItem } from "@/lib/exam/kurztest"
 import { typedRight } from "@/lib/exam/scoring/start"
 import type { PartId, TrueFalse } from "@/lib/exam/types"
@@ -56,8 +56,17 @@ function Item({ it, skill, label, keys, values, onChange }: { it: KurztestItem; 
       </div>
     )
   }
-  const ns = it.type === "match" ? it.data.situations.map((s) => s.n) : it.data.parts.flatMap((p) => (typeof p === "string" ? [] : [p.n]))
+  const ns = itemNumbers([it])
   const change = onChange && !keys ? onChange : undefined
+  if (it.type === "grid" || it.type === "marks") {
+    return (
+      <div className="flex flex-col gap-3">
+        {label ? <span className="text-[13px] text-v-muted">{label}</span> : null}
+        {it.type === "grid" ? <TickGrid data={it.data} value={values} onChange={change} review={reviewMap(ns)} /> : <MarkBoxes data={it.data} value={values} onChange={change} review={reviewMap(ns)} />}
+        {ns.map(feedback)}
+      </div>
+    )
+  }
   return (
     <div className="flex flex-col gap-3">
       {label ? <span className="text-[13px] text-v-muted">{label}</span> : null}

@@ -1,0 +1,479 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-10-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.134Z",
+        "textType": "Wegweiser in einem Bürgerhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten eine Tasse Kaffee trinken.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "An Ihrem Fahrrad funktionieren die Bremsen nicht. Sie möchten sie selbst reparieren, aber jemand soll Ihnen dabei helfen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Die Laienspieler aus Ihrem Stadtteil zeigen ein neues Stück. Sie möchten zuschauen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Sie hören bald auf zu arbeiten und haben Fragen zu Ihrem Geld im Alter.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Ein älterer Nachbar ist oft allein. Er möchte andere Leute in seinem Alter treffen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Es wird kalt. Sie brauchen eine warme Jacke, aber Sie haben wenig Geld.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Bürgerhaus Westend",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "3. Stock: Saal mit Bühne (Theater und Konzerte) · Tischtennisraum · Chorprobe · Tanzkurse für Erwachsene",
+            "2. Stock: Seniorentreff · Spieleraum · Computerkurse für Anfänger · Nähgruppe · Bücherecke",
+            "1. Stock: Beratung zu Miete, Rente und Schulden · Hilfe beim Ausfüllen von Formularen · Sprachcafé · Hausaufgabenhilfe",
+            "Erdgeschoss: Information · Stadtteilcafé · Stadtteilbüro · Garderobe · Toiletten",
+            "Untergeschoss: Fahrradwerkstatt (Hilfe zur Selbsthilfe) · Werkzeugverleih · Kleiderkammer · Fundsachen"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "Die Fahrradwerkstatt mit Hilfe zur Selbsthilfe ist im Untergeschoss. Im Erdgeschoss und im 2. Stock gibt es keine Werkstatt.",
+            "evidence": {
+              "text": "Untergeschoss: Fahrradwerkstatt (Hilfe zur Selbsthilfe) · Werkzeugverleih · Kleiderkammer · Fundsachen",
+              "hit": "Fahrradwerkstatt (Hilfe zur Selbsthilfe)"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Theater gibt es im Saal mit Bühne im 3. Stock. Im 1. Stock gibt es nur Beratung und Kurse.",
+            "evidence": {
+              "text": "3. Stock: Saal mit Bühne (Theater und Konzerte) · Tischtennisraum · Chorprobe · Tanzkurse für Erwachsene",
+              "hit": "Saal mit Bühne (Theater und Konzerte)"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Geld im Alter ist die Rente, und die Beratung dazu ist im 1. Stock. Im 2. Stock ist der Seniorentreff, aber dort gibt es keine Beratung.",
+            "evidence": {
+              "text": "1. Stock: Beratung zu Miete, Rente und Schulden · Hilfe beim Ausfüllen von Formularen · Sprachcafé · Hausaufgabenhilfe",
+              "hit": "Beratung zu Miete, Rente und Schulden"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Im Seniorentreff im 2. Stock trifft er andere ältere Menschen. Das Café im Erdgeschoss ist für alle, nicht speziell für ältere Leute.",
+            "evidence": {
+              "text": "2. Stock: Seniorentreff · Spieleraum · Computerkurse für Anfänger · Nähgruppe · Bücherecke",
+              "hit": "Seniorentreff"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Günstige Kleidung bekommst du in der Kleiderkammer im Untergeschoss. Im Erdgeschoss und im 1. Stock gibt es keine Kleidung.",
+            "evidence": {
+              "text": "Untergeschoss: Fahrradwerkstatt (Hilfe zur Selbsthilfe) · Werkzeugverleih · Kleiderkammer · Fundsachen",
+              "hit": "Kleiderkammer"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-10-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.134Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Ronja Falk macht Kunst aus Eis."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Bevor sie Eisfiguren gemacht hat, hat Ronja Falk in einer Küche gearbeitet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Ronja Falk hat nur in der kalten Jahreszeit Arbeit."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Eine Figur von Ronja Falk war höher als drei Meter."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Eine große Figur ist bei ihr an einem Tag fertig."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Ronja Falk macht ihre Figuren heute ohne Hilfe."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Kunst, die schmilzt",
+            "Ronja Falk (30) aus Schwerin hat einen ungewöhnlichen Beruf: Sie macht Figuren aus Eis. Mit Säge, Messer und Bohrer macht sie Tiere, Häuser oder Buchstaben – für Hochzeiten, Firmenfeiern und Messen.",
+            "Nach der Schule hat Ronja eine Ausbildung als Köchin gemacht und dann in einem Hotel an der Ostsee gearbeitet. Dort sollte sie einmal für das Buffet einen Schwan aus Eis machen. „Das hat mir so viel Spaß gemacht, dass ich mehr lernen wollte“, erzählt sie.",
+            "Viele denken, dass sie nur im Winter Arbeit hat. Aber sie arbeitet das ganze Jahr. Im Sommer steht sie in einer Halle, dort ist es minus zehn Grad kalt. Für einen kleinen Schwan braucht sie zwei Stunden, für eine große Figur etwa eine Woche. Ihre größte Figur war ein Leuchtturm: vier Meter hoch!",
+            "Am Anfang hat Ronja allein gearbeitet. Seit zwei Jahren hilft ihr Mann Sven mit. Er bringt das Eis zu den Kunden und baut die schweren Teile mit ihr zusammen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Ronja war zuerst Köchin in einem Hotel. Sie hat also in einer Küche gearbeitet.",
+            "evidence": {
+              "text": "Nach der Schule hat Ronja eine Ausbildung als Köchin gemacht und dann in einem Hotel an der Ostsee gearbeitet.",
+              "hit": "Ausbildung als Köchin"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Sie arbeitet das ganze Jahr, im Sommer in einer kalten Halle. Nur viele Leute denken, dass sie im Winter arbeitet.",
+            "evidence": {
+              "text": "Viele denken, dass sie nur im Winter Arbeit hat. Aber sie arbeitet das ganze Jahr.",
+              "hit": "Aber sie arbeitet das ganze Jahr."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "richtig",
+            "explanation": "Der Leuchtturm war vier Meter hoch. Das ist mehr als drei Meter.",
+            "evidence": {
+              "text": "Ihre größte Figur war ein Leuchtturm: vier Meter hoch!",
+              "hit": "vier Meter hoch"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Für eine große Figur braucht sie etwa eine Woche. Nur ein kleiner Schwan ist in zwei Stunden fertig.",
+            "evidence": {
+              "text": "Für einen kleinen Schwan braucht sie zwei Stunden, für eine große Figur etwa eine Woche.",
+              "hit": "für eine große Figur etwa eine Woche"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Seit zwei Jahren hilft ihr Mann Sven. Allein hat sie nur am Anfang gearbeitet.",
+            "evidence": {
+              "text": "Am Anfang hat Ronja allein gearbeitet. Seit zwei Jahren hilft ihr Mann Sven mit.",
+              "hit": "Seit zwei Jahren hilft ihr Mann Sven mit."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-10-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.134Z",
+        "textType": "Anzeigen und Webseiten: Essen gehen in Konstanz"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Café Morgenstund",
+                  "text": "Sonntags Brunch-Buffet von 9 bis 14 Uhr: Brötchen, Eier, Obst und warme Speisen. 19,50 € pro Person, Kaffee inklusive. Bitte reservieren!"
+                },
+                {
+                  "key": "b",
+                  "title": "Restaurant Grünkraut",
+                  "text": "100 % vegan: Bowls, Burger und Kuchen, alles frisch gemacht. Täglich ab 12 Uhr geöffnet."
+                },
+                {
+                  "key": "c",
+                  "title": "www.pizza-blitz-konstanz.de",
+                  "text": "Hunger am späten Abend? Wir bringen Pizza und Pasta zu Ihnen nach Hause – jeden Tag bis 24 Uhr."
+                },
+                {
+                  "key": "d",
+                  "title": "Mittagstisch im Seniorenzentrum Rheinblick",
+                  "text": "Für Menschen ab 65: Suppe des Tages für nur 3,50 €. Montag bis Freitag, 11:30–13:30 Uhr."
+                },
+                {
+                  "key": "e",
+                  "title": "Partyservice Löffelglück",
+                  "text": "Sie feiern, wir kochen: Buffets für Geburtstage und Firmenfeiern ab 20 Personen. Wir liefern alles, auch Teller und Gläser."
+                },
+                {
+                  "key": "f",
+                  "title": "Sushi-Bar Kaito",
+                  "text": "Frische japanische Küche: Sushi, Nudelsuppen und Tempura. Auch zum Mitnehmen. Dienstag bis Sonntag 17–22 Uhr."
+                },
+                {
+                  "key": "g",
+                  "title": "Gasthaus Brunnenhof",
+                  "text": "Gute badische Küche. Unser Nebenraum hat Platz für Gruppen bis 30 Personen – ideal für Vereine und Firmen. Reservierung: 07531 448203."
+                },
+                {
+                  "key": "h",
+                  "title": "Weinstube Uferblick",
+                  "text": "Weine vom Bodensee und kleine Speisen. Bei schönem Wetter sitzen Sie auf unserer Terrasse direkt am See. Ab 17 Uhr."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Sie möchten am Sonntag mit Freunden lange und viel frühstücken."
+                },
+                {
+                  "n": 11,
+                  "text": "Sie kommen um 23 Uhr von der Arbeit und möchten nicht mehr kochen. Das Essen soll zu Ihnen kommen."
+                },
+                {
+                  "n": 12,
+                  "text": "Sie möchten gern in ein indisches Restaurant gehen."
+                },
+                {
+                  "n": 13,
+                  "text": "Sie essen keine Lebensmittel von Tieren, also kein Fleisch, keinen Käse und keine Eier."
+                },
+                {
+                  "n": 14,
+                  "text": "Sie möchten draußen essen und dabei aufs Wasser schauen."
+                },
+                {
+                  "n": 15,
+                  "text": "Ihr Team (15 Personen) möchte nach der Arbeit zusammen in ein Restaurant gehen."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Der Pizza-Service bringt das Essen nach Hause, jeden Tag bis Mitternacht. Der Mittagstisch ist nur mittags und für Senioren.",
+            "evidence": {
+              "text": "www.pizza-blitz-konstanz.de. Hunger am späten Abend? Wir bringen Pizza und Pasta zu Ihnen nach Hause – jeden Tag bis 24 Uhr.",
+              "hit": "Wir bringen Pizza und Pasta zu Ihnen nach Hause – jeden Tag bis 24 Uhr."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "x",
+            "explanation": "Kein Restaurant bietet indisches Essen an. Die Sushi-Bar hat asiatisches Essen, aber es ist japanisch.",
+            "evidence": {
+              "text": "Sushi-Bar Kaito. Frische japanische Küche: Sushi, Nudelsuppen und Tempura. Auch zum Mitnehmen. Dienstag bis Sonntag 17–22 Uhr.",
+              "hit": "Frische japanische Küche"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Vegan bedeutet: nichts vom Tier. Das Restaurant Grünkraut kocht zu 100 % vegan.",
+            "evidence": {
+              "text": "Restaurant Grünkraut. 100 % vegan: Bowls, Burger und Kuchen, alles frisch gemacht. Täglich ab 12 Uhr geöffnet.",
+              "hit": "100 % vegan"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "h",
+            "explanation": "In der Weinstube sitzt du auf einer Terrasse direkt am See. Bei den anderen Anzeigen steht nichts von draußen sitzen.",
+            "evidence": {
+              "text": "Weinstube Uferblick. Weine vom Bodensee und kleine Speisen. Bei schönem Wetter sitzen Sie auf unserer Terrasse direkt am See. Ab 17 Uhr.",
+              "hit": "Terrasse direkt am See"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "g",
+            "explanation": "Das Gasthaus hat einen Raum für Gruppen bis 30 Personen. Der Partyservice bringt nur Essen zu einer Feier und ist erst ab 20 Personen.",
+            "evidence": {
+              "text": "Gasthaus Brunnenhof. Gute badische Küche. Unser Nebenraum hat Platz für Gruppen bis 30 Personen – ideal für Vereine und Firmen. Reservierung: 07531 448203.",
+              "hit": "Unser Nebenraum hat Platz für Gruppen bis 30 Personen"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-06-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.647Z",
+        "textType": "Formular ausfüllen: Anmeldung für einen Computerkurs"
+      },
+      "exampleAnswers": [
+        "Tesfaye"
+      ],
+      "display": {
+        "instruction": "Situation: Ihre Freundin Rahel möchte einen Computerkurs machen. Sie füllen für Rahel das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Themen“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Lernwerkstatt Kapfenberg · Computerkurs\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nKursbeginn (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nDauer: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "4 Wochen",
+                    "8 Wochen"
+                  ]
+                },
+                "\nEigener Laptop: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "ja",
+                    "nein"
+                  ]
+                },
+                "\nThemen: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "E-Mails schreiben",
+                    "online einkaufen",
+                    "Videos anschauen",
+                    "Texte schreiben"
+                  ],
+                  "pick": 2
+                },
+                "\nBezahlung: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "bar",
+                    "Überweisung"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Rahel",
+            "explanation": "Der Vorname ist Rahel, Tesfaye ist der Familienname. Der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "Rahel Tesfaye"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "14.10.1979",
+            "accept": [
+              "14. Oktober 1979",
+              "14.10.79",
+              "14/10/1979",
+              "1979-10-14"
+            ],
+            "explanation": "Rahel ist am 14. Oktober 1979 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "am 14. Oktober 1979 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Kapfenberg",
+            "explanation": "Rahel wohnt in Kapfenberg.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "Rahel Tesfaye aus Kapfenberg"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0699 214 63 08",
+            "accept": [
+              "0699 2146308",
+              "06992146308",
+              "0699/2146308",
+              "0699 / 214 63 08"
+            ],
+            "explanation": "Das ist Rahels Telefonnummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "0699 214 63 08"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "Mai",
+            "accept": [
+              "im Mai",
+              "ab Mai"
+            ],
+            "explanation": "Rahel möchte ab Mai den Kurs machen. Im Sommer reist sie, darum passt der Sommer nicht.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "möchte ab Mai"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "4 Wochen",
+            "explanation": "Rahel will nur den kurzen Kurs, das sind 4 Wochen. 8 Wochen ist zu lang, denn im Sommer reist sie.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "Rahel will nur den kurzen Kurs, im Sommer reist sie."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "nein",
+            "explanation": "Rahel hat keinen Laptop. Darum ist „nein“ richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "Sie hat keinen Laptop"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "E-Mails schreiben,Texte schreiben",
+            "explanation": "Rahel möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Einkaufen und Videos kommen nicht vor.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "bar",
+            "explanation": "Rahel bezahlt bar, nicht mit Überweisung.",
+            "evidence": {
+              "text": "Ihre Freundin Rahel Tesfaye aus Kapfenberg möchte ab Mai einen Computerkurs machen. Sie möchte E-Mails an ihre Tochter und Texte für Bewerbungen schreiben. Rahel will nur den kurzen Kurs, im Sommer reist sie. Sie hat keinen Laptop und bezahlt bar. Rahel ist am 14. Oktober 1979 geboren. Ihre Telefonnummer ist 0699 214 63 08.",
+              "hit": "bezahlt bar"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-06-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.647Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihr Freund Jonas hat Ihnen ein E-Mail geschrieben. Antworten Sie Jonas. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Jonas",
+            "situation": "Ihr Freund Jonas aus Dortmund schreibt Ihnen: „Hallo! Ich habe zwei Karten für das Fußballspiel am Samstagnachmittag hier in Dortmund. Mein Bruder kann leider nicht mitkommen. Hast du am Samstag Zeit? Spielst du auch selbst Fußball? Das Spiel beginnt um halb vier. Kannst du um zwei Uhr bei mir sein? Ich freue mich! Viele Grüße, Jonas“",
+            "points": [
+              "Hast du am Samstag Zeit?",
+              "Spielst du auch selbst Fußball?",
+              "Kannst du um zwei Uhr bei mir sein?"
+            ],
+            "opener": "Lieber Jonas,\ndanke für dein E-Mail. Fußball finde ich super!"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Lieber Jonas, danke für dein E-Mail. Fußball finde ich super! Ja, am Samstag habe ich Zeit. Ich spiele auch Fußball, jeden Sonntag mit Freunden. Ich bin um zwei Uhr bei dir. Bis Samstag! Viele Grüße, Mehmet"
+          }
+        ]
+      }
+    }
+  ]
+}

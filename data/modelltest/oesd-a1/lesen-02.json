@@ -1,0 +1,480 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-02-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.621Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Kinderglück, Bonn",
+                  "text": "Wir passen auf Ihre Kinder auf: am Abend und am Wochenende, auch spät in der Nacht. Erfahrene Babysitterinnen, 14 Euro pro Stunde. www.kinderglueck-bonn.de"
+                },
+                {
+                  "key": "2",
+                  "title": "Schlüssel-Express, Villach",
+                  "text": "Tür zu, Schlüssel weg? Wir öffnen Ihre Tür schnell und ohne Schaden. Tag und Nacht, auch am Sonntag. Rufen Sie an: 0676 418 27 53"
+                },
+                {
+                  "key": "3",
+                  "title": "Elektro Brunner, Bregenz",
+                  "text": "Großer Ausverkauf! Waschmaschinen, Digitalkameras und Babyfone jetzt bis zu 40 Prozent billiger. Nur bis Samstag. Bahnhofstraße 21, Montag bis Samstag 8 bis 18 Uhr."
+                },
+                {
+                  "key": "4",
+                  "title": "Fotostudio Lichtblick, Kassel",
+                  "text": "Fotos für Pass, Ausweis und Visum: fertig in zehn Minuten. Sie brauchen keinen Termin, kommen Sie einfach vorbei. Wilhelmsstraße 8, Montag bis Freitag 9 bis 19 Uhr."
+                },
+                {
+                  "key": "5",
+                  "title": "Lagerbox, Winterthur",
+                  "text": "Kein Platz zu Hause? Bei uns finden Sie trockene und sichere Lagerräume für Möbel und Kisten. Ab CHF 49.– pro Monat. Infos: www.lagerbox-winterthur.ch"
+                },
+                {
+                  "key": "6",
+                  "title": "Hausgeräte Kranzl, Klagenfurt",
+                  "text": "Waschmaschine oder Kühlschrank kaputt? Unser Techniker kommt zu Ihnen nach Hause und repariert das Gerät. Schnell und günstig. Telefon 0664 527 30 81"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Ihre Waschmaschine wäscht nicht mehr. Sie brauchen jemanden für die Reparatur."
+                },
+                {
+                  "n": 2,
+                  "text": "Sie bekommen einen neuen Reisepass. Dafür brauchen Sie ein Foto."
+                },
+                {
+                  "n": 3,
+                  "text": "Ihre Wohnung ist sehr klein. Sie suchen einen Platz für Ihre Kartons."
+                },
+                {
+                  "n": 4,
+                  "text": "Sie haben Ihren Hausschlüssel verloren. Sie können nicht in Ihre Wohnung."
+                },
+                {
+                  "n": 5,
+                  "text": "Sie möchten am Samstagabend ausgehen. Ihre Kinder sollen aber nicht allein zu Hause bleiben."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "6",
+            "explanation": "Der Techniker von Hausgeräte Kranzl repariert Waschmaschinen bei dir zu Hause. Elektro Brunner verkauft nur neue Waschmaschinen.",
+            "evidence": {
+              "text": "Hausgeräte Kranzl, Klagenfurt Waschmaschine oder Kühlschrank kaputt? Unser Techniker kommt zu Ihnen nach Hause und repariert das Gerät. Schnell und günstig. Telefon 0664 527 30 81",
+              "hit": "Unser Techniker kommt zu Ihnen nach Hause und repariert das Gerät."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "4",
+            "explanation": "Im Fotostudio in Kassel bekommst du schnell ein Passfoto. Elektro Brunner verkauft nur Kameras.",
+            "evidence": {
+              "text": "Fotostudio Lichtblick, Kassel Fotos für Pass, Ausweis und Visum: fertig in zehn Minuten. Sie brauchen keinen Termin, kommen Sie einfach vorbei. Wilhelmsstraße 8, Montag bis Freitag 9 bis 19 Uhr.",
+              "hit": "Fotos für Pass, Ausweis und Visum"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "5",
+            "explanation": "Bei Lagerbox in Winterthur kannst du Räume für Möbel und Kisten mieten.",
+            "evidence": {
+              "text": "Lagerbox, Winterthur Kein Platz zu Hause? Bei uns finden Sie trockene und sichere Lagerräume für Möbel und Kisten. Ab CHF 49.– pro Monat. Infos: www.lagerbox-winterthur.ch",
+              "hit": "Lagerräume für Möbel und Kisten"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "2",
+            "explanation": "Der Schlüssel-Express öffnet deine Tür, auch in der Nacht.",
+            "evidence": {
+              "text": "Schlüssel-Express, Villach Tür zu, Schlüssel weg? Wir öffnen Ihre Tür schnell und ohne Schaden. Tag und Nacht, auch am Sonntag. Rufen Sie an: 0676 418 27 53",
+              "hit": "Wir öffnen Ihre Tür schnell und ohne Schaden."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "1",
+            "explanation": "Die Babysitterinnen von Kinderglück passen am Abend und am Wochenende auf Kinder auf. Ein Babyfon von Elektro Brunner hilft dir nicht, wenn du weggehst.",
+            "evidence": {
+              "text": "Kinderglück, Bonn Wir passen auf Ihre Kinder auf: am Abend und am Wochenende, auch spät in der Nacht. Erfahrene Babysitterinnen, 14 Euro pro Stunde. www.kinderglueck-bonn.de",
+              "hit": "am Abend und am Wochenende"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-02-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.621Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Volkssternwarte Erfurt",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Abend unter Sternen",
+            "Jeden Freitag um 20 Uhr: Wir sehen mit Ihnen den Mond und die Sterne an.",
+            "Nur bei klarem Himmel! Bei Regen gibt es keinen Abend unter Sternen.",
+            "Eintritt: 6 Euro, Kinder 3 Euro. Eine Anmeldung ist nicht nötig."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kann man auch am Samstagabend kommen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Muss man sich für den Abend anmelden?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Den Abend unter Sternen gibt es nur am Freitag, nicht am Samstag.",
+            "evidence": {
+              "text": "Abend unter Sternen Jeden Freitag um 20 Uhr: Wir sehen mit Ihnen den Mond und die Sterne an. Nur bei klarem Himmel! Bei Regen gibt es keinen Abend unter Sternen. Eintritt: 6 Euro, Kinder 3 Euro. Eine Anmeldung ist nicht nötig.",
+              "hit": "Jeden Freitag um 20 Uhr"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Im Text steht: Eine Anmeldung ist nicht nötig. Du zahlst nur den Eintritt.",
+            "evidence": {
+              "text": "Abend unter Sternen Jeden Freitag um 20 Uhr: Wir sehen mit Ihnen den Mond und die Sterne an. Nur bei klarem Himmel! Bei Regen gibt es keinen Abend unter Sternen. Eintritt: 6 Euro, Kinder 3 Euro. Eine Anmeldung ist nicht nötig.",
+              "hit": "Eine Anmeldung ist nicht nötig."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-02-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.621Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Jugendzentrum Leoben",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Kürbisse schnitzen",
+            "Für Kinder von 6 bis 12 Jahren: Freitag, 31. Oktober, 15 bis 17 Uhr.",
+            "Die Kürbisse gibt es bei uns. Bitte geben Sie Ihrem Kind eine alte Schürze mit.",
+            "Preis: 5 Euro pro Kind. Infos: www.jugendzentrum-leoben.at"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Muss das Kind einen Kürbis mitbringen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Kostet das Kürbisschnitzen etwas?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Die Kürbisse gibt es im Jugendzentrum. Das Kind bringt nur eine alte Schürze mit.",
+            "evidence": {
+              "text": "Kürbisse schnitzen Für Kinder von 6 bis 12 Jahren: Freitag, 31. Oktober, 15 bis 17 Uhr. Die Kürbisse gibt es bei uns. Bitte geben Sie Ihrem Kind eine alte Schürze mit. Preis: 5 Euro pro Kind. Infos: www.jugendzentrum-leoben.at",
+              "hit": "Die Kürbisse gibt es bei uns."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Für jedes Kind zahlst du 5 Euro.",
+            "evidence": {
+              "text": "Kürbisse schnitzen Für Kinder von 6 bis 12 Jahren: Freitag, 31. Oktober, 15 bis 17 Uhr. Die Kürbisse gibt es bei uns. Bitte geben Sie Ihrem Kind eine alte Schürze mit. Preis: 5 Euro pro Kind. Infos: www.jugendzentrum-leoben.at",
+              "hit": "Preis: 5 Euro pro Kind."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-02-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.621Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Zirkus Montana, Thun",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Zirkus Montana in Thun",
+            "Vorstellungen: Mittwoch bis Sonntag, um 15.00 und 19.30 Uhr",
+            "Erwachsene CHF 32.–, Kinder CHF 18.–",
+            "Tickets: auf www.zirkus-montana.ch oder an der Kasse beim Zelt, ab einer Stunde vor der Vorstellung.",
+            "Grosser Spass für die ganze Familie!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Gibt es am Montag eine Vorstellung?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Kann man die Tickets auch direkt beim Zelt kaufen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Der Zirkus spielt nur von Mittwoch bis Sonntag. Am Montag gibt es keine Vorstellung.",
+            "evidence": {
+              "text": "Zirkus Montana in Thun Vorstellungen: Mittwoch bis Sonntag, um 15.00 und 19.30 Uhr Erwachsene CHF 32.–, Kinder CHF 18.– Tickets: auf www.zirkus-montana.ch oder an der Kasse beim Zelt, ab einer Stunde vor der Vorstellung. Grosser Spass für die ganze Familie!",
+              "hit": "Mittwoch bis Sonntag"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Tickets gibt es im Internet und an der Kasse beim Zelt.",
+            "evidence": {
+              "text": "Zirkus Montana in Thun Vorstellungen: Mittwoch bis Sonntag, um 15.00 und 19.30 Uhr Erwachsene CHF 32.–, Kinder CHF 18.– Tickets: auf www.zirkus-montana.ch oder an der Kasse beim Zelt, ab einer Stunde vor der Vorstellung. Grosser Spass für die ganze Familie!",
+              "hit": "an der Kasse beim Zelt"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-02-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.621Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "WLAN",
+                  "text": "",
+                  "picto": "wlan"
+                },
+                {
+                  "key": "2",
+                  "title": "Münzen, Bargeld",
+                  "text": "",
+                  "picto": "muenzen"
+                },
+                {
+                  "key": "3",
+                  "title": "Notausgang",
+                  "text": "",
+                  "picto": "notausgang"
+                },
+                {
+                  "key": "4",
+                  "title": "Toiletten",
+                  "text": "",
+                  "picto": "toilette"
+                },
+                {
+                  "key": "5",
+                  "title": "Bankkarte",
+                  "text": "",
+                  "picto": "bankkarte"
+                },
+                {
+                  "key": "6",
+                  "title": "Fahrrad",
+                  "text": "",
+                  "picto": "fahrrad"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Kundinnen und Kunden! Ab 1. Juni können Sie bei uns nur noch mit Karte bezahlen. Bargeld nehmen wir leider nicht mehr. Danke für Ihr Verständnis!"
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Gäste! In der Gaststube gibt es gratis Internet. Das Passwort steht auf der Speisekarte. Fragen Sie gern auch die Kellnerin."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Mieterinnen und Mieter! Bitte stellen Sie Ihre Fahrräder nicht ins Treppenhaus. Für Räder gibt es einen Raum im Hof. Dort ist genug Platz für alle."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Mitarbeiterinnen und Mitarbeiter! Diese Tür ist der Notausgang. Bitte stellen Sie keine Kisten und Kartons davor. Die Tür muss immer frei sein."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Gäste! Die Toiletten sind im ersten Stock. Bitte nehmen Sie die Treppe rechts neben der Bar."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "5",
+            "explanation": "Ab Juni zahlst du nur mit Karte. Das zeigt die Bankkarte, nicht die Münzen.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden! Ab 1. Juni können Sie bei uns nur noch mit Karte bezahlen. Bargeld nehmen wir leider nicht mehr. Danke für Ihr Verständnis!",
+              "hit": "nur noch mit Karte bezahlen"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "1",
+            "explanation": "In der Gaststube gibt es Internet mit Passwort. Das passt zum WLAN-Zeichen.",
+            "evidence": {
+              "text": "Liebe Gäste! In der Gaststube gibt es gratis Internet. Das Passwort steht auf der Speisekarte. Fragen Sie gern auch die Kellnerin.",
+              "hit": "In der Gaststube gibt es gratis Internet."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "6",
+            "explanation": "Der Text ist über Fahrräder und den Raum im Hof. Das passt zum Bild mit dem Fahrrad.",
+            "evidence": {
+              "text": "Liebe Mieterinnen und Mieter! Bitte stellen Sie Ihre Fahrräder nicht ins Treppenhaus. Für Räder gibt es einen Raum im Hof. Dort ist genug Platz für alle.",
+              "hit": "Für Räder gibt es einen Raum im Hof."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "3",
+            "explanation": "Die Tür ist ein Notausgang und muss frei bleiben. Das zeigt das Zeichen für den Notausgang.",
+            "evidence": {
+              "text": "Liebe Mitarbeiterinnen und Mitarbeiter! Diese Tür ist der Notausgang. Bitte stellen Sie keine Kisten und Kartons davor. Die Tür muss immer frei sein.",
+              "hit": "Diese Tür ist der Notausgang."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "4",
+            "explanation": "Der Text sagt, wo die Toiletten sind. Das passt zum Bild mit den Toiletten.",
+            "evidence": {
+              "text": "Liebe Gäste! Die Toiletten sind im ersten Stock. Bitte nehmen Sie die Treppe rechts neben der Bar.",
+              "hit": "Die Toiletten sind im ersten Stock."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

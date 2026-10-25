@@ -1,0 +1,1132 @@
+{
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "oesd-a1-hoeren-02-t1",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.616Z",
+        "textType": "Kurze Alltagsgespräche (Foto zuordnen)"
+      },
+      "photos": {
+        "0": {
+          "A": {
+            "query": "older man and young woman fishing with rods on riverbank",
+            "alt": "Ein junger Mann sitzt auf einem Baumstamm am Fluss und angelt.",
+            "src": "oesd-a1/hoeren-02/oesd-a1-hoeren-02-t1-0-A.webp",
+            "credit": {
+              "name": "VKJ International",
+              "url": "https://www.pexels.com/photo/young-couple-with-fishing-rods-by-river-in-summer-20943848/",
+              "pexelsId": 20943848
+            }
+          },
+          "B": {
+            "query": "man buying cheese from woman at outdoor farmers market stall",
+            "alt": "Ein Mann kauft draußen auf dem Markt bei einer Frau Käse an einem Stand."
+          },
+          "C": {
+            "query": "man at wooden christmas market stall serving hot drink mug to woman",
+            "alt": "Ein Mann gibt einer Frau an einem Holzstand auf dem Weihnachtsmarkt eine Tasse mit einem heißen Getränk."
+          },
+          "D": {
+            "query": "museum cloakroom attendant taking coat from woman at counter",
+            "alt": "Ein Mann hinter einer Theke in der Garderobe nimmt den Mantel von einer Frau."
+          },
+          "E": {
+            "query": "man lifting suitcase onto luggage rack for woman on train",
+            "alt": "Ein Mann hebt im Zug einen Koffer für eine Frau nach oben auf die Ablage."
+          },
+          "F": {
+            "query": "saleswoman at cheese counter giving cheese sample to man in shop",
+            "alt": "Eine Verkäuferin an der Käsetheke gibt einem Mann ein Stück Käse zum Probieren."
+          }
+        }
+      },
+      "display": {
+        "instruction": "Situation: Sie hören fünf kurze Gespräche. Welches Foto passt zu welchem Gespräch? Schreiben Sie die Nummer des Textes unter das Foto. Achtung: Ein Foto passt nicht. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "layout": "textNumber",
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "",
+                  "text": "Ein Mann und eine Frau angeln am Fluss.",
+                  "image": "oesd-a1/hoeren-02/oesd-a1-hoeren-02-t1-0-A.webp"
+                },
+                {
+                  "key": "B",
+                  "title": "",
+                  "text": "Auf dem Markt: Ein Mann kauft bei einer Frau Käse."
+                },
+                {
+                  "key": "C",
+                  "title": "",
+                  "text": "Am Weihnachtsmarkt: Ein Mann verkauft einer Frau ein warmes Getränk."
+                },
+                {
+                  "key": "D",
+                  "title": "",
+                  "text": "In der Garderobe: Ein Mann nimmt den Mantel von einer Frau."
+                },
+                {
+                  "key": "E",
+                  "title": "",
+                  "text": "Im Zug: Ein Mann hilft einer Frau mit dem Koffer."
+                },
+                {
+                  "key": "F",
+                  "title": "",
+                  "text": "An der Käsetheke: Ein Mann probiert ein Stück Käse."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 2,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 3,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 4,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 5,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fünf kurze Gespräche",
+          "speakers": {
+            "c1a": {
+              "name": "Mitarbeiter",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c1b": {
+              "name": "Besucherin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c2a": {
+              "name": "Vater",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2b": {
+              "name": "Tochter",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c3a": {
+              "name": "Verkäuferin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c3b": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c4a": {
+              "name": "Verkäufer",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c4b": {
+              "name": "Kundin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c5a": {
+              "name": "Fahrgast",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c5b": {
+              "name": "Helfer",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-02/oesd-a1-hoeren-02-t1.review.mp3",
+          "duration": 98.35
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "D",
+            "explanation": "Die Frau gibt ihren Mantel und ihre Tasche ab und bekommt eine Nummer. Das ist die Garderobe, nicht ein Geschäft.",
+            "evidence": {
+              "text": "Grüß Gott! Möchten Sie Ihren Mantel abgeben? Ja, gern. Und diese große Tasche auch, bitte. Was mache ich mit dem Schirm? Den Schirm können Sie hier in den Ständer stellen. Und hier ist Ihre Nummer: dreiundvierzig. Danke schön!",
+              "hit": "Möchten Sie Ihren Mantel abgeben?"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "A",
+            "explanation": "Vater und Tochter angeln, die Angel bewegt sich und sie fangen einen Fisch. Das passt zum Foto am Fluss.",
+            "evidence": {
+              "text": "Ganz ruhig, nicht so laut. Die Fische hören uns sonst. Papa, schau! Meine Angel bewegt sich. Was mache ich jetzt? Langsam ziehen, ganz langsam. Ja, gut so! Oh, der Fisch ist aber klein. Stimmt. Den werfen wir wieder ins Wasser.",
+              "hit": "Meine Angel bewegt sich."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "F",
+            "explanation": "Der Mann probiert Bergkäse und kauft dann dreihundert Gramm. Er probiert an der Käsetheke, nicht draußen auf dem Markt.",
+            "evidence": {
+              "text": "Guten Tag, möchten Sie ein Stück probieren? Das ist unser Bergkäse. Gern. Mmh, der ist sehr gut! Dann nehme ich lieber etwas mehr als zweihundert Gramm. Gut, das sind jetzt dreihundert Gramm. Das macht acht Franken zwanzig. Hier, bitte. Merci!",
+              "hit": "möchten Sie ein Stück probieren? Das ist unser Bergkäse."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "C",
+            "explanation": "Die Frau kauft zwei Häferl Punsch, also warme Getränke am Stand. Käse kauft hier niemand.",
+            "evidence": {
+              "text": "Guten Abend! Was darf es sein? Zwei Häferl Punsch, bitte. Aber einen ohne Alkohol, der ist für meine Freundin. Gern. Ein Punsch mit und ein Kinderpunsch ohne Alkohol. Das macht neun Euro. Hier sind zehn Euro. Stimmt so!",
+              "hit": "Zwei Häferl Punsch, bitte."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "E",
+            "explanation": "Der Koffer ist schwer und der Mann legt ihn für die Frau nach oben. Das ist das Foto im Zug.",
+            "evidence": {
+              "text": "Entschuldigung, der Koffer ist so schwer. Können Sie mir bitte helfen? Ja, natürlich. Ich lege ihn hier oben hin. So, das passt. Wo steigen Sie denn aus? Erst ganz am Ende, an der letzten Station. Vielen Dank!",
+              "hit": "Ich lege ihn hier oben hin."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1a",
+            "voice": "man_gruber_at",
+            "text": "Grüß Gott! Möchten Sie Ihren Mantel abgeben?",
+            "delivery": "[friendly, routine]",
+            "clip": 1,
+            "sound": "lobby"
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_alexandra_at",
+            "text": "Ja, gern. Und diese große Tasche auch, bitte. Was mache ich mit dem Schirm?",
+            "delivery": "[polite]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1a",
+            "voice": "man_gruber_at",
+            "text": "Den Schirm können Sie hier in den Ständer stellen. Und hier ist Ihre Nummer: dreiundvierzig.",
+            "delivery": "[friendly]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_alexandra_at",
+            "text": "Danke schön!",
+            "delivery": "[warm]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2a",
+            "voice": "man_martin_at",
+            "text": "Ganz ruhig, nicht so laut. Die Fische hören uns sonst.",
+            "delivery": "[quiet, whispering]",
+            "clip": 2,
+            "sound": "river"
+          },
+          {
+            "speaker": "c2b",
+            "voice": "woman_emilia_at",
+            "text": "Papa, schau! Meine Angel bewegt sich. Was mache ich jetzt?",
+            "delivery": "[excited, low voice]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2a",
+            "voice": "man_martin_at",
+            "text": "Langsam ziehen, ganz langsam. Ja, gut so! Oh, der Fisch ist aber klein.",
+            "delivery": "[calm, then amused]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2b",
+            "voice": "woman_emilia_at",
+            "text": "Stimmt. Den werfen wir wieder ins Wasser.",
+            "delivery": "[laughing]",
+            "clip": 2
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_mia_ch",
+            "text": "Guten Tag, möchten Sie ein Stück probieren? Das ist unser Bergkäse.",
+            "delivery": "[friendly, shop counter]",
+            "clip": 3,
+            "sound": "store"
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_thomas_ch",
+            "text": "Gern. Mmh, der ist sehr gut! Dann nehme ich lieber etwas mehr als zweihundert Gramm.",
+            "delivery": "[pleased]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_mia_ch",
+            "text": "Gut, das sind jetzt dreihundert Gramm. Das macht acht Franken zwanzig.",
+            "delivery": "[friendly]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_thomas_ch",
+            "text": "Hier, bitte. Merci!",
+            "delivery": "[warm]",
+            "clip": 3
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_gruber_at",
+            "text": "Guten Abend! Was darf es sein?",
+            "delivery": "[cheerful, market stall]",
+            "clip": 4,
+            "sound": "market"
+          },
+          {
+            "speaker": "c4b",
+            "voice": "woman_emilia_at",
+            "text": "Zwei Häferl Punsch, bitte. Aber einen ohne Alkohol, der ist für meine Freundin.",
+            "delivery": "[relaxed]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_gruber_at",
+            "text": "Gern. Ein Punsch mit und ein Kinderpunsch ohne Alkohol. Das macht neun Euro.",
+            "delivery": "[cheerful]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4b",
+            "voice": "woman_emilia_at",
+            "text": "Hier sind zehn Euro. Stimmt so!",
+            "delivery": "[friendly]",
+            "clip": 4
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_alexandra_at",
+            "text": "Entschuldigung, der Koffer ist so schwer. Können Sie mir bitte helfen?",
+            "delivery": "[a bit out of breath, polite]",
+            "clip": 5,
+            "sound": "train"
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_martin_at",
+            "text": "Ja, natürlich. Ich lege ihn hier oben hin. So, das passt. Wo steigen Sie denn aus?",
+            "delivery": "[helpful]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_alexandra_at",
+            "text": "Erst ganz am Ende, an der letzten Station. Vielen Dank!",
+            "delivery": "[relieved, grateful]",
+            "clip": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-02-t2",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.616Z",
+        "textType": "Nachricht auf der Sprachbox (Chor)"
+      },
+      "sound": "beep",
+      "exampleAnswers": [
+        "zur Chorprobe kommen"
+      ],
+      "display": {
+        "instruction": "Situation: Sie hören eine Nachricht auf Ihrer Sprachbox. Schreiben Sie die wichtigen Informationen auf den Zettel. Die erste Zeile ist ein Beispiel. Sie hören den Text zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Notizen\n",
+                "Was: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nWann: am ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                ", ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                ". November, um ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                " Uhr\nWo: ",
+                {
+                  "n": 9,
+                  "options": []
+                },
+                "gasse 4\nTelefon: 0699 / ",
+                {
+                  "n": 10,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Sprachbox",
+          "speakers": {
+            "wallner": {
+              "name": "Herr Wallner",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-02/oesd-a1-hoeren-02-t2.mp3",
+          "duration": 51.67
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "Montag",
+            "accept": [
+              "am Montag"
+            ],
+            "explanation": "Diesmal ist die Probe am Montag. Am Dienstag probt der Chor nur normalerweise.",
+            "evidence": {
+              "text": "Hallo, hier spricht Wallner vom Chor Klangwerk in Krems. Danke für Ihre Nachricht! Sie möchten gern bei uns singen, das freut mich. Normalerweise proben wir am Dienstag. Aber diesmal ist die Probe am Montag, dem dritten November. Wir beginnen um neunzehn Uhr und singen bis halb zehn. Die Adresse ist Kastaniengasse vier. Ich buchstabiere: K, A, S, T, A, N, I, E, N. Wir sind im Raum Nummer zwölf. Bitte bringen Sie eine Flasche Wasser mit. Wenn Sie Fragen haben, rufen Sie mich an: null sechs neun neun, siebenundzwanzig, sechsundfünfzig, neun, dreizehn. Bis bald und auf Wiederhören!",
+              "hit": "diesmal ist die Probe am Montag"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "3",
+            "accept": [
+              "3.",
+              "drei",
+              "dritten"
+            ],
+            "explanation": "Der Tag ist der dritte November.",
+            "evidence": {
+              "text": "Hallo, hier spricht Wallner vom Chor Klangwerk in Krems. Danke für Ihre Nachricht! Sie möchten gern bei uns singen, das freut mich. Normalerweise proben wir am Dienstag. Aber diesmal ist die Probe am Montag, dem dritten November. Wir beginnen um neunzehn Uhr und singen bis halb zehn. Die Adresse ist Kastaniengasse vier. Ich buchstabiere: K, A, S, T, A, N, I, E, N. Wir sind im Raum Nummer zwölf. Bitte bringen Sie eine Flasche Wasser mit. Wenn Sie Fragen haben, rufen Sie mich an: null sechs neun neun, siebenundzwanzig, sechsundfünfzig, neun, dreizehn. Bis bald und auf Wiederhören!",
+              "hit": "dem dritten November"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "19",
+            "accept": [
+              "19:00",
+              "19.00",
+              "neunzehn",
+              "7",
+              "sieben"
+            ],
+            "explanation": "Die Probe beginnt um neunzehn Uhr. Halb zehn ist das Ende der Probe.",
+            "evidence": {
+              "text": "Hallo, hier spricht Wallner vom Chor Klangwerk in Krems. Danke für Ihre Nachricht! Sie möchten gern bei uns singen, das freut mich. Normalerweise proben wir am Dienstag. Aber diesmal ist die Probe am Montag, dem dritten November. Wir beginnen um neunzehn Uhr und singen bis halb zehn. Die Adresse ist Kastaniengasse vier. Ich buchstabiere: K, A, S, T, A, N, I, E, N. Wir sind im Raum Nummer zwölf. Bitte bringen Sie eine Flasche Wasser mit. Wenn Sie Fragen haben, rufen Sie mich an: null sechs neun neun, siebenundzwanzig, sechsundfünfzig, neun, dreizehn. Bis bald und auf Wiederhören!",
+              "hit": "Wir beginnen um neunzehn Uhr"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Kastanien",
+            "accept": [
+              "Kastaniengasse",
+              "Kastaniengasse 4"
+            ],
+            "exact": true,
+            "explanation": "Herr Wallner buchstabiert den Namen: K, A, S, T, A, N, I, E, N. Der Name muss genau richtig sein.",
+            "evidence": {
+              "text": "Hallo, hier spricht Wallner vom Chor Klangwerk in Krems. Danke für Ihre Nachricht! Sie möchten gern bei uns singen, das freut mich. Normalerweise proben wir am Dienstag. Aber diesmal ist die Probe am Montag, dem dritten November. Wir beginnen um neunzehn Uhr und singen bis halb zehn. Die Adresse ist Kastaniengasse vier. Ich buchstabiere: K, A, S, T, A, N, I, E, N. Wir sind im Raum Nummer zwölf. Bitte bringen Sie eine Flasche Wasser mit. Wenn Sie Fragen haben, rufen Sie mich an: null sechs neun neun, siebenundzwanzig, sechsundfünfzig, neun, dreizehn. Bis bald und auf Wiederhören!",
+              "hit": "Ich buchstabiere: K, A, S, T, A, N, I, E, N."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "2756913",
+            "accept": [
+              "27 56 9 13",
+              "27 56 913",
+              "275 69 13",
+              "2 7 5 6 9 1 3"
+            ],
+            "exact": true,
+            "explanation": "Nach null sechs neun neun kommt siebenundzwanzig, sechsundfünfzig, neun, dreizehn. Zwölf ist nur die Nummer vom Raum.",
+            "evidence": {
+              "text": "Hallo, hier spricht Wallner vom Chor Klangwerk in Krems. Danke für Ihre Nachricht! Sie möchten gern bei uns singen, das freut mich. Normalerweise proben wir am Dienstag. Aber diesmal ist die Probe am Montag, dem dritten November. Wir beginnen um neunzehn Uhr und singen bis halb zehn. Die Adresse ist Kastaniengasse vier. Ich buchstabiere: K, A, S, T, A, N, I, E, N. Wir sind im Raum Nummer zwölf. Bitte bringen Sie eine Flasche Wasser mit. Wenn Sie Fragen haben, rufen Sie mich an: null sechs neun neun, siebenundzwanzig, sechsundfünfzig, neun, dreizehn. Bis bald und auf Wiederhören!",
+              "hit": "siebenundzwanzig, sechsundfünfzig, neun, dreizehn"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "wallner",
+            "voice": "man_gruber_at",
+            "text": "Hallo, hier spricht Wallner vom Chor Klangwerk in Krems. Danke für Ihre Nachricht! Sie möchten gern bei uns singen, das freut mich. Normalerweise proben wir am Dienstag. Aber diesmal ist die Probe am Montag, dem dritten November. Wir beginnen um neunzehn Uhr und singen bis halb zehn. Die Adresse ist Kastaniengasse vier. Ich buchstabiere: K, A, S, T, A, N, I, E, N. Wir sind im Raum Nummer zwölf. Bitte bringen Sie eine Flasche Wasser mit. Wenn Sie Fragen haben, rufen Sie mich an: null sechs neun neun, siebenundzwanzig, sechsundfünfzig, neun, dreizehn. Bis bald und auf Wiederhören!",
+            "delivery": "[warm, clear, voicemail, slow]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-02-t3",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.616Z",
+        "textType": "Umfrage auf der Straße (Kurzinterviews)"
+      },
+      "sound": "street",
+      "display": {
+        "instruction": "Situation: Eine Reporterin fragt Leute auf der Straße. Was essen die Personen am liebsten zum Frühstück? Kreuzen Sie für jeden Text eine Antwort an. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Was essen Sie am liebsten zum Frühstück?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Brot"
+                },
+                {
+                  "key": "b",
+                  "label": "Müsli"
+                },
+                {
+                  "key": "c",
+                  "label": "Eier"
+                },
+                {
+                  "key": "d",
+                  "label": "Obst"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 11,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 12,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 13,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 14,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 15,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "reporterin": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Text 1",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p2": {
+              "name": "Text 2",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p3": {
+              "name": "Text 3",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p4": {
+              "name": "Text 4",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p5": {
+              "name": "Text 5",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-02/oesd-a1-hoeren-02-t3.review.mp3",
+          "duration": 93.94
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "d",
+            "explanation": "Früher hat die Frau Müsli gegessen, jetzt isst sie am liebsten Obst. Eier macht sie nur manchmal am Wochenende.",
+            "evidence": {
+              "text": "Hm, früher habe ich immer Müsli gegessen, jeden Tag. Am Wochenende mache ich manchmal Eier, das ist gemütlich. Aber jetzt, äh, esse ich am liebsten Obst. Einen Apfel und eine Banane, das ist schnell und auch gesund. Ja, also Obst.",
+              "hit": "esse ich am liebsten Obst"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Der Mann isst am liebsten Brot mit Butter und Marmelade. Eier gibt es bei ihm nur am Sonntag.",
+            "evidence": {
+              "text": "Also, Obst mag ich in der Früh gar nicht. Eier gibt es bei uns nur am Sonntag. Ich esse am liebsten Brot mit Butter und Marmelade, äh, manchmal auch eine Semmel vom Bäcker. Dazu einen Kaffee, und dann gehe ich zur Arbeit.",
+              "hit": "Ich esse am liebsten Brot mit Butter und Marmelade"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Die Frau isst jeden Tag Müsli mit Joghurt. Obst isst sie nur im Müsli.",
+            "evidence": {
+              "text": "Ich bin aus Frauenfeld, in der Schweiz. Am Sonntag kaufe ich gern Gipfeli, das ist typisch für uns. Obst esse ich auch, aber nur im Müsli. Ja, äh, ich esse jeden Tag Müsli mit Joghurt. Das schmeckt mir einfach am besten.",
+              "hit": "ich esse jeden Tag Müsli mit Joghurt"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Brot mit Käse ist für den Mann nur okay. Am liebsten isst er zwei Eier.",
+            "evidence": {
+              "text": "Hm, Brot mit Käse ist okay, das esse ich unter der Woche. Aber Müsli? Nein, das schmeckt mir nicht. Am liebsten esse ich Eier, zwei Stück, mit ein bisschen Salz. Dann bin ich bis Mittag satt. Also, ganz klar: Eier.",
+              "hit": "Am liebsten esse ich Eier"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Müsli ist der Frau zu süß und Obst isst sie nur manchmal. Am liebsten isst sie Vollkornbrot.",
+            "evidence": {
+              "text": "Ich komme aus Bremen und besuche hier meine Schwester. Müsli ist mir zu süß, ehrlich gesagt. Obst esse ich manchmal, so eine Orange. Aber am liebsten esse ich Vollkornbrot, äh, mit Käse oder Wurst. Das ist für mich das beste Frühstück.",
+              "hit": "Aber am liebsten esse ich Vollkornbrot"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "reporterin",
+            "voice": "woman_emilia_at",
+            "text": "Guten Morgen, wir machen eine Umfrage für das Radio. Was essen Sie am liebsten zum Frühstück?",
+            "delivery": "[friendly reporter, outdoors]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_alexandra_at",
+            "text": "Hm, früher habe ich immer Müsli gegessen, jeden Tag. Am Wochenende mache ich manchmal Eier, das ist gemütlich. Aber jetzt, äh, esse ich am liebsten Obst. Einen Apfel und eine Banane, das ist schnell und auch gesund. Ja, also Obst.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Also, Obst mag ich in der Früh gar nicht. Eier gibt es bei uns nur am Sonntag. Ich esse am liebsten Brot mit Butter und Marmelade, äh, manchmal auch eine Semmel vom Bäcker. Dazu einen Kaffee, und dann gehe ich zur Arbeit.",
+            "delivery": "[spontaneous, relaxed]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_mia_ch",
+            "text": "Ich bin aus Frauenfeld, in der Schweiz. Am Sonntag kaufe ich gern Gipfeli, das ist typisch für uns. Obst esse ich auch, aber nur im Müsli. Ja, äh, ich esse jeden Tag Müsli mit Joghurt. Das schmeckt mir einfach am besten.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Hm, Brot mit Käse ist okay, das esse ich unter der Woche. Aber Müsli? Nein, das schmeckt mir nicht. Am liebsten esse ich Eier, zwei Stück, mit ein bisschen Salz. Dann bin ich bis Mittag satt. Also, ganz klar: Eier.",
+            "delivery": "[spontaneous, decided]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_irene",
+            "text": "Ich komme aus Bremen und besuche hier meine Schwester. Müsli ist mir zu süß, ehrlich gesagt. Obst esse ich manchmal, so eine Orange. Aber am liebsten esse ich Vollkornbrot, äh, mit Käse oder Wurst. Das ist für mich das beste Frühstück.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 5
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "oesd-a1/hoeren-02/track.mp3",
+    "duration": 616.96,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 9.74,
+        "to": 16.22
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 16.22,
+        "to": 46.26
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 46.26,
+        "to": 60.84
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 66.35,
+        "to": 67.21
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 67.84,
+        "to": 86.57
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 88.61,
+        "to": 89.5
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 90.12,
+        "to": 109.71
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 111.75,
+        "to": 112.61
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 113.24,
+        "to": 131.84
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 133.88,
+        "to": 134.64
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 135.26,
+        "to": 153.99
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 156.03,
+        "to": 156.89
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 157.52,
+        "to": 174.39
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 181.94,
+        "to": 187.95
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 187.95,
+        "to": 217.99
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 217.99,
+        "to": 230.58
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 237.58,
+        "to": 289.25
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 296.25,
+        "to": 299.47
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 306.47,
+        "to": 358.14
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 365.14,
+        "to": 369.68
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 369.68,
+        "to": 389.72
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 395.23,
+        "to": 401.21
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 401.21,
+        "to": 411.25
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 411.25,
+        "to": 424.86
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 430.37,
+        "to": 436.3
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 437.84,
+        "to": 438.7
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 439.33,
+        "to": 455.18
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 457.22,
+        "to": 458.11
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 458.74,
+        "to": 475.3
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 477.34,
+        "to": 478.2
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 478.82,
+        "to": 495.07
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 497.11,
+        "to": 497.87
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 498.49,
+        "to": 514.32
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 516.36,
+        "to": 517.22
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 517.85,
+        "to": 534.05
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 541.6,
+        "to": 546.09
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 546.09,
+        "to": 606.12
+      }
+    ]
+  }
+}

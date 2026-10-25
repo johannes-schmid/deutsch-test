@@ -1,0 +1,187 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-02-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:43:56.711Z",
+        "textType": "Formular ausfüllen: Auftrag für eine Reparatur"
+      },
+      "exampleAnswers": [
+        "Demir, Ayşe"
+      ],
+      "display": {
+        "instruction": "Ihre Freundin möchte eine Reparatur bestellen. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Ayşe Demir hat ein Problem: Ihre Waschmaschine ist kaputt. Unter der Maschine ist immer Wasser. Sie möchte bei der Firma Hausgeräte Fuchs eine Reparatur bestellen.",
+            "Ayşe wohnt im Kastanienweg 8 in 33098 Paderborn. Vormittags arbeitet sie. Nachmittags ist sie zu Hause.",
+            "Ihre Telefonnummer zu Hause ist 05251 47 39 62. Aber am besten erreicht man sie mit dem Handy: 0176 2850 413."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Hausgeräte Fuchs · Reparaturauftrag\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nPLZ, Wohnort: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nGerät: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTermin: ",
+                {
+                  "n": 4,
+                  "options": [
+                    "vormittags",
+                    "nachmittags"
+                  ]
+                },
+                "\nHandynummer: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Kastanienweg 8",
+            "accept": [
+              "Kastanienweg Nr. 8",
+              "Kastanienweg 8, Paderborn",
+              "Kastanienweg 8 in Paderborn"
+            ],
+            "explanation": "Ayşe wohnt im Kastanienweg 8. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Ayşe Demir hat ein Problem: Ihre Waschmaschine ist kaputt. Unter der Maschine ist immer Wasser. Sie möchte bei der Firma Hausgeräte Fuchs eine Reparatur bestellen. Ayşe wohnt im Kastanienweg 8 in 33098 Paderborn. Vormittags arbeitet sie. Nachmittags ist sie zu Hause. Ihre Telefonnummer zu Hause ist 05251 47 39 62. Aber am besten erreicht man sie mit dem Handy: 0176 2850 413.",
+              "hit": "Ayşe wohnt im Kastanienweg 8 in 33098 Paderborn."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "33098 Paderborn",
+            "accept": [
+              "33098, Paderborn",
+              "in 33098 Paderborn"
+            ],
+            "explanation": "Ayşe wohnt in 33098 Paderborn. Die Postleitzahl muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Ayşe Demir hat ein Problem: Ihre Waschmaschine ist kaputt. Unter der Maschine ist immer Wasser. Sie möchte bei der Firma Hausgeräte Fuchs eine Reparatur bestellen. Ayşe wohnt im Kastanienweg 8 in 33098 Paderborn. Vormittags arbeitet sie. Nachmittags ist sie zu Hause. Ihre Telefonnummer zu Hause ist 05251 47 39 62. Aber am besten erreicht man sie mit dem Handy: 0176 2850 413.",
+              "hit": "in 33098 Paderborn"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Waschmaschine",
+            "accept": [
+              "die Waschmaschine",
+              "Waschmaschine kaputt"
+            ],
+            "explanation": "Die Waschmaschine von Ayşe ist kaputt.",
+            "evidence": {
+              "text": "Ihre Freundin Ayşe Demir hat ein Problem: Ihre Waschmaschine ist kaputt. Unter der Maschine ist immer Wasser. Sie möchte bei der Firma Hausgeräte Fuchs eine Reparatur bestellen. Ayşe wohnt im Kastanienweg 8 in 33098 Paderborn. Vormittags arbeitet sie. Nachmittags ist sie zu Hause. Ihre Telefonnummer zu Hause ist 05251 47 39 62. Aber am besten erreicht man sie mit dem Handy: 0176 2850 413.",
+              "hit": "Ihre Waschmaschine ist kaputt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "nachmittags",
+            "explanation": "Nachmittags ist Ayşe zu Hause. Vormittags arbeitet sie, das passt also nicht.",
+            "evidence": {
+              "text": "Ihre Freundin Ayşe Demir hat ein Problem: Ihre Waschmaschine ist kaputt. Unter der Maschine ist immer Wasser. Sie möchte bei der Firma Hausgeräte Fuchs eine Reparatur bestellen. Ayşe wohnt im Kastanienweg 8 in 33098 Paderborn. Vormittags arbeitet sie. Nachmittags ist sie zu Hause. Ihre Telefonnummer zu Hause ist 05251 47 39 62. Aber am besten erreicht man sie mit dem Handy: 0176 2850 413.",
+              "hit": "Nachmittags ist sie zu Hause."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "0176 2850 413",
+            "accept": [
+              "01762850413",
+              "0176 2850413",
+              "0176-2850 413",
+              "0176-2850413",
+              "0176/2850413",
+              "0176/2850 413"
+            ],
+            "explanation": "Das Formular fragt nach dem Handy: 0176 2850 413. Die Nummer 05251 47 39 62 ist das Telefon zu Hause.",
+            "evidence": {
+              "text": "Ihre Freundin Ayşe Demir hat ein Problem: Ihre Waschmaschine ist kaputt. Unter der Maschine ist immer Wasser. Sie möchte bei der Firma Hausgeräte Fuchs eine Reparatur bestellen. Ayşe wohnt im Kastanienweg 8 in 33098 Paderborn. Vormittags arbeitet sie. Nachmittags ist sie zu Hause. Ihre Telefonnummer zu Hause ist 05251 47 39 62. Aber am besten erreicht man sie mit dem Handy: 0176 2850 413.",
+              "hit": "Aber am besten erreicht man sie mit dem Handy: 0176 2850 413."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-02-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:43:56.711Z",
+        "textType": "Kurze E-Mail an eine Freundin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an eine Freundin",
+            "situation": "Sie haben ein neues Zimmer und möchten Regale an die Wand hängen. Ihre Freundin Ines hat eine Bohrmaschine. Schreiben Sie Ines eine E-Mail.",
+            "points": [
+              "Warum schreiben Sie?",
+              "Bitte: Bohrmaschine am Samstag leihen",
+              "Wann können Sie die Bohrmaschine abholen?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Ines,\nich habe jetzt ein neues Zimmer und möchte Regale an die Wand hängen. Kannst du mir bitte am Samstag deine Bohrmaschine leihen? Wann kann ich sie bei dir abholen?\nViele Grüße\nSvenja"
+          }
+        ]
+      }
+    }
+  ]
+}

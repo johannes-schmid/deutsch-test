@@ -1,0 +1,2435 @@
+{
+  "exam": "goethe-a2",
+  "skill": "hoeren",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "goethe-a2-hoeren-08-t1-01",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Radio: Tipp für eine Veranstaltung"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Wählen Sie für die Aufgaben 1 bis 5 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Wann fahren die Autos durch die Stadt?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "um zehn Uhr"
+                },
+                {
+                  "key": "b",
+                  "label": "um drei Uhr"
+                },
+                {
+                  "key": "c",
+                  "label": "um elf Uhr"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t1-01.mp3",
+          "duration": 27.98
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "Die Zeitung hatte zehn Uhr geschrieben, aber um zehn öffnet nur die Ausstellung. Die Fahrt durch die Stadt beginnt erst um elf, um drei ist der Preis.",
+            "evidence": {
+              "text": "Und hier unser Tipp für Samstag: In Grevenmoor ist wieder das große Oldtimertreffen auf dem Marktplatz. In der Zeitung stand, die Fahrt durch die Stadt beginnt um zehn. Das stimmt aber nicht. Um zehn Uhr öffnet nur die Ausstellung auf dem Platz. Durch die Stadt fahren die Autos erst um elf. Und um drei gibt's dann den Preis für das schönste Auto.",
+              "hit": "Durch die Stadt fahren die Autos erst um elf."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_christian",
+            "text": "Und hier unser Tipp für Samstag: In Grevenmoor ist wieder das große Oldtimertreffen auf dem Marktplatz. In der Zeitung stand, die Fahrt durch die Stadt beginnt um zehn. Das stimmt aber nicht. Um zehn Uhr öffnet nur die Ausstellung auf dem Platz. Durch die Stadt fahren die Autos erst um elf. Und um drei gibt's dann den Preis für das schönste Auto.",
+            "delivery": "[upbeat local radio host, lively]",
+            "item": 1
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t1-02",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Nachricht einer Bank auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Wählen Sie für die Aufgaben 1 bis 5 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Was muss Frau Wittmann mitbringen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die PIN"
+                },
+                {
+                  "key": "b",
+                  "label": "ihren Ausweis"
+                },
+                {
+                  "key": "c",
+                  "label": "die alte Karte"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Bank",
+          "speakers": {
+            "S1": {
+              "name": "Bank",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t1-02.mp3",
+          "duration": 22.31
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Zum Abholen braucht Frau Wittmann ihren Personalausweis. Die PIN kommt mit der Post, und die alte Karte kann sie behalten.",
+            "evidence": {
+              "text": "Guten Tag, Frau Wittmann, hier ist die Volksbank Erlengrund. Ihre neue Bankkarte ist da. Die PIN kommt extra mit der Post, in den nächsten Tagen. Ihre alte Karte können Sie behalten, die funktioniert noch bis Montag. Die neue Karte müssen Sie aber selbst bei uns abholen. Bringen Sie dafür bitte Ihren Personalausweis mit. Vielen Dank und auf Wiederhören!",
+              "hit": "Bringen Sie dafür bitte Ihren Personalausweis mit."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_laura",
+            "text": "Guten Tag, Frau Wittmann, hier ist die Volksbank Erlengrund. Ihre neue Bankkarte ist da. Die PIN kommt extra mit der Post, in den nächsten Tagen. Ihre alte Karte können Sie behalten, die funktioniert noch bis Montag. Die neue Karte müssen Sie aber selbst bei uns abholen. Bringen Sie dafür bitte Ihren Personalausweis mit. Vielen Dank und auf Wiederhören!",
+            "delivery": "[polite bank employee, clear and calm on a voicemail]",
+            "item": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t1-03",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Nachricht auf dem Anrufbeantworter"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Wählen Sie für die Aufgaben 1 bis 5 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Wo ist der Spieleabend am Freitag?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bei Ilyas' Bruder"
+                },
+                {
+                  "key": "b",
+                  "label": "bei Ilyas zu Hause"
+                },
+                {
+                  "key": "c",
+                  "label": "im Spielcafé"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von einem Freund",
+          "speakers": {
+            "S1": {
+              "name": "Ilyas",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t1-03.mp3",
+          "duration": 23.41
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Bei Ilyas ist ein Wasserschaden, und das Spielcafé ist freitags voll. Deshalb treffen sie sich bei seinem Bruder.",
+            "evidence": {
+              "text": "Hey Jannik, hier ist Ilyas. Wegen Freitag, unserem Spieleabend: Bei mir geht's leider nicht, in meiner Küche ist ein Wasserschaden. Alles ist nass! Ich hab dann im Spielcafé Würfelglück angerufen, aber freitags ist da immer alles voll. Na ja, mein Bruder hat zum Glück Platz. Wir treffen uns also bei ihm, gleiche Zeit, um sieben. Ich schick dir die Adresse. Tschüss!",
+              "hit": "Wir treffen uns also bei ihm, gleiche Zeit, um sieben."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_johann",
+            "text": "Hey Jannik, hier ist Ilyas. Wegen Freitag, unserem Spieleabend: Bei mir geht's leider nicht, in meiner Küche ist ein Wasserschaden. Alles ist nass! Ich hab dann im Spielcafé Würfelglück angerufen, aber freitags ist da immer alles voll. Na ja, mein Bruder hat zum Glück Platz. Wir treffen uns also bei ihm, gleiche Zeit, um sieben. Ich schick dir die Adresse. Tschüss!",
+            "delivery": "[casual, a bit stressed, speaking quickly on a voicemail]",
+            "item": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t1-04",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Radio: Freizeittipp"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Wählen Sie für die Aufgaben 1 bis 5 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Wo meldet man sich für das Kürbisschnitzen an?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "an der Kasse"
+                },
+                {
+                  "key": "b",
+                  "label": "in der Scheune"
+                },
+                {
+                  "key": "c",
+                  "label": "im Hofladen"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Freizeittipp im Radio",
+          "speakers": {
+            "S1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t1-04.mp3",
+          "duration": 27.59
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Die Anmeldung ist dieses Jahr in der alten Scheune, nicht an der Kasse. Im Hofladen kauft man nur die Kürbisse.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp für Sonntag: Auf dem Kürbishof Brakemeier ist wieder Kürbisschnitzen, für alle. Die Kürbisse kaufen Sie direkt im Hofladen. Wichtig: Sie müssen sich vorher anmelden. Aber nicht an der Kasse am Eingang, wie letztes Jahr, sondern in der alten Scheune hinter dem Hof. Messer und Löffel gibt es dort auch. Los geht's um vierzehn Uhr. Viel Spaß!",
+              "hit": "sondern in der alten Scheune hinter dem Hof"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "woman_ela",
+            "text": "Und hier noch ein Tipp für Sonntag: Auf dem Kürbishof Brakemeier ist wieder Kürbisschnitzen, für alle. Die Kürbisse kaufen Sie direkt im Hofladen. Wichtig: Sie müssen sich vorher anmelden. Aber nicht an der Kasse am Eingang, wie letztes Jahr, sondern in der alten Scheune hinter dem Hof. Messer und Löffel gibt es dort auch. Los geht's um vierzehn Uhr. Viel Spaß!",
+            "delivery": "[cheerful regional radio host, warm]",
+            "item": 4
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t1-05",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Durchsage im Museum"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Wählen Sie für die Aufgaben 1 bis 5 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Was schließt heute schon um 15 Uhr?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Sonderausstellung"
+                },
+                {
+                  "key": "b",
+                  "label": "die Dauerausstellung"
+                },
+                {
+                  "key": "c",
+                  "label": "das Museumscafé"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage in der Kunsthalle",
+          "speakers": {
+            "S1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t1-05.mp3",
+          "duration": 24.82
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Wegen einer privaten Führung macht die Ausstellung im zweiten Stock früher zu. Die Ausstellung im Erdgeschoss und das Café sind bis 18 Uhr offen.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher der Kunsthalle Westerholt, eine wichtige Information: Unsere Sonderausstellung im zweiten Stock schließt heute schon um fünfzehn Uhr. Dort gibt es am Nachmittag eine private Führung. Die Dauerausstellung im Erdgeschoss ist wie immer bis achtzehn Uhr geöffnet. Auch unser Museumscafé hat bis achtzehn Uhr für Sie offen. Vielen Dank für Ihr Verständnis!",
+              "hit": "Unsere Sonderausstellung im zweiten Stock schließt heute schon um fünfzehn Uhr."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "S1",
+            "voice": "man_michael",
+            "text": "Liebe Besucherinnen und Besucher der Kunsthalle Westerholt, eine wichtige Information: Unsere Sonderausstellung im zweiten Stock schließt heute schon um fünfzehn Uhr. Dort gibt es am Nachmittag eine private Führung. Die Dauerausstellung im Erdgeschoss ist wie immer bis achtzehn Uhr geöffnet. Auch unser Museumscafé hat bis achtzehn Uhr für Sie offen. Vielen Dank für Ihr Verständnis!",
+            "delivery": "[calm, polite announcement over a museum PA]",
+            "item": 5
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t2-01",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Gespräch unter Nachbarn über eine Woche"
+      },
+      "display": {
+        "instruction": "Sie hören ein Gespräch. Sie hören den Text einmal. Was hat Hannelore mit ihren Enkeln in der Woche gemacht? Wählen Sie für die Aufgaben 6 bis 10 ein passendes Bild aus a bis i. Wählen Sie jeden Buchstaben nur einmal. Sehen Sie sich jetzt die Bilder an.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "",
+                  "text": "Barfußpfad"
+                },
+                {
+                  "key": "b",
+                  "title": "",
+                  "text": "Kletterwald",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-b.webp"
+                },
+                {
+                  "key": "c",
+                  "title": "",
+                  "text": "Murmelbahn"
+                },
+                {
+                  "key": "d",
+                  "title": "",
+                  "text": "Plätzchen backen",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-d.webp"
+                },
+                {
+                  "key": "e",
+                  "title": "",
+                  "text": "Tropfsteinhöhle",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-e.webp"
+                },
+                {
+                  "key": "f",
+                  "title": "",
+                  "text": "Tretboot",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-f.webp"
+                },
+                {
+                  "key": "g",
+                  "title": "",
+                  "text": "Schatzsuche",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-g.webp"
+                },
+                {
+                  "key": "h",
+                  "title": "",
+                  "text": "Trampolinhalle",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-h.webp"
+                },
+                {
+                  "key": "i",
+                  "title": "",
+                  "text": "Bilder malen",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-i.webp"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Montag"
+                },
+                {
+                  "n": 6,
+                  "text": "Dienstag"
+                },
+                {
+                  "n": 7,
+                  "text": "Mittwoch"
+                },
+                {
+                  "n": 8,
+                  "text": "Donnerstag"
+                },
+                {
+                  "n": 9,
+                  "text": "Freitag"
+                },
+                {
+                  "n": 10,
+                  "text": "Samstag"
+                }
+              ]
+            },
+            "noMatch": false
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch unter Nachbarn",
+          "speakers": {
+            "werner": {
+              "name": "Werner",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "hannelore": {
+              "name": "Hannelore",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01.mp3",
+          "duration": 71.89
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Für den Kletterwald ist Paul zu klein. Deshalb fahren sie am Dienstag zum Barfußpfad.",
+            "evidence": {
+              "text": "Mila wollte in den Kletterwald. Aber Paul ist noch zu klein, man muss mindestens eins vierzig sein. Wir sind dann zum Barfußpfad gefahren. Die Kinder sind über Steine und Sand gelaufen, das hat ihnen super gefallen.",
+              "hit": "Wir sind dann zum Barfußpfad gefahren."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "e",
+            "explanation": "Am Mittwoch regnet es den ganzen Tag. Darum besuchen sie eine Tropfsteinhöhle.",
+            "evidence": {
+              "text": "Am Mittwoch hat es leider den ganzen Tag geregnet. Da haben wir eine Tropfsteinhöhle besucht. Da drin ist es ja immer trocken.",
+              "hit": "Da haben wir eine Tropfsteinhöhle besucht."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Hannelore hat Angst auf dem Wasser, also fahren sie kein Tretboot. Sie bauen zu Hause eine Murmelbahn.",
+            "evidence": {
+              "text": "Ach, Werner, auf dem Wasser hab ich Angst! Nein, wir sind zu Hause geblieben und haben eine Murmelbahn gebaut. Aus Papierrollen und Karton.",
+              "hit": "haben eine Murmelbahn gebaut"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "g",
+            "explanation": "Am Freitag machen sie im Wald eine Schatzsuche. Hannelore hat vorher Geschenke versteckt.",
+            "evidence": {
+              "text": "Am Freitag haben wir im Wald eine Schatzsuche gemacht. Ich hab vorher kleine Geschenke versteckt, und Mila hat fast alles gefunden.",
+              "hit": "Am Freitag haben wir im Wald eine Schatzsuche gemacht."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "i",
+            "explanation": "Die Trampolinhalle ist zu teuer. Am Samstag malen die Kinder Bilder für ihre Eltern.",
+            "evidence": {
+              "text": "Ja, schon. Aber die ist viel zu teuer für eine Stunde! Wir haben dann Bilder für die Eltern gemalt. Die Eltern haben sich sehr gefreut.",
+              "hit": "Wir haben dann Bilder für die Eltern gemalt."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "werner",
+            "voice": "man_simon",
+            "text": "Hallo Hannelore! Na, deine Enkel waren doch letzte Woche bei dir, oder?",
+            "delivery": "[friendly neighbour, chatting over the fence]",
+            "item": 0
+          },
+          {
+            "speaker": "hannelore",
+            "voice": "woman_irene",
+            "text": "Ja, Paul und Mila, von Montag bis Samstag. Am Montag haben wir Plätzchen gebacken. Die waren schnell weg!",
+            "delivery": "[warm, cheerful retired woman]",
+            "item": 0
+          },
+          {
+            "speaker": "werner",
+            "voice": "man_simon",
+            "text": "Das glaub ich. Bei Plätzchen sag ich auch nie nein. Und am Dienstag?",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "hannelore",
+            "voice": "woman_irene",
+            "text": "Mila wollte in den Kletterwald. Aber Paul ist noch zu klein, man muss mindestens eins vierzig sein. Wir sind dann zum Barfußpfad gefahren. Die Kinder sind über Steine und Sand gelaufen, das hat ihnen super gefallen.",
+            "delivery": "[telling the story, lively]",
+            "item": 6
+          },
+          {
+            "speaker": "werner",
+            "voice": "man_simon",
+            "text": "Barfuß, im Ernst? Und wie war das Wetter?",
+            "delivery": "[surprised]"
+          },
+          {
+            "speaker": "hannelore",
+            "voice": "woman_irene",
+            "text": "Am Mittwoch hat es leider den ganzen Tag geregnet. Da haben wir eine Tropfsteinhöhle besucht. Da drin ist es ja immer trocken.",
+            "delivery": "[matter-of-fact, a little amused]",
+            "item": 7
+          },
+          {
+            "speaker": "werner",
+            "voice": "man_simon",
+            "text": "Gute Idee. Und am Donnerstag? Da war doch so schönes Wetter. Wart ihr am See? Da kann man Tretboot fahren.",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "hannelore",
+            "voice": "woman_irene",
+            "text": "Ach, Werner, auf dem Wasser hab ich Angst! Nein, wir sind zu Hause geblieben und haben eine Murmelbahn gebaut. Aus Papierrollen und Karton.",
+            "delivery": "[laughing at herself]",
+            "item": 8
+          },
+          {
+            "speaker": "werner",
+            "voice": "man_simon",
+            "text": "Toll. Und am Freitag?",
+            "delivery": "[interested]"
+          },
+          {
+            "speaker": "hannelore",
+            "voice": "woman_irene",
+            "text": "Am Freitag haben wir im Wald eine Schatzsuche gemacht. Ich hab vorher kleine Geschenke versteckt, und Mila hat fast alles gefunden.",
+            "delivery": "[proud]",
+            "item": 9
+          },
+          {
+            "speaker": "werner",
+            "voice": "man_simon",
+            "text": "Und am Samstag? Die Kinder wollten doch bestimmt in die Trampolinhalle, oder?",
+            "delivery": "[teasing]"
+          },
+          {
+            "speaker": "hannelore",
+            "voice": "woman_irene",
+            "text": "Ja, schon. Aber die ist viel zu teuer für eine Stunde! Wir haben dann Bilder für die Eltern gemalt. Die Eltern haben sich sehr gefreut.",
+            "delivery": "[firm, then warm]",
+            "item": 10
+          },
+          {
+            "speaker": "werner",
+            "voice": "man_simon",
+            "text": "Na, das war ja eine volle Woche!",
+            "delivery": "[impressed]"
+          },
+          {
+            "speaker": "hannelore",
+            "voice": "woman_irene",
+            "text": "Oh ja. Jetzt brauche ich erst mal Urlaub!",
+            "delivery": "[tired but happy, laughing]"
+          }
+        ]
+      },
+      "photos": {
+        "0": {
+          "a": {
+            "query": "barefoot path with stones and wood chips in park",
+            "alt": "Ein Barfußpfad im Park mit Feldern aus Steinen, Sand und Holz."
+          },
+          "b": {
+            "query": "high ropes course in forest",
+            "alt": "Ein Kletterpark mit Holzplattformen, Seilen und Holzmasten, links hängen Klettergurte.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-b.webp",
+            "credit": {
+              "name": "Seyiram Kweku",
+              "url": "https://www.pexels.com/photo/low-angle-view-of-a-rope-park-5692435/",
+              "pexelsId": 5692435
+            }
+          },
+          "c": {
+            "query": "homemade marble run cardboard tubes",
+            "alt": "Eine selbst gebaute Murmelbahn aus Papierrollen und Karton mit bunten Murmeln."
+          },
+          "d": {
+            "query": "homemade cookies on baking tray",
+            "alt": "Ausgestochene Plätzchen aus hellem Teig liegen auf Backpapier neben einem dunklen Backblech.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-d.webp",
+            "credit": {
+              "name": "Darja Brinkmöller",
+              "url": "https://www.pexels.com/photo/close-up-shot-of-cookies-on-a-tray-6280039/",
+              "pexelsId": 6280039
+            }
+          },
+          "e": {
+            "query": "dripstone cave stalactites",
+            "alt": "In einer dunklen Höhle hängen viele dünne, helle Tropfsteine von der Decke.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-e.webp",
+            "credit": {
+              "name": "Akshaya Nandyala",
+              "url": "https://www.pexels.com/photo/stunning-stalactites-in-underground-cave-32105590/",
+              "pexelsId": 32105590
+            }
+          },
+          "f": {
+            "query": "pedal boat on lake",
+            "alt": "Zwei Personen sitzen in einem grün-gelben Tretboot mit orangefarbenem Rettungsring auf dem dunklen Wasser.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-f.webp",
+            "credit": {
+              "name": "Artūras Kokorevas",
+              "url": "https://www.pexels.com/photo/pedal-boat-in-brazilin-flag-12771545/",
+              "pexelsId": 12771545
+            }
+          },
+          "g": {
+            "query": "small treasure chest on forest floor",
+            "alt": "Eine Hand hält eine kleine, offene Schatzkiste aus Holz mit verziertem Deckel.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-g.webp",
+            "credit": {
+              "name": "Wallace Chuck",
+              "url": "https://www.pexels.com/photo/crop-craftsman-opening-vintage-box-in-workshop-4939930/",
+              "pexelsId": 4939930
+            }
+          },
+          "h": {
+            "query": "indoor trampoline park",
+            "alt": "Ein Mann springt in einer dunklen Trampolinhalle rückwärts durch die Luft, während ein anderer Mann ihm einen Ball zuwirft.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-h.webp",
+            "credit": {
+              "name": "JESUS PERGES",
+              "url": "https://www.pexels.com/photo/grayscale-photography-of-man-doing-backflip-1739321/",
+              "pexelsId": 1739321
+            }
+          },
+          "i": {
+            "query": "children painting with watercolors at table",
+            "alt": "Kinderhände malen mit Pinseln und einem Wasserfarbkasten an einem Tisch, daneben stehen ein Glas Wasser und Buntstifte.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t2-01-0-i.webp",
+            "credit": {
+              "name": "cottonbro studio",
+              "url": "https://www.pexels.com/photo/a-group-of-kids-holding-paint-brushes-7898415/",
+              "pexelsId": 7898415
+            }
+          }
+        }
+      },
+      "exampleAnswers": [
+        "d"
+      ]
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t3-01",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Telefongespräch: Bestellung beim Getränkehandel"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Wählen Sie für die Aufgaben 11 bis 15 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 11,
+              "prompt": "Was bestellt Herr Brandl?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Apfelsaft",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-01-11-a.webp"
+                },
+                {
+                  "key": "b",
+                  "label": "Mineralwasser"
+                },
+                {
+                  "key": "c",
+                  "label": "Bier",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-01-11-c.webp"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Anruf beim Getränkehandel",
+          "speakers": {
+            "frau": {
+              "name": "Getränkehandel",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "mann": {
+              "name": "Herr Brandl",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-01.mp3",
+          "duration": 25.42
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Bier will seine Frau nicht mehr, und Apfelsaft ist ausverkauft. Darum bestellt Herr Brandl eine Kiste Mineralwasser.",
+            "evidence": {
+              "text": "Hm, schade. Dann bringen Sie mir einfach eine Kiste Mineralwasser. Das trinken wir ja immer.",
+              "hit": "Dann bringen Sie mir einfach eine Kiste Mineralwasser."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "frau",
+            "voice": "woman_lisa",
+            "text": "Getränke Hartmann, guten Tag!",
+            "delivery": "[friendly, answering the phone]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_ben",
+            "text": "Guten Tag, Brandl hier. Ich möchte meine Lieferung für diese Woche ändern. Statt Bier bitte Apfelsaft. Meine Frau will kein Bier mehr im Haus.",
+            "delivery": "[polite, a little embarrassed]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_lisa",
+            "text": "Oh, der Apfelsaft ist leider bis nächste Woche ausverkauft.",
+            "delivery": "[apologetic]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_ben",
+            "text": "Hm, schade. Dann bringen Sie mir einfach eine Kiste Mineralwasser. Das trinken wir ja immer.",
+            "delivery": "[thinking, then decided]",
+            "item": 11
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_lisa",
+            "text": "Gut, kommt am Donnerstag.",
+            "delivery": "[friendly]"
+          }
+        ]
+      },
+      "photos": {
+        "11": {
+          "a": {
+            "query": "glass of apple juice with apples",
+            "alt": "Ein Glas Apfelsaft steht auf einem Holztisch neben einer Schale mit grünen Äpfeln.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-01-11-a.webp",
+            "credit": {
+              "name": "Matvei",
+              "url": "https://www.pexels.com/photo/rustic-still-life-with-apples-and-juice-36794069/",
+              "pexelsId": 36794069
+            }
+          },
+          "b": {
+            "query": "crate of mineral water bottles",
+            "alt": "Eine Kiste mit Flaschen Mineralwasser."
+          },
+          "c": {
+            "query": "crate of beer bottles",
+            "alt": "Mehrere Kisten mit Flaschen mit roten und orangen Kronkorken stehen übereinander.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-01-11-c.webp",
+            "credit": {
+              "name": "Emre  Akyol",
+              "url": "https://www.pexels.com/photo/beer-bottles-in-plastic-crates-14120878/",
+              "pexelsId": 14120878
+            }
+          }
+        }
+      },
+      "sound": "phone"
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t3-02",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Gespräch beim Einkaufen"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Wählen Sie für die Aufgaben 11 bis 15 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 12,
+              "prompt": "Was kaufen Svea und Torben für den Balkon?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Solarlampe",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-02-12-a.webp"
+                },
+                {
+                  "key": "b",
+                  "label": "Lichterkette",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-02-12-b.webp"
+                },
+                {
+                  "key": "c",
+                  "label": "Laterne",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-02-12-c.webp"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Im Einrichtungsgeschäft",
+          "speakers": {
+            "svea": {
+              "name": "Svea",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "torben": {
+              "name": "Torben",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-02.mp3",
+          "duration": 23.3
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Die Kerzen in der Laterne gehen im Wind aus, und für die Lichterkette fehlt eine Steckdose. Deshalb nehmen sie die Solarlampe.",
+            "evidence": {
+              "text": "Stimmt. Dann nehmen wir die Solarlampe. Die lädt sich tagsüber in der Sonne auf.",
+              "hit": "Dann nehmen wir die Solarlampe."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "svea",
+            "voice": "woman_laura",
+            "text": "Torben, schau mal, die Laterne hier. Mit Kerzen ist das auf dem Balkon doch total gemütlich.",
+            "delivery": "[enthusiastic, browsing in a shop]"
+          },
+          {
+            "speaker": "torben",
+            "voice": "man_christian",
+            "text": "Na ja, bei uns ist es oben immer windig. Da gehen die Kerzen sofort aus. Wie wär's mit einer Lichterkette?",
+            "delivery": "[doubtful, then suggesting]"
+          },
+          {
+            "speaker": "svea",
+            "voice": "woman_laura",
+            "text": "Die braucht aber eine Steckdose, und auf dem Balkon haben wir keine.",
+            "delivery": "[matter-of-fact]"
+          },
+          {
+            "speaker": "torben",
+            "voice": "man_christian",
+            "text": "Stimmt. Dann nehmen wir die Solarlampe. Die lädt sich tagsüber in der Sonne auf.",
+            "delivery": "[decided]",
+            "item": 12
+          },
+          {
+            "speaker": "svea",
+            "voice": "woman_laura",
+            "text": "Perfekt!",
+            "delivery": "[happy]"
+          }
+        ]
+      },
+      "photos": {
+        "12": {
+          "a": {
+            "query": "solar garden lamp on balcony",
+            "alt": "Eine dunkle Lampe mit blauem und orangem Licht steht am Abend vor einem Geländer.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-02-12-a.webp",
+            "credit": {
+              "name": "Jacoby Clarke",
+              "url": "https://www.pexels.com/photo/solar-insect-killer-torch-with-led-light-9025158/",
+              "pexelsId": 9025158
+            }
+          },
+          "b": {
+            "query": "string lights fairy lights close up",
+            "alt": "Eine Lichterkette mit kleinen warmen Lichtern hängt an einem Vorhang, im Hintergrund leuchten viele unscharfe Lichtpunkte.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-02-12-b.webp",
+            "credit": {
+              "name": "ROMAN ODINTSOV",
+              "url": "https://www.pexels.com/photo/christmas-lights-on-concrete-wall-5836535/",
+              "pexelsId": 5836535
+            }
+          },
+          "c": {
+            "query": "metal lantern with candle",
+            "alt": "Zwei goldene Laternen aus Metall mit brennenden Kerzen stehen auf einem Tisch neben einem Buch.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-02-12-c.webp",
+            "credit": {
+              "name": "Rumeysa Demir",
+              "url": "https://www.pexels.com/photo/elegant-golden-lanterns-on-white-tabletop-30805314/",
+              "pexelsId": 30805314
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t3-03",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Telefongespräch mit der Abfallberatung"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Wählen Sie für die Aufgaben 11 bis 15 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 13,
+              "prompt": "In welche Tonne gehört der Pizzakarton?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Papiertonne",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-03-13-a.webp"
+                },
+                {
+                  "key": "b",
+                  "label": "gelbe Tonne",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-03-13-b.webp"
+                },
+                {
+                  "key": "c",
+                  "label": "Restmülltonne",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-03-13-c.webp"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Anruf bei der Stadt",
+          "speakers": {
+            "frau": {
+              "name": "Abfallberatung",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "mann": {
+              "name": "Herr Gül",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-03.mp3",
+          "duration": 27.59
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Der Karton ist schmutzig, darum darf er nicht ins Papier. Die gelbe Tonne ist nur für Plastik und Metall, also kommt er in den Restmüll.",
+            "evidence": {
+              "text": "Nein, die ist nur für Verpackungen aus Plastik und Metall. Ein schmutziger Karton kommt in den Restmüll.",
+              "hit": "Ein schmutziger Karton kommt in den Restmüll."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "frau",
+            "voice": "woman_ela",
+            "text": "Abfallberatung der Stadt Lauenstedt, guten Tag.",
+            "delivery": "[friendly city office employee on the phone]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_johann",
+            "text": "Guten Tag, Gül mein Name. Ich hab eine kurze Frage: Wohin gehört ein alter Pizzakarton? In die Papiertonne, oder?",
+            "delivery": "[polite, a little unsure]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_ela",
+            "text": "Ist er schmutzig, mit Käse und Fett?",
+            "delivery": "[helpful]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_johann",
+            "text": "Ja, schon. Dann vielleicht in die gelbe Tonne?",
+            "delivery": "[hesitant]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_ela",
+            "text": "Nein, die ist nur für Verpackungen aus Plastik und Metall. Ein schmutziger Karton kommt in den Restmüll.",
+            "delivery": "[clear, explaining]",
+            "item": 13
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_johann",
+            "text": "Ach so, danke!",
+            "delivery": "[relieved]"
+          }
+        ]
+      },
+      "photos": {
+        "13": {
+          "a": {
+            "query": "blue paper recycling bin",
+            "alt": "Eine blaue Mülltonne mit Recycling-Symbol und der Aufschrift \"PAPEL\" steht neben einer grünen Säule.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-03-13-a.webp",
+            "credit": {
+              "name": "Guilherme  Pedrosa",
+              "url": "https://www.pexels.com/photo/blue-recycling-bin-in-indoor-clothing-store-34406293/",
+              "pexelsId": 34406293
+            }
+          },
+          "b": {
+            "query": "yellow recycling bin plastic packaging germany",
+            "alt": "Eine gelbe und eine dunkelgrüne Mülltonne stehen vor einer weißen Wand.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-03-13-b.webp",
+            "credit": {
+              "name": "Cadu Mello",
+              "url": "https://www.pexels.com/photo/trash-bins-beside-a-white-wall-8795754/",
+              "pexelsId": 8795754
+            }
+          },
+          "c": {
+            "query": "black residual waste bin",
+            "alt": "Zwei schwarze Mülltonnen mit Deckel stehen vor einer Backsteinmauer und einer rosa Hauswand.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-03-13-c.webp",
+            "credit": {
+              "name": "Müca 🇩🇪",
+              "url": "https://www.pexels.com/photo/urban-street-scene-with-trash-bins-and-brick-wall-40084463/",
+              "pexelsId": 40084463
+            }
+          }
+        }
+      },
+      "sound": "phone"
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t3-04",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Gespräch beim Einkaufen"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Wählen Sie für die Aufgaben 11 bis 15 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 14,
+              "prompt": "Was kauft Frau Kuhnert?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Brotdose",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-04-14-a.webp"
+                },
+                {
+                  "key": "b",
+                  "label": "Thermoskanne",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-04-14-b.webp"
+                },
+                {
+                  "key": "c",
+                  "label": "Trinkflasche",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-04-14-c.webp"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Im Haushaltsgeschäft",
+          "speakers": {
+            "mann": {
+              "name": "Verkäufer",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "frau": {
+              "name": "Frau Kuhnert",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-04.mp3",
+          "duration": 23.72
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Aus ihrer Brotdose läuft die Suppe raus, und eine Trinkflasche hat sie schon. Sie nimmt die Thermoskanne, da bleibt die Suppe heiß.",
+            "evidence": {
+              "text": "Prima, die Thermoskanne nehme ich.",
+              "hit": "die Thermoskanne nehme ich"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "mann",
+            "voice": "man_michael",
+            "text": "Guten Tag, kann ich Ihnen helfen?",
+            "delivery": "[friendly shop assistant]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_irene",
+            "text": "Ja, ich möchte mittags heiße Suppe mit zur Arbeit nehmen. Meine Brotdose ist dafür nicht gut, da läuft immer alles raus.",
+            "delivery": "[a little annoyed]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_michael",
+            "text": "Hier haben wir eine schöne Trinkflasche aus Metall.",
+            "delivery": "[showing an item]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_irene",
+            "text": "Eine Trinkflasche hab ich schon. Und die Suppe soll ja warm bleiben.",
+            "delivery": "[shaking her head]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_michael",
+            "text": "Dann nehmen Sie diese Thermoskanne. Da bleibt die Suppe sechs Stunden heiß.",
+            "delivery": "[helpful, confident]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_irene",
+            "text": "Prima, die Thermoskanne nehme ich.",
+            "delivery": "[pleased, decided]",
+            "item": 14
+          }
+        ]
+      },
+      "photos": {
+        "14": {
+          "a": {
+            "query": "plastic lunch box on table",
+            "alt": "Zwei offene Brotdosen aus Plastik mit Essen, Obst und Keksen stehen auf einem Holztisch.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-04-14-a.webp",
+            "credit": {
+              "name": "Katerina Holmes",
+              "url": "https://www.pexels.com/photo/lunch-boxes-near-notebooks-on-table-5905683/",
+              "pexelsId": 5905683
+            }
+          },
+          "b": {
+            "query": "stainless steel thermos flask",
+            "alt": "Eine Person gießt Tee aus einer Thermoskanne aus Metall in einen Metallbecher.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-04-14-b.webp",
+            "credit": {
+              "name": "cottonbro studio",
+              "url": "https://www.pexels.com/photo/person-pouring-brown-liquid-on-stainless-cup-7507939/",
+              "pexelsId": 7507939
+            }
+          },
+          "c": {
+            "query": "reusable metal water bottle",
+            "alt": "Eine weiße Trinkflasche steht auf einem alten Holztisch, davor liegen zwei Herbstblätter.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-04-14-c.webp",
+            "credit": {
+              "name": "Ninety Seven Years",
+              "url": "https://www.pexels.com/photo/white-water-bottle-on-wooden-bench-outdoors-34140877/",
+              "pexelsId": 34140877
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t3-05",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Telefongespräch: Buchung in der Jugendherberge"
+      },
+      "display": {
+        "instruction": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Wählen Sie für die Aufgaben 11 bis 15 die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 15,
+              "prompt": "Welches Zimmer bekommen Herr und Frau Lindner?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Doppelzimmer",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-05-15-a.webp"
+                },
+                {
+                  "key": "b",
+                  "label": "Einzelzimmer",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-05-15-b.webp"
+                },
+                {
+                  "key": "c",
+                  "label": "Vierbettzimmer",
+                  "image": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-05-15-c.webp"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Anruf in der Jugendherberge",
+          "speakers": {
+            "frau": {
+              "name": "Jugendherberge",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "mann": {
+              "name": "Herr Lindner",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-05.mp3",
+          "duration": 28.94
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Die Doppelzimmer sind belegt, und zwei Einzelzimmer sind zu teuer. Sie bekommen ein Zimmer mit vier Betten zum Preis von einem Doppelzimmer.",
+            "evidence": {
+              "text": "Moment mal … Es ist ja gerade Nebensaison. Sie können ein Vierbettzimmer mit Stockbetten haben, zum Preis von einem Doppelzimmer.",
+              "hit": "Sie können ein Vierbettzimmer mit Stockbetten haben"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "frau",
+            "voice": "woman_lisa",
+            "text": "Jugendherberge Am Deich, guten Tag!",
+            "delivery": "[friendly receptionist answering the phone]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_simon",
+            "text": "Guten Tag, Lindner hier. Haben Sie für Samstag ein Doppelzimmer für meine Frau und mich? Nur eine Nacht.",
+            "delivery": "[polite, hopeful]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_lisa",
+            "text": "Die Doppelzimmer sind leider alle belegt. Ich hätte noch zwei Einzelzimmer.",
+            "delivery": "[apologetic]"
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_simon",
+            "text": "Hm, zwei Einzelzimmer sind uns zu teuer.",
+            "delivery": "[disappointed]"
+          },
+          {
+            "speaker": "frau",
+            "voice": "woman_lisa",
+            "text": "Moment mal … Es ist ja gerade Nebensaison. Sie können ein Vierbettzimmer mit Stockbetten haben, zum Preis von einem Doppelzimmer.",
+            "delivery": "[thinking, then helpful]",
+            "item": 15
+          },
+          {
+            "speaker": "mann",
+            "voice": "man_simon",
+            "text": "Super, das machen wir!",
+            "delivery": "[happy]"
+          }
+        ]
+      },
+      "photos": {
+        "15": {
+          "a": {
+            "query": "simple double bed hotel room",
+            "alt": "Ein Hotelzimmer mit einem großen, zerwühlten Doppelbett, zwei Kissen, einem Nachttisch und einem Fenster mit Vorhang.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-05-15-a.webp",
+            "credit": {
+              "name": "Vitor Lopes",
+              "url": "https://www.pexels.com/photo/double-bed-in-a-bedroom-26067598/",
+              "pexelsId": 26067598
+            }
+          },
+          "b": {
+            "query": "small single bed room",
+            "alt": "Ein kleines Zimmer mit einem Bett mit roter und oranger Decke und einem großen Holzregal an der Wand.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-05-15-b.webp",
+            "credit": {
+              "name": "My Walking Diary",
+              "url": "https://www.pexels.com/photo/small-room-with-bed-and-cupboard-4115551/",
+              "pexelsId": 4115551
+            }
+          },
+          "c": {
+            "query": "hostel room with bunk beds",
+            "alt": "Eine Frau sitzt unten auf einem Stockbett, ein Mann sitzt oben mit einer Kamera, daneben stehen Rucksäcke.",
+            "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t3-05-15-c.webp",
+            "credit": {
+              "name": "George Pak",
+              "url": "https://www.pexels.com/photo/man-and-woman-sitting-on-a-bunk-bed-7969098/",
+              "pexelsId": 7969098
+            }
+          }
+        }
+      },
+      "sound": "phone"
+    },
+    {
+      "id": "goethe-a2-hoeren-08-t4-01",
+      "exam": "goethe-a2",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.994Z",
+        "textType": "Radiointerview"
+      },
+      "display": {
+        "instruction": "Sie hören ein Interview. Sie hören den Text zweimal. Wählen Sie für die Aufgaben 16 bis 20 Ja oder Nein. Lesen Sie jetzt die Aufgaben.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Herr Schierholz hat das Kino seit fünfzehn Jahren.",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Das Kino war früher von Herrn Schierholz' Großvater.",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Herr Schierholz zeigt meistens neue Filme aus Hollywood.",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Das Kino ist jeden Abend voll.",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Herr Schierholz macht das Popcorn selbst.",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Herr Schierholz möchte einen zweiten Kinosaal bauen.",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Interview im Radio",
+          "speakers": {
+            "moderatorin": {
+              "name": "Moderatorin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "schierholz": {
+              "name": "Ralf Schierholz",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "goethe-a2/hoeren-08/goethe-a2-hoeren-08-t4-01.mp3",
+          "duration": 60.5
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "richtig",
+            "explanation": "Das Kino hat früher seinem Opa gehört. Herr Schierholz hat es von ihm übernommen.",
+            "evidence": {
+              "text": "Das Kino hat früher meinem Opa gehört. Als er alt war, hab ich es übernommen. Als Kind war ich jeden Sonntag dort, schon mit fünf Jahren.",
+              "hit": "Das Kino hat früher meinem Opa gehört."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "falsch",
+            "explanation": "Neue Filme aus Hollywood zeigt er nur selten. Er zeigt vor allem alte Filme und Filme aus Europa.",
+            "evidence": {
+              "text": "Nein, eher selten. Ich zeige vor allem alte Filme und Filme aus Europa, zum Beispiel aus Frankreich oder Italien.",
+              "hit": "Ich zeige vor allem alte Filme und Filme aus Europa"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "falsch",
+            "explanation": "Unter der Woche kommen oft nur zwanzig Gäste. Voll ist das Kino nur am Freitag.",
+            "evidence": {
+              "text": "Na ja, das ist unterschiedlich. Unter der Woche sind oft nur zwanzig Gäste da. Nur am Freitag ist das Kino immer voll.",
+              "hit": "Unter der Woche sind oft nur zwanzig Gäste da."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Er kauft das Popcorn nicht. Er macht es jeden Abend frisch in einer alten Maschine.",
+            "evidence": {
+              "text": "Nein, nein, das mache ich selbst, jeden Abend frisch, in einer alten Maschine. Die Leute lieben das, besonders mit Salz.",
+              "hit": "das mache ich selbst, jeden Abend frisch"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Für einen zweiten Saal hat er keinen Platz. Er möchte im Sommer ein Kino draußen im Hof machen.",
+            "evidence": {
+              "text": "Äh, nein, dafür haben wir keinen Platz. Aber im Sommer möchte ich ein Kino im Hof machen, unter freiem Himmel. Mit Liegestühlen!",
+              "hit": "Äh, nein, dafür haben wir keinen Platz."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "moderatorin",
+            "voice": "woman_laura",
+            "text": "Hallo und herzlich willkommen bei „Menschen in Ahlenfeld“! Heute ist Ralf Schierholz bei mir. Er hat das kleine Kino „Lichtspiele Kranich“. Herr Schierholz, wie lange machen Sie das schon?",
+            "delivery": "[warm radio presenter]",
+            "item": 0
+          },
+          {
+            "speaker": "schierholz",
+            "voice": "man_ben",
+            "text": "Hallo! Ja, also, seit fünfzehn Jahren jetzt. Die Zeit geht so schnell!",
+            "delivery": "[friendly, relaxed]",
+            "item": 0
+          },
+          {
+            "speaker": "moderatorin",
+            "voice": "woman_laura",
+            "text": "Und wie sind Sie zum Kino gekommen?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "schierholz",
+            "voice": "man_ben",
+            "text": "Das Kino hat früher meinem Opa gehört. Als er alt war, hab ich es übernommen. Als Kind war ich jeden Sonntag dort, schon mit fünf Jahren.",
+            "delivery": "[nostalgic, warm]",
+            "item": 16
+          },
+          {
+            "speaker": "moderatorin",
+            "voice": "woman_laura",
+            "text": "Welche Filme zeigen Sie denn? Die neuen Filme aus Hollywood?",
+            "delivery": "[interested]"
+          },
+          {
+            "speaker": "schierholz",
+            "voice": "man_ben",
+            "text": "Nein, eher selten. Ich zeige vor allem alte Filme und Filme aus Europa, zum Beispiel aus Frankreich oder Italien.",
+            "delivery": "[explaining, a little proud]",
+            "item": 17
+          },
+          {
+            "speaker": "moderatorin",
+            "voice": "woman_laura",
+            "text": "Und kommen da viele Leute?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "schierholz",
+            "voice": "man_ben",
+            "text": "Na ja, das ist unterschiedlich. Unter der Woche sind oft nur zwanzig Gäste da. Nur am Freitag ist das Kino immer voll.",
+            "delivery": "[honest, slightly rueful]",
+            "item": 18
+          },
+          {
+            "speaker": "moderatorin",
+            "voice": "woman_laura",
+            "text": "Bei Ihnen riecht es ja immer so gut nach Popcorn. Kaufen Sie das?",
+            "delivery": "[playful]"
+          },
+          {
+            "speaker": "schierholz",
+            "voice": "man_ben",
+            "text": "Nein, nein, das mache ich selbst, jeden Abend frisch, in einer alten Maschine. Die Leute lieben das, besonders mit Salz.",
+            "delivery": "[laughing, proud]",
+            "item": 19
+          },
+          {
+            "speaker": "moderatorin",
+            "voice": "woman_laura",
+            "text": "Und was planen Sie für die Zukunft? Vielleicht einen zweiten Kinosaal?",
+            "delivery": "[warm]"
+          },
+          {
+            "speaker": "schierholz",
+            "voice": "man_ben",
+            "text": "Äh, nein, dafür haben wir keinen Platz. Aber im Sommer möchte ich ein Kino im Hof machen, unter freiem Himmel. Mit Liegestühlen!",
+            "delivery": "[enthusiastic]",
+            "item": 20
+          },
+          {
+            "speaker": "moderatorin",
+            "voice": "woman_laura",
+            "text": "Das klingt wunderbar! Vielen Dank, Herr Schierholz.",
+            "delivery": "[warm, closing]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    }
+  ],
+  "track": {
+    "src": "goethe-a2/hoeren-08/track.mp3",
+    "duration": 1110.07,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 15.78,
+        "to": 28.5
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 30.54,
+        "to": 31.5
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1
+        ],
+        "from": 31.5,
+        "to": 36.55
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 36.55,
+        "to": 64.52
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 66.56,
+        "to": 68.88
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 69.93,
+        "to": 97.91
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1
+        ],
+        "from": 97.91,
+        "to": 102.95
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 102.95,
+        "to": 103.86
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          2
+        ],
+        "from": 103.86,
+        "to": 108.9
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 108.9,
+        "to": 131.21
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 133.25,
+        "to": 135.58
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 136.62,
+        "to": 158.93
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          2
+        ],
+        "from": 158.93,
+        "to": 163.97
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 163.97,
+        "to": 164.81
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3
+        ],
+        "from": 164.81,
+        "to": 169.85
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 169.85,
+        "to": 193.25
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 195.29,
+        "to": 197.62
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 198.66,
+        "to": 222.07
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3
+        ],
+        "from": 222.07,
+        "to": 227.11
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 227.11,
+        "to": 227.92
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          4
+        ],
+        "from": 227.92,
+        "to": 232.96
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 232.96,
+        "to": 260.55
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 262.58,
+        "to": 264.91
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 265.95,
+        "to": 293.54
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          4
+        ],
+        "from": 293.54,
+        "to": 298.58
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 298.58,
+        "to": 299.44
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5
+        ],
+        "from": 299.44,
+        "to": 304.48
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 304.48,
+        "to": 329.3
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 331.34,
+        "to": 333.66
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 334.71,
+        "to": 359.52
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5
+        ],
+        "from": 359.52,
+        "to": 364.56
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 364.56,
+        "to": 387.68
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 389.72,
+        "to": 391.99
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 391.99,
+        "to": 412.03
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 412.03,
+        "to": 414.17
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 416.1,
+        "to": 426.68
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 428.93,
+        "to": 431.02
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 434.26,
+        "to": 506.15
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 506.15,
+        "to": 511.19
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 511.19,
+        "to": 523.94
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 525.98,
+        "to": 526.76
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11
+        ],
+        "from": 526.76,
+        "to": 531.8
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 531.8,
+        "to": 557.22
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11
+        ],
+        "from": 557.22,
+        "to": 562.26
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 562.26,
+        "to": 563.15
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          12
+        ],
+        "from": 563.15,
+        "to": 568.19
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 568.19,
+        "to": 591.49
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          12
+        ],
+        "from": 591.49,
+        "to": 596.53
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 596.53,
+        "to": 597.42
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          13
+        ],
+        "from": 597.42,
+        "to": 602.46
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 602.46,
+        "to": 630.05
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          13
+        ],
+        "from": 630.05,
+        "to": 635.09
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 635.09,
+        "to": 636
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          14
+        ],
+        "from": 636,
+        "to": 641.04
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 641.04,
+        "to": 664.76
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          14
+        ],
+        "from": 664.76,
+        "to": 669.81
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 669.81,
+        "to": 670.77
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          15
+        ],
+        "from": 670.77,
+        "to": 675.81
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 675.81,
+        "to": 704.76
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          15
+        ],
+        "from": 704.76,
+        "to": 709.8
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 709.8,
+        "to": 722.49
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 724.53,
+        "to": 728.14
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 728.14,
+        "to": 758.18
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 758.18,
+        "to": 760.32
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 764.06,
+        "to": 779.26
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 781.51,
+        "to": 783.6
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 786.83,
+        "to": 847.33
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 847.33,
+        "to": 852.38
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 852.38,
+        "to": 854.7
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 856.74,
+        "to": 917.24
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 917.24,
+        "to": 922.28
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 922.28,
+        "to": 930.17
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "from": 930.17,
+        "to": 1110.2
+      }
+    ]
+  }
+}

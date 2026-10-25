@@ -1,0 +1,256 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-10-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.675Z",
+        "textType": "Formular ausfüllen: Anmeldung für einen Nähkurs"
+      },
+      "exampleAnswers": [
+        "Nguyen"
+      ],
+      "display": {
+        "instruction": "Situation: Ihre Freundin Linh möchte einen Nähkurs in der Nähschule Stichwerk machen. Sie füllen für Linh das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Nähen“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Nähschule Stichwerk · Kursanmeldung\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nKursbeginn (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nKurs: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "Abendkurs",
+                    "Wochenendkurs"
+                  ]
+                },
+                "\nNähen: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "Taschen",
+                    "Hosen",
+                    "Kissen",
+                    "Vorhänge"
+                  ],
+                  "pick": 2
+                },
+                "\nEigene Nähmaschine: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "ja",
+                    "nein"
+                  ]
+                },
+                "\nBezahlung: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "bar",
+                    "Überweisung"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Linh",
+            "explanation": "Der Vorname ist Linh. Der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "Linh Nguyen"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "19.9.1993",
+            "accept": [
+              "19.09.1993",
+              "19. September 1993",
+              "19.09.93",
+              "19.9.93",
+              "1993-09-19"
+            ],
+            "explanation": "Linh ist am 19. September 1993 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "am 19. September 1993 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Tübingen",
+            "accept": [
+              "Tuebingen"
+            ],
+            "explanation": "Linh wohnt in Tübingen.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "Linh Nguyen aus Tübingen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0172 4419 2603",
+            "accept": [
+              "0172 44192603",
+              "017244192603",
+              "0172/44192603",
+              "0172 / 4419 2603"
+            ],
+            "explanation": "Das ist Linhs Handynummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "0172 4419 2603"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "Januar",
+            "accept": [
+              "ab Januar",
+              "im Januar",
+              "Jänner",
+              "1",
+              "01"
+            ],
+            "explanation": "Linh möchte ab Januar den Kurs machen.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "möchte ab Januar"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "Abendkurs",
+            "explanation": "Linh arbeitet am Tag und hat nur am Abend Zeit. Darum passt der Abendkurs, nicht der Wochenendkurs.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "darum hat sie nur am Abend Zeit"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "Taschen,Kissen",
+            "explanation": "Linh möchte Taschen und Kissen nähen. Hosen sind Kleider, die möchte sie nicht nähen.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "Linh möchte Taschen und Kissen nähen, keine Kleider."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "nein",
+            "explanation": "Linh hat keine Nähmaschine. Darum ist „nein“ richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "Sie hat keine Nähmaschine"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "bar",
+            "explanation": "Linh bezahlt bar, nicht mit Überweisung.",
+            "evidence": {
+              "text": "Ihre Freundin Linh Nguyen aus Tübingen möchte ab Januar einen Nähkurs machen. Am Tag arbeitet sie im Hotel, darum hat sie nur am Abend Zeit. Linh möchte Taschen und Kissen nähen, keine Kleider. Sie hat keine Nähmaschine und bezahlt bar. Sie ist am 19. September 1993 geboren. Ihre Handynummer ist 0172 4419 2603.",
+              "hit": "bezahlt bar"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-10-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.675Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihr Freund Fabian hat Ihnen ein E-Mail geschrieben. Antworten Sie Fabian. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Fabian",
+            "situation": "Ihr Freund Fabian aus Arbon schreibt Ihnen: „Hallo! Am Freitag mache ich einen Spieleabend bei mir in der Wohnung. Ein paar Freunde kommen auch. Wir fangen um sieben Uhr an. Ich habe einen grossen Tisch. Hast du am Freitagabend Zeit? Welches Spiel bringst du mit? Und wie lange kannst du bleiben? Ich freue mich! Liebe Grüsse, Fabian“",
+            "points": [
+              "Hast du am Freitagabend Zeit?",
+              "Welches Spiel bringst du mit?",
+              "Wie lange kannst du bleiben?"
+            ],
+            "opener": "Lieber Fabian,\ndanke für dein E-Mail. Ein Spieleabend ist eine super Idee!"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Lieber Fabian, danke für dein E-Mail. Ein Spieleabend ist eine super Idee! Ja, am Freitagabend habe ich Zeit. Ich bringe ein Kartenspiel mit. Ich kann bis elf Uhr bleiben. Bis Freitag! Liebe Grüße, Sara"
+          }
+        ]
+      }
+    }
+  ]
+}

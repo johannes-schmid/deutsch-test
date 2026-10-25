@@ -1,0 +1,479 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-03-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.126Z",
+        "textType": "Wegweiser in einem Einkaufszentrum"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ihr Shampoo ist leer. Sie brauchen eine neue Flasche.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Ihre Nichte wird sechs Jahre alt. Sie möchten ihr ein Puzzle schenken.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Das Gestell von Ihrer Brille ist kaputt. Sie brauchen ein neues.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Sie bekommen am Wochenende Besuch und brauchen eine Kiste Mineralwasser.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Es ist zwölf Uhr. Sie möchten sich hinsetzen und etwas Warmes essen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Ihre Haare sind zu lang. Jemand soll sie Ihnen schneiden.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Mühlentor-Center Lübeck",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "3. Obergeschoss: Restaurants · Imbiss · Eiscafé · Friseur · Kosmetikstudio · Kinderspielecke · Toiletten",
+            "2. Obergeschoss: Elektronik · Computer und Zubehör · Bücher · Optiker · Hörgeräte · Uhren",
+            "1. Obergeschoss: Damenmode · Herrenmode · Kindermode · Schuhe · Taschen · Spielwaren",
+            "Erdgeschoss: Information · Handyshop · Zeitschriften · Geldautomat · Apotheke · Kerzen und Dekoration · Reisebüro",
+            "Untergeschoss: Supermarkt · Drogerie · Getränkemarkt · Haushaltswaren · Reinigung · Parkhaus-Kasse"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "Ein Puzzle findest du bei den Spielwaren im 1. Obergeschoss. Im Erdgeschoss gibt es nur Dekoration und im 2. Obergeschoss Bücher.",
+            "evidence": {
+              "text": "1. Obergeschoss: Damenmode · Herrenmode · Kindermode · Schuhe · Taschen · Spielwaren",
+              "hit": "Spielwaren"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Ein neues Brillengestell bekommst du beim Optiker im 2. Obergeschoss. Im 1. Obergeschoss gibt es Mode und Taschen, aber keine Brillen.",
+            "evidence": {
+              "text": "2. Obergeschoss: Elektronik · Computer und Zubehör · Bücher · Optiker · Hörgeräte · Uhren",
+              "hit": "Optiker"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "b",
+            "explanation": "Wasser in Kisten gibt es im Getränkemarkt im Untergeschoss. Im Erdgeschoss gibt es keine Getränke.",
+            "evidence": {
+              "text": "Untergeschoss: Supermarkt · Drogerie · Getränkemarkt · Haushaltswaren · Reinigung · Parkhaus-Kasse",
+              "hit": "Getränkemarkt"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Die Restaurants sind im 3. Obergeschoss. Im 1. und 2. Obergeschoss kannst du nichts essen.",
+            "evidence": {
+              "text": "3. Obergeschoss: Restaurants · Imbiss · Eiscafé · Friseur · Kosmetikstudio · Kinderspielecke · Toiletten",
+              "hit": "Restaurants"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "b",
+            "explanation": "Der Friseur ist im 3. Obergeschoss. In der Drogerie im Untergeschoss kaufst du nur Sachen für die Haare.",
+            "evidence": {
+              "text": "3. Obergeschoss: Restaurants · Imbiss · Eiscafé · Friseur · Kosmetikstudio · Kinderspielecke · Toiletten",
+              "hit": "Friseur"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-03-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.126Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Der Kürbis von Rüdiger Hampel ist schwerer als 600 Kilo."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Hampel hat schon immer Kürbisse in seinem Garten gehabt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Ingrid Hampel hat den Kürbis zum Wettbewerb gefahren."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Hampel hat bei dem Wettbewerb Geld bekommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Aus dem Kürbis wird ein Essen für Kinder gekocht."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Im nächsten Jahr möchte Hampel nicht mehr mitmachen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Ein Riese aus dem Garten",
+            "Rüdiger Hampel (63) aus Ludwigsburg ist sehr stolz: Sein Kürbis wiegt 612 Kilo. So einen schweren Kürbis hat in diesem Jahr kein anderer Gärtner im Landkreis.",
+            "Im Garten arbeitet der Rentner schon seit 30 Jahren. Früher hatte er dort vor allem Tomaten und Bohnen. Kürbisse pflanzt er erst seit fünf Jahren. „Am Anfang waren sie ganz klein, aber dann wollte ich immer mehr“, erzählt er. Im Sommer hat er seinen Kürbis jeden Tag gegossen.",
+            "Der Transport war nicht leicht. Seine Frau Ingrid hatte Angst, dass der Kürbis kaputtgeht. Zum Glück haben zwei Nachbarn geholfen: Sie haben den Riesen mit ihrem Traktor zum Wettbewerb in die Stadthalle gebracht. Dort hat Hampel den ersten Platz gemacht. Dafür gab es 800 Euro.",
+            "Und was passiert jetzt mit dem Kürbis? Ein Koch aus der Nachbarschaft macht daraus Suppe für eine Grundschule. Hampel denkt schon an den nächsten Herbst: „Dann schaffe ich 700 Kilo.“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Im Garten arbeitet er seit 30 Jahren, aber Kürbisse hat er erst seit fünf Jahren. Früher hatte er Tomaten und Bohnen.",
+            "evidence": {
+              "text": "Im Garten arbeitet der Rentner schon seit 30 Jahren. Früher hatte er dort vor allem Tomaten und Bohnen. Kürbisse pflanzt er erst seit fünf Jahren. „Am Anfang waren sie ganz klein, aber dann wollte ich immer mehr“, erzählt er. Im Sommer hat er seinen Kürbis jeden Tag gegossen.",
+              "hit": "Kürbisse pflanzt er erst seit fünf Jahren."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Zwei Nachbarn haben den Kürbis mit dem Traktor gebracht. Seine Frau hatte nur Angst, dass der Kürbis kaputtgeht.",
+            "evidence": {
+              "text": "Der Transport war nicht leicht. Seine Frau Ingrid hatte Angst, dass der Kürbis kaputtgeht. Zum Glück haben zwei Nachbarn geholfen: Sie haben den Riesen mit ihrem Traktor zum Wettbewerb in die Stadthalle gebracht. Dort hat Hampel den ersten Platz gemacht. Dafür gab es 800 Euro.",
+              "hit": "Sie haben den Riesen mit ihrem Traktor zum Wettbewerb in die Stadthalle gebracht."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "richtig",
+            "explanation": "Hampel hat den ersten Platz gemacht. Dafür gab es 800 Euro.",
+            "evidence": {
+              "text": "Der Transport war nicht leicht. Seine Frau Ingrid hatte Angst, dass der Kürbis kaputtgeht. Zum Glück haben zwei Nachbarn geholfen: Sie haben den Riesen mit ihrem Traktor zum Wettbewerb in die Stadthalle gebracht. Dort hat Hampel den ersten Platz gemacht. Dafür gab es 800 Euro.",
+              "hit": "Dafür gab es 800 Euro."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Ein Koch macht aus dem Kürbis Suppe für eine Grundschule. Dort essen Kinder.",
+            "evidence": {
+              "text": "Und was passiert jetzt mit dem Kürbis? Ein Koch aus der Nachbarschaft macht daraus Suppe für eine Grundschule. Hampel denkt schon an den nächsten Herbst: „Dann schaffe ich 700 Kilo.“",
+              "hit": "Ein Koch aus der Nachbarschaft macht daraus Suppe für eine Grundschule."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Hampel denkt schon an den nächsten Herbst. Dann möchte er einen Kürbis mit 700 Kilo haben.",
+            "evidence": {
+              "text": "Und was passiert jetzt mit dem Kürbis? Ein Koch aus der Nachbarschaft macht daraus Suppe für eine Grundschule. Hampel denkt schon an den nächsten Herbst: „Dann schaffe ich 700 Kilo.“",
+              "hit": "Hampel denkt schon an den nächsten Herbst: „Dann schaffe ich 700 Kilo.“"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-03-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.126Z",
+        "textType": "Anzeigen und Webseiten: Kurse"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Nähstube Warnemünde",
+                  "text": "Kleider und Taschen selbst nähen – auch ohne Erfahrung! Kurs für Anfänger, Nähmaschinen sind da. Montags 18–20 Uhr."
+                },
+                {
+                  "key": "b",
+                  "title": "Sprachtreff Rostock",
+                  "text": "Englisch für die Reise: im Hotel, im Restaurant, am Flughafen. Sechs Abende, kleine Gruppen, 60 €."
+                },
+                {
+                  "key": "c",
+                  "title": "Bildungszentrum am Stadthafen",
+                  "text": "Erste Schritte am Computer: E-Mails schreiben und im Internet suchen. Für Menschen ab 60, langsam und mit viel Zeit für Fragen."
+                },
+                {
+                  "key": "d",
+                  "title": "www.smartphone-bilder-rostock.de",
+                  "text": "Fotografieren mit dem Smartphone: Wie nutze ich Licht und Farben richtig? Workshop am Samstag, 10–15 Uhr."
+                },
+                {
+                  "key": "e",
+                  "title": "Kochschule Grünzeug",
+                  "text": "Gemüse, Linsen, Tofu: Lecker kochen ohne Fleisch. Wir kochen zusammen und essen danach gemeinsam. Freitags ab 17 Uhr."
+                },
+                {
+                  "key": "f",
+                  "title": "Café Weltenbummler",
+                  "text": "Sie lernen Deutsch? Jeden Donnerstag sprechen wir bei Kaffee und Kuchen über Alltagsthemen. Ohne Anmeldung, alle Niveaus."
+                },
+                {
+                  "key": "g",
+                  "title": "Kunstwerkstatt Kröpeliner Tor",
+                  "text": "Malen mit Wasserfarben und Kreide für Kinder von 8 bis 12 Jahren. Mittwochnachmittag, Material inklusive."
+                },
+                {
+                  "key": "h",
+                  "title": "www.tippfit.de",
+                  "text": "Schneller tippen mit allen zehn Fingern! Unser Online-Kurs: Üben Sie am eigenen Computer, wann Sie wollen."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Ihre Großmutter möchte lernen, wie sie ihrer Familie über das Internet Nachrichten schickt."
+                },
+                {
+                  "n": 11,
+                  "text": "Sie haben schönen Stoff gekauft und möchten sich daraus einen Rock machen."
+                },
+                {
+                  "n": 12,
+                  "text": "Ihre Urlaubsbilder vom Handy sind oft zu dunkel. Das soll besser werden."
+                },
+                {
+                  "n": 13,
+                  "text": "Sie schreiben am Computer sehr langsam. Sie möchten das zu Hause üben."
+                },
+                {
+                  "n": 14,
+                  "text": "Sie lernen Deutsch und möchten mehr mit anderen Menschen reden."
+                },
+                {
+                  "n": 15,
+                  "text": "Ihr Mann fährt im Sommer nach Rom. Vorher möchte er ein bisschen Italienisch lernen."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "In der Nähstube lernst du, Kleidung selbst zu nähen, auch als Anfänger. Ein Rock ist Kleidung.",
+            "evidence": {
+              "text": "Nähstube Warnemünde. Kleider und Taschen selbst nähen – auch ohne Erfahrung! Kurs für Anfänger, Nähmaschinen sind da. Montags 18–20 Uhr.",
+              "hit": "Kleider und Taschen selbst nähen"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "d",
+            "explanation": "Im Workshop lernst du, mit dem Smartphone und gutem Licht zu fotografieren. Der Englischkurs ist zwar für die Reise, aber nicht für Fotos.",
+            "evidence": {
+              "text": "www.smartphone-bilder-rostock.de. Fotografieren mit dem Smartphone: Wie nutze ich Licht und Farben richtig? Workshop am Samstag, 10–15 Uhr.",
+              "hit": "Fotografieren mit dem Smartphone"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "h",
+            "explanation": "Den Online-Kurs machst du am eigenen Computer zu Hause. Der Computerkurs im Bildungszentrum ist für Anfänger ab 60 und nicht zu Hause.",
+            "evidence": {
+              "text": "www.tippfit.de. Schneller tippen mit allen zehn Fingern! Unser Online-Kurs: Üben Sie am eigenen Computer, wann Sie wollen.",
+              "hit": "Unser Online-Kurs: Üben Sie am eigenen Computer, wann Sie wollen."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "f",
+            "explanation": "Im Café sprechen Deutschlernende jeden Donnerstag zusammen. So kannst du mit anderen Menschen reden.",
+            "evidence": {
+              "text": "Café Weltenbummler. Sie lernen Deutsch? Jeden Donnerstag sprechen wir bei Kaffee und Kuchen über Alltagsthemen. Ohne Anmeldung, alle Niveaus.",
+              "hit": "Sie lernen Deutsch? Jeden Donnerstag sprechen wir bei Kaffee und Kuchen über Alltagsthemen."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "x",
+            "explanation": "Keine Anzeige bietet Italienisch an. Der Kurs vom Sprachtreff ist auch für die Reise, aber nur für Englisch.",
+            "evidence": {
+              "text": "Sprachtreff Rostock. Englisch für die Reise: im Hotel, im Restaurant, am Flughafen. Sechs Abende, kleine Gruppen, 60 €.",
+              "hit": "Englisch für die Reise"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ]
+}

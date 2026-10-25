@@ -9,6 +9,7 @@ import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { GapData, MatchData, PartId, ReadingData } from "@/lib/exam/types"
 import { GapItem, MatchItem, SituationTabs } from "./items"
+import { PhotoNumberGrid } from "./oesd"
 import { ReadingText } from "./reading"
 import { LetterSheet } from "./sheet"
 import { Mark, isChosen, optionState, stateSurface, useExamCopy } from "./primitives"
@@ -19,11 +20,11 @@ const label = "v-num text-[11.5px] tracking-[0.08em] text-v-muted uppercase"
 const column = "hyphens-auto sm:text-justify sm:[text-align-last:left]"
 
 /** One newspaper item with an empty headline slot that fills with the chosen headline. */
-function Clipping({ n, text, headline, chosen }: { n: number; text: string; headline?: { key: string; title: string }; chosen?: ReactNode }) {
+function Clipping({ n, text, origin, table, headline, chosen }: { n: number; text: string; origin?: string; table?: string[][]; headline?: { key: string; title: string }; chosen?: ReactNode }) {
   const t = useExamCopy()
   return (
     <article lang="de" className="flex flex-col gap-3 rounded-[14px] bg-v-surface p-5 ring-1 ring-v-line">
-      <span className={label}>{t.textN(n)}</span>
+      <span className={label}>{t.textN(n)}{origin ? ` · [${origin}]` : ""}</span>
       {headline ? (
         <p className="flex items-start gap-2.5 text-[19px] leading-[1.2] font-semibold tracking-[-0.01em] text-balance">
           <span className="v-num mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-v-ink text-[12px] font-normal text-v-bg">{headline.key}</span>
@@ -34,7 +35,23 @@ function Clipping({ n, text, headline, chosen }: { n: number; text: string; head
         <p className="rounded-lg border border-dashed border-v-ink/30 px-3 py-2 text-[14.5px] text-v-muted">{t.pickHeadline}</p>
       )}
       <p className={cn("max-w-[44ch] text-[16px] leading-[1.6]", column)}>{text}</p>
+      {table?.length ? <ClipTable rows={table} /> : null}
     </article>
+  )
+}
+
+/** A small table printed inside a newspaper text (ÖSD A2 Lesen Aufgabe 1); the first row is the header. */
+function ClipTable({ rows }: { rows: string[][] }) {
+  const [head, ...body] = rows
+  return (
+    <table className="v-num max-w-[44ch] border-collapse text-left text-[14px] tabular-nums">
+      <thead>
+        <tr className="border-b-2 border-v-ink/70">{head.map((c, i) => <th key={i} scope="col" className="py-1.5 pr-4 font-semibold">{c}</th>)}</tr>
+      </thead>
+      <tbody>
+        {body.map((r, i) => <tr key={i} className="border-b border-v-line last:border-b-0">{r.map((c, j) => <td key={j} className="py-1.5 pr-4">{c}</td>)}</tr>)}
+      </tbody>
+    </table>
   )
 }
 
@@ -50,7 +67,7 @@ export function HeadlineMatch({ data, value, onChange, review }: { data: MatchDa
     <div className="flex flex-col gap-4">
       <SituationTabs items={data.situations} active={i} onActive={setI} value={value} review={review} label={t.situations} />
       <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-start">
-        <Clipping key={s.n} n={s.n} text={s.text} headline={pick} chosen={graded} />
+        <Clipping key={s.n} n={s.n} text={s.text} origin={s.origin} table={s.table} headline={pick} chosen={graded} />
         <div className="flex flex-col gap-2" role="radiogroup" aria-label={t.headlines}>
           <span className={label}>{t.headlines}</span>
           {data.ads.map((a) => {
@@ -151,6 +168,7 @@ export function AdBoard({ data, value, onChange, review, noMatch = true }: { dat
   const card = useRef<HTMLDivElement>(null)
   const chosen = value[s.n]
   const chosenAd = data.ads.find((a) => a.key === chosen)
+  const nm = data.noMatchLabel ?? "x"
   const noMatchButton = noMatch ? (
     <button
       type="button"
@@ -160,7 +178,7 @@ export function AdBoard({ data, value, onChange, review, noMatch = true }: { dat
       onClick={() => choose("x")}
       className={cn("flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border px-3.5 text-left text-[15px] transition-[border-color,box-shadow,transform,background-color] duration-150 ease-out active:scale-[0.985] disabled:cursor-default disabled:active:scale-100", stateSurface[x], x === "idle" && "border-dashed")}
     >
-      <span className={cn("v-num grid size-6 place-items-center rounded-full text-[12px]", x === "selected" ? "bg-v-ink text-v-bg" : "bg-v-soft")}>x</span>
+      <span className={cn("v-num grid size-6 place-items-center rounded-full text-[12px]", x === "selected" ? "bg-v-ink text-v-bg" : "bg-v-soft")}>{nm}</span>
       <span className="flex-1">{t.noMatch}</span>
       {x === "right" ? <Mark kind="right" inverse /> : x === "solution" ? <Mark kind="right" /> : x === "wrong" ? <Mark kind="wrong" /> : null}
     </button>
@@ -169,7 +187,7 @@ export function AdBoard({ data, value, onChange, review, noMatch = true }: { dat
   return (
     <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)] lg:items-start">
       <div className="flex flex-col gap-4 lg:sticky lg:top-24">
-        <SituationTabs items={data.situations} active={i} onActive={setI} value={value} review={review} label={t.situations} />
+        <SituationTabs items={data.situations} active={i} onActive={setI} value={value} review={review} label={t.situations} show={(k) => (k === "x" ? nm : k)} />
         {/* The current situation is the ink card (like its tab); the ads below are what it is matched to. */}
         <div key={s.n} ref={card} className="nz-screen flex scroll-mt-24 flex-col gap-3 rounded-2xl bg-v-ink p-5 text-v-bg">
           <span className="v-num text-[11.5px] tracking-[0.08em] uppercase opacity-70">{t.situationN(s.n, i + 1, data.situations.length)}</span>
@@ -178,7 +196,7 @@ export function AdBoard({ data, value, onChange, review, noMatch = true }: { dat
             {chosen ? (
               <>
                 <span className="opacity-70">{t.yourMatch} </span>
-                <b className="font-semibold">{chosen === "x" ? `x · ${t.noMatch}` : `${chosen} · ${chosenAd?.title ?? ""}`}</b>
+                <b className="font-semibold">{chosen === "x" ? `${nm} · ${t.noMatch}` : `${chosen} · ${chosenAd?.title ?? ""}`}</b>
               </>
             ) : review ? null : (
               <span className="opacity-80">{t.pickAd}</span>
@@ -311,6 +329,8 @@ export function WordPoolGap({ data, value, onChange, review }: { data: GapData; 
 
 /** The match layout a task's shape asks for: headlines only (newspaper), ads on a reading page, or the list. */
 export function MatchTask({ skill, data, noMatch, value, onChange, review }: { skill: PartId; data: MatchData; noMatch: boolean; value: Record<number, string>; onChange?: (n: number, k: string) => void; review?: Record<number, string> }) {
+  if (data.layout === "textNumber") return <PhotoNumberGrid data={data} value={value} onChange={onChange} review={review} />
+  if (data.ads.some((a) => a.picto)) return <MatchItem data={data} noMatch={noMatch} value={value} onChange={onChange} review={review} />
   if (data.ads.every((a) => a.title && !a.text)) return <HeadlineMatch data={data} value={value} onChange={onChange} review={review} />
   if (skill === "lesen") return <AdBoard data={data} noMatch={noMatch} value={value} onChange={onChange} review={review} />
   return <MatchItem data={data} noMatch={noMatch} value={value} onChange={onChange} review={review} />

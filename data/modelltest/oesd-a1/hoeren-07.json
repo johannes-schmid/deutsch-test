@@ -1,0 +1,1132 @@
+{
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "oesd-a1-hoeren-07-t1",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.651Z",
+        "textType": "Kurze Alltagsgespräche (Foto zuordnen)"
+      },
+      "photos": {
+        "0": {
+          "A": {
+            "query": "woman with backpack asking seated man question in train carriage",
+            "alt": "Eine Frau mit Rucksack steht im Zug und fragt einen Mann auf seinem Sitzplatz etwas."
+          },
+          "B": {
+            "query": "woman selling knitted scarf to man at outdoor market stall",
+            "alt": "Eine Frau verkauft einem Mann an einem Marktstand im Freien einen gestrickten Schal."
+          },
+          "C": {
+            "query": "saleswoman showing red yarn to man in wool shop",
+            "alt": "Eine Verkäuferin in einem Wollgeschäft zeigt einem Mann rote Wolle."
+          },
+          "D": {
+            "query": "woman at market stall holding out bar of soap for man to smell",
+            "alt": "Eine Frau an einem Marktstand hält einem Mann ein Stück Seife zum Riechen hin."
+          },
+          "E": {
+            "query": "hotel concierge at desk writing note for woman guest",
+            "alt": "Ein Concierge an der Hotelrezeption schreibt etwas auf einen Zettel für eine Frau."
+          },
+          "F": {
+            "query": "man holding name sign greeting woman with suitcase at train station",
+            "alt": "Ein Mann mit einem Namensschild begrüßt am Bahnhof eine Frau mit Koffer."
+          }
+        }
+      },
+      "display": {
+        "instruction": "Situation: Sie hören fünf kurze Gespräche. Welches Foto passt zu welchem Gespräch? Schreiben Sie die Nummer des Textes unter das Foto. Achtung: Ein Foto passt nicht. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "layout": "textNumber",
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "",
+                  "text": "Im Zug: Eine Frau mit Rucksack fragt einen Mann etwas."
+                },
+                {
+                  "key": "B",
+                  "title": "",
+                  "text": "Auf dem Markt verkauft eine Frau einem Mann einen Schal."
+                },
+                {
+                  "key": "C",
+                  "title": "",
+                  "text": "Im Geschäft zeigt eine Verkäuferin einem Mann rote Wolle."
+                },
+                {
+                  "key": "D",
+                  "title": "",
+                  "text": "Am Marktstand riecht ein Mann an einem Stück Seife."
+                },
+                {
+                  "key": "E",
+                  "title": "",
+                  "text": "An der Hotelrezeption schreibt ein Mann etwas für eine Frau auf."
+                },
+                {
+                  "key": "F",
+                  "title": "",
+                  "text": "Am Bahnhof begrüßt ein Mann mit Namensschild eine Frau mit Koffer."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 2,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 3,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 4,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 5,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fünf kurze Gespräche",
+          "speakers": {
+            "c1a": {
+              "name": "Concierge",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c1b": {
+              "name": "Gast",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c2a": {
+              "name": "Verkäuferin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2b": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c3a": {
+              "name": "Reisende",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c3b": {
+              "name": "Fahrgast",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c4a": {
+              "name": "Fahrer",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c4b": {
+              "name": "Frau Berger",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c5a": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c5b": {
+              "name": "Verkäuferin",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-07/oesd-a1-hoeren-07-t1.review.mp3",
+          "duration": 100.41
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "E",
+            "explanation": "Der Concierge empfiehlt ein Gasthaus und schreibt die Adresse auf einen Zettel. Das ist das Foto an der Hotelrezeption, nicht am Bahnhof.",
+            "evidence": {
+              "text": "Grüß Gott! Bitte schön? Kennen Sie ein gutes Restaurant hier in der Nähe? Ja, das Gasthaus Zum Hirschen, zwei Straßen weiter. Soll ich einen Tisch für zwei reservieren, um sieben Uhr? Ja, gern. Können Sie mir die Adresse auf einen Zettel schreiben?",
+              "hit": "Können Sie mir die Adresse auf einen Zettel schreiben?"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "C",
+            "explanation": "Der Mann kauft rote Wolle, er will den Schal selbst stricken. Auf dem Markt mit dem fertigen Schal kauft niemand Wolle.",
+            "evidence": {
+              "text": "Grüezi, kann ich Ihnen helfen? Ja, ich möchte selbst einen Schal stricken. Haben Sie rote Wolle? Ja, hier, diese Wolle ist sehr weich. Für einen Schal brauchen Sie drei Knäuel. Das macht zwölf Franken sechzig. Gut, die nehme ich. Merci.",
+              "hit": "ich möchte selbst einen Schal stricken. Haben Sie rote Wolle?"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "A",
+            "explanation": "Die Frau fragt im Zug einen Mann, wohin der Zug fährt. Das ist das Foto mit der Frau mit Rucksack im Zug.",
+            "evidence": {
+              "text": "Entschuldigung, fährt dieser Zug nach Mürzzuschlag? Nein, leider nicht. Der Zug fährt nur bis Gloggnitz. Dort müssen Sie umsteigen. Ach so, danke! Wissen Sie auch das Gleis in Gloggnitz? Nein, das weiß ich nicht. Schauen Sie doch auf Ihrem Handy nach.",
+              "hit": "fährt dieser Zug nach Mürzzuschlag?"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "F",
+            "explanation": "Ein Mann von der Firma holt Frau Berger ab und nimmt ihren Koffer. Das passt zum Foto mit dem Namensschild am Bahnhof.",
+            "evidence": {
+              "text": "Grüezi, sind Sie Frau Berger? Ja, das bin ich. Guten Tag! Ich bin von der Firma Brunnmatt. Darf ich Ihren Koffer nehmen? Unser Büro ist nur fünf Minuten zu Fuss von hier. Merci, das ist sehr freundlich.",
+              "hit": "Darf ich Ihren Koffer nehmen?"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "D",
+            "explanation": "Der Mann riecht an der Seife und kauft drei Stück am Marktstand. Am Stand mit dem Schal geht es um Kleidung, nicht um Seife.",
+            "evidence": {
+              "text": "Hm, die Lavendelseife riecht gut. Und die Rosenseife auch. Was kostet ein Stück? Grüß Gott! Ein Stück kostet vier Euro. Drei Stück kosten zusammen nur zehn Euro. Super, dann nehme ich drei. Das sind Geschenke. Gern. Möchten Sie ein Sackerl?",
+              "hit": "die Lavendelseife riecht gut"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1a",
+            "voice": "man_gruber_at",
+            "text": "Grüß Gott! Bitte schön?",
+            "delivery": "[friendly, professional]",
+            "clip": 1,
+            "sound": "lobby"
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_emilia_at",
+            "text": "Kennen Sie ein gutes Restaurant hier in der Nähe?",
+            "delivery": "[polite, curious]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1a",
+            "voice": "man_gruber_at",
+            "text": "Ja, das Gasthaus Zum Hirschen, zwei Straßen weiter. Soll ich einen Tisch für zwei reservieren, um sieben Uhr?",
+            "delivery": "[helpful]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1b",
+            "voice": "woman_emilia_at",
+            "text": "Ja, gern. Können Sie mir die Adresse auf einen Zettel schreiben?",
+            "delivery": "[pleased]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Grüezi, kann ich Ihnen helfen?",
+            "delivery": "[friendly, shop]",
+            "clip": 2,
+            "sound": "store"
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_thomas_ch",
+            "text": "Ja, ich möchte selbst einen Schal stricken. Haben Sie rote Wolle?",
+            "delivery": "[a bit shy]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Ja, hier, diese Wolle ist sehr weich. Für einen Schal brauchen Sie drei Knäuel. Das macht zwölf Franken sechzig.",
+            "delivery": "[helpful]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_thomas_ch",
+            "text": "Gut, die nehme ich. Merci.",
+            "delivery": "[pleased]",
+            "clip": 2
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_alexandra_at",
+            "text": "Entschuldigung, fährt dieser Zug nach Mürzzuschlag?",
+            "delivery": "[a bit worried]",
+            "clip": 3,
+            "sound": "train"
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_martin_at",
+            "text": "Nein, leider nicht. Der Zug fährt nur bis Gloggnitz. Dort müssen Sie umsteigen.",
+            "delivery": "[calm, helpful]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_alexandra_at",
+            "text": "Ach so, danke! Wissen Sie auch das Gleis in Gloggnitz?",
+            "delivery": "[relieved]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_martin_at",
+            "text": "Nein, das weiß ich nicht. Schauen Sie doch auf Ihrem Handy nach.",
+            "delivery": "[friendly]",
+            "clip": 3
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_andres_ch",
+            "text": "Grüezi, sind Sie Frau Berger?",
+            "delivery": "[friendly, a bit formal]",
+            "clip": 4,
+            "sound": "station"
+          },
+          {
+            "speaker": "c4b",
+            "voice": "woman_mia_ch",
+            "text": "Ja, das bin ich. Guten Tag!",
+            "delivery": "[pleased]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_andres_ch",
+            "text": "Ich bin von der Firma Brunnmatt. Darf ich Ihren Koffer nehmen? Unser Büro ist nur fünf Minuten zu Fuss von hier.",
+            "delivery": "[polite, helpful]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4b",
+            "voice": "woman_mia_ch",
+            "text": "Merci, das ist sehr freundlich.",
+            "delivery": "[warm]",
+            "clip": 4
+          },
+          {
+            "speaker": "c5a",
+            "voice": "man_gruber_at",
+            "text": "Hm, die Lavendelseife riecht gut. Und die Rosenseife auch. Was kostet ein Stück?",
+            "delivery": "[relaxed, curious]",
+            "clip": 5,
+            "sound": "market"
+          },
+          {
+            "speaker": "c5b",
+            "voice": "woman_alexandra_at",
+            "text": "Grüß Gott! Ein Stück kostet vier Euro. Drei Stück kosten zusammen nur zehn Euro.",
+            "delivery": "[cheerful, market stall]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5a",
+            "voice": "man_gruber_at",
+            "text": "Super, dann nehme ich drei. Das sind Geschenke.",
+            "delivery": "[pleased]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5b",
+            "voice": "woman_alexandra_at",
+            "text": "Gern. Möchten Sie ein Sackerl?",
+            "delivery": "[cheerful]",
+            "clip": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-07-t2",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.651Z",
+        "textType": "Nachricht auf der Sprachbox (Theater)"
+      },
+      "sound": "beep",
+      "exampleAnswers": [
+        "Theater – neuer Termin"
+      ],
+      "display": {
+        "instruction": "Situation: Sie hören eine Nachricht auf Ihrer Sprachbox. Schreiben Sie die wichtigen Informationen auf den Zettel. Die erste Zeile ist ein Beispiel. Sie hören den Text zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Notizen\n",
+                "Was: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nWann: am ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                ", ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                ". Dezember, um ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                " Uhr\nWo: ",
+                {
+                  "n": 9,
+                  "options": []
+                },
+                "gasse 12\nTelefon: 0699 / ",
+                {
+                  "n": 10,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Sprachbox",
+          "speakers": {
+            "lang": {
+              "name": "Herr Lang",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-07/oesd-a1-hoeren-07-t2.mp3",
+          "duration": 50.34
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "Sonntag",
+            "accept": [
+              "am Sonntag"
+            ],
+            "explanation": "Der neue Termin ist am Sonntag. Am Samstag fällt die Vorstellung aus.",
+            "evidence": {
+              "text": "Guten Tag, hier ist Lang von der Kleinbühne Rampenlicht in Mistelbach. Es geht um Ihre Theaterkarten für Samstag, den sechsten Dezember, um halb acht. Leider haben wir ein technisches Problem, die Vorstellung am Samstag fällt aus. Der neue Termin ist am Sonntag, dem siebten Dezember, um achtzehn Uhr. Wir spielen dann in einem anderen Saal, in der Amselgasse zwölf. Ich buchstabiere: A, M, S, E, L. Ihre Plätze bleiben gleich, Reihe vier. Die Kassa ist ab siebzehn Uhr offen. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, einundsiebzig, achtundfünfzig, null, sechsunddreißig. Auf Wiederhören!",
+              "hit": "Der neue Termin ist am Sonntag"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "7",
+            "accept": [
+              "7.",
+              "sieben",
+              "siebten"
+            ],
+            "explanation": "Der neue Tag ist der siebte Dezember. Der sechste Dezember ist der alte Termin.",
+            "evidence": {
+              "text": "Guten Tag, hier ist Lang von der Kleinbühne Rampenlicht in Mistelbach. Es geht um Ihre Theaterkarten für Samstag, den sechsten Dezember, um halb acht. Leider haben wir ein technisches Problem, die Vorstellung am Samstag fällt aus. Der neue Termin ist am Sonntag, dem siebten Dezember, um achtzehn Uhr. Wir spielen dann in einem anderen Saal, in der Amselgasse zwölf. Ich buchstabiere: A, M, S, E, L. Ihre Plätze bleiben gleich, Reihe vier. Die Kassa ist ab siebzehn Uhr offen. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, einundsiebzig, achtundfünfzig, null, sechsunddreißig. Auf Wiederhören!",
+              "hit": "dem siebten Dezember"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "18",
+            "accept": [
+              "18:00",
+              "18.00",
+              "achtzehn",
+              "6"
+            ],
+            "explanation": "Die neue Vorstellung beginnt um achtzehn Uhr. Um siebzehn Uhr öffnet nur die Kassa, und halb acht war der alte Termin.",
+            "evidence": {
+              "text": "Guten Tag, hier ist Lang von der Kleinbühne Rampenlicht in Mistelbach. Es geht um Ihre Theaterkarten für Samstag, den sechsten Dezember, um halb acht. Leider haben wir ein technisches Problem, die Vorstellung am Samstag fällt aus. Der neue Termin ist am Sonntag, dem siebten Dezember, um achtzehn Uhr. Wir spielen dann in einem anderen Saal, in der Amselgasse zwölf. Ich buchstabiere: A, M, S, E, L. Ihre Plätze bleiben gleich, Reihe vier. Die Kassa ist ab siebzehn Uhr offen. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, einundsiebzig, achtundfünfzig, null, sechsunddreißig. Auf Wiederhören!",
+              "hit": "um achtzehn Uhr"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Amsel",
+            "accept": [
+              "Amselgasse",
+              "Amselgasse 12"
+            ],
+            "exact": true,
+            "explanation": "Herr Lang buchstabiert den Namen: A, M, S, E, L. Der Name muss genau richtig sein.",
+            "evidence": {
+              "text": "Guten Tag, hier ist Lang von der Kleinbühne Rampenlicht in Mistelbach. Es geht um Ihre Theaterkarten für Samstag, den sechsten Dezember, um halb acht. Leider haben wir ein technisches Problem, die Vorstellung am Samstag fällt aus. Der neue Termin ist am Sonntag, dem siebten Dezember, um achtzehn Uhr. Wir spielen dann in einem anderen Saal, in der Amselgasse zwölf. Ich buchstabiere: A, M, S, E, L. Ihre Plätze bleiben gleich, Reihe vier. Die Kassa ist ab siebzehn Uhr offen. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, einundsiebzig, achtundfünfzig, null, sechsunddreißig. Auf Wiederhören!",
+              "hit": "Ich buchstabiere: A, M, S, E, L."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "7158036",
+            "accept": [
+              "71 58 0 36",
+              "71 58 036",
+              "715 80 36",
+              "7 1 5 8 0 3 6",
+              "71580 36"
+            ],
+            "exact": true,
+            "explanation": "Nach null sechs neun neun kommt einundsiebzig, achtundfünfzig, null, sechsunddreißig. Vier ist nur die Reihe im Theater.",
+            "evidence": {
+              "text": "Guten Tag, hier ist Lang von der Kleinbühne Rampenlicht in Mistelbach. Es geht um Ihre Theaterkarten für Samstag, den sechsten Dezember, um halb acht. Leider haben wir ein technisches Problem, die Vorstellung am Samstag fällt aus. Der neue Termin ist am Sonntag, dem siebten Dezember, um achtzehn Uhr. Wir spielen dann in einem anderen Saal, in der Amselgasse zwölf. Ich buchstabiere: A, M, S, E, L. Ihre Plätze bleiben gleich, Reihe vier. Die Kassa ist ab siebzehn Uhr offen. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, einundsiebzig, achtundfünfzig, null, sechsunddreißig. Auf Wiederhören!",
+              "hit": "einundsiebzig, achtundfünfzig, null, sechsunddreißig"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "lang",
+            "voice": "man_martin_at",
+            "text": "Guten Tag, hier ist Lang von der Kleinbühne Rampenlicht in Mistelbach. Es geht um Ihre Theaterkarten für Samstag, den sechsten Dezember, um halb acht. Leider haben wir ein technisches Problem, die Vorstellung am Samstag fällt aus. Der neue Termin ist am Sonntag, dem siebten Dezember, um achtzehn Uhr. Wir spielen dann in einem anderen Saal, in der Amselgasse zwölf. Ich buchstabiere: A, M, S, E, L. Ihre Plätze bleiben gleich, Reihe vier. Die Kassa ist ab siebzehn Uhr offen. Bei Fragen rufen Sie mich bitte an: null sechs neun neun, einundsiebzig, achtundfünfzig, null, sechsunddreißig. Auf Wiederhören!",
+            "delivery": "[calm, clear, office voicemail, slow]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-07-t3",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.651Z",
+        "textType": "Umfrage auf der Straße (Kurzinterviews)"
+      },
+      "sound": "street",
+      "display": {
+        "instruction": "Situation: Eine Reporterin fragt Leute auf der Straße. Welches Gemüse isst jede Person am liebsten? Kreuzen Sie für jeden Text eine Antwort an. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Welches Gemüse essen Sie am liebsten?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Karotten"
+                },
+                {
+                  "key": "b",
+                  "label": "Tomaten"
+                },
+                {
+                  "key": "c",
+                  "label": "Kartoffeln"
+                },
+                {
+                  "key": "d",
+                  "label": "Paprika"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 11,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 12,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 13,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 14,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 15,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "reporterin": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Text 1",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p2": {
+              "name": "Text 2",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p3": {
+              "name": "Text 3",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p4": {
+              "name": "Text 4",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p5": {
+              "name": "Text 5",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-07/oesd-a1-hoeren-07-t3.review.mp3",
+          "duration": 94.85
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Die Karotten kocht die Frau für ihre Kinder. Sie selbst isst am liebsten Kartoffeln, jeden Sonntag als Rösti.",
+            "evidence": {
+              "text": "Ich komme aus Brugg, in der Schweiz. Hm, Karotten koche ich oft, aber das ist für meine Kinder. Tomaten esse ich nur im Salat. Am liebsten esse ich, äh, Kartoffeln. Jeden Sonntag mache ich eine Rösti, das ist bei uns Tradition.",
+              "hit": "Am liebsten esse ich, äh, Kartoffeln."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Paprika ist dem Mann zu süß, und Kartoffeln findet er nur okay. Am liebsten isst er Karotten.",
+            "evidence": {
+              "text": "Also, Paprika mag ich nicht so, die sind mir zu süß. Kartoffeln sind okay, die esse ich oft zum Fleisch. Aber am liebsten, ja, Karotten. Ich nehme jeden Tag zwei Karotten mit in die Arbeit und esse sie roh. Das ist gesund.",
+              "hit": "Aber am liebsten, ja, Karotten."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Karotten findet die Frau langweilig, und Paprika mag sie nicht. Sie isst am liebsten Tomaten.",
+            "evidence": {
+              "text": "Äh, Karotten finde ich langweilig, ehrlich gesagt. Und Paprika? Nein, die mag ich gar nicht. Ich esse am liebsten Tomaten. Jeden Tag mache ich einen Tomatensalat mit Zwiebeln, ganz einfach, mit ein bisschen Öl und Salz. Das schmeckt mir immer.",
+              "hit": "Ich esse am liebsten Tomaten."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "d",
+            "explanation": "Kartoffeln gibt es bei ihm zu oft, und Tomaten sind nur okay. Am liebsten isst er gefüllte Paprika.",
+            "evidence": {
+              "text": "Hm, Kartoffeln gibt es bei uns fast jeden Tag, das ist langweilig. Tomaten sind okay, die esse ich manchmal. Aber am liebsten esse ich Paprika, also gefüllte Paprika mit Reis und Fleisch. Die hat meine Mutter immer gemacht, und jetzt koche ich sie selbst.",
+              "hit": "Aber am liebsten esse ich Paprika"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Tomaten isst die Frau nur im Sommer, Karotten nur manchmal. Am liebsten isst sie Kartoffeln.",
+            "evidence": {
+              "text": "Ich bin aus Bamberg und besuche hier meine Schwester. Tomaten esse ich nur im Sommer, da sind sie frisch. Karotten manchmal, in der Suppe. Aber Kartoffeln, die esse ich am liebsten, egal wie: als Salat, als Püree oder einfach gekocht.",
+              "hit": "Aber Kartoffeln, die esse ich am liebsten"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "reporterin",
+            "voice": "woman_alexandra_at",
+            "text": "Grüß Gott, wir machen eine Umfrage für die Zeitung. Welches Gemüse essen Sie am liebsten?",
+            "delivery": "[friendly reporter, outdoors]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_heidi_ch",
+            "text": "Ich komme aus Brugg, in der Schweiz. Hm, Karotten koche ich oft, aber das ist für meine Kinder. Tomaten esse ich nur im Salat. Am liebsten esse ich, äh, Kartoffeln. Jeden Sonntag mache ich eine Rösti, das ist bei uns Tradition.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_gruber_at",
+            "text": "Also, Paprika mag ich nicht so, die sind mir zu süß. Kartoffeln sind okay, die esse ich oft zum Fleisch. Aber am liebsten, ja, Karotten. Ich nehme jeden Tag zwei Karotten mit in die Arbeit und esse sie roh. Das ist gesund.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_emilia_at",
+            "text": "Äh, Karotten finde ich langweilig, ehrlich gesagt. Und Paprika? Nein, die mag ich gar nicht. Ich esse am liebsten Tomaten. Jeden Tag mache ich einen Tomatensalat mit Zwiebeln, ganz einfach, mit ein bisschen Öl und Salz. Das schmeckt mir immer.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_martin_at",
+            "text": "Hm, Kartoffeln gibt es bei uns fast jeden Tag, das ist langweilig. Tomaten sind okay, die esse ich manchmal. Aber am liebsten esse ich Paprika, also gefüllte Paprika mit Reis und Fleisch. Die hat meine Mutter immer gemacht, und jetzt koche ich sie selbst.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_irene",
+            "text": "Ich bin aus Bamberg und besuche hier meine Schwester. Tomaten esse ich nur im Sommer, da sind sie frisch. Karotten manchmal, in der Suppe. Aber Kartoffeln, die esse ich am liebsten, egal wie: als Salat, als Püree oder einfach gekocht.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 5
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "oesd-a1/hoeren-07/track.mp3",
+    "duration": 616.72,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 9.67,
+        "to": 16.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 16.14,
+        "to": 46.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 46.18,
+        "to": 60.76
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 66.27,
+        "to": 67.13
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 67.76,
+        "to": 88.01
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 90.04,
+        "to": 90.93
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 91.56,
+        "to": 110.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 112.22,
+        "to": 113.08
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 113.71,
+        "to": 132.13
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 134.16,
+        "to": 134.92
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 135.55,
+        "to": 153.36
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 155.4,
+        "to": 156.26
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 156.89,
+        "to": 176.38
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 183.93,
+        "to": 189.94
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 189.94,
+        "to": 219.98
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 219.98,
+        "to": 232.57
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 239.57,
+        "to": 289.91
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 296.91,
+        "to": 300.12
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 307.12,
+        "to": 357.46
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 364.46,
+        "to": 369.01
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 369.01,
+        "to": 389.04
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 394.55,
+        "to": 400.54
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 400.54,
+        "to": 410.57
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 410.57,
+        "to": 423.68
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 429.19,
+        "to": 434.76
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 436.3,
+        "to": 437.16
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 437.79,
+        "to": 453.98
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 456.02,
+        "to": 456.91
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 457.53,
+        "to": 474.15
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 476.19,
+        "to": 477.05
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 477.68,
+        "to": 493.51
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 495.54,
+        "to": 496.3
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 496.93,
+        "to": 514.38
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 516.41,
+        "to": 517.28
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 517.9,
+        "to": 533.79
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 541.34,
+        "to": 545.83
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 545.83,
+        "to": 605.86
+      }
+    ]
+  }
+}

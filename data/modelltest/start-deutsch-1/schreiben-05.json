@@ -1,0 +1,186 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-05-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.120Z",
+        "textType": "Formular ausfüllen: Anmeldung beim Carsharing"
+      },
+      "exampleAnswers": [
+        "Mensah, Kwame"
+      ],
+      "display": {
+        "instruction": "Ihr Freund möchte beim Carsharing mitmachen. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Kwame Mensah möchte beim Carsharing „Stadtflitzer“ in Hildesheim mitmachen. Er braucht manchmal ein Auto für den Einkauf. Seine Frau Abena hat keinen Führerschein.",
+            "Kwame hat den Führerschein seit 2015. Er ist am 3. September 1990 geboren. Er möchte monatlich bezahlen, nicht einmal im Jahr.",
+            "Bis Januar hat Kwame in Peine gewohnt. Jetzt wohnt er in der Lilienstraße 21, 31134 Hildesheim. Seine E-Mail-Adresse ist k.mensah@postfix.de."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Stadtflitzer Carsharing · Anmeldung\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nFührerschein seit (Jahr): ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nZahlung: ",
+                {
+                  "n": 4,
+                  "options": [
+                    "monatlich",
+                    "jährlich"
+                  ]
+                },
+                "\nE-Mail: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Lilienstraße 21",
+            "accept": [
+              "Lilienstr. 21",
+              "Lilienstrasse 21",
+              "Lilienstraße 21, 31134 Hildesheim",
+              "Lilienstraße 21, Hildesheim",
+              "Lilienstraße 21 in Hildesheim"
+            ],
+            "explanation": "Kwame wohnt jetzt in der Lilienstraße 21. In Peine hat er nur bis Januar gewohnt.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Mensah möchte beim Carsharing „Stadtflitzer“ in Hildesheim mitmachen. Er braucht manchmal ein Auto für den Einkauf. Seine Frau Abena hat keinen Führerschein. Kwame hat den Führerschein seit 2015. Er ist am 3. September 1990 geboren. Er möchte monatlich bezahlen, nicht einmal im Jahr. Bis Januar hat Kwame in Peine gewohnt. Jetzt wohnt er in der Lilienstraße 21, 31134 Hildesheim. Seine E-Mail-Adresse ist k.mensah@postfix.de.",
+              "hit": "Jetzt wohnt er in der Lilienstraße 21, 31134 Hildesheim."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "3. September 1990",
+            "accept": [
+              "3.9.1990",
+              "03.09.1990",
+              "3.09.1990",
+              "03.9.1990",
+              "03. September 1990",
+              "3. Sept. 1990",
+              "3.9.90",
+              "03.09.90"
+            ],
+            "explanation": "Kwame ist am 3. September 1990 geboren. Tag, Monat und Jahr müssen genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Mensah möchte beim Carsharing „Stadtflitzer“ in Hildesheim mitmachen. Er braucht manchmal ein Auto für den Einkauf. Seine Frau Abena hat keinen Führerschein. Kwame hat den Führerschein seit 2015. Er ist am 3. September 1990 geboren. Er möchte monatlich bezahlen, nicht einmal im Jahr. Bis Januar hat Kwame in Peine gewohnt. Jetzt wohnt er in der Lilienstraße 21, 31134 Hildesheim. Seine E-Mail-Adresse ist k.mensah@postfix.de.",
+              "hit": "Er ist am 3. September 1990 geboren."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "2015",
+            "accept": [
+              "seit 2015"
+            ],
+            "explanation": "Kwame hat den Führerschein seit 2015. Das Jahr 1990 ist sein Geburtsjahr.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Mensah möchte beim Carsharing „Stadtflitzer“ in Hildesheim mitmachen. Er braucht manchmal ein Auto für den Einkauf. Seine Frau Abena hat keinen Führerschein. Kwame hat den Führerschein seit 2015. Er ist am 3. September 1990 geboren. Er möchte monatlich bezahlen, nicht einmal im Jahr. Bis Januar hat Kwame in Peine gewohnt. Jetzt wohnt er in der Lilienstraße 21, 31134 Hildesheim. Seine E-Mail-Adresse ist k.mensah@postfix.de.",
+              "hit": "Kwame hat den Führerschein seit 2015."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "monatlich",
+            "explanation": "Kwame möchte monatlich bezahlen. Einmal im Jahr möchte er nicht.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Mensah möchte beim Carsharing „Stadtflitzer“ in Hildesheim mitmachen. Er braucht manchmal ein Auto für den Einkauf. Seine Frau Abena hat keinen Führerschein. Kwame hat den Führerschein seit 2015. Er ist am 3. September 1990 geboren. Er möchte monatlich bezahlen, nicht einmal im Jahr. Bis Januar hat Kwame in Peine gewohnt. Jetzt wohnt er in der Lilienstraße 21, 31134 Hildesheim. Seine E-Mail-Adresse ist k.mensah@postfix.de.",
+              "hit": "Er möchte monatlich bezahlen, nicht einmal im Jahr."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "k.mensah@postfix.de",
+            "explanation": "Kwames E-Mail-Adresse ist k.mensah@postfix.de.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Mensah möchte beim Carsharing „Stadtflitzer“ in Hildesheim mitmachen. Er braucht manchmal ein Auto für den Einkauf. Seine Frau Abena hat keinen Führerschein. Kwame hat den Führerschein seit 2015. Er ist am 3. September 1990 geboren. Er möchte monatlich bezahlen, nicht einmal im Jahr. Bis Januar hat Kwame in Peine gewohnt. Jetzt wohnt er in der Lilienstraße 21, 31134 Hildesheim. Seine E-Mail-Adresse ist k.mensah@postfix.de.",
+              "hit": "Seine E-Mail-Adresse ist k.mensah@postfix.de."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-05-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.120Z",
+        "textType": "Kurze E-Mail an den Vermieter"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an den Vermieter",
+            "situation": "In Ihrer Wohnung geht die Tür vom Badezimmer nicht mehr zu. Schreiben Sie Ihrem Vermieter, Herrn Pohl, eine E-Mail.",
+            "points": [
+              "Was ist das Problem?",
+              "Wann sind Sie zu Hause?",
+              "Fragen Sie: Wann kann jemand kommen?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Sehr geehrter Herr Pohl,\ndie Tür im Bad geht nicht mehr zu. Ich bin jeden Nachmittag zu Hause. Wann kann jemand kommen und die Tür reparieren?\nMit freundlichen Grüßen\nSelin Arslan"
+          }
+        ]
+      }
+    }
+  ]
+}

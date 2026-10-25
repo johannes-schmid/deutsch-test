@@ -140,7 +140,7 @@ ${officialNote(teil)}
 Neuer Teil (JSON):
 ${JSON.stringify(content).slice(0, 30000)}
 
-Liste jede Aufgabe oder jeden Text, dessen Situation UND geprüftes Detail einer offiziellen Aufgabe entspricht, auch bei anderen Namen, Zahlen oder Orten. Ein gleiches Alltagsthema allein (Reise, Restaurant, Wetter) ist kein Treffer; die Textsorte ist vorgegeben und kein Treffer. Wenn nichts zu nah ist: leere Liste.`)
+Liste jede Aufgabe oder jeden Text, dessen Situation UND geprüftes Detail einer offiziellen Aufgabe entspricht, auch bei anderen Namen, Zahlen oder Orten. Ein gleiches Alltagsthema allein (Reise, Restaurant, Wetter) ist kein Treffer; die Textsorte ist vorgegeben und kein Treffer. Auch das Aufgabenformat ist vorgegeben und kein Treffer: in Sprechen Teil 3 planen immer zwei Personen gemeinsam etwas, mit Leitpunkten wie wann, wo, Essen, Getränke, wer bezahlt, wer macht was; ein Treffer ist dort nur derselbe Anlass. Wenn nichts zu nah ist: leere Liste.`)
   return o.overlaps.map((x) => `too close to official material (${x.official}): "${x.ours}" — ${x.why}. Choose a different situation and a different detail to test`)
 }
 

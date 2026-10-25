@@ -1,0 +1,385 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-05-t1",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.694Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Gratis-WLAN im Stadtzentrum",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Neue Ruhezeiten im Sommer",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Stadt feiert ihr Jubiläum",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Hilfe mit dem Smartphone für Ältere",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Wer kennt alte Geschichten?",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Lärmschutzwand an der Autobahn",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Schnelles Internet für alle Häuser",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Wie laut ist unsere Stadt?",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Funde aus der Römerzeit",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Gratis-Kurs: sicher im Internet",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Heilbronn. Wo ist es in der Stadt besonders laut? Das wollte die Stadtverwaltung wissen. Im Mai hat sie an 20 Orten gemessen, morgens, mittags und abends. Am lautesten ist es am Bahnhof, am ruhigsten im Stadtpark. Alle Ergebnisse stehen auf der Webseite der Stadt. Hier sehen Sie drei Beispiele:",
+                  "origin": "aus einer deutschen Zeitung",
+                  "table": [
+                    [
+                      "Ort",
+                      "Dezibel"
+                    ],
+                    [
+                      "Bahnhof",
+                      "72"
+                    ],
+                    [
+                      "Marktplatz",
+                      "65"
+                    ],
+                    [
+                      "Stadtpark",
+                      "48"
+                    ]
+                  ]
+                },
+                {
+                  "n": 2,
+                  "text": "Neunkirchen. Wie schreibe ich eine Nachricht? Wie mache ich ein Foto und schicke es meinen Enkeln? Bei solchen Fragen helfen jetzt junge Leute aus der Stadt. Jeden Dienstag von 14 bis 16 Uhr erklären sie Pensionistinnen und Pensionisten im Gemeindezentrum ihr Handy. Das kostet nichts, eine Anmeldung ist nicht nötig.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Zug. Bei Bauarbeiten in einem alten Keller in der Altstadt haben Arbeiter im März etwas Besonderes gefunden: 40 Münzen aus Bronze. Sie sind fast 2000 Jahre alt und kommen aus dem Römischen Reich. Fachleute untersuchen sie jetzt in einem grossen Labor. Ab Herbst kann man die Münzen im Stadthaus ansehen. Der Eintritt ist gratis.",
+                  "origin": "aus einer Schweizer Zeitung"
+                },
+                {
+                  "n": 4,
+                  "text": "Kaiserslautern. Ab dem 1. Juni gelten in allen Wohngebieten neue Regeln. Mittags von 13 bis 15 Uhr und am Abend ab 22 Uhr soll es ruhig sein. In dieser Zeit dürfen Rasenmäher nicht laufen. Die Regeln gelten bis Ende September. Wer sich nicht daran hält, muss bis zu 50 Euro zahlen.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Schwaz. Ab nächstem Monat können alle kostenlos im Internet surfen: am Hauptplatz und in den Straßen rundherum. Man braucht kein Passwort und muss sich nicht anmelden. Das Netz funktioniert rund um die Uhr. Die Gemeinde möchte so mehr Gäste in die Innenstadt bringen. In den Wohnungen geht das aber nicht.",
+                  "origin": "aus einer österreichischen Zeitung"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "H",
+            "explanation": "Die Stadt hat an vielen Orten gemessen, wie laut es ist. Neue Ruhezeiten oder eine Lärmschutzwand kommen nicht vor.",
+            "evidence": {
+              "text": "Heilbronn. Wo ist es in der Stadt besonders laut? Das wollte die Stadtverwaltung wissen. Im Mai hat sie an 20 Orten gemessen, morgens, mittags und abends. Am lautesten ist es am Bahnhof, am ruhigsten im Stadtpark. Alle Ergebnisse stehen auf der Webseite der Stadt. Hier sehen Sie drei Beispiele:",
+              "hit": "Im Mai hat sie an 20 Orten gemessen, morgens, mittags und abends."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "D",
+            "explanation": "Junge Leute erklären älteren Menschen ihr Handy. Um schnelles Internet oder Sicherheit im Internet geht es nicht.",
+            "evidence": {
+              "text": "Neunkirchen. Wie schreibe ich eine Nachricht? Wie mache ich ein Foto und schicke es meinen Enkeln? Bei solchen Fragen helfen jetzt junge Leute aus der Stadt. Jeden Dienstag von 14 bis 16 Uhr erklären sie Pensionistinnen und Pensionisten im Gemeindezentrum ihr Handy. Das kostet nichts, eine Anmeldung ist nicht nötig.",
+              "hit": "Jeden Dienstag von 14 bis 16 Uhr erklären sie Pensionistinnen und Pensionisten im Gemeindezentrum ihr Handy."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "I",
+            "explanation": "Die Münzen sind fast 2000 Jahre alt und kommen aus dem Römischen Reich. Ein Jubiläum oder alte Geschichten kommen nicht vor.",
+            "evidence": {
+              "text": "Zug. Bei Bauarbeiten in einem alten Keller in der Altstadt haben Arbeiter im März etwas Besonderes gefunden: 40 Münzen aus Bronze. Sie sind fast 2000 Jahre alt und kommen aus dem Römischen Reich. Fachleute untersuchen sie jetzt in einem grossen Labor. Ab Herbst kann man die Münzen im Stadthaus ansehen. Der Eintritt ist gratis.",
+              "hit": "Sie sind fast 2000 Jahre alt und kommen aus dem Römischen Reich."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "B",
+            "explanation": "Von Juni bis September gibt es neue Zeiten, in denen es ruhig sein muss. Eine Messung oder eine Autobahn kommt nicht vor.",
+            "evidence": {
+              "text": "Kaiserslautern. Ab dem 1. Juni gelten in allen Wohngebieten neue Regeln. Mittags von 13 bis 15 Uhr und am Abend ab 22 Uhr soll es ruhig sein. In dieser Zeit dürfen Rasenmäher nicht laufen. Die Regeln gelten bis Ende September. Wer sich nicht daran hält, muss bis zu 50 Euro zahlen.",
+              "hit": "Mittags von 13 bis 15 Uhr und am Abend ab 22 Uhr soll es ruhig sein."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "A",
+            "explanation": "Am Hauptplatz kann man bald gratis und ohne Anmeldung ins Internet. In den Häusern und Wohnungen geht das nicht.",
+            "evidence": {
+              "text": "Schwaz. Ab nächstem Monat können alle kostenlos im Internet surfen: am Hauptplatz und in den Straßen rundherum. Man braucht kein Passwort und muss sich nicht anmelden. Das Netz funktioniert rund um die Uhr. Die Gemeinde möchte so mehr Gäste in die Innenstadt bringen. In den Wohnungen geht das aber nicht.",
+              "hit": "Ab nächstem Monat können alle kostenlos im Internet surfen: am Hauptplatz und in den Straßen rundherum."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-05-t2",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.694Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Wienerwald-Bote",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Mit 24 Jahren Bürgermeister",
+            "Florian Rainer ist erst 24 Jahre alt, aber er hat schon einen wichtigen Job: Seit dem letzten Frühling ist er Bürgermeister von Gutenstein. Das kleine Dorf in Niederösterreich hat etwa 1300 Einwohnerinnen und Einwohner.",
+            "Vorher hat Florian als Tischler in der Werkstatt seines Vaters gearbeitet. Eigentlich wollte er nach der Schule in Wien studieren. Aber dann ist er im Dorf geblieben, weil sein Vater Hilfe gebraucht hat.",
+            "Warum ist er Bürgermeister geworden? „Viele junge Leute gehen weg, in die Stadt“, sagt er. „Ich möchte, dass sie hier bleiben.“ Sein Vater war am Anfang gar nicht begeistert von der Idee.",
+            "Leicht war der Anfang nicht. Viele ältere Leute im Dorf haben ihn zuerst nicht ernst genommen. „Der ist doch noch ein Bub“, haben manche gesagt. Heute kommen gerade sie oft in seine Sprechstunde am Donnerstag.",
+            "Sein erstes Projekt war das alte Gasthaus am Dorfplatz. Es war fünf Jahre lang geschlossen. Manche wollten dort Wohnungen bauen. Jetzt ist es ein Treffpunkt für Jung und Alt. Freiwillige halten es offen, und es gibt dort Kurse und Vorträge.",
+            "Und die Werkstatt? Die hat Florian nicht vergessen. Am Wochenende steht er immer noch dort und baut Tische und Kästen."
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Florian Rainer ist Bürgermeister …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit dem letzten Winter."
+                },
+                {
+                  "key": "b",
+                  "label": "seit fünf Jahren."
+                },
+                {
+                  "key": "c",
+                  "label": "seit dem vergangenen Frühling."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Bevor er Bürgermeister war, hat Florian …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "an einer Universität in Wien studiert."
+                },
+                {
+                  "key": "b",
+                  "label": "zusammen mit seinem Vater Möbel gebaut."
+                },
+                {
+                  "key": "c",
+                  "label": "im Gasthaus am Dorfplatz gearbeitet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Florian ist Bürgermeister geworden, weil …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sein Vater das sehr gern wollte."
+                },
+                {
+                  "key": "b",
+                  "label": "die jungen Leute im Dorf bleiben sollen."
+                },
+                {
+                  "key": "c",
+                  "label": "er in der Stadt keine Arbeit gefunden hat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Viele ältere Leute im Dorf haben am Anfang …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ihm oft in der Sprechstunde geholfen."
+                },
+                {
+                  "key": "b",
+                  "label": "ihn sofort gewählt und unterstützt."
+                },
+                {
+                  "key": "c",
+                  "label": "gedacht, dass er noch zu jung ist."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Das alte Gasthaus ist heute …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Haus mit neuen Wohnungen."
+                },
+                {
+                  "key": "b",
+                  "label": "ein Ort für Menschen jeden Alters."
+                },
+                {
+                  "key": "c",
+                  "label": "leider noch immer geschlossen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Am Wochenende …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "arbeitet Florian noch als Tischler."
+                },
+                {
+                  "key": "b",
+                  "label": "hat Florian eine Sprechstunde."
+                },
+                {
+                  "key": "c",
+                  "label": "besucht Florian Kurse im Gasthaus."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Er war Tischler in der Werkstatt seines Vaters. Studieren wollte er nur, er hat es aber nicht gemacht.",
+            "evidence": {
+              "text": "Mit 24 Jahren Bürgermeister Florian Rainer ist erst 24 Jahre alt, aber er hat schon einen wichtigen Job: Seit dem letzten Frühling ist er Bürgermeister von Gutenstein. Das kleine Dorf in Niederösterreich hat etwa 1300 Einwohnerinnen und Einwohner. Vorher hat Florian als Tischler in der Werkstatt seines Vaters gearbeitet. Eigentlich wollte er nach der Schule in Wien studieren. Aber dann ist er im Dorf geblieben, weil sein Vater Hilfe gebraucht hat. Warum ist er Bürgermeister geworden? „Viele junge Leute gehen weg, in die Stadt“, sagt er. „Ich möchte, dass sie hier bleiben.“ Sein Vater war am Anfang gar nicht begeistert von der Idee. Leicht war der Anfang nicht. Viele ältere Leute im Dorf haben ihn zuerst nicht ernst genommen. „Der ist doch noch ein Bub“, haben manche gesagt. Heute kommen gerade sie oft in seine Sprechstunde am Donnerstag. Sein erstes Projekt war das alte Gasthaus am Dorfplatz. Es war fünf Jahre lang geschlossen. Manche wollten dort Wohnungen bauen. Jetzt ist es ein Treffpunkt für Jung und Alt. Freiwillige halten es offen, und es gibt dort Kurse und Vorträge. Und die Werkstatt? Die hat Florian nicht vergessen. Am Wochenende steht er immer noch dort und baut Tische und Kästen.",
+              "hit": "Vorher hat Florian als Tischler in der Werkstatt seines Vaters gearbeitet."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Er möchte, dass die jungen Leute im Dorf bleiben. Sein Vater war von der Idee gar nicht begeistert.",
+            "evidence": {
+              "text": "Mit 24 Jahren Bürgermeister Florian Rainer ist erst 24 Jahre alt, aber er hat schon einen wichtigen Job: Seit dem letzten Frühling ist er Bürgermeister von Gutenstein. Das kleine Dorf in Niederösterreich hat etwa 1300 Einwohnerinnen und Einwohner. Vorher hat Florian als Tischler in der Werkstatt seines Vaters gearbeitet. Eigentlich wollte er nach der Schule in Wien studieren. Aber dann ist er im Dorf geblieben, weil sein Vater Hilfe gebraucht hat. Warum ist er Bürgermeister geworden? „Viele junge Leute gehen weg, in die Stadt“, sagt er. „Ich möchte, dass sie hier bleiben.“ Sein Vater war am Anfang gar nicht begeistert von der Idee. Leicht war der Anfang nicht. Viele ältere Leute im Dorf haben ihn zuerst nicht ernst genommen. „Der ist doch noch ein Bub“, haben manche gesagt. Heute kommen gerade sie oft in seine Sprechstunde am Donnerstag. Sein erstes Projekt war das alte Gasthaus am Dorfplatz. Es war fünf Jahre lang geschlossen. Manche wollten dort Wohnungen bauen. Jetzt ist es ein Treffpunkt für Jung und Alt. Freiwillige halten es offen, und es gibt dort Kurse und Vorträge. Und die Werkstatt? Die hat Florian nicht vergessen. Am Wochenende steht er immer noch dort und baut Tische und Kästen.",
+              "hit": "„Ich möchte, dass sie hier bleiben.“"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Sie haben ihn zuerst nicht ernst genommen, für sie war er noch ein Bub. In seine Sprechstunde kommen sie erst heute.",
+            "evidence": {
+              "text": "Mit 24 Jahren Bürgermeister Florian Rainer ist erst 24 Jahre alt, aber er hat schon einen wichtigen Job: Seit dem letzten Frühling ist er Bürgermeister von Gutenstein. Das kleine Dorf in Niederösterreich hat etwa 1300 Einwohnerinnen und Einwohner. Vorher hat Florian als Tischler in der Werkstatt seines Vaters gearbeitet. Eigentlich wollte er nach der Schule in Wien studieren. Aber dann ist er im Dorf geblieben, weil sein Vater Hilfe gebraucht hat. Warum ist er Bürgermeister geworden? „Viele junge Leute gehen weg, in die Stadt“, sagt er. „Ich möchte, dass sie hier bleiben.“ Sein Vater war am Anfang gar nicht begeistert von der Idee. Leicht war der Anfang nicht. Viele ältere Leute im Dorf haben ihn zuerst nicht ernst genommen. „Der ist doch noch ein Bub“, haben manche gesagt. Heute kommen gerade sie oft in seine Sprechstunde am Donnerstag. Sein erstes Projekt war das alte Gasthaus am Dorfplatz. Es war fünf Jahre lang geschlossen. Manche wollten dort Wohnungen bauen. Jetzt ist es ein Treffpunkt für Jung und Alt. Freiwillige halten es offen, und es gibt dort Kurse und Vorträge. Und die Werkstatt? Die hat Florian nicht vergessen. Am Wochenende steht er immer noch dort und baut Tische und Kästen.",
+              "hit": "Viele ältere Leute im Dorf haben ihn zuerst nicht ernst genommen."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Das Gasthaus ist jetzt ein Treffpunkt für Jung und Alt. Wohnungen wollten dort nur manche Leute bauen.",
+            "evidence": {
+              "text": "Mit 24 Jahren Bürgermeister Florian Rainer ist erst 24 Jahre alt, aber er hat schon einen wichtigen Job: Seit dem letzten Frühling ist er Bürgermeister von Gutenstein. Das kleine Dorf in Niederösterreich hat etwa 1300 Einwohnerinnen und Einwohner. Vorher hat Florian als Tischler in der Werkstatt seines Vaters gearbeitet. Eigentlich wollte er nach der Schule in Wien studieren. Aber dann ist er im Dorf geblieben, weil sein Vater Hilfe gebraucht hat. Warum ist er Bürgermeister geworden? „Viele junge Leute gehen weg, in die Stadt“, sagt er. „Ich möchte, dass sie hier bleiben.“ Sein Vater war am Anfang gar nicht begeistert von der Idee. Leicht war der Anfang nicht. Viele ältere Leute im Dorf haben ihn zuerst nicht ernst genommen. „Der ist doch noch ein Bub“, haben manche gesagt. Heute kommen gerade sie oft in seine Sprechstunde am Donnerstag. Sein erstes Projekt war das alte Gasthaus am Dorfplatz. Es war fünf Jahre lang geschlossen. Manche wollten dort Wohnungen bauen. Jetzt ist es ein Treffpunkt für Jung und Alt. Freiwillige halten es offen, und es gibt dort Kurse und Vorträge. Und die Werkstatt? Die hat Florian nicht vergessen. Am Wochenende steht er immer noch dort und baut Tische und Kästen.",
+              "hit": "Jetzt ist es ein Treffpunkt für Jung und Alt."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Am Wochenende baut er immer noch Möbel in der Werkstatt. Die Sprechstunde ist am Donnerstag.",
+            "evidence": {
+              "text": "Mit 24 Jahren Bürgermeister Florian Rainer ist erst 24 Jahre alt, aber er hat schon einen wichtigen Job: Seit dem letzten Frühling ist er Bürgermeister von Gutenstein. Das kleine Dorf in Niederösterreich hat etwa 1300 Einwohnerinnen und Einwohner. Vorher hat Florian als Tischler in der Werkstatt seines Vaters gearbeitet. Eigentlich wollte er nach der Schule in Wien studieren. Aber dann ist er im Dorf geblieben, weil sein Vater Hilfe gebraucht hat. Warum ist er Bürgermeister geworden? „Viele junge Leute gehen weg, in die Stadt“, sagt er. „Ich möchte, dass sie hier bleiben.“ Sein Vater war am Anfang gar nicht begeistert von der Idee. Leicht war der Anfang nicht. Viele ältere Leute im Dorf haben ihn zuerst nicht ernst genommen. „Der ist doch noch ein Bub“, haben manche gesagt. Heute kommen gerade sie oft in seine Sprechstunde am Donnerstag. Sein erstes Projekt war das alte Gasthaus am Dorfplatz. Es war fünf Jahre lang geschlossen. Manche wollten dort Wohnungen bauen. Jetzt ist es ein Treffpunkt für Jung und Alt. Freiwillige halten es offen, und es gibt dort Kurse und Vorträge. Und die Werkstatt? Die hat Florian nicht vergessen. Am Wochenende steht er immer noch dort und baut Tische und Kästen.",
+              "hit": "Am Wochenende steht er immer noch dort und baut Tische und Kästen."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ]
+}

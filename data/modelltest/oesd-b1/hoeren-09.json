@@ -1,0 +1,2355 @@
+{
+  "exam": "oesd-b1",
+  "skill": "hoeren",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "oesd-b1-hoeren-09-t1-bsp",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Wanda will das Spiel bei sich zu Hause anschauen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Wanda möchte sich treffen um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "halb neun."
+                },
+                {
+                  "key": "b",
+                  "label": "Viertel vor neun."
+                },
+                {
+                  "key": "c",
+                  "label": "neun Uhr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Wanda",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 31.61,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t1-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Hallo du, hier ist Wanda. Du, am Dienstag ist doch das Spiel, und bei mir zu Hause ist der Fernseher kaputt. Deshalb hab ich im Biergarten am Stadtpark einen Tisch reserviert, da zeigen sie das Spiel auf der großen Leinwand. Das Spiel fängt um neun an, aber treffen wir uns lieber schon um Viertel vor neun, sonst wird's zu hektisch. Um halb neun schaff ich's nicht, ich arbeite bis acht. Sag mir kurz Bescheid, ob du kommst, ja? Tschüss!",
+            "delivery": "[friendly, casual voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "falsch",
+        "b"
+      ]
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t1-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Kinder dürfen sich in einen Rettungswagen setzen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Kostenlos ist …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "das Blutdruckmessen."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Jause am Stand."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Fahrt im Rettungswagen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "duration": 36.02,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t1-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Richtig: „Kinder dürfen sich in einen Rettungswagen setzen und alles genau anschauen“, nur mitfahren geht nicht.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp fürs Wochenende: Die Rettung in St. Veit an der Glan öffnet am Samstag von zehn bis sechzehn Uhr ihre Türen. Kinder dürfen sich in einen Rettungswagen setzen und alles genau anschauen, mitfahren geht aber natürlich nicht. Wer möchte, kann sich gratis den Blutdruck messen lassen. Heuer gibt's zum ersten Mal auch einen Jausenstand, eine Jause kostet drei Euro. Und um vierzehn Uhr landet ein Hubschrauber, allerdings nur, wenn das Wetter mitspielt.",
+              "hit": "allerdings nur, wenn das Wetter mitspielt"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Den Blutdruck kann man gratis messen lassen. Die Jause kostet drei Euro, und mitfahren darf man nicht.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp fürs Wochenende: Die Rettung in St. Veit an der Glan öffnet am Samstag von zehn bis sechzehn Uhr ihre Türen. Kinder dürfen sich in einen Rettungswagen setzen und alles genau anschauen, mitfahren geht aber natürlich nicht. Wer möchte, kann sich gratis den Blutdruck messen lassen. Heuer gibt's zum ersten Mal auch einen Jausenstand, eine Jause kostet drei Euro. Und um vierzehn Uhr landet ein Hubschrauber, allerdings nur, wenn das Wetter mitspielt.",
+              "hit": "Wer möchte, kann sich gratis den Blutdruck messen lassen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_gruber_at",
+            "text": "Und jetzt ein Tipp fürs Wochenende: Die Rettung in St. Veit an der Glan öffnet am Samstag von zehn bis sechzehn Uhr ihre Türen. Kinder dürfen sich in einen Rettungswagen setzen und alles genau anschauen, mitfahren geht aber natürlich nicht. Wer möchte, kann sich gratis den Blutdruck messen lassen. Heuer gibt's zum ersten Mal auch einen Jausenstand, eine Jause kostet drei Euro. Und um vierzehn Uhr landet ein Hubschrauber, allerdings nur, wenn das Wetter mitspielt.",
+            "delivery": "[warm, upbeat regional radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t1-02",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Nachricht auf der Mailbox (Rahmenwerkstatt)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Der Rahmen ist mit Glas fertig."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Die Werkstatt bietet an, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "das Geld zurückzugeben."
+                },
+                {
+                  "key": "b",
+                  "label": "Kunststoff statt Glas zu nehmen."
+                },
+                {
+                  "key": "c",
+                  "label": "den Rahmen nach Hause zu bringen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Rahmenwerkstatt",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 36.96,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t1-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Bei der Arbeit ist das Glas kaputtgegangen. Der Rahmen ist also noch nicht mit Glas fertig.",
+            "evidence": {
+              "text": "Guten Tag, Frau Seiler, hier ist die Rahmenwerkstatt Faltin in Amberg. Ihr Rahmen für das Poster ist eigentlich fertig, aber leider ist uns bei der Arbeit das Glas kaputtgegangen. Wir können Ihnen stattdessen Acrylglas anbieten, das ist ein Kunststoff, viel leichter, und es kostet genauso viel. Oder Sie warten eine Woche, bis neues Glas da ist. Bitte rufen Sie uns kurz zurück und sagen Sie, was Ihnen lieber ist. Den Rahmen holen Sie dann wie besprochen im Laden ab. Vielen Dank und auf Wiederhören!",
+              "hit": "aber leider ist uns bei der Arbeit das Glas kaputtgegangen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Die Werkstatt bietet Acrylglas an, das ist ein Kunststoff. Den Rahmen muss Frau Seiler selbst im Laden abholen.",
+            "evidence": {
+              "text": "Guten Tag, Frau Seiler, hier ist die Rahmenwerkstatt Faltin in Amberg. Ihr Rahmen für das Poster ist eigentlich fertig, aber leider ist uns bei der Arbeit das Glas kaputtgegangen. Wir können Ihnen stattdessen Acrylglas anbieten, das ist ein Kunststoff, viel leichter, und es kostet genauso viel. Oder Sie warten eine Woche, bis neues Glas da ist. Bitte rufen Sie uns kurz zurück und sagen Sie, was Ihnen lieber ist. Den Rahmen holen Sie dann wie besprochen im Laden ab. Vielen Dank und auf Wiederhören!",
+              "hit": "Wir können Ihnen stattdessen Acrylglas anbieten, das ist ein Kunststoff"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Guten Tag, Frau Seiler, hier ist die Rahmenwerkstatt Faltin in Amberg. Ihr Rahmen für das Poster ist eigentlich fertig, aber leider ist uns bei der Arbeit das Glas kaputtgegangen. Wir können Ihnen stattdessen Acrylglas anbieten, das ist ein Kunststoff, viel leichter, und es kostet genauso viel. Oder Sie warten eine Woche, bis neues Glas da ist. Bitte rufen Sie uns kurz zurück und sagen Sie, was Ihnen lieber ist. Den Rahmen holen Sie dann wie besprochen im Laden ab. Vielen Dank und auf Wiederhören!",
+            "delivery": "[polite, apologetic shop voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t1-03",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Durchsage im Hallenbad"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Das Sportbecken kann man heute ab dem Nachmittag nicht benutzen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Die Schwimmer im Sportbecken sollen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sofort ins Nichtschwimmerbecken gehen."
+                },
+                {
+                  "key": "b",
+                  "label": "um vier das ganze Bad verlassen."
+                },
+                {
+                  "key": "c",
+                  "label": "das Becken bis Viertel vor vier verlassen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage im Hallenbad",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage im Schwimmbad.",
+          "duration": 36,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t1-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Ab sechzehn Uhr ist das Sportbecken geschlossen, weil die Lampen repariert werden. Erst morgen früh ist es wieder offen.",
+            "evidence": {
+              "text": "Liebe Badegäste, eine Durchsage in eigener Sache. Im Sportbecken müssen heute die Lampen repariert werden. Deshalb ist das Sportbecken ab sechzehn Uhr geschlossen. Bitte verlassen Sie das Becken spätestens um Viertel vor vier, damit die Techniker pünktlich anfangen können. Das Nichtschwimmerbecken und die Rutsche bleiben wie gewohnt geöffnet, auch die Sauna ist ganz normal in Betrieb. Morgen früh ist das Sportbecken wieder für alle da. Vielen Dank für Ihr Verständnis, Ihr Team vom Hallenbad am Eichholz.",
+              "hit": "Deshalb ist das Sportbecken ab sechzehn Uhr geschlossen."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "Man soll das Sportbecken spätestens um Viertel vor vier verlassen. Das übrige Bad bleibt offen.",
+            "evidence": {
+              "text": "Liebe Badegäste, eine Durchsage in eigener Sache. Im Sportbecken müssen heute die Lampen repariert werden. Deshalb ist das Sportbecken ab sechzehn Uhr geschlossen. Bitte verlassen Sie das Becken spätestens um Viertel vor vier, damit die Techniker pünktlich anfangen können. Das Nichtschwimmerbecken und die Rutsche bleiben wie gewohnt geöffnet, auch die Sauna ist ganz normal in Betrieb. Morgen früh ist das Sportbecken wieder für alle da. Vielen Dank für Ihr Verständnis, Ihr Team vom Hallenbad am Eichholz.",
+              "hit": "Bitte verlassen Sie das Becken spätestens um Viertel vor vier"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_martin_at",
+            "text": "Liebe Badegäste, eine Durchsage in eigener Sache. Im Sportbecken müssen heute die Lampen repariert werden. Deshalb ist das Sportbecken ab sechzehn Uhr geschlossen. Bitte verlassen Sie das Becken spätestens um Viertel vor vier, damit die Techniker pünktlich anfangen können. Das Nichtschwimmerbecken und die Rutsche bleiben wie gewohnt geöffnet, auch die Sauna ist ganz normal in Betrieb. Morgen früh ist das Sportbecken wieder für alle da. Vielen Dank für Ihr Verständnis, Ihr Team vom Hallenbad am Eichholz.",
+            "delivery": "[calm, clear public address announcement]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t1-04",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Nachricht auf der Mailbox (Reinigung)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Alle Sachen sind schon fertig."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Frau Wirz kann ihre Sachen abholen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Donnerstagnachmittag."
+                },
+                {
+                  "key": "b",
+                  "label": "heute Abend."
+                },
+                {
+                  "key": "c",
+                  "label": "ab Freitag."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Reinigung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 34.98,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t1-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Nur das Duvet ist sauber. Das Federkissen braucht noch einen Tag.",
+            "evidence": {
+              "text": "Grüezi Frau Wirz, hier ist Zgraggen von der Reinigung Blitzblank in Arbon. Ihr Duvet ist sauber und kann abgeholt werden. Das Federkissen braucht aber noch einen Tag, das trocknet langsamer als gedacht. Am Donnerstagnachmittag haben wir leider geschlossen, kommen Sie also am besten ab Freitag vorbei, dann können Sie alles zusammen mitnehmen. Das macht dann insgesamt achtunddreissig Franken. Bei Fragen erreichen Sie uns unter null sieben eins, vier vier sieben, zwanzig, dreissig. Merci und einen schönen Tag.",
+              "hit": "Das Federkissen braucht aber noch einen Tag"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Herr Zgraggen sagt, dass sie am besten ab Freitag kommt. Am Donnerstagnachmittag ist die Reinigung geschlossen.",
+            "evidence": {
+              "text": "Grüezi Frau Wirz, hier ist Zgraggen von der Reinigung Blitzblank in Arbon. Ihr Duvet ist sauber und kann abgeholt werden. Das Federkissen braucht aber noch einen Tag, das trocknet langsamer als gedacht. Am Donnerstagnachmittag haben wir leider geschlossen, kommen Sie also am besten ab Freitag vorbei, dann können Sie alles zusammen mitnehmen. Das macht dann insgesamt achtunddreissig Franken. Bei Fragen erreichen Sie uns unter null sieben eins, vier vier sieben, zwanzig, dreissig. Merci und einen schönen Tag.",
+              "hit": "kommen Sie also am besten ab Freitag vorbei"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_andres_ch",
+            "text": "Grüezi Frau Wirz, hier ist Zgraggen von der Reinigung Blitzblank in Arbon. Ihr Duvet ist sauber und kann abgeholt werden. Das Federkissen braucht aber noch einen Tag, das trocknet langsamer als gedacht. Am Donnerstagnachmittag haben wir leider geschlossen, kommen Sie also am besten ab Freitag vorbei, dann können Sie alles zusammen mitnehmen. Das macht dann insgesamt achtunddreissig Franken. Bei Fragen erreichen Sie uns unter null sieben eins, vier vier sieben, zwanzig, dreissig. Merci und einen schönen Tag.",
+            "delivery": "[friendly, matter-of-fact shop owner voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t1-05",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Die Farbberatung bekommt man immer kostenlos."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Nur am Samstag gibt es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Malerset gratis."
+                },
+                {
+                  "key": "b",
+                  "label": "fünfzehn Prozent Rabatt."
+                },
+                {
+                  "key": "c",
+                  "label": "eine kostenlose Beratung."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "duration": 35.32,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t1-05.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Richtig: „Unsere Farbberatung kostet Sie nie etwas.“",
+            "evidence": {
+              "text": "Sie wollen streichen, wissen aber noch nicht, welche Farbe? Dann kommen Sie zu Malerbedarf Kolb in Aalen! Unsere Farbberatung kostet Sie nie etwas, egal ob fürs Wohnzimmer oder fürs Kinderzimmer. Und diese Woche gibt's fünfzehn Prozent auf alle Wandfarben. Aber das Beste kommt am Samstag: Nur an diesem Tag bekommen Sie zu jedem Einkauf ein Malerset geschenkt, mit Rolle, Pinsel und Farbwanne. Malerbedarf Kolb, Ulmer Straße achtzehn. Wir bringen Farbe in Ihr Leben!",
+              "hit": "Unsere Farbberatung kostet Sie nie etwas"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Das Malerset bekommt man nur am Samstag geschenkt. Den Rabatt gibt es die ganze Woche, die Beratung immer.",
+            "evidence": {
+              "text": "Sie wollen streichen, wissen aber noch nicht, welche Farbe? Dann kommen Sie zu Malerbedarf Kolb in Aalen! Unsere Farbberatung kostet Sie nie etwas, egal ob fürs Wohnzimmer oder fürs Kinderzimmer. Und diese Woche gibt's fünfzehn Prozent auf alle Wandfarben. Aber das Beste kommt am Samstag: Nur an diesem Tag bekommen Sie zu jedem Einkauf ein Malerset geschenkt, mit Rolle, Pinsel und Farbwanne. Malerbedarf Kolb, Ulmer Straße achtzehn. Wir bringen Farbe in Ihr Leben!",
+              "hit": "Nur an diesem Tag bekommen Sie zu jedem Einkauf ein Malerset geschenkt"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Sie wollen streichen, wissen aber noch nicht, welche Farbe? Dann kommen Sie zu Malerbedarf Kolb in Aalen! Unsere Farbberatung kostet Sie nie etwas, egal ob fürs Wohnzimmer oder fürs Kinderzimmer. Und diese Woche gibt's fünfzehn Prozent auf alle Wandfarben. Aber das Beste kommt am Samstag: Nur an diesem Tag bekommen Sie zu jedem Einkauf ein Malerset geschenkt, mit Rolle, Pinsel und Farbwanne. Malerbedarf Kolb, Ulmer Straße achtzehn. Wir bringen Farbe in Ihr Leben!",
+            "delivery": "[energetic, cheerful radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t2-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Führung durch eine Müllsortieranlage"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Sortierung sehen die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "direkt an den Bändern in der Halle."
+                },
+                {
+                  "key": "b",
+                  "label": "nur durch ein großes Fenster."
+                },
+                {
+                  "key": "c",
+                  "label": "auf einem Bildschirm im Besucherraum."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "In der Anlieferungshalle sollen die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nichts anfassen."
+                },
+                {
+                  "key": "b",
+                  "label": "einen Helm tragen."
+                },
+                {
+                  "key": "c",
+                  "label": "keine Fotos machen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Der häufigste Fehler beim Sortieren sind …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Batterien im Gelben Sack."
+                },
+                {
+                  "key": "b",
+                  "label": "Essensreste in den Verpackungen."
+                },
+                {
+                  "key": "c",
+                  "label": "Verpackungen, die ineinanderstecken."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Nach der Führung …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "können die Besucher Gelbe Säcke mitnehmen."
+                },
+                {
+                  "key": "b",
+                  "label": "zeigt ein Film, wie die Anlage arbeitet."
+                },
+                {
+                  "key": "c",
+                  "label": "können Kinder bei einem Sortierspiel mitmachen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Ihre Fragen sollen die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "direkt auf der Galerie stellen."
+                },
+                {
+                  "key": "b",
+                  "label": "am Ende im Besucherraum stellen."
+                },
+                {
+                  "key": "c",
+                  "label": "den Fahrern in der Halle stellen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Führung durch eine Sortieranlage",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Gudrun Pahl, Gästeführerin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie machen eine Führung durch die Müllsortieranlage in Gummersbach mit.",
+          "duration": 172.64,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t2-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Zu den Bändern darf man nicht, weil es unten sehr staubig ist. Man sieht alles von der Galerie durch eine große Fensterscheibe.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Sortierzentrum Oberberg! Mein Name ist Gudrun Pahl, und ich führe Sie heute durch unsere Anlage. Schön, dass auch so viele Kinder dabei sind. Bevor wir losgehen, ein paar Worte zum Ablauf. Die Führung dauert ungefähr eine Stunde. Hier bei uns landet alles, was in Gummersbach und Umgebung in die Gelben Säcke und Gelben Tonnen kommt, also Verpackungen aus Plastik, Metall und so weiter. Jeden Tag bringen die Lastwagen etwa hundertzwanzig Tonnen. Wir gehen zuerst durch die Anlieferungshalle. Da kippen die Lastwagen die Säcke ab. Einen Helm brauchen Sie nicht, Sie bleiben ja hinter dem Geländer. Und fotografieren dürfen Sie natürlich auch. Aber bitte fassen Sie dort nichts an, auch wenn da vielleicht etwas Interessantes liegt. Da sind manchmal Glasscherben oder Dosen mit scharfen Kanten dabei. Und sprechen Sie die Fahrer bitte nicht an, die haben einen sehr engen Zeitplan. Danach geht's in den ersten Stock auf die Galerie. Viele fragen mich, ob man nicht direkt zu den Bändern gehen kann. Das geht leider nicht. Die Anlage läuft, auch heute am Samstag, und unten in der Halle ist es sehr staubig. Sie sehen aber alles sehr gut durch eine große Fensterscheibe. Die Maschinen trennen die Verpackungen mit Luft, mit Magneten und mit Licht. Und das klappt ziemlich gut, wenn die Leute zu Hause richtig sortieren. Was machen die Leute denn falsch? Batterien im Gelben Sack, das ist sehr gefährlich, die können brennen. Zum Glück passiert das aber nicht so oft. Wenn Sie alte Batterien haben, bringen Sie die bitte in den Supermarkt, da gibt es Sammelboxen. Essensreste sind übrigens gar kein Problem. Sie müssen Ihren Joghurtbecher nicht spülen, löffelleer reicht völlig. Der häufigste Fehler ist ein anderer: Viele stecken Verpackungen ineinander, zum Beispiel den Joghurtbecher in die Konservendose, oder sie lassen den Aludeckel am Becher. Das kann keine Maschine trennen, und dann landet alles im Restmüll. Zum Schluss gehen wir in unseren Besucherraum. Dort zeigt ein Bildschirm, wie viel wir pro Jahr sortieren. Für die Kinder haben wir ein Sortierspiel vorbereitet, mit echtem Müll, natürlich sauber. Die Erwachsenen dürfen gern zuschauen. Gelbe Säcke können wir Ihnen hier leider nicht mitgeben, die bekommen Sie im Bürgerbüro. Noch eine Bitte: Oben auf der Galerie ist es ziemlich laut, da verstehen wir uns kaum. Sammeln Sie Ihre Fragen deshalb lieber, und im Besucherraum beantworte ich am Ende alles in Ruhe. So, dann folgen Sie mir bitte, hier entlang.",
+              "hit": "Sie sehen aber alles sehr gut durch eine große Fensterscheibe."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "In der Halle soll man nichts anfassen, weil dort Scherben liegen können. Einen Helm braucht man nicht, und Fotos sind erlaubt.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Sortierzentrum Oberberg! Mein Name ist Gudrun Pahl, und ich führe Sie heute durch unsere Anlage. Schön, dass auch so viele Kinder dabei sind. Bevor wir losgehen, ein paar Worte zum Ablauf. Die Führung dauert ungefähr eine Stunde. Hier bei uns landet alles, was in Gummersbach und Umgebung in die Gelben Säcke und Gelben Tonnen kommt, also Verpackungen aus Plastik, Metall und so weiter. Jeden Tag bringen die Lastwagen etwa hundertzwanzig Tonnen. Wir gehen zuerst durch die Anlieferungshalle. Da kippen die Lastwagen die Säcke ab. Einen Helm brauchen Sie nicht, Sie bleiben ja hinter dem Geländer. Und fotografieren dürfen Sie natürlich auch. Aber bitte fassen Sie dort nichts an, auch wenn da vielleicht etwas Interessantes liegt. Da sind manchmal Glasscherben oder Dosen mit scharfen Kanten dabei. Und sprechen Sie die Fahrer bitte nicht an, die haben einen sehr engen Zeitplan. Danach geht's in den ersten Stock auf die Galerie. Viele fragen mich, ob man nicht direkt zu den Bändern gehen kann. Das geht leider nicht. Die Anlage läuft, auch heute am Samstag, und unten in der Halle ist es sehr staubig. Sie sehen aber alles sehr gut durch eine große Fensterscheibe. Die Maschinen trennen die Verpackungen mit Luft, mit Magneten und mit Licht. Und das klappt ziemlich gut, wenn die Leute zu Hause richtig sortieren. Was machen die Leute denn falsch? Batterien im Gelben Sack, das ist sehr gefährlich, die können brennen. Zum Glück passiert das aber nicht so oft. Wenn Sie alte Batterien haben, bringen Sie die bitte in den Supermarkt, da gibt es Sammelboxen. Essensreste sind übrigens gar kein Problem. Sie müssen Ihren Joghurtbecher nicht spülen, löffelleer reicht völlig. Der häufigste Fehler ist ein anderer: Viele stecken Verpackungen ineinander, zum Beispiel den Joghurtbecher in die Konservendose, oder sie lassen den Aludeckel am Becher. Das kann keine Maschine trennen, und dann landet alles im Restmüll. Zum Schluss gehen wir in unseren Besucherraum. Dort zeigt ein Bildschirm, wie viel wir pro Jahr sortieren. Für die Kinder haben wir ein Sortierspiel vorbereitet, mit echtem Müll, natürlich sauber. Die Erwachsenen dürfen gern zuschauen. Gelbe Säcke können wir Ihnen hier leider nicht mitgeben, die bekommen Sie im Bürgerbüro. Noch eine Bitte: Oben auf der Galerie ist es ziemlich laut, da verstehen wir uns kaum. Sammeln Sie Ihre Fragen deshalb lieber, und im Besucherraum beantworte ich am Ende alles in Ruhe. So, dann folgen Sie mir bitte, hier entlang.",
+              "hit": "Aber bitte fassen Sie dort nichts an"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Am häufigsten stecken die Leute Verpackungen ineinander. Batterien sind gefährlich, kommen aber nicht so oft vor.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Sortierzentrum Oberberg! Mein Name ist Gudrun Pahl, und ich führe Sie heute durch unsere Anlage. Schön, dass auch so viele Kinder dabei sind. Bevor wir losgehen, ein paar Worte zum Ablauf. Die Führung dauert ungefähr eine Stunde. Hier bei uns landet alles, was in Gummersbach und Umgebung in die Gelben Säcke und Gelben Tonnen kommt, also Verpackungen aus Plastik, Metall und so weiter. Jeden Tag bringen die Lastwagen etwa hundertzwanzig Tonnen. Wir gehen zuerst durch die Anlieferungshalle. Da kippen die Lastwagen die Säcke ab. Einen Helm brauchen Sie nicht, Sie bleiben ja hinter dem Geländer. Und fotografieren dürfen Sie natürlich auch. Aber bitte fassen Sie dort nichts an, auch wenn da vielleicht etwas Interessantes liegt. Da sind manchmal Glasscherben oder Dosen mit scharfen Kanten dabei. Und sprechen Sie die Fahrer bitte nicht an, die haben einen sehr engen Zeitplan. Danach geht's in den ersten Stock auf die Galerie. Viele fragen mich, ob man nicht direkt zu den Bändern gehen kann. Das geht leider nicht. Die Anlage läuft, auch heute am Samstag, und unten in der Halle ist es sehr staubig. Sie sehen aber alles sehr gut durch eine große Fensterscheibe. Die Maschinen trennen die Verpackungen mit Luft, mit Magneten und mit Licht. Und das klappt ziemlich gut, wenn die Leute zu Hause richtig sortieren. Was machen die Leute denn falsch? Batterien im Gelben Sack, das ist sehr gefährlich, die können brennen. Zum Glück passiert das aber nicht so oft. Wenn Sie alte Batterien haben, bringen Sie die bitte in den Supermarkt, da gibt es Sammelboxen. Essensreste sind übrigens gar kein Problem. Sie müssen Ihren Joghurtbecher nicht spülen, löffelleer reicht völlig. Der häufigste Fehler ist ein anderer: Viele stecken Verpackungen ineinander, zum Beispiel den Joghurtbecher in die Konservendose, oder sie lassen den Aludeckel am Becher. Das kann keine Maschine trennen, und dann landet alles im Restmüll. Zum Schluss gehen wir in unseren Besucherraum. Dort zeigt ein Bildschirm, wie viel wir pro Jahr sortieren. Für die Kinder haben wir ein Sortierspiel vorbereitet, mit echtem Müll, natürlich sauber. Die Erwachsenen dürfen gern zuschauen. Gelbe Säcke können wir Ihnen hier leider nicht mitgeben, die bekommen Sie im Bürgerbüro. Noch eine Bitte: Oben auf der Galerie ist es ziemlich laut, da verstehen wir uns kaum. Sammeln Sie Ihre Fragen deshalb lieber, und im Besucherraum beantworte ich am Ende alles in Ruhe. So, dann folgen Sie mir bitte, hier entlang.",
+              "hit": "Viele stecken Verpackungen ineinander"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Im Besucherraum gibt es ein Sortierspiel für Kinder. Gelbe Säcke bekommt man nur im Bürgerbüro.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Sortierzentrum Oberberg! Mein Name ist Gudrun Pahl, und ich führe Sie heute durch unsere Anlage. Schön, dass auch so viele Kinder dabei sind. Bevor wir losgehen, ein paar Worte zum Ablauf. Die Führung dauert ungefähr eine Stunde. Hier bei uns landet alles, was in Gummersbach und Umgebung in die Gelben Säcke und Gelben Tonnen kommt, also Verpackungen aus Plastik, Metall und so weiter. Jeden Tag bringen die Lastwagen etwa hundertzwanzig Tonnen. Wir gehen zuerst durch die Anlieferungshalle. Da kippen die Lastwagen die Säcke ab. Einen Helm brauchen Sie nicht, Sie bleiben ja hinter dem Geländer. Und fotografieren dürfen Sie natürlich auch. Aber bitte fassen Sie dort nichts an, auch wenn da vielleicht etwas Interessantes liegt. Da sind manchmal Glasscherben oder Dosen mit scharfen Kanten dabei. Und sprechen Sie die Fahrer bitte nicht an, die haben einen sehr engen Zeitplan. Danach geht's in den ersten Stock auf die Galerie. Viele fragen mich, ob man nicht direkt zu den Bändern gehen kann. Das geht leider nicht. Die Anlage läuft, auch heute am Samstag, und unten in der Halle ist es sehr staubig. Sie sehen aber alles sehr gut durch eine große Fensterscheibe. Die Maschinen trennen die Verpackungen mit Luft, mit Magneten und mit Licht. Und das klappt ziemlich gut, wenn die Leute zu Hause richtig sortieren. Was machen die Leute denn falsch? Batterien im Gelben Sack, das ist sehr gefährlich, die können brennen. Zum Glück passiert das aber nicht so oft. Wenn Sie alte Batterien haben, bringen Sie die bitte in den Supermarkt, da gibt es Sammelboxen. Essensreste sind übrigens gar kein Problem. Sie müssen Ihren Joghurtbecher nicht spülen, löffelleer reicht völlig. Der häufigste Fehler ist ein anderer: Viele stecken Verpackungen ineinander, zum Beispiel den Joghurtbecher in die Konservendose, oder sie lassen den Aludeckel am Becher. Das kann keine Maschine trennen, und dann landet alles im Restmüll. Zum Schluss gehen wir in unseren Besucherraum. Dort zeigt ein Bildschirm, wie viel wir pro Jahr sortieren. Für die Kinder haben wir ein Sortierspiel vorbereitet, mit echtem Müll, natürlich sauber. Die Erwachsenen dürfen gern zuschauen. Gelbe Säcke können wir Ihnen hier leider nicht mitgeben, die bekommen Sie im Bürgerbüro. Noch eine Bitte: Oben auf der Galerie ist es ziemlich laut, da verstehen wir uns kaum. Sammeln Sie Ihre Fragen deshalb lieber, und im Besucherraum beantworte ich am Ende alles in Ruhe. So, dann folgen Sie mir bitte, hier entlang.",
+              "hit": "Für die Kinder haben wir ein Sortierspiel vorbereitet"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Auf der Galerie ist es zu laut, deshalb beantwortet Frau Pahl die Fragen am Ende im Besucherraum. Die Fahrer soll man nicht ansprechen.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Sortierzentrum Oberberg! Mein Name ist Gudrun Pahl, und ich führe Sie heute durch unsere Anlage. Schön, dass auch so viele Kinder dabei sind. Bevor wir losgehen, ein paar Worte zum Ablauf. Die Führung dauert ungefähr eine Stunde. Hier bei uns landet alles, was in Gummersbach und Umgebung in die Gelben Säcke und Gelben Tonnen kommt, also Verpackungen aus Plastik, Metall und so weiter. Jeden Tag bringen die Lastwagen etwa hundertzwanzig Tonnen. Wir gehen zuerst durch die Anlieferungshalle. Da kippen die Lastwagen die Säcke ab. Einen Helm brauchen Sie nicht, Sie bleiben ja hinter dem Geländer. Und fotografieren dürfen Sie natürlich auch. Aber bitte fassen Sie dort nichts an, auch wenn da vielleicht etwas Interessantes liegt. Da sind manchmal Glasscherben oder Dosen mit scharfen Kanten dabei. Und sprechen Sie die Fahrer bitte nicht an, die haben einen sehr engen Zeitplan. Danach geht's in den ersten Stock auf die Galerie. Viele fragen mich, ob man nicht direkt zu den Bändern gehen kann. Das geht leider nicht. Die Anlage läuft, auch heute am Samstag, und unten in der Halle ist es sehr staubig. Sie sehen aber alles sehr gut durch eine große Fensterscheibe. Die Maschinen trennen die Verpackungen mit Luft, mit Magneten und mit Licht. Und das klappt ziemlich gut, wenn die Leute zu Hause richtig sortieren. Was machen die Leute denn falsch? Batterien im Gelben Sack, das ist sehr gefährlich, die können brennen. Zum Glück passiert das aber nicht so oft. Wenn Sie alte Batterien haben, bringen Sie die bitte in den Supermarkt, da gibt es Sammelboxen. Essensreste sind übrigens gar kein Problem. Sie müssen Ihren Joghurtbecher nicht spülen, löffelleer reicht völlig. Der häufigste Fehler ist ein anderer: Viele stecken Verpackungen ineinander, zum Beispiel den Joghurtbecher in die Konservendose, oder sie lassen den Aludeckel am Becher. Das kann keine Maschine trennen, und dann landet alles im Restmüll. Zum Schluss gehen wir in unseren Besucherraum. Dort zeigt ein Bildschirm, wie viel wir pro Jahr sortieren. Für die Kinder haben wir ein Sortierspiel vorbereitet, mit echtem Müll, natürlich sauber. Die Erwachsenen dürfen gern zuschauen. Gelbe Säcke können wir Ihnen hier leider nicht mitgeben, die bekommen Sie im Bürgerbüro. Noch eine Bitte: Oben auf der Galerie ist es ziemlich laut, da verstehen wir uns kaum. Sammeln Sie Ihre Fragen deshalb lieber, und im Besucherraum beantworte ich am Ende alles in Ruhe. So, dann folgen Sie mir bitte, hier entlang.",
+              "hit": "im Besucherraum beantworte ich am Ende alles in Ruhe"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_emilia_at",
+            "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Sortierzentrum Oberberg! Mein Name ist Gudrun Pahl, und ich führe Sie heute durch unsere Anlage. Schön, dass auch so viele Kinder dabei sind. Bevor wir losgehen, ein paar Worte zum Ablauf. Die Führung dauert ungefähr eine Stunde. Hier bei uns landet alles, was in Gummersbach und Umgebung in die Gelben Säcke und Gelben Tonnen kommt, also Verpackungen aus Plastik, Metall und so weiter. Jeden Tag bringen die Lastwagen etwa hundertzwanzig Tonnen. Wir gehen zuerst durch die Anlieferungshalle. Da kippen die Lastwagen die Säcke ab. Einen Helm brauchen Sie nicht, Sie bleiben ja hinter dem Geländer. Und fotografieren dürfen Sie natürlich auch. Aber bitte fassen Sie dort nichts an, auch wenn da vielleicht etwas Interessantes liegt. Da sind manchmal Glasscherben oder Dosen mit scharfen Kanten dabei. Und sprechen Sie die Fahrer bitte nicht an, die haben einen sehr engen Zeitplan. Danach geht's in den ersten Stock auf die Galerie. Viele fragen mich, ob man nicht direkt zu den Bändern gehen kann. Das geht leider nicht. Die Anlage läuft, auch heute am Samstag, und unten in der Halle ist es sehr staubig. Sie sehen aber alles sehr gut durch eine große Fensterscheibe. Die Maschinen trennen die Verpackungen mit Luft, mit Magneten und mit Licht. Und das klappt ziemlich gut, wenn die Leute zu Hause richtig sortieren. Was machen die Leute denn falsch? Batterien im Gelben Sack, das ist sehr gefährlich, die können brennen. Zum Glück passiert das aber nicht so oft. Wenn Sie alte Batterien haben, bringen Sie die bitte in den Supermarkt, da gibt es Sammelboxen. Essensreste sind übrigens gar kein Problem. Sie müssen Ihren Joghurtbecher nicht spülen, löffelleer reicht völlig. Der häufigste Fehler ist ein anderer: Viele stecken Verpackungen ineinander, zum Beispiel den Joghurtbecher in die Konservendose, oder sie lassen den Aludeckel am Becher. Das kann keine Maschine trennen, und dann landet alles im Restmüll. Zum Schluss gehen wir in unseren Besucherraum. Dort zeigt ein Bildschirm, wie viel wir pro Jahr sortieren. Für die Kinder haben wir ein Sortierspiel vorbereitet, mit echtem Müll, natürlich sauber. Die Erwachsenen dürfen gern zuschauen. Gelbe Säcke können wir Ihnen hier leider nicht mitgeben, die bekommen Sie im Bürgerbüro. Noch eine Bitte: Oben auf der Galerie ist es ziemlich laut, da verstehen wir uns kaum. Sammeln Sie Ihre Fragen deshalb lieber, und im Besucherraum beantworte ich am Ende alles in Ruhe. So, dann folgen Sie mir bitte, hier entlang.",
+            "delivery": "[friendly, clear tour guide addressing a visitor group]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t3-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Gespräch zwischen Bekannten am Bahnsteig"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Georg wusste schon, dass Barbara bei einer Serie mitgemacht hat."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Barbara hat sich selbst als Komparsin beworben."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Der Drehtag hat sehr früh angefangen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Barbara musste die meiste Zeit warten."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Barbara hat mit einem bekannten Schauspieler gesprochen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Barbara hat für den Tag Geld bekommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Georg möchte sich auch als Komparse bewerben."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch am Bahnsteig",
+          "segments": [],
+          "speakers": {
+            "b": {
+              "name": "Barbara",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "g": {
+              "name": "Georg",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie warten am Bahnsteig in Neunkirchen und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "duration": 186.62,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t3-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Georg ist überrascht. Barbara hat ihm nichts davon erzählt.",
+            "evidence": {
+              "text": "Beim Fernsehen? Du? Davon hast du mir ja gar nichts erzählt!",
+              "hit": "Davon hast du mir ja gar nichts erzählt!"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "falsch",
+            "explanation": "Eine Kollegin hat ihr Foto geschickt. Barbara hat sie nicht gefragt.",
+            "evidence": {
+              "text": "Nein, gar nicht. Eine Kollegin aus dem Büro hat einfach ein Foto von mir an die Produktionsfirma geschickt, ohne mich zu fragen. Und zwei Wochen später ruft mich eine Frau an und fragt, ob ich am Dienstag Zeit hab.",
+              "hit": "Eine Kollegin aus dem Büro hat einfach ein Foto von mir an die Produktionsfirma geschickt, ohne mich zu fragen."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "richtig",
+            "explanation": "Um fünf Uhr früh mussten sie schon am Drehort sein. Barbara ist um halb vier aufgestanden.",
+            "evidence": {
+              "text": "Also, um fünf in der Früh mussten wir schon am Drehort sein. Um fünf! Ich bin um halb vier aufgestanden.",
+              "hit": "um fünf in der Früh mussten wir schon am Drehort sein"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Von zehn Stunden hat sie nur eine halbe Stunde gespielt. Den Rest der Zeit hat sie im Zelt gewartet.",
+            "evidence": {
+              "text": "Dann Maske, Kostüm, ich hab einen alten Wintermantel bekommen, weil die Szene im Winter spielt. Und dann … haben wir gewartet. Und gewartet. Ehrlich, von zehn Stunden hab ich vielleicht eine halbe Stunde wirklich gespielt. Den Rest bin ich in einem Zelt gesessen und hab Tee getrunken.",
+              "hit": "von zehn Stunden hab ich vielleicht eine halbe Stunde wirklich gespielt"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Sie hat ihn nur von Weitem gesehen. Die Komparsen durften nicht zu den Schauspielern gehen.",
+            "evidence": {
+              "text": "Ja, ja, der war auch da. Aber ich hab ihn nur von Weitem gesehen. Die Komparsen dürfen nicht einfach zu den Schauspielern hingehen. Ein Autogramm hätte ich schon gern gehabt, aber das war nicht erlaubt.",
+              "hit": "Aber ich hab ihn nur von Weitem gesehen."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Sie hat achtzig Euro für den Tag bekommen. Dazu gab es auch Essen.",
+            "evidence": {
+              "text": "Achtzig Euro für den ganzen Tag. Und Essen. In der Früh hat's eine Semmel und Kaffee gegeben, und zu Mittag sogar ein warmes Essen. Reich wird man davon nicht, aber für einen Tag passt das.",
+              "hit": "Achtzig Euro für den ganzen Tag."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Georg will nicht so früh aufstehen und warten. Er schaut die Serie lieber zu Hause an.",
+            "evidence": {
+              "text": "Ich? Na, sicher nicht. Um halb vier aufstehen und dann den ganzen Tag warten? Nein, danke. Ich schau mir die Serie lieber gemütlich auf dem Sofa an. Wann kommt die eigentlich?",
+              "hit": "Ich schau mir die Serie lieber gemütlich auf dem Sofa an."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Barbara! Servus! Fährst du auch nach Wien?",
+            "delivery": "[surprised, cheerful]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Georg, hallo! Ja, mit dem Zug um halb acht. Ich hab heute einen Termin beim Zahnarzt, leider.",
+            "delivery": "[friendly, a bit tired]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Du schaust aber müde aus. Alles in Ordnung?",
+            "delivery": "[concerned]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Ach, ich bin noch ganz fertig von Dienstag. Da war ich nämlich beim Fernsehen.",
+            "delivery": "[sighing, then teasing]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Beim Fernsehen? Du? Davon hast du mir ja gar nichts erzählt!",
+            "delivery": "[astonished]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Ich hab's ja auch fast niemandem gesagt. Ich war Komparsin bei dieser neuen Krimiserie, die sie heuer bei uns in der Gegend drehen. „Spuren im Schnee“, kennst du die?",
+            "delivery": "[a little proud, laughing]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Na geh! Die mit dem Kommissar aus Wien? Und wie bist du da hingekommen? Hast du dich beworben?",
+            "delivery": "[excited, curious]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Nein, gar nicht. Eine Kollegin aus dem Büro hat einfach ein Foto von mir an die Produktionsfirma geschickt, ohne mich zu fragen. Und zwei Wochen später ruft mich eine Frau an und fragt, ob ich am Dienstag Zeit hab.",
+            "delivery": "[amused, storytelling]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Wahnsinn. Und, wie war's?",
+            "delivery": "[quick, overlapping]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Also, um fünf in der Früh mussten wir schon am Drehort sein. Um fünf! Ich bin um halb vier aufgestanden.",
+            "delivery": "[exaggerated, laughing]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Au weh.",
+            "delivery": "[short back-channel, sympathetic]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Dann Maske, Kostüm, ich hab einen alten Wintermantel bekommen, weil die Szene im Winter spielt. Und dann … haben wir gewartet. Und gewartet. Ehrlich, von zehn Stunden hab ich vielleicht eine halbe Stunde wirklich gespielt. Den Rest bin ich in einem Zelt gesessen und hab Tee getrunken.",
+            "delivery": "[ironic, lively]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Mhm. Klingt jetzt nicht so spannend.",
+            "delivery": "[dry, teasing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Doch, irgendwie schon. Man sieht, wie viel Arbeit das ist. Für eine Szene, die im Fernsehen vielleicht zwanzig Sekunden dauert, haben die drei Stunden gebraucht.",
+            "delivery": "[thoughtful]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Und was hast du in der Szene gemacht?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Ich geh mit einer Einkaufstasche über den Hauptplatz, und hinter mir wird gerade jemand verhaftet. Das war's. Fünfzehnmal bin ich über diesen Platz gegangen.",
+            "delivery": "[laughing at herself]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Und der Kommissar? Der wird doch von diesem bekannten Schauspieler gespielt, wie heißt der gleich …",
+            "delivery": "[searching for the name]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Ja, ja, der war auch da. Aber ich hab ihn nur von Weitem gesehen. Die Komparsen dürfen nicht einfach zu den Schauspielern hingehen. Ein Autogramm hätte ich schon gern gehabt, aber das war nicht erlaubt.",
+            "delivery": "[slightly disappointed]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Schade. Und kriegt man dafür überhaupt was?",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Achtzig Euro für den ganzen Tag. Und Essen. In der Früh hat's eine Semmel und Kaffee gegeben, und zu Mittag sogar ein warmes Essen. Reich wird man davon nicht, aber für einen Tag passt das.",
+            "delivery": "[matter-of-fact]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Achtzig Euro fürs Herumsitzen, das ist doch nicht schlecht.",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Eben! Du, die suchen übrigens noch Leute für die nächsten Folgen. Vor allem Männer. Wär das nichts für dich?",
+            "delivery": "[encouraging]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Ich? Na, sicher nicht. Um halb vier aufstehen und dann den ganzen Tag warten? Nein, danke. Ich schau mir die Serie lieber gemütlich auf dem Sofa an. Wann kommt die eigentlich?",
+            "delivery": "[laughing, firm]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Im Herbst, glaub ich. Ich sag dir Bescheid, dann kannst du mich suchen. Ich bin die Frau mit dem grauen Mantel.",
+            "delivery": "[playful]"
+          },
+          {
+            "speaker": "g",
+            "voice": "man_gruber_at",
+            "text": "Abgemacht. Oh, da kommt unser Zug.",
+            "delivery": "[noticing, relieved]"
+          },
+          {
+            "speaker": "b",
+            "voice": "woman_alexandra_at",
+            "text": "Endlich. Komm, vorne sind meistens noch Plätze frei.",
+            "delivery": "[hurrying]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-09-t4-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.040Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ohne die Vermietung könnte ich das alte Haus meiner Eltern nicht behalten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "In manchen Orten findet eine Familie kaum noch eine Wohnung.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Meine Gäste bringen Geld in die Restaurants und Geschäfte im Ort.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Außerhalb der Saison sind ganze Straßen dunkel.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Im Winter vermiete ich auch an Saisonarbeiter.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Eine Grenze von neunzig Tagen im Jahr wäre ein fairer Kompromiss.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Die Gemeinde hat dieses Jahr neue Regeln eingeführt, und ich halte mich daran.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Ich habe im Urlaub selbst schon oft in einer Privatwohnung gewohnt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Junge Leute in der Ausbildung können sich die Mieten im Ort nicht mehr leisten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ralf Behrendt, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Elisabeth Lackner, Vermieterin"
+                },
+                {
+                  "key": "c",
+                  "label": "Andri Caflisch, Mieterverband"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Ralf Behrendt, Moderator",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "e": {
+              "name": "Elisabeth Lackner, Vermieterin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "a": {
+              "name": "Andri Caflisch, Mieterverband",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Der Moderator der Radiosendung „Thema am Abend“, Ralf Behrendt, diskutiert mit Elisabeth Lackner, Vermieterin von zwei Ferienwohnungen in St. Johann im Pongau, und Andri Caflisch vom Mieterverband in Interlaken über das Thema „Ferienwohnungen: Nehmen sie den Einheimischen die Wohnungen weg?“",
+          "duration": 298.66,
+          "src": "oesd-b1/hoeren-09/oesd-b1-hoeren-09-t4-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "c",
+            "explanation": "Herr Caflisch erzählt von jungen Familien, die zwei Jahre lang nichts finden. Frau Lackner spricht nur über ihr eigenes Haus.",
+            "evidence": {
+              "text": "Ja. Ich verstehe Frau Lackner, das ist eine persönliche Geschichte. Aber wenn das in einem Ort hundertfach passiert, dann wird es schwierig. Bei uns im Berner Oberland gibt es Dörfer, da sucht eine junge Familie zwei Jahre und findet nichts. Die Wohnungen sind da, aber darin wohnen nur Touristen.",
+              "hit": "da sucht eine junge Familie zwei Jahre und findet nichts"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "b",
+            "explanation": "Frau Lackner sagt, dass ihre Gäste essen gehen und im Ort einkaufen. Herr Caflisch stimmt nur für die Saison zu.",
+            "evidence": {
+              "text": "Man darf nicht vergessen, was die Gäste dem Ort bringen. Meine Gäste gehen jeden Abend essen, sie kaufen im Sportgeschäft ein, beim Bäcker, sie buchen den Skikurs. Davon leben bei uns viele Familien. Ohne die Touristen würde mancher Wirt zusperren.",
+              "hit": "Meine Gäste gehen jeden Abend essen, sie kaufen im Sportgeschäft ein, beim Bäcker"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Herr Caflisch sagt, dass im November in einer ganzen Straße kein Licht brennt. Der Moderator findet das nur traurig.",
+            "evidence": {
+              "text": "Das stimmt, im Winter und im Sommer. Aber gehen Sie mal im November durch manche Orte bei uns. Da brennt in einer ganzen Strasse kein einziges Licht. Die Fensterläden sind zu, niemand wohnt dort. Das ist kein Dorf mehr, das ist eine Kulisse.",
+              "hit": "Da brennt in einer ganzen Strasse kein einziges Licht."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "b",
+            "explanation": "Frau Lackner vermietet von Dezember bis April an Leute, die in Hotels und bei den Liften arbeiten. Herr Caflisch spricht nur über Saisonarbeiter, die nichts finden.",
+            "evidence": {
+              "text": "Nein, eigentlich nie lang. Im Sommer hab ich Familien und Wanderer. Und von Dezember bis April wohnen bei mir Leute, die in der Saison in den Hotels und bei den Liften arbeiten. Die zahlen weniger als Urlauber, aber dafür hab ich die Wohnung fünf Monate fest vergeben.",
+              "hit": "Und von Dezember bis April wohnen bei mir Leute, die in der Saison in den Hotels und bei den Liften arbeiten."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Herr Caflisch schlägt höchstens neunzig Tage vor und findet das fair. Frau Lackner sind neunzig Tage zu wenig.",
+            "evidence": {
+              "text": "Nein, ein Verbot wäre zu hart. Viele Menschen brauchen das Geld ja wirklich. Aber man könnte sagen: Eine Wohnung darf man höchstens neunzig Tage im Jahr an Touristen vermieten. Den Rest des Jahres muss sie für normale Mieter da sein. So eine Regel fände ich fair für beide Seiten.",
+              "hit": "So eine Regel fände ich fair für beide Seiten."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Frau Lackner erzählt von den neuen Regeln seit Jänner und sagt, dass sie alles meldet und zahlt. Der Moderator nennt nur Städte mit solchen Regeln.",
+            "evidence": {
+              "text": "Bei uns hat die Gemeinde heuer einiges geändert. Seit Jänner muss jede Ferienwohnung angemeldet sein, und man zahlt eine Abgabe pro Gast. Mir ist das ehrlich gesagt recht. Ich hab alles gemeldet und zahle brav, und ich finde, das sollen alle so machen. Neunzig Tage wären für mich allerdings zu wenig, davon könnte ich das Dach nicht abzahlen.",
+              "hit": "Ich hab alles gemeldet und zahle brav"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "a",
+            "explanation": "Der Moderator bucht im Urlaub fast immer eine private Wohnung. Die Gäste sprechen über ihre Arbeit und ihre Orte.",
+            "evidence": {
+              "text": "Ich muss an dieser Stelle zugeben: Ich bin selbst Kunde. Wenn ich mit meiner Familie verreise, buchen wir fast immer eine Wohnung von privat, in Italien, in Dänemark, auch schon in Österreich. Mit zwei Kindern ist das einfach praktischer als ein Hotel. Und ich habe mir ehrlich gesagt nie überlegt, wer da vorher gewohnt hat.",
+              "hit": "buchen wir fast immer eine Wohnung von privat"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "c",
+            "explanation": "Herr Caflisch sagt, dass ein Zimmer mehr kostet, als die Lernenden verdienen. Frau Lackner stimmt ihm nur zu.",
+            "evidence": {
+              "text": "Vor allem die Jungen. Nehmen Sie die Lernenden, die bei uns im Hotel oder in der Bäckerei ihre Lehre machen. Die verdienen vielleicht achthundert Franken im Monat. Ein Zimmer kostet in Interlaken inzwischen oft mehr als das. Viele ziehen deshalb weg, und dann fehlen später genau die Fachleute, die der Tourismus braucht.",
+              "hit": "Ein Zimmer kostet in Interlaken inzwischen oft mehr als das."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Guten Abend und willkommen bei „Thema am Abend“. Ferienwohnungen sind beliebt: Man hat mehr Platz als im Hotel, eine eigene Küche, und oft ist es billiger. Aber in vielen Urlaubsorten gibt es Kritik. Nehmen Ferienwohnungen den Einheimischen die Wohnungen weg? Darüber spreche ich heute mit Elisabeth Lackner. Sie vermietet zwei Ferienwohnungen in St. Johann im Pongau. Guten Abend, Frau Lackner.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "e",
+            "voice": "woman_emilia_at",
+            "text": "Guten Abend.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Und mit Andri Caflisch vom Mieterverband in Interlaken. Guten Abend, Herr Caflisch.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Guten Abend.",
+            "delivery": "[calm, polite]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Frau Lackner, wie sind Sie zur Vermietung gekommen?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "e",
+            "voice": "woman_emilia_at",
+            "text": "Das war eigentlich gar nicht geplant. Das Haus hat meinen Eltern gehört, es ist über hundert Jahre alt. Als ich es geerbt habe, war klar: Das Dach muss neu gemacht werden, die Heizung auch. Allein hätte ich das nie zahlen können. Also hab ich oben zwei Wohnungen für Gäste eingerichtet. Ehrlich gesagt, ohne die Gäste müsste ich das Haus verkaufen.",
+            "delivery": "[open, personal]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Herr Caflisch, Sie sehen das kritisch.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Ja. Ich verstehe Frau Lackner, das ist eine persönliche Geschichte. Aber wenn das in einem Ort hundertfach passiert, dann wird es schwierig. Bei uns im Berner Oberland gibt es Dörfer, da sucht eine junge Familie zwei Jahre und findet nichts. Die Wohnungen sind da, aber darin wohnen nur Touristen.",
+            "delivery": "[measured, serious]",
+            "item": 23
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Frau Lackner, was sagen Sie dazu?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "e",
+            "voice": "woman_emilia_at",
+            "text": "Man darf nicht vergessen, was die Gäste dem Ort bringen. Meine Gäste gehen jeden Abend essen, sie kaufen im Sportgeschäft ein, beim Bäcker, sie buchen den Skikurs. Davon leben bei uns viele Familien. Ohne die Touristen würde mancher Wirt zusperren.",
+            "delivery": "[firm, slightly defensive]",
+            "item": 24
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Das stimmt, im Winter und im Sommer. Aber gehen Sie mal im November durch manche Orte bei uns. Da brennt in einer ganzen Strasse kein einziges Licht. Die Fensterläden sind zu, niemand wohnt dort. Das ist kein Dorf mehr, das ist eine Kulisse.",
+            "delivery": "[calm but pointed]",
+            "item": 25
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Das klingt traurig. Frau Lackner, stehen Ihre Wohnungen im November auch leer?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "e",
+            "voice": "woman_emilia_at",
+            "text": "Nein, eigentlich nie lang. Im Sommer hab ich Familien und Wanderer. Und von Dezember bis April wohnen bei mir Leute, die in der Saison in den Hotels und bei den Liften arbeiten. Die zahlen weniger als Urlauber, aber dafür hab ich die Wohnung fünf Monate fest vergeben.",
+            "delivery": "[matter-of-fact]",
+            "item": 26
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Das ist schön, aber leider die Ausnahme. Viele Saisonarbeiter bei uns wohnen zu dritt in einem Zimmer, weil sie nichts anderes finden.",
+            "delivery": "[serious]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Frau Lackner, verdient man mit einer Ferienwohnung eigentlich mehr als mit einer normalen Miete?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "e",
+            "voice": "woman_emilia_at",
+            "text": "In der Hochsaison schon, ja. Aber man hat auch viel mehr Arbeit. Ich putze nach jedem Gast, ich wasche die Bettwäsche, ich beantworte E-Mails, oft auch am Sonntag. Wenn man das alles rechnet, ist der Unterschied gar nicht so groß, wie viele glauben.",
+            "delivery": "[honest, a little tired]"
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Für Sie vielleicht nicht. Aber es gibt Firmen, die kaufen ganze Häuser nur für Feriengäste. Denen geht es nur ums Geld.",
+            "delivery": "[critical]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Herr Caflisch, was wäre denn Ihre Lösung? Ein Verbot?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Nein, ein Verbot wäre zu hart. Viele Menschen brauchen das Geld ja wirklich. Aber man könnte sagen: Eine Wohnung darf man höchstens neunzig Tage im Jahr an Touristen vermieten. Den Rest des Jahres muss sie für normale Mieter da sein. So eine Regel fände ich fair für beide Seiten.",
+            "delivery": "[constructive, clear]",
+            "item": 27
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "In manchen Städten gibt es so etwas ja schon. Frau Lackner, wie ist das in St. Johann?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "e",
+            "voice": "woman_emilia_at",
+            "text": "Bei uns hat die Gemeinde heuer einiges geändert. Seit Jänner muss jede Ferienwohnung angemeldet sein, und man zahlt eine Abgabe pro Gast. Mir ist das ehrlich gesagt recht. Ich hab alles gemeldet und zahle brav, und ich finde, das sollen alle so machen. Neunzig Tage wären für mich allerdings zu wenig, davon könnte ich das Dach nicht abzahlen.",
+            "delivery": "[confident, reasonable]",
+            "item": 28
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Ich muss an dieser Stelle zugeben: Ich bin selbst Kunde. Wenn ich mit meiner Familie verreise, buchen wir fast immer eine Wohnung von privat, in Italien, in Dänemark, auch schon in Österreich. Mit zwei Kindern ist das einfach praktischer als ein Hotel. Und ich habe mir ehrlich gesagt nie überlegt, wer da vorher gewohnt hat.",
+            "delivery": "[candid, slightly self-ironic]",
+            "item": 29
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Das geht den meisten so, und das ist ja auch kein Vorwurf. Darum reden wir ja darüber.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Herr Caflisch, wer leidet denn am meisten unter der Situation?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Vor allem die Jungen. Nehmen Sie die Lernenden, die bei uns im Hotel oder in der Bäckerei ihre Lehre machen. Die verdienen vielleicht achthundert Franken im Monat. Ein Zimmer kostet in Interlaken inzwischen oft mehr als das. Viele ziehen deshalb weg, und dann fehlen später genau die Fachleute, die der Tourismus braucht.",
+            "delivery": "[concerned, earnest]",
+            "item": 30
+          },
+          {
+            "speaker": "e",
+            "voice": "woman_emilia_at",
+            "text": "Das sehe ich auch, das ist wirklich ein Problem. Vielleicht sollten die Gemeinden selbst mehr günstige Wohnungen bauen. Bei uns wird gerade über so ein Projekt diskutiert.",
+            "delivery": "[agreeing, thoughtful]"
+          },
+          {
+            "speaker": "a",
+            "voice": "man_andres_ch",
+            "text": "Da sind wir uns einig, Frau Lackner.",
+            "delivery": "[warm]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_martin_at",
+            "text": "Das ist ja schon fast ein gemeinsames Schlusswort. Vielen Dank, Frau Lackner, vielen Dank, Herr Caflisch, und Ihnen zu Hause einen schönen Abend.",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ],
+  "track": {
+    "src": "oesd-b1/hoeren-09/track.mp3",
+    "duration": 2237.1,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.09,
+        "to": 19.64
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.68,
+        "to": 26.7
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.7,
+        "to": 37.22
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.22,
+        "to": 40.28
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 41.82,
+        "to": 73.43
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 75.47,
+        "to": 77.87
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 78.92,
+        "to": 110.52
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 110.52,
+        "to": 113.06
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 113.06,
+        "to": 119.3
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 119.3,
+        "to": 129.83
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 129.83,
+        "to": 132.47
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 134.01,
+        "to": 170.03
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 172.07,
+        "to": 174.47
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 175.52,
+        "to": 211.54
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 211.54,
+        "to": 214.07
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 214.07,
+        "to": 220.42
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 220.42,
+        "to": 230.95
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 230.95,
+        "to": 234
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 235.55,
+        "to": 272.51
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 274.55,
+        "to": 276.95
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 278,
+        "to": 314.96
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 314.96,
+        "to": 317.49
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 317.49,
+        "to": 323.97
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 323.97,
+        "to": 334.5
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 334.5,
+        "to": 337.16
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 338.7,
+        "to": 374.7
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 376.74,
+        "to": 379.14
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 380.19,
+        "to": 416.18
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 416.18,
+        "to": 418.72
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 418.72,
+        "to": 425.12
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 425.12,
+        "to": 435.64
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 435.64,
+        "to": 438.7
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 440.24,
+        "to": 475.22
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 477.26,
+        "to": 479.66
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 480.71,
+        "to": 515.68
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 515.68,
+        "to": 518.22
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 518.22,
+        "to": 524.49
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 524.49,
+        "to": 535.01
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 535.01,
+        "to": 537.05
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 538.59,
+        "to": 573.91
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 575.95,
+        "to": 578.35
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 579.4,
+        "to": 614.71
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 614.71,
+        "to": 617.25
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 624.46,
+        "to": 638.54
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 640.57,
+        "to": 647
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 647,
+        "to": 707.03
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 707.03,
+        "to": 711.5
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 713.04,
+        "to": 885.68
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 885.68,
+        "to": 894.72
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 901.88,
+        "to": 914.08
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 916.11,
+        "to": 922.62
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 922.62,
+        "to": 982.65
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 982.65,
+        "to": 989.02
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 990.56,
+        "to": 1177.18
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1177.18,
+        "to": 1186.22
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1193.38,
+        "to": 1205.58
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1207.61,
+        "to": 1214.07
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1214.07,
+        "to": 1274.1
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1274.1,
+        "to": 1292.98
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1298.57,
+        "to": 1597.23
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1601.28,
+        "to": 1604.31
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1604.31,
+        "to": 1607.18
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1612.77,
+        "to": 1911.43
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1915.48,
+        "to": 1924.52
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1931.65,
+        "to": 1937.53
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1937.53,
+        "to": 2237.57
+      }
+    ]
+  }
+}

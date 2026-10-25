@@ -1,0 +1,480 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-05-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.349Z",
+        "textType": "Wegweiser im Rathaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ihr Personalausweis ist bald nicht mehr gültig. Sie brauchen einen neuen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Die Stadt hat Ihnen eine Rechnung geschickt. Sie möchten das Geld bar bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Ihre Aufenthaltserlaubnis läuft im nächsten Monat ab.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Sie möchten heiraten und brauchen einen Termin dafür.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Sie möchten sehen, wie Ihre Straße vor über hundert Jahren ausgesehen hat.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Am Samstag ziehen Sie um. Der Lkw soll direkt vor Ihrer Haustür stehen können.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Rathaus Detmold",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "4. Obergeschoss: Bauamt · Bauanträge · Sitzungssaal · Büro des Bürgermeisters",
+            "3. Obergeschoss: Ordnungsamt · Parkerlaubnis und Halteverbotszonen · Straßenfeste und Märkte",
+            "2. Obergeschoss: Ausländerbehörde · Aufenthalt und Visum · Einbürgerung · Wohngeld",
+            "1. Obergeschoss: Standesamt · Trauungen · Geburtsurkunden · Stadtkasse · Gebühren und Zahlungen",
+            "Erdgeschoss: Bürgerbüro · Personalausweis und Reisepass · An- und Ummeldung · Information · Fundbüro",
+            "Untergeschoss: Stadtarchiv · Stadtgeschichte · alte Fotos und Karten · Lesesaal"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Rechnungen der Stadt bezahlst du bei der Stadtkasse im 1. Obergeschoss. Das Ordnungsamt im 3. Obergeschoss nimmt kein Geld an.",
+            "evidence": {
+              "text": "1. Obergeschoss: Standesamt · Trauungen · Geburtsurkunden · Stadtkasse · Gebühren und Zahlungen",
+              "hit": "Stadtkasse · Gebühren und Zahlungen"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Für den Aufenthalt ist die Ausländerbehörde im 2. Obergeschoss zuständig. Im Erdgeschoss gibt es nur Ausweise und Pässe.",
+            "evidence": {
+              "text": "2. Obergeschoss: Ausländerbehörde · Aufenthalt und Visum · Einbürgerung · Wohngeld",
+              "hit": "Ausländerbehörde · Aufenthalt und Visum"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Trauungen macht das Standesamt im 1. Obergeschoss. Im 2. Obergeschoss ist die Ausländerbehörde.",
+            "evidence": {
+              "text": "1. Obergeschoss: Standesamt · Trauungen · Geburtsurkunden · Stadtkasse · Gebühren und Zahlungen",
+              "hit": "Standesamt · Trauungen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Alte Fotos und die Stadtgeschichte findest du im Stadtarchiv im Untergeschoss. Im 4. Obergeschoss ist das Bauamt, dort gibt es keine alten Bilder.",
+            "evidence": {
+              "text": "Untergeschoss: Stadtarchiv · Stadtgeschichte · alte Fotos und Karten · Lesesaal",
+              "hit": "alte Fotos und Karten"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Eine Halteverbotszone für den Lkw bekommst du beim Ordnungsamt im 3. Obergeschoss. Im Erdgeschoss meldest du nur deine neue Adresse an.",
+            "evidence": {
+              "text": "3. Obergeschoss: Ordnungsamt · Parkerlaubnis und Halteverbotszonen · Straßenfeste und Märkte",
+              "hit": "Parkerlaubnis und Halteverbotszonen"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-05-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.349Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Kim Albrecht bringt mit ihrem Schiff Autos und Menschen über den Fluss."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kim wollte schon immer auf einem Schiff arbeiten."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Ein Mann aus Kims Familie hatte früher auch einen Beruf auf dem Fluss."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Man kann mit der Fähre auch mitten in der Nacht über den Rhein fahren."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Kim war nach einem Jahr mit ihrer Ausbildung fertig."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Kim fährt jeden Tag mehr als fünfzig Mal über den Rhein."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Mit 24 Jahren Kapitänin auf dem Rhein",
+            "Jeden Morgen um halb sieben steht Kim Albrecht am Steuer. Die 24-Jährige fährt die Autofähre zwischen Boppard und Filsen. Sie ist die jüngste Fährkapitänin am ganzen Rhein.",
+            "Ein Beruf auf dem Wasser war aber nicht ihr Plan. Nach der Schule hat Kim eine Ausbildung zur Bürokauffrau gemacht. „Ich saß den ganzen Tag am Computer. Das war nichts für mich“, sagt sie. Mit 20 hat sie noch einmal neu angefangen. Die Idee kam von ihrem Großvater. Er war über dreißig Jahre lang Fährmann in Boppard.",
+            "Nach einem Jahr durfte Kim schon manchmal selbst steuern. Aber die ganze Ausbildung hat drei Jahre gedauert. Heute fährt sie etwa sechzig Mal am Tag über den Fluss. Die letzte Fahrt ist um 21 Uhr, in der Nacht hat die Fähre Pause.",
+            "Und der Großvater? Er fährt oft mit und erzählt den Fahrgästen stolz: „Das ist meine Enkelin!“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Ein Beruf auf dem Wasser war nicht ihr Plan. Zuerst hat sie eine Ausbildung im Büro gemacht.",
+            "evidence": {
+              "text": "Ein Beruf auf dem Wasser war aber nicht ihr Plan. Nach der Schule hat Kim eine Ausbildung zur Bürokauffrau gemacht.",
+              "hit": "Ein Beruf auf dem Wasser war aber nicht ihr Plan."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Ihr Großvater war über dreißig Jahre lang Fährmann. Er hat also auch auf dem Rhein gearbeitet.",
+            "evidence": {
+              "text": "Die Idee kam von ihrem Großvater. Er war über dreißig Jahre lang Fährmann in Boppard.",
+              "hit": "Er war über dreißig Jahre lang Fährmann in Boppard."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Die letzte Fahrt ist um 21 Uhr. In der Nacht fährt die Fähre nicht.",
+            "evidence": {
+              "text": "Die letzte Fahrt ist um 21 Uhr, in der Nacht hat die Fähre Pause.",
+              "hit": "in der Nacht hat die Fähre Pause"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Nach einem Jahr durfte sie nur manchmal steuern. Die ganze Ausbildung hat drei Jahre gedauert.",
+            "evidence": {
+              "text": "Nach einem Jahr durfte Kim schon manchmal selbst steuern. Aber die ganze Ausbildung hat drei Jahre gedauert.",
+              "hit": "Aber die ganze Ausbildung hat drei Jahre gedauert."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Sie fährt etwa sechzig Mal am Tag über den Fluss. Das ist mehr als fünfzig Mal.",
+            "evidence": {
+              "text": "Heute fährt sie etwa sechzig Mal am Tag über den Fluss.",
+              "hit": "etwa sechzig Mal am Tag"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-05-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.349Z",
+        "textType": "Anzeigen und Webseiten: Reisen und Ausflüge ab Chemnitz"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Busreisen Kretzschmar",
+                  "text": "Ein Wochenende in Prag: Fahrt im Reisebus ab Chemnitz Hauptbahnhof, zwei Nächte im Hotel mit Frühstück und Stadtführung. Nur 159 € pro Person."
+                },
+                {
+                  "key": "b",
+                  "title": "www.reiseschutz-direkt.de",
+                  "text": "Krank im Urlaub oder Gepäck weg? Unsere Reiseversicherung hilft. Schon ab 2,50 € pro Woche."
+                },
+                {
+                  "key": "c",
+                  "title": "Jugendherberge Bad Schandau",
+                  "text": "Mitten in der Sächsischen Schweiz: Mehrbettzimmer ab 28 € pro Nacht, auch für Erwachsene. Die Wanderwege beginnen direkt vor dem Haus."
+                },
+                {
+                  "key": "d",
+                  "title": "Reisebüro Weltenbummler",
+                  "text": "Spontan in die Sonne? Last-Minute-Flüge ab Leipzig nach Mallorca, Barcelona und Málaga. Abflug in den nächsten 14 Tagen."
+                },
+                {
+                  "key": "e",
+                  "title": "Ferienhof Lindner im Erzgebirge",
+                  "text": "Urlaub auf dem Bauernhof: Kühe und Hühner füttern, Ponys reiten, frische Milch zum Frühstück. Ferienwohnungen für 2–6 Personen."
+                },
+                {
+                  "key": "f",
+                  "title": "Koffer-Doktor Chemnitz",
+                  "text": "Rad ab, Griff kaputt, Reißverschluss klemmt? Wir reparieren Koffer und Taschen, meistens in zwei Tagen. Zwickauer Straße 31."
+                },
+                {
+                  "key": "g",
+                  "title": "www.mitfahren-chemnitz.de",
+                  "text": "Sie haben Platz im Auto oder suchen eine Fahrt nach Berlin, München oder Hamburg? Hier finden Fahrer und Mitfahrer zusammen."
+                },
+                {
+                  "key": "h",
+                  "title": "Campingplatz Seeblick am Chiemsee",
+                  "text": "Plätze für Zelt und Wohnwagen direkt am See, Bootsverleih, kleiner Laden. Geöffnet April bis Oktober."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Sie möchten am Wochenende mit anderen Leuten eine Stadt im Nachbarland besuchen und nicht selbst fahren."
+                },
+                {
+                  "n": 11,
+                  "text": "Sie möchten mit zwei Freunden günstig übernachten und tagsüber in den Bergen laufen."
+                },
+                {
+                  "n": 12,
+                  "text": "Ihr Koffer rollt nicht mehr richtig, weil unten etwas abgebrochen ist."
+                },
+                {
+                  "n": 13,
+                  "text": "Sie suchen für Ihren Sommerurlaub eine Ferienwohnung am Meer."
+                },
+                {
+                  "n": 14,
+                  "text": "Sie möchten Ihre Ferien auf dem Land verbringen und jeden Tag bei den Tieren helfen."
+                },
+                {
+                  "n": 15,
+                  "text": "Sie haben ab Montag Urlaub und möchten günstig nach Spanien."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Die Jugendherberge hat billige Zimmer für mehrere Personen, auch für Erwachsene. Die Wanderwege beginnen direkt am Haus.",
+            "evidence": {
+              "text": "Jugendherberge Bad Schandau. Mitten in der Sächsischen Schweiz: Mehrbettzimmer ab 28 € pro Nacht, auch für Erwachsene. Die Wanderwege beginnen direkt vor dem Haus.",
+              "hit": "Mehrbettzimmer ab 28 € pro Nacht, auch für Erwachsene."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "f",
+            "explanation": "Der Koffer-Doktor repariert Koffer, auch wenn ein Rad ab ist. Die Reiseversicherung hilft nur, wenn das Gepäck weg ist.",
+            "evidence": {
+              "text": "Koffer-Doktor Chemnitz. Rad ab, Griff kaputt, Reißverschluss klemmt? Wir reparieren Koffer und Taschen, meistens in zwei Tagen. Zwickauer Straße 31.",
+              "hit": "Rad ab, Griff kaputt"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "x",
+            "explanation": "Keine Anzeige hat eine Wohnung am Meer. Der Chiemsee ist ein See, und die Ferienwohnungen vom Bauernhof sind im Erzgebirge.",
+            "evidence": {
+              "text": "Campingplatz Seeblick am Chiemsee. Plätze für Zelt und Wohnwagen direkt am See, Bootsverleih, kleiner Laden. Geöffnet April bis Oktober.",
+              "hit": "direkt am See"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "e",
+            "explanation": "Auf dem Ferienhof kannst du die Kühe und Hühner füttern. Das ist Urlaub auf dem Land mit Tieren.",
+            "evidence": {
+              "text": "Ferienhof Lindner im Erzgebirge. Urlaub auf dem Bauernhof: Kühe und Hühner füttern, Ponys reiten, frische Milch zum Frühstück. Ferienwohnungen für 2–6 Personen.",
+              "hit": "Kühe und Hühner füttern"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "d",
+            "explanation": "Das Reisebüro hat Last-Minute-Flüge nach Mallorca, Barcelona und Málaga, das ist Spanien. Die Busreise geht nach Prag.",
+            "evidence": {
+              "text": "Reisebüro Weltenbummler. Spontan in die Sonne? Last-Minute-Flüge ab Leipzig nach Mallorca, Barcelona und Málaga. Abflug in den nächsten 14 Tagen.",
+              "hit": "Last-Minute-Flüge ab Leipzig nach Mallorca, Barcelona und Málaga."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    }
+  ]
+}

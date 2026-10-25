@@ -1,0 +1,742 @@
+{
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "goethe-a2-lesen-08-t1-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.995Z",
+        "textType": "Zeitungsartikel: Lokales"
+      },
+      "display": {
+        "instruction": "Sie lesen diesen Text in der Zeitung. Wählen Sie für die Aufgaben 1–5 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "In Ellerbrück kann man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "für wenig Geld Fahrräder leihen."
+                },
+                {
+                  "key": "b",
+                  "label": "bei Regen gratis Bus fahren."
+                },
+                {
+                  "key": "c",
+                  "label": "kostenlos einen Schirm leihen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Die Idee für die Schirme hatte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "der Bürgermeister."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Frau aus der Apotheke."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Mitarbeiterin vom Rathaus."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Die Schirme …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "haben vorher andere Leute verloren."
+                },
+                {
+                  "key": "b",
+                  "label": "hat die Stadt neu gekauft."
+                },
+                {
+                  "key": "c",
+                  "label": "sind ein Geschenk von der Apotheke."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Die Kisten mit den Schirmen stehen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur vor dem Rathaus."
+                },
+                {
+                  "key": "b",
+                  "label": "auch schon vor der Stadthalle."
+                },
+                {
+                  "key": "c",
+                  "label": "an drei Stellen in der Stadt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Am Anfang …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "gab es zu wenige Schirme."
+                },
+                {
+                  "key": "b",
+                  "label": "haben viele Leute ihren Schirm behalten."
+                },
+                {
+                  "key": "c",
+                  "label": "waren viele Schirme kaputt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Bald …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "gibt es noch einen Ort mit Schirmen."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man für die Schirme bezahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "bekommt die Apotheke neue Schirme."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Trocken durch die Stadt",
+            "In Ellerbrück muss bei Regen niemand mehr nass werden. Seit dem Frühling gibt es in der Stadt kostenlose Regenschirme zum Ausleihen. Sie stehen in großen Holzkisten an drei Orten: vor dem Rathaus, an der Bushaltestelle am Markt und vor der Löwen-Apotheke. Wenn es regnet, nimmt man einfach einen Schirm mit. Später bringt man ihn zu einer der drei Kisten zurück.",
+            "Die Idee hatte Apothekerin Selin Aktaş. „Viele Kunden kamen ganz nass in meine Apotheke. Manche waren sogar erkältet“, erzählt sie. „Ich wollte, dass die Leute auch bei schlechtem Wetter gern in die Innenstadt kommen.“ Sie hat dann mit dem Bürgermeister gesprochen, und die Stadt hat sofort mitgemacht.",
+            "Gekauft hat die Stadt die Schirme nicht. Sie kommen aus dem Fundbüro im Rathaus. „Dort lagen über hundert Schirme. Niemand hat sie abgeholt. Die meisten waren noch fast neu“, sagt eine Mitarbeiterin.",
+            "Ganz ohne Probleme lief das Projekt aber nicht. Im ersten Monat sind 40 von 100 Schirmen nicht zurückgekommen. Jetzt klebt auf jedem Schirm ein Aufkleber mit dem Satz „Bitte zurückbringen“. Seitdem fehlen viel weniger Schirme. Im Herbst soll noch eine vierte Kiste dazukommen: vor der neuen Stadthalle. Die Stadthalle soll im Oktober fertig sein."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Die Idee hatte die Apothekerin Selin Aktaş. Mit dem Bürgermeister hat sie erst später gesprochen.",
+            "evidence": {
+              "text": "Die Idee hatte Apothekerin Selin Aktaş. „Viele Kunden kamen ganz nass in meine Apotheke. Manche waren sogar erkältet“, erzählt sie. „Ich wollte, dass die Leute auch bei schlechtem Wetter gern in die Innenstadt kommen.“ Sie hat dann mit dem Bürgermeister gesprochen, und die Stadt hat sofort mitgemacht.",
+              "hit": "Die Idee hatte Apothekerin Selin Aktaş."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Die Schirme kommen aus dem Fundbüro, niemand hat sie abgeholt. Die Stadt hat sie nicht gekauft.",
+            "evidence": {
+              "text": "Gekauft hat die Stadt die Schirme nicht. Sie kommen aus dem Fundbüro im Rathaus. „Dort lagen über hundert Schirme. Niemand hat sie abgeholt. Die meisten waren noch fast neu“, sagt eine Mitarbeiterin.",
+              "hit": "Sie kommen aus dem Fundbüro im Rathaus."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "c",
+            "explanation": "Die Kisten stehen am Rathaus, am Markt und an der Apotheke, also an drei Orten. Die Kiste an der Stadthalle kommt erst im Herbst.",
+            "evidence": {
+              "text": "In Ellerbrück muss bei Regen niemand mehr nass werden. Seit dem Frühling gibt es in der Stadt kostenlose Regenschirme zum Ausleihen. Sie stehen in großen Holzkisten an drei Orten: vor dem Rathaus, an der Bushaltestelle am Markt und vor der Löwen-Apotheke. Wenn es regnet, nimmt man einfach einen Schirm mit. Später bringt man ihn zu einer der drei Kisten zurück.",
+              "hit": "Sie stehen in großen Holzkisten an drei Orten"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Im ersten Monat sind 40 Schirme nicht zurückgekommen. Von kaputten Schirmen steht nichts im Text, und es gab über hundert Schirme.",
+            "evidence": {
+              "text": "Ganz ohne Probleme lief das Projekt aber nicht. Im ersten Monat sind 40 von 100 Schirmen nicht zurückgekommen. Jetzt klebt auf jedem Schirm ein Aufkleber mit dem Satz „Bitte zurückbringen“. Seitdem fehlen viel weniger Schirme. Im Herbst soll noch eine vierte Kiste dazukommen: vor der neuen Stadthalle. Die Stadthalle soll im Oktober fertig sein.",
+              "hit": "Im ersten Monat sind 40 von 100 Schirmen nicht zurückgekommen."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Im Herbst kommt eine vierte Kiste vor der Stadthalle dazu. Die Schirme bleiben kostenlos.",
+            "evidence": {
+              "text": "Ganz ohne Probleme lief das Projekt aber nicht. Im ersten Monat sind 40 von 100 Schirmen nicht zurückgekommen. Jetzt klebt auf jedem Schirm ein Aufkleber mit dem Satz „Bitte zurückbringen“. Seitdem fehlen viel weniger Schirme. Im Herbst soll noch eine vierte Kiste dazukommen: vor der neuen Stadthalle. Die Stadthalle soll im Oktober fertig sein.",
+              "hit": "Im Herbst soll noch eine vierte Kiste dazukommen: vor der neuen Stadthalle."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-08-t2-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.995Z",
+        "textType": "Wegweiser: Kaufhaus"
+      },
+      "display": {
+        "instruction": "Sie sind im Kaufhaus Brenneke. Lesen Sie die Aufgaben 6–10 und die Informationstafel. In welchen Stock gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten zu Hause Yoga machen und brauchen eine Matte.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie möchten am Samstag in ein Konzert gehen und brauchen noch Karten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie suchen ein Geschenk für Ihre Frau. Sie mag gute Düfte.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihr Sohn kommt im Sommer in die erste Klasse. Er braucht eine Tasche für die Schule.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie möchten heute Abend Brot mit Käse essen, aber Sie haben keinen Käse mehr.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In Ihrem Schlafzimmer ist es morgens zu hell. Sie brauchen etwas für die Fenster.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Kaufhaus Brenneke",
+          "source": "Informationstafel",
+          "paragraphs": [
+            "Kaufhaus Brenneke – Wegweiser · geöffnet Montag bis Samstag von 9:30 bis 20 Uhr",
+            "4. Stock: Heimtextilien – Gardinen, Vorhänge und Rollos · Kissen und Decken · Teppiche · Restaurant „Dachblick“ mit Terrasse · Ticketservice für Konzerte, Theater und Sport",
+            "3. Stock: Kindermode · Babyausstattung und Kinderwagen · Spielwaren · Schulbedarf: Schulranzen, Hefte und Stifte · Kinderfriseur · Spielecke · Wickelraum",
+            "2. Stock: Herrenmode und Anzüge · Sportbekleidung für Damen und Herren · Sportgeräte und Fitnesszubehör · Wander- und Laufschuhe · Fahrradzubehör",
+            "1. Stock: Damenmode · Damenschuhe · Wäsche und Strumpfhosen · Bademoden · Hüte und Schals · Änderungsschneiderei",
+            "Erdgeschoss: Parfümerie und Kosmetik · Zeitschriften, Zeitungen und Bücher · Lederwaren und Taschen · Schmuck und Uhren · Kundeninformation und Geschenkservice",
+            "Untergeschoss: Lebensmittel · Obst und Gemüse · Feinkost und Käsetheke · Fleisch- und Wursttheke · Wein und Spirituosen · Getränkemarkt · Bäckerei · Kundentoiletten"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Karten für Konzerte gibt es beim Ticketservice im 4. Stock. Im Erdgeschoss gibt es nur die Kundeninformation.",
+            "evidence": {
+              "text": "4. Stock: Heimtextilien – Gardinen, Vorhänge und Rollos · Kissen und Decken · Teppiche · Restaurant „Dachblick“ mit Terrasse · Ticketservice für Konzerte, Theater und Sport",
+              "hit": "Ticketservice für Konzerte, Theater und Sport"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Parfüm gibt es in der Parfümerie im Erdgeschoss. Im 1. Stock gibt es Damenmode, aber kein Parfüm.",
+            "evidence": {
+              "text": "Erdgeschoss: Parfümerie und Kosmetik · Zeitschriften, Zeitungen und Bücher · Lederwaren und Taschen · Schmuck und Uhren · Kundeninformation und Geschenkservice",
+              "hit": "Parfümerie und Kosmetik"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Schulranzen gibt es beim Schulbedarf im 3. Stock. Im 2. Stock gibt es Sportsachen, aber keine Schultaschen.",
+            "evidence": {
+              "text": "3. Stock: Kindermode · Babyausstattung und Kinderwagen · Spielwaren · Schulbedarf: Schulranzen, Hefte und Stifte · Kinderfriseur · Spielecke · Wickelraum",
+              "hit": "Schulbedarf: Schulranzen, Hefte und Stifte"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Die Käsetheke ist im Untergeschoss bei den Lebensmitteln. Im 4. Stock ist nur ein Restaurant.",
+            "evidence": {
+              "text": "Untergeschoss: Lebensmittel · Obst und Gemüse · Feinkost und Käsetheke · Fleisch- und Wursttheke · Wein und Spirituosen · Getränkemarkt · Bäckerei · Kundentoiletten",
+              "hit": "Feinkost und Käsetheke"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Vorhänge und Rollos gibt es im 4. Stock. Im 1. Stock und im Erdgeschoss gibt es nichts für die Fenster.",
+            "evidence": {
+              "text": "4. Stock: Heimtextilien – Gardinen, Vorhänge und Rollos · Kissen und Decken · Teppiche · Restaurant „Dachblick“ mit Terrasse · Ticketservice für Konzerte, Theater und Sport",
+              "hit": "Gardinen, Vorhänge und Rollos"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-08-t3-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.995Z",
+        "textType": "Persönliche E-Mail: Kandidatin in einer Quizsendung"
+      },
+      "display": {
+        "instruction": "Sie lesen eine E-Mail. Wählen Sie für die Aufgaben 11–15 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Jasmin war in der Sendung, weil …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sie sich selbst angemeldet hat."
+                },
+                {
+                  "key": "b",
+                  "label": "ihr Bruder sie angemeldet hat."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Kollegin sie angemeldet hat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Schwierig war für Jasmin …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "das helle Licht im Studio."
+                },
+                {
+                  "key": "b",
+                  "label": "das Gespräch mit dem Moderator."
+                },
+                {
+                  "key": "c",
+                  "label": "die Fragen zum Thema Sport."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Jasmin hat …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Geldpreis gewonnen."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Reise nach Wien gewonnen."
+                },
+                {
+                  "key": "c",
+                  "label": "ein neues Fahrrad gewonnen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Die Sendung kommt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Samstagabend im Fernsehen."
+                },
+                {
+                  "key": "b",
+                  "label": "am Freitagabend im Fernsehen."
+                },
+                {
+                  "key": "c",
+                  "label": "schon in der letzten Woche."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Jasmin möchte mit Paula …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zusammen ins Studio nach Lahnfeld fahren."
+                },
+                {
+                  "key": "b",
+                  "label": "die Sendung bei Paula ansehen."
+                },
+                {
+                  "key": "c",
+                  "label": "bei sich zu Hause fernsehen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Jasmin",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Paula,",
+            "du glaubst nicht, was ich letzte Woche gemacht habe: Ich war im Fernsehen! Ich war Kandidatin bei „Wer weiß es?“, der Quizsendung von Regio-TV Süd. Aufgenommen wurde sie in einem Studio in Lahnfeld.",
+            "Wie ich dahin gekommen bin? Ich wollte mich nie selbst bewerben, ich bin doch viel zu nervös! Meine Kollegin Bettina sieht die Sendung jede Woche, deshalb haben alle zuerst gedacht, sie hat mich angemeldet. Aber es war mein Bruder Timo. Er hat mich heimlich angemeldet und mir erst nach der Einladung davon erzählt.",
+            "Im Studio war es ganz anders, als ich gedacht habe. Die Lampen waren sehr hell, aber das hat mich nicht gestört. Der Moderator war total nett und hat vor der Sendung lange mit uns gesprochen. Schwer waren für mich nur die Fragen zum Thema Sport. Du weißt ja, Fußball und Tennis interessieren mich überhaupt nicht!",
+            "Am Ende war ich Zweite. Die Reise nach Wien hat leider ein Mann aus Freiburg gewonnen, aber ich habe 300 Euro bekommen. Davon möchte ich mir ein neues Fahrrad kaufen, mein altes ist ja schon zwanzig Jahre alt.",
+            "Die Sendung kommt am nächsten Samstag um 19:30 Uhr. Zuerst hat man uns Freitag gesagt, aber das hat sich geändert. Hast du Lust, sie mit mir zusammen anzusehen? Komm doch einfach zu mir, dann koche ich etwas Leckeres. Bei dir geht es ja nicht, dein Fernseher ist doch noch kaputt, oder?",
+            "Ich freue mich auf deine Antwort!",
+            "Liebe Grüße",
+            "Jasmin"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Ihr Bruder Timo hat Jasmin heimlich angemeldet. Alle haben zuerst an die Kollegin Bettina gedacht, aber sie war es nicht.",
+            "evidence": {
+              "text": "Wie ich dahin gekommen bin? Ich wollte mich nie selbst bewerben, ich bin doch viel zu nervös! Meine Kollegin Bettina sieht die Sendung jede Woche, deshalb haben alle zuerst gedacht, sie hat mich angemeldet. Aber es war mein Bruder Timo. Er hat mich heimlich angemeldet und mir erst nach der Einladung davon erzählt.",
+              "hit": "Aber es war mein Bruder Timo. Er hat mich heimlich angemeldet"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Schwer waren für Jasmin nur die Sportfragen. Das helle Licht hat sie nicht gestört, und der Moderator war nett.",
+            "evidence": {
+              "text": "Im Studio war es ganz anders, als ich gedacht habe. Die Lampen waren sehr hell, aber das hat mich nicht gestört. Der Moderator war total nett und hat vor der Sendung lange mit uns gesprochen. Schwer waren für mich nur die Fragen zum Thema Sport. Du weißt ja, Fußball und Tennis interessieren mich überhaupt nicht!",
+              "hit": "Schwer waren für mich nur die Fragen zum Thema Sport."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Jasmin hat 300 Euro bekommen. Das Fahrrad möchte sie von dem Geld erst kaufen, und die Reise hat ein anderer Mann gewonnen.",
+            "evidence": {
+              "text": "Am Ende war ich Zweite. Die Reise nach Wien hat leider ein Mann aus Freiburg gewonnen, aber ich habe 300 Euro bekommen. Davon möchte ich mir ein neues Fahrrad kaufen, mein altes ist ja schon zwanzig Jahre alt.",
+              "hit": "aber ich habe 300 Euro bekommen"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a",
+            "explanation": "Die Sendung kommt am nächsten Samstag um 19:30 Uhr. Freitag war nur der erste Termin, das hat sich geändert.",
+            "evidence": {
+              "text": "Die Sendung kommt am nächsten Samstag um 19:30 Uhr. Zuerst hat man uns Freitag gesagt, aber das hat sich geändert. Hast du Lust, sie mit mir zusammen anzusehen? Komm doch einfach zu mir, dann koche ich etwas Leckeres. Bei dir geht es ja nicht, dein Fernseher ist doch noch kaputt, oder?",
+              "hit": "Die Sendung kommt am nächsten Samstag um 19:30 Uhr."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Jasmin lädt Paula zu sich ein, dann sehen sie die Sendung zusammen. Bei Paula geht es nicht, denn ihr Fernseher ist kaputt.",
+            "evidence": {
+              "text": "Die Sendung kommt am nächsten Samstag um 19:30 Uhr. Zuerst hat man uns Freitag gesagt, aber das hat sich geändert. Hast du Lust, sie mit mir zusammen anzusehen? Komm doch einfach zu mir, dann koche ich etwas Leckeres. Bei dir geht es ja nicht, dein Fernseher ist doch noch kaputt, oder?",
+              "hit": "Komm doch einfach zu mir, dann koche ich etwas Leckeres."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-lesen-08-t4-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.995Z",
+        "textType": "Anzeigen im Internet: Verleih für Feiern"
+      },
+      "display": {
+        "instruction": "Sechs Personen suchen im Internet nach Angeboten für ein Fest. Lesen Sie die Aufgaben 16–20 und die Anzeigen a–f. Welche Anzeige passt zu welcher Person? Für eine Aufgabe gibt es keine Lösung. Dann wählen Sie X. Die Anzeige aus dem Beispiel können Sie nicht mehr wählen.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "www.zeltverleih-sturmfest.de",
+                  "text": "Wolken am Himmel? Kein Problem! Mit unseren Partyzelten bleiben Ihre Gäste trocken. Zelte für 20 bis 120 Personen, auch mit Seitenwänden und Licht. Wir bringen das Zelt, bauen es auf und holen es danach wieder ab."
+                },
+                {
+                  "key": "b",
+                  "title": "Geschirrverleih „Teller & Tasse“",
+                  "text": "Sie feiern mit vielen Gästen und haben nicht genug Geschirr? Wir leihen Ihnen Teller, Gläser, Tassen und Besteck, schon ab 30 Cent pro Stück. Das Beste: Sie müssen nichts spülen. Bringen Sie einfach alles schmutzig zurück."
+                },
+                {
+                  "key": "c",
+                  "title": "www.fotobox-klick.de",
+                  "text": "Ein Erinnerungsfoto mit lustigen Hüten, Brillen und Schildern: Unsere Fotobox ist der Spaß auf jeder Feier. Die Gäste machen die Bilder selbst, und die Box druckt sie sofort aus. Lieferung und Aufbau sind im Preis dabei."
+                },
+                {
+                  "key": "d",
+                  "title": "DJ Robin – Musik für Ihre Party",
+                  "text": "Ob Hochzeit, Geburtstag oder Firmenfeier: Ich bringe die richtige Musik mit. Über 20.000 Lieder aus meiner Sammlung, von Schlager bis Rock. Eine Band oder Live-Musik biete ich nicht an, aber Ihre Lieblingslieder spiele ich gern."
+                },
+                {
+                  "key": "e",
+                  "title": "Festzeltgarnituren Holzmann",
+                  "text": "Sie brauchen Sitzplätze für viele Gäste? Bei uns können Sie Bierbänke und Biertische leihen. Eine Garnitur hat einen Tisch und zwei Bänke für acht Personen. Wir liefern bis zu 20 Garnituren direkt zu Ihnen nach Hause."
+                },
+                {
+                  "key": "f",
+                  "title": "Partykeller „Gewölbe“",
+                  "text": "Ihre Wohnung ist zu klein für eine Feier? Mieten Sie unseren gemütlichen Gewölbekeller in der Altstadt. Platz für bis zu 40 Gäste, mit Küche, Kühlschrank und Musikanlage. Am Wochenende bitte früh reservieren."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Frau Kessler feiert mit 50 Gästen und hat nicht genug Teller und Gläser."
+                },
+                {
+                  "n": 16,
+                  "text": "Herr Albayrak feiert im Garten. Weil vielleicht schlechtes Wetter kommt, möchte er seine Gäste vor Regen schützen."
+                },
+                {
+                  "n": 17,
+                  "text": "Herr Dittmar möchte, dass seine Gäste auf der Feier lustige Bilder machen und mit nach Hause nehmen."
+                },
+                {
+                  "n": 18,
+                  "text": "Frau Rieger wird 50. Auf ihrer Feier soll eine Band live spielen."
+                },
+                {
+                  "n": 19,
+                  "text": "Frau Schulze hat nur eine kleine Wohnung. Sie sucht einen Raum für ihre Feier mit 30 Gästen."
+                },
+                {
+                  "n": 20,
+                  "text": "Herr Mahler lädt 60 Leute in seinen Garten ein. Er hat aber nicht genug Plätze zum Sitzen."
+                }
+              ],
+              "noMatchLabel": "X"
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "a",
+            "explanation": "Im Partyzelt bleiben die Gäste bei Regen trocken. Die Bänke und Tische sind nur zum Sitzen, sie schützen nicht vor Regen.",
+            "evidence": {
+              "text": "Wolken am Himmel? Kein Problem! Mit unseren Partyzelten bleiben Ihre Gäste trocken. Zelte für 20 bis 120 Personen, auch mit Seitenwänden und Licht. Wir bringen das Zelt, bauen es auf und holen es danach wieder ab.",
+              "hit": "Mit unseren Partyzelten bleiben Ihre Gäste trocken."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "c",
+            "explanation": "Mit der Fotobox machen die Gäste lustige Fotos, und die Box druckt sie gleich aus. Die anderen Anzeigen bieten keine Fotos an.",
+            "evidence": {
+              "text": "Ein Erinnerungsfoto mit lustigen Hüten, Brillen und Schildern: Unsere Fotobox ist der Spaß auf jeder Feier. Die Gäste machen die Bilder selbst, und die Box druckt sie sofort aus. Lieferung und Aufbau sind im Preis dabei.",
+              "hit": "Die Gäste machen die Bilder selbst, und die Box druckt sie sofort aus."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "x",
+            "explanation": "DJ Robin bringt Musik mit, aber er spielt keine Live-Musik. Eine Band gibt es in keiner Anzeige.",
+            "evidence": {
+              "text": "Ob Hochzeit, Geburtstag oder Firmenfeier: Ich bringe die richtige Musik mit. Über 20.000 Lieder aus meiner Sammlung, von Schlager bis Rock. Eine Band oder Live-Musik biete ich nicht an, aber Ihre Lieblingslieder spiele ich gern.",
+              "hit": "Eine Band oder Live-Musik biete ich nicht an"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "f",
+            "explanation": "Den Partykeller kann man für bis zu 40 Gäste mieten. Das Zelt passt nicht, denn Frau Schulze hat keinen Garten erwähnt und sucht einen Raum.",
+            "evidence": {
+              "text": "Ihre Wohnung ist zu klein für eine Feier? Mieten Sie unseren gemütlichen Gewölbekeller in der Altstadt. Platz für bis zu 40 Gäste, mit Küche, Kühlschrank und Musikanlage. Am Wochenende bitte früh reservieren.",
+              "hit": "Platz für bis zu 40 Gäste"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "e",
+            "explanation": "Bei Holzmann kann man Tische und Bänke leihen, und sie liefern bis zu 20 Garnituren. Das Zelt hat keine Sitzplätze.",
+            "evidence": {
+              "text": "Sie brauchen Sitzplätze für viele Gäste? Bei uns können Sie Bierbänke und Biertische leihen. Eine Garnitur hat einen Tisch und zwei Bänke für acht Personen. Wir liefern bis zu 20 Garnituren direkt zu Ihnen nach Hause.",
+              "hit": "Bei uns können Sie Bierbänke und Biertische leihen."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

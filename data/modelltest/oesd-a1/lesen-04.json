@@ -1,0 +1,479 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-04-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.634Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Schornsteinfeger Kühn, Bielefeld",
+                  "text": "Wir reinigen und prüfen Schornsteine und Kamine in Ihrem Haus. Schnell und sauber! Rufen Sie an und machen Sie einen Termin: Telefon 0521 386 72 40"
+                },
+                {
+                  "key": "2",
+                  "title": "Pilzschule Waldkorb, Leibnitz",
+                  "text": "Welche Pilze kann man essen? Spazieren Sie mit unserem Förster durch den Wald und lernen Sie die Pilze kennen. Samstag und Sonntag, 9 bis 12 Uhr. www.pilzschule-waldkorb.at"
+                },
+                {
+                  "key": "3",
+                  "title": "Stadtteilfest Fulda-Nord",
+                  "text": "Am Sonntag fahren keine Autos durch unsere Straßen! Um 15 Uhr gibt es ein Klavierkonzert im Park. Pilzsuppe für alle ist gratis. Feiern Sie mit!"
+                },
+                {
+                  "key": "4",
+                  "title": "Installateur Haslinger, Wörgl",
+                  "text": "Probleme mit Wasser oder Heizung? Wir reparieren alles in Bad und Küche. Wir kommen schnell, Tag und Nacht, auch am Wochenende. Notdienst: 0664 527 19 86"
+                },
+                {
+                  "key": "5",
+                  "title": "Reifen-Service Danner, Ulm",
+                  "text": "Der Winter kommt! Wir wechseln die Reifen an Ihrem Auto in nur 30 Minuten. Geöffnet: Montag bis Freitag 7 bis 18 Uhr, Samstag 8 bis 14 Uhr. www.reifen-danner.de"
+                },
+                {
+                  "key": "6",
+                  "title": "Musikschule Tonleiter, Olten",
+                  "text": "Klavierunterricht für Erwachsene, auch für Anfänger. Kein Instrument zu Hause? Kein Problem: Bei uns können Sie Übungsräume mit Klavier mieten, pro Stunde CHF 12.–. www.tonleiter-olten.ch"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Ihr Auto braucht Winterreifen. Sie haben nur am Samstag Zeit."
+                },
+                {
+                  "n": 2,
+                  "text": "Im Bad ist ein Wasserrohr kaputt. Sie brauchen sofort Hilfe, auch am Sonntag."
+                },
+                {
+                  "n": 3,
+                  "text": "Sie möchten Klavier spielen lernen. Sie haben aber kein Klavier zu Hause."
+                },
+                {
+                  "n": 4,
+                  "text": "Sie möchten im Wald Pilze suchen. Sie kennen die Pilze aber nicht gut."
+                },
+                {
+                  "n": 5,
+                  "text": "Ihr Kamin ist schmutzig. Jemand soll ihn sauber machen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "5",
+            "explanation": "Der Reifen-Service in Ulm wechselt Reifen und hat am Samstag offen. Beim Stadtteilfest fahren nur keine Autos, das hilft dir nicht.",
+            "evidence": {
+              "text": "Reifen-Service Danner, Ulm Der Winter kommt! Wir wechseln die Reifen an Ihrem Auto in nur 30 Minuten. Geöffnet: Montag bis Freitag 7 bis 18 Uhr, Samstag 8 bis 14 Uhr. www.reifen-danner.de",
+              "hit": "Wir wechseln die Reifen an Ihrem Auto in nur 30 Minuten."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "4",
+            "explanation": "Der Installateur in Wörgl repariert Wasser im Bad und kommt auch am Wochenende. Das Fest am Sonntag hilft dir bei einem kaputten Rohr nicht.",
+            "evidence": {
+              "text": "Installateur Haslinger, Wörgl Probleme mit Wasser oder Heizung? Wir reparieren alles in Bad und Küche. Wir kommen schnell, Tag und Nacht, auch am Wochenende. Notdienst: 0664 527 19 86",
+              "hit": "Wir kommen schnell, Tag und Nacht, auch am Wochenende."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "6",
+            "explanation": "Bei der Musikschule in Olten lernst du Klavier und kannst einen Raum mit Klavier mieten. Beim Stadtteilfest hörst du nur ein Konzert.",
+            "evidence": {
+              "text": "Musikschule Tonleiter, Olten Klavierunterricht für Erwachsene, auch für Anfänger. Kein Instrument zu Hause? Kein Problem: Bei uns können Sie Übungsräume mit Klavier mieten, pro Stunde CHF 12.–. www.tonleiter-olten.ch",
+              "hit": "Bei uns können Sie Übungsräume mit Klavier mieten"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "2",
+            "explanation": "In der Pilzschule lernst du mit einem Förster die Pilze im Wald kennen. Beim Fest gibt es nur Pilzsuppe zum Essen.",
+            "evidence": {
+              "text": "Pilzschule Waldkorb, Leibnitz Welche Pilze kann man essen? Spazieren Sie mit unserem Förster durch den Wald und lernen Sie die Pilze kennen. Samstag und Sonntag, 9 bis 12 Uhr. www.pilzschule-waldkorb.at",
+              "hit": "Spazieren Sie mit unserem Förster durch den Wald und lernen Sie die Pilze kennen."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "1",
+            "explanation": "Der Schornsteinfeger in Bielefeld reinigt Kamine. Der Installateur repariert Wasser und Heizung, aber er reinigt keinen Kamin.",
+            "evidence": {
+              "text": "Schornsteinfeger Kühn, Bielefeld Wir reinigen und prüfen Schornsteine und Kamine in Ihrem Haus. Schnell und sauber! Rufen Sie an und machen Sie einen Termin: Telefon 0521 386 72 40",
+              "hit": "Wir reinigen und prüfen Schornsteine und Kamine in Ihrem Haus."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-04-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.634Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Rathaus Aachen",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Ausstellung: Bilder von Schülerinnen und Schülern",
+            "Vom 3. bis 17. März zeigt das Gymnasium Am Wiesenhang Bilder im Rathaus.",
+            "Montag bis Freitag, 9 bis 18 Uhr. Der Eintritt ist frei.",
+            "Die Bilder sind auch zu verkaufen. Das Geld ist für die Schule."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kostet der Eintritt etwas?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Kann man die Bilder kaufen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Der Eintritt ist frei, du bezahlst also nichts. Geld gibt es nur für die Bilder.",
+            "evidence": {
+              "text": "Ausstellung: Bilder von Schülerinnen und Schülern Vom 3. bis 17. März zeigt das Gymnasium Am Wiesenhang Bilder im Rathaus. Montag bis Freitag, 9 bis 18 Uhr. Der Eintritt ist frei. Die Bilder sind auch zu verkaufen. Das Geld ist für die Schule.",
+              "hit": "Der Eintritt ist frei."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Die Bilder sind zu verkaufen, also kannst du sie kaufen. Das Geld bekommt die Schule.",
+            "evidence": {
+              "text": "Ausstellung: Bilder von Schülerinnen und Schülern Vom 3. bis 17. März zeigt das Gymnasium Am Wiesenhang Bilder im Rathaus. Montag bis Freitag, 9 bis 18 Uhr. Der Eintritt ist frei. Die Bilder sind auch zu verkaufen. Das Geld ist für die Schule.",
+              "hit": "Die Bilder sind auch zu verkaufen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-04-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.634Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Stadtgemeinde Hallein",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Sperrmüll-Abholung",
+            "Am Samstag, 11. Oktober, holen wir alte Möbel bei Ihnen ab.",
+            "Bitte melden Sie sich bis Mittwoch telefonisch an: 06245 803 15.",
+            "Bis zu drei Stück sind gratis. Wir nehmen keine Elektrogeräte mit."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Kann man sich per E-Mail anmelden?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Muss man für zwei Möbelstücke bezahlen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Du musst dich telefonisch anmelden. Von E-Mail steht nichts im Text.",
+            "evidence": {
+              "text": "Sperrmüll-Abholung Am Samstag, 11. Oktober, holen wir alte Möbel bei Ihnen ab. Bitte melden Sie sich bis Mittwoch telefonisch an: 06245 803 15. Bis zu drei Stück sind gratis. Wir nehmen keine Elektrogeräte mit.",
+              "hit": "Bitte melden Sie sich bis Mittwoch telefonisch an"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Bis zu drei Stück sind gratis. Zwei Möbelstücke kosten also nichts.",
+            "evidence": {
+              "text": "Sperrmüll-Abholung Am Samstag, 11. Oktober, holen wir alte Möbel bei Ihnen ab. Bitte melden Sie sich bis Mittwoch telefonisch an: 06245 803 15. Bis zu drei Stück sind gratis. Wir nehmen keine Elektrogeräte mit.",
+              "hit": "Bis zu drei Stück sind gratis."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-04-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.634Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Gemeinschaftszentrum Liestal-Süd",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Kerzenziehen im Gemeinschaftszentrum",
+            "Vom 20. November bis 3. Dezember: Mittwoch 14 bis 18 Uhr, Samstag 10 bis 17 Uhr.",
+            "Das Wachs kostet CHF 3.50 pro 100 Gramm.",
+            "Kinder unter zehn Jahren dürfen nur mit einer erwachsenen Person kommen. Viel Spass!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Kann man am Donnerstag Kerzen ziehen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Muss ein Kind mit acht Jahren mit einem Erwachsenen kommen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Das Kerzenziehen ist nur am Mittwoch und am Samstag. Am Donnerstag ist es nicht offen.",
+            "evidence": {
+              "text": "Kerzenziehen im Gemeinschaftszentrum Vom 20. November bis 3. Dezember: Mittwoch 14 bis 18 Uhr, Samstag 10 bis 17 Uhr. Das Wachs kostet CHF 3.50 pro 100 Gramm. Kinder unter zehn Jahren dürfen nur mit einer erwachsenen Person kommen. Viel Spass!",
+              "hit": "Mittwoch 14 bis 18 Uhr, Samstag 10 bis 17 Uhr"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Ein Kind mit acht Jahren ist unter zehn. Es darf nur mit einer erwachsenen Person kommen.",
+            "evidence": {
+              "text": "Kerzenziehen im Gemeinschaftszentrum Vom 20. November bis 3. Dezember: Mittwoch 14 bis 18 Uhr, Samstag 10 bis 17 Uhr. Das Wachs kostet CHF 3.50 pro 100 Gramm. Kinder unter zehn Jahren dürfen nur mit einer erwachsenen Person kommen. Viel Spass!",
+              "hit": "Kinder unter zehn Jahren dürfen nur mit einer erwachsenen Person kommen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-04-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.634Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Grillplatz",
+                  "text": "",
+                  "picto": "grill"
+                },
+                {
+                  "key": "2",
+                  "title": "Geldautomat",
+                  "text": "",
+                  "picto": "geldautomat"
+                },
+                {
+                  "key": "3",
+                  "title": "Schlüssel",
+                  "text": "",
+                  "picto": "schluessel"
+                },
+                {
+                  "key": "4",
+                  "title": "Offenes Feuer verboten",
+                  "text": "",
+                  "picto": "kein-feuer"
+                },
+                {
+                  "key": "5",
+                  "title": "Parkplatz",
+                  "text": "",
+                  "picto": "parkplatz"
+                },
+                {
+                  "key": "6",
+                  "title": "Treppe",
+                  "text": "",
+                  "picto": "treppe"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Kundinnen und Kunden! Unser Parkplatz ist hinter dem Haus. Mit Ihrem Kassenzettel parken Sie dort zwei Stunden gratis."
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Mieterinnen und Mieter! Bitte schließen Sie die Haustür ab 22 Uhr immer ab. In der Nacht soll niemand ohne Schlüssel ins Haus kommen."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Gäste! Im Waldpark dürfen Sie nur an der Grillstelle am Bach grillen. Bitte machen Sie an anderen Orten kein Feuer."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Bewohnerinnen und Bewohner! Bei Feuer im Haus nehmen Sie bitte nicht den Lift. Gehen Sie über die Stiege nach unten und dann schnell hinaus."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Bankkundinnen und Bankkunden! Unser Bankomat ist jetzt im Haus, gleich neben dem Eingang. Dort können Sie jeden Tag von 6 bis 23 Uhr Geld abheben."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "5",
+            "explanation": "Der Text sagt, wo die Kunden ihr Auto parken. Das passt zum Bild mit dem P für Parkplatz.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden! Unser Parkplatz ist hinter dem Haus. Mit Ihrem Kassenzettel parken Sie dort zwei Stunden gratis.",
+              "hit": "Unser Parkplatz ist hinter dem Haus."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "3",
+            "explanation": "Die Mieter sollen die Haustür in der Nacht abschließen. Das passt zum Bild mit dem Schlüssel.",
+            "evidence": {
+              "text": "Liebe Mieterinnen und Mieter! Bitte schließen Sie die Haustür ab 22 Uhr immer ab. In der Nacht soll niemand ohne Schlüssel ins Haus kommen.",
+              "hit": "Bitte schließen Sie die Haustür ab 22 Uhr immer ab."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "1",
+            "explanation": "Der Text zeigt, wo man grillen darf: an der Grillstelle. Das Bild \"Feuer verboten\" passt nicht, denn hier ist Grillen erlaubt.",
+            "evidence": {
+              "text": "Liebe Gäste! Im Waldpark dürfen Sie nur an der Grillstelle am Bach grillen. Bitte machen Sie an anderen Orten kein Feuer.",
+              "hit": "dürfen Sie nur an der Grillstelle am Bach grillen"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "6",
+            "explanation": "Bei Feuer sollen die Bewohner die Stiege nehmen, also die Treppe. Das Bild \"Feuer verboten\" passt nicht, denn es geht um den Weg nach unten.",
+            "evidence": {
+              "text": "Liebe Bewohnerinnen und Bewohner! Bei Feuer im Haus nehmen Sie bitte nicht den Lift. Gehen Sie über die Stiege nach unten und dann schnell hinaus.",
+              "hit": "Gehen Sie über die Stiege nach unten"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "2",
+            "explanation": "Am Bankomat bekommst du Geld. Das passt zum Bild mit dem Geldautomaten.",
+            "evidence": {
+              "text": "Liebe Bankkundinnen und Bankkunden! Unser Bankomat ist jetzt im Haus, gleich neben dem Eingang. Dort können Sie jeden Tag von 6 bis 23 Uhr Geld abheben.",
+              "hit": "Dort können Sie jeden Tag von 6 bis 23 Uhr Geld abheben."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

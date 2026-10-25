@@ -1,0 +1,195 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-06-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.327Z",
+        "textType": "Formular ausfüllen: Lagerraum mieten"
+      },
+      "exampleAnswers": [
+        "Alves, Ricardo"
+      ],
+      "display": {
+        "instruction": "Ihr Freund möchte einen Lagerraum mieten. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Ricardo Alves wohnt im Fasanenweg 3 in 38448 Wolfsburg. Seine Wohnung bekommt neue Böden und Fenster. Deshalb braucht er für drei Monate einen Raum für seine Möbel.",
+            "Bei BoxRaum Lagerhaus gibt es kleine Räume mit 5 m² und große Räume mit 10 m². Ricardo wollte zuerst einen kleinen Raum. Aber sein Sofa ist zu groß. Jetzt nimmt er einen großen.",
+            "Er braucht den Raum ab dem 1. März. Seine Handynummer ist 0176 4528 913."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "BoxRaum Lagerhaus Wolfsburg · Mietvertrag Lagerraum\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGröße vom Raum: ",
+                {
+                  "n": 2,
+                  "options": [
+                    "5 m²",
+                    "10 m²"
+                  ]
+                },
+                "\nMietbeginn (Datum): ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nDauer (Monate): ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nHandynummer: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Fasanenweg 3",
+            "accept": [
+              "Fasanenweg Nr. 3",
+              "Fasanenweg 3, Wolfsburg",
+              "Fasanenweg 3 in Wolfsburg"
+            ],
+            "explanation": "Ricardo wohnt im Fasanenweg 3. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Ricardo Alves wohnt im Fasanenweg 3 in 38448 Wolfsburg. Seine Wohnung bekommt neue Böden und Fenster. Deshalb braucht er für drei Monate einen Raum für seine Möbel. Bei BoxRaum Lagerhaus gibt es kleine Räume mit 5 m² und große Räume mit 10 m². Ricardo wollte zuerst einen kleinen Raum. Aber sein Sofa ist zu groß. Jetzt nimmt er einen großen. Er braucht den Raum ab dem 1. März. Seine Handynummer ist 0176 4528 913.",
+              "hit": "Ihr Freund Ricardo Alves wohnt im Fasanenweg 3 in 38448 Wolfsburg."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "10 m²",
+            "explanation": "Ricardo nimmt jetzt einen großen Raum, also 10 m². Den kleinen Raum wollte er nur zuerst, aber das Sofa ist zu groß.",
+            "evidence": {
+              "text": "Ihr Freund Ricardo Alves wohnt im Fasanenweg 3 in 38448 Wolfsburg. Seine Wohnung bekommt neue Böden und Fenster. Deshalb braucht er für drei Monate einen Raum für seine Möbel. Bei BoxRaum Lagerhaus gibt es kleine Räume mit 5 m² und große Räume mit 10 m². Ricardo wollte zuerst einen kleinen Raum. Aber sein Sofa ist zu groß. Jetzt nimmt er einen großen. Er braucht den Raum ab dem 1. März. Seine Handynummer ist 0176 4528 913.",
+              "hit": "Aber sein Sofa ist zu groß. Jetzt nimmt er einen großen."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "1. März",
+            "accept": [
+              "1.3.",
+              "01.03.",
+              "1.03.",
+              "01.3.",
+              "1. 3.",
+              "1. Maerz",
+              "ab 1. März",
+              "ab dem 1. März",
+              "1.3"
+            ],
+            "explanation": "Ricardo braucht den Raum ab dem 1. März. Das Datum muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Ricardo Alves wohnt im Fasanenweg 3 in 38448 Wolfsburg. Seine Wohnung bekommt neue Böden und Fenster. Deshalb braucht er für drei Monate einen Raum für seine Möbel. Bei BoxRaum Lagerhaus gibt es kleine Räume mit 5 m² und große Räume mit 10 m². Ricardo wollte zuerst einen kleinen Raum. Aber sein Sofa ist zu groß. Jetzt nimmt er einen großen. Er braucht den Raum ab dem 1. März. Seine Handynummer ist 0176 4528 913.",
+              "hit": "Er braucht den Raum ab dem 1. März."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "3",
+            "accept": [
+              "drei",
+              "3 Monate",
+              "drei Monate"
+            ],
+            "explanation": "Ricardo braucht den Raum für drei Monate.",
+            "evidence": {
+              "text": "Ihr Freund Ricardo Alves wohnt im Fasanenweg 3 in 38448 Wolfsburg. Seine Wohnung bekommt neue Böden und Fenster. Deshalb braucht er für drei Monate einen Raum für seine Möbel. Bei BoxRaum Lagerhaus gibt es kleine Räume mit 5 m² und große Räume mit 10 m². Ricardo wollte zuerst einen kleinen Raum. Aber sein Sofa ist zu groß. Jetzt nimmt er einen großen. Er braucht den Raum ab dem 1. März. Seine Handynummer ist 0176 4528 913.",
+              "hit": "Deshalb braucht er für drei Monate einen Raum für seine Möbel."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "0176 4528 913",
+            "accept": [
+              "01764528913",
+              "0176 4528913",
+              "0176-4528 913",
+              "0176-4528913",
+              "0176/4528913",
+              "0176/4528 913"
+            ],
+            "explanation": "Die Nummer muss genau stimmen: 0176 4528 913.",
+            "evidence": {
+              "text": "Ihr Freund Ricardo Alves wohnt im Fasanenweg 3 in 38448 Wolfsburg. Seine Wohnung bekommt neue Böden und Fenster. Deshalb braucht er für drei Monate einen Raum für seine Möbel. Bei BoxRaum Lagerhaus gibt es kleine Räume mit 5 m² und große Räume mit 10 m². Ricardo wollte zuerst einen kleinen Raum. Aber sein Sofa ist zu groß. Jetzt nimmt er einen großen. Er braucht den Raum ab dem 1. März. Seine Handynummer ist 0176 4528 913.",
+              "hit": "Seine Handynummer ist 0176 4528 913."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-06-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.327Z",
+        "textType": "Kurze E-Mail an eine Freundin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an Marlene",
+            "situation": "Sie möchten am Samstagnachmittag Minigolf spielen. Schreiben Sie Ihrer Freundin Marlene eine E-Mail.",
+            "points": [
+              "Laden Sie Marlene ein.",
+              "Wo und wann treffen Sie sich?",
+              "Fragen Sie: Kommt ihr Mann auch mit?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Marlene,\nhast du am Samstagnachmittag Zeit? Ich möchte mit dir Minigolf spielen. Wir treffen uns um drei Uhr am Eingang vom Stadtpark. Kommt dein Mann auch mit?\nViele Grüße\nTanja"
+          }
+        ]
+      }
+    }
+  ]
+}

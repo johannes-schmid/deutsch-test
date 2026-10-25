@@ -172,6 +172,24 @@ export const makeAsk = (system: string, model = MODEL) => async function ask<T e
   return format.parse(res.text) as z.infer<T>
 }
 
+/** Free-text output (e.g. a whole Modelltest file as JSON); the system prompt is cached across the requests that share it. */
+export async function askText(system: string, prompt: string, maxTokens = 64000, model = MODEL) {
+  const params: Anthropic.MessageCreateParamsNonStreaming = {
+    model,
+    max_tokens: maxTokens,
+    output_config: { effort: EFFORT },
+    system: [{ type: "text", text: system, cache_control: { type: "ephemeral" } }],
+    messages: [{ role: "user", content: prompt }],
+  }
+  const res = await (BATCH ? viaBatch(params) : viaStream(params))
+  if (res.stop_reason === "refusal") throw new Error(`Refused: ${res.refusal ?? ""}`)
+  if (res.stop_reason === "max_tokens" || !res.text) throw new Error(`No usable output (stop_reason ${res.stop_reason})`)
+  const [pin, pout] = PRICE[model] ?? [4, 20]
+  const cost = ((res.usage.input_tokens * pin + res.usage.output_tokens * pout) / 1e6) * (BATCH ? 0.5 : 1)
+  console.log(`    in=${res.usage.input_tokens} out=${res.usage.output_tokens} ~$${cost.toFixed(3)}${BATCH ? " (batch)" : ""}`)
+  return res.text
+}
+
 /** Picks a free voice per speaker. `pool` restricts the choice to approved voice keys (e.g. per DTZ Teil). */
 export function cast(speakers: { id: string; gender: "male" | "female" }[], accents: string[] = ["de"], pool?: string[]) {
   const used = new Set<string>()

@@ -1,0 +1,2337 @@
+{
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "goethe-b1-hoeren-04-t1-bsp",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Ole hat den Termin für den Karaoke-Abend geändert."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die Freunde treffen sich …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "um acht Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "um halb neun."
+                },
+                {
+                  "key": "c",
+                  "label": "um neun Uhr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Ole",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t1-bsp.mp3",
+          "duration": 31.45
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Hey Paula, hier ist Ole. Kurze Info zum Karaoke-Abend: Wir machen das doch nicht am Samstag, sondern schon am Freitag. Am Samstag hat die Notenbank nämlich eine geschlossene Feier. Wir treffen uns um halb neun direkt an der Bar, dann können wir in Ruhe was trinken. Gesungen wird ab neun, und um acht ist da noch gar nichts los. Sag mir bitte bis morgen, ob du kommst, dann reserviere ich einen Tisch. Bis dann!",
+            "delivery": "[casual, cheerful voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "richtig",
+        "b"
+      ]
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t1-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Physiotherapiepraxis)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Der Termin von Herrn Yıldız fällt ganz aus."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Was soll Herr Yıldız mitbringen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ein eigenes Handtuch."
+                },
+                {
+                  "key": "b",
+                  "label": "Ein Dokument von seinem Arzt."
+                },
+                {
+                  "key": "c",
+                  "label": "Ein Paar Sportschuhe."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Physiotherapie",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t1-01.mp3",
+          "duration": 37.07
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Der Termin fällt nicht aus. Er ist nur vom Donnerstag auf Dienstag verschoben.",
+            "evidence": {
+              "text": "Guten Tag, Herr Yıldız, hier ist die Physiotherapie Reinholdt in Hildesheim. Es geht um Ihren Termin am Donnerstag. Ihre Therapeutin ist an dem Tag leider auf einer Schulung. Wir haben den Termin deshalb auf Dienstag gelegt, um halb acht morgens. Bitte bringen Sie dann unbedingt die Verordnung von Ihrem Arzt mit, die hat beim letzten Mal gefehlt. Handtücher haben wir hier, und spezielle Schuhe brauchen Sie auch nicht. Bequeme Kleidung reicht völlig. Wenn Dienstag nicht passt, rufen Sie uns bitte zurück. Danke!",
+              "hit": "Wir haben den Termin deshalb auf Dienstag gelegt, um halb acht morgens."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Er soll die Verordnung vom Arzt mitbringen. Handtücher gibt es in der Praxis, und spezielle Schuhe braucht er nicht.",
+            "evidence": {
+              "text": "Guten Tag, Herr Yıldız, hier ist die Physiotherapie Reinholdt in Hildesheim. Es geht um Ihren Termin am Donnerstag. Ihre Therapeutin ist an dem Tag leider auf einer Schulung. Wir haben den Termin deshalb auf Dienstag gelegt, um halb acht morgens. Bitte bringen Sie dann unbedingt die Verordnung von Ihrem Arzt mit, die hat beim letzten Mal gefehlt. Handtücher haben wir hier, und spezielle Schuhe brauchen Sie auch nicht. Bequeme Kleidung reicht völlig. Wenn Dienstag nicht passt, rufen Sie uns bitte zurück. Danke!",
+              "hit": "Bitte bringen Sie dann unbedingt die Verordnung von Ihrem Arzt mit"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Guten Tag, Herr Yıldız, hier ist die Physiotherapie Reinholdt in Hildesheim. Es geht um Ihren Termin am Donnerstag. Ihre Therapeutin ist an dem Tag leider auf einer Schulung. Wir haben den Termin deshalb auf Dienstag gelegt, um halb acht morgens. Bitte bringen Sie dann unbedingt die Verordnung von Ihrem Arzt mit, die hat beim letzten Mal gefehlt. Handtücher haben wir hier, und spezielle Schuhe brauchen Sie auch nicht. Bequeme Kleidung reicht völlig. Wenn Dienstag nicht passt, rufen Sie uns bitte zurück. Danke!",
+            "delivery": "[polite, efficient practice receptionist voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t1-02",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Wenn es nicht genug Wind gibt, findet das Fest an einem anderen Tag statt."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Der Bastelkurs für Kinder …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "hat keine freien Plätze mehr."
+                },
+                {
+                  "key": "b",
+                  "label": "kostet zwei Euro pro Kind."
+                },
+                {
+                  "key": "c",
+                  "label": "beginnt schon um zehn Uhr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t1-02.mp3",
+          "duration": 37.38
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Bei zu wenig Wind ist das Drachenfest am Sonntag statt am Samstag. Es wird also verschoben, nicht abgesagt.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp fürs Wochenende: Am Samstag steigen im Schlosspark Eisenstadt wieder die Drachen! Ab zehn Uhr könnt ihr eure eigenen Drachen fliegen lassen, und der Eintritt ist frei. Für Hunger und Durst gibt's einen Jausenstand, Brote und Getränke kosten dort ab zwei Euro. Achtung, Eltern: Der Bastelkurs für Kinder am Nachmittag ist heuer leider schon voll. Und falls am Samstag zu wenig Wind weht, keine Sorge: Dann findet das Drachenfest einfach am Sonntag statt. Viel Spaß!",
+              "hit": "Dann findet das Drachenfest einfach am Sonntag statt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Der Bastelkurs ist schon voll. Zwei Euro kosten die Brote und Getränke, und um zehn Uhr beginnt das Fest.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp fürs Wochenende: Am Samstag steigen im Schlosspark Eisenstadt wieder die Drachen! Ab zehn Uhr könnt ihr eure eigenen Drachen fliegen lassen, und der Eintritt ist frei. Für Hunger und Durst gibt's einen Jausenstand, Brote und Getränke kosten dort ab zwei Euro. Achtung, Eltern: Der Bastelkurs für Kinder am Nachmittag ist heuer leider schon voll. Und falls am Samstag zu wenig Wind weht, keine Sorge: Dann findet das Drachenfest einfach am Sonntag statt. Viel Spaß!",
+              "hit": "Der Bastelkurs für Kinder am Nachmittag ist heuer leider schon voll."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_ela",
+            "text": "Und jetzt ein Tipp fürs Wochenende: Am Samstag steigen im Schlosspark Eisenstadt wieder die Drachen! Ab zehn Uhr könnt ihr eure eigenen Drachen fliegen lassen, und der Eintritt ist frei. Für Hunger und Durst gibt's einen Jausenstand, Brote und Getränke kosten dort ab zwei Euro. Achtung, Eltern: Der Bastelkurs für Kinder am Nachmittag ist heuer leider schon voll. Und falls am Samstag zu wenig Wind weht, keine Sorge: Dann findet das Drachenfest einfach am Sonntag statt. Viel Spaß!",
+            "delivery": "[bright, upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t1-03",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Durchsage am Bahnhof"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Alle Wagen dieses Zuges fahren bis Sissach."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Fahrgäste nach Hölstein sollen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in Liestal in einen anderen Zug umsteigen."
+                },
+                {
+                  "key": "b",
+                  "label": "in einen der vorderen Wagen einsteigen."
+                },
+                {
+                  "key": "c",
+                  "label": "in einen der letzten drei Wagen einsteigen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage am Bahnhof",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage am Bahnhof.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t1-03.mp3",
+          "duration": 36
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Der Zug wird geteilt. Nur die vorderen Wagen fahren nach Sissach, die hinteren nach Hölstein.",
+            "evidence": {
+              "text": "Perron zwei: Einfahrt der S-Bahn nach Sissach und Hölstein. Bitte beachten Sie: Dieser Zug wird hier in Liestal geteilt. Die vorderen Wagen fahren weiter nach Sissach. Die hinteren drei Wagen fahren nach Hölstein. Reisende nach Hölstein steigen bitte direkt in die hinteren Wagen ein, ein Umsteigen in Liestal ist dann nicht nötig. Achten Sie beim Einsteigen auf die Anzeige am Perron. Die Billette werden während der Fahrt im Zug kontrolliert. Wir wünschen Ihnen eine angenehme Reise.",
+              "hit": "Dieser Zug wird hier in Liestal geteilt."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "Die hinteren drei Wagen fahren nach Hölstein. Umsteigen in Liestal ist nicht nötig, und die vorderen Wagen fahren nach Sissach.",
+            "evidence": {
+              "text": "Perron zwei: Einfahrt der S-Bahn nach Sissach und Hölstein. Bitte beachten Sie: Dieser Zug wird hier in Liestal geteilt. Die vorderen Wagen fahren weiter nach Sissach. Die hinteren drei Wagen fahren nach Hölstein. Reisende nach Hölstein steigen bitte direkt in die hinteren Wagen ein, ein Umsteigen in Liestal ist dann nicht nötig. Achten Sie beim Einsteigen auf die Anzeige am Perron. Die Billette werden während der Fahrt im Zug kontrolliert. Wir wünschen Ihnen eine angenehme Reise.",
+              "hit": "Die hinteren drei Wagen fahren nach Hölstein."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Perron zwei: Einfahrt der S-Bahn nach Sissach und Hölstein. Bitte beachten Sie: Dieser Zug wird hier in Liestal geteilt. Die vorderen Wagen fahren weiter nach Sissach. Die hinteren drei Wagen fahren nach Hölstein. Reisende nach Hölstein steigen bitte direkt in die hinteren Wagen ein, ein Umsteigen in Liestal ist dann nicht nötig. Achten Sie beim Einsteigen auf die Anzeige am Perron. Die Billette werden während der Fahrt im Zug kontrolliert. Wir wünschen Ihnen eine angenehme Reise.",
+            "delivery": "[calm, clear station announcer]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t1-04",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Handwerksbetrieb)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Die neue Scheibe wird wie geplant am Montag eingebaut."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Frau Kogler soll …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "vor dem Haus Platz für ein Auto lassen."
+                },
+                {
+                  "key": "b",
+                  "label": "vorher den Balkon ganz leer räumen."
+                },
+                {
+                  "key": "c",
+                  "label": "den Schlüssel beim Nachbarn abgeben."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Glaserei",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t1-04.mp3",
+          "duration": 37.88
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Die Scheibe ist noch nicht geliefert. Deshalb kommt die Glaserei erst am Mittwoch.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Kogler, hier spricht Werner Haberl von der Glaserei in Weiz. Leider gibt's ein Problem: Die Scheibe für Ihre Balkontür ist noch nicht geliefert worden. Am Montag können wir deshalb nicht kommen. Wir machen das jetzt am Mittwoch, um sieben Uhr morgens. Wir läuten zweimal. Und bitte halten Sie vor dem Haus einen Parkplatz für unseren Lieferwagen frei, die Scheibe ist sehr schwer. Den Balkon müssen Sie nicht ausräumen. Bei Fragen rufen Sie an, aber zu Mittag sind wir nicht erreichbar. Wiederhören!",
+              "hit": "Am Montag können wir deshalb nicht kommen."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Sie soll einen Parkplatz für den Lieferwagen freihalten. Den Balkon muss sie nicht ausräumen.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Kogler, hier spricht Werner Haberl von der Glaserei in Weiz. Leider gibt's ein Problem: Die Scheibe für Ihre Balkontür ist noch nicht geliefert worden. Am Montag können wir deshalb nicht kommen. Wir machen das jetzt am Mittwoch, um sieben Uhr morgens. Wir läuten zweimal. Und bitte halten Sie vor dem Haus einen Parkplatz für unseren Lieferwagen frei, die Scheibe ist sehr schwer. Den Balkon müssen Sie nicht ausräumen. Bei Fragen rufen Sie an, aber zu Mittag sind wir nicht erreichbar. Wiederhören!",
+              "hit": "Und bitte halten Sie vor dem Haus einen Parkplatz für unseren Lieferwagen frei"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Grüß Gott, Frau Kogler, hier spricht Werner Haberl von der Glaserei in Weiz. Leider gibt's ein Problem: Die Scheibe für Ihre Balkontür ist noch nicht geliefert worden. Am Montag können wir deshalb nicht kommen. Wir machen das jetzt am Mittwoch, um sieben Uhr morgens. Wir läuten zweimal. Und bitte halten Sie vor dem Haus einen Parkplatz für unseren Lieferwagen frei, die Scheibe ist sehr schwer. Den Balkon müssen Sie nicht ausräumen. Bei Fragen rufen Sie an, aber zu Mittag sind wir nicht erreichbar. Wiederhören!",
+            "delivery": "[friendly, practical craftsman voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t1-05",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Der Autowaschpark hat gerade erst eröffnet."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Nur am Eröffnungswochenende …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist die Wäsche zum halben Preis."
+                },
+                {
+                  "key": "b",
+                  "label": "ist die Innenreinigung kostenlos."
+                },
+                {
+                  "key": "c",
+                  "label": "bekommt man gratis einen Kaffee."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t1-05.mp3",
+          "duration": 36.13
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Der Waschpark ist neu in Oldenburg und feiert sein Eröffnungswochenende.",
+            "evidence": {
+              "text": "Neu in Oldenburg: der Autowaschpark Glanzwerk am Hafenring! Von Montag bis Samstag wird Ihr Auto bei uns wieder richtig sauber, sonntags haben wir geschlossen. Während Sie warten, ist der Kaffee bei uns immer gratis. Jeden Montag zahlen Sie für jede Wäsche nur den halben Preis. Und nur an unserem Eröffnungswochenende, am kommenden Freitag und Samstag, saugen und putzen wir Ihr Auto auch innen, ganz ohne Kosten. Glanzwerk, Hafenring vierzig. Kommen Sie vorbei, wir freuen uns!",
+              "hit": "Neu in Oldenburg: der Autowaschpark Glanzwerk am Hafenring!"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Nur an diesem Wochenende wird das Auto innen gratis sauber gemacht. Den halben Preis gibt es jeden Montag, und Kaffee ist immer gratis.",
+            "evidence": {
+              "text": "Neu in Oldenburg: der Autowaschpark Glanzwerk am Hafenring! Von Montag bis Samstag wird Ihr Auto bei uns wieder richtig sauber, sonntags haben wir geschlossen. Während Sie warten, ist der Kaffee bei uns immer gratis. Jeden Montag zahlen Sie für jede Wäsche nur den halben Preis. Und nur an unserem Eröffnungswochenende, am kommenden Freitag und Samstag, saugen und putzen wir Ihr Auto auch innen, ganz ohne Kosten. Glanzwerk, Hafenring vierzig. Kommen Sie vorbei, wir freuen uns!",
+              "hit": "saugen und putzen wir Ihr Auto auch innen, ganz ohne Kosten"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_lisa",
+            "text": "Neu in Oldenburg: der Autowaschpark Glanzwerk am Hafenring! Von Montag bis Samstag wird Ihr Auto bei uns wieder richtig sauber, sonntags haben wir geschlossen. Während Sie warten, ist der Kaffee bei uns immer gratis. Jeden Montag zahlen Sie für jede Wäsche nur den halben Preis. Und nur an unserem Eröffnungswochenende, am kommenden Freitag und Samstag, saugen und putzen wir Ihr Auto auch innen, ganz ohne Kosten. Glanzwerk, Hafenring vierzig. Kommen Sie vorbei, wir freuen uns!",
+            "delivery": "[energetic, cheerful radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t2-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Führung am Flughafen"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Zu Beginn der Führung …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "werden alle wie Fluggäste kontrolliert."
+                },
+                {
+                  "key": "b",
+                  "label": "müssen alle ihre Taschen abgeben."
+                },
+                {
+                  "key": "c",
+                  "label": "bekommen alle einen Besucherausweis."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Fotografieren darf man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur auf der Besucherterrasse."
+                },
+                {
+                  "key": "b",
+                  "label": "nur aus dem Bus heraus."
+                },
+                {
+                  "key": "c",
+                  "label": "fast überall auf der Tour."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Auf dem Vorfeld …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dürfen alle kurz aussteigen."
+                },
+                {
+                  "key": "b",
+                  "label": "bleiben alle im Bus sitzen."
+                },
+                {
+                  "key": "c",
+                  "label": "geht man zu Fuß zu einem Flugzeug."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Bei der Gepäckanlage …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zeigt Torsten einen kurzen Film."
+                },
+                {
+                  "key": "b",
+                  "label": "darf man die Koffer anfassen."
+                },
+                {
+                  "key": "c",
+                  "label": "sieht man die Anlage von oben."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Nach der Führung können die Teilnehmer …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kostenlos auf die Besucherterrasse gehen."
+                },
+                {
+                  "key": "b",
+                  "label": "mit einem Gutschein ins Café gehen."
+                },
+                {
+                  "key": "c",
+                  "label": "noch einen kleinen Rundflug machen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Führung am Flughafen",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Torsten, Gästeführer",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie nehmen an einer Führung hinter den Kulissen des Flughafens Bremen teil.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t2-01.mp3",
+          "duration": 164.83
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Alle gehen zuerst durch die Sicherheitskontrolle wie jeder Fluggast. Kleine Taschen darf man behalten, und den Ausweis hat man schon am Schalter bekommen.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen am Flughafen Bremen! Mein Name ist Torsten, ich arbeite seit über zwanzig Jahren hier, und heute zeige ich Ihnen, was die Passagiere normalerweise nicht sehen. Die Führung dauert ungefähr zwei Stunden. Ihren Besucherausweis haben Sie ja schon unten am Schalter bekommen, den tragen Sie bitte die ganze Zeit gut sichtbar. Bitte ziehen Sie auch die Warnwesten an, die ich gleich verteile, die brauchen wir draußen auf dem Vorfeld. Bevor es losgeht, müssen wir alle durch die Sicherheitskontrolle, genau so wie jeder Fluggast. Ihre kleinen Taschen und Rucksäcke dürfen Sie behalten, die laufen einfach durch das Röntgengerät. Größere Sachen können Sie hier vorne in die Schränke legen. Dann eine Frage, die immer kommt: Darf man fotografieren? Ja, Sie dürfen, und zwar auf der ganzen Tour. Nur an der Kontrolle selbst bitte keine Fotos und keine Videos, da sind die Kollegen sehr streng. Nach der Kontrolle steigen wir in einen kleinen Bus und fahren aufs Vorfeld, also dahin, wo die Flugzeuge stehen und getankt werden. Das ist für viele der spannendste Teil. Manchmal sehen wir sogar, wie ein Flugzeug gerade beladen wird. Manche fragen mich: Können wir mal kurz aussteigen und ein Flugzeug anfassen? Leider nein. Auf dem Vorfeld bleiben wir aus Sicherheitsgründen die ganze Zeit im Bus, das ist Vorschrift. Aber keine Sorge, wir fahren ganz nah an die Maschinen heran, Sie sehen also wirklich viel. Danach geht es zur Gepäckanlage. Da laufen jeden Tag mehrere tausend Koffer durch, und jeder muss zum richtigen Flugzeug. Früher haben wir dort einen kurzen Film gezeigt, wie das alles funktioniert. Das machen wir aber nicht mehr. Heute gehen wir auf eine Galerie über der Halle, und von da oben können Sie den Koffern direkt zuschauen. Anfassen dürfen Sie dort natürlich nichts. Zum Schluss besuchen wir noch die Feuerwehr. Die Kollegen zeigen Ihnen ihre großen Löschfahrzeuge, und wenn wir Glück haben, machen sie gerade eine Übung. Und wenn die Führung zu Ende ist, haben Sie noch eine kleine Belohnung: Mit Ihrem Besucherausweis kommen Sie heute ohne Eintritt auf unsere Besucherterrasse. Von dort sehen Sie die Starts und Landungen am besten. Einen Gutschein für das Café gibt es leider nicht, und Rundflüge bieten wir hier auch nicht an, das werde ich oft gefragt. So, haben Sie noch Fragen? Nein? Dann gehen wir jetzt gemeinsam zur Kontrolle. Bitte bleiben Sie immer bei der Gruppe.",
+              "hit": "Bevor es losgeht, müssen wir alle durch die Sicherheitskontrolle, genau so wie jeder Fluggast."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Man darf auf der ganzen Tour fotografieren, nur an der Kontrolle nicht. Es gilt also nicht nur für die Terrasse oder den Bus.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen am Flughafen Bremen! Mein Name ist Torsten, ich arbeite seit über zwanzig Jahren hier, und heute zeige ich Ihnen, was die Passagiere normalerweise nicht sehen. Die Führung dauert ungefähr zwei Stunden. Ihren Besucherausweis haben Sie ja schon unten am Schalter bekommen, den tragen Sie bitte die ganze Zeit gut sichtbar. Bitte ziehen Sie auch die Warnwesten an, die ich gleich verteile, die brauchen wir draußen auf dem Vorfeld. Bevor es losgeht, müssen wir alle durch die Sicherheitskontrolle, genau so wie jeder Fluggast. Ihre kleinen Taschen und Rucksäcke dürfen Sie behalten, die laufen einfach durch das Röntgengerät. Größere Sachen können Sie hier vorne in die Schränke legen. Dann eine Frage, die immer kommt: Darf man fotografieren? Ja, Sie dürfen, und zwar auf der ganzen Tour. Nur an der Kontrolle selbst bitte keine Fotos und keine Videos, da sind die Kollegen sehr streng. Nach der Kontrolle steigen wir in einen kleinen Bus und fahren aufs Vorfeld, also dahin, wo die Flugzeuge stehen und getankt werden. Das ist für viele der spannendste Teil. Manchmal sehen wir sogar, wie ein Flugzeug gerade beladen wird. Manche fragen mich: Können wir mal kurz aussteigen und ein Flugzeug anfassen? Leider nein. Auf dem Vorfeld bleiben wir aus Sicherheitsgründen die ganze Zeit im Bus, das ist Vorschrift. Aber keine Sorge, wir fahren ganz nah an die Maschinen heran, Sie sehen also wirklich viel. Danach geht es zur Gepäckanlage. Da laufen jeden Tag mehrere tausend Koffer durch, und jeder muss zum richtigen Flugzeug. Früher haben wir dort einen kurzen Film gezeigt, wie das alles funktioniert. Das machen wir aber nicht mehr. Heute gehen wir auf eine Galerie über der Halle, und von da oben können Sie den Koffern direkt zuschauen. Anfassen dürfen Sie dort natürlich nichts. Zum Schluss besuchen wir noch die Feuerwehr. Die Kollegen zeigen Ihnen ihre großen Löschfahrzeuge, und wenn wir Glück haben, machen sie gerade eine Übung. Und wenn die Führung zu Ende ist, haben Sie noch eine kleine Belohnung: Mit Ihrem Besucherausweis kommen Sie heute ohne Eintritt auf unsere Besucherterrasse. Von dort sehen Sie die Starts und Landungen am besten. Einen Gutschein für das Café gibt es leider nicht, und Rundflüge bieten wir hier auch nicht an, das werde ich oft gefragt. So, haben Sie noch Fragen? Nein? Dann gehen wir jetzt gemeinsam zur Kontrolle. Bitte bleiben Sie immer bei der Gruppe.",
+              "hit": "Ja, Sie dürfen, und zwar auf der ganzen Tour."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Auf dem Vorfeld bleiben alle im Bus, das ist Vorschrift. Aussteigen oder ein Flugzeug anfassen ist nicht erlaubt.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen am Flughafen Bremen! Mein Name ist Torsten, ich arbeite seit über zwanzig Jahren hier, und heute zeige ich Ihnen, was die Passagiere normalerweise nicht sehen. Die Führung dauert ungefähr zwei Stunden. Ihren Besucherausweis haben Sie ja schon unten am Schalter bekommen, den tragen Sie bitte die ganze Zeit gut sichtbar. Bitte ziehen Sie auch die Warnwesten an, die ich gleich verteile, die brauchen wir draußen auf dem Vorfeld. Bevor es losgeht, müssen wir alle durch die Sicherheitskontrolle, genau so wie jeder Fluggast. Ihre kleinen Taschen und Rucksäcke dürfen Sie behalten, die laufen einfach durch das Röntgengerät. Größere Sachen können Sie hier vorne in die Schränke legen. Dann eine Frage, die immer kommt: Darf man fotografieren? Ja, Sie dürfen, und zwar auf der ganzen Tour. Nur an der Kontrolle selbst bitte keine Fotos und keine Videos, da sind die Kollegen sehr streng. Nach der Kontrolle steigen wir in einen kleinen Bus und fahren aufs Vorfeld, also dahin, wo die Flugzeuge stehen und getankt werden. Das ist für viele der spannendste Teil. Manchmal sehen wir sogar, wie ein Flugzeug gerade beladen wird. Manche fragen mich: Können wir mal kurz aussteigen und ein Flugzeug anfassen? Leider nein. Auf dem Vorfeld bleiben wir aus Sicherheitsgründen die ganze Zeit im Bus, das ist Vorschrift. Aber keine Sorge, wir fahren ganz nah an die Maschinen heran, Sie sehen also wirklich viel. Danach geht es zur Gepäckanlage. Da laufen jeden Tag mehrere tausend Koffer durch, und jeder muss zum richtigen Flugzeug. Früher haben wir dort einen kurzen Film gezeigt, wie das alles funktioniert. Das machen wir aber nicht mehr. Heute gehen wir auf eine Galerie über der Halle, und von da oben können Sie den Koffern direkt zuschauen. Anfassen dürfen Sie dort natürlich nichts. Zum Schluss besuchen wir noch die Feuerwehr. Die Kollegen zeigen Ihnen ihre großen Löschfahrzeuge, und wenn wir Glück haben, machen sie gerade eine Übung. Und wenn die Führung zu Ende ist, haben Sie noch eine kleine Belohnung: Mit Ihrem Besucherausweis kommen Sie heute ohne Eintritt auf unsere Besucherterrasse. Von dort sehen Sie die Starts und Landungen am besten. Einen Gutschein für das Café gibt es leider nicht, und Rundflüge bieten wir hier auch nicht an, das werde ich oft gefragt. So, haben Sie noch Fragen? Nein? Dann gehen wir jetzt gemeinsam zur Kontrolle. Bitte bleiben Sie immer bei der Gruppe.",
+              "hit": "Auf dem Vorfeld bleiben wir aus Sicherheitsgründen die ganze Zeit im Bus, das ist Vorschrift."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Man schaut den Koffern von einer Galerie über der Halle zu. Den Film zeigt man heute nicht mehr, und anfassen darf man nichts.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen am Flughafen Bremen! Mein Name ist Torsten, ich arbeite seit über zwanzig Jahren hier, und heute zeige ich Ihnen, was die Passagiere normalerweise nicht sehen. Die Führung dauert ungefähr zwei Stunden. Ihren Besucherausweis haben Sie ja schon unten am Schalter bekommen, den tragen Sie bitte die ganze Zeit gut sichtbar. Bitte ziehen Sie auch die Warnwesten an, die ich gleich verteile, die brauchen wir draußen auf dem Vorfeld. Bevor es losgeht, müssen wir alle durch die Sicherheitskontrolle, genau so wie jeder Fluggast. Ihre kleinen Taschen und Rucksäcke dürfen Sie behalten, die laufen einfach durch das Röntgengerät. Größere Sachen können Sie hier vorne in die Schränke legen. Dann eine Frage, die immer kommt: Darf man fotografieren? Ja, Sie dürfen, und zwar auf der ganzen Tour. Nur an der Kontrolle selbst bitte keine Fotos und keine Videos, da sind die Kollegen sehr streng. Nach der Kontrolle steigen wir in einen kleinen Bus und fahren aufs Vorfeld, also dahin, wo die Flugzeuge stehen und getankt werden. Das ist für viele der spannendste Teil. Manchmal sehen wir sogar, wie ein Flugzeug gerade beladen wird. Manche fragen mich: Können wir mal kurz aussteigen und ein Flugzeug anfassen? Leider nein. Auf dem Vorfeld bleiben wir aus Sicherheitsgründen die ganze Zeit im Bus, das ist Vorschrift. Aber keine Sorge, wir fahren ganz nah an die Maschinen heran, Sie sehen also wirklich viel. Danach geht es zur Gepäckanlage. Da laufen jeden Tag mehrere tausend Koffer durch, und jeder muss zum richtigen Flugzeug. Früher haben wir dort einen kurzen Film gezeigt, wie das alles funktioniert. Das machen wir aber nicht mehr. Heute gehen wir auf eine Galerie über der Halle, und von da oben können Sie den Koffern direkt zuschauen. Anfassen dürfen Sie dort natürlich nichts. Zum Schluss besuchen wir noch die Feuerwehr. Die Kollegen zeigen Ihnen ihre großen Löschfahrzeuge, und wenn wir Glück haben, machen sie gerade eine Übung. Und wenn die Führung zu Ende ist, haben Sie noch eine kleine Belohnung: Mit Ihrem Besucherausweis kommen Sie heute ohne Eintritt auf unsere Besucherterrasse. Von dort sehen Sie die Starts und Landungen am besten. Einen Gutschein für das Café gibt es leider nicht, und Rundflüge bieten wir hier auch nicht an, das werde ich oft gefragt. So, haben Sie noch Fragen? Nein? Dann gehen wir jetzt gemeinsam zur Kontrolle. Bitte bleiben Sie immer bei der Gruppe.",
+              "hit": "Heute gehen wir auf eine Galerie über der Halle, und von da oben können Sie den Koffern direkt zuschauen."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Mit dem Besucherausweis kommt man ohne Eintritt auf die Terrasse. Einen Café-Gutschein und Rundflüge gibt es nicht.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen am Flughafen Bremen! Mein Name ist Torsten, ich arbeite seit über zwanzig Jahren hier, und heute zeige ich Ihnen, was die Passagiere normalerweise nicht sehen. Die Führung dauert ungefähr zwei Stunden. Ihren Besucherausweis haben Sie ja schon unten am Schalter bekommen, den tragen Sie bitte die ganze Zeit gut sichtbar. Bitte ziehen Sie auch die Warnwesten an, die ich gleich verteile, die brauchen wir draußen auf dem Vorfeld. Bevor es losgeht, müssen wir alle durch die Sicherheitskontrolle, genau so wie jeder Fluggast. Ihre kleinen Taschen und Rucksäcke dürfen Sie behalten, die laufen einfach durch das Röntgengerät. Größere Sachen können Sie hier vorne in die Schränke legen. Dann eine Frage, die immer kommt: Darf man fotografieren? Ja, Sie dürfen, und zwar auf der ganzen Tour. Nur an der Kontrolle selbst bitte keine Fotos und keine Videos, da sind die Kollegen sehr streng. Nach der Kontrolle steigen wir in einen kleinen Bus und fahren aufs Vorfeld, also dahin, wo die Flugzeuge stehen und getankt werden. Das ist für viele der spannendste Teil. Manchmal sehen wir sogar, wie ein Flugzeug gerade beladen wird. Manche fragen mich: Können wir mal kurz aussteigen und ein Flugzeug anfassen? Leider nein. Auf dem Vorfeld bleiben wir aus Sicherheitsgründen die ganze Zeit im Bus, das ist Vorschrift. Aber keine Sorge, wir fahren ganz nah an die Maschinen heran, Sie sehen also wirklich viel. Danach geht es zur Gepäckanlage. Da laufen jeden Tag mehrere tausend Koffer durch, und jeder muss zum richtigen Flugzeug. Früher haben wir dort einen kurzen Film gezeigt, wie das alles funktioniert. Das machen wir aber nicht mehr. Heute gehen wir auf eine Galerie über der Halle, und von da oben können Sie den Koffern direkt zuschauen. Anfassen dürfen Sie dort natürlich nichts. Zum Schluss besuchen wir noch die Feuerwehr. Die Kollegen zeigen Ihnen ihre großen Löschfahrzeuge, und wenn wir Glück haben, machen sie gerade eine Übung. Und wenn die Führung zu Ende ist, haben Sie noch eine kleine Belohnung: Mit Ihrem Besucherausweis kommen Sie heute ohne Eintritt auf unsere Besucherterrasse. Von dort sehen Sie die Starts und Landungen am besten. Einen Gutschein für das Café gibt es leider nicht, und Rundflüge bieten wir hier auch nicht an, das werde ich oft gefragt. So, haben Sie noch Fragen? Nein? Dann gehen wir jetzt gemeinsam zur Kontrolle. Bitte bleiben Sie immer bei der Gruppe.",
+              "hit": "Mit Ihrem Besucherausweis kommen Sie heute ohne Eintritt auf unsere Besucherterrasse."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen am Flughafen Bremen! Mein Name ist Torsten, ich arbeite seit über zwanzig Jahren hier, und heute zeige ich Ihnen, was die Passagiere normalerweise nicht sehen. Die Führung dauert ungefähr zwei Stunden. Ihren Besucherausweis haben Sie ja schon unten am Schalter bekommen, den tragen Sie bitte die ganze Zeit gut sichtbar. Bitte ziehen Sie auch die Warnwesten an, die ich gleich verteile, die brauchen wir draußen auf dem Vorfeld. Bevor es losgeht, müssen wir alle durch die Sicherheitskontrolle, genau so wie jeder Fluggast. Ihre kleinen Taschen und Rucksäcke dürfen Sie behalten, die laufen einfach durch das Röntgengerät. Größere Sachen können Sie hier vorne in die Schränke legen. Dann eine Frage, die immer kommt: Darf man fotografieren? Ja, Sie dürfen, und zwar auf der ganzen Tour. Nur an der Kontrolle selbst bitte keine Fotos und keine Videos, da sind die Kollegen sehr streng. Nach der Kontrolle steigen wir in einen kleinen Bus und fahren aufs Vorfeld, also dahin, wo die Flugzeuge stehen und getankt werden. Das ist für viele der spannendste Teil. Manchmal sehen wir sogar, wie ein Flugzeug gerade beladen wird. Manche fragen mich: Können wir mal kurz aussteigen und ein Flugzeug anfassen? Leider nein. Auf dem Vorfeld bleiben wir aus Sicherheitsgründen die ganze Zeit im Bus, das ist Vorschrift. Aber keine Sorge, wir fahren ganz nah an die Maschinen heran, Sie sehen also wirklich viel. Danach geht es zur Gepäckanlage. Da laufen jeden Tag mehrere tausend Koffer durch, und jeder muss zum richtigen Flugzeug. Früher haben wir dort einen kurzen Film gezeigt, wie das alles funktioniert. Das machen wir aber nicht mehr. Heute gehen wir auf eine Galerie über der Halle, und von da oben können Sie den Koffern direkt zuschauen. Anfassen dürfen Sie dort natürlich nichts. Zum Schluss besuchen wir noch die Feuerwehr. Die Kollegen zeigen Ihnen ihre großen Löschfahrzeuge, und wenn wir Glück haben, machen sie gerade eine Übung. Und wenn die Führung zu Ende ist, haben Sie noch eine kleine Belohnung: Mit Ihrem Besucherausweis kommen Sie heute ohne Eintritt auf unsere Besucherterrasse. Von dort sehen Sie die Starts und Landungen am besten. Einen Gutschein für das Café gibt es leider nicht, und Rundflüge bieten wir hier auch nicht an, das werde ich oft gefragt. So, haben Sie noch Fragen? Nein? Dann gehen wir jetzt gemeinsam zur Kontrolle. Bitte bleiben Sie immer bei der Gruppe.",
+            "delivery": "[friendly, experienced tour guide addressing a group]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t3-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Gespräch zwischen Bekannten im Wartebereich einer Behörde"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Sabine war eine ganze Woche im Kloster."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Beim Essen nicht zu sprechen, war für Sabine zuerst schwierig."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Sabine durfte ihr Handy im Kloster behalten."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Sabine hat im Kloster bei den Büchern geholfen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Nach dem Wochenende schläft Sabine besser."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Sabine fährt nächsten Monat wieder ins Kloster."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Jakob möchte auch einmal ein Wochenende im Kloster verbringen."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch im Wartebereich",
+          "segments": [],
+          "speakers": {
+            "s": {
+              "name": "Sabine",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "j": {
+              "name": "Jakob",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie sitzen im Wartebereich der Bezirkshauptmannschaft Zwettl und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t3-01.mp3",
+          "duration": 182.31
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Sabine war nur von Freitag bis Sonntag dort. Kurse für eine Woche gibt es auch, aber dafür hat sie keinen Urlaub.",
+            "evidence": {
+              "text": "Nein, nein, nur von Freitag bis Sonntag. Es gibt auch Kurse für eine Woche, aber so viel Urlaub hab ich gerade nicht.",
+              "hit": "Nein, nein, nur von Freitag bis Sonntag."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "richtig",
+            "explanation": "Am ersten Abend dachte sie, sie hält das Schweigen nicht aus. Erst am Sonntag hat sie die Ruhe genossen.",
+            "evidence": {
+              "text": "Am ersten Abend hab ich mir auch gedacht: Das halt ich nicht aus. Ich wollte dauernd jemandem was erzählen. Aber am Sonntag hab ich die Ruhe richtig genossen. Und das Essen war super, einfach, aber gut: Erdäpfel vom eigenen Feld, Suppe, frisches Brot.",
+              "hit": "Am ersten Abend hab ich mir auch gedacht: Das halt ich nicht aus."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "falsch",
+            "explanation": "Sie hat das Handy gleich am Tor abgegeben. In die Tasche gegriffen hat sie nur aus Gewohnheit.",
+            "evidence": {
+              "text": "Keine Chance. Das hab ich gleich am Tor abgegeben. Am Anfang hab ich trotzdem dauernd in die Jackentasche gegriffen, ganz automatisch.",
+              "hit": "Das hab ich gleich am Tor abgegeben."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Sabine hat in der Bibliothek alte Bücher sortiert und beschriftet. In der Küche haben andere gearbeitet.",
+            "evidence": {
+              "text": "Nein, man arbeitet auch mit. Manche waren in der Küche, andere in der Werkstatt. Ich war in der Bibliothek. Die haben dort tausende alte Bücher, und ich hab geholfen, sie zu sortieren und neu zu beschriften.",
+              "hit": "Ich war in der Bibliothek."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "Seit sie zurück ist, schläft sie viel besser. Sie wacht erst auf, wenn der Wecker läutet.",
+            "evidence": {
+              "text": "Stimmt. Und weißt du, was das Beste ist? Seit ich zurück bin, schlaf ich viel besser. Wirklich, ich lieg um zehn im Bett und wach erst auf, wenn der Wecker läutet.",
+              "hit": "Seit ich zurück bin, schlaf ich viel besser."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Im November hat sie zu viel Arbeit. Sie fährt vielleicht erst im Frühling wieder hin.",
+            "evidence": {
+              "text": "Nein, im November hab ich in der Arbeit viel zu viel zu tun. Aber vielleicht im Frühling, da gibt's wieder neue Termine.",
+              "hit": "Aber vielleicht im Frühling, da gibt's wieder neue Termine."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Sabine lädt ihn ein, aber Jakob sagt nein. Er fährt lieber auf eine Hütte in den Bergen.",
+            "evidence": {
+              "text": "Ich? Ehrlich gesagt, nein. Um sechs aufstehen und beim Essen nicht reden? Da fahr ich lieber auf eine Hütte in den Bergen. Da ist es auch ruhig, und abends sitzt man mit den anderen zusammen und plaudert.",
+              "hit": "Da fahr ich lieber auf eine Hütte in den Bergen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Sabine? Hallo! Wartest du auch auf deinen neuen Pass?",
+            "delivery": "[surprised, friendly]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Jakob! Ja, meiner läuft im Dezember ab. Ich hab die Nummer dreiundvierzig gezogen, und schau, da oben steht erst einunddreißig.",
+            "delivery": "[pleased, a little resigned]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Mhm, ich hab die fünfundvierzig. Na, dann haben wir ja Zeit. Sag mal, du schaust so entspannt aus. Warst du auf Urlaub?",
+            "delivery": "[relaxed, curious]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "So ähnlich. Ich war in einem Kloster, im Stift Altenkamp. Das ist hier im Waldviertel, gar nicht weit weg.",
+            "delivery": "[slightly mysterious, smiling]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Im Kloster? Geh, wirklich? Du?",
+            "delivery": "[amused disbelief, overlapping]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Ja, ich! Das heißt „Kloster auf Zeit“. Man wohnt ein paar Tage bei den Mönchen und macht bei ihrem Alltag mit.",
+            "delivery": "[laughing, lively]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Und wie lang warst du dort? Eine ganze Woche?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Nein, nein, nur von Freitag bis Sonntag. Es gibt auch Kurse für eine Woche, aber so viel Urlaub hab ich gerade nicht.",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Und was macht man da den ganzen Tag? Beten?",
+            "delivery": "[teasing]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Auch, klar. Um sechs Uhr morgens ist schon das erste Gebet. Aber am schwierigsten war für mich was anderes: Beim Essen wird nicht geredet. Gar nicht. Einer liest etwas vor, und alle anderen essen still.",
+            "delivery": "[animated, telling a story]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Oje. Das wär nichts für mich.",
+            "delivery": "[short reaction, laughing]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Am ersten Abend hab ich mir auch gedacht: Das halt ich nicht aus. Ich wollte dauernd jemandem was erzählen. Aber am Sonntag hab ich die Ruhe richtig genossen. Und das Essen war super, einfach, aber gut: Erdäpfel vom eigenen Feld, Suppe, frisches Brot.",
+            "delivery": "[reflective, warm]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Und dein Handy? Hast du da nicht heimlich mal reingeschaut?",
+            "delivery": "[playful]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Keine Chance. Das hab ich gleich am Tor abgegeben. Am Anfang hab ich trotzdem dauernd in die Jackentasche gegriffen, ganz automatisch.",
+            "delivery": "[laughing at herself]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Kenn ich. Und sonst? Nur beten und still sein?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Nein, man arbeitet auch mit. Manche waren in der Küche, andere in der Werkstatt. Ich war in der Bibliothek. Die haben dort tausende alte Bücher, und ich hab geholfen, sie zu sortieren und neu zu beschriften.",
+            "delivery": "[enthusiastic]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Das passt zu dir. Du hast ja immer schon gern gelesen.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Stimmt. Und weißt du, was das Beste ist? Seit ich zurück bin, schlaf ich viel besser. Wirklich, ich lieg um zehn im Bett und wach erst auf, wenn der Wecker läutet.",
+            "delivery": "[happy, emphatic]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Echt? Das klingt ja fast zu schön.",
+            "delivery": "[mildly sceptical]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Ich weiß. Ich will auf jeden Fall wieder hin.",
+            "delivery": "[determined]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Schon nächsten Monat?",
+            "delivery": "[quick question]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Nein, im November hab ich in der Arbeit viel zu viel zu tun. Aber vielleicht im Frühling, da gibt's wieder neue Termine.",
+            "delivery": "[sighing, then hopeful]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Mhm.",
+            "delivery": "[short back-channel]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Komm doch mit! Das wär sicher auch was für dich.",
+            "delivery": "[inviting, eager]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Ich? Ehrlich gesagt, nein. Um sechs aufstehen und beim Essen nicht reden? Da fahr ich lieber auf eine Hütte in den Bergen. Da ist es auch ruhig, und abends sitzt man mit den anderen zusammen und plaudert.",
+            "delivery": "[laughing, firm]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Auch nicht schlecht. Oh, schau, einundvierzig. Gleich bin ich dran.",
+            "delivery": "[glancing up, slightly hurried]"
+          },
+          {
+            "speaker": "j",
+            "voice": "man_ben",
+            "text": "Na dann, viel Glück mit dem Foto!",
+            "delivery": "[cheerful]"
+          },
+          {
+            "speaker": "s",
+            "voice": "woman_laura",
+            "text": "Danke, das brauch ich. Auf Passfotos schau ich immer furchtbar aus.",
+            "delivery": "[laughing, getting up]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-04-t4-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.865Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Viele Gäste vergessen ihren Mehrwegbecher zu Hause.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Ein Mehrwegbecher ist erst nach vielen Benutzungen besser für die Umwelt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Das Spülen kostet mich zusätzlich Zeit und Personal.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Städte geben viel Geld dafür aus, Abfall von der Straße zu holen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Seit ich Pfand verlange, kommen manche Stammgäste seltener.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Ein gemeinsames System für alle Geschäfte wäre am einfachsten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Ich habe zu Hause fünf Mehrwegbecher, aber nie einen dabei.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Wer eigenes Geschirr mitbringt, bekommt bei mir einen Rabatt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Ein Verbot von Einweggeschirr kommt für kleine Betriebe zu schnell.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sven Hollmann, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Renate Gsellmann, Café-Besitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabian Brunner, Umweltwissenschaftler"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Sven Hollmann, Moderator",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "r": {
+              "name": "Renate Gsellmann, Café-Besitzerin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "f": {
+              "name": "Fabian Brunner, Umweltwissenschaftler",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Der Moderator der Sendung „Radio-Forum“, Sven Hollmann, diskutiert mit Renate Gsellmann, Besitzerin eines Cafés in Leibnitz, und Dr. Fabian Brunner, Umweltwissenschaftler aus Wettingen, über das Thema „Essen zum Mitnehmen nur noch in Mehrweggeschirr?“",
+          "src": "goethe-b1/hoeren-04/goethe-b1-hoeren-04-t4-01.mp3",
+          "duration": 298.14
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "c",
+            "explanation": "Herr Brunner sagt, dass sich ein Becher erst nach zwanzig bis dreißig Benutzungen lohnt. Der Moderator stellt nur die Frage.",
+            "evidence": {
+              "text": "Ja, aber nicht sofort. Das vergessen viele. Ein Mehrwegbecher ist schwerer, man braucht mehr Material und Energie, um ihn herzustellen. Und er muss jedes Mal heiss gespült werden. Nach unseren Berechnungen lohnt er sich für die Umwelt erst, wenn man ihn ungefähr zwanzig bis dreissig Mal benutzt. Wer ihn nach zwei Wochen im Schrank vergisst, hat der Umwelt nicht geholfen.",
+              "hit": "lohnt er sich für die Umwelt erst, wenn man ihn ungefähr zwanzig bis dreissig Mal benutzt"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "b",
+            "explanation": "Frau Gsellmann hat für das Spülen extra eine Aushilfe angestellt. Der Moderator fragt nur danach.",
+            "evidence": {
+              "text": "Und wie! Wir sind ein kleines Café, zu dritt. Früher waren die Becher nach dem Kaffee einfach weg. Jetzt muss jemand ständig sammeln, spülen, trocknen, einräumen. Dafür habe ich heuer extra eine Aushilfe für zehn Stunden die Woche angestellt. Das zahlt mir niemand.",
+              "hit": "Dafür habe ich heuer extra eine Aushilfe für zehn Stunden die Woche angestellt."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Herr Brunner sagt, dass Städte und Gemeinden Millionen für das Einsammeln von Abfall zahlen. Frau Gsellmann spricht nur über die Kosten in ihrem Café.",
+            "evidence": {
+              "text": "Darf ich da etwas ergänzen? Die Kosten gibt es heute auch, nur zahlt sie jemand anderes. Die Städte und Gemeinden geben jedes Jahr Millionen aus, um Becher und Schachteln aus Parks und von Strassen zu sammeln. Allein in der Schweiz sind das fast zweihundert Millionen Franken pro Jahr. Und das zahlen wir alle mit unseren Steuern.",
+              "hit": "Die Städte und Gemeinden geben jedes Jahr Millionen aus, um Becher und Schachteln aus Parks und von Strassen zu sammeln."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "b",
+            "explanation": "Frau Gsellmann sieht einige ältere Stammgäste wegen des Pfands nur noch selten. Der Moderator fragt nur nach dem Pfand.",
+            "evidence": {
+              "text": "Zwei Euro pro Becher. Die meisten haben kein Problem damit, die bringen ihn zurück und kriegen das Geld wieder. Aber ein paar ältere Herren, die seit Jahren jeden Tag gekommen sind, die sehe ich jetzt nur noch ein-, zweimal in der Woche. Einer hat gesagt: Für einen Kaffee zahl ich doch keine Kaution! Das tut mir schon weh.",
+              "hit": "die sehe ich jetzt nur noch ein-, zweimal in der Woche"
+            }
+          },
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Herr Brunner möchte den gleichen Becher für alle Geschäfte einer Stadt. Frau Gsellmann erzählt nur von ihrem eigenen Café.",
+            "evidence": {
+              "text": "Ich denke, ja. Das grösste Problem ist heute, dass jedes Café sein eigenes System hat. Hier gibt es den grünen Becher, dort den blauen, und zurückgeben kann man ihn nur dort, wo man ihn gekauft hat. Wenn alle Geschäfte in einer Stadt den gleichen Becher hätten, könnte man ihn überall abgeben. Das wäre die bequemste Lösung, für die Kundschaft und für die Betriebe.",
+              "hit": "Wenn alle Geschäfte in einer Stadt den gleichen Becher hätten, könnte man ihn überall abgeben."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "a",
+            "explanation": "Der Moderator erzählt von seinen fünf Bechern in der Küche. Frau Gsellmann spricht über ihre Gäste, nicht über sich.",
+            "evidence": {
+              "text": "Da muss ich ehrlich etwas zugeben. Bei mir in der Küche stehen fünf Mehrwegbecher, die meisten hab ich geschenkt bekommen. Aber wenn ich morgens zum Bahnhof renne, hab ich nie einen davon in der Tasche. Ich glaube, so geht es vielen.",
+              "hit": "Bei mir in der Küche stehen fünf Mehrwegbecher"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "b",
+            "explanation": "In Frau Gsellmanns Café zahlt man mit eigener Tasse dreißig Cent weniger. Herr Brunner erzählt nur von anderen Bäckereien.",
+            "evidence": {
+              "text": "Das kenn ich, Herr Hollmann! Deshalb mach ich es jetzt umgekehrt: Wer seine eigene Tasse oder seine eigene Dose mitbringt, zahlt bei mir dreißig Cent weniger. Egal ob für Kaffee oder für ein Stück Kuchen. Das funktioniert viel besser als jede Strafe.",
+              "hit": "Wer seine eigene Tasse oder seine eigene Dose mitbringt, zahlt bei mir dreißig Cent weniger."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Frau Gsellmann findet ein Verbot im nächsten Jahr viel zu früh. Der Moderator nennt nur das Thema.",
+            "evidence": {
+              "text": "Grundsätzlich ja, irgendwann. Aber nächstes Jahr? Das ist viel zu früh. Eine große Kette kauft einfach eine Spülmaschine für tausende Euro und fertig. Ich muss mir das gut überlegen, vielleicht brauche ich sogar einen größeren Raum. Wir Kleinen brauchen mindestens zwei, drei Jahre Zeit, sonst sperren einige einfach zu.",
+              "hit": "Wir Kleinen brauchen mindestens zwei, drei Jahre Zeit"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Guten Abend und willkommen beim Radio-Forum. Kaffee im Pappbecher, Nudeln in der Plastikschachtel: Essen und Trinken zum Mitnehmen ist praktisch, aber es macht auch viel Müll. Deshalb fordern viele: Ab nächstem Jahr soll es das nur noch in Mehrweggeschirr geben. Darüber spreche ich heute mit zwei Gästen. Renate Gsellmann hat ein Café in Leibnitz in der Steiermark. Guten Abend, Frau Gsellmann.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "r",
+            "voice": "woman_ela",
+            "text": "Guten Abend, schön, dass ich da sein darf.",
+            "delivery": "[friendly, down-to-earth]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Und aus Wettingen in der Schweiz ist Doktor Fabian Brunner bei uns. Er forscht zum Thema Abfall und Umwelt. Grüezi, Herr Brunner.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_michael",
+            "text": "Grüezi und guten Abend.",
+            "delivery": "[calm, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Frau Gsellmann, Sie bieten in Ihrem Café schon seit einem Jahr Mehrwegbecher an. Wie läuft das?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "r",
+            "voice": "woman_ela",
+            "text": "Ehrlich gesagt, gemischt. Die Idee finden alle gut, wirklich alle. Aber morgens, wenn die Leute schnell vor der Arbeit einen Kaffee holen, dann steht jemand an der Kassa und sagt: Oh, mein Becher liegt daheim in der Küche. Das passiert bei uns jeden Tag zehn, fünfzehn Mal. Dann bekommen sie halt doch wieder einen Pappbecher.",
+            "delivery": "[frank, lively]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Brunner, ist so ein Mehrwegbecher denn wirklich besser für die Umwelt?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_michael",
+            "text": "Ja, aber nicht sofort. Das vergessen viele. Ein Mehrwegbecher ist schwerer, man braucht mehr Material und Energie, um ihn herzustellen. Und er muss jedes Mal heiss gespült werden. Nach unseren Berechnungen lohnt er sich für die Umwelt erst, wenn man ihn ungefähr zwanzig bis dreissig Mal benutzt. Wer ihn nach zwei Wochen im Schrank vergisst, hat der Umwelt nicht geholfen.",
+            "delivery": "[precise, explanatory]",
+            "item": 23
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Frau Gsellmann, das Spülen machen ja Sie. Ist das ein Problem?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "r",
+            "voice": "woman_ela",
+            "text": "Und wie! Wir sind ein kleines Café, zu dritt. Früher waren die Becher nach dem Kaffee einfach weg. Jetzt muss jemand ständig sammeln, spülen, trocknen, einräumen. Dafür habe ich heuer extra eine Aushilfe für zehn Stunden die Woche angestellt. Das zahlt mir niemand.",
+            "delivery": "[emphatic, slightly exasperated]",
+            "item": 24
+          },
+          {
+            "speaker": "f",
+            "voice": "man_michael",
+            "text": "Darf ich da etwas ergänzen? Die Kosten gibt es heute auch, nur zahlt sie jemand anderes. Die Städte und Gemeinden geben jedes Jahr Millionen aus, um Becher und Schachteln aus Parks und von Strassen zu sammeln. Allein in der Schweiz sind das fast zweihundert Millionen Franken pro Jahr. Und das zahlen wir alle mit unseren Steuern.",
+            "delivery": "[polite, firm]",
+            "item": 25
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Frau Gsellmann, Sie verlangen ja für den Becher ein Pfand. Wie reagieren Ihre Gäste darauf?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "r",
+            "voice": "woman_ela",
+            "text": "Zwei Euro pro Becher. Die meisten haben kein Problem damit, die bringen ihn zurück und kriegen das Geld wieder. Aber ein paar ältere Herren, die seit Jahren jeden Tag gekommen sind, die sehe ich jetzt nur noch ein-, zweimal in der Woche. Einer hat gesagt: Für einen Kaffee zahl ich doch keine Kaution! Das tut mir schon weh.",
+            "delivery": "[a little sad, honest]",
+            "item": 26
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Brunner, wäre das anders, wenn alle mitmachen?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_michael",
+            "text": "Ich denke, ja. Das grösste Problem ist heute, dass jedes Café sein eigenes System hat. Hier gibt es den grünen Becher, dort den blauen, und zurückgeben kann man ihn nur dort, wo man ihn gekauft hat. Wenn alle Geschäfte in einer Stadt den gleichen Becher hätten, könnte man ihn überall abgeben. Das wäre die bequemste Lösung, für die Kundschaft und für die Betriebe.",
+            "delivery": "[thoughtful, convinced]",
+            "item": 27
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Da muss ich ehrlich etwas zugeben. Bei mir in der Küche stehen fünf Mehrwegbecher, die meisten hab ich geschenkt bekommen. Aber wenn ich morgens zum Bahnhof renne, hab ich nie einen davon in der Tasche. Ich glaube, so geht es vielen.",
+            "delivery": "[self-ironic, laughing]",
+            "item": 28
+          },
+          {
+            "speaker": "r",
+            "voice": "woman_ela",
+            "text": "Das kenn ich, Herr Hollmann! Deshalb mach ich es jetzt umgekehrt: Wer seine eigene Tasse oder seine eigene Dose mitbringt, zahlt bei mir dreißig Cent weniger. Egal ob für Kaffee oder für ein Stück Kuchen. Das funktioniert viel besser als jede Strafe.",
+            "delivery": "[laughing, then proud]",
+            "item": 29
+          },
+          {
+            "speaker": "f",
+            "voice": "man_michael",
+            "text": "Das ist eine gute Idee. Bei uns in Baden machen das schon einige Bäckereien. Aber ganz ohne Regeln vom Staat wird es nicht gehen, das zeigen alle Studien. Freiwillig machen einfach zu wenige mit.",
+            "delivery": "[appreciative, then cautious]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Dann kommen wir zur Frage des Abends: Immer wieder wird über ein Verbot von Einweggeschirr diskutiert, manche wollen es schon ab dem nächsten Jahr. Frau Gsellmann, wären Sie dafür?",
+            "delivery": "[host, pointed]"
+          },
+          {
+            "speaker": "r",
+            "voice": "woman_ela",
+            "text": "Grundsätzlich ja, irgendwann. Aber nächstes Jahr? Das ist viel zu früh. Eine große Kette kauft einfach eine Spülmaschine für tausende Euro und fertig. Ich muss mir das gut überlegen, vielleicht brauche ich sogar einen größeren Raum. Wir Kleinen brauchen mindestens zwei, drei Jahre Zeit, sonst sperren einige einfach zu.",
+            "delivery": "[firm, worried]",
+            "item": 30
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Brunner, Ihr Schlusswort?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_michael",
+            "text": "Ich verstehe Frau Gsellmann gut. Ein Verbot allein hilft nicht, wenn die kleinen Betriebe dabei Probleme bekommen. Man sollte ihnen beim Kauf von Spülmaschinen helfen, zum Beispiel mit Geld von der Gemeinde. Dann geht es auch schneller. Aber warten sollten wir nicht zu lange, der Abfall wird jedes Jahr mehr.",
+            "delivery": "[balanced, clear]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Vielen Dank, Frau Gsellmann, vielen Dank, Herr Brunner. Und Ihnen zu Hause: Vielleicht nehmen Sie morgen ja Ihren Becher mit. Ich versuch's auf jeden Fall. Gute Nacht!",
+            "delivery": "[warm sign-off, smiling]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ],
+  "track": {
+    "src": "goethe-b1/hoeren-04/track.mp3",
+    "duration": 2232.08,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.06,
+        "to": 19.75
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.79,
+        "to": 26.72
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.72,
+        "to": 37.25
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.25,
+        "to": 40.39
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 41.93,
+        "to": 73.38
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 75.42,
+        "to": 77.74
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 78.79,
+        "to": 110.24
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 110.24,
+        "to": 112.77
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 112.77,
+        "to": 118.96
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 118.96,
+        "to": 129.49
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 129.49,
+        "to": 132.62
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 134.16,
+        "to": 171.23
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 173.27,
+        "to": 175.6
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 176.64,
+        "to": 213.71
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 213.71,
+        "to": 216.24
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 216.24,
+        "to": 222.41
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 222.41,
+        "to": 232.93
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 232.93,
+        "to": 235.62
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 237.17,
+        "to": 274.55
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 276.58,
+        "to": 278.91
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 279.95,
+        "to": 317.34
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 317.34,
+        "to": 319.87
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 319.87,
+        "to": 326.22
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 326.22,
+        "to": 336.74
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 336.74,
+        "to": 339.38
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 340.92,
+        "to": 376.92
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 378.96,
+        "to": 381.28
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 382.33,
+        "to": 418.32
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 418.32,
+        "to": 420.86
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 420.86,
+        "to": 427.15
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 427.15,
+        "to": 437.68
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 437.68,
+        "to": 440.82
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 442.36,
+        "to": 480.24
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 482.27,
+        "to": 484.6
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 485.64,
+        "to": 523.52
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 523.52,
+        "to": 526.05
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 526.05,
+        "to": 532.19
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 532.19,
+        "to": 542.72
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 542.72,
+        "to": 544.86
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 546.4,
+        "to": 582.53
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 584.57,
+        "to": 586.89
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 587.94,
+        "to": 624.07
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 624.07,
+        "to": 626.6
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 633.86,
+        "to": 648.02
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 650.06,
+        "to": 656.51
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 656.51,
+        "to": 716.54
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 716.54,
+        "to": 721.58
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 723.12,
+        "to": 887.95
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 887.95,
+        "to": 896.99
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 904.28,
+        "to": 916.45
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 918.49,
+        "to": 924.97
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 924.97,
+        "to": 985
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 985,
+        "to": 992.6
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 994.14,
+        "to": 1176.45
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1176.45,
+        "to": 1185.49
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1192.7,
+        "to": 1204.9
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1206.94,
+        "to": 1213.44
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1213.44,
+        "to": 1273.47
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1273.47,
+        "to": 1289.06
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1294.65,
+        "to": 1592.79
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1596.84,
+        "to": 1599.87
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1599.87,
+        "to": 1602.61
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1608.2,
+        "to": 1906.34
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1910.39,
+        "to": 1919.43
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1926.69,
+        "to": 1932.49
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1932.49,
+        "to": 2232.53
+      }
+    ]
+  }
+}

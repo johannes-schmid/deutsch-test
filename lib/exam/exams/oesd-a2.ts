@@ -3,20 +3,27 @@
 
 import type { ExamSpec } from "../exam-blueprints"
 
+const U = "research/oesd-a2.md §9 (Modellsatz 2026, audio measured with Scribe + silencedetect, verified 2026-10-24)"
+
 export const spec: ExamSpec = {
   context: { name: "ÖSD Zertifikat A2", level: "A2", setting: "Alltag in Österreich, Deutschland und der Schweiz; Texte aus allen drei Ländern (Preise in Euro oder Franken, Orte aus allen drei Ländern). Standardsprache, regionale Wörter nur, wenn sie aus dem Zusammenhang klar sind", copyright: "ÖSD" },
   parts: [
     {
       skill: "hoeren", teil: 1, answer: "rf", itemsReal: 4, itemsPerBlock: 4, sample: 2,
-      textTypes: ["Zwei kurze Radiomeldungen zum selben Thema (Wetter am Wochenende)", "Zwei kurze Radiomeldungen zum selben Thema (Veranstaltung in der Stadt)", "Zwei kurze Radiomeldungen zum selben Thema (Verkehr am Feiertag)"],
+      // Two radio texts (f, then m) with the same four facts, 66–73 words, ~25 s, 161–170 wpm, jingle between; mark 4 of 8.
+      full: { items: 4, first: 1, blocks: 1, itemsPerBlock: 4, length: { min: 23, max: 27, unit: "seconds" }, example: false, readingSeconds: 30, options: 8, clips: 2, pace: { min: 160, max: 172 }, sound: "Radio-Jingle vor, zwischen und nach den Texten", source: U },
+      // The official set uses a weekend weather report (research/oesd-a2-official-situations.md): never as a text type here.
+      textTypes: ["Zwei kurze Radiomeldungen zum selben Thema (Veranstaltung in der Stadt)", "Zwei kurze Radiomeldungen zum selben Thema (Verkehr am Feiertag)", "Zwei kurze Radiomeldungen zum selben Thema (Neueröffnung im Ort)"],
       length: { min: 40, max: 60, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 1,
       accents: ["at", "ch"],
       instruction: "Sie hören zwei kurze Meldungen im Radio. Beide sagen dasselbe, aber mit anderen Worten. Ist die Aussage richtig oder falsch? Sie hören die Meldungen einmal.",
-      hint: `Zwei Radiosender bringen dieselbe Meldung. Sprecher 1 (erster Sender) liest Meldung 1, dann liest Sprecher 2 (zweiter Sender) Meldung 2: jede 45–65 Wörter, ruhige Radiosprache (A2), mit Sendername am Anfang. Beide Meldungen enthalten dieselben Informationen, aber in anderen Worten und anderer Reihenfolge. role: "Radio 1" und "Radio 2" (oder die erfundenen Sendernamen). Die Aussagen prüfen je eine Information (Tag, Ort, Zeit, Wetter, Preis); eine ist richtig, eine falsch, weil ein Detail nicht stimmt (z. B. anderer Tag). Die Lösung muss in beiden Meldungen gleich sein.`,
+      hint: `Zwei Radiosender bringen dieselbe Meldung. Sprecher 1 (erster Sender) liest Meldung 1, dann liest Sprecher 2 (zweiter Sender) Meldung 2: jede 65–75 Wörter, ruhige Radiosprache (A2), mit Sendername am Anfang. Beide Meldungen enthalten dieselben Informationen, aber in anderen Worten und anderer Reihenfolge. role: "Radio 1" und "Radio 2" (oder die erfundenen Sendernamen). Die Aussagen prüfen je eine Information (Tag, Ort, Zeit, Wetter, Preis); eine ist richtig, eine falsch, weil ein Detail nicht stimmt (z. B. anderer Tag). Die Lösung muss in beiden Meldungen gleich sein.`,
       todo: "TODO(hannes): the real Aufgabe 1 is 'mark 4 of 8 keywords' (one topic sheet, over-marking penalty). The kit has no pick-N-of-M format, so the taster asks 2 richtig/falsch statements.",
     },
     {
       skill: "hoeren", teil: 2, answer: "abc", itemsReal: 5, itemsPerBlock: 5, sample: 2,
+      // Informal voice message ~124 words, 40.5 s, ~184 wpm, twice; playback sound before each play.
+      full: { items: 5, first: 5, blocks: 1, itemsPerBlock: 5, length: { min: 38, max: 43, unit: "seconds" }, example: false, readingSeconds: 30, pace: { min: 172, max: 182 }, sound: "Abspielton vor jeder Wiedergabe", source: U },
       textTypes: ["Sprachnachricht von einer Freundin oder einem Freund", "Sprachnachricht vom Sportverein oder von der Kursleitung", "Sprachnachricht von einer Kollegin oder einem Kollegen"],
       length: { min: 28, max: 42, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 2,
       accents: ["at"],
@@ -26,6 +33,8 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 3, answer: "abc", options: 5, itemsReal: 5, itemsPerBlock: 5, sample: 2,
+      // Interviewer once, five answers (36–67 words, 12–23 s, 149–191 wpm), ~4 s apart, no labels; multi-select grid.
+      full: { items: 5, first: 10, blocks: 1, itemsPerBlock: 5, length: { min: 12, max: 22, unit: "seconds" }, example: false, readingSeconds: 30, options: 5, clips: 5, pace: { min: 160, max: 180 }, sound: "leichte Straßengeräusche", source: U },
       textTypes: ["Straßeninterview im Radio zu einer Alltagsfrage (Freizeit, Einkaufen, Wohnen, Arbeit, Urlaub)"],
       length: { min: 38, max: 60, unit: "seconds" }, voices: { min: 3, max: 3 }, plays: 1,
       accents: ["at", "ch", "de"],
@@ -35,14 +44,18 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 1, answer: "match", headings: true, ads: 6, noMatch: false, itemsReal: 5, itemsPerBlock: 5, sample: 3,
+      // 10 headings A–I, K → 5 texts of 35–54 words with origin labels; a letter may be used twice.
+      full: { items: 5, first: 1, blocks: 1, itemsPerBlock: 5, length: { min: 35, max: 55, unit: "words" }, example: false, options: 10, source: U },
       textTypes: ["Einfache Zeitungsmeldungen (Lokales, Angebote, Veranstaltungen)"],
-      length: { min: 45, max: 60, unit: "words" },
+      length: { min: 35, max: 55, unit: "words" },
       instruction: "Lesen Sie die Überschriften und die Texte. Welche Überschrift passt zu welchem Text?",
-      hint: "6 Überschriften (nur Titel, 3–7 Wörter). 3 Zeitungsmeldungen, je 45–60 Wörter, jede beginnt mit dem Ort (\"Graz.\"). Zu jeder Meldung passt genau eine Überschrift; zu jeder Meldung passt eine andere Überschrift fast (gleiches Thema, anderes Detail). Die übrigen Überschriften sind Ablenker zu ähnlichen Themen.",
+      hint: "6 Überschriften (nur Titel, 3–7 Wörter). 3 Zeitungsmeldungen, je 35–55 Wörter, jede beginnt mit dem Ort (\"Graz.\"). Zu jeder Meldung passt genau eine Überschrift; zu jeder Meldung passt eine andere Überschrift fast (gleiches Thema, anderes Detail). Die übrigen Überschriften sind Ablenker zu ähnlichen Themen.",
       todo: "TODO(hannes): the real Aufgabe 1 has 10 headings for 5 texts. The taster keeps the 2:1 ratio with 6 headings for 3 texts (research/oesd-a2.md §7).",
     },
     {
       skill: "lesen", teil: 2, answer: "abc", itemsReal: 5, itemsPerBlock: 5, sample: 2,
+      // ~200 words (207 in the MS), Beispiel 0 + 5 sentence completions A/B/C in text order.
+      full: { items: 5, first: 6, blocks: 1, itemsPerBlock: 5, length: { min: 185, max: 225, unit: "words" }, example: true, source: U },
       textTypes: ["Zeitungsbericht über eine Person oder ein Projekt"],
       length: { min: 170, max: 230, unit: "words" },
       instruction: "Lesen Sie den Text. Wählen Sie für jede Aufgabe die richtige Antwort: a, b oder c.",
@@ -84,7 +97,7 @@ turns: 1. pruefer: begrüßt kurz und erklärt die Aufgabe (6 Themen, 5 wählen,
       skill: "sprechen", teil: 2, title: "Gemeinsam etwas planen", minutes: 2, accents: ["at", "ch"],
       instruction: "Planen Sie zusammen mit Ihrer Partnerin oder Ihrem Partner eine Aktivität. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge und einigen Sie sich.",
       hint: `ÖSD prüft Sprechen zu zweit oder einzeln; hier die Paarprüfung: "du" plant mit einer Partnerin oder einem Partner (andere Prüfungsteilnehmende), die Prüferin hört zu.
-Die Aktivität: z. B. ein Ausflug mit dem Deutschkurs, ein Fest für eine Kollegin, ein Picknick mit Nachbarn. points: genau 5 Stichworte wie auf dem Aufgabenblatt: "Wohin?", "Wann?", "Wie hinfahren?", "Was mitnehmen?", "Sonst noch etwas?". cards: genau 3 Karten = drei Ziele zur Auswahl (label = Ort, picto aus der Liste passend).
+Die Aktivität: z. B. ein Fest für eine Kollegin, ein Picknick mit Nachbarn, ein Flohmarkt im Haus (nie ein Ausflug mit dem Deutschkurs: das ist die offizielle Aufgabe). points: genau 5 Stichworte wie auf dem Aufgabenblatt: "Wohin?", "Wann?", "Wie hinfahren?", "Was mitnehmen?", "Sonst noch etwas?". cards: genau 3 Karten = drei Ziele zur Auswahl (label = Ort, picto aus der Liste passend).
 turns (8–10): 1. pruefer: erklärt die Aufgabe kurz. 2. partner: macht einen ersten Vorschlag zu "Wohin?". 3. du: Hinweis "Reagiere und mach einen anderen Vorschlag." 4. partner: widerspricht höflich oder nimmt an, fragt nach "Wann?". 5. du: Hinweis zum Termin. 6. partner: schlägt vor, wie man hinfährt. 7. du: Hinweis "Sag, was ihr mitnehmt." 8. partner: stimmt zu, fragt nach "Sonst noch etwas?" oder fasst zusammen. 9. du: Hinweis zum Abschluss. 10. pruefer: beendet die Prüfung freundlich. Der Partner spricht natürlich, 1–3 Sätze pro Beitrag (A2), widerspricht mindestens einmal. sampleAnswer je 1–3 Sätze.`,
       todo: "TODO(hannes): pair or individual version (both are official; in the individual exam the Interlokutor is the partner). The taster simulates the pair version.",
     },

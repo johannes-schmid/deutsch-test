@@ -1,0 +1,744 @@
+{
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "goethe-a2-lesen-10-t1-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.003Z",
+        "textType": "Zeitungsartikel: Lokales"
+      },
+      "display": {
+        "instruction": "Sie lesen diesen Text in der Zeitung. Wählen Sie für die Aufgaben 1–5 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Beim Laufbus …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "fahren die Kinder mit einem kleinen Bus."
+                },
+                {
+                  "key": "b",
+                  "label": "bringen die Eltern die Kinder mit dem Auto."
+                },
+                {
+                  "key": "c",
+                  "label": "gehen die Kinder zusammen zu Fuß."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Die Idee für den Laufbus hatte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Schulleitung."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Mutter von zwei Kindern."
+                },
+                {
+                  "key": "c",
+                  "label": "die Polizei in Velsheim."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Die Kinder treffen sich morgens …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "an drei Stellen mit einem Schild."
+                },
+                {
+                  "key": "b",
+                  "label": "an der Haltestelle vom Schulbus."
+                },
+                {
+                  "key": "c",
+                  "label": "bei Frau Weiß zu Hause."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Von der Polizei haben die Kinder …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Schild für jede Haltestelle bekommen."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Fahrkarte für den Winter bekommen."
+                },
+                {
+                  "key": "c",
+                  "label": "eine gelbe Weste bekommen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Seit es den Laufbus gibt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "beginnt der Unterricht später."
+                },
+                {
+                  "key": "b",
+                  "label": "sind die Kinder morgens müde."
+                },
+                {
+                  "key": "c",
+                  "label": "halten weniger Autos vor der Schule."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Frau Weiß möchte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine zweite Strecke für den Laufbus."
+                },
+                {
+                  "key": "b",
+                  "label": "einen Schulbus für den Sonnenhang."
+                },
+                {
+                  "key": "c",
+                  "label": "dass die Kinder allein laufen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Mit dem Laufbus zur Schule",
+            "In Velsheim fährt jeden Morgen ein besonderer Bus zur Grundschule Am Lerchenfeld. Aber er hat keine Räder und keinen Motor: Beim „Laufbus“ gehen die Kinder in Gruppen zu Fuß zur Schule. Die Idee hatte Carolin Weiß, die Mutter von zwei Schülern. „Vor der Schule standen morgens immer viele Autos. Das war gefährlich“, erzählt sie. Die Schulleitung fand den Plan sofort gut.",
+            "Einen richtigen Schulbus gibt es in Velsheim nicht. Für den Laufbus gibt es drei „Haltestellen“ mit einem Schild, zum Beispiel vor der Bäckerei Hollerbusch und am Spielplatz Ahornweg. Dort treffen sich die Kinder um halb acht. Eltern und Großeltern laufen abwechselnd mit.",
+            "Von der Polizei hat jedes Kind eine gelbe Sicherheitsweste bekommen. So sehen die Autofahrer die Gruppe auch im Winter, wenn es morgens noch dunkel ist. Die Schilder für die Haltestellen hat die Stadt bezahlt.",
+            "Seit es den Laufbus gibt, ist es vor der Schule viel ruhiger. Früher haben morgens bis zu 50 Autos dort gehalten, heute sind es nur noch etwa zehn. Der Unterricht beginnt wie immer um acht, aber die Kinder kommen wach und gut gelaunt in die Klasse.",
+            "Im neuen Wohngebiet Sonnenhang wohnen viele junge Familien. Deshalb plant Frau Weiß jetzt eine zweite Strecke von dort. Allein sollen die Kinder aber nicht laufen: Sie sucht noch Erwachsene, die mitmachen möchten."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Die Idee hatte Carolin Weiß, die Mutter von zwei Schülern. Die Schulleitung fand den Plan nur gut.",
+            "evidence": {
+              "text": "In Velsheim fährt jeden Morgen ein besonderer Bus zur Grundschule Am Lerchenfeld. Aber er hat keine Räder und keinen Motor: Beim „Laufbus“ gehen die Kinder in Gruppen zu Fuß zur Schule. Die Idee hatte Carolin Weiß, die Mutter von zwei Schülern. „Vor der Schule standen morgens immer viele Autos. Das war gefährlich“, erzählt sie. Die Schulleitung fand den Plan sofort gut.",
+              "hit": "Die Idee hatte Carolin Weiß, die Mutter von zwei Schülern."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Die Kinder treffen sich an drei „Haltestellen“ mit einem Schild. Einen richtigen Schulbus gibt es in Velsheim nicht.",
+            "evidence": {
+              "text": "Einen richtigen Schulbus gibt es in Velsheim nicht. Für den Laufbus gibt es drei „Haltestellen“ mit einem Schild, zum Beispiel vor der Bäckerei Hollerbusch und am Spielplatz Ahornweg. Dort treffen sich die Kinder um halb acht. Eltern und Großeltern laufen abwechselnd mit.",
+              "hit": "Für den Laufbus gibt es drei „Haltestellen“ mit einem Schild"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "c",
+            "explanation": "Jedes Kind hat von der Polizei eine gelbe Weste bekommen. Die Schilder hat die Stadt bezahlt, nicht die Polizei.",
+            "evidence": {
+              "text": "Von der Polizei hat jedes Kind eine gelbe Sicherheitsweste bekommen. So sehen die Autofahrer die Gruppe auch im Winter, wenn es morgens noch dunkel ist. Die Schilder für die Haltestellen hat die Stadt bezahlt.",
+              "hit": "Von der Polizei hat jedes Kind eine gelbe Sicherheitsweste bekommen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Früher haben bis zu 50 Autos vor der Schule gehalten, heute nur noch etwa zehn. Der Unterricht beginnt wie immer um acht, und die Kinder sind wach.",
+            "evidence": {
+              "text": "Seit es den Laufbus gibt, ist es vor der Schule viel ruhiger. Früher haben morgens bis zu 50 Autos dort gehalten, heute sind es nur noch etwa zehn. Der Unterricht beginnt wie immer um acht, aber die Kinder kommen wach und gut gelaunt in die Klasse.",
+              "hit": "Früher haben morgens bis zu 50 Autos dort gehalten, heute sind es nur noch etwa zehn."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Frau Weiß plant eine zweite Strecke vom Sonnenhang. Die Kinder sollen dort nicht allein laufen, darum sucht sie Erwachsene.",
+            "evidence": {
+              "text": "Im neuen Wohngebiet Sonnenhang wohnen viele junge Familien. Deshalb plant Frau Weiß jetzt eine zweite Strecke von dort. Allein sollen die Kinder aber nicht laufen: Sie sucht noch Erwachsene, die mitmachen möchten.",
+              "hit": "Deshalb plant Frau Weiß jetzt eine zweite Strecke von dort."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-10-t2-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.003Z",
+        "textType": "Wegweiser: Kaufhaus"
+      },
+      "display": {
+        "instruction": "Sie lesen den Wegweiser im Kaufhaus Overbeck. Lesen Sie die Aufgaben 6–10. In welchen Stock gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie fahren in Urlaub und brauchen einen neuen Koffer.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihr Mann hat nächste Woche ein Vorstellungsgespräch. Er braucht noch eine passende Krawatte.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Beim Umzug sind viele Teller kaputtgegangen. Sie brauchen sechs neue.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Sie möchten Ihrer Freundin einen Schal stricken und brauchen dafür Wolle.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Ihre Sonnenbrille ist kaputt. Sie möchten eine neue kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Die Zahnpasta in Ihrem Bad ist leer.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Kaufhaus Overbeck",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "Kaufhaus Overbeck – Wegweiser",
+            "4. Stock: Haushaltswaren · Glas und Porzellan · Töpfe und Pfannen · Küchengeräte · Bettwäsche und Handtücher · Restaurant „Panorama“ mit Blick über die Stadt · Toiletten",
+            "3. Stock: Spielwaren · Gesellschaftsspiele und Puzzles · Bastelbedarf · Wolle, Garn und Stricknadeln · Geschenkpapier und Karten",
+            "2. Stock: Herrenmode · Anzüge und Sakkos · Hemden und Krawatten · Gürtel · Mäntel und Jacken für Herren · Herrenschuhe",
+            "1. Stock: Damenmode · Kleider und Blusen · Nachtwäsche · Hüte, Mützen und Tücher · Damenschuhe · Strümpfe",
+            "Erdgeschoss: Koffer und Reisetaschen · Kosmetik · Handtaschen · Regenschirme · Uhren und Sonnenbrillen · Schmuck · Kundeninformation",
+            "Untergeschoss: Lebensmittel · Obst und Gemüse · Fleisch, Wurst und Käse an der Theke · Getränke · Drogerieartikel · Eingang zur Tiefgarage",
+            "Öffnungszeiten: Montag bis Samstag 9:30 bis 20:00 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Krawatten gibt es bei der Herrenmode im 2. Stock. Im 1. Stock ist nur Mode für Damen.",
+            "evidence": {
+              "text": "2. Stock: Herrenmode · Anzüge und Sakkos · Hemden und Krawatten · Gürtel · Mäntel und Jacken für Herren · Herrenschuhe",
+              "hit": "Hemden und Krawatten"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Teller sind aus Porzellan, und Glas und Porzellan gibt es im 4. Stock. Im Untergeschoss gibt es Lebensmittel und Getränke.",
+            "evidence": {
+              "text": "4. Stock: Haushaltswaren · Glas und Porzellan · Töpfe und Pfannen · Küchengeräte · Bettwäsche und Handtücher · Restaurant „Panorama“ mit Blick über die Stadt · Toiletten",
+              "hit": "Glas und Porzellan"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Wolle und Stricknadeln gibt es im 3. Stock. Im 1. Stock gibt es fertige Tücher, aber keine Wolle.",
+            "evidence": {
+              "text": "3. Stock: Spielwaren · Gesellschaftsspiele und Puzzles · Bastelbedarf · Wolle, Garn und Stricknadeln · Geschenkpapier und Karten",
+              "hit": "Wolle, Garn und Stricknadeln"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "Sonnenbrillen gibt es im Erdgeschoss, also in einem anderen Stock. Im 1. Stock gibt es nur Hüte und Mützen gegen die Sonne.",
+            "evidence": {
+              "text": "Erdgeschoss: Koffer und Reisetaschen · Kosmetik · Handtaschen · Regenschirme · Uhren und Sonnenbrillen · Schmuck · Kundeninformation",
+              "hit": "Uhren und Sonnenbrillen"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Zahnpasta gehört zu den Drogerieartikeln im Untergeschoss. Im Erdgeschoss gibt es Kosmetik, aber keine Drogerie.",
+            "evidence": {
+              "text": "Untergeschoss: Lebensmittel · Obst und Gemüse · Fleisch, Wurst und Käse an der Theke · Getränke · Drogerieartikel · Eingang zur Tiefgarage",
+              "hit": "Drogerieartikel"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-10-t3-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.003Z",
+        "textType": "Persönliche E-Mail: neues Hobby Geocaching"
+      },
+      "display": {
+        "instruction": "Sie lesen eine E-Mail. Wählen Sie für die Aufgaben 11–15 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Lotte hat Geocaching kennengelernt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "weil sie in der Zeitung davon gelesen hat."
+                },
+                {
+                  "key": "b",
+                  "label": "weil ihr Neffe es ihr gezeigt hat."
+                },
+                {
+                  "key": "c",
+                  "label": "weil eine Kollegin davon erzählt hat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Für ihr neues Hobby hat Lotte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine teure App gekauft."
+                },
+                {
+                  "key": "b",
+                  "label": "ein GPS-Gerät gekauft."
+                },
+                {
+                  "key": "c",
+                  "label": "Schuhe zum Wandern gekauft."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Ihr schönster Fund war …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine sehr kleine Dose in einem Baum."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Dose unter einem großen Stein."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Dose hinter einer Parkbank."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Für Lotte ist es schwierig, dass …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sie beim Suchen sehr weit laufen muss."
+                },
+                {
+                  "key": "b",
+                  "label": "sie manche Dosen sehr lange suchen muss."
+                },
+                {
+                  "key": "c",
+                  "label": "die App oft nicht richtig funktioniert."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Lotte möchte, dass Bettina …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "im Juni mit Finn auf Schatzsuche geht."
+                },
+                {
+                  "key": "b",
+                  "label": "selbst eine kleine Dose versteckt."
+                },
+                {
+                  "key": "c",
+                  "label": "sie besucht und mit ihr sucht."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Lotte",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Bettina,",
+            "wie geht es dir? Ich habe lange nichts von mir hören lassen, aber ich war in den letzten Wochen fast jedes Wochenende draußen. Ich habe nämlich ein neues Hobby: Geocaching! Das ist eine Art Schatzsuche. Andere Leute verstecken kleine Dosen, und man sucht sie mit dem Handy.",
+            "Wie ich dazu gekommen bin? Du denkst bestimmt, ich habe das in der Zeitung gelesen oder eine Kollegin hat es mir erzählt. Nein, es war mein Neffe Finn. Er ist jetzt neunzehn und hat mir beim Familienessen an Ostern die App gezeigt. Am Nachmittag haben wir gleich zusammen die erste Dose gesucht.",
+            "Die App kostet nichts. Zuerst wollte ich ein richtiges GPS-Gerät kaufen, aber das war mir zu teuer, und das Handy reicht völlig. Gekauft habe ich nur gute Wanderschuhe, weil man oft durch nasse Wiesen und über Steine läuft.",
+            "Die meisten Dosen liegen einfach unter einem Stein oder hinter einer Parkbank. Mein schönster Fund war im Stadtwald: eine winzige Dose in einem alten Baum, der innen hohl ist. Ich habe sie nur gefunden, weil ein Eichhörnchen aus dem Loch gesprungen ist!",
+            "Die langen Wege sind für mich kein Problem, ich laufe ja gern. Schwierig ist etwas anderes: Manche Dosen sind wirklich sehr gut versteckt. Oft suche ich eine ganze Stunde, und manchmal finde ich am Ende gar nichts.",
+            "Hast du nicht Lust, mal mitzumachen? Komm doch im Juni für ein Wochenende zu mir! Hier in der Stadt gibt es über hundert Verstecke, und ich kenne noch lange nicht alle. Ein Bett für dich habe ich natürlich auch.",
+            "Liebe Grüße",
+            "Lotte"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Ihr Neffe Finn hat ihr die App beim Familienessen gezeigt. Von der Zeitung und der Kollegin schreibt Lotte nur, dass Bettina das vielleicht denkt.",
+            "evidence": {
+              "text": "Wie ich dazu gekommen bin? Du denkst bestimmt, ich habe das in der Zeitung gelesen oder eine Kollegin hat es mir erzählt. Nein, es war mein Neffe Finn. Er ist jetzt neunzehn und hat mir beim Familienessen an Ostern die App gezeigt. Am Nachmittag haben wir gleich zusammen die erste Dose gesucht.",
+              "hit": "Nein, es war mein Neffe Finn."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Lotte hat nur gute Wanderschuhe gekauft. Das GPS-Gerät war ihr zu teuer, und die App kostet nichts.",
+            "evidence": {
+              "text": "Die App kostet nichts. Zuerst wollte ich ein richtiges GPS-Gerät kaufen, aber das war mir zu teuer, und das Handy reicht völlig. Gekauft habe ich nur gute Wanderschuhe, weil man oft durch nasse Wiesen und über Steine läuft.",
+              "hit": "Gekauft habe ich nur gute Wanderschuhe"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Der schönste Fund war eine winzige Dose in einem alten, hohlen Baum. Unter Steinen und hinter Parkbänken liegen nur die meisten anderen Dosen.",
+            "evidence": {
+              "text": "Die meisten Dosen liegen einfach unter einem Stein oder hinter einer Parkbank. Mein schönster Fund war im Stadtwald: eine winzige Dose in einem alten Baum, der innen hohl ist. Ich habe sie nur gefunden, weil ein Eichhörnchen aus dem Loch gesprungen ist!",
+              "hit": "Mein schönster Fund war im Stadtwald: eine winzige Dose in einem alten Baum"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Manche Dosen sind sehr gut versteckt, und Lotte sucht oft eine Stunde. Die langen Wege sind für sie kein Problem.",
+            "evidence": {
+              "text": "Die langen Wege sind für mich kein Problem, ich laufe ja gern. Schwierig ist etwas anderes: Manche Dosen sind wirklich sehr gut versteckt. Oft suche ich eine ganze Stunde, und manchmal finde ich am Ende gar nichts.",
+              "hit": "Manche Dosen sind wirklich sehr gut versteckt. Oft suche ich eine ganze Stunde"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Lotte lädt Bettina im Juni für ein Wochenende zu sich ein. Von Finn schreibt sie dabei nichts.",
+            "evidence": {
+              "text": "Hast du nicht Lust, mal mitzumachen? Komm doch im Juni für ein Wochenende zu mir! Hier in der Stadt gibt es über hundert Verstecke, und ich kenne noch lange nicht alle. Ein Bett für dich habe ich natürlich auch.",
+              "hit": "Komm doch im Juni für ein Wochenende zu mir!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-lesen-10-t4-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.003Z",
+        "textType": "Anzeigen im Internet: besondere Erlebnisse"
+      },
+      "display": {
+        "instruction": "Sechs Personen suchen im Internet nach einem besonderen Erlebnis. Lesen Sie die Aufgaben 16–20 und die Anzeigen a–f. Welche Anzeige passt zu welcher Person? Für eine Aufgabe gibt es keine Lösung. Dann wählen Sie X. Die Anzeige aus dem Beispiel können Sie nicht mehr wählen.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Krimidinner im Schlosshotel Falkenau",
+                  "text": "Ein Abend voller Spannung: Bei unserem Vier-Gänge-Menü passiert ein Verbrechen. Schauspieler spielen die Geschichte, und Sie als Gäste suchen den Täter. Jeden Samstag ab 19 Uhr, 69 Euro pro Person mit Essen. Bitte reservieren Sie früh."
+                },
+                {
+                  "key": "b",
+                  "title": "www.segway-touren-altstadt.de",
+                  "text": "Die Altstadt einmal anders entdecken! Unsere Führer zeigen Ihnen auf dem Segway die schönsten Plätze und Gassen. Vorher gibt es eine kurze Übung. Wir bieten Touren für Gruppen bis 12 Personen an, gern auch als Betriebsausflug. Dauer: zwei Stunden."
+                },
+                {
+                  "key": "c",
+                  "title": "Duftwerkstatt „Nase vorn“",
+                  "text": "Ihr eigenes Parfüm in zwei Stunden! In unserer Werkstatt mischen Sie aus über 80 Düften Ihren Lieblingsduft. Am Ende nehmen Sie eine schöne Flasche mit nach Hause – auch ein tolles Geschenk. Kurse mittwochs und samstags, 45 Euro."
+                },
+                {
+                  "key": "d",
+                  "title": "www.cockpit-erlebnis.de",
+                  "text": "Einmal Pilot sein – und dabei sicher am Boden bleiben! In unserem Flugsimulator sitzen Sie in einem echten Cockpit und landen mit einem Trainer in Rom oder New York. Ideal auch für Menschen mit Flugangst. 60 Minuten ab 99 Euro, Gutscheine online."
+                },
+                {
+                  "key": "e",
+                  "title": "Ballonfahrten Himmelsblick",
+                  "text": "Schweben Sie über Wälder und Dörfer! Unsere Ballone starten bei gutem Wetter morgens und abends. Eine Fahrt dauert etwa eine Stunde, danach gibt es ein kleines Picknick. Wir fahren nur von April bis Oktober. Gutscheine für Paare: 398 Euro."
+                },
+                {
+                  "key": "f",
+                  "title": "Schmiede Amboss",
+                  "text": "Feuer, Eisen und Hammer: In unserem Tageskurs schmieden Sie Ihr eigenes Messer. Sie brauchen keine Erfahrung, unser Schmied hilft Ihnen bei jedem Schritt. Kurse an jedem zweiten Sonntag, 9 bis 17 Uhr, mit Mittagessen. Höchstens sechs Personen."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Der Vater von Frau Haller liebt Flugzeuge, aber er hat Angst vor dem Fliegen. Sie sucht ein Geschenk für ihn."
+                },
+                {
+                  "n": 16,
+                  "text": "Herr Petzold möchte mit seinen Kollegen auf einem Segway eine Tour durch die alte Stadt machen."
+                },
+                {
+                  "n": 17,
+                  "text": "Die Schwester von Frau Šimić hat bald Geburtstag. Frau Šimić möchte ihr einen Duft selbst machen."
+                },
+                {
+                  "n": 18,
+                  "text": "Herr Bachmann möchte einen Abend mit gutem Essen erleben, an dem die Gäste einen Kriminalfall lösen."
+                },
+                {
+                  "n": 19,
+                  "text": "Frau Sander möchte am 14. Februar mit ihrem Mann eine Fahrt mit einem Ballon machen."
+                },
+                {
+                  "n": 20,
+                  "text": "Herr Quast möchte gern einmal selbst ein Messer herstellen."
+                }
+              ],
+              "noMatchLabel": "X"
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "b",
+            "explanation": "Die Segway-Touren zeigen die Altstadt und sind auch für Betriebsausflüge. Die anderen Anzeigen bieten keine Tour durch die Stadt an.",
+            "evidence": {
+              "text": "Die Altstadt einmal anders entdecken! Unsere Führer zeigen Ihnen auf dem Segway die schönsten Plätze und Gassen. Vorher gibt es eine kurze Übung. Wir bieten Touren für Gruppen bis 12 Personen an, gern auch als Betriebsausflug. Dauer: zwei Stunden.",
+              "hit": "gern auch als Betriebsausflug"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "c",
+            "explanation": "In der Duftwerkstatt mischt man ein eigenes Parfüm, das auch ein Geschenk sein kann. Ein Messer aus der Schmiede ist kein Duft.",
+            "evidence": {
+              "text": "Ihr eigenes Parfüm in zwei Stunden! In unserer Werkstatt mischen Sie aus über 80 Düften Ihren Lieblingsduft. Am Ende nehmen Sie eine schöne Flasche mit nach Hause – auch ein tolles Geschenk. Kurse mittwochs und samstags, 45 Euro.",
+              "hit": "In unserer Werkstatt mischen Sie aus über 80 Düften Ihren Lieblingsduft."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "a",
+            "explanation": "Beim Krimidinner im Schlosshotel gibt es ein Menü, und die Gäste suchen den Täter. Beim Ballon gibt es nur ein kleines Picknick.",
+            "evidence": {
+              "text": "Ein Abend voller Spannung: Bei unserem Vier-Gänge-Menü passiert ein Verbrechen. Schauspieler spielen die Geschichte, und Sie als Gäste suchen den Täter. Jeden Samstag ab 19 Uhr, 69 Euro pro Person mit Essen. Bitte reservieren Sie früh.",
+              "hit": "Sie als Gäste suchen den Täter"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "x",
+            "explanation": "Die Ballonfahrten passen fast, aber sie fahren nur von April bis Oktober. Im Februar gibt es keine passende Anzeige.",
+            "evidence": {
+              "text": "Schweben Sie über Wälder und Dörfer! Unsere Ballone starten bei gutem Wetter morgens und abends. Eine Fahrt dauert etwa eine Stunde, danach gibt es ein kleines Picknick. Wir fahren nur von April bis Oktober. Gutscheine für Paare: 398 Euro.",
+              "hit": "Wir fahren nur von April bis Oktober."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "f",
+            "explanation": "In der Schmiede macht man an einem Tag ein eigenes Messer. Man braucht dafür keine Erfahrung.",
+            "evidence": {
+              "text": "Feuer, Eisen und Hammer: In unserem Tageskurs schmieden Sie Ihr eigenes Messer. Sie brauchen keine Erfahrung, unser Schmied hilft Ihnen bei jedem Schritt. Kurse an jedem zweiten Sonntag, 9 bis 17 Uhr, mit Mittagessen. Höchstens sechs Personen.",
+              "hit": "In unserem Tageskurs schmieden Sie Ihr eigenes Messer."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "d"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-06-t1-meldungen",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.697Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Tag der offenen Tür am Bauernhof",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Gebrauchte Möbel gesucht",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Kinder-Uni im Sommer",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Alte Handys für einen guten Zweck",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Frische Milch rund um die Uhr",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Mehr Studierende als je zuvor",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Alte Brillen bekommen ein zweites Leben",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Immer weniger junge Bauern",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Abendkurse für Berufstätige",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Rekord: 20 000 Euro für die Kinderhilfe",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Feldkirchen in Kärnten. Familie Pirker hat beim Hoftor einen Milchautomaten aufgestellt. Dort gibt es jeden Tag Milch direkt von den eigenen Kühen, auch in der Nacht und am Sonntag. Ein Liter kostet 1,30 Euro. Bitte bringen Sie eine eigene Flasche mit. Der Hof liegt am Rand der Gemeinde, direkt an der Straße nach Ossiach.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 2,
+                  "text": "Jena. In den Sommerferien lädt die Universität Kinder zwischen acht und zwölf Jahren ein. An fünf Vormittagen erklären Professorinnen und Professoren in großen Hörsälen, wie Vulkane, Roboter und Computer funktionieren. Die Vorlesungen sind kostenlos. Eltern melden ihre Kinder bis zum 30. Juni auf www.uni-kinder-jena.de an.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Olten. Haben Sie zu Hause eine alte Brille, die Sie nicht mehr brauchen? Bis Ende Monat sammeln zwölf Optikergeschäfte an der Baslerstrasse und in der Altstadt gebrauchte Brillen. Fachleute reinigen und prüfen sie. Danach bekommen Menschen in Westafrika die Brillen, die sich selbst keine leisten können. Abgeben kann man sie während der normalen Öffnungszeiten.",
+                  "origin": "aus einer Schweizer Zeitung"
+                },
+                {
+                  "n": 4,
+                  "text": "Ried im Innkreis. Der Verein „Hand in Hand“ hilft Familien, die wenig Geld haben. Jetzt braucht er Tische, Betten, Kästen und Stühle. Alles soll sauber und noch gut sein. Kleine Stücke können Sie selbst bringen, große holen die Helferinnen und Helfer gratis bei Ihnen ab. Hier können Sie Möbel abgeben:",
+                  "origin": "aus einer österreichischen Zeitung",
+                  "table": [
+                    [
+                      "Abgabestelle",
+                      "Tag",
+                      "Uhrzeit"
+                    ],
+                    [
+                      "Lager Bahnhofstraße",
+                      "Montag",
+                      "9–12 Uhr"
+                    ],
+                    [
+                      "Pfarrhof",
+                      "Mittwoch",
+                      "14–17 Uhr"
+                    ],
+                    [
+                      "Gemeindeamt",
+                      "Freitag",
+                      "8–11 Uhr"
+                    ]
+                  ]
+                },
+                {
+                  "n": 5,
+                  "text": "Oldenburg. Im Landkreis wollen nur noch wenige junge Menschen einen Hof übernehmen. Das Durchschnittsalter der Landwirte liegt jetzt bei 55 Jahren. Vor zwanzig Jahren waren es noch 47. Viele Söhne und Töchter arbeiten lieber in der Stadt, weil die Arbeit auf dem Hof sehr hart ist und man kaum Urlaub hat.",
+                  "origin": "aus einer deutschen Zeitung"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "E",
+            "explanation": "Am Automaten gibt es jeden Tag Milch, auch in der Nacht. Einen Tag der offenen Tür am Hof gibt es nicht.",
+            "evidence": {
+              "text": "Feldkirchen in Kärnten. Familie Pirker hat beim Hoftor einen Milchautomaten aufgestellt. Dort gibt es jeden Tag Milch direkt von den eigenen Kühen, auch in der Nacht und am Sonntag. Ein Liter kostet 1,30 Euro. Bitte bringen Sie eine eigene Flasche mit. Der Hof liegt am Rand der Gemeinde, direkt an der Straße nach Ossiach.",
+              "hit": "Dort gibt es jeden Tag Milch direkt von den eigenen Kühen, auch in der Nacht und am Sonntag."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "C",
+            "explanation": "Die Universität lädt in den Sommerferien Kinder ein. Um Studierende oder Kurse für Erwachsene geht es nicht.",
+            "evidence": {
+              "text": "Jena. In den Sommerferien lädt die Universität Kinder zwischen acht und zwölf Jahren ein. An fünf Vormittagen erklären Professorinnen und Professoren in großen Hörsälen, wie Vulkane, Roboter und Computer funktionieren. Die Vorlesungen sind kostenlos. Eltern melden ihre Kinder bis zum 30. Juni auf www.uni-kinder-jena.de an.",
+              "hit": "In den Sommerferien lädt die Universität Kinder zwischen acht und zwölf Jahren ein."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "G",
+            "explanation": "Alte Brillen werden gesammelt und gehen dann an Menschen in Westafrika. Von Handys oder Möbeln steht nichts im Text.",
+            "evidence": {
+              "text": "Olten. Haben Sie zu Hause eine alte Brille, die Sie nicht mehr brauchen? Bis Ende Monat sammeln zwölf Optikergeschäfte an der Baslerstrasse und in der Altstadt gebrauchte Brillen. Fachleute reinigen und prüfen sie. Danach bekommen Menschen in Westafrika die Brillen, die sich selbst keine leisten können. Abgeben kann man sie während der normalen Öffnungszeiten.",
+              "hit": "Danach bekommen Menschen in Westafrika die Brillen, die sich selbst keine leisten können."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "B",
+            "explanation": "Der Verein braucht Tische, Betten, Kästen und Stühle. Geld oder Handys sammelt er hier nicht.",
+            "evidence": {
+              "text": "Ried im Innkreis. Der Verein „Hand in Hand“ hilft Familien, die wenig Geld haben. Jetzt braucht er Tische, Betten, Kästen und Stühle. Alles soll sauber und noch gut sein. Kleine Stücke können Sie selbst bringen, große holen die Helferinnen und Helfer gratis bei Ihnen ab. Hier können Sie Möbel abgeben:",
+              "hit": "Jetzt braucht er Tische, Betten, Kästen und Stühle."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "H",
+            "explanation": "Nur noch wenige junge Menschen wollen einen Hof übernehmen. Milch oder einen Besuchstag am Hof gibt es im Text nicht.",
+            "evidence": {
+              "text": "Oldenburg. Im Landkreis wollen nur noch wenige junge Menschen einen Hof übernehmen. Das Durchschnittsalter der Landwirte liegt jetzt bei 55 Jahren. Vor zwanzig Jahren waren es noch 47. Viele Söhne und Töchter arbeiten lieber in der Stadt, weil die Arbeit auf dem Hof sehr hart ist und man kaum Urlaub hat.",
+              "hit": "Im Landkreis wollen nur noch wenige junge Menschen einen Hof übernehmen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-06-t2-zauberer",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.697Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Oststeirische Rundschau",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Der Zauberer aus Hartberg",
+            "Karl Weninger ist 69 Jahre alt. Vierzig Jahre lang hat er in einer Bank in Hartberg gearbeitet. Seit seiner Pension hat er einen neuen Beruf: Er ist Zauberer.",
+            "Mit der Zauberei hat er schon als Kind begonnen. Mit zwölf Jahren hat er von seinem Onkel ein Buch mit Zaubertricks bekommen. „Mein Vater hat gesagt, das ist doch nur Zeitverschwendung“, erzählt er. „Aber ich habe jeden Abend geübt.“",
+            "Heute tritt er einmal im Monat in Seniorenheimen in der Region auf. Geld nimmt er dafür nicht. Schulen haben ihn auch schon gefragt, aber er bleibt lieber bei den älteren Menschen.",
+            "Am meisten freut sich das Publikum, wenn jemand nach vorne kommen und bei einem Trick helfen darf. „Dann lachen alle, auch die Leute, die sonst sehr still sind“, sagt Weninger. Seine größte Show hatte er vor 500 Menschen in der Stadthalle. „Da war ich sehr nervös.“",
+            "Auf der Bühne ist er nie allein. Seine Frau Gertrude ist seine Assistentin. Sie gibt ihm die Tücher und den Zauberstab. Eintrittskarten muss sie nicht verkaufen, denn die Shows sind gratis.",
+            "Und was plant er für die Zukunft? Weninger möchte ein Buch schreiben, mit einfachen Tricks für Kinder. „Dann können auch meine Enkel zaubern“, sagt er und lacht."
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Karl Weninger hat früher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in einer Schule gearbeitet."
+                },
+                {
+                  "key": "b",
+                  "label": "bei einer Bank gearbeitet."
+                },
+                {
+                  "key": "c",
+                  "label": "als Zauberer gearbeitet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sein erstes Zauberbuch war …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Geschenk von seinem Vater."
+                },
+                {
+                  "key": "b",
+                  "label": "aus einer Buchhandlung."
+                },
+                {
+                  "key": "c",
+                  "label": "ein Geschenk von seinem Onkel."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Weninger zaubert regelmäßig …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "für ältere Menschen in Heimen."
+                },
+                {
+                  "key": "b",
+                  "label": "für Kinder in den Schulen."
+                },
+                {
+                  "key": "c",
+                  "label": "jede Woche in der Stadthalle."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Die Zuschauer finden es am schönsten, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "wenn viele Leute im Saal sind."
+                },
+                {
+                  "key": "b",
+                  "label": "wenn ein Trick sehr schwer ist."
+                },
+                {
+                  "key": "c",
+                  "label": "wenn sie selbst mitmachen dürfen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Seine Frau …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "verkauft vor der Show die Karten."
+                },
+                {
+                  "key": "b",
+                  "label": "hilft ihm bei den Auftritten."
+                },
+                {
+                  "key": "c",
+                  "label": "zaubert manchmal auch selbst."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In Zukunft möchte Weninger …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "wieder in der Stadthalle zaubern."
+                },
+                {
+                  "key": "b",
+                  "label": "Zauberkurse für Kinder geben."
+                },
+                {
+                  "key": "c",
+                  "label": "Kindern Tricks in einem Buch zeigen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "Das Buch hat er mit zwölf Jahren von seinem Onkel bekommen. Der Vater fand die Zauberei nur Zeitverschwendung.",
+            "evidence": {
+              "text": "Der Zauberer aus Hartberg Karl Weninger ist 69 Jahre alt. Vierzig Jahre lang hat er in einer Bank in Hartberg gearbeitet. Seit seiner Pension hat er einen neuen Beruf: Er ist Zauberer. Mit der Zauberei hat er schon als Kind begonnen. Mit zwölf Jahren hat er von seinem Onkel ein Buch mit Zaubertricks bekommen. „Mein Vater hat gesagt, das ist doch nur Zeitverschwendung“, erzählt er. „Aber ich habe jeden Abend geübt.“ Heute tritt er einmal im Monat in Seniorenheimen in der Region auf. Geld nimmt er dafür nicht. Schulen haben ihn auch schon gefragt, aber er bleibt lieber bei den älteren Menschen. Am meisten freut sich das Publikum, wenn jemand nach vorne kommen und bei einem Trick helfen darf. „Dann lachen alle, auch die Leute, die sonst sehr still sind“, sagt Weninger. Seine größte Show hatte er vor 500 Menschen in der Stadthalle. „Da war ich sehr nervös.“ Auf der Bühne ist er nie allein. Seine Frau Gertrude ist seine Assistentin. Sie gibt ihm die Tücher und den Zauberstab. Eintrittskarten muss sie nicht verkaufen, denn die Shows sind gratis. Und was plant er für die Zukunft? Weninger möchte ein Buch schreiben, mit einfachen Tricks für Kinder. „Dann können auch meine Enkel zaubern“, sagt er und lacht.",
+              "hit": "Mit zwölf Jahren hat er von seinem Onkel ein Buch mit Zaubertricks bekommen."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "Er tritt einmal im Monat in Seniorenheimen auf. Die Schulen haben ihn gefragt, aber er geht nicht hin.",
+            "evidence": {
+              "text": "Der Zauberer aus Hartberg Karl Weninger ist 69 Jahre alt. Vierzig Jahre lang hat er in einer Bank in Hartberg gearbeitet. Seit seiner Pension hat er einen neuen Beruf: Er ist Zauberer. Mit der Zauberei hat er schon als Kind begonnen. Mit zwölf Jahren hat er von seinem Onkel ein Buch mit Zaubertricks bekommen. „Mein Vater hat gesagt, das ist doch nur Zeitverschwendung“, erzählt er. „Aber ich habe jeden Abend geübt.“ Heute tritt er einmal im Monat in Seniorenheimen in der Region auf. Geld nimmt er dafür nicht. Schulen haben ihn auch schon gefragt, aber er bleibt lieber bei den älteren Menschen. Am meisten freut sich das Publikum, wenn jemand nach vorne kommen und bei einem Trick helfen darf. „Dann lachen alle, auch die Leute, die sonst sehr still sind“, sagt Weninger. Seine größte Show hatte er vor 500 Menschen in der Stadthalle. „Da war ich sehr nervös.“ Auf der Bühne ist er nie allein. Seine Frau Gertrude ist seine Assistentin. Sie gibt ihm die Tücher und den Zauberstab. Eintrittskarten muss sie nicht verkaufen, denn die Shows sind gratis. Und was plant er für die Zukunft? Weninger möchte ein Buch schreiben, mit einfachen Tricks für Kinder. „Dann können auch meine Enkel zaubern“, sagt er und lacht.",
+              "hit": "Heute tritt er einmal im Monat in Seniorenheimen in der Region auf."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Das Publikum freut sich am meisten, wenn jemand bei einem Trick helfen darf. Die große Show mit 500 Menschen war nur ein besonderer Abend.",
+            "evidence": {
+              "text": "Der Zauberer aus Hartberg Karl Weninger ist 69 Jahre alt. Vierzig Jahre lang hat er in einer Bank in Hartberg gearbeitet. Seit seiner Pension hat er einen neuen Beruf: Er ist Zauberer. Mit der Zauberei hat er schon als Kind begonnen. Mit zwölf Jahren hat er von seinem Onkel ein Buch mit Zaubertricks bekommen. „Mein Vater hat gesagt, das ist doch nur Zeitverschwendung“, erzählt er. „Aber ich habe jeden Abend geübt.“ Heute tritt er einmal im Monat in Seniorenheimen in der Region auf. Geld nimmt er dafür nicht. Schulen haben ihn auch schon gefragt, aber er bleibt lieber bei den älteren Menschen. Am meisten freut sich das Publikum, wenn jemand nach vorne kommen und bei einem Trick helfen darf. „Dann lachen alle, auch die Leute, die sonst sehr still sind“, sagt Weninger. Seine größte Show hatte er vor 500 Menschen in der Stadthalle. „Da war ich sehr nervös.“ Auf der Bühne ist er nie allein. Seine Frau Gertrude ist seine Assistentin. Sie gibt ihm die Tücher und den Zauberstab. Eintrittskarten muss sie nicht verkaufen, denn die Shows sind gratis. Und was plant er für die Zukunft? Weninger möchte ein Buch schreiben, mit einfachen Tricks für Kinder. „Dann können auch meine Enkel zaubern“, sagt er und lacht.",
+              "hit": "Am meisten freut sich das Publikum, wenn jemand nach vorne kommen und bei einem Trick helfen darf."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Seine Frau ist seine Assistentin auf der Bühne. Karten verkauft sie nicht, denn die Shows kosten nichts.",
+            "evidence": {
+              "text": "Der Zauberer aus Hartberg Karl Weninger ist 69 Jahre alt. Vierzig Jahre lang hat er in einer Bank in Hartberg gearbeitet. Seit seiner Pension hat er einen neuen Beruf: Er ist Zauberer. Mit der Zauberei hat er schon als Kind begonnen. Mit zwölf Jahren hat er von seinem Onkel ein Buch mit Zaubertricks bekommen. „Mein Vater hat gesagt, das ist doch nur Zeitverschwendung“, erzählt er. „Aber ich habe jeden Abend geübt.“ Heute tritt er einmal im Monat in Seniorenheimen in der Region auf. Geld nimmt er dafür nicht. Schulen haben ihn auch schon gefragt, aber er bleibt lieber bei den älteren Menschen. Am meisten freut sich das Publikum, wenn jemand nach vorne kommen und bei einem Trick helfen darf. „Dann lachen alle, auch die Leute, die sonst sehr still sind“, sagt Weninger. Seine größte Show hatte er vor 500 Menschen in der Stadthalle. „Da war ich sehr nervös.“ Auf der Bühne ist er nie allein. Seine Frau Gertrude ist seine Assistentin. Sie gibt ihm die Tücher und den Zauberstab. Eintrittskarten muss sie nicht verkaufen, denn die Shows sind gratis. Und was plant er für die Zukunft? Weninger möchte ein Buch schreiben, mit einfachen Tricks für Kinder. „Dann können auch meine Enkel zaubern“, sagt er und lacht.",
+              "hit": "Seine Frau Gertrude ist seine Assistentin."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Er möchte ein Buch mit einfachen Tricks für Kinder schreiben. Von Kursen oder einer neuen Show in der Stadthalle steht nichts im Text.",
+            "evidence": {
+              "text": "Der Zauberer aus Hartberg Karl Weninger ist 69 Jahre alt. Vierzig Jahre lang hat er in einer Bank in Hartberg gearbeitet. Seit seiner Pension hat er einen neuen Beruf: Er ist Zauberer. Mit der Zauberei hat er schon als Kind begonnen. Mit zwölf Jahren hat er von seinem Onkel ein Buch mit Zaubertricks bekommen. „Mein Vater hat gesagt, das ist doch nur Zeitverschwendung“, erzählt er. „Aber ich habe jeden Abend geübt.“ Heute tritt er einmal im Monat in Seniorenheimen in der Region auf. Geld nimmt er dafür nicht. Schulen haben ihn auch schon gefragt, aber er bleibt lieber bei den älteren Menschen. Am meisten freut sich das Publikum, wenn jemand nach vorne kommen und bei einem Trick helfen darf. „Dann lachen alle, auch die Leute, die sonst sehr still sind“, sagt Weninger. Seine größte Show hatte er vor 500 Menschen in der Stadthalle. „Da war ich sehr nervös.“ Auf der Bühne ist er nie allein. Seine Frau Gertrude ist seine Assistentin. Sie gibt ihm die Tücher und den Zauberstab. Eintrittskarten muss sie nicht verkaufen, denn die Shows sind gratis. Und was plant er für die Zukunft? Weninger möchte ein Buch schreiben, mit einfachen Tricks für Kinder. „Dann können auch meine Enkel zaubern“, sagt er und lacht.",
+              "hit": "Weninger möchte ein Buch schreiben, mit einfachen Tricks für Kinder."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

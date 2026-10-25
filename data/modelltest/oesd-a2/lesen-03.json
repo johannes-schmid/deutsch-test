@@ -1,0 +1,389 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-03-t1",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.686Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Lehrstellenmesse im Stadtsaal",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Feuerwehr sucht Freiwillige",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Gemeinde stellt neue Mitarbeiter ein",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Wer muss Schnee räumen?",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Streusalz wird knapp",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Technik-Tag nur für Mädchen",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Eislaufplatz öffnet früher",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Rauchmelder bald Pflicht",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Sommerjobs für Jugendliche",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Polizei warnt vor falschen Anrufen",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Spittal an der Drau. Was möchtest du nach der Schule lernen? Am Samstag, dem 14. März, stellen sich im Stadtsaal 40 Firmen aus der Region vor. Sie zeigen ihre Lehrstellen, zum Beispiel für Köche, Elektriker oder Verkäuferinnen. Jugendliche können mit den Chefs sprechen und gleich ihre Bewerbung abgeben. Der Eintritt ist frei.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 2,
+                  "text": "Würzburg. In vielen Wohnungen in Würzburg gibt es noch keine Rauchmelder. Das ändert sich: Ab nächstem Jahr muss in jedem Schlafzimmer und in jedem Kinderzimmer ein Rauchmelder hängen. Die Feuerwehr erklärt: Die kleinen Geräte warnen in der Nacht, wenn es brennt. Mieter fragen am besten ihren Vermieter. Ein Rauchmelder kostet ab 10 Euro.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Chur. Es hat geschneit, und viele Wege sind glatt. Die Stadt erinnert: Hausbesitzer müssen den Schnee auf dem Trottoir vor dem Haus selbst wegräumen, und zwar bis 7 Uhr am Morgen. Wer das nicht macht, muss eine Strafe von bis zu CHF 200.– bezahlen. Salz für die Strassen hat die Stadt genug.",
+                  "origin": "aus einer Schweizer Zeitung"
+                },
+                {
+                  "n": 4,
+                  "text": "Kufstein. Die Feuerwehr braucht Hilfe. Viele Mitglieder sind älter, und es kommen zu wenige junge Leute nach. Neue Mitglieder helfen in ihrer Freizeit und bekommen kein Geld, aber eine gute Ausbildung. Am Freitag, dem 20. Februar, gibt es um 19 Uhr einen Infoabend im Feuerwehrhaus. Dort zeigen die Feuerwehrleute, wie man einen Rauchmelder aufhängt.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Bielefeld. Du bist mindestens 15 Jahre alt und möchtest in den Ferien Geld verdienen? Die Stadt bietet in diesem Sommer 50 Jobs für Schülerinnen und Schüler an. Man arbeitet höchstens vier Stunden am Tag. Das ist keine Ausbildung, aber man sammelt erste Erfahrungen. Anmeldung im Internet unter www.ferienjobs-bielefeld.de. Diese Jobs gibt es:",
+                  "origin": "aus einer deutschen Zeitung",
+                  "table": [
+                    [
+                      "Job",
+                      "Zeitraum",
+                      "Lohn pro Stunde"
+                    ],
+                    [
+                      "Büro im Rathaus",
+                      "Juli",
+                      "12 €"
+                    ],
+                    [
+                      "Lager der Stadtwerke",
+                      "August",
+                      "13 €"
+                    ],
+                    [
+                      "Infostand Tourismus",
+                      "Juli–August",
+                      "12,50 €"
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "A",
+            "explanation": "Im Stadtsaal zeigen 40 Firmen ihre Lehrstellen, das ist eine Lehrstellenmesse. Sommerjobs oder einen Tag nur für Mädchen gibt es hier nicht.",
+            "evidence": {
+              "text": "Spittal an der Drau. Was möchtest du nach der Schule lernen? Am Samstag, dem 14. März, stellen sich im Stadtsaal 40 Firmen aus der Region vor. Sie zeigen ihre Lehrstellen, zum Beispiel für Köche, Elektriker oder Verkäuferinnen. Jugendliche können mit den Chefs sprechen und gleich ihre Bewerbung abgeben. Der Eintritt ist frei.",
+              "hit": "Am Samstag, dem 14. März, stellen sich im Stadtsaal 40 Firmen aus der Region vor."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "H",
+            "explanation": "Ab nächstem Jahr muss in jedem Schlafzimmer ein Rauchmelder hängen. Die Feuerwehr erklärt nur, sie sucht keine neuen Leute.",
+            "evidence": {
+              "text": "Würzburg. In vielen Wohnungen in Würzburg gibt es noch keine Rauchmelder. Das ändert sich: Ab nächstem Jahr muss in jedem Schlafzimmer und in jedem Kinderzimmer ein Rauchmelder hängen. Die Feuerwehr erklärt: Die kleinen Geräte warnen in der Nacht, wenn es brennt. Mieter fragen am besten ihren Vermieter. Ein Rauchmelder kostet ab 10 Euro.",
+              "hit": "Ab nächstem Jahr muss in jedem Schlafzimmer und in jedem Kinderzimmer ein Rauchmelder hängen."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "D",
+            "explanation": "Die Hausbesitzer müssen den Schnee vor dem Haus wegräumen. Salz gibt es genug, also passt „Streusalz wird knapp“ nicht.",
+            "evidence": {
+              "text": "Chur. Es hat geschneit, und viele Wege sind glatt. Die Stadt erinnert: Hausbesitzer müssen den Schnee auf dem Trottoir vor dem Haus selbst wegräumen, und zwar bis 7 Uhr am Morgen. Wer das nicht macht, muss eine Strafe von bis zu CHF 200.– bezahlen. Salz für die Strassen hat die Stadt genug.",
+              "hit": "Hausbesitzer müssen den Schnee auf dem Trottoir vor dem Haus selbst wegräumen, und zwar bis 7 Uhr am Morgen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "B",
+            "explanation": "Die Feuerwehr braucht neue Mitglieder, die in ihrer Freizeit ohne Geld helfen. Rauchmelder sind hier nur ein Nebenthema.",
+            "evidence": {
+              "text": "Kufstein. Die Feuerwehr braucht Hilfe. Viele Mitglieder sind älter, und es kommen zu wenige junge Leute nach. Neue Mitglieder helfen in ihrer Freizeit und bekommen kein Geld, aber eine gute Ausbildung. Am Freitag, dem 20. Februar, gibt es um 19 Uhr einen Infoabend im Feuerwehrhaus. Dort zeigen die Feuerwehrleute, wie man einen Rauchmelder aufhängt.",
+              "hit": "Neue Mitglieder helfen in ihrer Freizeit und bekommen kein Geld, aber eine gute Ausbildung."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "I",
+            "explanation": "Die Stadt hat Ferienjobs für Schülerinnen und Schüler ab 15. Es ist keine Ausbildung, also passt die Lehrstellenmesse nicht.",
+            "evidence": {
+              "text": "Bielefeld. Du bist mindestens 15 Jahre alt und möchtest in den Ferien Geld verdienen? Die Stadt bietet in diesem Sommer 50 Jobs für Schülerinnen und Schüler an. Man arbeitet höchstens vier Stunden am Tag. Das ist keine Ausbildung, aber man sammelt erste Erfahrungen. Anmeldung im Internet unter www.ferienjobs-bielefeld.de. Diese Jobs gibt es:",
+              "hit": "Die Stadt bietet in diesem Sommer 50 Jobs für Schülerinnen und Schüler an."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-03-t2",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.686Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Oberkärntner Wochenblatt",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Die Puppenspielerin von Gmünd",
+            "Anna Moser ist 66 Jahre alt und spielt seit fast 30 Jahren Puppentheater. Ihre kleine Bühne steht in Gmünd in Kärnten, einer alten Stadt mit vielen Künstlern.",
+            "Angefangen hat alles, als ihre eigenen Kinder klein waren. „In Gmünd gab es damals kein Programm für Kinder, kein Kino, kein Theater“, erzählt sie. „Also habe ich selbst etwas gemacht.“ Gelernt hat sie das Puppenspiel nie, sie war früher Verkäuferin in einer Bäckerei.",
+            "Alle Puppen macht Anna Moser selbst. Die Köpfe schnitzt sie aus Holz, die Kleider näht sie aus alten Stoffen. Kaufen will sie keine Puppen. Am liebsten hat sie ihren Kasperl. Er ist schon so alt wie das Theater.",
+            "Gespielt wird jeden Sonntag am Nachmittag, in einem früheren Geschäft am Hauptplatz. Dort gibt es 40 Plätze, und oft sind alle besetzt. Im Sommer spielt sie manchmal auch im Park.",
+            "Seit einem Jahr hilft ihr Enkel Jakob. Der 16-Jährige schreibt neue Geschichten für die Stücke. Das Licht macht er nicht, das macht seine Mutter.",
+            "Und die Zukunft? Anna Moser möchte einen kleinen Bus kaufen. „Dann fahre ich mit meinen Puppen in die Kindergärten in der Region“, sagt sie. „Nicht alle Kinder können nach Gmünd kommen.“"
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Anna Moser spielt Puppentheater …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit ihrer Zeit in der Bäckerei."
+                },
+                {
+                  "key": "b",
+                  "label": "erst seit einem Jahr."
+                },
+                {
+                  "key": "c",
+                  "label": "schon etwa 30 Jahre lang."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie hat mit dem Theater angefangen, weil …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sie das Puppenspiel gelernt hatte."
+                },
+                {
+                  "key": "b",
+                  "label": "es in Gmünd nichts für Kinder gab."
+                },
+                {
+                  "key": "c",
+                  "label": "ihre Kinder ins Kino gehen wollten."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Die Puppen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kauft sie in einem Geschäft."
+                },
+                {
+                  "key": "b",
+                  "label": "baut sie alle mit eigenen Händen."
+                },
+                {
+                  "key": "c",
+                  "label": "macht ihr Enkel aus Holz."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Die Vorstellungen sind …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sonntags in einem ehemaligen Laden."
+                },
+                {
+                  "key": "b",
+                  "label": "jeden Sonntag im Park."
+                },
+                {
+                  "key": "c",
+                  "label": "samstags in einem Kindergarten."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Jakob …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "macht das Licht für die Stücke."
+                },
+                {
+                  "key": "b",
+                  "label": "erfindet neue Geschichten für das Theater."
+                },
+                {
+                  "key": "c",
+                  "label": "spielt jeden Sonntag mit den Puppen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Anna Moser möchte in Zukunft …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "mehr Plätze im Theater haben."
+                },
+                {
+                  "key": "b",
+                  "label": "nur noch im Park spielen."
+                },
+                {
+                  "key": "c",
+                  "label": "mit einem Bus Kindergärten besuchen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Damals gab es in Gmünd kein Programm für Kinder, darum hat sie selbst etwas gemacht. Gelernt hat sie das Puppenspiel nie.",
+            "evidence": {
+              "text": "Die Puppenspielerin von Gmünd Anna Moser ist 66 Jahre alt und spielt seit fast 30 Jahren Puppentheater. Ihre kleine Bühne steht in Gmünd in Kärnten, einer alten Stadt mit vielen Künstlern. Angefangen hat alles, als ihre eigenen Kinder klein waren. „In Gmünd gab es damals kein Programm für Kinder, kein Kino, kein Theater“, erzählt sie. „Also habe ich selbst etwas gemacht.“ Gelernt hat sie das Puppenspiel nie, sie war früher Verkäuferin in einer Bäckerei. Alle Puppen macht Anna Moser selbst. Die Köpfe schnitzt sie aus Holz, die Kleider näht sie aus alten Stoffen. Kaufen will sie keine Puppen. Am liebsten hat sie ihren Kasperl. Er ist schon so alt wie das Theater. Gespielt wird jeden Sonntag am Nachmittag, in einem früheren Geschäft am Hauptplatz. Dort gibt es 40 Plätze, und oft sind alle besetzt. Im Sommer spielt sie manchmal auch im Park. Seit einem Jahr hilft ihr Enkel Jakob. Der 16-Jährige schreibt neue Geschichten für die Stücke. Das Licht macht er nicht, das macht seine Mutter. Und die Zukunft? Anna Moser möchte einen kleinen Bus kaufen. „Dann fahre ich mit meinen Puppen in die Kindergärten in der Region“, sagt sie. „Nicht alle Kinder können nach Gmünd kommen.“",
+              "hit": "„In Gmünd gab es damals kein Programm für Kinder, kein Kino, kein Theater“, erzählt sie."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Anna Moser macht alle Puppen selbst aus Holz und alten Stoffen. Kaufen will sie keine, und Jakob schreibt nur Geschichten.",
+            "evidence": {
+              "text": "Die Puppenspielerin von Gmünd Anna Moser ist 66 Jahre alt und spielt seit fast 30 Jahren Puppentheater. Ihre kleine Bühne steht in Gmünd in Kärnten, einer alten Stadt mit vielen Künstlern. Angefangen hat alles, als ihre eigenen Kinder klein waren. „In Gmünd gab es damals kein Programm für Kinder, kein Kino, kein Theater“, erzählt sie. „Also habe ich selbst etwas gemacht.“ Gelernt hat sie das Puppenspiel nie, sie war früher Verkäuferin in einer Bäckerei. Alle Puppen macht Anna Moser selbst. Die Köpfe schnitzt sie aus Holz, die Kleider näht sie aus alten Stoffen. Kaufen will sie keine Puppen. Am liebsten hat sie ihren Kasperl. Er ist schon so alt wie das Theater. Gespielt wird jeden Sonntag am Nachmittag, in einem früheren Geschäft am Hauptplatz. Dort gibt es 40 Plätze, und oft sind alle besetzt. Im Sommer spielt sie manchmal auch im Park. Seit einem Jahr hilft ihr Enkel Jakob. Der 16-Jährige schreibt neue Geschichten für die Stücke. Das Licht macht er nicht, das macht seine Mutter. Und die Zukunft? Anna Moser möchte einen kleinen Bus kaufen. „Dann fahre ich mit meinen Puppen in die Kindergärten in der Region“, sagt sie. „Nicht alle Kinder können nach Gmünd kommen.“",
+              "hit": "Alle Puppen macht Anna Moser selbst."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Sie spielt jeden Sonntagnachmittag in einem früheren Geschäft. Im Park spielt sie nur manchmal im Sommer.",
+            "evidence": {
+              "text": "Die Puppenspielerin von Gmünd Anna Moser ist 66 Jahre alt und spielt seit fast 30 Jahren Puppentheater. Ihre kleine Bühne steht in Gmünd in Kärnten, einer alten Stadt mit vielen Künstlern. Angefangen hat alles, als ihre eigenen Kinder klein waren. „In Gmünd gab es damals kein Programm für Kinder, kein Kino, kein Theater“, erzählt sie. „Also habe ich selbst etwas gemacht.“ Gelernt hat sie das Puppenspiel nie, sie war früher Verkäuferin in einer Bäckerei. Alle Puppen macht Anna Moser selbst. Die Köpfe schnitzt sie aus Holz, die Kleider näht sie aus alten Stoffen. Kaufen will sie keine Puppen. Am liebsten hat sie ihren Kasperl. Er ist schon so alt wie das Theater. Gespielt wird jeden Sonntag am Nachmittag, in einem früheren Geschäft am Hauptplatz. Dort gibt es 40 Plätze, und oft sind alle besetzt. Im Sommer spielt sie manchmal auch im Park. Seit einem Jahr hilft ihr Enkel Jakob. Der 16-Jährige schreibt neue Geschichten für die Stücke. Das Licht macht er nicht, das macht seine Mutter. Und die Zukunft? Anna Moser möchte einen kleinen Bus kaufen. „Dann fahre ich mit meinen Puppen in die Kindergärten in der Region“, sagt sie. „Nicht alle Kinder können nach Gmünd kommen.“",
+              "hit": "Gespielt wird jeden Sonntag am Nachmittag, in einem früheren Geschäft am Hauptplatz."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Jakob schreibt neue Geschichten für die Stücke. Das Licht macht nicht er, sondern seine Mutter.",
+            "evidence": {
+              "text": "Die Puppenspielerin von Gmünd Anna Moser ist 66 Jahre alt und spielt seit fast 30 Jahren Puppentheater. Ihre kleine Bühne steht in Gmünd in Kärnten, einer alten Stadt mit vielen Künstlern. Angefangen hat alles, als ihre eigenen Kinder klein waren. „In Gmünd gab es damals kein Programm für Kinder, kein Kino, kein Theater“, erzählt sie. „Also habe ich selbst etwas gemacht.“ Gelernt hat sie das Puppenspiel nie, sie war früher Verkäuferin in einer Bäckerei. Alle Puppen macht Anna Moser selbst. Die Köpfe schnitzt sie aus Holz, die Kleider näht sie aus alten Stoffen. Kaufen will sie keine Puppen. Am liebsten hat sie ihren Kasperl. Er ist schon so alt wie das Theater. Gespielt wird jeden Sonntag am Nachmittag, in einem früheren Geschäft am Hauptplatz. Dort gibt es 40 Plätze, und oft sind alle besetzt. Im Sommer spielt sie manchmal auch im Park. Seit einem Jahr hilft ihr Enkel Jakob. Der 16-Jährige schreibt neue Geschichten für die Stücke. Das Licht macht er nicht, das macht seine Mutter. Und die Zukunft? Anna Moser möchte einen kleinen Bus kaufen. „Dann fahre ich mit meinen Puppen in die Kindergärten in der Region“, sagt sie. „Nicht alle Kinder können nach Gmünd kommen.“",
+              "hit": "Der 16-Jährige schreibt neue Geschichten für die Stücke."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Sie möchte einen Bus kaufen und damit in die Kindergärten fahren. Von mehr Plätzen spricht sie nicht.",
+            "evidence": {
+              "text": "Die Puppenspielerin von Gmünd Anna Moser ist 66 Jahre alt und spielt seit fast 30 Jahren Puppentheater. Ihre kleine Bühne steht in Gmünd in Kärnten, einer alten Stadt mit vielen Künstlern. Angefangen hat alles, als ihre eigenen Kinder klein waren. „In Gmünd gab es damals kein Programm für Kinder, kein Kino, kein Theater“, erzählt sie. „Also habe ich selbst etwas gemacht.“ Gelernt hat sie das Puppenspiel nie, sie war früher Verkäuferin in einer Bäckerei. Alle Puppen macht Anna Moser selbst. Die Köpfe schnitzt sie aus Holz, die Kleider näht sie aus alten Stoffen. Kaufen will sie keine Puppen. Am liebsten hat sie ihren Kasperl. Er ist schon so alt wie das Theater. Gespielt wird jeden Sonntag am Nachmittag, in einem früheren Geschäft am Hauptplatz. Dort gibt es 40 Plätze, und oft sind alle besetzt. Im Sommer spielt sie manchmal auch im Park. Seit einem Jahr hilft ihr Enkel Jakob. Der 16-Jährige schreibt neue Geschichten für die Stücke. Das Licht macht er nicht, das macht seine Mutter. Und die Zukunft? Anna Moser möchte einen kleinen Bus kaufen. „Dann fahre ich mit meinen Puppen in die Kindergärten in der Region“, sagt sie. „Nicht alle Kinder können nach Gmünd kommen.“",
+              "hit": "„Dann fahre ich mit meinen Puppen in die Kindergärten in der Region“, sagt sie."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ]
+}

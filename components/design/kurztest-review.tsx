@@ -3,8 +3,8 @@
 import { useRef, useState, type ReactNode } from "react"
 import { Eye, EyeOff, Image as ImageIcon, Play, Square } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { ChoiceItem, ExamAudio, ExamButton, ExamReading, ExamStage, FeedbackSheet, GapTask, MatchTask, PictureItem, ReadingLayout, SpeakingTask, TrueFalseItem, WritingTask, fmt } from "@/components/exam"
-import type { ItemKey, KurztestBlock, KurztestItem } from "@/lib/exam/kurztest"
+import { ChoiceItem, ExamAudio, ExamButton, ExamReading, ExamStage, FeedbackSheet, GapTask, MarkBoxes, MatchTask, PictureItem, PlanningSheet, ReadingLayout, SceneChoice, SpeakingTask, TickGrid, TopicCard, TrueFalseItem, WritingTask, fmt } from "@/components/exam"
+import { itemNumbers, type ItemKey, type KurztestBlock, type KurztestItem } from "@/lib/exam/kurztest"
 import type { PartId, TrueFalse } from "@/lib/exam/types"
 import { EXAMS, EXAM_IDS, type ExamId } from "@/lib/exams"
 import { partSpec } from "@/lib/exam/blueprint"
@@ -36,7 +36,16 @@ function Item({ it, skill, label, keys, values, onChange, reveal }: { it: Kurzte
       </div>
     )
   }
-  const ns = it.type === "match" ? it.data.situations.map((s) => s.n) : it.data.parts.flatMap((p) => (typeof p === "string" ? [] : [p.n]))
+  const ns = itemNumbers([it])
+  if (it.type === "grid" || it.type === "marks") {
+    return (
+      <div className="flex flex-col gap-3">
+        {label ? <span className="text-[13px] text-v-muted">{label}</span> : null}
+        {it.type === "grid" ? <TickGrid data={it.data} value={values} onChange={onChange} review={reveal ? reviewMap(ns) : undefined} /> : <MarkBoxes data={it.data} value={values} onChange={onChange} review={reveal ? reviewMap(ns) : undefined} />}
+        {reveal ? ns.map((n) => <Feedback key={n} k={keyOf(n)} value={values[n]} />) : null}
+      </div>
+    )
+  }
   return (
     <div className="flex flex-col gap-3">
       {label ? <span className="text-[13px] text-v-muted">{label}</span> : null}
@@ -101,6 +110,23 @@ function Writing({ block, reveal }: { block: KurztestBlock; reveal: boolean }) {
   )
 }
 
+/** ÖSD Sprechen material shown before the talk: the topic card, the three photos with their roles, the planning sheet. */
+function OesdMaterial({ block }: { block: KurztestBlock }) {
+  const data = block.display.speaking!.data
+  const [topics, setTopics] = useState<string[]>([])
+  const [scene, setScene] = useState<string>()
+  const [role, setRole] = useState<string>()
+  const photos = (block as { photos?: Record<number, Record<string, { src?: string }>> }).photos?.[0]
+  const scenes = data.scenes?.map((s) => ({ ...s, image: s.image ?? photos?.[s.key]?.src }))
+  return (
+    <>
+      {data.choose ? <TopicCard data={data} picked={topics} onPick={setTopics} /> : null}
+      {scenes ? <SceneChoice scenes={scenes} value={scene} onChange={setScene} role={role} onRole={block.teil === 3 ? setRole : undefined} /> : null}
+      {data.sheet ? <PlanningSheet sheet={data.sheet} /> : null}
+    </>
+  )
+}
+
 function Speaking({ block, reveal }: { block: KurztestBlock; reveal: boolean }) {
   const sp = block.display.speaking!
   const audio = useRef<HTMLAudioElement | null>(null)
@@ -118,6 +144,7 @@ function Speaking({ block, reveal }: { block: KurztestBlock; reveal: boolean }) 
   let mine = 0
   return (
     <>
+      <OesdMaterial block={block} />
       <SpeakingTask data={sp.data} people={sp.people} turns={sp.turns} />
       <Note title="Stimmen in der Vorschau">
         <ul className="flex flex-col gap-1.5">

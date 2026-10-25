@@ -1,0 +1,195 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-09-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.133Z",
+        "textType": "Formular: Mieterselbstauskunft für eine Wohnung"
+      },
+      "display": {
+        "instruction": "Ihre Bekannte Liliana möchte eine Wohnung bei einer Wohnungsgenossenschaft mieten. Sie helfen ihr bei dem Formular. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Wohnungsgenossenschaft Talblick eG, Pforzheim – Mieterselbstauskunft\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: Liliana\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStaatsangehörigkeit: kolumbianisch\nJetzige Adresse: Ahornweg 27, 75175 Pforzheim\nBeruf: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nTelefon (mobil): ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nPersonen im Haushalt: 1\nHaustiere: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nEinzug möglich ab (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Liliana Ortega",
+          "source": "Pass und Notiz",
+          "paragraphs": [
+            "Reisepass – Name: ORTEGA · Vorname: LILIANA · Staatsangehörigkeit: KOLUMBIANISCH · Geburtsdatum: 30.07.1992 · Geburtsort: BOGOTÁ · ausgestellt am: 14.02.2021 · gültig bis: 13.02.2031",
+            "Liliana wohnt seit drei Jahren in Pforzheim, im Ahornweg 27. Sie arbeitet als Grafikdesignerin in einer kleinen Werbeagentur. Im Büro hat sie die Nummer 07231 445 802, aber die Genossenschaft soll sie lieber auf dem Handy anrufen: 0152 66193748. Ihr Bruder Mateo besucht sie oft mit seinem Hund, aber in der neuen Wohnung lebt nur Liliana mit ihrer Katze. Ihre alte Wohnung ist noch bis Ende März gemietet. Deshalb kann sie erst im April umziehen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "30.07.1992",
+            "explanation": "Das Geburtsdatum steht im Pass. Die anderen Daten sind Ausstellungsdatum und Gültigkeit des Passes.",
+            "evidence": {
+              "text": "Reisepass – Name: ORTEGA · Vorname: LILIANA · Staatsangehörigkeit: KOLUMBIANISCH · Geburtsdatum: 30.07.1992 · Geburtsort: BOGOTÁ · ausgestellt am: 14.02.2021 · gültig bis: 13.02.2031",
+              "hit": "Geburtsdatum: 30.07.1992"
+            },
+            "accept": [
+              "30.7.1992",
+              "30.07.92",
+              "30.7.92",
+              "30. Juli 1992"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "Grafikdesignerin",
+            "explanation": "Liliana arbeitet als Grafikdesignerin. Die Werbeagentur ist ihre Firma, nicht ihr Beruf.",
+            "evidence": {
+              "text": "Liliana wohnt seit drei Jahren in Pforzheim, im Ahornweg 27. Sie arbeitet als Grafikdesignerin in einer kleinen Werbeagentur. Im Büro hat sie die Nummer 07231 445 802, aber die Genossenschaft soll sie lieber auf dem Handy anrufen: 0152 66193748. Ihr Bruder Mateo besucht sie oft mit seinem Hund, aber in der neuen Wohnung lebt nur Liliana mit ihrer Katze. Ihre alte Wohnung ist noch bis Ende März gemietet. Deshalb kann sie erst im April umziehen.",
+              "hit": "Sie arbeitet als Grafikdesignerin"
+            },
+            "accept": [
+              "Grafik-Designerin",
+              "Graphikdesignerin",
+              "Grafikerin",
+              "Designerin"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "0152 66193748",
+            "explanation": "Gefragt ist die Handynummer. Die Nummer mit 07231 ist ihr Büro. Zahlen müssen genau stimmen.",
+            "evidence": {
+              "text": "Liliana wohnt seit drei Jahren in Pforzheim, im Ahornweg 27. Sie arbeitet als Grafikdesignerin in einer kleinen Werbeagentur. Im Büro hat sie die Nummer 07231 445 802, aber die Genossenschaft soll sie lieber auf dem Handy anrufen: 0152 66193748. Ihr Bruder Mateo besucht sie oft mit seinem Hund, aber in der neuen Wohnung lebt nur Liliana mit ihrer Katze. Ihre alte Wohnung ist noch bis Ende März gemietet. Deshalb kann sie erst im April umziehen.",
+              "hit": "0152 66193748"
+            },
+            "accept": [
+              "015266193748",
+              "0152-66193748",
+              "0152/66193748",
+              "0152 6619 3748",
+              "0152-6619 3748"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "Katze",
+            "explanation": "Liliana lebt mit ihrer Katze in der neuen Wohnung. Der Hund gehört ihrem Bruder Mateo.",
+            "evidence": {
+              "text": "Liliana wohnt seit drei Jahren in Pforzheim, im Ahornweg 27. Sie arbeitet als Grafikdesignerin in einer kleinen Werbeagentur. Im Büro hat sie die Nummer 07231 445 802, aber die Genossenschaft soll sie lieber auf dem Handy anrufen: 0152 66193748. Ihr Bruder Mateo besucht sie oft mit seinem Hund, aber in der neuen Wohnung lebt nur Liliana mit ihrer Katze. Ihre alte Wohnung ist noch bis Ende März gemietet. Deshalb kann sie erst im April umziehen.",
+              "hit": "lebt nur Liliana mit ihrer Katze"
+            },
+            "accept": [
+              "eine Katze",
+              "1 Katze",
+              "ja, eine Katze",
+              "ja, Katze"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "April",
+            "explanation": "Die alte Wohnung ist bis Ende März gemietet, deshalb kann Liliana im April einziehen. März ist also zu früh.",
+            "evidence": {
+              "text": "Liliana wohnt seit drei Jahren in Pforzheim, im Ahornweg 27. Sie arbeitet als Grafikdesignerin in einer kleinen Werbeagentur. Im Büro hat sie die Nummer 07231 445 802, aber die Genossenschaft soll sie lieber auf dem Handy anrufen: 0152 66193748. Ihr Bruder Mateo besucht sie oft mit seinem Hund, aber in der neuen Wohnung lebt nur Liliana mit ihrer Katze. Ihre alte Wohnung ist noch bis Ende März gemietet. Deshalb kann sie erst im April umziehen.",
+              "hit": "Deshalb kann sie erst im April umziehen."
+            },
+            "accept": [
+              "1. April",
+              "01.04.",
+              "1.4.",
+              "im April",
+              "ab April"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Ortega"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-09-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.133Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Freundin Annika hat Sie zu einem Spieleabend eingeladen. Antworten Sie Annika mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Spieleabend am Freitag",
+            "situation": "Ihre Freundin Annika macht am Freitag um 20 Uhr bei sich zu Hause einen Spieleabend. Sie hat Sie eingeladen.",
+            "points": [
+              "jemanden mitbringen",
+              "ein Spiel mitbringen",
+              "Getränke mitbringen",
+              "Wer kommt noch?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Annika,\ndanke für die Einladung, ich komme gern! Darf ich meinen Freund Tobias mitbringen? Er spielt auch sehr gern. Ich bringe ein Kartenspiel mit, das kennst du vielleicht noch nicht. Wer kommt denn noch zum Spieleabend?\nBis Freitag\nSelin"
+          }
+        ]
+      }
+    }
+  ]
+}

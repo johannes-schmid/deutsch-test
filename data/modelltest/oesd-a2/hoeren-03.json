@@ -1,0 +1,784 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-03-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.685Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Bauarbeiten bei der Bahn",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sonntag"
+                },
+                {
+                  "key": "b",
+                  "label": "ab Montag"
+                },
+                {
+                  "key": "c",
+                  "label": "teurer"
+                },
+                {
+                  "key": "d",
+                  "label": "Busse statt Züge"
+                },
+                {
+                  "key": "e",
+                  "label": "eine Woche"
+                },
+                {
+                  "key": "f",
+                  "label": "zwei Wochen"
+                },
+                {
+                  "key": "g",
+                  "label": "Fahrrad"
+                },
+                {
+                  "key": "h",
+                  "label": "20 Minuten länger"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Verkehrsmeldung im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Mostviertel",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Radio Ybbstal",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-03/oesd-a2-hoeren-03-t1.review.mp3",
+          "duration": 52.01
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Beide Sender sagen: Die Änderung beginnt am Montag. Den Sonntag nennt niemand.",
+            "evidence": {
+              "text": "Radio Mostviertel, die Verkehrsmeldungen. Auf der Bahnstrecke zwischen Amstetten und St. Valentin wird gebaut. Ab Montag fahren dort deshalb keine Züge, sondern Busse. Die Bauarbeiten dauern zwei Wochen. Fahrgäste sollen etwa zwanzig Minuten mehr Zeit einplanen, denn die Busse brauchen länger als der Zug. Die Tickets werden nicht teurer, sie gelten auch im Bus. Die Haltestellen finden Sie direkt vor den Bahnhöfen. Wir wünschen Ihnen trotzdem eine gute Fahrt.",
+              "hit": "Ab Montag fahren dort deshalb keine Züge, sondern Busse."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "d",
+            "explanation": "Auf der Strecke fahren keine Züge, man fährt mit dem Bus. Die Tickets werden aber nicht teurer.",
+            "evidence": {
+              "text": "Radio Mostviertel, die Verkehrsmeldungen. Auf der Bahnstrecke zwischen Amstetten und St. Valentin wird gebaut. Ab Montag fahren dort deshalb keine Züge, sondern Busse. Die Bauarbeiten dauern zwei Wochen. Fahrgäste sollen etwa zwanzig Minuten mehr Zeit einplanen, denn die Busse brauchen länger als der Zug. Die Tickets werden nicht teurer, sie gelten auch im Bus. Die Haltestellen finden Sie direkt vor den Bahnhöfen. Wir wünschen Ihnen trotzdem eine gute Fahrt.",
+              "hit": "keine Züge, sondern Busse"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "f",
+            "explanation": "Die Arbeiten dauern zwei Wochen, also vierzehn Tage. Von einer Woche spricht niemand.",
+            "evidence": {
+              "text": "Radio Mostviertel, die Verkehrsmeldungen. Auf der Bahnstrecke zwischen Amstetten und St. Valentin wird gebaut. Ab Montag fahren dort deshalb keine Züge, sondern Busse. Die Bauarbeiten dauern zwei Wochen. Fahrgäste sollen etwa zwanzig Minuten mehr Zeit einplanen, denn die Busse brauchen länger als der Zug. Die Tickets werden nicht teurer, sie gelten auch im Bus. Die Haltestellen finden Sie direkt vor den Bahnhöfen. Wir wünschen Ihnen trotzdem eine gute Fahrt.",
+              "hit": "Die Bauarbeiten dauern zwei Wochen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "h",
+            "explanation": "Man braucht etwa zwanzig Minuten mehr Zeit. Ein Fahrrad kommt in den Texten nicht vor.",
+            "evidence": {
+              "text": "Radio Mostviertel, die Verkehrsmeldungen. Auf der Bahnstrecke zwischen Amstetten und St. Valentin wird gebaut. Ab Montag fahren dort deshalb keine Züge, sondern Busse. Die Bauarbeiten dauern zwei Wochen. Fahrgäste sollen etwa zwanzig Minuten mehr Zeit einplanen, denn die Busse brauchen länger als der Zug. Die Tickets werden nicht teurer, sie gelten auch im Bus. Die Haltestellen finden Sie direkt vor den Bahnhöfen. Wir wünschen Ihnen trotzdem eine gute Fahrt.",
+              "hit": "Fahrgäste sollen etwa zwanzig Minuten mehr Zeit einplanen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_alexandra_at",
+            "text": "Radio Mostviertel, die Verkehrsmeldungen. Auf der Bahnstrecke zwischen Amstetten und St. Valentin wird gebaut. Ab Montag fahren dort deshalb keine Züge, sondern Busse. Die Bauarbeiten dauern zwei Wochen. Fahrgäste sollen etwa zwanzig Minuten mehr Zeit einplanen, denn die Busse brauchen länger als der Zug. Die Tickets werden nicht teurer, sie gelten auch im Bus. Die Haltestellen finden Sie direkt vor den Bahnhöfen. Wir wünschen Ihnen trotzdem eine gute Fahrt.",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_martin_at",
+            "text": "Hallo, hier ist Radio Ybbstal! Und jetzt, liebe Leute, was für alle, die mit dem Zug pendeln! Zwischen St. Valentin und Amstetten wird an den Schienen gearbeitet, und zwar vierzehn Tage lang. Das heißt: Ihr steigt in einen Bus um, Züge gibt's dort keine. Los geht's schon am Montag. Plant ein bisschen mehr Zeit ein, so ungefähr zwanzig Minuten. Die gute Nachricht: Euer Ticket kostet gleich viel wie immer. Also, nicht ärgern!",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-03-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.685Z",
+        "textType": "Sprachnachricht von einem Freund"
+      },
+      "display": {
+        "instruction": "Situation: Ein Freund hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Tanzkurs\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nBeginn um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nKosten: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nStefans Telefon: 0699 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von Stefan",
+          "speakers": {
+            "stefan": {
+              "name": "Stefan",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-03/oesd-a2-hoeren-03-t2.mp3",
+          "duration": 40.07
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Dienstag",
+            "accept": [
+              "am Dienstag",
+              "Di.",
+              "Di"
+            ],
+            "explanation": "Der Kurs für Erwachsene ist am Dienstag. Am Montag ist nur ein Kurs für Jugendliche.",
+            "evidence": {
+              "text": "Grüß dich, Stefan hier! Du, äh, du weißt ja, meine Firma hat im Jänner einen Ball. Tja, und ich kann nicht Walzer tanzen. Darum möchte ich mit dir einen Kurs machen, in der Tanzschule Leitner in Baden. Am Montag ist dort nur ein Kurs für Jugendliche, aber am Dienstag gibt es einen für Erwachsene. Der fängt um Viertel vor acht an. Er kostet, äh, fünfundvierzig Euro für sechs Abende. In einer anderen Tanzschule zahlt man achtzig Euro pro Paar, das ist mir zu viel. Getränke gibt's dort, aber bring bitte Schuhe mit einer glatten Sohle mit. Ruf mich an, ja? Null sechs neun neun, eins vier sechs, null neun, drei acht. Noch einmal: eins vier sechs, null neun, drei acht. Servus!",
+              "hit": "aber am Dienstag gibt es einen für Erwachsene"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "19.45",
+            "accept": [
+              "19:45",
+              "7.45",
+              "7:45",
+              "19.45 Uhr",
+              "19 Uhr 45",
+              "7 Uhr 45",
+              "Viertel vor acht"
+            ],
+            "explanation": "Der Kurs beginnt um Viertel vor acht am Abend, also um 19.45 Uhr. Du kannst auch 7.45 schreiben.",
+            "evidence": {
+              "text": "Grüß dich, Stefan hier! Du, äh, du weißt ja, meine Firma hat im Jänner einen Ball. Tja, und ich kann nicht Walzer tanzen. Darum möchte ich mit dir einen Kurs machen, in der Tanzschule Leitner in Baden. Am Montag ist dort nur ein Kurs für Jugendliche, aber am Dienstag gibt es einen für Erwachsene. Der fängt um Viertel vor acht an. Er kostet, äh, fünfundvierzig Euro für sechs Abende. In einer anderen Tanzschule zahlt man achtzig Euro pro Paar, das ist mir zu viel. Getränke gibt's dort, aber bring bitte Schuhe mit einer glatten Sohle mit. Ruf mich an, ja? Null sechs neun neun, eins vier sechs, null neun, drei acht. Noch einmal: eins vier sechs, null neun, drei acht. Servus!",
+              "hit": "Der fängt um Viertel vor acht an."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "45",
+            "accept": [
+              "45 Euro",
+              "fünfundvierzig"
+            ],
+            "explanation": "Der Kurs kostet 45 Euro für sechs Abende. 80 Euro zahlt man in einer anderen Tanzschule.",
+            "evidence": {
+              "text": "Grüß dich, Stefan hier! Du, äh, du weißt ja, meine Firma hat im Jänner einen Ball. Tja, und ich kann nicht Walzer tanzen. Darum möchte ich mit dir einen Kurs machen, in der Tanzschule Leitner in Baden. Am Montag ist dort nur ein Kurs für Jugendliche, aber am Dienstag gibt es einen für Erwachsene. Der fängt um Viertel vor acht an. Er kostet, äh, fünfundvierzig Euro für sechs Abende. In einer anderen Tanzschule zahlt man achtzig Euro pro Paar, das ist mir zu viel. Getränke gibt's dort, aber bring bitte Schuhe mit einer glatten Sohle mit. Ruf mich an, ja? Null sechs neun neun, eins vier sechs, null neun, drei acht. Noch einmal: eins vier sechs, null neun, drei acht. Servus!",
+              "hit": "Er kostet, äh, fünfundvierzig Euro für sechs Abende."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Schuhe mit glatter Sohle",
+            "accept": [
+              "Schuhe",
+              "Tanzschuhe",
+              "Schuhe mit glatten Sohlen",
+              "Schuhe mit einer glatten Sohle"
+            ],
+            "explanation": "Du sollst Schuhe mit einer glatten Sohle mitbringen. Getränke gibt es in der Tanzschule.",
+            "evidence": {
+              "text": "Grüß dich, Stefan hier! Du, äh, du weißt ja, meine Firma hat im Jänner einen Ball. Tja, und ich kann nicht Walzer tanzen. Darum möchte ich mit dir einen Kurs machen, in der Tanzschule Leitner in Baden. Am Montag ist dort nur ein Kurs für Jugendliche, aber am Dienstag gibt es einen für Erwachsene. Der fängt um Viertel vor acht an. Er kostet, äh, fünfundvierzig Euro für sechs Abende. In einer anderen Tanzschule zahlt man achtzig Euro pro Paar, das ist mir zu viel. Getränke gibt's dort, aber bring bitte Schuhe mit einer glatten Sohle mit. Ruf mich an, ja? Null sechs neun neun, eins vier sechs, null neun, drei acht. Noch einmal: eins vier sechs, null neun, drei acht. Servus!",
+              "hit": "aber bring bitte Schuhe mit einer glatten Sohle mit"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "1460938",
+            "accept": [
+              "146 09 38",
+              "146 0938",
+              "1460 938"
+            ],
+            "exact": true,
+            "explanation": "Stefan sagt die Nummer zweimal: eins vier sechs, null neun, drei acht. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Grüß dich, Stefan hier! Du, äh, du weißt ja, meine Firma hat im Jänner einen Ball. Tja, und ich kann nicht Walzer tanzen. Darum möchte ich mit dir einen Kurs machen, in der Tanzschule Leitner in Baden. Am Montag ist dort nur ein Kurs für Jugendliche, aber am Dienstag gibt es einen für Erwachsene. Der fängt um Viertel vor acht an. Er kostet, äh, fünfundvierzig Euro für sechs Abende. In einer anderen Tanzschule zahlt man achtzig Euro pro Paar, das ist mir zu viel. Getränke gibt's dort, aber bring bitte Schuhe mit einer glatten Sohle mit. Ruf mich an, ja? Null sechs neun neun, eins vier sechs, null neun, drei acht. Noch einmal: eins vier sechs, null neun, drei acht. Servus!",
+              "hit": "eins vier sechs, null neun, drei acht"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "stefan",
+            "voice": "man_gruber_at",
+            "text": "Grüß dich, Stefan hier! Du, äh, du weißt ja, meine Firma hat im Jänner einen Ball. Tja, und ich kann nicht Walzer tanzen. Darum möchte ich mit dir einen Kurs machen, in der Tanzschule Leitner in Baden. Am Montag ist dort nur ein Kurs für Jugendliche, aber am Dienstag gibt es einen für Erwachsene. Der fängt um Viertel vor acht an. Er kostet, äh, fünfundvierzig Euro für sechs Abende. In einer anderen Tanzschule zahlt man achtzig Euro pro Paar, das ist mir zu viel. Getränke gibt's dort, aber bring bitte Schuhe mit einer glatten Sohle mit. Ruf mich an, ja? Null sechs neun neun, eins vier sechs, null neun, drei acht. Noch einmal: eins vier sechs, null neun, drei acht. Servus!",
+            "delivery": "[casual, friendly, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-03-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.685Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, wie sie im Alltag bezahlen. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Wie bezahlen Sie im Alltag meistens?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "bar"
+                },
+                {
+                  "key": "b",
+                  "label": "mit Bankkarte"
+                },
+                {
+                  "key": "c",
+                  "label": "mit Kreditkarte"
+                },
+                {
+                  "key": "d",
+                  "label": "mit dem Handy"
+                },
+                {
+                  "key": "e",
+                  "label": "per Überweisung"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-03/oesd-a2-hoeren-03-t3.review.mp3",
+          "duration": 95.11
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "d",
+            "explanation": "Sie bezahlt alles mit dem Handy. Bargeld hat sie fast nie dabei.",
+            "evidence": {
+              "text": "Na ja, ich arbeite in einem Büro in Dresden, und ich bezahle eigentlich alles mit dem Handy. Das geht schnell, ich halte es einfach an die Kasse, fertig. Bargeld habe ich fast nie dabei, äh, mein Portemonnaie bleibt meistens zu Hause.",
+              "hit": "ich bezahle eigentlich alles mit dem Handy"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "a,b",
+            "explanation": "Er zahlt oft bar und größere Einkäufe mit der Bankkarte. Eine Kreditkarte hat er nicht.",
+            "evidence": {
+              "text": "Ich verkaufe Blumen am Markt, und da zahlen die meisten Leute bar. Darum zahle ich selber auch oft bar, das Geld habe ich ja in der Tasche. Größere Einkäufe zahle ich mit der Bankkarte. Eine Kreditkarte habe ich gar nicht, äh, die brauche ich nicht.",
+              "hit": "Größere Einkäufe zahle ich mit der Bankkarte."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c,e",
+            "explanation": "Hotel und Internet zahlt sie mit der Kreditkarte, Rechnungen überweist sie. Mit dem Handy zahlt sie nie.",
+            "evidence": {
+              "text": "Ich bin beruflich viel unterwegs. Im Hotel bezahle ich immer mit der Kreditkarte, und wenn ich im Internet etwas bestelle, auch. Rechnungen, zum Beispiel für den Strom, überweise ich am Computer, das mache ich einmal im Monat. Mit dem Handy zahlen? Nein, das mache ich nie, das ist mir nicht sicher genug.",
+              "hit": "überweise ich am Computer"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a,c,e",
+            "explanation": "Er zahlt bar, überweist die Miete und nimmt im Urlaub die Kreditkarte. Mit dem Handy zahlt er nie.",
+            "evidence": {
+              "text": "Ich bin Pensionist, und in der Apotheke oder beim Friseur zahle ich bar, wie immer. Die Miete überweise ich jeden Monat von meinem Konto. Und im Urlaub, äh, in Italien zum Beispiel, nehme ich die Kreditkarte, das ist praktisch. Mit dem Handy? Nie. Das kann mein Enkel, aber ich nicht.",
+              "hit": "Die Miete überweise ich jeden Monat von meinem Konto."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b,d",
+            "explanation": "Sie zahlt meistens mit dem Handy und sonst mit der Bankkarte. Bargeld hat sie keines mehr.",
+            "evidence": {
+              "text": "Ich studiere in St. Gallen. In der Mensa und im Laden zahle ich meistens mit dem Handy, das geht am schnellsten. Wenn der Akku leer ist, nehme ich die Bankkarte. Bargeld habe ich eigentlich keines mehr, äh, meine letzten Franken liegen seit Wochen in einer Schublade.",
+              "hit": "Wenn der Akku leer ist, nehme ich die Bankkarte."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Wir machen heute eine kurze Umfrage für das Radio. Wie bezahlen Sie im Alltag meistens?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_laura",
+            "text": "Na ja, ich arbeite in einem Büro in Dresden, und ich bezahle eigentlich alles mit dem Handy. Das geht schnell, ich halte es einfach an die Kasse, fertig. Bargeld habe ich fast nie dabei, äh, mein Portemonnaie bleibt meistens zu Hause.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Ich verkaufe Blumen am Markt, und da zahlen die meisten Leute bar. Darum zahle ich selber auch oft bar, das Geld habe ich ja in der Tasche. Größere Einkäufe zahle ich mit der Bankkarte. Eine Kreditkarte habe ich gar nicht, äh, die brauche ich nicht.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_alexandra_at",
+            "text": "Ich bin beruflich viel unterwegs. Im Hotel bezahle ich immer mit der Kreditkarte, und wenn ich im Internet etwas bestelle, auch. Rechnungen, zum Beispiel für den Strom, überweise ich am Computer, das mache ich einmal im Monat. Mit dem Handy zahlen? Nein, das mache ich nie, das ist mir nicht sicher genug.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich bin Pensionist, und in der Apotheke oder beim Friseur zahle ich bar, wie immer. Die Miete überweise ich jeden Monat von meinem Konto. Und im Urlaub, äh, in Italien zum Beispiel, nehme ich die Kreditkarte, das ist praktisch. Mit dem Handy? Nie. Das kann mein Enkel, aber ich nicht.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_heidi_ch",
+            "text": "Ich studiere in St. Gallen. In der Mensa und im Laden zahle ich meistens mit dem Handy, das geht am schnellsten. Wenn der Akku leer ist, nehme ich die Bankkarte. Bargeld habe ich eigentlich keines mehr, äh, meine letzten Franken liegen seit Wochen in einer Schublade.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-03/track.mp3",
+    "duration": 568.24,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.4,
+        "to": 15.44
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.44,
+        "to": 45.48
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.48,
+        "to": 58.64
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.81,
+        "to": 92.58
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 96.86,
+        "to": 122.62
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 131.79,
+        "to": 137.8
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 137.8,
+        "to": 167.84
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 167.84,
+        "to": 179.04
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 186.51,
+        "to": 226.59
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 232.54,
+        "to": 235.76
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 243.23,
+        "to": 283.3
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 289.25,
+        "to": 293.8
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 293.8,
+        "to": 313.84
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 319.35,
+        "to": 325.36
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 325.36,
+        "to": 355.4
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 355.4,
+        "to": 371.41
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 376.92,
+        "to": 382.56
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 384.1,
+        "to": 398.55
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 402.6,
+        "to": 418.43
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 422.48,
+        "to": 440.69
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 444.73,
+        "to": 462.24
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 466.29,
+        "to": 482.46
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 492.02,
+        "to": 496.51
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 496.51,
+        "to": 556.54
+      }
+    ]
+  }
+}

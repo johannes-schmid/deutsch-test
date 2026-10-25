@@ -1,0 +1,740 @@
+{
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "goethe-a2-lesen-01-t1-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Zeitungsartikel: Lokales"
+      },
+      "display": {
+        "instruction": "Sie lesen diesen Text in der Zeitung. Wählen Sie für die Aufgaben 1–5 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die Idee für den Garten auf dem Dach hatte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Rentner aus dem Viertel."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Lehrerin."
+                },
+                {
+                  "key": "c",
+                  "label": "die Leiterin vom Supermarkt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Auf dem Dach wollte Frau Albers zuerst …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Solarzellen haben."
+                },
+                {
+                  "key": "b",
+                  "label": "ein Café eröffnen."
+                },
+                {
+                  "key": "c",
+                  "label": "Hochbeete aufstellen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Die Nachbarn …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bezahlen jeden Monat für ihr Beet."
+                },
+                {
+                  "key": "b",
+                  "label": "müssen für das Wasser nichts bezahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "kaufen ihre Pflanzen im Supermarkt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Herr Demir kommt gern auf das Dach, weil er …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dort sein Gemüse verkaufen kann."
+                },
+                {
+                  "key": "b",
+                  "label": "zu Hause keinen Garten hat."
+                },
+                {
+                  "key": "c",
+                  "label": "im Supermarkt arbeitet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Die Schulkinder …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kommen jeden Tag auf das Dach."
+                },
+                {
+                  "key": "b",
+                  "label": "gießen die Pflanzen in den Sommerferien."
+                },
+                {
+                  "key": "c",
+                  "label": "lernen, wie Gemüse wächst."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Das Gemüse vom Dach …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kann man im Supermarkt kaufen."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommen die Gärtner und die Tafel."
+                },
+                {
+                  "key": "c",
+                  "label": "gibt es bald im Café."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Gemüse vom Supermarktdach",
+            "In Gifhorn wachsen Tomaten, Salat und Kräuter an einem ungewöhnlichen Ort: auf dem Dach eines Supermarkts. Vor zwei Jahren hatte Marktleiterin Katrin Albers die Idee. „Das Dach war groß und leer. Zuerst wollte ich dort Solarzellen haben, aber das war zu teuer“, erzählt sie.",
+            "Heute stehen dort oben 40 Hochbeete. Um die Pflanzen kümmern sich etwa 25 Nachbarn aus dem Viertel. Jeder bekommt ein eigenes Beet und muss nichts dafür bezahlen. Auch das Wasser bezahlt der Supermarkt. Der Rentner Yusuf Demir ist fast jeden Morgen da. „Ich habe keinen Garten, nur einen kleinen Balkon. Hier oben treffe ich nette Leute und bin an der frischen Luft“, sagt er.",
+            "Zwei Beete gehören der Klasse 6b der Wilhelm-Busch-Schule. Jeden Donnerstag kommen die Kinder mit ihrer Lehrerin auf das Dach. Sie lernen, wie Kartoffeln und Bohnen wachsen und wann man sie ernten kann. In den Sommerferien gießen die Nachbarn die Pflanzen der Schüler.",
+            "Verkauft wird das Gemüse vom Dach nicht. Die Gärtner nehmen es mit nach Hause, und was übrig bleibt, bekommt die Tafel in der Stadt. Im nächsten Frühling möchte Frau Albers auf dem Dach ein kleines Café eröffnen. Wer im Garten mitmachen möchte, kann sich an der Kasse in eine Liste eintragen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Frau Albers wollte zuerst Solarzellen, aber sie waren zu teuer. Ein Café plant sie erst für den nächsten Frühling.",
+            "evidence": {
+              "text": "In Gifhorn wachsen Tomaten, Salat und Kräuter an einem ungewöhnlichen Ort: auf dem Dach eines Supermarkts. Vor zwei Jahren hatte Marktleiterin Katrin Albers die Idee. „Das Dach war groß und leer. Zuerst wollte ich dort Solarzellen haben, aber das war zu teuer“, erzählt sie.",
+              "hit": "Zuerst wollte ich dort Solarzellen haben"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Die Beete kosten nichts, und das Wasser bezahlt der Supermarkt. Von Pflanzen aus dem Supermarkt steht nichts im Text.",
+            "evidence": {
+              "text": "Heute stehen dort oben 40 Hochbeete. Um die Pflanzen kümmern sich etwa 25 Nachbarn aus dem Viertel. Jeder bekommt ein eigenes Beet und muss nichts dafür bezahlen. Auch das Wasser bezahlt der Supermarkt. Der Rentner Yusuf Demir ist fast jeden Morgen da. „Ich habe keinen Garten, nur einen kleinen Balkon. Hier oben treffe ich nette Leute und bin an der frischen Luft“, sagt er.",
+              "hit": "Auch das Wasser bezahlt der Supermarkt."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "b",
+            "explanation": "Herr Demir hat nur einen kleinen Balkon und keinen Garten. Er ist Rentner und verkauft nichts, denn das Gemüse wird nicht verkauft.",
+            "evidence": {
+              "text": "Heute stehen dort oben 40 Hochbeete. Um die Pflanzen kümmern sich etwa 25 Nachbarn aus dem Viertel. Jeder bekommt ein eigenes Beet und muss nichts dafür bezahlen. Auch das Wasser bezahlt der Supermarkt. Der Rentner Yusuf Demir ist fast jeden Morgen da. „Ich habe keinen Garten, nur einen kleinen Balkon. Hier oben treffe ich nette Leute und bin an der frischen Luft“, sagt er.",
+              "hit": "Ich habe keinen Garten, nur einen kleinen Balkon."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Die Kinder lernen, wie Kartoffeln und Bohnen wachsen. Sie kommen nur donnerstags, und in den Ferien gießen die Nachbarn.",
+            "evidence": {
+              "text": "Zwei Beete gehören der Klasse 6b der Wilhelm-Busch-Schule. Jeden Donnerstag kommen die Kinder mit ihrer Lehrerin auf das Dach. Sie lernen, wie Kartoffeln und Bohnen wachsen und wann man sie ernten kann. In den Sommerferien gießen die Nachbarn die Pflanzen der Schüler.",
+              "hit": "Sie lernen, wie Kartoffeln und Bohnen wachsen"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "b",
+            "explanation": "Die Gärtner nehmen das Gemüse mit, den Rest bekommt die Tafel. Im Supermarkt wird es nicht verkauft, und das Café gibt es noch nicht.",
+            "evidence": {
+              "text": "Verkauft wird das Gemüse vom Dach nicht. Die Gärtner nehmen es mit nach Hause, und was übrig bleibt, bekommt die Tafel in der Stadt. Im nächsten Frühling möchte Frau Albers auf dem Dach ein kleines Café eröffnen. Wer im Garten mitmachen möchte, kann sich an der Kasse in eine Liste eintragen.",
+              "hit": "Die Gärtner nehmen es mit nach Hause, und was übrig bleibt, bekommt die Tafel in der Stadt."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-01-t2-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Messeprogramm: Bau- und Wohnmesse"
+      },
+      "display": {
+        "instruction": "Sie sind auf der Messe „Bauen & Wohnen“. Lesen Sie die Aufgaben 6–10 und das Programm. In welche Halle gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten auf Ihrem Balkon Basilikum und Petersilie pflanzen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 2"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 5"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihre Heizung kostet sehr viel Geld. Sie wohnen zur Miete und möchten wissen, was Sie tun können.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 1"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 4"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie möchten im Flur einen neuen Holzboden haben und die Arbeit selbst machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 4"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 5"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihr Badezimmer ist sehr klein. Sie suchen Ideen, wo Sie Handtücher und Shampoo hinstellen können.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 5"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 1"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie brauchen für ein Wochenende eine Bohrmaschine, möchten aber keine kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 3"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 1"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ihre Kinder sind vier und sechs Jahre alt. Sie möchten in Ruhe Lampen ansehen, und die Kinder sollen spielen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Halle 5"
+                },
+                {
+                  "key": "b",
+                  "label": "Halle 2"
+                },
+                {
+                  "key": "c",
+                  "label": "andere Halle"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Messe Bauen & Wohnen",
+          "source": "Programm",
+          "paragraphs": [
+            "Messe „Bauen & Wohnen“ Kassel – Programm am Samstag, 10 bis 18 Uhr",
+            "Halle 1 – Küche und Bad: neue Küchen, Waschbecken, Duschen und Badmöbel · 11:00 Uhr Vortrag „Das kleine Bad: Ideen für Schränke und Regale“ · 14:00 Uhr Kochshow mit modernen Herden · 16:00 Uhr Beratung „Das Bad ohne Stufen“",
+            "Halle 2 – Garten und Balkon: Pflanzen, Gartenmöbel, Grills · 10:30 Uhr Workshop „Kräuter und Tomaten auf dem Balkon“ · 15:00 Uhr Beratung zum Thema Gartenteich",
+            "Halle 3 – Energie sparen: Heizungen, Fenster, Solaranlagen · 12:00 Uhr Vortrag „Weniger Heizkosten in der Mietwohnung“ · 13:00 bis 17:00 Uhr kostenlose Energieberatung für Hausbesitzer und Mieter",
+            "Halle 4 – Renovieren und Heimwerken: Farben, Tapeten, Böden, Werkzeug · 10:00 und 13:00 Uhr Kurs „Laminat und Parkett selbst verlegen“ · 11:30 Uhr Vorführung „Wände richtig streichen“ · 15:30 Uhr Infostand „Werkzeug ausleihen statt kaufen“",
+            "Halle 5 – Wohnen und Einrichten: Möbel, Lampen, Teppiche, Vorhänge · 11:30 Uhr Vortrag „Kleine Wohnung, viel Platz“ · Kinderland mit Spielecke und Betreuung (10 bis 18 Uhr) · Café und Imbiss"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "Zum Thema Heizkosten in der Mietwohnung gibt es einen Vortrag in Halle 3. In Halle 1 gibt es Küchen und Bäder, in Halle 4 Werkzeug und Farben.",
+            "evidence": {
+              "text": "Halle 3 – Energie sparen: Heizungen, Fenster, Solaranlagen · 12:00 Uhr Vortrag „Weniger Heizkosten in der Mietwohnung“ · 13:00 bis 17:00 Uhr kostenlose Energieberatung für Hausbesitzer und Mieter",
+              "hit": "Vortrag „Weniger Heizkosten in der Mietwohnung“"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "In Halle 4 gibt es Böden und einen Kurs, wie man Parkett selbst verlegt. In Halle 5 gibt es nur Teppiche.",
+            "evidence": {
+              "text": "Halle 4 – Renovieren und Heimwerken: Farben, Tapeten, Böden, Werkzeug · 10:00 und 13:00 Uhr Kurs „Laminat und Parkett selbst verlegen“ · 11:30 Uhr Vorführung „Wände richtig streichen“ · 15:30 Uhr Infostand „Werkzeug ausleihen statt kaufen“",
+              "hit": "Kurs „Laminat und Parkett selbst verlegen“"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Der Vortrag über Schränke und Regale im kleinen Bad ist in Halle 1. Der Vortrag in Halle 5 ist für die ganze Wohnung, nicht für das Bad.",
+            "evidence": {
+              "text": "Halle 1 – Küche und Bad: neue Küchen, Waschbecken, Duschen und Badmöbel · 11:00 Uhr Vortrag „Das kleine Bad: Ideen für Schränke und Regale“ · 14:00 Uhr Kochshow mit modernen Herden · 16:00 Uhr Beratung „Das Bad ohne Stufen“",
+              "hit": "Vortrag „Das kleine Bad: Ideen für Schränke und Regale“"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "Werkzeug ausleihen kann man am Infostand in Halle 4. In Halle 3 und Halle 1 gibt es kein Werkzeug.",
+            "evidence": {
+              "text": "Halle 4 – Renovieren und Heimwerken: Farben, Tapeten, Böden, Werkzeug · 10:00 und 13:00 Uhr Kurs „Laminat und Parkett selbst verlegen“ · 11:30 Uhr Vorführung „Wände richtig streichen“ · 15:30 Uhr Infostand „Werkzeug ausleihen statt kaufen“",
+              "hit": "Infostand „Werkzeug ausleihen statt kaufen“"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "In Halle 5 gibt es Lampen und auch ein Kinderland mit Betreuung. In Halle 2 gibt es Pflanzen und Gartenmöbel, aber keine Spielecke.",
+            "evidence": {
+              "text": "Halle 5 – Wohnen und Einrichten: Möbel, Lampen, Teppiche, Vorhänge · 11:30 Uhr Vortrag „Kleine Wohnung, viel Platz“ · Kinderland mit Spielecke und Betreuung (10 bis 18 Uhr) · Café und Imbiss",
+              "hit": "Kinderland mit Spielecke und Betreuung"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-01-t3-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Persönliche E-Mail: Ferien auf dem Bauernhof"
+      },
+      "display": {
+        "instruction": "Sie lesen eine E-Mail. Wählen Sie für die Aufgaben 11–15 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Mira und ihre Kinder haben …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in einem Zelt auf der Wiese geschlafen."
+                },
+                {
+                  "key": "b",
+                  "label": "in einer Wohnung über dem Stall gewohnt."
+                },
+                {
+                  "key": "c",
+                  "label": "im Haus der Bauernfamilie gewohnt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Paula …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "hat jeden Morgen die Eier gesammelt."
+                },
+                {
+                  "key": "b",
+                  "label": "war am liebsten bei den jungen Kühen."
+                },
+                {
+                  "key": "c",
+                  "label": "hat die Hühner gefüttert."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Am Regentag …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "haben sich die Kinder gelangweilt."
+                },
+                {
+                  "key": "b",
+                  "label": "ist die Familie in die Stadt gefahren."
+                },
+                {
+                  "key": "c",
+                  "label": "hat die Familie Brot gebacken."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Leo …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "möchte jetzt auch zu Hause reiten lernen."
+                },
+                {
+                  "key": "b",
+                  "label": "hatte vor dem Pony keine Angst."
+                },
+                {
+                  "key": "c",
+                  "label": "hat von Merle ein Pony bekommen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Im Herbst …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "möchte Mira allein auf den Hof fahren."
+                },
+                {
+                  "key": "b",
+                  "label": "möchte Mira mit Svenja und ihren Kindern auf den Hof fahren."
+                },
+                {
+                  "key": "c",
+                  "label": "ist auf dem Hof keine Wohnung mehr frei."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Mira",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Svenja,",
+            "wie geht es dir? Wir sind seit gestern Abend wieder zu Hause, und die Kinder erzählen immer noch von unserer Woche auf dem Bauernhof. Du hattest recht: Ferien auf dem Land waren genau das Richtige für uns!",
+            "Der Hof liegt in der Nähe von Lüneburg, mitten zwischen Wiesen und Feldern. Wir hatten eine kleine Ferienwohnung über dem alten Stall. Jeden Morgen um sieben durften Leo und Paula beim Füttern helfen. Leo hat die Hühner gefüttert und die Eier gesammelt. Paula wollte nur bei den Kälbern sein. Sie hat einem Kalb sogar einen Namen gegeben: Wolke.",
+            "Am Mittwoch hat es den ganzen Tag geregnet. Ich hatte zuerst Angst, dass die Kinder sich langweilen. Aber die Bäuerin hat mit uns in ihrer Küche Brot gebacken, und am Nachmittag haben wir in der Scheune im Heu gespielt. Am Ende war das der schönste Tag!",
+            "Die Tochter von den Bauern heißt Merle und ist zwölf. Sie hat den Kindern gezeigt, wie man auf einem alten Pony reitet. Leo hatte am Anfang ein bisschen Angst, aber am Freitag ist er schon allein geritten. Jetzt möchte er hier in der Stadt unbedingt Reitstunden nehmen. Das ist leider ziemlich teuer, mal sehen.",
+            "Im Oktober wollen wir noch einmal hinfahren. Dann ist Apfelernte, und alle Gäste dürfen mithelfen. Hast du nicht Lust, mit deinen beiden Jungs mitzukommen? Die Wohnung neben unserer ist in der Woche noch frei. Ich schicke dir heute Abend den Link vom Hof.",
+            "Viele Grüße und bis bald",
+            "Mira"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Die Familie hatte eine Ferienwohnung über dem alten Stall. Von einem Zelt oder vom Haus der Bauern schreibt Mira nichts.",
+            "evidence": {
+              "text": "Der Hof liegt in der Nähe von Lüneburg, mitten zwischen Wiesen und Feldern. Wir hatten eine kleine Ferienwohnung über dem alten Stall. Jeden Morgen um sieben durften Leo und Paula beim Füttern helfen. Leo hat die Hühner gefüttert und die Eier gesammelt. Paula wollte nur bei den Kälbern sein. Sie hat einem Kalb sogar einen Namen gegeben: Wolke.",
+              "hit": "Wir hatten eine kleine Ferienwohnung über dem alten Stall."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Paula wollte nur bei den Kälbern sein, das sind junge Kühe. Eier gesammelt und Hühner gefüttert hat ihr Bruder Leo.",
+            "evidence": {
+              "text": "Der Hof liegt in der Nähe von Lüneburg, mitten zwischen Wiesen und Feldern. Wir hatten eine kleine Ferienwohnung über dem alten Stall. Jeden Morgen um sieben durften Leo und Paula beim Füttern helfen. Leo hat die Hühner gefüttert und die Eier gesammelt. Paula wollte nur bei den Kälbern sein. Sie hat einem Kalb sogar einen Namen gegeben: Wolke.",
+              "hit": "Paula wollte nur bei den Kälbern sein."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Am Mittwoch hat die Bäuerin mit der Familie Brot gebacken. Mira hatte nur Angst, dass die Kinder sich langweilen, aber es war der schönste Tag.",
+            "evidence": {
+              "text": "Am Mittwoch hat es den ganzen Tag geregnet. Ich hatte zuerst Angst, dass die Kinder sich langweilen. Aber die Bäuerin hat mit uns in ihrer Küche Brot gebacken, und am Nachmittag haben wir in der Scheune im Heu gespielt. Am Ende war das der schönste Tag!",
+              "hit": "die Bäuerin hat mit uns in ihrer Küche Brot gebacken"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a",
+            "explanation": "Leo möchte in der Stadt Reitstunden nehmen. Am Anfang hatte er ein bisschen Angst, und das Pony gehört der Bauernfamilie.",
+            "evidence": {
+              "text": "Die Tochter von den Bauern heißt Merle und ist zwölf. Sie hat den Kindern gezeigt, wie man auf einem alten Pony reitet. Leo hatte am Anfang ein bisschen Angst, aber am Freitag ist er schon allein geritten. Jetzt möchte er hier in der Stadt unbedingt Reitstunden nehmen. Das ist leider ziemlich teuer, mal sehen.",
+              "hit": "Jetzt möchte er hier in der Stadt unbedingt Reitstunden nehmen."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Mira fragt Svenja, ob sie mit ihren Jungs im Oktober mitkommt. Die Wohnung neben ihrer ist noch frei.",
+            "evidence": {
+              "text": "Im Oktober wollen wir noch einmal hinfahren. Dann ist Apfelernte, und alle Gäste dürfen mithelfen. Hast du nicht Lust, mit deinen beiden Jungs mitzukommen? Die Wohnung neben unserer ist in der Woche noch frei. Ich schicke dir heute Abend den Link vom Hof.",
+              "hit": "Hast du nicht Lust, mit deinen beiden Jungs mitzukommen?"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-lesen-01-t4-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Anzeigen im Internet: Sport und Bewegung"
+      },
+      "display": {
+        "instruction": "Sechs Personen suchen im Internet nach Sportangeboten. Lesen Sie die Aufgaben 16–20 und die Anzeigen a–f. Welche Anzeige passt zu welcher Person? Für eine Aufgabe gibt es keine Lösung. Dann wählen Sie X. Die Anzeige aus dem Beispiel können Sie nicht mehr wählen.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "www.yoga-im-stadtpark.de",
+                  "text": "Yoga unter freiem Himmel: Von Mai bis September treffen wir uns jeden Sonntag um 9 Uhr auf der großen Wiese im Stadtpark. Für alle, auch für Anfänger. Bitte eine eigene Matte mitbringen. Die Teilnahme ist kostenlos."
+                },
+                {
+                  "key": "b",
+                  "title": "www.kletterhalle-nordwand.de",
+                  "text": "Klettern für Groß und Klein! Unsere Halle ist täglich von 10 bis 23 Uhr geöffnet. Schuhe und Gurte kann man bei uns leihen. Neu: Schnupperkurs für Erwachsene ohne Erfahrung, jeden Freitag um 18 Uhr, 25 Euro."
+                },
+                {
+                  "key": "c",
+                  "title": "www.lauftreff-weserufer.de",
+                  "text": "Zusammen läuft es sich leichter! Wir laufen dreimal pro Woche am Weserufer: montags und mittwochs um 18:30 Uhr, samstags schon um 8 Uhr. Es gibt eine langsame und eine schnelle Gruppe. Einfach vorbeikommen, eine Anmeldung ist nicht nötig."
+                },
+                {
+                  "key": "d",
+                  "title": "www.schwimmschule-delfin.de",
+                  "text": "Nie schwimmen gelernt? Kein Problem! Unsere Kurse sind nur für Erwachsene, in kleinen Gruppen und im warmen Lehrschwimmbecken. Zehn Abende, immer dienstags um 19:30 Uhr. Für Frauen gibt es auch einen Kurs mit Trainerin."
+                },
+                {
+                  "key": "e",
+                  "title": "www.tanzschule-rhythmus.de",
+                  "text": "Discofox, Walzer, Salsa: Bei uns lernen Paare tanzen. Neue Kurse ab September, immer donnerstags. Für Jugendliche von 12 bis 17 Jahren bieten wir Hip-Hop und Streetdance an, montags und freitags nach der Schule."
+                },
+                {
+                  "key": "f",
+                  "title": "www.radhaus-kettenblatt.de",
+                  "text": "Fahrräder, E-Bikes und Zubehör für die ganze Familie. Jeden ersten Samstag im Monat bieten wir einen kostenlosen Kurs an: Reifen flicken, Bremsen einstellen, Kette ölen. Bitte melden Sie sich im Laden an."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Ewa ist 42 Jahre alt und kann nicht schwimmen. Jetzt möchte sie es endlich lernen."
+                },
+                {
+                  "n": 16,
+                  "text": "Tobias möchte am Wochenende früh am Morgen mit anderen Leuten draußen joggen."
+                },
+                {
+                  "n": 17,
+                  "text": "Die Tochter von Familie Okafor ist 15 und tanzt gern zu moderner Musik. Sie sucht einen Kurs."
+                },
+                {
+                  "n": 18,
+                  "text": "Herr Lindqvist fährt jeden Tag mit dem Rad zur Arbeit. Er möchte lernen, wie man einen kaputten Reifen repariert."
+                },
+                {
+                  "n": 19,
+                  "text": "Frau Haddad möchte im Winter einmal pro Woche in einer Gruppe Yoga machen."
+                },
+                {
+                  "n": 20,
+                  "text": "Jan ist 30 und war noch nie klettern. Er möchte es einmal mit Hilfe ausprobieren."
+                }
+              ],
+              "noMatchLabel": "X"
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "c",
+            "explanation": "Der Lauftreff am Weserufer läuft samstags schon um 8 Uhr. Das Yoga im Stadtpark ist auch am Wochenende draußen, aber dort joggt man nicht.",
+            "evidence": {
+              "text": "Zusammen läuft es sich leichter! Wir laufen dreimal pro Woche am Weserufer: montags und mittwochs um 18:30 Uhr, samstags schon um 8 Uhr. Es gibt eine langsame und eine schnelle Gruppe. Einfach vorbeikommen, eine Anmeldung ist nicht nötig.",
+              "hit": "samstags schon um 8 Uhr"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "e",
+            "explanation": "Die Tanzschule Rhythmus hat Hip-Hop und Streetdance für Jugendliche von 12 bis 17. Die Kurse für Walzer und Salsa sind für Paare.",
+            "evidence": {
+              "text": "Discofox, Walzer, Salsa: Bei uns lernen Paare tanzen. Neue Kurse ab September, immer donnerstags. Für Jugendliche von 12 bis 17 Jahren bieten wir Hip-Hop und Streetdance an, montags und freitags nach der Schule.",
+              "hit": "Für Jugendliche von 12 bis 17 Jahren bieten wir Hip-Hop und Streetdance an"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "f",
+            "explanation": "Im Radhaus gibt es einen kostenlosen Kurs, in dem man Reifen flicken lernt. Die anderen Anzeigen haben nichts mit Fahrrädern zu tun.",
+            "evidence": {
+              "text": "Fahrräder, E-Bikes und Zubehör für die ganze Familie. Jeden ersten Samstag im Monat bieten wir einen kostenlosen Kurs an: Reifen flicken, Bremsen einstellen, Kette ölen. Bitte melden Sie sich im Laden an.",
+              "hit": "Reifen flicken, Bremsen einstellen, Kette ölen"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "x",
+            "explanation": "Das Yoga im Stadtpark passt fast, aber es findet nur von Mai bis September statt. Im Winter gibt es keine passende Anzeige.",
+            "evidence": {
+              "text": "Yoga unter freiem Himmel: Von Mai bis September treffen wir uns jeden Sonntag um 9 Uhr auf der großen Wiese im Stadtpark. Für alle, auch für Anfänger. Bitte eine eigene Matte mitbringen. Die Teilnahme ist kostenlos.",
+              "hit": "Von Mai bis September"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "b",
+            "explanation": "Die Kletterhalle hat einen Schnupperkurs für Erwachsene ohne Erfahrung. Dort kann man Schuhe und Gurte auch leihen.",
+            "evidence": {
+              "text": "Klettern für Groß und Klein! Unsere Halle ist täglich von 10 bis 23 Uhr geöffnet. Schuhe und Gurte kann man bei uns leihen. Neu: Schnupperkurs für Erwachsene ohne Erfahrung, jeden Freitag um 18 Uhr, 25 Euro.",
+              "hit": "Schnupperkurs für Erwachsene ohne Erfahrung"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "d"
+      ]
+    }
+  ]
+}

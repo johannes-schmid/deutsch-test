@@ -13,16 +13,29 @@ export const SKILLS: PartId[] = ["hoeren", "lesen", "schreiben", "sprechen"]
 
 export type SetSummary = { id: string; exam: ExamId; skill: PartId; number: number; isFree: boolean; published: boolean; total: number; reviewed: number }
 
+type ReviewRow = { set_id: string; review_status: string }
+
+/** All review rows of a table: the API returns at most 1,000 rows per request, whatever range is asked for. */
+async function allReviewRows(db: ReturnType<typeof createAdminClient>, table: "mt_stimuli" | "mt_open_tasks") {
+  const out: ReviewRow[] = []
+  for (let from = 0; ; from += 1000) {
+    const { data, error } = await db.from(table).select("set_id, review_status").order("id").range(from, from + 999)
+    if (error) throw error
+    out.push(...data)
+    if (data.length < 1000) return out
+  }
+}
+
 /** Every set with its review progress (content rows reviewed / all). */
 export async function setOverview(): Promise<SetSummary[]> {
   const db = createAdminClient()
   const [sets, stimuli, tasks] = await Promise.all([
     db.from("mt_sets").select("id, exam, skill, number, is_free, published").order("exam").order("number"),
-    db.from("mt_stimuli").select("set_id, review_status").range(0, 9999),
-    db.from("mt_open_tasks").select("set_id, review_status").range(0, 9999),
+    allReviewRows(db, "mt_stimuli"),
+    allReviewRows(db, "mt_open_tasks"),
   ])
-  if (sets.error || stimuli.error || tasks.error) throw sets.error ?? stimuli.error ?? tasks.error
-  const rows = [...stimuli.data, ...tasks.data]
+  if (sets.error) throw sets.error
+  const rows = [...stimuli, ...tasks]
   return sets.data.map((s) => {
     const mine = rows.filter((r) => r.set_id === s.id)
     return { id: s.id, exam: s.exam, skill: s.skill, number: s.number, isFree: s.is_free, published: s.published, total: mine.length, reviewed: mine.filter((r) => r.review_status === "reviewed").length }

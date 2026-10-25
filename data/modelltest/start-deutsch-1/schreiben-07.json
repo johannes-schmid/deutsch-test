@@ -1,0 +1,187 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-07-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.123Z",
+        "textType": "Formular ausfüllen: Anmeldung für einen Chor"
+      },
+      "exampleAnswers": [
+        "Ekholm, Rasmus"
+      ],
+      "display": {
+        "instruction": "Ihr Freund möchte sich für einen Chor anmelden. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Rasmus Ekholm singt sehr gern. Er möchte jetzt im Stadtchor Celle mitsingen. Er wohnt im Wiesengrund 12, 29221 Celle.",
+            "Rasmus ist am 14. Mai 1987 geboren. Der Chor probt am Dienstag oder am Donnerstag. Dienstags arbeitet Rasmus bis 20 Uhr. Deshalb geht er donnerstags zur Probe.",
+            "Er möchte die Informationen vom Chor per E-Mail bekommen. Seine Adresse ist r.ekholm@nordpost.de."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Stadtchor Celle · Anmeldung\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nPostleitzahl, Wohnort: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nProbentag: ",
+                {
+                  "n": 4,
+                  "options": [
+                    "Dienstag",
+                    "Donnerstag"
+                  ]
+                },
+                "\nE-Mail: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Wiesengrund 12",
+            "accept": [
+              "Wiesengrund Nr. 12",
+              "Wiesengrund Nr 12",
+              "im Wiesengrund 12",
+              "Wiesengrund 12, Celle"
+            ],
+            "explanation": "Rasmus wohnt im Wiesengrund 12. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Rasmus Ekholm singt sehr gern. Er möchte jetzt im Stadtchor Celle mitsingen. Er wohnt im Wiesengrund 12, 29221 Celle. Rasmus ist am 14. Mai 1987 geboren. Der Chor probt am Dienstag oder am Donnerstag. Dienstags arbeitet Rasmus bis 20 Uhr. Deshalb geht er donnerstags zur Probe. Er möchte die Informationen vom Chor per E-Mail bekommen. Seine Adresse ist r.ekholm@nordpost.de.",
+              "hit": "Er wohnt im Wiesengrund 12, 29221 Celle."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "29221 Celle",
+            "accept": [
+              "Celle 29221",
+              "29221, Celle"
+            ],
+            "explanation": "Rasmus wohnt in 29221 Celle. Die Postleitzahl muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Rasmus Ekholm singt sehr gern. Er möchte jetzt im Stadtchor Celle mitsingen. Er wohnt im Wiesengrund 12, 29221 Celle. Rasmus ist am 14. Mai 1987 geboren. Der Chor probt am Dienstag oder am Donnerstag. Dienstags arbeitet Rasmus bis 20 Uhr. Deshalb geht er donnerstags zur Probe. Er möchte die Informationen vom Chor per E-Mail bekommen. Seine Adresse ist r.ekholm@nordpost.de.",
+              "hit": "29221 Celle"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "14. Mai 1987",
+            "accept": [
+              "14.5.1987",
+              "14.05.1987",
+              "14. 5. 1987",
+              "14. 05. 1987",
+              "14.Mai 1987",
+              "14 Mai 1987"
+            ],
+            "explanation": "Rasmus ist am 14. Mai 1987 geboren. Tag und Jahr müssen genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Rasmus Ekholm singt sehr gern. Er möchte jetzt im Stadtchor Celle mitsingen. Er wohnt im Wiesengrund 12, 29221 Celle. Rasmus ist am 14. Mai 1987 geboren. Der Chor probt am Dienstag oder am Donnerstag. Dienstags arbeitet Rasmus bis 20 Uhr. Deshalb geht er donnerstags zur Probe. Er möchte die Informationen vom Chor per E-Mail bekommen. Seine Adresse ist r.ekholm@nordpost.de.",
+              "hit": "Rasmus ist am 14. Mai 1987 geboren."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "Donnerstag",
+            "explanation": "Am Dienstag arbeitet Rasmus bis 20 Uhr. Darum geht er am Donnerstag zur Probe.",
+            "evidence": {
+              "text": "Ihr Freund Rasmus Ekholm singt sehr gern. Er möchte jetzt im Stadtchor Celle mitsingen. Er wohnt im Wiesengrund 12, 29221 Celle. Rasmus ist am 14. Mai 1987 geboren. Der Chor probt am Dienstag oder am Donnerstag. Dienstags arbeitet Rasmus bis 20 Uhr. Deshalb geht er donnerstags zur Probe. Er möchte die Informationen vom Chor per E-Mail bekommen. Seine Adresse ist r.ekholm@nordpost.de.",
+              "hit": "Deshalb geht er donnerstags zur Probe."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "r.ekholm@nordpost.de",
+            "accept": [
+              "r. ekholm@nordpost.de"
+            ],
+            "explanation": "Die E-Mail-Adresse von Rasmus ist r.ekholm@nordpost.de.",
+            "evidence": {
+              "text": "Ihr Freund Rasmus Ekholm singt sehr gern. Er möchte jetzt im Stadtchor Celle mitsingen. Er wohnt im Wiesengrund 12, 29221 Celle. Rasmus ist am 14. Mai 1987 geboren. Der Chor probt am Dienstag oder am Donnerstag. Dienstags arbeitet Rasmus bis 20 Uhr. Deshalb geht er donnerstags zur Probe. Er möchte die Informationen vom Chor per E-Mail bekommen. Seine Adresse ist r.ekholm@nordpost.de.",
+              "hit": "Seine Adresse ist r.ekholm@nordpost.de."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-07-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.123Z",
+        "textType": "Kurze E-Mail an die Nachbarin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an die Nachbarin",
+            "situation": "Gestern war Ihre Familie bei Ihnen. Ein Auto von Ihren Gästen stand vor der Garage von Ihrer Nachbarin, Frau Wendt. Schreiben Sie Frau Wendt eine E-Mail.",
+            "points": [
+              "Entschuldigen Sie sich.",
+              "Wer war bei Ihnen zu Besuch?",
+              "Fragen Sie: Wo können Gäste parken?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Liebe Frau Wendt,\nes tut mir leid: Gestern stand ein Auto vor Ihrer Garage. Meine Eltern waren zu Besuch und haben dort geparkt. Wo können meine Gäste beim nächsten Mal parken?\nViele Grüße\nCornelia Haupt"
+          }
+        ]
+      }
+    }
+  ]
+}

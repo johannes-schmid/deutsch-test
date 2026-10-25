@@ -1,0 +1,2355 @@
+{
+  "exam": "oesd-b1",
+  "skill": "hoeren",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "oesd-b1-hoeren-02-t1-bsp",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Philipp sagt das Frühstück am Samstag ab."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Philipp möchte sich am Samstag … treffen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "um neun Uhr"
+                },
+                {
+                  "key": "b",
+                  "label": "um zehn Uhr"
+                },
+                {
+                  "key": "c",
+                  "label": "um elf Uhr"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Philipp",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 30.67,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t1-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_martin_at",
+            "text": "Hallo, ich bin's, Philipp. Du, wegen Samstag: Das Frühstück im neuen Café am Markt machen wir auf jeden Fall, aber nicht um neun. Ich muss vorher noch meine Schwester zum Bahnhof bringen. Sagen wir lieber um zehn? Ich hab schon angerufen und einen Tisch am Fenster reserviert. Frühstück gibt's dort bis elf, da haben wir also genug Zeit. Wenn's bei dir nicht klappt, schreib mir einfach kurz. Bis Samstag!",
+            "delivery": "[relaxed, friendly voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "falsch",
+        "b"
+      ]
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t1-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Für die Blutspende braucht man immer einen Termin."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Wer zum ersten Mal Blut spendet, muss … mitbringen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seinen Impfpass"
+                },
+                {
+                  "key": "b",
+                  "label": "seine Versichertenkarte"
+                },
+                {
+                  "key": "c",
+                  "label": "seinen Personalausweis"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "duration": 38.24,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t1-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Tagsüber kannst du ohne Termin kommen. Nur für den Abend muss man sich vorher anmelden.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp fürs Wochenende: Am Samstag sammelt der Blutspendedienst im Kornhaus in Ulm wieder Blut. Wer spenden möchte, kann zwischen zehn und sechzehn Uhr einfach vorbeikommen, einen Termin brauchen Sie nicht. Nur für den Abend, also von siebzehn bis zwanzig Uhr, müssen Sie sich vorher online anmelden. Zum ersten Mal dabei? Dann bekommen Sie einen kostenlosen Gesundheitscheck. Mitbringen müssen Sie nur Ihren Personalausweis, Impfpass und Versichertenkarte können zu Hause bleiben. Und danach gibt's belegte Brötchen und Saft.",
+              "hit": "einen Termin brauchen Sie nicht"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Man braucht nur den Personalausweis. Impfpass und Versichertenkarte können zu Hause bleiben.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp fürs Wochenende: Am Samstag sammelt der Blutspendedienst im Kornhaus in Ulm wieder Blut. Wer spenden möchte, kann zwischen zehn und sechzehn Uhr einfach vorbeikommen, einen Termin brauchen Sie nicht. Nur für den Abend, also von siebzehn bis zwanzig Uhr, müssen Sie sich vorher online anmelden. Zum ersten Mal dabei? Dann bekommen Sie einen kostenlosen Gesundheitscheck. Mitbringen müssen Sie nur Ihren Personalausweis, Impfpass und Versichertenkarte können zu Hause bleiben. Und danach gibt's belegte Brötchen und Saft.",
+              "hit": "Mitbringen müssen Sie nur Ihren Personalausweis"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Und hier noch ein Tipp fürs Wochenende: Am Samstag sammelt der Blutspendedienst im Kornhaus in Ulm wieder Blut. Wer spenden möchte, kann zwischen zehn und sechzehn Uhr einfach vorbeikommen, einen Termin brauchen Sie nicht. Nur für den Abend, also von siebzehn bis zwanzig Uhr, müssen Sie sich vorher online anmelden. Zum ersten Mal dabei? Dann bekommen Sie einen kostenlosen Gesundheitscheck. Mitbringen müssen Sie nur Ihren Personalausweis, Impfpass und Versichertenkarte können zu Hause bleiben. Und danach gibt's belegte Brötchen und Saft.",
+            "delivery": "[warm, upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t1-02",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Nachricht auf der Mailbox (Schneiderei)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Die Hose ist schon zum Abholen bereit."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Die Schneiderei ist geschlossen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Montag."
+                },
+                {
+                  "key": "b",
+                  "label": "am Samstag."
+                },
+                {
+                  "key": "c",
+                  "label": "am Mittwochnachmittag."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Schneiderei",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 33.88,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t1-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Die Hose ist fertig, du kannst sie ab sofort holen. Nur die Jacke dauert noch.",
+            "evidence": {
+              "text": "Grüß Gott, hier ist die Schneiderei Hinterberger in Krems. Ihre Hose ist fertig, die können Sie ab sofort bei uns holen. Bei der Jacke dauert's leider noch, für den neuen Reißverschluss brauchen wir ein Teil vom Lieferanten. Wir haben Dienstag bis Samstag offen, seit diesem Monat auch am Mittwochnachmittag. Nur zu Mittag, von zwölf bis eins, ist zu. Am Montag haben wir den ganzen Tag geschlossen. Bezahlen können Sie dann direkt an der Kassa. Danke und auf Wiederhören!",
+              "hit": "Ihre Hose ist fertig, die können Sie ab sofort bei uns holen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Am Montag ist den ganzen Tag zu. Samstag und Mittwochnachmittag ist die Schneiderei offen.",
+            "evidence": {
+              "text": "Grüß Gott, hier ist die Schneiderei Hinterberger in Krems. Ihre Hose ist fertig, die können Sie ab sofort bei uns holen. Bei der Jacke dauert's leider noch, für den neuen Reißverschluss brauchen wir ein Teil vom Lieferanten. Wir haben Dienstag bis Samstag offen, seit diesem Monat auch am Mittwochnachmittag. Nur zu Mittag, von zwölf bis eins, ist zu. Am Montag haben wir den ganzen Tag geschlossen. Bezahlen können Sie dann direkt an der Kassa. Danke und auf Wiederhören!",
+              "hit": "Am Montag haben wir den ganzen Tag geschlossen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott, hier ist die Schneiderei Hinterberger in Krems. Ihre Hose ist fertig, die können Sie ab sofort bei uns holen. Bei der Jacke dauert's leider noch, für den neuen Reißverschluss brauchen wir ein Teil vom Lieferanten. Wir haben Dienstag bis Samstag offen, seit diesem Monat auch am Mittwochnachmittag. Nur zu Mittag, von zwölf bis eins, ist zu. Am Montag haben wir den ganzen Tag geschlossen. Bezahlen können Sie dann direkt an der Kassa. Danke und auf Wiederhören!",
+            "delivery": "[polite, practical shop voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t1-03",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Durchsage an der Bergstation"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Die Gäste müssen sofort ins Tal fahren."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Gäste mit einer Tageskarte bekommen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Gratis-Kaffee im Restaurant."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Ermässigung für einen anderen Tag."
+                },
+                {
+                  "key": "c",
+                  "label": "das Geld für die Karte zurück."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage an der Bergstation",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage an der Bergstation einer Seilbahn.",
+          "duration": 38.53,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t1-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Die letzte Fahrt ist erst um sechzehn Uhr dreißig. Die Gäste haben noch genug Zeit.",
+            "evidence": {
+              "text": "Geschätzte Gäste, hier eine wichtige Mitteilung der Luftseilbahn Rossberg-Grat. Wegen starkem Wind müssen wir den Betrieb heute früher einstellen. Die letzte Fahrt ins Tal ist um sechzehn Uhr dreissig. Sie haben also noch genug Zeit, es ist kein Grund zur Eile. Das Bergrestaurant bleibt bis dahin geöffnet, der Kaffee kostet heute nur zwei Franken. Ihr Geld für die Tageskarte können wir leider nicht zurückgeben. Sie erhalten aber an der Kasse ein vergünstigtes Billett für einen anderen Tag. Besten Dank für Ihr Verständnis.",
+              "hit": "Sie haben also noch genug Zeit, es ist kein Grund zur Eile."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Man bekommt ein günstigeres Billett für einen anderen Tag. Geld zurück gibt es nicht, und der Kaffee kostet zwei Franken.",
+            "evidence": {
+              "text": "Geschätzte Gäste, hier eine wichtige Mitteilung der Luftseilbahn Rossberg-Grat. Wegen starkem Wind müssen wir den Betrieb heute früher einstellen. Die letzte Fahrt ins Tal ist um sechzehn Uhr dreissig. Sie haben also noch genug Zeit, es ist kein Grund zur Eile. Das Bergrestaurant bleibt bis dahin geöffnet, der Kaffee kostet heute nur zwei Franken. Ihr Geld für die Tageskarte können wir leider nicht zurückgeben. Sie erhalten aber an der Kasse ein vergünstigtes Billett für einen anderen Tag. Besten Dank für Ihr Verständnis.",
+              "hit": "Sie erhalten aber an der Kasse ein vergünstigtes Billett für einen anderen Tag."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_andres_ch",
+            "text": "Geschätzte Gäste, hier eine wichtige Mitteilung der Luftseilbahn Rossberg-Grat. Wegen starkem Wind müssen wir den Betrieb heute früher einstellen. Die letzte Fahrt ins Tal ist um sechzehn Uhr dreissig. Sie haben also noch genug Zeit, es ist kein Grund zur Eile. Das Bergrestaurant bleibt bis dahin geöffnet, der Kaffee kostet heute nur zwei Franken. Ihr Geld für die Tageskarte können wir leider nicht zurückgeben. Sie erhalten aber an der Kasse ein vergünstigtes Billett für einen anderen Tag. Besten Dank für Ihr Verständnis.",
+            "delivery": "[calm, clear station announcement]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t1-04",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Nachricht auf der Mailbox (Klavierstimmer)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Herr Moosbrugger kommt wie geplant am Donnerstag."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Wenn Frau Rauch am Freitag keine Zeit hat, soll sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine SMS schicken."
+                },
+                {
+                  "key": "b",
+                  "label": "im Geschäft vorbeikommen."
+                },
+                {
+                  "key": "c",
+                  "label": "am Donnerstag zu Hause sein."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Klavierstimmer",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 33.88,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t1-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Am Donnerstag hat er einen anderen Auftrag. Er möchte am Freitag kommen.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Rauch, hier ist Moosbrugger aus Feldkirch, der Klavierstimmer. Es geht um unseren Termin am Donnerstag. Da muss ich leider zu einem dringenden Auftrag in die Musikschule. Ich würde dann am Freitag um neun zu Ihnen kommen. Wenn der Freitag nicht passt, schreiben Sie mir bitte einfach kurz aufs Handy. Ins Geschäft müssen Sie nicht extra kommen. Heuer bin ich ja schon zum zweiten Mal bei Ihnen. Ich läute dann einfach bei Ihnen. Danke und schönen Tag noch!",
+              "hit": "Ich würde dann am Freitag um neun zu Ihnen kommen."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Sie soll ihm kurz aufs Handy schreiben. Ins Geschäft muss sie nicht kommen.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Rauch, hier ist Moosbrugger aus Feldkirch, der Klavierstimmer. Es geht um unseren Termin am Donnerstag. Da muss ich leider zu einem dringenden Auftrag in die Musikschule. Ich würde dann am Freitag um neun zu Ihnen kommen. Wenn der Freitag nicht passt, schreiben Sie mir bitte einfach kurz aufs Handy. Ins Geschäft müssen Sie nicht extra kommen. Heuer bin ich ja schon zum zweiten Mal bei Ihnen. Ich läute dann einfach bei Ihnen. Danke und schönen Tag noch!",
+              "hit": "schreiben Sie mir bitte einfach kurz aufs Handy"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_martin_at",
+            "text": "Grüß Gott, Frau Rauch, hier ist Moosbrugger aus Feldkirch, der Klavierstimmer. Es geht um unseren Termin am Donnerstag. Da muss ich leider zu einem dringenden Auftrag in die Musikschule. Ich würde dann am Freitag um neun zu Ihnen kommen. Wenn der Freitag nicht passt, schreiben Sie mir bitte einfach kurz aufs Handy. Ins Geschäft müssen Sie nicht extra kommen. Heuer bin ich ja schon zum zweiten Mal bei Ihnen. Ich läute dann einfach bei Ihnen. Danke und schönen Tag noch!",
+            "delivery": "[friendly, slightly apologetic craftsman voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t1-05",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Man kann ohne Anmeldung einen Sehtest machen lassen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Nur bis Samstag bekommt man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen kostenlosen Sehtest."
+                },
+                {
+                  "key": "b",
+                  "label": "die zweite Brille zum halben Preis."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Sonnenbrille geschenkt."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "duration": 34.38,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t1-05.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Für den Sehtest kommt man einfach ins Geschäft. Einen Termin braucht man nicht.",
+            "evidence": {
+              "text": "Neue Brille gefällig? Dann ab zu Optik Weißmann in der Kaiserstraße in Karlsruhe! Den Sehtest machen wir bei uns sofort, einfach reinkommen, ganz ohne Termin, und natürlich kostenlos. Und weil der Sommer kommt: Den ganzen Monat bekommen Sie Ihre zweite Brille zum halben Preis. Aber schnell sein lohnt sich! Wer bis diesen Samstag eine Brille kauft, bekommt eine Sonnenbrille mit passender Sehstärke gratis dazu. Optik Weißmann, Kaiserstraße vierundvierzig. Wir sehen uns!",
+              "hit": "einfach reinkommen, ganz ohne Termin"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Die Sonnenbrille gibt es nur bis Samstag gratis. Die zweite Brille ist den ganzen Monat billiger, und der Sehtest ist immer kostenlos.",
+            "evidence": {
+              "text": "Neue Brille gefällig? Dann ab zu Optik Weißmann in der Kaiserstraße in Karlsruhe! Den Sehtest machen wir bei uns sofort, einfach reinkommen, ganz ohne Termin, und natürlich kostenlos. Und weil der Sommer kommt: Den ganzen Monat bekommen Sie Ihre zweite Brille zum halben Preis. Aber schnell sein lohnt sich! Wer bis diesen Samstag eine Brille kauft, bekommt eine Sonnenbrille mit passender Sehstärke gratis dazu. Optik Weißmann, Kaiserstraße vierundvierzig. Wir sehen uns!",
+              "hit": "Wer bis diesen Samstag eine Brille kauft, bekommt eine Sonnenbrille mit passender Sehstärke gratis dazu."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Neue Brille gefällig? Dann ab zu Optik Weißmann in der Kaiserstraße in Karlsruhe! Den Sehtest machen wir bei uns sofort, einfach reinkommen, ganz ohne Termin, und natürlich kostenlos. Und weil der Sommer kommt: Den ganzen Monat bekommen Sie Ihre zweite Brille zum halben Preis. Aber schnell sein lohnt sich! Wer bis diesen Samstag eine Brille kauft, bekommt eine Sonnenbrille mit passender Sehstärke gratis dazu. Optik Weißmann, Kaiserstraße vierundvierzig. Wir sehen uns!",
+            "delivery": "[energetic radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t2-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Führung durch eine Druckerei"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Zuerst sollen die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ihre Taschen abgeben."
+                },
+                {
+                  "key": "b",
+                  "label": "die Ohrstöpsel einsetzen."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Warnweste anziehen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Fotos machen darf man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "an den Druckmaschinen."
+                },
+                {
+                  "key": "b",
+                  "label": "nur in der Halle mit den fertigen Zeitungen."
+                },
+                {
+                  "key": "c",
+                  "label": "überall außer im Papierlager."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Die Besucher bekommen Ohrstöpsel, weil …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Druckmaschinen sehr laut sind."
+                },
+                {
+                  "key": "b",
+                  "label": "die Lüftung in den Hallen laut ist."
+                },
+                {
+                  "key": "c",
+                  "label": "dort manchmal laute Musik läuft."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Die Führung dauert heute länger, weil …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Gruppe heute sehr groß ist."
+                },
+                {
+                  "key": "b",
+                  "label": "die Besucher eine Pause machen."
+                },
+                {
+                  "key": "c",
+                  "label": "eine neue Maschine gezeigt wird."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Am Ende der Führung bekommen die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Kaffee kostenlos."
+                },
+                {
+                  "key": "b",
+                  "label": "die Zeitung vom nächsten Tag."
+                },
+                {
+                  "key": "c",
+                  "label": "die Warnweste als Geschenk."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Nachtführung in einer Druckerei",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Holger, Gästeführer",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie nehmen an einer Nachtführung durch die Druckerei einer Zeitung in Nürnberg teil.",
+          "duration": 166.43,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t2-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Als Erstes sollen alle eine gelbe Warnweste anziehen. Die Taschen darf man behalten, und die Ohrstöpsel kommen erst später.",
+            "evidence": {
+              "text": "Guten Abend, meine Damen und Herren, und herzlich willkommen in der Druckerei der Nürnberger Abendpost! Mein Name ist Holger, ich arbeite seit über zwanzig Jahren hier im Haus, und heute Nacht zeige ich Ihnen, wie aus vielen weißen Papierrollen die Zeitung von morgen wird. Bevor wir losgehen, ein paar wichtige Dinge. Ihre Taschen und Jacken können Sie gern behalten, eine Garderobe gibt es hier nicht. Aber das Erste, was wir jetzt machen: Bitte ziehen Sie alle eine von diesen gelben Warnwesten an. Die liegen hier vorne auf dem Tisch. In der Halle fahren nämlich ständig Gabelstapler herum, und die Fahrer müssen Sie gut sehen können. Also, Weste an, und dann bleibt sie bis zum Ende an. Dann zum Thema Fotos. Ich weiß, viele möchten gern Bilder machen, und das verstehe ich auch. An den Druckmaschinen und im Lager mit dem Papier ist Fotografieren aber leider verboten, aus Sicherheitsgründen. In der letzten Halle, wo die fertigen Zeitungen gebündelt werden, dürfen Sie dann so viele Fotos machen, wie Sie wollen. Gleich bekommen Sie außerdem von mir Ohrstöpsel. Die Lüftung hört man kaum, aber wenn die Druckmaschinen laufen, wird es wirklich sehr laut, lauter als in jeder Disco. Bitte setzen Sie die Stöpsel dann auch ein, wenn ich es sage. An der Maschine kann ich sowieso nichts erklären, deshalb erzähle ich Ihnen das Wichtigste immer vorher. Haben Sie dazu Fragen? Nein? Gut. Normalerweise dauert die Führung ungefähr eine Stunde. Heute wird es etwas länger, ungefähr anderthalb Stunden. Das liegt nicht an der Gruppe, Sie sind ja nur fünfzehn Leute. Wir haben seit zwei Wochen eine neue Falzmaschine, und die darf ich Ihnen heute zum ersten Mal zeigen. Die faltet in einer Stunde über dreißigtausend Zeitungen. Darauf sind wir hier alle ziemlich stolz. Ach ja, und noch etwas: Bitte bleiben Sie immer bei der Gruppe und gehen Sie nur auf den grün markierten Wegen. Wer auf die Toilette muss, sagt mir kurz Bescheid. Und jetzt das Beste zum Schluss. Am Ende der Führung bekommt jeder von Ihnen ein Exemplar der Zeitung von morgen, frisch aus der Maschine, manchmal ist sie noch ein bisschen warm. So früh hat sie sonst niemand in Nürnberg. Kaffee gibt es danach am Automaten im Eingangsbereich, den müssen Sie aber leider selbst bezahlen. So, haben Sie Ihre Westen an? Sehr gut. Dann gehen wir jetzt los, bitte hier entlang.",
+              "hit": "Bitte ziehen Sie alle eine von diesen gelben Warnwesten an."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Fotos sind nur in der letzten Halle mit den fertigen Zeitungen erlaubt. An den Maschinen und im Lager ist es verboten.",
+            "evidence": {
+              "text": "Guten Abend, meine Damen und Herren, und herzlich willkommen in der Druckerei der Nürnberger Abendpost! Mein Name ist Holger, ich arbeite seit über zwanzig Jahren hier im Haus, und heute Nacht zeige ich Ihnen, wie aus vielen weißen Papierrollen die Zeitung von morgen wird. Bevor wir losgehen, ein paar wichtige Dinge. Ihre Taschen und Jacken können Sie gern behalten, eine Garderobe gibt es hier nicht. Aber das Erste, was wir jetzt machen: Bitte ziehen Sie alle eine von diesen gelben Warnwesten an. Die liegen hier vorne auf dem Tisch. In der Halle fahren nämlich ständig Gabelstapler herum, und die Fahrer müssen Sie gut sehen können. Also, Weste an, und dann bleibt sie bis zum Ende an. Dann zum Thema Fotos. Ich weiß, viele möchten gern Bilder machen, und das verstehe ich auch. An den Druckmaschinen und im Lager mit dem Papier ist Fotografieren aber leider verboten, aus Sicherheitsgründen. In der letzten Halle, wo die fertigen Zeitungen gebündelt werden, dürfen Sie dann so viele Fotos machen, wie Sie wollen. Gleich bekommen Sie außerdem von mir Ohrstöpsel. Die Lüftung hört man kaum, aber wenn die Druckmaschinen laufen, wird es wirklich sehr laut, lauter als in jeder Disco. Bitte setzen Sie die Stöpsel dann auch ein, wenn ich es sage. An der Maschine kann ich sowieso nichts erklären, deshalb erzähle ich Ihnen das Wichtigste immer vorher. Haben Sie dazu Fragen? Nein? Gut. Normalerweise dauert die Führung ungefähr eine Stunde. Heute wird es etwas länger, ungefähr anderthalb Stunden. Das liegt nicht an der Gruppe, Sie sind ja nur fünfzehn Leute. Wir haben seit zwei Wochen eine neue Falzmaschine, und die darf ich Ihnen heute zum ersten Mal zeigen. Die faltet in einer Stunde über dreißigtausend Zeitungen. Darauf sind wir hier alle ziemlich stolz. Ach ja, und noch etwas: Bitte bleiben Sie immer bei der Gruppe und gehen Sie nur auf den grün markierten Wegen. Wer auf die Toilette muss, sagt mir kurz Bescheid. Und jetzt das Beste zum Schluss. Am Ende der Führung bekommt jeder von Ihnen ein Exemplar der Zeitung von morgen, frisch aus der Maschine, manchmal ist sie noch ein bisschen warm. So früh hat sie sonst niemand in Nürnberg. Kaffee gibt es danach am Automaten im Eingangsbereich, den müssen Sie aber leider selbst bezahlen. So, haben Sie Ihre Westen an? Sehr gut. Dann gehen wir jetzt los, bitte hier entlang.",
+              "hit": "In der letzten Halle, wo die fertigen Zeitungen gebündelt werden, dürfen Sie dann so viele Fotos machen, wie Sie wollen."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Wenn die Druckmaschinen laufen, ist es sehr laut. Die Lüftung hört man kaum, und die Disco ist nur ein Vergleich.",
+            "evidence": {
+              "text": "Guten Abend, meine Damen und Herren, und herzlich willkommen in der Druckerei der Nürnberger Abendpost! Mein Name ist Holger, ich arbeite seit über zwanzig Jahren hier im Haus, und heute Nacht zeige ich Ihnen, wie aus vielen weißen Papierrollen die Zeitung von morgen wird. Bevor wir losgehen, ein paar wichtige Dinge. Ihre Taschen und Jacken können Sie gern behalten, eine Garderobe gibt es hier nicht. Aber das Erste, was wir jetzt machen: Bitte ziehen Sie alle eine von diesen gelben Warnwesten an. Die liegen hier vorne auf dem Tisch. In der Halle fahren nämlich ständig Gabelstapler herum, und die Fahrer müssen Sie gut sehen können. Also, Weste an, und dann bleibt sie bis zum Ende an. Dann zum Thema Fotos. Ich weiß, viele möchten gern Bilder machen, und das verstehe ich auch. An den Druckmaschinen und im Lager mit dem Papier ist Fotografieren aber leider verboten, aus Sicherheitsgründen. In der letzten Halle, wo die fertigen Zeitungen gebündelt werden, dürfen Sie dann so viele Fotos machen, wie Sie wollen. Gleich bekommen Sie außerdem von mir Ohrstöpsel. Die Lüftung hört man kaum, aber wenn die Druckmaschinen laufen, wird es wirklich sehr laut, lauter als in jeder Disco. Bitte setzen Sie die Stöpsel dann auch ein, wenn ich es sage. An der Maschine kann ich sowieso nichts erklären, deshalb erzähle ich Ihnen das Wichtigste immer vorher. Haben Sie dazu Fragen? Nein? Gut. Normalerweise dauert die Führung ungefähr eine Stunde. Heute wird es etwas länger, ungefähr anderthalb Stunden. Das liegt nicht an der Gruppe, Sie sind ja nur fünfzehn Leute. Wir haben seit zwei Wochen eine neue Falzmaschine, und die darf ich Ihnen heute zum ersten Mal zeigen. Die faltet in einer Stunde über dreißigtausend Zeitungen. Darauf sind wir hier alle ziemlich stolz. Ach ja, und noch etwas: Bitte bleiben Sie immer bei der Gruppe und gehen Sie nur auf den grün markierten Wegen. Wer auf die Toilette muss, sagt mir kurz Bescheid. Und jetzt das Beste zum Schluss. Am Ende der Führung bekommt jeder von Ihnen ein Exemplar der Zeitung von morgen, frisch aus der Maschine, manchmal ist sie noch ein bisschen warm. So früh hat sie sonst niemand in Nürnberg. Kaffee gibt es danach am Automaten im Eingangsbereich, den müssen Sie aber leider selbst bezahlen. So, haben Sie Ihre Westen an? Sehr gut. Dann gehen wir jetzt los, bitte hier entlang.",
+              "hit": "wenn die Druckmaschinen laufen, wird es wirklich sehr laut"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Heute zeigt Holger zum ersten Mal die neue Falzmaschine. An der Gruppe liegt es nicht, sie ist klein.",
+            "evidence": {
+              "text": "Guten Abend, meine Damen und Herren, und herzlich willkommen in der Druckerei der Nürnberger Abendpost! Mein Name ist Holger, ich arbeite seit über zwanzig Jahren hier im Haus, und heute Nacht zeige ich Ihnen, wie aus vielen weißen Papierrollen die Zeitung von morgen wird. Bevor wir losgehen, ein paar wichtige Dinge. Ihre Taschen und Jacken können Sie gern behalten, eine Garderobe gibt es hier nicht. Aber das Erste, was wir jetzt machen: Bitte ziehen Sie alle eine von diesen gelben Warnwesten an. Die liegen hier vorne auf dem Tisch. In der Halle fahren nämlich ständig Gabelstapler herum, und die Fahrer müssen Sie gut sehen können. Also, Weste an, und dann bleibt sie bis zum Ende an. Dann zum Thema Fotos. Ich weiß, viele möchten gern Bilder machen, und das verstehe ich auch. An den Druckmaschinen und im Lager mit dem Papier ist Fotografieren aber leider verboten, aus Sicherheitsgründen. In der letzten Halle, wo die fertigen Zeitungen gebündelt werden, dürfen Sie dann so viele Fotos machen, wie Sie wollen. Gleich bekommen Sie außerdem von mir Ohrstöpsel. Die Lüftung hört man kaum, aber wenn die Druckmaschinen laufen, wird es wirklich sehr laut, lauter als in jeder Disco. Bitte setzen Sie die Stöpsel dann auch ein, wenn ich es sage. An der Maschine kann ich sowieso nichts erklären, deshalb erzähle ich Ihnen das Wichtigste immer vorher. Haben Sie dazu Fragen? Nein? Gut. Normalerweise dauert die Führung ungefähr eine Stunde. Heute wird es etwas länger, ungefähr anderthalb Stunden. Das liegt nicht an der Gruppe, Sie sind ja nur fünfzehn Leute. Wir haben seit zwei Wochen eine neue Falzmaschine, und die darf ich Ihnen heute zum ersten Mal zeigen. Die faltet in einer Stunde über dreißigtausend Zeitungen. Darauf sind wir hier alle ziemlich stolz. Ach ja, und noch etwas: Bitte bleiben Sie immer bei der Gruppe und gehen Sie nur auf den grün markierten Wegen. Wer auf die Toilette muss, sagt mir kurz Bescheid. Und jetzt das Beste zum Schluss. Am Ende der Führung bekommt jeder von Ihnen ein Exemplar der Zeitung von morgen, frisch aus der Maschine, manchmal ist sie noch ein bisschen warm. So früh hat sie sonst niemand in Nürnberg. Kaffee gibt es danach am Automaten im Eingangsbereich, den müssen Sie aber leider selbst bezahlen. So, haben Sie Ihre Westen an? Sehr gut. Dann gehen wir jetzt los, bitte hier entlang.",
+              "hit": "Wir haben seit zwei Wochen eine neue Falzmaschine, und die darf ich Ihnen heute zum ersten Mal zeigen."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Jeder bekommt die Zeitung von morgen. Den Kaffee am Automaten muss man selbst bezahlen.",
+            "evidence": {
+              "text": "Guten Abend, meine Damen und Herren, und herzlich willkommen in der Druckerei der Nürnberger Abendpost! Mein Name ist Holger, ich arbeite seit über zwanzig Jahren hier im Haus, und heute Nacht zeige ich Ihnen, wie aus vielen weißen Papierrollen die Zeitung von morgen wird. Bevor wir losgehen, ein paar wichtige Dinge. Ihre Taschen und Jacken können Sie gern behalten, eine Garderobe gibt es hier nicht. Aber das Erste, was wir jetzt machen: Bitte ziehen Sie alle eine von diesen gelben Warnwesten an. Die liegen hier vorne auf dem Tisch. In der Halle fahren nämlich ständig Gabelstapler herum, und die Fahrer müssen Sie gut sehen können. Also, Weste an, und dann bleibt sie bis zum Ende an. Dann zum Thema Fotos. Ich weiß, viele möchten gern Bilder machen, und das verstehe ich auch. An den Druckmaschinen und im Lager mit dem Papier ist Fotografieren aber leider verboten, aus Sicherheitsgründen. In der letzten Halle, wo die fertigen Zeitungen gebündelt werden, dürfen Sie dann so viele Fotos machen, wie Sie wollen. Gleich bekommen Sie außerdem von mir Ohrstöpsel. Die Lüftung hört man kaum, aber wenn die Druckmaschinen laufen, wird es wirklich sehr laut, lauter als in jeder Disco. Bitte setzen Sie die Stöpsel dann auch ein, wenn ich es sage. An der Maschine kann ich sowieso nichts erklären, deshalb erzähle ich Ihnen das Wichtigste immer vorher. Haben Sie dazu Fragen? Nein? Gut. Normalerweise dauert die Führung ungefähr eine Stunde. Heute wird es etwas länger, ungefähr anderthalb Stunden. Das liegt nicht an der Gruppe, Sie sind ja nur fünfzehn Leute. Wir haben seit zwei Wochen eine neue Falzmaschine, und die darf ich Ihnen heute zum ersten Mal zeigen. Die faltet in einer Stunde über dreißigtausend Zeitungen. Darauf sind wir hier alle ziemlich stolz. Ach ja, und noch etwas: Bitte bleiben Sie immer bei der Gruppe und gehen Sie nur auf den grün markierten Wegen. Wer auf die Toilette muss, sagt mir kurz Bescheid. Und jetzt das Beste zum Schluss. Am Ende der Führung bekommt jeder von Ihnen ein Exemplar der Zeitung von morgen, frisch aus der Maschine, manchmal ist sie noch ein bisschen warm. So früh hat sie sonst niemand in Nürnberg. Kaffee gibt es danach am Automaten im Eingangsbereich, den müssen Sie aber leider selbst bezahlen. So, haben Sie Ihre Westen an? Sehr gut. Dann gehen wir jetzt los, bitte hier entlang.",
+              "hit": "Am Ende der Führung bekommt jeder von Ihnen ein Exemplar der Zeitung von morgen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_gruber_at",
+            "text": "Guten Abend, meine Damen und Herren, und herzlich willkommen in der Druckerei der Nürnberger Abendpost! Mein Name ist Holger, ich arbeite seit über zwanzig Jahren hier im Haus, und heute Nacht zeige ich Ihnen, wie aus vielen weißen Papierrollen die Zeitung von morgen wird. Bevor wir losgehen, ein paar wichtige Dinge. Ihre Taschen und Jacken können Sie gern behalten, eine Garderobe gibt es hier nicht. Aber das Erste, was wir jetzt machen: Bitte ziehen Sie alle eine von diesen gelben Warnwesten an. Die liegen hier vorne auf dem Tisch. In der Halle fahren nämlich ständig Gabelstapler herum, und die Fahrer müssen Sie gut sehen können. Also, Weste an, und dann bleibt sie bis zum Ende an. Dann zum Thema Fotos. Ich weiß, viele möchten gern Bilder machen, und das verstehe ich auch. An den Druckmaschinen und im Lager mit dem Papier ist Fotografieren aber leider verboten, aus Sicherheitsgründen. In der letzten Halle, wo die fertigen Zeitungen gebündelt werden, dürfen Sie dann so viele Fotos machen, wie Sie wollen. Gleich bekommen Sie außerdem von mir Ohrstöpsel. Die Lüftung hört man kaum, aber wenn die Druckmaschinen laufen, wird es wirklich sehr laut, lauter als in jeder Disco. Bitte setzen Sie die Stöpsel dann auch ein, wenn ich es sage. An der Maschine kann ich sowieso nichts erklären, deshalb erzähle ich Ihnen das Wichtigste immer vorher. Haben Sie dazu Fragen? Nein? Gut. Normalerweise dauert die Führung ungefähr eine Stunde. Heute wird es etwas länger, ungefähr anderthalb Stunden. Das liegt nicht an der Gruppe, Sie sind ja nur fünfzehn Leute. Wir haben seit zwei Wochen eine neue Falzmaschine, und die darf ich Ihnen heute zum ersten Mal zeigen. Die faltet in einer Stunde über dreißigtausend Zeitungen. Darauf sind wir hier alle ziemlich stolz. Ach ja, und noch etwas: Bitte bleiben Sie immer bei der Gruppe und gehen Sie nur auf den grün markierten Wegen. Wer auf die Toilette muss, sagt mir kurz Bescheid. Und jetzt das Beste zum Schluss. Am Ende der Führung bekommt jeder von Ihnen ein Exemplar der Zeitung von morgen, frisch aus der Maschine, manchmal ist sie noch ein bisschen warm. So früh hat sie sonst niemand in Nürnberg. Kaffee gibt es danach am Automaten im Eingangsbereich, den müssen Sie aber leider selbst bezahlen. So, haben Sie Ihre Westen an? Sehr gut. Dann gehen wir jetzt los, bitte hier entlang.",
+            "delivery": "[friendly, experienced tour guide addressing a group, clear and lively]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t3-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Gespräch zwischen Bekannten im Bahnhofscafé"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Katrin wurde von jemand anderem für die Quizshow angemeldet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Die Aufnahme fand in Katrins Heimatstadt statt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Katrin ist mit ihrem Bruder ins Studio gefahren."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Eine Frage zum Thema Sport hat Katrin falsch beantwortet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Lukas erfährt, wie viel Geld Katrin gewonnen hat."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Die Sendung wird in einigen Wochen im Fernsehen gezeigt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Lukas möchte selbst bei der Quizshow mitmachen."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch im Bahnhofscafé",
+          "segments": [],
+          "speakers": {
+            "k": {
+              "name": "Katrin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "l": {
+              "name": "Lukas",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie sitzen in einem Café im Bahnhof von Wiener Neustadt und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "duration": 187.66,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t3-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "richtig",
+            "explanation": "Ihr Bruder hat sie angemeldet, ohne sie zu fragen. Sie selbst hat sich nicht beworben.",
+            "evidence": {
+              "text": "Nein, eben nicht! Das war mein Bruder. Der hat mich angemeldet, ohne mich zu fragen. Und dann ruft mich plötzlich eine Frau vom Sender an und lädt mich zum Casting ein.",
+              "hit": "Der hat mich angemeldet, ohne mich zu fragen."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "falsch",
+            "explanation": "Lukas denkt an Wiener Neustadt. Das Studio ist aber in Wien.",
+            "evidence": {
+              "text": "Nein, nein, das Studio ist in Wien. Ich bin mit dem Zug hin, ganz früh am Morgen.",
+              "hit": "das Studio ist in Wien"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "falsch",
+            "explanation": "Ihre Mutter ist mitgekommen. Der Bruder wollte mit, hatte aber eine Prüfung.",
+            "evidence": {
+              "text": "Nein, meine Mama ist mitgekommen. Eigentlich wollte mein Bruder mit, das wäre ja auch fair gewesen, aber er hatte an dem Tag eine Prüfung. Und Mama sitzt jetzt halt im Publikum, man sieht sie bestimmt ein paar Mal.",
+              "hit": "Nein, meine Mama ist mitgekommen."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Bei der Handballfrage hat sie elf gesagt. Das ist falsch, elf Spieler gibt es beim Fußball.",
+            "evidence": {
+              "text": "Unterschiedlich. Geschichte und Musik liefen super. Aber dann kam eine Frage zum Sport: Wie viele Spieler sind bei einer Handballmannschaft auf dem Feld? Und ich sag ganz sicher: elf! Elf, stell dir vor. Das ist doch Fußball.",
+              "hit": "Und ich sag ganz sicher: elf! Elf, stell dir vor. Das ist doch Fußball."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Katrin darf den Gewinn nicht verraten. Lukas muss die Sendung selbst anschauen.",
+            "evidence": {
+              "text": "Das darf ich dir nicht sagen! Echt nicht. Wir mussten einen Vertrag unterschreiben. Bis die Sendung läuft, darf ich nichts verraten.",
+              "hit": "Bis die Sendung läuft, darf ich nichts verraten."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Die Sendung läuft nächsten Monat am ersten Freitag. Katrin schickt Lukas noch eine Erinnerung.",
+            "evidence": {
+              "text": "Nächsten Monat, am ersten Freitag, um Viertel nach acht. Ich schick dir noch eine Erinnerung.",
+              "hit": "Nächsten Monat, am ersten Freitag, um Viertel nach acht."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "Lukas will sich heute Abend gleich auf der Website anmelden. Katrin schickt ihm dafür den Link.",
+            "evidence": {
+              "text": "Ja, unbedingt. Dann melde ich mich heute Abend gleich an, bevor ich es mir anders überlege.",
+              "hit": "Dann melde ich mich heute Abend gleich an"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Katrin? Na so was! Was machst du denn hier im Café?",
+            "delivery": "[surprised, cheerful]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Lukas! Hallo! Ich warte auf meinen Zug, der hat zwanzig Minuten Verspätung. Setz dich doch!",
+            "delivery": "[happy, lively]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Gern. Du, ich hab gehört, du warst im Fernsehen? Stimmt das?",
+            "delivery": "[curious, sitting down]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Na ja, noch nicht ganz. Ich war bei der Aufnahme von einer Quizshow. „Das schlaue Duell“, kennst du die?",
+            "delivery": "[a bit coy, laughing]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Echt jetzt? Die schaut meine Oma jeden Freitag! Und wie bist du da hingekommen? Hast du dich einfach beworben?",
+            "delivery": "[excited, overlapping slightly]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Nein, eben nicht! Das war mein Bruder. Der hat mich angemeldet, ohne mich zu fragen. Und dann ruft mich plötzlich eine Frau vom Sender an und lädt mich zum Casting ein.",
+            "delivery": "[animated, telling a story]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Nein! Und du warst nicht sauer?",
+            "delivery": "[amused]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Zuerst schon ein bisschen. Aber dann hab ich mir gedacht: Warum eigentlich nicht? Heuer wollte ich sowieso mal was Verrücktes machen.",
+            "delivery": "[relaxed, shrugging]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Mhm. Und wo war das? Hier bei uns in Wiener Neustadt?",
+            "delivery": "[short back-channel, curious]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Nein, nein, das Studio ist in Wien. Ich bin mit dem Zug hin, ganz früh am Morgen.",
+            "delivery": "[quick]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Allein? Ich wär so nervös gewesen.",
+            "delivery": "[sympathetic]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Nein, meine Mama ist mitgekommen. Eigentlich wollte mein Bruder mit, das wäre ja auch fair gewesen, aber er hatte an dem Tag eine Prüfung. Und Mama sitzt jetzt halt im Publikum, man sieht sie bestimmt ein paar Mal.",
+            "delivery": "[warm, laughing]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Wie süß. Und? Wie war's? Erzähl!",
+            "delivery": "[eager]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Also, zuerst wirst du geschminkt, das dauert ewig. Dann wartest du mit den anderen Kandidaten in einem kleinen Raum. Und dann geht's los: Licht, Kameras, Publikum … Ich hab am Anfang gar nichts mehr gewusst.",
+            "delivery": "[excited, a little breathless]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Und die Fragen? Waren die schwer?",
+            "delivery": "[interested]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Unterschiedlich. Geschichte und Musik liefen super. Aber dann kam eine Frage zum Sport: Wie viele Spieler sind bei einer Handballmannschaft auf dem Feld? Und ich sag ganz sicher: elf! Elf, stell dir vor. Das ist doch Fußball.",
+            "delivery": "[embarrassed, laughing at herself]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Oje! Aber du bist nicht rausgeflogen, oder?",
+            "delivery": "[laughing, worried]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Nein, zum Glück nicht. Ich bin bis ganz zum Schluss dabei geblieben.",
+            "delivery": "[proud]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Und? Wie viel hast du gewonnen? Komm, sag schon!",
+            "delivery": "[teasing, pushing]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Das darf ich dir nicht sagen! Echt nicht. Wir mussten einen Vertrag unterschreiben. Bis die Sendung läuft, darf ich nichts verraten.",
+            "delivery": "[firm but playful]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Ach, komm! Nur ungefähr? Mehr als tausend Euro?",
+            "delivery": "[pleading]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Lukas! Nein. Du musst dir die Sendung schon selbst anschauen.",
+            "delivery": "[laughing, refusing]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Okay, okay. Und wann kommt die?",
+            "delivery": "[giving in]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Nächsten Monat, am ersten Freitag, um Viertel nach acht. Ich schick dir noch eine Erinnerung.",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Super. Weißt du was? Ich glaub, so was würde mir auch Spaß machen. Bei solchen Sendungen weiß ich zu Hause immer alles besser als die Kandidaten.",
+            "delivery": "[thoughtful, then confident]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Haha, das sagen alle vor dem Fernseher!",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Nein, ehrlich. Wie kann man sich denn da bewerben?",
+            "delivery": "[serious]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Ganz einfach, auf der Website vom Sender gibt's ein Formular. Soll ich dir den Link schicken?",
+            "delivery": "[helpful]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Ja, unbedingt. Dann melde ich mich heute Abend gleich an, bevor ich es mir anders überlege.",
+            "delivery": "[decisive]"
+          },
+          {
+            "speaker": "k",
+            "voice": "woman_alexandra_at",
+            "text": "Mach das! Oh, da kommt die Durchsage für meinen Zug. Ich muss los!",
+            "delivery": "[hurried, standing up]"
+          },
+          {
+            "speaker": "l",
+            "voice": "man_martin_at",
+            "text": "Alles klar. Schöne Fahrt!",
+            "delivery": "[friendly goodbye]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-02-t4-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.859Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Mit dem Handy ist man an der Kasse schneller als mit Münzen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Ältere Kundinnen bezahlen am Marktstand meistens lieber bar.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Junge Leute bezahlen sogar kleine Beträge fast nur digital.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Für kleine Betriebe sind die Gebühren für Kartenzahlungen ein Problem.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Mit der Karte gibt man leicht mehr aus, als man eigentlich wollte.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Auch mit einer App können Kinder lernen, was Geld wert ist.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Bei einem Stromausfall kann man nur noch bar bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Niemand möchte das Bargeld komplett abschaffen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Inzwischen gibt es am Marktstand doch ein Gerät für Kartenzahlungen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Nora Brandt, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Erwin Pichler, Marktstandbesitzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Corinne Wyss, Konsumforscherin"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Nora Brandt, Moderatorin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p": {
+              "name": "Erwin Pichler, Marktstandbesitzer",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "w": {
+              "name": "Corinne Wyss, Konsumforscherin",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Die Moderatorin der Radiosendung „Treffpunkt Alltag“, Nora Brandt, diskutiert mit Erwin Pichler, der einen Gemüsestand auf dem Wochenmarkt in Leoben hat, und Corinne Wyss, Konsumforscherin aus Olten, über das Thema „Bezahlen nur noch mit Karte und Handy?“",
+          "duration": 301.53,
+          "src": "oesd-b1/hoeren-02/oesd-b1-hoeren-02-t4-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "b",
+            "explanation": "Herr Pichler erzählt, dass seine älteren Kundinnen fast alle bar zahlen. Frau Wyss spricht über junge Leute.",
+            "evidence": {
+              "text": "Bei mir ist das ganz anders. Meine Kundschaft am Markt, das sind ja oft ältere Damen, die kommen seit Jahren jeden Samstag. Und die zahlen fast alle bar. Die wollen das Geld in der Hand haben, die wissen genau, wie viel sie in der Geldtasche haben. Wenn ich da mit einem Handy komme, schauen die mich an, als wär ich vom Mond.",
+              "hit": "Und die zahlen fast alle bar."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "c",
+            "explanation": "Frau Wyss sagt, dass Leute unter dreißig sogar einen Kaffee digital bezahlen. Herr Pichler spricht über ältere Kundinnen.",
+            "evidence": {
+              "text": "Das passt zu unseren Zahlen. Bei den Jungen sieht es aber völlig anders aus. In unserer letzten Studie haben Leute unter dreissig sogar einen Kaffee für drei Franken fast immer digital bezahlt. Viele von ihnen haben gar kein Portemonnaie mehr, nur noch das Handy.",
+              "hit": "In unserer letzten Studie haben Leute unter dreissig sogar einen Kaffee für drei Franken fast immer digital bezahlt."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "b",
+            "explanation": "Herr Pichler erklärt, dass die Gebühren für seinen kleinen Stand zu hoch sind. Frau Wyss spricht nicht über Gebühren.",
+            "evidence": {
+              "text": "Das ist eine Frage des Geldes. Für jede Zahlung mit Bankomatkarte oder Kreditkarte muss ich eine Gebühr zahlen, dazu noch die Miete für das Gerät jeden Monat. Für einen großen Supermarkt ist das nichts. Aber wenn jemand bei mir einen Kopf Salat um einen Euro fünfzig kauft, dann bleibt mir am Ende fast nichts mehr übrig. Für so einen kleinen Betrieb wie meinen ist das einfach zu viel.",
+              "hit": "Für so einen kleinen Betrieb wie meinen ist das einfach zu viel."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "a",
+            "explanation": "Die Moderatorin erzählt, dass sie mit Karte den Überblick über ihr Geld verliert. Die Gäste sagen das nicht über sich.",
+            "evidence": {
+              "text": "Ich muss da ehrlich etwas zugeben. Seit ich fast alles mit Karte bezahle, habe ich viel weniger Überblick. Ein Kaffee hier, ein Buch dort, und am Monatsende schaue ich aufs Konto und denke: Wo ist denn das ganze Geld hin? Mit Scheinen in der Hand ist mir das nie passiert.",
+              "hit": "Seit ich fast alles mit Karte bezahle, habe ich viel weniger Überblick."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Frau Wyss sagt, dass Kinder auch mit einer Taschengeld-App gut lernen. Herr Pichler zweifelt daran.",
+            "evidence": {
+              "text": "Darüber diskutieren wir in der Forschung viel. Ich möchte aber noch etwas anderes ansprechen, nämlich die Kinder. Viele Eltern glauben, Kinder müssen Münzen anfassen, sonst verstehen sie nicht, was Geld wert ist. Das stimmt so nicht. Es gibt heute Apps für das Taschengeld. Da sehen Kinder genau, wie viel sie noch haben und wofür sie es ausgegeben haben. Unsere Studie zeigt: Damit lernen Kinder ebenso gut, mit Geld umzugehen.",
+              "hit": "Damit lernen Kinder ebenso gut, mit Geld umzugehen."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Herr Pichler erzählt vom Stromausfall in Leoben, als nur Bargeld funktioniert hat. Frau Wyss spricht nicht über Stromausfälle.",
+            "evidence": {
+              "text": "Ja, genau. Da war in Leoben am Nachmittag in der halben Stadt der Strom weg, fast drei Stunden lang. Im Supermarkt ist die Kassa nicht mehr gegangen, die Kartengeräte auch nicht, und die Leute sind mit vollen Einkaufswagen dagestanden. Bei mir am Stand haben alle ganz normal bar gezahlt. In so einer Situation kommt man nur mit Bargeld weiter, mit sonst gar nichts.",
+              "hit": "In so einer Situation kommt man nur mit Bargeld weiter, mit sonst gar nichts."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Frau Wyss kennt niemanden, der das Bargeld ganz abschaffen will. Herr Pichler hat dagegen Angst davor.",
+            "evidence": {
+              "text": "Da kann ich Sie beruhigen, Herr Pichler. Wir haben mit Banken, mit dem Handel und auch mit Politikern gesprochen. Ich kenne wirklich niemanden, der das Bargeld ganz abschaffen möchte. Es geht nur darum, dass die Menschen wählen können. Und viele wollen eben beides: das Handy für den Alltag und ein paar Scheine im Portemonnaie, für alle Fälle.",
+              "hit": "Ich kenne wirklich niemanden, der das Bargeld ganz abschaffen möchte."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Herr Pichler hat letzte Woche doch ein Kartengerät gekauft. Am Anfang der Sendung hat er noch keine Karten genommen.",
+            "evidence": {
+              "text": "Also, jetzt muss ich was gestehen. Letzte Woche hab ich mir doch so ein kleines Kartengerät gekauft. Meine Tochter hat so lange geredet, bis ich nachgegeben hab. Die Gebühren ärgern mich immer noch, aber ich will auch keine Kundschaft verlieren. Und meine Stammkundinnen zahlen natürlich weiter bar.",
+              "hit": "Letzte Woche hab ich mir doch so ein kleines Kartengerät gekauft."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Guten Tag und herzlich willkommen bei „Treffpunkt Alltag“. Heute geht es um eine Frage, die uns alle jeden Tag betrifft: Wie bezahlen wir? Immer mehr Menschen zahlen mit Karte oder mit dem Handy, manche haben gar kein Bargeld mehr dabei. Ist das die Zukunft? Darüber spreche ich mit zwei Gästen. Erwin Pichler hat seit fast dreißig Jahren einen Gemüsestand auf dem Wochenmarkt in Leoben. Grüß Gott, Herr Pichler.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Grüß Gott, schönen guten Tag.",
+            "delivery": "[friendly, down-to-earth]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Und aus Olten ist Doktor Corinne Wyss zugeschaltet. Sie forscht an der Fachhochschule zum Verhalten von Konsumentinnen und Konsumenten. Guten Tag, Frau Wyss.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "w",
+            "voice": "woman_heidi_ch",
+            "text": "Grüezi, guten Tag.",
+            "delivery": "[calm, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Frau Wyss, fangen wir mit Ihnen an. Wie bezahlen Sie denn persönlich?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "w",
+            "voice": "woman_heidi_ch",
+            "text": "Ehrlich gesagt, fast nur noch mit dem Handy. Ich halte es kurz an das Gerät, und fertig. Wenn ich früher am Kiosk mein Portemonnaie gesucht und dann die Münzen gezählt habe, hat das ewig gedauert. Mit dem Handy bin ich in zwei Sekunden durch, die Leute hinter mir freuen sich.",
+            "delivery": "[relaxed, slightly amused]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pichler, wie ist das bei Ihnen am Stand?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Bei mir ist das ganz anders. Meine Kundschaft am Markt, das sind ja oft ältere Damen, die kommen seit Jahren jeden Samstag. Und die zahlen fast alle bar. Die wollen das Geld in der Hand haben, die wissen genau, wie viel sie in der Geldtasche haben. Wenn ich da mit einem Handy komme, schauen die mich an, als wär ich vom Mond.",
+            "delivery": "[lively, laughing]",
+            "item": 23
+          },
+          {
+            "speaker": "w",
+            "voice": "woman_heidi_ch",
+            "text": "Das passt zu unseren Zahlen. Bei den Jungen sieht es aber völlig anders aus. In unserer letzten Studie haben Leute unter dreissig sogar einen Kaffee für drei Franken fast immer digital bezahlt. Viele von ihnen haben gar kein Portemonnaie mehr, nur noch das Handy.",
+            "delivery": "[precise, matter-of-fact]",
+            "item": 24
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pichler, warum nehmen Sie eigentlich keine Karten?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Das ist eine Frage des Geldes. Für jede Zahlung mit Bankomatkarte oder Kreditkarte muss ich eine Gebühr zahlen, dazu noch die Miete für das Gerät jeden Monat. Für einen großen Supermarkt ist das nichts. Aber wenn jemand bei mir einen Kopf Salat um einen Euro fünfzig kauft, dann bleibt mir am Ende fast nichts mehr übrig. Für so einen kleinen Betrieb wie meinen ist das einfach zu viel.",
+            "delivery": "[frank, a little annoyed]",
+            "item": 25
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Ich muss da ehrlich etwas zugeben. Seit ich fast alles mit Karte bezahle, habe ich viel weniger Überblick. Ein Kaffee hier, ein Buch dort, und am Monatsende schaue ich aufs Konto und denke: Wo ist denn das ganze Geld hin? Mit Scheinen in der Hand ist mir das nie passiert.",
+            "delivery": "[personal, self-ironic]",
+            "item": 26
+          },
+          {
+            "speaker": "w",
+            "voice": "woman_heidi_ch",
+            "text": "Darüber diskutieren wir in der Forschung viel. Ich möchte aber noch etwas anderes ansprechen, nämlich die Kinder. Viele Eltern glauben, Kinder müssen Münzen anfassen, sonst verstehen sie nicht, was Geld wert ist. Das stimmt so nicht. Es gibt heute Apps für das Taschengeld. Da sehen Kinder genau, wie viel sie noch haben und wofür sie es ausgegeben haben. Unsere Studie zeigt: Damit lernen Kinder ebenso gut, mit Geld umzugehen.",
+            "delivery": "[thoughtful, firm]",
+            "item": 27
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Na ja, ich weiß nicht. Mein Enkel hat so eine App, und der hat keine Ahnung, was eine Semmel kostet.",
+            "delivery": "[sceptical, chuckling]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pichler, Sie haben uns vor der Sendung noch von einem Erlebnis im letzten Winter erzählt.",
+            "delivery": "[host, inviting]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Ja, genau. Da war in Leoben am Nachmittag in der halben Stadt der Strom weg, fast drei Stunden lang. Im Supermarkt ist die Kassa nicht mehr gegangen, die Kartengeräte auch nicht, und die Leute sind mit vollen Einkaufswagen dagestanden. Bei mir am Stand haben alle ganz normal bar gezahlt. In so einer Situation kommt man nur mit Bargeld weiter, mit sonst gar nichts.",
+            "delivery": "[storytelling, convinced]",
+            "item": 28
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pichler, haben Sie Angst, dass es das Bargeld irgendwann nicht mehr gibt?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Manchmal schon, ehrlich gesagt. Ich hab oft das Gefühl, die Banken und die Politik wollen uns das Bargeld langsam wegnehmen. Immer mehr Geschäfte nehmen keine Scheine mehr, und Bankomaten gibt's auch immer weniger.",
+            "delivery": "[worried]"
+          },
+          {
+            "speaker": "w",
+            "voice": "woman_heidi_ch",
+            "text": "Da kann ich Sie beruhigen, Herr Pichler. Wir haben mit Banken, mit dem Handel und auch mit Politikern gesprochen. Ich kenne wirklich niemanden, der das Bargeld ganz abschaffen möchte. Es geht nur darum, dass die Menschen wählen können. Und viele wollen eben beides: das Handy für den Alltag und ein paar Scheine im Portemonnaie, für alle Fälle.",
+            "delivery": "[reassuring, calm]",
+            "item": 29
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pichler, wie geht es denn bei Ihnen am Stand weiter? Bleibt es beim Bargeld?",
+            "delivery": "[host, playful]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Also, jetzt muss ich was gestehen. Letzte Woche hab ich mir doch so ein kleines Kartengerät gekauft. Meine Tochter hat so lange geredet, bis ich nachgegeben hab. Die Gebühren ärgern mich immer noch, aber ich will auch keine Kundschaft verlieren. Und meine Stammkundinnen zahlen natürlich weiter bar.",
+            "delivery": "[sheepish, laughing]",
+            "item": 30
+          },
+          {
+            "speaker": "w",
+            "voice": "woman_heidi_ch",
+            "text": "Das finde ich eine gute Lösung, dann können Ihre Kunden selbst entscheiden.",
+            "delivery": "[approving]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Damit sind wir am Ende unserer Sendung. Vielen Dank, Frau Wyss, vielen Dank, Herr Pichler. Und Ihnen zu Hause: Ob mit Karte, Handy oder Münzen, kommen Sie gut durch die Woche!",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ],
+  "track": {
+    "src": "oesd-b1/hoeren-02/track.mp3",
+    "duration": 2237.31,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.19,
+        "to": 19.75
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.79,
+        "to": 26.8
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.8,
+        "to": 37.33
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.33,
+        "to": 40.39
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 41.93,
+        "to": 72.59
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 74.63,
+        "to": 77.04
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 78.08,
+        "to": 108.75
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 108.75,
+        "to": 111.28
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 111.28,
+        "to": 117.52
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 117.52,
+        "to": 128.05
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 128.05,
+        "to": 130.69
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 132.23,
+        "to": 170.48
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 172.51,
+        "to": 174.92
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 175.96,
+        "to": 214.2
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 214.2,
+        "to": 216.74
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 216.74,
+        "to": 223.09
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 223.09,
+        "to": 233.61
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 233.61,
+        "to": 236.67
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 238.21,
+        "to": 272.09
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 274.13,
+        "to": 276.53
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 277.58,
+        "to": 311.46
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 311.46,
+        "to": 313.99
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 313.99,
+        "to": 320.47
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 320.47,
+        "to": 331
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 331,
+        "to": 335.02
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 336.56,
+        "to": 375.09
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 377.13,
+        "to": 379.53
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 380.58,
+        "to": 419.11
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 419.11,
+        "to": 421.64
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 421.64,
+        "to": 428.04
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 428.04,
+        "to": 438.57
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 438.57,
+        "to": 441.63
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 443.17,
+        "to": 477.05
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 479.09,
+        "to": 481.49
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 482.53,
+        "to": 516.41
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 516.41,
+        "to": 518.95
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 518.95,
+        "to": 525.22
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 525.22,
+        "to": 535.75
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 535.75,
+        "to": 537.78
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 539.32,
+        "to": 573.7
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 575.74,
+        "to": 578.14
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 579.19,
+        "to": 613.56
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 613.56,
+        "to": 616.1
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 623.31,
+        "to": 637.39
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 639.43,
+        "to": 645.85
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 645.85,
+        "to": 705.88
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 705.88,
+        "to": 711.34
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 712.88,
+        "to": 879.31
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 879.31,
+        "to": 888.35
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 895.5,
+        "to": 907.7
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 909.74,
+        "to": 916.24
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 916.24,
+        "to": 976.27
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 976.27,
+        "to": 983.95
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 985.5,
+        "to": 1173.16
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1173.16,
+        "to": 1182.2
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1189.36,
+        "to": 1201.55
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1203.59,
+        "to": 1210.04
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1210.04,
+        "to": 1270.07
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1270.07,
+        "to": 1287.52
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1293.11,
+        "to": 1594.64
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1598.69,
+        "to": 1601.72
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1601.72,
+        "to": 1604.6
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1610.19,
+        "to": 1911.72
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1915.77,
+        "to": 1924.81
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1931.94,
+        "to": 1937.82
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1937.82,
+        "to": 2237.86
+      }
+    ]
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-03-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.631Z",
+        "textType": "Formular ausfüllen: Bestellung eines Zeitungsabos"
+      },
+      "exampleAnswers": [
+        "Nowak"
+      ],
+      "display": {
+        "instruction": "Situation: Ihr Freund Tomasz möchte eine Zeitung bestellen. Sie füllen für Tomasz das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Themen“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Elbe-Bote · Abo-Bestellung\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nAbo ab (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nAusgabe: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "Papier",
+                    "Digital"
+                  ]
+                },
+                "\nDauer: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "6 Monate",
+                    "1 Jahr"
+                  ]
+                },
+                "\nThemen: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "Politik",
+                    "Kultur",
+                    "Reisen",
+                    "Lokales"
+                  ],
+                  "pick": 2
+                },
+                "\nBezahlung: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "Kreditkarte",
+                    "Rechnung"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Tomasz",
+            "explanation": "Der Vorname ist Tomasz, Nowak ist der Familienname. Der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "Tomasz Nowak"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "8.2.1987",
+            "accept": [
+              "08.02.1987",
+              "8. Februar 1987",
+              "8. Feber 1987",
+              "08.02.87",
+              "8.2.87",
+              "1987-02-08"
+            ],
+            "explanation": "Tomasz ist am 8. Februar 1987 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "am 8. Februar 1987 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Dresden",
+            "explanation": "Tomasz wohnt in Dresden.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "Tomasz Nowak aus Dresden"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0176 5520 3148",
+            "accept": [
+              "0176 55203148",
+              "017655203148",
+              "0176/55203148",
+              "0176 / 5520 3148",
+              "0176/5520 3148"
+            ],
+            "explanation": "Das ist die Handynummer von Tomasz. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "0176 5520 3148"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "März",
+            "accept": [
+              "ab März",
+              "im März",
+              "Maerz"
+            ],
+            "explanation": "Tomasz möchte die Zeitung ab März lesen.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "ab März"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "Digital",
+            "explanation": "Tomasz liest nur auf dem Tablet. Darum ist Digital richtig, nicht Papier.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "aber nur auf dem Tablet"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "1 Jahr",
+            "explanation": "Sechs Monate sind für Tomasz zu kurz. Er möchte ein Jahr.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "Sechs Monate sind zu kurz, er möchte ein Jahr."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Kultur,Lokales",
+            "explanation": "Tomasz mag Kultur und Nachrichten aus Dresden, das ist Lokales. Politik mag er nicht.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "Er mag Kultur und Nachrichten aus Dresden, keine Politik."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Rechnung",
+            "explanation": "Tomasz hat keine Kreditkarte. Darum bezahlt er mit Rechnung.",
+            "evidence": {
+              "text": "Ihr Freund Tomasz Nowak aus Dresden möchte ab März die Zeitung „Elbe-Bote“ lesen, aber nur auf dem Tablet. Sechs Monate sind zu kurz, er möchte ein Jahr. Er mag Kultur und Nachrichten aus Dresden, keine Politik. Er hat keine Kreditkarte. Tomasz ist am 8. Februar 1987 geboren. Seine Handynummer ist 0176 5520 3148.",
+              "hit": "Er hat keine Kreditkarte."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-03-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.631Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihre Freundin Miriam hat ein Baby bekommen und Ihnen ein E-Mail geschrieben. Antworten Sie Miriam. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Miriam",
+            "situation": "Ihre Freundin Miriam aus Bad Ischl schreibt Ihnen: „Hallo! Unsere Tochter Lina ist da! Sie ist am Montag geboren und sie ist sehr süß. Komm doch auf eine Jause zu uns! Wann hast du nächste Woche Zeit? Gehst du mit uns im Park spazieren? Bringst du Fotos von dir als Baby mit? Ich freue mich! Liebe Grüße, Miriam“",
+            "points": [
+              "Wann hast du nächste Woche Zeit?",
+              "Gehst du mit uns im Park spazieren?",
+              "Bringst du Fotos von dir als Baby mit?"
+            ],
+            "opener": "Liebe Miriam,\ndanke für dein E-Mail und herzlichen Glückwunsch! Hier meine Antworten:"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Miriam, danke für dein E-Mail und herzlichen Glückwunsch! Hier meine Antworten: Ich habe am Mittwochnachmittag Zeit. Ja, ich gehe gern mit euch im Park spazieren. Ich bringe zwei Fotos von mir als Baby mit. Bis Mittwoch! Liebe Grüße, Sara"
+          }
+        ]
+      }
+    }
+  ]
+}

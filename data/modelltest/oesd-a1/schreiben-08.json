@@ -1,0 +1,252 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-08-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.664Z",
+        "textType": "Formular ausfüllen: Anmeldung beim Carsharing"
+      },
+      "exampleAnswers": [
+        "Asante"
+      ],
+      "display": {
+        "instruction": "Situation: Ihr Freund Kwame möchte beim Carsharing mitmachen. Sie füllen für Kwame das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Fahrten“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "teilAuto Leonding · Anmeldung\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nStart ab Monat: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nAuto: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "Kleinwagen",
+                    "Familienauto"
+                  ]
+                },
+                "\nWann: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "unter der Woche",
+                    "am Wochenende"
+                  ]
+                },
+                "\nFahrten: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "zur Arbeit",
+                    "einkaufen",
+                    "Ausflüge",
+                    "in den Urlaub"
+                  ],
+                  "pick": 2
+                },
+                "\nBezahlung: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "Kreditkarte",
+                    "Rechnung"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Kwame",
+            "explanation": "Der Vorname ist Kwame. Der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "Kwame Asante"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "27.6.1988",
+            "accept": [
+              "27.06.1988",
+              "27. Juni 1988",
+              "27.06.88",
+              "27.6.88",
+              "1988-06-27"
+            ],
+            "explanation": "Kwame ist am 27. Juni 1988 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "am 27. Juni 1988 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Leonding",
+            "explanation": "Kwame wohnt in Leonding.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "Kwame Asante aus Leonding"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0664 527 30 81",
+            "accept": [
+              "0664 5273081",
+              "06645273081",
+              "0664/5273081",
+              "0664 / 527 30 81"
+            ],
+            "explanation": "Das ist Kwames Handynummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "0664 527 30 81"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "Februar",
+            "accept": [
+              "ab Februar",
+              "im Februar",
+              "2",
+              "02"
+            ],
+            "explanation": "Kwame möchte ab Februar mitmachen.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "möchte ab Februar"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "Familienauto",
+            "explanation": "Kwame braucht ein großes Auto für seine Frau und seine Eltern. Ein Kleinwagen ist zu klein.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "ein großes Auto"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "am Wochenende",
+            "explanation": "Er braucht das Auto nur am Wochenende. Unter der Woche fährt er mit dem Bus zur Arbeit.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "Er braucht nur am Wochenende ein großes Auto"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "einkaufen,Ausflüge",
+            "explanation": "Kwame braucht das Auto zum Einkaufen und für Ausflüge. Zur Arbeit fährt er Bus, darum ist „zur Arbeit“ falsch.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "zum Einkaufen und für Ausflüge"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Kreditkarte",
+            "explanation": "Kwame zahlt mit Kreditkarte, nicht mit Rechnung.",
+            "evidence": {
+              "text": "Ihr Freund Kwame Asante aus Leonding möchte ab Februar bei „teilAuto Leonding“ mitmachen. Zur Arbeit fährt er Bus. Er braucht nur am Wochenende ein großes Auto: zum Einkaufen und für Ausflüge mit seiner Frau und seinen Eltern. Er zahlt mit Kreditkarte. Er ist am 27. Juni 1988 geboren. Seine Handynummer ist 0664 527 30 81.",
+              "hit": "Er zahlt mit Kreditkarte."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-08-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.664Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihre Freundin Greta hat Ihnen ein E-Mail geschrieben. Antworten Sie Greta. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Greta",
+            "situation": "Ihre Freundin Greta aus Erlangen schreibt Ihnen: „Hallo! Ich habe zwei Karten für ein Popkonzert in der Stadthalle Erlangen. Das Konzert ist am Freitag um acht Uhr am Abend. Hast du am Freitag Zeit? Magst du Popmusik? Und wo treffen wir uns? Vielleicht beim Bahnhof oder vor der Stadthalle? Ich freue mich auf dich! Liebe Grüße, Greta“",
+            "points": [
+              "Hast du am Freitag Zeit?",
+              "Magst du Popmusik?",
+              "Wo treffen wir uns?"
+            ],
+            "opener": "Liebe Greta,\ndanke für dein E-Mail. Hier meine Antworten:"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Greta, danke für dein E-Mail. Hier meine Antworten: Ja, am Freitag habe ich Zeit. Ich mag Popmusik sehr gern. Wir treffen uns um halb acht vor der Stadthalle. Danke für die Karte! Liebe Grüße, Sara"
+          }
+        ]
+      }
+    }
+  ]
+}

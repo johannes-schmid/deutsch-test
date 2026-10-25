@@ -226,10 +226,10 @@ All audio on `eleven_v4_turbo`. Voice IDs live only in `data/tts-voices.json`; c
 | Accent | Men | Women |
 |---|---|---|
 | **DE** (standard German) | `man_mark` (narrator only) · `man_ben` (young) · `man_christian` (middle) · `man_simon` (young) · `man_johann` (old) · `man_michael` (old) | `woman_ela` (young) · `woman_irene` (middle) · `woman_laura` (middle) · `woman_lisa` (old) · `woman_kathi` (`de-learner`: soft Eastern European accent) |
-| **AT** | `man_gruber_at` · `man_martin_at` (stronger dialect) | `woman_alexandra_at` · `woman_emilia_at` |
+| **AT** | `man_gruber_at` · `man_martin_at` (stronger dialect) | `woman_alexandra_at` · `woman_emilia_at` · `woman_seda_at` (approved 2026-10-24) |
 | **CH** | `man_andres_ch` · `man_thomas_ch` (maybe) | `woman_heidi_ch` · `woman_mia_ch` |
 
-- **Accent per exam:** DTZ, Goethe and telc use DE voices only. ÖSD uses AT (plus DE/CH where
+- **Accent per exam:** DTZ, Goethe and telc use DE voices only. ÖSD B1 runs the Goethe B1 sets with Austrian voices (Swiss voices for Swiss-set speakers), made by `scripts/modelltest/derive-oesd.ts` (Hannes, 2026-10-24). ÖSD uses AT (plus DE/CH where
   `accents` in `lib/exam/exams/oesd-*.ts` says so). CH voices only where an exam has Swiss speakers.
 - **Kathi** (`de-learner`) is never a native role (announcer, examiner, official). Use her for people who
   came to Germany themselves: Hören Teil 4 opinions, a learner partner in Sprechen.
@@ -270,6 +270,8 @@ deutsch-test/
 ├── research/dtz-blueprint.md        # ★ the real DTZ format, sourced and dated (g.a.s.t. Übungssätze 1+2); encoded as `full` in lib/exam/blueprint.ts
 ├── research/telc-overview.md         # all 24 telc German exams: official result modes (§2), skeletons, recognition, A1→C1 ladder; blueprints in research/{start-deutsch-1,telc-a2,telc-b1,telc-b2,telc-c1}.md
 ├── research/telc-plan.md             # ★ telc build plan (all exams, telc B1 first), audio standard, cited Anleitung drafts, Prüfungssimulation (§7)
+├── research/goethe-plan.md           # ★ Goethe A2/B1 build plan: which exams share a format, ÖSD B1 = Goethe B1 items with AT/CH voices, voice gaps, open decisions
+├── research/goethe-{a2,oesd-b1}-set1.md # set 1 plans with scorecards (official vs ours vs TestGerman) · *-official-situations.md = do-not-reuse lists · austrian-swiss-glossary.md = regional words + generator rules
 ├── research/telc-anleitung/          # draft Anleitung (intro) text per telc exam, cited to the official Übungstest pages; moves to lib/modelltest/ when built
 ├── research/dtz-official-situations.md # every situation of the official DTZ sets (paraphrased): the generator's do-not-reuse list; official texts for the 6-word overlap check live only in .unit-cache/official/ (gitignored)
 └── testgerman/                       # competitor research, sorted by level; README.md in every folder
@@ -350,8 +352,13 @@ scripts/lib/drafting.ts              # shared Claude call (direct API, optional 
 scripts/modelltest/                  # ★ Modelltest pipeline: plan-dtz (topics per set) → author (Claude per Teil, validated) → audio (eleven_v4_turbo, Hören track / Sprechen lines) → images (Pexels → WebP, Claude refits text to the photo) → seed (local mt_* + Storage; never touches review_status)
                                      # batch.sh <sets…> runs all of it (author → images → audio → local seed) with Claude on the Message Batches API (50% off), logs in .unit-cache/batch/
                                      # drafting model: Opus 5.5, effort medium (DRAFT_MODEL / DRAFT_EFFORT override; blind eval 2026-10-23 in LEARNINGS.md)
+scripts/modelltest/author-oesd.ts     # ÖSD A1/A2 sets 2–10: plan per set → draft per skill (Message Batches with DRAFT_BATCH=1) → check-oesd.ts (validateSet, AT voices + max one DE voice, names across skills, official overlap); guides research/oesd-{a1,a2}-authoring.md, set 1 plans research/oesd-{a1,a2}-set1.md
+scripts/modelltest/check-oesd.ts      # checks an ÖSD set (--exam oesd-a1|oesd-a2 --set n); audio.ts --exam oesd-a1|oesd-a2 builds the ÖSD track (SedaDa, xylophone gongs, previews, beeps/jingle/playback, 20/60 s checks); images-options.ts --skill sprechen fetches the A1 Sprechen photos
+lib/exam/scoring/oesd.ts             # ÖSD A1/A2 official scoring: Aufgabe tables, 4-of-8 with penalty, 2/1/0 grid rows, form 10→5, Schreiben rubrics, module results (minimums + Prädikat); tests in oesd.test.ts (npx tsx --test)
+components/exam/oesd.tsx             # ÖSD answer formats: PhotoNumberGrid, TickGrid, MarkBoxes, TopicCard, SceneChoice, PlanningSheet (shown on /design/pruefung)
 scripts/modelltest/{plan,author}-telc-b1.ts # telc B1: one plan entry per set covers all skills (= Simulation n) → author (Teile batched together; Lesen Teil 4–5 = Sprachbausteine; rejects names/themes repeated in the set via clash.ts) → check-set.ts --set n after all four skills (re-run flagged Teile with --teil --force) → audio.ts/seed.ts --exam telc-b1 (official pace ~185 wpm, Teil 3 situation lines); do-not-reuse list research/telc-b1-official-situations.md, official text for the overlap check only in .unit-cache/official-telc-b1/
 scripts/modelltest/check-start.ts + research/{start-deutsch-1,telc-a2}-authoring.md # Start Deutsch 1 / telc A2: how to draft sets 2–10 in the style of set 1 (shape, casting, quality rules, prompt) and the structural + overlap check
+scripts/modelltest/author-start.ts + research/{start-deutsch-1,telc-a2}-plan.md # sets 2–10: plan (2 sets per call, all skills of set n together) → draft per skill with set 1 as the example → check-start + validateSet, redraft flagged skills (DRAFT_BATCH=1, --sets 2-10, --force); logs in .unit-cache/start-batch/
 lib/exam/scoring/start.ts            # Start Deutsch 1 / telc A2 scoring: typed answers (spelling slack, exact numbers), Schreiben Teil 2 3/1.5/0 + 1, Sprechen tasks 3/6/6, telc grade bands /60 ("teilgenommen" below 36); lib/modelltest/speaking-start.ts = live partner + grading
 data/modelltest/<exam>/<skill>-NN.json # Modelltest drafts (MtSet); photos.lock.json = Pexels ids in use. Rendered media lives in .unit-cache/ (gitignored) until seeded
 lib/modelltest/types.ts              # MtSet/MtBlock (+ Hören track cues, Sprechen turns with phase/live, photos, live key)

@@ -1,0 +1,684 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-08-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Kurze Notiz an einen Gast"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Annegret arbeitet heute."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die Handtücher liegen im Bad."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Mirko trifft am Abend Freunde von Annegret."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Annegret",
+          "source": "Notiz",
+          "paragraphs": [
+            "Lieber Mirko,",
+            "ich bin heute bis 18 Uhr im Büro. Frische Handtücher sind im Schrank im Flur. Im Bad ist leider kein Platz mehr. Der Schlüssel liegt auf dem Tisch. Heute Abend kommen zwei Freunde von mir. Sie möchten dich gern kennenlernen!",
+            "Bis später,",
+            "Annegret"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Die Handtücher sind im Schrank im Flur. Im Bad ist kein Platz mehr.",
+            "evidence": {
+              "text": "ich bin heute bis 18 Uhr im Büro. Frische Handtücher sind im Schrank im Flur. Im Bad ist leider kein Platz mehr. Der Schlüssel liegt auf dem Tisch. Heute Abend kommen zwei Freunde von mir. Sie möchten dich gern kennenlernen!",
+              "hit": "Frische Handtücher sind im Schrank im Flur."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Am Abend kommen zwei Freunde von Annegret. Sie möchten Mirko kennenlernen.",
+            "evidence": {
+              "text": "ich bin heute bis 18 Uhr im Büro. Frische Handtücher sind im Schrank im Flur. Im Bad ist leider kein Platz mehr. Der Schlüssel liegt auf dem Tisch. Heute Abend kommen zwei Freunde von mir. Sie möchten dich gern kennenlernen!",
+              "hit": "Heute Abend kommen zwei Freunde von mir. Sie möchten dich gern kennenlernen!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Kurze E-Mail an eine Kollegin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Ludger ist am Montag nicht im Büro."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Frau Engin beginnt am Montag um 9 Uhr mit der Arbeit."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Branka soll Frau Engin etwas aus Ludgers Schreibtisch geben."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ludger",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Branka,",
+            "von Montag bis Mittwoch bin ich auf einer Schulung. Am Montag kommt unsere neue Kollegin, Frau Engin. Sie fängt um 8.30 Uhr an und wartet am Empfang. Kannst du ihr bitte ihren Schreibtisch und die Garderobe zeigen? Um 9 Uhr hat sie dann einen Termin beim Chef. In meinem Schreibtisch, in der zweiten Schublade, liegt eine blaue Mappe. Die ist für Frau Engin. Bitte gib sie ihr. Am Donnerstag bin ich wieder da.",
+            "Viele Grüße",
+            "Ludger"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Ludger ist von Montag bis Mittwoch auf einer Schulung. Am Montag ist er also nicht da.",
+            "evidence": {
+              "text": "von Montag bis Mittwoch bin ich auf einer Schulung. Am Montag kommt unsere neue Kollegin, Frau Engin. Sie fängt um 8.30 Uhr an und wartet am Empfang. Kannst du ihr bitte ihren Schreibtisch und die Garderobe zeigen? Um 9 Uhr hat sie dann einen Termin beim Chef. In meinem Schreibtisch, in der zweiten Schublade, liegt eine blaue Mappe. Die ist für Frau Engin. Bitte gib sie ihr. Am Donnerstag bin ich wieder da.",
+              "hit": "von Montag bis Mittwoch bin ich auf einer Schulung."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Frau Engin fängt schon um 8.30 Uhr an. Um 9 Uhr hat sie nur einen Termin beim Chef.",
+            "evidence": {
+              "text": "von Montag bis Mittwoch bin ich auf einer Schulung. Am Montag kommt unsere neue Kollegin, Frau Engin. Sie fängt um 8.30 Uhr an und wartet am Empfang. Kannst du ihr bitte ihren Schreibtisch und die Garderobe zeigen? Um 9 Uhr hat sie dann einen Termin beim Chef. In meinem Schreibtisch, in der zweiten Schublade, liegt eine blaue Mappe. Die ist für Frau Engin. Bitte gib sie ihr. Am Donnerstag bin ich wieder da.",
+              "hit": "Sie fängt um 8.30 Uhr an"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "In Ludgers Schreibtisch liegt eine blaue Mappe für Frau Engin. Branka soll sie ihr geben.",
+            "evidence": {
+              "text": "von Montag bis Mittwoch bin ich auf einer Schulung. Am Montag kommt unsere neue Kollegin, Frau Engin. Sie fängt um 8.30 Uhr an und wartet am Empfang. Kannst du ihr bitte ihren Schreibtisch und die Garderobe zeigen? Um 9 Uhr hat sie dann einen Termin beim Chef. In meinem Schreibtisch, in der zweiten Schublade, liegt eine blaue Mappe. Die ist für Frau Engin. Bitte gib sie ihr. Am Donnerstag bin ich wieder da.",
+              "hit": "In meinem Schreibtisch, in der zweiten Schublade, liegt eine blaue Mappe. Die ist für Frau Engin. Bitte gib sie ihr."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "a"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie suchen eine Person. Sie soll jede Woche Ihre Wohnung sauber machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.putzhilfe-direkt.de · Wir putzen Ihre Wohnung oder Ihr Haus: jede Woche oder alle zwei Wochen. Ab 18 € pro Stunde."
+                },
+                {
+                  "key": "b",
+                  "label": "www.putzmittel-markt.de · Putzmittel, Eimer und Besen: alles für Ihre Wohnung. Diese Woche 10 % billiger."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihre Hemden sind gewaschen, aber nicht glatt. Sie haben dafür keine Zeit.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.elektro-haushalt.de · Bügeleisen und Waschmaschinen: neue Modelle zu guten Preisen. Wir liefern auch nach Hause."
+                },
+                {
+                  "key": "b",
+                  "label": "www.hemdenservice-weber.de · Bringen Sie uns Ihre Hemden: Wir bügeln sie für Sie. Abholen nach zwei Tagen. Pro Hemd 2,50 €."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "In b bügelt jemand deine Hemden für dich. In a kannst du nur ein Bügeleisen kaufen und musst selbst bügeln."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Bald ist Weihnachten. Sie brauchen noch einen Tannenbaum für Ihr Wohnzimmer.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.forsthof-lindgruen.de · Weihnachtsbäume aus unserem Wald: vom 1. bis 23. Dezember, täglich 9–18 Uhr. Wir bringen den Baum auch zu Ihnen."
+                },
+                {
+                  "key": "b",
+                  "label": "www.deko-sternchen.de · Kerzen, Sterne und Kugeln für Ihren Weihnachtsbaum. Online bestellen, Lieferung in drei Tagen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "In a kannst du einen Baum für Weihnachten kaufen. In b gibt es nur Sachen für den Baum, aber keinen Baum."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Sie gehen am Samstag zu einer Faschingsparty. Sie brauchen ein Kostüm, aber nur für einen Abend.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.kostuemverleih-maske.de · Pirat, Prinzessin oder Clown? Leihen Sie bei uns Ihre Verkleidung für Karneval. Ab 12 € pro Tag."
+                },
+                {
+                  "key": "b",
+                  "label": "www.naehschule-faden.de · Nähkurs für alle: Wir nähen zusammen ein Kostüm für Karneval. Vier Abende, 60 €."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "In a kannst du ein Kostüm für einen Tag leihen. Der Nähkurs in b dauert vier Abende, das ist zu lang."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie möchten schöne Fingernägel haben. Sie suchen einen Termin.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.friseur-schnittpunkt.de · Haare schneiden, waschen und föhnen. Ohne Termin, Montag bis Samstag 9–18 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "www.nagelstudio-perle.de · Maniküre und Nageldesign in vielen Farben. Termine online oder Tel. 0176 4419 2305."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Das Studio in b macht die Nägel schön, und du bekommst dort einen Termin. Der Friseur in a macht nur die Haare."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In der Regenrinne an Ihrem Haus sind viele Blätter. Jemand soll sie sauber machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.baumarkt-plus.de · Leitern, Werkzeug und Dachrinnen günstig kaufen. Montag bis Samstag 8–20 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "www.dachservice-hoch.de · Wir reinigen Dachrinnen und reparieren Dächer. Auch am Samstag. Rufen Sie an: 0157 3380 6612."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Die Firma in b macht die Dachrinne für dich sauber. Im Baumarkt in a kannst du nur Sachen kaufen und musst alles selbst machen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Schild im Park"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Man darf auf der Wiese spielen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Stadtpark",
+          "source": "Schild",
+          "paragraphs": [
+            "Achtung: neuer Rasen!",
+            "Bitte nicht betreten."
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Schild am Supermarkt"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Für den Einkaufswagen braucht man ein Geldstück."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Eingang vom Supermarkt",
+          "source": "Schild",
+          "paragraphs": [
+            "Einkaufswagen",
+            "Bitte eine 1-Euro-Münze einwerfen.",
+            "Das Geld bekommen Sie zurück."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Für den Einkaufswagen musst du eine Münze mit 1 Euro einwerfen. Das ist ein Geldstück.",
+            "evidence": {
+              "text": "Einkaufswagen Bitte eine 1-Euro-Münze einwerfen. Das Geld bekommen Sie zurück.",
+              "hit": "Bitte eine 1-Euro-Münze einwerfen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Schild im Gemeindesaal"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Nach dem Fest sollen die Stühle bleiben, wo sie sind."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Gemeindesaal",
+          "source": "Schild",
+          "paragraphs": [
+            "Liebe Gäste!",
+            "Nach der Feier bitte die Stühle stapeln und an die Wand stellen.",
+            "Danke!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Nach der Feier sollst du die Stühle aufeinander stellen und an die Wand bringen. Sie sollen nicht im Saal stehen bleiben.",
+            "evidence": {
+              "text": "Liebe Gäste! Nach der Feier bitte die Stühle stapeln und an die Wand stellen. Danke!",
+              "hit": "Nach der Feier bitte die Stühle stapeln und an die Wand stellen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Schild an der Haustür"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Am späten Abend soll man die Haustür mit dem Schlüssel zumachen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Haustür",
+          "source": "Schild",
+          "paragraphs": [
+            "Liebe Mieterinnen und Mieter,",
+            "bitte die Haustür ab 22 Uhr abschließen.",
+            "Ihre Hausverwaltung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "richtig",
+            "explanation": "Ab 22 Uhr sollst du die Haustür abschließen. Das macht man mit dem Schlüssel.",
+            "evidence": {
+              "text": "Liebe Mieterinnen und Mieter, bitte die Haustür ab 22 Uhr abschließen. Ihre Hausverwaltung",
+              "hit": "bitte die Haustür ab 22 Uhr abschließen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Schild an der Bushaltestelle"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Am 5. Mai können Sie hier nicht in den Bus einsteigen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Bushaltestelle",
+          "source": "Schild",
+          "paragraphs": [
+            "Haltestelle Kastanienweg",
+            "Vom 3. bis 7. Mai fahren hier keine Busse.",
+            "Bitte gehen Sie zur Haltestelle Bergstraße."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Vom 3. bis 7. Mai fahren hier keine Busse. Der 5. Mai ist in dieser Zeit.",
+            "evidence": {
+              "text": "Haltestelle Kastanienweg Vom 3. bis 7. Mai fahren hier keine Busse. Bitte gehen Sie zur Haltestelle Bergstraße.",
+              "hit": "Vom 3. bis 7. Mai fahren hier keine Busse."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-08-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.333Z",
+        "textType": "Schild im Hinterhof"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Am Sonntag darf man hier Teppiche klopfen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Hinterhof",
+          "source": "Schild",
+          "paragraphs": [
+            "Teppiche klopfen:",
+            "nur Montag bis Samstag, 8–12 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "falsch",
+            "explanation": "Teppiche klopfen geht nur von Montag bis Samstag. Am Sonntag ist es nicht erlaubt.",
+            "evidence": {
+              "text": "Teppiche klopfen: nur Montag bis Samstag, 8–12 Uhr",
+              "hit": "nur Montag bis Samstag, 8–12 Uhr"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

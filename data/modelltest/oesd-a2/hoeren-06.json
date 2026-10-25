@@ -1,0 +1,783 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-06-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.696Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Ritterfest",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Samstag"
+                },
+                {
+                  "key": "b",
+                  "label": "Hunde"
+                },
+                {
+                  "key": "c",
+                  "label": "Donnerstag"
+                },
+                {
+                  "key": "d",
+                  "label": "ab 10 Uhr"
+                },
+                {
+                  "key": "e",
+                  "label": "Turnier um 15 Uhr"
+                },
+                {
+                  "key": "f",
+                  "label": "Kostüme leihen"
+                },
+                {
+                  "key": "g",
+                  "label": "Feuershow"
+                },
+                {
+                  "key": "h",
+                  "label": "Turnier um 17 Uhr"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Tipps im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Waldviertel",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Radio Manhartsberg",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-06/oesd-a2-hoeren-06-t1.review.mp3",
+          "duration": 52.4
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "Beide Sender sagen: Das Fest ist am Donnerstag, am Feiertag. Samstag hörst du gar nicht.",
+            "evidence": {
+              "text": "Radio Waldviertel, unser Tipp für den Feiertag. Am Donnerstag gibt es auf der Burgruine Eggenburg wieder ein Ritterfest. Auf der Burg zeigen Handwerker außerdem, wie man früher gearbeitet hat. Die Tore sind ab zehn Uhr offen. Am Eingang können Besucherinnen und Besucher Kostüme ausleihen, für Kinder und für Erwachsene. Der Höhepunkt ist um fünfzehn Uhr: das große Ritterturnier. Bitte beachten Sie: Hunde dürfen heuer leider nicht auf die Burg.",
+              "hit": "Am Donnerstag gibt es auf der Burgruine Eggenburg wieder ein Ritterfest."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "d",
+            "explanation": "Die Tore öffnen um zehn Uhr, also um zehn in der Früh. Hunde werden zwar genannt, aber sie dürfen nicht auf die Burg.",
+            "evidence": {
+              "text": "Radio Waldviertel, unser Tipp für den Feiertag. Am Donnerstag gibt es auf der Burgruine Eggenburg wieder ein Ritterfest. Auf der Burg zeigen Handwerker außerdem, wie man früher gearbeitet hat. Die Tore sind ab zehn Uhr offen. Am Eingang können Besucherinnen und Besucher Kostüme ausleihen, für Kinder und für Erwachsene. Der Höhepunkt ist um fünfzehn Uhr: das große Ritterturnier. Bitte beachten Sie: Hunde dürfen heuer leider nicht auf die Burg.",
+              "hit": "Die Tore sind ab zehn Uhr offen."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "e",
+            "explanation": "Das Turnier beginnt um 15 Uhr, also um drei am Nachmittag. Von 17 Uhr spricht niemand.",
+            "evidence": {
+              "text": "Radio Waldviertel, unser Tipp für den Feiertag. Am Donnerstag gibt es auf der Burgruine Eggenburg wieder ein Ritterfest. Auf der Burg zeigen Handwerker außerdem, wie man früher gearbeitet hat. Die Tore sind ab zehn Uhr offen. Am Eingang können Besucherinnen und Besucher Kostüme ausleihen, für Kinder und für Erwachsene. Der Höhepunkt ist um fünfzehn Uhr: das große Ritterturnier. Bitte beachten Sie: Hunde dürfen heuer leider nicht auf die Burg.",
+              "hit": "Der Höhepunkt ist um fünfzehn Uhr: das große Ritterturnier."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "f",
+            "explanation": "Am Eingang kann man Kostüme ausleihen. Eine Feuershow kommt in den Texten nicht vor.",
+            "evidence": {
+              "text": "Radio Waldviertel, unser Tipp für den Feiertag. Am Donnerstag gibt es auf der Burgruine Eggenburg wieder ein Ritterfest. Auf der Burg zeigen Handwerker außerdem, wie man früher gearbeitet hat. Die Tore sind ab zehn Uhr offen. Am Eingang können Besucherinnen und Besucher Kostüme ausleihen, für Kinder und für Erwachsene. Der Höhepunkt ist um fünfzehn Uhr: das große Ritterturnier. Bitte beachten Sie: Hunde dürfen heuer leider nicht auf die Burg.",
+              "hit": "Am Eingang können Besucherinnen und Besucher Kostüme ausleihen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_emilia_at",
+            "text": "Radio Waldviertel, unser Tipp für den Feiertag. Am Donnerstag gibt es auf der Burgruine Eggenburg wieder ein Ritterfest. Auf der Burg zeigen Handwerker außerdem, wie man früher gearbeitet hat. Die Tore sind ab zehn Uhr offen. Am Eingang können Besucherinnen und Besucher Kostüme ausleihen, für Kinder und für Erwachsene. Der Höhepunkt ist um fünfzehn Uhr: das große Ritterturnier. Bitte beachten Sie: Hunde dürfen heuer leider nicht auf die Burg.",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_gruber_at",
+            "text": "Hallo, Leute, hier ist Radio Manhartsberg! Wolltet ihr immer schon einmal wie ein Ritter oder eine Burgfrau aussehen? Kein Problem: Die Kostüme leiht ihr euch direkt beim Tor aus. Das Ganze gibt's beim Ritterfest auf der Burgruine Eggenburg, diesen Donnerstag, am Feiertag. Los geht's um zehn in der Früh. Um drei am Nachmittag reiten die Ritter beim Turnier gegeneinander. Ach ja, euren Hund lasst ihr heuer besser daheim, der darf nämlich nicht mit.",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-06-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.696Z",
+        "textType": "Sprachnachricht von einem Freund"
+      },
+      "display": {
+        "instruction": "Situation: Ein Freund hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Kerzen-Workshop\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTreffen um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nKosten mit Material: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nBernhards Telefon: 0681 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Handy",
+          "speakers": {
+            "bernhard": {
+              "name": "Bernhard",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-06/oesd-a2-hoeren-06-t2.mp3",
+          "duration": 39.5
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Sonntag",
+            "accept": [
+              "am Sonntag",
+              "So."
+            ],
+            "explanation": "Am Samstag ist der Kurs schon voll, darum geht ihr am Sonntag.",
+            "evidence": {
+              "text": "Servus, Bernhard da! Äh, du, ich hab uns jetzt für den Kerzen-Workshop angemeldet, bei der Kerzenwerkstatt Lichtblick in Mürzzuschlag. Am Samstag ist leider schon alles voll, na ja, also gehen wir am Sonntag. Wir treffen uns um Viertel nach zwei am Nachmittag direkt vor der Werkstatt. Der Kurs kostet zweiundzwanzig Euro, das Material ist da schon dabei. Kinder zahlen zwölf, aber das betrifft uns ja nicht. Eine Schürze bekommst du dort, äh, aber bring bitte alte Kerzenreste mit. Das Wachs wird nämlich wieder geschmolzen. Ruf mich bitte kurz an, ob das für dich passt. Meine Nummer ist null sechs acht eins, vier null sieben, zwei neun, fünf drei. Noch einmal: vier null sieben, zwei neun, fünf drei. Bis dann!",
+              "hit": "also gehen wir am Sonntag"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "14.15",
+            "accept": [
+              "14:15",
+              "14 Uhr 15",
+              "14.15 Uhr",
+              "2.15",
+              "2:15",
+              "Viertel nach zwei",
+              "vierzehn Uhr fünfzehn"
+            ],
+            "explanation": "Ihr trefft euch um Viertel nach zwei am Nachmittag, also um 14.15 Uhr.",
+            "evidence": {
+              "text": "Servus, Bernhard da! Äh, du, ich hab uns jetzt für den Kerzen-Workshop angemeldet, bei der Kerzenwerkstatt Lichtblick in Mürzzuschlag. Am Samstag ist leider schon alles voll, na ja, also gehen wir am Sonntag. Wir treffen uns um Viertel nach zwei am Nachmittag direkt vor der Werkstatt. Der Kurs kostet zweiundzwanzig Euro, das Material ist da schon dabei. Kinder zahlen zwölf, aber das betrifft uns ja nicht. Eine Schürze bekommst du dort, äh, aber bring bitte alte Kerzenreste mit. Das Wachs wird nämlich wieder geschmolzen. Ruf mich bitte kurz an, ob das für dich passt. Meine Nummer ist null sechs acht eins, vier null sieben, zwei neun, fünf drei. Noch einmal: vier null sieben, zwei neun, fünf drei. Bis dann!",
+              "hit": "Wir treffen uns um Viertel nach zwei am Nachmittag"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "22",
+            "accept": [
+              "22 Euro",
+              "zweiundzwanzig"
+            ],
+            "explanation": "Der Kurs kostet 22 Euro, das Material ist dabei. 12 Euro zahlen nur Kinder.",
+            "evidence": {
+              "text": "Servus, Bernhard da! Äh, du, ich hab uns jetzt für den Kerzen-Workshop angemeldet, bei der Kerzenwerkstatt Lichtblick in Mürzzuschlag. Am Samstag ist leider schon alles voll, na ja, also gehen wir am Sonntag. Wir treffen uns um Viertel nach zwei am Nachmittag direkt vor der Werkstatt. Der Kurs kostet zweiundzwanzig Euro, das Material ist da schon dabei. Kinder zahlen zwölf, aber das betrifft uns ja nicht. Eine Schürze bekommst du dort, äh, aber bring bitte alte Kerzenreste mit. Das Wachs wird nämlich wieder geschmolzen. Ruf mich bitte kurz an, ob das für dich passt. Meine Nummer ist null sechs acht eins, vier null sieben, zwei neun, fünf drei. Noch einmal: vier null sieben, zwei neun, fünf drei. Bis dann!",
+              "hit": "Der Kurs kostet zweiundzwanzig Euro, das Material ist da schon dabei."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "alte Kerzenreste",
+            "accept": [
+              "Kerzenreste",
+              "Kerzen",
+              "alte Kerzen",
+              "Reste von Kerzen"
+            ],
+            "explanation": "Du sollst alte Kerzenreste mitbringen. Eine Schürze bekommst du dort.",
+            "evidence": {
+              "text": "Servus, Bernhard da! Äh, du, ich hab uns jetzt für den Kerzen-Workshop angemeldet, bei der Kerzenwerkstatt Lichtblick in Mürzzuschlag. Am Samstag ist leider schon alles voll, na ja, also gehen wir am Sonntag. Wir treffen uns um Viertel nach zwei am Nachmittag direkt vor der Werkstatt. Der Kurs kostet zweiundzwanzig Euro, das Material ist da schon dabei. Kinder zahlen zwölf, aber das betrifft uns ja nicht. Eine Schürze bekommst du dort, äh, aber bring bitte alte Kerzenreste mit. Das Wachs wird nämlich wieder geschmolzen. Ruf mich bitte kurz an, ob das für dich passt. Meine Nummer ist null sechs acht eins, vier null sieben, zwei neun, fünf drei. Noch einmal: vier null sieben, zwei neun, fünf drei. Bis dann!",
+              "hit": "aber bring bitte alte Kerzenreste mit"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "4072953",
+            "accept": [
+              "407 29 53",
+              "407 2953",
+              "4072 953"
+            ],
+            "exact": true,
+            "explanation": "Bernhard sagt die Nummer zweimal: vier null sieben, zwei neun, fünf drei. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Servus, Bernhard da! Äh, du, ich hab uns jetzt für den Kerzen-Workshop angemeldet, bei der Kerzenwerkstatt Lichtblick in Mürzzuschlag. Am Samstag ist leider schon alles voll, na ja, also gehen wir am Sonntag. Wir treffen uns um Viertel nach zwei am Nachmittag direkt vor der Werkstatt. Der Kurs kostet zweiundzwanzig Euro, das Material ist da schon dabei. Kinder zahlen zwölf, aber das betrifft uns ja nicht. Eine Schürze bekommst du dort, äh, aber bring bitte alte Kerzenreste mit. Das Wachs wird nämlich wieder geschmolzen. Ruf mich bitte kurz an, ob das für dich passt. Meine Nummer ist null sechs acht eins, vier null sieben, zwei neun, fünf drei. Noch einmal: vier null sieben, zwei neun, fünf drei. Bis dann!",
+              "hit": "vier null sieben, zwei neun, fünf drei"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "bernhard",
+            "voice": "man_martin_at",
+            "text": "Servus, Bernhard da! Äh, du, ich hab uns jetzt für den Kerzen-Workshop angemeldet, bei der Kerzenwerkstatt Lichtblick in Mürzzuschlag. Am Samstag ist leider schon alles voll, na ja, also gehen wir am Sonntag. Wir treffen uns um Viertel nach zwei am Nachmittag direkt vor der Werkstatt. Der Kurs kostet zweiundzwanzig Euro, das Material ist da schon dabei. Kinder zahlen zwölf, aber das betrifft uns ja nicht. Eine Schürze bekommst du dort, äh, aber bring bitte alte Kerzenreste mit. Das Wachs wird nämlich wieder geschmolzen. Ruf mich bitte kurz an, ob das für dich passt. Meine Nummer ist null sechs acht eins, vier null sieben, zwei neun, fünf drei. Noch einmal: vier null sieben, zwei neun, fünf drei. Bis dann!",
+            "delivery": "[casual, friendly, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-06-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.696Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, was sie in der Mittagspause machen. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Was machen Sie in der Mittagspause?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "spazieren gehen"
+                },
+                {
+                  "key": "b",
+                  "label": "lesen"
+                },
+                {
+                  "key": "c",
+                  "label": "mit Kollegen reden"
+                },
+                {
+                  "key": "d",
+                  "label": "einkaufen"
+                },
+                {
+                  "key": "e",
+                  "label": "sich ausruhen"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-06/oesd-a2-hoeren-06-t3.review.mp3",
+          "duration": 109.77
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a,c",
+            "explanation": "Sie geht im Park spazieren und redet danach mit ihren Kollegen. Lesen will sie nicht, dafür ist sie zu unruhig.",
+            "evidence": {
+              "text": "Also, ich arbeite in einem Büro hier in Vöcklabruck. In der Mittagspause gehe ich zuerst ein bisschen allein spazieren, im Park gleich neben der Firma. Das tut mir gut, ich sitze ja den ganzen Tag. Danach setze ich mich zu meinen Kollegen und wir reden über alles Mögliche. Ein Buch nehme ich nie mit, zum Lesen bin ich zu unruhig.",
+              "hit": "Danach setze ich mich zu meinen Kollegen und wir reden über alles Mögliche."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b,d,e",
+            "explanation": "Er liest, kauft für die Familie ein und macht im Auto die Augen zu. Mit den Kollegen redet er in der Pause nicht.",
+            "evidence": {
+              "text": "Ich bin bei einer Versicherung. Äh, in der Pause lese ich zuerst ein paar Seiten in meinem Buch. Dann gehe ich schnell in die Drogerie oder in den Supermarkt und kaufe ein, was meine Familie braucht. Und zum Schluss mache ich im Auto zehn Minuten die Augen zu. Mit den Kollegen red ich eh den ganzen Tag, das brauche ich in der Pause nicht.",
+              "hit": "Und zum Schluss mache ich im Auto zehn Minuten die Augen zu."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c,e",
+            "explanation": "Sie plaudert mit den Kollegen und ruht sich auf dem Sofa aus. Zum Einkaufen ist die Pause zu kurz.",
+            "evidence": {
+              "text": "Na ja, ich arbeite in einem Labor in Ulm. Mittags sitze ich mit meinen Kollegen im Pausenraum, und wir quatschen ein bisschen. Danach lege ich mich dort noch kurz aufs Sofa und ruhe mich aus. Einkaufen gehen? Nein, dafür ist die Pause zu kurz, das mache ich lieber nach der Arbeit.",
+              "hit": "Danach lege ich mich dort noch kurz aufs Sofa und ruhe mich aus."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a,d",
+            "explanation": "Er geht zwischen zwei Aufträgen zu Fuß und macht die Einkäufe. Ausruhen will er sich erst am Abend.",
+            "evidence": {
+              "text": "Ich bin Installateur, ich bin den ganzen Tag bei Kunden unterwegs. Äh, meine Pause mache ich dort, wo ich gerade bin. Zwischen zwei Aufträgen gehe ich ein Stück zu Fuß, einfach so, an der frischen Luft. Und oft erledige ich dann die Einkäufe für meine Familie. Ausruhen kann ich mich am Abend.",
+              "hit": "Und oft erledige ich dann die Einkäufe für meine Familie."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Sie liest in der Pause immer einen Roman. Spazieren geht sie nicht, weil die Straße so laut ist.",
+            "evidence": {
+              "text": "Ich bin Grafikerin in Liestal. In der Mittagspause lese ich immer, meistens einen Roman. Dann vergesse ich die Arbeit für eine halbe Stunde. Spazieren gehen macht mir keinen Spass, mein Büro ist an der Hauptstrasse, und dort ist es sehr laut. Also bleibe ich lieber mit meinem Buch im Büro.",
+              "hit": "In der Mittagspause lese ich immer, meistens einen Roman."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Wir machen heute eine kleine Umfrage für das Radio. Was machen Sie in der Mittagspause?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_alexandra_at",
+            "text": "Also, ich arbeite in einem Büro hier in Vöcklabruck. In der Mittagspause gehe ich zuerst ein bisschen allein spazieren, im Park gleich neben der Firma. Das tut mir gut, ich sitze ja den ganzen Tag. Danach setze ich mich zu meinen Kollegen und wir reden über alles Mögliche. Ein Buch nehme ich nie mit, zum Lesen bin ich zu unruhig.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Ich bin bei einer Versicherung. Äh, in der Pause lese ich zuerst ein paar Seiten in meinem Buch. Dann gehe ich schnell in die Drogerie oder in den Supermarkt und kaufe ein, was meine Familie braucht. Und zum Schluss mache ich im Auto zehn Minuten die Augen zu. Mit den Kollegen red ich eh den ganzen Tag, das brauche ich in der Pause nicht.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_laura",
+            "text": "Na ja, ich arbeite in einem Labor in Ulm. Mittags sitze ich mit meinen Kollegen im Pausenraum, und wir quatschen ein bisschen. Danach lege ich mich dort noch kurz aufs Sofa und ruhe mich aus. Einkaufen gehen? Nein, dafür ist die Pause zu kurz, das mache ich lieber nach der Arbeit.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich bin Installateur, ich bin den ganzen Tag bei Kunden unterwegs. Äh, meine Pause mache ich dort, wo ich gerade bin. Zwischen zwei Aufträgen gehe ich ein Stück zu Fuß, einfach so, an der frischen Luft. Und oft erledige ich dann die Einkäufe für meine Familie. Ausruhen kann ich mich am Abend.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_heidi_ch",
+            "text": "Ich bin Grafikerin in Liestal. In der Mittagspause lese ich immer, meistens einen Roman. Dann vergesse ich die Arbeit für eine halbe Stunde. Spazieren gehen macht mir keinen Spass, mein Büro ist an der Hauptstrasse, und dort ist es sehr laut. Also bleibe ich lieber mit meinem Buch im Büro.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-06/track.mp3",
+    "duration": 582.61,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.4,
+        "to": 15.44
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.44,
+        "to": 45.48
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.48,
+        "to": 58.64
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.81,
+        "to": 92.55
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 96.84,
+        "to": 123.04
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 132.21,
+        "to": 138.21
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 138.21,
+        "to": 168.25
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 168.25,
+        "to": 179.46
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 186.93,
+        "to": 226.43
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 232.39,
+        "to": 235.6
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 243.07,
+        "to": 282.57
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 288.52,
+        "to": 293.07
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 293.07,
+        "to": 313.1
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 318.62,
+        "to": 324.62
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 324.62,
+        "to": 354.66
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 354.66,
+        "to": 371.15
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 376.66,
+        "to": 382.25
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 383.79,
+        "to": 404.69
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 408.74,
+        "to": 431.02
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 435.07,
+        "to": 452.96
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 457.01,
+        "to": 475.19
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 479.24,
+        "to": 496.85
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 506.41,
+        "to": 510.9
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 510.9,
+        "to": 570.93
+      }
+    ]
+  }
+}

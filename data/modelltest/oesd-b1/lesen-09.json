@@ -1,0 +1,958 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-09-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.042Z",
+        "textType": "Blogbeitrag"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Johanna hat sich nicht selbst für diese Aufgabe gemeldet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Über den Brief vom Gericht hat sich Johanna zuerst gefreut."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Ihr Arbeitgeber muss ihr für die Verhandlungen frei geben."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Vor der ersten Verhandlung wurde Johanna auf die Aufgabe vorbereitet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Bei der ersten Verhandlung hat Johanna viele Fragen gestellt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Mit ihrem Mann darf Johanna über alle Einzelheiten der Fälle sprechen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Johanna würde die Aufgabe noch einmal übernehmen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Johanna",
+          "source": "Blog",
+          "paragraphs": [
+            "Mein Jahr als Schöffin",
+            "Hallo ihr Lieben! Ich wohne in Baden bei Wien und arbeite als Buchhalterin in einer Spedition. Heute erzähle ich euch von einer Aufgabe, die ich mir nie selbst ausgesucht hätte: Seit einem Jahr bin ich Schöffin am Landesgericht in Wiener Neustadt. Das heißt, ich sitze bei manchen Strafprozessen neben der Richterin und entscheide mit. Mein Name wurde einfach ausgelost – gefragt hat mich niemand.",
+            "Angefangen hat alles mit einem grauen Kuvert* vom Gericht. Als ich es geöffnet habe, war ich sicher, dass das ein Irrtum ist. Ich hatte richtig Angst und habe den Brief dreimal gelesen. Erst mein Mann Wolfram hat mich beruhigt: „Du hast nichts angestellt, du sollst nur helfen.“",
+            "Mein Chef war davon gar nicht begeistert. Er hat ein bisschen geschimpft, weil im Büro sowieso schon viel zu tun ist. Aber er hat keine Wahl: Für die Verhandlungstage muss er mich freistellen. Zum Glück sind es nur ein paar Termine im Jahr.",
+            "Bevor es richtig losging, gab es einen Informationsnachmittag mit einer Richterin. Sie hat uns neuen Schöffen genau erklärt, welche Rechte und Pflichten wir haben. Ich habe gelernt, dass meine Stimme genauso viel zählt wie ihre. Das hat mich überrascht.",
+            "Meine erste Verhandlung war Mitte Jänner. Es ging um einen Diebstahl in einem Geschäft. Eigentlich darf ich als Schöffin auch Fragen stellen, aber ich war so aufgeregt, dass ich kein einziges Wort gesagt habe. Ich habe nur zugehört und mir Notizen gemacht. Bei der zweiten Verhandlung ging es dann schon viel besser.",
+            "Schwierig ist für mich, dass ich zu Hause nicht alles erzählen darf. Wolfram weiß, an welchen Tagen ich bei Gericht bin, und ich sage ihm, ob es ein anstrengender Tag war. Aber über die Einzelheiten der Fälle muss ich schweigen, auch ihm gegenüber.",
+            "Heuer endet meine Zeit als Schöffin. Am Anfang hatte ich vor allem Angst, heute habe ich großen Respekt vor der Arbeit der Richterinnen und Richter. Und ein bisschen stolz bin ich auch. Wenn man mich wieder fragt, sage ich sofort Ja.",
+            "Johanna",
+            "*Kuvert = österreichischer Standard für „Briefumschlag“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Johanna dachte zuerst, der Brief ist ein Irrtum, und hatte Angst. Gefreut hat sie sich nicht.",
+            "evidence": {
+              "text": "Angefangen hat alles mit einem grauen Kuvert* vom Gericht. Als ich es geöffnet habe, war ich sicher, dass das ein Irrtum ist. Ich hatte richtig Angst und habe den Brief dreimal gelesen. Erst mein Mann Wolfram hat mich beruhigt: „Du hast nichts angestellt, du sollst nur helfen.“",
+              "hit": "Ich hatte richtig Angst und habe den Brief dreimal gelesen."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Ihr Chef war nicht begeistert, aber er hat keine Wahl. Er muss sie für die Verhandlungstage freistellen.",
+            "evidence": {
+              "text": "Mein Chef war davon gar nicht begeistert. Er hat ein bisschen geschimpft, weil im Büro sowieso schon viel zu tun ist. Aber er hat keine Wahl: Für die Verhandlungstage muss er mich freistellen. Zum Glück sind es nur ein paar Termine im Jahr.",
+              "hit": "Für die Verhandlungstage muss er mich freistellen."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Vor dem Start gab es einen Informationsnachmittag mit einer Richterin. Dort hat Johanna ihre Rechte und Pflichten erklärt bekommen.",
+            "evidence": {
+              "text": "Bevor es richtig losging, gab es einen Informationsnachmittag mit einer Richterin. Sie hat uns neuen Schöffen genau erklärt, welche Rechte und Pflichten wir haben. Ich habe gelernt, dass meine Stimme genauso viel zählt wie ihre. Das hat mich überrascht.",
+              "hit": "Sie hat uns neuen Schöffen genau erklärt, welche Rechte und Pflichten wir haben."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Sie hätte Fragen stellen dürfen, war aber so aufgeregt, dass sie nichts gesagt hat. Erst bei der zweiten Verhandlung ging es besser.",
+            "evidence": {
+              "text": "Meine erste Verhandlung war Mitte Jänner. Es ging um einen Diebstahl in einem Geschäft. Eigentlich darf ich als Schöffin auch Fragen stellen, aber ich war so aufgeregt, dass ich kein einziges Wort gesagt habe. Ich habe nur zugehört und mir Notizen gemacht. Bei der zweiten Verhandlung ging es dann schon viel besser.",
+              "hit": "aber ich war so aufgeregt, dass ich kein einziges Wort gesagt habe"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Wolfram erfährt nur, wann sie bei Gericht ist und ob der Tag anstrengend war. Über die Einzelheiten muss sie auch bei ihm schweigen.",
+            "evidence": {
+              "text": "Schwierig ist für mich, dass ich zu Hause nicht alles erzählen darf. Wolfram weiß, an welchen Tagen ich bei Gericht bin, und ich sage ihm, ob es ein anstrengender Tag war. Aber über die Einzelheiten der Fälle muss ich schweigen, auch ihm gegenüber.",
+              "hit": "Aber über die Einzelheiten der Fälle muss ich schweigen, auch ihm gegenüber."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Johanna schreibt, dass sie sofort Ja sagt, wenn man sie noch einmal fragt.",
+            "evidence": {
+              "text": "Heuer endet meine Zeit als Schöffin. Am Anfang hatte ich vor allem Angst, heute habe ich großen Respekt vor der Arbeit der Richterinnen und Richter. Und ein bisschen stolz bin ich auch. Wenn man mich wieder fragt, sage ich sofort Ja.",
+              "hit": "Wenn man mich wieder fragt, sage ich sofort Ja."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-09-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.042Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "c"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die öffentlichen Beete gibt es in Bingen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit zwanzig Jahren."
+                },
+                {
+                  "key": "b",
+                  "label": "seit diesem Frühling."
+                },
+                {
+                  "key": "c",
+                  "label": "seit drei Jahren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Stadt, die Gemüse an Kindergärten verschenkt."
+                },
+                {
+                  "key": "b",
+                  "label": "öffentliche Beete, in denen alle ernten dürfen."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Verein, der kleine Gärten vermietet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Um die Beete kümmern sich …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur Freiwillige aus der Stadt."
+                },
+                {
+                  "key": "b",
+                  "label": "Mitarbeiter einer privaten Gartenfirma."
+                },
+                {
+                  "key": "c",
+                  "label": "Stadtgärtner und freiwillige Helfer."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Am Anfang …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "fürchteten viele, dass die Beete schnell leer sind."
+                },
+                {
+                  "key": "b",
+                  "label": "interessierte sich niemand für das Projekt."
+                },
+                {
+                  "key": "c",
+                  "label": "hat die Stadt sehr viel Geld dafür ausgegeben."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Tomaten zum Mitnehmen",
+            "Wer in Bingen am Rhein spazieren geht, kann dort nicht nur Schiffe beobachten, sondern auch Salat, Zucchini und Kräuter ernten. Seit drei Jahren gibt es an der Rheinpromenade und vor dem Rathaus öffentliche Beete. Auf kleinen Schildern steht „Pflücken erlaubt“, und jeder darf kostenlos mitnehmen, was er braucht. In diesem Frühling sind außerdem neue Beete am Bahnhof dazugekommen.",
+            "Die Idee kommt aus einer Nachbarstadt, in der es solche Beete schon seit zwanzig Jahren gibt. Gepflegt werden die Binger Beete von den Gärtnerinnen und Gärtnern der Stadt. Sie säen, gießen und schneiden die Pflanzen. Unterstützt werden sie von Freiwilligen, die jeden Samstagvormittag beim Unkrautjäten helfen. Ein Kleingartenverein hat außerdem Samen gespendet.",
+            "Am Anfang waren viele skeptisch. „Die Leute dachten, dass nach einem Tag alles leer ist, weil jemand gleich alles auf einmal mitnimmt“, erzählt Stadtgärtnerin Petra Hollmann. Das ist aber kaum passiert. Die meisten nehmen nur ein paar Tomaten oder etwas Petersilie mit. Auch die Kinder aus dem Kindergarten nebenan kommen oft zum Ernten vorbei.",
+            "Teuer ist das Projekt übrigens nicht: Die Gemüsepflanzen kosten die Stadt weniger als die Blumen, die früher dort standen.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "In Bingen gibt es öffentliche Beete, in denen jeder kostenlos ernten darf. Die Kindergartenkinder ernten dort selbst, die Stadt verschenkt nichts an Kindergärten.",
+            "evidence": {
+              "text": "Wer in Bingen am Rhein spazieren geht, kann dort nicht nur Schiffe beobachten, sondern auch Salat, Zucchini und Kräuter ernten. Seit drei Jahren gibt es an der Rheinpromenade und vor dem Rathaus öffentliche Beete. Auf kleinen Schildern steht „Pflücken erlaubt“, und jeder darf kostenlos mitnehmen, was er braucht. In diesem Frühling sind außerdem neue Beete am Bahnhof dazugekommen.",
+              "hit": "jeder darf kostenlos mitnehmen, was er braucht"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Die Gärtnerinnen und Gärtner der Stadt pflegen die Beete, Freiwillige helfen samstags mit. Es sind also nicht nur Freiwillige.",
+            "evidence": {
+              "text": "Die Idee kommt aus einer Nachbarstadt, in der es solche Beete schon seit zwanzig Jahren gibt. Gepflegt werden die Binger Beete von den Gärtnerinnen und Gärtnern der Stadt. Sie säen, gießen und schneiden die Pflanzen. Unterstützt werden sie von Freiwilligen, die jeden Samstagvormittag beim Unkrautjäten helfen. Ein Kleingartenverein hat außerdem Samen gespendet.",
+              "hit": "Unterstützt werden sie von Freiwilligen, die jeden Samstagvormittag beim Unkrautjäten helfen."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Viele dachten am Anfang, dass jemand alles auf einmal mitnimmt und die Beete dann leer sind. Teuer ist das Projekt nicht.",
+            "evidence": {
+              "text": "Am Anfang waren viele skeptisch. „Die Leute dachten, dass nach einem Tag alles leer ist, weil jemand gleich alles auf einmal mitnimmt“, erzählt Stadtgärtnerin Petra Hollmann. Das ist aber kaum passiert. Die meisten nehmen nur ein paar Tomaten oder etwas Petersilie mit. Auch die Kinder aus dem Kindergarten nebenan kommen oft zum Ernten vorbei.",
+              "hit": "Die Leute dachten, dass nach einem Tag alles leer ist, weil jemand gleich alles auf einmal mitnimmt"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-09-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.042Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jugendliche, die über Geld ihrer Gemeinde mitbestimmen."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Schule, die einen Ideenwettbewerb durchführt."
+                },
+                {
+                  "key": "c",
+                  "label": "einen neuen Jugendtreff, den die Gemeinde baut."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Welche Ideen umgesetzt werden, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "entscheidet am Ende der Gemeinderat."
+                },
+                {
+                  "key": "b",
+                  "label": "bestimmen die jungen Leute in einer Abstimmung."
+                },
+                {
+                  "key": "c",
+                  "label": "legt die Jugendarbeiterin allein fest."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Im ersten Jahr …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "wurde ein Skatepark für die Jugend gebaut."
+                },
+                {
+                  "key": "b",
+                  "label": "gab es Konzerte und neue Bänke beim Bahnhof."
+                },
+                {
+                  "key": "c",
+                  "label": "wurde nur ein Teil des Geldes ausgegeben."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Jugendliche verteilen 20'000 Franken",
+            "In Möhlin im Kanton Aargau dürfen junge Leute seit letztem Jahr mitbestimmen, wofür die Gemeinde Geld ausgibt. Jedes Jahr stehen ihnen 20'000 Franken zur Verfügung. Mitmachen können alle Jugendlichen zwischen 12 und 20 Jahren, die im Ort wohnen. Möhlin ist damit eine der ersten Gemeinden in der Region mit einem solchen Jugendbudget.",
+            "Die Idee hatte die Jugendarbeiterin Seraina Brunner. «Viele Jugendliche hatten das Gefühl, dass sich niemand für ihre Wünsche interessiert», sagt sie. «An die Gemeindeversammlung kommen sie fast nie.» Im Frühling kann deshalb jede und jeder Vorschläge einreichen, online oder auf Zetteln im Jugendtreff. Der Gemeinderat prüft danach nur, ob die Kosten realistisch sind. Welche Projekte wirklich umgesetzt werden, entscheiden die Jugendlichen dann selbst: Im Juni stimmen alle zwischen 12 und 20 ab. Brunner selbst organisiert nur die Abstimmung.",
+            "Im ersten Jahr kamen 46 Vorschläge zusammen. Gewonnen haben drei Konzerte auf dem Schulhausplatz und neue Sitzbänke beim Bahnhof, wo sich am Abend viele Jugendliche treffen. Damit war das ganze Budget aufgebraucht. Ein Skatepark war leider zu teuer. «Vielleicht klappt das später, wenn die Gemeinde noch etwas dazugibt», hofft der 15-jährige Luca.",
+            "Die Konzerte haben Jugendliche aus dem Dorf übrigens selbst organisiert. Schon jetzt sammelt der Jugendtreff neue Ideen für die nächste Runde.",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Die Jugendlichen in Möhlin bestimmen mit, wofür die Gemeinde jedes Jahr 20'000 Franken ausgibt. Den Jugendtreff gibt es schon, er wird nicht neu gebaut.",
+            "evidence": {
+              "text": "In Möhlin im Kanton Aargau dürfen junge Leute seit letztem Jahr mitbestimmen, wofür die Gemeinde Geld ausgibt. Jedes Jahr stehen ihnen 20'000 Franken zur Verfügung. Mitmachen können alle Jugendlichen zwischen 12 und 20 Jahren, die im Ort wohnen. Möhlin ist damit eine der ersten Gemeinden in der Region mit einem solchen Jugendbudget.",
+              "hit": "dürfen junge Leute seit letztem Jahr mitbestimmen, wofür die Gemeinde Geld ausgibt"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Im Juni stimmen alle Jugendlichen zwischen 12 und 20 ab. Der Gemeinderat prüft nur die Kosten, und die Jugendarbeiterin organisiert nur die Abstimmung.",
+            "evidence": {
+              "text": "Die Idee hatte die Jugendarbeiterin Seraina Brunner. «Viele Jugendliche hatten das Gefühl, dass sich niemand für ihre Wünsche interessiert», sagt sie. «An die Gemeindeversammlung kommen sie fast nie.» Im Frühling kann deshalb jede und jeder Vorschläge einreichen, online oder auf Zetteln im Jugendtreff. Der Gemeinderat prüft danach nur, ob die Kosten realistisch sind. Welche Projekte wirklich umgesetzt werden, entscheiden die Jugendlichen dann selbst: Im Juni stimmen alle zwischen 12 und 20 ab. Brunner selbst organisiert nur die Abstimmung.",
+              "hit": "Welche Projekte wirklich umgesetzt werden, entscheiden die Jugendlichen dann selbst: Im Juni stimmen alle zwischen 12 und 20 ab."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Gewonnen haben Konzerte und neue Sitzbänke beim Bahnhof. Der Skatepark war zu teuer, und das ganze Geld wurde ausgegeben.",
+            "evidence": {
+              "text": "Im ersten Jahr kamen 46 Vorschläge zusammen. Gewonnen haben drei Konzerte auf dem Schulhausplatz und neue Sitzbänke beim Bahnhof, wo sich am Abend viele Jugendliche treffen. Damit war das ganze Budget aufgebraucht. Ein Skatepark war leider zu teuer. «Vielleicht klappt das später, wenn die Gemeinde noch etwas dazugibt», hofft der 15-jährige Luca.",
+              "hit": "Gewonnen haben drei Konzerte auf dem Schulhausplatz und neue Sitzbänke beim Bahnhof"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-09-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.042Z",
+        "textType": "Anzeigen: Angebote rund um Haustiere und Tiere"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten haben ein Haustier oder möchten etwas mit Tieren unternehmen.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Welpenkurse am Samstag",
+                  "text": "Ihr Hund ist noch jung? In unseren Kursen lernen Welpen bis sechs Monate spielerisch, auf ihren Namen zu hören, an der Leine zu gehen und ruhig zu bleiben. Samstags 9–10.30 Uhr, kleine Gruppen. Hundeschule Pfotenglück, Ansbach."
+                },
+                {
+                  "key": "b",
+                  "title": "Katzensitting Mattersburg",
+                  "text": "Sie fahren auf Urlaub, und Ihre Katze bleibt daheim? Wir kommen ein- bis zweimal am Tag zu Ihnen, füttern, putzen das Katzenklo und spielen mit Ihren Lieblingen. 12 € pro Besuch. Bitte beachten: Wir betreuen nur Katzen!."
+                },
+                {
+                  "key": "c",
+                  "title": "Reiten für Erwachsene – Hof Rütimatt",
+                  "text": "Noch nie auf einem Pferd gesessen? Kein Problem! Auf unserem Hof in Hochdorf lernen erwachsene Anfängerinnen und Anfänger mit ruhigen, geduldigen Pferden. Einzellektion CHF 45.–. Anmeldung: www.ruetimatt-reiten.ch"
+                },
+                {
+                  "key": "d",
+                  "title": "Ihr Tier als Kunstwerk",
+                  "text": "Halten Sie die schönsten Momente mit Ihrem Hund, Ihrer Katze oder Ihrem Pferd fest. Professionelle Fotos im Studio in Rüsselsheim oder draußen in der Natur, auf Wunsch als Leinwand oder Fotobuch. Tierfotografie Kroll, www.tierportrait-kroll.de"
+                },
+                {
+                  "key": "e",
+                  "title": "Ferienpension für Kleintiere",
+                  "text": "Wohin mit Hoppel im Urlaub? Wir betreuen Kaninchen und Meerschweinchen während Ihrer Reise in großen Gehegen mit Auslauf. Andere Tiere können wir leider nicht aufnehmen. 5 € pro Tier und Tag. Kleintierhof Sonnenwiese, Peine, Tel. 05171 80 93 22"
+                },
+                {
+                  "key": "f",
+                  "title": "Ponyferien in Gleisdorf",
+                  "text": "In den Sommerferien erleben Kinder von 6 bis 10 Jahren bei uns tolle Tage mit Ponys: putzen, füttern, reiten und spielen. Täglich 9–15 Uhr, mit Mittagessen. Reiterhof Lindenhof, Tel. 03112 23 487"
+                },
+                {
+                  "key": "g",
+                  "title": "Aquarienfreunde Lippstadt",
+                  "text": "Sie träumen von einem eigenen Aquarium? Unser Verein trifft sich jeden ersten Freitag im Monat um 19 Uhr im Bürgerhaus. Erfahrene Mitglieder beraten Anfänger gern, von der Technik bis zum richtigen Futter. Gäste sind herzlich willkommen!"
+                },
+                {
+                  "key": "h",
+                  "title": "Vögel am See beobachten",
+                  "text": "Mit dem Ornithologen Beat Sutter am Ufer bei Romanshorn unterwegs: Er zeigt Ihnen Haubentaucher, Enten und seltene Zugvögel. Treffpunkt beim Hafen, jeden Sonntag um 6 Uhr. Ferngläser können ausgeliehen werden. CHF 20.– pro Person"
+                },
+                {
+                  "key": "i",
+                  "title": "Wandern mit Hund in der Eifel",
+                  "text": "Gemeinsam unterwegs: Jeden Sonntag wandern wir mit einer Hundetrainerin rund um Daun. Sie bringen Ihren eigenen Hund mit, lernen andere Hundebesitzer kennen und bekommen unterwegs Tipps. 10–13 Uhr, 15 € pro Team. www.eifel-hundewandern.de"
+                },
+                {
+                  "key": "j",
+                  "title": "Hundesalon mobil",
+                  "text": "Waschen, schneiden, Krallen kürzen – und das bei Ihnen zu Hause! Unser Hundesalon im Bus kommt direkt vor Ihre Tür in Hollabrunn und Umgebung. Kein Stress für Ihren Hund und keine Wartezeit. Termine unter 0676 552 18 40"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Kristina hat einen Hund, der vier Monate alt ist und lernen soll zu folgen."
+                },
+                {
+                  "n": 13,
+                  "text": "Yannick ist 32 und möchte zum ersten Mal in seinem Leben reiten lernen."
+                },
+                {
+                  "n": 14,
+                  "text": "Ute fährt in den Urlaub, und ihre zwei Katzen sollen in der Wohnung versorgt werden."
+                },
+                {
+                  "n": 15,
+                  "text": "Ansgar fährt drei Wochen weg und sucht einen Platz für seinen Papagei."
+                },
+                {
+                  "n": 16,
+                  "text": "Roswithas Tochter ist sieben, liebt Pferde und möchte in den Ferien Zeit mit Ponys verbringen."
+                },
+                {
+                  "n": 17,
+                  "text": "Edgar möchte früh am Morgen zusammen mit einem Fachmann Vögel beobachten."
+                },
+                {
+                  "n": 18,
+                  "text": "Bärbel möchte mit ihrem Hund und anderen Hundebesitzern wandern gehen."
+                },
+                {
+                  "n": 19,
+                  "text": "Leander möchte ein professionelles Foto von seinem alten Hund als Erinnerung."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Auf dem Hof in Hochdorf lernen Erwachsene ohne Erfahrung reiten. Die Ponyferien in Gleisdorf sind nur für Kinder.",
+            "evidence": {
+              "text": "Noch nie auf einem Pferd gesessen? Kein Problem! Auf unserem Hof in Hochdorf lernen erwachsene Anfängerinnen und Anfänger mit ruhigen, geduldigen Pferden. Einzellektion CHF 45.–. Anmeldung: www.ruetimatt-reiten.ch",
+              "hit": "lernen erwachsene Anfängerinnen und Anfänger mit ruhigen, geduldigen Pferden"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Der Katzensitter kommt zu Ute nach Hause und füttert die Katzen. Der mobile Salon kommt auch nach Hause, ist aber nur für Hunde.",
+            "evidence": {
+              "text": "Sie fahren auf Urlaub, und Ihre Katze bleibt daheim? Wir kommen ein- bis zweimal am Tag zu Ihnen, füttern, putzen das Katzenklo und spielen mit Ihren Lieblingen. 12 € pro Besuch. Bitte beachten: Wir betreuen nur Katzen!.",
+              "hit": "Wir kommen ein- bis zweimal am Tag zu Ihnen, füttern, putzen das Katzenklo"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "x",
+            "explanation": "Die Ferienpension in Peine nimmt nur Kaninchen und Meerschweinchen. Für einen Papagei gibt es keine passende Anzeige.",
+            "evidence": {
+              "text": "Wohin mit Hoppel im Urlaub? Wir betreuen Kaninchen und Meerschweinchen während Ihrer Reise in großen Gehegen mit Auslauf. Andere Tiere können wir leider nicht aufnehmen. 5 € pro Tier und Tag. Kleintierhof Sonnenwiese, Peine, Tel. 05171 80 93 22",
+              "hit": "Andere Tiere können wir leider nicht aufnehmen."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "f",
+            "explanation": "Die Ponyferien in Gleisdorf sind für Kinder von 6 bis 10 Jahren in den Sommerferien. Der Reithof in Hochdorf ist für Erwachsene.",
+            "evidence": {
+              "text": "In den Sommerferien erleben Kinder von 6 bis 10 Jahren bei uns tolle Tage mit Ponys: putzen, füttern, reiten und spielen. Täglich 9–15 Uhr, mit Mittagessen. Reiterhof Lindenhof, Tel. 03112 23 487",
+              "hit": "In den Sommerferien erleben Kinder von 6 bis 10 Jahren bei uns tolle Tage mit Ponys"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "h",
+            "explanation": "Ein Ornithologe zeigt am See Vögel, und der Treffpunkt ist um 6 Uhr morgens.",
+            "evidence": {
+              "text": "Mit dem Ornithologen Beat Sutter am Ufer bei Romanshorn unterwegs: Er zeigt Ihnen Haubentaucher, Enten und seltene Zugvögel. Treffpunkt beim Hafen, jeden Sonntag um 6 Uhr. Ferngläser können ausgeliehen werden. CHF 20.– pro Person",
+              "hit": "Treffpunkt beim Hafen, jeden Sonntag um 6 Uhr."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "i",
+            "explanation": "Bei den Wanderungen in der Eifel geht man mit dem eigenen Hund und lernt andere Hundebesitzer kennen. Die Welpenkurse sind ein Training, keine Wanderung.",
+            "evidence": {
+              "text": "Gemeinsam unterwegs: Jeden Sonntag wandern wir mit einer Hundetrainerin rund um Daun. Sie bringen Ihren eigenen Hund mit, lernen andere Hundebesitzer kennen und bekommen unterwegs Tipps. 10–13 Uhr, 15 € pro Team. www.eifel-hundewandern.de",
+              "hit": "Sie bringen Ihren eigenen Hund mit, lernen andere Hundebesitzer kennen"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "d",
+            "explanation": "Die Tierfotografin macht professionelle Fotos von Hunden und anderen Tieren.",
+            "evidence": {
+              "text": "Halten Sie die schönsten Momente mit Ihrem Hund, Ihrer Katze oder Ihrem Pferd fest. Professionelle Fotos im Studio in Rüsselsheim oder draußen in der Natur, auf Wunsch als Leinwand oder Fotobuch. Tierfotografie Kroll, www.tierportrait-kroll.de",
+              "hit": "Professionelle Fotos im Studio in Rüsselsheim oder draußen in der Natur"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-09-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.042Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person dafür, dass der Unterricht erst um neun Uhr beginnt?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Eckhard, 60, Straubing",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Fiona, 16, Erding",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Burkhard, 49, Völklingen",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Sonja, 39, Perchtoldsdorf",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Jamal, 34, Wolfsburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Mirjam, 44, Lyss",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Arnold, 52, Kulmbach",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Flurin, 19, Landquart",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Eine Familienzeitschrift hat über eine neue Studie zum Schlaf von Jugendlichen berichtet. Jetzt fragt sie ihre Leserinnen und Leser: Soll der Unterricht an Schulen erst um neun Uhr beginnen?",
+            "Ich sehe das ganz praktisch: Meine Tochter und mein Schwiegersohn fangen beide um acht Uhr mit der Arbeit an. Wenn die Schule erst um neun beginnt, sind meine Enkel morgens eine Stunde allein zu Hause. Wer passt dann auf, dass sie pünktlich losgehen? Für viele berufstätige Eltern wäre das ein echtes Problem. Ich finde, man sollte alles so lassen, wie es ist.",
+            "Eckhard, 60, Straubing",
+            "Ich sitze jeden Morgen um Viertel vor acht in der ersten Stunde und verstehe ehrlich gesagt kaum etwas. Mein Kopf ist dann einfach noch nicht wach, und meiner Klasse geht es genauso. Die erste Stunde ist für uns eigentlich verloren. Eine Stunde später, und wir könnten viel besser mitarbeiten. Ich hoffe wirklich, dass das bald kommt.",
+            "Fiona, 16, Erding",
+            "Auf den ersten Blick klingt ein späterer Beginn gut. Aber dann endet die Schule auch eine Stunde später. Mein Sohn spielt Trompete im Musikverein und trainiert zweimal pro Woche Handball. Schon jetzt ist der Nachmittag knapp. Mit einem Schulschluss um halb vier oder vier bliebe für Vereine und Musik kaum noch Zeit. Das wäre ein großer Verlust.",
+            "Burkhard, 49, Völklingen",
+            "Meine zwei Kinder gehen in die Volksschule und sind um acht Uhr hellwach. Ich glaube nicht, dass die Uhrzeit das Problem ist. Viele Jugendliche liegen bis Mitternacht mit dem Handy im Bett und sind deshalb am Morgen müde. Daran ändert eine spätere erste Stunde gar nichts. Wir Eltern sollten lieber am Abend das Handy einsammeln.",
+            "Sonja, 39, Perchtoldsdorf",
+            "Als Kinderarzt höre ich diese Diskussion oft. Die innere Uhr von Jugendlichen läuft tatsächlich später als bei Kindern oder Erwachsenen, das ist keine Faulheit. Sie werden abends später müde und brauchen morgens länger Schlaf. Studien aus anderen Ländern zeigen, dass Schüler mit einem späteren Beginn bessere Noten haben. Ich finde, wir sollten das ernst nehmen.",
+            "Jamal, 34, Wolfsburg",
+            "In unserem Kanton haben einige Schulen das letztes Jahr ausprobiert. Die Lehrpersonen haben erzählt, dass die Schülerinnen und Schüler viel ruhiger und konzentrierter waren. Auch meine Tochter kam entspannter nach Hause. Natürlich muss man den Stundenplan neu organisieren, aber das ist machbar. Ich wünsche mir, dass bald alle Schulen mitmachen.",
+            "Mirjam, 44, Lyss",
+            "Ich unterrichte seit vielen Jahren an einem Gymnasium. Für die Älteren ab 14 könnte ich mir einen späteren Beginn durchaus vorstellen, die sind morgens oft wirklich müde. Aber für alle Schulen um neun Uhr? Die Kleinen in der Grundschule sind früh fit, und ihre Eltern brauchen feste Zeiten. Eine Regel für alle halte ich für falsch.",
+            "Arnold, 52, Kulmbach",
+            "Bei uns begann die Schule jahrelang schon um halb acht. Am Anfang war das hart, das gebe ich zu. Aber ich habe dadurch gelernt, früh aufzustehen und meinen Tag zu planen. Heute in der Lehre beginne ich um sieben und habe damit keine Probleme. Diese Disziplin hilft im Leben. Ich verstehe nicht, warum man das ändern will.",
+            "Flurin, 19, Landquart"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "Fiona ist in der ersten Stunde noch nicht wach. Sie hofft, dass die Schule bald eine Stunde später beginnt.",
+            "evidence": {
+              "text": "Ich sitze jeden Morgen um Viertel vor acht in der ersten Stunde und verstehe ehrlich gesagt kaum etwas. Mein Kopf ist dann einfach noch nicht wach, und meiner Klasse geht es genauso. Die erste Stunde ist für uns eigentlich verloren. Eine Stunde später, und wir könnten viel besser mitarbeiten. Ich hoffe wirklich, dass das bald kommt.",
+              "hit": "Eine Stunde später, und wir könnten viel besser mitarbeiten."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Burkhard findet die Idee nur auf den ersten Blick gut. Er ist dagegen, weil dann zu wenig Zeit für Vereine und Musik bleibt.",
+            "evidence": {
+              "text": "Auf den ersten Blick klingt ein späterer Beginn gut. Aber dann endet die Schule auch eine Stunde später. Mein Sohn spielt Trompete im Musikverein und trainiert zweimal pro Woche Handball. Schon jetzt ist der Nachmittag knapp. Mit einem Schulschluss um halb vier oder vier bliebe für Vereine und Musik kaum noch Zeit. Das wäre ein großer Verlust.",
+              "hit": "Mit einem Schulschluss um halb vier oder vier bliebe für Vereine und Musik kaum noch Zeit."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Sonja glaubt, dass das Handy am Abend das Problem ist, nicht die Uhrzeit. Ein späterer Beginn ändert für sie nichts.",
+            "evidence": {
+              "text": "Meine zwei Kinder gehen in die Volksschule und sind um acht Uhr hellwach. Ich glaube nicht, dass die Uhrzeit das Problem ist. Viele Jugendliche liegen bis Mitternacht mit dem Handy im Bett und sind deshalb am Morgen müde. Daran ändert eine spätere erste Stunde gar nichts. Wir Eltern sollten lieber am Abend das Handy einsammeln.",
+              "hit": "Daran ändert eine spätere erste Stunde gar nichts."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "richtig",
+            "explanation": "Jamal erklärt, dass Jugendliche morgens mehr Schlaf brauchen. Studien zeigen bessere Noten mit einem späteren Beginn.",
+            "evidence": {
+              "text": "Als Kinderarzt höre ich diese Diskussion oft. Die innere Uhr von Jugendlichen läuft tatsächlich später als bei Kindern oder Erwachsenen, das ist keine Faulheit. Sie werden abends später müde und brauchen morgens länger Schlaf. Studien aus anderen Ländern zeigen, dass Schüler mit einem späteren Beginn bessere Noten haben. Ich finde, wir sollten das ernst nehmen.",
+              "hit": "Studien aus anderen Ländern zeigen, dass Schüler mit einem späteren Beginn bessere Noten haben."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "richtig",
+            "explanation": "In Mirjams Kanton waren die Schüler mit dem späteren Beginn ruhiger. Sie wünscht sich, dass alle Schulen mitmachen.",
+            "evidence": {
+              "text": "In unserem Kanton haben einige Schulen das letztes Jahr ausprobiert. Die Lehrpersonen haben erzählt, dass die Schülerinnen und Schüler viel ruhiger und konzentrierter waren. Auch meine Tochter kam entspannter nach Hause. Natürlich muss man den Stundenplan neu organisieren, aber das ist machbar. Ich wünsche mir, dass bald alle Schulen mitmachen.",
+              "hit": "Ich wünsche mir, dass bald alle Schulen mitmachen."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "falsch",
+            "explanation": "Arnold kann sich einen späteren Beginn nur für ältere Schüler vorstellen. Neun Uhr für alle Schulen findet er falsch.",
+            "evidence": {
+              "text": "Ich unterrichte seit vielen Jahren an einem Gymnasium. Für die Älteren ab 14 könnte ich mir einen späteren Beginn durchaus vorstellen, die sind morgens oft wirklich müde. Aber für alle Schulen um neun Uhr? Die Kleinen in der Grundschule sind früh fit, und ihre Eltern brauchen feste Zeiten. Eine Regel für alle halte ich für falsch.",
+              "hit": "Eine Regel für alle halte ich für falsch."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "falsch",
+            "explanation": "Flurin hat durch den frühen Beginn Disziplin gelernt. Er versteht nicht, warum man das ändern soll.",
+            "evidence": {
+              "text": "Bei uns begann die Schule jahrelang schon um halb acht. Am Anfang war das hart, das gebe ich zu. Aber ich habe dadurch gelernt, früh aufzustehen und meinen Tag zu planen. Heute in der Lehre beginne ich um sieben und habe damit keine Probleme. Diese Disziplin hilft im Leben. Ich verstehe nicht, warum man das ändern will.",
+              "hit": "Ich verstehe nicht, warum man das ändern will."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-09-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:26.042Z",
+        "textType": "Nutzungsbedingungen Lagerabteil"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie haben für drei Monate ein Lagerabteil gemietet und lesen jetzt die Nutzungsbedingungen.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Wer seine Sachen versichern will, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist automatisch über Lagerbox Nord versichert."
+                },
+                {
+                  "key": "b",
+                  "label": "kann monatlich für 4 Euro eine Versicherung dazubuchen."
+                },
+                {
+                  "key": "c",
+                  "label": "muss eine eigene Versicherung nachweisen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Wer das Abteil nicht mehr braucht, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "gibt einfach seinen Zugangscode im Büro zurück."
+                },
+                {
+                  "key": "b",
+                  "label": "muss dafür eine Gebühr bezahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "muss rechtzeitig kündigen und das Abteil sauber übergeben."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Mit dem Zugangscode …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kommt man zu jeder Zeit, auch nachts, hinein."
+                },
+                {
+                  "key": "b",
+                  "label": "dürfen auch Freunde allein hineingehen."
+                },
+                {
+                  "key": "c",
+                  "label": "kommt man jeden Tag von 6 bis 22 Uhr hinein."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Lebensmittel …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf man im Abteil gar nicht lagern."
+                },
+                {
+                  "key": "b",
+                  "label": "darf man in geschlossenen Dosen lagern."
+                },
+                {
+                  "key": "c",
+                  "label": "muss man vorher im Büro anmelden."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Nutzungsbedingungen",
+          "paragraphs": [
+            "Nutzungsbedingungen von Lagerbox Nord, Bremerhaven",
+            "**Zugang**",
+            "Nach Vertragsabschluss erhalten Sie per SMS einen persönlichen Zugangscode. Damit öffnen Sie das Tor und die Eingangstür täglich von 6 bis 22 Uhr, auch an Sonn- und Feiertagen. Nachts bleibt das Gebäude geschlossen. Den Code dürfen Sie nicht weitergeben. Andere Personen dürfen nur in Ihrer Begleitung ins Gebäude.",
+            "**Lagern**",
+            "Ihr Abteil schließen Sie mit einem eigenen Vorhängeschloss ab. Stellen Sie Ihre Sachen nur in Ihr Abteil, nicht in die Gänge. Schwere Kartons sollten unten stehen. Das Abteil darf nicht als Werkstatt oder Büro genutzt werden. Rollwagen finden Sie am Eingang; bitte bringen Sie sie nach der Benutzung zurück.",
+            "**Verbotene Gegenstände**",
+            "Nicht gelagert werden dürfen Lebensmittel, auch nicht in geschlossenen Dosen oder Gläsern, weil sie Mäuse und Insekten anlocken. Ebenfalls verboten sind Benzin, Gasflaschen, Farben und lebende Tiere. Wenn Sie unsicher sind, fragen Sie bitte vorher im Büro.",
+            "**Versicherung**",
+            "Ihre Sachen sind nicht automatisch versichert. Für 4 Euro im Monat können Sie bei uns eine Versicherung gegen Feuer, Wasser und Diebstahl bis zu einem Wert von 3.000 Euro abschließen. Wenn Ihre Hausratversicherung den Inhalt schon abdeckt, brauchen Sie unsere Versicherung nicht.",
+            "**Kündigung**",
+            "Der Mietvertrag läuft immer bis zum Ende eines Monats und verlängert sich automatisch. Sie können ihn ohne Gebühr kündigen, spätestens zwei Wochen vor Monatsende, schriftlich oder per E-Mail. Bitte geben Sie das Abteil besenrein und leer zurück und entfernen Sie Ihr Schloss. Ihr Zugangscode wird danach gesperrt."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "b",
+            "explanation": "Für 4 Euro im Monat kannst du bei Lagerbox Nord eine Versicherung abschließen. Automatisch versichert sind die Sachen nicht.",
+            "evidence": {
+              "text": "Ihre Sachen sind nicht automatisch versichert. Für 4 Euro im Monat können Sie bei uns eine Versicherung gegen Feuer, Wasser und Diebstahl bis zu einem Wert von 3.000 Euro abschließen. Wenn Ihre Hausratversicherung den Inhalt schon abdeckt, brauchen Sie unsere Versicherung nicht.",
+              "hit": "Für 4 Euro im Monat können Sie bei uns eine Versicherung gegen Feuer, Wasser und Diebstahl bis zu einem Wert von 3.000 Euro abschließen."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "c",
+            "explanation": "Du kündigst spätestens zwei Wochen vor Monatsende und gibst das Abteil besenrein zurück. Eine Gebühr gibt es nicht.",
+            "evidence": {
+              "text": "Der Mietvertrag läuft immer bis zum Ende eines Monats und verlängert sich automatisch. Sie können ihn ohne Gebühr kündigen, spätestens zwei Wochen vor Monatsende, schriftlich oder per E-Mail. Bitte geben Sie das Abteil besenrein und leer zurück und entfernen Sie Ihr Schloss. Ihr Zugangscode wird danach gesperrt.",
+              "hit": "spätestens zwei Wochen vor Monatsende"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Mit dem Code öffnest du die Türen täglich von 6 bis 22 Uhr. Nachts ist das Gebäude geschlossen, und andere Personen dürfen nur mit dir hinein.",
+            "evidence": {
+              "text": "Nach Vertragsabschluss erhalten Sie per SMS einen persönlichen Zugangscode. Damit öffnen Sie das Tor und die Eingangstür täglich von 6 bis 22 Uhr, auch an Sonn- und Feiertagen. Nachts bleibt das Gebäude geschlossen. Den Code dürfen Sie nicht weitergeben. Andere Personen dürfen nur in Ihrer Begleitung ins Gebäude.",
+              "hit": "Damit öffnen Sie das Tor und die Eingangstür täglich von 6 bis 22 Uhr"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "a",
+            "explanation": "Lebensmittel sind im Lager verboten, auch in geschlossenen Dosen. Im Büro fragt man nur, wenn man unsicher ist.",
+            "evidence": {
+              "text": "Nicht gelagert werden dürfen Lebensmittel, auch nicht in geschlossenen Dosen oder Gläsern, weil sie Mäuse und Insekten anlocken. Ebenfalls verboten sind Benzin, Gasflaschen, Farben und lebende Tiere. Wenn Sie unsicher sind, fragen Sie bitte vorher im Büro.",
+              "hit": "Nicht gelagert werden dürfen Lebensmittel, auch nicht in geschlossenen Dosen oder Gläsern"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -108,7 +108,7 @@ function checkKeys(b: MtBlock) {
     }
     const keys = pickKeys(it)!
     if (new Set(keys).size !== keys.length) flag(b.id, "duplicate option keys")
-    const ns = it.type === "match" ? it.data.situations.map((s) => s.n) : [it.item.n]
+    const ns = itemNumbers([it])
     ns.forEach((n) => {
       const c = n === 0 ? b.exampleAnswers?.[0] : b.key.answers.find((a) => a.n === n)?.correct
       if (c === undefined || !keys.includes(String(c))) flag(b.id, `item ${n}: key "${c}" is not one of ${keys.join("/")}`)

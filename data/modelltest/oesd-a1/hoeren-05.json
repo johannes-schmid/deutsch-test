@@ -1,0 +1,1139 @@
+{
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "oesd-a1-hoeren-05-t1",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.639Z",
+        "textType": "Kurze Alltagsgespräche (Foto zuordnen)"
+      },
+      "photos": {
+        "0": {
+          "A": {
+            "query": "man and woman looking at paper map together on riverside path",
+            "alt": "Ein Mann und eine Frau lehnen an einem Auto auf einem Feldweg und schauen zusammen auf eine große Karte.",
+            "src": "oesd-a1/hoeren-05/oesd-a1-hoeren-05-t1-0-A.webp",
+            "credit": {
+              "name": "cottonbro studio",
+              "url": "https://www.pexels.com/photo/a-couple-on-a-road-trip-looking-at-a-map-5966311/",
+              "pexelsId": 5966311
+            }
+          },
+          "B": {
+            "query": "man and woman painting wooden garden fence white with roller and brush",
+            "alt": "Ein Mann und eine Frau streichen einen Gartenzaun aus Holz weiß, mit einer Rolle und einem Pinsel."
+          },
+          "C": {
+            "query": "salesman showing desk lamp to woman customer in lighting store",
+            "alt": "Ein Verkäufer zeigt einer Frau in einem Lampengeschäft eine Schreibtischlampe."
+          },
+          "D": {
+            "query": "man handing wet hat to woman on riverbank",
+            "alt": "Ein Mann gibt einer Frau am Ufer von einem Fluss einen nassen Hut."
+          },
+          "E": {
+            "query": "woman vendor holding mirror for man trying on sunglasses at market stall",
+            "alt": "Eine Frau an einem Marktstand hält einen Spiegel, und ein Mann probiert eine Sonnenbrille."
+          },
+          "F": {
+            "query": "railway employee in uniform giving directions to woman with suitcase on train platform",
+            "alt": "Ein Bahnmitarbeiter in Uniform zeigt einer Frau mit Koffer auf dem Bahnsteig den Weg."
+          }
+        }
+      },
+      "display": {
+        "instruction": "Situation: Sie hören fünf kurze Gespräche. Welches Foto passt zu welchem Gespräch? Schreiben Sie die Nummer des Textes unter das Foto. Achtung: Ein Foto passt nicht. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "layout": "textNumber",
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "",
+                  "text": "Ein Mann und eine Frau schauen am Fluss auf eine Karte.",
+                  "image": "oesd-a1/hoeren-05/oesd-a1-hoeren-05-t1-0-A.webp"
+                },
+                {
+                  "key": "B",
+                  "title": "",
+                  "text": "Zwei Personen streichen einen Gartenzaun weiß."
+                },
+                {
+                  "key": "C",
+                  "title": "",
+                  "text": "Ein Verkäufer zeigt einer Frau eine Lampe."
+                },
+                {
+                  "key": "D",
+                  "title": "",
+                  "text": "Ein Mann gibt einer Frau am Fluss einen nassen Hut."
+                },
+                {
+                  "key": "E",
+                  "title": "",
+                  "text": "Am Marktstand: Ein Mann probiert eine Sonnenbrille."
+                },
+                {
+                  "key": "F",
+                  "title": "",
+                  "text": "Am Bahnhof: Ein Mitarbeiter zeigt einer Frau mit Koffer den Weg."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 2,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 3,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 4,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 5,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fünf kurze Gespräche",
+          "speakers": {
+            "c1a": {
+              "name": "Reisende",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c1b": {
+              "name": "Bahnmitarbeiter",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c2a": {
+              "name": "Frau",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2b": {
+              "name": "Mann",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c3a": {
+              "name": "Nachbarin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c3b": {
+              "name": "Nachbar",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c4a": {
+              "name": "Verkäufer",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c4b": {
+              "name": "Kundin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c5a": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c5b": {
+              "name": "Verkäuferin",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-05/oesd-a1-hoeren-05-t1.review.mp3",
+          "duration": 99.06
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "F",
+            "explanation": "Die Frau sucht ihren Zug, und ein Mitarbeiter am Bahnhof zeigt ihr den Weg zu Gleis neun. Auf dem Foto mit der Karte am Fluss sucht man auch einen Weg, aber dort gibt es keinen Bahnhof.",
+            "evidence": {
+              "text": "Entschuldigung, wo fährt der Zug um zehn Uhr fünfzehn ab? Grüß Gott! Der Zug fährt von Gleis neun. Gehen Sie rechts die Treppe hinunter und dann durch die Unterführung. Danke! Habe ich noch Zeit? Noch fünf Minuten. Sie müssen sich beeilen!",
+              "hit": "Der Zug fährt von Gleis neun."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "D",
+            "explanation": "Der Hut der Frau ist im Wasser, und der Mann holt ihn mit einem Ast. Das ist das Foto mit dem nassen Hut, nicht das Foto mit der Karte am Fluss.",
+            "evidence": {
+              "text": "Oh nein! Der Wind! Mein Hut ist im Wasser! Warten Sie, ich helfe Ihnen. Hier ist ein langer Ast. So, ich habe ihn! Merci, vielen Dank! Er ist ganz nass, aber das ist nicht schlimm. Bitte, gern geschehen.",
+              "hit": "Mein Hut ist im Wasser!"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "B",
+            "explanation": "Die Nachbarn streichen einen Zaun weiß, mit Rolle und Pinsel. Das passt zum Foto mit dem Gartenzaun.",
+            "evidence": {
+              "text": "Du nimmst die Rolle, ich nehme den Pinsel für die Ecken, ja? Gut. Das Weiß ist schön. Der Zaun sieht wie neu aus. Stimmt. Die andere Seite streichen wir dann morgen. Ja. Jetzt machen wir eine Pause. Ich hole Limonade.",
+              "hit": "Der Zaun sieht wie neu aus."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "C",
+            "explanation": "Die Frau sucht eine Lampe für ihren Schreibtisch und kauft die weisse. Das ist das Foto im Lampengeschäft.",
+            "evidence": {
+              "text": "Guten Tag, kann ich Ihnen helfen? Ja, ich suche eine Lampe für meinen Schreibtisch. Hier haben wir eine schwarze und eine weisse. Die weisse kostet vierundvierzig Franken, mit Glühbirne. Die weisse gefällt mir. Die nehme ich. Merci.",
+              "hit": "ich suche eine Lampe für meinen Schreibtisch"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "E",
+            "explanation": "Der Mann probiert eine Sonnenbrille, und die Verkäuferin gibt ihm einen Spiegel. Das passt zum Foto mit dem Marktstand und der Sonnenbrille.",
+            "evidence": {
+              "text": "Entschuldigung, was kostet diese Sonnenbrille? Grüß Gott! Fünfzehn Euro. Hier ist ein Spiegel, schauen Sie. Hm, sie gefällt mir. Aber zwölf Euro, geht das? Zwölf ist zu wenig. Sagen wir dreizehn Euro, dann gehört sie Ihnen.",
+              "hit": "Hier ist ein Spiegel, schauen Sie."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1a",
+            "voice": "woman_emilia_at",
+            "text": "Entschuldigung, wo fährt der Zug um zehn Uhr fünfzehn ab?",
+            "delivery": "[hurried, a bit stressed]",
+            "clip": 1,
+            "sound": "station"
+          },
+          {
+            "speaker": "c1b",
+            "voice": "man_martin_at",
+            "text": "Grüß Gott! Der Zug fährt von Gleis neun. Gehen Sie rechts die Treppe hinunter und dann durch die Unterführung.",
+            "delivery": "[friendly, helpful]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1a",
+            "voice": "woman_emilia_at",
+            "text": "Danke! Habe ich noch Zeit?",
+            "delivery": "[worried]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1b",
+            "voice": "man_martin_at",
+            "text": "Noch fünf Minuten. Sie müssen sich beeilen!",
+            "delivery": "[friendly, urgent]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Oh nein! Der Wind! Mein Hut ist im Wasser!",
+            "delivery": "[surprised, upset, outdoors]",
+            "clip": 2,
+            "sound": "river"
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_andres_ch",
+            "text": "Warten Sie, ich helfe Ihnen. Hier ist ein langer Ast. So, ich habe ihn!",
+            "delivery": "[helpful, slightly out of breath]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Merci, vielen Dank! Er ist ganz nass, aber das ist nicht schlimm.",
+            "delivery": "[relieved, happy]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_andres_ch",
+            "text": "Bitte, gern geschehen.",
+            "delivery": "[warm]",
+            "clip": 2
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_alexandra_at",
+            "text": "Du nimmst die Rolle, ich nehme den Pinsel für die Ecken, ja?",
+            "delivery": "[casual, friendly]",
+            "clip": 3,
+            "sound": "roller"
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_gruber_at",
+            "text": "Gut. Das Weiß ist schön. Der Zaun sieht wie neu aus.",
+            "delivery": "[casual, pleased]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_alexandra_at",
+            "text": "Stimmt. Die andere Seite streichen wir dann morgen.",
+            "delivery": "[casual]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_gruber_at",
+            "text": "Ja. Jetzt machen wir eine Pause. Ich hole Limonade.",
+            "delivery": "[relaxed, cheerful]",
+            "clip": 3
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_thomas_ch",
+            "text": "Guten Tag, kann ich Ihnen helfen?",
+            "delivery": "[polite, shop assistant]",
+            "clip": 4,
+            "sound": "store"
+          },
+          {
+            "speaker": "c4b",
+            "voice": "woman_mia_ch",
+            "text": "Ja, ich suche eine Lampe für meinen Schreibtisch.",
+            "delivery": "[friendly]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4a",
+            "voice": "man_thomas_ch",
+            "text": "Hier haben wir eine schwarze und eine weisse. Die weisse kostet vierundvierzig Franken, mit Glühbirne.",
+            "delivery": "[polite, helpful]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4b",
+            "voice": "woman_mia_ch",
+            "text": "Die weisse gefällt mir. Die nehme ich. Merci.",
+            "delivery": "[pleased]",
+            "clip": 4
+          },
+          {
+            "speaker": "c5a",
+            "voice": "man_gruber_at",
+            "text": "Entschuldigung, was kostet diese Sonnenbrille?",
+            "delivery": "[relaxed, curious]",
+            "clip": 5,
+            "sound": "market"
+          },
+          {
+            "speaker": "c5b",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Fünfzehn Euro. Hier ist ein Spiegel, schauen Sie.",
+            "delivery": "[cheerful, market stall]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5a",
+            "voice": "man_gruber_at",
+            "text": "Hm, sie gefällt mir. Aber zwölf Euro, geht das?",
+            "delivery": "[playful, bargaining]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5b",
+            "voice": "woman_emilia_at",
+            "text": "Zwölf ist zu wenig. Sagen wir dreizehn Euro, dann gehört sie Ihnen.",
+            "delivery": "[cheerful, laughing]",
+            "clip": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-05-t2",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.639Z",
+        "textType": "Nachricht auf der Sprachbox (Imkerei)"
+      },
+      "sound": "beep",
+      "exampleAnswers": [
+        "die Bienen anschauen"
+      ],
+      "display": {
+        "instruction": "Situation: Sie hören eine Nachricht auf Ihrer Sprachbox. Schreiben Sie die wichtigen Informationen auf den Zettel. Die erste Zeile ist ein Beispiel. Sie hören den Text zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Notizen\n",
+                "Was: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nWann: am ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                ", ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                ". Juni, um ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                " Uhr\nWo: ",
+                {
+                  "n": 9,
+                  "options": []
+                },
+                "gasse 3\nTelefon: 0699 / ",
+                {
+                  "n": 10,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Sprachbox",
+          "speakers": {
+            "fuchs": {
+              "name": "Herr Fuchs",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-05/oesd-a1-hoeren-05-t2.mp3",
+          "duration": 47.02
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "Samstag",
+            "accept": [
+              "am Samstag"
+            ],
+            "explanation": "Herr Fuchs hat am Samstag Zeit. Am Sonntag besucht er seine Tochter.",
+            "evidence": {
+              "text": "Grüß Gott, hier spricht Fuchs von der Imkerei Fuchs in Wolfsberg. Sie haben mich beim Vortrag nach meinen Bienen gefragt. Kommen Sie doch zu mir und schauen Sie die Bienen an! Am Sonntag besuche ich meine Tochter. Aber am Samstag, dem vierzehnten Juni, habe ich Zeit. Kommen Sie bitte um sechzehn Uhr. Vor halb vier bin ich nicht zu Hause. Die Führung dauert eine Stunde. Meine Adresse ist Ahorngasse drei. Ich buchstabiere: A, H, O, R, N. Rufen Sie mich bitte kurz an: null sechs neun neun, zweiundachtzig, siebenundvierzig, fünfzehn, neun. Ich freue mich. Auf Wiederhören!",
+              "hit": "Aber am Samstag"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "14",
+            "accept": [
+              "14.",
+              "vierzehn",
+              "vierzehnten"
+            ],
+            "explanation": "Der Besuch ist am vierzehnten Juni.",
+            "evidence": {
+              "text": "Grüß Gott, hier spricht Fuchs von der Imkerei Fuchs in Wolfsberg. Sie haben mich beim Vortrag nach meinen Bienen gefragt. Kommen Sie doch zu mir und schauen Sie die Bienen an! Am Sonntag besuche ich meine Tochter. Aber am Samstag, dem vierzehnten Juni, habe ich Zeit. Kommen Sie bitte um sechzehn Uhr. Vor halb vier bin ich nicht zu Hause. Die Führung dauert eine Stunde. Meine Adresse ist Ahorngasse drei. Ich buchstabiere: A, H, O, R, N. Rufen Sie mich bitte kurz an: null sechs neun neun, zweiundachtzig, siebenundvierzig, fünfzehn, neun. Ich freue mich. Auf Wiederhören!",
+              "hit": "dem vierzehnten Juni"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "16",
+            "accept": [
+              "16:00",
+              "16.00",
+              "sechzehn",
+              "4",
+              "vier"
+            ],
+            "explanation": "Du sollst um sechzehn Uhr kommen. Vor halb vier ist Herr Fuchs nicht zu Hause, das ist nicht der Termin.",
+            "evidence": {
+              "text": "Grüß Gott, hier spricht Fuchs von der Imkerei Fuchs in Wolfsberg. Sie haben mich beim Vortrag nach meinen Bienen gefragt. Kommen Sie doch zu mir und schauen Sie die Bienen an! Am Sonntag besuche ich meine Tochter. Aber am Samstag, dem vierzehnten Juni, habe ich Zeit. Kommen Sie bitte um sechzehn Uhr. Vor halb vier bin ich nicht zu Hause. Die Führung dauert eine Stunde. Meine Adresse ist Ahorngasse drei. Ich buchstabiere: A, H, O, R, N. Rufen Sie mich bitte kurz an: null sechs neun neun, zweiundachtzig, siebenundvierzig, fünfzehn, neun. Ich freue mich. Auf Wiederhören!",
+              "hit": "Kommen Sie bitte um sechzehn Uhr."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Ahorn",
+            "accept": [
+              "Ahorngasse",
+              "Ahorngasse 3"
+            ],
+            "exact": true,
+            "explanation": "Herr Fuchs buchstabiert den Namen: A, H, O, R, N. Der Name muss genau richtig sein.",
+            "evidence": {
+              "text": "Grüß Gott, hier spricht Fuchs von der Imkerei Fuchs in Wolfsberg. Sie haben mich beim Vortrag nach meinen Bienen gefragt. Kommen Sie doch zu mir und schauen Sie die Bienen an! Am Sonntag besuche ich meine Tochter. Aber am Samstag, dem vierzehnten Juni, habe ich Zeit. Kommen Sie bitte um sechzehn Uhr. Vor halb vier bin ich nicht zu Hause. Die Führung dauert eine Stunde. Meine Adresse ist Ahorngasse drei. Ich buchstabiere: A, H, O, R, N. Rufen Sie mich bitte kurz an: null sechs neun neun, zweiundachtzig, siebenundvierzig, fünfzehn, neun. Ich freue mich. Auf Wiederhören!",
+              "hit": "Ich buchstabiere: A, H, O, R, N."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "8247159",
+            "accept": [
+              "82 47 15 9",
+              "824 71 59",
+              "8 2 4 7 1 5 9",
+              "82 47 159"
+            ],
+            "exact": true,
+            "explanation": "Nach null sechs neun neun kommt zweiundachtzig, siebenundvierzig, fünfzehn, neun. Die Drei ist nur die Hausnummer.",
+            "evidence": {
+              "text": "Grüß Gott, hier spricht Fuchs von der Imkerei Fuchs in Wolfsberg. Sie haben mich beim Vortrag nach meinen Bienen gefragt. Kommen Sie doch zu mir und schauen Sie die Bienen an! Am Sonntag besuche ich meine Tochter. Aber am Samstag, dem vierzehnten Juni, habe ich Zeit. Kommen Sie bitte um sechzehn Uhr. Vor halb vier bin ich nicht zu Hause. Die Führung dauert eine Stunde. Meine Adresse ist Ahorngasse drei. Ich buchstabiere: A, H, O, R, N. Rufen Sie mich bitte kurz an: null sechs neun neun, zweiundachtzig, siebenundvierzig, fünfzehn, neun. Ich freue mich. Auf Wiederhören!",
+              "hit": "zweiundachtzig, siebenundvierzig, fünfzehn, neun"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "fuchs",
+            "voice": "man_martin_at",
+            "text": "Grüß Gott, hier spricht Fuchs von der Imkerei Fuchs in Wolfsberg. Sie haben mich beim Vortrag nach meinen Bienen gefragt. Kommen Sie doch zu mir und schauen Sie die Bienen an! Am Sonntag besuche ich meine Tochter. Aber am Samstag, dem vierzehnten Juni, habe ich Zeit. Kommen Sie bitte um sechzehn Uhr. Vor halb vier bin ich nicht zu Hause. Die Führung dauert eine Stunde. Meine Adresse ist Ahorngasse drei. Ich buchstabiere: A, H, O, R, N. Rufen Sie mich bitte kurz an: null sechs neun neun, zweiundachtzig, siebenundvierzig, fünfzehn, neun. Ich freue mich. Auf Wiederhören!",
+            "delivery": "[warm, calm, private voicemail, slow]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-05-t3",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.639Z",
+        "textType": "Umfrage auf der Straße (Kurzinterviews)"
+      },
+      "sound": "street",
+      "display": {
+        "instruction": "Situation: Eine Reporterin fragt Leute auf der Straße. Was machen die Personen am Abend am liebsten? Kreuzen Sie für jeden Text eine Antwort an. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Was machen Sie am Abend am liebsten?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "lesen"
+                },
+                {
+                  "key": "b",
+                  "label": "fernsehen"
+                },
+                {
+                  "key": "c",
+                  "label": "kochen"
+                },
+                {
+                  "key": "d",
+                  "label": "Musik hören"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 11,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 12,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 13,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 14,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 15,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "reporterin": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Text 1",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p2": {
+              "name": "Text 2",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p3": {
+              "name": "Text 3",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p4": {
+              "name": "Text 4",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p5": {
+              "name": "Text 5",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-05/oesd-a1-hoeren-05-t3.review.mp3",
+          "duration": 96.73
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Die Frau liest nur am Wochenende und findet Fernsehen langweilig. Am liebsten kocht sie am Abend für ihre Familie.",
+            "evidence": {
+              "text": "Hm, am Abend? Also, ich komme aus Mainz. Lesen mache ich nur am Wochenende, und Fernsehen finde ich ehrlich gesagt langweilig. Aber jeden Abend koche ich für meine Familie. Das macht mir richtig Spaß. Ja, kochen, das mache ich am liebsten.",
+              "hit": "kochen, das mache ich am liebsten"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Musik hört der Mann nur im Auto, und die Nachrichten schaut er nur kurz. Am liebsten liest er ein Buch im Bett.",
+            "evidence": {
+              "text": "Äh, also Musik höre ich nur im Auto, auf dem Weg nach Hause. Dann schaue ich kurz die Nachrichten im Fernsehen, so zehn Minuten. Aber das Beste ist für mich ein Buch im Bett. Ja, am liebsten lese ich, jeden Abend ein bisschen.",
+              "hit": "am liebsten lese ich"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Das Radio läuft bei der Frau nur nebenbei, das ist nicht ihr Favorit. Sie ist am liebsten in der Küche und kocht.",
+            "evidence": {
+              "text": "Bei mir läuft am Abend manchmal das Radio, aber nur so nebenbei. Fernsehen? Nein, eher nicht. Ich bin am liebsten in der Küche. Ich koche sehr gern, äh, besonders Palatschinken mit Marmelade. Die mögen alle bei uns. Also, ganz klar: kochen.",
+              "hit": "Ich koche sehr gern"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "d",
+            "explanation": "Seine Frau kocht, und Fernsehen mag er nicht so. Am liebsten hört er mit Kopfhörern Musik.",
+            "evidence": {
+              "text": "Hm, meine Frau kocht am Abend, das kann sie viel besser als ich. Und Fernsehen mag ich nicht so. Ich habe viele alte Schallplatten. Ich setze mich aufs Sofa, nehme die Kopfhörer und höre Musik. Das ist für mich der beste Abend.",
+              "hit": "nehme die Kopfhörer und höre Musik"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Die Frau möchte gern lesen, aber sie ist zu müde. Sie kocht nur schnell etwas und schaut dann am liebsten eine Serie.",
+            "evidence": {
+              "text": "Ich komme aus Zug. Eigentlich möchte ich am Abend gern lesen, aber ich bin dann immer so müde. Ich koche schnell etwas, äh, Pasta oder einen Salat. Und dann sitze ich vor dem Fernseher und schaue eine Serie. Das mache ich am liebsten.",
+              "hit": "sitze ich vor dem Fernseher und schaue eine Serie"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "reporterin",
+            "voice": "woman_emilia_at",
+            "text": "Guten Tag, wir machen eine kleine Umfrage für das Radio. Was machen Sie am Abend am liebsten?",
+            "delivery": "[friendly reporter, outdoors]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_irene",
+            "text": "Hm, am Abend? Also, ich komme aus Mainz. Lesen mache ich nur am Wochenende, und Fernsehen finde ich ehrlich gesagt langweilig. Aber jeden Abend koche ich für meine Familie. Das macht mir richtig Spaß. Ja, kochen, das mache ich am liebsten.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Äh, also Musik höre ich nur im Auto, auf dem Weg nach Hause. Dann schaue ich kurz die Nachrichten im Fernsehen, so zehn Minuten. Aber das Beste ist für mich ein Buch im Bett. Ja, am liebsten lese ich, jeden Abend ein bisschen.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_alexandra_at",
+            "text": "Bei mir läuft am Abend manchmal das Radio, aber nur so nebenbei. Fernsehen? Nein, eher nicht. Ich bin am liebsten in der Küche. Ich koche sehr gern, äh, besonders Palatschinken mit Marmelade. Die mögen alle bei uns. Also, ganz klar: kochen.",
+            "delivery": "[spontaneous, cheerful]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Hm, meine Frau kocht am Abend, das kann sie viel besser als ich. Und Fernsehen mag ich nicht so. Ich habe viele alte Schallplatten. Ich setze mich aufs Sofa, nehme die Kopfhörer und höre Musik. Das ist für mich der beste Abend.",
+            "delivery": "[spontaneous, relaxed]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_heidi_ch",
+            "text": "Ich komme aus Zug. Eigentlich möchte ich am Abend gern lesen, aber ich bin dann immer so müde. Ich koche schnell etwas, äh, Pasta oder einen Salat. Und dann sitze ich vor dem Fernseher und schaue eine Serie. Das mache ich am liebsten.",
+            "delivery": "[spontaneous, a bit tired]",
+            "clip": 5
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "oesd-a1/hoeren-05/track.mp3",
+    "duration": 611.08,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 9.67,
+        "to": 16.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 16.14,
+        "to": 46.18
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 46.18,
+        "to": 60.76
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 66.27,
+        "to": 67.13
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 67.76,
+        "to": 87.2
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 89.23,
+        "to": 90.12
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 90.75,
+        "to": 109.53
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 111.57,
+        "to": 112.43
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 113.06,
+        "to": 132.57
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 134.61,
+        "to": 135.37
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 135.99,
+        "to": 153.47
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 155.51,
+        "to": 156.37
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 157,
+        "to": 174.99
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 182.54,
+        "to": 188.55
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 188.55,
+        "to": 218.59
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 218.59,
+        "to": 231.18
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 238.18,
+        "to": 285.2
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 292.21,
+        "to": 295.42
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 302.42,
+        "to": 349.44
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 356.44,
+        "to": 360.99
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 360.99,
+        "to": 381.02
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 386.53,
+        "to": 392.52
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 392.52,
+        "to": 402.55
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 402.55,
+        "to": 416.16
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 421.67,
+        "to": 427.94
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 429.48,
+        "to": 430.34
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 430.97,
+        "to": 447.16
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 449.2,
+        "to": 450.09
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 450.72,
+        "to": 467.72
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 469.76,
+        "to": 470.62
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 471.25,
+        "to": 487.5
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 489.53,
+        "to": 490.29
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 490.92,
+        "to": 507.53
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 509.57,
+        "to": 510.43
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 511.06,
+        "to": 528.14
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 535.69,
+        "to": 540.19
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 540.19,
+        "to": 600.22
+      }
+    ]
+  }
+}

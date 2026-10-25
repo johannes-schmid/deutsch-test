@@ -30,6 +30,9 @@ export type FullSpec = {
   fixedLast?: string
   /** Listening: each item has its own clip (Hören Teil 4), not one clip per block. */
   clipPerItem?: boolean
+  /** Listening: one block carries this many clips (ÖSD: one photo grid or tick grid over five texts); script turns carry
+   * `clip`, and `length` and `pace` apply per clip. */
+  clips?: number
   /** Listening: speaking rate of the clips in words per minute, measured on the official audio. */
   pace?: { min: number; max: number }
   /** Listening: silence before each clip (read the question) and after it (answer), in seconds. */

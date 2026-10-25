@@ -1,0 +1,1119 @@
+{
+  "exam": "oesd-a1",
+  "skill": "hoeren",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "oesd-a1-hoeren-04-t1",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.633Z",
+        "textType": "Kurze Alltagsgespräche (Foto zuordnen)"
+      },
+      "photos": {
+        "0": {
+          "A": {
+            "query": "woman at market spice stall handing small paper bag of spices to man",
+            "alt": "Eine Frau steht an einem Marktstand mit Schalen voller Gewürze und gibt einem Mann eine kleine Tüte."
+          },
+          "B": {
+            "query": "man at riverside canoe rental handing paddle to woman",
+            "alt": "Ein Mann steht an einem Bootsverleih am Fluss und gibt einer Frau ein Paddel."
+          },
+          "C": {
+            "query": "woman and man sitting opposite each other by train window",
+            "alt": "Eine Frau und ein Mann sitzen sich im Zug am Fenster gegenüber."
+          },
+          "D": {
+            "query": "receptionist handing visitor badge to man at office front desk",
+            "alt": "Eine Frau am Empfang gibt einem Mann eine Besucherkarte über den Tisch."
+          },
+          "E": {
+            "query": "toy shop salesman showing jigsaw puzzle box to woman",
+            "alt": "Ein Verkäufer zeigt einer Frau in einem Spielwarengeschäft eine Puzzleschachtel."
+          },
+          "F": {
+            "query": "man selling wooden toys to woman at outdoor market stall",
+            "alt": "Ein Mann verkauft an einem Marktstand im Freien Holzspielzeug an eine Frau."
+          }
+        }
+      },
+      "display": {
+        "instruction": "Situation: Sie hören fünf kurze Gespräche. Welches Foto passt zu welchem Gespräch? Schreiben Sie die Nummer des Textes unter das Foto. Achtung: Ein Foto passt nicht. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "layout": "textNumber",
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "",
+                  "text": "Eine Frau verkauft an einem Marktstand Gewürze an einen Mann."
+                },
+                {
+                  "key": "B",
+                  "title": "",
+                  "text": "Ein Mann gibt einer Frau am Fluss ein Paddel."
+                },
+                {
+                  "key": "C",
+                  "title": "",
+                  "text": "Eine Frau und ein Mann sitzen im Zug am Fenster."
+                },
+                {
+                  "key": "D",
+                  "title": "",
+                  "text": "Eine Frau am Empfang gibt einem Mann eine Besucherkarte."
+                },
+                {
+                  "key": "E",
+                  "title": "",
+                  "text": "Ein Verkäufer zeigt einer Frau im Geschäft ein Puzzle."
+                },
+                {
+                  "key": "F",
+                  "title": "",
+                  "text": "Ein Mann verkauft auf dem Markt Holzspielzeug an eine Frau."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 2,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 3,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 4,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 5,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fünf kurze Gespräche",
+          "speakers": {
+            "c1a": {
+              "name": "Empfang",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c1b": {
+              "name": "Besucher",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c2a": {
+              "name": "Kundin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2b": {
+              "name": "Bootsverleih",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c3a": {
+              "name": "Kundin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c3b": {
+              "name": "Verkäufer",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c4a": {
+              "name": "Verkäuferin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c4b": {
+              "name": "Kunde",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "c5a": {
+              "name": "Fahrgast",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c5b": {
+              "name": "Mitreisender",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-04/oesd-a1-hoeren-04-t1.review.mp3",
+          "duration": 96.81
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "D",
+            "explanation": "Die Frau am Empfang gibt dem Mann eine Besucherkarte. Das ist das Foto am Empfangstisch, nicht ein Geschäft.",
+            "evidence": {
+              "text": "Grüß Gott! Wie kann ich Ihnen helfen? Guten Tag. Ich habe um zehn Uhr einen Termin bei Frau Danzer. Gut, hier ist Ihre Besucherkarte. Frau Danzer ist im dritten Stock. Der Lift ist rechts. Danke schön!",
+              "hit": "hier ist Ihre Besucherkarte"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "B",
+            "explanation": "Die Frau mietet ein Kanu und bekommt Schwimmwesten. Das passt zum Foto mit dem Bootsverleih am Fluss, nicht zum Marktstand.",
+            "evidence": {
+              "text": "Guten Tag. Ich möchte ein Kanu mieten, für eine Stunde. Was kostet das? Eine Stunde kostet zwanzig Franken. Hier sind zwei Schwimmwesten. Sie müssen um vier Uhr wieder hier sein. Um vier Uhr, alles klar. Merci!",
+              "hit": "Ich möchte ein Kanu mieten"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "E",
+            "explanation": "Der Verkäufer zeigt der Frau im Geschäft ein Puzzle. Das Holzspielzeug am Marktstand passt nicht, denn hier geht es um ein Puzzle im Geschäft.",
+            "evidence": {
+              "text": "Entschuldigung, ich suche ein Puzzle für meinen Neffen. Er ist sechs. Ist das gut, mit hundert Teilen? Nein, hundert Teile sind zu viel. Schauen Sie, das hier hat achtundvierzig Teile, mit Piraten. Super, das nehme ich. Es ist ein Geschenk.",
+              "hit": "ich suche ein Puzzle für meinen Neffen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "A",
+            "explanation": "Der Mann kauft Paprika und Curry, also Gewürze. Am Marktstand mit dem Holzspielzeug gibt es keine Gewürze.",
+            "evidence": {
+              "text": "Guten Morgen! Was darf es sein? Ich möchte fünfzig Gramm Paprika, bitte. Und ein bisschen Curry. Darf ich zuerst riechen? Natürlich, bitte schön. Zusammen macht das sieben Franken achtzig. Hm, der riecht sehr gut. Hier, bitte. Merci!",
+              "hit": "Ich möchte fünfzig Gramm Paprika, bitte."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "C",
+            "explanation": "Zwei Fahrgäste sitzen im Zug und sprechen über das Fenster. Das passt zum Foto mit der Frau und dem Mann am Zugfenster.",
+            "evidence": {
+              "text": "Puh, hier ist es so warm. Darf ich das Fenster aufmachen? Leider geht dieses Fenster nicht auf. Aber im nächsten Wagen sind noch Plätze frei. Dort ist es kühler. Gute Idee. Gehen wir zusammen? Ja, gern. Ich nehme meine Tasche.",
+              "hit": "Darf ich das Fenster aufmachen?"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1a",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Wie kann ich Ihnen helfen?",
+            "delivery": "[friendly, professional]",
+            "clip": 1,
+            "sound": "lobby"
+          },
+          {
+            "speaker": "c1b",
+            "voice": "man_martin_at",
+            "text": "Guten Tag. Ich habe um zehn Uhr einen Termin bei Frau Danzer.",
+            "delivery": "[polite]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1a",
+            "voice": "woman_emilia_at",
+            "text": "Gut, hier ist Ihre Besucherkarte. Frau Danzer ist im dritten Stock. Der Lift ist rechts.",
+            "delivery": "[friendly, helpful]",
+            "clip": 1
+          },
+          {
+            "speaker": "c1b",
+            "voice": "man_martin_at",
+            "text": "Danke schön!",
+            "delivery": "[polite]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Guten Tag. Ich möchte ein Kanu mieten, für eine Stunde. Was kostet das?",
+            "delivery": "[cheerful, outdoors]",
+            "clip": 2,
+            "sound": "river"
+          },
+          {
+            "speaker": "c2b",
+            "voice": "man_thomas_ch",
+            "text": "Eine Stunde kostet zwanzig Franken. Hier sind zwei Schwimmwesten. Sie müssen um vier Uhr wieder hier sein.",
+            "delivery": "[relaxed, friendly]",
+            "clip": 2
+          },
+          {
+            "speaker": "c2a",
+            "voice": "woman_heidi_ch",
+            "text": "Um vier Uhr, alles klar. Merci!",
+            "delivery": "[cheerful]",
+            "clip": 2
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_alexandra_at",
+            "text": "Entschuldigung, ich suche ein Puzzle für meinen Neffen. Er ist sechs. Ist das gut, mit hundert Teilen?",
+            "delivery": "[polite, unsure]",
+            "clip": 3,
+            "sound": "store"
+          },
+          {
+            "speaker": "c3b",
+            "voice": "man_gruber_at",
+            "text": "Nein, hundert Teile sind zu viel. Schauen Sie, das hier hat achtundvierzig Teile, mit Piraten.",
+            "delivery": "[helpful, warm]",
+            "clip": 3
+          },
+          {
+            "speaker": "c3a",
+            "voice": "woman_alexandra_at",
+            "text": "Super, das nehme ich. Es ist ein Geschenk.",
+            "delivery": "[pleased]",
+            "clip": 3
+          },
+          {
+            "speaker": "c4a",
+            "voice": "woman_mia_ch",
+            "text": "Guten Morgen! Was darf es sein?",
+            "delivery": "[cheerful, market stall]",
+            "clip": 4,
+            "sound": "market"
+          },
+          {
+            "speaker": "c4b",
+            "voice": "man_andres_ch",
+            "text": "Ich möchte fünfzig Gramm Paprika, bitte. Und ein bisschen Curry. Darf ich zuerst riechen?",
+            "delivery": "[curious, relaxed]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4a",
+            "voice": "woman_mia_ch",
+            "text": "Natürlich, bitte schön. Zusammen macht das sieben Franken achtzig.",
+            "delivery": "[friendly]",
+            "clip": 4
+          },
+          {
+            "speaker": "c4b",
+            "voice": "man_andres_ch",
+            "text": "Hm, der riecht sehr gut. Hier, bitte. Merci!",
+            "delivery": "[pleased]",
+            "clip": 4
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_alexandra_at",
+            "text": "Puh, hier ist es so warm. Darf ich das Fenster aufmachen?",
+            "delivery": "[a bit tired, polite]",
+            "clip": 5,
+            "sound": "train"
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_martin_at",
+            "text": "Leider geht dieses Fenster nicht auf. Aber im nächsten Wagen sind noch Plätze frei. Dort ist es kühler.",
+            "delivery": "[friendly, helpful]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5a",
+            "voice": "woman_alexandra_at",
+            "text": "Gute Idee. Gehen wir zusammen?",
+            "delivery": "[relieved]",
+            "clip": 5
+          },
+          {
+            "speaker": "c5b",
+            "voice": "man_martin_at",
+            "text": "Ja, gern. Ich nehme meine Tasche.",
+            "delivery": "[casual]",
+            "clip": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-04-t2",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.633Z",
+        "textType": "Nachricht auf der Sprachbox (Blutspende)"
+      },
+      "sound": "beep",
+      "exampleAnswers": [
+        "Blut spenden"
+      ],
+      "display": {
+        "instruction": "Situation: Sie hören eine Nachricht auf Ihrer Sprachbox. Schreiben Sie die wichtigen Informationen auf den Zettel. Die erste Zeile ist ein Beispiel. Sie hören den Text zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Notizen\n",
+                "Was: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nWann: am ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                ", ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                ". Oktober, um ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                " Uhr\nWo: ",
+                {
+                  "n": 9,
+                  "options": []
+                },
+                "gasse 7\nTelefon: 0699 / ",
+                {
+                  "n": 10,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Sprachbox",
+          "speakers": {
+            "strobl": {
+              "name": "Frau Strobl",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-04/oesd-a1-hoeren-04-t2.mp3",
+          "duration": 50.78
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "Donnerstag",
+            "accept": [
+              "am Donnerstag"
+            ],
+            "explanation": "Dein Termin ist am Donnerstag. Am Mittwoch ist das Zentrum geschlossen.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Strobl vom Blutspendezentrum Baden. Sie haben gestern angerufen, Sie möchten Blut spenden. Ich habe einen Termin für Sie. Am Mittwoch haben wir leider geschlossen. Kommen Sie bitte am Donnerstag, dem neunten Oktober, um acht Uhr. Wir öffnen schon um halb acht, aber um acht Uhr ist es ruhig. Unsere Adresse ist Birkengasse sieben. Ich buchstabiere: B, I, R, K, E, N. Bitte essen Sie vorher gut und bringen Sie Ihren Ausweis mit. Ihre Spendernummer ist drei, eins, fünf. Haben Sie noch Fragen? Dann rufen Sie mich an: null sechs neun neun, einundfünfzig, dreiundneunzig, null, vierundsechzig. Auf Wiederhören!",
+              "hit": "Kommen Sie bitte am Donnerstag"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "9",
+            "accept": [
+              "9.",
+              "neun",
+              "neunten"
+            ],
+            "explanation": "Der Termin ist am neunten Oktober.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Strobl vom Blutspendezentrum Baden. Sie haben gestern angerufen, Sie möchten Blut spenden. Ich habe einen Termin für Sie. Am Mittwoch haben wir leider geschlossen. Kommen Sie bitte am Donnerstag, dem neunten Oktober, um acht Uhr. Wir öffnen schon um halb acht, aber um acht Uhr ist es ruhig. Unsere Adresse ist Birkengasse sieben. Ich buchstabiere: B, I, R, K, E, N. Bitte essen Sie vorher gut und bringen Sie Ihren Ausweis mit. Ihre Spendernummer ist drei, eins, fünf. Haben Sie noch Fragen? Dann rufen Sie mich an: null sechs neun neun, einundfünfzig, dreiundneunzig, null, vierundsechzig. Auf Wiederhören!",
+              "hit": "dem neunten Oktober"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "8",
+            "accept": [
+              "08",
+              "8:00",
+              "08:00",
+              "8.00",
+              "acht"
+            ],
+            "explanation": "Du sollst um acht Uhr kommen. Um halb acht öffnet das Zentrum, das ist nicht dein Termin.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Strobl vom Blutspendezentrum Baden. Sie haben gestern angerufen, Sie möchten Blut spenden. Ich habe einen Termin für Sie. Am Mittwoch haben wir leider geschlossen. Kommen Sie bitte am Donnerstag, dem neunten Oktober, um acht Uhr. Wir öffnen schon um halb acht, aber um acht Uhr ist es ruhig. Unsere Adresse ist Birkengasse sieben. Ich buchstabiere: B, I, R, K, E, N. Bitte essen Sie vorher gut und bringen Sie Ihren Ausweis mit. Ihre Spendernummer ist drei, eins, fünf. Haben Sie noch Fragen? Dann rufen Sie mich an: null sechs neun neun, einundfünfzig, dreiundneunzig, null, vierundsechzig. Auf Wiederhören!",
+              "hit": "dem neunten Oktober, um acht Uhr"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Birken",
+            "accept": [
+              "Birkengasse",
+              "Birkengasse 7"
+            ],
+            "exact": true,
+            "explanation": "Frau Strobl buchstabiert den Namen: B, I, R, K, E, N. Der Name muss genau richtig sein.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Strobl vom Blutspendezentrum Baden. Sie haben gestern angerufen, Sie möchten Blut spenden. Ich habe einen Termin für Sie. Am Mittwoch haben wir leider geschlossen. Kommen Sie bitte am Donnerstag, dem neunten Oktober, um acht Uhr. Wir öffnen schon um halb acht, aber um acht Uhr ist es ruhig. Unsere Adresse ist Birkengasse sieben. Ich buchstabiere: B, I, R, K, E, N. Bitte essen Sie vorher gut und bringen Sie Ihren Ausweis mit. Ihre Spendernummer ist drei, eins, fünf. Haben Sie noch Fragen? Dann rufen Sie mich an: null sechs neun neun, einundfünfzig, dreiundneunzig, null, vierundsechzig. Auf Wiederhören!",
+              "hit": "Ich buchstabiere: B, I, R, K, E, N."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "5193064",
+            "accept": [
+              "51 93 0 64",
+              "519 30 64",
+              "51 930 64",
+              "5 1 9 3 0 6 4",
+              "519 3064"
+            ],
+            "exact": true,
+            "explanation": "Nach null sechs neun neun kommt einundfünfzig, dreiundneunzig, null, vierundsechzig. Drei, eins, fünf ist nur deine Spendernummer.",
+            "evidence": {
+              "text": "Guten Tag, hier spricht Strobl vom Blutspendezentrum Baden. Sie haben gestern angerufen, Sie möchten Blut spenden. Ich habe einen Termin für Sie. Am Mittwoch haben wir leider geschlossen. Kommen Sie bitte am Donnerstag, dem neunten Oktober, um acht Uhr. Wir öffnen schon um halb acht, aber um acht Uhr ist es ruhig. Unsere Adresse ist Birkengasse sieben. Ich buchstabiere: B, I, R, K, E, N. Bitte essen Sie vorher gut und bringen Sie Ihren Ausweis mit. Ihre Spendernummer ist drei, eins, fünf. Haben Sie noch Fragen? Dann rufen Sie mich an: null sechs neun neun, einundfünfzig, dreiundneunzig, null, vierundsechzig. Auf Wiederhören!",
+              "hit": "einundfünfzig, dreiundneunzig, null, vierundsechzig"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "strobl",
+            "voice": "woman_emilia_at",
+            "text": "Guten Tag, hier spricht Strobl vom Blutspendezentrum Baden. Sie haben gestern angerufen, Sie möchten Blut spenden. Ich habe einen Termin für Sie. Am Mittwoch haben wir leider geschlossen. Kommen Sie bitte am Donnerstag, dem neunten Oktober, um acht Uhr. Wir öffnen schon um halb acht, aber um acht Uhr ist es ruhig. Unsere Adresse ist Birkengasse sieben. Ich buchstabiere: B, I, R, K, E, N. Bitte essen Sie vorher gut und bringen Sie Ihren Ausweis mit. Ihre Spendernummer ist drei, eins, fünf. Haben Sie noch Fragen? Dann rufen Sie mich an: null sechs neun neun, einundfünfzig, dreiundneunzig, null, vierundsechzig. Auf Wiederhören!",
+            "delivery": "[calm, clear, friendly office voicemail, slow]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-hoeren-04-t3",
+      "exam": "oesd-a1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.633Z",
+        "textType": "Umfrage auf der Straße (Kurzinterviews)"
+      },
+      "sound": "street",
+      "display": {
+        "instruction": "Situation: Eine Reporterin fragt Leute auf der Straße. Welches Tier möchte jede Person gern zu Hause haben? Kreuzen Sie für jeden Text eine Antwort an. Sie hören jeden Text einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Welches Tier möchten Sie gern zu Hause haben?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Hund"
+                },
+                {
+                  "key": "b",
+                  "label": "Katze"
+                },
+                {
+                  "key": "c",
+                  "label": "Vogel"
+                },
+                {
+                  "key": "d",
+                  "label": "Fisch"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 11,
+                  "text": "Text 1"
+                },
+                {
+                  "n": 12,
+                  "text": "Text 2"
+                },
+                {
+                  "n": 13,
+                  "text": "Text 3"
+                },
+                {
+                  "n": 14,
+                  "text": "Text 4"
+                },
+                {
+                  "n": 15,
+                  "text": "Text 5"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "reporterin": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Text 1",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p2": {
+              "name": "Text 2",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p3": {
+              "name": "Text 3",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p4": {
+              "name": "Text 4",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p5": {
+              "name": "Text 5",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a1/hoeren-04/oesd-a1-hoeren-04-t3.review.mp3",
+          "duration": 95.06
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Die Frau arbeitet lange, darum ist ein Hund nicht gut für sie. Eine Katze kann allein bleiben, also möchte sie eine Katze.",
+            "evidence": {
+              "text": "Hm, also, ein Hund ist toll, aber er muss jeden Tag spazieren gehen. Und ich arbeite oft lange, bis sieben Uhr. Fische? Nein, die finde ich langweilig. Äh, eine Katze kann gut allein zu Hause bleiben. Ja, ich möchte eine Katze.",
+              "hit": "Ja, ich möchte eine Katze."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Sein Sohn möchte einen Vogel, aber der Mann möchte einen Hund. Er geht gern lange spazieren.",
+            "evidence": {
+              "text": "Mein Bub möchte unbedingt einen Vogel, einen kleinen, bunten. Aber ich, äh, ich gehe sehr gern lange spazieren, im Wald und in den Bergen. Darum möchte ich einen Hund. Dann sind wir jeden Tag zusammen draußen. Ja, also, ein Hund.",
+              "hit": "Darum möchte ich einen Hund."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Eine Katze erlaubt ihr Vermieter nicht. Ein Fisch ist auch schön, aber sie möchte einen Vogel, weil er am Morgen singt.",
+            "evidence": {
+              "text": "Ich komme aus der Schweiz, aus Chur. Ich hätte gern eine Katze, aber mein Vermieter erlaubt das nicht. Äh, ein Fisch ist auch schön, das stimmt. Aber ein Vogel singt am Morgen, das finde ich wunderschön. Also, ich möchte einen Vogel.",
+              "hit": "Also, ich möchte einen Vogel."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a",
+            "explanation": "Als Kind hatte der Mann Katzen. Jetzt hat er einen Garten und möchte einen Hund.",
+            "evidence": {
+              "text": "Als Kind hatte ich zwei Katzen, die waren super. Aber jetzt habe ich ein Haus mit einem großen Garten. Ein Vogel? Nein, äh, das ist nichts für mich. Im Garten kann ein Hund schön spielen und laufen. Darum möchte ich jetzt einen Hund.",
+              "hit": "Darum möchte ich jetzt einen Hund."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "d",
+            "explanation": "Ein Hund ist ihr zu viel Arbeit, und Vögel sind ihr zu laut. Sie möchte ein Aquarium mit Fischen.",
+            "evidence": {
+              "text": "Hm, ich bin aus Hannover. Ein Hund ist mir zu viel Arbeit, ehrlich. Und Vögel sind so laut, das mag ich nicht. Ich möchte gern ein Aquarium mit vielen bunten Fischen. Das ist so ruhig und schön, besonders am Abend. Ja, also, Fische.",
+              "hit": "Ich möchte gern ein Aquarium mit vielen bunten Fischen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "reporterin",
+            "voice": "woman_alexandra_at",
+            "text": "Guten Tag, wir machen eine kleine Umfrage. Welches Tier möchten Sie gern zu Hause haben?",
+            "delivery": "[friendly reporter, outdoors]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_emilia_at",
+            "text": "Hm, also, ein Hund ist toll, aber er muss jeden Tag spazieren gehen. Und ich arbeite oft lange, bis sieben Uhr. Fische? Nein, die finde ich langweilig. Äh, eine Katze kann gut allein zu Hause bleiben. Ja, ich möchte eine Katze.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_gruber_at",
+            "text": "Mein Bub möchte unbedingt einen Vogel, einen kleinen, bunten. Aber ich, äh, ich gehe sehr gern lange spazieren, im Wald und in den Bergen. Darum möchte ich einen Hund. Dann sind wir jeden Tag zusammen draußen. Ja, also, ein Hund.",
+            "delivery": "[spontaneous, amused]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_heidi_ch",
+            "text": "Ich komme aus der Schweiz, aus Chur. Ich hätte gern eine Katze, aber mein Vermieter erlaubt das nicht. Äh, ein Fisch ist auch schön, das stimmt. Aber ein Vogel singt am Morgen, das finde ich wunderschön. Also, ich möchte einen Vogel.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_martin_at",
+            "text": "Als Kind hatte ich zwei Katzen, die waren super. Aber jetzt habe ich ein Haus mit einem großen Garten. Ein Vogel? Nein, äh, das ist nichts für mich. Im Garten kann ein Hund schön spielen und laufen. Darum möchte ich jetzt einen Hund.",
+            "delivery": "[spontaneous, thinking aloud]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_irene",
+            "text": "Hm, ich bin aus Hannover. Ein Hund ist mir zu viel Arbeit, ehrlich. Und Vögel sind so laut, das mag ich nicht. Ich möchte gern ein Aquarium mit vielen bunten Fischen. Das ist so ruhig und schön, besonders am Abend. Ja, also, Fische.",
+            "delivery": "[spontaneous, calm]",
+            "clip": 5
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "oesd-a1/hoeren-04/track.mp3",
+    "duration": 615.05,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 9.56,
+        "to": 16.04
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 16.04,
+        "to": 46.08
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 46.08,
+        "to": 60.66
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 66.17,
+        "to": 67.03
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 67.66,
+        "to": 85.68
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 87.72,
+        "to": 88.61
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 89.23,
+        "to": 107.23
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 109.27,
+        "to": 110.13
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 110.76,
+        "to": 129.33
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 131.37,
+        "to": 132.13
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 132.75,
+        "to": 151.17
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 153.21,
+        "to": 154.07
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "from": 154.7,
+        "to": 172.64
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 180.19,
+        "to": 186.2
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 186.2,
+        "to": 216.24
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 216.24,
+        "to": 228.83
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 235.83,
+        "to": 286.62
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 293.62,
+        "to": 296.83
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 303.83,
+        "to": 354.61
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 361.61,
+        "to": 366.16
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 366.16,
+        "to": 386.19
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 391.71,
+        "to": 397.69
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 397.69,
+        "to": 407.72
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 407.72,
+        "to": 421.77
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 427.28,
+        "to": 432.9
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 434.44,
+        "to": 435.3
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 435.93,
+        "to": 452.13
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 454.16,
+        "to": 455.05
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 455.68,
+        "to": 471.51
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 473.55,
+        "to": 474.41
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 475.04,
+        "to": 491.23
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 493.27,
+        "to": 494.03
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 494.65,
+        "to": 511.61
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 513.65,
+        "to": 514.51
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 515.13,
+        "to": 532.09
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 539.64,
+        "to": 544.13
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 544.13,
+        "to": 604.16
+      }
+    ]
+  }
+}

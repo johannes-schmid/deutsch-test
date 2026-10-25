@@ -1,0 +1,479 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-03-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.629Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Saal Rosengarten, Aarau",
+                  "text": "Feiern Sie Ihr Fest bei uns: Geburtstag, Hochzeit oder Firmenfeier. Unser grosser Saal hat Platz für bis zu 80 Personen. Ab CHF 450.–. www.rosengarten-aarau.ch"
+                },
+                {
+                  "key": "2",
+                  "title": "Montage-Profi, Wiener Neustadt",
+                  "text": "Neue Möbel aus dem Möbelhaus? Wir bauen Ihre Kästen, Betten und Tische bei Ihnen zu Hause auf. Schnell und günstig, auch am Samstag. Telefon 0676 381 22 90"
+                },
+                {
+                  "key": "3",
+                  "title": "Tiroler Werkhof, Kufstein",
+                  "text": "Ihr Baumarkt in Kufstein! Jetzt im Angebot: Partyzelte für große Feste. Samstag, 10 Uhr: Kurs „Regale selbst aufbauen“. Alte Farbe nehmen wir gratis zurück."
+                },
+                {
+                  "key": "4",
+                  "title": "Räumdienst Nord, Kiel",
+                  "text": "Wir räumen Keller, Dachböden und Wohnungen leer. Alte Möbel, Kisten und Geräte holen wir ab und bringen alles weg. Auch am Wochenende. Telefon 0431 778 45 60"
+                },
+                {
+                  "key": "5",
+                  "title": "Übersetzungsbüro Wortbrücke, Augsburg",
+                  "text": "Wir übersetzen Ihre Dokumente: Zeugnisse, Urkunden und Verträge. Aus dem Arabischen, Türkischen und Persischen ins Deutsche. Schnell und offiziell, ab 35 Euro. www.wortbruecke-augsburg.de"
+                },
+                {
+                  "key": "6",
+                  "title": "Ferienhof Lindner bei Feldkirch",
+                  "text": "Ferien am Bauernhof! Ferienwohnungen für Familien mit Kindern, viele Tiere und Frühstück mit Eiern vom Hof. Offen von Mai bis Oktober. Telefon 05522 47 318"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Ihr Schulzeugnis ist auf Arabisch. Sie brauchen es aber auf Deutsch."
+                },
+                {
+                  "n": 2,
+                  "text": "Sie haben im August Urlaub. Sie möchten mit Ihrer Familie auf dem Land wohnen, bei Kühen und Hühnern."
+                },
+                {
+                  "n": 3,
+                  "text": "Sie heiraten im Juni. Sie brauchen einen großen Raum für 60 Gäste."
+                },
+                {
+                  "n": 4,
+                  "text": "Sie haben einen neuen Schrank gekauft. Jemand soll ihn bei Ihnen zusammenbauen."
+                },
+                {
+                  "n": 5,
+                  "text": "Ihr Keller ist voll mit alten Sachen. Jemand soll alles abholen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "5",
+            "explanation": "Das Übersetzungsbüro in Augsburg übersetzt Zeugnisse aus dem Arabischen ins Deutsche.",
+            "evidence": {
+              "text": "Übersetzungsbüro Wortbrücke, Augsburg Wir übersetzen Ihre Dokumente: Zeugnisse, Urkunden und Verträge. Aus dem Arabischen, Türkischen und Persischen ins Deutsche. Schnell und offiziell, ab 35 Euro. www.wortbruecke-augsburg.de",
+              "hit": "Aus dem Arabischen, Türkischen und Persischen ins Deutsche."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "6",
+            "explanation": "Der Ferienhof bei Feldkirch hat Wohnungen für Familien und viele Tiere. Er ist im August offen.",
+            "evidence": {
+              "text": "Ferienhof Lindner bei Feldkirch Ferien am Bauernhof! Ferienwohnungen für Familien mit Kindern, viele Tiere und Frühstück mit Eiern vom Hof. Offen von Mai bis Oktober. Telefon 05522 47 318",
+              "hit": "Ferienwohnungen für Familien mit Kindern, viele Tiere"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "1",
+            "explanation": "Der Saal in Aarau hat Platz für 80 Personen, auch für eine Hochzeit. Der Baumarkt verkauft nur Partyzelte, er hat keinen Raum.",
+            "evidence": {
+              "text": "Saal Rosengarten, Aarau Feiern Sie Ihr Fest bei uns: Geburtstag, Hochzeit oder Firmenfeier. Unser grosser Saal hat Platz für bis zu 80 Personen. Ab CHF 450.–. www.rosengarten-aarau.ch",
+              "hit": "Unser grosser Saal hat Platz für bis zu 80 Personen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "2",
+            "explanation": "Der Montage-Profi baut Möbel bei dir zu Hause auf. Im Kurs im Baumarkt musst du selbst aufbauen.",
+            "evidence": {
+              "text": "Montage-Profi, Wiener Neustadt Neue Möbel aus dem Möbelhaus? Wir bauen Ihre Kästen, Betten und Tische bei Ihnen zu Hause auf. Schnell und günstig, auch am Samstag. Telefon 0676 381 22 90",
+              "hit": "Wir bauen Ihre Kästen, Betten und Tische bei Ihnen zu Hause auf."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "4",
+            "explanation": "Der Räumdienst in Kiel räumt Keller leer und holt alte Sachen ab. Der Baumarkt nimmt nur alte Farbe zurück.",
+            "evidence": {
+              "text": "Räumdienst Nord, Kiel Wir räumen Keller, Dachböden und Wohnungen leer. Alte Möbel, Kisten und Geräte holen wir ab und bringen alles weg. Auch am Wochenende. Telefon 0431 778 45 60",
+              "hit": "Wir räumen Keller, Dachböden und Wohnungen leer."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-03-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.629Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Gemeindeamt Amstetten",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Neue Öffnungszeiten",
+            "Ab 1. März sind wir für Sie da:",
+            "Montag bis Freitag von 8 bis 12 Uhr, am Donnerstag auch von 14 bis 18 Uhr.",
+            "Termine auch online: www.amstetten-gemeinde.at"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Ist das Gemeindeamt am Donnerstag am Nachmittag offen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Kann man am Freitag um 15 Uhr kommen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Am Donnerstag ist das Amt auch von 14 bis 18 Uhr offen, also am Nachmittag.",
+            "evidence": {
+              "text": "Neue Öffnungszeiten Ab 1. März sind wir für Sie da: Montag bis Freitag von 8 bis 12 Uhr, am Donnerstag auch von 14 bis 18 Uhr. Termine auch online: www.amstetten-gemeinde.at",
+              "hit": "am Donnerstag auch von 14 bis 18 Uhr"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Am Freitag ist das Amt nur von 8 bis 12 Uhr offen. Am Nachmittag ist es nur am Donnerstag offen.",
+            "evidence": {
+              "text": "Neue Öffnungszeiten Ab 1. März sind wir für Sie da: Montag bis Freitag von 8 bis 12 Uhr, am Donnerstag auch von 14 bis 18 Uhr. Termine auch online: www.amstetten-gemeinde.at",
+              "hit": "Montag bis Freitag von 8 bis 12 Uhr"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-03-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.629Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Kinder-Uni Würzburg",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Professoren erklären die Welt",
+            "Für Kinder von 8 bis 12 Jahren, jeden Samstag um 11 Uhr.",
+            "Der Eintritt ist frei.",
+            "Eltern dürfen nicht in den Hörsaal. Sie können im Café warten."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Kostet die Kinder-Uni etwas?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Dürfen die Eltern mit den Kindern zuhören?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Der Eintritt ist frei, die Kinder-Uni kostet also nichts.",
+            "evidence": {
+              "text": "Professoren erklären die Welt Für Kinder von 8 bis 12 Jahren, jeden Samstag um 11 Uhr. Der Eintritt ist frei. Eltern dürfen nicht in den Hörsaal. Sie können im Café warten.",
+              "hit": "Der Eintritt ist frei."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Eltern dürfen nicht in den Hörsaal. Sie warten im Café.",
+            "evidence": {
+              "text": "Professoren erklären die Welt Für Kinder von 8 bis 12 Jahren, jeden Samstag um 11 Uhr. Der Eintritt ist frei. Eltern dürfen nicht in den Hörsaal. Sie können im Café warten.",
+              "hit": "Eltern dürfen nicht in den Hörsaal."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-03-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.629Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Ludothek Solothurn",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Spiele ausleihen",
+            "Bei uns gibt es über 800 Spiele und Spielsachen für Gross und Klein.",
+            "Offen: Dienstag 15 bis 18 Uhr, Samstag 9 bis 12 Uhr",
+            "Familien bezahlen CHF 20.– im Jahr. Sie dürfen jedes Spiel drei Wochen behalten."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Kann man am Montag Spiele ausleihen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Darf man ein Spiel 21 Tage zu Hause haben?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Die Ludothek ist nur am Dienstag und am Samstag offen, nicht am Montag.",
+            "evidence": {
+              "text": "Spiele ausleihen Bei uns gibt es über 800 Spiele und Spielsachen für Gross und Klein. Offen: Dienstag 15 bis 18 Uhr, Samstag 9 bis 12 Uhr Familien bezahlen CHF 20.– im Jahr. Sie dürfen jedes Spiel drei Wochen behalten.",
+              "hit": "Offen: Dienstag 15 bis 18 Uhr, Samstag 9 bis 12 Uhr"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Du darfst jedes Spiel drei Wochen behalten. Drei Wochen sind 21 Tage.",
+            "evidence": {
+              "text": "Spiele ausleihen Bei uns gibt es über 800 Spiele und Spielsachen für Gross und Klein. Offen: Dienstag 15 bis 18 Uhr, Samstag 9 bis 12 Uhr Familien bezahlen CHF 20.– im Jahr. Sie dürfen jedes Spiel drei Wochen behalten.",
+              "hit": "Sie dürfen jedes Spiel drei Wochen behalten."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-03-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.629Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Information",
+                  "text": "",
+                  "picto": "info"
+                },
+                {
+                  "key": "2",
+                  "title": "Einkaufswagen",
+                  "text": "",
+                  "picto": "einkaufswagen"
+                },
+                {
+                  "key": "3",
+                  "title": "Fotografieren verboten",
+                  "text": "",
+                  "picto": "fotografieren-verboten"
+                },
+                {
+                  "key": "4",
+                  "title": "Einkaufskorb",
+                  "text": "",
+                  "picto": "einkaufskorb"
+                },
+                {
+                  "key": "5",
+                  "title": "Rollstuhl",
+                  "text": "",
+                  "picto": "rollstuhl"
+                },
+                {
+                  "key": "6",
+                  "title": "Handy laden",
+                  "text": "",
+                  "picto": "handy-laden"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Besucherinnen und Besucher! In der Ausstellung dürfen Sie leider keine Fotos machen. Postkarten von den Bildern gibt es im Museumsshop."
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Gäste! Ist Ihr Handy leer? Hier können Sie es kostenlos laden. Kabel bekommen Sie an der Rezeption."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Kundinnen und Kunden! Bitte stellen Sie die Einkaufswagen nach dem Einkauf zurück. Der Platz für die Wagen ist gleich neben der Kassa."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Besucher! Haben Sie Fragen zum Haus oder zum Programm? Unsere Information ist in der Eingangshalle, gleich rechts. Wir helfen Ihnen gern."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Gäste im Rollstuhl! Der Eingang ist hinten am Gebäude, neben dem Parkplatz. Dort gibt es keine Stufen. Der Lift fährt in alle Stockwerke."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "3",
+            "explanation": "In der Ausstellung darf man nicht fotografieren. Das zeigt das Verbotszeichen mit der Kamera.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher! In der Ausstellung dürfen Sie leider keine Fotos machen. Postkarten von den Bildern gibt es im Museumsshop.",
+              "hit": "dürfen Sie leider keine Fotos machen"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "6",
+            "explanation": "Hier kann man das Handy laden. Das passt zum Bild mit dem Stecker.",
+            "evidence": {
+              "text": "Liebe Gäste! Ist Ihr Handy leer? Hier können Sie es kostenlos laden. Kabel bekommen Sie an der Rezeption.",
+              "hit": "Hier können Sie es kostenlos laden."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "2",
+            "explanation": "Der Text ist über die Einkaufswagen. Der Einkaufskorb ist etwas anderes.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden! Bitte stellen Sie die Einkaufswagen nach dem Einkauf zurück. Der Platz für die Wagen ist gleich neben der Kassa.",
+              "hit": "Bitte stellen Sie die Einkaufswagen nach dem Einkauf zurück."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "1",
+            "explanation": "Bei Fragen hilft die Information in der Eingangshalle. Das zeigt das Zeichen mit dem „i“.",
+            "evidence": {
+              "text": "Liebe Besucher! Haben Sie Fragen zum Haus oder zum Programm? Unsere Information ist in der Eingangshalle, gleich rechts. Wir helfen Ihnen gern.",
+              "hit": "Unsere Information ist in der Eingangshalle"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "5",
+            "explanation": "Der Text ist für Gäste im Rollstuhl. Das passt zum Bild mit dem Rollstuhl.",
+            "evidence": {
+              "text": "Liebe Gäste im Rollstuhl! Der Eingang ist hinten am Gebäude, neben dem Parkplatz. Dort gibt es keine Stufen. Der Lift fährt in alle Stockwerke.",
+              "hit": "Liebe Gäste im Rollstuhl!"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-09-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.125Z",
+        "textType": "Formular ausfüllen: Bestellung einer Gemüsekiste"
+      },
+      "exampleAnswers": [
+        "Toprak, Emre"
+      ],
+      "display": {
+        "instruction": "Ihr Freund möchte eine Gemüsekiste bestellen. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Emre Toprak möchte beim Biohof Kleebach eine Gemüsekiste bestellen. Der Biohof bringt das Gemüse direkt nach Hause.",
+            "Emres Kollege bekommt jede Woche eine Kiste. Das ist für Emre zu viel. Er möchte die Kiste nur alle zwei Wochen. Die erste Kiste soll am 6. Juni kommen.",
+            "Emre wohnt in der Ketzerbach 11 in 35037 Marburg. Seine Handynummer ist 0176 4128 593."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Biohof Kleebach · Bestellung Gemüsekiste\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nPLZ, Wohnort: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nLieferung: ",
+                {
+                  "n": 3,
+                  "options": [
+                    "jede Woche",
+                    "alle zwei Wochen"
+                  ]
+                },
+                "\nErste Lieferung am: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nHandynummer: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Ketzerbach 11",
+            "accept": [
+              "Ketzerbach Nr. 11",
+              "Ketzerbach Nr 11",
+              "Ketzerbach 11, Marburg",
+              "Ketzerbach 11 in Marburg"
+            ],
+            "explanation": "Emre wohnt in der Ketzerbach 11. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Emre Toprak möchte beim Biohof Kleebach eine Gemüsekiste bestellen. Der Biohof bringt das Gemüse direkt nach Hause. Emres Kollege bekommt jede Woche eine Kiste. Das ist für Emre zu viel. Er möchte die Kiste nur alle zwei Wochen. Die erste Kiste soll am 6. Juni kommen. Emre wohnt in der Ketzerbach 11 in 35037 Marburg. Seine Handynummer ist 0176 4128 593.",
+              "hit": "Emre wohnt in der Ketzerbach 11 in 35037 Marburg."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "35037 Marburg",
+            "accept": [
+              "35037, Marburg",
+              "35037 Marburg an der Lahn",
+              "Marburg 35037"
+            ],
+            "explanation": "Emre wohnt in 35037 Marburg. Die Postleitzahl muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Emre Toprak möchte beim Biohof Kleebach eine Gemüsekiste bestellen. Der Biohof bringt das Gemüse direkt nach Hause. Emres Kollege bekommt jede Woche eine Kiste. Das ist für Emre zu viel. Er möchte die Kiste nur alle zwei Wochen. Die erste Kiste soll am 6. Juni kommen. Emre wohnt in der Ketzerbach 11 in 35037 Marburg. Seine Handynummer ist 0176 4128 593.",
+              "hit": "Emre wohnt in der Ketzerbach 11 in 35037 Marburg."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "alle zwei Wochen",
+            "explanation": "Emre möchte die Kiste nur alle zwei Wochen. Jede Woche bekommt nur sein Kollege eine Kiste.",
+            "evidence": {
+              "text": "Ihr Freund Emre Toprak möchte beim Biohof Kleebach eine Gemüsekiste bestellen. Der Biohof bringt das Gemüse direkt nach Hause. Emres Kollege bekommt jede Woche eine Kiste. Das ist für Emre zu viel. Er möchte die Kiste nur alle zwei Wochen. Die erste Kiste soll am 6. Juni kommen. Emre wohnt in der Ketzerbach 11 in 35037 Marburg. Seine Handynummer ist 0176 4128 593.",
+              "hit": "Er möchte die Kiste nur alle zwei Wochen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "6. Juni",
+            "accept": [
+              "6.6.",
+              "06.06.",
+              "6.6",
+              "06.06",
+              "6. 6.",
+              "06. Juni",
+              "am 6. Juni",
+              "6.06.",
+              "06.6."
+            ],
+            "explanation": "Die erste Kiste soll am 6. Juni kommen. Das Datum muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Emre Toprak möchte beim Biohof Kleebach eine Gemüsekiste bestellen. Der Biohof bringt das Gemüse direkt nach Hause. Emres Kollege bekommt jede Woche eine Kiste. Das ist für Emre zu viel. Er möchte die Kiste nur alle zwei Wochen. Die erste Kiste soll am 6. Juni kommen. Emre wohnt in der Ketzerbach 11 in 35037 Marburg. Seine Handynummer ist 0176 4128 593.",
+              "hit": "Die erste Kiste soll am 6. Juni kommen."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "0176 4128 593",
+            "accept": [
+              "01764128593",
+              "0176 4128593",
+              "0176-4128 593",
+              "0176-4128593",
+              "0176/4128593",
+              "0176/4128 593"
+            ],
+            "explanation": "Die Nummer muss genau stimmen: 0176 4128 593.",
+            "evidence": {
+              "text": "Ihr Freund Emre Toprak möchte beim Biohof Kleebach eine Gemüsekiste bestellen. Der Biohof bringt das Gemüse direkt nach Hause. Emres Kollege bekommt jede Woche eine Kiste. Das ist für Emre zu viel. Er möchte die Kiste nur alle zwei Wochen. Die erste Kiste soll am 6. Juni kommen. Emre wohnt in der Ketzerbach 11 in 35037 Marburg. Seine Handynummer ist 0176 4128 593.",
+              "hit": "Seine Handynummer ist 0176 4128 593."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-09-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.125Z",
+        "textType": "Kurze E-Mail an die Chefin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an die Chefin",
+            "situation": "Sie brauchen einen neuen Personalausweis. Sie haben am Freitag um acht Uhr einen Termin beim Bürgeramt. Schreiben Sie Ihrer Chefin Ilona Oberländer eine E-Mail.",
+            "points": [
+              "Warum schreiben Sie?",
+              "Wann kommen Sie am Freitag zur Arbeit?",
+              "Frage: Sollen Sie an diesem Tag länger arbeiten?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Liebe Ilona Oberländer,\nich habe am Freitag um acht Uhr einen Termin beim Bürgeramt. Ich brauche einen neuen Ausweis. Ich komme um elf Uhr zur Arbeit. Soll ich am Freitag länger arbeiten?\nViele Grüße\nDoreen Fischer"
+          }
+        ]
+      }
+    }
+  ]
+}

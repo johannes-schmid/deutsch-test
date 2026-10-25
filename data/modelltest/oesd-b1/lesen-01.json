@@ -1,0 +1,957 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-01-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T10:00:00.000Z",
+        "textType": "Blogbeitrag"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Bernhard singt seit dem letzten Herbst in einem Chor."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Bernhard ist in den Chor gegangen, weil er schon als Kind gern gesungen hat."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Nach der Arbeit hat Bernhard manchmal keine Lust auf die Probe."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Beim Konzert hat ein anderer Sänger Bernhard geholfen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Bernhard und Ferdinand sehen sich nur bei den Chorproben."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Lena fand es von Anfang an gut, dass ihr Vater im Chor singt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Bernhard möchte im Sommer mit dem Chor ins Ausland fahren."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Bernhard",
+          "source": "Blog",
+          "paragraphs": [
+            "Mit 45 zum ersten Mal auf der Bühne",
+            "Hallo zusammen! Heute schreibe ich über etwas, das ich mir vor einem Jahr nie vorstellen konnte: Ich singe in einem Chor. Als Kind hat mir mein Musiklehrer gesagt, dass ich lieber nur zuhören soll. Daran habe ich mich dreißig Jahre lang gehalten. Im letzten Herbst hat mich dann meine Kollegin Sabine zu einer Probe ihres Chors in Graz mitgenommen. Eigentlich wollte ich nur zuschauen, aber am Ende habe ich mitgesungen – und bin geblieben.",
+            "Wir proben jeden Mittwoch von halb acht bis zehn. Ehrlich gesagt ist das nicht immer leicht. Wenn ich nach einem langen Tag um sechs aus dem Büro komme, würde ich mich manchmal lieber aufs Sofa legen. Aber nach jeder Probe fühle ich mich besser als vorher, ruhiger und irgendwie leichter.",
+            "Ende Jänner hatten wir dann unser erstes Konzert in einer Kirche. Ich war so nervös, dass ich in der Nacht davor kaum geschlafen habe. Auf der Bühne haben meine Hände gezittert, und beim dritten Lied hätte ich meinen Einsatz fast verpasst. Zum Glück hat mich Ferdinand, der in der Reihe neben mir steht, leicht am Arm berührt. So habe ich genau im richtigen Moment angefangen. Im Publikum hat niemand etwas gemerkt.",
+            "Ferdinand ist inzwischen ein guter Freund geworden. Nach der Probe gehen wir oft noch auf eine Jause* ins Gasthaus um die Ecke, und an manchen Sonntagen wandern wir zusammen auf den Schöckl.",
+            "Und meine Tochter Lena? Die fand die Idee am Anfang ziemlich peinlich. „Papa, du im Chor?“, hat sie gelacht. Beim Konzert saß sie dann aber in der ersten Reihe und hat alles mit dem Handy gefilmt. Danach hat sie mich umarmt und gesagt, dass sie stolz auf mich ist. Das Video hat sie sogar ihrer Oma geschickt.",
+            "Heuer im Sommer fährt unser Chor für vier Tage nach Slowenien und gibt dort zwei Konzerte. Ich habe mich schon angemeldet. Vielleicht bin ich dann nicht mehr ganz so nervös!",
+            "Bernhard",
+            "*Jause = österreichischer Standard für „kleine Zwischenmahlzeit“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Sein Musiklehrer hat ihm als Kind gesagt, dass er lieber nur zuhören soll. In den Chor ist er gekommen, weil seine Kollegin ihn zu einer Probe mitgenommen hat.",
+            "evidence": {
+              "text": "Hallo zusammen! Heute schreibe ich über etwas, das ich mir vor einem Jahr nie vorstellen konnte: Ich singe in einem Chor. Als Kind hat mir mein Musiklehrer gesagt, dass ich lieber nur zuhören soll. Daran habe ich mich dreißig Jahre lang gehalten. Im letzten Herbst hat mich dann meine Kollegin Sabine zu einer Probe ihres Chors in Graz mitgenommen. Eigentlich wollte ich nur zuschauen, aber am Ende habe ich mitgesungen – und bin geblieben.",
+              "hit": "Als Kind hat mir mein Musiklehrer gesagt, dass ich lieber nur zuhören soll."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Nach einem langen Arbeitstag würde er manchmal lieber aufs Sofa gehen. Er geht aber trotzdem, weil er sich danach besser fühlt.",
+            "evidence": {
+              "text": "Wir proben jeden Mittwoch von halb acht bis zehn. Ehrlich gesagt ist das nicht immer leicht. Wenn ich nach einem langen Tag um sechs aus dem Büro komme, würde ich mich manchmal lieber aufs Sofa legen. Aber nach jeder Probe fühle ich mich besser als vorher, ruhiger und irgendwie leichter.",
+              "hit": "würde ich mich manchmal lieber aufs Sofa legen"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Ferdinand hat ihn am Arm berührt, als er seinen Einsatz fast verpasst hat. So hat Bernhard rechtzeitig angefangen.",
+            "evidence": {
+              "text": "Ende Jänner hatten wir dann unser erstes Konzert in einer Kirche. Ich war so nervös, dass ich in der Nacht davor kaum geschlafen habe. Auf der Bühne haben meine Hände gezittert, und beim dritten Lied hätte ich meinen Einsatz fast verpasst. Zum Glück hat mich Ferdinand, der in der Reihe neben mir steht, leicht am Arm berührt. So habe ich genau im richtigen Moment angefangen. Im Publikum hat niemand etwas gemerkt.",
+              "hit": "Zum Glück hat mich Ferdinand, der in der Reihe neben mir steht, leicht am Arm berührt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Die beiden gehen nach der Probe zusammen ins Gasthaus und wandern manchmal sonntags. Sie treffen sich also auch außerhalb vom Chor.",
+            "evidence": {
+              "text": "Ferdinand ist inzwischen ein guter Freund geworden. Nach der Probe gehen wir oft noch auf eine Jause* ins Gasthaus um die Ecke, und an manchen Sonntagen wandern wir zusammen auf den Schöckl.",
+              "hit": "an manchen Sonntagen wandern wir zusammen auf den Schöckl"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Am Anfang fand Lena die Idee peinlich. Erst beim Konzert war sie stolz auf ihren Vater.",
+            "evidence": {
+              "text": "Und meine Tochter Lena? Die fand die Idee am Anfang ziemlich peinlich. „Papa, du im Chor?“, hat sie gelacht. Beim Konzert saß sie dann aber in der ersten Reihe und hat alles mit dem Handy gefilmt. Danach hat sie mich umarmt und gesagt, dass sie stolz auf mich ist. Das Video hat sie sogar ihrer Oma geschickt.",
+              "hit": "Die fand die Idee am Anfang ziemlich peinlich."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Der Chor fährt im Sommer nach Slowenien, und Bernhard hat sich schon angemeldet.",
+            "evidence": {
+              "text": "Heuer im Sommer fährt unser Chor für vier Tage nach Slowenien und gibt dort zwei Konzerte. Ich habe mich schon angemeldet. Vielleicht bin ich dann nicht mehr ganz so nervös!",
+              "hit": "Ich habe mich schon angemeldet."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-01-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T10:00:00.000Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "b"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die Gegenstände in der „Bibliothek der Dinge“ …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "hat die Bücherei alle selbst gekauft."
+                },
+                {
+                  "key": "b",
+                  "label": "kommen zum Teil von Menschen aus der Stadt."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man dort auch kaufen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um eine Bücherei, die …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Reparatur-Café für alte Geräte eröffnet hat."
+                },
+                {
+                  "key": "b",
+                  "label": "Dinge verleiht, die man nicht oft braucht."
+                },
+                {
+                  "key": "c",
+                  "label": "gebrauchtes Werkzeug günstig verkauft."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Wer zum ersten Mal eine Nähmaschine ausleihen möchte, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss dafür eine Gebühr bezahlen."
+                },
+                {
+                  "key": "b",
+                  "label": "muss sie zwei Wochen vorher bestellen."
+                },
+                {
+                  "key": "c",
+                  "label": "muss zuerst eine Einführung besuchen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Die Ehrenamtlichen in der Bücherei …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kontrollieren die Geräte nach der Rückgabe."
+                },
+                {
+                  "key": "b",
+                  "label": "zeigen samstags, wie man näht."
+                },
+                {
+                  "key": "c",
+                  "label": "reparieren kaputte Geräte im Keller."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Bohrmaschine statt Roman",
+            "Wer in Herford eine Bohrmaschine braucht, muss sie nicht mehr kaufen. Seit März verleiht die Stadtbücherei nicht nur Bücher und Filme, sondern auch Gegenstände, die man nur selten benutzt. In der „Bibliothek der Dinge“ stehen inzwischen rund 80 Sachen: Werkzeug, Nähmaschinen, ein Beamer, ein Zelt und sogar ein Raclette-Gerät.",
+            "Die Idee hatte die Bibliothekarin Anja Wolters. „Viele Leute kaufen eine Bohrmaschine, benutzen sie zweimal, und dann liegt sie jahrelang im Keller“, sagt sie. „Das ist schlecht für den Geldbeutel und für die Umwelt.“ Einen Teil der Gegenstände hat die Bücherei gekauft, viele andere haben Bürgerinnen und Bürger gespendet.",
+            "Ausleihen kann man alles mit dem normalen Büchereiausweis, kostenlos und für zwei Wochen. Nur für die Nähmaschinen gibt es eine Regel: Wer zum ersten Mal eine mitnehmen möchte, muss vorher an einer kurzen Einführung teilnehmen. Diese findet jeden Samstagvormittag statt, eine Mitarbeiterin zeigt dann, wie die Maschine funktioniert. Die Nähmaschinen sind auch am beliebtesten, manchmal gibt es sogar eine Warteliste.",
+            "Damit alles funktioniert, helfen fünf Ehrenamtliche. Sie prüfen jedes Gerät, wenn es zurückkommt, und reinigen es, falls nötig. Im nächsten Jahr möchte die Bücherei außerdem ein Reparatur-Café eröffnen.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Die Bücherei verleiht Werkzeug, Nähmaschinen und andere Dinge, die man nur selten benutzt. Das Reparatur-Café gibt es noch nicht, es ist erst für das nächste Jahr geplant.",
+            "evidence": {
+              "text": "Wer in Herford eine Bohrmaschine braucht, muss sie nicht mehr kaufen. Seit März verleiht die Stadtbücherei nicht nur Bücher und Filme, sondern auch Gegenstände, die man nur selten benutzt. In der „Bibliothek der Dinge“ stehen inzwischen rund 80 Sachen: Werkzeug, Nähmaschinen, ein Beamer, ein Zelt und sogar ein Raclette-Gerät.",
+              "hit": "sondern auch Gegenstände, die man nur selten benutzt"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Vor der ersten Ausleihe muss man an einer kurzen Einführung teilnehmen. Das Ausleihen ist kostenlos, und die Warteliste heißt nicht, dass man zwei Wochen vorher bestellen muss.",
+            "evidence": {
+              "text": "Ausleihen kann man alles mit dem normalen Büchereiausweis, kostenlos und für zwei Wochen. Nur für die Nähmaschinen gibt es eine Regel: Wer zum ersten Mal eine mitnehmen möchte, muss vorher an einer kurzen Einführung teilnehmen. Diese findet jeden Samstagvormittag statt, eine Mitarbeiterin zeigt dann, wie die Maschine funktioniert. Die Nähmaschinen sind auch am beliebtesten, manchmal gibt es sogar eine Warteliste.",
+              "hit": "muss vorher an einer kurzen Einführung teilnehmen"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Die Ehrenamtlichen prüfen jedes Gerät, wenn es zurückkommt. Von Nähkursen oder Reparaturen durch sie steht nichts im Text.",
+            "evidence": {
+              "text": "Damit alles funktioniert, helfen fünf Ehrenamtliche. Sie prüfen jedes Gerät, wenn es zurückkommt, und reinigen es, falls nötig. Im nächsten Jahr möchte die Bücherei außerdem ein Reparatur-Café eröffnen.",
+              "hit": "Sie prüfen jedes Gerät, wenn es zurückkommt"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-01-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T10:00:00.000Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Firma, die in Bergdörfern neue Läden eröffnet."
+                },
+                {
+                  "key": "b",
+                  "label": "Feriengäste, die im Winter in einem Bergdorf einkaufen."
+                },
+                {
+                  "key": "c",
+                  "label": "Dorfbewohner, die selbst einen Laden betreiben."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die alte Filiale in Brunnwald wurde geschlossen, weil …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sie für die Firma zu wenig Geld brachte."
+                },
+                {
+                  "key": "b",
+                  "label": "es keine Verkäuferinnen mehr gab."
+                },
+                {
+                  "key": "c",
+                  "label": "die Leute lieber im Tal einkauften."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Im Dorfladen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sind die Preise niedriger als im Supermarkt."
+                },
+                {
+                  "key": "b",
+                  "label": "arbeiten auch Leute, die dafür kein Geld bekommen."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man nur im Winter Kaffee trinken."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Ein Dorfladen, der allen gehört",
+            "Vor drei Jahren war in Brunnwald plötzlich Schluss: Der grosse Detailhändler schloss seine kleine Filiale im Bergdorf, weil sie zu wenig Gewinn brachte. Für die 280 Einwohnerinnen und Einwohner bedeutete das eine halbe Stunde Fahrt ins Tal – für jedes Brot und jeden Liter Milch.",
+            "«Für viele Ältere ohne Auto war das ein echtes Problem», erzählt Gemeindepräsidentin Claudia Caduff. Deshalb gründeten die Brunnwalder eine Genossenschaft. Wer Mitglied werden wollte, kaufte einen Anteilschein für 200 Franken. Schon nach zwei Monaten hatten sich 150 Personen gemeldet, und im alten Ladenlokal ging das Licht wieder an.",
+            "Heute arbeiten im Laden zwei Verkäuferinnen in Teilzeit. Dazu kommen rund dreissig Freiwillige, die ohne Lohn Regale auffüllen oder an der Kasse aushelfen. Verkauft werden vor allem Produkte aus der Region: Käse von der Alp, Brot aus dem Nachbardorf und Gemüse aus dem Tal. Ausserdem gibt es eine Postagentur und einen kleinen Tisch, an dem man Kaffee trinken kann.",
+            "Billiger als im Supermarkt ist der Dorfladen nicht. Trotzdem kaufen die meisten Leute aus dem Dorf hier ein. «Ein paar Rappen mehr bezahle ich gern, wenn der Laden dafür bleibt», sagt eine Kundin. Im Winter kommen zusätzlich viele Feriengäste aus dem nahen Skigebiet.",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Die Menschen in Brunnwald haben eine Genossenschaft gegründet und führen ihren Laden jetzt selbst. Die Feriengäste sind nur ein Detail am Ende.",
+            "evidence": {
+              "text": "«Für viele Ältere ohne Auto war das ein echtes Problem», erzählt Gemeindepräsidentin Claudia Caduff. Deshalb gründeten die Brunnwalder eine Genossenschaft. Wer Mitglied werden wollte, kaufte einen Anteilschein für 200 Franken. Schon nach zwei Monaten hatten sich 150 Personen gemeldet, und im alten Ladenlokal ging das Licht wieder an.",
+              "hit": "Deshalb gründeten die Brunnwalder eine Genossenschaft."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Die Firma hat die Filiale geschlossen, weil sie zu wenig Gewinn brachte. Dass die Leute im Tal einkaufen mussten, war die Folge, nicht der Grund.",
+            "evidence": {
+              "text": "Vor drei Jahren war in Brunnwald plötzlich Schluss: Der grosse Detailhändler schloss seine kleine Filiale im Bergdorf, weil sie zu wenig Gewinn brachte. Für die 280 Einwohnerinnen und Einwohner bedeutete das eine halbe Stunde Fahrt ins Tal – für jedes Brot und jeden Liter Milch.",
+              "hit": "weil sie zu wenig Gewinn brachte"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Rund dreissig Freiwillige helfen ohne Lohn. Billiger als im Supermarkt ist der Laden nicht, und Kaffee gibt es nicht nur im Winter.",
+            "evidence": {
+              "text": "Heute arbeiten im Laden zwei Verkäuferinnen in Teilzeit. Dazu kommen rund dreissig Freiwillige, die ohne Lohn Regale auffüllen oder an der Kasse aushelfen. Verkauft werden vor allem Produkte aus der Region: Käse von der Alp, Brot aus dem Nachbardorf und Gemüse aus dem Tal. Ausserdem gibt es eine Postagentur und einen kleinen Tisch, an dem man Kaffee trinken kann.",
+              "hit": "Dazu kommen rund dreissig Freiwillige, die ohne Lohn Regale auffüllen oder an der Kasse aushelfen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-01-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T10:00:00.000Z",
+        "textType": "Anzeigen: Angebote für Neue in der Stadt"
+      },
+      "exampleAnswers": [
+        "d"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Verschiedene Personen sind neu in ihrer Stadt und suchen passende Angebote.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Möbelbörse im Hafenviertel",
+                  "text": "Gut erhaltene Möbel aus zweiter Hand: Schränke, Betten, Tische und Sofas zu kleinen Preisen. Lieferung in Hannover für 15 €. Di–Sa 10–18 Uhr, Hafenstraße 7, Tel. 0511 39 88 120"
+                },
+                {
+                  "key": "b",
+                  "title": "Gemeinde Seewil – Einwohnerkontrolle",
+                  "text": "Bitte melden Sie sich innert 14 Tagen nach dem Umzug an. Bringen Sie Pass und Mietvertrag mit. Mo–Fr 8–11.30 Uhr, Gemeindehaus, Dorfstrasse 12"
+                },
+                {
+                  "key": "c",
+                  "title": "Nachbarnetz – die App für Ihre Straße",
+                  "text": "Wer wohnt eigentlich nebenan? Mit Nachbarnetz lernen Sie die Menschen in Ihrem Viertel kennen. Verabreden Sie sich zum Grillen oder leihen Sie sich Werkzeug oder eine Leiter. Kostenlos: www.nachbarnetz-app.de"
+                },
+                {
+                  "key": "d",
+                  "title": "Neu in Köln? Herzlich willkommen!",
+                  "text": "Einmal im Monat lädt das Bürgerbüro Innenstadt neue Kölnerinnen und Kölner zu einem kostenlosen Stadtspaziergang ein. Lernen Sie Ämter, Märkte und andere Neue kennen. Start: erster Samstag im Monat, 11 Uhr, vor dem Rathaus."
+                },
+                {
+                  "key": "e",
+                  "title": "Schwimmen lernen für Erwachsene",
+                  "text": "Nie richtig schwimmen gelernt? Im Hallenbad Nord gibt es Anfängerkurse nur für Erwachsene, mit viel Geduld. Kurszeit: dienstags und freitags 9–10 Uhr, zehn Termine, 89 €. Anmeldung: www.hallenbad-nord-mainz.de"
+                },
+                {
+                  "key": "f",
+                  "title": "Sprachcafé Plauderecke, Linz",
+                  "text": "Jeden Dienstag ab 18 Uhr treffen sich bei uns Linzerinnen und Linzer mit Menschen aus aller Welt. Kein Unterricht, keine Prüfung, nur Gespräche bei Kaffee und Topfenstrudel. Eintritt frei. Landstraße 41, 4020 Linz"
+                },
+                {
+                  "key": "g",
+                  "title": "Lauftreff für Einsteiger",
+                  "text": "Lange keinen Sport gemacht? Wir starten jeden Montag und Donnerstag um 18:30 Uhr am Eingang zum Westfalenpark, laufen langsam und machen Pausen. Mitmachen ist kostenlos, eine Anmeldung ist nicht nötig. TSV Eichholz Dortmund"
+                },
+                {
+                  "key": "h",
+                  "title": "Deutsch B1 – Intensivkurs",
+                  "text": "Vier Wochen, täglich von 9 bis 12:30 Uhr: Sie bereiten sich gezielt auf die B1-Prüfung vor, mit Abschlusstest und Zertifikat. Kursgebühr 320 €. Bildungszentrum am Markt, Wiesbaden, Tel. 0611 44 07 31"
+                },
+                {
+                  "key": "i",
+                  "title": "Kinderhüte-Börse Basel",
+                  "text": "Keine Grosseltern in der Nähe? Bei uns hüten Eltern gegenseitig ihre Kinder. Sie schenken Stunden und bekommen Stunden zurück – ganz ohne Geld. Infoabend jeden ersten Montag im Quartierzentrum, Bläsiring 86, 4057 Basel"
+                },
+                {
+                  "key": "j",
+                  "title": "Radfahren lernen – egal, wie alt!",
+                  "text": "Sie sind erwachsen und haben nie Fahrrad fahren gelernt? Bei uns üben Sie in kleinen Gruppen, bis Sie sicher im Straßenverkehr fahren. Räder und Helme sind da. Samstags 10–12 Uhr, sechs Termine, 60 €. Radschule Leipzig-Süd, Tel. 0341 22 63 190"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Malika ist gerade nach Köln gezogen und möchte die Stadt gemeinsam mit anderen Neuen kennenlernen."
+                },
+                {
+                  "n": 13,
+                  "text": "Tomasz möchte sein Deutsch im Gespräch mit Einheimischen verbessern, aber keinen Kurs besuchen."
+                },
+                {
+                  "n": 14,
+                  "text": "Ines hat in ihrer neuen Wohnung noch keinen Kleiderschrank und möchte dafür wenig Geld ausgeben."
+                },
+                {
+                  "n": 15,
+                  "text": "Kofi möchte mit dem Rad zur Arbeit fahren, hat aber als Kind nie Radfahren gelernt."
+                },
+                {
+                  "n": 16,
+                  "text": "Yasmin möchte endlich schwimmen lernen, hat aber nur abends nach der Arbeit Zeit."
+                },
+                {
+                  "n": 17,
+                  "text": "Aylin hat in der neuen Stadt keine Familie und sucht jemanden, der manchmal auf ihre Kinder aufpasst, kann dafür aber nichts bezahlen."
+                },
+                {
+                  "n": 18,
+                  "text": "Jonas möchte die Leute in seiner Straße kennenlernen und sich ab und zu Werkzeug ausleihen."
+                },
+                {
+                  "n": 19,
+                  "text": "Marco hat seit Jahren keinen Sport gemacht und sucht ein kostenloses Angebot nach Feierabend."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "f",
+            "explanation": "Im Sprachcafé in Linz spricht man einfach mit Einheimischen, ohne Unterricht und ohne Prüfung. Der Intensivkurs in Wiesbaden ist ein Kurs, den Tomasz nicht möchte.",
+            "evidence": {
+              "text": "Jeden Dienstag ab 18 Uhr treffen sich bei uns Linzerinnen und Linzer mit Menschen aus aller Welt. Kein Unterricht, keine Prüfung, nur Gespräche bei Kaffee und Topfenstrudel. Eintritt frei. Landstraße 41, 4020 Linz",
+              "hit": "Kein Unterricht, keine Prüfung, nur Gespräche"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a",
+            "explanation": "Die Möbelbörse verkauft gebrauchte Schränke zu kleinen Preisen. Die Nachbarschafts-App ist zum Ausleihen da, nicht für Möbel.",
+            "evidence": {
+              "text": "Gut erhaltene Möbel aus zweiter Hand: Schränke, Betten, Tische und Sofas zu kleinen Preisen. Lieferung in Hannover für 15 €. Di–Sa 10–18 Uhr, Hafenstraße 7, Tel. 0511 39 88 120",
+              "hit": "Schränke, Betten, Tische und Sofas zu kleinen Preisen"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "j",
+            "explanation": "Die Radschule in Leipzig bietet Kurse für Erwachsene an, die nie Fahrrad fahren gelernt haben.",
+            "evidence": {
+              "text": "Sie sind erwachsen und haben nie Fahrrad fahren gelernt? Bei uns üben Sie in kleinen Gruppen, bis Sie sicher im Straßenverkehr fahren. Räder und Helme sind da. Samstags 10–12 Uhr, sechs Termine, 60 €. Radschule Leipzig-Süd, Tel. 0341 22 63 190",
+              "hit": "Sie sind erwachsen und haben nie Fahrrad fahren gelernt?"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "x",
+            "explanation": "Nur das Hallenbad bietet einen Schwimmkurs für Erwachsene an, aber nur am Vormittag. Yasmin hat erst abends Zeit, deshalb passt keine Anzeige.",
+            "evidence": {
+              "text": "Nie richtig schwimmen gelernt? Im Hallenbad Nord gibt es Anfängerkurse nur für Erwachsene, mit viel Geduld. Kurszeit: dienstags und freitags 9–10 Uhr, zehn Termine, 89 €. Anmeldung: www.hallenbad-nord-mainz.de",
+              "hit": "dienstags und freitags 9–10 Uhr"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "i",
+            "explanation": "Bei der Kinderhüte-Börse in Basel passen Eltern gegenseitig auf ihre Kinder auf, und es kostet kein Geld.",
+            "evidence": {
+              "text": "Keine Grosseltern in der Nähe? Bei uns hüten Eltern gegenseitig ihre Kinder. Sie schenken Stunden und bekommen Stunden zurück – ganz ohne Geld. Infoabend jeden ersten Montag im Quartierzentrum, Bläsiring 86, 4057 Basel",
+              "hit": "Sie schenken Stunden und bekommen Stunden zurück – ganz ohne Geld."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "c",
+            "explanation": "Mit der App lernt man die Nachbarn kennen und kann sich Werkzeug leihen. Die Möbelbörse verkauft nur Möbel.",
+            "evidence": {
+              "text": "Wer wohnt eigentlich nebenan? Mit Nachbarnetz lernen Sie die Menschen in Ihrem Viertel kennen. Verabreden Sie sich zum Grillen oder leihen Sie sich Werkzeug oder eine Leiter. Kostenlos: www.nachbarnetz-app.de",
+              "hit": "leihen Sie sich Werkzeug oder eine Leiter"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "g",
+            "explanation": "Der Lauftreff ist für Einsteiger, abends um 18:30 Uhr und kostenlos. Der Schwimmkurs im Hallenbad kostet Geld und ist vormittags.",
+            "evidence": {
+              "text": "Lange keinen Sport gemacht? Wir starten jeden Montag und Donnerstag um 18:30 Uhr am Eingang zum Westfalenpark, laufen langsam und machen Pausen. Mitmachen ist kostenlos, eine Anmeldung ist nicht nötig. TSV Eichholz Dortmund",
+              "hit": "Mitmachen ist kostenlos, eine Anmeldung ist nicht nötig."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-01-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T10:00:00.000Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für die Öffnung der Geschäfte am Sonntag?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Florian, 29, Hamburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Gisela, 63, Fulda",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Reto, 34, Luzern",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Katrin, 45, Rostock",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Martina, 51, Salzburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Felix, 27, Leipzig",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Ursula, 58, Basel",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Nicole, 36, Stuttgart",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "In einer Zeitschrift lesen Sie Kommentare zu einem Artikel über die Frage: Sollen Geschäfte auch am Sonntag öffnen dürfen?",
+            "Ich arbeite unter der Woche oft bis acht Uhr abends, und samstags sind die Geschäfte in der Innenstadt so voll, dass Einkaufen keinen Spaß macht. Ein ruhiger Sonntagnachmittag wäre für mich die perfekte Zeit, um in Ruhe neue Schuhe oder ein Geschenk zu kaufen. Wer am Sonntag nicht einkaufen will, muss es ja nicht tun.",
+            "Florian, 29, Hamburg",
+            "Der Sonntag ist für mich der einzige Tag, an dem die ganze Familie zusammen am Tisch sitzt. Wenn die Geschäfte öffnen, müssen viele Menschen arbeiten, auch meine Enkelin, die gerade in einem Modegeschäft ihre Ausbildung macht. Ein Tag pro Woche ohne Hektik und Einkaufsstress tut uns allen gut. Sechs Tage reichen wirklich zum Einkaufen.",
+            "Gisela, 63, Fulda",
+            "In Luzern sind jeden Tag Tausende Touristen unterwegs, auch am Sonntag. Viele stehen dann vor geschlossenen Türen und gehen enttäuscht weiter. Im Bahnhof dürfen die Läden schon heute sonntags öffnen, und dort ist immer viel los. Warum soll das nicht in der ganzen Stadt möglich sein? Der Detailhandel würde mehr verdienen, und für Studierende gäbe es ausserdem gute Jobs.",
+            "Reto, 34, Luzern",
+            "Ich kann verstehen, dass manche Leute am Sonntag gern bummeln möchten. Aber ich arbeite seit zwanzig Jahren als Verkäuferin und stehe schon jeden Samstag im Laden. Wenn jetzt auch noch der Sonntag dazukommt, sehe ich meine Kinder kaum noch. Und mehr Geld gibt es dafür bestimmt nicht. Also bitte: Lasst uns wenigstens diesen einen freien Tag!",
+            "Katrin, 45, Rostock",
+            "Ich habe ein kleines Geschäft für Handarbeiten in der Salzburger Altstadt. Wenn die großen Ketten sonntags öffnen dürfen, müsste ich das auch tun, sonst gehen meine Kunden zur Konkurrenz. Eine zusätzliche Verkäuferin kann ich mir aber nicht leisten. Dann müsste ich sieben Tage in der Woche selbst an der Kassa stehen, und das schaffe ich nicht.",
+            "Martina, 51, Salzburg",
+            "Im Internet kann ich rund um die Uhr bestellen, auch am Sonntag. Die Geschäfte in unserer Innenstadt sind dagegen geschlossen, und viele haben schon ganz aufgegeben. Wenn wir lebendige Städte wollen, müssen die Läden eine faire Chance bekommen. Ich würde jedenfalls lieber am Sonntag durch die Stadt bummeln und dort einkaufen, als alles nur online zu bestellen.",
+            "Felix, 27, Leipzig",
+            "Am Sonntag fahre ich mit dem Velo am Rhein entlang, treffe Freunde oder geniesse einfach die Ruhe in der Stadt. Wenn überall Läden offen sind, gibt es mehr Verkehr, mehr Lärm und mehr Stress. Wir brauchen nicht an jedem Tag die Möglichkeit, etwas zu kaufen. Ein ruhiger Tag pro Woche ist ein Stück Lebensqualität, das wir nicht verlieren sollten.",
+            "Ursula, 58, Basel",
+            "Viele sagen, am Sonntag soll niemand arbeiten. Aber ich bin Krankenschwester und arbeite selbst oft sonntags, genau wie Busfahrer, Köche oder Polizisten. Warum also nicht auch Verkäuferinnen und Verkäufer? Wichtig ist nur, dass niemand dazu gezwungen wird und dass es am Sonntag mehr Lohn gibt. Dann finden sich bestimmt genug Leute, die gern arbeiten.",
+            "Nicole, 36, Stuttgart"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Gisela möchte, dass der Sonntag ein ruhiger Familientag bleibt. Sie findet, sechs Tage zum Einkaufen sind genug.",
+            "evidence": {
+              "text": "Der Sonntag ist für mich der einzige Tag, an dem die ganze Familie zusammen am Tisch sitzt. Wenn die Geschäfte öffnen, müssen viele Menschen arbeiten, auch meine Enkelin, die gerade in einem Modegeschäft ihre Ausbildung macht. Ein Tag pro Woche ohne Hektik und Einkaufsstress tut uns allen gut. Sechs Tage reichen wirklich zum Einkaufen.",
+              "hit": "Sechs Tage reichen wirklich zum Einkaufen."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Reto möchte, dass in ganz Luzern die Läden sonntags öffnen dürfen, wie schon im Bahnhof. Er sieht Vorteile für Touristen, Geschäfte und Studierende.",
+            "evidence": {
+              "text": "In Luzern sind jeden Tag Tausende Touristen unterwegs, auch am Sonntag. Viele stehen dann vor geschlossenen Türen und gehen enttäuscht weiter. Im Bahnhof dürfen die Läden schon heute sonntags öffnen, und dort ist immer viel los. Warum soll das nicht in der ganzen Stadt möglich sein? Der Detailhandel würde mehr verdienen, und für Studierende gäbe es ausserdem gute Jobs.",
+              "hit": "Warum soll das nicht in der ganzen Stadt möglich sein?"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Katrin versteht die Kunden zwar, aber als Verkäuferin will sie den Sonntag frei haben, um ihre Kinder zu sehen.",
+            "evidence": {
+              "text": "Ich kann verstehen, dass manche Leute am Sonntag gern bummeln möchten. Aber ich arbeite seit zwanzig Jahren als Verkäuferin und stehe schon jeden Samstag im Laden. Wenn jetzt auch noch der Sonntag dazukommt, sehe ich meine Kinder kaum noch. Und mehr Geld gibt es dafür bestimmt nicht. Also bitte: Lasst uns wenigstens diesen einen freien Tag!",
+              "hit": "Lasst uns wenigstens diesen einen freien Tag!"
+            }
+          },
+          {
+            "n": 23,
+            "correct": "falsch",
+            "explanation": "Martina hat ein kleines Geschäft. Wenn sonntags geöffnet wird, müsste sie sieben Tage arbeiten. Das schafft sie nicht, deshalb ist sie dagegen.",
+            "evidence": {
+              "text": "Ich habe ein kleines Geschäft für Handarbeiten in der Salzburger Altstadt. Wenn die großen Ketten sonntags öffnen dürfen, müsste ich das auch tun, sonst gehen meine Kunden zur Konkurrenz. Eine zusätzliche Verkäuferin kann ich mir aber nicht leisten. Dann müsste ich sieben Tage in der Woche selbst an der Kassa stehen, und das schaffe ich nicht.",
+              "hit": "Dann müsste ich sieben Tage in der Woche selbst an der Kassa stehen, und das schaffe ich nicht."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "richtig",
+            "explanation": "Felix möchte am Sonntag in der Stadt einkaufen. Er glaubt, dass die Geschäfte so gegen das Internet eine Chance haben.",
+            "evidence": {
+              "text": "Im Internet kann ich rund um die Uhr bestellen, auch am Sonntag. Die Geschäfte in unserer Innenstadt sind dagegen geschlossen, und viele haben schon ganz aufgegeben. Wenn wir lebendige Städte wollen, müssen die Läden eine faire Chance bekommen. Ich würde jedenfalls lieber am Sonntag durch die Stadt bummeln und dort einkaufen, als alles nur online zu bestellen.",
+              "hit": "Ich würde jedenfalls lieber am Sonntag durch die Stadt bummeln und dort einkaufen"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "falsch",
+            "explanation": "Ursula möchte am Sonntag Ruhe. Offene Läden bringen für sie nur mehr Verkehr, Lärm und Stress.",
+            "evidence": {
+              "text": "Am Sonntag fahre ich mit dem Velo am Rhein entlang, treffe Freunde oder geniesse einfach die Ruhe in der Stadt. Wenn überall Läden offen sind, gibt es mehr Verkehr, mehr Lärm und mehr Stress. Wir brauchen nicht an jedem Tag die Möglichkeit, etwas zu kaufen. Ein ruhiger Tag pro Woche ist ein Stück Lebensqualität, das wir nicht verlieren sollten.",
+              "hit": "Ein ruhiger Tag pro Woche ist ein Stück Lebensqualität, das wir nicht verlieren sollten."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "richtig",
+            "explanation": "Nicole beginnt mit dem Gegenargument, ist aber dafür: Viele Menschen arbeiten schon sonntags, also auch Verkäufer, wenn sie freiwillig arbeiten und mehr Lohn bekommen.",
+            "evidence": {
+              "text": "Viele sagen, am Sonntag soll niemand arbeiten. Aber ich bin Krankenschwester und arbeite selbst oft sonntags, genau wie Busfahrer, Köche oder Polizisten. Warum also nicht auch Verkäuferinnen und Verkäufer? Wichtig ist nur, dass niemand dazu gezwungen wird und dass es am Sonntag mehr Lohn gibt. Dann finden sich bestimmt genug Leute, die gern arbeiten.",
+              "hit": "Warum also nicht auch Verkäuferinnen und Verkäufer?"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-01-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T10:00:00.000Z",
+        "textType": "Nutzungsbedingungen Carsharing"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie haben sich bei einem Carsharing-Anbieter angemeldet und lesen jetzt die Nutzungsbedingungen.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Wenn Sie das Auto länger brauchen als geplant, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "müssen Sie es an einer anderen Station abstellen."
+                },
+                {
+                  "key": "b",
+                  "label": "können Sie die Buchung eventuell in der App verlängern."
+                },
+                {
+                  "key": "c",
+                  "label": "zahlen Sie in jedem Fall 20 Euro extra."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Wenn Sie unterwegs tanken müssen, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bezahlen Sie mit einer Karte aus dem Auto."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommen Sie das Geld bei der nächsten Fahrt zurück."
+                },
+                {
+                  "key": "c",
+                  "label": "müssen Sie vorher die Hotline anrufen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Eine Buchung können Sie ohne Kosten absagen, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bis 15 Minuten vor Fahrtbeginn."
+                },
+                {
+                  "key": "b",
+                  "label": "aber nur telefonisch über die Hotline."
+                },
+                {
+                  "key": "c",
+                  "label": "bis eine Stunde vor Fahrtbeginn."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Wenn das Auto vor Ihrer Fahrt schon beschädigt ist, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schicken Sie ein Foto über die App."
+                },
+                {
+                  "key": "b",
+                  "label": "müssen Sie die Polizei rufen."
+                },
+                {
+                  "key": "c",
+                  "label": "dürfen Sie das Auto nicht benutzen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Nutzungsbedingungen",
+          "paragraphs": [
+            "Nutzungsbedingungen von StadtFlitzer Carsharing",
+            "**Buchung**",
+            "Sie buchen ein Auto über unsere App oder telefonisch, spätestens 15 Minuten vor Fahrtbeginn. Bis eine Stunde vor Beginn können Sie kostenlos stornieren. Bei einer späteren Stornierung berechnen wir die Hälfte des Fahrpreises.",
+            "**Kundenkarte**",
+            "Mit Ihrer persönlichen Kundenkarte öffnen Sie das Fahrzeug: Halten Sie die Karte an das Lesegerät hinter der Windschutzscheibe. Den Schlüssel finden Sie im Handschuhfach. Die Karte dürfen Sie nicht an andere Personen weitergeben. Wenn Sie sie verlieren, melden Sie das bitte sofort unserer Hotline. Eine neue Karte kostet 15 Euro.",
+            "**Tanken**",
+            "Ist der Tank weniger als ein Viertel voll, tanken Sie bitte. Bezahlen Sie dafür mit der Tankkarte, die im Fahrzeug liegt. Die Kosten übernehmen wir, und Sie erhalten zusätzlich zehn Freiminuten für Ihre nächste Fahrt.",
+            "**Schäden**",
+            "Bitte prüfen Sie das Auto vor jeder Fahrt. Neue Schäden oder starke Verschmutzungen melden Sie vor Fahrtbeginn mit einem Foto in der App. Sonst müssen wir annehmen, dass Sie den Schaden verursacht haben. Bei einem Unfall rufen Sie immer die Polizei und unsere Hotline an.",
+            "**Rückgabe**",
+            "Stellen Sie das Auto am Ende an der gleichen Station ab, an der Sie es abgeholt haben. Wenn Sie länger brauchen, können Sie Ihre Buchung in der App verlängern, falls das Auto danach nicht schon gebucht ist. Wer ohne Verlängerung zu spät kommt, zahlt zusätzlich zum Fahrpreis eine Gebühr von 20 Euro."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "b",
+            "explanation": "Man kann die Buchung in der App verlängern, wenn das Auto danach frei ist. Die 20 Euro zahlt nur, wer ohne Verlängerung zu spät kommt.",
+            "evidence": {
+              "text": "Stellen Sie das Auto am Ende an der gleichen Station ab, an der Sie es abgeholt haben. Wenn Sie länger brauchen, können Sie Ihre Buchung in der App verlängern, falls das Auto danach nicht schon gebucht ist. Wer ohne Verlängerung zu spät kommt, zahlt zusätzlich zum Fahrpreis eine Gebühr von 20 Euro.",
+              "hit": "können Sie Ihre Buchung in der App verlängern"
+            }
+          },
+          {
+            "n": 28,
+            "correct": "a",
+            "explanation": "Man bezahlt mit der Tankkarte, die im Auto liegt. Man bekommt kein Geld zurück, sondern zehn Freiminuten.",
+            "evidence": {
+              "text": "Ist der Tank weniger als ein Viertel voll, tanken Sie bitte. Bezahlen Sie dafür mit der Tankkarte, die im Fahrzeug liegt. Die Kosten übernehmen wir, und Sie erhalten zusätzlich zehn Freiminuten für Ihre nächste Fahrt.",
+              "hit": "Bezahlen Sie dafür mit der Tankkarte, die im Fahrzeug liegt."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Kostenlos stornieren kann man bis eine Stunde vor Beginn. Die 15 Minuten gelten nur für die Buchung.",
+            "evidence": {
+              "text": "Sie buchen ein Auto über unsere App oder telefonisch, spätestens 15 Minuten vor Fahrtbeginn. Bis eine Stunde vor Beginn können Sie kostenlos stornieren. Bei einer späteren Stornierung berechnen wir die Hälfte des Fahrpreises.",
+              "hit": "Bis eine Stunde vor Beginn können Sie kostenlos stornieren."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "a",
+            "explanation": "Einen Schaden meldet man vor der Fahrt mit einem Foto in der App. Die Polizei ruft man nur bei einem Unfall.",
+            "evidence": {
+              "text": "Bitte prüfen Sie das Auto vor jeder Fahrt. Neue Schäden oder starke Verschmutzungen melden Sie vor Fahrtbeginn mit einem Foto in der App. Sonst müssen wir annehmen, dass Sie den Schaden verursacht haben. Bei einem Unfall rufen Sie immer die Polizei und unsere Hotline an.",
+              "hit": "Neue Schäden oder starke Verschmutzungen melden Sie vor Fahrtbeginn mit einem Foto in der App."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

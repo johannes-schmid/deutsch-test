@@ -1,0 +1,2154 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "hoeren",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-hoeren-10-t1-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 1,
+      "example": true,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Gespräch bei der Arbeit"
+      },
+      "display": {
+        "instruction": "Sie hören sechs kurze Gespräche. Welches Bild ist richtig? Wählen Sie a, b oder c. Jedes Gespräch hören Sie zweimal.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 0,
+              "prompt": "Was trinkt die Frau?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Kaffee",
+                  "picto": "kaffee"
+                },
+                {
+                  "key": "b",
+                  "label": "Milch",
+                  "picto": "milch"
+                },
+                {
+                  "key": "c",
+                  "label": "Wasser",
+                  "picto": "wasser"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "An der Kaffeemaschine",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Frau",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Mann",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t1-bsp.mp3",
+          "duration": 16.67
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Oh, geht die Kaffeemaschine wieder?",
+            "delivery": "[hopeful, casual]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Ja, seit heute Morgen. Möchtest du auch einen Kaffee?",
+            "delivery": "[friendly, colleague]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Nein danke, heute keinen Kaffee. Ich nehme lieber eine warme Milch.",
+            "delivery": "[relaxed]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_simon",
+            "text": "Und ein Glas Wasser dazu?",
+            "delivery": "[helpful]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Nein, nur die Milch, danke.",
+            "delivery": "[smiling]"
+          }
+        ],
+        "pictureBrief": "a: eine Tasse Kaffee mit Dampf. b: ein Glas Milch. c: ein Glas Wasser."
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Telefongespräch in der Familie"
+      },
+      "display": {
+        "instruction": "Sie hören sechs kurze Gespräche. Welches Bild ist richtig? Wählen Sie a, b oder c. Jedes Gespräch hören Sie zweimal.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 1,
+              "prompt": "Was nimmt der Sohn am Samstag mit?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Laptop",
+                  "picto": "laptop"
+                },
+                {
+                  "key": "b",
+                  "label": "Kamera",
+                  "picto": "kamera"
+                },
+                {
+                  "key": "c",
+                  "label": "Drucker",
+                  "picto": "drucker"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Telefongespräch mit der Mutter",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Mutter",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Sohn",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t1-01.mp3",
+          "duration": 23.9
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Die Mutter möchte den Laptop, denn ihr Computer ist alt. Eine Kamera hat der Vater selbst, und einen Drucker brauchen sie nicht.",
+            "evidence": {
+              "text": "Ja, bitte deinen Laptop. Papa möchte im Internet eine Reise buchen, und unser Computer ist so alt.",
+              "hit": "Ja, bitte deinen Laptop."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_lisa",
+            "text": "Hallo, mein Schatz! Kommst du am Samstag zu uns?",
+            "delivery": "[elderly, warm, on the phone]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Ja, Mama. Ich komme so um zwei. Soll ich etwas mitbringen?",
+            "delivery": "[cheerful]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_lisa",
+            "text": "Ja, bitte deinen Laptop. Papa möchte im Internet eine Reise buchen, und unser Computer ist so alt.",
+            "delivery": "[a little sighing]",
+            "item": 1
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Klar. Und die Kamera auch?",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_lisa",
+            "text": "Nein, eine Kamera hat Papa selbst. Und einen Drucker brauchen wir nicht.",
+            "delivery": "[gently]"
+          }
+        ],
+        "pictureBrief": "a: ein aufgeklappter Laptop. b: eine Fotokamera. c: ein Drucker mit einem Blatt Papier."
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Gespräch an der Haltestelle"
+      },
+      "display": {
+        "instruction": "Sie hören sechs kurze Gespräche. Welches Bild ist richtig? Wählen Sie a, b oder c. Jedes Gespräch hören Sie zweimal.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 2,
+              "prompt": "Wie viel muss der Mann bezahlen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1,40 €",
+                  "picto": "ticket"
+                },
+                {
+                  "key": "b",
+                  "label": "4,20 €",
+                  "picto": "ticket"
+                },
+                {
+                  "key": "c",
+                  "label": "2,40 €",
+                  "picto": "ticket"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Am Fahrkartenautomaten",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Mann",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Frau",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t1-02.mp3",
+          "duration": 21.39
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Die Frau sagt: Zwei Euro vierzig. Andere Preise hörst du nicht.",
+            "evidence": {
+              "text": "Zwei Euro vierzig. Sie können auch mit Karte bezahlen.",
+              "hit": "Zwei Euro vierzig."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_michael",
+            "text": "Entschuldigung, können Sie mir helfen? Ich fahre nur drei Stationen, bis zum Rathaus. Welche Karte brauche ich?",
+            "delivery": "[older man, a bit lost]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_laura",
+            "text": "Da reicht eine Kurzstrecke. Drücken Sie hier oben.",
+            "delivery": "[friendly, helpful]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_michael",
+            "text": "Ah ja, danke. Und wie viel kostet das?",
+            "delivery": "[relieved]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_laura",
+            "text": "Zwei Euro vierzig. Sie können auch mit Karte bezahlen.",
+            "delivery": "[clear]",
+            "item": 2
+          },
+          {
+            "speaker": "A",
+            "voice": "man_michael",
+            "text": "Wunderbar, vielen Dank!",
+            "delivery": "[grateful]"
+          }
+        ],
+        "pictureBrief": "Drei Fahrkarten mit einem großen Preis darauf: a: 1,40 €. b: 4,20 €. c: 2,40 €."
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t1-03",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Gespräch im Treppenhaus"
+      },
+      "display": {
+        "instruction": "Sie hören sechs kurze Gespräche. Welches Bild ist richtig? Wählen Sie a, b oder c. Jedes Gespräch hören Sie zweimal.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 3,
+              "prompt": "Woher kommen die neuen Nachbarn?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Irland",
+                  "picto": "welt"
+                },
+                {
+                  "key": "b",
+                  "label": "Kanada",
+                  "picto": "welt"
+                },
+                {
+                  "key": "c",
+                  "label": "Schweden",
+                  "picto": "welt"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Im Treppenhaus",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Frau",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Mann",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t1-03.mp3",
+          "duration": 25.21
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "b",
+            "explanation": "Der Mann dachte zuerst an Irland, aber die Familie kommt aus Kanada. In Schweden hat der Vater nur ein Jahr gearbeitet.",
+            "evidence": {
+              "text": "Ja, heute Morgen. Sehr nett! Ich dachte, sie kommen aus Irland, aber nein. Sie kommen aus Kanada, aus Toronto.",
+              "hit": "Sie kommen aus Kanada, aus Toronto."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Haben Sie die Familie im dritten Stock schon gesehen? Sie sind gestern eingezogen.",
+            "delivery": "[curious, neighbourly]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_ben",
+            "text": "Ja, heute Morgen. Sehr nett! Ich dachte, sie kommen aus Irland, aber nein. Sie kommen aus Kanada, aus Toronto.",
+            "delivery": "[chatty]",
+            "item": 3
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Ach so! Und sprechen sie Deutsch?",
+            "delivery": "[interested]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_ben",
+            "text": "Ja, ein bisschen. Der Mann hat ein Jahr in Schweden gearbeitet. Jetzt arbeitet er hier.",
+            "delivery": "[friendly]"
+          }
+        ],
+        "pictureBrief": "Drei Weltkugeln mit je einem Land groß markiert und beschriftet: a: IRLAND. b: KANADA. c: SCHWEDEN."
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t1-04",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Telefongespräch unter Partnern"
+      },
+      "display": {
+        "instruction": "Sie hören sechs kurze Gespräche. Welches Bild ist richtig? Wählen Sie a, b oder c. Jedes Gespräch hören Sie zweimal.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 4,
+              "prompt": "Was bringt die Frau heute mit nach Hause?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sessel",
+                  "picto": "sessel"
+                },
+                {
+                  "key": "b",
+                  "label": "Lampe",
+                  "picto": "lampe"
+                },
+                {
+                  "key": "c",
+                  "label": "Fernseher",
+                  "picto": "fernseher"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Anruf am Nachmittag",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Mann",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Frau",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t1-04.mp3",
+          "duration": 22.33
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Die Frau hat einen kleinen Fernseher für die Küche gekauft. Die Lampe war zu teuer, und den Sessel gab es nicht mehr.",
+            "evidence": {
+              "text": "Ja! Ich habe einen kleinen Fernseher für die Küche gekauft.",
+              "hit": "Ich habe einen kleinen Fernseher für die Küche gekauft."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Hallo, Schatz! Du warst doch heute in der Stadt. Hast du etwas gefunden?",
+            "delivery": "[warm, on the phone]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_irene",
+            "text": "Ja! Ich habe einen kleinen Fernseher für die Küche gekauft.",
+            "delivery": "[pleased]",
+            "item": 4
+          },
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Super. Und die Lampe für das Wohnzimmer?",
+            "delivery": "[interested]"
+          },
+          {
+            "speaker": "B",
+            "voice": "woman_irene",
+            "text": "Die wollte ich auch, aber sie war zu teuer. Und der Sessel war nicht mehr da.",
+            "delivery": "[a little disappointed]"
+          },
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Na gut, dann suchen wir am Wochenende zusammen.",
+            "delivery": "[relaxed]"
+          }
+        ],
+        "pictureBrief": "a: ein gemütlicher Sessel. b: eine Stehlampe. c: ein kleiner Fernseher."
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t1-05",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Gespräch in der Familie"
+      },
+      "display": {
+        "instruction": "Sie hören sechs kurze Gespräche. Welches Bild ist richtig? Wählen Sie a, b oder c. Jedes Gespräch hören Sie zweimal.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 5,
+              "prompt": "Was möchte Timo haben?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Schuhe",
+                  "picto": "schuhe"
+                },
+                {
+                  "key": "b",
+                  "label": "Handy",
+                  "picto": "handy"
+                },
+                {
+                  "key": "c",
+                  "label": "Spielkonsole",
+                  "picto": "spielkonsole"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Zu Hause",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Vater",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Sohn",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t1-05.mp3",
+          "duration": 19.15
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Timo spart für neue Fußballschuhe, denn seine alten sind zu klein. Ein Handy oder eine Spielkonsole will er nicht kaufen.",
+            "evidence": {
+              "text": "Ich spare, Papa. Ich möchte neue Fußballschuhe kaufen. Meine alten sind zu klein.",
+              "hit": "Ich möchte neue Fußballschuhe kaufen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_johann",
+            "text": "Timo, du hast ja dein Geburtstagsgeld noch. Warum kaufst du nichts?",
+            "delivery": "[fatherly, curious]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_ben",
+            "text": "Ich spare, Papa. Ich möchte neue Fußballschuhe kaufen. Meine alten sind zu klein.",
+            "delivery": "[teenager, eager]",
+            "item": 5
+          },
+          {
+            "speaker": "A",
+            "voice": "man_johann",
+            "text": "Ah, das ist gut. Wie viel kosten die denn?",
+            "delivery": "[approving]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_ben",
+            "text": "Neunzig Euro. Ich habe schon siebzig.",
+            "delivery": "[proud]"
+          }
+        ],
+        "pictureBrief": "a: ein Paar Sportschuhe. b: ein Handy. c: eine Spielkonsole mit Controller."
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t1-06",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Gespräch in der Apotheke"
+      },
+      "display": {
+        "instruction": "Sie hören sechs kurze Gespräche. Welches Bild ist richtig? Wählen Sie a, b oder c. Jedes Gespräch hören Sie zweimal.",
+        "items": [
+          {
+            "type": "picture",
+            "item": {
+              "n": 6,
+              "prompt": "Wie oft am Tag soll der Mann das Medikament nehmen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zweimal",
+                  "picto": "tabletten"
+                },
+                {
+                  "key": "b",
+                  "label": "dreimal",
+                  "picto": "tabletten"
+                },
+                {
+                  "key": "c",
+                  "label": "viermal",
+                  "picto": "tabletten"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "In der Apotheke",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Apothekerin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "B": {
+              "name": "Mann",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t1-06.mp3",
+          "duration": 20.09
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Die Apothekerin sagt: dreimal am Tag eine Tablette. Der Mann wiederholt: dreimal.",
+            "evidence": {
+              "text": "Hier sind Ihre Tabletten. Bitte nehmen Sie dreimal am Tag eine Tablette, immer nach dem Essen.",
+              "hit": "Bitte nehmen Sie dreimal am Tag eine Tablette"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_laura",
+            "text": "Guten Tag, was kann ich für Sie tun?",
+            "delivery": "[polite, professional]"
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Guten Tag, ich habe hier ein Rezept vom Arzt.",
+            "delivery": "[a bit tired]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_laura",
+            "text": "Danke. Hier sind Ihre Tabletten. Bitte nehmen Sie dreimal am Tag eine Tablette, immer nach dem Essen.",
+            "delivery": "[clear, kind]",
+            "item": 6
+          },
+          {
+            "speaker": "B",
+            "voice": "man_christian",
+            "text": "Dreimal, gut. Und wie lange?",
+            "delivery": "[attentive]"
+          },
+          {
+            "speaker": "A",
+            "voice": "woman_laura",
+            "text": "Eine Woche. Gute Besserung!",
+            "delivery": "[warm]"
+          }
+        ],
+        "pictureBrief": "Drei Tablettenpackungen, daneben jeweils Tabletten: a: 2 Tabletten. b: 3 Tabletten. c: 4 Tabletten."
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 2,
+      "example": true,
+      "sound": "store",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Durchsage im Kaufhaus"
+      },
+      "display": {
+        "instruction": "Sie hören vier Durchsagen. Ist die Aussage richtig oder falsch? Sie hören jede Durchsage nur einmal.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Das Kaufhaus ist heute bis spät am Abend offen."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Durchsage im Kaufhaus",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Sprecher",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t2-bsp.mp3",
+          "duration": 19.1
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Liebe Kundinnen und Kunden, heute ist im Kaufhaus Kolberg langer Einkaufsabend. Wir sind bis zweiundzwanzig Uhr für Sie da. Im Erdgeschoss gibt es kostenlos Kaffee und Kekse. Viel Spaß beim Einkaufen!",
+            "delivery": "[bright announcer voice]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 2,
+      "sound": "gong",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Durchsage am Flughafen"
+      },
+      "display": {
+        "instruction": "Sie hören vier Durchsagen. Ist die Aussage richtig oder falsch? Sie hören jede Durchsage nur einmal.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Die Reisenden sollen ihre Sachen immer bei sich haben."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Durchsage am Flughafen",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Sprecherin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t2-01.mp3",
+          "duration": 20.53
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Die Durchsage sagt: Lassen Sie Ihr Gepäck nie allein. Nehmen Sie Koffer und Taschen immer mit.",
+            "evidence": {
+              "text": "Achtung, eine Information für alle Fluggäste: Bitte lassen Sie Ihr Gepäck nie allein. Nehmen Sie Ihre Koffer und Taschen immer mit. Gepäck ohne Besitzer nimmt die Polizei mit. Vielen Dank und einen guten Flug!",
+              "hit": "Nehmen Sie Ihre Koffer und Taschen immer mit."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_laura",
+            "text": "Achtung, eine Information für alle Fluggäste: Bitte lassen Sie Ihr Gepäck nie allein. Nehmen Sie Ihre Koffer und Taschen immer mit. Gepäck ohne Besitzer nimmt die Polizei mit. Vielen Dank und einen guten Flug!",
+            "delivery": "[calm, formal airport announcement]",
+            "item": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 2,
+      "sound": "train",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Durchsage im Zug"
+      },
+      "display": {
+        "instruction": "Sie hören vier Durchsagen. Ist die Aussage richtig oder falsch? Sie hören jede Durchsage nur einmal.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Wer einen Platz in Wagen neun hat, kann heute dort sitzen."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Durchsage im Zug",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Sprecher",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t2-02.mp3",
+          "duration": 17.95
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Wagen neun fehlt heute. Die Fahrgäste mit Reservierung sollen in den Wagen elf gehen.",
+            "evidence": {
+              "text": "Meine Damen und Herren, nächster Halt: Gotha. Eine Information: Der Wagen neun fehlt heute leider. Haben Sie dort einen Platz reserviert? Dann gehen Sie bitte in den Wagen elf. Dort sind Plätze für Sie frei.",
+              "hit": "Der Wagen neun fehlt heute leider."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_ben",
+            "text": "Meine Damen und Herren, nächster Halt: Gotha. Eine Information: Der Wagen neun fehlt heute leider. Haben Sie dort einen Platz reserviert? Dann gehen Sie bitte in den Wagen elf. Dort sind Plätze für Sie frei.",
+            "delivery": "[friendly train staff]",
+            "item": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 2,
+      "sound": "station",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Durchsage im Bahnhof"
+      },
+      "display": {
+        "instruction": "Sie hören vier Durchsagen. Ist die Aussage richtig oder falsch? Sie hören jede Durchsage nur einmal.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Am Nachmittag kann man im Bahnhof einkaufen."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Durchsage im Hauptbahnhof",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Sprecherin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t2-03.mp3",
+          "duration": 19.98
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Heute schließen die Geschäfte schon um vierzehn Uhr. Bis zweiundzwanzig Uhr sind sie nur an anderen Tagen offen.",
+            "evidence": {
+              "text": "Liebe Reisende, wegen Bauarbeiten schließen die Geschäfte im Hauptbahnhof heute schon um vierzehn Uhr. Sonst sind sie bis zweiundzwanzig Uhr geöffnet. Fahrkarten bekommen Sie aber am Automaten. Vielen Dank für Ihr Verständnis.",
+              "hit": "schließen die Geschäfte im Hauptbahnhof heute schon um vierzehn Uhr"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_irene",
+            "text": "Liebe Reisende, wegen Bauarbeiten schließen die Geschäfte im Hauptbahnhof heute schon um vierzehn Uhr. Sonst sind sie bis zweiundzwanzig Uhr geöffnet. Fahrkarten bekommen Sie aber am Automaten. Vielen Dank für Ihr Verständnis.",
+            "delivery": "[clear, neutral station announcement]",
+            "item": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 2,
+      "sound": "station",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Durchsage in der Straßenbahn"
+      },
+      "display": {
+        "instruction": "Sie hören vier Durchsagen. Ist die Aussage richtig oder falsch? Sie hören jede Durchsage nur einmal.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "An der zweiten Tür sollen Menschen im Rollstuhl Platz haben."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Durchsage in der Straßenbahn",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Sprecher",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t2-04.mp3",
+          "duration": 16.98
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Der Platz an der zweiten Tür soll frei bleiben. Er ist für Rollstühle und Kinderwagen.",
+            "evidence": {
+              "text": "Liebe Fahrgäste der Linie elf: Bitte halten Sie den Platz an der zweiten Tür frei. Dieser Platz ist für Rollstühle und Kinderwagen. Vielen Dank. Nächste Haltestelle: Goetheplatz.",
+              "hit": "Dieser Platz ist für Rollstühle und Kinderwagen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_christian",
+            "text": "Liebe Fahrgäste der Linie elf: Bitte halten Sie den Platz an der zweiten Tür frei. Dieser Platz ist für Rollstühle und Kinderwagen. Vielen Dank. Nächste Haltestelle: Goetheplatz.",
+            "delivery": "[calm, friendly]",
+            "item": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 3,
+      "sound": "beep",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Arztpraxis)"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Welche Antwort passt? Wählen Sie a, b oder c. Jede Nachricht hören Sie zweimal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Wann soll Herr Bakker in die Praxis kommen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "um 9.15 Uhr"
+                },
+                {
+                  "key": "b",
+                  "label": "um 9.30 Uhr"
+                },
+                {
+                  "key": "c",
+                  "label": "um 9.45 Uhr"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Augenarztpraxis",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Frau",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t3-01.mp3",
+          "duration": 16.14
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Der Termin ist nicht um halb zehn, sondern erst um Viertel vor zehn. Das ist 9.45 Uhr.",
+            "evidence": {
+              "text": "Ihr Termin am Donnerstag ist nicht um halb zehn, sondern erst um Viertel vor zehn.",
+              "hit": "sondern erst um Viertel vor zehn"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_ela",
+            "text": "Guten Tag, Herr Bakker, hier ist die Augenarztpraxis Doktor Stamm. Ihr Termin am Donnerstag ist nicht um halb zehn, sondern erst um Viertel vor zehn. Bitte bringen Sie Ihre Brille mit. Auf Wiederhören.",
+            "delivery": "[professional, friendly]",
+            "item": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 3,
+      "sound": "beep",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Werkstatt)"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Welche Antwort passt? Wählen Sie a, b oder c. Jede Nachricht hören Sie zweimal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Wie viel muss Frau Weidner bezahlen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "18 Euro"
+                },
+                {
+                  "key": "b",
+                  "label": "80 Euro"
+                },
+                {
+                  "key": "c",
+                  "label": "88 Euro"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Polsterei",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Mann",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t3-02.mp3",
+          "duration": 16.04
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Der Mann sagt: Das kostet achtzig Euro. Achtzehn oder achtundachtzig sagt er nicht.",
+            "evidence": {
+              "text": "Guten Tag, Frau Weidner, hier ist die Polsterei Hagedorn. Ihr Stuhl ist fertig, der neue Stoff sieht sehr schön aus. Das kostet achtzig Euro. Sie können den Stuhl ab morgen abholen. Auf Wiederhören.",
+              "hit": "Das kostet achtzig Euro."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_michael",
+            "text": "Guten Tag, Frau Weidner, hier ist die Polsterei Hagedorn. Ihr Stuhl ist fertig, der neue Stoff sieht sehr schön aus. Das kostet achtzig Euro. Sie können den Stuhl ab morgen abholen. Auf Wiederhören.",
+            "delivery": "[older craftsman, calm]",
+            "item": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 3,
+      "sound": "beep",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Schule)"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Welche Antwort passt? Wählen Sie a, b oder c. Jede Nachricht hören Sie zweimal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Wo ist die Dose von Emre jetzt?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "beim Hausmeister"
+                },
+                {
+                  "key": "b",
+                  "label": "im Sekretariat"
+                },
+                {
+                  "key": "c",
+                  "label": "in der Turnhalle"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht von der Schule",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Frau",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t3-03.mp3",
+          "duration": 17.42
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Die Brotdose liegt jetzt im Sekretariat im ersten Stock. Frau Tekin kann sie dort abholen.",
+            "evidence": {
+              "text": "Sie liegt jetzt bei uns im Sekretariat, im ersten Stock.",
+              "hit": "bei uns im Sekretariat"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "woman_laura",
+            "text": "Hallo, Frau Tekin, hier ist die Brüder-Grimm-Schule. Ihr Sohn Emre hat heute seine Brotdose in der Schule vergessen. Sie liegt jetzt bei uns im Sekretariat, im ersten Stock. Sie können sie bis sechzehn Uhr abholen. Danke!",
+            "delivery": "[friendly, a bit hurried]",
+            "item": 13
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 3,
+      "sound": "beep",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Einkaufszentrum)"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Welche Antwort passt? Wählen Sie a, b oder c. Jede Nachricht hören Sie zweimal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Was bekommt Frau Ruhnau?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Gutschein"
+                },
+                {
+                  "key": "b",
+                  "label": "ein Fahrrad"
+                },
+                {
+                  "key": "c",
+                  "label": "einen Koffer"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht vom Einkaufszentrum",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Mann",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t3-04.mp3",
+          "duration": 17.37
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "a",
+            "explanation": "Frau Ruhnau hat einen Gutschein über fünfzig Euro gewonnen. Das Fahrrad hat eine andere Person gewonnen.",
+            "evidence": {
+              "text": "Sie haben bei unserem Gewinnspiel einen Gutschein über fünfzig Euro gewonnen.",
+              "hit": "einen Gutschein über fünfzig Euro gewonnen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_simon",
+            "text": "Guten Tag, Frau Ruhnau, hier ist das Einkaufszentrum Löwenpassage. Herzlichen Glückwunsch! Sie haben bei unserem Gewinnspiel einen Gutschein über fünfzig Euro gewonnen. Das Fahrrad hat leider jemand anders gewonnen. Bitte kommen Sie zur Information im Erdgeschoss.",
+            "delivery": "[upbeat, friendly]",
+            "item": 14
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-hoeren-10-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "hoeren",
+      "teil": 3,
+      "sound": "beep",
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.339Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Handwerker)"
+      },
+      "display": {
+        "instruction": "Sie hören fünf Nachrichten am Telefon. Welche Antwort passt? Wählen Sie a, b oder c. Jede Nachricht hören Sie zweimal.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "An welchem Tag kommt der Dachdecker zu Frau Ludwig?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Montag"
+                },
+                {
+                  "key": "b",
+                  "label": "am Dienstag"
+                },
+                {
+                  "key": "c",
+                  "label": "am Mittwoch"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht vom Dachdecker",
+          "segments": [],
+          "speakers": {
+            "A": {
+              "name": "Mann",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "src": "start-deutsch-1/hoeren-10/start-deutsch-1-hoeren-10-t3-05.mp3",
+          "duration": 16.07
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "c",
+            "explanation": "Herr Pfister sagt: Wir reparieren Ihr Dach am Mittwoch. Andere Tage nennt er nicht.",
+            "evidence": {
+              "text": "Guten Tag, Frau Ludwig, hier ist Pfister von der Firma Bedachungen Holtkamp. Wir reparieren Ihr Dach am Mittwoch. Ich komme um acht Uhr mit einem Kollegen. Wir brauchen ungefähr vier Stunden. Auf Wiederhören.",
+              "hit": "Wir reparieren Ihr Dach am Mittwoch."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "A",
+            "voice": "man_johann",
+            "text": "Guten Tag, Frau Ludwig, hier ist Pfister von der Firma Bedachungen Holtkamp. Wir reparieren Ihr Dach am Mittwoch. Ich komme um acht Uhr mit einem Kollegen. Wir brauchen ungefähr vier Stunden. Auf Wiederhören.",
+            "delivery": "[older man, calm, matter-of-fact]",
+            "item": 15
+          }
+        ]
+      }
+    }
+  ],
+  "track": {
+    "src": "start-deutsch-1/hoeren-10/track.mp3",
+    "duration": 1078.65,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "from": 21.08,
+        "to": 31.43
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 33.46,
+        "to": 34.14
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 34.14,
+        "to": 41.17
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 41.17,
+        "to": 57.84
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 61.96,
+        "to": 78.63
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 78.63,
+        "to": 94.67
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1
+        ],
+        "from": 94.67,
+        "to": 95.63
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1
+        ],
+        "from": 95.63,
+        "to": 102.66
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 102.66,
+        "to": 126.56
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1
+        ],
+        "from": 130.69,
+        "to": 154.59
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1
+        ],
+        "from": 154.59,
+        "to": 170.63
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          2
+        ],
+        "from": 170.63,
+        "to": 171.55
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          2
+        ],
+        "from": 171.55,
+        "to": 178.57
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 178.57,
+        "to": 199.97
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          2
+        ],
+        "from": 204.09,
+        "to": 225.49
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          2
+        ],
+        "from": 225.49,
+        "to": 241.53
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3
+        ],
+        "from": 241.53,
+        "to": 242.36
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3
+        ],
+        "from": 242.36,
+        "to": 249.39
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 249.39,
+        "to": 274.6
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3
+        ],
+        "from": 278.73,
+        "to": 303.93
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3
+        ],
+        "from": 303.93,
+        "to": 319.97
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          4
+        ],
+        "from": 319.97,
+        "to": 320.78
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          4
+        ],
+        "from": 320.78,
+        "to": 327.81
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 327.81,
+        "to": 350.15
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          4
+        ],
+        "from": 354.27,
+        "to": 376.61
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          4
+        ],
+        "from": 376.61,
+        "to": 392.65
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5
+        ],
+        "from": 392.65,
+        "to": 393.51
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5
+        ],
+        "from": 393.51,
+        "to": 400.54
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 400.54,
+        "to": 419.68
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5
+        ],
+        "from": 423.81,
+        "to": 442.96
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5
+        ],
+        "from": 442.96,
+        "to": 459
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          6
+        ],
+        "from": 459,
+        "to": 459.86
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          6
+        ],
+        "from": 459.86,
+        "to": 466.89
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          6
+        ],
+        "from": 466.89,
+        "to": 486.97
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          6
+        ],
+        "from": 491.1,
+        "to": 511.19
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          6
+        ],
+        "from": 511.19,
+        "to": 527.23
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          0,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 530.26,
+        "to": 538.7
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          0
+        ],
+        "from": 540.73,
+        "to": 541.41
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          0
+        ],
+        "from": 541.41,
+        "to": 548.44
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          0
+        ],
+        "from": 548.44,
+        "to": 567.54
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          0
+        ],
+        "from": 567.54,
+        "to": 583.58
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          7
+        ],
+        "from": 583.58,
+        "to": 584.41
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          7
+        ],
+        "from": 584.41,
+        "to": 591.44
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          7
+        ],
+        "from": 591.44,
+        "to": 611.97
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          7
+        ],
+        "from": 611.97,
+        "to": 628.01
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          8
+        ],
+        "from": 628.01,
+        "to": 628.82
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          8
+        ],
+        "from": 628.82,
+        "to": 635.85
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          8
+        ],
+        "from": 635.85,
+        "to": 653.79
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          8
+        ],
+        "from": 653.79,
+        "to": 669.83
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          9
+        ],
+        "from": 669.83,
+        "to": 670.67
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          9
+        ],
+        "from": 670.67,
+        "to": 677.69
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          9
+        ],
+        "from": 677.69,
+        "to": 697.68
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          9
+        ],
+        "from": 697.68,
+        "to": 713.72
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          10
+        ],
+        "from": 713.72,
+        "to": 714.5
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          10
+        ],
+        "from": 714.5,
+        "to": 721.53
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 721.53,
+        "to": 738.51
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          10
+        ],
+        "from": 738.51,
+        "to": 754.55
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 757.58,
+        "to": 767.92
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          11
+        ],
+        "from": 769.96,
+        "to": 770.74
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          11
+        ],
+        "from": 770.74,
+        "to": 777.77
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 777.77,
+        "to": 793.91
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 798.04,
+        "to": 814.18
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          11
+        ],
+        "from": 814.18,
+        "to": 830.22
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          12
+        ],
+        "from": 830.22,
+        "to": 831.11
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          12
+        ],
+        "from": 831.11,
+        "to": 838.14
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 838.14,
+        "to": 854.18
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 858.31,
+        "to": 874.34
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          12
+        ],
+        "from": 874.34,
+        "to": 890.38
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          13
+        ],
+        "from": 890.38,
+        "to": 891.27
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          13
+        ],
+        "from": 891.27,
+        "to": 898.3
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 898.3,
+        "to": 915.72
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 919.85,
+        "to": 937.27
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          13
+        ],
+        "from": 937.27,
+        "to": 953.31
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          14
+        ],
+        "from": 953.31,
+        "to": 954.23
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          14
+        ],
+        "from": 954.23,
+        "to": 961.25
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 961.25,
+        "to": 978.63
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 982.75,
+        "to": 1000.12
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          14
+        ],
+        "from": 1000.12,
+        "to": 1016.16
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          15
+        ],
+        "from": 1016.16,
+        "to": 1017.13
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          15
+        ],
+        "from": 1017.13,
+        "to": 1024.16
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 1024.16,
+        "to": 1040.22
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          15
+        ],
+        "from": 1044.35,
+        "to": 1060.41
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          15
+        ],
+        "from": 1060.41,
+        "to": 1076.45
+      }
+    ]
+  }
+}

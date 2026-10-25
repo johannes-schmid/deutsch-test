@@ -1,0 +1,389 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-04-t1-ueberschriften",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.689Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Brunnen in der Altstadt laufen wieder",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Mehr Gäste als im letzten Jahr",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Malkurs für Erwachsene",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Stadtführungen jetzt auch auf Englisch",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Trinkwasser: Ergebnis der Prüfung",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Jugendliche bemalen eine Wand",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Neues Infobüro am Bahnhof",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Gemeinde bittet: Wasser sparen",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Kunst im leeren Geschäft",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Ferienwohnungen werden kontrolliert",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Hallein. Lange waren die drei alten Brunnen in der Altstadt trocken. Die Rohre waren kaputt und mussten repariert werden. Jetzt sind die Arbeiten fertig: Ab Mai fließt wieder Wasser. Die Gemeinde sagt: Das Wasser ist zum Anschauen, nicht zum Trinken. Bitte lassen Sie auch keine Hunde daraus trinken.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 2,
+                  "text": "Regensburg. Immer mehr Touristen aus dem Ausland besuchen die Stadt. Deshalb gibt es die Führungen durch die Altstadt ab Juni nicht nur auf Deutsch. Jeden Samstag um 11 Uhr startet eine Tour in englischer Sprache am Domplatz. Sie dauert 90 Minuten und kostet 12 Euro. Tickets gibt es in der Touristeninformation am Rathaus.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Thun. Diesen Sommer haben mehr Touristen in Thun übernachtet als im Sommer davor. Das meldet das Tourismusbüro. Besonders viele Gäste kamen aus Deutschland und aus Asien. Die Hotels und Ferienwohnungen sind zufrieden, heisst es. Nur im Juni war das Wetter schlecht, darum gab es weniger Gäste. Die Zahlen im Überblick:",
+                  "origin": "aus einer Schweizer Zeitung",
+                  "table": [
+                    [
+                      "Monat",
+                      "Gäste letztes Jahr",
+                      "Gäste dieses Jahr"
+                    ],
+                    [
+                      "Juni",
+                      "41'200",
+                      "39'800"
+                    ],
+                    [
+                      "Juli",
+                      "58'300",
+                      "63'900"
+                    ],
+                    [
+                      "August",
+                      "55'100",
+                      "61'400"
+                    ]
+                  ]
+                },
+                {
+                  "n": 4,
+                  "text": "Mödling. Die Unterführung beim Bahnhof war lange grau und schmutzig. Jetzt bekommt sie Farbe: Eine Gruppe aus dem Jugendzentrum malt dort im Juli Bilder von Tieren und Pflanzen. Die Gemeinde hat das erlaubt und bezahlt die Farben. Wer zuschauen will, kann gern vorbeikommen. Ein Kurs ist das aber nicht: Mitmachen können nur die Jugendlichen.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Göttingen. Das Wasserwerk Leinetal hat im Frühling das Trinkwasser in allen Stadtteilen untersucht. Das Ergebnis: Die Qualität ist sehr gut, man kann das Wasser ohne Probleme aus dem Hahn trinken. Wasser sparen müssen die Menschen in diesem Sommer nicht. Alle Ergebnisse finden Sie im Internet unter www.wasserwerk-leinetal.de.",
+                  "origin": "aus einer deutschen Zeitung"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "A",
+            "explanation": "Die alten Brunnen in der Altstadt haben ab Mai wieder Wasser. Um Trinkwasser geht es nicht, denn das Wasser ist nur zum Anschauen.",
+            "evidence": {
+              "text": "Hallein. Lange waren die drei alten Brunnen in der Altstadt trocken. Die Rohre waren kaputt und mussten repariert werden. Jetzt sind die Arbeiten fertig: Ab Mai fließt wieder Wasser. Die Gemeinde sagt: Das Wasser ist zum Anschauen, nicht zum Trinken. Bitte lassen Sie auch keine Hunde daraus trinken.",
+              "hit": "Jetzt sind die Arbeiten fertig: Ab Mai fließt wieder Wasser."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "D",
+            "explanation": "Die Führungen durch die Altstadt gibt es jetzt auch in englischer Sprache. Die Touristeninformation am Rathaus ist nicht neu und nicht am Bahnhof.",
+            "evidence": {
+              "text": "Regensburg. Immer mehr Touristen aus dem Ausland besuchen die Stadt. Deshalb gibt es die Führungen durch die Altstadt ab Juni nicht nur auf Deutsch. Jeden Samstag um 11 Uhr startet eine Tour in englischer Sprache am Domplatz. Sie dauert 90 Minuten und kostet 12 Euro. Tickets gibt es in der Touristeninformation am Rathaus.",
+              "hit": "Jeden Samstag um 11 Uhr startet eine Tour in englischer Sprache am Domplatz."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "B",
+            "explanation": "In diesem Sommer haben mehr Touristen in Thun übernachtet als im Sommer davor. Die Ferienwohnungen werden nicht kontrolliert, sie sind nur zufrieden.",
+            "evidence": {
+              "text": "Thun. Diesen Sommer haben mehr Touristen in Thun übernachtet als im Sommer davor. Das meldet das Tourismusbüro. Besonders viele Gäste kamen aus Deutschland und aus Asien. Die Hotels und Ferienwohnungen sind zufrieden, heisst es. Nur im Juni war das Wetter schlecht, darum gab es weniger Gäste. Die Zahlen im Überblick:",
+              "hit": "Diesen Sommer haben mehr Touristen in Thun übernachtet als im Sommer davor."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "F",
+            "explanation": "Junge Leute aus dem Jugendzentrum malen Bilder an die Wand der Unterführung. Ein Malkurs für Erwachsene ist das nicht.",
+            "evidence": {
+              "text": "Mödling. Die Unterführung beim Bahnhof war lange grau und schmutzig. Jetzt bekommt sie Farbe: Eine Gruppe aus dem Jugendzentrum malt dort im Juli Bilder von Tieren und Pflanzen. Die Gemeinde hat das erlaubt und bezahlt die Farben. Wer zuschauen will, kann gern vorbeikommen. Ein Kurs ist das aber nicht: Mitmachen können nur die Jugendlichen.",
+              "hit": "Eine Gruppe aus dem Jugendzentrum malt dort im Juli Bilder von Tieren und Pflanzen."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "E",
+            "explanation": "Das Wasserwerk hat das Trinkwasser untersucht, und das Ergebnis ist sehr gut. Wasser sparen muss man in diesem Sommer nicht.",
+            "evidence": {
+              "text": "Göttingen. Das Wasserwerk Leinetal hat im Frühling das Trinkwasser in allen Stadtteilen untersucht. Das Ergebnis: Die Qualität ist sehr gut, man kann das Wasser ohne Probleme aus dem Hahn trinken. Wasser sparen müssen die Menschen in diesem Sommer nicht. Alle Ergebnisse finden Sie im Internet unter www.wasserwerk-leinetal.de.",
+              "hit": "Das Ergebnis: Die Qualität ist sehr gut, man kann das Wasser ohne Probleme aus dem Hahn trinken."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-04-t2-bericht",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.689Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Waldviertler Wochenblatt",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Die Rauchfangkehrerin aus Zwettl",
+            "Verena Haslinger ist 34 Jahre alt und arbeitet seit vier Jahren als Rauchfangkehrerin in Zwettl. Sie steigt jeden Tag auf Dächer und putzt Rauchfänge. Vorher war sie zehn Jahre lang Friseurin in einem Salon in der Stadt.",
+            "„Ich wollte nicht mehr den ganzen Tag drinnen stehen“, erzählt sie. „Ich wollte draußen arbeiten, an der frischen Luft.“ Mehr Geld war es am Anfang nicht, im Gegenteil. Trotzdem hat sie den Wechsel nie bereut.",
+            "In der Berufsschule war sie die einzige Frau in ihrer Klasse. Die Älteste war sie aber nicht: Ein Kollege war schon über vierzig. Am Anfang haben manche Kunden gestaunt, heute kennen sie alle.",
+            "Ihr Arbeitstag beginnt um sechs Uhr in der Früh. Am Vormittag ist sie auf den Dächern und in den Kellern unterwegs. Im Winter ist es oft kalt, aber das stört sie nicht. Am Nachmittag sitzt sie meistens im Büro und schreibt Rechnungen.",
+            "Zu Silvester und Neujahr hat sie besonders viel zu tun. Dann wollen alle ein Foto mit ihr machen, denn Rauchfangkehrer gelten als Glücksbringer. „Manche Leute wollen mich sogar berühren“, sagt sie und lacht.",
+            "Nächstes Jahr möchte Verena Haslinger die Meisterprüfung machen. Ihre Chefin unterstützt sie dabei. Dann kann sie vielleicht einmal einen eigenen Betrieb führen."
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Vor ihrer jetzigen Arbeit war Verena Haslinger …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Verkäuferin in einem Geschäft."
+                },
+                {
+                  "key": "b",
+                  "label": "zehn Jahre lang Friseurin."
+                },
+                {
+                  "key": "c",
+                  "label": "Lehrerin an einer Berufsschule."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie hat den Beruf gewechselt, weil sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "lieber im Freien arbeiten wollte."
+                },
+                {
+                  "key": "b",
+                  "label": "mehr Geld verdienen wollte."
+                },
+                {
+                  "key": "c",
+                  "label": "keine Stelle im Salon mehr hatte."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In ihrer Klasse in der Berufsschule war sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die älteste Person von allen."
+                },
+                {
+                  "key": "b",
+                  "label": "eine von wenigen Frauen."
+                },
+                {
+                  "key": "c",
+                  "label": "die einzige Frau."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihr Arbeitstag beginnt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schon sehr früh am Morgen."
+                },
+                {
+                  "key": "b",
+                  "label": "am Nachmittag im Büro."
+                },
+                {
+                  "key": "c",
+                  "label": "erst um acht Uhr am Vormittag."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Zu Neujahr möchten viele Menschen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ihr ein kleines Geschenk geben."
+                },
+                {
+                  "key": "b",
+                  "label": "ein Foto mit ihr haben."
+                },
+                {
+                  "key": "c",
+                  "label": "sie zu einer Feier einladen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Im nächsten Jahr will Verena Haslinger …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine wichtige Prüfung machen."
+                },
+                {
+                  "key": "b",
+                  "label": "einen eigenen Betrieb eröffnen."
+                },
+                {
+                  "key": "c",
+                  "label": "wieder als Friseurin arbeiten."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Sie wollte nicht mehr drinnen stehen, sondern an der frischen Luft arbeiten. Mehr Geld hat sie am Anfang nicht verdient.",
+            "evidence": {
+              "text": "Die Rauchfangkehrerin aus Zwettl Verena Haslinger ist 34 Jahre alt und arbeitet seit vier Jahren als Rauchfangkehrerin in Zwettl. Sie steigt jeden Tag auf Dächer und putzt Rauchfänge. Vorher war sie zehn Jahre lang Friseurin in einem Salon in der Stadt. „Ich wollte nicht mehr den ganzen Tag drinnen stehen“, erzählt sie. „Ich wollte draußen arbeiten, an der frischen Luft.“ Mehr Geld war es am Anfang nicht, im Gegenteil. Trotzdem hat sie den Wechsel nie bereut. In der Berufsschule war sie die einzige Frau in ihrer Klasse. Die Älteste war sie aber nicht: Ein Kollege war schon über vierzig. Am Anfang haben manche Kunden gestaunt, heute kennen sie alle. Ihr Arbeitstag beginnt um sechs Uhr in der Früh. Am Vormittag ist sie auf den Dächern und in den Kellern unterwegs. Im Winter ist es oft kalt, aber das stört sie nicht. Am Nachmittag sitzt sie meistens im Büro und schreibt Rechnungen. Zu Silvester und Neujahr hat sie besonders viel zu tun. Dann wollen alle ein Foto mit ihr machen, denn Rauchfangkehrer gelten als Glücksbringer. „Manche Leute wollen mich sogar berühren“, sagt sie und lacht. Nächstes Jahr möchte Verena Haslinger die Meisterprüfung machen. Ihre Chefin unterstützt sie dabei. Dann kann sie vielleicht einmal einen eigenen Betrieb führen.",
+              "hit": "„Ich wollte draußen arbeiten, an der frischen Luft.“"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Sie war die einzige Frau in der Klasse. Die Älteste war sie nicht, denn ein Kollege war schon über vierzig.",
+            "evidence": {
+              "text": "Die Rauchfangkehrerin aus Zwettl Verena Haslinger ist 34 Jahre alt und arbeitet seit vier Jahren als Rauchfangkehrerin in Zwettl. Sie steigt jeden Tag auf Dächer und putzt Rauchfänge. Vorher war sie zehn Jahre lang Friseurin in einem Salon in der Stadt. „Ich wollte nicht mehr den ganzen Tag drinnen stehen“, erzählt sie. „Ich wollte draußen arbeiten, an der frischen Luft.“ Mehr Geld war es am Anfang nicht, im Gegenteil. Trotzdem hat sie den Wechsel nie bereut. In der Berufsschule war sie die einzige Frau in ihrer Klasse. Die Älteste war sie aber nicht: Ein Kollege war schon über vierzig. Am Anfang haben manche Kunden gestaunt, heute kennen sie alle. Ihr Arbeitstag beginnt um sechs Uhr in der Früh. Am Vormittag ist sie auf den Dächern und in den Kellern unterwegs. Im Winter ist es oft kalt, aber das stört sie nicht. Am Nachmittag sitzt sie meistens im Büro und schreibt Rechnungen. Zu Silvester und Neujahr hat sie besonders viel zu tun. Dann wollen alle ein Foto mit ihr machen, denn Rauchfangkehrer gelten als Glücksbringer. „Manche Leute wollen mich sogar berühren“, sagt sie und lacht. Nächstes Jahr möchte Verena Haslinger die Meisterprüfung machen. Ihre Chefin unterstützt sie dabei. Dann kann sie vielleicht einmal einen eigenen Betrieb führen.",
+              "hit": "In der Berufsschule war sie die einzige Frau in ihrer Klasse."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Ihr Arbeitstag beginnt um sechs Uhr in der Früh. Ins Büro geht sie erst am Nachmittag.",
+            "evidence": {
+              "text": "Die Rauchfangkehrerin aus Zwettl Verena Haslinger ist 34 Jahre alt und arbeitet seit vier Jahren als Rauchfangkehrerin in Zwettl. Sie steigt jeden Tag auf Dächer und putzt Rauchfänge. Vorher war sie zehn Jahre lang Friseurin in einem Salon in der Stadt. „Ich wollte nicht mehr den ganzen Tag drinnen stehen“, erzählt sie. „Ich wollte draußen arbeiten, an der frischen Luft.“ Mehr Geld war es am Anfang nicht, im Gegenteil. Trotzdem hat sie den Wechsel nie bereut. In der Berufsschule war sie die einzige Frau in ihrer Klasse. Die Älteste war sie aber nicht: Ein Kollege war schon über vierzig. Am Anfang haben manche Kunden gestaunt, heute kennen sie alle. Ihr Arbeitstag beginnt um sechs Uhr in der Früh. Am Vormittag ist sie auf den Dächern und in den Kellern unterwegs. Im Winter ist es oft kalt, aber das stört sie nicht. Am Nachmittag sitzt sie meistens im Büro und schreibt Rechnungen. Zu Silvester und Neujahr hat sie besonders viel zu tun. Dann wollen alle ein Foto mit ihr machen, denn Rauchfangkehrer gelten als Glücksbringer. „Manche Leute wollen mich sogar berühren“, sagt sie und lacht. Nächstes Jahr möchte Verena Haslinger die Meisterprüfung machen. Ihre Chefin unterstützt sie dabei. Dann kann sie vielleicht einmal einen eigenen Betrieb führen.",
+              "hit": "Ihr Arbeitstag beginnt um sechs Uhr in der Früh."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Zu Neujahr wollen alle ein Foto mit ihr machen, weil Rauchfangkehrer Glück bringen. Von Geschenken oder Einladungen steht nichts im Text.",
+            "evidence": {
+              "text": "Die Rauchfangkehrerin aus Zwettl Verena Haslinger ist 34 Jahre alt und arbeitet seit vier Jahren als Rauchfangkehrerin in Zwettl. Sie steigt jeden Tag auf Dächer und putzt Rauchfänge. Vorher war sie zehn Jahre lang Friseurin in einem Salon in der Stadt. „Ich wollte nicht mehr den ganzen Tag drinnen stehen“, erzählt sie. „Ich wollte draußen arbeiten, an der frischen Luft.“ Mehr Geld war es am Anfang nicht, im Gegenteil. Trotzdem hat sie den Wechsel nie bereut. In der Berufsschule war sie die einzige Frau in ihrer Klasse. Die Älteste war sie aber nicht: Ein Kollege war schon über vierzig. Am Anfang haben manche Kunden gestaunt, heute kennen sie alle. Ihr Arbeitstag beginnt um sechs Uhr in der Früh. Am Vormittag ist sie auf den Dächern und in den Kellern unterwegs. Im Winter ist es oft kalt, aber das stört sie nicht. Am Nachmittag sitzt sie meistens im Büro und schreibt Rechnungen. Zu Silvester und Neujahr hat sie besonders viel zu tun. Dann wollen alle ein Foto mit ihr machen, denn Rauchfangkehrer gelten als Glücksbringer. „Manche Leute wollen mich sogar berühren“, sagt sie und lacht. Nächstes Jahr möchte Verena Haslinger die Meisterprüfung machen. Ihre Chefin unterstützt sie dabei. Dann kann sie vielleicht einmal einen eigenen Betrieb führen.",
+              "hit": "Dann wollen alle ein Foto mit ihr machen, denn Rauchfangkehrer gelten als Glücksbringer."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Nächstes Jahr will sie die Meisterprüfung machen. Einen eigenen Betrieb hat sie vielleicht erst später einmal.",
+            "evidence": {
+              "text": "Die Rauchfangkehrerin aus Zwettl Verena Haslinger ist 34 Jahre alt und arbeitet seit vier Jahren als Rauchfangkehrerin in Zwettl. Sie steigt jeden Tag auf Dächer und putzt Rauchfänge. Vorher war sie zehn Jahre lang Friseurin in einem Salon in der Stadt. „Ich wollte nicht mehr den ganzen Tag drinnen stehen“, erzählt sie. „Ich wollte draußen arbeiten, an der frischen Luft.“ Mehr Geld war es am Anfang nicht, im Gegenteil. Trotzdem hat sie den Wechsel nie bereut. In der Berufsschule war sie die einzige Frau in ihrer Klasse. Die Älteste war sie aber nicht: Ein Kollege war schon über vierzig. Am Anfang haben manche Kunden gestaunt, heute kennen sie alle. Ihr Arbeitstag beginnt um sechs Uhr in der Früh. Am Vormittag ist sie auf den Dächern und in den Kellern unterwegs. Im Winter ist es oft kalt, aber das stört sie nicht. Am Nachmittag sitzt sie meistens im Büro und schreibt Rechnungen. Zu Silvester und Neujahr hat sie besonders viel zu tun. Dann wollen alle ein Foto mit ihr machen, denn Rauchfangkehrer gelten als Glücksbringer. „Manche Leute wollen mich sogar berühren“, sagt sie und lacht. Nächstes Jahr möchte Verena Haslinger die Meisterprüfung machen. Ihre Chefin unterstützt sie dabei. Dann kann sie vielleicht einmal einen eigenen Betrieb führen.",
+              "hit": "Nächstes Jahr möchte Verena Haslinger die Meisterprüfung machen."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

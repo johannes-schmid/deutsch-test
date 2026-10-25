@@ -1,0 +1,2373 @@
+{
+  "exam": "oesd-b1",
+  "skill": "hoeren",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "oesd-b1-hoeren-06-t1-bsp",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Jule kann diesmal nicht selbst fahren."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Jule möchte abgeholt werden um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Viertel nach sieben."
+                },
+                {
+                  "key": "b",
+                  "label": "halb acht."
+                },
+                {
+                  "key": "c",
+                  "label": "acht Uhr."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Jule",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 31.5,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t1-bsp.mp3"
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Hallo Corinna, hier ist Jule. Du, wegen Donnerstag, unserem Bowlingabend: Mein Auto ist seit gestern in der Werkstatt, und vor Freitag krieg ich's nicht zurück. Könntest du mich vielleicht abholen? Ich komm zwar erst um Viertel nach sieben von der Arbeit heim, aber um halb acht bin ich fertig. Die Bahn ist ja erst für acht reserviert, das schaffen wir locker. Ich wohn doch fast auf dem Weg. Sag mir einfach kurz Bescheid, ja? Danke dir!",
+            "delivery": "[friendly, casual voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "richtig",
+        "b"
+      ]
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t1-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Uhrmacherei)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die Uhr von Herrn Okafors Großvater ist schon repariert."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Das neue Armband …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kann er sofort mitnehmen."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommt er per Post nach Hause."
+                },
+                {
+                  "key": "c",
+                  "label": "muss er später selbst abholen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Uhrmacherei",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 34.46,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t1-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Die Reparatur ist fertig, und die Uhr läuft wieder. Nur das neue Armband fehlt noch.",
+            "evidence": {
+              "text": "Guten Tag, Herr Okafor, hier spricht Rainer Kolbe von der Uhrmacherei Kolbe in Hamm. Gute Nachricht: Die Uhr von Ihrem Großvater läuft wieder, die Reparatur ist fertig. Nur das neue Lederarmband ist leider noch nicht gekommen, der Hersteller hat Lieferprobleme. Sie können die Uhr aber schon jetzt mit dem alten Armband abholen. Das neue schicken wir Ihnen dann mit der Post, das kostet Sie natürlich nichts. Denken Sie bitte daran: Mittwochnachmittag haben wir geschlossen. Auf Wiederhören!",
+              "hit": "Die Uhr von Ihrem Großvater läuft wieder, die Reparatur ist fertig."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Das Geschäft schickt das neue Armband kostenlos mit der Post. Mitnehmen kann er jetzt nur das alte Armband.",
+            "evidence": {
+              "text": "Guten Tag, Herr Okafor, hier spricht Rainer Kolbe von der Uhrmacherei Kolbe in Hamm. Gute Nachricht: Die Uhr von Ihrem Großvater läuft wieder, die Reparatur ist fertig. Nur das neue Lederarmband ist leider noch nicht gekommen, der Hersteller hat Lieferprobleme. Sie können die Uhr aber schon jetzt mit dem alten Armband abholen. Das neue schicken wir Ihnen dann mit der Post, das kostet Sie natürlich nichts. Denken Sie bitte daran: Mittwochnachmittag haben wir geschlossen. Auf Wiederhören!",
+              "hit": "Das neue schicken wir Ihnen dann mit der Post"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_martin_at",
+            "text": "Guten Tag, Herr Okafor, hier spricht Rainer Kolbe von der Uhrmacherei Kolbe in Hamm. Gute Nachricht: Die Uhr von Ihrem Großvater läuft wieder, die Reparatur ist fertig. Nur das neue Lederarmband ist leider noch nicht gekommen, der Hersteller hat Lieferprobleme. Sie können die Uhr aber schon jetzt mit dem alten Armband abholen. Das neue schicken wir Ihnen dann mit der Post, das kostet Sie natürlich nichts. Denken Sie bitte daran: Mittwochnachmittag haben wir geschlossen. Auf Wiederhören!",
+            "delivery": "[polite, friendly shop owner voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t1-02",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Bei der Veranstaltung kann man Pflanzen kaufen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Wenn es regnet, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zieht die Börse in einen Saal nebenan um."
+                },
+                {
+                  "key": "b",
+                  "label": "wird die Börse um eine Woche verschoben."
+                },
+                {
+                  "key": "c",
+                  "label": "fällt die Börse an diesem Samstag aus."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "duration": 38.22,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t1-02.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Pflanzen verkaufen ist dort nicht erlaubt. Man kann sie nur tauschen.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp für alle mit grünem Daumen: Am Samstag gibt's auf dem Oberen Stadtplatz in Hall in Tirol wieder die große Pflanzentauschbörse. Bringen Sie Ableger, Samen oder Zimmerpflanzen mit, die Sie nicht mehr brauchen. Pflanzen verkaufen darf man dort nicht, es wird nur getauscht. Der Gartenbauverein gibt Tipps, und Kinder können Blumentöpfe bemalen. Heuer gibt es zum ersten Mal auch einen Stand mit Jause. Und falls es regnet: kein Problem, dann geht's einfach in den Pfarrsaal gleich daneben.",
+              "hit": "Pflanzen verkaufen darf man dort nicht, es wird nur getauscht."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Bei Regen geht man in den Pfarrsaal gleich neben dem Platz. Von einer Absage oder einem neuen Termin spricht die Moderatorin nicht.",
+            "evidence": {
+              "text": "Und jetzt ein Tipp für alle mit grünem Daumen: Am Samstag gibt's auf dem Oberen Stadtplatz in Hall in Tirol wieder die große Pflanzentauschbörse. Bringen Sie Ableger, Samen oder Zimmerpflanzen mit, die Sie nicht mehr brauchen. Pflanzen verkaufen darf man dort nicht, es wird nur getauscht. Der Gartenbauverein gibt Tipps, und Kinder können Blumentöpfe bemalen. Heuer gibt es zum ersten Mal auch einen Stand mit Jause. Und falls es regnet: kein Problem, dann geht's einfach in den Pfarrsaal gleich daneben.",
+              "hit": "dann geht's einfach in den Pfarrsaal gleich daneben."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Und jetzt ein Tipp für alle mit grünem Daumen: Am Samstag gibt's auf dem Oberen Stadtplatz in Hall in Tirol wieder die große Pflanzentauschbörse. Bringen Sie Ableger, Samen oder Zimmerpflanzen mit, die Sie nicht mehr brauchen. Pflanzen verkaufen darf man dort nicht, es wird nur getauscht. Der Gartenbauverein gibt Tipps, und Kinder können Blumentöpfe bemalen. Heuer gibt es zum ersten Mal auch einen Stand mit Jause. Und falls es regnet: kein Problem, dann geht's einfach in den Pfarrsaal gleich daneben.",
+            "delivery": "[warm, cheerful radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t1-03",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Durchsage im Theater"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Die Vorstellung fängt heute später an."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Die Zuschauer bekommen heute …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ihr Geld für das Billett zurück."
+                },
+                {
+                  "key": "b",
+                  "label": "in der Pause etwas umsonst zu trinken."
+                },
+                {
+                  "key": "c",
+                  "label": "das Programmheft ohne Bezahlung."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage im Theater",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage im Theater.",
+          "duration": 38.14,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t1-03.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Richtig: Die Vorstellung beginnt zwanzig Minuten später, um zwanzig Uhr zwanzig.",
+            "evidence": {
+              "text": "Geschätztes Publikum im Theater Seeland, leider ist unser Hauptdarsteller heute Abend krank. Zum Glück übernimmt eine Gastschauspielerin aus Bern seine Rolle. Sie braucht etwas Zeit für die Vorbereitung, deshalb beginnt die Vorstellung zwanzig Minuten später, also um zwanzig Uhr zwanzig. Als kleines Dankeschön erhalten alle mit einem Billett in der Pause ein Getränk gratis an der Bar. Das Geld für die Billette können wir leider nicht zurückgeben. Das Programmheft gibt es wie immer für fünf Franken. Besten Dank für Ihr Verständnis.",
+              "hit": "deshalb beginnt die Vorstellung zwanzig Minuten später"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Alle mit Billett bekommen in der Pause ein Getränk gratis. Geld gibt es nicht zurück, und das Programmheft kostet fünf Franken.",
+            "evidence": {
+              "text": "Geschätztes Publikum im Theater Seeland, leider ist unser Hauptdarsteller heute Abend krank. Zum Glück übernimmt eine Gastschauspielerin aus Bern seine Rolle. Sie braucht etwas Zeit für die Vorbereitung, deshalb beginnt die Vorstellung zwanzig Minuten später, also um zwanzig Uhr zwanzig. Als kleines Dankeschön erhalten alle mit einem Billett in der Pause ein Getränk gratis an der Bar. Das Geld für die Billette können wir leider nicht zurückgeben. Das Programmheft gibt es wie immer für fünf Franken. Besten Dank für Ihr Verständnis.",
+              "hit": "erhalten alle mit einem Billett in der Pause ein Getränk gratis an der Bar"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_andres_ch",
+            "text": "Geschätztes Publikum im Theater Seeland, leider ist unser Hauptdarsteller heute Abend krank. Zum Glück übernimmt eine Gastschauspielerin aus Bern seine Rolle. Sie braucht etwas Zeit für die Vorbereitung, deshalb beginnt die Vorstellung zwanzig Minuten später, also um zwanzig Uhr zwanzig. Als kleines Dankeschön erhalten alle mit einem Billett in der Pause ein Getränk gratis an der Bar. Das Geld für die Billette können wir leider nicht zurückgeben. Das Programmheft gibt es wie immer für fünf Franken. Besten Dank für Ihr Verständnis.",
+            "delivery": "[calm, polite theatre announcement]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t1-04",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Apotheke)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Frau Hödl kann ihr Medikament heute abholen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Was soll Frau Hödl mitbringen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Ihre Versicherungskarte."
+                },
+                {
+                  "key": "b",
+                  "label": "Das Rezept vom Arzt."
+                },
+                {
+                  "key": "c",
+                  "label": "Genug Bargeld."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Apotheke",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "duration": 35.27,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t1-04.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Das Medikament ist heute noch nicht gekommen. Sie kann es erst morgen ab zwei Uhr holen.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Hödl, hier ist die Löwen-Apotheke in Freistadt. Es geht um Ihr Medikament, das Sie gestern bestellt haben. Leider ist es heute doch noch nicht gekommen. Der Großhändler liefert erst morgen, ab zwei Uhr können Sie es abholen. Bitte beachten Sie, dass wir zu Mittag von zwölf bis zwei geschlossen haben. Ihr Rezept ist ja elektronisch, ein Papier vom Arzt brauchen Sie also nicht. Bringen Sie aber bitte Ihre e-card mit. Bezahlen können Sie auch mit Karte. Auf Wiederhören!",
+              "hit": "Leider ist es heute doch noch nicht gekommen."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Sie soll ihre e-card mitbringen, das ist ihre Versicherungskarte. Das Rezept ist elektronisch, ein Papier braucht sie nicht.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Hödl, hier ist die Löwen-Apotheke in Freistadt. Es geht um Ihr Medikament, das Sie gestern bestellt haben. Leider ist es heute doch noch nicht gekommen. Der Großhändler liefert erst morgen, ab zwei Uhr können Sie es abholen. Bitte beachten Sie, dass wir zu Mittag von zwölf bis zwei geschlossen haben. Ihr Rezept ist ja elektronisch, ein Papier vom Arzt brauchen Sie also nicht. Bringen Sie aber bitte Ihre e-card mit. Bezahlen können Sie auch mit Karte. Auf Wiederhören!",
+              "hit": "Bringen Sie aber bitte Ihre e-card mit."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_alexandra_at",
+            "text": "Grüß Gott, Frau Hödl, hier ist die Löwen-Apotheke in Freistadt. Es geht um Ihr Medikament, das Sie gestern bestellt haben. Leider ist es heute doch noch nicht gekommen. Der Großhändler liefert erst morgen, ab zwei Uhr können Sie es abholen. Bitte beachten Sie, dass wir zu Mittag von zwölf bis zwei geschlossen haben. Ihr Rezept ist ja elektronisch, ein Papier vom Arzt brauchen Sie also nicht. Bringen Sie aber bitte Ihre e-card mit. Bezahlen können Sie auch mit Karte. Auf Wiederhören!",
+            "delivery": "[friendly, efficient pharmacy voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t1-05",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "In dieser Woche sind Schuhe für Kinder günstiger."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Was gibt es nur am Samstag?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Eine kostenlose Fußmessung."
+                },
+                {
+                  "key": "b",
+                  "label": "Zwanzig Prozent Rabatt."
+                },
+                {
+                  "key": "c",
+                  "label": "Ein Geschenk für die Schuhpflege."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "duration": 37.83,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t1-05.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Zur Eröffnung gibt es die ganze Woche zwanzig Prozent auf alle Kinderschuhe.",
+            "evidence": {
+              "text": "Neu in der Lüdenscheider Altstadt: das Schuhhaus Brenner! Bei uns finden Sie Schuhe für die ganze Familie, vom Wanderschuh bis zum eleganten Pumps. Unser Service: Wir messen Ihre Füße, und das ist bei uns immer kostenlos. Zur Eröffnung sparen Sie die ganze Woche zwanzig Prozent auf alle Kinderschuhe. Und am Samstag gibt's noch ein Extra: Wer an diesem Tag ein Paar kauft, bekommt ein Pflegeset für seine Schuhe geschenkt. Schuhhaus Brenner, Kirchgasse vier. Wir freuen uns auf Ihren Besuch!",
+              "hit": "Zur Eröffnung sparen Sie die ganze Woche zwanzig Prozent auf alle Kinderschuhe."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Nur am Samstag bekommt man beim Kauf ein Pflegeset geschenkt. Die Fußmessung ist immer kostenlos, und der Rabatt gilt die ganze Woche.",
+            "evidence": {
+              "text": "Neu in der Lüdenscheider Altstadt: das Schuhhaus Brenner! Bei uns finden Sie Schuhe für die ganze Familie, vom Wanderschuh bis zum eleganten Pumps. Unser Service: Wir messen Ihre Füße, und das ist bei uns immer kostenlos. Zur Eröffnung sparen Sie die ganze Woche zwanzig Prozent auf alle Kinderschuhe. Und am Samstag gibt's noch ein Extra: Wer an diesem Tag ein Paar kauft, bekommt ein Pflegeset für seine Schuhe geschenkt. Schuhhaus Brenner, Kirchgasse vier. Wir freuen uns auf Ihren Besuch!",
+              "hit": "Wer an diesem Tag ein Paar kauft, bekommt ein Pflegeset für seine Schuhe geschenkt."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_emilia_at",
+            "text": "Neu in der Lüdenscheider Altstadt: das Schuhhaus Brenner! Bei uns finden Sie Schuhe für die ganze Familie, vom Wanderschuh bis zum eleganten Pumps. Unser Service: Wir messen Ihre Füße, und das ist bei uns immer kostenlos. Zur Eröffnung sparen Sie die ganze Woche zwanzig Prozent auf alle Kinderschuhe. Und am Samstag gibt's noch ein Extra: Wer an diesem Tag ein Paar kauft, bekommt ein Pflegeset für seine Schuhe geschenkt. Schuhhaus Brenner, Kirchgasse vier. Wir freuen uns auf Ihren Besuch!",
+            "delivery": "[upbeat, energetic radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t2-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Informationen bei einem Fahrsicherheitstraining"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Bevor die Teilnehmenden losfahren, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zeigen sie ihren Führerschein."
+                },
+                {
+                  "key": "b",
+                  "label": "hören sie einen Vortrag über Bremswege."
+                },
+                {
+                  "key": "c",
+                  "label": "bringen sie Sitz und Spiegel in die richtige Position."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Die Anweisungen bei den Übungen kommen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "per Funk in ihr eigenes Auto."
+                },
+                {
+                  "key": "b",
+                  "label": "vom Trainer, der neben ihnen sitzt."
+                },
+                {
+                  "key": "c",
+                  "label": "über Lautsprecher auf dem Platz."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Wer sich bei einer Übung unsicher fühlt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "fährt einfach langsam weiter."
+                },
+                {
+                  "key": "b",
+                  "label": "stoppt das Auto und macht die Warnblinkanlage an."
+                },
+                {
+                  "key": "c",
+                  "label": "ruft den Trainer mit dem Handy an."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Die Mittagspause …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "beginnt schon um zwölf Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man selbst bezahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "ist im Preis für den Kurs enthalten."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Am Ende des Trainings …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "erhält man ein Papier, mit dem man bei einer Versicherung sparen kann."
+                },
+                {
+                  "key": "b",
+                  "label": "fahren alle eine Runde auf der Rennstrecke."
+                },
+                {
+                  "key": "c",
+                  "label": "macht jeder Teilnehmer eine kleine Prüfung."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Fahrsicherheitstraining",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Herbert Leitgeb, Trainer",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie nehmen an einem Fahrsicherheitstraining im Fahrtechnikzentrum Pinzgau in Saalfelden teil. Der Trainer gibt Informationen.",
+          "duration": 168.25,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t2-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Als Erstes stellt man Sitz und Spiegel richtig ein. Die Führerscheine hat die Rezeption schon kontrolliert, und der Vortrag kommt erst am Nachmittag.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Fahrtechnikzentrum Pinzgau! Mein Name ist Herbert Leitgeb, ich bin heute Ihr Trainer. Ich mach das jetzt schon seit zwölf Jahren, und ich kann Ihnen versprechen: Das wird ein spannender Tag. Ein paar Dinge möchte ich Ihnen gleich am Anfang erklären. Ihre Führerscheine haben die Kolleginnen an der Rezeption ja schon kontrolliert, das ist also erledigt. Bevor wir losfahren, machen wir als Erstes etwas, das die meisten unterschätzen: Sie stellen Ihren Sitz und Ihre Spiegel richtig ein. Klingt einfach, aber ganz ehrlich, das macht fast jeder falsch. Ich komme zu jedem Auto und schau mir das an. Den Vortrag über Bremswege gibt's dann erst am Nachmittag. Während der Übungen sitze ich nicht bei Ihnen im Auto, und Lautsprecher haben wir auf dem Platz auch keine, da hört man bei laufendem Motor sowieso nichts. Sie bekommen von mir gleich ein kleines Funkgerät, das legen Sie auf den Beifahrersitz. Darüber sage ich Ihnen, wann Sie losfahren, wann Sie bremsen und wann Sie lenken. Ihr Handy bleibt bitte in der Tasche. Jetzt etwas ganz Wichtiges. Bei manchen Übungen ist die Fahrbahn nass und rutschig, und das Auto dreht sich vielleicht. Das ist normal, das soll so sein. Wenn Sie sich aber einmal gar nicht wohlfühlen, dann fahren Sie bitte nicht einfach langsam weiter. Schalten Sie den Warnblinker ein und bleiben Sie stehen. Dann komme ich sofort zu Ihnen, und wir besprechen das in Ruhe. Niemand muss hier etwas machen, was er nicht will. Zur Mittagspause: Im Programm steht zwölf Uhr, aber das schaffen wir erfahrungsgemäß nie. Wir essen also um halb eins im Restaurant oben im Haupthaus. Das Essen ist im Kurspreis schon drin, nur Getränke zahlen Sie selbst. Heute gibt's übrigens Schnitzel mit Erdäpfelsalat, und das ist hier wirklich gut. Am Nachmittag wiederholen wir dann die Übungen auf der Kreisbahn, und am Schluss fahren wir alle noch einmal den ganzen Parcours. Einige von Ihnen haben mich vorhin gefragt, ob wir auch auf der Rennstrecke fahren. Nein, leider nicht, die gibt's nur im Kurs für Fortgeschrittene. Dafür bekommen Sie am Ende eine Bestätigung über das Training. Die sollten Sie gut aufheben, denn bei manchen Versicherungen bekommen Sie damit einen Rabatt. Heuer machen das übrigens schon mehr Versicherungen als früher. Fragen Sie am besten einfach nach. So, ich glaub, das war's fürs Erste. Haben Sie noch Fragen? Nein? Dann gehen wir jetzt zu den Autos. Auf geht's!",
+              "hit": "Sie stellen Ihren Sitz und Ihre Spiegel richtig ein."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Der Trainer spricht über ein Funkgerät, das im Auto liegt. Er sitzt nicht im Auto, und Lautsprecher gibt es nicht.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Fahrtechnikzentrum Pinzgau! Mein Name ist Herbert Leitgeb, ich bin heute Ihr Trainer. Ich mach das jetzt schon seit zwölf Jahren, und ich kann Ihnen versprechen: Das wird ein spannender Tag. Ein paar Dinge möchte ich Ihnen gleich am Anfang erklären. Ihre Führerscheine haben die Kolleginnen an der Rezeption ja schon kontrolliert, das ist also erledigt. Bevor wir losfahren, machen wir als Erstes etwas, das die meisten unterschätzen: Sie stellen Ihren Sitz und Ihre Spiegel richtig ein. Klingt einfach, aber ganz ehrlich, das macht fast jeder falsch. Ich komme zu jedem Auto und schau mir das an. Den Vortrag über Bremswege gibt's dann erst am Nachmittag. Während der Übungen sitze ich nicht bei Ihnen im Auto, und Lautsprecher haben wir auf dem Platz auch keine, da hört man bei laufendem Motor sowieso nichts. Sie bekommen von mir gleich ein kleines Funkgerät, das legen Sie auf den Beifahrersitz. Darüber sage ich Ihnen, wann Sie losfahren, wann Sie bremsen und wann Sie lenken. Ihr Handy bleibt bitte in der Tasche. Jetzt etwas ganz Wichtiges. Bei manchen Übungen ist die Fahrbahn nass und rutschig, und das Auto dreht sich vielleicht. Das ist normal, das soll so sein. Wenn Sie sich aber einmal gar nicht wohlfühlen, dann fahren Sie bitte nicht einfach langsam weiter. Schalten Sie den Warnblinker ein und bleiben Sie stehen. Dann komme ich sofort zu Ihnen, und wir besprechen das in Ruhe. Niemand muss hier etwas machen, was er nicht will. Zur Mittagspause: Im Programm steht zwölf Uhr, aber das schaffen wir erfahrungsgemäß nie. Wir essen also um halb eins im Restaurant oben im Haupthaus. Das Essen ist im Kurspreis schon drin, nur Getränke zahlen Sie selbst. Heute gibt's übrigens Schnitzel mit Erdäpfelsalat, und das ist hier wirklich gut. Am Nachmittag wiederholen wir dann die Übungen auf der Kreisbahn, und am Schluss fahren wir alle noch einmal den ganzen Parcours. Einige von Ihnen haben mich vorhin gefragt, ob wir auch auf der Rennstrecke fahren. Nein, leider nicht, die gibt's nur im Kurs für Fortgeschrittene. Dafür bekommen Sie am Ende eine Bestätigung über das Training. Die sollten Sie gut aufheben, denn bei manchen Versicherungen bekommen Sie damit einen Rabatt. Heuer machen das übrigens schon mehr Versicherungen als früher. Fragen Sie am besten einfach nach. So, ich glaub, das war's fürs Erste. Haben Sie noch Fragen? Nein? Dann gehen wir jetzt zu den Autos. Auf geht's!",
+              "hit": "Sie bekommen von mir gleich ein kleines Funkgerät, das legen Sie auf den Beifahrersitz."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Man soll den Warnblinker einschalten und stehen bleiben. Langsam weiterfahren soll man ausdrücklich nicht.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Fahrtechnikzentrum Pinzgau! Mein Name ist Herbert Leitgeb, ich bin heute Ihr Trainer. Ich mach das jetzt schon seit zwölf Jahren, und ich kann Ihnen versprechen: Das wird ein spannender Tag. Ein paar Dinge möchte ich Ihnen gleich am Anfang erklären. Ihre Führerscheine haben die Kolleginnen an der Rezeption ja schon kontrolliert, das ist also erledigt. Bevor wir losfahren, machen wir als Erstes etwas, das die meisten unterschätzen: Sie stellen Ihren Sitz und Ihre Spiegel richtig ein. Klingt einfach, aber ganz ehrlich, das macht fast jeder falsch. Ich komme zu jedem Auto und schau mir das an. Den Vortrag über Bremswege gibt's dann erst am Nachmittag. Während der Übungen sitze ich nicht bei Ihnen im Auto, und Lautsprecher haben wir auf dem Platz auch keine, da hört man bei laufendem Motor sowieso nichts. Sie bekommen von mir gleich ein kleines Funkgerät, das legen Sie auf den Beifahrersitz. Darüber sage ich Ihnen, wann Sie losfahren, wann Sie bremsen und wann Sie lenken. Ihr Handy bleibt bitte in der Tasche. Jetzt etwas ganz Wichtiges. Bei manchen Übungen ist die Fahrbahn nass und rutschig, und das Auto dreht sich vielleicht. Das ist normal, das soll so sein. Wenn Sie sich aber einmal gar nicht wohlfühlen, dann fahren Sie bitte nicht einfach langsam weiter. Schalten Sie den Warnblinker ein und bleiben Sie stehen. Dann komme ich sofort zu Ihnen, und wir besprechen das in Ruhe. Niemand muss hier etwas machen, was er nicht will. Zur Mittagspause: Im Programm steht zwölf Uhr, aber das schaffen wir erfahrungsgemäß nie. Wir essen also um halb eins im Restaurant oben im Haupthaus. Das Essen ist im Kurspreis schon drin, nur Getränke zahlen Sie selbst. Heute gibt's übrigens Schnitzel mit Erdäpfelsalat, und das ist hier wirklich gut. Am Nachmittag wiederholen wir dann die Übungen auf der Kreisbahn, und am Schluss fahren wir alle noch einmal den ganzen Parcours. Einige von Ihnen haben mich vorhin gefragt, ob wir auch auf der Rennstrecke fahren. Nein, leider nicht, die gibt's nur im Kurs für Fortgeschrittene. Dafür bekommen Sie am Ende eine Bestätigung über das Training. Die sollten Sie gut aufheben, denn bei manchen Versicherungen bekommen Sie damit einen Rabatt. Heuer machen das übrigens schon mehr Versicherungen als früher. Fragen Sie am besten einfach nach. So, ich glaub, das war's fürs Erste. Haben Sie noch Fragen? Nein? Dann gehen wir jetzt zu den Autos. Auf geht's!",
+              "hit": "Schalten Sie den Warnblinker ein und bleiben Sie stehen."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Das Essen ist im Kurspreis schon drin, nur Getränke zahlt man selbst. Die Pause beginnt erst um halb eins, nicht um zwölf.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Fahrtechnikzentrum Pinzgau! Mein Name ist Herbert Leitgeb, ich bin heute Ihr Trainer. Ich mach das jetzt schon seit zwölf Jahren, und ich kann Ihnen versprechen: Das wird ein spannender Tag. Ein paar Dinge möchte ich Ihnen gleich am Anfang erklären. Ihre Führerscheine haben die Kolleginnen an der Rezeption ja schon kontrolliert, das ist also erledigt. Bevor wir losfahren, machen wir als Erstes etwas, das die meisten unterschätzen: Sie stellen Ihren Sitz und Ihre Spiegel richtig ein. Klingt einfach, aber ganz ehrlich, das macht fast jeder falsch. Ich komme zu jedem Auto und schau mir das an. Den Vortrag über Bremswege gibt's dann erst am Nachmittag. Während der Übungen sitze ich nicht bei Ihnen im Auto, und Lautsprecher haben wir auf dem Platz auch keine, da hört man bei laufendem Motor sowieso nichts. Sie bekommen von mir gleich ein kleines Funkgerät, das legen Sie auf den Beifahrersitz. Darüber sage ich Ihnen, wann Sie losfahren, wann Sie bremsen und wann Sie lenken. Ihr Handy bleibt bitte in der Tasche. Jetzt etwas ganz Wichtiges. Bei manchen Übungen ist die Fahrbahn nass und rutschig, und das Auto dreht sich vielleicht. Das ist normal, das soll so sein. Wenn Sie sich aber einmal gar nicht wohlfühlen, dann fahren Sie bitte nicht einfach langsam weiter. Schalten Sie den Warnblinker ein und bleiben Sie stehen. Dann komme ich sofort zu Ihnen, und wir besprechen das in Ruhe. Niemand muss hier etwas machen, was er nicht will. Zur Mittagspause: Im Programm steht zwölf Uhr, aber das schaffen wir erfahrungsgemäß nie. Wir essen also um halb eins im Restaurant oben im Haupthaus. Das Essen ist im Kurspreis schon drin, nur Getränke zahlen Sie selbst. Heute gibt's übrigens Schnitzel mit Erdäpfelsalat, und das ist hier wirklich gut. Am Nachmittag wiederholen wir dann die Übungen auf der Kreisbahn, und am Schluss fahren wir alle noch einmal den ganzen Parcours. Einige von Ihnen haben mich vorhin gefragt, ob wir auch auf der Rennstrecke fahren. Nein, leider nicht, die gibt's nur im Kurs für Fortgeschrittene. Dafür bekommen Sie am Ende eine Bestätigung über das Training. Die sollten Sie gut aufheben, denn bei manchen Versicherungen bekommen Sie damit einen Rabatt. Heuer machen das übrigens schon mehr Versicherungen als früher. Fragen Sie am besten einfach nach. So, ich glaub, das war's fürs Erste. Haben Sie noch Fragen? Nein? Dann gehen wir jetzt zu den Autos. Auf geht's!",
+              "hit": "Das Essen ist im Kurspreis schon drin, nur Getränke zahlen Sie selbst."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Am Ende gibt es eine Bestätigung, mit der manche Versicherungen Rabatt geben. Die Rennstrecke gibt es nur im Kurs für Fortgeschrittene.",
+            "evidence": {
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Fahrtechnikzentrum Pinzgau! Mein Name ist Herbert Leitgeb, ich bin heute Ihr Trainer. Ich mach das jetzt schon seit zwölf Jahren, und ich kann Ihnen versprechen: Das wird ein spannender Tag. Ein paar Dinge möchte ich Ihnen gleich am Anfang erklären. Ihre Führerscheine haben die Kolleginnen an der Rezeption ja schon kontrolliert, das ist also erledigt. Bevor wir losfahren, machen wir als Erstes etwas, das die meisten unterschätzen: Sie stellen Ihren Sitz und Ihre Spiegel richtig ein. Klingt einfach, aber ganz ehrlich, das macht fast jeder falsch. Ich komme zu jedem Auto und schau mir das an. Den Vortrag über Bremswege gibt's dann erst am Nachmittag. Während der Übungen sitze ich nicht bei Ihnen im Auto, und Lautsprecher haben wir auf dem Platz auch keine, da hört man bei laufendem Motor sowieso nichts. Sie bekommen von mir gleich ein kleines Funkgerät, das legen Sie auf den Beifahrersitz. Darüber sage ich Ihnen, wann Sie losfahren, wann Sie bremsen und wann Sie lenken. Ihr Handy bleibt bitte in der Tasche. Jetzt etwas ganz Wichtiges. Bei manchen Übungen ist die Fahrbahn nass und rutschig, und das Auto dreht sich vielleicht. Das ist normal, das soll so sein. Wenn Sie sich aber einmal gar nicht wohlfühlen, dann fahren Sie bitte nicht einfach langsam weiter. Schalten Sie den Warnblinker ein und bleiben Sie stehen. Dann komme ich sofort zu Ihnen, und wir besprechen das in Ruhe. Niemand muss hier etwas machen, was er nicht will. Zur Mittagspause: Im Programm steht zwölf Uhr, aber das schaffen wir erfahrungsgemäß nie. Wir essen also um halb eins im Restaurant oben im Haupthaus. Das Essen ist im Kurspreis schon drin, nur Getränke zahlen Sie selbst. Heute gibt's übrigens Schnitzel mit Erdäpfelsalat, und das ist hier wirklich gut. Am Nachmittag wiederholen wir dann die Übungen auf der Kreisbahn, und am Schluss fahren wir alle noch einmal den ganzen Parcours. Einige von Ihnen haben mich vorhin gefragt, ob wir auch auf der Rennstrecke fahren. Nein, leider nicht, die gibt's nur im Kurs für Fortgeschrittene. Dafür bekommen Sie am Ende eine Bestätigung über das Training. Die sollten Sie gut aufheben, denn bei manchen Versicherungen bekommen Sie damit einen Rabatt. Heuer machen das übrigens schon mehr Versicherungen als früher. Fragen Sie am besten einfach nach. So, ich glaub, das war's fürs Erste. Haben Sie noch Fragen? Nein? Dann gehen wir jetzt zu den Autos. Auf geht's!",
+              "hit": "Die sollten Sie gut aufheben, denn bei manchen Versicherungen bekommen Sie damit einen Rabatt."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_gruber_at",
+            "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Fahrtechnikzentrum Pinzgau! Mein Name ist Herbert Leitgeb, ich bin heute Ihr Trainer. Ich mach das jetzt schon seit zwölf Jahren, und ich kann Ihnen versprechen: Das wird ein spannender Tag. Ein paar Dinge möchte ich Ihnen gleich am Anfang erklären. Ihre Führerscheine haben die Kolleginnen an der Rezeption ja schon kontrolliert, das ist also erledigt. Bevor wir losfahren, machen wir als Erstes etwas, das die meisten unterschätzen: Sie stellen Ihren Sitz und Ihre Spiegel richtig ein. Klingt einfach, aber ganz ehrlich, das macht fast jeder falsch. Ich komme zu jedem Auto und schau mir das an. Den Vortrag über Bremswege gibt's dann erst am Nachmittag. Während der Übungen sitze ich nicht bei Ihnen im Auto, und Lautsprecher haben wir auf dem Platz auch keine, da hört man bei laufendem Motor sowieso nichts. Sie bekommen von mir gleich ein kleines Funkgerät, das legen Sie auf den Beifahrersitz. Darüber sage ich Ihnen, wann Sie losfahren, wann Sie bremsen und wann Sie lenken. Ihr Handy bleibt bitte in der Tasche. Jetzt etwas ganz Wichtiges. Bei manchen Übungen ist die Fahrbahn nass und rutschig, und das Auto dreht sich vielleicht. Das ist normal, das soll so sein. Wenn Sie sich aber einmal gar nicht wohlfühlen, dann fahren Sie bitte nicht einfach langsam weiter. Schalten Sie den Warnblinker ein und bleiben Sie stehen. Dann komme ich sofort zu Ihnen, und wir besprechen das in Ruhe. Niemand muss hier etwas machen, was er nicht will. Zur Mittagspause: Im Programm steht zwölf Uhr, aber das schaffen wir erfahrungsgemäß nie. Wir essen also um halb eins im Restaurant oben im Haupthaus. Das Essen ist im Kurspreis schon drin, nur Getränke zahlen Sie selbst. Heute gibt's übrigens Schnitzel mit Erdäpfelsalat, und das ist hier wirklich gut. Am Nachmittag wiederholen wir dann die Übungen auf der Kreisbahn, und am Schluss fahren wir alle noch einmal den ganzen Parcours. Einige von Ihnen haben mich vorhin gefragt, ob wir auch auf der Rennstrecke fahren. Nein, leider nicht, die gibt's nur im Kurs für Fortgeschrittene. Dafür bekommen Sie am Ende eine Bestätigung über das Training. Die sollten Sie gut aufheben, denn bei manchen Versicherungen bekommen Sie damit einen Rabatt. Heuer machen das übrigens schon mehr Versicherungen als früher. Fragen Sie am besten einfach nach. So, ich glaub, das war's fürs Erste. Haben Sie noch Fragen? Nein? Dann gehen wir jetzt zu den Autos. Auf geht's!",
+            "delivery": "[relaxed, experienced trainer addressing a group, friendly, clear]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t3-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Gespräch zwischen Bekannten im Waschsalon"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Nicole hat die Reise ins Baumhaus geschenkt bekommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Nicole und Jörg hatten an dem Wochenende schlechtes Wetter."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Das Baumhaus hatte ein eigenes Bad."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Das Frühstück bekamen sie in einem Korb, der hochgezogen wurde."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Nicole hat in der ersten Nacht gut geschlafen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Nicole möchte noch einmal in das Baumhausdorf fahren."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Benjamin möchte selbst einmal im Baumhaus übernachten."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch im Waschsalon",
+          "segments": [],
+          "speakers": {
+            "n": {
+              "name": "Nicole",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "b": {
+              "name": "Benjamin",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie sind in einem Waschsalon und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "duration": 185.86,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t3-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Nicole hat das Wochenende Jörg zum Geburtstag geschenkt. Sie selbst hat es nicht bekommen.",
+            "evidence": {
+              "text": "Ja, so richtig. Das heißt Baumhausdorf Lenneblick. Da gibt's sechs Häuser, alle so fünf, sechs Meter hoch zwischen den Bäumen. Jörg hatte doch letzten Monat Geburtstag, und ich hab ihm das geschenkt. Er wollte als Kind immer ein Baumhaus haben.",
+              "hit": "Jörg hatte doch letzten Monat Geburtstag, und ich hab ihm das geschenkt."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "richtig",
+            "explanation": "Es hat fast das ganze Wochenende geregnet. Nicole fand das aber nicht so schlimm.",
+            "evidence": {
+              "text": "Total. Obwohl das Wetter, oh Mann … Es hat fast das ganze Wochenende geregnet.",
+              "hit": "Es hat fast das ganze Wochenende geregnet."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "falsch",
+            "explanation": "Toilette und Dusche sind unten in einem anderen Haus. Oben gibt es nur Bett und Tisch.",
+            "evidence": {
+              "text": "Strom ja, Heizung auch. Ein großes Bett, ein kleiner Tisch, alles aus Holz. Nur Toilette und Dusche gibt's nicht oben. Die sind unten in einem extra Haus, so zwei Minuten zu Fuß.",
+              "hit": "Nur Toilette und Dusche gibt's nicht oben."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Das Frühstück kommt morgens in einem Korb. Den zieht man mit einem Seil zum Baumhaus hoch.",
+            "evidence": {
+              "text": "Nee, aber das Frühstück war das Beste. Das bringen sie morgens in einem Korb, und den zieht man mit einem Seil nach oben. Frische Brötchen, Eier, Marmelade vom Hof.",
+              "hit": "Das bringen sie morgens in einem Korb, und den zieht man mit einem Seil nach oben."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "In der ersten Nacht hat sie kaum geschlafen, weil Eulen gerufen haben. Nur Jörg hat gut geschlafen.",
+            "evidence": {
+              "text": "Von wegen! Die erste Nacht hab ich kaum ein Auge zugemacht. Da waren Eulen direkt neben uns, die haben die ganze Nacht gerufen. Jörg hat natürlich geschlafen wie ein Stein.",
+              "hit": "Die erste Nacht hab ich kaum ein Auge zugemacht."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Sie will im Herbst wieder hinfahren. Der Regen hat sie nicht gestört.",
+            "evidence": {
+              "text": "Auf jeden Fall. Wir wollen im Herbst wieder hin, wenn die Blätter bunt sind. Hoffentlich ist es dann trockener.",
+              "hit": "Wir wollen im Herbst wieder hin"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Benjamin sucht ein Geschenk für den Hochzeitstag seiner Eltern. Er will nicht selbst dort schlafen.",
+            "evidence": {
+              "text": "Ja, warum nicht? Die haben im Juni vierzigsten Hochzeitstag, und wir Kinder suchen noch ein Geschenk. Mein Vater klettert immer noch gern auf Berge, der schafft auch eine Leiter.",
+              "hit": "Die haben im Juni vierzigsten Hochzeitstag, und wir Kinder suchen noch ein Geschenk."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Nicole? Na so was, du hier im Waschsalon?",
+            "delivery": "[surprised, friendly]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Hallo Benjamin! Ja, unsere Waschmaschine ist seit einer Woche kaputt. Und du?",
+            "delivery": "[warm, a bit amused]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Ich hab gar keine. In meiner Wohnung ist kein Platz dafür. Und, wie geht's dir? Du siehst irgendwie erholt aus.",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Echt? Ja, wir waren am Wochenende weg. Im Sauerland, in der Nähe von Schmallenberg. Wir haben in einem Baumhaus übernachtet!",
+            "delivery": "[excited]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "In einem Baumhaus? Wie, so richtig im Baum?",
+            "delivery": "[curious, overlapping slightly]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Ja, so richtig. Das heißt Baumhausdorf Lenneblick. Da gibt's sechs Häuser, alle so fünf, sechs Meter hoch zwischen den Bäumen. Jörg hatte doch letzten Monat Geburtstag, und ich hab ihm das geschenkt. Er wollte als Kind immer ein Baumhaus haben.",
+            "delivery": "[lively, proud]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Mhm, süß. Und, hat's ihm gefallen?",
+            "delivery": "[short back-channel]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Total. Obwohl das Wetter, oh Mann … Es hat fast das ganze Wochenende geregnet.",
+            "delivery": "[laughing, sighing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Oh nein. Ausgerechnet.",
+            "delivery": "[sympathetic]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Ach, das war gar nicht so schlimm. Wir saßen auf der kleinen Terrasse, mit Decken und Tee, und haben in den Regen geschaut. Das war richtig gemütlich.",
+            "delivery": "[relaxed, content]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Und wie ist es da drinnen? Gibt's da Strom und so?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Strom ja, Heizung auch. Ein großes Bett, ein kleiner Tisch, alles aus Holz. Nur Toilette und Dusche gibt's nicht oben. Die sind unten in einem extra Haus, so zwei Minuten zu Fuß.",
+            "delivery": "[matter-of-fact]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Echt? Und nachts, wenn man mal muss?",
+            "delivery": "[amused, quick]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Ja, das war das Problem. Mit Taschenlampe die Leiter runter, im Regen. Aber man gewöhnt sich dran.",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Und Essen? Kochen kann man da wahrscheinlich nicht.",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Nee, aber das Frühstück war das Beste. Das bringen sie morgens in einem Korb, und den zieht man mit einem Seil nach oben. Frische Brötchen, Eier, Marmelade vom Hof.",
+            "delivery": "[enthusiastic]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Wie cool ist das denn!",
+            "delivery": "[impressed, overlapping]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Ja, oder? Und ich hab gedacht, da oben schläft man bestimmt wie ein Baby, so mitten in der Natur, ganz ruhig.",
+            "delivery": "[ironic build-up]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Und?",
+            "delivery": "[short, curious]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Von wegen! Die erste Nacht hab ich kaum ein Auge zugemacht. Da waren Eulen direkt neben uns, die haben die ganze Nacht gerufen. Jörg hat natürlich geschlafen wie ein Stein.",
+            "delivery": "[mock-annoyed, laughing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Typisch. Und die zweite Nacht?",
+            "delivery": "[chuckling]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Da war ich so müde, da hab ich nichts mehr gehört.",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Würdest du's denn noch mal machen?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Auf jeden Fall. Wir wollen im Herbst wieder hin, wenn die Blätter bunt sind. Hoffentlich ist es dann trockener.",
+            "delivery": "[decided, warm]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Klingt toll. Was kostet so was eigentlich?",
+            "delivery": "[interested]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Hundertsechzig Euro pro Nacht, mit Frühstück. Nicht billig, aber es lohnt sich.",
+            "delivery": "[matter-of-fact]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Du, das ist eigentlich eine super Idee für meine Eltern.",
+            "delivery": "[thinking aloud]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Für deine Eltern? In einem Baumhaus?",
+            "delivery": "[surprised, amused]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Ja, warum nicht? Die haben im Juni vierzigsten Hochzeitstag, und wir Kinder suchen noch ein Geschenk. Mein Vater klettert immer noch gern auf Berge, der schafft auch eine Leiter.",
+            "delivery": "[eager]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Na dann! Aber buch früh, die sind am Wochenende schnell ausgebucht. Ich schick dir den Link.",
+            "delivery": "[helpful]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_martin_at",
+            "text": "Danke! Oh, meine Maschine ist fertig. Wart mal kurz, ich bin gleich wieder da.",
+            "delivery": "[hurried, friendly]"
+          },
+          {
+            "speaker": "n",
+            "voice": "woman_alexandra_at",
+            "text": "Klar, ich lauf nicht weg. Meine braucht noch zwanzig Minuten.",
+            "delivery": "[laughing]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-hoeren-06-t4-01",
+      "exam": "oesd-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.867Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Bei der Arbeit in der eigenen Wohnung ist Stille am Tag wichtig.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Viele Streitigkeiten fangen mit einer Nachricht ohne Absender im Treppenhaus an.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Spielende Kinder sind in Ordnung, aber nicht spät am Abend.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Manche Regeln in Hausordnungen gehen weiter, als es das Recht zulässt.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Als Kind war diese Person selbst ziemlich laut.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Ein offenes Gespräch bringt mehr, als zum Anwalt zu gehen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Mit Ohrstöpseln ist die Situation leichter geworden.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Oft ist nicht das Verhalten, sondern das Gebäude das Problem.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Die Nachbarn mit den Kindern waren zu Gast in der eigenen Wohnung.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Katharina Voss, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Gerhard Pöllinger, Übersetzer"
+                },
+                {
+                  "key": "c",
+                  "label": "Andrea Zbinden, Mediatorin"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Katharina Voss, Moderatorin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p": {
+              "name": "Gerhard Pöllinger, Übersetzer",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "z": {
+              "name": "Andrea Zbinden, Mediatorin",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Die Moderatorin der Radiosendung „Nachbarschaft heute“, Katharina Voss, diskutiert mit Gerhard Pöllinger, Übersetzer aus Kapfenberg, der zu Hause arbeitet, und Andrea Zbinden, Mediatorin für Nachbarschaftskonflikte aus Schwyz, über das Thema „Wie laut darf es im Haus sein?“",
+          "duration": 307.54,
+          "src": "oesd-b1/hoeren-06/oesd-b1-hoeren-06-t4-01.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "c",
+            "explanation": "Frau Zbinden sagt, dass fast alle Konflikte mit einem Zettel ohne Namen im Treppenhaus beginnen. Herr Pöllinger hat seinen Zettel nie aufgehängt.",
+            "evidence": {
+              "text": "Sehr typisch, ja. Und meistens läuft es gleich ab. Am Anfang redet niemand miteinander. Dann hängt irgendwann jemand einen Zettel ins Treppenhaus: «Bitte nehmen Sie Rücksicht!», ohne Namen. Die anderen fühlen sich angegriffen, und schon ist der Streit da. So fangen fast alle Konflikte an, mit denen ich zu tun habe.",
+              "hit": "So fangen fast alle Konflikte an, mit denen ich zu tun habe."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "b",
+            "explanation": "Herr Pöllinger findet spielende Kinder in Ordnung, aber nicht um elf in der Nacht. Frau Zbinden spricht nur über Kindergeräusche am Mittag.",
+            "evidence": {
+              "text": "Also, dass Kinder spielen und auch mal laut sind, das ist für mich grundsätzlich in Ordnung. Das gehört dazu, auch wenn ich mich dann schwerer konzentriere. Aber einmal im Winter haben die um elf in der Nacht noch Fangen gespielt, das hat richtig gedröhnt. Das geht einfach nicht. Da hab ich dann oben geläutet.",
+              "hit": "Aber einmal im Winter haben die um elf in der Nacht noch Fangen gespielt"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Frau Zbinden sagt, dass Hausordnungen oft mehr verlangen, als das Gesetz erlaubt. Die Moderatorin stellt nur die Frage nach dem Gesetz.",
+            "evidence": {
+              "text": "Da gibt es viele Missverständnisse. Normale Geräusche von Kindern müssen Nachbarn in der Regel akzeptieren, auch über Mittag. In vielen Hausordnungen steht zwar: Kein Lärm zwischen zwölf und zwei. Aber nicht alles, was in einer Hausordnung steht, gilt auch rechtlich. Oft verlangen solche Regeln viel mehr, als das Gesetz erlaubt. Darum würde ich immer zuerst beim Hauswart oder bei der Verwaltung nachfragen.",
+              "hit": "Oft verlangen solche Regeln viel mehr, als das Gesetz erlaubt."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "a",
+            "explanation": "Die Moderatorin erzählt, dass sie als Kind im Flur Fußball gespielt hat. Herr Pöllinger spricht nur über die Kinder über ihm.",
+            "evidence": {
+              "text": "Ich muss da ehrlich sein: Ich war als Kind selbst alles andere als leise. Meine Mutter erzählt heute noch, dass sich die Nachbarin unter uns fast jede Woche beschwert hat, weil ich im Flur Fußball gespielt habe. Vielleicht verstehe ich deshalb beide Seiten. Herr Pöllinger, haben Sie mit der Familie denn direkt gesprochen?",
+              "hit": "Ich war als Kind selbst alles andere als leise."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Frau Zbinden rät vom Anwalt ab und empfiehlt ein offenes Gespräch. Herr Pöllinger hat nur überlegt, zu einem Anwalt zu gehen.",
+            "evidence": {
+              "text": "Davon würde ich abraten, zumindest am Anfang. Ein Brief vom Anwalt macht alles nur schlimmer, danach grüsst man sich im Treppenhaus nicht mehr. Viel mehr bringt es, wenn man sich zusammensetzt und offen redet: Was stört mich, wann genau, und was ist für beide machbar? Das klingt einfach, aber es funktioniert erstaunlich oft.",
+              "hit": "Viel mehr bringt es, wenn man sich zusammensetzt und offen redet"
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Herr Pöllinger trägt beim Arbeiten Ohrstöpsel und ist seitdem entspannter. Frau Zbinden hält Ohrstöpsel nicht für eine gute Dauerlösung.",
+            "evidence": {
+              "text": "Bei mir war das am Ende ganz einfach. Eine Freundin hat mir Ohrstöpsel empfohlen, so gute aus Wachs. Zuerst hab ich gedacht, das ist doch lächerlich. Aber seit ich die beim Arbeiten trage, bin ich viel entspannter. Ich höre die Kinder zwar noch ein bisschen, aber es stört mich kaum noch.",
+              "hit": "Aber seit ich die beim Arbeiten trage, bin ich viel entspannter."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Frau Zbinden sagt, dass viele Häuser dünne Decken und Wände haben. Die Moderatorin fragt nur danach.",
+            "evidence": {
+              "text": "Sehr oft an den Häusern, ja, das unterschätzen viele. Gerade in Häusern aus den Sechziger- und Siebzigerjahren sind Decken und Wände oft dünn. Da hört man jeden Schritt, auch wenn die Nachbarn ganz normal leben. Bei uns im Quartier gibt es eine ganze Siedlung, wo das so ist. Da kann die netteste Familie nichts dafür, schuld ist einfach die schlechte Bauweise.",
+              "hit": "schuld ist einfach die schlechte Bauweise."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Herr Pöllinger hat die Familie zu Kaffee und Kuchen zu sich eingeladen. Frau Zbinden empfiehlt diesen Weg nur.",
+            "evidence": {
+              "text": "Viel besser. Heuer im Frühling hab ich mir ein Herz gefasst und die ganze Familie zu mir auf Kaffee und Kuchen eingeladen. Die Kinder durften mein Büro anschauen, und wir haben gemeinsam etwas ausgemacht: Am Vormittag spielen sie im Kinderzimmer, das liegt nicht über meinem Schreibtisch. Und wenn sie eine Feier haben, sagt mir die Mutter vorher Bescheid.",
+              "hit": "die ganze Familie zu mir auf Kaffee und Kuchen eingeladen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Guten Abend und willkommen bei „Nachbarschaft heute“. Bohrmaschine am Samstagmorgen, Kinder, die durch die Wohnung rennen, Musik bis spät in die Nacht: Lärm ist einer der häufigsten Gründe für Streit im Haus. Heute fragen wir: Wie laut darf es im Haus sein? Bei mir sind zwei Gäste. Gerhard Pöllinger arbeitet als Übersetzer und lebt in Kapfenberg in der Steiermark. Guten Abend, Herr Pöllinger.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Grüß Gott, guten Abend.",
+            "delivery": "[friendly, relaxed]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Und aus Schwyz ist Andrea Zbinden zugeschaltet. Sie ist Mediatorin und hilft Nachbarn, die Streit miteinander haben. Guten Abend, Frau Zbinden.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "z",
+            "voice": "woman_heidi_ch",
+            "text": "Guten Abend.",
+            "delivery": "[calm, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pöllinger, Sie haben uns geschrieben, weil Sie selbst ein Lärmproblem haben. Erzählen Sie mal.",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Ja, also, ich bin freiberuflicher Übersetzer, und mein Büro ist bei mir in der Wohnung. Ich sitze von acht in der Früh bis ungefähr sechs am Abend am Schreibtisch, und bei so einer Arbeit muss es einfach still sein. Über mir ist vor zwei Jahren eine Familie mit drei Kindern eingezogen. Seitdem ist es tagsüber eigentlich nie mehr ruhig. Aber während der Arbeit, das ist schwierig.",
+            "delivery": "[thoughtful, a bit tired]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Frau Zbinden, ist das ein typischer Fall?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "z",
+            "voice": "woman_heidi_ch",
+            "text": "Sehr typisch, ja. Und meistens läuft es gleich ab. Am Anfang redet niemand miteinander. Dann hängt irgendwann jemand einen Zettel ins Treppenhaus: «Bitte nehmen Sie Rücksicht!», ohne Namen. Die anderen fühlen sich angegriffen, und schon ist der Streit da. So fangen fast alle Konflikte an, mit denen ich zu tun habe.",
+            "delivery": "[calm, experienced]",
+            "item": 23
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Einen Zettel hab ich auch schon einmal geschrieben, das muss ich zugeben. Aber aufgehängt hab ich ihn dann doch nicht.",
+            "delivery": "[laughing, a little embarrassed]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pöllinger, wann ist es für Sie zu viel?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Also, dass Kinder spielen und auch mal laut sind, das ist für mich grundsätzlich in Ordnung. Das gehört dazu, auch wenn ich mich dann schwerer konzentriere. Aber einmal im Winter haben die um elf in der Nacht noch Fangen gespielt, das hat richtig gedröhnt. Das geht einfach nicht. Da hab ich dann oben geläutet.",
+            "delivery": "[firm but fair]",
+            "item": 24
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Und dürfen die das? Was sagt eigentlich das Gesetz, Frau Zbinden?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "z",
+            "voice": "woman_heidi_ch",
+            "text": "Da gibt es viele Missverständnisse. Normale Geräusche von Kindern müssen Nachbarn in der Regel akzeptieren, auch über Mittag. In vielen Hausordnungen steht zwar: Kein Lärm zwischen zwölf und zwei. Aber nicht alles, was in einer Hausordnung steht, gilt auch rechtlich. Oft verlangen solche Regeln viel mehr, als das Gesetz erlaubt. Darum würde ich immer zuerst beim Hauswart oder bei der Verwaltung nachfragen.",
+            "delivery": "[precise, explaining]",
+            "item": 25
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Ich muss da ehrlich sein: Ich war als Kind selbst alles andere als leise. Meine Mutter erzählt heute noch, dass sich die Nachbarin unter uns fast jede Woche beschwert hat, weil ich im Flur Fußball gespielt habe. Vielleicht verstehe ich deshalb beide Seiten. Herr Pöllinger, haben Sie mit der Familie denn direkt gesprochen?",
+            "delivery": "[amused, personal]",
+            "item": 26
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Am Anfang nicht, nein. Ehrlich gesagt hab ich sogar überlegt, zu einem Anwalt zu gehen. Ein Kollege hat mir das geraten.",
+            "delivery": "[honest]"
+          },
+          {
+            "speaker": "z",
+            "voice": "woman_heidi_ch",
+            "text": "Davon würde ich abraten, zumindest am Anfang. Ein Brief vom Anwalt macht alles nur schlimmer, danach grüsst man sich im Treppenhaus nicht mehr. Viel mehr bringt es, wenn man sich zusammensetzt und offen redet: Was stört mich, wann genau, und was ist für beide machbar? Das klingt einfach, aber es funktioniert erstaunlich oft.",
+            "delivery": "[warm, convincing]",
+            "item": 27
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Und wenn Reden nicht hilft? Was kann man selbst tun?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Bei mir war das am Ende ganz einfach. Eine Freundin hat mir Ohrstöpsel empfohlen, so gute aus Wachs. Zuerst hab ich gedacht, das ist doch lächerlich. Aber seit ich die beim Arbeiten trage, bin ich viel entspannter. Ich höre die Kinder zwar noch ein bisschen, aber es stört mich kaum noch.",
+            "delivery": "[relaxed, slightly amused]",
+            "item": 28
+          },
+          {
+            "speaker": "z",
+            "voice": "woman_heidi_ch",
+            "text": "Kurzfristig kann das helfen, sicher. Aber als Dauerlösung sehe ich das nicht. Man soll sich in der eigenen Wohnung wohlfühlen, ohne sich die Ohren zuzustopfen.",
+            "delivery": "[polite but sceptical]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Frau Zbinden, liegt es eigentlich immer an den Menschen? Oder auch an den Häusern?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "z",
+            "voice": "woman_heidi_ch",
+            "text": "Sehr oft an den Häusern, ja, das unterschätzen viele. Gerade in Häusern aus den Sechziger- und Siebzigerjahren sind Decken und Wände oft dünn. Da hört man jeden Schritt, auch wenn die Nachbarn ganz normal leben. Bei uns im Quartier gibt es eine ganze Siedlung, wo das so ist. Da kann die netteste Familie nichts dafür, schuld ist einfach die schlechte Bauweise.",
+            "delivery": "[thoughtful, clear]",
+            "item": 29
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Herr Pöllinger, und wie ist es heute bei Ihnen im Haus?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "p",
+            "voice": "man_andres_ch",
+            "text": "Viel besser. Heuer im Frühling hab ich mir ein Herz gefasst und die ganze Familie zu mir auf Kaffee und Kuchen eingeladen. Die Kinder durften mein Büro anschauen, und wir haben gemeinsam etwas ausgemacht: Am Vormittag spielen sie im Kinderzimmer, das liegt nicht über meinem Schreibtisch. Und wenn sie eine Feier haben, sagt mir die Mutter vorher Bescheid.",
+            "delivery": "[pleased, warm]",
+            "item": 30
+          },
+          {
+            "speaker": "z",
+            "voice": "woman_heidi_ch",
+            "text": "Das ist eigentlich genau der Weg, den ich empfehle. Meistens merken die Leute dabei, dass die anderen gar keine bösen Menschen sind, sondern einfach nur leben.",
+            "delivery": "[warm, approving]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_emilia_at",
+            "text": "Damit sind wir leider schon am Ende. Vielen Dank, Frau Zbinden, vielen Dank, Herr Pöllinger. Und Ihnen, liebe Hörerinnen und Hörer, einen ruhigen Abend!",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ],
+  "track": {
+    "src": "oesd-b1/hoeren-06/track.mp3",
+    "duration": 2259.23,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.22,
+        "to": 19.77
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.81,
+        "to": 26.83
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.83,
+        "to": 37.36
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.36,
+        "to": 40.41
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 41.95,
+        "to": 73.46
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 75.49,
+        "to": 77.9
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 78.94,
+        "to": 110.45
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 110.45,
+        "to": 112.98
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 112.98,
+        "to": 119.22
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 119.22,
+        "to": 129.75
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 129.75,
+        "to": 132.81
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 134.35,
+        "to": 168.8
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 170.84,
+        "to": 173.24
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 174.29,
+        "to": 208.74
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 208.74,
+        "to": 211.28
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 211.28,
+        "to": 217.63
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 217.63,
+        "to": 228.15
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 228.15,
+        "to": 230.79
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 232.33,
+        "to": 270.55
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 272.59,
+        "to": 274.99
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 276.04,
+        "to": 314.25
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 314.25,
+        "to": 316.79
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 316.79,
+        "to": 323.27
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 323.27,
+        "to": 333.79
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 333.79,
+        "to": 336.3
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 337.84,
+        "to": 375.98
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 378.02,
+        "to": 380.42
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 381.47,
+        "to": 419.6
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 419.6,
+        "to": 422.14
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 422.14,
+        "to": 428.54
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 428.54,
+        "to": 439.07
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 439.07,
+        "to": 442.12
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 443.66,
+        "to": 478.93
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 480.97,
+        "to": 483.37
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 484.41,
+        "to": 519.68
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 519.68,
+        "to": 522.21
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 522.21,
+        "to": 528.48
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 528.48,
+        "to": 539.01
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 539.01,
+        "to": 541.05
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 542.59,
+        "to": 580.41
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 582.45,
+        "to": 584.86
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 585.9,
+        "to": 623.73
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 623.73,
+        "to": 626.26
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 633.47,
+        "to": 647.55
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 649.59,
+        "to": 656.01
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 656.01,
+        "to": 716.04
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 716.04,
+        "to": 723.04
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 724.58,
+        "to": 892.84
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 892.84,
+        "to": 901.88
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 909.04,
+        "to": 921.23
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 923.27,
+        "to": 929.78
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 929.78,
+        "to": 989.81
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 989.81,
+        "to": 995.5
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 997.04,
+        "to": 1182.9
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1182.9,
+        "to": 1191.94
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1199.1,
+        "to": 1211.3
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1213.34,
+        "to": 1219.79
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1219.79,
+        "to": 1279.82
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1279.82,
+        "to": 1297.29
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1302.88,
+        "to": 1610.42
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1614.47,
+        "to": 1617.5
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1617.5,
+        "to": 1620.38
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1625.97,
+        "to": 1933.51
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1937.55,
+        "to": 1946.59
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1953.72,
+        "to": 1959.6
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1959.6,
+        "to": 2259.64
+      }
+    ]
+  }
+}

@@ -9,13 +9,14 @@ import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
   ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
   ReadingLayout, ReadingText, SpeakingTask, SpeakingSheet, SheetPeek, SpeakingPrep, NotesPeek, TrueFalseItem, WritingTask, type ShellSection,
-  AdBoard, ArticleText, HeadlineMatch, WordPoolGap,
+  AdBoard, ArticleText, HeadlineMatch, WordPoolGap, PhotoNumberGrid, TickGrid, MatchTask, MarkBoxes, TopicCard, SceneChoice, PlanningSheet,
 } from "@/components/exam"
 import type { TrueFalse } from "@/lib/exam/types"
 import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
 import {
   DURCHSAGE, APOTHEKE, FORM, FORM_SOLUTION, GAP, GAP_SOLUTION, NOTE, HOEREN_CHOICE, HOEREN_FEEDBACK, HOEREN_TEILE, HOEREN_TF, HOEREN_TF_SOLUTION, MATCH, MATCH_SOLUTION,
   ADS_BOARD, ADS_BOARD_SOLUTION, ARTICLE, HEADLINES, HEADLINES_SOLUTION, POOL_GAP, POOL_GAP_SOLUTION,
+  OESD_PHOTOS, OESD_PHOTOS_SOLUTION, OESD_GRID, OESD_MULTI, OESD_MULTI_SOLUTION, OESD_MARKS, OESD_MARKS_SOLUTION, OESD_PICTOS, OESD_HEADINGS, OESD_FORM, OESD_TOPICS, OESD_SCENES, OESD_SHEET,
   CARD_TURNS, PEOPLE, PICTO_PICTURE, PICTURE, TRACK, READING, READING_CHOICE, READING_TF, SPEAKING, SPEAKING_CARDS, TURNS, WRITING, WRITING_SINGLE,
 } from "@/lib/exam/samples"
 
@@ -336,6 +337,46 @@ export function ExamGallery() {
           <Panel><GapItem data={NOTE} value={{ 4: "10:30" }} review={{ 4: "11:30" }} marks={{ 4: false }} /></Panel>
         </ExamStage>
       </Block>
+
+      <OesdBlock />
     </div>
+  )
+}
+
+/** ÖSD Zertifikat A1 / A2 (components/exam/oesd.tsx): every new answer format, open and graded. */
+function OesdBlock() {
+  const [photos, setPhotos] = useState<Record<number, string>>({ 2: "E" })
+  const [grid, setGrid] = useState<Record<number, string>>({})
+  const [multi, setMulti] = useState<Record<number, string>>({})
+  const [marks, setMarks] = useState<Record<number, string>>({})
+  const [pictos, setPictos] = useState<Record<number, string>>({})
+  const [headings, setHeadings] = useState<Record<number, string>>({})
+  const [form, setForm] = useState<Record<number, string>>({ 0: "Haddad" })
+  const [topics, setTopics] = useState<string[]>(["Familie?"])
+  const [scene, setScene] = useState<string>()
+  const [role, setRole] = useState<string>()
+  const up = (set: React.Dispatch<React.SetStateAction<Record<number, string>>>) => (n: number, v: string) => set((m) => ({ ...m, [n]: v }))
+  return (
+    <Block title="ÖSD Zertifikat A1 / A2" note="A1 Hören 1: sechs Fotos, unter jedem ein Feld „Text Nr.“ (antippen, Nummer wählen). Hören 3: Raster, eine Antwort pro Zeile (A1) oder mehrere (A2, 2/1/0 Punkte pro Zeile). A2 Hören 1: 4 von 8 Kästchen, mehr Kreuze kosten Punkte. Lesen: Schilder als Piktogramm, Überschriften mit Herkunft und kleiner Tabelle. Formular mit Kästchen (2 von 4). Sprechen: Themenkarte, Fotowahl mit Rolle, Angabenblatt zum Planen.">
+      <ExamStage scene="hoeren" framed className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:grid-cols-2">
+        <Panel><PhotoNumberGrid data={OESD_PHOTOS} value={photos} onChange={up(setPhotos)} /></Panel>
+        <Panel><PhotoNumberGrid data={OESD_PHOTOS} value={{ 1: "B", 2: "A", 3: "C" }} review={OESD_PHOTOS_SOLUTION} /></Panel>
+        <Panel><TickGrid data={OESD_GRID} value={grid} onChange={up(setGrid)} /></Panel>
+        <Panel><TickGrid data={OESD_MULTI} value={multi} onChange={up(setMulti)} /></Panel>
+        <Panel><MarkBoxes data={OESD_MARKS} value={marks} onChange={up(setMarks)} /></Panel>
+        <Panel><MarkBoxes data={OESD_MARKS} value={{ 1: "b,c,e,h", 2: "b,c,e,h", 3: "b,c,e,h", 4: "b,c,e,h" }} review={OESD_MARKS_SOLUTION} /></Panel>
+        <Panel className="lg:col-span-2"><TickGrid data={OESD_MULTI} value={{ 10: "b,e", 11: "a,b", 12: "c" }} review={OESD_MULTI_SOLUTION} /></Panel>
+      </ExamStage>
+      <ExamStage scene="lesen" framed className="grid grid-cols-[minmax(0,1fr)] gap-3">
+        <Panel><MatchTask skill="lesen" data={OESD_PICTOS} noMatch={false} value={pictos} onChange={up(setPictos)} /></Panel>
+        <Panel><HeadlineMatch data={OESD_HEADINGS} value={headings} onChange={up(setHeadings)} /></Panel>
+        <Panel><GapItem data={OESD_FORM} value={form} onChange={up(setForm)} /></Panel>
+      </ExamStage>
+      <ExamStage scene="sprechen" framed className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:grid-cols-2">
+        <Panel><TopicCard data={OESD_TOPICS} picked={topics} onPick={setTopics} /></Panel>
+        <Panel><SceneChoice scenes={OESD_SCENES} value={scene} onChange={setScene} role={role} onRole={setRole} /></Panel>
+        <Panel className="lg:col-span-2"><PlanningSheet sheet={OESD_SHEET} /></Panel>
+      </ExamStage>
+    </Block>
   )
 }

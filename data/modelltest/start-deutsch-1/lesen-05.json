@@ -1,0 +1,685 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-05-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Kurze Notiz an einen Kollegen"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Petra ist heute erst später im Büro."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die Besucher aus Belgien kommen um 11 Uhr."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Holger soll Getränke besorgen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Petra",
+          "source": "Notiz",
+          "paragraphs": [
+            "Hallo Holger,",
+            "ich bin heute Morgen noch bei einem Kunden. Ich komme erst um halb zehn ins Büro. Die Gäste aus Belgien kommen nicht um 11 Uhr, sie kommen schon um 10 Uhr. Kannst du bitte den Konferenzraum vorbereiten? Wir haben kein Wasser und keinen Kaffee mehr. Bitte kauf beides im Supermarkt.",
+            "Danke!",
+            "Petra"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Die Gäste kommen nicht um 11 Uhr. Sie kommen schon um 10 Uhr.",
+            "evidence": {
+              "text": "ich bin heute Morgen noch bei einem Kunden. Ich komme erst um halb zehn ins Büro. Die Gäste aus Belgien kommen nicht um 11 Uhr, sie kommen schon um 10 Uhr. Kannst du bitte den Konferenzraum vorbereiten? Wir haben kein Wasser und keinen Kaffee mehr. Bitte kauf beides im Supermarkt.",
+              "hit": "sie kommen schon um 10 Uhr"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Im Büro gibt es kein Wasser und keinen Kaffee mehr. Holger soll beides im Supermarkt kaufen.",
+            "evidence": {
+              "text": "ich bin heute Morgen noch bei einem Kunden. Ich komme erst um halb zehn ins Büro. Die Gäste aus Belgien kommen nicht um 11 Uhr, sie kommen schon um 10 Uhr. Kannst du bitte den Konferenzraum vorbereiten? Wir haben kein Wasser und keinen Kaffee mehr. Bitte kauf beides im Supermarkt.",
+              "hit": "Bitte kauf beides im Supermarkt."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Kurze E-Mail an eine Nachbarin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Fatma muss Handschuhe mitbringen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Am Samstagvormittag treffen sich alle am Gemeindehaus."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Fatma kann ihre Kinder mitnehmen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Sabrina",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Fatma,",
+            "am Samstag gibt es im Rosenpark eine Aufräumaktion. Wir sammeln dort Müll, zum Beispiel Flaschen und Papier. Wir treffen uns um 10 Uhr vor dem Gemeindehaus. Handschuhe und Müllsäcke bekommen wir von der Stadt. Bring bitte nur etwas zu trinken mit. Deine Kinder können auch gern mitkommen und helfen. Danach koche ich bei mir eine Suppe für alle. Kommst du mit?",
+            "Viele Grüße",
+            "Sabrina"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Die Handschuhe bekommen alle von der Stadt. Fatma soll nur etwas zu trinken mitbringen.",
+            "evidence": {
+              "text": "am Samstag gibt es im Rosenpark eine Aufräumaktion. Wir sammeln dort Müll, zum Beispiel Flaschen und Papier. Wir treffen uns um 10 Uhr vor dem Gemeindehaus. Handschuhe und Müllsäcke bekommen wir von der Stadt. Bring bitte nur etwas zu trinken mit. Deine Kinder können auch gern mitkommen und helfen. Danach koche ich bei mir eine Suppe für alle. Kommst du mit?",
+              "hit": "Handschuhe und Müllsäcke bekommen wir von der Stadt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "Das Treffen ist am Samstag um 10 Uhr, also am Vormittag. Treffpunkt ist vor dem Gemeindehaus.",
+            "evidence": {
+              "text": "am Samstag gibt es im Rosenpark eine Aufräumaktion. Wir sammeln dort Müll, zum Beispiel Flaschen und Papier. Wir treffen uns um 10 Uhr vor dem Gemeindehaus. Handschuhe und Müllsäcke bekommen wir von der Stadt. Bring bitte nur etwas zu trinken mit. Deine Kinder können auch gern mitkommen und helfen. Danach koche ich bei mir eine Suppe für alle. Kommst du mit?",
+              "hit": "Wir treffen uns um 10 Uhr vor dem Gemeindehaus."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Sabrina schreibt: Deine Kinder können auch mitkommen und helfen. Fatma darf ihre Kinder also mitbringen.",
+            "evidence": {
+              "text": "am Samstag gibt es im Rosenpark eine Aufräumaktion. Wir sammeln dort Müll, zum Beispiel Flaschen und Papier. Wir treffen uns um 10 Uhr vor dem Gemeindehaus. Handschuhe und Müllsäcke bekommen wir von der Stadt. Bring bitte nur etwas zu trinken mit. Deine Kinder können auch gern mitkommen und helfen. Danach koche ich bei mir eine Suppe für alle. Kommst du mit?",
+              "hit": "Deine Kinder können auch gern mitkommen und helfen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "a"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Das Gras in Ihrem Garten ist zu lang. Sie möchten das nicht selbst machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.gartenhilfe-sommer.de · Wir mähen Ihren Rasen und schneiden Ihre Hecke. Kleine Gärten ab 25 €. Tel. 0172 4419 306"
+                },
+                {
+                  "key": "b",
+                  "label": "www.baumarkt-kessler.de · Rasenmäher diese Woche im Angebot: ab 89 €. Kommen Sie in unseren Markt!"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihr Teppich ist schmutzig. Jemand soll ihn für Sie sauber machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.teppichhaus-weber.de · Neue Teppiche aus Wolle, in vielen Größen und Farben. Jetzt 30 % billiger."
+                },
+                {
+                  "key": "b",
+                  "label": "www.reinigung-klar.de · Wir waschen Teppiche, Vorhänge und Decken. Wir holen alles bei Ihnen ab und bringen es zurück."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "In b wäscht eine Firma Teppiche und holt sie sogar ab. In a kannst du nur neue Teppiche kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie möchten eine Nähmaschine kaufen. Sie darf schon alt sein, aber sie soll billig sein.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.kleinanzeigen-suedviertel.de · Verkaufe Nähmaschine, fünf Jahre alt, funktioniert gut. Nur 45 €. Tel. 0157 3302 815"
+                },
+                {
+                  "key": "b",
+                  "label": "www.naehstube-faden.de · Nähkurse für Anfänger: Wir zeigen Ihnen, wie Sie mit der Maschine nähen. Samstags 10–13 Uhr."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "In a verkauft jemand eine gebrauchte Nähmaschine für nur 45 €. In b gibt es nur einen Nähkurs."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihr Klavier klingt nicht mehr gut. Ein Fachmann soll zu Ihnen nach Hause kommen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.klavierstimmer-voigt.de · Ich stimme Ihr Klavier bei Ihnen zu Hause. Termine auch am Samstag. Tel. 0511 863 247"
+                },
+                {
+                  "key": "b",
+                  "label": "www.musikschule-taktvoll.de · Klavierunterricht für Kinder und Erwachsene. Die erste Stunde ist kostenlos."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "In a kommt ein Klavierstimmer zu dir nach Hause und macht das Klavier wieder gut. In b lernt man nur Klavier spielen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie arbeiten jeden Tag bis 17 Uhr. Danach möchten Sie lernen, Vasen und Schalen aus Ton zu machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.toepferei-am-markt.de · Töpferkurs für Anfänger: montags und mittwochs von 10 bis 12 Uhr. Material inklusive."
+                },
+                {
+                  "key": "b",
+                  "label": "www.vhs-wendelstadt.de · Töpfern für Anfänger: donnerstags 19–21 Uhr, acht Abende, 60 €. Anmeldung online."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Der Kurs in b ist am Abend um 19 Uhr, nach der Arbeit. Der Kurs in a ist am Vormittag, dann arbeitest du noch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ihre alten Hosen und Jacken passen nicht mehr. Andere Leute sollen sie kostenlos bekommen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.mode-outlet-24.de · Jacken und Hosen bis 50 % billiger. Nur diese Woche, online und im Laden!"
+                },
+                {
+                  "key": "b",
+                  "label": "www.kleiderkammer-hilfe.de · Wir nehmen saubere Kleidung und Schuhe für Familien in Not. Abgabe: Montag bis Freitag 9–16 Uhr."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Bei der Kleiderkammer in b kannst du alte Kleidung abgeben, sie ist für andere Familien. In a kann man nur neue Kleidung kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Schild am Spielplatz"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Kinder können hier um 21 Uhr noch spielen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Spielplatz",
+          "source": "Schild",
+          "paragraphs": [
+            "Spielplatz Am Mühlbach",
+            "Spielen erlaubt: täglich 8–20 Uhr",
+            "Bitte keinen Müll liegen lassen!"
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Schild im Müllraum"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Leere Flaschen können Sie in diesen Raum bringen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür vom Müllraum",
+          "source": "Schild",
+          "paragraphs": [
+            "Müllraum",
+            "Bitte kein Glas hier!",
+            "Glascontainer: an der Ecke Ahornstraße"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "falsch",
+            "explanation": "Glas darf nicht in den Müllraum. Die Flaschen musst du zum Container an der Ecke bringen.",
+            "evidence": {
+              "text": "Müllraum Bitte kein Glas hier! Glascontainer: an der Ecke Ahornstraße",
+              "hit": "Bitte kein Glas hier!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Schild in der Konzerthalle"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Im Konzert sollen Sie keine Bilder mit dem Handy machen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Eingang von der Konzerthalle",
+          "source": "Schild",
+          "paragraphs": [
+            "Während des Konzerts:",
+            "Fotografieren und Filmen verboten!",
+            "Vielen Dank."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "richtig",
+            "explanation": "Im Konzert sind Fotos und Videos verboten. Du darfst also keine Bilder machen.",
+            "evidence": {
+              "text": "Während des Konzerts: Fotografieren und Filmen verboten! Vielen Dank.",
+              "hit": "Fotografieren und Filmen verboten!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Schild in der Waschküche"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Ist Ihre Wäsche fertig, sollen Sie sie von der Leine holen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "In der Waschküche",
+          "source": "Schild",
+          "paragraphs": [
+            "Bitte trockene Wäsche abnehmen!",
+            "Andere Hausbewohner möchten auch waschen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "richtig",
+            "explanation": "Auf dem Schild steht: trockene Wäsche abnehmen. Die anderen Leute im Haus brauchen auch Platz.",
+            "evidence": {
+              "text": "Bitte trockene Wäsche abnehmen! Andere Hausbewohner möchten auch waschen.",
+              "hit": "Bitte trockene Wäsche abnehmen!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Schild an der Kasse"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Sie kaufen nur einen Kaffee für 3 €. Sie können mit Karte bezahlen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Kasse vom Imbiss",
+          "source": "Schild",
+          "paragraphs": [
+            "Imbiss Zur Ecke",
+            "Kartenzahlung erst ab 10 €",
+            "Danke für Ihr Verständnis!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "falsch",
+            "explanation": "Mit Karte bezahlen geht erst ab 10 €. Einen Kaffee für 3 € musst du bar bezahlen.",
+            "evidence": {
+              "text": "Imbiss Zur Ecke Kartenzahlung erst ab 10 € Danke für Ihr Verständnis!",
+              "hit": "Kartenzahlung erst ab 10 €"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-05-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.323Z",
+        "textType": "Schild an der Tür"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Im März ist das Eiscafé wieder offen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür vom Eiscafé",
+          "source": "Schild",
+          "paragraphs": [
+            "Eiscafé Dolomiti",
+            "Winterpause: 1. November bis 28. Februar",
+            "Ab März sind wir wieder für Sie da!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "richtig",
+            "explanation": "Die Pause geht nur bis zum 28. Februar. Ab März kannst du hier wieder Eis kaufen.",
+            "evidence": {
+              "text": "Eiscafé Dolomiti Winterpause: 1. November bis 28. Februar Ab März sind wir wieder für Sie da!",
+              "hit": "Ab März sind wir wieder für Sie da!"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

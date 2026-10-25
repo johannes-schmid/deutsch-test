@@ -4,10 +4,29 @@
 // Every Teil before the last drafted one is listed with its real itemsReal, so item numbers match the real exam.
 
 import type { ExamSpec } from "../exam-blueprints"
+import type { FullSpec, PartSpec } from "../blueprint"
+
+const U = "research/goethe-oesd-b1.md §8 (Goethe Modellsatz + Übungssatz = ÖSD Band 1 sets, official audio measured 2026-10-24)"
+
+/** The official Teile, shared with ÖSD Zertifikat B1 (one exam, one item bank). */
+export const FULL: Record<string, FullSpec> = {
+  "lesen-1": { items: 6, first: 1, blocks: 1, itemsPerBlock: 6, length: { min: 300, max: 380, unit: "words" }, example: true, source: U },
+  "lesen-2": { items: 6, first: 7, blocks: 2, itemsPerBlock: 3, length: { min: 175, max: 235, unit: "words" }, example: true, source: U },
+  "lesen-3": { items: 7, first: 13, blocks: 1, itemsPerBlock: 7, length: { min: 270, max: 390, unit: "words" }, example: true, options: 10, source: U },
+  "lesen-4": { items: 7, first: 20, blocks: 1, itemsPerBlock: 7, length: { min: 400, max: 540, unit: "words" }, example: true, source: U },
+  "lesen-5": { items: 4, first: 27, blocks: 1, itemsPerBlock: 4, length: { min: 215, max: 265, unit: "words" }, example: false, source: U },
+  "hoeren-1": { items: 10, first: 1, blocks: 5, itemsPerBlock: 2, length: { min: 24, max: 44, unit: "seconds" }, example: true, readingSeconds: 10, pace: { min: 105, max: 170 }, pauses: { before: 10.5, after: 2.5 }, sound: "Anrufbeantworter-Klick/Piepton, Radio-Jingle, Bahnhofsgong", source: U },
+  "hoeren-2": { items: 5, first: 11, blocks: 1, itemsPerBlock: 5, length: { min: 150, max: 205, unit: "seconds" }, example: false, readingSeconds: 60, pace: { min: 120, max: 160 }, pauses: { before: 60, after: 9 }, source: U },
+  "hoeren-3": { items: 7, first: 16, blocks: 1, itemsPerBlock: 7, length: { min: 165, max: 210, unit: "seconds" }, example: false, readingSeconds: 60, pace: { min: 135, max: 165 }, pauses: { before: 60, after: 9 }, source: U },
+  "hoeren-4": { items: 8, first: 23, blocks: 1, itemsPerBlock: 8, length: { min: 270, max: 330, unit: "seconds" }, example: true, readingSeconds: 60, pace: { min: 140, max: 170 }, pauses: { before: 60, after: 9 }, sound: "Musik vor und nach jedem Durchgang", source: U },
+}
+
+/** Adds the official format to a part list (Goethe and ÖSD use the same Teile). */
+export const withFull = (parts: PartSpec[]) => parts.map((p) => ({ ...p, full: FULL[`${p.skill}-${p.teil}`] }))
 
 export const spec: ExamSpec = {
   context: { name: "Goethe-Zertifikat B1", level: "B1", setting: "Alltag, Arbeit und Ausbildung in Deutschland", copyright: "Goethe-Institut, ÖSD" },
-  parts: [
+  parts: withFull([
     {
       skill: "lesen", teil: 1, answer: "rf", itemsReal: 6, itemsPerBlock: 6,
       textTypes: ["Persönliche E-Mail an eine Freundin oder einen Freund", "Blogbeitrag über ein Erlebnis"],
@@ -69,7 +88,15 @@ export const spec: ExamSpec = {
       hint: `Zwei Personen (eine Frau, ein Mann, mit Vornamen, sagen du zueinander) unterhalten sich an einem öffentlichen Ort über ihren Alltag: Pläne, Erlebnisse, ein Problem. Natürlich gesprochen, mit Füllwörtern und Nachfragen, abwechselnd, 6–10 Beiträge. role: der Vorname. Die Aussagen in der Reihenfolge des Gesprächs, beide über eine der zwei Personen (z. B. "Lena hat …").`,
       todo: "TODO(hannes): shortened clip (~150 words, ~55 s) for the 5-minute taster; the real Teil 3 dialogue is ~480 words (~3.5 min) with 7 items.",
     },
-  ],
+    {
+      // Full Modelltest only (research/goethe-oesd-b1.md §3.2, §8.3); too long for the taster.
+      skill: "hoeren", teil: 4, answer: "abc", itemsReal: 8, itemsPerBlock: 8,
+      textTypes: ["Diskussion im Radio: eine Moderatorin oder ein Moderator und zwei Gäste mit verschiedenen Meinungen"],
+      length: { min: 270, max: 330, unit: "seconds" }, voices: { min: 3, max: 3 }, plays: 2,
+      instruction: "Sie hören eine Diskussion. Sie hören die Diskussion zweimal. Wer sagt was? Wählen Sie bei jeder Aufgabe a, b oder c.",
+      todo: "TODO(hannes): not in the taster (two plays of ~5 min).",
+    },
+  ]),
   kurztest: {
     lesen: [
       { teil: 3, blocks: 1, items: 3 },

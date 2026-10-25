@@ -1,0 +1,250 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-05-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.642Z",
+        "textType": "Formular ausfüllen: Anmeldung in einer Zahnarztpraxis"
+      },
+      "exampleAnswers": [
+        "Benali"
+      ],
+      "display": {
+        "instruction": "Situation: Ihre Freundin Samira ist neu in einer Zahnarztpraxis. Sie füllen für Samira das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Grund für den Termin“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Zahnarztpraxis · Neue Patientin\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nLetzter Besuch (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTermin: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "vormittags",
+                    "nachmittags"
+                  ]
+                },
+                "\nGrund für den Termin: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "Kontrolle",
+                    "Zahnschmerzen",
+                    "Zähne reinigen",
+                    "Zahnspange"
+                  ],
+                  "pick": 2
+                },
+                "\nAngst vor dem Zahnarzt: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "ja",
+                    "nein"
+                  ]
+                },
+                "\nErinnerung: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "per SMS",
+                    "per Brief"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Samira",
+            "explanation": "Der Vorname ist Samira. Benali ist der Familienname, und der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "Samira Benali"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "11.8.1996",
+            "accept": [
+              "11.08.1996",
+              "11. August 1996",
+              "11.08.96",
+              "11.8.96",
+              "1996-08-11"
+            ],
+            "explanation": "Samira ist am 11. August 1996 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "am 11. August 1996 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Schwechat",
+            "explanation": "Samira wohnt jetzt in Schwechat.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "wohnt neu in Schwechat"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0676 492 18 30",
+            "accept": [
+              "0676 4921830",
+              "06764921830",
+              "0676/4921830",
+              "0676 / 492 18 30"
+            ],
+            "explanation": "Das ist Samiras Handynummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "0676 492 18 30"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "September",
+            "accept": [
+              "im September",
+              "Sept."
+            ],
+            "explanation": "Samira war zuletzt im September beim Zahnarzt. August ist ihr Geburtsmonat, nicht der letzte Besuch.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "Ihr letzter Besuch war im September."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "nachmittags",
+            "explanation": "Am Vormittag arbeitet Samira. Darum kann sie nur nachmittags kommen.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "Sie arbeitet am Vormittag."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "Kontrolle,Zähne reinigen",
+            "explanation": "Samira möchte eine Kontrolle und eine Zahnreinigung. Von Zahnschmerzen steht nichts im Text.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "Sie möchte eine Kontrolle und eine Zahnreinigung."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "ja",
+            "explanation": "Samira hat ein bisschen Angst. Darum ist „ja“ richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "Sie hat ein bisschen Angst."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "per SMS",
+            "explanation": "Samira möchte die Erinnerung per SMS, nicht per Brief.",
+            "evidence": {
+              "text": "Ihre Freundin Samira Benali wohnt neu in Schwechat und braucht einen Zahnarzt. Sie möchte eine Kontrolle und eine Zahnreinigung. Sie arbeitet am Vormittag. Sie hat ein bisschen Angst. Eine Erinnerung möchte sie per SMS. Ihr letzter Besuch war im September. Samira ist am 11. August 1996 geboren. Ihre Handynummer ist 0676 492 18 30.",
+              "hit": "Eine Erinnerung möchte sie per SMS."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-05-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.642Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihre Freundin Nina hat Ihnen ein E-Mail geschrieben. Antworten Sie Nina. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Nina",
+            "situation": "Ihre Freundin Nina aus Glarus schreibt Ihnen: „Hallo! Am Sonntag gehe ich mit meinem Bruder in den Bergen schlitteln. Es hat viel Schnee, das wird super. Komm doch mit! Hast du einen Schlitten? Um wie viel Uhr kannst du kommen? Wir fahren mit dem Zug zum Berg. Isst du danach mit uns in der Hütte? Ich freue mich! Liebe Grüsse, Nina“",
+            "points": [
+              "Hast du einen Schlitten?",
+              "Um wie viel Uhr kannst du kommen?",
+              "Isst du danach mit uns in der Hütte?"
+            ],
+            "opener": "Liebe Nina,\ndanke für dein E-Mail. Ich komme gern mit!"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Nina, danke für dein E-Mail. Ich komme gern mit! Nein, ich habe keinen Schlitten, aber ich kaufe einen am Samstag. Ich kann um neun Uhr kommen. Ja, ich esse gern mit euch in der Hütte. Bis Sonntag! Liebe Grüße, Marek"
+          }
+        ]
+      }
+    }
+  ]
+}

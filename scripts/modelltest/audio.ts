@@ -33,15 +33,19 @@ const EXAM = arg("exam") ?? "dtz"
 const SKILL = arg("skill") ?? "hoeren"
 const FORCE = process.argv.includes("--force")
 const NN = String(SET).padStart(2, "0")
-if (!["hoeren", "sprechen"].includes(SKILL) || !(SET >= 1 && SET <= 10) || !["dtz", "telc-b1", "start-deutsch-1", "telc-a2"].includes(EXAM)) throw new Error("Usage: --set 1..10 [--skill hoeren|sprechen] [--exam dtz|telc-b1|start-deutsch-1|telc-a2]")
+const EXAMS = ["dtz", "telc-b1", "start-deutsch-1", "telc-a2", "goethe-a2", "goethe-b1", "oesd-b1", "oesd-a1", "oesd-a2"]
+if (!["hoeren", "sprechen"].includes(SKILL) || !(SET >= 1 && SET <= 10) || !EXAMS.includes(EXAM)) throw new Error(`Usage: --set 1..10 [--skill hoeren|sprechen] [--exam ${EXAMS.join("|")}]`)
 const FILE = `data/modelltest/${EXAM}/${SKILL}-${NN}.json`
 const OUT = `.unit-cache/audio/${EXAM}/${SKILL}-${NN}`
 const SRC = `${EXAM}/${SKILL}-${NN}`
 const COMMON = ".unit-cache/audio/common"
-const NARRATOR = "man_mark"
+/** ÖSD gets an Austrian narrator (Hannes, 2026-10-24: Austrian voices for ÖSD). */
+const NARRATOR = EXAM.startsWith("oesd-") ? "woman_seda_at" : "man_mark"
 /** Official speaking rate per Teil, words per minute (measured on the g.a.s.t. audio). Narrator ≈ 125. */
 const PACE: Record<number, number> = { 0: 125, 1: 125, 2: 130, 3: 150, 4: 160 }
 const SAMPLE = ["-ar", "44100", "-ac", "1"]
+// Concat joins re-frame the decoded audio: a plain copy into libmp3lame can fail with "inadequate AVFrame plane padding".
+const JOIN = ["-af", "aresample=44100", ...SAMPLE]
 let characters = 0
 
 const words = (s: string) => s.replace(/\[[^\]]*\]/g, "").split(/\s+/).filter(Boolean).length
@@ -79,23 +83,42 @@ async function speak(file: string, voice: string, text: string, pace: number) {
   return file
 }
 
-/** Two or more voices in one natural exchange (text-to-dialogue), then tempo-corrected. */
+/** Two or more voices in one natural exchange (text-to-dialogue), then tempo-corrected. Long discussions (Goethe B1
+ * Hören Teil 4, ~800 words) go out in chunks of whole turns and are joined with a natural gap. */
 async function converse(file: string, turns: { voice: string; text: string }[], pace: number) {
   if (!FORCE && fs.existsSync(file)) return file
-  const res = await post("https://api.elevenlabs.io/v1/text-to-dialogue/with-timestamps?output_format=mp3_44100_128", {
-    model_id: MODEL, language_code: "de", inputs: turns.map((t) => ({ voice_id: voiceId(t.voice), text: t.text })),
-  })
-  const d = (await res.json()) as { audio_base64: string; voice_segments: { start_time_seconds: number; end_time_seconds: number }[] }
-  characters += turns.reduce((n, t) => n + t.text.length, 0)
+  const chunks: (typeof turns)[] = [[]]
+  for (const t of turns) {
+    if (chunks.at(-1)!.length && chunks.at(-1)!.reduce((n, x) => n + x.text.length, 0) + t.text.length > 2400) chunks.push([])
+    chunks.at(-1)!.push(t)
+  }
+  const raws: string[] = []
+  let span = 0
+  for (const [i, chunk] of chunks.entries()) {
+    const res = await post("https://api.elevenlabs.io/v1/text-to-dialogue/with-timestamps?output_format=mp3_44100_128", {
+      model_id: MODEL, language_code: "de", inputs: chunk.map((t) => ({ voice_id: voiceId(t.voice), text: t.text })),
+    })
+    const d = (await res.json()) as { audio_base64: string; voice_segments: { start_time_seconds: number; end_time_seconds: number }[] }
+    characters += chunk.reduce((n, t) => n + t.text.length, 0)
+    const raw = `${file}.raw${i}.mp3`
+    fs.writeFileSync(raw, Buffer.from(d.audio_base64, "base64"))
+    raws.push(raw)
+    span += Math.max(...d.voice_segments.map((s) => s.end_time_seconds)) - Math.min(...d.voice_segments.map((s) => s.start_time_seconds))
+  }
   const raw = `${file}.raw.mp3`
-  fs.writeFileSync(raw, Buffer.from(d.audio_base64, "base64"))
-  const span = Math.max(...d.voice_segments.map((s) => s.end_time_seconds)) - Math.min(...d.voice_segments.map((s) => s.start_time_seconds))
+  if (raws.length === 1) fs.renameSync(raws[0], raw)
+  else {
+    const list = `${file}.raw.txt`
+    fs.writeFileSync(list, raws.flatMap((f, i) => [`file '${path.resolve(f)}'`, ...(i < raws.length - 1 ? [`file '${path.resolve(silence(0.6))}'`] : [])]).join("\n"))
+    ff("-f", "concat", "-safe", "0", "-i", list, ...JOIN, raw)
+    for (const f of [...raws, list]) fs.rmSync(f)
+  }
   retime(raw, file, (60 * turns.reduce((n, t) => n + words(t.text), 0)) / span, pace)
   return file
 }
 
 /** telc speaks faster than the voices do by default (~185 words/min measured), so telc may speed up (pitch kept). */
-const MAX_SPEEDUP: number = { "telc-b1": 1.35, "telc-a2": 1.25, "start-deutsch-1": 1.15 }[EXAM] ?? 1
+const MAX_SPEEDUP: number = { "telc-b1": 1.35, "telc-a2": 1.25, "start-deutsch-1": 1.15, "goethe-a2": 1.2, "goethe-b1": 1.2, "oesd-b1": 1.2, "oesd-a1": 1.2, "oesd-a2": 1.3 }[EXAM] ?? 1
 
 /** Brings speech to the target rate (DTZ: only slows down; telc: up to ×1.35 faster), trims silence, levels loudness. */
 function retime(src: string, dst: string, wpm: number, pace: number) {
@@ -122,6 +145,19 @@ const SFX: Record<string, { prompt: string; sec: number; loop?: boolean }> = {
   trainchime: { prompt: "Short soft chime before an announcement inside a German regional train", sec: 1.5 },
   traininside: { prompt: "Inside a moving regional train, steady rolling noise, quiet, no voices", sec: 20, loop: true },
   number: { prompt: "Very short soft neutral two-note chime for an exam audio, clean", sec: 1 },
+  ring: { prompt: "German landline telephone ringing twice, then picked up, clean, no voice", sec: 3.5 },
+  pool: { prompt: "Indoor swimming pool hall ambience, distant splashing and echo, no clear voices", sec: 20, loop: true },
+  boatchime: { prompt: "Short ship public address chime on a lake passenger boat", sec: 2 },
+  boat: { prompt: "On the deck of a lake passenger boat, low engine hum, water, wind, no voices", sec: 20, loop: true },
+  music: { prompt: "Short calm instrumental radio talk show theme, 4 seconds, no voice", sec: 4 },
+  // ÖSD (research/oesd-a1.md §9.2): a xylophone gong between steps, short cues before the A1 dialogues, street noise.
+  xylo: { prompt: "Soft xylophone signal, three ascending notes, exam audio separator, clean, gentle decay", sec: 4 },
+  market: { prompt: "Short outdoor farmers market ambience, murmuring people, a paper bag rustling, no clear words", sec: 3 },
+  lobby: { prompt: "Short cinema lobby ambience, popcorn machine, distant murmur, no clear words", sec: 3 },
+  roller: { prompt: "Paint roller rolling on a wall, close, a few strokes, indoor empty room", sec: 3 },
+  river: { prompt: "River flowing under a bridge, a few birds, light wind, outdoors", sec: 3 },
+  street: { prompt: "Quiet pedestrian street ambience in a small Austrian town, distant footsteps, no clear voices", sec: 20, loop: true },
+  playback: { prompt: "Mobile phone voicemail playback starting: a short click and a soft electronic tone", sec: 1.5 },
 }
 
 async function sfx(key: string) {
@@ -138,8 +174,8 @@ async function sfx(key: string) {
 
 /** Puts sound design around a voice clip. Ambience stays low and ducks under the voice, so the voice always leads. */
 async function design(voice: string, sound: SoundKey | undefined, dst: string) {
-  const before: Record<SoundKey, string | null> = { beep: "beep", gong: "gong", station: "gong", store: "storechime", radio: "jingle", train: "trainchime" }
-  const bed: Partial<Record<SoundKey, string>> = { station: "station", store: "store", train: "traininside" }
+  const before: Record<SoundKey, string | null> = { beep: "beep", gong: "gong", station: "gong", store: "storechime", radio: "jingle", train: "trainchime", phone: "ring", pool: "storechime", boat: "boatchime", market: "market", lobby: "lobby", roller: "roller", river: "river", street: null, playback: "playback" }
+  const bed: Partial<Record<SoundKey, string>> = { station: "station", store: "store", train: "traininside", pool: "pool", boat: "boat", street: "street" }
   if (!sound) return fs.copyFileSync(voice, dst)
   const lead = before[sound] ? await sfx(before[sound]!) : null
   const amb = bed[sound] ? await sfx(bed[sound]!) : null
@@ -160,7 +196,8 @@ async function design(voice: string, sound: SoundKey | undefined, dst: string) {
   ff(...inputs, "-filter_complex", parts.join(";"), "-map", "[out]", ...SAMPLE, dst)
 }
 
-const narr = async (text: string) => speak(path.join(COMMON, `narrator-${crypto.createHash("sha1").update(text).digest("hex").slice(0, 10)}.mp3`), NARRATOR, text, PACE[0])
+// Mark's files keep their old names; other narrators get the voice in the hash so a cached line never switches voice.
+const narr = async (text: string) => speak(path.join(COMMON, `narrator-${crypto.createHash("sha1").update(NARRATOR === "man_mark" ? text : `${NARRATOR}:${text}`).digest("hex").slice(0, 10)}.mp3`), NARRATOR, text, PACE[0])
 const numberLine = (ns: number[]) => `Nummer ${ns.length === 2 ? `${NUM[ns[0]]} und ${NUM[ns[1]]}` : NUM[ns[0]]}.`
 
 async function renderBlock(b: MtBlock) {
@@ -191,7 +228,8 @@ async function sprechen() {
   }
   for (const b of set.blocks) {
     for (const t of b.display.speaking!.turns) if (t.who !== "du") Object.assign(t, await line(b, t.who, t.text))
-    for (const f of b.key.live?.followups ?? []) Object.assign(f, await line(b, "pruefer", f.text))
+    // ÖSD: the Interlokutorin (partner) asks the follow-ups; elsewhere the examiner does.
+    for (const f of b.key.live?.followups ?? []) Object.assign(f, await line(b, EXAM === "oesd-a1" || EXAM === "oesd-a2" ? "partner" : "pruefer", f.text))
     for (const f of b.key.live?.partnerLines ?? []) Object.assign(f, await line(b, "partner", f.text))
   }
   fs.writeFileSync(FILE, JSON.stringify(set, null, 2) + "\n")
@@ -251,7 +289,7 @@ async function telcTrack(set: MtSet) {
       const list = path.join(OUT, `${b.id}.txt`)
       fs.writeFileSync(list, parts.flatMap((f, i) => [`file '${path.resolve(f)}'`, ...(i < parts.length - 1 ? [`file '${path.resolve(silence(1.5))}'`] : [])]).join("\n"))
       const joined = path.join(OUT, `${b.id}.mp3`)
-      ff("-f", "concat", "-safe", "0", "-i", list, ...SAMPLE, joined)
+      ff("-f", "concat", "-safe", "0", "-i", list, ...JOIN, joined)
       b.display.clip = { ...b.display.clip!, src: `${SRC}/${b.id}.mp3`, duration: +seconds(joined).toFixed(2), segments: [] }
     } else {
       for (const b of blocks) {
@@ -362,12 +400,297 @@ async function levelTrack(set: MtSet) {
   console.log(`→ ${track}: ${(set.track.duration / 60).toFixed(1)} min, ${cues.length} cues, ${characters} characters rendered (${MODEL})`)
 }
 
+/**
+ * Goethe-Zertifikat A2 (research/goethe-a2.md §11.2, measured on the Modellsatz clips 2026-10-24): Teil 1 five texts
+ * played twice, Teil 2 "Sie hören jetzt das Beispiel" + example + "Sie hören jetzt den Text" + the rest once, Teil 3 five
+ * dialogues once, Teil 4 example + interview, the interview twice; ~3 min transfer at the end (paper exam clock).
+ * TODO(hannes): the reading pauses and the gap between plays are not measured (the Übungssatz master MP3 was not
+ * reachable); the values below are our assumptions.
+ */
+const GOETHE_A2_PACE: Record<number, number> = { 1: 155, 2: 166, 3: 160, 4: 160 }
+/**
+ * Goethe-/ÖSD-Zertifikat B1 (research/goethe-oesd-b1.md §8.3, both official tracks measured 2026-10-24): Teil 1 per text
+ * "Lesen Sie nun die Aufgaben …" + 10.5 s, the situation line, the text, "noch einmal", the text; Teile 2–4 60 s reading,
+ * the situation line, the text (Teil 4 with music and twice), ~9 s, "Ende von Hören Teil n"; 5 min transfer at the end.
+ */
+const GOETHE_B1_PACE: Record<number, number> = { 1: 140, 2: 140, 3: 150, 4: 155 }
+
+/** The Beispiel turns (item 0) at the start of a block's script, and the rest. */
+const splitExample = (script: NonNullable<MtBlock["key"]["script"]>) => {
+  const last = script.map((t) => t.item).lastIndexOf(0)
+  return last < 0 ? [[], script] : [script.slice(0, last + 1), script.slice(last + 1)]
+}
+
+async function goetheTrack(set: MtSet) {
+  const a2 = EXAM === "goethe-a2"
+  const pace = a2 ? GOETHE_A2_PACE : GOETHE_B1_PACE
+  const seq: string[] = []
+  const cues: TrackCue[] = []
+  let t = 0
+  const push = (file: string, cue?: Omit<TrackCue, "from" | "to">) => {
+    const d = seconds(file)
+    if (cue) cues.push({ ...cue, from: +t.toFixed(2), to: +(t + d).toFixed(2) })
+    seq.push(file)
+    t += d
+  }
+  const gap = (sec: number, cue?: Omit<TrackCue, "from" | "to">) => push(silence(sec), cue)
+  /** Renders a script (one voice or a dialogue) with its sound design into <name>.mp3. */
+  const render = async (b: MtBlock, name: string, script: NonNullable<MtBlock["key"]["script"]>, teil: number) => {
+    const voiceFile = path.join(OUT, `${name}.voice.mp3`)
+    if (new Set(script.map((s) => s.speaker)).size === 1) await speak(voiceFile, script[0].voice, script.map((s) => s.text).join(" "), pace[teil])
+    else await converse(voiceFile, script.map((s) => ({ voice: s.voice, text: s.text })), pace[teil])
+    const clip = path.join(OUT, `${name}.mp3`)
+    if (FORCE || !fs.existsSync(clip)) await design(voiceFile, b.sound, clip)
+    return clip
+  }
+  const setClip = (b: MtBlock, file: string) => (b.display.clip = { ...b.display.clip!, src: `${SRC}/${path.basename(file)}`, duration: +seconds(file).toFixed(2), segments: [] })
+  const range = (ns: number[]) => (ns.length > 1 ? `${spell(ns[0])} bis ${spell(ns.at(-1)!)}` : spell(ns[0]))
+
+  push(await narr(a2 ? `Goethe-Zertifikat A2. Modelltest ${NUM[SET] ?? SET}. Hören. Der Test Hören hat vier Teile. Lesen Sie zuerst die Aufgaben. Hören Sie dann den Text. Wählen Sie bei jeder Aufgabe die richtige Lösung.` : `Zertifikat B1. Modul Hören. Modelltest ${NUM[SET] ?? SET}.`))
+  gap(2)
+  for (const teil of [1, 2, 3, 4]) {
+    const blocks = set.blocks.filter((b) => b.teil === teil)
+    const all = blocks.flatMap((b) => itemNumbers(b.display.items)).filter((n) => n > 0)
+    push(await narr(`${a2 ? "Teil" : "Hören Teil"} ${NUM[teil]}. ${spoken(blocks[0].display.instruction)}`), { teil, phase: "instruction", items: all })
+    gap(2)
+    const lead = async (b: MtBlock) => {
+      if (!b.display.clip?.lead) return
+      push(await narr(b.display.clip.lead), { teil, phase: "instruction", items: itemNumbers(b.display.items) })
+      gap(1.5)
+    }
+    if (a2 && (teil === 2 || teil === 4)) {
+      // One block: the Beispiel exchange, then the text (Teil 4 twice).
+      const b = blocks[0]
+      const [ex, rest] = splitExample(b.key.script!)
+      push(await narr(teil === 2 ? "Sehen Sie sich jetzt die Bilder an." : `Lesen Sie jetzt die Aufgaben ${range(all)}.`), { teil, phase: "instruction", items: all })
+      gap(teil === 2 ? 20 : 30, { teil, phase: "reading", items: all })
+      const exClip = await render(b, `${b.id}-bsp`, ex, teil)
+      const clip = await render(b, b.id, rest, teil)
+      push(await narr("Sie hören jetzt das Beispiel."), { teil, phase: "instruction", items: [0] })
+      gap(teil === 2 ? 1.9 : 3.7)
+      push(exClip, { teil, phase: "clip", items: [0] })
+      gap(2.2)
+      push(await narr("Sie hören jetzt den Text."), { teil, phase: "instruction", items: all })
+      gap(3.2)
+      push(clip, { teil, phase: "clip", items: all })
+      gap(5, { teil, phase: "answer", items: all })
+      if (teil === 4) {
+        push(await narr("Sie hören den Text noch einmal."), { teil, phase: "instruction", items: all })
+        gap(2)
+        push(clip, { teil, phase: "clip", items: all })
+        gap(5, { teil, phase: "answer", items: all })
+      }
+      setClip(b, clip)
+    } else if (a2 || teil === 1) {
+      for (const b of blocks) {
+        const ns = itemNumbers(b.display.items)
+        const real = ns.filter((n) => n > 0)
+        const clip = await render(b, b.id, b.key.script!, teil)
+        setClip(b, clip)
+        if (a2) push(await narr(`Nummer ${spell(real[0])}.`), { teil, phase: "instruction", items: ns })
+        else push(await narr(b.example ? "Lesen Sie nun das Beispiel. Dazu haben Sie zehn Sekunden Zeit." : `Lesen Sie nun die Aufgaben ${spell(real[0])} und ${spell(real[1])}. Dazu haben Sie zehn Sekunden Zeit.`), { teil, phase: "instruction", items: ns })
+        gap(a2 ? 5 : 10.5, { teil, phase: "reading", items: ns })
+        await lead(b)
+        push(clip, { teil, phase: "clip", items: ns })
+        if ((b.display.clip?.plays ?? 1) > 1) {
+          gap(2)
+          push(await narr("Sie hören den Text noch einmal."), { teil, phase: "instruction", items: ns })
+          gap(1)
+          push(clip, { teil, phase: "clip", items: ns })
+        }
+        gap(a2 ? 5 : 2.5, { teil, phase: "answer", items: ns })
+      }
+    } else {
+      // B1 Teile 2–4: one long text after 60 s reading; Teil 4 is a radio discussion with music, played twice.
+      const b = blocks[0]
+      const clip = await render(b, b.id, b.key.script!, teil)
+      setClip(b, clip)
+      push(await narr(`Lesen Sie jetzt die Aufgaben ${range(all)}. Dazu haben Sie sechzig Sekunden Zeit.`), { teil, phase: "instruction", items: all })
+      gap(60, { teil, phase: "reading", items: all })
+      await lead(b)
+      const plays = teil === 4 ? 2 : 1
+      for (let p = 0; p < plays; p++) {
+        if (p) {
+          push(await narr("Sie hören die Diskussion jetzt noch einmal."), { teil, phase: "instruction", items: all })
+          gap(1.5)
+        }
+        if (teil === 4) push(await sfx("music"))
+        push(clip, { teil, phase: "clip", items: all })
+        if (teil === 4) push(await sfx("music"))
+        gap(teil === 4 && !p ? 3 : 9, { teil, phase: "answer", items: all })
+      }
+    }
+    if (!a2) {
+      push(await narr(`Ende von Hören Teil ${NUM[teil]}.`))
+      gap(5)
+    }
+  }
+  const items = set.blocks.flatMap((b) => itemNumbers(b.display.items)).filter((n) => n > 0)
+  push(await narr(a2 ? "Ende des Prüfungsteils Hören. Sie haben jetzt drei Minuten Zeit. Übertragen Sie Ihre Lösungen auf den Antwortbogen." : "Sie haben nun fünf Minuten Zeit, Ihre Ergebnisse auf den Antwortbogen zu übertragen."), { teil: 4, phase: "instruction", items })
+  gap(a2 ? 180 : 300, { teil: 4, phase: "answer", items })
+  push(await narr(a2 ? "Ende des Tests Hören." : "Ende des Moduls Hören."))
+  gap(2)
+  const list = path.join(OUT, "track.txt")
+  fs.writeFileSync(list, seq.map((f) => `file '${path.resolve(f)}'`).join("\n"))
+  const track = path.join(OUT, "track.mp3")
+  ff("-f", "concat", "-safe", "0", "-i", list, "-ac", "1", "-ar", "44100", "-b:a", "64k", track)
+  set.track = { src: `${SRC}/track.mp3`, duration: +seconds(track).toFixed(2), cues } satisfies HoerTrack
+  fs.writeFileSync(FILE, JSON.stringify(set, null, 2) + "\n")
+  console.log(`→ ${track}: ${(set.track.duration / 60).toFixed(1)} min, ${cues.length} cues, ${characters} characters rendered (${MODEL})`)
+}
+
+/**
+ * ÖSD Zertifikat A1 / A2 (research/oesd-a1.md, oesd-a2.md §9.2, both Modellsatz tracks measured 2026-10-24): a gong
+ * between every step; per Aufgabe the preview line, the reading pause (A1 30 / 30 / 10 s, A2 30 / 30 / 30 s), the spoken
+ * situation, then the texts. A1: "Text n." before each dialogue and interview answer, a beep around the voicemail;
+ * A2: a radio jingle around the two texts, the playback sound before each voicemail play, answers ~4 s apart without
+ * labels. 20 s to check after Aufgabe 2, 60 s after Aufgabe 3. Totals: A1 11:39, A2 10:22.
+ */
+const OESD_PACE: Record<string, Record<number, number>> = { "oesd-a1": { 1: 154, 2: 112, 3: 155 }, "oesd-a2": { 1: 166, 2: 180, 3: 175 } }
+
+async function oesdTrack(set: MtSet) {
+  const a1 = EXAM === "oesd-a1"
+  const pace = OESD_PACE[EXAM]
+  const seq: string[] = []
+  const cues: TrackCue[] = []
+  let t = 0
+  const push = (file: string, cue?: Omit<TrackCue, "from" | "to">) => {
+    const d = seconds(file)
+    if (cue) cues.push({ ...cue, from: +t.toFixed(2), to: +(t + d).toFixed(2) })
+    seq.push(file)
+    t += d
+  }
+  const gap = (sec: number, cue?: Omit<TrackCue, "from" | "to">) => push(silence(sec), cue)
+  const gong = async () => {
+    gap(0.6)
+    push(await sfx("xylo"))
+    gap(0.8)
+  }
+  /** One clip of a script (one voice or a dialogue), with the sound cue its first turn names. */
+  const render = async (name: string, turns: NonNullable<MtBlock["key"]["script"]>, teil: number, sound?: SoundKey) => {
+    const voiceFile = path.join(OUT, `${name}.voice.mp3`)
+    if (new Set(turns.map((s) => s.speaker)).size === 1) await speak(voiceFile, turns[0].voice, turns.map((s) => s.text).join(" "), pace[teil])
+    else await converse(voiceFile, turns.map((s) => ({ voice: s.voice, text: s.text })), pace[teil])
+    const clip = path.join(OUT, `${name}.mp3`)
+    if (FORCE || !fs.existsSync(clip)) await design(voiceFile, sound, clip)
+    return clip
+  }
+  /** The block's review clip: its clips joined with a short pause (the exam itself plays the track). */
+  const review = (b: MtBlock, files: string[]) => {
+    const list = path.join(OUT, `${b.id}.txt`)
+    fs.writeFileSync(list, files.flatMap((f, i) => [`file '${path.resolve(f)}'`, ...(i < files.length - 1 ? [`file '${path.resolve(silence(1.5))}'`] : [])]).join("\n"))
+    const joined = path.join(OUT, `${b.id}.review.mp3`)
+    ff("-f", "concat", "-safe", "0", "-i", list, ...JOIN, joined)
+    b.display.clip = { ...b.display.clip!, src: `${SRC}/${path.basename(joined)}`, duration: +seconds(joined).toFixed(2), segments: [] }
+  }
+  const READ: Record<number, number> = a1 ? { 1: 30, 2: 30, 3: 10 } : { 1: 30, 2: 30, 3: 30 }
+  const SEC = ["", "", "", "", "", "", "", "", "", "", "zehn", "", "", "", "", "", "", "", "", "", "zwanzig", "", "", "", "", "", "", "", "", "", "dreißig"]
+
+  push(await narr(`ÖSD Zertifikat ${a1 ? "A1" : "A2"}. Modelltest ${NUM[SET] ?? SET}. Hören.`))
+  await gong()
+  for (const teil of [1, 2, 3]) {
+    const b = set.blocks.find((x) => x.teil === teil)!
+    const all = itemNumbers(b.display.items).filter((n) => n > 0)
+    const script = b.key.script!
+    const preview = a1 && teil === 1 ? "Sehen Sie sich die Fotos an." : `Lesen Sie die Aufgabe ${NUM[teil]}.`
+    push(await narr(`Aufgabe ${NUM[teil]}. ${preview} Sie haben dafür ${SEC[READ[teil]]} Sekunden Zeit.`), { teil, phase: "instruction", items: all })
+    gap(READ[teil], { teil, phase: "reading", items: all })
+    push(await narr(spoken(b.display.instruction)), { teil, phase: "instruction", items: all })
+    await gong()
+    const clipNos = [...new Set(script.map((s) => s.clip ?? 0))].filter((c) => c > 0)
+    const turnsOf = (c: number) => script.filter((s) => s.clip === c)
+    if (teil === 2) {
+      // The voicemail, twice. A1: beep before and after each play; A2: the playback sound before each play.
+      const voice = await render(b.id, script, teil)
+      const play = async () => {
+        if (a1) push(await sfx("beep"))
+        else push(await sfx("playback"))
+        gap(0.4)
+        push(voice, { teil, phase: "clip", items: all })
+        gap(0.4)
+        if (a1) push(await sfx("beep"))
+      }
+      await play()
+      await gong()
+      push(await narr("Sie hören den Text jetzt zum zweiten Mal."), { teil, phase: "instruction", items: all })
+      await gong()
+      await play()
+      await gong()
+      push(await narr("Sie haben jetzt zwanzig Sekunden Zeit. Kontrollieren Sie Ihre Notizen."), { teil, phase: "instruction", items: all })
+      gap(20, { teil, phase: "answer", items: all })
+      b.display.clip = { ...b.display.clip!, src: `${SRC}/${path.basename(voice)}`, duration: +seconds(voice).toFixed(2), segments: [] }
+    } else if (!a1 && teil === 1) {
+      // Two radio texts with the same news, a jingle before, between and after.
+      const files: string[] = []
+      push(await sfx("jingle"))
+      for (const c of clipNos) {
+        const f = await render(`${b.id}-${c}`, turnsOf(c), teil)
+        files.push(f)
+        gap(0.6)
+        push(f, { teil, phase: "clip", items: all })
+        gap(0.6)
+        push(await sfx("jingle"))
+      }
+      review(b, files)
+    } else {
+      // A1 Aufgabe 1: "Text n." + cue + dialogue. Aufgabe 3: the interviewer once, then the answers (A1 labelled).
+      const files: string[] = []
+      const intro = script.filter((s) => s.clip === undefined)
+      if (intro.length) {
+        const f = await render(`${b.id}-0`, intro, teil)
+        files.push(f)
+        push(f, { teil, phase: "clip", items: all })
+        gap(1.5)
+      }
+      for (const [i, c] of clipNos.entries()) {
+        const turns = turnsOf(c)
+        const f = await render(`${b.id}-${c}`, turns, teil, (turns[0].sound as SoundKey | undefined) ?? (teil === 3 ? b.sound : undefined))
+        files.push(f)
+        const n = all[i] ?? all[0]
+        if (a1) {
+          push(await narr(`Text ${NUM[c]}.`), { teil, phase: "instruction", items: [n] })
+          gap(0.6)
+        }
+        push(f, { teil, phase: "clip", items: teil === 1 ? all : [n] })
+        gap(a1 ? 2 : 4)
+      }
+      review(b, files)
+    }
+    await gong()
+    if (teil === 3) {
+      push(await narr("Sie haben jetzt sechzig Sekunden Zeit. Kontrollieren Sie Ihre Antworten."), { teil, phase: "instruction", items: all })
+      gap(60, { teil, phase: "answer", items: all })
+      await gong()
+    }
+  }
+  push(await narr("Ende des Prüfungsteils Hören."))
+  await gong()
+  gap(2)
+  const list = path.join(OUT, "track.txt")
+  fs.writeFileSync(list, seq.map((f) => `file '${path.resolve(f)}'`).join("\n"))
+  const track = path.join(OUT, "track.mp3")
+  ff("-f", "concat", "-safe", "0", "-i", list, "-ac", "1", "-ar", "44100", "-b:a", "64k", track)
+  set.track = { src: `${SRC}/track.mp3`, duration: +seconds(track).toFixed(2), cues } satisfies HoerTrack
+  fs.writeFileSync(FILE, JSON.stringify(set, null, 2) + "\n")
+  console.log(`→ ${track}: ${(set.track.duration / 60).toFixed(1)} min, ${cues.length} cues, ${characters} characters rendered (${MODEL})`)
+}
+
 async function main() {
   if (SKILL === "sprechen") return sprechen()
+  if (EXAM === "oesd-a1" || EXAM === "oesd-a2") {
+    fs.mkdirSync(OUT, { recursive: true })
+    fs.mkdirSync(COMMON, { recursive: true })
+    return oesdTrack(JSON.parse(fs.readFileSync(FILE, "utf8")) as MtSet)
+  }
   if (EXAM in LEVEL_PACE) {
     fs.mkdirSync(OUT, { recursive: true })
     fs.mkdirSync(COMMON, { recursive: true })
     return levelTrack(JSON.parse(fs.readFileSync(FILE, "utf8")) as MtSet)
+  }
+  if (["goethe-a2", "goethe-b1", "oesd-b1"].includes(EXAM)) {
+    fs.mkdirSync(OUT, { recursive: true })
+    fs.mkdirSync(COMMON, { recursive: true })
+    return goetheTrack(JSON.parse(fs.readFileSync(FILE, "utf8")) as MtSet)
   }
   if (EXAM === "telc-b1") {
     fs.mkdirSync(OUT, { recursive: true })
@@ -429,7 +752,7 @@ async function main() {
       const list4 = path.join(OUT, `${b.id}.txt`)
       fs.writeFileSync(list4, parts.flatMap((f, i) => [`file '${path.resolve(f)}'`, ...(i < parts.length - 1 ? [`file '${path.resolve(silence(1.5))}'`] : [])]).join("\n"))
       const joined = path.join(OUT, `${b.id}.mp3`)
-      ff("-f", "concat", "-safe", "0", "-i", list4, ...SAMPLE, joined)
+      ff("-f", "concat", "-safe", "0", "-i", list4, ...JOIN, joined)
       b.display.clip = { ...b.display.clip!, src: `${SRC}/${b.id}.mp3`, duration: +seconds(joined).toFixed(2), segments: [] }
     }
     push(await sfx("number"))

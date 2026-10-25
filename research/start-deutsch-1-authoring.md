@@ -205,7 +205,7 @@ change (Wien), cinema meeting time, practice opening hours, birthday party in th
 evening, doctor's holiday sign, language-course enquiry, cards Einkaufen · Supermarkt and Schere. Names Paul,
 Miriam, Jana, Jonas, Mareike, Hanna, Felix, Hollmann, Lindner, Krause, Lindenau, Mertens, Kaltenbach, Lindenberg.
 
-**Sets used** (add a row per finished set):
+**Sets used** (set 1 below; sets 2–10 are in `research/start-deutsch-1-plan.md`, one `## Set n` section each with its cross-skill name list. `scripts/modelltest/author-start.ts` plans and drafts them and feeds every earlier plan into the next one):
 
 | Set | Hören | Lesen | Schreiben | Sprechen |
 |---|---|---|---|---|

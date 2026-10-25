@@ -1,0 +1,251 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-09-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.671Z",
+        "textType": "Formular ausfüllen: Anmeldung für einen Tanzkurs"
+      },
+      "exampleAnswers": [
+        "Kovalenko"
+      ],
+      "display": {
+        "instruction": "Situation: Ihre Freundin Olena möchte einen Tanzkurs machen. Sie füllen für Olena das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Tänze“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Tanzschule Takt · Kursanmeldung\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nKursbeginn (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nKurs: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "als Paar",
+                    "allein"
+                  ]
+                },
+                "\nTag: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "Freitag",
+                    "Sonntag"
+                  ]
+                },
+                "\nTänze: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "Walzer",
+                    "Tango",
+                    "Salsa",
+                    "Hip-Hop"
+                  ],
+                  "pick": 2
+                },
+                "\nBezahlung: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "bar",
+                    "Überweisung"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Olena",
+            "explanation": "Der Vorname ist Olena. Der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "Olena Kovalenko"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "4.3.1991",
+            "accept": [
+              "04.03.1991",
+              "4. März 1991",
+              "04.03.91",
+              "4.3.91",
+              "1991-03-04"
+            ],
+            "explanation": "Olena ist am 4. März 1991 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "am 4. März 1991 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Eisenstadt",
+            "explanation": "Olena wohnt in Eisenstadt.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "Olena Kovalenko aus Eisenstadt"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0676 835 20 47",
+            "accept": [
+              "0676 8352047",
+              "06768352047",
+              "0676/8352047",
+              "0676 / 835 20 47"
+            ],
+            "explanation": "Das ist Olenas Handynummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "0676 835 20 47"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "August",
+            "accept": [
+              "8",
+              "im August",
+              "ab August"
+            ],
+            "explanation": "Der Kurs beginnt im August. März ist Olenas Geburtsmonat, nicht der Kursbeginn.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "möchte ab August"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "als Paar",
+            "explanation": "Olena lernt mit ihrem Mann tanzen. Darum ist „als Paar“ richtig, nicht „allein“.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "mit ihrem Mann"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "Sonntag",
+            "explanation": "Sie können nur am Sonntag kommen. Am Freitag arbeitet Olena.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "Am Freitag arbeitet Olena, sie können nur am Sonntag kommen."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Walzer,Salsa",
+            "explanation": "Olena möchte Walzer und Salsa tanzen. Tango möchte sie nicht.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "Olena möchte Walzer und Salsa tanzen, Tango nicht."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "Überweisung",
+            "explanation": "Olena bezahlt mit Überweisung, nicht bar.",
+            "evidence": {
+              "text": "Ihre Freundin Olena Kovalenko aus Eisenstadt möchte ab August mit ihrem Mann in der Tanzschule Takt tanzen lernen. Am Freitag arbeitet Olena, sie können nur am Sonntag kommen. Olena möchte Walzer und Salsa tanzen, Tango nicht. Sie bezahlt mit Überweisung. Olena ist am 4. März 1991 geboren. Ihre Handynummer ist 0676 835 20 47.",
+              "hit": "Sie bezahlt mit Überweisung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-09-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.671Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihr Freund Moritz hat Ihnen ein E-Mail geschrieben. Antworten Sie Moritz. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Moritz",
+            "situation": "Ihr Freund Moritz aus Bernkastel-Kues schreibt Ihnen: „Hallo! Am Samstag ist bei meiner Familie Weinlese. Wir holen die Trauben von unserem Weinberg. Hilfst du uns? Wir fangen um acht Uhr an. Hast du am Samstag Zeit? Hast du feste Schuhe und Handschuhe? Kannst du auch am Sonntag helfen? Ich freue mich auf deine Antwort! Viele Grüße, Moritz“",
+            "points": [
+              "Hast du am Samstag Zeit?",
+              "Hast du feste Schuhe und Handschuhe?",
+              "Kannst du auch am Sonntag helfen?"
+            ],
+            "opener": "Lieber Moritz,\ndanke für dein E-Mail. Das klingt toll!"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Lieber Moritz, danke für dein E-Mail. Das klingt toll! Ja, am Samstag habe ich Zeit. Feste Schuhe habe ich, aber keine Handschuhe. Hast du welche für mich? Am Sonntag kann ich leider nicht. Viele Grüße, Ana"
+          }
+        ]
+      }
+    }
+  ]
+}

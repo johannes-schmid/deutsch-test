@@ -1,0 +1,783 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-05-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.692Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Neue Hängebrücke",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sonntag"
+                },
+                {
+                  "key": "b",
+                  "label": "Samstag"
+                },
+                {
+                  "key": "c",
+                  "label": "200 Meter"
+                },
+                {
+                  "key": "d",
+                  "label": "100 Meter"
+                },
+                {
+                  "key": "e",
+                  "label": "Kinderwagen"
+                },
+                {
+                  "key": "f",
+                  "label": "ab 9 Uhr"
+                },
+                {
+                  "key": "g",
+                  "label": "ab 10 Uhr"
+                },
+                {
+                  "key": "h",
+                  "label": "4 Euro"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Nachrichten im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Osttirol",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Radio Iseltal",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-05/oesd-a2-hoeren-05-t1.review.mp3",
+          "duration": 51.33
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Beide Sender sagen: Die Brücke wird am Sonntag eröffnet. Von Samstag spricht niemand.",
+            "evidence": {
+              "text": "Radio Osttirol, die Nachrichten aus der Region. Bei Lienz wird am Sonntag eine neue Hängebrücke für Wanderer eröffnet. Die Brücke ist zweihundert Meter lang und führt hoch über eine Schlucht. Sie ist jeden Tag ab neun Uhr geöffnet. Erwachsene bezahlen vier Euro, Kinder dürfen gratis hinüber. Mit dem Kinderwagen geht es heuer leider nicht über die Brücke. Der Weg zur Brücke dauert vom Parkplatz etwa zwanzig Minuten.",
+              "hit": "Bei Lienz wird am Sonntag eine neue Hängebrücke für Wanderer eröffnet."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Die Brücke ist zweihundert Meter lang. Hundert Meter hörst du nicht.",
+            "evidence": {
+              "text": "Radio Osttirol, die Nachrichten aus der Region. Bei Lienz wird am Sonntag eine neue Hängebrücke für Wanderer eröffnet. Die Brücke ist zweihundert Meter lang und führt hoch über eine Schlucht. Sie ist jeden Tag ab neun Uhr geöffnet. Erwachsene bezahlen vier Euro, Kinder dürfen gratis hinüber. Mit dem Kinderwagen geht es heuer leider nicht über die Brücke. Der Weg zur Brücke dauert vom Parkplatz etwa zwanzig Minuten.",
+              "hit": "Die Brücke ist zweihundert Meter lang"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "f",
+            "explanation": "Man kann jeden Tag ab neun Uhr über die Brücke gehen. Mit dem Kinderwagen geht es heuer aber nicht.",
+            "evidence": {
+              "text": "Radio Osttirol, die Nachrichten aus der Region. Bei Lienz wird am Sonntag eine neue Hängebrücke für Wanderer eröffnet. Die Brücke ist zweihundert Meter lang und führt hoch über eine Schlucht. Sie ist jeden Tag ab neun Uhr geöffnet. Erwachsene bezahlen vier Euro, Kinder dürfen gratis hinüber. Mit dem Kinderwagen geht es heuer leider nicht über die Brücke. Der Weg zur Brücke dauert vom Parkplatz etwa zwanzig Minuten.",
+              "hit": "Sie ist jeden Tag ab neun Uhr geöffnet."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "h",
+            "explanation": "Erwachsene zahlen vier Euro, Kinder nichts. Einen Kinderwagen darf man nicht mitnehmen.",
+            "evidence": {
+              "text": "Radio Osttirol, die Nachrichten aus der Region. Bei Lienz wird am Sonntag eine neue Hängebrücke für Wanderer eröffnet. Die Brücke ist zweihundert Meter lang und führt hoch über eine Schlucht. Sie ist jeden Tag ab neun Uhr geöffnet. Erwachsene bezahlen vier Euro, Kinder dürfen gratis hinüber. Mit dem Kinderwagen geht es heuer leider nicht über die Brücke. Der Weg zur Brücke dauert vom Parkplatz etwa zwanzig Minuten.",
+              "hit": "Erwachsene bezahlen vier Euro"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_alexandra_at",
+            "text": "Radio Osttirol, die Nachrichten aus der Region. Bei Lienz wird am Sonntag eine neue Hängebrücke für Wanderer eröffnet. Die Brücke ist zweihundert Meter lang und führt hoch über eine Schlucht. Sie ist jeden Tag ab neun Uhr geöffnet. Erwachsene bezahlen vier Euro, Kinder dürfen gratis hinüber. Mit dem Kinderwagen geht es heuer leider nicht über die Brücke. Der Weg zur Brücke dauert vom Parkplatz etwa zwanzig Minuten.",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_gruber_at",
+            "text": "Servus, liebe Leute, hier ist Radio Iseltal! Ihr seid gern in den Bergen? Dann hab ich was für euch: Bei Lienz gibt es jetzt eine neue Hängebrücke. Vier Euro zahlt ihr als Erwachsene, die Kinder gehen gratis. Eröffnet wird die Brücke am Sonntag, und dann könnt ihr jeden Tag ab neun Uhr drüber. Zweihundert Meter, das ist ganz schön lang! Aber Achtung, liebe Eltern: Den Kinderwagen müsst ihr heuer leider daheim lassen.",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-05-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.692Z",
+        "textType": "Sprachnachricht von einer Freundin"
+      },
+      "display": {
+        "instruction": "Situation: Eine Freundin hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Kirtag\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTreffen um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nEine Fahrt: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nTheresas Telefon: 0650 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Handy",
+          "speakers": {
+            "theresa": {
+              "name": "Theresa",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-05/oesd-a2-hoeren-05-t2.mp3",
+          "duration": 39.47
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Montag",
+            "accept": [
+              "am Montag",
+              "Mo."
+            ],
+            "explanation": "Am Sonntag ist es zu voll, darum geht ihr am Montag.",
+            "evidence": {
+              "text": "Hallo, Theresa hier! Du, hast du Lust auf den Kirtag in Mank, also das Fest mit Riesenrad und Ringelspiel? Am Sonntag ist es dort immer viel zu voll, äh, da steht man nur in der Schlange. Darum gehen wir lieber am Montag. Treffen wir uns um drei am Nachmittag beim Eingang? Und am Montag ist es billiger: Eine Fahrt kostet nur drei Euro, sonst kostet eine Fahrt fünf Euro. Tja, und nimm bitte einen Rucksack mit, für die Sachen, die wir gewinnen. Eine Tasche ist zu klein, glaub mir. Ruf mich kurz an, ja? Meine Nummer ist null sechs fünf null, sieben zwei drei, acht vier, eins sechs. Noch einmal: sieben zwei drei, acht vier, eins sechs. Bis dann!",
+              "hit": "Darum gehen wir lieber am Montag."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "15",
+            "accept": [
+              "15.00",
+              "15:00",
+              "15 Uhr",
+              "15.00 Uhr",
+              "3",
+              "3 Uhr",
+              "drei",
+              "drei Uhr"
+            ],
+            "explanation": "Theresa will euch um drei am Nachmittag treffen, also um 15 Uhr.",
+            "evidence": {
+              "text": "Hallo, Theresa hier! Du, hast du Lust auf den Kirtag in Mank, also das Fest mit Riesenrad und Ringelspiel? Am Sonntag ist es dort immer viel zu voll, äh, da steht man nur in der Schlange. Darum gehen wir lieber am Montag. Treffen wir uns um drei am Nachmittag beim Eingang? Und am Montag ist es billiger: Eine Fahrt kostet nur drei Euro, sonst kostet eine Fahrt fünf Euro. Tja, und nimm bitte einen Rucksack mit, für die Sachen, die wir gewinnen. Eine Tasche ist zu klein, glaub mir. Ruf mich kurz an, ja? Meine Nummer ist null sechs fünf null, sieben zwei drei, acht vier, eins sechs. Noch einmal: sieben zwei drei, acht vier, eins sechs. Bis dann!",
+              "hit": "Treffen wir uns um drei am Nachmittag beim Eingang?"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "3",
+            "accept": [
+              "3 Euro",
+              "drei",
+              "drei Euro"
+            ],
+            "explanation": "Am Montag kostet eine Fahrt drei Euro. Fünf Euro zahlt man an den anderen Tagen.",
+            "evidence": {
+              "text": "Hallo, Theresa hier! Du, hast du Lust auf den Kirtag in Mank, also das Fest mit Riesenrad und Ringelspiel? Am Sonntag ist es dort immer viel zu voll, äh, da steht man nur in der Schlange. Darum gehen wir lieber am Montag. Treffen wir uns um drei am Nachmittag beim Eingang? Und am Montag ist es billiger: Eine Fahrt kostet nur drei Euro, sonst kostet eine Fahrt fünf Euro. Tja, und nimm bitte einen Rucksack mit, für die Sachen, die wir gewinnen. Eine Tasche ist zu klein, glaub mir. Ruf mich kurz an, ja? Meine Nummer ist null sechs fünf null, sieben zwei drei, acht vier, eins sechs. Noch einmal: sieben zwei drei, acht vier, eins sechs. Bis dann!",
+              "hit": "Eine Fahrt kostet nur drei Euro"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Rucksack",
+            "accept": [
+              "einen Rucksack",
+              "ein Rucksack"
+            ],
+            "explanation": "Du sollst einen Rucksack mitnehmen. Eine Tasche ist zu klein.",
+            "evidence": {
+              "text": "Hallo, Theresa hier! Du, hast du Lust auf den Kirtag in Mank, also das Fest mit Riesenrad und Ringelspiel? Am Sonntag ist es dort immer viel zu voll, äh, da steht man nur in der Schlange. Darum gehen wir lieber am Montag. Treffen wir uns um drei am Nachmittag beim Eingang? Und am Montag ist es billiger: Eine Fahrt kostet nur drei Euro, sonst kostet eine Fahrt fünf Euro. Tja, und nimm bitte einen Rucksack mit, für die Sachen, die wir gewinnen. Eine Tasche ist zu klein, glaub mir. Ruf mich kurz an, ja? Meine Nummer ist null sechs fünf null, sieben zwei drei, acht vier, eins sechs. Noch einmal: sieben zwei drei, acht vier, eins sechs. Bis dann!",
+              "hit": "nimm bitte einen Rucksack mit"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "7238416",
+            "accept": [
+              "723 84 16",
+              "723 8416",
+              "7238 416"
+            ],
+            "exact": true,
+            "explanation": "Theresa sagt die Nummer zweimal: sieben zwei drei, acht vier, eins sechs. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Hallo, Theresa hier! Du, hast du Lust auf den Kirtag in Mank, also das Fest mit Riesenrad und Ringelspiel? Am Sonntag ist es dort immer viel zu voll, äh, da steht man nur in der Schlange. Darum gehen wir lieber am Montag. Treffen wir uns um drei am Nachmittag beim Eingang? Und am Montag ist es billiger: Eine Fahrt kostet nur drei Euro, sonst kostet eine Fahrt fünf Euro. Tja, und nimm bitte einen Rucksack mit, für die Sachen, die wir gewinnen. Eine Tasche ist zu klein, glaub mir. Ruf mich kurz an, ja? Meine Nummer ist null sechs fünf null, sieben zwei drei, acht vier, eins sechs. Noch einmal: sieben zwei drei, acht vier, eins sechs. Bis dann!",
+              "hit": "sieben zwei drei, acht vier, eins sechs"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "theresa",
+            "voice": "woman_emilia_at",
+            "text": "Hallo, Theresa hier! Du, hast du Lust auf den Kirtag in Mank, also das Fest mit Riesenrad und Ringelspiel? Am Sonntag ist es dort immer viel zu voll, äh, da steht man nur in der Schlange. Darum gehen wir lieber am Montag. Treffen wir uns um drei am Nachmittag beim Eingang? Und am Montag ist es billiger: Eine Fahrt kostet nur drei Euro, sonst kostet eine Fahrt fünf Euro. Tja, und nimm bitte einen Rucksack mit, für die Sachen, die wir gewinnen. Eine Tasche ist zu klein, glaub mir. Ruf mich kurz an, ja? Meine Nummer ist null sechs fünf null, sieben zwei drei, acht vier, eins sechs. Noch einmal: sieben zwei drei, acht vier, eins sechs. Bis dann!",
+            "delivery": "[casual, cheerful, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-05-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.692Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, was sie am liebsten zum Frühstück trinken. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Was trinken Sie am liebsten zum Frühstück?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Kaffee"
+                },
+                {
+                  "key": "b",
+                  "label": "Tee"
+                },
+                {
+                  "key": "c",
+                  "label": "Kakao"
+                },
+                {
+                  "key": "d",
+                  "label": "Saft"
+                },
+                {
+                  "key": "e",
+                  "label": "Wasser"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-05/oesd-a2-hoeren-05-t3.review.mp3",
+          "duration": 96.39
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b,d",
+            "explanation": "Sie trinkt grünen Tee und ein Glas Orangensaft. Kaffee trinkt sie nicht mehr, davon wird sie nervös.",
+            "evidence": {
+              "text": "Ich arbeite in einem Büro in Kiel, und am Morgen trinke ich immer grünen Tee. Dazu gibt es ein Glas Orangensaft, das ist gesund und schmeckt frisch. Kaffee trinke ich nicht mehr, äh, davon werde ich ganz nervös. Meine Kollegen verstehen das nicht, die trinken alle Kaffee.",
+              "hit": "am Morgen trinke ich immer grünen Tee"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "c,d",
+            "explanation": "Er trinkt mit seinen Kindern Kakao und dann ein Glas Apfelsaft. Tee trinkt nur seine Frau.",
+            "evidence": {
+              "text": "Na ja, ich hab zwei Kinder, und die wollen am Morgen immer Kakao. Also trinke ich einfach mit, äh, das ist bei uns schon so eine Tradition. Und dann noch ein Glas Apfelsaft, das brauche ich. Meine Frau trinkt Tee, aber Tee mag ich gar nicht.",
+              "hit": "Also trinke ich einfach mit"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a,b,e",
+            "explanation": "Sie trinkt zuerst Wasser, dann Kaffee und im Winter noch Tee. Saft ist ihr zu sauer.",
+            "evidence": {
+              "text": "Ich bin Lehrerin in Schaffhausen. Zuerst trinke ich immer ein grosses Glas Wasser, gleich nach dem Aufstehen. Dann mache ich mir einen Kaffee, ohne den geht es nicht. Und im Winter trinke ich auch noch einen heissen Tee. Saft trinke ich zum Frühstück nie, der ist mir zu sauer.",
+              "hit": "Dann mache ich mir einen Kaffee, ohne den geht es nicht."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Er trinkt zum Frühstück nur starken Kaffee. Wasser trinkt er erst später in der Pause.",
+            "evidence": {
+              "text": "Ich arbeite in einer Fabrik, und die Frühschicht beginnt schon um sechs. Da brauche ich einen starken Kaffee, äh, am besten gleich zwei Tassen. Sonst trinke ich nichts. Wasser trink ich in der Früh nie, das gibt es bei mir erst in der Pause am Vormittag.",
+              "hit": "Da brauche ich einen starken Kaffee"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c,e",
+            "explanation": "Sie trinkt Kakao wie als Kind und dazu Wasser. Kaffee schmeckt ihr nicht.",
+            "evidence": {
+              "text": "Ich bin Studentin, und ich trinke zum Frühstück Kakao, wie schon als Kind. Meine Mama hat ihn mir jeden Morgen gemacht, und das mache ich jetzt selbst. Dazu trinke ich ein Glas Wasser. Kaffee? Nein danke, der schmeckt mir einfach nicht, auch wenn alle in der Uni Kaffee trinken.",
+              "hit": "Dazu trinke ich ein Glas Wasser."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Guten Morgen! Wir machen heute eine kleine Umfrage für das Radio. Was trinken Sie am liebsten zum Frühstück?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_laura",
+            "text": "Ich arbeite in einem Büro in Kiel, und am Morgen trinke ich immer grünen Tee. Dazu gibt es ein Glas Orangensaft, das ist gesund und schmeckt frisch. Kaffee trinke ich nicht mehr, äh, davon werde ich ganz nervös. Meine Kollegen verstehen das nicht, die trinken alle Kaffee.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Na ja, ich hab zwei Kinder, und die wollen am Morgen immer Kakao. Also trinke ich einfach mit, äh, das ist bei uns schon so eine Tradition. Und dann noch ein Glas Apfelsaft, das brauche ich. Meine Frau trinkt Tee, aber Tee mag ich gar nicht.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_heidi_ch",
+            "text": "Ich bin Lehrerin in Schaffhausen. Zuerst trinke ich immer ein grosses Glas Wasser, gleich nach dem Aufstehen. Dann mache ich mir einen Kaffee, ohne den geht es nicht. Und im Winter trinke ich auch noch einen heissen Tee. Saft trinke ich zum Frühstück nie, der ist mir zu sauer.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich arbeite in einer Fabrik, und die Frühschicht beginnt schon um sechs. Da brauche ich einen starken Kaffee, äh, am besten gleich zwei Tassen. Sonst trinke ich nichts. Wasser trink ich in der Früh nie, das gibt es bei mir erst in der Pause am Vormittag.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_alexandra_at",
+            "text": "Ich bin Studentin, und ich trinke zum Frühstück Kakao, wie schon als Kind. Meine Mama hat ihn mir jeden Morgen gemacht, und das mache ich jetzt selbst. Dazu trinke ich ein Glas Wasser. Kaffee? Nein danke, der schmeckt mir einfach nicht, auch wenn alle in der Uni Kaffee trinken.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-05/track.mp3",
+    "duration": 568.61,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.4,
+        "to": 15.44
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.44,
+        "to": 45.48
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.48,
+        "to": 58.64
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.81,
+        "to": 91.9
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 96.18,
+        "to": 121.97
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 131.13,
+        "to": 137.14
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 137.14,
+        "to": 167.18
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 167.18,
+        "to": 178.39
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 185.86,
+        "to": 225.33
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 231.29,
+        "to": 234.5
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 241.97,
+        "to": 281.44
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 287.4,
+        "to": 291.94
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 291.94,
+        "to": 311.98
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 317.49,
+        "to": 323.5
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 323.5,
+        "to": 353.54
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 353.54,
+        "to": 370.49
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 376.01,
+        "to": 381.96
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 383.5,
+        "to": 400.07
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 404.11,
+        "to": 420.26
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 424.31,
+        "to": 441.44
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 445.49,
+        "to": 461.58
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 465.63,
+        "to": 482.85
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 492.41,
+        "to": 496.9
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 496.9,
+        "to": 556.93
+      }
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-04-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.347Z",
+        "textType": "Formular: Bestellung einer Monatskarte im Abo"
+      },
+      "display": {
+        "instruction": "Ihre Kollegin Grace möchte für den Bus eine Monatskarte im Abo bestellen. Sie helfen ihr bei der Bestellung. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Stadtbus Augsburg – Bestellung Monatskarte im Abo\n\nNachname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: Grace\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nPLZ, Ort: 86161 Augsburg\nTelefon (privat): ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nE-Mail: grace.mensah@postfix-mail.de\nEinstiegshaltestelle: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nAbo ab (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nZahlung: monatlich per Lastschrift",
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Grace Mensah",
+          "source": "Aufenthaltstitel und Notiz",
+          "paragraphs": [
+            "Aufenthaltstitel – Name: MENSAH · Vorname: GRACE · Geburtsdatum: 27.06.1988 · Staatsangehörigkeit: GHANAISCH · ausgestellt am: 15.03.2024 · gültig bis: 14.03.2028",
+            "Grace wohnt seit dem Frühling in der Haunstetter Straße 41 in Augsburg. Sie arbeitet in einem Labor und fährt jeden Tag mit dem Bus. Ihr Kollege Paul sagt, dass eine Monatskarte im Abo billiger ist. Im Labor ist Grace unter 0821 9930 64 zu erreichen, aber für das Formular möchte sie ihre private Nummer angeben: 0821 5547 120. Sie steigt immer an der Haltestelle Rosenaustraße ein, gleich bei ihrem Haus. Im September besucht sie ihre Familie in Ghana, deshalb soll das Abo erst im Oktober beginnen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "27.06.1988",
+            "explanation": "Das Geburtsdatum steht auf dem Aufenthaltstitel. Die anderen Daten sind Ausstellung und Gültigkeit der Karte, und Zahlen müssen genau stimmen.",
+            "evidence": {
+              "text": "Aufenthaltstitel – Name: MENSAH · Vorname: GRACE · Geburtsdatum: 27.06.1988 · Staatsangehörigkeit: GHANAISCH · ausgestellt am: 15.03.2024 · gültig bis: 14.03.2028",
+              "hit": "Geburtsdatum: 27.06.1988"
+            },
+            "accept": [
+              "27.6.1988",
+              "27.06.88",
+              "27.6.88",
+              "27. Juni 1988",
+              "27.Juni 1988"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "Haunstetter Straße 41",
+            "explanation": "Grace wohnt in der Haunstetter Straße 41. Rosenaustraße ist nur der Name der Haltestelle.",
+            "evidence": {
+              "text": "Grace wohnt seit dem Frühling in der Haunstetter Straße 41 in Augsburg. Sie arbeitet in einem Labor und fährt jeden Tag mit dem Bus. Ihr Kollege Paul sagt, dass eine Monatskarte im Abo billiger ist. Im Labor ist Grace unter 0821 9930 64 zu erreichen, aber für das Formular möchte sie ihre private Nummer angeben: 0821 5547 120. Sie steigt immer an der Haltestelle Rosenaustraße ein, gleich bei ihrem Haus. Im September besucht sie ihre Familie in Ghana, deshalb soll das Abo erst im Oktober beginnen.",
+              "hit": "Haunstetter Straße 41"
+            },
+            "accept": [
+              "Haunstetter Str. 41",
+              "Haunstetter Strasse 41",
+              "Haunstetterstraße 41",
+              "Haunstetter Str 41"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "0821 5547 120",
+            "explanation": "Im Formular steht „Telefon (privat)“, also die private Nummer. Die Nummer 0821 9930 64 ist vom Labor.",
+            "evidence": {
+              "text": "Grace wohnt seit dem Frühling in der Haunstetter Straße 41 in Augsburg. Sie arbeitet in einem Labor und fährt jeden Tag mit dem Bus. Ihr Kollege Paul sagt, dass eine Monatskarte im Abo billiger ist. Im Labor ist Grace unter 0821 9930 64 zu erreichen, aber für das Formular möchte sie ihre private Nummer angeben: 0821 5547 120. Sie steigt immer an der Haltestelle Rosenaustraße ein, gleich bei ihrem Haus. Im September besucht sie ihre Familie in Ghana, deshalb soll das Abo erst im Oktober beginnen.",
+              "hit": "0821 5547 120"
+            },
+            "accept": [
+              "08215547120",
+              "0821 5547120",
+              "0821-5547 120",
+              "0821/5547 120",
+              "0821-5547120",
+              "0821/5547120"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "Rosenaustraße",
+            "explanation": "Grace steigt immer an der Haltestelle Rosenaustraße in den Bus. Die Haunstetter Straße ist ihre Adresse.",
+            "evidence": {
+              "text": "Grace wohnt seit dem Frühling in der Haunstetter Straße 41 in Augsburg. Sie arbeitet in einem Labor und fährt jeden Tag mit dem Bus. Ihr Kollege Paul sagt, dass eine Monatskarte im Abo billiger ist. Im Labor ist Grace unter 0821 9930 64 zu erreichen, aber für das Formular möchte sie ihre private Nummer angeben: 0821 5547 120. Sie steigt immer an der Haltestelle Rosenaustraße ein, gleich bei ihrem Haus. Im September besucht sie ihre Familie in Ghana, deshalb soll das Abo erst im Oktober beginnen.",
+              "hit": "Haltestelle Rosenaustraße"
+            },
+            "accept": [
+              "Rosenaustrasse",
+              "Rosenaustr.",
+              "Rosenaustr",
+              "Haltestelle Rosenaustraße"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "Oktober",
+            "explanation": "Das Abo soll im Oktober beginnen. Im September ist Grace bei ihrer Familie in Ghana.",
+            "evidence": {
+              "text": "Grace wohnt seit dem Frühling in der Haunstetter Straße 41 in Augsburg. Sie arbeitet in einem Labor und fährt jeden Tag mit dem Bus. Ihr Kollege Paul sagt, dass eine Monatskarte im Abo billiger ist. Im Labor ist Grace unter 0821 9930 64 zu erreichen, aber für das Formular möchte sie ihre private Nummer angeben: 0821 5547 120. Sie steigt immer an der Haltestelle Rosenaustraße ein, gleich bei ihrem Haus. Im September besucht sie ihre Familie in Ghana, deshalb soll das Abo erst im Oktober beginnen.",
+              "hit": "deshalb soll das Abo erst im Oktober beginnen"
+            },
+            "accept": [
+              "Okt.",
+              "Okt",
+              "ab Oktober",
+              "im Oktober",
+              "1. Oktober"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Mensah"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-04-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.347Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Freundin Johanna hat Sie zu einem Theaterabend eingeladen. Antworten Sie Johanna mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Premiere am Freitag",
+            "situation": "Ihre Freundin Johanna spielt in der Theatergruppe „Bühnenzauber“. Am Freitag um 19:30 Uhr zeigt die Gruppe ihr neues Stück zum ersten Mal. Johanna hat Sie eingeladen.",
+            "points": [
+              "etwas später kommen (warum?)",
+              "Wer kommt mit?",
+              "Blumen mitbringen?",
+              "nach dem Theater zusammen essen"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Johanna,\nvielen Dank für die Einladung, ich komme sehr gern! Leider bin ich ein paar Minuten später da, weil ich am Freitag bis sieben Uhr arbeiten muss. Mein Freund Luca kommt auch mit. Gehen wir nach dem Theater zusammen essen? Ich lade dich ein!\nViele Grüße\nAmira"
+          }
+        ]
+      }
+    }
+  ]
+}

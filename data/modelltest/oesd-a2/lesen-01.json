@@ -1,0 +1,384 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-01-t1",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:00:00.000Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Konzerte im Park: Eintritt frei",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Ärztin zieht in die Altstadt",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Musikschule sucht Lehrerinnen und Lehrer",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Fest im Innenhof",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Grippe-Impfung ohne Termin",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Neue Regeln für den Müll",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Neuer Kinderchor in der Stadt",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Kantine kocht jetzt gesünder",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Konzerthaus bleibt im Sommer zu",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Neuer Spielplatz hinter dem Haus",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Villach. Die Ordination von Dr. Sabine Kofler, Ärztin für Allgemeinmedizin, zieht im März um. Ab dem 3. März finden die Patientinnen und Patienten die Praxis in der Altstadt, in der Kirchgasse 12 im ersten Stock. Die Ordinationszeiten bleiben gleich. Neu ist aber die Telefonnummer: 04242 31 77 80.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 2,
+                  "text": "Kassel. Ab März bekommt jedes Haus in der Stadt eine braune Tonne. Dort kommen Essensreste, Obst- und Gemüseschalen und Kaffeefilter hinein, aber kein Plastik. Die braune Tonne wird jeden Dienstag geleert und kostet nichts extra. Fragen beantwortet das Umweltamt unter der Nummer 0561 787 20 40.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Winterthur. Wer sich gegen Grippe impfen lassen will, braucht dieses Jahr keinen Termin. Viele Apotheken in der Stadt impfen ohne Anmeldung. Die Impfung kostet CHF 30.–. Bitte bringen Sie Ihre Krankenkassenkarte mit. Die meisten Apotheken impfen zu diesen Zeiten:",
+                  "origin": "aus einer Schweizer Zeitung",
+                  "table": [
+                    [
+                      "Tag",
+                      "Zeit"
+                    ],
+                    [
+                      "Montag",
+                      "8–12 Uhr"
+                    ],
+                    [
+                      "Mittwoch",
+                      "14–18 Uhr"
+                    ],
+                    [
+                      "Samstag",
+                      "9–12 Uhr"
+                    ]
+                  ]
+                },
+                {
+                  "n": 4,
+                  "text": "Wels. Im Juli gibt es jeden Donnerstag Musik im Stadtpark. Die Konzerte beginnen um 19 Uhr und dauern etwa zwei Stunden. Es spielen Bands aus der Region, von Jazz bis Volksmusik. Der Eintritt ist frei. Bei Regen finden die Konzerte im Kulturhaus statt. Bringen Sie eine Decke mit!",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Bamberg. Die städtische Musikschule sucht ab September neue Lehrkräfte für Gitarre und Klavier. Unterricht ist am Nachmittag, vor allem für Kinder und Jugendliche. Sie haben Musik studiert oder viel Erfahrung? Dann schicken Sie Ihre Bewerbung bis Ende Mai an info@musikschule-bamberg.de.",
+                  "origin": "aus einer deutschen Zeitung"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "B",
+            "explanation": "Die Ordination einer Ärztin zieht in die Altstadt. Um Grippe-Impfungen oder die Kantine geht es nicht.",
+            "evidence": {
+              "text": "Villach. Die Ordination von Dr. Sabine Kofler, Ärztin für Allgemeinmedizin, zieht im März um. Ab dem 3. März finden die Patientinnen und Patienten die Praxis in der Altstadt, in der Kirchgasse 12 im ersten Stock. Die Ordinationszeiten bleiben gleich. Neu ist aber die Telefonnummer: 04242 31 77 80.",
+              "hit": "Die Ordination von Dr. Sabine Kofler, Ärztin für Allgemeinmedizin, zieht im März um."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "F",
+            "explanation": "Ab März gibt es eine braune Tonne für Essensreste: neue Regeln für den Müll. Ein Fest oder ein Spielplatz kommt nicht vor.",
+            "evidence": {
+              "text": "Kassel. Ab März bekommt jedes Haus in der Stadt eine braune Tonne. Dort kommen Essensreste, Obst- und Gemüseschalen und Kaffeefilter hinein, aber kein Plastik. Die braune Tonne wird jeden Dienstag geleert und kostet nichts extra. Fragen beantwortet das Umweltamt unter der Nummer 0561 787 20 40.",
+              "hit": "Ab März bekommt jedes Haus in der Stadt eine braune Tonne."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "E",
+            "explanation": "Die Apotheken impfen gegen Grippe, und man braucht keinen Termin. Eine Ärztin, die umzieht, kommt nicht vor.",
+            "evidence": {
+              "text": "Winterthur. Wer sich gegen Grippe impfen lassen will, braucht dieses Jahr keinen Termin. Viele Apotheken in der Stadt impfen ohne Anmeldung. Die Impfung kostet CHF 30.–. Bitte bringen Sie Ihre Krankenkassenkarte mit. Die meisten Apotheken impfen zu diesen Zeiten:",
+              "hit": "Wer sich gegen Grippe impfen lassen will, braucht dieses Jahr keinen Termin."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "A",
+            "explanation": "Im Juli gibt es Konzerte im Stadtpark, und der Eintritt ist frei. Das Konzerthaus und ein Kinderchor kommen nicht vor.",
+            "evidence": {
+              "text": "Wels. Im Juli gibt es jeden Donnerstag Musik im Stadtpark. Die Konzerte beginnen um 19 Uhr und dauern etwa zwei Stunden. Es spielen Bands aus der Region, von Jazz bis Volksmusik. Der Eintritt ist frei. Bei Regen finden die Konzerte im Kulturhaus statt. Bringen Sie eine Decke mit!",
+              "hit": "Der Eintritt ist frei."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "C",
+            "explanation": "Die Musikschule sucht Lehrkräfte für Gitarre und Klavier. Ein neuer Chor für Kinder ist das nicht.",
+            "evidence": {
+              "text": "Bamberg. Die städtische Musikschule sucht ab September neue Lehrkräfte für Gitarre und Klavier. Unterricht ist am Nachmittag, vor allem für Kinder und Jugendliche. Sie haben Musik studiert oder viel Erfahrung? Dann schicken Sie Ihre Bewerbung bis Ende Mai an info@musikschule-bamberg.de.",
+              "hit": "Die städtische Musikschule sucht ab September neue Lehrkräfte für Gitarre und Klavier."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-01-t2",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:00:00.000Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Salzburger Bergbote",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Seit 22 Sommern auf 1800 Metern",
+            "Maria Lechner ist 58 Jahre alt und hat einen ganz besonderen Arbeitsplatz. Seit 22 Jahren führt sie jeden Sommer eine kleine Berghütte im Lungau. Von Juni bis September wohnt sie dort oben, auf 1800 Metern. Die Hütte hat zwölf Betten und eine kleine Küche, mehr nicht.",
+            "Eine Straße zur Hütte gibt es nicht. Das Essen kommt einmal in der Woche mit einer kleinen Materialseilbahn nach oben. „Bei schlechtem Wetter muss ich gut planen“, sagt sie und lacht. Früher hat sie viele Sachen sogar selbst im Rucksack hinaufgetragen.",
+            "Die Wanderer kommen vor allem wegen ihrer Knödel. Auch die Jause mit Brot, Speck und Käse ist sehr beliebt. Viele Gäste kommen jedes Jahr wieder und bringen ihre Freunde mit. Manche bleiben eine Nacht und sehen am Morgen den Sonnenaufgang.",
+            "Seit dem letzten Sommer hilft ihr Sohn Thomas auf der Hütte. Er kocht mit ihr und repariert, was kaputt ist. Im Winter ist die Hütte geschlossen. Dann arbeitet Maria Lechner in einem Hotel im Tal, an der Rezeption.",
+            "Wie lange will sie noch auf die Hütte gehen? „Noch einen Sommer“, sagt sie. „Dann übernimmt Thomas die Hütte, und ich komme nur noch als Gast.“"
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Maria Lechner führt die Hütte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur im Winter."
+                },
+                {
+                  "key": "b",
+                  "label": "seit 22 Jahren im Sommer."
+                },
+                {
+                  "key": "c",
+                  "label": "seit einem Jahr."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Das Essen kommt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "mit dem Auto über eine Straße."
+                },
+                {
+                  "key": "b",
+                  "label": "jeden Tag in einem Rucksack."
+                },
+                {
+                  "key": "c",
+                  "label": "einmal pro Woche mit einer Seilbahn."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Die Gäste mögen besonders …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Knödel von Maria Lechner."
+                },
+                {
+                  "key": "b",
+                  "label": "die Musik auf der Hütte."
+                },
+                {
+                  "key": "c",
+                  "label": "die Zimmer mit Aussicht."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Auf der Hütte hilft jetzt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ihr Sohn."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Kollegin aus dem Hotel."
+                },
+                {
+                  "key": "c",
+                  "label": "ihr Mann."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Im Winter …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist die Hütte auch offen."
+                },
+                {
+                  "key": "b",
+                  "label": "arbeitet Maria Lechner in einem Hotel."
+                },
+                {
+                  "key": "c",
+                  "label": "macht Maria Lechner Urlaub im Tal."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Maria Lechner möchte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "noch einen Sommer auf der Hütte arbeiten."
+                },
+                {
+                  "key": "b",
+                  "label": "die Hütte bald verkaufen."
+                },
+                {
+                  "key": "c",
+                  "label": "im Hotel als Köchin arbeiten."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "Das Essen kommt einmal in der Woche mit einer Seilbahn. Eine Straße gibt es nicht, und den Rucksack hat sie nur früher getragen.",
+            "evidence": {
+              "text": "Seit 22 Sommern auf 1800 Metern Maria Lechner ist 58 Jahre alt und hat einen ganz besonderen Arbeitsplatz. Seit 22 Jahren führt sie jeden Sommer eine kleine Berghütte im Lungau. Von Juni bis September wohnt sie dort oben, auf 1800 Metern. Die Hütte hat zwölf Betten und eine kleine Küche, mehr nicht. Eine Straße zur Hütte gibt es nicht. Das Essen kommt einmal in der Woche mit einer kleinen Materialseilbahn nach oben. „Bei schlechtem Wetter muss ich gut planen“, sagt sie und lacht. Früher hat sie viele Sachen sogar selbst im Rucksack hinaufgetragen. Die Wanderer kommen vor allem wegen ihrer Knödel. Auch die Jause mit Brot, Speck und Käse ist sehr beliebt. Viele Gäste kommen jedes Jahr wieder und bringen ihre Freunde mit. Manche bleiben eine Nacht und sehen am Morgen den Sonnenaufgang. Seit dem letzten Sommer hilft ihr Sohn Thomas auf der Hütte. Er kocht mit ihr und repariert, was kaputt ist. Im Winter ist die Hütte geschlossen. Dann arbeitet Maria Lechner in einem Hotel im Tal, an der Rezeption. Wie lange will sie noch auf die Hütte gehen? „Noch einen Sommer“, sagt sie. „Dann übernimmt Thomas die Hütte, und ich komme nur noch als Gast.“",
+              "hit": "Das Essen kommt einmal in der Woche mit einer kleinen Materialseilbahn nach oben."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "Die Wanderer kommen vor allem wegen ihrer Knödel. Von Musik oder Zimmern steht nichts im Text.",
+            "evidence": {
+              "text": "Seit 22 Sommern auf 1800 Metern Maria Lechner ist 58 Jahre alt und hat einen ganz besonderen Arbeitsplatz. Seit 22 Jahren führt sie jeden Sommer eine kleine Berghütte im Lungau. Von Juni bis September wohnt sie dort oben, auf 1800 Metern. Die Hütte hat zwölf Betten und eine kleine Küche, mehr nicht. Eine Straße zur Hütte gibt es nicht. Das Essen kommt einmal in der Woche mit einer kleinen Materialseilbahn nach oben. „Bei schlechtem Wetter muss ich gut planen“, sagt sie und lacht. Früher hat sie viele Sachen sogar selbst im Rucksack hinaufgetragen. Die Wanderer kommen vor allem wegen ihrer Knödel. Auch die Jause mit Brot, Speck und Käse ist sehr beliebt. Viele Gäste kommen jedes Jahr wieder und bringen ihre Freunde mit. Manche bleiben eine Nacht und sehen am Morgen den Sonnenaufgang. Seit dem letzten Sommer hilft ihr Sohn Thomas auf der Hütte. Er kocht mit ihr und repariert, was kaputt ist. Im Winter ist die Hütte geschlossen. Dann arbeitet Maria Lechner in einem Hotel im Tal, an der Rezeption. Wie lange will sie noch auf die Hütte gehen? „Noch einen Sommer“, sagt sie. „Dann übernimmt Thomas die Hütte, und ich komme nur noch als Gast.“",
+              "hit": "Die Wanderer kommen vor allem wegen ihrer Knödel."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Seit dem letzten Sommer hilft ihr Sohn Thomas. Das Hotel ist ihr Arbeitsplatz im Winter.",
+            "evidence": {
+              "text": "Seit 22 Sommern auf 1800 Metern Maria Lechner ist 58 Jahre alt und hat einen ganz besonderen Arbeitsplatz. Seit 22 Jahren führt sie jeden Sommer eine kleine Berghütte im Lungau. Von Juni bis September wohnt sie dort oben, auf 1800 Metern. Die Hütte hat zwölf Betten und eine kleine Küche, mehr nicht. Eine Straße zur Hütte gibt es nicht. Das Essen kommt einmal in der Woche mit einer kleinen Materialseilbahn nach oben. „Bei schlechtem Wetter muss ich gut planen“, sagt sie und lacht. Früher hat sie viele Sachen sogar selbst im Rucksack hinaufgetragen. Die Wanderer kommen vor allem wegen ihrer Knödel. Auch die Jause mit Brot, Speck und Käse ist sehr beliebt. Viele Gäste kommen jedes Jahr wieder und bringen ihre Freunde mit. Manche bleiben eine Nacht und sehen am Morgen den Sonnenaufgang. Seit dem letzten Sommer hilft ihr Sohn Thomas auf der Hütte. Er kocht mit ihr und repariert, was kaputt ist. Im Winter ist die Hütte geschlossen. Dann arbeitet Maria Lechner in einem Hotel im Tal, an der Rezeption. Wie lange will sie noch auf die Hütte gehen? „Noch einen Sommer“, sagt sie. „Dann übernimmt Thomas die Hütte, und ich komme nur noch als Gast.“",
+              "hit": "Seit dem letzten Sommer hilft ihr Sohn Thomas auf der Hütte."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Im Winter ist die Hütte zu, und sie arbeitet an der Rezeption in einem Hotel. Urlaub macht sie nicht.",
+            "evidence": {
+              "text": "Seit 22 Sommern auf 1800 Metern Maria Lechner ist 58 Jahre alt und hat einen ganz besonderen Arbeitsplatz. Seit 22 Jahren führt sie jeden Sommer eine kleine Berghütte im Lungau. Von Juni bis September wohnt sie dort oben, auf 1800 Metern. Die Hütte hat zwölf Betten und eine kleine Küche, mehr nicht. Eine Straße zur Hütte gibt es nicht. Das Essen kommt einmal in der Woche mit einer kleinen Materialseilbahn nach oben. „Bei schlechtem Wetter muss ich gut planen“, sagt sie und lacht. Früher hat sie viele Sachen sogar selbst im Rucksack hinaufgetragen. Die Wanderer kommen vor allem wegen ihrer Knödel. Auch die Jause mit Brot, Speck und Käse ist sehr beliebt. Viele Gäste kommen jedes Jahr wieder und bringen ihre Freunde mit. Manche bleiben eine Nacht und sehen am Morgen den Sonnenaufgang. Seit dem letzten Sommer hilft ihr Sohn Thomas auf der Hütte. Er kocht mit ihr und repariert, was kaputt ist. Im Winter ist die Hütte geschlossen. Dann arbeitet Maria Lechner in einem Hotel im Tal, an der Rezeption. Wie lange will sie noch auf die Hütte gehen? „Noch einen Sommer“, sagt sie. „Dann übernimmt Thomas die Hütte, und ich komme nur noch als Gast.“",
+              "hit": "Dann arbeitet Maria Lechner in einem Hotel im Tal, an der Rezeption."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Sie sagt: noch einen Sommer. Dann übernimmt ihr Sohn die Hütte, sie verkauft sie nicht.",
+            "evidence": {
+              "text": "Seit 22 Sommern auf 1800 Metern Maria Lechner ist 58 Jahre alt und hat einen ganz besonderen Arbeitsplatz. Seit 22 Jahren führt sie jeden Sommer eine kleine Berghütte im Lungau. Von Juni bis September wohnt sie dort oben, auf 1800 Metern. Die Hütte hat zwölf Betten und eine kleine Küche, mehr nicht. Eine Straße zur Hütte gibt es nicht. Das Essen kommt einmal in der Woche mit einer kleinen Materialseilbahn nach oben. „Bei schlechtem Wetter muss ich gut planen“, sagt sie und lacht. Früher hat sie viele Sachen sogar selbst im Rucksack hinaufgetragen. Die Wanderer kommen vor allem wegen ihrer Knödel. Auch die Jause mit Brot, Speck und Käse ist sehr beliebt. Viele Gäste kommen jedes Jahr wieder und bringen ihre Freunde mit. Manche bleiben eine Nacht und sehen am Morgen den Sonnenaufgang. Seit dem letzten Sommer hilft ihr Sohn Thomas auf der Hütte. Er kocht mit ihr und repariert, was kaputt ist. Im Winter ist die Hütte geschlossen. Dann arbeitet Maria Lechner in einem Hotel im Tal, an der Rezeption. Wie lange will sie noch auf die Hütte gehen? „Noch einen Sommer“, sagt sie. „Dann übernimmt Thomas die Hütte, und ich komme nur noch als Gast.“",
+              "hit": "„Noch einen Sommer“, sagt sie."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

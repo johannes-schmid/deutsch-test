@@ -1,0 +1,2367 @@
+{
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "goethe-b1-hoeren-08-t1-bsp",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Ida lädt zu einem Tanzabend ein."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ida sagt, man braucht …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eigene Getränke."
+                },
+                {
+                  "key": "b",
+                  "label": "Schuhe mit glatter Sohle."
+                },
+                {
+                  "key": "c",
+                  "label": "Geld für den Kurs."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Ida",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t1-bsp.mp3",
+          "duration": 32.29
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_ela",
+            "text": "Hallo, hier ist Ida! Du, am Freitag ist im Kulturzentrum wieder Salsa-Abend, und ich hätte total Lust, mit dir hinzugehen. Um halb neun gibt's eine Schnupperstunde für Anfänger, die kostet nichts. Um neun fängt dann die Party an. Getränke gibt's dort an der Bar, da musst du nichts mitnehmen. Aber zieh bitte Schuhe mit einer glatten Sohle an, mit Turnschuhen tanzt es sich ganz schlecht. Ruf mich an, ja? Bis bald!",
+            "delivery": "[cheerful, casual voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "richtig",
+        "b"
+      ]
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t1-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Man kann ohne Karte einfach auf den Turm steigen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Kinder unter sechs Jahren …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommen oben eine Urkunde."
+                },
+                {
+                  "key": "b",
+                  "label": "müssen an der Hand gehen."
+                },
+                {
+                  "key": "c",
+                  "label": "dürfen nicht mit hinauf."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t1-01.mp3",
+          "duration": 39.08
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Der Eintritt ist frei, aber du brauchst vorher eine kostenlose Karte von der Touristinformation. Ohne Karte geht es nicht.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp für Sonntag: In Bad Hersfeld ist der Rathausturm wieder für Besucher offen. Hundertachtzig Stufen sind es bis nach oben, und bei gutem Wetter sieht man bis weit ins Fuldatal. Der Eintritt ist frei. Weil aber immer nur zwanzig Personen gleichzeitig hinauf dürfen, brauchen Sie vorher eine kostenlose Karte von der Touristinformation. Kinder ab sechs dürfen mit, aber nur an der Hand. Für jüngere Kinder ist der Aufstieg leider verboten. Und oben wartet auf jeden eine kleine Urkunde.",
+              "hit": "brauchen Sie vorher eine kostenlose Karte von der Touristinformation"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Für Kinder unter sechs ist der Aufstieg verboten. An der Hand gehen müssen nur die Kinder ab sechs.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp für Sonntag: In Bad Hersfeld ist der Rathausturm wieder für Besucher offen. Hundertachtzig Stufen sind es bis nach oben, und bei gutem Wetter sieht man bis weit ins Fuldatal. Der Eintritt ist frei. Weil aber immer nur zwanzig Personen gleichzeitig hinauf dürfen, brauchen Sie vorher eine kostenlose Karte von der Touristinformation. Kinder ab sechs dürfen mit, aber nur an der Hand. Für jüngere Kinder ist der Aufstieg leider verboten. Und oben wartet auf jeden eine kleine Urkunde.",
+              "hit": "Für jüngere Kinder ist der Aufstieg leider verboten."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Und hier noch ein Tipp für Sonntag: In Bad Hersfeld ist der Rathausturm wieder für Besucher offen. Hundertachtzig Stufen sind es bis nach oben, und bei gutem Wetter sieht man bis weit ins Fuldatal. Der Eintritt ist frei. Weil aber immer nur zwanzig Personen gleichzeitig hinauf dürfen, brauchen Sie vorher eine kostenlose Karte von der Touristinformation. Kinder ab sechs dürfen mit, aber nur an der Hand. Für jüngere Kinder ist der Aufstieg leider verboten. Und oben wartet auf jeden eine kleine Urkunde.",
+            "delivery": "[warm, upbeat radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t1-02",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Nachricht auf der Mailbox (Fahrradwerkstatt)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Frau Brändli kann ihr Velo schon abholen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Frau Brändli soll sagen, ob …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "das Rücklicht repariert werden soll."
+                },
+                {
+                  "key": "b",
+                  "label": "die Werkstatt neue Reifen montieren soll."
+                },
+                {
+                  "key": "c",
+                  "label": "sie das Velo am Samstag abholt."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Velowerkstatt",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t1-02.mp3",
+          "duration": 36.23
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Der Service ist gemacht, und das Velo ist fertig. Nur über die Reifen will die Werkstatt noch sprechen.",
+            "evidence": {
+              "text": "Grüezi Frau Brändli, hier ist die Velowerkstatt Kettenblatt in Wohlen. Ihr Velo ist fertig, der Service ist gemacht, und beim Rücklicht haben wir ein neues Teil eingebaut. Zusammen kostet das hundertzwanzig Franken. Was mir noch aufgefallen ist: Die Reifen sind ziemlich abgefahren. Die haben wir aber nicht einfach gewechselt, das möchten wir zuerst mit Ihnen besprechen. Rufen Sie mich doch bitte bis morgen zurück. Und denken Sie daran, am Samstag haben wir nur bis zwölf offen. Merci und auf Wiederhören.",
+              "hit": "Ihr Velo ist fertig, der Service ist gemacht"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Die Reifen sind abgefahren, und die Werkstatt will sie nicht ohne Frage wechseln. Das Rücklicht ist schon repariert.",
+            "evidence": {
+              "text": "Grüezi Frau Brändli, hier ist die Velowerkstatt Kettenblatt in Wohlen. Ihr Velo ist fertig, der Service ist gemacht, und beim Rücklicht haben wir ein neues Teil eingebaut. Zusammen kostet das hundertzwanzig Franken. Was mir noch aufgefallen ist: Die Reifen sind ziemlich abgefahren. Die haben wir aber nicht einfach gewechselt, das möchten wir zuerst mit Ihnen besprechen. Rufen Sie mich doch bitte bis morgen zurück. Und denken Sie daran, am Samstag haben wir nur bis zwölf offen. Merci und auf Wiederhören.",
+              "hit": "Die haben wir aber nicht einfach gewechselt, das möchten wir zuerst mit Ihnen besprechen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Grüezi Frau Brändli, hier ist die Velowerkstatt Kettenblatt in Wohlen. Ihr Velo ist fertig, der Service ist gemacht, und beim Rücklicht haben wir ein neues Teil eingebaut. Zusammen kostet das hundertzwanzig Franken. Was mir noch aufgefallen ist: Die Reifen sind ziemlich abgefahren. Die haben wir aber nicht einfach gewechselt, das möchten wir zuerst mit Ihnen besprechen. Rufen Sie mich doch bitte bis morgen zurück. Und denken Sie daran, am Samstag haben wir nur bis zwölf offen. Merci und auf Wiederhören.",
+            "delivery": "[friendly, matter-of-fact workshop voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t1-03",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Durchsage in einer Eishalle"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Die Eisfläche ist heute den ganzen Nachmittag für alle offen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Bis Sonntag …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kostet die Karte für die ganze Saison weniger."
+                },
+                {
+                  "key": "b",
+                  "label": "kann man Schlittschuhe gratis leihen."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man einen Kurs für Kinder buchen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage in der Eishalle",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage in einer Eishalle.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t1-03.mp3",
+          "duration": 37.83
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Der Publikumslauf endet heute schon um Viertel vor vier. Danach trainiert die Eishockeymannschaft.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher der Eishalle Knittelfeld, bitte beachten Sie: Der Publikumslauf endet heute schon um Viertel vor vier, denn um vier beginnt das Training der Eishockeymannschaft. In zehn Minuten machen wir außerdem eine kurze Pause, damit das Eis neu aufbereitet werden kann. Leihschuhe kosten weiterhin drei Euro pro Paar. Und noch ein Tipp: Bis Sonntag bekommen Sie an der Kassa die Saisonkarte um zehn Prozent günstiger, heuer übrigens zum letzten Mal. Die Eislaufkurse für Kinder starten im Jänner. Danke!",
+              "hit": "Der Publikumslauf endet heute schon um Viertel vor vier"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Die Saisonkarte ist bis Sonntag zehn Prozent billiger. Leihschuhe kosten weiter drei Euro, und die Kinderkurse beginnen erst im Jänner.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher der Eishalle Knittelfeld, bitte beachten Sie: Der Publikumslauf endet heute schon um Viertel vor vier, denn um vier beginnt das Training der Eishockeymannschaft. In zehn Minuten machen wir außerdem eine kurze Pause, damit das Eis neu aufbereitet werden kann. Leihschuhe kosten weiterhin drei Euro pro Paar. Und noch ein Tipp: Bis Sonntag bekommen Sie an der Kassa die Saisonkarte um zehn Prozent günstiger, heuer übrigens zum letzten Mal. Die Eislaufkurse für Kinder starten im Jänner. Danke!",
+              "hit": "Bis Sonntag bekommen Sie an der Kassa die Saisonkarte um zehn Prozent günstiger"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Liebe Besucherinnen und Besucher der Eishalle Knittelfeld, bitte beachten Sie: Der Publikumslauf endet heute schon um Viertel vor vier, denn um vier beginnt das Training der Eishockeymannschaft. In zehn Minuten machen wir außerdem eine kurze Pause, damit das Eis neu aufbereitet werden kann. Leihschuhe kosten weiterhin drei Euro pro Paar. Und noch ein Tipp: Bis Sonntag bekommen Sie an der Kassa die Saisonkarte um zehn Prozent günstiger, heuer übrigens zum letzten Mal. Die Eislaufkurse für Kinder starten im Jänner. Danke!",
+            "delivery": "[calm, clear public announcement]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t1-04",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Für die Planung einer Küche muss man nichts bezahlen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Nur am Samstag …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist die Montage kostenlos."
+                },
+                {
+                  "key": "b",
+                  "label": "gibt es zehn Prozent Rabatt."
+                },
+                {
+                  "key": "c",
+                  "label": "bekommen Käufer ein Messerset geschenkt."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t1-04.mp3",
+          "duration": 39.11
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Die Fachleute planen die Küche wie immer ohne Kosten für dich. Das gilt nicht nur diesen Monat.",
+            "evidence": {
+              "text": "Sie träumen von einer neuen Küche? Dann kommen Sie zur Küchenwelt Bergmann nach Memmingen! Unsere Fachleute planen Ihre Traumküche dreidimensional am Computer, und zwar wie immer ohne Kosten für Sie. Den ganzen Monat bauen wir Ihre neue Küche kostenlos bei Ihnen zu Hause auf. Auf unsere Ausstellungsküchen gibt es außerdem zehn Prozent, bis alle verkauft sind. Und nur am Samstag bekommt jeder, der eine Küche kauft, ein hochwertiges Messerset gratis dazu. Küchenwelt Bergmann, direkt an der Bundesstraße. Wir freuen uns auf Sie!",
+              "hit": "und zwar wie immer ohne Kosten für Sie"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Das Messerset gibt es nur am Samstag. Die Montage ist den ganzen Monat gratis, und der Rabatt gilt, bis die Ausstellungsküchen verkauft sind.",
+            "evidence": {
+              "text": "Sie träumen von einer neuen Küche? Dann kommen Sie zur Küchenwelt Bergmann nach Memmingen! Unsere Fachleute planen Ihre Traumküche dreidimensional am Computer, und zwar wie immer ohne Kosten für Sie. Den ganzen Monat bauen wir Ihre neue Küche kostenlos bei Ihnen zu Hause auf. Auf unsere Ausstellungsküchen gibt es außerdem zehn Prozent, bis alle verkauft sind. Und nur am Samstag bekommt jeder, der eine Küche kauft, ein hochwertiges Messerset gratis dazu. Küchenwelt Bergmann, direkt an der Bundesstraße. Wir freuen uns auf Sie!",
+              "hit": "Und nur am Samstag bekommt jeder, der eine Küche kauft, ein hochwertiges Messerset gratis dazu."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_lisa",
+            "text": "Sie träumen von einer neuen Küche? Dann kommen Sie zur Küchenwelt Bergmann nach Memmingen! Unsere Fachleute planen Ihre Traumküche dreidimensional am Computer, und zwar wie immer ohne Kosten für Sie. Den ganzen Monat bauen wir Ihre neue Küche kostenlos bei Ihnen zu Hause auf. Auf unsere Ausstellungsküchen gibt es außerdem zehn Prozent, bis alle verkauft sind. Und nur am Samstag bekommt jeder, der eine Küche kauft, ein hochwertiges Messerset gratis dazu. Küchenwelt Bergmann, direkt an der Bundesstraße. Wir freuen uns auf Sie!",
+            "delivery": "[bright, energetic radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t1-05",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Nachricht auf der Mailbox (Installateur)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Der alte Wasserhahn im Bad lässt sich noch reparieren."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Frau Kranzl soll …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen neuen Termin ausmachen."
+                },
+                {
+                  "key": "b",
+                  "label": "in der Ausstellung der Firma einen Hahn wählen."
+                },
+                {
+                  "key": "c",
+                  "label": "das Ersatzteil im Internet bestellen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Installateur",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t1-05.mp3",
+          "duration": 34.95
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Das Ersatzteil gibt es nicht mehr, auch nicht im Internet. Darum schlägt die Firma einen neuen Hahn vor.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Kranzl, hier ist Installateur Hofbauer aus Gänserndorf. Es geht um Ihren tropfenden Wasserhahn im Bad. Leider gibt es das Ersatzteil für dieses alte Modell nicht mehr, wir haben überall gesucht, auch im Internet. Wir würden Ihnen deshalb einen neuen Hahn vorschlagen, der kostet ungefähr neunzig Euro. Kommen Sie doch bitte bis Donnerstag in unseren Schauraum und suchen Sie sich einen aus. Der Termin am Freitag um sieben Uhr früh bleibt, wie besprochen. Auf Wiederhören!",
+              "hit": "Leider gibt es das Ersatzteil für dieses alte Modell nicht mehr"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Sie soll bis Donnerstag in den Schauraum kommen und einen neuen Hahn aussuchen. Der Termin am Freitag bleibt.",
+            "evidence": {
+              "text": "Grüß Gott, Frau Kranzl, hier ist Installateur Hofbauer aus Gänserndorf. Es geht um Ihren tropfenden Wasserhahn im Bad. Leider gibt es das Ersatzteil für dieses alte Modell nicht mehr, wir haben überall gesucht, auch im Internet. Wir würden Ihnen deshalb einen neuen Hahn vorschlagen, der kostet ungefähr neunzig Euro. Kommen Sie doch bitte bis Donnerstag in unseren Schauraum und suchen Sie sich einen aus. Der Termin am Freitag um sieben Uhr früh bleibt, wie besprochen. Auf Wiederhören!",
+              "hit": "Kommen Sie doch bitte bis Donnerstag in unseren Schauraum und suchen Sie sich einen aus."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Grüß Gott, Frau Kranzl, hier ist Installateur Hofbauer aus Gänserndorf. Es geht um Ihren tropfenden Wasserhahn im Bad. Leider gibt es das Ersatzteil für dieses alte Modell nicht mehr, wir haben überall gesucht, auch im Internet. Wir würden Ihnen deshalb einen neuen Hahn vorschlagen, der kostet ungefähr neunzig Euro. Kommen Sie doch bitte bis Donnerstag in unseren Schauraum und suchen Sie sich einen aus. Der Termin am Freitag um sieben Uhr früh bleibt, wie besprochen. Auf Wiederhören!",
+            "delivery": "[polite, businesslike tradesman voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t2-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Führung durch einen Handwerksbetrieb"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Bevor es losgeht, sollen die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "etwas zum Schutz der Augen aufsetzen."
+                },
+                {
+                  "key": "b",
+                  "label": "ihre Taschen in der Garderobe lassen."
+                },
+                {
+                  "key": "c",
+                  "label": "einen kurzen Film ansehen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Heute können die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Film über die Herstellung sehen."
+                },
+                {
+                  "key": "b",
+                  "label": "live sehen, wie eine Glocke gegossen wird."
+                },
+                {
+                  "key": "c",
+                  "label": "selbst eine kleine Glocke gießen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Beim Gießen müssen die Besucher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Handschuhe tragen."
+                },
+                {
+                  "key": "b",
+                  "label": "ganz leise sein."
+                },
+                {
+                  "key": "c",
+                  "label": "hinter einer Markierung auf dem Boden stehen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Fotografieren ist …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in der ganzen Gießerei verboten."
+                },
+                {
+                  "key": "b",
+                  "label": "erlaubt, wenn der Blitz aus ist."
+                },
+                {
+                  "key": "c",
+                  "label": "nur im Museum erlaubt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Am Ende der Führung …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf jeder eine große Glocke zum Klingen bringen."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommt jeder eine kleine Glocke geschenkt."
+                },
+                {
+                  "key": "c",
+                  "label": "gibt es für alle eine Jause."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Führung durch eine Gießerei",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Ewald Steinwender, Führung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie machen eine Führung durch eine Glockengießerei in Ternitz mit.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t2-01.mp3",
+          "duration": 167.24
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Zuerst setzt jeder eine Schutzbrille auf, wegen der Funken. Die Taschen darf man behalten, es gibt keine Garderobe.",
+            "evidence": {
+              "text": "Grüß Gott, meine Damen und Herren, und herzlich willkommen in der Glockengießerei Pernegger hier in Ternitz! Mein Name ist Ewald Steinwender, ich arbeite seit über dreißig Jahren hier, und heute führe ich Sie durch unseren Betrieb. Wir sind ein Familienbetrieb, und Glocken gießen wir hier schon seit über zweihundert Jahren. Die Führung dauert ungefähr eine Stunde. Bevor wir hineingehen, eine Bitte: Nehmen Sie sich aus der Kiste hier neben der Tür eine Schutzbrille und setzen Sie die gleich auf. In der Halle fliegen manchmal kleine Funken, und da ist das einfach sicherer. Ihre Taschen und Jacken können Sie übrigens behalten, wir haben leider keine Garderobe, aber das ist auch kein Problem. So, und jetzt habe ich eine gute Nachricht für Sie. Normalerweise zeigen wir unseren Besuchern das Gießen nur in einem Film, weil wir nicht jeden Tag gießen. Aber heute haben Sie Glück: In einer Viertelstunde gießen wir eine große Glocke für eine Kirche in der Steiermark, und Sie dürfen live dabei sein. Das sieht man nicht oft, glauben Sie mir. Heuer ist es erst das vierte Mal. Das flüssige Metall ist über tausend Grad heiß. Deshalb bleiben Sie bitte die ganze Zeit hinter der gelben Linie am Boden. Auch wenn Sie neugierig sind, gehen Sie bitte nicht näher hin. Meine Kollegen tragen spezielle Schutzkleidung, Sie nicht. Handschuhe brauchen Sie keine, Sie fassen ja nichts an. Und es wird ziemlich laut, aber sprechen dürfen Sie natürlich trotzdem. Viele fragen mich immer, ob sie fotografieren dürfen. Ja, das dürfen Sie, auch beim Gießen. Nur den Blitz schalten Sie bitte aus, der stört meine Kollegen bei der Arbeit. Videos sind auch in Ordnung. Nach dem Gießen gehen wir dann über die Stiege hinauf in den ersten Stock. Die Stiege ist ein bisschen steil, halten Sie sich bitte gut fest. Dort ist unser kleines Museum mit alten Glocken, die älteste ist fast fünfhundert Jahre alt. Und zum Schluss gibt es noch etwas Besonderes: Jeder von Ihnen darf mit einem Hammer an unsere große Probeglocke schlagen. Das ist ein wunderbarer Klang, den spüren Sie im ganzen Körper. Kleine Glocken als Andenken können Sie danach in unserem Shop kaufen. Und wer Hunger hat: Eine Jause gibt es bei uns leider nicht, aber gleich gegenüber ist ein gutes Gasthaus. So, haben Sie noch Fragen? Nein? Dann setzen Sie jetzt bitte Ihre Brillen auf, und wir gehen hinein.",
+              "hit": "Nehmen Sie sich aus der Kiste hier neben der Tür eine Schutzbrille und setzen Sie die gleich auf."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Heute wird eine große Glocke gegossen, und die Gruppe darf zusehen. Den Film gibt es nur an normalen Tagen.",
+            "evidence": {
+              "text": "Grüß Gott, meine Damen und Herren, und herzlich willkommen in der Glockengießerei Pernegger hier in Ternitz! Mein Name ist Ewald Steinwender, ich arbeite seit über dreißig Jahren hier, und heute führe ich Sie durch unseren Betrieb. Wir sind ein Familienbetrieb, und Glocken gießen wir hier schon seit über zweihundert Jahren. Die Führung dauert ungefähr eine Stunde. Bevor wir hineingehen, eine Bitte: Nehmen Sie sich aus der Kiste hier neben der Tür eine Schutzbrille und setzen Sie die gleich auf. In der Halle fliegen manchmal kleine Funken, und da ist das einfach sicherer. Ihre Taschen und Jacken können Sie übrigens behalten, wir haben leider keine Garderobe, aber das ist auch kein Problem. So, und jetzt habe ich eine gute Nachricht für Sie. Normalerweise zeigen wir unseren Besuchern das Gießen nur in einem Film, weil wir nicht jeden Tag gießen. Aber heute haben Sie Glück: In einer Viertelstunde gießen wir eine große Glocke für eine Kirche in der Steiermark, und Sie dürfen live dabei sein. Das sieht man nicht oft, glauben Sie mir. Heuer ist es erst das vierte Mal. Das flüssige Metall ist über tausend Grad heiß. Deshalb bleiben Sie bitte die ganze Zeit hinter der gelben Linie am Boden. Auch wenn Sie neugierig sind, gehen Sie bitte nicht näher hin. Meine Kollegen tragen spezielle Schutzkleidung, Sie nicht. Handschuhe brauchen Sie keine, Sie fassen ja nichts an. Und es wird ziemlich laut, aber sprechen dürfen Sie natürlich trotzdem. Viele fragen mich immer, ob sie fotografieren dürfen. Ja, das dürfen Sie, auch beim Gießen. Nur den Blitz schalten Sie bitte aus, der stört meine Kollegen bei der Arbeit. Videos sind auch in Ordnung. Nach dem Gießen gehen wir dann über die Stiege hinauf in den ersten Stock. Die Stiege ist ein bisschen steil, halten Sie sich bitte gut fest. Dort ist unser kleines Museum mit alten Glocken, die älteste ist fast fünfhundert Jahre alt. Und zum Schluss gibt es noch etwas Besonderes: Jeder von Ihnen darf mit einem Hammer an unsere große Probeglocke schlagen. Das ist ein wunderbarer Klang, den spüren Sie im ganzen Körper. Kleine Glocken als Andenken können Sie danach in unserem Shop kaufen. Und wer Hunger hat: Eine Jause gibt es bei uns leider nicht, aber gleich gegenüber ist ein gutes Gasthaus. So, haben Sie noch Fragen? Nein? Dann setzen Sie jetzt bitte Ihre Brillen auf, und wir gehen hinein.",
+              "hit": "In einer Viertelstunde gießen wir eine große Glocke für eine Kirche in der Steiermark, und Sie dürfen live dabei sein."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Du musst die ganze Zeit hinter der gelben Linie am Boden bleiben. Handschuhe brauchst du nicht, und sprechen darfst du.",
+            "evidence": {
+              "text": "Grüß Gott, meine Damen und Herren, und herzlich willkommen in der Glockengießerei Pernegger hier in Ternitz! Mein Name ist Ewald Steinwender, ich arbeite seit über dreißig Jahren hier, und heute führe ich Sie durch unseren Betrieb. Wir sind ein Familienbetrieb, und Glocken gießen wir hier schon seit über zweihundert Jahren. Die Führung dauert ungefähr eine Stunde. Bevor wir hineingehen, eine Bitte: Nehmen Sie sich aus der Kiste hier neben der Tür eine Schutzbrille und setzen Sie die gleich auf. In der Halle fliegen manchmal kleine Funken, und da ist das einfach sicherer. Ihre Taschen und Jacken können Sie übrigens behalten, wir haben leider keine Garderobe, aber das ist auch kein Problem. So, und jetzt habe ich eine gute Nachricht für Sie. Normalerweise zeigen wir unseren Besuchern das Gießen nur in einem Film, weil wir nicht jeden Tag gießen. Aber heute haben Sie Glück: In einer Viertelstunde gießen wir eine große Glocke für eine Kirche in der Steiermark, und Sie dürfen live dabei sein. Das sieht man nicht oft, glauben Sie mir. Heuer ist es erst das vierte Mal. Das flüssige Metall ist über tausend Grad heiß. Deshalb bleiben Sie bitte die ganze Zeit hinter der gelben Linie am Boden. Auch wenn Sie neugierig sind, gehen Sie bitte nicht näher hin. Meine Kollegen tragen spezielle Schutzkleidung, Sie nicht. Handschuhe brauchen Sie keine, Sie fassen ja nichts an. Und es wird ziemlich laut, aber sprechen dürfen Sie natürlich trotzdem. Viele fragen mich immer, ob sie fotografieren dürfen. Ja, das dürfen Sie, auch beim Gießen. Nur den Blitz schalten Sie bitte aus, der stört meine Kollegen bei der Arbeit. Videos sind auch in Ordnung. Nach dem Gießen gehen wir dann über die Stiege hinauf in den ersten Stock. Die Stiege ist ein bisschen steil, halten Sie sich bitte gut fest. Dort ist unser kleines Museum mit alten Glocken, die älteste ist fast fünfhundert Jahre alt. Und zum Schluss gibt es noch etwas Besonderes: Jeder von Ihnen darf mit einem Hammer an unsere große Probeglocke schlagen. Das ist ein wunderbarer Klang, den spüren Sie im ganzen Körper. Kleine Glocken als Andenken können Sie danach in unserem Shop kaufen. Und wer Hunger hat: Eine Jause gibt es bei uns leider nicht, aber gleich gegenüber ist ein gutes Gasthaus. So, haben Sie noch Fragen? Nein? Dann setzen Sie jetzt bitte Ihre Brillen auf, und wir gehen hinein.",
+              "hit": "Deshalb bleiben Sie bitte die ganze Zeit hinter der gelben Linie am Boden."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Fotos sind erlaubt, auch beim Gießen. Nur den Blitz soll man ausschalten.",
+            "evidence": {
+              "text": "Grüß Gott, meine Damen und Herren, und herzlich willkommen in der Glockengießerei Pernegger hier in Ternitz! Mein Name ist Ewald Steinwender, ich arbeite seit über dreißig Jahren hier, und heute führe ich Sie durch unseren Betrieb. Wir sind ein Familienbetrieb, und Glocken gießen wir hier schon seit über zweihundert Jahren. Die Führung dauert ungefähr eine Stunde. Bevor wir hineingehen, eine Bitte: Nehmen Sie sich aus der Kiste hier neben der Tür eine Schutzbrille und setzen Sie die gleich auf. In der Halle fliegen manchmal kleine Funken, und da ist das einfach sicherer. Ihre Taschen und Jacken können Sie übrigens behalten, wir haben leider keine Garderobe, aber das ist auch kein Problem. So, und jetzt habe ich eine gute Nachricht für Sie. Normalerweise zeigen wir unseren Besuchern das Gießen nur in einem Film, weil wir nicht jeden Tag gießen. Aber heute haben Sie Glück: In einer Viertelstunde gießen wir eine große Glocke für eine Kirche in der Steiermark, und Sie dürfen live dabei sein. Das sieht man nicht oft, glauben Sie mir. Heuer ist es erst das vierte Mal. Das flüssige Metall ist über tausend Grad heiß. Deshalb bleiben Sie bitte die ganze Zeit hinter der gelben Linie am Boden. Auch wenn Sie neugierig sind, gehen Sie bitte nicht näher hin. Meine Kollegen tragen spezielle Schutzkleidung, Sie nicht. Handschuhe brauchen Sie keine, Sie fassen ja nichts an. Und es wird ziemlich laut, aber sprechen dürfen Sie natürlich trotzdem. Viele fragen mich immer, ob sie fotografieren dürfen. Ja, das dürfen Sie, auch beim Gießen. Nur den Blitz schalten Sie bitte aus, der stört meine Kollegen bei der Arbeit. Videos sind auch in Ordnung. Nach dem Gießen gehen wir dann über die Stiege hinauf in den ersten Stock. Die Stiege ist ein bisschen steil, halten Sie sich bitte gut fest. Dort ist unser kleines Museum mit alten Glocken, die älteste ist fast fünfhundert Jahre alt. Und zum Schluss gibt es noch etwas Besonderes: Jeder von Ihnen darf mit einem Hammer an unsere große Probeglocke schlagen. Das ist ein wunderbarer Klang, den spüren Sie im ganzen Körper. Kleine Glocken als Andenken können Sie danach in unserem Shop kaufen. Und wer Hunger hat: Eine Jause gibt es bei uns leider nicht, aber gleich gegenüber ist ein gutes Gasthaus. So, haben Sie noch Fragen? Nein? Dann setzen Sie jetzt bitte Ihre Brillen auf, und wir gehen hinein.",
+              "hit": "Nur den Blitz schalten Sie bitte aus, der stört meine Kollegen bei der Arbeit."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Jeder darf mit einem Hammer an die große Probeglocke schlagen. Die kleinen Glocken muss man kaufen, und eine Jause gibt es nicht.",
+            "evidence": {
+              "text": "Grüß Gott, meine Damen und Herren, und herzlich willkommen in der Glockengießerei Pernegger hier in Ternitz! Mein Name ist Ewald Steinwender, ich arbeite seit über dreißig Jahren hier, und heute führe ich Sie durch unseren Betrieb. Wir sind ein Familienbetrieb, und Glocken gießen wir hier schon seit über zweihundert Jahren. Die Führung dauert ungefähr eine Stunde. Bevor wir hineingehen, eine Bitte: Nehmen Sie sich aus der Kiste hier neben der Tür eine Schutzbrille und setzen Sie die gleich auf. In der Halle fliegen manchmal kleine Funken, und da ist das einfach sicherer. Ihre Taschen und Jacken können Sie übrigens behalten, wir haben leider keine Garderobe, aber das ist auch kein Problem. So, und jetzt habe ich eine gute Nachricht für Sie. Normalerweise zeigen wir unseren Besuchern das Gießen nur in einem Film, weil wir nicht jeden Tag gießen. Aber heute haben Sie Glück: In einer Viertelstunde gießen wir eine große Glocke für eine Kirche in der Steiermark, und Sie dürfen live dabei sein. Das sieht man nicht oft, glauben Sie mir. Heuer ist es erst das vierte Mal. Das flüssige Metall ist über tausend Grad heiß. Deshalb bleiben Sie bitte die ganze Zeit hinter der gelben Linie am Boden. Auch wenn Sie neugierig sind, gehen Sie bitte nicht näher hin. Meine Kollegen tragen spezielle Schutzkleidung, Sie nicht. Handschuhe brauchen Sie keine, Sie fassen ja nichts an. Und es wird ziemlich laut, aber sprechen dürfen Sie natürlich trotzdem. Viele fragen mich immer, ob sie fotografieren dürfen. Ja, das dürfen Sie, auch beim Gießen. Nur den Blitz schalten Sie bitte aus, der stört meine Kollegen bei der Arbeit. Videos sind auch in Ordnung. Nach dem Gießen gehen wir dann über die Stiege hinauf in den ersten Stock. Die Stiege ist ein bisschen steil, halten Sie sich bitte gut fest. Dort ist unser kleines Museum mit alten Glocken, die älteste ist fast fünfhundert Jahre alt. Und zum Schluss gibt es noch etwas Besonderes: Jeder von Ihnen darf mit einem Hammer an unsere große Probeglocke schlagen. Das ist ein wunderbarer Klang, den spüren Sie im ganzen Körper. Kleine Glocken als Andenken können Sie danach in unserem Shop kaufen. Und wer Hunger hat: Eine Jause gibt es bei uns leider nicht, aber gleich gegenüber ist ein gutes Gasthaus. So, haben Sie noch Fragen? Nein? Dann setzen Sie jetzt bitte Ihre Brillen auf, und wir gehen hinein.",
+              "hit": "Jeder von Ihnen darf mit einem Hammer an unsere große Probeglocke schlagen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Grüß Gott, meine Damen und Herren, und herzlich willkommen in der Glockengießerei Pernegger hier in Ternitz! Mein Name ist Ewald Steinwender, ich arbeite seit über dreißig Jahren hier, und heute führe ich Sie durch unseren Betrieb. Wir sind ein Familienbetrieb, und Glocken gießen wir hier schon seit über zweihundert Jahren. Die Führung dauert ungefähr eine Stunde. Bevor wir hineingehen, eine Bitte: Nehmen Sie sich aus der Kiste hier neben der Tür eine Schutzbrille und setzen Sie die gleich auf. In der Halle fliegen manchmal kleine Funken, und da ist das einfach sicherer. Ihre Taschen und Jacken können Sie übrigens behalten, wir haben leider keine Garderobe, aber das ist auch kein Problem. So, und jetzt habe ich eine gute Nachricht für Sie. Normalerweise zeigen wir unseren Besuchern das Gießen nur in einem Film, weil wir nicht jeden Tag gießen. Aber heute haben Sie Glück: In einer Viertelstunde gießen wir eine große Glocke für eine Kirche in der Steiermark, und Sie dürfen live dabei sein. Das sieht man nicht oft, glauben Sie mir. Heuer ist es erst das vierte Mal. Das flüssige Metall ist über tausend Grad heiß. Deshalb bleiben Sie bitte die ganze Zeit hinter der gelben Linie am Boden. Auch wenn Sie neugierig sind, gehen Sie bitte nicht näher hin. Meine Kollegen tragen spezielle Schutzkleidung, Sie nicht. Handschuhe brauchen Sie keine, Sie fassen ja nichts an. Und es wird ziemlich laut, aber sprechen dürfen Sie natürlich trotzdem. Viele fragen mich immer, ob sie fotografieren dürfen. Ja, das dürfen Sie, auch beim Gießen. Nur den Blitz schalten Sie bitte aus, der stört meine Kollegen bei der Arbeit. Videos sind auch in Ordnung. Nach dem Gießen gehen wir dann über die Stiege hinauf in den ersten Stock. Die Stiege ist ein bisschen steil, halten Sie sich bitte gut fest. Dort ist unser kleines Museum mit alten Glocken, die älteste ist fast fünfhundert Jahre alt. Und zum Schluss gibt es noch etwas Besonderes: Jeder von Ihnen darf mit einem Hammer an unsere große Probeglocke schlagen. Das ist ein wunderbarer Klang, den spüren Sie im ganzen Körper. Kleine Glocken als Andenken können Sie danach in unserem Shop kaufen. Und wer Hunger hat: Eine Jause gibt es bei uns leider nicht, aber gleich gegenüber ist ein gutes Gasthaus. So, haben Sie noch Fragen? Nein? Dann setzen Sie jetzt bitte Ihre Brillen auf, und wir gehen hinein.",
+            "delivery": "[warm, proud tour guide addressing a group, relaxed]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t3-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Gespräch zwischen Bekannten vor einer Eisdiele"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Vanessa hat den Kurs selbst ausgewählt und bezahlt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Felix hat schon Erfahrung mit Segelflugzeugen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Am Samstag musste Vanessa lange warten, bis es losging."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Vanessa war im Segelflugzeug allein."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Vanessa ging es beim Fliegen körperlich schlecht."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Vanessa plant, das Segelfliegen richtig zu lernen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Felix möchte Vanessa einmal zum Flugplatz begleiten."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch vor einer Eisdiele",
+          "segments": [],
+          "speakers": {
+            "v": {
+              "name": "Vanessa",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "f": {
+              "name": "Felix",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie stehen in Lindau in der Schlange vor einer Eisdiele und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t3-01.mp3",
+          "duration": 179.49
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "richtig",
+            "explanation": "Der Kurs war kein Geschenk. Vanessa hat ihn mit ihrer Prämie selbst ausgesucht und gebucht.",
+            "evidence": {
+              "text": "Nee, das hab ich mir selbst gegönnt. Wir haben im Frühling in der Firma eine Prämie bekommen, und ich hab sofort gewusst, was ich damit mache. Ich hab mir im Internet einen Kurs rausgesucht und gleich gebucht.",
+              "hit": "Ich hab mir im Internet einen Kurs rausgesucht und gleich gebucht."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "falsch",
+            "explanation": "Felix ist nur einmal mit einem großen Flugzeug geflogen. Mit einem Segelflugzeug war er noch nie in der Luft.",
+            "evidence": {
+              "text": "Wow. Also, ich wär zu feige. Ich bin bis jetzt nur mal in einem großen Flugzeug nach Mallorca geflogen, und schon da hatte ich die ganze Zeit Angst.",
+              "hit": "Ich bin bis jetzt nur mal in einem großen Flugzeug nach Mallorca geflogen"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "richtig",
+            "explanation": "Der Wind war falsch, deshalb hat die Gruppe bis zum Nachmittag gewartet. Erst um drei ging es los.",
+            "evidence": {
+              "text": "Der Wind kam aus der falschen Richtung. Wir haben bis zum Nachmittag nur im Gras gesessen und Kaffee getrunken. Ich dachte schon, das war's.",
+              "hit": "Wir haben bis zum Nachmittag nur im Gras gesessen und Kaffee getrunken."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "falsch",
+            "explanation": "Der Fluglehrer saß die ganze Zeit hinter ihr. Sie durfte nur ein paar Minuten selbst steuern.",
+            "evidence": {
+              "text": "Nein, nein! Das darf man am Anfang gar nicht. Der Fluglehrer saß die ganze Zeit hinter mir. Aber er hat mich ein paar Minuten selbst steuern lassen. Das war unglaublich.",
+              "hit": "Der Fluglehrer saß die ganze Zeit hinter mir."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Schlecht war ihr überhaupt nicht. Sie war nur beim Start nervös.",
+            "evidence": {
+              "text": "Haha, nein, überhaupt nicht. Nur beim Start war ich total nervös, da hab ich mich richtig festgehalten. Aber oben … du siehst die Felder, die Dörfer, und es ist so still. Nur der Wind.",
+              "hit": "Haha, nein, überhaupt nicht. Nur beim Start war ich total nervös"
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Sie will eine richtige Ausbildung mit Prüfung machen. Zuerst spart sie noch etwas Geld.",
+            "evidence": {
+              "text": "Ehrlich gesagt nicht. Ich will eine richtige Ausbildung machen, mit Prüfung und so. Aber das kostet. Ich spare jetzt erst mal ein bisschen, und nächstes Frühjahr fang ich an.",
+              "hit": "Ich will eine richtige Ausbildung machen, mit Prüfung und so."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "Selbst fliegen will Felix nicht, aber zuschauen schon. Er bittet Vanessa, ihn das nächste Mal mitzunehmen.",
+            "evidence": {
+              "text": "Super. Dann nimm mich doch mit, wenn du das nächste Mal hinfährst.",
+              "hit": "Dann nimm mich doch mit, wenn du das nächste Mal hinfährst."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Hey, Vanessa! Na so ein Zufall! Stehst du auch für Eis an? Die Schlange ist ja heute endlos.",
+            "delivery": "[surprised, cheerful]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Felix! Ja, bei dem Wetter wollen alle ein Eis. Na, wie geht's dir?",
+            "delivery": "[happy, relaxed]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Gut, gut. Und dir? Du siehst irgendwie so braun aus. Warst du im Urlaub?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Nicht direkt. Ich war am Wochenende auf der Schwäbischen Alb, auf einem Flugplatz. Ich hab einen Schnupperkurs im Segelfliegen gemacht!",
+            "delivery": "[excited, proud]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Segelfliegen? Krass! Hat dir das jemand geschenkt?",
+            "delivery": "[impressed, overlapping]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Nee, das hab ich mir selbst gegönnt. Wir haben im Frühling in der Firma eine Prämie bekommen, und ich hab sofort gewusst, was ich damit mache. Ich hab mir im Internet einen Kurs rausgesucht und gleich gebucht.",
+            "delivery": "[pleased, lively]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Wow. Also, ich wär zu feige. Ich bin bis jetzt nur mal in einem großen Flugzeug nach Mallorca geflogen, und schon da hatte ich die ganze Zeit Angst.",
+            "delivery": "[laughing, a bit embarrassed]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Ach, das ist was ganz anderes. Kein Motor, total ruhig. Aber am Samstag, oh Mann … am Anfang lief gar nichts.",
+            "delivery": "[enthusiastic, then sighing]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Wieso?",
+            "delivery": "[short]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Der Wind kam aus der falschen Richtung. Wir haben bis zum Nachmittag nur im Gras gesessen und Kaffee getrunken. Ich dachte schon, das war's.",
+            "delivery": "[mock-frustrated]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Mhm, das ist bitter.",
+            "delivery": "[sympathetic back-channel]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Ja, aber dann um drei hat sich der Wind gedreht, und plötzlich ging alles ganz schnell.",
+            "delivery": "[brightening]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Und dann bist du da allein rauf? Einfach so?",
+            "delivery": "[incredulous]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Nein, nein! Das darf man am Anfang gar nicht. Der Fluglehrer saß die ganze Zeit hinter mir. Aber er hat mich ein paar Minuten selbst steuern lassen. Das war unglaublich.",
+            "delivery": "[laughing, then dreamy]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Und wie hoch wart ihr?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Fast tausend Meter, glaub ich. Und wir waren über zwanzig Minuten oben.",
+            "delivery": "[thinking]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Krass. Und dir war nicht schlecht? Ich glaub, mir wär sofort übel geworden.",
+            "delivery": "[half joking]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Haha, nein, überhaupt nicht. Nur beim Start war ich total nervös, da hab ich mich richtig festgehalten. Aber oben … du siehst die Felder, die Dörfer, und es ist so still. Nur der Wind.",
+            "delivery": "[laughing, then calm and enthusiastic]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Klingt schön. Und, war's das jetzt? Einmal und fertig?",
+            "delivery": "[friendly]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Ehrlich gesagt nicht. Ich will eine richtige Ausbildung machen, mit Prüfung und so. Aber das kostet. Ich spare jetzt erst mal ein bisschen, und nächstes Frühjahr fang ich an.",
+            "delivery": "[determined]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Respekt. Und wie lange dauert so was?",
+            "delivery": "[impressed]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Kommt drauf an, wie oft du fliegst. Ein, zwei Jahre, sagt der Lehrer. Man muss im Verein auch mithelfen, am Wochenende, beim Start von den anderen und so.",
+            "delivery": "[explaining, casual]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Mhm, verstehe. Weißt du was? Selbst fliegen will ich nicht, aber zuschauen würde ich schon gern mal. Geht das?",
+            "delivery": "[thoughtful, then interested]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Klar! Am Wochenende kommen immer Leute zum Flugplatz und schauen zu. Es gibt sogar ein kleines Café direkt neben der Wiese.",
+            "delivery": "[eager]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Super. Dann nimm mich doch mit, wenn du das nächste Mal hinfährst.",
+            "delivery": "[pleased]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Mach ich gern. Oh, schau, wir sind dran. Was nimmst du?",
+            "delivery": "[quick, cheerful]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Zwei Kugeln Schoko. Wie immer.",
+            "delivery": "[matter-of-fact]"
+          },
+          {
+            "speaker": "v",
+            "voice": "woman_ela",
+            "text": "Langweiler!",
+            "delivery": "[teasing, laughing]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-08-t4-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.870Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die meisten Menschen informieren sich vor einem Kauf zuerst über Bewertungen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Es gibt Unternehmen, die für positive Bewertungen bezahlen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Ich lese Bewertungen, verfasse aber selbst keine.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Wegen eines negativen Kommentars habe ich deutlich weniger Gäste bekommen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Bewertungen mit einer genauen Beschreibung sind glaubwürdiger als reine Sterne.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Ich reagiere auf jede Bewertung mit einer eigenen Antwort.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Die meisten Gäste melden sich nur, wenn sie unzufrieden sind.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Die Internetseiten sollten falsche Bewertungen schneller entfernen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Seit einiger Zeit spreche ich zufriedene Gäste direkt auf eine Bewertung an.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Miriam Kuhn, Moderatorin"
+                },
+                {
+                  "key": "b",
+                  "label": "Waltraud Lechner, Pensionsbesitzerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Silvan Kälin, Konsumentenschützer"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Miriam Kuhn, Moderatorin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "l": {
+              "name": "Waltraud Lechner, Pensionsbesitzerin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "k": {
+              "name": "Silvan Kälin, Konsumentenschützer",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Die Moderatorin der Radiosendung „Im Gespräch“, Miriam Kuhn, diskutiert mit Waltraud Lechner, Besitzerin einer Pension in Zell am See, und Silvan Kälin, Experte für Konsumentenschutz aus Horgen, über das Thema „Sterne im Internet – kann man Bewertungen glauben?“",
+          "src": "goethe-b1/hoeren-08/goethe-b1-hoeren-08-t4-01.mp3",
+          "duration": 302.71
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "c",
+            "explanation": "Herr Kälin erzählt von Agenturen, die Bewertungen verkaufen, und von Firmen, die sie kaufen. Frau Lechner spricht nur über einen echten bösen Kommentar.",
+            "evidence": {
+              "text": "Leider nicht. Es gibt Agenturen, die Bewertungen verkaufen, zum Beispiel hundert Mal fünf Sterne für ein paar hundert Franken. Und manche Firmen kaufen das tatsächlich, damit sie in den Listen weiter oben stehen. Das ist natürlich verboten, aber schwer zu beweisen.",
+              "hit": "Und manche Firmen kaufen das tatsächlich, damit sie in den Listen weiter oben stehen."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "a",
+            "explanation": "Die Moderatorin sagt, dass sie oft Bewertungen liest, aber noch nie eine geschrieben hat. Frau Lechner liest Bewertungen und antwortet darauf.",
+            "evidence": {
+              "text": "Unglaublich. Ich muss ja ehrlich gestehen: Ich lese Bewertungen ständig, aber ich selbst habe noch nie eine geschrieben. Nicht einmal nach einem wirklich tollen Urlaub. Irgendwie fehlt mir immer die Zeit. Frau Lechner, wie wichtig sind die Sterne für Ihre Pension?",
+              "hit": "Ich lese Bewertungen ständig, aber ich selbst habe noch nie eine geschrieben."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "b",
+            "explanation": "Nach einem Kommentar mit einem Stern hatte Frau Lechner im Herbst fast ein Drittel weniger Buchungen. Herr Kälin spricht nur allgemein über kleine Betriebe.",
+            "evidence": {
+              "text": "Sehr wichtig, leider. Ich erzähl Ihnen ein Beispiel. Letzten Sommer hat jemand geschrieben, unser Frühstück sei eine Frechheit und die Zimmer schmutzig. Ein Stern. Ich weiß bis heute nicht, wer das war, wir hatten in der Woche nur zufriedene Gäste. Aber danach sind die Buchungen eingebrochen, im Herbst hatten wir fast ein Drittel weniger. Wegen einem einzigen Kommentar!",
+              "hit": "Aber danach sind die Buchungen eingebrochen, im Herbst hatten wir fast ein Drittel weniger."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "c",
+            "explanation": "Herr Kälin sagt: Je genauer der Text, desto eher kann man ihm glauben. Die Moderatorin stellt nur die Frage dazu.",
+            "evidence": {
+              "text": "Da gibt es ein paar Tipps. Schauen Sie nicht nur auf die Sterne. Fünf Sterne und darunter nur super, super, das ist verdächtig. Echte Bewertungen erzählen meistens etwas Konkretes: wie das Zimmer war, was es zum Frühstück gab, wie lange man gewartet hat. Je genauer der Text, desto eher kann man ihm glauben. Und achten Sie aufs Datum: Wenn an einem Tag plötzlich zwanzig Bewertungen kommen, stimmt meistens etwas nicht.",
+              "hit": "Je genauer der Text, desto eher kann man ihm glauben."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "b",
+            "explanation": "Frau Lechner schreibt auf jede Bewertung eine persönliche Antwort. Herr Kälin rät nur, auf die Antworten der Betriebe zu achten.",
+            "evidence": {
+              "text": "Natürlich, jeden Abend. Und ich schreibe auch auf jede eine Antwort, ob gut oder schlecht. Nicht so einen Standardsatz, sondern persönlich, mit dem Namen vom Gast. Bei dem bösen Kommentar damals hab ich auch geantwortet, ganz freundlich, und hab erklärt, wie es bei uns wirklich ist.",
+              "hit": "Und ich schreibe auch auf jede eine Antwort, ob gut oder schlecht."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Frau Lechner sagt, dass die meisten Gäste nur schreiben, wenn sie sich ärgern. Die Moderatorin sagt nur, dass sie selbst nie schreibt.",
+            "evidence": {
+              "text": "Weil es fast allen so geht wie Ihnen, Frau Kuhn. Wer zufrieden ist, fährt nach Hause und denkt nicht mehr daran. Schreiben tun die meisten Gäste nur dann, wenn sie sich über etwas ärgern. Dass das Wasser nicht warm genug war oder der Parkplatz zu klein. Darum sieht das Bild im Internet oft schlechter aus, als es ist.",
+              "hit": "Schreiben tun die meisten Gäste nur dann, wenn sie sich über etwas ärgern."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Herr Kälin fordert, dass die Plattformen falsche Bewertungen in wenigen Tagen löschen. Frau Lechner erzählt nur, wie lange es bei ihr gedauert hat.",
+            "evidence": {
+              "text": "Doch, eigentlich die Plattformen. Aber die tun viel zu wenig. Wenn man eine falsche Bewertung meldet, dauert es oft Wochen, bis etwas passiert, manchmal passiert gar nichts. In dieser Zeit verliert ein kleiner Betrieb wie der von Frau Lechner schon viel Geld. Die Plattformen müssten so etwas innerhalb von wenigen Tagen prüfen und löschen. Das fordern wir beim Konsumentenschutz schon lange.",
+              "hit": "Die Plattformen müssten so etwas innerhalb von wenigen Tagen prüfen und löschen."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Seit dem Frühling fragt Frau Lechner zufriedene Gäste beim Frühstück nach einer Bewertung. Herr Kälin sagt nur, dass das erlaubt ist.",
+            "evidence": {
+              "text": "Ja, heuer im Frühling hab ich etwas Neues angefangen. Wenn ein Gast beim Frühstück sagt, dass es ihm gut gefällt, dann frag ich ganz direkt: Würden Sie das auch im Internet schreiben? Ich leg auch ein kleines Kärtchen mit dem Link auf den Tisch. Am Anfang war mir das ein bisschen unangenehm, aber die meisten machen es gern.",
+              "hit": "Wenn ein Gast beim Frühstück sagt, dass es ihm gut gefällt, dann frag ich ganz direkt"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Guten Abend und willkommen bei „Im Gespräch“. Ein Restaurant für den Geburtstag, ein Hotel für den Urlaub, ein neuer Staubsauger: Für fast alles gibt es im Internet Sterne und Kommentare. Aber kann man diesen Bewertungen wirklich glauben? Darüber spreche ich heute mit Waltraud Lechner. Sie hat eine Frühstückspension in Zell am See. Grüß Gott, Frau Lechner.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Grüß Gott, und danke für die Einladung.",
+            "delivery": "[friendly, down-to-earth]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Und aus Horgen am Zürichsee ist Silvan Kälin zugeschaltet. Er arbeitet beim Konsumentenschutz. Guten Abend, Herr Kälin.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_christian",
+            "text": "Guten Abend, Frau Kuhn.",
+            "delivery": "[calm, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Herr Kälin, wie wichtig sind Bewertungen heute eigentlich?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_christian",
+            "text": "Sehr wichtig, das kann man nicht anders sagen. Nach unseren Zahlen schauen sich etwa acht von zehn Leuten zuerst die Bewertungen an, bevor sie etwas kaufen oder buchen. Bei Hotels und Restaurants sind es sogar noch mehr. Für viele sind die Sterne wichtiger als der Preis.",
+            "delivery": "[factual, precise]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Herr Kälin, sind denn alle diese Bewertungen auch echt?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_christian",
+            "text": "Leider nicht. Es gibt Agenturen, die Bewertungen verkaufen, zum Beispiel hundert Mal fünf Sterne für ein paar hundert Franken. Und manche Firmen kaufen das tatsächlich, damit sie in den Listen weiter oben stehen. Das ist natürlich verboten, aber schwer zu beweisen.",
+            "delivery": "[serious, measured]",
+            "item": 23
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Unglaublich. Ich muss ja ehrlich gestehen: Ich lese Bewertungen ständig, aber ich selbst habe noch nie eine geschrieben. Nicht einmal nach einem wirklich tollen Urlaub. Irgendwie fehlt mir immer die Zeit. Frau Lechner, wie wichtig sind die Sterne für Ihre Pension?",
+            "delivery": "[candid, slightly amused, then host]",
+            "item": 24
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Sehr wichtig, leider. Ich erzähl Ihnen ein Beispiel. Letzten Sommer hat jemand geschrieben, unser Frühstück sei eine Frechheit und die Zimmer schmutzig. Ein Stern. Ich weiß bis heute nicht, wer das war, wir hatten in der Woche nur zufriedene Gäste. Aber danach sind die Buchungen eingebrochen, im Herbst hatten wir fast ein Drittel weniger. Wegen einem einzigen Kommentar!",
+            "delivery": "[emotional, indignant]",
+            "item": 25
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Das klingt ja schlimm. Herr Kälin, woran erkenne ich denn als Kundin, ob eine Bewertung echt ist?",
+            "delivery": "[sympathetic, then host]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_christian",
+            "text": "Da gibt es ein paar Tipps. Schauen Sie nicht nur auf die Sterne. Fünf Sterne und darunter nur super, super, das ist verdächtig. Echte Bewertungen erzählen meistens etwas Konkretes: wie das Zimmer war, was es zum Frühstück gab, wie lange man gewartet hat. Je genauer der Text, desto eher kann man ihm glauben. Und achten Sie aufs Datum: Wenn an einem Tag plötzlich zwanzig Bewertungen kommen, stimmt meistens etwas nicht.",
+            "delivery": "[clear, advisory]",
+            "item": 26
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Frau Lechner, wie gehen Sie mit Bewertungen um? Lesen Sie die überhaupt alle?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Natürlich, jeden Abend. Und ich schreibe auch auf jede eine Antwort, ob gut oder schlecht. Nicht so einen Standardsatz, sondern persönlich, mit dem Namen vom Gast. Bei dem bösen Kommentar damals hab ich auch geantwortet, ganz freundlich, und hab erklärt, wie es bei uns wirklich ist.",
+            "delivery": "[committed, warm]",
+            "item": 27
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Und hat das etwas gebracht?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Ein bisschen schon. Ein paar Gäste haben mir später geschrieben, dass sie wegen meiner Antwort trotzdem gebucht haben.",
+            "delivery": "[pleased]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Frau Lechner, Sie haben vorhin gesagt, dass Ihre Gäste eigentlich zufrieden waren. Warum schreiben die dann nicht?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Weil es fast allen so geht wie Ihnen, Frau Kuhn. Wer zufrieden ist, fährt nach Hause und denkt nicht mehr daran. Schreiben tun die meisten Gäste nur dann, wenn sie sich über etwas ärgern. Dass das Wasser nicht warm genug war oder der Parkplatz zu klein. Darum sieht das Bild im Internet oft schlechter aus, als es ist.",
+            "delivery": "[lively, a little teasing]",
+            "item": 28
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Herr Kälin, ist denn niemand dafür verantwortlich, dass falsche Bewertungen verschwinden?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_christian",
+            "text": "Doch, eigentlich die Plattformen. Aber die tun viel zu wenig. Wenn man eine falsche Bewertung meldet, dauert es oft Wochen, bis etwas passiert, manchmal passiert gar nichts. In dieser Zeit verliert ein kleiner Betrieb wie der von Frau Lechner schon viel Geld. Die Plattformen müssten so etwas innerhalb von wenigen Tagen prüfen und löschen. Das fordern wir beim Konsumentenschutz schon lange.",
+            "delivery": "[firm, critical]",
+            "item": 29
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Bei mir hat es fast drei Monate gedauert. Erst im Jänner war der Kommentar endlich weg.",
+            "delivery": "[sighing]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Frau Lechner, haben Sie denn etwas geändert, damit Sie mehr gute Bewertungen bekommen?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Ja, heuer im Frühling hab ich etwas Neues angefangen. Wenn ein Gast beim Frühstück sagt, dass es ihm gut gefällt, dann frag ich ganz direkt: Würden Sie das auch im Internet schreiben? Ich leg auch ein kleines Kärtchen mit dem Link auf den Tisch. Am Anfang war mir das ein bisschen unangenehm, aber die meisten machen es gern.",
+            "delivery": "[cheerful, a bit shy]",
+            "item": 30
+          },
+          {
+            "speaker": "k",
+            "voice": "man_christian",
+            "text": "Das ist übrigens völlig in Ordnung, solange Sie nichts dafür geben. Ein Gratis-Frühstück für fünf Sterne, das wäre nicht erlaubt.",
+            "delivery": "[friendly, informative]"
+          },
+          {
+            "speaker": "l",
+            "voice": "woman_lisa",
+            "text": "Nein, nein, da gibt's nichts. Nur ein Lächeln.",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Zum Schluss, Herr Kälin: Sollen wir den Sternen nun glauben oder nicht?",
+            "delivery": "[host, wrapping up]"
+          },
+          {
+            "speaker": "k",
+            "voice": "man_christian",
+            "text": "Ja, aber mit gesundem Misstrauen. Lesen Sie lieber zehn Texte als hundert Sterne, und schauen Sie auch auf die schlechten Bewertungen und darauf, wie der Betrieb antwortet.",
+            "delivery": "[calm, advisory]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_laura",
+            "text": "Das ist ein guter Rat. Vielen Dank, Frau Lechner, vielen Dank, Herr Kälin. Und Ihnen zu Hause noch einen schönen Abend.",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ],
+  "track": {
+    "src": "goethe-b1/hoeren-08/track.mp3",
+    "duration": 2250.14,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.14,
+        "to": 19.83
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.86,
+        "to": 26.8
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.8,
+        "to": 37.33
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.33,
+        "to": 40.46
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 42,
+        "to": 74.29
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 76.33,
+        "to": 78.65
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 79.7,
+        "to": 111.99
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 111.99,
+        "to": 114.52
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 114.52,
+        "to": 120.71
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 120.71,
+        "to": 131.24
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 131.24,
+        "to": 133.93
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 135.47,
+        "to": 174.55
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 176.59,
+        "to": 178.91
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 179.96,
+        "to": 219.04
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 219.04,
+        "to": 221.57
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 221.57,
+        "to": 227.74
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 227.74,
+        "to": 238.26
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 238.26,
+        "to": 241.4
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 242.94,
+        "to": 279.17
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 281.21,
+        "to": 283.53
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 284.58,
+        "to": 320.81
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 320.81,
+        "to": 323.34
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 323.34,
+        "to": 329.69
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 329.69,
+        "to": 340.22
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 340.22,
+        "to": 343.3
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 344.84,
+        "to": 382.67
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 384.71,
+        "to": 387.03
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 388.08,
+        "to": 425.9
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 425.9,
+        "to": 428.43
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 428.43,
+        "to": 434.73
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 434.73,
+        "to": 445.26
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 445.26,
+        "to": 447.4
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 448.94,
+        "to": 488.05
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 490.08,
+        "to": 492.41
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 493.45,
+        "to": 532.56
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 532.56,
+        "to": 535.09
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 535.09,
+        "to": 541.23
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 541.23,
+        "to": 551.76
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 551.76,
+        "to": 554.89
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 556.43,
+        "to": 591.39
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 593.42,
+        "to": 595.75
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 596.79,
+        "to": 631.75
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 631.75,
+        "to": 634.28
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 641.54,
+        "to": 655.7
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 657.74,
+        "to": 664.19
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 664.19,
+        "to": 724.22
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 724.22,
+        "to": 728.79
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 730.33,
+        "to": 897.57
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 897.57,
+        "to": 906.61
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 913.89,
+        "to": 926.07
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 928.1,
+        "to": 934.58
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 934.58,
+        "to": 994.61
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 994.61,
+        "to": 1002.08
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1003.62,
+        "to": 1183.11
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1183.11,
+        "to": 1192.15
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1199.36,
+        "to": 1211.56
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1213.6,
+        "to": 1220.1
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1220.1,
+        "to": 1280.13
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1280.13,
+        "to": 1298.1
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1303.69,
+        "to": 1606.4
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1610.45,
+        "to": 1613.48
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1613.48,
+        "to": 1616.22
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1621.81,
+        "to": 1924.52
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1928.57,
+        "to": 1937.61
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1944.87,
+        "to": 1950.67
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1950.67,
+        "to": 2250.71
+      }
+    ]
+  }
+}

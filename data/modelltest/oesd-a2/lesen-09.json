@@ -1,0 +1,385 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-09-t1-meldungen",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.712Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Besuch aus der Partnerstadt",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Familienpass bringt viele Rabatte",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Hundert Jahre alt und noch fit",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Austausch: Jugendliche fahren nach Frankreich",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Treffpunkt für junge Väter",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Seit 40 Jahren Schulwart",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Platz bekommt den Namen der Partnerstadt",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Leih-Omas und Leih-Opas gesucht",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Lehrerin geht nach 38 Jahren in Pension",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Neue Partnerstadt in Ungarn",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Melk. Nach 38 Jahren im Klassenzimmer ist für Gertrude Hofbauer Schluss. Die Lehrerin für Deutsch und Geschichte an der Mittelschule Melk hat am Freitag ihren letzten Schultag. Danach ist sie Pensionistin. Zum Abschied singen die Schülerinnen und Schüler im Turnsaal ein Lied für sie. „Ich werde die Kinder sehr vermissen“, sagt sie.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 2,
+                  "text": "Gießen. Das Familienzentrum in der Nordstadt hat ein neues Angebot für Männer in Elternzeit. Jeden Donnerstag ab 9 Uhr können sich Väter mit kleinen Kindern dort treffen. Sie lernen andere Väter kennen und tauschen Tipps aus, die Kinder spielen zusammen. Das Angebot ist kostenlos, eine Anmeldung ist nicht nötig.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Burgdorf. Ernst Zbinden hat am Sonntag seinen 100. Geburtstag gefeiert. Er war 40 Jahre lang Briefträger in der Stadt. Heute wohnt er noch immer allein in seiner Wohnung an der Bahnhofstrasse. Jeden Nachmittag spielt er mit Freunden Karten. «Ich gehe jeden Tag eine Stunde zu Fuss», erzählt er.",
+                  "origin": "aus einer Schweizer Zeitung"
+                },
+                {
+                  "n": 4,
+                  "text": "Stockerau. Am Freitag kommen 30 Gäste aus Montrelle nach Stockerau. Die französische Stadt ist seit 25 Jahren Partnerstadt von Stockerau. Die Gäste bleiben bis Sonntag und wohnen bei Familien. Am Samstag zeigt ihnen die Gemeinde die Altstadt und das Rathaus. Im nächsten Sommer fährt dann der Gemeinderat nach Frankreich.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Fulda. Mit dem Familienpass der Stadt Fulda bezahlen Familien jetzt an 40 Orten weniger. Bisher waren es nur 15. Den Pass bekommen Eltern mit Kindern unter 18 Jahren kostenlos im Bürgerbüro. Auch Großeltern können ihn benutzen, wenn sie mit ihren Enkeln unterwegs sind. Hier einige Beispiele:",
+                  "origin": "aus einer deutschen Zeitung",
+                  "table": [
+                    [
+                      "Angebot",
+                      "Rabatt"
+                    ],
+                    [
+                      "Stadtbücherei",
+                      "gratis"
+                    ],
+                    [
+                      "Stadttheater",
+                      "30 %"
+                    ],
+                    [
+                      "Volkshochschule",
+                      "20 %"
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "I",
+            "explanation": "Die Lehrerin hört nach 38 Jahren auf und ist dann Pensionistin. Um einen Schulwart geht es nicht.",
+            "evidence": {
+              "text": "Melk. Nach 38 Jahren im Klassenzimmer ist für Gertrude Hofbauer Schluss. Die Lehrerin für Deutsch und Geschichte an der Mittelschule Melk hat am Freitag ihren letzten Schultag. Danach ist sie Pensionistin. Zum Abschied singen die Schülerinnen und Schüler im Turnsaal ein Lied für sie. „Ich werde die Kinder sehr vermissen“, sagt sie.",
+              "hit": "Nach 38 Jahren im Klassenzimmer ist für Gertrude Hofbauer Schluss."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "E",
+            "explanation": "Väter in Elternzeit treffen sich jeden Donnerstag im Familienzentrum. Rabatte oder Leih-Omas kommen nicht vor.",
+            "evidence": {
+              "text": "Gießen. Das Familienzentrum in der Nordstadt hat ein neues Angebot für Männer in Elternzeit. Jeden Donnerstag ab 9 Uhr können sich Väter mit kleinen Kindern dort treffen. Sie lernen andere Väter kennen und tauschen Tipps aus, die Kinder spielen zusammen. Das Angebot ist kostenlos, eine Anmeldung ist nicht nötig.",
+              "hit": "Jeden Donnerstag ab 9 Uhr können sich Väter mit kleinen Kindern dort treffen."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "C",
+            "explanation": "Ernst Zbinden ist 100 und geht noch jeden Tag zu Fuß. Die 40 Jahre war er Briefträger, nicht Schulwart.",
+            "evidence": {
+              "text": "Burgdorf. Ernst Zbinden hat am Sonntag seinen 100. Geburtstag gefeiert. Er war 40 Jahre lang Briefträger in der Stadt. Heute wohnt er noch immer allein in seiner Wohnung an der Bahnhofstrasse. Jeden Nachmittag spielt er mit Freunden Karten. «Ich gehe jeden Tag eine Stunde zu Fuss», erzählt er.",
+              "hit": "Ernst Zbinden hat am Sonntag seinen 100. Geburtstag gefeiert."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "A",
+            "explanation": "30 Gäste aus der französischen Partnerstadt besuchen Stockerau. Nach Frankreich fährt erst nächsten Sommer der Gemeinderat, keine Jugendlichen.",
+            "evidence": {
+              "text": "Stockerau. Am Freitag kommen 30 Gäste aus Montrelle nach Stockerau. Die französische Stadt ist seit 25 Jahren Partnerstadt von Stockerau. Die Gäste bleiben bis Sonntag und wohnen bei Familien. Am Samstag zeigt ihnen die Gemeinde die Altstadt und das Rathaus. Im nächsten Sommer fährt dann der Gemeinderat nach Frankreich.",
+              "hit": "Am Freitag kommen 30 Gäste aus Montrelle nach Stockerau."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "B",
+            "explanation": "Mit dem Familienpass zahlen Familien an 40 Orten weniger. Großeltern dürfen ihn benutzen, aber Leih-Omas werden nicht gesucht.",
+            "evidence": {
+              "text": "Fulda. Mit dem Familienpass der Stadt Fulda bezahlen Familien jetzt an 40 Orten weniger. Bisher waren es nur 15. Den Pass bekommen Eltern mit Kindern unter 18 Jahren kostenlos im Bürgerbüro. Auch Großeltern können ihn benutzen, wenn sie mit ihren Enkeln unterwegs sind. Hier einige Beispiele:",
+              "hit": "Mit dem Familienpass der Stadt Fulda bezahlen Familien jetzt an 40 Orten weniger."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-09-t2-glockengiesserin",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.712Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Oberinntaler Rundschau",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Die Glockengießerin von Telfs",
+            "Elisabeth Kranewitter ist 45 Jahre alt und hat einen seltenen Beruf: Sie gießt Glocken. Seit zehn Jahren leitet sie die kleine Glockengießerei ihrer Familie in Telfs in Tirol.",
+            "Als junge Frau wollte sie mit der Firma nichts zu tun haben. Sie hat in Wien Wirtschaft studiert und danach in einem Büro gearbeitet. „Ich wollte etwas ganz anderes machen“, erzählt sie. Dann ist ihr Vater krank geworden und hat sie gebeten, nach Hause zu kommen.",
+            "Eine Glocke zu machen dauert ungefähr drei Monate. Zuerst baut man eine Form aus Lehm, das braucht viel Zeit. Das Gießen selbst geht dann sehr schnell, es dauert nur zehn Minuten.",
+            "Ihre größte Glocke wiegt zwei Tonnen. Sie hängt heute in einer Kirche in Südtirol. „Die Kirchen in Tirol haben nur kleinere Glocken von uns“, sagt sie und lacht.",
+            "Wöchentliche Führungen gibt es in der Werkstatt nicht. Aber zweimal im Jahr dürfen Besucher beim Gießen zuschauen. Dann kommen oft über hundert Leute.",
+            "Und ihre Pläne? Eine zweite Werkstatt möchte sie nicht eröffnen. Sie sucht lieber einen Lehrling: „Am liebsten eine junge Frau. Ich will zeigen, dass auch Frauen diesen Beruf lernen können.“"
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Elisabeth Kranewitter leitet die Glockengießerei …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit zehn Jahren."
+                },
+                {
+                  "key": "b",
+                  "label": "seit 45 Jahren."
+                },
+                {
+                  "key": "c",
+                  "label": "mit ihrem Vater."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Als junge Frau wollte Elisabeth Kranewitter …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in einem Büro in Telfs arbeiten."
+                },
+                {
+                  "key": "b",
+                  "label": "Glocken für Kirchen machen."
+                },
+                {
+                  "key": "c",
+                  "label": "nicht in der Familienfirma arbeiten."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Für eine neue Glocke braucht man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur zehn Minuten."
+                },
+                {
+                  "key": "b",
+                  "label": "ungefähr ein Jahr."
+                },
+                {
+                  "key": "c",
+                  "label": "etwa drei Monate."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihre größte Glocke …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "hängt in einer Kirche in Südtirol."
+                },
+                {
+                  "key": "b",
+                  "label": "hängt in einer Kirche in Tirol."
+                },
+                {
+                  "key": "c",
+                  "label": "steht noch in ihrer Werkstatt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Besucherinnen und Besucher können …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "jede Woche eine Führung machen."
+                },
+                {
+                  "key": "b",
+                  "label": "das ganze Jahr beim Gießen helfen."
+                },
+                {
+                  "key": "c",
+                  "label": "zweimal im Jahr beim Gießen zusehen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In Zukunft möchte Elisabeth Kranewitter …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine zweite Werkstatt eröffnen."
+                },
+                {
+                  "key": "b",
+                  "label": "eine junge Frau ausbilden."
+                },
+                {
+                  "key": "c",
+                  "label": "wieder in Wien arbeiten."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "Als junge Frau wollte sie mit der Firma nichts zu tun haben. Im Büro hat sie in Wien gearbeitet, nicht in Telfs.",
+            "evidence": {
+              "text": "Die Glockengießerin von Telfs Elisabeth Kranewitter ist 45 Jahre alt und hat einen seltenen Beruf: Sie gießt Glocken. Seit zehn Jahren leitet sie die kleine Glockengießerei ihrer Familie in Telfs in Tirol. Als junge Frau wollte sie mit der Firma nichts zu tun haben. Sie hat in Wien Wirtschaft studiert und danach in einem Büro gearbeitet. „Ich wollte etwas ganz anderes machen“, erzählt sie. Dann ist ihr Vater krank geworden und hat sie gebeten, nach Hause zu kommen. Eine Glocke zu machen dauert ungefähr drei Monate. Zuerst baut man eine Form aus Lehm, das braucht viel Zeit. Das Gießen selbst geht dann sehr schnell, es dauert nur zehn Minuten. Ihre größte Glocke wiegt zwei Tonnen. Sie hängt heute in einer Kirche in Südtirol. „Die Kirchen in Tirol haben nur kleinere Glocken von uns“, sagt sie und lacht. Wöchentliche Führungen gibt es in der Werkstatt nicht. Aber zweimal im Jahr dürfen Besucher beim Gießen zuschauen. Dann kommen oft über hundert Leute. Und ihre Pläne? Eine zweite Werkstatt möchte sie nicht eröffnen. Sie sucht lieber einen Lehrling: „Am liebsten eine junge Frau. Ich will zeigen, dass auch Frauen diesen Beruf lernen können.“",
+              "hit": "Als junge Frau wollte sie mit der Firma nichts zu tun haben."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Eine Glocke dauert ungefähr drei Monate. Zehn Minuten dauert nur das Gießen.",
+            "evidence": {
+              "text": "Die Glockengießerin von Telfs Elisabeth Kranewitter ist 45 Jahre alt und hat einen seltenen Beruf: Sie gießt Glocken. Seit zehn Jahren leitet sie die kleine Glockengießerei ihrer Familie in Telfs in Tirol. Als junge Frau wollte sie mit der Firma nichts zu tun haben. Sie hat in Wien Wirtschaft studiert und danach in einem Büro gearbeitet. „Ich wollte etwas ganz anderes machen“, erzählt sie. Dann ist ihr Vater krank geworden und hat sie gebeten, nach Hause zu kommen. Eine Glocke zu machen dauert ungefähr drei Monate. Zuerst baut man eine Form aus Lehm, das braucht viel Zeit. Das Gießen selbst geht dann sehr schnell, es dauert nur zehn Minuten. Ihre größte Glocke wiegt zwei Tonnen. Sie hängt heute in einer Kirche in Südtirol. „Die Kirchen in Tirol haben nur kleinere Glocken von uns“, sagt sie und lacht. Wöchentliche Führungen gibt es in der Werkstatt nicht. Aber zweimal im Jahr dürfen Besucher beim Gießen zuschauen. Dann kommen oft über hundert Leute. Und ihre Pläne? Eine zweite Werkstatt möchte sie nicht eröffnen. Sie sucht lieber einen Lehrling: „Am liebsten eine junge Frau. Ich will zeigen, dass auch Frauen diesen Beruf lernen können.“",
+              "hit": "Eine Glocke zu machen dauert ungefähr drei Monate."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "a",
+            "explanation": "Die größte Glocke hängt in einer Kirche in Südtirol. In Tirol gibt es nur kleinere Glocken von ihr.",
+            "evidence": {
+              "text": "Die Glockengießerin von Telfs Elisabeth Kranewitter ist 45 Jahre alt und hat einen seltenen Beruf: Sie gießt Glocken. Seit zehn Jahren leitet sie die kleine Glockengießerei ihrer Familie in Telfs in Tirol. Als junge Frau wollte sie mit der Firma nichts zu tun haben. Sie hat in Wien Wirtschaft studiert und danach in einem Büro gearbeitet. „Ich wollte etwas ganz anderes machen“, erzählt sie. Dann ist ihr Vater krank geworden und hat sie gebeten, nach Hause zu kommen. Eine Glocke zu machen dauert ungefähr drei Monate. Zuerst baut man eine Form aus Lehm, das braucht viel Zeit. Das Gießen selbst geht dann sehr schnell, es dauert nur zehn Minuten. Ihre größte Glocke wiegt zwei Tonnen. Sie hängt heute in einer Kirche in Südtirol. „Die Kirchen in Tirol haben nur kleinere Glocken von uns“, sagt sie und lacht. Wöchentliche Führungen gibt es in der Werkstatt nicht. Aber zweimal im Jahr dürfen Besucher beim Gießen zuschauen. Dann kommen oft über hundert Leute. Und ihre Pläne? Eine zweite Werkstatt möchte sie nicht eröffnen. Sie sucht lieber einen Lehrling: „Am liebsten eine junge Frau. Ich will zeigen, dass auch Frauen diesen Beruf lernen können.“",
+              "hit": "Sie hängt heute in einer Kirche in Südtirol."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "Zweimal im Jahr dürfen Besucher beim Gießen zuschauen. Wöchentliche Führungen gibt es nicht.",
+            "evidence": {
+              "text": "Die Glockengießerin von Telfs Elisabeth Kranewitter ist 45 Jahre alt und hat einen seltenen Beruf: Sie gießt Glocken. Seit zehn Jahren leitet sie die kleine Glockengießerei ihrer Familie in Telfs in Tirol. Als junge Frau wollte sie mit der Firma nichts zu tun haben. Sie hat in Wien Wirtschaft studiert und danach in einem Büro gearbeitet. „Ich wollte etwas ganz anderes machen“, erzählt sie. Dann ist ihr Vater krank geworden und hat sie gebeten, nach Hause zu kommen. Eine Glocke zu machen dauert ungefähr drei Monate. Zuerst baut man eine Form aus Lehm, das braucht viel Zeit. Das Gießen selbst geht dann sehr schnell, es dauert nur zehn Minuten. Ihre größte Glocke wiegt zwei Tonnen. Sie hängt heute in einer Kirche in Südtirol. „Die Kirchen in Tirol haben nur kleinere Glocken von uns“, sagt sie und lacht. Wöchentliche Führungen gibt es in der Werkstatt nicht. Aber zweimal im Jahr dürfen Besucher beim Gießen zuschauen. Dann kommen oft über hundert Leute. Und ihre Pläne? Eine zweite Werkstatt möchte sie nicht eröffnen. Sie sucht lieber einen Lehrling: „Am liebsten eine junge Frau. Ich will zeigen, dass auch Frauen diesen Beruf lernen können.“",
+              "hit": "Aber zweimal im Jahr dürfen Besucher beim Gießen zuschauen."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Sie sucht einen Lehrling, am liebsten eine junge Frau. Eine zweite Werkstatt möchte sie nicht.",
+            "evidence": {
+              "text": "Die Glockengießerin von Telfs Elisabeth Kranewitter ist 45 Jahre alt und hat einen seltenen Beruf: Sie gießt Glocken. Seit zehn Jahren leitet sie die kleine Glockengießerei ihrer Familie in Telfs in Tirol. Als junge Frau wollte sie mit der Firma nichts zu tun haben. Sie hat in Wien Wirtschaft studiert und danach in einem Büro gearbeitet. „Ich wollte etwas ganz anderes machen“, erzählt sie. Dann ist ihr Vater krank geworden und hat sie gebeten, nach Hause zu kommen. Eine Glocke zu machen dauert ungefähr drei Monate. Zuerst baut man eine Form aus Lehm, das braucht viel Zeit. Das Gießen selbst geht dann sehr schnell, es dauert nur zehn Minuten. Ihre größte Glocke wiegt zwei Tonnen. Sie hängt heute in einer Kirche in Südtirol. „Die Kirchen in Tirol haben nur kleinere Glocken von uns“, sagt sie und lacht. Wöchentliche Führungen gibt es in der Werkstatt nicht. Aber zweimal im Jahr dürfen Besucher beim Gießen zuschauen. Dann kommen oft über hundert Leute. Und ihre Pläne? Eine zweite Werkstatt möchte sie nicht eröffnen. Sie sucht lieber einen Lehrling: „Am liebsten eine junge Frau. Ich will zeigen, dass auch Frauen diesen Beruf lernen können.“",
+              "hit": "Sie sucht lieber einen Lehrling: „Am liebsten eine junge Frau."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    }
+  ]
+}

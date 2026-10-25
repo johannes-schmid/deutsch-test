@@ -1,0 +1,960 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-10-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.472Z",
+        "textType": "Persönliche E-Mail"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Heiko antwortet auf eine Frage von Achim."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Heiko ist von sich aus zum Hörtest gegangen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Beim Akustiker hat Heiko sofort sein eigenes Gerät bekommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "In den ersten Tagen waren Heiko viele Geräusche zu laut."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Das Hörgerät hat Heiko ganz allein bezahlt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Ein Kollege möchte jetzt auch seine Ohren testen lassen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Heiko möchte mit Achim ins Kino gehen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Heiko",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Lieber Achim,",
+            "du hast mich gefragt, warum ich am Telefon auf einmal wieder alles verstehe. Die Antwort ist einfach: Seit drei Monaten trage ich ein Hörgerät. Lange wollte ich dir das nicht erzählen, weil es mir ein bisschen peinlich war. Mit 52 fühlt man sich doch noch nicht alt!",
+            "Angefangen hat alles im letzten Winter. Unsere Nachbarn haben sich zweimal beschwert, weil unser Fernseher abends so laut war. Claudia hat dann, ohne mich zu fragen, einen Termin für einen Hörtest gemacht. Ich war richtig sauer und wollte zuerst gar nicht hingehen. Ich dachte immer, die anderen reden einfach zu leise.",
+            "Beim Hörakustiker war dann alles ganz anders, als ich dachte. Die Mitarbeiterin war sehr geduldig. Nach dem Test durfte ich zuerst zwei verschiedene Modelle ausprobieren, jedes zwei Wochen lang, im Alltag und auch in der Werkstatt. Erst danach habe ich mich für eins entschieden.",
+            "Die ersten Tage waren wirklich verrückt. Die Kaffeemaschine, meine eigenen Schritte im Flur, sogar das Rascheln der Zeitung – alles war plötzlich so laut wie im Konzert. Am Abend hatte ich manchmal Kopfschmerzen. Aber nach etwa einer Woche hat sich mein Kopf daran gewöhnt.",
+            "Und das Geld? Den größten Teil hat zum Glück die Krankenkasse übernommen. Ich habe nur etwas dazubezahlt, weil ich das kleine Modell hinter dem Ohr wollte. Das sieht man fast nicht.",
+            "In der Werkstatt hat es tatsächlich zwei Wochen lang niemand gemerkt. Dann habe ich es meinen Kollegen selbst erzählt. Keiner hat gelacht. Im Gegenteil: Ein älterer Kollege hat mich am nächsten Tag nach der Adresse vom Akustiker gefragt, weil er bei dem Lärm in der Halle selbst schon länger schlecht hört.",
+            "Weißt du, was ich am meisten vermisst habe? Das Kino. Jahrelang bin ich nicht mehr hingegangen, weil ich die Dialoge kaum verstanden habe. Jetzt freue ich mich wieder richtig darauf. Hast du am Freitag Zeit? Im Kino am Bahnhof läuft ein neuer Krimi, und danach könnten wir noch etwas trinken gehen.",
+            "Ich bin jedenfalls einfach froh, dass ich nicht mehr ständig „Wie bitte?“ sagen muss. Melde dich bald!",
+            "Viele Grüße",
+            "Heiko"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Seine Frau Claudia hat den Termin gemacht, ohne ihn zu fragen. Heiko wollte zuerst gar nicht hingehen.",
+            "evidence": {
+              "text": "Angefangen hat alles im letzten Winter. Unsere Nachbarn haben sich zweimal beschwert, weil unser Fernseher abends so laut war. Claudia hat dann, ohne mich zu fragen, einen Termin für einen Hörtest gemacht. Ich war richtig sauer und wollte zuerst gar nicht hingehen. Ich dachte immer, die anderen reden einfach zu leise.",
+              "hit": "Claudia hat dann, ohne mich zu fragen, einen Termin für einen Hörtest gemacht."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "falsch",
+            "explanation": "Heiko hat zuerst zwei Modelle je zwei Wochen lang ausprobiert. Erst danach hat er sich für ein Gerät entschieden.",
+            "evidence": {
+              "text": "Beim Hörakustiker war dann alles ganz anders, als ich dachte. Die Mitarbeiterin war sehr geduldig. Nach dem Test durfte ich zuerst zwei verschiedene Modelle ausprobieren, jedes zwei Wochen lang, im Alltag und auch in der Werkstatt. Erst danach habe ich mich für eins entschieden.",
+              "hit": "durfte ich zuerst zwei verschiedene Modelle ausprobieren, jedes zwei Wochen lang"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Am Anfang waren sogar leise Geräusche für ihn so laut wie im Konzert. Er hatte davon manchmal Kopfschmerzen.",
+            "evidence": {
+              "text": "Die ersten Tage waren wirklich verrückt. Die Kaffeemaschine, meine eigenen Schritte im Flur, sogar das Rascheln der Zeitung – alles war plötzlich so laut wie im Konzert. Am Abend hatte ich manchmal Kopfschmerzen. Aber nach etwa einer Woche hat sich mein Kopf daran gewöhnt.",
+              "hit": "alles war plötzlich so laut wie im Konzert"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Den größten Teil hat die Krankenkasse bezahlt. Heiko hat nur für das kleine Modell etwas dazubezahlt.",
+            "evidence": {
+              "text": "Und das Geld? Den größten Teil hat zum Glück die Krankenkasse übernommen. Ich habe nur etwas dazubezahlt, weil ich das kleine Modell hinter dem Ohr wollte. Das sieht man fast nicht.",
+              "hit": "Den größten Teil hat zum Glück die Krankenkasse übernommen."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Ein Kollege hört selbst schlecht und hat nach der Adresse vom Akustiker gefragt. Er will also auch einen Test machen.",
+            "evidence": {
+              "text": "In der Werkstatt hat es tatsächlich zwei Wochen lang niemand gemerkt. Dann habe ich es meinen Kollegen selbst erzählt. Keiner hat gelacht. Im Gegenteil: Ein älterer Kollege hat mich am nächsten Tag nach der Adresse vom Akustiker gefragt, weil er bei dem Lärm in der Halle selbst schon länger schlecht hört.",
+              "hit": "Ein älterer Kollege hat mich am nächsten Tag nach der Adresse vom Akustiker gefragt"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Heiko fragt Achim, ob er am Freitag Zeit hat, und schlägt einen Krimi im Kino vor.",
+            "evidence": {
+              "text": "Weißt du, was ich am meisten vermisst habe? Das Kino. Jahrelang bin ich nicht mehr hingegangen, weil ich die Dialoge kaum verstanden habe. Jetzt freue ich mich wieder richtig darauf. Hast du am Freitag Zeit? Im Kino am Bahnhof läuft ein neuer Krimi, und danach könnten wir noch etwas trinken gehen.",
+              "hit": "Hast du am Freitag Zeit? Im Kino am Bahnhof läuft ein neuer Krimi"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-10-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.472Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Das Portal „Sag's Oberhausen“ gibt es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit vier Jahren."
+                },
+                {
+                  "key": "b",
+                  "label": "seit dem letzten Winter."
+                },
+                {
+                  "key": "c",
+                  "label": "seit zehn Jahren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine App, mit der man Parkplätze findet."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Stadt, die alle Straßen erneuert."
+                },
+                {
+                  "key": "c",
+                  "label": "Bürger, die Schäden in ihrer Stadt melden."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Wer kein Smartphone hat, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kann leider nichts melden."
+                },
+                {
+                  "key": "b",
+                  "label": "kann den Schaden auch telefonisch melden."
+                },
+                {
+                  "key": "c",
+                  "label": "muss persönlich ins Rathaus gehen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Die meisten Meldungen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "betreffen fehlende Parkplätze."
+                },
+                {
+                  "key": "b",
+                  "label": "werden innerhalb von zehn Tagen erledigt."
+                },
+                {
+                  "key": "c",
+                  "label": "kommen von Schulklassen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Kaputte Laterne? Einfach melden!",
+            "Eine Straßenlaterne ist kaputt, auf dem Radweg liegt Müll, oder in der Straße ist ein tiefes Loch: Wer so etwas in Oberhausen sieht, muss nicht mehr lange suchen, wer zuständig ist. Seit vier Jahren gibt es das Portal „Sag's Oberhausen“. Dort können Bürgerinnen und Bürger Schäden im öffentlichen Raum schnell und einfach an die Stadt melden.",
+            "Am beliebtesten ist die App. Man macht ein Foto, das Handy speichert automatisch den Ort, und mit zwei Klicks ist die Meldung bei der Stadt. Seit dem letzten Winter gibt es außerdem eine Telefonnummer. „Viele ältere Menschen haben kein Smartphone, wollen aber trotzdem helfen“, erklärt eine Sprecherin der Stadt. Unter der Hotline nehmen Mitarbeiter die Meldungen montags bis freitags entgegen.",
+            "Rund 9.000 Meldungen sind im letzten Jahr eingegangen. Ganz vorne liegen kaputte Laternen und illegal abgestellter Müll, danach kommen Schlaglöcher. Fehlende Parkplätze oder Falschparker gehören übrigens nicht ins Portal. Bei den meisten Meldungen dauert es weniger als zehn Tage, bis der Schaden repariert oder der Müll abgeholt ist. Im Portal kann man jederzeit sehen, wie weit die Arbeit ist.",
+            "Andere Städte haben ähnliche Angebote zum Teil schon seit zehn Jahren. In Oberhausen ist man trotzdem stolz: Inzwischen machen sogar Schulklassen mit und gehen gemeinsam durch ihr Viertel, um Probleme zu finden.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Im Text geht es darum, dass die Menschen in Oberhausen Schäden wie kaputte Laternen an die Stadt melden. Die App findet keine Parkplätze, sie ist nur für Meldungen da.",
+            "evidence": {
+              "text": "Eine Straßenlaterne ist kaputt, auf dem Radweg liegt Müll, oder in der Straße ist ein tiefes Loch: Wer so etwas in Oberhausen sieht, muss nicht mehr lange suchen, wer zuständig ist. Seit vier Jahren gibt es das Portal „Sag's Oberhausen“. Dort können Bürgerinnen und Bürger Schäden im öffentlichen Raum schnell und einfach an die Stadt melden.",
+              "hit": "Dort können Bürgerinnen und Bürger Schäden im öffentlichen Raum schnell und einfach an die Stadt melden."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Für Menschen ohne Smartphone gibt es seit dem letzten Winter eine Hotline. Vom Rathaus steht nichts im Text.",
+            "evidence": {
+              "text": "Am beliebtesten ist die App. Man macht ein Foto, das Handy speichert automatisch den Ort, und mit zwei Klicks ist die Meldung bei der Stadt. Seit dem letzten Winter gibt es außerdem eine Telefonnummer. „Viele ältere Menschen haben kein Smartphone, wollen aber trotzdem helfen“, erklärt eine Sprecherin der Stadt. Unter der Hotline nehmen Mitarbeiter die Meldungen montags bis freitags entgegen.",
+              "hit": "Seit dem letzten Winter gibt es außerdem eine Telefonnummer."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Bei den meisten Meldungen ist das Problem in weniger als zehn Tagen gelöst. Parkplätze gehören gar nicht ins Portal.",
+            "evidence": {
+              "text": "Rund 9.000 Meldungen sind im letzten Jahr eingegangen. Ganz vorne liegen kaputte Laternen und illegal abgestellter Müll, danach kommen Schlaglöcher. Fehlende Parkplätze oder Falschparker gehören übrigens nicht ins Portal. Bei den meisten Meldungen dauert es weniger als zehn Tage, bis der Schaden repariert oder der Müll abgeholt ist. Im Portal kann man jederzeit sehen, wie weit die Arbeit ist.",
+              "hit": "Bei den meisten Meldungen dauert es weniger als zehn Tage, bis der Schaden repariert oder der Müll abgeholt ist."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-10-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.472Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Pensionierte, die junge Menschen während der Lehre begleiten."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Firma, die neue Lehrstellen anbietet."
+                },
+                {
+                  "key": "c",
+                  "label": "Jugendliche, die älteren Menschen im Alltag helfen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Paare treffen sich …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "jeden Tag im Lehrbetrieb."
+                },
+                {
+                  "key": "b",
+                  "label": "einmal im Monat in der Berufsschule."
+                },
+                {
+                  "key": "c",
+                  "label": "etwa alle zwei Wochen an einem Ort, den sie selbst wählen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Seit es das Projekt gibt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "haben alle Lernenden eine feste Stelle."
+                },
+                {
+                  "key": "b",
+                  "label": "brechen weniger Jugendliche ihre Lehre ab."
+                },
+                {
+                  "key": "c",
+                  "label": "braucht die Gemeinde keine neuen Mentoren mehr."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Erfahrung für den Start ins Berufsleben",
+            "Die erste Zeit in der Lehre ist für viele Jugendliche nicht einfach: neue Kollegen, lange Arbeitstage, dazu die Berufsschule. In Uzwil bekommen junge Lernende* deshalb Unterstützung von Menschen, die schon pensioniert sind. Das Projekt heisst «Lehre plus 60» und läuft seit drei Jahren.",
+            "Die Idee ist einfach: Jede Mentorin und jeder Mentor begleitet einen jungen Menschen während der ganzen Lehre. Ungefähr zweimal im Monat treffen sich die beiden – wo, entscheiden sie selbst. Manche sitzen im Café, andere gehen spazieren oder lernen in der Bibliothek. Die Gemeinde bezahlt den Kaffee: Pro Treffen gibt es Fr. 10.–.",
+            "«Mit meinen Eltern kann ich nicht über alles reden», sagt eine 17-jährige Lernende, die Malerin wird. Ihr Mentor, ein pensionierter Elektriker, hilft ihr beim Lernen für die Prüfungen und hört zu, wenn es im Lehrbetrieb Probleme gibt. «Er sagt mir ehrlich seine Meinung, aber er ist nicht mein Chef.»",
+            "Einmal im Monat treffen sich alle Mentorinnen und Mentoren in der Berufsschule, um Erfahrungen auszutauschen. Die Bilanz nach drei Jahren ist positiv: Die Zahl der Lehrabbrüche in der Gemeinde ist seit dem Start des Projekts um fast die Hälfte gesunken. Einige Jugendliche haben nach dem Abschluss sogar eine feste Stelle in ihrem Lehrbetrieb bekommen. Trotzdem sucht die Gemeinde weiterhin Freiwillige, vor allem Männer, denn bis jetzt machen viel mehr Frauen mit.",
+            "*Lernende = Schweizer Standard für «Auszubildende»",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Im Projekt helfen pensionierte Menschen jungen Lernenden während ihrer Lehre. Es ist nicht umgekehrt, denn die Jugendlichen bekommen die Hilfe.",
+            "evidence": {
+              "text": "Die erste Zeit in der Lehre ist für viele Jugendliche nicht einfach: neue Kollegen, lange Arbeitstage, dazu die Berufsschule. In Uzwil bekommen junge Lernende* deshalb Unterstützung von Menschen, die schon pensioniert sind. Das Projekt heisst «Lehre plus 60» und läuft seit drei Jahren.",
+              "hit": "In Uzwil bekommen junge Lernende* deshalb Unterstützung von Menschen, die schon pensioniert sind."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Die beiden treffen sich ungefähr zweimal im Monat und entscheiden selbst, wo. Einmal im Monat in der Berufsschule treffen sich nur die Mentoren.",
+            "evidence": {
+              "text": "Die Idee ist einfach: Jede Mentorin und jeder Mentor begleitet einen jungen Menschen während der ganzen Lehre. Ungefähr zweimal im Monat treffen sich die beiden – wo, entscheiden sie selbst. Manche sitzen im Café, andere gehen spazieren oder lernen in der Bibliothek. Die Gemeinde bezahlt den Kaffee: Pro Treffen gibt es Fr. 10.–.",
+              "hit": "Ungefähr zweimal im Monat treffen sich die beiden – wo, entscheiden sie selbst."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Seit dem Start gibt es fast halb so viele Lehrabbrüche. Eine feste Stelle haben nur einige, und die Gemeinde sucht noch Freiwillige.",
+            "evidence": {
+              "text": "Einmal im Monat treffen sich alle Mentorinnen und Mentoren in der Berufsschule, um Erfahrungen auszutauschen. Die Bilanz nach drei Jahren ist positiv: Die Zahl der Lehrabbrüche in der Gemeinde ist seit dem Start des Projekts um fast die Hälfte gesunken. Einige Jugendliche haben nach dem Abschluss sogar eine feste Stelle in ihrem Lehrbetrieb bekommen. Trotzdem sucht die Gemeinde weiterhin Freiwillige, vor allem Männer, denn bis jetzt machen viel mehr Frauen mit.",
+              "hit": "Die Zahl der Lehrabbrüche in der Gemeinde ist seit dem Start des Projekts um fast die Hälfte gesunken."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-10-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.472Z",
+        "textType": "Anzeigen: Spielangebote"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten spielen gern und suchen passende Angebote.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Spielecafé Würfelglück",
+                  "text": "Über 600 Brettspiele warten auf Sie! Keine Lust, lange Anleitungen zu lesen? Unser Team erklärt Ihnen die Regeln direkt am Tisch. Täglich ab 15 Uhr geöffnet, 5 € pro Person. Kaiserstraße 18, 53721 Siegburg, www.wuerfelglueck-siegburg.de"
+                },
+                {
+                  "key": "b",
+                  "title": "Tarock lernen im Gasthaus Stögmüller",
+                  "text": "Sie wollten schon immer Tarock spielen, das traditionelle Kartenspiel für vier Personen? An vier Abenden zeigen wir Anfängerinnen und Anfängern, wie es geht. Karten bekommen Sie von uns. Mittwochs ab 19 Uhr, Linzer Straße 9, 4780 Schärding."
+                },
+                {
+                  "key": "c",
+                  "title": "Jassen für Einsteiger",
+                  "text": "Jassen gehört in der Schweiz einfach dazu! In unserem Kurs lernen Sie an drei Abenden die wichtigsten Regeln unseres beliebtesten Kartenspiels. Schweizer Jasskarten erhalten Sie gratis. CHF 60.–, Pfarreisaal Willisau, Anmeldung: www.jassen-willisau.ch"
+                },
+                {
+                  "key": "d",
+                  "title": "Quizabend im Shamrock",
+                  "text": "Jeden zweiten Donnerstag ab 20 Uhr: Testen Sie Ihr Allgemeinwissen! Gespielt wird in Teams mit bis zu sechs Personen, für die besten drei Teams gibt es Preise. Bitte reservieren Sie einen Tisch. Shamrock Irish Pub, Pirmasens."
+                },
+                {
+                  "key": "e",
+                  "title": "Spiele ausleihen statt kaufen",
+                  "text": "Im Stadtteilzentrum Nordplatz können Sie bis zu drei Brett- oder Kartenspiele für zwei Wochen kostenlos mitnehmen. Über 200 Spiele für Kinder und Erwachsene. Mo–Fr 14–19 Uhr, Nordplatz 3, 99817 Eisenach"
+                },
+                {
+                  "key": "f",
+                  "title": "Spielefest Lustenau",
+                  "text": "Zwei Tage lang neue Spiele ausprobieren und die Menschen kennenlernen, die sie erfunden haben! Am Samstag gibt es außerdem den Workshop „Ein eigenes Spiel erfinden“ – nur für Kinder von 8 bis 12 Jahren. Eintritt frei. Reichshofsaal, Lustenau."
+                },
+                {
+                  "key": "g",
+                  "title": "Rollenspielrunde sucht Verstärkung",
+                  "text": "Drachen, Zauberer und alte Burgen: Unsere Gruppe erzählt gemeinsam Abenteuer, die oft über viele Treffen gehen. Jede Person spielt eine eigene Figur. Neue sind herzlich willkommen, Vorkenntnisse sind nicht nötig. Samstags ab 14 Uhr, Jugendhaus Witten, ab 18 Jahren."
+                },
+                {
+                  "key": "h",
+                  "title": "Puzzle-Meisterschaft Thalwil",
+                  "text": "Wer ist das schnellste Puzzle-Team am Zürichsee? Zu zweit haben Sie zwei Stunden Zeit für 500 Teile. Startgeld Fr. 20.– pro Team, für die Sieger gibt es tolle Preise. Samstag, 14. März, Gemeindesaal Thalwil, Anmeldung unter www.puzzle-thalwil.ch"
+                },
+                {
+                  "key": "i",
+                  "title": "Bridge für Anfänger",
+                  "text": "Bridge gilt als eines der anspruchsvollsten Kartenspiele überhaupt – gespielt wird zu viert. In unserem Kurs lernen Sie es in kleinen Gruppen und mit viel Geduld. Acht Termine, dienstags 10–12 Uhr, Seniorentreff am Kurpark, 61231 Bad Nauheim."
+                },
+                {
+                  "key": "j",
+                  "title": "Großes Schnapsen-Turnier",
+                  "text": "Sie spielen schon lange Schnapsen und kennen alle Tricks? Dann kommen Sie zu unserem großen Turnier! Startgeld 10 €, für die besten drei warten schöne Preise. Sonntag, 14 Uhr, Gasthof zur Post, Hauptplatz 6, 8490 Bad Radkersburg"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Lasse möchte in einem Café neue Brettspiele kennenlernen, ohne die Regeln selbst lesen zu müssen."
+                },
+                {
+                  "n": 13,
+                  "text": "Linus hat Freunde in der Schweiz und möchte ihr traditionelles Kartenspiel lernen."
+                },
+                {
+                  "n": 14,
+                  "text": "Sophie möchte mit ihren Kolleginnen als Team bei einem Wissensquiz mitmachen."
+                },
+                {
+                  "n": 15,
+                  "text": "Oswald spielt seit Jahren Karten und sucht ein Turnier mit Preisen."
+                },
+                {
+                  "n": 16,
+                  "text": "Hilke möchte lernen, wie man selbst ein Brettspiel erfindet."
+                },
+                {
+                  "n": 17,
+                  "text": "Bruno, 72, möchte vormittags in einer Gruppe ein anspruchsvolles Kartenspiel für vier Personen lernen."
+                },
+                {
+                  "n": 18,
+                  "text": "Agathe und ihr Mann möchten zu zweit gegen andere Paare puzzeln."
+                },
+                {
+                  "n": 19,
+                  "text": "Hugo möchte mit anderen am Tisch eine lange Fantasy-Geschichte erleben, in der jeder eine Rolle spielt."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Jassen ist das typische Kartenspiel der Schweiz, und der Kurs in Willisau ist für Einsteiger. Tarock in Schärding ist ein österreichisches Spiel.",
+            "evidence": {
+              "text": "Jassen gehört in der Schweiz einfach dazu! In unserem Kurs lernen Sie an drei Abenden die wichtigsten Regeln unseres beliebtesten Kartenspiels. Schweizer Jasskarten erhalten Sie gratis. CHF 60.–, Pfarreisaal Willisau, Anmeldung: www.jassen-willisau.ch",
+              "hit": "Jassen gehört in der Schweiz einfach dazu!"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "d",
+            "explanation": "Beim Quizabend testet man sein Allgemeinwissen in Teams. Bei der Puzzle-Meisterschaft geht es nicht um Wissen.",
+            "evidence": {
+              "text": "Jeden zweiten Donnerstag ab 20 Uhr: Testen Sie Ihr Allgemeinwissen! Gespielt wird in Teams mit bis zu sechs Personen, für die besten drei Teams gibt es Preise. Bitte reservieren Sie einen Tisch. Shamrock Irish Pub, Pirmasens.",
+              "hit": "Gespielt wird in Teams mit bis zu sechs Personen"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "j",
+            "explanation": "Das Schnapsen-Turnier ist für erfahrene Spieler und hat Preise. Der Tarock-Kurs ist nur für Anfänger.",
+            "evidence": {
+              "text": "Sie spielen schon lange Schnapsen und kennen alle Tricks? Dann kommen Sie zu unserem großen Turnier! Startgeld 10 €, für die besten drei warten schöne Preise. Sonntag, 14 Uhr, Gasthof zur Post, Hauptplatz 6, 8490 Bad Radkersburg",
+              "hit": "Sie spielen schon lange Schnapsen und kennen alle Tricks?"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "x",
+            "explanation": "Den Workshop zum Spiele-Erfinden gibt es nur auf dem Spielefest, aber nur für Kinder. Für Hilke passt deshalb keine Anzeige.",
+            "evidence": {
+              "text": "Zwei Tage lang neue Spiele ausprobieren und die Menschen kennenlernen, die sie erfunden haben! Am Samstag gibt es außerdem den Workshop „Ein eigenes Spiel erfinden“ – nur für Kinder von 8 bis 12 Jahren. Eintritt frei. Reichshofsaal, Lustenau.",
+              "hit": "nur für Kinder von 8 bis 12 Jahren"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "i",
+            "explanation": "Bridge ist ein schweres Spiel zu viert, und der Kurs ist dienstags am Vormittag. Der Tarock-Kurs ist abends.",
+            "evidence": {
+              "text": "Bridge gilt als eines der anspruchsvollsten Kartenspiele überhaupt – gespielt wird zu viert. In unserem Kurs lernen Sie es in kleinen Gruppen und mit viel Geduld. Acht Termine, dienstags 10–12 Uhr, Seniorentreff am Kurpark, 61231 Bad Nauheim.",
+              "hit": "dienstags 10–12 Uhr"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "h",
+            "explanation": "Bei der Puzzle-Meisterschaft spielen Teams aus zwei Personen gegeneinander.",
+            "evidence": {
+              "text": "Wer ist das schnellste Puzzle-Team am Zürichsee? Zu zweit haben Sie zwei Stunden Zeit für 500 Teile. Startgeld Fr. 20.– pro Team, für die Sieger gibt es tolle Preise. Samstag, 14. März, Gemeindesaal Thalwil, Anmeldung unter www.puzzle-thalwil.ch",
+              "hit": "Zu zweit haben Sie zwei Stunden Zeit für 500 Teile."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "g",
+            "explanation": "In der Rollenspielrunde erzählt die Gruppe lange Abenteuer, und jeder spielt eine eigene Figur.",
+            "evidence": {
+              "text": "Drachen, Zauberer und alte Burgen: Unsere Gruppe erzählt gemeinsam Abenteuer, die oft über viele Treffen gehen. Jede Person spielt eine eigene Figur. Neue sind herzlich willkommen, Vorkenntnisse sind nicht nötig. Samstags ab 14 Uhr, Jugendhaus Witten, ab 18 Jahren.",
+              "hit": "Jede Person spielt eine eigene Figur."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-10-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.472Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für eine Helmpflicht für alle Radfahrerinnen und Radfahrer?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Lothar, 63, Coesfeld",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Jette, 25, Münster",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Engelbert, 58, Imst",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Lorenz, 44, Bocholt",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Ladina, 37, Ilanz",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Silke, 50, Nordhorn",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Remo, 61, Frutigen",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Detlef, 39, Bad Oeynhausen",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Nach mehreren Fahrradunfällen in der Stadt fragt eine Regionalzeitung ihre Leserinnen und Leser: Soll es für alle Radfahrerinnen und Radfahrer eine Helmpflicht geben?",
+            "Ich war fast dreißig Jahre lang Rettungssanitäter. In dieser Zeit habe ich viele Unfälle mit Radfahrern erlebt. Oft war es nur ein kleiner Sturz an der Bordsteinkante, aber ohne Helm hatten die Leute schwere Kopfverletzungen. Und mehr als einmal habe ich gesehen, dass ein Helm ein Leben gerettet hat. Deshalb sage ich ganz klar: Ein Helm muss für alle Pflicht sein.",
+            "Lothar, 63, Coesfeld",
+            "Ich fahre jeden Tag mit dem Rad, zur Uni und zum Einkaufen. Das Schöne am Radfahren ist, dass es so einfach ist: aufsteigen und los. Wenn ich jedes Mal einen Helm mitschleppen muss, wird es kompliziert. Ich bin sicher, dass dann viele Leute wieder das Auto nehmen. Und weniger Radfahrer bedeuten am Ende mehr Gefahr für alle, die noch radeln.",
+            "Jette, 25, Münster",
+            "Bei uns in Österreich müssen Kinder unter zwölf Jahren schon lange einen Helm tragen. Am Anfang haben viele Eltern geschimpft, heute nicht mehr. Die Buben und Mädchen setzen ihn ganz selbstverständlich auf. Warum soll das, was bei den Kleinen so gut funktioniert, nicht auch für die Erwachsenen gelten? Ein Kopf mit fünfzig ist doch nicht härter als einer mit zehn.",
+            "Engelbert, 58, Imst",
+            "Ich verstehe ja, dass Helme bei schnellen Fahrten sinnvoll sind. Aber ich fahre morgens fünf Minuten ganz gemütlich zum Bäcker, und zwar auf einem ruhigen Radweg. Dafür soll ich jetzt einen Helm aufsetzen? Das ist übertrieben. Jeder Erwachsene kann selbst entscheiden, wann ein Helm nötig ist. Dafür brauchen wir keine neuen Gesetze und schon gar keine Strafen.",
+            "Lorenz, 44, Bocholt",
+            "Ich fahre fast jeden Tag mit meinen beiden Kindern Velo. Die Kinder tragen natürlich einen Helm, und ich auch. Im Auto schnallen wir uns ja auch alle an, ohne lange darüber nachzudenken. Genauso selbstverständlich sollte der Helm auf dem Velo sein, für Gross und Klein. Eine Pflicht würde helfen, dass sich alle daran gewöhnen. Ein paar Franken für einen Helm sind doch nichts im Vergleich zu einer Kopfverletzung.",
+            "Ladina, 37, Ilanz",
+            "Für Kinder bin ich auf jeden Fall für eine Helmpflicht, sie fallen oft und sehen Gefahren noch nicht richtig. Auch wer mit dem E-Bike mit 25 km/h unterwegs ist, sollte einen Helm tragen müssen. Aber für alle Erwachsenen auf einem normalen Fahrrad? Das geht mir zu weit. Wer langsam fährt, sollte das selbst entscheiden dürfen.",
+            "Silke, 50, Nordhorn",
+            "Bei uns in der Schweiz entscheidet jeder selbst, ob er beim Velofahren einen Helm trägt, und viele tun es freiwillig. So soll es bleiben. Wenn die Politik wirklich etwas für die Sicherheit tun will, soll sie lieber breitere Velowege bauen und die Velofahrer besser von den Autos trennen. Das verhindert Unfälle. Ein Helm hilft erst, wenn es schon passiert ist.",
+            "Remo, 61, Frutigen",
+            "Früher habe ich über Helme nur gelacht. Dann bin ich im letzten Herbst auf nassem Laub gestürzt und mit dem Kopf auf die Straße geknallt. Mein Helm war danach kaputt, aber mir ist fast nichts passiert. Jeder, der den kaputten Helm gesehen hat, weiß: Ohne ihn wäre das ganz anders ausgegangen. Seitdem bin ich überzeugt: Der Helm muss für alle Pflicht werden, denn freiwillig setzen ihn viele leider nicht auf.",
+            "Detlef, 39, Bad Oeynhausen"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Jette möchte, dass Radfahren einfach bleibt. Sie glaubt, dass mit einer Pflicht viele wieder das Auto nehmen.",
+            "evidence": {
+              "text": "Ich fahre jeden Tag mit dem Rad, zur Uni und zum Einkaufen. Das Schöne am Radfahren ist, dass es so einfach ist: aufsteigen und los. Wenn ich jedes Mal einen Helm mitschleppen muss, wird es kompliziert. Ich bin sicher, dass dann viele Leute wieder das Auto nehmen. Und weniger Radfahrer bedeuten am Ende mehr Gefahr für alle, die noch radeln.",
+              "hit": "Ich bin sicher, dass dann viele Leute wieder das Auto nehmen."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Engelbert sieht, dass die Pflicht für Kinder in Österreich gut funktioniert. Er möchte sie deshalb auch für Erwachsene.",
+            "evidence": {
+              "text": "Bei uns in Österreich müssen Kinder unter zwölf Jahren schon lange einen Helm tragen. Am Anfang haben viele Eltern geschimpft, heute nicht mehr. Die Buben und Mädchen setzen ihn ganz selbstverständlich auf. Warum soll das, was bei den Kleinen so gut funktioniert, nicht auch für die Erwachsenen gelten? Ein Kopf mit fünfzig ist doch nicht härter als einer mit zehn.",
+              "hit": "Warum soll das, was bei den Kleinen so gut funktioniert, nicht auch für die Erwachsenen gelten?"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Lorenz findet eine Helmpflicht für kurze, langsame Fahrten übertrieben. Er will keine neuen Gesetze.",
+            "evidence": {
+              "text": "Ich verstehe ja, dass Helme bei schnellen Fahrten sinnvoll sind. Aber ich fahre morgens fünf Minuten ganz gemütlich zum Bäcker, und zwar auf einem ruhigen Radweg. Dafür soll ich jetzt einen Helm aufsetzen? Das ist übertrieben. Jeder Erwachsene kann selbst entscheiden, wann ein Helm nötig ist. Dafür brauchen wir keine neuen Gesetze und schon gar keine Strafen.",
+              "hit": "Das ist übertrieben."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "richtig",
+            "explanation": "Für Ladina soll der Helm so normal sein wie der Gurt im Auto, für Groß und Klein. Eine Pflicht würde dabei helfen.",
+            "evidence": {
+              "text": "Ich fahre fast jeden Tag mit meinen beiden Kindern Velo. Die Kinder tragen natürlich einen Helm, und ich auch. Im Auto schnallen wir uns ja auch alle an, ohne lange darüber nachzudenken. Genauso selbstverständlich sollte der Helm auf dem Velo sein, für Gross und Klein. Eine Pflicht würde helfen, dass sich alle daran gewöhnen. Ein paar Franken für einen Helm sind doch nichts im Vergleich zu einer Kopfverletzung.",
+              "hit": "Eine Pflicht würde helfen, dass sich alle daran gewöhnen."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "falsch",
+            "explanation": "Silke will eine Pflicht nur für Kinder und E-Bike-Fahrer. Für alle Erwachsenen geht ihr das zu weit.",
+            "evidence": {
+              "text": "Für Kinder bin ich auf jeden Fall für eine Helmpflicht, sie fallen oft und sehen Gefahren noch nicht richtig. Auch wer mit dem E-Bike mit 25 km/h unterwegs ist, sollte einen Helm tragen müssen. Aber für alle Erwachsenen auf einem normalen Fahrrad? Das geht mir zu weit. Wer langsam fährt, sollte das selbst entscheiden dürfen.",
+              "hit": "Aber für alle Erwachsenen auf einem normalen Fahrrad? Das geht mir zu weit."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "falsch",
+            "explanation": "Remo möchte, dass jeder selbst entscheidet. Bessere Velowege findet er wichtiger als eine Pflicht.",
+            "evidence": {
+              "text": "Bei uns in der Schweiz entscheidet jeder selbst, ob er beim Velofahren einen Helm trägt, und viele tun es freiwillig. So soll es bleiben. Wenn die Politik wirklich etwas für die Sicherheit tun will, soll sie lieber breitere Velowege bauen und die Velofahrer besser von den Autos trennen. Das verhindert Unfälle. Ein Helm hilft erst, wenn es schon passiert ist.",
+              "hit": "So soll es bleiben."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "richtig",
+            "explanation": "Detlef hat früher gelacht, aber nach seinem Sturz ist er für die Pflicht. Sein Helm hat ihn geschützt.",
+            "evidence": {
+              "text": "Früher habe ich über Helme nur gelacht. Dann bin ich im letzten Herbst auf nassem Laub gestürzt und mit dem Kopf auf die Straße geknallt. Mein Helm war danach kaputt, aber mir ist fast nichts passiert. Jeder, der den kaputten Helm gesehen hat, weiß: Ohne ihn wäre das ganz anders ausgegangen. Seitdem bin ich überzeugt: Der Helm muss für alle Pflicht werden, denn freiwillig setzen ihn viele leider nicht auf.",
+              "hit": "Der Helm muss für alle Pflicht werden"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-10-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.472Z",
+        "textType": "Nutzungsbedingungen Proberaumzentrum"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie spielen in einer Band und haben für ein halbes Jahr einen Proberaum gemietet.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Das Schlagzeug im Proberaum …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "gehört der Band, die zuerst kommt."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man extra mieten."
+                },
+                {
+                  "key": "c",
+                  "label": "darf man benutzen, aber Becken und Stöcke bringt man selbst mit."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Gäste bei einer Probe …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "dürfen höchstens zu dritt kommen."
+                },
+                {
+                  "key": "b",
+                  "label": "brauchen einen eigenen Chip."
+                },
+                {
+                  "key": "c",
+                  "label": "müssen Eintritt bezahlen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Wenn ein Gerät nicht funktioniert, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "repariert man es selbst."
+                },
+                {
+                  "key": "b",
+                  "label": "bezahlt immer die Band die Reparatur."
+                },
+                {
+                  "key": "c",
+                  "label": "meldet man es sofort über die App."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Eigene Instrumente …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss man nach jeder Probe mitnehmen."
+                },
+                {
+                  "key": "b",
+                  "label": "darf man in einem Schrank mit Schloss im Raum aufbewahren."
+                },
+                {
+                  "key": "c",
+                  "label": "sind über das Zentrum versichert."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Nutzungsbedingungen",
+          "paragraphs": [
+            "Nutzungsbedingungen des Proberaumzentrums Klangkeller",
+            "**Zugang**",
+            "Jedes Bandmitglied erhält einen persönlichen Chip, mit dem es rund um die Uhr ins Gebäude und in den gebuchten Raum kommt. Der Chip darf nicht weitergegeben werden. Gäste, zum Beispiel Freunde oder ein Fotograf, sind willkommen, allerdings nicht mehr als drei Personen pro Probe. Sie kommen nur zusammen mit einem Bandmitglied ins Haus.",
+            "**Technik**",
+            "In jedem Raum stehen eine Gesangsanlage, zwei Verstärker und ein Schlagzeug. Diese dürfen alle Bands, die den Raum nutzen, kostenlos verwenden. Becken und Sticks sind nicht dabei – bitte bringen Sie diese selbst mit. Funktioniert ein Gerät nicht, melden Sie das bitte gleich über die Klangkeller-App. Versuchen Sie nicht, es selbst zu reparieren. Wer ein Gerät durch falsche Nutzung beschädigt, muss die Reparatur bezahlen.",
+            "**Eigene Instrumente**",
+            "Sie dürfen eigene Instrumente und Kabel im Raum lassen, aber nur in dem abschließbaren Schrank, den jede Band bekommt. Alles andere muss nach der Probe wieder mit. Bitte beachten Sie: Ihre Instrumente sind über den Klangkeller nicht versichert. Wir empfehlen Ihnen eine eigene Versicherung.",
+            "**Lautstärke und Ruhezeiten**",
+            "Die Räume sind gut gedämmt. Trotzdem bitten wir Sie, die Türen während der Probe geschlossen zu halten. Zwischen 22 und 8 Uhr darf in den Räumen im Erdgeschoss nur leise geprobt werden, weil im Nachbarhaus Menschen wohnen.",
+            "**Kündigung**",
+            "Der Mietvertrag läuft mindestens sechs Monate. Danach können Sie mit einer Frist von einem Monat zum Monatsende kündigen, schriftlich oder per E-Mail. Den Chip geben Sie am letzten Tag an der Rezeption ab."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Alle Bands dürfen das Schlagzeug kostenlos benutzen, aber Becken und Sticks muss man mitbringen. Extra mieten muss man es nicht.",
+            "evidence": {
+              "text": "In jedem Raum stehen eine Gesangsanlage, zwei Verstärker und ein Schlagzeug. Diese dürfen alle Bands, die den Raum nutzen, kostenlos verwenden. Becken und Sticks sind nicht dabei – bitte bringen Sie diese selbst mit. Funktioniert ein Gerät nicht, melden Sie das bitte gleich über die Klangkeller-App. Versuchen Sie nicht, es selbst zu reparieren. Wer ein Gerät durch falsche Nutzung beschädigt, muss die Reparatur bezahlen.",
+              "hit": "Becken und Sticks sind nicht dabei – bitte bringen Sie diese selbst mit."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "a",
+            "explanation": "Pro Probe dürfen nicht mehr als drei Gäste kommen. Einen Chip bekommen nur die Bandmitglieder, die Gäste kommen mit ihnen ins Haus.",
+            "evidence": {
+              "text": "Jedes Bandmitglied erhält einen persönlichen Chip, mit dem es rund um die Uhr ins Gebäude und in den gebuchten Raum kommt. Der Chip darf nicht weitergegeben werden. Gäste, zum Beispiel Freunde oder ein Fotograf, sind willkommen, allerdings nicht mehr als drei Personen pro Probe. Sie kommen nur zusammen mit einem Bandmitglied ins Haus.",
+              "hit": "allerdings nicht mehr als drei Personen pro Probe"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Ein kaputtes Gerät meldet man gleich in der App. Die Band zahlt die Reparatur nur, wenn sie das Gerät falsch benutzt hat.",
+            "evidence": {
+              "text": "In jedem Raum stehen eine Gesangsanlage, zwei Verstärker und ein Schlagzeug. Diese dürfen alle Bands, die den Raum nutzen, kostenlos verwenden. Becken und Sticks sind nicht dabei – bitte bringen Sie diese selbst mit. Funktioniert ein Gerät nicht, melden Sie das bitte gleich über die Klangkeller-App. Versuchen Sie nicht, es selbst zu reparieren. Wer ein Gerät durch falsche Nutzung beschädigt, muss die Reparatur bezahlen.",
+              "hit": "Funktioniert ein Gerät nicht, melden Sie das bitte gleich über die Klangkeller-App."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Instrumente darf man im abschließbaren Schrank der Band lassen. Versichert sind sie über den Klangkeller nicht.",
+            "evidence": {
+              "text": "Sie dürfen eigene Instrumente und Kabel im Raum lassen, aber nur in dem abschließbaren Schrank, den jede Band bekommt. Alles andere muss nach der Probe wieder mit. Bitte beachten Sie: Ihre Instrumente sind über den Klangkeller nicht versichert. Wir empfehlen Ihnen eine eigene Versicherung.",
+              "hit": "aber nur in dem abschließbaren Schrank, den jede Band bekommt"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

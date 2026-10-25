@@ -1,0 +1,253 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-07-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.656Z",
+        "textType": "Formular ausfüllen: Mitgliedsantrag für einen Tennisclub"
+      },
+      "exampleAnswers": [
+        "Ferreira"
+      ],
+      "display": {
+        "instruction": "Situation: Ihr Freund João möchte in einem Tennisclub spielen. Sie füllen für João das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Spielzeit“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Tennisclub Rot-Gelb Paderborn · Mitgliedsantrag\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nMitglied ab (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nMitgliedschaft: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "Einzelperson",
+                    "Familie"
+                  ]
+                },
+                "\nStunden mit Trainer: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "ja",
+                    "nein"
+                  ]
+                },
+                "\nSpielzeit: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "morgens",
+                    "mittags",
+                    "abends",
+                    "am Wochenende"
+                  ],
+                  "pick": 2
+                },
+                "\nBezahlung: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "monatlich",
+                    "einmal im Jahr"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "João",
+            "accept": [
+              "Joao"
+            ],
+            "explanation": "Der Vorname ist João. Ferreira ist der Familienname, der steht schon im Formular.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "João Ferreira"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "29.11.1985",
+            "accept": [
+              "29. November 1985",
+              "29.11.85",
+              "29. 11. 1985",
+              "1985-11-29"
+            ],
+            "explanation": "João ist am 29. November 1985 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "am 29. November 1985 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Paderborn",
+            "explanation": "João wohnt in Paderborn.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "João Ferreira aus Paderborn"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0151 2846 7739",
+            "accept": [
+              "0151 28467739",
+              "015128467739",
+              "0151/28467739",
+              "0151 / 2846 7739",
+              "0151/2846 7739"
+            ],
+            "explanation": "Das ist Joãos Handynummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "0151 2846 7739"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "April",
+            "accept": [
+              "ab April",
+              "im April"
+            ],
+            "explanation": "João möchte ab April im Club spielen.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "möchte ab April"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "Einzelperson",
+            "explanation": "Seine Frau spielt nicht Tennis. Darum ist João allein Mitglied, nicht mit der Familie.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "Seine Frau spielt nicht."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "ja",
+            "explanation": "João möchte Stunden mit einem Trainer. Darum kreuzt du „ja“ an.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "João möchte Stunden mit einem Trainer."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "abends,am Wochenende",
+            "explanation": "João arbeitet bis fünf Uhr. Er kann nur am Abend und am Wochenende spielen, nicht morgens oder mittags.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "einmal im Jahr",
+            "explanation": "João bezahlt einmal im Jahr, nicht jeden Monat.",
+            "evidence": {
+              "text": "Ihr Freund João Ferreira aus Paderborn möchte ab April im Tennisclub Rot-Gelb spielen. Seine Frau spielt nicht. João möchte Stunden mit einem Trainer. Er arbeitet bis fünf Uhr, er kann nur am Abend und am Wochenende. Er bezahlt einmal im Jahr. João ist am 29. November 1985 geboren. Seine Handynummer ist 0151 2846 7739.",
+              "hit": "Er bezahlt einmal im Jahr."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-07-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.656Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihre Freundin Verena hat Ihnen ein E-Mail geschrieben. Antworten Sie Verena. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Verena",
+            "situation": "Ihre Freundin Verena aus Lienz schreibt Ihnen: „Hallo! Am Freitagabend gehe ich mit ein paar Freunden in eine Karaoke-Bar in der Altstadt. Wir treffen uns um acht Uhr. Kommst du am Freitag mit? Welches Lied möchtest du singen? Bringst du deinen Bruder mit? Er singt doch so gern! Es wird sicher lustig! Ich freue mich! Liebe Grüße, Verena“",
+            "points": [
+              "Kommst du am Freitag mit?",
+              "Welches Lied möchtest du singen?",
+              "Bringst du deinen Bruder mit?"
+            ],
+            "opener": "Liebe Verena,\ndanke für dein E-Mail. Karaoke klingt lustig!"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Verena, danke für dein E-Mail. Karaoke klingt lustig! Ja, am Freitag komme ich gern mit. Ich möchte ein Lied auf Englisch singen. Mein Bruder kommt auch mit, er freut sich schon. Bis Freitag! Liebe Grüße, Ana"
+          }
+        ]
+      }
+    }
+  ]
+}

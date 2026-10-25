@@ -1,0 +1,193 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-06-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.352Z",
+        "textType": "Formular: Antrag auf einen Kleingarten"
+      },
+      "display": {
+        "instruction": "Ihr Bekannter Yonas möchte einen Garten im Kleingartenverein. Sie helfen ihm bei der Anmeldung. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Kleingartenverein Sonnenwiese e. V. Braunschweig – Antrag auf einen Kleingarten\n\nFamilienname: Tesfay\nVorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStaatsangehörigkeit: eritreisch\nStraße, Hausnummer: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nPLZ, Ort: 38124 Braunschweig\nTelefon (privat): ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nPersonen im Haushalt: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nBeruf: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Yonas Tesfay",
+          "source": "Aufenthaltstitel und Notiz",
+          "paragraphs": [
+            "Aufenthaltstitel – Name: TESFAY · Vorname: YONAS · Geburtsdatum: 21.01.1985 · Staatsangehörigkeit: ERITREISCH · Art des Titels: Aufenthaltserlaubnis · gültig bis: 14.09.2027",
+            "Notiz von Saba: Hallo, danke für deine Hilfe! Wir wohnen seit drei Jahren in der Wolfenbütteler Straße 18, im dritten Stock und ohne Balkon. Deshalb möchte Yonas so gern einen Garten. Bei uns wohnen Yonas, ich und unsere zwei Kinder, Senait und Robel. In Eritrea war Yonas Lehrer, hier arbeitet er als Maler beim Malerbetrieb Oltmanns. In der Firma hat er die Nummer 0531 6610 33, aber dort kann er nicht telefonieren. Der Verein soll lieber zu Hause anrufen: 0531 2278406. Viele Grüße, Saba"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "21.01.1985",
+            "explanation": "Das Geburtsdatum steht im Aufenthaltstitel. Das andere Datum zeigt nur, wie lange der Titel gültig ist.",
+            "evidence": {
+              "text": "Aufenthaltstitel – Name: TESFAY · Vorname: YONAS · Geburtsdatum: 21.01.1985 · Staatsangehörigkeit: ERITREISCH · Art des Titels: Aufenthaltserlaubnis · gültig bis: 14.09.2027",
+              "hit": "Geburtsdatum: 21.01.1985"
+            },
+            "accept": [
+              "21.1.1985",
+              "21.01.85",
+              "21.1.85",
+              "21. Januar 1985",
+              "21. 01. 1985"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "Wolfenbütteler Straße 18",
+            "explanation": "Saba schreibt, wo die Familie wohnt: Wolfenbütteler Straße 18. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Notiz von Saba: Hallo, danke für deine Hilfe! Wir wohnen seit drei Jahren in der Wolfenbütteler Straße 18, im dritten Stock und ohne Balkon. Deshalb möchte Yonas so gern einen Garten. Bei uns wohnen Yonas, ich und unsere zwei Kinder, Senait und Robel. In Eritrea war Yonas Lehrer, hier arbeitet er als Maler beim Malerbetrieb Oltmanns. In der Firma hat er die Nummer 0531 6610 33, aber dort kann er nicht telefonieren. Der Verein soll lieber zu Hause anrufen: 0531 2278406. Viele Grüße, Saba",
+              "hit": "Wolfenbütteler Straße 18"
+            },
+            "accept": [
+              "Wolfenbütteler Str. 18",
+              "Wolfenbütteler Strasse 18",
+              "Wolfenbütteler Str 18",
+              "Wolfenbüttelerstraße 18"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "0531 2278406",
+            "explanation": "Der Verein soll zu Hause anrufen, also brauchst du die private Nummer. Die Nummer 0531 6610 33 ist von der Firma.",
+            "evidence": {
+              "text": "Notiz von Saba: Hallo, danke für deine Hilfe! Wir wohnen seit drei Jahren in der Wolfenbütteler Straße 18, im dritten Stock und ohne Balkon. Deshalb möchte Yonas so gern einen Garten. Bei uns wohnen Yonas, ich und unsere zwei Kinder, Senait und Robel. In Eritrea war Yonas Lehrer, hier arbeitet er als Maler beim Malerbetrieb Oltmanns. In der Firma hat er die Nummer 0531 6610 33, aber dort kann er nicht telefonieren. Der Verein soll lieber zu Hause anrufen: 0531 2278406. Viele Grüße, Saba",
+              "hit": "zu Hause anrufen: 0531 2278406"
+            },
+            "accept": [
+              "05312278406",
+              "0531-2278406",
+              "0531/2278406",
+              "0531 227 8406",
+              "0531 22 78 406"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "4",
+            "explanation": "Im Haushalt wohnen Yonas, Saba und zwei Kinder, also vier Personen. Zwei sind nur die Kinder.",
+            "evidence": {
+              "text": "Notiz von Saba: Hallo, danke für deine Hilfe! Wir wohnen seit drei Jahren in der Wolfenbütteler Straße 18, im dritten Stock und ohne Balkon. Deshalb möchte Yonas so gern einen Garten. Bei uns wohnen Yonas, ich und unsere zwei Kinder, Senait und Robel. In Eritrea war Yonas Lehrer, hier arbeitet er als Maler beim Malerbetrieb Oltmanns. In der Firma hat er die Nummer 0531 6610 33, aber dort kann er nicht telefonieren. Der Verein soll lieber zu Hause anrufen: 0531 2278406. Viele Grüße, Saba",
+              "hit": "Bei uns wohnen Yonas, ich und unsere zwei Kinder"
+            },
+            "accept": [
+              "vier",
+              "4 Personen",
+              "vier Personen"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "Maler",
+            "explanation": "Heute arbeitet Yonas als Maler. Lehrer war er früher in Eritrea.",
+            "evidence": {
+              "text": "Notiz von Saba: Hallo, danke für deine Hilfe! Wir wohnen seit drei Jahren in der Wolfenbütteler Straße 18, im dritten Stock und ohne Balkon. Deshalb möchte Yonas so gern einen Garten. Bei uns wohnen Yonas, ich und unsere zwei Kinder, Senait und Robel. In Eritrea war Yonas Lehrer, hier arbeitet er als Maler beim Malerbetrieb Oltmanns. In der Firma hat er die Nummer 0531 6610 33, aber dort kann er nicht telefonieren. Der Verein soll lieber zu Hause anrufen: 0531 2278406. Viele Grüße, Saba",
+              "hit": "hier arbeitet er als Maler"
+            },
+            "accept": [
+              "Anstreicher",
+              "Maler und Lackierer",
+              "Maler beim Malerbetrieb Oltmanns"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Yonas"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-06-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.352Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Freundin Sevgi hat Sie zu einem Abschiedsessen eingeladen. Antworten Sie Sevgi mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Abschiedsessen bei Sevgi",
+            "situation": "Ihre Freundin Sevgi zieht nächsten Monat nach Graz. Am Freitag um 19 Uhr gibt sie in ihrer Wohnung ein Abschiedsessen und hat Sie eingeladen. Am Samstag packt sie ihre Kisten.",
+            "points": [
+              "später kommen: warum?",
+              "etwas mitbringen",
+              "Hilfe beim Packen",
+              "wieder zu Besuch kommen"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Sevgi,\ndanke für die Einladung! Ich komme gern, aber erst um acht, weil ich am Freitag bis halb acht arbeiten muss. Ich bringe einen Nachtisch mit. Am Samstag habe ich Zeit und helfe dir gern beim Packen.\nBis Freitag!\nDein Tobias"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-04-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.347Z",
+        "textType": "Wegweiser in einem Krankenhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten einen Kaffee trinken.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Nach Ihrer Operation sollen Sie Übungen für den Rücken machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Sie sehen in letzter Zeit schlecht. Ein Arzt soll Ihre Augen untersuchen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Ihr Vater darf bald nach Hause. Er braucht dort Hilfe, und Sie wissen nicht, wer ihm helfen kann.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Sie sind auf den Arm gefallen. Man soll ein Bild von Ihrem Knochen machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Ihr kleiner Neffe liegt im Krankenhaus. Sie möchten ihn besuchen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Klinikum am Rosengarten",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "4. Obergeschoss: Verwaltung · Patientenkasse · Sozialdienst und Pflegeberatung · Seelsorge",
+            "3. Obergeschoss: Innere Medizin · Augenklinik · Augenambulanz · Diabetes-Sprechstunde",
+            "2. Obergeschoss: Chirurgie · Unfallchirurgie · Gipsraum · Physiotherapie",
+            "1. Obergeschoss: Kinderstation · Kinderambulanz · Geburtshilfe · Kreißsaal · Elternzimmer",
+            "Erdgeschoss: Information · Aufnahme · Notaufnahme · Cafeteria · Kiosk · Blumenladen · Kapelle",
+            "Untergeschoss: Röntgen · MRT · Labor · Blutabnahme · Zugang Tiefgarage"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Übungen nach einer Operation macht man bei der Physiotherapie im 2. Obergeschoss. Im Untergeschoss gibt es nur Röntgen und Labor.",
+            "evidence": {
+              "text": "2. Obergeschoss: Chirurgie · Unfallchirurgie · Gipsraum · Physiotherapie",
+              "hit": "Physiotherapie"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Die Augenklinik ist im 3. Obergeschoss. Im 2. und im 1. Obergeschoss gibt es keine Augenärzte.",
+            "evidence": {
+              "text": "3. Obergeschoss: Innere Medizin · Augenklinik · Augenambulanz · Diabetes-Sprechstunde",
+              "hit": "Augenklinik"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "b",
+            "explanation": "Der Sozialdienst und die Pflegeberatung im 4. Obergeschoss helfen bei der Pflege zu Hause. Im Erdgeschoss ist nur die Information.",
+            "evidence": {
+              "text": "4. Obergeschoss: Verwaltung · Patientenkasse · Sozialdienst und Pflegeberatung · Seelsorge",
+              "hit": "Sozialdienst und Pflegeberatung"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Ein Bild vom Knochen ist ein Röntgenbild, und das Röntgen ist im Untergeschoss. Im 2. Obergeschoss ist der Gipsraum, aber dort macht man keine Bilder.",
+            "evidence": {
+              "text": "Untergeschoss: Röntgen · MRT · Labor · Blutabnahme · Zugang Tiefgarage",
+              "hit": "Röntgen"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Kranke Kinder liegen auf der Kinderstation im 1. Obergeschoss. Im Untergeschoss gibt es keine Station.",
+            "evidence": {
+              "text": "1. Obergeschoss: Kinderstation · Kinderambulanz · Geburtshilfe · Kreißsaal · Elternzimmer",
+              "hit": "Kinderstation"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-04-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.347Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Marco Steinbach hat früher mit Fußball sein Geld verdient."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Steinbach hat nur bei Vereinen in Deutschland gespielt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Steinbach hat wegen einer Verletzung mit dem Profifußball aufgehört."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Die Kinder haben an zwei Tagen in der Woche Training."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Steinbach bekommt Geld für seine Arbeit mit den Kindern."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Bald können im Verein auch Mädchen in einem eigenen Team spielen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Vom Stadion zurück auf den Dorfplatz",
+            "Viele Jahre stand Marco Steinbach (34) vor Tausenden Zuschauern auf dem Platz. Als Profi spielte er acht Jahre für einen Verein in Bochum und danach zwei Jahre in Salzburg in Österreich.",
+            "Vor zwei Jahren hatte er beim Training einen schweren Unfall. Sein Knie war danach nicht mehr gesund, und mit 32 musste er seine Karriere beenden. „Das war am Anfang sehr schwer für mich“, sagt er.",
+            "Heute wohnt Steinbach wieder in Neuenkirchen, in dem Dorf, in dem er aufgewachsen ist. Dort trainiert er 22 Kinder zwischen acht und zwölf Jahren, immer dienstags und freitags nach der Schule. Geld nimmt er dafür nicht. „Der Verein braucht das Geld für Bälle und Trikots“, erklärt er.",
+            "Bald hat er noch mehr Arbeit: Viele Mädchen aus dem Dorf möchten auch mitspielen. Deshalb gründet der Verein für die nächste Saison eine eigene Mädchenmannschaft. Steinbach freut sich schon darauf."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Steinbach hat auch zwei Jahre in Salzburg gespielt. Salzburg liegt in Österreich, nicht in Deutschland.",
+            "evidence": {
+              "text": "Viele Jahre stand Marco Steinbach (34) vor Tausenden Zuschauern auf dem Platz. Als Profi spielte er acht Jahre für einen Verein in Bochum und danach zwei Jahre in Salzburg in Österreich.",
+              "hit": "zwei Jahre in Salzburg in Österreich"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Nach einem Unfall war sein Knie nicht mehr gesund. Deshalb musste er mit 32 aufhören.",
+            "evidence": {
+              "text": "Vor zwei Jahren hatte er beim Training einen schweren Unfall. Sein Knie war danach nicht mehr gesund, und mit 32 musste er seine Karriere beenden. „Das war am Anfang sehr schwer für mich“, sagt er.",
+              "hit": "Sein Knie war danach nicht mehr gesund, und mit 32 musste er seine Karriere beenden."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "richtig",
+            "explanation": "Das Training ist dienstags und freitags. Das sind zwei Tage pro Woche.",
+            "evidence": {
+              "text": "Heute wohnt Steinbach wieder in Neuenkirchen, in dem Dorf, in dem er aufgewachsen ist. Dort trainiert er 22 Kinder zwischen acht und zwölf Jahren, immer dienstags und freitags nach der Schule. Geld nimmt er dafür nicht. „Der Verein braucht das Geld für Bälle und Trikots“, erklärt er.",
+              "hit": "immer dienstags und freitags nach der Schule"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Steinbach nimmt kein Geld für das Training. Das Geld vom Verein ist für Bälle und Trikots, nicht für ihn.",
+            "evidence": {
+              "text": "Heute wohnt Steinbach wieder in Neuenkirchen, in dem Dorf, in dem er aufgewachsen ist. Dort trainiert er 22 Kinder zwischen acht und zwölf Jahren, immer dienstags und freitags nach der Schule. Geld nimmt er dafür nicht. „Der Verein braucht das Geld für Bälle und Trikots“, erklärt er.",
+              "hit": "Geld nimmt er dafür nicht."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Für die nächste Saison gründet der Verein eine eigene Mannschaft nur für Mädchen.",
+            "evidence": {
+              "text": "Bald hat er noch mehr Arbeit: Viele Mädchen aus dem Dorf möchten auch mitspielen. Deshalb gründet der Verein für die nächste Saison eine eigene Mädchenmannschaft. Steinbach freut sich schon darauf.",
+              "hit": "Deshalb gründet der Verein für die nächste Saison eine eigene Mädchenmannschaft."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-04-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.347Z",
+        "textType": "Anzeigen und Webseiten: Dienstleistungen im Alltag"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "www.pc-hilfe-mannheim.de",
+                  "text": "Ärger mit Computer oder Handy? Wir kommen zu Ihnen nach Hause und richten Programme, Internet und E-Mail ein. Mo–Sa, auch abends."
+                },
+                {
+                  "key": "b",
+                  "title": "Übersetzungsbüro Kaya",
+                  "text": "Wir übersetzen Zeugnisse, Urkunden und andere Dokumente aus Ihrem Heimatland ins Deutsche – mit Stempel, für alle Ämter."
+                },
+                {
+                  "key": "c",
+                  "title": "Glasklar Fensterreinigung",
+                  "text": "Saubere Fenster, Glastüren und Wintergärten für Wohnungen und Büros. Leitern und Putzmittel bringen wir mit."
+                },
+                {
+                  "key": "d",
+                  "title": "Bügelstube Faltenlos",
+                  "text": "Ihre Wäsche ist sauber, aber zerknittert? Wir bügeln Blusen, Hosen und Oberhemden. Morgens abgeben, abends abholen."
+                },
+                {
+                  "key": "e",
+                  "title": "Einkaufsservice 60+",
+                  "text": "Das Tragen fällt Ihnen schwer? Wir kaufen für Sie im Supermarkt ein und bringen alles bis an die Wohnungstür. Bestellung per Telefon."
+                },
+                {
+                  "key": "f",
+                  "title": "Lohnsteuerhilfeverein Rhein-Neckar",
+                  "text": "Wir machen Ihre Steuererklärung – für Angestellte, Rentner und Azubis. Termine auch samstags. Jahresbeitrag ab 59 €."
+                },
+                {
+                  "key": "g",
+                  "title": "Fotoatelier Weitblick",
+                  "text": "Gute Bewerbungsfotos in 15 Minuten, ohne Termin. Wir helfen bei Kleidung und Frisur. Bilder auch als Datei."
+                },
+                {
+                  "key": "h",
+                  "title": "Druckerei Schwarz auf Weiß",
+                  "text": "Visitenkarten, Flyer und Plakate für Ihre Firma oder Ihren Verein. Schnell gedruckt, schon ab 50 Stück."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Sie haben einen neuen Laptop gekauft und wissen nicht, wie Sie dort Ihre Mails lesen können."
+                },
+                {
+                  "n": 11,
+                  "text": "Das Amt braucht Ihre Geburtsurkunde, aber Sie haben sie nur auf Arabisch."
+                },
+                {
+                  "n": 12,
+                  "text": "Sie haben zehn Hemden gewaschen. Jetzt müssen sie glatt werden, aber Sie haben keine Zeit."
+                },
+                {
+                  "n": 13,
+                  "text": "Die Wände in Ihrem Wohnzimmer sollen eine neue Farbe bekommen."
+                },
+                {
+                  "n": 14,
+                  "text": "Sie suchen eine neue Arbeitsstelle und brauchen ein schönes Bild für Ihre Unterlagen."
+                },
+                {
+                  "n": 15,
+                  "text": "Sie möchten Geld vom Finanzamt zurück, aber das Formular ist Ihnen zu schwierig."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Das Übersetzungsbüro übersetzt Urkunden aus dem Heimatland ins Deutsche, mit Stempel für die Ämter.",
+            "evidence": {
+              "text": "Übersetzungsbüro Kaya. Wir übersetzen Zeugnisse, Urkunden und andere Dokumente aus Ihrem Heimatland ins Deutsche – mit Stempel, für alle Ämter.",
+              "hit": "Wir übersetzen Zeugnisse, Urkunden und andere Dokumente aus Ihrem Heimatland ins Deutsche"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "d",
+            "explanation": "Die Bügelstube bügelt Oberhemden für dich. Du gibst sie morgens ab und holst sie abends wieder.",
+            "evidence": {
+              "text": "Bügelstube Faltenlos. Ihre Wäsche ist sauber, aber zerknittert? Wir bügeln Blusen, Hosen und Oberhemden. Morgens abgeben, abends abholen.",
+              "hit": "Wir bügeln Blusen, Hosen und Oberhemden."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "x",
+            "explanation": "Keine Anzeige bietet Malerarbeiten an. Glasklar macht nur Fenster und Glastüren sauber, aber keine Wände.",
+            "evidence": {
+              "text": "Glasklar Fensterreinigung. Saubere Fenster, Glastüren und Wintergärten für Wohnungen und Büros. Leitern und Putzmittel bringen wir mit.",
+              "hit": "Saubere Fenster, Glastüren und Wintergärten"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "g",
+            "explanation": "Das Fotoatelier macht Bewerbungsfotos. So ein Bild brauchst du für deine Unterlagen.",
+            "evidence": {
+              "text": "Fotoatelier Weitblick. Gute Bewerbungsfotos in 15 Minuten, ohne Termin. Wir helfen bei Kleidung und Frisur. Bilder auch als Datei.",
+              "hit": "Gute Bewerbungsfotos in 15 Minuten"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "f",
+            "explanation": "Der Lohnsteuerhilfeverein macht die Steuererklärung für dich. Damit bekommst du Geld vom Finanzamt zurück.",
+            "evidence": {
+              "text": "Lohnsteuerhilfeverein Rhein-Neckar. Wir machen Ihre Steuererklärung – für Angestellte, Rentner und Azubis. Termine auch samstags. Jahresbeitrag ab 59 €.",
+              "hit": "Wir machen Ihre Steuererklärung"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    }
+  ]
+}

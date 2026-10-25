@@ -1,0 +1,959 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-02-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.447Z",
+        "textType": "E-Mail"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Svenja schreibt, weil die Gastschülerin nicht mehr bei der Familie wohnt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die Idee mit der Gastschülerin kam von Svenjas Sohn."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Valentina musste sich am Anfang an andere Essenszeiten gewöhnen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "In der Schule hat Valentina schnell neue Freunde gefunden."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Svenja hat während Valentinas Aufenthalt weniger gearbeitet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Die Familie möchte noch einmal einen jungen Gast aus dem Ausland aufnehmen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Svenja möchte Merve bald besuchen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Svenja",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Merve,",
+            "seit Freitag ist es bei uns so still, dass ich mich fast nicht daran gewöhnen kann. Valentina ist wieder in Chile. Drei Monate hat sie bei uns gewohnt, und jetzt fehlt sie mir mehr, als ich gedacht hätte. Deshalb muss ich dir einfach mal schreiben.",
+            "Weißt du noch, wie skeptisch ich am Anfang war? Die Idee hatte eigentlich Jens. Ein Kollege von ihm hatte schon zweimal Gastschüler, und der hat so begeistert davon erzählt. Unser Sohn Mats war zuerst gar nicht einverstanden. Er hatte Angst, dass er sein Zimmer teilen muss. Zum Glück hatten wir ja noch das kleine Gästezimmer unter dem Dach.",
+            "Die ersten Wochen waren nicht ganz einfach. In Chile isst man abends erst sehr spät, oft um zehn. Bei uns gibt es um halb sieben Abendessen, und Valentina hatte da einfach noch keinen Hunger. Nachts ist sie dann mit knurrendem Magen in die Küche geschlichen. Irgendwann haben wir dann immer einen Teller für später in den Kühlschrank gestellt.",
+            "Wegen der Schule hatte ich mir am meisten Sorgen gemacht. Aber schon nach zwei Wochen hat die Theatergruppe sie aufgenommen, und von da an hatte sie mehr Freunde als Mats. Am Ende hat sie sogar in einem Stück mitgespielt, auf Deutsch!",
+            "Ich wollte eigentlich für die drei Monate weniger arbeiten, weil die Proben immer am späten Nachmittag waren und ich Valentina nicht allein mit dem Bus fahren lassen wollte. Dann hat unsere Nachbarin angeboten, sie mitzunehmen, weil ihre Tochter auch in der Gruppe ist. So konnte ich ganz normal im Büro bleiben.",
+            "Jetzt ist ihr Zimmer leer, und sogar Mats sagt, dass es ohne sie langweilig ist. Ich vermisse inzwischen auch ihre laute Musik am Morgen. Wir haben uns deshalb schon für das nächste Schuljahr als Gastfamilie angemeldet. Vielleicht kommt dann jemand aus Japan oder Mexiko, mal sehen.",
+            "Und du? Hast du nicht Lust, mal wieder nach Osnabrück zu kommen? Dann zeige ich dir die vielen Fotos, und wir backen zusammen die chilenischen Empanadas, die Valentina uns beigebracht hat. Ich würde mich riesig freuen!",
+            "Liebe Grüße",
+            "Svenja"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Die Idee hatte Jens. Der Sohn Mats war am Anfang sogar dagegen.",
+            "evidence": {
+              "text": "Weißt du noch, wie skeptisch ich am Anfang war? Die Idee hatte eigentlich Jens. Ein Kollege von ihm hatte schon zweimal Gastschüler, und der hat so begeistert davon erzählt. Unser Sohn Mats war zuerst gar nicht einverstanden. Er hatte Angst, dass er sein Zimmer teilen muss. Zum Glück hatten wir ja noch das kleine Gästezimmer unter dem Dach.",
+              "hit": "Die Idee hatte eigentlich Jens."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "In Chile isst man abends viel später. Deshalb hatte Valentina beim Abendessen keinen Hunger und war nachts hungrig.",
+            "evidence": {
+              "text": "Die ersten Wochen waren nicht ganz einfach. In Chile isst man abends erst sehr spät, oft um zehn. Bei uns gibt es um halb sieben Abendessen, und Valentina hatte da einfach noch keinen Hunger. Nachts ist sie dann mit knurrendem Magen in die Küche geschlichen. Irgendwann haben wir dann immer einen Teller für später in den Kühlschrank gestellt.",
+              "hit": "In Chile isst man abends erst sehr spät, oft um zehn."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Schon nach zwei Wochen war sie in der Theatergruppe und hatte viele Freunde. Svenjas Sorgen waren also unnötig.",
+            "evidence": {
+              "text": "Wegen der Schule hatte ich mir am meisten Sorgen gemacht. Aber schon nach zwei Wochen hat die Theatergruppe sie aufgenommen, und von da an hatte sie mehr Freunde als Mats. Am Ende hat sie sogar in einem Stück mitgespielt, auf Deutsch!",
+              "hit": "Aber schon nach zwei Wochen hat die Theatergruppe sie aufgenommen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Svenja wollte weniger arbeiten, aber die Nachbarin hat Valentina mitgenommen. Deshalb hat sie normal weitergearbeitet.",
+            "evidence": {
+              "text": "Ich wollte eigentlich für die drei Monate weniger arbeiten, weil die Proben immer am späten Nachmittag waren und ich Valentina nicht allein mit dem Bus fahren lassen wollte. Dann hat unsere Nachbarin angeboten, sie mitzunehmen, weil ihre Tochter auch in der Gruppe ist. So konnte ich ganz normal im Büro bleiben.",
+              "hit": "So konnte ich ganz normal im Büro bleiben."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Die Familie hat sich schon wieder als Gastfamilie für das nächste Schuljahr angemeldet.",
+            "evidence": {
+              "text": "Jetzt ist ihr Zimmer leer, und sogar Mats sagt, dass es ohne sie langweilig ist. Ich vermisse inzwischen auch ihre laute Musik am Morgen. Wir haben uns deshalb schon für das nächste Schuljahr als Gastfamilie angemeldet. Vielleicht kommt dann jemand aus Japan oder Mexiko, mal sehen.",
+              "hit": "Wir haben uns deshalb schon für das nächste Schuljahr als Gastfamilie angemeldet."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Svenja lädt Merve nach Osnabrück ein. Merve soll also zu ihr kommen, nicht umgekehrt.",
+            "evidence": {
+              "text": "Und du? Hast du nicht Lust, mal wieder nach Osnabrück zu kommen? Dann zeige ich dir die vielen Fotos, und wir backen zusammen die chilenischen Empanadas, die Valentina uns beigebracht hat. Ich würde mich riesig freuen!",
+              "hit": "Hast du nicht Lust, mal wieder nach Osnabrück zu kommen?"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-02-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.447Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Das Projekt gibt es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit einem sehr trockenen Sommer."
+                },
+                {
+                  "key": "b",
+                  "label": "seit über zehn Jahren."
+                },
+                {
+                  "key": "c",
+                  "label": "seit diesem Frühling."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Stadt, die viele neue Bäume pflanzt."
+                },
+                {
+                  "key": "b",
+                  "label": "Menschen, die junge Bäume an der Straße pflegen."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Verein, der Geld für Parks sammelt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Die Stadt gibt den Paten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Geld für das Wasser."
+                },
+                {
+                  "key": "b",
+                  "label": "einen kostenlosen Kurs."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Sack und Hinweise zum Gießen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Im nächsten Jahr möchte die Stadt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "das Projekt beenden."
+                },
+                {
+                  "key": "b",
+                  "label": "auch Schulklassen mitmachen lassen."
+                },
+                {
+                  "key": "c",
+                  "label": "nur noch alte Bäume betreuen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Paten für junge Bäume",
+            "Wenn es im Sommer wochenlang nicht regnet, leiden vor allem die jungen Bäume an den Straßen. Ihre Wurzeln sind noch kurz und finden kaum Wasser. Ältere Bäume, die schon über zehn Jahre stehen, kommen meistens allein zurecht. In Dortmund kümmern sich deshalb inzwischen über 1.200 Bürgerinnen und Bürger als „Baumpaten“ um einen jungen Baum vor ihrer Haustür.",
+            "Angefangen hat alles im besonders trockenen Sommer vor drei Jahren. Damals sind in der Stadt Hunderte junge Bäume vertrocknet. „Wir haben mit unseren Fahrzeugen einfach nicht alle Bäume erreicht“, erzählt eine Mitarbeiterin vom Grünflächenamt. In diesem Frühling hat die Stadt wieder 500 neue Bäume gepflanzt, aber ohne Hilfe aus der Nachbarschaft ginge es nicht.",
+            "Wer Pate werden möchte, meldet sich online an. Die Stadt bringt dann einen grünen Wassersack, den man um den Stamm legt und einmal pro Woche füllt. Dazu bekommt jeder Pate ein Blatt mit Tipps, wann und wie viel man gießen soll. Das Wasser selbst bezahlen die Paten, aber ein voller Sack kostet weniger als einen Euro.",
+            "Im nächsten Jahr will die Stadt auch Schulklassen für das Projekt gewinnen. Für sie soll es einen kostenlosen Kurs geben, in dem die Kinder lernen, was ein Baum zum Leben braucht.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Über 1.200 Menschen kümmern sich als Paten um junge Bäume vor ihrem Haus. Dass die Stadt neue Bäume pflanzt, ist nur ein Detail.",
+            "evidence": {
+              "text": "Wenn es im Sommer wochenlang nicht regnet, leiden vor allem die jungen Bäume an den Straßen. Ihre Wurzeln sind noch kurz und finden kaum Wasser. Ältere Bäume, die schon über zehn Jahre stehen, kommen meistens allein zurecht. In Dortmund kümmern sich deshalb inzwischen über 1.200 Bürgerinnen und Bürger als „Baumpaten“ um einen jungen Baum vor ihrer Haustür.",
+              "hit": "kümmern sich deshalb inzwischen über 1.200 Bürgerinnen und Bürger als „Baumpaten“ um einen jungen Baum vor ihrer Haustür"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Die Paten bekommen einen Wassersack und ein Blatt mit Tipps. Das Wasser bezahlen sie selbst, und den Kurs gibt es nur für Schulklassen.",
+            "evidence": {
+              "text": "Wer Pate werden möchte, meldet sich online an. Die Stadt bringt dann einen grünen Wassersack, den man um den Stamm legt und einmal pro Woche füllt. Dazu bekommt jeder Pate ein Blatt mit Tipps, wann und wie viel man gießen soll. Das Wasser selbst bezahlen die Paten, aber ein voller Sack kostet weniger als einen Euro.",
+              "hit": "Die Stadt bringt dann einen grünen Wassersack, den man um den Stamm legt und einmal pro Woche füllt. Dazu bekommt jeder Pate ein Blatt mit Tipps"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "Die Stadt will im nächsten Jahr auch Schulklassen für das Projekt gewinnen. Von einem Ende des Projekts steht nichts im Text.",
+            "evidence": {
+              "text": "Im nächsten Jahr will die Stadt auch Schulklassen für das Projekt gewinnen. Für sie soll es einen kostenlosen Kurs geben, in dem die Kinder lernen, was ein Baum zum Leben braucht.",
+              "hit": "Im nächsten Jahr will die Stadt auch Schulklassen für das Projekt gewinnen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-02-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.447Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen neuen Bus, der Schulkinder abholt."
+                },
+                {
+                  "key": "b",
+                  "label": "Kinder, die ihren Schulweg in einer Gruppe machen."
+                },
+                {
+                  "key": "c",
+                  "label": "Eltern, die zusammen ein Auto benutzen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Kinder werden begleitet von …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Eltern, die sich abwechseln."
+                },
+                {
+                  "key": "b",
+                  "label": "Lehrpersonen der Schule."
+                },
+                {
+                  "key": "c",
+                  "label": "pensionierten Freiwilligen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Nach einem Jahr …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kommen die Kinder pünktlicher an."
+                },
+                {
+                  "key": "b",
+                  "label": "gibt es schon zehn Linien."
+                },
+                {
+                  "key": "c",
+                  "label": "stehen morgens weniger Autos vor der Schule."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Ein Bus ohne Motor",
+            "Jeden Morgen um Viertel nach sieben stehen ein paar Kinder an der Haltestelle «Kirchbühl» in Burgdorf. Es gibt dort aber keinen Fahrplan und keinen Motor: Der «Laufbus» ist eine Gruppe von Primarschulkindern, die gemeinsam zu Fuss zur Schule gehen. Unterwegs gibt es weitere Haltestellen, an denen neue Kinder dazukommen.",
+            "Begleitet wird die Gruppe von Erwachsenen. Jede Woche gibt es einen Plan, auf dem steht, welche Mutter oder welcher Vater an welchem Tag dran ist. «So muss niemand jeden Morgen mitlaufen», erklärt eine Mutter, die das Projekt gestartet hat. Vor dem Schulhaus wartet eine Lehrperson und nimmt die Kinder in Empfang. Gesucht werden ausserdem Pensionierte, die in Zukunft auch einmal mitgehen möchten.",
+            "Die Idee kam von den Eltern selbst. Viele hatten Angst, ihre Kinder allein über die grosse Kreuzung beim Bahnhof gehen zu lassen. Deshalb fuhren sie sie mit dem Auto. Am Morgen war es vor dem Schulhaus oft gefährlich, weil Autos sogar auf dem Trottoir* hielten.",
+            "Nach einem Jahr ist das Ergebnis klar: Am Morgen sieht man vor der Schule nur noch wenige Elterntaxis. Pünktlicher sind die Kinder zwar nicht geworden, obwohl die Eltern das gehofft hatten. Dafür sind sie wacher im Unterricht, sagen die Lehrpersonen. Inzwischen gibt es vier Linien in verschiedenen Quartieren, bald sollen es zehn werden.",
+            "*Trottoir = Schweizer Standard für «Bürgersteig»",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Der «Laufbus» ist kein echter Bus. Es ist eine Gruppe von Kindern, die zusammen zu Fuss zur Schule geht.",
+            "evidence": {
+              "text": "Jeden Morgen um Viertel nach sieben stehen ein paar Kinder an der Haltestelle «Kirchbühl» in Burgdorf. Es gibt dort aber keinen Fahrplan und keinen Motor: Der «Laufbus» ist eine Gruppe von Primarschulkindern, die gemeinsam zu Fuss zur Schule gehen. Unterwegs gibt es weitere Haltestellen, an denen neue Kinder dazukommen.",
+              "hit": "die gemeinsam zu Fuss zur Schule gehen"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Ein Plan zeigt, welche Mutter oder welcher Vater an welchem Tag mitgeht. Die Lehrperson wartet nur vor dem Schulhaus, und Pensionierte werden erst gesucht.",
+            "evidence": {
+              "text": "Begleitet wird die Gruppe von Erwachsenen. Jede Woche gibt es einen Plan, auf dem steht, welche Mutter oder welcher Vater an welchem Tag dran ist. «So muss niemand jeden Morgen mitlaufen», erklärt eine Mutter, die das Projekt gestartet hat. Vor dem Schulhaus wartet eine Lehrperson und nimmt die Kinder in Empfang. Gesucht werden ausserdem Pensionierte, die in Zukunft auch einmal mitgehen möchten.",
+              "hit": "welche Mutter oder welcher Vater an welchem Tag dran ist"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Am Morgen sieht man nur noch wenige Elterntaxis vor der Schule. Pünktlicher sind die Kinder nicht geworden, und es gibt erst vier Linien.",
+            "evidence": {
+              "text": "Nach einem Jahr ist das Ergebnis klar: Am Morgen sieht man vor der Schule nur noch wenige Elterntaxis. Pünktlicher sind die Kinder zwar nicht geworden, obwohl die Eltern das gehofft hatten. Dafür sind sie wacher im Unterricht, sagen die Lehrpersonen. Inzwischen gibt es vier Linien in verschiedenen Quartieren, bald sollen es zehn werden.",
+              "hit": "Am Morgen sieht man vor der Schule nur noch wenige Elterntaxis."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-02-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.447Z",
+        "textType": "Anzeigen: Erlebnisse zum Verschenken"
+      },
+      "exampleAnswers": [
+        "f"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten suchen ein Erlebnis, das sie verschenken können.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Ballonfahrten über den Bodensee",
+                  "text": "Erleben Sie den Bodensee aus der Luft! Start ist in Wil, die Fahrt dauert etwa eine Stunde. Gutschein pro Person: Fr. 390.–. Bitte beachten: Der Einstieg erfolgt über den Korbrand, daher nicht geeignet bei eingeschränkter Beweglichkeit."
+                },
+                {
+                  "key": "b",
+                  "title": "Töpfern zu zweit",
+                  "text": "Verschenken Sie einen Nachmittag in unserer Werkstatt in Würzburg: Zwei Personen formen gemeinsam Tassen oder Schalen an der Töpferscheibe. Nach dem Brennen holen Sie Ihre Stücke bei uns ab. Gutschein für zwei Personen 85 €. Töpferei Lehmhaus."
+                },
+                {
+                  "key": "c",
+                  "title": "Escape-Room „Das Labor“",
+                  "text": "Ihr habt 60 Minuten Zeit, um aus einem geheimen Labor herauszukommen. Das schafft ihr nur, wenn ihr gemeinsam Hinweise sucht und Rätsel löst. Für Gruppen von drei bis sechs Personen, Gutscheine ab 25 € pro Person. Exit Augsburg."
+                },
+                {
+                  "key": "d",
+                  "title": "Sternwarte St. Pölten",
+                  "text": "Bei unseren Abendführungen erfahren Sie viel über Planeten und ferne Galaxien und dürfen selbst durch unser großes Teleskop schauen. Ab Jänner gibt es neue Termine, auch am Wochenende. Gutscheine erhalten Sie an der Kassa."
+                },
+                {
+                  "key": "e",
+                  "title": "Ihr Fotobuch in fünf Tagen",
+                  "text": "Machen Sie aus Ihren schönsten Urlaubsfotos ein persönliches Buch: Bilder hochladen, Seiten gestalten, bestellen. Lieferung innerhalb von fünf Tagen. Auch als Geschenkgutschein erhältlich. www.meinfotobuch-online.com"
+                },
+                {
+                  "key": "f",
+                  "title": "Mit dem Oldtimerbus durch Regensburg",
+                  "text": "Steigen Sie ein in unseren Bus aus dem Jahr 1958 und fahren Sie gemütlich durch die Altstadt. Ein Stadtführer erzählt dabei Geschichten aus Jahren. Abfahrt täglich um 11 und 14 Uhr am Dom. Gutscheine in der Tourist-Info am Alten Kornmarkt."
+                },
+                {
+                  "key": "g",
+                  "title": "Glasbläserei Inntal – Kinderwerkstatt",
+                  "text": "Wie wird aus heißem Glas eine bunte Kugel? In unserer Werkstatt in Kufstein blasen Buben und Mädchen von 8 bis 12 Jahren ihr eigenes Glas. Eltern dürfen zuschauen. Jeden Samstag, zwei Stunden, 45 €."
+                },
+                {
+                  "key": "h",
+                  "title": "Kleine Bühne Bielefeld",
+                  "text": "Kabarett, Comedy und Satire – bei uns wird gelacht! Vorstellungen Donnerstag bis Samstag jeweils um 20 Uhr. Verschenken Sie einen Gutschein für zwei Plätze inklusive Getränk. Bielefeld."
+                },
+                {
+                  "key": "i",
+                  "title": "Barista-Kurs in der Rösterei",
+                  "text": "In unserer Kaffeerösterei in Thun lernen Sie in zwei Lektionen, wie ein perfekter Espresso und ein cremiger Cappuccino gelingen. Dazu gibt es Tipps für die Maschine zu Hause. Kurs pro Person CHF 120.–. Rösterei Aareblick."
+                },
+                {
+                  "key": "j",
+                  "title": "Brotbacken wie früher",
+                  "text": "Schauen Sie unserer Bäuerin über die Schulter, wenn sie im alten Holzofen Brot bäckt, und hören Sie, wie man früher am Hof gelebt hat. Danach gibt es eine Jause mit Speck und Käse. Freitags 15 Uhr, Moserhof bei Hallein, Gutschein 29 €"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Hakans Vater sammelt Modelle von alten Fahrzeugen und möchte gern einmal in einem echten mitfahren."
+                },
+                {
+                  "n": 13,
+                  "text": "Ronjas Schwester und ihr Mann möchten zusammen etwas Eigenes herstellen, das sie behalten können."
+                },
+                {
+                  "n": 14,
+                  "text": "Darios Neffe wird zehn und findet alles spannend, was man aus Glas machen kann."
+                },
+                {
+                  "n": 15,
+                  "text": "Tamaras Großmutter kann nicht mehr gut gehen und wünscht sich einen besonderen Ausflug über einen See."
+                },
+                {
+                  "n": 16,
+                  "text": "Elif sucht für sich und vier Freundinnen ein Spiel, bei dem man zusammen nachdenken muss."
+                },
+                {
+                  "n": 17,
+                  "text": "Konstantins Freundin interessiert sich sehr für den Himmel in der Nacht."
+                },
+                {
+                  "n": 18,
+                  "text": "Jasmins Kollege trinkt sehr viel Kaffee und möchte ihn zu Hause richtig zubereiten."
+                },
+                {
+                  "n": 19,
+                  "text": "Björns Eltern gehen abends gern aus und sehen sich am liebsten lustige Programme auf der Bühne an."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "In der Töpferei formen zwei Personen zusammen Tassen oder Schalen und nehmen sie später mit. Die Glaswerkstatt ist nur für Kinder.",
+            "evidence": {
+              "text": "Verschenken Sie einen Nachmittag in unserer Werkstatt in Würzburg: Zwei Personen formen gemeinsam Tassen oder Schalen an der Töpferscheibe. Nach dem Brennen holen Sie Ihre Stücke bei uns ab. Gutschein für zwei Personen 85 €. Töpferei Lehmhaus.",
+              "hit": "Zwei Personen formen gemeinsam Tassen oder Schalen an der Töpferscheibe."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "g",
+            "explanation": "In Kufstein können Kinder von 8 bis 12 Jahren selbst Glas blasen. Darios Neffe ist zehn, das passt.",
+            "evidence": {
+              "text": "Wie wird aus heißem Glas eine bunte Kugel? In unserer Werkstatt in Kufstein blasen Buben und Mädchen von 8 bis 12 Jahren ihr eigenes Glas. Eltern dürfen zuschauen. Jeden Samstag, zwei Stunden, 45 €.",
+              "hit": "blasen Buben und Mädchen von 8 bis 12 Jahren ihr eigenes Glas"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "x",
+            "explanation": "Die Ballonfahrt geht zwar über den Bodensee, ist aber nichts für Menschen, die nicht gut gehen können. Ein anderes Angebot für einen See gibt es nicht, deshalb passt keine Anzeige.",
+            "evidence": {
+              "text": "Erleben Sie den Bodensee aus der Luft! Start ist in Wil, die Fahrt dauert etwa eine Stunde. Gutschein pro Person: Fr. 390.–. Bitte beachten: Der Einstieg erfolgt über den Korbrand, daher nicht geeignet bei eingeschränkter Beweglichkeit.",
+              "hit": "nicht geeignet bei eingeschränkter Beweglichkeit"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "c",
+            "explanation": "Im Escape-Room löst man in einer Gruppe von drei bis sechs Personen zusammen Rätsel. Elif und ihre vier Freundinnen sind fünf.",
+            "evidence": {
+              "text": "Ihr habt 60 Minuten Zeit, um aus einem geheimen Labor herauszukommen. Das schafft ihr nur, wenn ihr gemeinsam Hinweise sucht und Rätsel löst. Für Gruppen von drei bis sechs Personen, Gutscheine ab 25 € pro Person. Exit Augsburg.",
+              "hit": "Das schafft ihr nur, wenn ihr gemeinsam Hinweise sucht und Rätsel löst."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "d",
+            "explanation": "In der Sternwarte lernt man abends viel über Planeten und schaut durch ein Teleskop.",
+            "evidence": {
+              "text": "Bei unseren Abendführungen erfahren Sie viel über Planeten und ferne Galaxien und dürfen selbst durch unser großes Teleskop schauen. Ab Jänner gibt es neue Termine, auch am Wochenende. Gutscheine erhalten Sie an der Kassa.",
+              "hit": "erfahren Sie viel über Planeten und ferne Galaxien"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "i",
+            "explanation": "Im Barista-Kurs lernt man, guten Kaffee zu machen, und bekommt Tipps für die Maschine zu Hause.",
+            "evidence": {
+              "text": "In unserer Kaffeerösterei in Thun lernen Sie in zwei Lektionen, wie ein perfekter Espresso und ein cremiger Cappuccino gelingen. Dazu gibt es Tipps für die Maschine zu Hause. Kurs pro Person CHF 120.–. Rösterei Aareblick.",
+              "hit": "Dazu gibt es Tipps für die Maschine zu Hause."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "h",
+            "explanation": "Die Kleine Bühne zeigt abends Kabarett und Comedy. Der Oldtimerbus fährt nur tagsüber und ist keine lustige Show.",
+            "evidence": {
+              "text": "Kabarett, Comedy und Satire – bei uns wird gelacht! Vorstellungen Donnerstag bis Samstag jeweils um 20 Uhr. Verschenken Sie einen Gutschein für zwei Plätze inklusive Getränk. Bielefeld.",
+              "hit": "Kabarett, Comedy und Satire – bei uns wird gelacht!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-02-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.447Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für ein Verbot von privatem Feuerwerk an Silvester?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Jürgen, 58, Rostock",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Annika, 34, Kiel",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Gerhard, 41, Steyr",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Selin, 27, Halle",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Beat, 52, Chur",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Melanie, 45, Mainz",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Luzia, 63, Solothurn",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Tim, 19, Bonn",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Eine Zeitschrift hat ihre Leserinnen und Leser gefragt: Soll privates Feuerwerk an Silvester verboten werden? Hier sind einige Antworten.",
+            "Silvester ohne Raketen kann ich mir einfach nicht vorstellen. Es ist doch nur eine Nacht im Jahr! Bei uns steht die ganze Straße um Mitternacht draußen, Nachbarn, die sich sonst kaum grüßen, stoßen zusammen an, und die Kinder staunen über die bunten Farben am Himmel. Diese Tradition sollte man den Familien nicht wegnehmen.",
+            "Jürgen, 58, Rostock",
+            "Unser Hund zittert schon Tage vor Silvester, sobald irgendwo ein Böller knallt. In der Nacht selbst versteckt er sich unter dem Bett und frisst nichts mehr. Und es geht nicht nur um Haustiere: Auch Vögel und Wildtiere geraten in Panik. Dazu kommt der viele Feinstaub, den wir alle einatmen. Ich finde, private Raketen gehören endlich verboten.",
+            "Annika, 34, Kiel",
+            "Heuer zünde ich mit meinen Kindern wieder ein paar Raketen im Garten an, so wie es schon mein Vater mit mir gemacht hat. Natürlich muss man vorsichtig sein und den Müll am nächsten Tag wegräumen. Aber gleich alles zu verbieten, geht mir zu weit. Wer sich an die Regeln hält, soll auch weiterhin feiern dürfen, wie er möchte.",
+            "Gerhard, 41, Steyr",
+            "Ich arbeite in der Notaufnahme unseres Krankenhauses, und jedes Jahr an Silvester ist bei uns die Hölle los. Verbrannte Hände, verletzte Augen, manchmal fehlt sogar ein Finger. Oft sind es junge Leute, die einfach nicht wissen, wie gefährlich Böller sind. Ein schönes Feuerwerk, das von Profis organisiert wird, reicht völlig. Den Rest sollte man nicht mehr verkaufen dürfen.",
+            "Selin, 27, Halle",
+            "Bei uns in der Gemeinde darf man Feuerwerk nur an Silvester und am 1. August zünden, und in der Altstadt ist es ganz verboten. Das funktioniert gut, und die meisten Leute halten sich daran. Ein Verbot für das ganze Land braucht es deshalb nicht. Die Gemeinden kennen ihre Situation selbst am besten und können eigene Regeln machen.",
+            "Beat, 52, Chur",
+            "Mein Sohn ist vierzehn, und letztes Jahr hat ihm ein älterer Freund Böller besorgt. Das hat mir Angst gemacht. Ich finde aber nicht, dass man Feuerwerk ganz verbieten muss. Viel wichtiger wäre, dass man es erst ab 21 Jahren kaufen darf und dass die Geschäfte die Ausweise genau kontrollieren. Dann könnten Erwachsene weiter feiern, und Jugendliche wären sicherer.",
+            "Melanie, 45, Mainz",
+            "Am Neujahrsmorgen sehen unsere Strassen jedes Mal schlimm aus: überall Papier, Plastik und leere Flaschen. Aufräumen müssen das dann die Angestellten der Stadt, und bezahlt wird das mit unseren Steuern. Ich bin dafür, dass Private keine Raketen mehr zünden dürfen. Mit dem Geld, das jede Familie dafür ausgibt, könnte man ein grosses gemeinsames Feuerwerk über der Aare organisieren.",
+            "Luzia, 63, Solothurn",
+            "Ich verstehe die Argumente, aber ich finde, jeder sollte selbst entscheiden dürfen, wie er das neue Jahr begrüßt. Der Staat muss nicht alles regeln. Außerdem würde ein Verbot gar nichts bringen: Meine Freunde und ich würden die Raketen dann einfach im Ausland kaufen und über die Grenze mitbringen. Die sind dort oft sogar lauter und gefährlicher als bei uns.",
+            "Tim, 19, Bonn"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "Annika denkt an ihren Hund, an andere Tiere und an den Feinstaub. Deshalb möchte sie private Raketen verbieten.",
+            "evidence": {
+              "text": "Unser Hund zittert schon Tage vor Silvester, sobald irgendwo ein Böller knallt. In der Nacht selbst versteckt er sich unter dem Bett und frisst nichts mehr. Und es geht nicht nur um Haustiere: Auch Vögel und Wildtiere geraten in Panik. Dazu kommt der viele Feinstaub, den wir alle einatmen. Ich finde, private Raketen gehören endlich verboten.",
+              "hit": "Ich finde, private Raketen gehören endlich verboten."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Gerhard findet zwar, dass man vorsichtig sein muss. Ein Verbot geht ihm aber zu weit, er will weiter mit seinen Kindern feiern.",
+            "evidence": {
+              "text": "Heuer zünde ich mit meinen Kindern wieder ein paar Raketen im Garten an, so wie es schon mein Vater mit mir gemacht hat. Natürlich muss man vorsichtig sein und den Müll am nächsten Tag wegräumen. Aber gleich alles zu verbieten, geht mir zu weit. Wer sich an die Regeln hält, soll auch weiterhin feiern dürfen, wie er möchte.",
+              "hit": "Aber gleich alles zu verbieten, geht mir zu weit."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "Selin sieht jedes Jahr viele Verletzte. Sie will nur noch Feuerwerk von Profis, privat soll man nichts mehr kaufen können.",
+            "evidence": {
+              "text": "Ich arbeite in der Notaufnahme unseres Krankenhauses, und jedes Jahr an Silvester ist bei uns die Hölle los. Verbrannte Hände, verletzte Augen, manchmal fehlt sogar ein Finger. Oft sind es junge Leute, die einfach nicht wissen, wie gefährlich Böller sind. Ein schönes Feuerwerk, das von Profis organisiert wird, reicht völlig. Den Rest sollte man nicht mehr verkaufen dürfen.",
+              "hit": "Den Rest sollte man nicht mehr verkaufen dürfen."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "falsch",
+            "explanation": "Beat findet die Regeln in seiner Gemeinde gut genug. Ein Verbot für das ganze Land braucht man für ihn nicht.",
+            "evidence": {
+              "text": "Bei uns in der Gemeinde darf man Feuerwerk nur an Silvester und am 1. August zünden, und in der Altstadt ist es ganz verboten. Das funktioniert gut, und die meisten Leute halten sich daran. Ein Verbot für das ganze Land braucht es deshalb nicht. Die Gemeinden kennen ihre Situation selbst am besten und können eigene Regeln machen.",
+              "hit": "Ein Verbot für das ganze Land braucht es deshalb nicht."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "falsch",
+            "explanation": "Melanie macht sich Sorgen um Jugendliche, will aber kein Verbot. Sie möchte nur, dass man Feuerwerk erst später kaufen darf.",
+            "evidence": {
+              "text": "Mein Sohn ist vierzehn, und letztes Jahr hat ihm ein älterer Freund Böller besorgt. Das hat mir Angst gemacht. Ich finde aber nicht, dass man Feuerwerk ganz verbieten muss. Viel wichtiger wäre, dass man es erst ab 21 Jahren kaufen darf und dass die Geschäfte die Ausweise genau kontrollieren. Dann könnten Erwachsene weiter feiern, und Jugendliche wären sicherer.",
+              "hit": "Ich finde aber nicht, dass man Feuerwerk ganz verbieten muss."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "richtig",
+            "explanation": "Luzia ärgert sich über den Müll. Private sollen keine Raketen mehr zünden, lieber soll es ein gemeinsames Feuerwerk geben.",
+            "evidence": {
+              "text": "Am Neujahrsmorgen sehen unsere Strassen jedes Mal schlimm aus: überall Papier, Plastik und leere Flaschen. Aufräumen müssen das dann die Angestellten der Stadt, und bezahlt wird das mit unseren Steuern. Ich bin dafür, dass Private keine Raketen mehr zünden dürfen. Mit dem Geld, das jede Familie dafür ausgibt, könnte man ein grosses gemeinsames Feuerwerk über der Aare organisieren.",
+              "hit": "Ich bin dafür, dass Private keine Raketen mehr zünden dürfen."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "falsch",
+            "explanation": "Tim versteht die Argumente, aber jeder soll selbst entscheiden. Außerdem glaubt er, dass ein Verbot nichts bringt.",
+            "evidence": {
+              "text": "Ich verstehe die Argumente, aber ich finde, jeder sollte selbst entscheiden dürfen, wie er das neue Jahr begrüßt. Der Staat muss nicht alles regeln. Außerdem würde ein Verbot gar nichts bringen: Meine Freunde und ich würden die Raketen dann einfach im Ausland kaufen und über die Grenze mitbringen. Die sind dort oft sogar lauter und gefährlicher als bei uns.",
+              "hit": "Außerdem würde ein Verbot gar nichts bringen"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-02-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.447Z",
+        "textType": "Nutzungsbedingungen Radstation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie haben in der Radstation am Hauptbahnhof einen Dauerstellplatz gemietet und lesen jetzt die Nutzungsbedingungen.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Wer sein E-Bike laden will, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss sein Ladegerät selbst mitbringen."
+                },
+                {
+                  "key": "b",
+                  "label": "bezahlt für jede Stunde Strom."
+                },
+                {
+                  "key": "c",
+                  "label": "braucht dafür eine zweite Karte."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Räder, die länger als 14 Tage nicht bewegt werden, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "werden sofort aus der Station gebracht."
+                },
+                {
+                  "key": "b",
+                  "label": "kosten eine zusätzliche Gebühr."
+                },
+                {
+                  "key": "c",
+                  "label": "bekommen zuerst einen Zettel und kommen später weg."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Wer die Zugangskarte verliert, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommt kostenlos eine neue."
+                },
+                {
+                  "key": "b",
+                  "label": "muss für eine neue Karte bezahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "kann mit dem Personalausweis hinein."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Lastenräder und Anhänger …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sind in der Radstation nicht erlaubt."
+                },
+                {
+                  "key": "b",
+                  "label": "dürfen nur in einem eigenen Bereich stehen."
+                },
+                {
+                  "key": "c",
+                  "label": "brauchen eine eigene Monatskarte."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Nutzungsbedingungen",
+          "paragraphs": [
+            "Nutzungsbedingungen der Radstation am Hauptbahnhof Göttingen",
+            "**Anmeldung**",
+            "Einen Dauerstellplatz mieten Sie online oder direkt am Serviceschalter. Dafür brauchen Sie einen gültigen Ausweis. Der Platz kostet 9 Euro im Monat oder 90 Euro im Jahr. Kündigen können Sie mit einer Frist von vier Wochen.",
+            "**Zugang**",
+            "Mit Ihrer Zugangskarte öffnen Sie die Tür rund um die Uhr. Bitte lassen Sie keine fremden Personen mit hineingehen. Wenn Sie die Karte verloren haben, melden Sie dies sofort am Schalter. Die Karte wird dann gesperrt. Für eine Ersatzkarte berechnen wir 15 Euro. Ohne Karte ist kein Zutritt möglich, auch nicht mit Personalausweis.",
+            "**Abstellen**",
+            "Stellen Sie Ihr Rad nur in die Ständer, nicht in die Gänge oder vor die Notausgänge. Lastenräder und Fahrradanhänger sind erlaubt, sie haben aber eine eigene, gelb markierte Fläche neben dem Eingang. Steht ein Rad länger als 14 Tage unbewegt da, bringen wir einen Hinweiszettel an. Wird es danach eine weitere Woche nicht bewegt, bringen wir es in unser Lager.",
+            "**E-Bikes**",
+            "An den Plätzen in Reihe A gibt es Steckdosen. Das Laden ist für Mieter kostenlos, und Sie brauchen dafür keine weitere Karte. Ein Ladegerät stellen wir aber nicht zur Verfügung, bitte bringen Sie Ihr eigenes mit. Akkus dürfen nicht über Nacht geladen werden.",
+            "**Haftung**",
+            "Die Radstation ist videoüberwacht, trotzdem haften wir nicht für Diebstahl oder Schäden. Schließen Sie Ihr Rad deshalb immer mit einem eigenen Schloss an. Helme, Taschen und Kindersitze sollten Sie nicht am Rad lassen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "a",
+            "explanation": "Die Radstation hat kein Ladegerät für dich, du musst dein eigenes mitbringen. Das Laden ist kostenlos und geht ohne weitere Karte.",
+            "evidence": {
+              "text": "An den Plätzen in Reihe A gibt es Steckdosen. Das Laden ist für Mieter kostenlos, und Sie brauchen dafür keine weitere Karte. Ein Ladegerät stellen wir aber nicht zur Verfügung, bitte bringen Sie Ihr eigenes mit. Akkus dürfen nicht über Nacht geladen werden.",
+              "hit": "Ein Ladegerät stellen wir aber nicht zur Verfügung, bitte bringen Sie Ihr eigenes mit."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "c",
+            "explanation": "Nach 14 Tagen bekommt das Rad zuerst einen Hinweiszettel. Erst nach einer weiteren Woche kommt es ins Lager, also nicht sofort.",
+            "evidence": {
+              "text": "Stellen Sie Ihr Rad nur in die Ständer, nicht in die Gänge oder vor die Notausgänge. Lastenräder und Fahrradanhänger sind erlaubt, sie haben aber eine eigene, gelb markierte Fläche neben dem Eingang. Steht ein Rad länger als 14 Tage unbewegt da, bringen wir einen Hinweiszettel an. Wird es danach eine weitere Woche nicht bewegt, bringen wir es in unser Lager.",
+              "hit": "Steht ein Rad länger als 14 Tage unbewegt da, bringen wir einen Hinweiszettel an. Wird es danach eine weitere Woche nicht bewegt, bringen wir es in unser Lager."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "b",
+            "explanation": "Eine Ersatzkarte kostet 15 Euro. Mit dem Personalausweis kommt man nicht hinein.",
+            "evidence": {
+              "text": "Mit Ihrer Zugangskarte öffnen Sie die Tür rund um die Uhr. Bitte lassen Sie keine fremden Personen mit hineingehen. Wenn Sie die Karte verloren haben, melden Sie dies sofort am Schalter. Die Karte wird dann gesperrt. Für eine Ersatzkarte berechnen wir 15 Euro. Ohne Karte ist kein Zutritt möglich, auch nicht mit Personalausweis.",
+              "hit": "Für eine Ersatzkarte berechnen wir 15 Euro."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Lastenräder und Anhänger sind erlaubt, aber sie haben eine eigene gelbe Fläche. Verboten sind sie also nicht.",
+            "evidence": {
+              "text": "Stellen Sie Ihr Rad nur in die Ständer, nicht in die Gänge oder vor die Notausgänge. Lastenräder und Fahrradanhänger sind erlaubt, sie haben aber eine eigene, gelb markierte Fläche neben dem Eingang. Steht ein Rad länger als 14 Tage unbewegt da, bringen wir einen Hinweiszettel an. Wird es danach eine weitere Woche nicht bewegt, bringen wir es in unser Lager.",
+              "hit": "sie haben aber eine eigene, gelb markierte Fläche neben dem Eingang"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

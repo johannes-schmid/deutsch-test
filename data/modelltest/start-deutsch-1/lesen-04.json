@@ -1,0 +1,686 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-04-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Kurze Notiz an den Sohn"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Janniks Mutter arbeitet schon."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Jannik soll seine Oma um 15 Uhr abholen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Jannik findet das Geld für die Schulreise in der Küche."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Gabi",
+          "source": "Notiz",
+          "paragraphs": [
+            "Lieber Jannik,",
+            "ich bin schon bei der Arbeit. Oma kommt heute um 16 Uhr mit dem Bus. Bitte hol sie an der Haltestelle ab. In der Küche ist Essen für euch. Das Geld für die Klassenfahrt liegt im Flur auf dem Schrank.",
+            "Bis heute Abend!",
+            "Mama"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Oma kommt um 16 Uhr mit dem Bus. Um 15 Uhr ist sie noch nicht da.",
+            "evidence": {
+              "text": "ich bin schon bei der Arbeit. Oma kommt heute um 16 Uhr mit dem Bus. Bitte hol sie an der Haltestelle ab. In der Küche ist Essen für euch. Das Geld für die Klassenfahrt liegt im Flur auf dem Schrank.",
+              "hit": "Oma kommt heute um 16 Uhr mit dem Bus."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "falsch",
+            "explanation": "In der Küche ist nur das Essen. Das Geld liegt im Flur auf dem Schrank.",
+            "evidence": {
+              "text": "ich bin schon bei der Arbeit. Oma kommt heute um 16 Uhr mit dem Bus. Bitte hol sie an der Haltestelle ab. In der Küche ist Essen für euch. Das Geld für die Klassenfahrt liegt im Flur auf dem Schrank.",
+              "hit": "Das Geld für die Klassenfahrt liegt im Flur auf dem Schrank."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Kurze E-Mail an eine Freundin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Ulrike und Samira fahren mit der Bahn zur Schule."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Samira soll ein Papier für die Lehrerin mitbringen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Der Elternabend fängt um 19 Uhr an."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ulrike",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Samira,",
+            "am Donnerstag ist der Elternabend in der Schule. Leider ist mein Auto in der Werkstatt. Ich kann dich also nicht abholen. Wir fahren mit der Straßenbahn, Linie 4. Sie fährt um 18.40 Uhr am Kirchplatz ab. Der Elternabend beginnt um 19.15 Uhr, dann sind wir pünktlich da. Bitte bring das Formular mit. Die Klassenlehrerin möchte es haben. Ich warte an der Haltestelle auf dich.",
+            "Viele Grüße",
+            "Ulrike"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Ulrikes Auto ist in der Werkstatt. Darum fahren die zwei mit der Straßenbahn.",
+            "evidence": {
+              "text": "am Donnerstag ist der Elternabend in der Schule. Leider ist mein Auto in der Werkstatt. Ich kann dich also nicht abholen. Wir fahren mit der Straßenbahn, Linie 4. Sie fährt um 18.40 Uhr am Kirchplatz ab. Der Elternabend beginnt um 19.15 Uhr, dann sind wir pünktlich da. Bitte bring das Formular mit. Die Klassenlehrerin möchte es haben. Ich warte an der Haltestelle auf dich.",
+              "hit": "Wir fahren mit der Straßenbahn, Linie 4."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "Samira soll das Formular mitbringen. Die Klassenlehrerin möchte es haben.",
+            "evidence": {
+              "text": "am Donnerstag ist der Elternabend in der Schule. Leider ist mein Auto in der Werkstatt. Ich kann dich also nicht abholen. Wir fahren mit der Straßenbahn, Linie 4. Sie fährt um 18.40 Uhr am Kirchplatz ab. Der Elternabend beginnt um 19.15 Uhr, dann sind wir pünktlich da. Bitte bring das Formular mit. Die Klassenlehrerin möchte es haben. Ich warte an der Haltestelle auf dich.",
+              "hit": "Bitte bring das Formular mit. Die Klassenlehrerin möchte es haben."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Der Elternabend beginnt erst um 19.15 Uhr. Um 18.40 Uhr fährt nur die Straßenbahn ab.",
+            "evidence": {
+              "text": "am Donnerstag ist der Elternabend in der Schule. Leider ist mein Auto in der Werkstatt. Ich kann dich also nicht abholen. Wir fahren mit der Straßenbahn, Linie 4. Sie fährt um 18.40 Uhr am Kirchplatz ab. Der Elternabend beginnt um 19.15 Uhr, dann sind wir pünktlich da. Bitte bring das Formular mit. Die Klassenlehrerin möchte es haben. Ich warte an der Haltestelle auf dich.",
+              "hit": "Der Elternabend beginnt um 19.15 Uhr"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "b"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie stehen vor Ihrer Wohnung. Die Tür ist zu und Ihr Schlüssel ist drinnen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.eisenwaren-bauer.de · Schlösser, Werkzeug und Schrauben für Haus und Garten. Mo–Sa 8–18 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "www.aufsperrdienst-schnell.de · Tür zu? Wir kommen in 30 Minuten und öffnen Ihre Tür. Tag und Nacht: 0170 4482 913."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie brauchen einen neuen Reisepass. Dafür brauchen Sie neue Bilder von Ihrem Gesicht.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.foto-lichtblick.de · Passbilder in 10 Minuten, auch für Kinder. Ohne Termin. 4 Stück nur 12 €."
+                },
+                {
+                  "key": "b",
+                  "label": "www.vhs-fotokurse.de · Fotokurs für Anfänger: Wie mache ich schöne Bilder mit dem Handy? Samstags 10–13 Uhr."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "In a macht ein Fotostudio Passbilder in 10 Minuten. In b lernst du nur, wie du selbst Fotos mit dem Handy machst."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie ziehen um und möchten alles selbst machen. Ihr Auto ist aber zu klein für die Möbel.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.anhaenger-verleih-west.de · Anhänger für jedes Auto mieten, ab 29 € pro Tag. Auch am Wochenende."
+                },
+                {
+                  "key": "b",
+                  "label": "www.umzug-meyer.de · Wir packen, tragen und fahren Ihre Möbel. Sie machen nichts! Angebot kostenlos."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "In a kannst du einen Anhänger für dein Auto mieten und alles selbst transportieren. In b macht eine Firma den ganzen Umzug für dich."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihre Geburtsurkunde ist auf Arabisch. Das Standesamt möchte sie auf Deutsch.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.buchladen-orient.de · Romane, Kinderbücher und Wörterbücher auf Arabisch und Türkisch. Bestellen Sie online!"
+                },
+                {
+                  "key": "b",
+                  "label": "www.uebersetzungen-klar.de · Wir übersetzen Ihre Papiere aus 30 Sprachen ins Deutsche, auch für Ämter. Schnell und sicher."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Das Büro in b übersetzt Papiere ins Deutsche, auch für Ämter. In a kannst du nur Bücher auf Arabisch kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Sie laufen jeden Sonntag mit zwölf Freunden. Alle möchten das gleiche Shirt mit dem Namen von der Gruppe.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.sporthaus-tempo.de · Laufschuhe, Hosen und Jacken für Sportler. Diese Woche alles 30 % billiger."
+                },
+                {
+                  "key": "b",
+                  "label": "www.druckerei-farbenfroh.de · Wir drucken Ihr Logo oder Ihren Namen auf T-Shirts und Pullover. Schon ab 10 Stück."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "In b druckt eine Firma Namen auf T-Shirts, schon ab 10 Stück. In a gibt es nur normale Sportkleidung billiger."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Sie haben eine neue Hose gekauft. Leider ist sie zu lang.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.schneiderei-nadel.de · Wir machen Hosen und Röcke kürzer und reparieren Jacken. Fertig in zwei Tagen."
+                },
+                {
+                  "key": "b",
+                  "label": "www.reinigung-frisch.de · Wir waschen und bügeln Hemden, Hosen und Jacken. Abholen schon am nächsten Tag."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Die Schneiderei in a macht Hosen kürzer. In b werden Hosen nur gewaschen und gebügelt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Schild an einer Bürotür"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Sie können heute am Nachmittag zur Beratung kommen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür von der Mieterberatung",
+          "source": "Schild",
+          "paragraphs": [
+            "Mieterberatung",
+            "Sprechstunde: Mo–Fr 9–16 Uhr",
+            "Heute nur bis 12 Uhr!"
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Schild im Park"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Im August dürfen Sie hier am Nachmittag grillen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Grillplatz im Park",
+          "source": "Schild",
+          "paragraphs": [
+            "Grillplatz",
+            "Grillen erlaubt: 1. Mai bis 30. September, 10–22 Uhr",
+            "Bitte nehmen Sie Ihren Müll mit."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Grillen ist von Mai bis September erlaubt, jeden Tag von 10 bis 22 Uhr. Der August und der Nachmittag passen also.",
+            "evidence": {
+              "text": "Grillplatz Grillen erlaubt: 1. Mai bis 30. September, 10–22 Uhr Bitte nehmen Sie Ihren Müll mit.",
+              "hit": "Grillen erlaubt: 1. Mai bis 30. September, 10–22 Uhr"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Schild an einem Bücherschrank"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Ein Buch aus diesem Schrank kostet Geld."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An einem Bücherschrank auf der Straße",
+          "source": "Schild",
+          "paragraphs": [
+            "Offener Bücherschrank",
+            "Nehmen Sie ein Buch mit – kostenlos!",
+            "Alte Bücher können Sie gern hier hineinstellen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Auf dem Schild steht: kostenlos. Du musst für ein Buch nichts bezahlen.",
+            "evidence": {
+              "text": "Offener Bücherschrank Nehmen Sie ein Buch mit – kostenlos! Alte Bücher können Sie gern hier hineinstellen.",
+              "hit": "Nehmen Sie ein Buch mit – kostenlos!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Schild im Amt"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Sie müssen vorher keinen Termin machen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Eingang von der Ausländerbehörde",
+          "source": "Schild",
+          "paragraphs": [
+            "Ausländerbehörde",
+            "Bitte nur mit Termin kommen!",
+            "Termine bekommen Sie nur online: www.auslaenderamt-hellbach.de"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "falsch",
+            "explanation": "Du darfst nur mit Termin kommen. Den Termin machst du vorher online.",
+            "evidence": {
+              "text": "Ausländerbehörde Bitte nur mit Termin kommen! Termine bekommen Sie nur online: www.auslaenderamt-hellbach.de",
+              "hit": "Bitte nur mit Termin kommen!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Schild im Hofladen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Hier bezahlen Sie ohne Verkäufer."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Hofladen",
+          "source": "Schild",
+          "paragraphs": [
+            "Hofladen Sonnenhof",
+            "Selbstbedienung",
+            "Bitte legen Sie das Geld in die Kasse auf dem Tisch. Danke!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Im Hofladen ist Selbstbedienung. Du legst das Geld selbst in die Kasse auf dem Tisch.",
+            "evidence": {
+              "text": "Hofladen Sonnenhof Selbstbedienung Bitte legen Sie das Geld in die Kasse auf dem Tisch. Danke!",
+              "hit": "Bitte legen Sie das Geld in die Kasse auf dem Tisch."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-04-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.320Z",
+        "textType": "Schild an der Eisbahn"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Ihre Tochter ist acht. Sie darf hier ohne Helm Schlittschuh laufen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Kasse von der Eisbahn",
+          "source": "Schild",
+          "paragraphs": [
+            "Eisbahn am Markt",
+            "Kinder unter 10 Jahren nur mit Helm!",
+            "Helme können Sie an der Kasse leihen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "falsch",
+            "explanation": "Kinder unter 10 Jahren brauchen einen Helm. Eine Achtjährige darf also nicht ohne Helm aufs Eis.",
+            "evidence": {
+              "text": "Eisbahn am Markt Kinder unter 10 Jahren nur mit Helm! Helme können Sie an der Kasse leihen.",
+              "hit": "Kinder unter 10 Jahren nur mit Helm!"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

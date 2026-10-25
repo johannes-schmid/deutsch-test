@@ -1,0 +1,958 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-05-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.454Z",
+        "textType": "Blogbeitrag"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Gerlindes Familie hat in den Ferien mit einer anderen Familie das Zuhause getauscht."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Den Tausch hat die Familie schon im Winter geplant."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Vor der Reise hat Gerlinde viel Zeit mit Aufräumen verbracht."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "In Porto ist die Familie mit dem Auto der Gastfamilie gefahren."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Um ein Problem in ihrem Haus hat sich ein Nachbar gekümmert."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Die Kinder haben sich in Porto oft gelangweilt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Nächsten Sommer tauscht die Familie wieder mit den Ferreiras."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Gerlinde",
+          "source": "Blog",
+          "paragraphs": [
+            "Drei Wochen in einem fremden Zuhause",
+            "Hallo, ihr Lieben! Ihr wisst ja, dass wir im Sommer verreist waren. Aber diesmal war alles anders: Wir haben kein Hotel gebucht, sondern unser Haus in Gmunden getauscht. Drei Wochen lang wohnte Familie Ferreira aus Porto bei uns – und wir bei ihnen. Ehrlich gesagt hatte ich am Anfang große Bedenken. Fremde Leute in meinem Haus, in meinem Bett, in meiner Küche? Mein Mann Herbert fand die Idee dagegen sofort super.",
+            "Im Jänner haben wir die Ferreiras im Internet gefunden, auf einer Plattform für Haustausch. Danach haben wir oft telefoniert, Fotos geschickt und viele Fragen gestellt. Nach ein paar Wochen hatte ich das Gefühl, dass ich ihnen vertrauen kann.",
+            "Vor der Abreise gab es dann viel zu tun. Zwei Wochenenden lang habe ich den Keller ausgeräumt und das Vorzimmer*, in dem sich die Schuhe, Jacken und Sporttaschen von uns vier stapelten. Am Ende sah unser Haus so ordentlich aus wie schon lange nicht mehr.",
+            "In Porto stand das Auto der Ferreiras in der Garage, und wir hätten es benutzen dürfen. Aber die Straßen dort sind so eng und steil, dass Herbert sich nicht getraut hat. Also sind wir überall mit der Straßenbahn und dem Bus hingefahren, und das hat wunderbar funktioniert.",
+            "Nach einer Woche kam dann eine Nachricht von Ana Ferreira: Die Waschmaschine hatte Wasser verloren, und der Boden im Keller war nass. Ich bin richtig erschrocken. Aber bevor ich überhaupt jemanden anrufen konnte, war unser Nachbar Herr Stadler schon da. Er hat die Maschine repariert und mir danach geschrieben, dass alles wieder in Ordnung ist. Ich war so erleichtert und dankbar!",
+            "Unsere Kinder Moritz und Hanna hatten vorher Angst, dass ihnen langweilig wird, weil sie kein Wort Portugiesisch können. Doch schon am zweiten Tag haben sie die Kinder von nebenan kennengelernt. Danach haben sie jeden Tag zusammen im Hof Fußball gespielt – mit Händen, Füßen und ein bisschen Englisch.",
+            "Und jetzt? Wir sind uns alle einig: Das machen wir wieder! Für den nächsten Sommer haben wir schon Kontakt zu einer Familie aus Dänemark. Die Ferreiras besuchen uns vielleicht im Herbst für ein Wochenende – diesmal als Gäste und nicht als Tauschpartner.",
+            "Gerlinde",
+            "*Vorzimmer = österreichischer Standard für „Flur“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Im Jänner, also im Winter, hat die Familie die Ferreiras gefunden und mit der Planung begonnen.",
+            "evidence": {
+              "text": "Im Jänner haben wir die Ferreiras im Internet gefunden, auf einer Plattform für Haustausch. Danach haben wir oft telefoniert, Fotos geschickt und viele Fragen gestellt. Nach ein paar Wochen hatte ich das Gefühl, dass ich ihnen vertrauen kann.",
+              "hit": "Im Jänner haben wir die Ferreiras im Internet gefunden"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Gerlinde hat zwei Wochenenden lang den Keller und das Vorzimmer ausgeräumt.",
+            "evidence": {
+              "text": "Vor der Abreise gab es dann viel zu tun. Zwei Wochenenden lang habe ich den Keller ausgeräumt und das Vorzimmer*, in dem sich die Schuhe, Jacken und Sporttaschen von uns vier stapelten. Am Ende sah unser Haus so ordentlich aus wie schon lange nicht mehr.",
+              "hit": "Zwei Wochenenden lang habe ich den Keller ausgeräumt"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Sie hätten das Auto benutzen dürfen, aber Herbert wollte in den engen Straßen nicht fahren. Sie sind mit Straßenbahn und Bus gefahren.",
+            "evidence": {
+              "text": "In Porto stand das Auto der Ferreiras in der Garage, und wir hätten es benutzen dürfen. Aber die Straßen dort sind so eng und steil, dass Herbert sich nicht getraut hat. Also sind wir überall mit der Straßenbahn und dem Bus hingefahren, und das hat wunderbar funktioniert.",
+              "hit": "Also sind wir überall mit der Straßenbahn und dem Bus hingefahren"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "richtig",
+            "explanation": "Der Nachbar Herr Stadler hat die Waschmaschine repariert. Gerlinde musste niemanden anrufen.",
+            "evidence": {
+              "text": "Nach einer Woche kam dann eine Nachricht von Ana Ferreira: Die Waschmaschine hatte Wasser verloren, und der Boden im Keller war nass. Ich bin richtig erschrocken. Aber bevor ich überhaupt jemanden anrufen konnte, war unser Nachbar Herr Stadler schon da. Er hat die Maschine repariert und mir danach geschrieben, dass alles wieder in Ordnung ist. Ich war so erleichtert und dankbar!",
+              "hit": "Er hat die Maschine repariert"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Die Kinder hatten nur vorher Angst vor Langeweile. In Porto haben sie jeden Tag mit den Nachbarskindern gespielt.",
+            "evidence": {
+              "text": "Unsere Kinder Moritz und Hanna hatten vorher Angst, dass ihnen langweilig wird, weil sie kein Wort Portugiesisch können. Doch schon am zweiten Tag haben sie die Kinder von nebenan kennengelernt. Danach haben sie jeden Tag zusammen im Hof Fußball gespielt – mit Händen, Füßen und ein bisschen Englisch.",
+              "hit": "Danach haben sie jeden Tag zusammen im Hof Fußball gespielt"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Für den nächsten Sommer gibt es Kontakt zu einer Familie aus Dänemark. Die Ferreiras kommen vielleicht nur für ein Wochenende zu Besuch.",
+            "evidence": {
+              "text": "Und jetzt? Wir sind uns alle einig: Das machen wir wieder! Für den nächsten Sommer haben wir schon Kontakt zu einer Familie aus Dänemark. Die Ferreiras besuchen uns vielleicht im Herbst für ein Wochenende – diesmal als Gäste und nicht als Tauschpartner.",
+              "hit": "Für den nächsten Sommer haben wir schon Kontakt zu einer Familie aus Dänemark."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-05-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.454Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Das Kinderwagenkino gibt es …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "seit einem Jahr."
+                },
+                {
+                  "key": "b",
+                  "label": "seit fünf Jahren."
+                },
+                {
+                  "key": "c",
+                  "label": "erst seit diesem Monat."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ein Kino, das nur Kinderfilme zeigt."
+                },
+                {
+                  "key": "b",
+                  "label": "eine Stadt, die Familien Rabatt gibt."
+                },
+                {
+                  "key": "c",
+                  "label": "Kinovorstellungen für Eltern mit Babys."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Während des Films …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist es im Saal ganz dunkel."
+                },
+                {
+                  "key": "b",
+                  "label": "ist der Ton leiser als sonst."
+                },
+                {
+                  "key": "c",
+                  "label": "gibt es alle 30 Minuten eine Pause."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Die Eintrittskarten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kosten so viel wie sonst, Babys sind frei."
+                },
+                {
+                  "key": "b",
+                  "label": "sind günstiger als am Abend."
+                },
+                {
+                  "key": "c",
+                  "label": "gibt es nur im Internet."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Kino mit Kinderwagen",
+            "Dienstagvormittag, zehn Uhr, im Filmtheater Pegnitz in Fürth: Im Saal stehen elf Kinderwagen, irgendwo weint ein Baby, in der letzten Reihe wechselt ein Vater eine Windel. Niemand schaut böse. Denn heute ist „Kinderwagenkino“.",
+            "Seit einem Jahr zeigt das kleine Kino jede Woche einen aktuellen Film für Mütter und Väter mit Babys. Das Kino selbst hat vor fünf Jahren nach einer langen Renovierung wieder eröffnet. „Viele junge Eltern haben uns gesagt, dass sie seit der Geburt nicht mehr im Kino waren“, erzählt Betreiberin Sandra Kellermann. „Das wollten wir ändern.“",
+            "Damit sich die Kleinen wohlfühlen, ist einiges anders als sonst. Das Licht im Saal wird während des Films nicht ganz ausgemacht, und die Lautstärke ist deutlich niedriger, damit die Babyohren geschützt sind. Wickeltische gibt es direkt neben dem Saal. Eine Pause macht das Kino nicht, aber wer kurz hinausgehen muss, kann das jederzeit tun.",
+            "Der Eintritt kostet genauso viel wie bei jeder anderen Vorstellung, die Babys sind kostenlos dabei. Karten gibt es an der Kinokasse oder online. „Für mich ist das jede Woche ein kleiner Urlaub“, sagt Jasmin, die mit ihrer vier Monate alten Tochter gekommen ist. Weil das Angebot so gut ankommt, gibt es seit diesem Monat zusätzlich am Donnerstag eine zweite Vorstellung.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Der Text beschreibt Filmvorstellungen für Mütter und Väter mit Babys. Das Kino zeigt aktuelle Filme, nicht nur Kinderfilme.",
+            "evidence": {
+              "text": "Seit einem Jahr zeigt das kleine Kino jede Woche einen aktuellen Film für Mütter und Väter mit Babys. Das Kino selbst hat vor fünf Jahren nach einer langen Renovierung wieder eröffnet. „Viele junge Eltern haben uns gesagt, dass sie seit der Geburt nicht mehr im Kino waren“, erzählt Betreiberin Sandra Kellermann. „Das wollten wir ändern.“",
+              "hit": "Seit einem Jahr zeigt das kleine Kino jede Woche einen aktuellen Film für Mütter und Väter mit Babys."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Die Lautstärke ist niedriger als sonst. Das Licht bleibt ein bisschen an, und eine Pause gibt es nicht.",
+            "evidence": {
+              "text": "Damit sich die Kleinen wohlfühlen, ist einiges anders als sonst. Das Licht im Saal wird während des Films nicht ganz ausgemacht, und die Lautstärke ist deutlich niedriger, damit die Babyohren geschützt sind. Wickeltische gibt es direkt neben dem Saal. Eine Pause macht das Kino nicht, aber wer kurz hinausgehen muss, kann das jederzeit tun.",
+              "hit": "die Lautstärke ist deutlich niedriger"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Der Eintritt kostet so viel wie bei anderen Vorstellungen, Babys zahlen nichts. Karten gibt es auch an der Kinokasse, nicht nur online.",
+            "evidence": {
+              "text": "Der Eintritt kostet genauso viel wie bei jeder anderen Vorstellung, die Babys sind kostenlos dabei. Karten gibt es an der Kinokasse oder online. „Für mich ist das jede Woche ein kleiner Urlaub“, sagt Jasmin, die mit ihrer vier Monate alten Tochter gekommen ist. Weil das Angebot so gut ankommt, gibt es seit diesem Monat zusätzlich am Donnerstag eine zweite Vorstellung.",
+              "hit": "Der Eintritt kostet genauso viel wie bei jeder anderen Vorstellung, die Babys sind kostenlos dabei."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-05-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.454Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine neue Buslinie mit festem Fahrplan."
+                },
+                {
+                  "key": "b",
+                  "label": "einen Fahrdienst nur für ältere Menschen."
+                },
+                {
+                  "key": "c",
+                  "label": "Busse, die nur auf Wunsch der Fahrgäste kommen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Bestellen muss man den Bus …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schon am Tag vorher."
+                },
+                {
+                  "key": "b",
+                  "label": "mindestens eine halbe Stunde vorher."
+                },
+                {
+                  "key": "c",
+                  "label": "immer über das Telefon."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Die Gemeinden …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "wollen den Rufbus wieder abschaffen."
+                },
+                {
+                  "key": "b",
+                  "label": "geben für den Abendverkehr weniger aus."
+                },
+                {
+                  "key": "c",
+                  "label": "bauen viele neue Haltestellen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Der Bus, der nur auf Bestellung kommt",
+            "Wer im Kanton Glarus abends noch von Schwanden nach Linthal fahren will, schaut nicht mehr in den Fahrplan. Seit letztem Dezember fahren dort nach 20 Uhr keine grossen Linienbusse mehr. Stattdessen gibt es den «Rufbus», einen Kleinbus mit acht Plätzen. Er fährt nur, wenn jemand ihn vorher bestellt hat.",
+            "Bestellen kann man den Rufbus per App oder telefonisch, spätestens dreissig Minuten vor der gewünschten Abfahrt. «Viele bestellen schon am Nachmittag, das ist aber nicht nötig», sagt Projektleiterin Regula Hösli. Der Bus holt die Fahrgäste an den normalen Haltestellen ab. Ein Billett kostet gleich viel wie im Linienbus, und auch Monatsabos gelten.",
+            "Früher fuhren am Abend oft fast leere Busse durch das Tal. «Manchmal sass nur eine einzige Person im grossen Bus», erzählt ein Chauffeur. Für die Gemeinden war das teuer. Mit dem Rufbus bezahlen sie heute rund ein Drittel weniger. Neue Haltestellen waren dafür nicht nötig.",
+            "Bei der Bevölkerung kommt das Angebot gut an. Vor allem Jugendliche, die abends vom Training oder aus dem Ausgang nach Hause wollen, nutzen den Rufbus. Ältere Menschen hatten am Anfang dagegen Mühe mit der App. Für sie bietet die Gemeinde jetzt kleine Kurse an. Ab nächstem Jahr soll der Rufbus auch am Wochenende tagsüber fahren.",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Der Rufbus fährt abends nur, wenn ihn jemand bestellt. Er ist für alle da, vor allem Jugendliche nutzen ihn.",
+            "evidence": {
+              "text": "Wer im Kanton Glarus abends noch von Schwanden nach Linthal fahren will, schaut nicht mehr in den Fahrplan. Seit letztem Dezember fahren dort nach 20 Uhr keine grossen Linienbusse mehr. Stattdessen gibt es den «Rufbus», einen Kleinbus mit acht Plätzen. Er fährt nur, wenn jemand ihn vorher bestellt hat.",
+              "hit": "Er fährt nur, wenn jemand ihn vorher bestellt hat."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Man bestellt spätestens dreissig Minuten vor der Abfahrt. Am Nachmittag bestellen ist nicht nötig, und es geht auch per App.",
+            "evidence": {
+              "text": "Bestellen kann man den Rufbus per App oder telefonisch, spätestens dreissig Minuten vor der gewünschten Abfahrt. «Viele bestellen schon am Nachmittag, das ist aber nicht nötig», sagt Projektleiterin Regula Hösli. Der Bus holt die Fahrgäste an den normalen Haltestellen ab. Ein Billett kostet gleich viel wie im Linienbus, und auch Monatsabos gelten.",
+              "hit": "spätestens dreissig Minuten vor der gewünschten Abfahrt"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Die Gemeinden zahlen mit dem Rufbus etwa ein Drittel weniger. Neue Haltestellen waren nicht nötig.",
+            "evidence": {
+              "text": "Früher fuhren am Abend oft fast leere Busse durch das Tal. «Manchmal sass nur eine einzige Person im grossen Bus», erzählt ein Chauffeur. Für die Gemeinden war das teuer. Mit dem Rufbus bezahlen sie heute rund ein Drittel weniger. Neue Haltestellen waren dafür nicht nötig.",
+              "hit": "Mit dem Rufbus bezahlen sie heute rund ein Drittel weniger."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-05-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.454Z",
+        "textType": "Anzeigen: Angebote für Eltern und Großeltern"
+      },
+      "exampleAnswers": [
+        "a"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten suchen Angebote für ihre Eltern und Großeltern.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Wischen und Tippen – Smartphone-Kurs 65+",
+                  "text": "Ihr Handy kann viel mehr, als Sie denken! An vier Vormittagen lernen Sie in Ruhe, wie man Nachrichten schreibt, Fotos verschickt und Videoanrufe macht. Höchstens sechs Personen pro Gruppe. Volkshochschule Fulda, Tel. 0661 48 22 917"
+                },
+                {
+                  "key": "b",
+                  "title": "Tanzcafé am Stadtplatz",
+                  "text": "Jeden Donnerstag von 14 bis 17 Uhr spielt bei uns eine Live-Band Walzer, Schlager und Swing. Für alle ab 60, mit oder ohne Partnerin oder Partner – bei uns findet jeder Anschluss. Café Seidl, Stadtplatz 9, 4840 Vöcklabruck"
+                },
+                {
+                  "key": "c",
+                  "title": "Holzwerkstatt für Gross und Klein",
+                  "text": "Einmal im Monat bauen Grosseltern gemeinsam mit ihren Enkelkindern zwischen 6 und 10 Jahren Vogelhäuschen, Spielzeug oder kleine Regale. Holz und Werkzeug sind vorhanden. CHF 15.– pro Nachmittag. Werkhof Lenzburg, Anmeldung: www.holzwerkstatt-lenzburg.ch"
+                },
+                {
+                  "key": "d",
+                  "title": "Fit im Kopf",
+                  "text": "Namen vergessen, Schlüssel verlegt? Mit Spielen, Rätseln und kleinen Übungen trainieren Sie Ihr Gedächtnis – in einer fröhlichen Gruppe. Mittwochs um 10 Uhr im Stadtteilzentrum Bad Kreuznach-Nord, 5 € pro Termin, ohne Anmeldung."
+                },
+                {
+                  "key": "e",
+                  "title": "Gemütlich gehen",
+                  "text": "Sie lieben die Natur, aber lange Bergtouren sind nichts mehr für Sie? Jeden Donnerstag spazieren wir zwei Stunden auf flachen Wegen, ganz ohne Eile und mit vielen Pausen. Treffpunkt: 9 Uhr beim Kurpark. Wanderfreunde Bad Ischl."
+                },
+                {
+                  "key": "f",
+                  "title": "Sicherheit daheim – Hausnotruf",
+                  "text": "Ein Knopfdruck genügt: Mit unserem Notrufarmband erreichen Sie rund um die Uhr Hilfe, zum Beispiel nach einem Sturz in Bad oder Küche. Der erste Monat ist kostenlos. Sicherheit daheim, Cottbus, Tel. 0355 79 41 600"
+                },
+                {
+                  "key": "g",
+                  "title": "Mobil bleiben – Nachbarschaftshilfe Wittenberg",
+                  "text": "Sie fahren selbst nicht mehr Auto? Unsere ehrenamtlichen Fahrerinnen und Fahrer bringen Sie zu Arztterminen, zur Apotheke oder zum Einkaufen und holen Sie danach wieder ab. Sie zahlen nur 0,40 € pro Kilometer."
+                },
+                {
+                  "key": "h",
+                  "title": "Leih-Großeltern gesucht",
+                  "text": "Viele junge Familien in Siegen haben keine Oma und keinen Opa in der Nähe. Sie haben Zeit und mögen Kinder? Dann verbringen Sie als Leih-Oma oder Leih-Opa ein paar Stunden pro Woche mit einer Familie. Familienbüro Siegen, www.familienbuero-siegen.de"
+                },
+                {
+                  "key": "i",
+                  "title": "Englisch ab 60",
+                  "text": "Es ist nie zu spät! In Gruppen mit höchstens acht Personen lernen Sie in gemütlichem Tempo die wichtigsten Sätze für Reisen, Telefongespräche und den Alltag. Montags und mittwochs von 9 bis 10.30 Uhr. Bildungshaus Braunau."
+                },
+                {
+                  "key": "j",
+                  "title": "Studieren ab 50",
+                  "text": "Die Hochschule Passau-Innstadt öffnet ihre Hörsäle für ältere Menschen: Als Gasthörerin oder Gasthörer besuchen Sie Vorlesungen in Geschichte, Kunst und Philosophie – ohne Abitur und ohne Prüfungen. 80 € pro Semester. Infos: www.hochschule-innstadt.de/gasthoerer"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Maltes Großmutter ist 78 und möchte ihre Enkel am Handy nicht nur hören, sondern auch sehen."
+                },
+                {
+                  "n": 13,
+                  "text": "Gülsens Vater hat seinen Führerschein abgegeben und muss trotzdem regelmäßig zum Augenarzt."
+                },
+                {
+                  "n": 14,
+                  "text": "Henriks Mutter bewegt sich gern zu Musik und möchte nachmittags neue Leute kennenlernen."
+                },
+                {
+                  "n": 15,
+                  "text": "Annegrets Eltern möchten sich besser mit ihren Enkeln unterhalten können, die in Kanada aufwachsen und kaum Deutsch sprechen."
+                },
+                {
+                  "n": 16,
+                  "text": "Kilians Großvater wohnt allein, und die Familie hat Angst, dass er hinfällt und niemand es bemerkt."
+                },
+                {
+                  "n": 17,
+                  "text": "Rosalies Mutter ist pensionierte Lehrerin und möchte an einer Uni mehr über die Vergangenheit erfahren."
+                },
+                {
+                  "n": 18,
+                  "text": "Vincents Großvater möchte jede Woche mit anderen Männern in seinem Alter etwas aus Holz bauen."
+                },
+                {
+                  "n": 19,
+                  "text": "Taminas Vater ist am liebsten draußen in der Natur, kann aber nur langsam und nicht weit gehen."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "g",
+            "explanation": "Die Nachbarschaftshilfe fährt Menschen zum Arzt, die nicht mehr selbst Auto fahren. Das passt zu Gülsens Vater.",
+            "evidence": {
+              "text": "Sie fahren selbst nicht mehr Auto? Unsere ehrenamtlichen Fahrerinnen und Fahrer bringen Sie zu Arztterminen, zur Apotheke oder zum Einkaufen und holen Sie danach wieder ab. Sie zahlen nur 0,40 € pro Kilometer.",
+              "hit": "Unsere ehrenamtlichen Fahrerinnen und Fahrer bringen Sie zu Arztterminen"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Im Tanzcafé gibt es am Nachmittag Live-Musik zum Tanzen, und man lernt andere Menschen kennen.",
+            "evidence": {
+              "text": "Jeden Donnerstag von 14 bis 17 Uhr spielt bei uns eine Live-Band Walzer, Schlager und Swing. Für alle ab 60, mit oder ohne Partnerin oder Partner – bei uns findet jeder Anschluss. Café Seidl, Stadtplatz 9, 4840 Vöcklabruck",
+              "hit": "Jeden Donnerstag von 14 bis 17 Uhr spielt bei uns eine Live-Band Walzer, Schlager und Swing."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "i",
+            "explanation": "Der Englischkurs ab 60 hilft Annegrets Eltern, mit den Enkeln in Kanada zu sprechen. Der Handykurs lehrt keine Sprache.",
+            "evidence": {
+              "text": "Es ist nie zu spät! In Gruppen mit höchstens acht Personen lernen Sie in gemütlichem Tempo die wichtigsten Sätze für Reisen, Telefongespräche und den Alltag. Montags und mittwochs von 9 bis 10.30 Uhr. Bildungshaus Braunau.",
+              "hit": "lernen Sie in gemütlichem Tempo die wichtigsten Sätze für Reisen, Telefongespräche und den Alltag"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "f",
+            "explanation": "Mit dem Notrufarmband bekommt Kilians Großvater nach einem Sturz sofort Hilfe, Tag und Nacht.",
+            "evidence": {
+              "text": "Ein Knopfdruck genügt: Mit unserem Notrufarmband erreichen Sie rund um die Uhr Hilfe, zum Beispiel nach einem Sturz in Bad oder Küche. Der erste Monat ist kostenlos. Sicherheit daheim, Cottbus, Tel. 0355 79 41 600",
+              "hit": "rund um die Uhr Hilfe, zum Beispiel nach einem Sturz in Bad oder Küche"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "j",
+            "explanation": "An der Hochschule in Passau kann Rosalies Mutter als Gasthörerin Vorlesungen in Geschichte besuchen.",
+            "evidence": {
+              "text": "Die Hochschule Passau-Innstadt öffnet ihre Hörsäle für ältere Menschen: Als Gasthörerin oder Gasthörer besuchen Sie Vorlesungen in Geschichte, Kunst und Philosophie – ohne Abitur und ohne Prüfungen. 80 € pro Semester. Infos: www.hochschule-innstadt.de/gasthoerer",
+              "hit": "besuchen Sie Vorlesungen in Geschichte"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "x",
+            "explanation": "Die Holzwerkstatt in Lenzburg ist nur für Großeltern mit Enkelkindern und nur einmal im Monat. Vincents Großvater sucht etwas mit älteren Männern, deshalb passt keine Anzeige.",
+            "evidence": {
+              "text": "Einmal im Monat bauen Grosseltern gemeinsam mit ihren Enkelkindern zwischen 6 und 10 Jahren Vogelhäuschen, Spielzeug oder kleine Regale. Holz und Werkzeug sind vorhanden. CHF 15.– pro Nachmittag. Werkhof Lenzburg, Anmeldung: www.holzwerkstatt-lenzburg.ch",
+              "hit": "Einmal im Monat bauen Grosseltern gemeinsam mit ihren Enkelkindern"
+            }
+          },
+          {
+            "n": 19,
+            "correct": "e",
+            "explanation": "Die Wanderfreunde gehen langsam auf flachen Wegen und machen viele Pausen. Das passt zu Taminas Vater.",
+            "evidence": {
+              "text": "Sie lieben die Natur, aber lange Bergtouren sind nichts mehr für Sie? Jeden Donnerstag spazieren wir zwei Stunden auf flachen Wegen, ganz ohne Eile und mit vielen Pausen. Treffpunkt: 9 Uhr beim Kurpark. Wanderfreunde Bad Ischl.",
+              "hit": "Jeden Donnerstag spazieren wir zwei Stunden auf flachen Wegen, ganz ohne Eile und mit vielen Pausen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-05-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.454Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für ein Pflichtjahr für alle jungen Menschen?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Dominik, 19, Marburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Brigitte, 64, Neuss",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Luca, 23, Grenchen",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Volker, 47, Kaiserslautern",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Rebekka, 33, Detmold",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Clemens, 52, Mistelbach",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Svea, 20, Flensburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Margrit, 58, Altdorf",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Internet",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Auf einem Nachrichtenportal im Internet lesen Sie Kommentare zu der Frage: Soll es für alle jungen Menschen ein Pflichtjahr für die Gesellschaft geben, zum Beispiel in der Pflege, im Umweltschutz oder bei der Feuerwehr?",
+            "Ich mache gerade Abitur und habe schon einen Studienplatz für Medizin in Aussicht. Das Studium dauert sowieso viele Jahre. Wenn ich jetzt noch ein Jahr in einem Altenheim oder bei der Feuerwehr arbeiten muss, verliere ich wertvolle Zeit. Wer helfen möchte, kann das doch freiwillig tun. Ich will direkt nach der Schule mit dem Studium anfangen.",
+            "Dominik, 19, Marburg",
+            "Meine Enkel sind lieb, aber sie denken oft nur an sich selbst, an ihr Handy und ihre Freizeit. Ein Jahr im Krankenhaus, im Kindergarten oder im Naturschutz würde ihnen zeigen, wie es ist, Verantwortung für andere Menschen zu übernehmen. Mich hat meine Zeit im Verein für mein ganzes Leben geprägt. Deshalb: unbedingt einführen!",
+            "Brigitte, 64, Neuss",
+            "Bei uns in der Schweiz müssen junge Männer schon jetzt ins Militär oder in den Zivildienst. Ich war selbst fast ein Jahr lang weg von meiner Arbeit und meinen Kollegen. Wenn jetzt noch ein zusätzliches Jahr für die Gesellschaft dazukommt, ist das einfach zu viel. Junge Leute wollen auch einmal anfangen, eigenes Geld zu verdienen und ihr Leben selbst zu planen.",
+            "Luca, 23, Grenchen",
+            "Ich finde es toll, wenn junge Menschen ein Jahr lang in einem Altenheim oder einem Jugendzentrum mitarbeiten. Mein Sohn hat das gemacht und viel gelernt. Aber zwingen sollte man niemanden. Besser wäre es, das freiwillige Jahr attraktiver zu machen, zum Beispiel mit mehr Geld und einem günstigen Ticket für Bus und Bahn. Dann melden sich bestimmt viel mehr junge Leute.",
+            "Volker, 47, Kaiserslautern",
+            "Nach dem Abitur wusste ich überhaupt nicht, was ich machen sollte. Also habe ich ein freiwilliges Jahr in einer Werkstatt für Menschen mit Behinderung gemacht. Es war das beste Jahr meines Lebens: Ich habe tolle Menschen kennengelernt und meinen Beruf gefunden. Heute bin ich Ergotherapeutin. Viele junge Leute trauen sich so etwas nicht von allein. Deshalb sollte jeder diese Chance bekommen – auch wenn man ihn ein bisschen dazu zwingen muss.",
+            "Rebekka, 33, Detmold",
+            "Bei uns in Österreich gehen junge Männer schon heute zum Bundesheer oder machen Zivildienst, zum Beispiel bei der Rettung. Das funktioniert gut. Wozu brauchen wir dann noch ein extra Jahr für alle? Das kostet den Staat viel Geld, und die jungen Leute kommen noch später in den Beruf. Ich halte das für überflüssig. Lieber sollten wir die bestehenden Dienste besser unterstützen.",
+            "Clemens, 52, Mistelbach",
+            "In Pflegeheimen und Krankenhäusern fehlen überall Leute, das stimmt. Aber die Lösung kann doch nicht sein, dass junge Menschen dort ein Jahr lang für wenig Geld arbeiten müssen. Die Pflegekräfte brauchen bessere Löhne und mehr Kolleginnen und Kollegen, die richtig ausgebildet sind. Mit Helfern, die gezwungen werden, ist niemandem geholfen – den Patienten am wenigsten.",
+            "Svea, 20, Flensburg",
+            "In der Schweiz leben wir oft in unseren eigenen kleinen Welten: Die Studentin aus der Stadt trifft kaum den Lernenden vom Bauernhof, und Zugezogene bleiben unter sich. Bei einem gemeinsamen Dienst würden sich junge Menschen aus allen Schichten und Kulturen kennenlernen und zusammen etwas Sinnvolles tun. Das macht unsere Gesellschaft stärker. Ich wäre sofort dafür, und zwar für junge Frauen und Männer.",
+            "Margrit, 58, Altdorf"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "Brigitte meint, dass junge Menschen in einem Pflichtjahr Verantwortung lernen. Sie möchte es unbedingt einführen.",
+            "evidence": {
+              "text": "Meine Enkel sind lieb, aber sie denken oft nur an sich selbst, an ihr Handy und ihre Freizeit. Ein Jahr im Krankenhaus, im Kindergarten oder im Naturschutz würde ihnen zeigen, wie es ist, Verantwortung für andere Menschen zu übernehmen. Mich hat meine Zeit im Verein für mein ganzes Leben geprägt. Deshalb: unbedingt einführen!",
+              "hit": "Deshalb: unbedingt einführen!"
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Junge Männer in der Schweiz machen schon Militär oder Zivildienst. Ein weiteres Jahr ist für Luca zu viel.",
+            "evidence": {
+              "text": "Bei uns in der Schweiz müssen junge Männer schon jetzt ins Militär oder in den Zivildienst. Ich war selbst fast ein Jahr lang weg von meiner Arbeit und meinen Kollegen. Wenn jetzt noch ein zusätzliches Jahr für die Gesellschaft dazukommt, ist das einfach zu viel. Junge Leute wollen auch einmal anfangen, eigenes Geld zu verdienen und ihr Leben selbst zu planen.",
+              "hit": "ist das einfach zu viel"
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Volker findet ein freiwilliges Jahr gut, aber er will niemanden zwingen. Er ist also gegen eine Pflicht.",
+            "evidence": {
+              "text": "Ich finde es toll, wenn junge Menschen ein Jahr lang in einem Altenheim oder einem Jugendzentrum mitarbeiten. Mein Sohn hat das gemacht und viel gelernt. Aber zwingen sollte man niemanden. Besser wäre es, das freiwillige Jahr attraktiver zu machen, zum Beispiel mit mehr Geld und einem günstigen Ticket für Bus und Bahn. Dann melden sich bestimmt viel mehr junge Leute.",
+              "hit": "Aber zwingen sollte man niemanden."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "richtig",
+            "explanation": "Rebekka hatte selbst ein sehr gutes Jahr. Sie meint, alle sollen diese Chance bekommen, auch wenn man sie dazu zwingen muss.",
+            "evidence": {
+              "text": "Nach dem Abitur wusste ich überhaupt nicht, was ich machen sollte. Also habe ich ein freiwilliges Jahr in einer Werkstatt für Menschen mit Behinderung gemacht. Es war das beste Jahr meines Lebens: Ich habe tolle Menschen kennengelernt und meinen Beruf gefunden. Heute bin ich Ergotherapeutin. Viele junge Leute trauen sich so etwas nicht von allein. Deshalb sollte jeder diese Chance bekommen – auch wenn man ihn ein bisschen dazu zwingen muss.",
+              "hit": "Deshalb sollte jeder diese Chance bekommen"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "falsch",
+            "explanation": "In Österreich gibt es schon Bundesheer und Zivildienst. Ein Jahr für alle findet Clemens überflüssig.",
+            "evidence": {
+              "text": "Bei uns in Österreich gehen junge Männer schon heute zum Bundesheer oder machen Zivildienst, zum Beispiel bei der Rettung. Das funktioniert gut. Wozu brauchen wir dann noch ein extra Jahr für alle? Das kostet den Staat viel Geld, und die jungen Leute kommen noch später in den Beruf. Ich halte das für überflüssig. Lieber sollten wir die bestehenden Dienste besser unterstützen.",
+              "hit": "Ich halte das für überflüssig."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "falsch",
+            "explanation": "Svea sieht zwar, dass in der Pflege Leute fehlen. Sie will aber bessere Löhne und ausgebildete Fachkräfte statt gezwungener Helfer.",
+            "evidence": {
+              "text": "In Pflegeheimen und Krankenhäusern fehlen überall Leute, das stimmt. Aber die Lösung kann doch nicht sein, dass junge Menschen dort ein Jahr lang für wenig Geld arbeiten müssen. Die Pflegekräfte brauchen bessere Löhne und mehr Kolleginnen und Kollegen, die richtig ausgebildet sind. Mit Helfern, die gezwungen werden, ist niemandem geholfen – den Patienten am wenigsten.",
+              "hit": "Mit Helfern, die gezwungen werden, ist niemandem geholfen"
+            }
+          },
+          {
+            "n": 26,
+            "correct": "richtig",
+            "explanation": "Margrit meint, ein gemeinsamer Dienst bringt Menschen aus allen Gruppen zusammen. Sie ist sofort dafür.",
+            "evidence": {
+              "text": "In der Schweiz leben wir oft in unseren eigenen kleinen Welten: Die Studentin aus der Stadt trifft kaum den Lernenden vom Bauernhof, und Zugezogene bleiben unter sich. Bei einem gemeinsamen Dienst würden sich junge Menschen aus allen Schichten und Kulturen kennenlernen und zusammen etwas Sinnvolles tun. Das macht unsere Gesellschaft stärker. Ich wäre sofort dafür, und zwar für junge Frauen und Männer.",
+              "hit": "Ich wäre sofort dafür"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-05-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.454Z",
+        "textType": "Platzordnung Tennisclub"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie sind neues Mitglied im Tennisclub und lesen die Platzordnung.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Wer einen Gast mitbringt, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zahlt für den Gast 8 Euro pro Stunde."
+                },
+                {
+                  "key": "b",
+                  "label": "braucht dafür eine Genehmigung vom Vorstand."
+                },
+                {
+                  "key": "c",
+                  "label": "darf mit ihm nur am Wochenende spielen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Einen Platz buchen kann man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "schon einen Monat vorher."
+                },
+                {
+                  "key": "b",
+                  "label": "höchstens eine Woche vorher."
+                },
+                {
+                  "key": "c",
+                  "label": "nur am selben Tag."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Auf den Sandplätzen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf man auch in Joggingschuhen spielen."
+                },
+                {
+                  "key": "b",
+                  "label": "darf man nur bis 20 Uhr spielen."
+                },
+                {
+                  "key": "c",
+                  "label": "muss man den Platz nach dem Spiel in Ordnung bringen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Wer nicht spielen kann, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommt die Platzgebühr zurück."
+                },
+                {
+                  "key": "b",
+                  "label": "muss auf jeden Fall 10 Euro zahlen."
+                },
+                {
+                  "key": "c",
+                  "label": "sollte bis zwei Stunden vorher online absagen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Platzordnung",
+          "paragraphs": [
+            "Platzordnung des TC Grün-Rot Hanau",
+            "**Buchung**",
+            "Alle Plätze reservieren Sie über das Buchungssystem auf unserer Website. Eine Buchung ist frühestens sieben Tage vor dem Spieltermin möglich. Freie Plätze können Sie natürlich auch noch am selben Tag reservieren. Für Turniere und Mannschaftsspiele sperrt der Vorstand einzelne Plätze schon bis zu einem Monat im Voraus.",
+            "**Spielzeiten**",
+            "Die Anlage ist von April bis Oktober täglich von 8 bis 21 Uhr geöffnet. Ein Einzel dauert 60 Minuten, ein Doppel 90 Minuten. Samstags und sonntags haben bis 13 Uhr die Mannschaften Vorrang. Kinder unter 14 Jahren dürfen nach 20 Uhr nur zusammen mit einem Erwachsenen spielen.",
+            "**Gäste**",
+            "Sie dürfen gern Gäste mitbringen. Eine Genehmigung brauchen Sie dafür nicht, tragen Sie den Gast einfach bei der Buchung ein. Pro Gast und Stunde berechnen wir 8 Euro, die von Ihrem Konto abgebucht werden. Gäste können von Montag bis Sonntag spielen, jedoch höchstens fünfmal pro Saison.",
+            "**Platzpflege**",
+            "Unsere Sandplätze dürfen Sie nur mit Tennisschuhen betreten, Lauf- oder Joggingschuhe sind nicht erlaubt. Ist der Platz sehr trocken, bewässern Sie ihn bitte vor dem Spiel. Am Ende Ihrer Spielzeit ziehen Sie den Platz mit dem Netz ab und fegen die Linien. So bleibt er für die nächsten Spieler in gutem Zustand.",
+            "**Absage**",
+            "Können Sie nicht spielen, stornieren Sie Ihre Buchung bitte spätestens zwei Stunden vor Beginn im Buchungssystem. Dann können andere Mitglieder den Platz nutzen. Wer zweimal in einer Saison ohne Absage nicht erscheint, zahlt eine Gebühr von 10 Euro."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "a",
+            "explanation": "Für jeden Gast zahlst du 8 Euro pro Stunde. Eine Genehmigung brauchst du nicht, und Gäste dürfen an allen Tagen spielen.",
+            "evidence": {
+              "text": "Sie dürfen gern Gäste mitbringen. Eine Genehmigung brauchen Sie dafür nicht, tragen Sie den Gast einfach bei der Buchung ein. Pro Gast und Stunde berechnen wir 8 Euro, die von Ihrem Konto abgebucht werden. Gäste können von Montag bis Sonntag spielen, jedoch höchstens fünfmal pro Saison.",
+              "hit": "Pro Gast und Stunde berechnen wir 8 Euro"
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Du kannst frühestens sieben Tage vorher buchen. Nur der Vorstand sperrt Plätze schon einen Monat vorher.",
+            "evidence": {
+              "text": "Alle Plätze reservieren Sie über das Buchungssystem auf unserer Website. Eine Buchung ist frühestens sieben Tage vor dem Spieltermin möglich. Freie Plätze können Sie natürlich auch noch am selben Tag reservieren. Für Turniere und Mannschaftsspiele sperrt der Vorstand einzelne Plätze schon bis zu einem Monat im Voraus.",
+              "hit": "Eine Buchung ist frühestens sieben Tage vor dem Spieltermin möglich."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Am Ende der Spielzeit ziehst du den Platz ab und fegst die Linien. Joggingschuhe sind verboten, und die 20-Uhr-Regel gilt nur für Kinder.",
+            "evidence": {
+              "text": "Unsere Sandplätze dürfen Sie nur mit Tennisschuhen betreten, Lauf- oder Joggingschuhe sind nicht erlaubt. Ist der Platz sehr trocken, bewässern Sie ihn bitte vor dem Spiel. Am Ende Ihrer Spielzeit ziehen Sie den Platz mit dem Netz ab und fegen die Linien. So bleibt er für die nächsten Spieler in gutem Zustand.",
+              "hit": "Am Ende Ihrer Spielzeit ziehen Sie den Platz mit dem Netz ab und fegen die Linien."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "c",
+            "explanation": "Du sagst spätestens zwei Stunden vorher im Buchungssystem ab. Die 10 Euro zahlt nur, wer zweimal ohne Absage nicht kommt.",
+            "evidence": {
+              "text": "Können Sie nicht spielen, stornieren Sie Ihre Buchung bitte spätestens zwei Stunden vor Beginn im Buchungssystem. Dann können andere Mitglieder den Platz nutzen. Wer zweimal in einer Saison ohne Absage nicht erscheint, zahlt eine Gebühr von 10 Euro.",
+              "hit": "stornieren Sie Ihre Buchung bitte spätestens zwei Stunden vor Beginn im Buchungssystem"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

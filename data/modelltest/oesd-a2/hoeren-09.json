@@ -1,0 +1,782 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 9,
+  "title": "Modelltest 9",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-09-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.711Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Seifenkistenrennen",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Samstag"
+                },
+                {
+                  "key": "b",
+                  "label": "Tribüne"
+                },
+                {
+                  "key": "c",
+                  "label": "Sonntag"
+                },
+                {
+                  "key": "d",
+                  "label": "ab 13 Uhr"
+                },
+                {
+                  "key": "e",
+                  "label": "40 Teams"
+                },
+                {
+                  "key": "f",
+                  "label": "14 Teams"
+                },
+                {
+                  "key": "g",
+                  "label": "Zuschauen gratis"
+                },
+                {
+                  "key": "h",
+                  "label": "Musik"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Veranstaltungstipp im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Pongau",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Welle Salzach",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-09/oesd-a2-hoeren-09-t1.review.mp3",
+          "duration": 49.61
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "c",
+            "explanation": "Beide Sender sagen: Das Rennen ist am Sonntag. Samstag hört man gar nicht.",
+            "evidence": {
+              "text": "Radio Pongau mit einem Tipp für das Wochenende. In Bischofshofen gibt es am Sonntag wieder das Seifenkistenrennen auf der Kirchenstraße. Vierzig Teams von Vereinen und Firmen fahren mit ihren selbst gebauten Wagen die steile Straße hinunter. Das Rennen beginnt um dreizehn Uhr. Zuschauen kostet nichts. Eine Tribüne gibt es heuer nicht, man steht am Straßenrand. Die Kirchenstraße ist am Sonntag den ganzen Tag für Autos gesperrt. Viel Spaß!",
+              "hit": "In Bischofshofen gibt es am Sonntag wieder das Seifenkistenrennen auf der Kirchenstraße."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "d",
+            "explanation": "Das Rennen beginnt um ein Uhr am Nachmittag, also um 13 Uhr. Eine andere Uhrzeit nennt niemand.",
+            "evidence": {
+              "text": "Hallo und guten Tag, hier ist die Welle Salzach! Habt ihr am Sonntag schon was vor? Nein? Dann kommt nach Bischofshofen! Dort rasen um ein Uhr am Nachmittag die Seifenkisten die Kirchenstraße hinunter. Und Eintritt zahlt dort niemand. Mitmachen dürfen heuer vierzig Teams, aus Vereinen und aus Firmen. Ein kleiner Tipp: Sitzplätze auf einer Tribüne gibt's diesmal keine. Also einfach an den Straßenrand stellen und anfeuern!",
+              "hit": "Dort rasen um ein Uhr am Nachmittag die Seifenkisten die Kirchenstraße hinunter."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "e",
+            "explanation": "Vierzig Teams von Vereinen und Firmen fahren mit. Von 14 Teams spricht niemand.",
+            "evidence": {
+              "text": "Radio Pongau mit einem Tipp für das Wochenende. In Bischofshofen gibt es am Sonntag wieder das Seifenkistenrennen auf der Kirchenstraße. Vierzig Teams von Vereinen und Firmen fahren mit ihren selbst gebauten Wagen die steile Straße hinunter. Das Rennen beginnt um dreizehn Uhr. Zuschauen kostet nichts. Eine Tribüne gibt es heuer nicht, man steht am Straßenrand. Die Kirchenstraße ist am Sonntag den ganzen Tag für Autos gesperrt. Viel Spaß!",
+              "hit": "Vierzig Teams von Vereinen und Firmen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "g",
+            "explanation": "Niemand zahlt Eintritt, Zuschauen kostet also nichts. Eine Tribüne gibt es heuer nicht.",
+            "evidence": {
+              "text": "Hallo und guten Tag, hier ist die Welle Salzach! Habt ihr am Sonntag schon was vor? Nein? Dann kommt nach Bischofshofen! Dort rasen um ein Uhr am Nachmittag die Seifenkisten die Kirchenstraße hinunter. Und Eintritt zahlt dort niemand. Mitmachen dürfen heuer vierzig Teams, aus Vereinen und aus Firmen. Ein kleiner Tipp: Sitzplätze auf einer Tribüne gibt's diesmal keine. Also einfach an den Straßenrand stellen und anfeuern!",
+              "hit": "Und Eintritt zahlt dort niemand."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_emilia_at",
+            "text": "Radio Pongau mit einem Tipp für das Wochenende. In Bischofshofen gibt es am Sonntag wieder das Seifenkistenrennen auf der Kirchenstraße. Vierzig Teams von Vereinen und Firmen fahren mit ihren selbst gebauten Wagen die steile Straße hinunter. Das Rennen beginnt um dreizehn Uhr. Zuschauen kostet nichts. Eine Tribüne gibt es heuer nicht, man steht am Straßenrand. Die Kirchenstraße ist am Sonntag den ganzen Tag für Autos gesperrt. Viel Spaß!",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_martin_at",
+            "text": "Hallo und guten Tag, hier ist die Welle Salzach! Habt ihr am Sonntag schon was vor? Nein? Dann kommt nach Bischofshofen! Dort rasen um ein Uhr am Nachmittag die Seifenkisten die Kirchenstraße hinunter. Und Eintritt zahlt dort niemand. Mitmachen dürfen heuer vierzig Teams, aus Vereinen und aus Firmen. Ein kleiner Tipp: Sitzplätze auf einer Tribüne gibt's diesmal keine. Also einfach an den Straßenrand stellen und anfeuern!",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-09-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.711Z",
+        "textType": "Sprachnachricht von einer Freundin"
+      },
+      "display": {
+        "instruction": "Situation: Eine Freundin hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Vollmondfahrt\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTreffen um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nBerg- und Talfahrt: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nJohannas Telefon: 0664 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Handy",
+          "speakers": {
+            "johanna": {
+              "name": "Johanna",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-09/oesd-a2-hoeren-09-t2.mp3",
+          "duration": 40.46
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Donnerstag",
+            "accept": [
+              "am Donnerstag",
+              "Do."
+            ],
+            "explanation": "Am Mittwoch war schon alles ausgebucht. Darum fahrt ihr am Donnerstag.",
+            "evidence": {
+              "text": "Grüß dich, Johanna hier! Äh, du, ich hab jetzt die Vollmondfahrt mit der Panoramabahn in Bad Aussee gebucht. Am Mittwoch war leider schon alles ausgebucht, tja, also fahren wir am Donnerstag. Wir treffen uns um Viertel nach acht am Abend bei der Talstation. Rauf und wieder runter kostet das neunzehn Euro. Mit der Gästekarte wären es vierzehn, aber die haben wir nicht. Oben ist es auch im Sommer kalt, also nimm bitte Handschuhe mit. Eine Taschenlampe brauchst du nicht, der Weg oben ist beleuchtet. Äh, sag mir bitte bis morgen, ob das passt. Meine Nummer ist null sechs sechs vier, fünf neun zwei, sieben null, vier eins. Noch einmal: fünf neun zwei, sieben null, vier eins. Ich freu mich schon! Bis bald!",
+              "hit": "also fahren wir am Donnerstag"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "20.15",
+            "accept": [
+              "20:15",
+              "8.15",
+              "8:15",
+              "20.15 Uhr",
+              "8.15 Uhr",
+              "20 Uhr 15",
+              "Viertel nach acht",
+              "zwanzig Uhr fünfzehn"
+            ],
+            "explanation": "Ihr trefft euch um Viertel nach acht am Abend, also um 20.15 Uhr. Du kannst auch 8.15 schreiben.",
+            "evidence": {
+              "text": "Grüß dich, Johanna hier! Äh, du, ich hab jetzt die Vollmondfahrt mit der Panoramabahn in Bad Aussee gebucht. Am Mittwoch war leider schon alles ausgebucht, tja, also fahren wir am Donnerstag. Wir treffen uns um Viertel nach acht am Abend bei der Talstation. Rauf und wieder runter kostet das neunzehn Euro. Mit der Gästekarte wären es vierzehn, aber die haben wir nicht. Oben ist es auch im Sommer kalt, also nimm bitte Handschuhe mit. Eine Taschenlampe brauchst du nicht, der Weg oben ist beleuchtet. Äh, sag mir bitte bis morgen, ob das passt. Meine Nummer ist null sechs sechs vier, fünf neun zwei, sieben null, vier eins. Noch einmal: fünf neun zwei, sieben null, vier eins. Ich freu mich schon! Bis bald!",
+              "hit": "Wir treffen uns um Viertel nach acht am Abend bei der Talstation."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "19",
+            "accept": [
+              "19 Euro",
+              "neunzehn"
+            ],
+            "explanation": "Rauf und wieder runter kostet 19 Euro. 14 Euro zahlt man nur mit der Gästekarte, und die habt ihr nicht.",
+            "evidence": {
+              "text": "Grüß dich, Johanna hier! Äh, du, ich hab jetzt die Vollmondfahrt mit der Panoramabahn in Bad Aussee gebucht. Am Mittwoch war leider schon alles ausgebucht, tja, also fahren wir am Donnerstag. Wir treffen uns um Viertel nach acht am Abend bei der Talstation. Rauf und wieder runter kostet das neunzehn Euro. Mit der Gästekarte wären es vierzehn, aber die haben wir nicht. Oben ist es auch im Sommer kalt, also nimm bitte Handschuhe mit. Eine Taschenlampe brauchst du nicht, der Weg oben ist beleuchtet. Äh, sag mir bitte bis morgen, ob das passt. Meine Nummer ist null sechs sechs vier, fünf neun zwei, sieben null, vier eins. Noch einmal: fünf neun zwei, sieben null, vier eins. Ich freu mich schon! Bis bald!",
+              "hit": "Rauf und wieder runter kostet das neunzehn Euro."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Handschuhe",
+            "accept": [
+              "die Handschuhe",
+              "Handschuh"
+            ],
+            "explanation": "Oben ist es kalt, darum sollst du Handschuhe mitnehmen. Eine Taschenlampe brauchst du nicht.",
+            "evidence": {
+              "text": "Grüß dich, Johanna hier! Äh, du, ich hab jetzt die Vollmondfahrt mit der Panoramabahn in Bad Aussee gebucht. Am Mittwoch war leider schon alles ausgebucht, tja, also fahren wir am Donnerstag. Wir treffen uns um Viertel nach acht am Abend bei der Talstation. Rauf und wieder runter kostet das neunzehn Euro. Mit der Gästekarte wären es vierzehn, aber die haben wir nicht. Oben ist es auch im Sommer kalt, also nimm bitte Handschuhe mit. Eine Taschenlampe brauchst du nicht, der Weg oben ist beleuchtet. Äh, sag mir bitte bis morgen, ob das passt. Meine Nummer ist null sechs sechs vier, fünf neun zwei, sieben null, vier eins. Noch einmal: fünf neun zwei, sieben null, vier eins. Ich freu mich schon! Bis bald!",
+              "hit": "also nimm bitte Handschuhe mit"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "5927041",
+            "accept": [
+              "592 70 41",
+              "592 7041",
+              "5927 041"
+            ],
+            "exact": true,
+            "explanation": "Johanna sagt die Nummer zweimal: fünf neun zwei, sieben null, vier eins. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Grüß dich, Johanna hier! Äh, du, ich hab jetzt die Vollmondfahrt mit der Panoramabahn in Bad Aussee gebucht. Am Mittwoch war leider schon alles ausgebucht, tja, also fahren wir am Donnerstag. Wir treffen uns um Viertel nach acht am Abend bei der Talstation. Rauf und wieder runter kostet das neunzehn Euro. Mit der Gästekarte wären es vierzehn, aber die haben wir nicht. Oben ist es auch im Sommer kalt, also nimm bitte Handschuhe mit. Eine Taschenlampe brauchst du nicht, der Weg oben ist beleuchtet. Äh, sag mir bitte bis morgen, ob das passt. Meine Nummer ist null sechs sechs vier, fünf neun zwei, sieben null, vier eins. Noch einmal: fünf neun zwei, sieben null, vier eins. Ich freu mich schon! Bis bald!",
+              "hit": "fünf neun zwei, sieben null, vier eins"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "johanna",
+            "voice": "woman_alexandra_at",
+            "text": "Grüß dich, Johanna hier! Äh, du, ich hab jetzt die Vollmondfahrt mit der Panoramabahn in Bad Aussee gebucht. Am Mittwoch war leider schon alles ausgebucht, tja, also fahren wir am Donnerstag. Wir treffen uns um Viertel nach acht am Abend bei der Talstation. Rauf und wieder runter kostet das neunzehn Euro. Mit der Gästekarte wären es vierzehn, aber die haben wir nicht. Oben ist es auch im Sommer kalt, also nimm bitte Handschuhe mit. Eine Taschenlampe brauchst du nicht, der Weg oben ist beleuchtet. Äh, sag mir bitte bis morgen, ob das passt. Meine Nummer ist null sechs sechs vier, fünf neun zwei, sieben null, vier eins. Noch einmal: fünf neun zwei, sieben null, vier eins. Ich freu mich schon! Bis bald!",
+            "delivery": "[casual, friendly, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-09-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.711Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, was sie immer in ihrer Tasche dabeihaben. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Was haben Sie immer in Ihrer Tasche dabei?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Kopfhörer"
+                },
+                {
+                  "key": "b",
+                  "label": "Taschenbuch"
+                },
+                {
+                  "key": "c",
+                  "label": "Ladekabel"
+                },
+                {
+                  "key": "d",
+                  "label": "Sonnenbrille"
+                },
+                {
+                  "key": "e",
+                  "label": "Taschentücher"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-09/oesd-a2-hoeren-09-t3.review.mp3",
+          "duration": 99.84
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a,b",
+            "explanation": "Sie hat Kopfhörer zum Telefonieren und ein Taschenbuch für die Wartezeit dabei. Die Sonnenbrille vergisst sie immer.",
+            "evidence": {
+              "text": "Hm, ich bin jeden Tag fast eine Stunde unterwegs ins Büro. Meine Kopfhörer habe ich immer dabei, damit telefoniere ich schon unterwegs mit Kollegen. Und für die Wartezeit am Bahnsteig steckt ein Taschenbuch in meiner Tasche. Eine Sonnenbrille, äh, die vergess ich immer. Die liegt meistens daheim im Vorzimmer.",
+              "hit": "Meine Kopfhörer habe ich immer dabei, damit telefoniere ich schon unterwegs mit Kollegen."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "c,d",
+            "explanation": "Er ist den ganzen Tag draußen und braucht eine Sonnenbrille, und für das Handy ein Ladekabel. Taschentücher braucht er nicht.",
+            "evidence": {
+              "text": "Ich bin Paketbote, ich bin den ganzen Tag draußen. Darum habe ich immer eine Sonnenbrille mit, sonst sehe ich bei Sonne nichts. Und ein Ladekabel, ganz wichtig! Mein Handy ist zu Mittag schon leer, weil ich ständig Adressen suche. Taschentücher? Nie, äh, die brauche ich eigentlich nicht.",
+              "hit": "Darum habe ich immer eine Sonnenbrille mit"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b,e",
+            "explanation": "Sie hat ein kleines Buch für die Mittagspause und Taschentücher dabei. Ein Ladekabel braucht sie nicht, ihr Handy hält lange.",
+            "evidence": {
+              "text": "Ich arbeite als Sekretärin in Uster. In meiner Tasche ist immer ein kleines Buch, meistens ein Roman. Den lese ich in der Mittagspause. Und Taschentücher habe ich auch immer dabei, man weiss ja nie. Ein Ladekabel brauche ich nicht, mein Handy hält lange, zwei Tage ohne Problem.",
+              "hit": "In meiner Tasche ist immer ein kleines Buch, meistens ein Roman."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Er hat nur ein Ladekabel dabei, der Rest ist im Spind. Kopfhörer stören ihn.",
+            "evidence": {
+              "text": "Ich bin Mechaniker in einer Werkstatt. Ehrlich gesagt habe ich nur ein Ladekabel in der Tasche, sonst nichts. Der Rest ist im Spind in der Arbeit. Kopfhörer? Nein, die stören mich, äh, die drücken immer an den Ohren. Und in der Werkstatt muss ich sowieso hören, was die Kollegen sagen.",
+              "hit": "Ehrlich gesagt habe ich nur ein Ladekabel in der Tasche, sonst nichts."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a,d,e",
+            "explanation": "Sie hat Kopfhörer, eine Sonnenbrille und Taschentücher dabei. Ein Buch ist ihr zu schwer, sie liest am Handy.",
+            "evidence": {
+              "text": "Oh, meine Tasche ist immer total voll! Ich studiere in Mainz und bin den ganzen Tag an der Uni. Kopfhörer brauche ich zum Lernen, dann habe ich meine Ruhe. Dann die Sonnenbrille, und natürlich Taschentücher, die braucht man doch immer. Ein Buch ist mir aber zu schwer, äh, ich lese lieber am Handy.",
+              "hit": "Dann die Sonnenbrille, und natürlich Taschentücher, die braucht man doch immer."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Wir machen heute eine kurze Umfrage für das Radio. Was haben Sie immer in Ihrer Tasche dabei?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_alexandra_at",
+            "text": "Hm, ich bin jeden Tag fast eine Stunde unterwegs ins Büro. Meine Kopfhörer habe ich immer dabei, damit telefoniere ich schon unterwegs mit Kollegen. Und für die Wartezeit am Bahnsteig steckt ein Taschenbuch in meiner Tasche. Eine Sonnenbrille, äh, die vergess ich immer. Die liegt meistens daheim im Vorzimmer.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Ich bin Paketbote, ich bin den ganzen Tag draußen. Darum habe ich immer eine Sonnenbrille mit, sonst sehe ich bei Sonne nichts. Und ein Ladekabel, ganz wichtig! Mein Handy ist zu Mittag schon leer, weil ich ständig Adressen suche. Taschentücher? Nie, äh, die brauche ich eigentlich nicht.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_heidi_ch",
+            "text": "Ich arbeite als Sekretärin in Uster. In meiner Tasche ist immer ein kleines Buch, meistens ein Roman. Den lese ich in der Mittagspause. Und Taschentücher habe ich auch immer dabei, man weiss ja nie. Ein Ladekabel brauche ich nicht, mein Handy hält lange, zwei Tage ohne Problem.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich bin Mechaniker in einer Werkstatt. Ehrlich gesagt habe ich nur ein Ladekabel in der Tasche, sonst nichts. Der Rest ist im Spind in der Arbeit. Kopfhörer? Nein, die stören mich, äh, die drücken immer an den Ohren. Und in der Werkstatt muss ich sowieso hören, was die Kollegen sagen.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_laura",
+            "text": "Oh, meine Tasche ist immer total voll! Ich studiere in Mainz und bin den ganzen Tag an der Uni. Kopfhörer brauche ich zum Lernen, dann habe ich meine Ruhe. Dann die Sonnenbrille, und natürlich Taschentücher, die braucht man doch immer. Ein Buch ist mir aber zu schwer, äh, ich lese lieber am Handy.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-09/track.mp3",
+    "duration": 572.37,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.4,
+        "to": 15.44
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.44,
+        "to": 45.48
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.48,
+        "to": 58.64
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.81,
+        "to": 92.26
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 96.55,
+        "to": 120.24
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 129.41,
+        "to": 135.42
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 135.42,
+        "to": 165.46
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 165.46,
+        "to": 176.67
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 184.14,
+        "to": 224.6
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 230.56,
+        "to": 233.77
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 241.24,
+        "to": 281.7
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 287.66,
+        "to": 292.21
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 292.21,
+        "to": 312.24
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 317.75,
+        "to": 323.76
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 323.76,
+        "to": 353.8
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 353.8,
+        "to": 370.78
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 376.29,
+        "to": 382.56
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 384.1,
+        "to": 401.24
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 405.29,
+        "to": 421.8
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 425.85,
+        "to": 442.41
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 446.46,
+        "to": 463.99
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 468.04,
+        "to": 486.58
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 496.14,
+        "to": 500.64
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 500.64,
+        "to": 560.67
+      }
+    ]
+  }
+}

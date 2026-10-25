@@ -1,0 +1,957 @@
+{
+  "exam": "oesd-b1",
+  "skill": "lesen",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "oesd-b1-lesen-03-t1-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.449Z",
+        "textType": "Blogbeitrag"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Auf die Idee für ihr Projekt ist Verena beim Aufräumen gekommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Für Lebensmittel galt Verenas Regel nicht."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Am Anfang ist es Verena leichtgefallen, nichts zu kaufen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Ihre kaputten Schuhe hat Verena von einem Fachmann reparieren lassen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Verenas Familie war von der Idee sofort begeistert."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Verena hat das gesparte Geld schon für einen Kurs ausgegeben."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Verena möchte auch in Zukunft weniger kaufen als früher."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Verena",
+          "source": "Blog",
+          "paragraphs": [
+            "Mein Jahr ohne Neukauf",
+            "Hallo ihr Lieben! Heute ist ein besonderer Tag für mich: Genau vor einem Jahr habe ich beschlossen, zwölf Monate lang nichts Neues mehr zu kaufen. Die Idee kam mir in den Weihnachtsferien beim Aufräumen. Mein Kasten* war so voll, dass die Tür kaum noch zuging. Darin hingen Blusen und Hosen, die ich nie getragen hatte, manche sogar noch mit Preisschild. Da habe ich mich ehrlich gesagt geschämt.",
+            "Meine Regeln waren einfach: Lebensmittel, Medikamente und Sachen fürs Bad wie Seife oder Zahnpasta durfte ich weiter kaufen. Alles andere war tabu, also keine Kleidung, keine Bücher und keine Deko. Was ich wirklich brauchte, wollte ich leihen, tauschen oder gebraucht besorgen.",
+            "Begonnen habe ich am Neujahrstag, und das war vielleicht keine gute Idee. Gleich danach kam nämlich der Ausverkauf. Jeden Tag bekam ich E-Mails mit „minus 50 Prozent“, und in der Stadt hingen überall rote Plakate. Diese ersten Wochen waren die schwierigsten im ganzen Jahr. Irgendwann habe ich die Newsletter von fast allen Geschäften abbestellt, danach wurde es besser.",
+            "Im Frühling ist dann bei meinen Lieblingsschuhen die Sohle kaputtgegangen. Früher hätte ich sie sofort weggeworfen und neue gekauft. Diesmal habe ich sie zu einem Schuster in der Bregenzer Altstadt gebracht. Für 18 Euro hat er eine neue Sohle angebracht, und ich trage die Schuhe bis heute.",
+            "Meine Familie war am Anfang nicht gerade begeistert. Vor allem meine Mutter hat sich Sorgen wegen der Geburtstage gemacht: „Was schenkst du uns denn dann?“ Am Ende haben alle selbst gebackene Kekse oder einen gemeinsamen Ausflug bekommen. Mein Bruder hat zugegeben, dass ihm das besser gefallen hat als manche Krawatte von früher.",
+            "An der Kassa im Supermarkt stand ich natürlich trotzdem jede Woche. Aber insgesamt habe ich heuer ungefähr 1.400 Euro gespart. Das Geld liegt jetzt auf einem eigenen Konto. Ausgeben möchte ich es erst im nächsten Jahr, für einen Töpferkurs, von dem ich schon lange träume.",
+            "Und wie geht es jetzt weiter? Ganz zurück zu meinem alten Leben will ich nicht. Natürlich werde ich wieder Dinge kaufen, aber nur, wenn ich sie wirklich brauche, und am liebsten gebraucht. Mein Kasten ist übrigens inzwischen halb leer, und das fühlt sich richtig gut an.",
+            "Verena",
+            "*Kasten = österreichischer Standard für „Schrank“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Lebensmittel, Medikamente und Sachen fürs Bad durfte Verena weiter kaufen. Nur alles andere war verboten.",
+            "evidence": {
+              "text": "Meine Regeln waren einfach: Lebensmittel, Medikamente und Sachen fürs Bad wie Seife oder Zahnpasta durfte ich weiter kaufen. Alles andere war tabu, also keine Kleidung, keine Bücher und keine Deko. Was ich wirklich brauchte, wollte ich leihen, tauschen oder gebraucht besorgen.",
+              "hit": "Lebensmittel, Medikamente und Sachen fürs Bad wie Seife oder Zahnpasta durfte ich weiter kaufen."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "falsch",
+            "explanation": "Gleich am Anfang kam der Ausverkauf, deshalb waren die ersten Wochen am schwierigsten. Erst später wurde es besser.",
+            "evidence": {
+              "text": "Begonnen habe ich am Neujahrstag, und das war vielleicht keine gute Idee. Gleich danach kam nämlich der Ausverkauf. Jeden Tag bekam ich E-Mails mit „minus 50 Prozent“, und in der Stadt hingen überall rote Plakate. Diese ersten Wochen waren die schwierigsten im ganzen Jahr. Irgendwann habe ich die Newsletter von fast allen Geschäften abbestellt, danach wurde es besser.",
+              "hit": "Diese ersten Wochen waren die schwierigsten im ganzen Jahr."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Sie hat die Schuhe zu einem Schuster gebracht, und er hat eine neue Sohle gemacht. Weggeworfen hat sie die Schuhe nicht.",
+            "evidence": {
+              "text": "Im Frühling ist dann bei meinen Lieblingsschuhen die Sohle kaputtgegangen. Früher hätte ich sie sofort weggeworfen und neue gekauft. Diesmal habe ich sie zu einem Schuster in der Bregenzer Altstadt gebracht. Für 18 Euro hat er eine neue Sohle angebracht, und ich trage die Schuhe bis heute.",
+              "hit": "Diesmal habe ich sie zu einem Schuster in der Bregenzer Altstadt gebracht."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Am Anfang war die Familie nicht begeistert, die Mutter hatte Sorgen wegen der Geschenke. Erst später haben sich alle gefreut.",
+            "evidence": {
+              "text": "Meine Familie war am Anfang nicht gerade begeistert. Vor allem meine Mutter hat sich Sorgen wegen der Geburtstage gemacht: „Was schenkst du uns denn dann?“ Am Ende haben alle selbst gebackene Kekse oder einen gemeinsamen Ausflug bekommen. Mein Bruder hat zugegeben, dass ihm das besser gefallen hat als manche Krawatte von früher.",
+              "hit": "Meine Familie war am Anfang nicht gerade begeistert."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "falsch",
+            "explanation": "Das Geld liegt noch auf einem Konto. Den Töpferkurs möchte sie erst im nächsten Jahr machen.",
+            "evidence": {
+              "text": "An der Kassa im Supermarkt stand ich natürlich trotzdem jede Woche. Aber insgesamt habe ich heuer ungefähr 1.400 Euro gespart. Das Geld liegt jetzt auf einem eigenen Konto. Ausgeben möchte ich es erst im nächsten Jahr, für einen Töpferkurs, von dem ich schon lange träume.",
+              "hit": "Ausgeben möchte ich es erst im nächsten Jahr"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Sie will nicht zu ihrem alten Leben zurück. Sie kauft nur noch, was sie wirklich braucht.",
+            "evidence": {
+              "text": "Und wie geht es jetzt weiter? Ganz zurück zu meinem alten Leben will ich nicht. Natürlich werde ich wieder Dinge kaufen, aber nur, wenn ich sie wirklich brauche, und am liebsten gebraucht. Mein Kasten ist übrigens inzwischen halb leer, und das fühlt sich richtig gut an.",
+              "hit": "Ganz zurück zu meinem alten Leben will ich nicht."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-03-t2-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.449Z",
+        "textType": "Zeitungsartikel"
+      },
+      "exampleAnswers": [
+        "b"
+      ],
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Die Bänke stehen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur am Bahnhof des Nachbarorts."
+                },
+                {
+                  "key": "b",
+                  "label": "an drei verschiedenen Stellen im Dorf."
+                },
+                {
+                  "key": "c",
+                  "label": "vor jedem Geschäft im Ort."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen neuen Fahrplan für den Bus im Dorf."
+                },
+                {
+                  "key": "b",
+                  "label": "Bänke, auf denen Spaziergänger Pause machen."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Idee, wie Menschen ohne Auto mitfahren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Wer mitfahren will, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "gibt dem Fahrer etwas Geld für das Benzin."
+                },
+                {
+                  "key": "b",
+                  "label": "zeigt mit einem Schild, wohin er möchte."
+                },
+                {
+                  "key": "c",
+                  "label": "ruft den Fahrer am Tag vorher an."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Die Bänke benutzen vor allem …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Senioren und junge Leute ohne Auto."
+                },
+                {
+                  "key": "b",
+                  "label": "Touristen, die das Dorf besuchen."
+                },
+                {
+                  "key": "c",
+                  "label": "Leute, die morgens zur Arbeit pendeln."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Die Bank, die zum Mitfahren einlädt",
+            "In Wiesenthal bei Bamberg hält der Bus nur zweimal am Tag, und der nächste Bahnhof ist acht Kilometer entfernt. Wer kein Auto hat, sitzt deshalb oft fest. Seit dem Frühjahr gibt es dafür eine einfache Lösung: Mitfahrbänke. Drei dieser roten Holzbänke stehen inzwischen im Ort, vor der Kirche, am Dorfladen und am Ortsausgang Richtung Bamberg.",
+            "Das Prinzip ist leicht zu verstehen. Neben jeder Bank hängt ein Schild mit mehreren Klappen. Wer mitfahren möchte, setzt sich auf die Bank und klappt das gewünschte Ziel auf, zum Beispiel „Bamberg Zentrum“ oder „Ärztehaus Hallstadt“. Autofahrer aus dem Dorf, die in diese Richtung fahren, halten an und nehmen die Person mit. Vorher anrufen muss niemand, und Geld nimmt auch keiner.",
+            "„Am Anfang hatten manche Angst, dass niemand anhält“, erzählt Bürgermeisterin Elke Brandl. „Aber meistens wartet man keine zehn Minuten.“ Die Bänke benutzen vor allem ältere Menschen, die nicht mehr selbst fahren, und Jugendliche ohne Führerschein. Viele Pendler, die morgens nach Bamberg fahren, nehmen gern jemanden mit. Und wer nur eine kurze Pause machen will, darf sich natürlich auch hinsetzen – dann bleibt das Schild einfach zu.",
+            "aus einer deutschen Zeitung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Im Text geht es darum, dass Menschen ohne Auto bei Nachbarn mitfahren können. Pause machen darf man auf den Bänken auch, aber das ist nicht das Thema.",
+            "evidence": {
+              "text": "Das Prinzip ist leicht zu verstehen. Neben jeder Bank hängt ein Schild mit mehreren Klappen. Wer mitfahren möchte, setzt sich auf die Bank und klappt das gewünschte Ziel auf, zum Beispiel „Bamberg Zentrum“ oder „Ärztehaus Hallstadt“. Autofahrer aus dem Dorf, die in diese Richtung fahren, halten an und nehmen die Person mit. Vorher anrufen muss niemand, und Geld nimmt auch keiner.",
+              "hit": "Autofahrer aus dem Dorf, die in diese Richtung fahren, halten an und nehmen die Person mit."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Man klappt am Schild das Ziel auf, so sieht der Fahrer, wohin man will. Anrufen muss man nicht, und Geld nimmt niemand.",
+            "evidence": {
+              "text": "Das Prinzip ist leicht zu verstehen. Neben jeder Bank hängt ein Schild mit mehreren Klappen. Wer mitfahren möchte, setzt sich auf die Bank und klappt das gewünschte Ziel auf, zum Beispiel „Bamberg Zentrum“ oder „Ärztehaus Hallstadt“. Autofahrer aus dem Dorf, die in diese Richtung fahren, halten an und nehmen die Person mit. Vorher anrufen muss niemand, und Geld nimmt auch keiner.",
+              "hit": "klappt das gewünschte Ziel auf"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Vor allem ältere Menschen und Jugendliche ohne Führerschein sitzen auf den Bänken. Die Pendler sind die Fahrer, die andere mitnehmen.",
+            "evidence": {
+              "text": "„Am Anfang hatten manche Angst, dass niemand anhält“, erzählt Bürgermeisterin Elke Brandl. „Aber meistens wartet man keine zehn Minuten.“ Die Bänke benutzen vor allem ältere Menschen, die nicht mehr selbst fahren, und Jugendliche ohne Führerschein. Viele Pendler, die morgens nach Bamberg fahren, nehmen gern jemanden mit. Und wer nur eine kurze Pause machen will, darf sich natürlich auch hinsetzen – dann bleibt das Schild einfach zu.",
+              "hit": "Die Bänke benutzen vor allem ältere Menschen, die nicht mehr selbst fahren, und Jugendliche ohne Führerschein."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-03-t2-02",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.449Z",
+        "textType": "Zeitschriftenartikel"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "In diesem Text geht es um …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einen Kindergarten, der neue Räume sucht."
+                },
+                {
+                  "key": "b",
+                  "label": "ein Heim, in dem Jung und Alt sich oft treffen."
+                },
+                {
+                  "key": "c",
+                  "label": "ein Altersheim, dem Pflegepersonal fehlt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Kinder besuchen die Bewohner …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "jeden Tag nach dem Mittagessen."
+                },
+                {
+                  "key": "b",
+                  "label": "nur an Festtagen wie Weihnachten."
+                },
+                {
+                  "key": "c",
+                  "label": "zweimal wöchentlich am Vormittag."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Einige Eltern …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zahlen dafür jetzt höhere Gebühren."
+                },
+                {
+                  "key": "b",
+                  "label": "waren zuerst nicht ganz überzeugt."
+                },
+                {
+                  "key": "c",
+                  "label": "wollten das Projekt im Frühling beenden."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "Ein Kindergarten im Altersheim",
+            "Im Altersheim Seeblick in Kreuzlingen ist es seit einem Jahr deutlich lauter als früher. Im Erdgeschoss des Hauses gibt es nämlich einen Kindergarten mit zwanzig Kindern. Die Idee kam von der Heimleiterin Corinne Ammann: «Viele unserer Bewohnerinnen und Bewohner sehen ihre Enkel nur selten. Sie haben mir oft gesagt, wie sehr ihnen das Lachen von Kindern fehlt.»",
+            "Zweimal pro Woche, am Dienstag und am Freitag, kommen die Kinder mit ihrer Lehrperson in den Aufenthaltsraum. Dort essen alle zusammen am Vormittag Znüni, meistens Äpfel, Brot und Käse. Danach wird gesungen, gespielt oder vorgelesen. Natürlich begegnet man sich auch sonst im Garten oder im Gang, und an Weihnachten feiern alle gemeinsam.",
+            "Einige Eltern hatten zu Beginn Bedenken. Sie fragten sich, ob die Kinder dort genug Platz zum Toben haben und ob alte, kranke Menschen ihnen vielleicht Angst machen. Heute sind diese Sorgen verschwunden. Die Gebühren sind die gleichen wie in den anderen städtischen Kindergärten. Und als die Stadt im Frühling überlegte, das Projekt aus Kostengründen zu beenden, sammelten die Eltern sogar Unterschriften dafür, dass es weitergeht.",
+            "Auch das Pflegepersonal ist zufrieden. «Manche Bewohner, die sonst kaum reden, erzählen den Kindern plötzlich Geschichten aus ihrer Jugend», sagt Ammann.",
+            "aus einer Schweizer Zeitschrift"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Im Altersheim gibt es einen Kindergarten, und Kinder und alte Menschen verbringen regelmässig Zeit zusammen. Vom fehlenden Personal steht nichts im Text, das Personal ist zufrieden.",
+            "evidence": {
+              "text": "Im Altersheim Seeblick in Kreuzlingen ist es seit einem Jahr deutlich lauter als früher. Im Erdgeschoss des Hauses gibt es nämlich einen Kindergarten mit zwanzig Kindern. Die Idee kam von der Heimleiterin Corinne Ammann: «Viele unserer Bewohnerinnen und Bewohner sehen ihre Enkel nur selten. Sie haben mir oft gesagt, wie sehr ihnen das Lachen von Kindern fehlt.»",
+              "hit": "Im Erdgeschoss des Hauses gibt es nämlich einen Kindergarten mit zwanzig Kindern."
+            }
+          },
+          {
+            "n": 11,
+            "correct": "c",
+            "explanation": "Am Dienstag und am Freitag essen alle zusammen am Vormittag. Im Garten trifft man sich auch sonst, aber das sind keine festen Besuche.",
+            "evidence": {
+              "text": "Zweimal pro Woche, am Dienstag und am Freitag, kommen die Kinder mit ihrer Lehrperson in den Aufenthaltsraum. Dort essen alle zusammen am Vormittag Znüni, meistens Äpfel, Brot und Käse. Danach wird gesungen, gespielt oder vorgelesen. Natürlich begegnet man sich auch sonst im Garten oder im Gang, und an Weihnachten feiern alle gemeinsam.",
+              "hit": "Zweimal pro Woche, am Dienstag und am Freitag, kommen die Kinder mit ihrer Lehrperson in den Aufenthaltsraum."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "b",
+            "explanation": "Am Anfang hatten einige Eltern Bedenken. Beenden wollte das Projekt die Stadt, die Eltern haben dagegen Unterschriften gesammelt.",
+            "evidence": {
+              "text": "Einige Eltern hatten zu Beginn Bedenken. Sie fragten sich, ob die Kinder dort genug Platz zum Toben haben und ob alte, kranke Menschen ihnen vielleicht Angst machen. Heute sind diese Sorgen verschwunden. Die Gebühren sind die gleichen wie in den anderen städtischen Kindergärten. Und als die Stadt im Frühling überlegte, das Projekt aus Kostengründen zu beenden, sammelten die Eltern sogar Unterschriften dafür, dass es weitergeht.",
+              "hit": "Einige Eltern hatten zu Beginn Bedenken."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-03-t3-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.449Z",
+        "textType": "Anzeigen: Angebote für den Winter"
+      },
+      "exampleAnswers": [
+        "c"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall wählen Sie 0. Ihre Bekannten möchten im Winter etwas unternehmen.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": true,
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Eislaufen im Stadtpark",
+                  "text": "Unsere Eisbahn im Magdeburger Stadtpark ist bis Ende Februar täglich von 10 bis 21 Uhr geöffnet. Schlittschuhe kann man vor Ort ausleihen. Freitags ab 19 Uhr: Disco auf dem Eis. Laufkurse am Wochenende, aber nur für Kinder von 6 bis 12 Jahren."
+                },
+                {
+                  "key": "b",
+                  "title": "Nachtrodeln mit Fackeln",
+                  "text": "Jeden Donnerstag und Samstag ab 19 Uhr geht es mit Fackeln auf die beleuchtete Rodelbahn bei der Schwarzkogelhütte oberhalb von Waidhofen an der Ybbs. Danach wartet eine Hüttenjause mit Brot, Speck und Käse. Rodel ausleihen: 8 €."
+                },
+                {
+                  "key": "c",
+                  "title": "Langlauf-Schnupperkurs",
+                  "text": "Noch nie auf Langlaufski gestanden? Kein Problem! In unserem Schnupperkurs in Einsiedeln lernen Anfängerinnen und Anfänger an einem Nachmittag die wichtigsten Techniken. CHF 85.– inklusive Ski, Schuhe und Stöcke. Jeden Sonntag 13–16 Uhr. Langlaufschule Sihlsee."
+                },
+                {
+                  "key": "d",
+                  "title": "Saunadorf Seewiese",
+                  "text": "Wärme tanken im Saunadorf Seewiese in Aschaffenburg: sechs Saunen, ein beheiztes Außenbecken und ein Ruheraum mit Blick aufs Wasser. Zutritt erst ab 16 Jahren. Montag bis Sonntag 10–23 Uhr, Tageskarte 24 €."
+                },
+                {
+                  "key": "e",
+                  "title": "Schneeschuhwandern im Toggenburg",
+                  "text": "Mit unseren Wanderleitern geht es abseits der Pisten durch tief verschneite Wälder. Schneeschuhe und Stöcke leihen wir Ihnen gern. Für alle ab 14 Jahren mit normaler Kondition. Samstags 9.30–14 Uhr, CHF 65.–. Treffpunkt Bahnhof Wildhaus."
+                },
+                {
+                  "key": "f",
+                  "title": "Pferdeschlittenfahrten bei Mariazell",
+                  "text": "Lassen Sie sich mit dem Pferdeschlitten durch die Winterlandschaft rund um Mariazell fahren. Warme Decken liegen bereit, unterwegs gibt es heißen Tee. Ideal für Paare, aber auch für Familien. Fahrten täglich ab 14 Uhr, 45 € pro Person."
+                },
+                {
+                  "key": "g",
+                  "title": "Winterfotografie in Jena",
+                  "text": "Wie fotografiere ich Schnee, ohne dass das Bild grau wird? In unserem Kurs üben wir draußen an der Saale und im Wald, auch mit dem Handy. Zwei Samstage, je 10–15 Uhr, 95 €. Fotoschule Lichtblick."
+                },
+                {
+                  "key": "h",
+                  "title": "Sprungwelt Heidelberg",
+                  "text": "Wenn es draußen kalt ist, wird bei uns gesprungen! Über 40 Trampoline in einer warmen Halle, dazu ein Familienbereich für Kinder ab 3 Jahren mit weichen Matten. Täglich 10–20 Uhr, Kinder 9 €, Erwachsene 12 €."
+                },
+                {
+                  "key": "i",
+                  "title": "Mit Huskys durch den Harz",
+                  "text": "Erleben Sie eine Fahrt im Hundeschlitten! Unsere Huskys ziehen Sie durch den verschneiten Wald bei Wernigerode. Vorher dürfen Sie die Hunde kennenlernen und streicheln. Nur bei Schnee, Termine nach Absprache. Huskyhof Brockenblick."
+                },
+                {
+                  "key": "j",
+                  "title": "Eisstockschießen für Firmen",
+                  "text": "Ihr Team sucht einen lustigen Abend? Auf unserer überdachten Eisstockbahn in Spittal an der Drau spielen Sie gegeneinander, danach gibt es Glühwein und Kärntner Spezialitäten. Für Gruppen ab 8 Personen, Montag bis Freitag ab 18 Uhr. Gasthof Drautal."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Mustafa möchte zum ersten Mal in seinem Leben Langlauf ausprobieren."
+                },
+                {
+                  "n": 13,
+                  "text": "Greta möchte lernen, wie man schöne Bilder von Landschaften im Schnee macht."
+                },
+                {
+                  "n": 14,
+                  "text": "Ivo sucht für sein Team aus der Firma etwas, das alle an einem Abend gemeinsam unternehmen können."
+                },
+                {
+                  "n": 15,
+                  "text": "Hanna möchte an einem kalten Tag mit ihren Kindern (4 und 6 Jahre) drinnen etwas unternehmen."
+                },
+                {
+                  "n": 16,
+                  "text": "Sebastian liebt Hunde und möchte einmal mit ihnen durch den Schnee fahren."
+                },
+                {
+                  "n": 17,
+                  "text": "Ulrike ist 42 und möchte in einem Kurs endlich Schlittschuhlaufen lernen."
+                },
+                {
+                  "n": 18,
+                  "text": "Nils ist 16 und möchte mit einer erfahrenen Begleitung durch tiefen Schnee wandern."
+                },
+                {
+                  "n": 19,
+                  "text": "Pia möchte mit ihrem Freund eine romantische Fahrt mit Pferden machen."
+                }
+              ],
+              "noMatchLabel": "0"
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "g",
+            "explanation": "Im Fotokurs in Jena lernt man, wie man Schnee gut fotografiert. Der Kurs findet draußen in der Natur statt.",
+            "evidence": {
+              "text": "Wie fotografiere ich Schnee, ohne dass das Bild grau wird? In unserem Kurs üben wir draußen an der Saale und im Wald, auch mit dem Handy. Zwei Samstage, je 10–15 Uhr, 95 €. Fotoschule Lichtblick.",
+              "hit": "Wie fotografiere ich Schnee, ohne dass das Bild grau wird?"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "j",
+            "explanation": "Das Eisstockschießen ist für Firmengruppen am Abend gedacht. Das Nachtrodeln passt auch zum Abend, ist aber kein Angebot für Teams aus der Firma.",
+            "evidence": {
+              "text": "Ihr Team sucht einen lustigen Abend? Auf unserer überdachten Eisstockbahn in Spittal an der Drau spielen Sie gegeneinander, danach gibt es Glühwein und Kärntner Spezialitäten. Für Gruppen ab 8 Personen, Montag bis Freitag ab 18 Uhr. Gasthof Drautal.",
+              "hit": "Für Gruppen ab 8 Personen, Montag bis Freitag ab 18 Uhr."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "h",
+            "explanation": "Die Trampolinhalle ist warm und hat einen Bereich für Kinder ab 3 Jahren. In die Sauna dürfen Kinder nicht, erst ab 16 Jahren.",
+            "evidence": {
+              "text": "Wenn es draußen kalt ist, wird bei uns gesprungen! Über 40 Trampoline in einer warmen Halle, dazu ein Familienbereich für Kinder ab 3 Jahren mit weichen Matten. Täglich 10–20 Uhr, Kinder 9 €, Erwachsene 12 €.",
+              "hit": "dazu ein Familienbereich für Kinder ab 3 Jahren mit weichen Matten"
+            }
+          },
+          {
+            "n": 16,
+            "correct": "i",
+            "explanation": "Beim Huskyhof fährt man mit einem Hundeschlitten durch den Schnee. Der Schlitten bei Mariazell wird von Pferden gezogen.",
+            "evidence": {
+              "text": "Erleben Sie eine Fahrt im Hundeschlitten! Unsere Huskys ziehen Sie durch den verschneiten Wald bei Wernigerode. Vorher dürfen Sie die Hunde kennenlernen und streicheln. Nur bei Schnee, Termine nach Absprache. Huskyhof Brockenblick.",
+              "hit": "Unsere Huskys ziehen Sie durch den verschneiten Wald bei Wernigerode."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "x",
+            "explanation": "Die Eisbahn in Magdeburg hat Kurse, aber nur für Kinder von 6 bis 12 Jahren. Ulrike ist erwachsen, deshalb passt keine Anzeige.",
+            "evidence": {
+              "text": "Unsere Eisbahn im Magdeburger Stadtpark ist bis Ende Februar täglich von 10 bis 21 Uhr geöffnet. Schlittschuhe kann man vor Ort ausleihen. Freitags ab 19 Uhr: Disco auf dem Eis. Laufkurse am Wochenende, aber nur für Kinder von 6 bis 12 Jahren.",
+              "hit": "Laufkurse am Wochenende, aber nur für Kinder von 6 bis 12 Jahren."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "e",
+            "explanation": "Die Schneeschuhwanderung im Toggenburg geht mit Wanderleitern durch tiefen Schnee und ist ab 14 Jahren. Nils ist 16, also passt das.",
+            "evidence": {
+              "text": "Mit unseren Wanderleitern geht es abseits der Pisten durch tief verschneite Wälder. Schneeschuhe und Stöcke leihen wir Ihnen gern. Für alle ab 14 Jahren mit normaler Kondition. Samstags 9.30–14 Uhr, CHF 65.–. Treffpunkt Bahnhof Wildhaus.",
+              "hit": "Für alle ab 14 Jahren mit normaler Kondition."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "f",
+            "explanation": "Die Pferdeschlittenfahrt bei Mariazell ist ideal für Paare. Beim Huskyhof ziehen Hunde den Schlitten, keine Pferde.",
+            "evidence": {
+              "text": "Lassen Sie sich mit dem Pferdeschlitten durch die Winterlandschaft rund um Mariazell fahren. Warme Decken liegen bereit, unterwegs gibt es heißen Tee. Ideal für Paare, aber auch für Familien. Fahrten täglich ab 14 Uhr, 45 € pro Person.",
+              "hit": "Ideal für Paare, aber auch für Familien."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-03-t4-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.449Z",
+        "textType": "Leserbriefe zu einer Streitfrage"
+      },
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "display": {
+        "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person dafür, dass Jugendliche schon mit 16 bei allen Wahlen wählen dürfen?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Beispiel: Lotte, 17, Lüneburg",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Beitrag 20: Werner, 66, Trier",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Beitrag 21: Magdalena, 22, Amstetten",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Beitrag 22: Urs, 48, Zug",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 23,
+              "statement": "Beitrag 23: Jessica, 39, Wiesbaden",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 24,
+              "statement": "Beitrag 24: Ömer, 31, Bochum",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 25,
+              "statement": "Beitrag 25: Simone, 55, Langenthal",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 26,
+              "statement": "Beitrag 26: Moritz, 18, Darmstadt",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitschrift",
+          "paragraphs": [
+            "LESERBRIEFE",
+            "Ein Nachrichtenmagazin hat seine Leserinnen und Leser gefragt: Sollen Jugendliche schon mit 16 bei allen Wahlen wählen dürfen?",
+            "Ich mache neben der Schule einen Minijob im Café, und wenn ich in den Ferien mehr arbeite, zahle ich manchmal sogar Steuern. Über die Politik, die mit diesem Geld gemacht wird, darf ich aber nicht mitentscheiden. Das finde ich ungerecht. Viele Entscheidungen von heute betreffen uns Junge viel länger als die Älteren. Deshalb sollten wir auch mitbestimmen dürfen.",
+            "Lotte, 17, Lüneburg",
+            "Ich war selbst einmal 16 und weiß noch genau, was mich damals interessiert hat: Fußball, Musik und Mädchen. Politik kam darin nicht vor. Bei meinen Enkeln ist es heute nicht anders, sie reden über Videospiele und Serien. Das ist in diesem Alter völlig normal. Aber wer sich nicht informiert, sollte auch nicht über die Zukunft des Landes entscheiden.",
+            "Werner, 66, Trier",
+            "Bei uns in Österreich dürfen Jugendliche schon seit vielen Jahren mit 16 wählen, und niemand findet das seltsam. Ich habe meine erste Stimme noch vor der Matura abgegeben. Wir haben vorher im Unterricht die Programme der Parteien verglichen und lange diskutiert. Das war spannend, und seitdem bin ich bei jeder Wahl dabei. Ich kann es nur empfehlen.",
+            "Magdalena, 22, Amstetten",
+            "Ich habe nichts gegen junge Leute. Aber bei uns stimmt man nicht nur alle paar Jahre über Parteien ab, sondern mehrmals im Jahr über schwierige Sachfragen, zum Beispiel über Steuern oder Bauprojekte. Das ist schon für viele Erwachsene zu kompliziert. In unserem Kanton hat das Volk deshalb Nein zum Stimmrecht ab 16 gesagt, und ich finde das richtig.",
+            "Urs, 48, Zug",
+            "Grundsätzlich finde ich es gut, wenn junge Menschen sich für Politik interessieren. Aber im Moment lernen sie in der Schule viel zu wenig darüber, wie unser Staat funktioniert. Zuerst brauchen wir mehr Politikunterricht, und zwar ab der siebten Klasse. Wenn das ein paar Jahre gut läuft, kann man vielleicht noch einmal über das Wahlalter sprechen. Jetzt wäre es zu früh.",
+            "Jessica, 39, Wiesbaden",
+            "Viele sagen, Jugendliche interessieren sich nicht für Politik. Ich glaube, das ist falsch herum gedacht. Das Interesse kommt erst, wenn man wirklich mitmachen darf. Als ich mit 18 zum ersten Mal wählen durfte, habe ich plötzlich Nachrichten gelesen und mit Freunden diskutiert. Warum soll das nicht schon zwei Jahre früher passieren? Wer früher anfängt, bleibt vielleicht auch länger dabei.",
+            "Ömer, 31, Bochum",
+            "Meine Tochter ist 16 und liest jeden Morgen die Zeitung, bevor sie in die Schule geht. Beim Abendessen diskutiert sie mit uns über Klimapolitik oder über die nächsten Abstimmungen und weiss oft besser Bescheid als mein Mann und ich. Viele Erwachsene gehen dagegen gar nicht abstimmen. Warum sollen Jugendliche wie sie warten müssen, bis sie 18 sind?",
+            "Simone, 55, Langenthal",
+            "Ich durfte im letzten Jahr zum ersten Mal wählen, und ich bin froh, dass es nicht früher war. Mit 16 habe ich mich kaum mit Politik beschäftigt und hätte bestimmt einfach das gewählt, was meine Eltern wählen. Erst in den letzten zwei Jahren habe ich eine eigene Meinung entwickelt. Das braucht einfach Zeit.",
+            "Moritz, 18, Darmstadt"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 20,
+            "correct": "falsch",
+            "explanation": "Werner meint, dass sich die meisten 16-Jährigen nicht für Politik interessieren. Deshalb sollen sie für ihn noch nicht wählen.",
+            "evidence": {
+              "text": "Ich war selbst einmal 16 und weiß noch genau, was mich damals interessiert hat: Fußball, Musik und Mädchen. Politik kam darin nicht vor. Bei meinen Enkeln ist es heute nicht anders, sie reden über Videospiele und Serien. Das ist in diesem Alter völlig normal. Aber wer sich nicht informiert, sollte auch nicht über die Zukunft des Landes entscheiden.",
+              "hit": "Aber wer sich nicht informiert, sollte auch nicht über die Zukunft des Landes entscheiden."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "richtig",
+            "explanation": "Magdalena hat in Österreich schon mit 16 gewählt und gute Erfahrungen gemacht. Sie empfiehlt das Wahlrecht ab 16.",
+            "evidence": {
+              "text": "Bei uns in Österreich dürfen Jugendliche schon seit vielen Jahren mit 16 wählen, und niemand findet das seltsam. Ich habe meine erste Stimme noch vor der Matura abgegeben. Wir haben vorher im Unterricht die Programme der Parteien verglichen und lange diskutiert. Das war spannend, und seitdem bin ich bei jeder Wahl dabei. Ich kann es nur empfehlen.",
+              "hit": "Ich kann es nur empfehlen."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Urs hat nichts gegen junge Leute, findet die Abstimmungen aber zu kompliziert. Er findet das Nein in seinem Kanton richtig.",
+            "evidence": {
+              "text": "Ich habe nichts gegen junge Leute. Aber bei uns stimmt man nicht nur alle paar Jahre über Parteien ab, sondern mehrmals im Jahr über schwierige Sachfragen, zum Beispiel über Steuern oder Bauprojekte. Das ist schon für viele Erwachsene zu kompliziert. In unserem Kanton hat das Volk deshalb Nein zum Stimmrecht ab 16 gesagt, und ich finde das richtig.",
+              "hit": "In unserem Kanton hat das Volk deshalb Nein zum Stimmrecht ab 16 gesagt, und ich finde das richtig."
+            }
+          },
+          {
+            "n": 23,
+            "correct": "falsch",
+            "explanation": "Jessica findet Interesse an Politik gut, will aber zuerst mehr Politikunterricht. Für das Wahlrecht ab 16 ist es ihr jetzt noch zu früh.",
+            "evidence": {
+              "text": "Grundsätzlich finde ich es gut, wenn junge Menschen sich für Politik interessieren. Aber im Moment lernen sie in der Schule viel zu wenig darüber, wie unser Staat funktioniert. Zuerst brauchen wir mehr Politikunterricht, und zwar ab der siebten Klasse. Wenn das ein paar Jahre gut läuft, kann man vielleicht noch einmal über das Wahlalter sprechen. Jetzt wäre es zu früh.",
+              "hit": "Jetzt wäre es zu früh."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "richtig",
+            "explanation": "Ömer glaubt, dass das Interesse an Politik erst kommt, wenn man wählen darf. Darum soll das schon mit 16 möglich sein.",
+            "evidence": {
+              "text": "Viele sagen, Jugendliche interessieren sich nicht für Politik. Ich glaube, das ist falsch herum gedacht. Das Interesse kommt erst, wenn man wirklich mitmachen darf. Als ich mit 18 zum ersten Mal wählen durfte, habe ich plötzlich Nachrichten gelesen und mit Freunden diskutiert. Warum soll das nicht schon zwei Jahre früher passieren? Wer früher anfängt, bleibt vielleicht auch länger dabei.",
+              "hit": "Warum soll das nicht schon zwei Jahre früher passieren?"
+            }
+          },
+          {
+            "n": 25,
+            "correct": "richtig",
+            "explanation": "Simones Tochter ist mit 16 gut informiert. Simone findet, dass solche Jugendliche nicht bis 18 warten sollen.",
+            "evidence": {
+              "text": "Meine Tochter ist 16 und liest jeden Morgen die Zeitung, bevor sie in die Schule geht. Beim Abendessen diskutiert sie mit uns über Klimapolitik oder über die nächsten Abstimmungen und weiss oft besser Bescheid als mein Mann und ich. Viele Erwachsene gehen dagegen gar nicht abstimmen. Warum sollen Jugendliche wie sie warten müssen, bis sie 18 sind?",
+              "hit": "Warum sollen Jugendliche wie sie warten müssen, bis sie 18 sind?"
+            }
+          },
+          {
+            "n": 26,
+            "correct": "falsch",
+            "explanation": "Moritz ist froh, dass er nicht schon mit 16 wählen durfte. Damals hätte er einfach wie seine Eltern gewählt.",
+            "evidence": {
+              "text": "Ich durfte im letzten Jahr zum ersten Mal wählen, und ich bin froh, dass es nicht früher war. Mit 16 habe ich mich kaum mit Politik beschäftigt und hätte bestimmt einfach das gewählt, was meine Eltern wählen. Erst in den letzten zwei Jahren habe ich eine eigene Meinung entwickelt. Das braucht einfach Zeit.",
+              "hit": "ich bin froh, dass es nicht früher war"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-b1-lesen-03-t5-01",
+      "exam": "oesd-b1",
+      "skill": "lesen",
+      "teil": 5,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.449Z",
+        "textType": "Hausordnung Jugendgästehaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Sie haben für Ihre Familie zwei Nächte in einem Jugendgästehaus gebucht und lesen jetzt die Hausordnung.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Wer spät anreist, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "muss spätestens um 21 Uhr ankommen."
+                },
+                {
+                  "key": "b",
+                  "label": "holt den Schlüssel im Nachbarhaus ab."
+                },
+                {
+                  "key": "c",
+                  "label": "sollte vorher anrufen und bekommt einen Türcode."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Die Gästeküche …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist rund um die Uhr geöffnet."
+                },
+                {
+                  "key": "b",
+                  "label": "kann man bis 21 Uhr benutzen."
+                },
+                {
+                  "key": "c",
+                  "label": "dürfen nur Gruppen benutzen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Bettwäsche …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist im Zimmerpreis schon dabei."
+                },
+                {
+                  "key": "b",
+                  "label": "muss man selbst mitbringen."
+                },
+                {
+                  "key": "c",
+                  "label": "kostet drei Euro pro Person."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Am Abreisetag …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "müssen Sie das Haus um 8 Uhr verlassen."
+                },
+                {
+                  "key": "b",
+                  "label": "können Sie kein Gepäck im Haus lassen."
+                },
+                {
+                  "key": "c",
+                  "label": "darf Ihr Gepäck bis 16 Uhr im Haus bleiben."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Hausordnung",
+          "paragraphs": [
+            "Hausordnung im Jugendgästehaus „Weserblick“, Hameln",
+            "**Anreise**",
+            "Unsere Rezeption ist täglich von 15 bis 21 Uhr besetzt. Die Zimmer sind ab 15 Uhr bezugsfertig. Wenn Sie später ankommen, rufen Sie uns bitte bis 18 Uhr an. Sie bekommen dann per SMS einen Code für die Haustür, Ihren Schlüssel finden Sie in einem kleinen Schlüsselfach im Eingang. Parkplätze gibt es im Hof hinter dem Nachbarhaus.",
+            "**Zimmer und Bettwäsche**",
+            "Bettwäsche ist im Übernachtungspreis enthalten und liegt auf Ihrem Bett. Bitte beziehen Sie die Betten selbst. Handtücher bringen Sie bitte mit oder leihen sie an der Rezeption für 3 € pro Stück. In den Zimmern darf nicht gegessen werden.",
+            "**Gästeküche**",
+            "Im Erdgeschoss gibt es eine Küche, die alle Gäste von 7 bis 21 Uhr benutzen dürfen. Gruppen ab zehn Personen melden sich bitte vorher an der Rezeption an. Räumen Sie nach dem Kochen auf und beschriften Sie Lebensmittel im Kühlschrank mit Ihrer Zimmernummer. Kaffee und kalte Getränke bekommen Sie rund um die Uhr am Automaten im Flur.",
+            "**Nachtruhe**",
+            "Von 22 bis 7 Uhr ist Nachtruhe. Bitte nehmen Sie in dieser Zeit Rücksicht auf andere Gäste, besonders auf Familien mit kleinen Kindern. Rauchen ist im ganzen Haus verboten.",
+            "**Abreise**",
+            "Am Abreisetag räumen Sie Ihr Zimmer bitte bis 10 Uhr. Wenn Sie vor 8 Uhr abreisen, werfen Sie den Schlüssel einfach in den Briefkasten neben der Rezeption. Ihr Gepäck können Sie bis 16 Uhr im Gepäckraum abstellen. So können Sie ohne Koffer noch einen Spaziergang durch die Altstadt machen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Wer später kommt, ruft bis 18 Uhr an und bekommt per SMS einen Code für die Haustür. Das Nachbarhaus wird nur bei den Parkplätzen genannt.",
+            "evidence": {
+              "text": "Unsere Rezeption ist täglich von 15 bis 21 Uhr besetzt. Die Zimmer sind ab 15 Uhr bezugsfertig. Wenn Sie später ankommen, rufen Sie uns bitte bis 18 Uhr an. Sie bekommen dann per SMS einen Code für die Haustür, Ihren Schlüssel finden Sie in einem kleinen Schlüsselfach im Eingang. Parkplätze gibt es im Hof hinter dem Nachbarhaus.",
+              "hit": "Wenn Sie später ankommen, rufen Sie uns bitte bis 18 Uhr an. Sie bekommen dann per SMS einen Code für die Haustür"
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Die Küche ist für alle Gäste von 7 bis 21 Uhr offen. Rund um die Uhr gibt es nur den Getränkeautomaten.",
+            "evidence": {
+              "text": "Im Erdgeschoss gibt es eine Küche, die alle Gäste von 7 bis 21 Uhr benutzen dürfen. Gruppen ab zehn Personen melden sich bitte vorher an der Rezeption an. Räumen Sie nach dem Kochen auf und beschriften Sie Lebensmittel im Kühlschrank mit Ihrer Zimmernummer. Kaffee und kalte Getränke bekommen Sie rund um die Uhr am Automaten im Flur.",
+              "hit": "die alle Gäste von 7 bis 21 Uhr benutzen dürfen"
+            }
+          },
+          {
+            "n": 29,
+            "correct": "a",
+            "explanation": "Die Bettwäsche ist im Übernachtungspreis enthalten. Mitbringen oder für 3 € leihen muss man nur Handtücher.",
+            "evidence": {
+              "text": "Bettwäsche ist im Übernachtungspreis enthalten und liegt auf Ihrem Bett. Bitte beziehen Sie die Betten selbst. Handtücher bringen Sie bitte mit oder leihen sie an der Rezeption für 3 € pro Stück. In den Zimmern darf nicht gegessen werden.",
+              "hit": "Bettwäsche ist im Übernachtungspreis enthalten"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "c",
+            "explanation": "Das Gepäck kann bis 16 Uhr im Gepäckraum bleiben. Die Zeit 8 Uhr gilt nur für Gäste, die sehr früh abreisen.",
+            "evidence": {
+              "text": "Am Abreisetag räumen Sie Ihr Zimmer bitte bis 10 Uhr. Wenn Sie vor 8 Uhr abreisen, werfen Sie den Schlüssel einfach in den Briefkasten neben der Rezeption. Ihr Gepäck können Sie bis 16 Uhr im Gepäckraum abstellen. So können Sie ohne Koffer noch einen Spaziergang durch die Altstadt machen.",
+              "hit": "Ihr Gepäck können Sie bis 16 Uhr im Gepäckraum abstellen."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

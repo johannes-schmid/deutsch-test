@@ -1,0 +1,481 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-07-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.655Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Winterfest am Dorfplatz, Ried im Innkreis",
+                  "text": "Samstag ab 14 Uhr: Wettbewerb „Der schönste Schneemann“, um 16 Uhr Kinderfilm „Die kleine Maus“. Am Abend Lagerfeuer mit Holz aus dem Wald. Eintritt frei!"
+                },
+                {
+                  "key": "2",
+                  "title": "Dachdeckerei Petersen, Flensburg",
+                  "text": "Ihr Dach ist kaputt? Wir reparieren Dächer schnell und gut, auch nach einem Sturm. Wir kommen auch am Wochenende. Telefon 0461 583 27 40, www.dach-petersen.de"
+                },
+                {
+                  "key": "3",
+                  "title": "Hausmeisterservice Krüger, Kempten",
+                  "text": "Unser Winterdienst für Sie: Wir räumen jeden Morgen vor 7 Uhr den Schnee vor Ihrem Haus. Auch Treppen und Wege. Telefon 0831 960 45 12"
+                },
+                {
+                  "key": "4",
+                  "title": "Brennholz Zauner, Vöcklabruck",
+                  "text": "Trockenes Buchenholz für Ofen und Kamin. Wir bringen das Holz zu Ihnen nach Hause. Bestellen Sie jetzt für den Winter: 0664 318 72 05"
+                },
+                {
+                  "key": "5",
+                  "title": "Garagenpark Heidelberg",
+                  "text": "Garagen und Parkplätze zu vermieten, in vielen Stadtteilen. Ab 60 € im Monat, auch für ein Jahr. Sicher und sauber. Infos: www.garagenpark-heidelberg.de"
+                },
+                {
+                  "key": "6",
+                  "title": "Schädlingsbekämpfung Bühlmann, Lenzburg",
+                  "text": "Mäuse im Keller? Insekten in der Küche? Wir helfen Ihnen schnell und diskret, auch am Samstag. Telefon 062 891 44 70, www.buehlmann-lenzburg.ch"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Sie haben ein neues Auto. Bei Ihrer Wohnung gibt es keinen Platz für das Auto."
+                },
+                {
+                  "n": 2,
+                  "text": "Im Winter fahren Sie sehr früh zur Arbeit. Sie haben keine Zeit für den Schnee vor Ihrem Haus."
+                },
+                {
+                  "n": 3,
+                  "text": "In Ihrem Keller sind Mäuse. Sie möchten die Tiere nicht im Haus haben."
+                },
+                {
+                  "n": 4,
+                  "text": "Wenn es regnet, kommt Wasser von oben in Ihre Wohnung. Sie brauchen schnell Hilfe."
+                },
+                {
+                  "n": 5,
+                  "text": "Sie haben einen Ofen für Holz. Sie brauchen Holz für den kalten Winter."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "5",
+            "explanation": "Beim Garagenpark in Heidelberg kannst du eine Garage oder einen Parkplatz mieten.",
+            "evidence": {
+              "text": "Garagenpark Heidelberg Garagen und Parkplätze zu vermieten, in vielen Stadtteilen. Ab 60 € im Monat, auch für ein Jahr. Sicher und sauber. Infos: www.garagenpark-heidelberg.de",
+              "hit": "Garagen und Parkplätze zu vermieten"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "3",
+            "explanation": "Der Hausmeisterservice räumt jeden Morgen den Schnee vor deinem Haus. Beim Winterfest baut man nur einen Schneemann.",
+            "evidence": {
+              "text": "Hausmeisterservice Krüger, Kempten Unser Winterdienst für Sie: Wir räumen jeden Morgen vor 7 Uhr den Schnee vor Ihrem Haus. Auch Treppen und Wege. Telefon 0831 960 45 12",
+              "hit": "Wir räumen jeden Morgen vor 7 Uhr den Schnee vor Ihrem Haus."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "6",
+            "explanation": "Die Firma in Lenzburg hilft gegen Mäuse im Keller. Beim Winterfest gibt es nur einen Film über eine Maus.",
+            "evidence": {
+              "text": "Schädlingsbekämpfung Bühlmann, Lenzburg Mäuse im Keller? Insekten in der Küche? Wir helfen Ihnen schnell und diskret, auch am Samstag. Telefon 062 891 44 70, www.buehlmann-lenzburg.ch",
+              "hit": "Mäuse im Keller?"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "2",
+            "explanation": "Das Wasser kommt durch das Dach. Die Dachdeckerei repariert Dächer schnell.",
+            "evidence": {
+              "text": "Dachdeckerei Petersen, Flensburg Ihr Dach ist kaputt? Wir reparieren Dächer schnell und gut, auch nach einem Sturm. Wir kommen auch am Wochenende. Telefon 0461 583 27 40, www.dach-petersen.de",
+              "hit": "Wir reparieren Dächer schnell und gut"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "4",
+            "explanation": "Die Firma in Vöcklabruck bringt Holz für den Ofen zu dir nach Hause. Das Holz beim Winterfest ist nur für das Lagerfeuer.",
+            "evidence": {
+              "text": "Brennholz Zauner, Vöcklabruck Trockenes Buchenholz für Ofen und Kamin. Wir bringen das Holz zu Ihnen nach Hause. Bestellen Sie jetzt für den Winter: 0664 318 72 05",
+              "hit": "Wir bringen das Holz zu Ihnen nach Hause."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-07-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.655Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Kinderzeitung Saale-Spatz, Jena",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Malwettbewerb: Mein Lieblingsplatz in Jena",
+            "Für Kinder von 5 bis 12 Jahren: Male deinen Lieblingsplatz in Jena!",
+            "Schick dein Bild bis zum 30. April per Post oder bring es in unser Büro, Johannisstraße 9.",
+            "Preise: tolle Malkästen!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kann man das Bild mit der Post schicken?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Kann ein Kind mit 14 Jahren mitmachen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Du kannst das Bild per Post schicken oder ins Büro bringen.",
+            "evidence": {
+              "text": "Malwettbewerb: Mein Lieblingsplatz in Jena Für Kinder von 5 bis 12 Jahren: Male deinen Lieblingsplatz in Jena! Schick dein Bild bis zum 30. April per Post oder bring es in unser Büro, Johannisstraße 9. Preise: tolle Malkästen!",
+              "hit": "Schick dein Bild bis zum 30. April per Post"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Der Wettbewerb ist nur für Kinder von 5 bis 12 Jahren. Ein Kind mit 14 ist zu alt.",
+            "evidence": {
+              "text": "Malwettbewerb: Mein Lieblingsplatz in Jena Für Kinder von 5 bis 12 Jahren: Male deinen Lieblingsplatz in Jena! Schick dein Bild bis zum 30. April per Post oder bring es in unser Büro, Johannisstraße 9. Preise: tolle Malkästen!",
+              "hit": "Für Kinder von 5 bis 12 Jahren"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-07-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.655Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Stadtgemeinde Bruck an der Mur",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Sprechstunde beim Bürgermeister",
+            "Haben Sie Fragen oder Ideen für unsere Stadt?",
+            "Jeden ersten Dienstag im Monat, 16 bis 18 Uhr",
+            "Rathaus, Zimmer 3",
+            "Sie brauchen keinen Termin. Kommen Sie einfach vorbei!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Ist die Sprechstunde jeden Dienstag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Braucht man für die Sprechstunde einen Termin?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Die Sprechstunde ist nur am ersten Dienstag im Monat, also nicht jede Woche.",
+            "evidence": {
+              "text": "Sprechstunde beim Bürgermeister Haben Sie Fragen oder Ideen für unsere Stadt? Jeden ersten Dienstag im Monat, 16 bis 18 Uhr Rathaus, Zimmer 3 Sie brauchen keinen Termin. Kommen Sie einfach vorbei!",
+              "hit": "Jeden ersten Dienstag im Monat"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Im Text steht: Sie brauchen keinen Termin. Du kannst einfach kommen.",
+            "evidence": {
+              "text": "Sprechstunde beim Bürgermeister Haben Sie Fragen oder Ideen für unsere Stadt? Jeden ersten Dienstag im Monat, 16 bis 18 Uhr Rathaus, Zimmer 3 Sie brauchen keinen Termin. Kommen Sie einfach vorbei!",
+              "hit": "Sie brauchen keinen Termin."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-07-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.655Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Quartierverein Bülach-Nord",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Putztag im Quartier",
+            "Samstag, 4. April, 9 bis 12 Uhr",
+            "Wir machen die Strassen in unserem Quartier sauber – helfen Sie mit!",
+            "Treffpunkt: vor dem Schulhaus",
+            "Handschuhe und Säcke bekommen Sie von uns. Getränke sind gratis."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Ist der Putztag am Vormittag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Muss man Handschuhe mitbringen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Der Putztag ist von 9 bis 12 Uhr, also am Vormittag.",
+            "evidence": {
+              "text": "Putztag im Quartier Samstag, 4. April, 9 bis 12 Uhr Wir machen die Strassen in unserem Quartier sauber – helfen Sie mit! Treffpunkt: vor dem Schulhaus Handschuhe und Säcke bekommen Sie von uns. Getränke sind gratis.",
+              "hit": "Samstag, 4. April, 9 bis 12 Uhr"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "falsch",
+            "explanation": "Die Handschuhe bekommst du vom Verein. Du musst sie nicht mitbringen.",
+            "evidence": {
+              "text": "Putztag im Quartier Samstag, 4. April, 9 bis 12 Uhr Wir machen die Strassen in unserem Quartier sauber – helfen Sie mit! Treffpunkt: vor dem Schulhaus Handschuhe und Säcke bekommen Sie von uns. Getränke sind gratis.",
+              "hit": "Handschuhe und Säcke bekommen Sie von uns."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-07-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.655Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Nachtruhe, Mond",
+                  "text": "",
+                  "picto": "nachtruhe"
+                },
+                {
+                  "key": "2",
+                  "title": "Kuh",
+                  "text": "",
+                  "picto": "kuh"
+                },
+                {
+                  "key": "3",
+                  "title": "Biotonne",
+                  "text": "",
+                  "picto": "biomuell"
+                },
+                {
+                  "key": "4",
+                  "title": "Tankstelle",
+                  "text": "",
+                  "picto": "tankstelle"
+                },
+                {
+                  "key": "5",
+                  "title": "Ladestation für Elektroautos",
+                  "text": "",
+                  "picto": "ladestation"
+                },
+                {
+                  "key": "6",
+                  "title": "Hände waschen",
+                  "text": "",
+                  "picto": "haendewaschen"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Hausbewohnerinnen und Hausbewohner! Bitte werfen Sie Küchenabfälle nur in die braune Tonne im Hof. Sie gehören nicht in den Mistkübel in der Wohnung. Danke!"
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Wanderinnen und Wanderer! Auf dieser Wiese sind Kühe. Bitte machen Sie das Tor immer wieder zu. Vielen Dank!"
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Mitarbeiterinnen und Mitarbeiter! Bitte waschen Sie immer die Hände: vor der Arbeit und nach der Toilette. Seife und Handtücher sind hier."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Kundinnen und Kunden! Hier können Sie Ihr Elektroauto laden. Die erste Stunde ist gratis, danach kostet sie 3 Euro."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Gäste der Jugendherberge! Ab 22 Uhr ist Nachtruhe im Haus. Bitte sprechen Sie dann nicht laut in den Gängen. Andere Gäste möchten schlafen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "3",
+            "explanation": "Küchenabfälle kommen in die braune Tonne. Das zeigt das Bild mit der Biotonne.",
+            "evidence": {
+              "text": "Liebe Hausbewohnerinnen und Hausbewohner! Bitte werfen Sie Küchenabfälle nur in die braune Tonne im Hof. Sie gehören nicht in den Mistkübel in der Wohnung. Danke!",
+              "hit": "Küchenabfälle nur in die braune Tonne im Hof"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "2",
+            "explanation": "Auf der Wiese sind Kühe. Das passt zum Bild mit der Kuh.",
+            "evidence": {
+              "text": "Liebe Wanderinnen und Wanderer! Auf dieser Wiese sind Kühe. Bitte machen Sie das Tor immer wieder zu. Vielen Dank!",
+              "hit": "Auf dieser Wiese sind Kühe."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "6",
+            "explanation": "Die Mitarbeiter sollen die Hände waschen. Das zeigt das Bild mit dem Händewaschen.",
+            "evidence": {
+              "text": "Liebe Mitarbeiterinnen und Mitarbeiter! Bitte waschen Sie immer die Hände: vor der Arbeit und nach der Toilette. Seife und Handtücher sind hier.",
+              "hit": "Bitte waschen Sie immer die Hände"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "5",
+            "explanation": "Hier lädt man ein Elektroauto. Die Tankstelle ist für Benzin, nicht für Strom.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden! Hier können Sie Ihr Elektroauto laden. Die erste Stunde ist gratis, danach kostet sie 3 Euro.",
+              "hit": "Hier können Sie Ihr Elektroauto laden."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "1",
+            "explanation": "Ab 22 Uhr sollen die Gäste ruhig sein und schlafen. Das passt zum Bild mit dem Mond.",
+            "evidence": {
+              "text": "Liebe Gäste der Jugendherberge! Ab 22 Uhr ist Nachtruhe im Haus. Bitte sprechen Sie dann nicht laut in den Gängen. Andere Gäste möchten schlafen.",
+              "hit": "Ab 22 Uhr ist Nachtruhe im Haus."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

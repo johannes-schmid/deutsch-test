@@ -1,0 +1,480 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-05-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.640Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Beratungsstelle Brücke, Dornbirn",
+                  "text": "Probleme mit Post vom Amt? Wir helfen Ihnen kostenlos bei Briefen und Formularen. Dienstag und Donnerstag, 9 bis 12 Uhr, ohne Termin. Marktstraße 21."
+                },
+                {
+                  "key": "2",
+                  "title": "Teppichpflege Aebi, Rapperswil",
+                  "text": "Ist Ihr Teppich schmutzig? Wir holen ihn bei Ihnen ab, waschen ihn und bringen ihn sauber zurück. Ab CHF 39.–. Telefon 055 210 64 17, www.teppich-aebi.ch"
+                },
+                {
+                  "key": "3",
+                  "title": "Glaserei Pirker, Spittal an der Drau",
+                  "text": "Neues Glas für Fenster und Türen, schnell und günstig. Wir kommen zu Ihnen nach Hause, meistens schon am gleichen Tag. Rufen Sie an: 0676 / 318 52 90"
+                },
+                {
+                  "key": "4",
+                  "title": "Dekor & Mehr, Trier",
+                  "text": "Großer Ausverkauf! Glasvasen, Schachspiele aus Holz und schöne Teppiche ab 29 Euro. Nur diese Woche! Geöffnet Montag bis Samstag von 10 bis 19 Uhr. Brückenweg 14."
+                },
+                {
+                  "key": "5",
+                  "title": "Schachclub Springer, Münster",
+                  "text": "Sie möchten Schach spielen lernen? Bei uns sind Anfänger herzlich willkommen. Jeden Mittwoch ab 19 Uhr im Bürgerhaus. Der erste Abend ist gratis. www.schachclub-springer.de"
+                },
+                {
+                  "key": "6",
+                  "title": "Repair-Café Neckarstadt, Mannheim",
+                  "text": "Ihr Toaster, Ihr Radio oder Ihre Lampe ist kaputt? Werfen Sie sie nicht weg! Unsere Helfer reparieren sie gratis. Jeden ersten Samstag im Monat, 14 bis 17 Uhr."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "In Ihrer Küche ist ein Fenster kaputt. Sie brauchen neues Glas."
+                },
+                {
+                  "n": 2,
+                  "text": "Schach ist neu für Sie. Sie möchten einmal pro Woche mit anderen Leuten spielen."
+                },
+                {
+                  "n": 3,
+                  "text": "Ihr großer Teppich ist sehr schmutzig. Sie können ihn nicht selbst waschen."
+                },
+                {
+                  "n": 4,
+                  "text": "Sie haben Post von einer Behörde bekommen. Sie verstehen das Formular nicht und brauchen Hilfe."
+                },
+                {
+                  "n": 5,
+                  "text": "Ihr Toaster geht nicht mehr. Sie möchten aber keinen neuen kaufen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "3",
+            "explanation": "Die Glaserei bringt neues Glas für Fenster zu dir nach Hause. Das Geschäft in Trier verkauft nur Vasen aus Glas.",
+            "evidence": {
+              "text": "Glaserei Pirker, Spittal an der Drau Neues Glas für Fenster und Türen, schnell und günstig. Wir kommen zu Ihnen nach Hause, meistens schon am gleichen Tag. Rufen Sie an: 0676 / 318 52 90",
+              "hit": "Neues Glas für Fenster und Türen"
+            }
+          },
+          {
+            "n": 2,
+            "text": "",
+            "correct": "5",
+            "explanation": "Im Schachclub können Anfänger jeden Mittwoch spielen. Im Geschäft in Trier kannst du nur ein Schachspiel kaufen.",
+            "evidence": {
+              "text": "Schachclub Springer, Münster Sie möchten Schach spielen lernen? Bei uns sind Anfänger herzlich willkommen. Jeden Mittwoch ab 19 Uhr im Bürgerhaus. Der erste Abend ist gratis. www.schachclub-springer.de",
+              "hit": "Bei uns sind Anfänger herzlich willkommen. Jeden Mittwoch ab 19 Uhr"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "2",
+            "explanation": "Die Teppichpflege holt den Teppich ab und wäscht ihn. Im Geschäft in Trier kannst du nur neue Teppiche kaufen.",
+            "evidence": {
+              "text": "Teppichpflege Aebi, Rapperswil Ist Ihr Teppich schmutzig? Wir holen ihn bei Ihnen ab, waschen ihn und bringen ihn sauber zurück. Ab CHF 39.–. Telefon 055 210 64 17, www.teppich-aebi.ch",
+              "hit": "Wir holen ihn bei Ihnen ab, waschen ihn"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "1",
+            "explanation": "Die Beratungsstelle hilft bei Briefen und Formularen vom Amt. Das kostet nichts.",
+            "evidence": {
+              "text": "Beratungsstelle Brücke, Dornbirn Probleme mit Post vom Amt? Wir helfen Ihnen kostenlos bei Briefen und Formularen. Dienstag und Donnerstag, 9 bis 12 Uhr, ohne Termin. Marktstraße 21.",
+              "hit": "Wir helfen Ihnen kostenlos bei Briefen und Formularen."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "6",
+            "explanation": "Im Repair-Café reparieren Helfer kaputte Toaster. So musst du keinen neuen kaufen.",
+            "evidence": {
+              "text": "Repair-Café Neckarstadt, Mannheim Ihr Toaster, Ihr Radio oder Ihre Lampe ist kaputt? Werfen Sie sie nicht weg! Unsere Helfer reparieren sie gratis. Jeden ersten Samstag im Monat, 14 bis 17 Uhr.",
+              "hit": "Unsere Helfer reparieren sie gratis."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-05-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.640Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Freiwillige Feuerwehr Zell am See",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Besuchen Sie die Feuerwehr!",
+            "Sonntag, 22. Juni, von 10 bis 16 Uhr: Sehen Sie unsere Feuerwehrautos an!",
+            "Der Eintritt ist frei.",
+            "Parkplätze gibt es bei der Volksschule, nur zwei Minuten zu Fuß."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kann man die Feuerwehr am Samstag besuchen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Kann man bei der Schule parken?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Der Besuch ist am Sonntag, nicht am Samstag.",
+            "evidence": {
+              "text": "Besuchen Sie die Feuerwehr! Sonntag, 22. Juni, von 10 bis 16 Uhr: Sehen Sie unsere Feuerwehrautos an! Der Eintritt ist frei. Parkplätze gibt es bei der Volksschule, nur zwei Minuten zu Fuß.",
+              "hit": "Sonntag, 22. Juni"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Bei der Volksschule gibt es Parkplätze. Das ist nur zwei Minuten zu Fuß.",
+            "evidence": {
+              "text": "Besuchen Sie die Feuerwehr! Sonntag, 22. Juni, von 10 bis 16 Uhr: Sehen Sie unsere Feuerwehrautos an! Der Eintritt ist frei. Parkplätze gibt es bei der Volksschule, nur zwei Minuten zu Fuß.",
+              "hit": "Parkplätze gibt es bei der Volksschule"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-05-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.640Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Stadtteiltreff Gießen-West",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Hilfe mit dem Handy",
+            "Jeden Mittwoch von 10 bis 11.30 Uhr erklären wir Ihnen Ihr Handy.",
+            "Die Hilfe ist kostenlos, eine Anmeldung ist nicht nötig.",
+            "Bitte bringen Sie Ihr eigenes Handy mit."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Ist die Hilfe mit dem Handy am Abend?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Muss man für die Hilfe bezahlen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Die Hilfe ist von 10 bis 11.30 Uhr, also am Vormittag.",
+            "evidence": {
+              "text": "Hilfe mit dem Handy Jeden Mittwoch von 10 bis 11.30 Uhr erklären wir Ihnen Ihr Handy. Die Hilfe ist kostenlos, eine Anmeldung ist nicht nötig. Bitte bringen Sie Ihr eigenes Handy mit.",
+              "hit": "Jeden Mittwoch von 10 bis 11.30 Uhr"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Die Hilfe ist kostenlos. Du musst nur dein Handy mitbringen.",
+            "evidence": {
+              "text": "Hilfe mit dem Handy Jeden Mittwoch von 10 bis 11.30 Uhr erklären wir Ihnen Ihr Handy. Die Hilfe ist kostenlos, eine Anmeldung ist nicht nötig. Bitte bringen Sie Ihr eigenes Handy mit.",
+              "hit": "Die Hilfe ist kostenlos"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-05-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.640Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Waldspielgruppe Tannzapfen, Uster",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Spielen im Wald",
+            "Für Kinder von 3 bis 5 Jahren: Montag und Donnerstag, 8.30 bis 11.30 Uhr.",
+            "Ein Morgen kostet CHF 15.–.",
+            "Bei jedem Wetter draussen! Ihr Kind braucht Regenkleider und Gummistiefel."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Ist die Spielgruppe am Freitag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Braucht das Kind Kleidung für schlechtes Wetter?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Die Spielgruppe ist nur am Montag und am Donnerstag.",
+            "evidence": {
+              "text": "Spielen im Wald Für Kinder von 3 bis 5 Jahren: Montag und Donnerstag, 8.30 bis 11.30 Uhr. Ein Morgen kostet CHF 15.–. Bei jedem Wetter draussen! Ihr Kind braucht Regenkleider und Gummistiefel.",
+              "hit": "Montag und Donnerstag"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Die Kinder sind bei jedem Wetter draussen. Sie brauchen Regenkleider und Gummistiefel.",
+            "evidence": {
+              "text": "Spielen im Wald Für Kinder von 3 bis 5 Jahren: Montag und Donnerstag, 8.30 bis 11.30 Uhr. Ein Morgen kostet CHF 15.–. Bei jedem Wetter draussen! Ihr Kind braucht Regenkleider und Gummistiefel.",
+              "hit": "Ihr Kind braucht Regenkleider und Gummistiefel."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-05-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.640Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Schirmständer",
+                  "text": "",
+                  "picto": "schirm"
+                },
+                {
+                  "key": "2",
+                  "title": "Altpapier",
+                  "text": "",
+                  "picto": "altpapier"
+                },
+                {
+                  "key": "3",
+                  "title": "Briefkasten",
+                  "text": "",
+                  "picto": "briefkasten"
+                },
+                {
+                  "key": "4",
+                  "title": "Skateboardfahren verboten",
+                  "text": "",
+                  "picto": "skateboard-verboten"
+                },
+                {
+                  "key": "5",
+                  "title": "Sammelplatz",
+                  "text": "",
+                  "picto": "sammelplatz"
+                },
+                {
+                  "key": "6",
+                  "title": "Ballspielen verboten",
+                  "text": "",
+                  "picto": "ballspiel-verboten"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Jugendliche! Auf dem Platz vor dem Rathaus ist Skateboardfahren verboten. Bitte fahrt im Skatepark beim Bahnhof. Danke!"
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Mieterinnen und Mieter! Altpapier gehört nur in die blaue Tonne im Hof. Bitte machen Sie Kartons vorher flach. Vielen Dank, Ihre Hausverwaltung"
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Museumsgäste! Heute regnet es. Bitte stellen Sie nasse Regenschirme in den Ständer beim Eingang. So bleibt der Boden trocken."
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Gäste! Hier können Sie Ihre Briefe und Postkarten einwerfen. Die Post holt sie jeden Tag um 16 Uhr ab."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Schülerinnen und Schüler! Bei Feueralarm geht ihr nicht in den Turnsaal. Wir treffen uns alle im Schulhof, bei der großen Linde. Bitte geht schnell und ruhig!"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "4",
+            "explanation": "Vor dem Rathaus darf man nicht Skateboard fahren. Das Bild mit dem verbotenen Ball passt nicht, hier geht es nicht um Ballspiele.",
+            "evidence": {
+              "text": "Liebe Jugendliche! Auf dem Platz vor dem Rathaus ist Skateboardfahren verboten. Bitte fahrt im Skatepark beim Bahnhof. Danke!",
+              "hit": "Skateboardfahren verboten"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "2",
+            "explanation": "Der Text ist über Altpapier und Kartons. Das passt zum Bild für Altpapier.",
+            "evidence": {
+              "text": "Liebe Mieterinnen und Mieter! Altpapier gehört nur in die blaue Tonne im Hof. Bitte machen Sie Kartons vorher flach. Vielen Dank, Ihre Hausverwaltung",
+              "hit": "Altpapier gehört nur in die blaue Tonne im Hof."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "1",
+            "explanation": "Nasse Regenschirme kommen in den Ständer. Das zeigt das Bild mit dem Schirmständer.",
+            "evidence": {
+              "text": "Liebe Museumsgäste! Heute regnet es. Bitte stellen Sie nasse Regenschirme in den Ständer beim Eingang. So bleibt der Boden trocken.",
+              "hit": "Bitte stellen Sie nasse Regenschirme in den Ständer beim Eingang."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "3",
+            "explanation": "Hier wirft man Briefe ein. Das passt zum Briefkasten.",
+            "evidence": {
+              "text": "Liebe Gäste! Hier können Sie Ihre Briefe und Postkarten einwerfen. Die Post holt sie jeden Tag um 16 Uhr ab.",
+              "hit": "Hier können Sie Ihre Briefe und Postkarten einwerfen."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "5",
+            "explanation": "Bei Feueralarm treffen sich alle im Schulhof. Das zeigt das Bild für den Sammelplatz.",
+            "evidence": {
+              "text": "Liebe Schülerinnen und Schüler! Bei Feueralarm geht ihr nicht in den Turnsaal. Wir treffen uns alle im Schulhof, bei der großen Linde. Bitte geht schnell und ruhig!",
+              "hit": "Wir treffen uns alle im Schulhof"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

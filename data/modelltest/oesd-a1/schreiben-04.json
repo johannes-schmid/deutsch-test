@@ -1,0 +1,251 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-04-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.636Z",
+        "textType": "Formular ausfüllen: Anmeldung für einen Yogakurs"
+      },
+      "exampleAnswers": [
+        "Yılmaz"
+      ],
+      "display": {
+        "instruction": "Situation: Ihre Freundin Fatma möchte einen Yogakurs machen. Sie füllen für Fatma das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Kurstage“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Yogaraum Tulln · Kursanmeldung\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nKursbeginn (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nNiveau: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "Anfänger",
+                    "Fortgeschrittene"
+                  ]
+                },
+                "\nZeit: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "vormittags",
+                    "abends"
+                  ]
+                },
+                "\nKurstage: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "Montag",
+                    "Dienstag",
+                    "Mittwoch",
+                    "Donnerstag"
+                  ],
+                  "pick": 2
+                },
+                "\nEigene Yogamatte: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "ja",
+                    "nein"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Fatma",
+            "explanation": "Der Vorname ist Fatma. Der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "Fatma Yılmaz"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "22.5.1992",
+            "accept": [
+              "22.05.1992",
+              "22. Mai 1992",
+              "22.5.92",
+              "22.05.92",
+              "1992-05-22"
+            ],
+            "explanation": "Fatma ist am 22. Mai 1992 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "am 22. Mai 1992 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Tulln",
+            "explanation": "Fatma wohnt in Tulln.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "Fatma Yılmaz aus Tulln"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0664 318 47 25",
+            "accept": [
+              "0664 3184725",
+              "06643184725",
+              "0664/3184725",
+              "0664 / 318 47 25"
+            ],
+            "explanation": "Das ist Fatmas Handynummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "0664 318 47 25"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "März",
+            "accept": [
+              "ab März",
+              "im März",
+              "Maerz"
+            ],
+            "explanation": "Fatma möchte ab März Yoga machen. Mai ist ihr Geburtsmonat, nicht der Kursbeginn.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "ab März"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "Anfänger",
+            "explanation": "Fatma hat noch nie Yoga gemacht. Darum ist sie Anfängerin, nicht Fortgeschrittene.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "Sie hat noch nie Yoga gemacht."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "abends",
+            "explanation": "Fatma arbeitet am Tag. Sie kann nur am Abend kommen, nicht vormittags.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "sie kann nur am Abend kommen"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Montag,Donnerstag",
+            "explanation": "Fatma kann am Montag und am Donnerstag kommen. Dienstag und Mittwoch sind falsch.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "am Montag und am Donnerstag"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "nein",
+            "explanation": "Fatma hat keine Yogamatte. Darum kreuzt du „nein“ an.",
+            "evidence": {
+              "text": "Ihre Freundin Fatma Yılmaz aus Tulln möchte ab März einen Yogakurs im „Yogaraum Tulln“ machen. Sie hat noch nie Yoga gemacht. Am Tag arbeitet Fatma, sie kann nur am Abend kommen, am Montag und am Donnerstag. Eine Yogamatte hat sie nicht. Fatma ist am 22. Mai 1992 geboren. Ihre Handynummer ist 0664 318 47 25.",
+              "hit": "Eine Yogamatte hat sie nicht."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-04-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.636Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihr Freund Paul hat Ihnen ein E-Mail geschrieben. Antworten Sie Paul. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Paul",
+            "situation": "Ihr Freund Paul aus Konstanz schreibt Ihnen: „Hallo! Im August mache ich mit meiner Freundin eine Reise in dein Land. Ich möchte vorher ein bisschen deine Sprache lernen. Kannst du mir helfen? Wann hast du Zeit? Wo können wir uns treffen? Und welches Buch soll ich kaufen? Ich freue mich auf deine Antwort! Viele Grüße, Paul“",
+            "points": [
+              "Wann hast du Zeit?",
+              "Wo können wir uns treffen?",
+              "Welches Buch soll ich kaufen?"
+            ],
+            "opener": "Lieber Paul,\ndanke für dein E-Mail. Ich helfe dir gern!"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Lieber Paul, danke für dein E-Mail. Ich helfe dir gern! Ich habe am Dienstag und am Freitag abends Zeit. Wir können uns im Café am Bahnhof treffen. Kauf bitte das Buch „Polnisch für Anfänger“. Bis bald! Liebe Grüße, Marta"
+          }
+        ]
+      }
+    }
+  ]
+}

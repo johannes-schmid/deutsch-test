@@ -1,0 +1,253 @@
+{
+  "exam": "oesd-a1",
+  "skill": "schreiben",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "oesd-a1-schreiben-02-t1",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.623Z",
+        "textType": "Formular ausfüllen: Anmeldung für freiwillige Mitarbeit im Seniorenhaus"
+      },
+      "exampleAnswers": [
+        "Petrović"
+      ],
+      "display": {
+        "instruction": "Situation: Ihre Freundin Ana möchte in einem Seniorenhaus helfen. Sie füllen für Ana das Formular aus. Schreiben Sie die Angaben in die Felder oder kreuzen Sie an. Bei „Tätigkeiten“ sind zwei Kreuze richtig.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Seniorenhaus am Lindenpark · Freiwillige Mitarbeit · Anmeldung\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nWohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nBeginn (Monat): ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTage: ",
+                {
+                  "n": 6,
+                  "options": [
+                    "Montag–Freitag",
+                    "Samstag–Sonntag"
+                  ]
+                },
+                "\nZeit: ",
+                {
+                  "n": 7,
+                  "options": [
+                    "vormittags",
+                    "nachmittags"
+                  ]
+                },
+                "\nTätigkeiten: ",
+                {
+                  "n": 8,
+                  "options": [
+                    "vorlesen",
+                    "spazieren gehen",
+                    "einkaufen gehen",
+                    "basteln"
+                  ],
+                  "pick": 2
+                },
+                "\nErfahrung mit älteren Menschen: ",
+                {
+                  "n": 9,
+                  "options": [
+                    "ja",
+                    "nein"
+                  ]
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Ana",
+            "explanation": "Der Vorname ist Ana. Der Name muss richtig geschrieben sein.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "Ana Petrović"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "17.7.1990",
+            "accept": [
+              "17.07.1990",
+              "17. Juli 1990",
+              "17.7.90",
+              "17.07.90",
+              "1990-07-17"
+            ],
+            "explanation": "Ana ist am 17. Juli 1990 geboren. Jede übliche Datumsform ist richtig.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "am 17. Juli 1990 geboren"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Göttingen",
+            "accept": [
+              "Goettingen"
+            ],
+            "explanation": "Ana wohnt in Göttingen. Lindenpark ist nur der Name vom Seniorenhaus.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "Ana Petrović aus Göttingen"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "0157 2384 1196",
+            "accept": [
+              "0157 23841196",
+              "015723841196",
+              "0157/23841196",
+              "0157 / 2384 1196"
+            ],
+            "explanation": "Das ist Anas Telefonnummer. Alle Ziffern müssen stimmen.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "0157 2384 1196"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "Oktober",
+            "accept": [
+              "ab Oktober",
+              "im Oktober"
+            ],
+            "explanation": "Ana möchte ab Oktober helfen. Juli ist ihr Geburtsmonat, nicht der Beginn.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "möchte ab Oktober"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "Samstag–Sonntag",
+            "explanation": "Ana hat nur am Wochenende Zeit. Das sind Samstag und Sonntag, nicht Montag bis Freitag.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "Sie hat nur am Wochenende Zeit"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "nachmittags",
+            "explanation": "Am Vormittag arbeitet Ana. Darum kann sie nur am Nachmittag kommen.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "vorlesen,spazieren gehen",
+            "explanation": "Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht, und vom Einkaufen steht nichts im Text.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "ja",
+            "explanation": "Ana hat ihre Oma gepflegt. Sie hat also schon Erfahrung mit älteren Menschen.",
+            "evidence": {
+              "text": "Ihre Freundin Ana Petrović aus Göttingen möchte ab Oktober im Seniorenhaus am Lindenpark helfen. Sie arbeitet am Vormittag. Sie hat nur am Wochenende Zeit, am Nachmittag. Ana liest gern vor und geht gern spazieren. Basteln mag sie nicht. Sie hat ihre Oma gepflegt. Ana ist am 17. Juli 1990 geboren. Telefon: 0157 2384 1196.",
+              "hit": "Sie hat ihre Oma gepflegt."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-schreiben-02-t2",
+      "exam": "oesd-a1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.623Z",
+        "textType": "Antwort auf ein persönliches E-Mail"
+      },
+      "display": {
+        "instruction": "Situation: Ihre Freundin Lea hat Ihnen ein E-Mail geschrieben. Antworten Sie Lea. Schreiben Sie circa 30 Wörter. Beantworten Sie alle Fragen und schreiben Sie am Ende einen Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Antwort an Lea",
+            "situation": "Ihre Freundin Lea aus Schaffhausen schreibt Ihnen: „Hallo! Im Juni habe ich endlich Ferien. Ich möchte dich an einem Wochenende besuchen. Ich komme am Freitag um 18 Uhr mit dem Zug an. Kann ich bei dir schlafen? Was können wir am Samstag machen? Holst du mich am Freitag am Bahnhof ab? Ich freue mich schon sehr! Liebe Grüsse, Lea“",
+            "points": [
+              "Kann ich bei dir schlafen?",
+              "Was können wir am Samstag machen?",
+              "Holst du mich am Freitag ab?"
+            ],
+            "opener": "Liebe Lea,\ndanke für dein E-Mail. Ich freue mich auf deinen Besuch!"
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Lea, danke für dein E-Mail. Ich freue mich auf deinen Besuch! Ja, du kannst bei mir schlafen. Am Samstag gehen wir in die Stadt und dann ins Kino. Ich hole dich am Freitag um 18 Uhr am Bahnhof ab. Bis bald! Liebe Grüße, Deniz"
+          }
+        ]
+      }
+    }
+  ]
+}

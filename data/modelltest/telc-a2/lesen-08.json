@@ -1,0 +1,480 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-08-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.357Z",
+        "textType": "Wegweiser in einem Ärztehaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ihre Ärztin hat Ihnen ein Rezept gegeben. Jetzt möchten Sie das Medikament holen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Immer wenn Sie etwas Kaltes trinken, tut ein Zahn weh.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Ihre Tabletten für den Blutdruck sind bald alle. Sie brauchen ein neues Rezept.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Seit ein paar Tagen hören Sie links nicht mehr gut.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Sie können Ihre Schulter kaum bewegen. Sie möchten Übungen dagegen machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Auf Ihrem Arm ist seit einer Woche ein roter Fleck.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ärztehaus am Schillerplatz",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "4. Obergeschoss: Krankengymnastik · Massage · Rückenkurse · Wartebereich mit Dachterrasse",
+            "3. Obergeschoss: HNO-Praxis (Hals, Nase, Ohren) · Frauenarztpraxis · Ultraschall",
+            "2. Obergeschoss: Zahnarztpraxis · Zahnreinigung · Hautarztpraxis · Allergie-Sprechstunde",
+            "1. Obergeschoss: Hausarztpraxis Dr. Ebeling (Allgemeinmedizin) · Impfungen · Gesundheits-Check",
+            "Erdgeschoss: Apotheke am Schillerplatz · Sanitätshaus · Empfang und Information",
+            "Untergeschoss: Labor (Blutabnahme) · Tiefgarage · Toiletten"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Bei Zahnschmerzen gehst du in die Zahnarztpraxis im 2. Obergeschoss. Im 4. Obergeschoss gibt es nur Krankengymnastik und Massage.",
+            "evidence": {
+              "text": "2. Obergeschoss: Zahnarztpraxis · Zahnreinigung · Hautarztpraxis · Allergie-Sprechstunde",
+              "hit": "Zahnarztpraxis"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Ein neues Rezept schreibt der Hausarzt im 1. Obergeschoss. In der Apotheke im Erdgeschoss bekommst du Tabletten, aber kein Rezept.",
+            "evidence": {
+              "text": "1. Obergeschoss: Hausarztpraxis Dr. Ebeling (Allgemeinmedizin) · Impfungen · Gesundheits-Check",
+              "hit": "Hausarztpraxis Dr. Ebeling"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "b",
+            "explanation": "Die HNO-Praxis im 3. Obergeschoss ist für die Ohren. Der Hausarzt ist im 1. Obergeschoss, aber für das Ohr ist die HNO-Praxis richtig.",
+            "evidence": {
+              "text": "3. Obergeschoss: HNO-Praxis (Hals, Nase, Ohren) · Frauenarztpraxis · Ultraschall",
+              "hit": "HNO-Praxis (Hals, Nase, Ohren)"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Übungen für die Schulter macht man in der Krankengymnastik im 4. Obergeschoss. Im 2. Obergeschoss sind Zahnarzt und Hautarzt.",
+            "evidence": {
+              "text": "4. Obergeschoss: Krankengymnastik · Massage · Rückenkurse · Wartebereich mit Dachterrasse",
+              "hit": "Krankengymnastik"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Mit einem Fleck auf der Haut gehst du in die Hautarztpraxis im 2. Obergeschoss. Im 3. und 4. Obergeschoss gibt es keinen Hautarzt.",
+            "evidence": {
+              "text": "2. Obergeschoss: Zahnarztpraxis · Zahnreinigung · Hautarztpraxis · Allergie-Sprechstunde",
+              "hit": "Hautarztpraxis"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-08-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.357Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Carla Mertens arbeitet oft hoch über dem Boden."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Carla Mertens war zuerst an der Universität."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Bei der Arbeit sind immer Kollegen dabei."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Carla Mertens klettert auch bei Sturm auf die Bäume."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Sie arbeitet vor allem in den Gärten von privaten Leuten."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Manchmal arbeitet sie in mehr als 25 Metern Höhe."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Ihr Arbeitsplatz ist ganz oben",
+            "Carla Mertens (29) aus Bayreuth hat einen ungewöhnlichen Beruf: Sie ist Baumpflegerin. Mit Seil und Helm klettert sie auf Bäume, schneidet trockene Äste ab und kontrolliert, ob ein Baum gesund ist.",
+            "Nach der Schule hat Carla Mertens zuerst Biologie studiert. „Das war mir zu viel Theorie“, sagt sie. Nach zwei Jahren hat sie aufgehört und eine Ausbildung als Gärtnerin gemacht. Danach hat sie einen Kurs für Baumkletterer besucht.",
+            "Heute arbeitet sie für die Stadt Bayreuth. Meistens ist sie in Parks und an Straßen unterwegs. Nur selten hilft sie auch Leuten mit einem großen Baum im eigenen Garten. Allein ist sie nie: Zu ihrem Team gehören noch zwei Kollegen. Einer bleibt immer unten und passt auf.",
+            "Die meisten Bäume in der Stadt sind etwa 20 Meter hoch. Manche alten Buchen im Park sind aber bis zu 35 Meter hoch. „Auch da klettere ich bis ganz nach oben“, erzählt sie. Nur bei starkem Wind bleibt das Team auf dem Boden – dann ist es zu gefährlich."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Sie hat zuerst zwei Jahre Biologie studiert. Erst danach hat sie die Ausbildung als Gärtnerin gemacht.",
+            "evidence": {
+              "text": "Nach der Schule hat Carla Mertens zuerst Biologie studiert. „Das war mir zu viel Theorie“, sagt sie. Nach zwei Jahren hat sie aufgehört und eine Ausbildung als Gärtnerin gemacht. Danach hat sie einen Kurs für Baumkletterer besucht.",
+              "hit": "Nach der Schule hat Carla Mertens zuerst Biologie studiert."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Sie ist nie allein, denn zu ihrem Team gehören zwei Kollegen. Einer passt immer unten auf.",
+            "evidence": {
+              "text": "Heute arbeitet sie für die Stadt Bayreuth. Meistens ist sie in Parks und an Straßen unterwegs. Nur selten hilft sie auch Leuten mit einem großen Baum im eigenen Garten. Allein ist sie nie: Zu ihrem Team gehören noch zwei Kollegen. Einer bleibt immer unten und passt auf.",
+              "hit": "Allein ist sie nie: Zu ihrem Team gehören noch zwei Kollegen."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Bei starkem Wind bleibt das Team unten, weil es zu gefährlich ist. Sie klettert also nicht bei Sturm.",
+            "evidence": {
+              "text": "Die meisten Bäume in der Stadt sind etwa 20 Meter hoch. Manche alten Buchen im Park sind aber bis zu 35 Meter hoch. „Auch da klettere ich bis ganz nach oben“, erzählt sie. Nur bei starkem Wind bleibt das Team auf dem Boden – dann ist es zu gefährlich.",
+              "hit": "Nur bei starkem Wind bleibt das Team auf dem Boden"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "falsch",
+            "explanation": "Meistens arbeitet sie für die Stadt in Parks und an Straßen. In privaten Gärten hilft sie nur selten.",
+            "evidence": {
+              "text": "Heute arbeitet sie für die Stadt Bayreuth. Meistens ist sie in Parks und an Straßen unterwegs. Nur selten hilft sie auch Leuten mit einem großen Baum im eigenen Garten. Allein ist sie nie: Zu ihrem Team gehören noch zwei Kollegen. Einer bleibt immer unten und passt auf.",
+              "hit": "Meistens ist sie in Parks und an Straßen unterwegs."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Manche Buchen im Park sind bis zu 35 Meter hoch, und sie klettert bis ganz nach oben. Die 20 Meter gelten nur für die meisten Bäume in der Stadt.",
+            "evidence": {
+              "text": "Die meisten Bäume in der Stadt sind etwa 20 Meter hoch. Manche alten Buchen im Park sind aber bis zu 35 Meter hoch. „Auch da klettere ich bis ganz nach oben“, erzählt sie. Nur bei starkem Wind bleibt das Team auf dem Boden – dann ist es zu gefährlich.",
+              "hit": "Manche alten Buchen im Park sind aber bis zu 35 Meter hoch. „Auch da klettere ich bis ganz nach oben“"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-08-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.357Z",
+        "textType": "Kleinanzeigen: verkaufen, verschenken, suchen"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Zu verschenken in Trier-Nord",
+                  "text": "Großes graues Sofa mit drei Sitzen, sehr bequem. Kostet nichts, Sie müssen es aber selbst abholen (2. Stock, kein Aufzug)."
+                },
+                {
+                  "key": "b",
+                  "title": "Kühlschrank zu verkaufen",
+                  "text": "Erst zwei Jahre alt, mit Gefrierfach, funktioniert super. In unserer neuen Küche ist schon einer. Nur 60 Euro."
+                },
+                {
+                  "key": "c",
+                  "title": "Damenrad, 28 Zoll",
+                  "text": "Blau, 7 Gänge, mit Korb und Licht. Wenig gefahren. 90 Euro. Anschauen samstags in Trier-Süd."
+                },
+                {
+                  "key": "d",
+                  "title": "Kostenlos zum Mitnehmen",
+                  "text": "Drei Kisten mit Romanen, Krimis und Kochbüchern. Sie stehen ab Freitag vor dem Haus Ahornweg 12. Bitte einfach nehmen!"
+                },
+                {
+                  "key": "e",
+                  "title": "Laptop, drei Jahre alt",
+                  "text": "15 Zoll, schnell, mit Ladekabel und Tasche. Kleiner Kratzer am Deckel. 220 Euro, Preis verhandelbar."
+                },
+                {
+                  "key": "f",
+                  "title": "Leider keine Zeit!",
+                  "text": "Zwei Karten für die Band „Moselwind“, Samstag, 20 Uhr, in der Stadthalle. Ich kann nicht hingehen. Zusammen 45 statt 70 Euro."
+                },
+                {
+                  "key": "g",
+                  "title": "Winterjacke für Herren",
+                  "text": "Größe L, schwarz, mit Kapuze, sehr warm. Nur einen Winter getragen. 35 Euro."
+                },
+                {
+                  "key": "h",
+                  "title": "Suche Kleiderschrank",
+                  "text": "Für meine erste eigene Wohnung suche ich einen gebrauchten Kleiderschrank, gern mit Spiegel. Ich zahle bis 80 Euro und hole ihn selbst ab."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Ihr alter Kühlschrank ist kaputt. Für einen neuen haben Sie nicht genug Geld."
+                },
+                {
+                  "n": 11,
+                  "text": "Sie lesen sehr gern, möchten dafür aber nichts bezahlen."
+                },
+                {
+                  "n": 12,
+                  "text": "In Ihrem Wohnzimmer gibt es noch keinen Platz zum Sitzen. Sie haben nur wenig Geld."
+                },
+                {
+                  "n": 13,
+                  "text": "Sie brauchen Ihren alten Schrank für Kleidung nicht mehr und möchten etwas Geld dafür bekommen."
+                },
+                {
+                  "n": 14,
+                  "text": "Ihr Mann möchte mit dem Rad zur Arbeit fahren. Er sucht ein günstiges Fahrrad für Männer."
+                },
+                {
+                  "n": 15,
+                  "text": "Sie möchten am Wochenende abends Musik live erleben."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "d",
+            "explanation": "Die Kisten mit Romanen und Krimis kann man kostenlos mitnehmen. So bekommst du Bücher, ohne zu bezahlen.",
+            "evidence": {
+              "text": "Kostenlos zum Mitnehmen. Drei Kisten mit Romanen, Krimis und Kochbüchern. Sie stehen ab Freitag vor dem Haus Ahornweg 12. Bitte einfach nehmen!",
+              "hit": "Drei Kisten mit Romanen, Krimis und Kochbüchern."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Das Sofa kostet nichts, du musst es nur selbst abholen. Es passt also, auch wenn du wenig Geld hast.",
+            "evidence": {
+              "text": "Zu verschenken in Trier-Nord. Großes graues Sofa mit drei Sitzen, sehr bequem. Kostet nichts, Sie müssen es aber selbst abholen (2. Stock, kein Aufzug).",
+              "hit": "Großes graues Sofa mit drei Sitzen"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "h",
+            "explanation": "Hier sucht jemand einen gebrauchten Kleiderschrank und zahlt bis 80 Euro. Du kannst ihm deinen Schrank verkaufen.",
+            "evidence": {
+              "text": "Suche Kleiderschrank. Für meine erste eigene Wohnung suche ich einen gebrauchten Kleiderschrank, gern mit Spiegel. Ich zahle bis 80 Euro und hole ihn selbst ab.",
+              "hit": "suche ich einen gebrauchten Kleiderschrank"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "x",
+            "explanation": "Keine Anzeige bietet ein Fahrrad für Männer an. Das einzige Rad in den Anzeigen ist ein Damenrad.",
+            "evidence": {
+              "text": "Damenrad, 28 Zoll. Blau, 7 Gänge, mit Korb und Licht. Wenig gefahren. 90 Euro. Anschauen samstags in Trier-Süd.",
+              "hit": "Damenrad, 28 Zoll"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "f",
+            "explanation": "Die Karten sind für eine Band am Samstagabend in der Stadthalle. So kannst du am Wochenende Musik live hören.",
+            "evidence": {
+              "text": "Leider keine Zeit!. Zwei Karten für die Band „Moselwind“, Samstag, 20 Uhr, in der Stadthalle. Ich kann nicht hingehen. Zusammen 45 statt 70 Euro.",
+              "hit": "Zwei Karten für die Band „Moselwind“, Samstag, 20 Uhr"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

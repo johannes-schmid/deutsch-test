@@ -1,0 +1,479 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-10-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.674Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "DJ Klangkiste, Heilbronn",
+                  "text": "Musik für Ihr Fest: Hochzeit, Geburtstag oder Firmenfeier. Wir bringen die Anlage und das Licht mit. Für 20 bis 200 Gäste. Infos und Preise: www.dj-klangkiste.de"
+                },
+                {
+                  "key": "2",
+                  "title": "Massagepraxis Rückenwind, Thalwil",
+                  "text": "Haben Sie Schmerzen im Rücken oder im Nacken? Unsere Massagen helfen. Montag bis Freitag von 8 bis 21 Uhr, auch nach der Arbeit. Seestrasse 41, www.rueckenwind-thalwil.ch"
+                },
+                {
+                  "key": "3",
+                  "title": "Videofix, Darmstadt",
+                  "text": "Sie haben alte Videokassetten oder Dias? Wir bringen Ihre Filme und Fotos auf einen USB-Stick oder eine DVD. In einer Woche ist alles fertig. Telefon 06151 37 29 18"
+                },
+                {
+                  "key": "4",
+                  "title": "Leihladen Werkzeugkiste, Korneuburg",
+                  "text": "Werkzeug für einen Tag mieten, schon ab € 5: Bohrmaschinen, Leitern, Sägen und mehr. Kaufen müssen Sie nichts! Montag bis Samstag. Telefon 0664 / 238 51 76"
+                },
+                {
+                  "key": "5",
+                  "title": "Rasenprofi, Wiesbaden",
+                  "text": "Keine Zeit für den Garten? Wir mähen Ihren Rasen jede Woche und schneiden Ihre Hecke. Auch am Samstag. Rufen Sie an: 0611 940 27 55 oder www.rasenprofi-wiesbaden.de"
+                },
+                {
+                  "key": "6",
+                  "title": "Hotel Almblick, Kitzbühel",
+                  "text": "Wellness-Wochenende in den Bergen: zwei Nächte, eine Massage, eine Gartenführung mit unserem Gärtner und am Samstagabend eine Party mit DJ. Ab € 239 pro Person. www.almblick-kitzbuehel.at"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Sie haben alte Videos von Ihrer Familie. Sie möchten die Filme auf einem USB-Stick haben."
+                },
+                {
+                  "n": 2,
+                  "text": "Sie möchten ein Regal an die Wand hängen. Sie brauchen eine Bohrmaschine für einen Tag, aber Sie möchten keine kaufen."
+                },
+                {
+                  "n": 3,
+                  "text": "Nach der Arbeit tut Ihnen jeden Tag der Rücken weh. Sie möchten eine Massage, am liebsten am Abend."
+                },
+                {
+                  "n": 4,
+                  "text": "Das Gras in Ihrem Garten ist sehr lang. Sie haben keinen Rasenmäher."
+                },
+                {
+                  "n": 5,
+                  "text": "Sie feiern Ihren 40. Geburtstag mit 50 Gästen. Sie brauchen Musik für die Party."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "3",
+            "explanation": "Die Firma in Darmstadt bringt alte Videokassetten auf einen USB-Stick.",
+            "evidence": {
+              "text": "Videofix, Darmstadt Sie haben alte Videokassetten oder Dias? Wir bringen Ihre Filme und Fotos auf einen USB-Stick oder eine DVD. In einer Woche ist alles fertig. Telefon 06151 37 29 18",
+              "hit": "Wir bringen Ihre Filme und Fotos auf einen USB-Stick oder eine DVD."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "4",
+            "explanation": "Im Leihladen kannst du eine Bohrmaschine für einen Tag mieten. Kaufen musst du sie nicht.",
+            "evidence": {
+              "text": "Leihladen Werkzeugkiste, Korneuburg Werkzeug für einen Tag mieten, schon ab € 5: Bohrmaschinen, Leitern, Sägen und mehr. Kaufen müssen Sie nichts! Montag bis Samstag. Telefon 0664 / 238 51 76",
+              "hit": "Werkzeug für einen Tag mieten"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "2",
+            "explanation": "Die Massagepraxis hilft bei Rückenschmerzen und ist bis 21 Uhr offen. Das Hotel hat auch eine Massage, aber nur bei einem Wochenende in den Bergen.",
+            "evidence": {
+              "text": "Massagepraxis Rückenwind, Thalwil Haben Sie Schmerzen im Rücken oder im Nacken? Unsere Massagen helfen. Montag bis Freitag von 8 bis 21 Uhr, auch nach der Arbeit. Seestrasse 41, www.rueckenwind-thalwil.ch",
+              "hit": "Montag bis Freitag von 8 bis 21 Uhr, auch nach der Arbeit."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "5",
+            "explanation": "Der Rasenprofi mäht deinen Rasen. Im Hotel gibt es nur eine Gartenführung.",
+            "evidence": {
+              "text": "Rasenprofi, Wiesbaden Keine Zeit für den Garten? Wir mähen Ihren Rasen jede Woche und schneiden Ihre Hecke. Auch am Samstag. Rufen Sie an: 0611 940 27 55 oder www.rasenprofi-wiesbaden.de",
+              "hit": "Wir mähen Ihren Rasen jede Woche"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "1",
+            "explanation": "Der DJ macht Musik für Geburtstage mit bis zu 200 Gästen. Die DJ-Party im Hotel ist nicht für dein eigenes Fest.",
+            "evidence": {
+              "text": "DJ Klangkiste, Heilbronn Musik für Ihr Fest: Hochzeit, Geburtstag oder Firmenfeier. Wir bringen die Anlage und das Licht mit. Für 20 bis 200 Gäste. Infos und Preise: www.dj-klangkiste.de",
+              "hit": "Musik für Ihr Fest: Hochzeit, Geburtstag oder Firmenfeier."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-10-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.674Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Tourist-Info Detmold",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Offene Gärten in Detmold",
+            "Sonntag, 15. Juni, von 10 bis 17 Uhr: Acht private Gärten sind offen.",
+            "Sie können alle Gärten ohne Eintritt besuchen.",
+            "Pläne bekommen Sie in der Tourist-Info am Markt."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Ist der Gartentag am Samstag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Kostet der Eintritt etwas?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Die Gärten sind am Sonntag offen, nicht am Samstag.",
+            "evidence": {
+              "text": "Offene Gärten in Detmold Sonntag, 15. Juni, von 10 bis 17 Uhr: Acht private Gärten sind offen. Sie können alle Gärten ohne Eintritt besuchen. Pläne bekommen Sie in der Tourist-Info am Markt.",
+              "hit": "Sonntag, 15. Juni, von 10 bis 17 Uhr"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Du besuchst die Gärten ohne Eintritt, also kostet es nichts.",
+            "evidence": {
+              "text": "Offene Gärten in Detmold Sonntag, 15. Juni, von 10 bis 17 Uhr: Acht private Gärten sind offen. Sie können alle Gärten ohne Eintritt besuchen. Pläne bekommen Sie in der Tourist-Info am Markt.",
+              "hit": "Sie können alle Gärten ohne Eintritt besuchen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-10-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.674Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Stadtgemeinde Hartberg",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Faschingsumzug in Hartberg",
+            "Am Faschingsdienstag beginnt um 13 Uhr der große Umzug am Hauptplatz.",
+            "Kinder im Kostüm bekommen bei uns einen Luftballon gratis.",
+            "Kommen Sie mit der ganzen Familie!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Ist der Umzug am Vormittag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Gibt es für Kinder im Kostüm etwas kostenlos?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Der Umzug beginnt um 13 Uhr, also am Nachmittag.",
+            "evidence": {
+              "text": "Faschingsumzug in Hartberg Am Faschingsdienstag beginnt um 13 Uhr der große Umzug am Hauptplatz. Kinder im Kostüm bekommen bei uns einen Luftballon gratis. Kommen Sie mit der ganzen Familie!",
+              "hit": "beginnt um 13 Uhr der große Umzug"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Kinder im Kostüm bekommen einen Luftballon gratis, also kostenlos.",
+            "evidence": {
+              "text": "Faschingsumzug in Hartberg Am Faschingsdienstag beginnt um 13 Uhr der große Umzug am Hauptplatz. Kinder im Kostüm bekommen bei uns einen Luftballon gratis. Kommen Sie mit der ganzen Familie!",
+              "hit": "Kinder im Kostüm bekommen bei uns einen Luftballon gratis."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-10-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.674Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Kirchgemeinde Zofingen",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Kirchturm St. Martin",
+            "Jeden Samstag von 10 bis 16 Uhr offen. 200 Stufen bis oben, grossartige Aussicht!",
+            "Erwachsene CHF 5.–, Kinder von 6 bis 16 Jahren CHF 2.–",
+            "Kinder unter 6 Jahren dürfen nicht auf den Turm."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Müssen Erwachsene etwas bezahlen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Darf ein Kind mit vier Jahren auf den Turm?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Erwachsene bezahlen 5 Franken für den Turm.",
+            "evidence": {
+              "text": "Kirchturm St. Martin Jeden Samstag von 10 bis 16 Uhr offen. 200 Stufen bis oben, grossartige Aussicht! Erwachsene CHF 5.–, Kinder von 6 bis 16 Jahren CHF 2.– Kinder unter 6 Jahren dürfen nicht auf den Turm.",
+              "hit": "Erwachsene CHF 5.–"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "falsch",
+            "explanation": "Kinder unter 6 Jahren dürfen nicht hinauf. Der Preis von 2 Franken gilt nur für Kinder ab 6.",
+            "evidence": {
+              "text": "Kirchturm St. Martin Jeden Samstag von 10 bis 16 Uhr offen. 200 Stufen bis oben, grossartige Aussicht! Erwachsene CHF 5.–, Kinder von 6 bis 16 Jahren CHF 2.– Kinder unter 6 Jahren dürfen nicht auf den Turm.",
+              "hit": "Kinder unter 6 Jahren dürfen nicht auf den Turm."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-10-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.674Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Lautsprecher verboten",
+                  "text": "",
+                  "picto": "lautsprecher-verboten"
+                },
+                {
+                  "key": "2",
+                  "title": "Kopfhörer",
+                  "text": "",
+                  "picto": "kopfhoerer"
+                },
+                {
+                  "key": "3",
+                  "title": "Rauchmelder",
+                  "text": "",
+                  "picto": "rauchmelder"
+                },
+                {
+                  "key": "4",
+                  "title": "Schließfach",
+                  "text": "",
+                  "picto": "schliessfach"
+                },
+                {
+                  "key": "5",
+                  "title": "Nummer ziehen",
+                  "text": "",
+                  "picto": "nummer-ziehen"
+                },
+                {
+                  "key": "6",
+                  "title": "Nicht berühren",
+                  "text": "",
+                  "picto": "nicht-beruehren"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Studentinnen und Studenten! Taschen und Rucksäcke dürfen nicht in den Lesesaal. Bitte benützen Sie die Schließfächer im Erdgeschoß. Sie brauchen dafür eine Ein-Euro-Münze."
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Kundinnen und Kunden des Bürgerservice! Bitte ziehen Sie zuerst eine Nummer am Automaten. Warten Sie, bis Ihre Nummer auf dem Bildschirm steht. Parteienverkehr: Montag bis Freitag, 8 bis 12 Uhr."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Gäste! Im Aufenthaltsraum sitzen oft viele Leute. Musik hören und Videos schauen ist hier nur mit Kopfhörern erlaubt. Danke!"
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Besucherinnen und Besucher! Die Figuren in diesem Raum sind sehr alt. Bitte fassen Sie sie nicht an. Fotografieren ist erlaubt."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Kolleginnen und Kollegen! Am Dienstag prüft ein Techniker die Rauchmelder in allen Büros. Bitte lassen Sie an diesem Tag Ihre Bürotür offen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "4",
+            "explanation": "Die Taschen kommen in die Schließfächer. Das passt zum Bild mit dem Schließfach.",
+            "evidence": {
+              "text": "Liebe Studentinnen und Studenten! Taschen und Rucksäcke dürfen nicht in den Lesesaal. Bitte benützen Sie die Schließfächer im Erdgeschoß. Sie brauchen dafür eine Ein-Euro-Münze.",
+              "hit": "Bitte benützen Sie die Schließfächer"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "5",
+            "explanation": "Zuerst ziehst du eine Nummer am Automaten. Das zeigt das Bild mit dem Nummernautomaten.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden des Bürgerservice! Bitte ziehen Sie zuerst eine Nummer am Automaten. Warten Sie, bis Ihre Nummer auf dem Bildschirm steht. Parteienverkehr: Montag bis Freitag, 8 bis 12 Uhr.",
+              "hit": "Bitte ziehen Sie zuerst eine Nummer am Automaten."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "2",
+            "explanation": "Musik ist hier erlaubt, aber nur mit Kopfhörern. Darum passt das Bild mit den Kopfhörern, nicht der durchgestrichene Lautsprecher.",
+            "evidence": {
+              "text": "Liebe Gäste! Im Aufenthaltsraum sitzen oft viele Leute. Musik hören und Videos schauen ist hier nur mit Kopfhörern erlaubt. Danke!",
+              "hit": "nur mit Kopfhörern erlaubt"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "6",
+            "explanation": "Man darf die alten Figuren nicht anfassen. Das zeigt die durchgestrichene Hand.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher! Die Figuren in diesem Raum sind sehr alt. Bitte fassen Sie sie nicht an. Fotografieren ist erlaubt.",
+              "hit": "Bitte fassen Sie sie nicht an."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "3",
+            "explanation": "Ein Techniker prüft die Rauchmelder. Das passt zum Bild mit dem Rauchmelder.",
+            "evidence": {
+              "text": "Liebe Kolleginnen und Kollegen! Am Dienstag prüft ein Techniker die Rauchmelder in allen Büros. Bitte lassen Sie an diesem Tag Ihre Bürotür offen.",
+              "hit": "prüft ein Techniker die Rauchmelder"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

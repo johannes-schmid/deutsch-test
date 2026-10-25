@@ -1,0 +1,193 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-04-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.120Z",
+        "textType": "Formular ausfüllen: Bestellung Brennholz"
+      },
+      "exampleAnswers": [
+        "Hansen, Viktor"
+      ],
+      "display": {
+        "instruction": "Ihr Freund möchte Holz für den Winter bestellen. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Viktor Hansen möchte beim Forsthof Grünwald Brennholz für den Winter bestellen. Er braucht drei Raummeter.",
+            "Sein Nachbar nimmt immer Holz mit 25 Zentimetern. Aber Viktors Ofen ist groß. Er nimmt lieber 33 Zentimeter. Das Holz soll am 15. Oktober kommen.",
+            "Viktor wohnt Am Mühlbach 4 in Detmold. Seine Telefonnummer ist 05231 478 92."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Forsthof Grünwald · Bestellung Brennholz\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nTelefon: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nMenge (Raummeter): ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nLänge vom Holz: ",
+                {
+                  "n": 4,
+                  "options": [
+                    "25 cm",
+                    "33 cm"
+                  ]
+                },
+                "\nLiefertermin: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Am Mühlbach 4",
+            "accept": [
+              "Mühlbach 4",
+              "Am Muehlbach 4",
+              "Am Mühlbach 4, Detmold",
+              "Am Mühlbach 4 in Detmold"
+            ],
+            "explanation": "Viktor wohnt Am Mühlbach 4. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Viktor Hansen möchte beim Forsthof Grünwald Brennholz für den Winter bestellen. Er braucht drei Raummeter. Sein Nachbar nimmt immer Holz mit 25 Zentimetern. Aber Viktors Ofen ist groß. Er nimmt lieber 33 Zentimeter. Das Holz soll am 15. Oktober kommen. Viktor wohnt Am Mühlbach 4 in Detmold. Seine Telefonnummer ist 05231 478 92.",
+              "hit": "Viktor wohnt Am Mühlbach 4 in Detmold."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "05231 478 92",
+            "accept": [
+              "0523147892",
+              "05231 47892",
+              "05231-47892",
+              "05231-478 92",
+              "05231/47892",
+              "05231/478 92"
+            ],
+            "explanation": "Die Telefonnummer muss genau stimmen: 05231 478 92.",
+            "evidence": {
+              "text": "Ihr Freund Viktor Hansen möchte beim Forsthof Grünwald Brennholz für den Winter bestellen. Er braucht drei Raummeter. Sein Nachbar nimmt immer Holz mit 25 Zentimetern. Aber Viktors Ofen ist groß. Er nimmt lieber 33 Zentimeter. Das Holz soll am 15. Oktober kommen. Viktor wohnt Am Mühlbach 4 in Detmold. Seine Telefonnummer ist 05231 478 92.",
+              "hit": "Seine Telefonnummer ist 05231 478 92."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "3",
+            "accept": [
+              "drei",
+              "3 Raummeter",
+              "drei Raummeter"
+            ],
+            "explanation": "Viktor braucht drei Raummeter Holz.",
+            "evidence": {
+              "text": "Ihr Freund Viktor Hansen möchte beim Forsthof Grünwald Brennholz für den Winter bestellen. Er braucht drei Raummeter. Sein Nachbar nimmt immer Holz mit 25 Zentimetern. Aber Viktors Ofen ist groß. Er nimmt lieber 33 Zentimeter. Das Holz soll am 15. Oktober kommen. Viktor wohnt Am Mühlbach 4 in Detmold. Seine Telefonnummer ist 05231 478 92.",
+              "hit": "Er braucht drei Raummeter."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "33 cm",
+            "explanation": "Viktor nimmt 33 Zentimeter. Die 25 Zentimeter nimmt sein Nachbar, nicht Viktor.",
+            "evidence": {
+              "text": "Ihr Freund Viktor Hansen möchte beim Forsthof Grünwald Brennholz für den Winter bestellen. Er braucht drei Raummeter. Sein Nachbar nimmt immer Holz mit 25 Zentimetern. Aber Viktors Ofen ist groß. Er nimmt lieber 33 Zentimeter. Das Holz soll am 15. Oktober kommen. Viktor wohnt Am Mühlbach 4 in Detmold. Seine Telefonnummer ist 05231 478 92.",
+              "hit": "Er nimmt lieber 33 Zentimeter."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "15. Oktober",
+            "accept": [
+              "15.10.",
+              "15.10",
+              "15. 10.",
+              "15 Oktober",
+              "am 15. Oktober",
+              "am 15.10."
+            ],
+            "explanation": "Das Holz soll am 15. Oktober kommen. Das Datum muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Viktor Hansen möchte beim Forsthof Grünwald Brennholz für den Winter bestellen. Er braucht drei Raummeter. Sein Nachbar nimmt immer Holz mit 25 Zentimetern. Aber Viktors Ofen ist groß. Er nimmt lieber 33 Zentimeter. Das Holz soll am 15. Oktober kommen. Viktor wohnt Am Mühlbach 4 in Detmold. Seine Telefonnummer ist 05231 478 92.",
+              "hit": "Das Holz soll am 15. Oktober kommen."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-04-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.120Z",
+        "textType": "Kurze E-Mail an eine Freundin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an eine Freundin",
+            "situation": "Ihre Freundin Carla hatte am Wochenende Geburtstag. Sie haben den Tag vergessen. Schreiben Sie Carla eine E-Mail.",
+            "points": [
+              "Entschuldigen Sie sich.",
+              "Einladung: nächste Woche ins Café",
+              "Welcher Tag passt für Carla?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Carla,\nes tut mir sehr leid, ich habe deinen Geburtstag vergessen! Alles Gute nachträglich! Ich möchte dich nächste Woche ins Café einladen. Welcher Tag passt dir? Hast du am Mittwoch Zeit?\nLiebe Grüße\nBianca"
+          }
+        ]
+      }
+    }
+  ]
+}

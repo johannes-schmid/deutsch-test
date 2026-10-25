@@ -60,6 +60,7 @@ export function WritingTask({ options, chosen, onChoose, value, onChange }: { op
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="exam-writing" className="text-[13px] text-v-muted">{t.letter}</label>
+            {task.opener ? <p lang="de" className="rounded-2xl bg-v-soft px-4 py-3 text-[16.5px] leading-relaxed whitespace-pre-line text-v-ink/80">{task.opener}</p> : null}
             <textarea
               id="exam-writing"
               value={value}

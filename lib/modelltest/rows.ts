@@ -13,14 +13,25 @@ export const trackWithUrl = (track: HoerTrack | null) => track && { ...track, sr
 /** Storage paths in a block become public URLs, so the exam components play and show them as they are. */
 export function withUrls(b: MtBlock): MtBlock {
   const a = (src?: string) => (src ? publicUrl("exam-audio", src) : src)
+  const img = (src?: string) => (src && !/^https?:/.test(src) ? publicUrl("exam-images", src) : src)
   const sp = b.display.speaking
   return {
     ...b,
     display: {
       ...b.display,
+      items: b.display.items.map((it) =>
+        it.type === "picture" ? { ...it, item: { ...it.item, options: it.item.options.map((o) => ({ ...o, image: img(o.image) })) } }
+        : it.type === "match" && it.data.ads.some((a) => a.image) ? { ...it, data: { ...it.data, ads: it.data.ads.map((a) => ({ ...a, image: img(a.image) })) } }
+        : it
+      ),
       clip: b.display.clip && { ...b.display.clip, src: a(b.display.clip.src) },
       speaking: sp && {
         ...sp,
+        data: {
+          ...sp.data,
+          ...(sp.data.scenes ? { scenes: sp.data.scenes.map((x) => ({ ...x, image: img(x.image) })) } : {}),
+          ...(sp.data.sheet ? { sheet: { ...sp.data.sheet, rows: sp.data.sheet.rows.map((r) => ({ ...r, pictures: r.pictures.map((p) => ({ ...p, image: img(p.image) })) })) } } : {}),
+        },
         turns: sp.turns.map((t) => ({ ...t, src: a(t.src) })),
         photos: sp.photos && { du: { ...sp.photos.du, src: sp.photos.du.src && publicUrl("exam-images", sp.photos.du.src) }, partner: { ...sp.photos.partner, src: sp.photos.partner.src && publicUrl("exam-images", sp.photos.partner.src) } },
       },

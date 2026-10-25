@@ -1,0 +1,685 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-07-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Notiz an der Tür für den Nachbarn"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "In Wiebkes Wohnung wird gearbeitet."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die Arbeiten dauern bis Freitag."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Konrad kann am Donnerstag zu Wiebke kommen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Wiebke",
+          "source": "Notiz",
+          "paragraphs": [
+            "Lieber Konrad,",
+            "ich bekomme eine neue Küche. Die Handwerker sind von Montag bis Mittwoch da, immer von 8 bis 16 Uhr. Das ist leider sehr laut. Entschuldigung! Am Donnerstag ist alles fertig. Dann lade ich dich zum Kaffee ein. Hast du um 15 Uhr Zeit?",
+            "Viele Grüße",
+            "Wiebke"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Die Handwerker sind nur von Montag bis Mittwoch da. Am Donnerstag ist schon alles fertig, also nicht erst am Freitag.",
+            "evidence": {
+              "text": "ich bekomme eine neue Küche. Die Handwerker sind von Montag bis Mittwoch da, immer von 8 bis 16 Uhr. Das ist leider sehr laut. Entschuldigung! Am Donnerstag ist alles fertig. Dann lade ich dich zum Kaffee ein. Hast du um 15 Uhr Zeit?",
+              "hit": "Die Handwerker sind von Montag bis Mittwoch da"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Am Donnerstag lädt Wiebke Konrad zum Kaffee ein. Er kann also zu ihr kommen.",
+            "evidence": {
+              "text": "ich bekomme eine neue Küche. Die Handwerker sind von Montag bis Mittwoch da, immer von 8 bis 16 Uhr. Das ist leider sehr laut. Entschuldigung! Am Donnerstag ist alles fertig. Dann lade ich dich zum Kaffee ein. Hast du um 15 Uhr Zeit?",
+              "hit": "Dann lade ich dich zum Kaffee ein."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Kurze E-Mail an eine Freundin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Hatice und Gesa gehen am Sonntag in den Park."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Die zwei Frauen treffen sich am Eingang vom Park."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Gesas Kinder müssen nichts bezahlen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Hatice",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Gesa,",
+            "wir wollten am Sonntag in den Schlosspark gehen. Aber ich muss am Sonntag leider arbeiten. Du hast am Telefon gesagt: Samstag geht auch. Super! Wir treffen uns um 11 Uhr an der Haltestelle „Rosenhöhe“. Von dort gehen wir zusammen zum Eingang, das sind nur fünf Minuten. Der Eintritt kostet 4 Euro, aber für Kinder ist er frei. Bring also deine zwei Kinder mit!",
+            "Ich freue mich!",
+            "Hatice"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Am Sonntag muss Hatice arbeiten. Deshalb gehen die zwei Frauen am Samstag in den Park.",
+            "evidence": {
+              "text": "wir wollten am Sonntag in den Schlosspark gehen. Aber ich muss am Sonntag leider arbeiten. Du hast am Telefon gesagt: Samstag geht auch. Super! Wir treffen uns um 11 Uhr an der Haltestelle „Rosenhöhe“. Von dort gehen wir zusammen zum Eingang, das sind nur fünf Minuten. Der Eintritt kostet 4 Euro, aber für Kinder ist er frei. Bring also deine zwei Kinder mit!",
+              "hit": "Aber ich muss am Sonntag leider arbeiten."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Sie treffen sich an der Haltestelle „Rosenhöhe“. Zum Eingang gehen sie erst danach zusammen.",
+            "evidence": {
+              "text": "wir wollten am Sonntag in den Schlosspark gehen. Aber ich muss am Sonntag leider arbeiten. Du hast am Telefon gesagt: Samstag geht auch. Super! Wir treffen uns um 11 Uhr an der Haltestelle „Rosenhöhe“. Von dort gehen wir zusammen zum Eingang, das sind nur fünf Minuten. Der Eintritt kostet 4 Euro, aber für Kinder ist er frei. Bring also deine zwei Kinder mit!",
+              "hit": "Wir treffen uns um 11 Uhr an der Haltestelle „Rosenhöhe“."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Der Eintritt kostet 4 Euro, aber nur für Erwachsene. Für Kinder ist er frei.",
+            "evidence": {
+              "text": "wir wollten am Sonntag in den Schlosspark gehen. Aber ich muss am Sonntag leider arbeiten. Du hast am Telefon gesagt: Samstag geht auch. Super! Wir treffen uns um 11 Uhr an der Haltestelle „Rosenhöhe“. Von dort gehen wir zusammen zum Eingang, das sind nur fünf Minuten. Der Eintritt kostet 4 Euro, aber für Kinder ist er frei. Bring also deine zwei Kinder mit!",
+              "hit": "aber für Kinder ist er frei"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "b"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie feiern einen Kindergeburtstag. Die Kinder sollen draußen springen und spielen. Sie brauchen etwas nur für einen Tag.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.spielwelt-kaiser.de · Spielsachen für jedes Alter: Puppen, Bälle und Spiele. Diese Woche 10 % billiger im Laden."
+                },
+                {
+                  "key": "b",
+                  "label": "www.huepfspass-verleih.de · Hüpfburgen für Kinderfeste mieten, ab 59 € pro Tag. Wir bringen sie und holen sie wieder ab."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihre Messer in der Küche schneiden schlecht. Sie möchten aber keine neuen kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.schleiferei-brandl.de · Ihre Küchenmesser sind stumpf? Wir schleifen sie in einem Tag. Pro Messer nur 4 €."
+                },
+                {
+                  "key": "b",
+                  "label": "www.kuechenhaus-lorenz.de · Neue Messer-Sets aus Japan und Deutschland, ab 49 €. Diese Woche im Angebot."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "In a macht man alte Messer wieder scharf. In b kann man nur neue Messer kaufen, und das möchten Sie nicht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie machen ein Sommerfest im Hof. 30 Personen brauchen einen Platz zum Sitzen. Kaufen möchten Sie nichts.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.holzmoebel-hansen.de · Stühle und Tische aus Holz für draußen kaufen. Ab 200 € liefern wir kostenlos."
+                },
+                {
+                  "key": "b",
+                  "label": "www.festverleih-nord.de · Wir vermieten Biertische und Bänke: ein Set für 8 Personen kostet 12 € am Wochenende."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "In b kann man Tische und Bänke mieten, man kauft also nichts. In a muss man die Möbel kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Sie heiraten im Juni. Jemand soll an diesem Tag schöne Bilder von Ihnen und den Gästen machen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.fotoshop-klick.de · Fotos drucken lassen: 10 × 15 cm nur 9 Cent. Online bestellen und im Laden abholen."
+                },
+                {
+                  "key": "b",
+                  "label": "www.studio-lichtblick.de · Fotografin für Hochzeit, Taufe und Familienfeste. Ich komme zu Ihnen. Tel. 0176 4410 2283"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "In b kommt eine Fotografin zur Hochzeit und macht die Bilder. In a kann man nur fertige Fotos drucken lassen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Ihre Wohnung hat vier Zimmer. Die Kinder wohnen nicht mehr bei Ihnen. Sie möchten weniger Platz.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.wohnungstausch-stadt.de · Große Wohnung gegen kleine tauschen? Hier finden Sie Familien, die mehr Platz brauchen."
+                },
+                {
+                  "key": "b",
+                  "label": "www.immo-weber.de · Neue 5-Zimmer-Wohnungen mit Balkon in ruhiger Lage. Jetzt anschauen!"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "In a können Sie Ihre große Wohnung gegen eine kleine tauschen. Die Wohnungen in b haben fünf Zimmer, sie sind noch größer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ihr Rücken tut oft weh. Sie möchten einen Termin für eine Massage.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.praxis-wohlfuehlzeit.de · Massage für Rücken und Nacken, 30 Minuten 35 €. Termine auch am Samstag: Tel. 0221 58 30 94"
+                },
+                {
+                  "key": "b",
+                  "label": "www.matratzen-traum.de · Schlecht geschlafen? Gute Matratzen für einen gesunden Rücken. Jetzt im Laden testen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "In a gibt es Massagen und Sie können anrufen und einen Termin machen. In b kauft man nur Matratzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Schild am Friedhofstor"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Im Sommer ist der Friedhof um 20 Uhr offen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Tor vom Friedhof",
+          "source": "Schild",
+          "paragraphs": [
+            "Friedhof am Kirchberg",
+            "April–September: 7–19 Uhr",
+            "Oktober–März: 8–17 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Schild auf dem Marktplatz"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Am Freitagvormittag kann man hier einkaufen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Auf dem Marktplatz",
+          "source": "Schild",
+          "paragraphs": [
+            "Wochenmarkt",
+            "jeden Dienstag und Freitag",
+            "von 7 bis 13 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Der Markt ist auch am Freitag, von 7 bis 13 Uhr. Am Vormittag kann man also einkaufen.",
+            "evidence": {
+              "text": "Wochenmarkt jeden Dienstag und Freitag von 7 bis 13 Uhr",
+              "hit": "jeden Dienstag und Freitag von 7 bis 13 Uhr"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Schild am Bahnhof"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Ihr Koffer darf zwei Tage in dem Fach bleiben."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Bahnhof",
+          "source": "Schild",
+          "paragraphs": [
+            "Schließfächer",
+            "Höchstens 24 Stunden!",
+            "Danach öffnet das Personal das Fach."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "falsch",
+            "explanation": "Ein Koffer darf höchstens 24 Stunden im Fach bleiben. Das ist nur ein Tag, nicht zwei.",
+            "evidence": {
+              "text": "Schließfächer Höchstens 24 Stunden! Danach öffnet das Personal das Fach.",
+              "hit": "Höchstens 24 Stunden!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Schild an der Tür zum Dachboden"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Alte Stühle oder Schränke dürfen hier nicht stehen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür zum Dachboden",
+          "source": "Schild",
+          "paragraphs": [
+            "Dachboden",
+            "Hier bitte keine Möbel abstellen!",
+            "Nur für Wäsche zum Trocknen."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "richtig",
+            "explanation": "Auf dem Dachboden darf man keine Möbel abstellen. Stühle und Schränke sind Möbel.",
+            "evidence": {
+              "text": "Dachboden Hier bitte keine Möbel abstellen! Nur für Wäsche zum Trocknen.",
+              "hit": "Hier bitte keine Möbel abstellen!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Schild am Waldweg"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Heute müssen Sie hier einen anderen Weg gehen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Waldweg",
+          "source": "Schild",
+          "paragraphs": [
+            "Wegen Baumarbeiten heute gesperrt!",
+            "Bitte gehen Sie über den Parkplatz."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "richtig",
+            "explanation": "Der Weg ist heute gesperrt. Sie sollen über den Parkplatz gehen, das ist ein anderer Weg.",
+            "evidence": {
+              "text": "Wegen Baumarbeiten heute gesperrt! Bitte gehen Sie über den Parkplatz.",
+              "hit": "Bitte gehen Sie über den Parkplatz."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-07-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.122Z",
+        "textType": "Schild im Hof"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Für die Kräuter muss man Geld geben."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Hof der Wohnsiedlung",
+          "source": "Schild",
+          "paragraphs": [
+            "Kräuterbeet für alle",
+            "Petersilie, Minze, Schnittlauch",
+            "Bitte nur für sich selbst pflücken – kostenlos!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "falsch",
+            "explanation": "Die Kräuter sind kostenlos. Man soll nur nicht zu viel nehmen, nur für sich selbst.",
+            "evidence": {
+              "text": "Kräuterbeet für alle Petersilie, Minze, Schnittlauch Bitte nur für sich selbst pflücken – kostenlos!",
+              "hit": "kostenlos!"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

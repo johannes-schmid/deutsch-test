@@ -1,0 +1,665 @@
+{
+  "exam": "oesd-a1",
+  "skill": "sprechen",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "oesd-a1-sprechen-01-t1",
+      "exam": "oesd-a1",
+      "skill": "sprechen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Sich vorstellen (Themenkarte)"
+      },
+      "display": {
+        "instruction": "Stellen Sie sich vor. Wählen Sie vier von sechs Themen und sagen Sie zu jedem Thema ein paar Sätze. Danach stellt die Prüferin Ihnen Fragen.",
+        "items": [],
+        "speaking": {
+          "data": {
+            "part": "Sprechen · Aufgabe 1",
+            "title": "Sich vorstellen",
+            "task": "Stellen Sie sich vor. Wählen Sie vier Themen und sagen Sie zu jedem Thema ein paar Sätze.",
+            "points": [
+              "Wohnort?",
+              "Wohnung?",
+              "Familie?",
+              "Sprachen?",
+              "Arbeit?",
+              "Wochenende?"
+            ],
+            "choose": 4
+          },
+          "people": {
+            "pruefer": {
+              "name": "Herr Leitner",
+              "initial": "L",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "partner": {
+              "name": "Frau Moser",
+              "initial": "M",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "du": {
+              "name": "Du",
+              "initial": "Du",
+              "tone": "var(--p-glow)"
+            }
+          },
+          "turns": [
+            {
+              "who": "pruefer",
+              "phase": "1",
+              "text": "Grüß Gott und herzlich willkommen! Mein Name ist Leitner, und das ist meine Kollegin, Frau Moser. Wie ist Ihr Name, bitte? Und wie geht es Ihnen heute?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-0e7dc211.mp3",
+              "duration": 11.73
+            },
+            {
+              "who": "du",
+              "phase": "1",
+              "text": "Sag deinen Namen und wie es dir geht.",
+              "seconds": 15
+            },
+            {
+              "who": "pruefer",
+              "phase": "1",
+              "text": "Danke schön. Wir beginnen mit Aufgabe eins. Auf Ihrem Blatt stehen sechs Themen. Bitte wählen Sie vier Themen und sagen Sie zu jedem Thema ein paar Sätze. Frau Moser stellt Ihnen danach ein paar Fragen.",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-918f9586.mp3",
+              "duration": 15.12
+            },
+            {
+              "who": "du",
+              "phase": "1",
+              "text": "Wähl vier Themen und sprich zu jedem zwei oder drei Sätze.",
+              "seconds": 90
+            },
+            {
+              "who": "partner",
+              "phase": "1",
+              "text": "Wohnen Sie in einer Stadt oder in einem Dorf?",
+              "live": "followup",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-0d0fc5a3.mp3",
+              "duration": 3.47
+            },
+            {
+              "who": "du",
+              "phase": "1",
+              "text": "Antworte auf die Frage von Frau Moser.",
+              "seconds": 20
+            },
+            {
+              "who": "partner",
+              "phase": "1",
+              "text": "Was machen Sie gern am Wochenende?",
+              "live": "followup",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-8edd614c.mp3",
+              "duration": 2.17
+            },
+            {
+              "who": "du",
+              "phase": "1",
+              "text": "Antworte auf die Frage von Frau Moser.",
+              "seconds": 20
+            },
+            {
+              "who": "partner",
+              "phase": "1",
+              "text": "Welche Sprache möchten Sie noch lernen?",
+              "live": "followup",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-be3a4950.mp3",
+              "duration": 2.53
+            },
+            {
+              "who": "du",
+              "phase": "1",
+              "text": "Antworte auf die Frage von Frau Moser.",
+              "seconds": 20
+            },
+            {
+              "who": "pruefer",
+              "phase": "1",
+              "text": "Vielen Dank. Dann kommen wir zu Aufgabe zwei.",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-b404b450.mp3",
+              "duration": 3.32
+            }
+          ]
+        }
+      },
+      "key": {
+        "answers": [],
+        "speaking": {
+          "voices": {
+            "pruefer": "man_gruber_at",
+            "partner": "woman_alexandra_at"
+          },
+          "sampleAnswers": [
+            "Mein Name ist Amir Rahimi. Danke, es geht mir gut. Ich bin ein bisschen nervös.",
+            "Ich wohne in Wien, im zehnten Bezirk. Ich wohne dort seit zwei Jahren. Meine Wohnung ist klein, sie hat zwei Zimmer und eine Küche. Ich habe eine Frau und einen Sohn. Mein Sohn ist fünf Jahre alt. Ich spreche Persisch, Englisch und ein bisschen Deutsch. Am Wochenende gehe ich mit meiner Familie in den Park.",
+            "In einer Stadt. Wien ist sehr groß, aber mein Bezirk ist ruhig.",
+            "Am Wochenende schlafe ich lange. Dann kochen wir zusammen, und am Nachmittag gehen wir spazieren.",
+            "Ich möchte noch gut Deutsch lernen. Später vielleicht auch Italienisch."
+          ]
+        },
+        "live": {
+          "followups": [
+            {
+              "text": "Wohnen Sie in einer Stadt oder in einem Dorf?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-0d0fc5a3.mp3",
+              "duration": 3.47
+            },
+            {
+              "text": "Was machen Sie gern am Wochenende?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-8edd614c.mp3",
+              "duration": 2.17
+            },
+            {
+              "text": "Welche Sprache möchten Sie noch lernen?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-be3a4950.mp3",
+              "duration": 2.53
+            },
+            {
+              "text": "Mit wem wohnen Sie zusammen?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-f30d5c4c.mp3",
+              "duration": 2.06
+            },
+            {
+              "text": "Wie lange lernen Sie schon Deutsch?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-178b8657.mp3",
+              "duration": 2.17
+            },
+            {
+              "text": "Was kochen Sie gern?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t1-0719f96c.mp3",
+              "duration": 1.41
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "oesd-a1-sprechen-01-t2",
+      "exam": "oesd-a1",
+      "skill": "sprechen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Ein Foto beschreiben (1 von 3)"
+      },
+      "photos": {
+        "0": {
+          "1": {
+            "query": "phone store employee helping customer",
+            "alt": "Ein Verkäufer mit Brille und Maske steht in einem Geschäft hinter ausgestellten Handys.",
+            "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-0-1.webp",
+            "credit": {
+              "name": "Jiří Prchlík",
+              "url": "https://www.pexels.com/photo/a-man-in-yellow-polo-with-nameplate-wearing-facemask-while-smiling-the-camera-11031182/",
+              "pexelsId": 11031182
+            }
+          },
+          "2": {
+            "query": "ski boots rental shop customer",
+            "alt": "Vor einem gelb-grauen Geschäft im Schnee stehen viele Skier und Snowboards an der Wand.",
+            "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-0-2.webp",
+            "credit": {
+              "name": "Патимат Магомедова",
+              "url": "https://www.pexels.com/photo/charming-winter-ski-rental-shop-with-snowfall-34655628/",
+              "pexelsId": 34655628
+            }
+          },
+          "3": {
+            "query": "dry cleaner clothes on hangers",
+            "alt": "In der Putzerei"
+          }
+        }
+      },
+      "display": {
+        "instruction": "Wählen Sie ein Foto. Beschreiben Sie das Foto: Was sehen Sie? Wie viele Personen sind auf dem Foto? Wo sind die Personen? Was machen die Personen? Danach stellt die Prüferin Ihnen Fragen.",
+        "items": [],
+        "speaking": {
+          "data": {
+            "part": "Sprechen · Aufgabe 2",
+            "title": "Ein Foto beschreiben",
+            "task": "Wählen Sie ein Foto. Beschreiben Sie das Foto. Die Fragen helfen Ihnen.",
+            "points": [
+              "Was sehen Sie?",
+              "Wie viele Personen sind auf dem Foto?",
+              "Wo sind die Personen?",
+              "Was machen die Personen?"
+            ],
+            "scenes": [
+              {
+                "key": "1",
+                "label": "Im Handygeschäft",
+                "roles": [
+                  "Verkäuferin oder Verkäufer",
+                  "Kundin oder Kunde"
+                ],
+                "image": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-0-1.webp"
+              },
+              {
+                "key": "2",
+                "label": "Beim Skiverleih",
+                "roles": [
+                  "Mitarbeiterin oder Mitarbeiter",
+                  "Skifahrerin oder Skifahrer"
+                ],
+                "image": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-0-2.webp"
+              },
+              {
+                "key": "3",
+                "label": "In der Putzerei (Reinigung)",
+                "roles": [
+                  "Mitarbeiterin oder Mitarbeiter",
+                  "Kundin oder Kunde"
+                ]
+              }
+            ]
+          },
+          "people": {
+            "pruefer": {
+              "name": "Herr Leitner",
+              "initial": "L",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "partner": {
+              "name": "Frau Moser",
+              "initial": "M",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "du": {
+              "name": "Du",
+              "initial": "Du",
+              "tone": "var(--p-glow)"
+            }
+          },
+          "turns": [
+            {
+              "who": "pruefer",
+              "phase": "2",
+              "text": "Danke. Jetzt kommen wir zu Aufgabe zwei. Hier sind drei Fotos. Welches Foto möchten Sie nehmen?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-887b10fc.mp3",
+              "duration": 7
+            },
+            {
+              "who": "du",
+              "phase": "2",
+              "text": "Sag, welches Foto du nimmst.",
+              "seconds": 10
+            },
+            {
+              "who": "pruefer",
+              "phase": "2",
+              "text": "Gut. Bitte beschreiben Sie das Foto. Die Fragen auf dem Blatt helfen Ihnen.",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-cb8adebd.mp3",
+              "duration": 5.51
+            },
+            {
+              "who": "du",
+              "phase": "2",
+              "text": "Beschreib das Foto. Die vier Fragen helfen dir.",
+              "seconds": 60
+            },
+            {
+              "who": "partner",
+              "phase": "2",
+              "text": "Wie sehen die Personen auf dem Foto aus?",
+              "live": "followup",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-5c47671b.mp3",
+              "duration": 2.93
+            },
+            {
+              "who": "du",
+              "phase": "2",
+              "text": "Antworte auf die Frage von Frau Moser.",
+              "seconds": 20
+            },
+            {
+              "who": "partner",
+              "phase": "2",
+              "text": "Wie alt sind die Personen, was glauben Sie?",
+              "live": "followup",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-cf513681.mp3",
+              "duration": 3.06
+            },
+            {
+              "who": "du",
+              "phase": "2",
+              "text": "Antworte auf die Frage von Frau Moser.",
+              "seconds": 20
+            },
+            {
+              "who": "pruefer",
+              "phase": "2",
+              "text": "Danke schön.",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-777ae061.mp3",
+              "duration": 0.63
+            }
+          ]
+        }
+      },
+      "key": {
+        "answers": [],
+        "speaking": {
+          "voices": {
+            "pruefer": "man_gruber_at",
+            "partner": "woman_alexandra_at"
+          },
+          "sampleAnswers": [
+            "Ich nehme das Foto Nummer drei, die Putzerei.",
+            "Auf dem Foto sehe ich zwei Personen, eine Frau und einen Mann. Sie sind in einer Putzerei. Die Frau ist eine Kundin. Sie gibt einen Mantel ab. Der Mann arbeitet dort. Er steht hinter der Theke und nimmt den Mantel.",
+            "Die Frau hat lange, dunkle Haare. Sie trägt eine Jacke. Der Mann trägt ein weißes Hemd.",
+            "Ich glaube, die Frau ist dreißig Jahre alt. Der Mann ist vielleicht fünfzig."
+          ]
+        },
+        "live": {
+          "followups": [
+            {
+              "text": "Wie sehen die Personen auf dem Foto aus?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-5c47671b.mp3",
+              "duration": 2.93
+            },
+            {
+              "text": "Wie alt sind die Personen, was glauben Sie?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-cf513681.mp3",
+              "duration": 3.06
+            },
+            {
+              "text": "Ist das Geschäft groß oder klein, was glauben Sie?",
+              "level": "A2",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-71e55748.mp3",
+              "duration": 3.97
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "oesd-a1-sprechen-01-t3",
+      "exam": "oesd-a1",
+      "skill": "sprechen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:00:00.000Z",
+        "textType": "Rollenspiel zum Foto"
+      },
+      "display": {
+        "instruction": "Spielen Sie die Situation auf Ihrem Foto aus Aufgabe 2. Wählen Sie eine Rolle. Die Prüferin spielt die andere Person.",
+        "items": [],
+        "speaking": {
+          "data": {
+            "part": "Sprechen · Aufgabe 3",
+            "title": "Rollenspiel",
+            "task": "Spielen Sie die Situation auf Ihrem Foto mit Frau Moser. Wählen Sie eine Rolle.",
+            "points": [
+              "Begrüßen",
+              "Fragen stellen und antworten",
+              "Preis und Zeit klären",
+              "Verabschieden"
+            ],
+            "scenes": [
+              {
+                "key": "1",
+                "label": "Im Handygeschäft",
+                "roles": [
+                  "Verkäuferin oder Verkäufer",
+                  "Kundin oder Kunde"
+                ],
+                "image": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-0-1.webp"
+              },
+              {
+                "key": "2",
+                "label": "Beim Skiverleih",
+                "roles": [
+                  "Mitarbeiterin oder Mitarbeiter",
+                  "Skifahrerin oder Skifahrer"
+                ],
+                "image": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t2-0-2.webp"
+              },
+              {
+                "key": "3",
+                "label": "In der Putzerei (Reinigung)",
+                "roles": [
+                  "Mitarbeiterin oder Mitarbeiter",
+                  "Kundin oder Kunde"
+                ]
+              }
+            ]
+          },
+          "people": {
+            "pruefer": {
+              "name": "Herr Leitner",
+              "initial": "L",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "partner": {
+              "name": "Frau Moser",
+              "initial": "M",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "du": {
+              "name": "Du",
+              "initial": "Du",
+              "tone": "var(--p-glow)"
+            }
+          },
+          "turns": [
+            {
+              "who": "pruefer",
+              "phase": "3",
+              "text": "Jetzt kommen wir zu Aufgabe drei. Sie spielen die Situation auf Ihrem Foto. Frau Moser spielt die andere Person. Welche Rolle möchten Sie spielen?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-268a7c8f.mp3",
+              "duration": 10.4
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Sag, welche Rolle du spielst.",
+              "seconds": 10
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Grüß Gott! Was kann ich für Sie tun?",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-bebf28ea.mp3",
+              "duration": 2.38
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Grüß und sag, was du brauchst.",
+              "seconds": 15
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Gut. Wann brauchen Sie das wieder?",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-e19730a5.mp3",
+              "duration": 2.69
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Antworte auf die Frage.",
+              "seconds": 15
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Am Freitag ist es fertig. Passt Ihnen das?",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-14e599c5.mp3",
+              "duration": 3.16
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Antworte auf die Frage.",
+              "seconds": 15
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Oh, ich sehe hier einen Fleck. Was ist das?",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-dea65d76.mp3",
+              "duration": 3.81
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Erklär das kurz.",
+              "seconds": 15
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Kein Problem, das machen wir weg. Das kostet dann zwölf Euro.",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-a257cf72.mp3",
+              "duration": 4.7
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Reagiere auf den Preis.",
+              "seconds": 15
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Möchten Sie jetzt bezahlen oder später?",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-abbaaa2e.mp3",
+              "duration": 2.66
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Sag, wann du bezahlst.",
+              "seconds": 15
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Wie ist Ihr Name, bitte? Für den Abholschein.",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-b7785d6b.mp3",
+              "duration": 3.16
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Sag deinen Namen.",
+              "seconds": 15
+            },
+            {
+              "who": "partner",
+              "phase": "3",
+              "text": "Danke. Hier ist Ihr Zettel. Auf Wiedersehen!",
+              "live": "partner",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-f2081fca.mp3",
+              "duration": 3.27
+            },
+            {
+              "who": "du",
+              "phase": "3",
+              "text": "Bedank dich und verabschiede dich.",
+              "seconds": 15
+            },
+            {
+              "who": "pruefer",
+              "phase": "3",
+              "text": "Vielen Dank. Die Prüfung ist jetzt zu Ende. Ihr Ergebnis bekommen Sie nächste Woche. Auf Wiedersehen!",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-93cbf99a.mp3",
+              "duration": 6.87
+            }
+          ]
+        }
+      },
+      "key": {
+        "answers": [],
+        "speaking": {
+          "voices": {
+            "pruefer": "man_gruber_at",
+            "partner": "woman_alexandra_at"
+          },
+          "sampleAnswers": [
+            "Ich bin die Kundin.",
+            "Guten Tag! Ich möchte diesen Mantel reinigen lassen.",
+            "Ich brauche ihn am Wochenende wieder.",
+            "Ja, Freitag ist gut.",
+            "Das ist Kaffee. Das war leider ein Unfall.",
+            "Zwölf Euro, das ist in Ordnung.",
+            "Ich bezahle später, wenn ich den Mantel abhole.",
+            "Mein Name ist Rahimi. R, A, H, I, M, I.",
+            "Danke schön. Auf Wiedersehen!"
+          ]
+        },
+        "live": {
+          "persona": "Frau Moser ist die Interlokutorin. Sie spielt die andere Person auf dem Foto, das die Kandidatin oder der Kandidat gewählt hat, und führt das Rollenspiel mit etwa acht kurzen Fragen und Reaktionen (A1, langsam, Sie-Form). Sie reagiert auf das, was gesagt wurde, und hilft mit einer einfachen Frage, wenn nichts kommt.\n\nFoto 1, Handygeschäft:\n- Die Person ist Kundin/Kunde, Frau Moser ist Verkäuferin: begrüßt, fragt, was gesucht wird (ein neues Handy), welche Farbe, wie viel es kosten darf, nennt einen Preis (zweihundert Euro), fragt nach einer Hülle, fragt bar oder mit Karte, verabschiedet sich.\n- Die Person ist Verkäuferin/Verkäufer, Frau Moser ist Kundin: Ihr Handy ist kaputt (der Bildschirm), sie fragt, ob man es reparieren kann, was es kostet, wie lange es dauert, ob sie ein Ersatzhandy bekommt, wann sie es abholen kann, bezahlt, verabschiedet sich.\n\nFoto 2, Skiverleih:\n- Die Person ist Skifahrerin/Skifahrer, Frau Moser arbeitet im Skiverleih: begrüßt, fragt, was gebraucht wird (Ski, Schuhe, Helm), welche Schuhgröße, für wie viele Tage, nennt den Preis (fünfunddreißig Euro pro Tag), fragt nach einem Ausweis, sagt, bis wann man zurückbringen muss (siebzehn Uhr), verabschiedet sich.\n- Die Person arbeitet im Skiverleih, Frau Moser ist Skifahrerin: möchte Ski für drei Tage, sagt ihre Schuhgröße (achtunddreißig), die Schuhe sind zu klein, fragt nach dem Preis, nach einem Helm, wann der Verleih morgen aufmacht, bezahlt, verabschiedet sich.\n\nFoto 3, Putzerei (Reinigung):\n- Die Person ist Kundin/Kunde, Frau Moser arbeitet in der Putzerei (Standard): begrüßt, fragt, was gereinigt werden soll, wann es gebraucht wird, sagt \"Freitag\", sieht einen Fleck und fragt danach, nennt den Preis (zwölf Euro), fragt jetzt oder später bezahlen, fragt den Namen für den Abholschein, verabschiedet sich.\n- Die Person arbeitet in der Putzerei, Frau Moser ist Kundin: bringt einen Mantel und eine Hose, die Hose hat einen Fleck (Kaffee), fragt nach dem Preis, braucht den Mantel schon am Donnerstag, fragt nach den Öffnungszeiten, bezahlt mit Karte, verabschiedet sich.",
+          "partnerLines": [
+            {
+              "text": "Grüß Gott! Was kann ich für Sie tun?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-bebf28ea.mp3",
+              "duration": 2.38
+            },
+            {
+              "text": "Gut. Und was noch?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-0a01e166.mp3",
+              "duration": 1.83
+            },
+            {
+              "text": "Wann brauchen Sie das?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-f4d37414.mp3",
+              "duration": 1.52
+            },
+            {
+              "text": "Das kostet zwölf Euro.",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-562acd41.mp3",
+              "duration": 1.78
+            },
+            {
+              "text": "Möchten Sie bar oder mit Karte bezahlen?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-c2a58129.mp3",
+              "duration": 2.87
+            },
+            {
+              "text": "Wie ist Ihr Name, bitte?",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-2e73f063.mp3",
+              "duration": 1.59
+            },
+            {
+              "text": "Alles klar. Danke schön!",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-3e2007e7.mp3",
+              "duration": 1.8
+            },
+            {
+              "text": "Auf Wiedersehen und einen schönen Tag!",
+              "src": "oesd-a1/sprechen-01/oesd-a1-sprechen-01-t3-2c83aa7d.mp3",
+              "duration": 2.9
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

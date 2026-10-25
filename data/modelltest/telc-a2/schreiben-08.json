@@ -1,0 +1,189 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-08-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.357Z",
+        "textType": "Formular: Meldeschein im Hotel"
+      },
+      "display": {
+        "instruction": "Ihre Bekannte Joy übernachtet mit einer Freundin im Gasthof Zum Hirschen. An der Rezeption muss sie einen Meldeschein ausfüllen. Sie helfen ihr dabei. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Gasthof Zum Hirschen, Rothenburg ob der Tauber – Meldeschein\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: Joy\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStaatsangehörigkeit: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: Rosenstraße 31\nPLZ, Wohnort: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                " Krefeld\nPassnummer: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nAnreise: 14.11.2026\nAbreise: 15.11.2026\nAnzahl der Mitreisenden: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Joy Villanueva",
+          "source": "Pass und Notiz",
+          "paragraphs": [
+            "Reisepass – Name: VILLANUEVA · Vorname: JOY · Staatsangehörigkeit: PHILIPPINISCH · Geburtsdatum: 04.12.1989 · Geburtsort: CEBU CITY · Passnummer: P7743021 · ausgestellt am: 15.03.2022 · gültig bis: 14.03.2032",
+            "Joy kommt von den Philippinen und arbeitet als Verkäuferin in einem Modegeschäft. Bis letzten Monat hat sie in Duisburg gewohnt, im Kastanienweg 5, 47051 Duisburg. Jetzt hat sie eine neue Wohnung: Rosenstraße 31, 47798 Krefeld. Am Wochenende macht sie mit ihrer Freundin Rhea einen Ausflug nach Rothenburg. Ihre Kollegin Marisol wollte auch mitkommen, aber sie ist krank und hat abgesagt."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "04.12.1989",
+            "explanation": "Das Geburtsdatum steht im Pass. Die anderen Daten sind nur das Ausstellungsdatum und die Gültigkeit des Passes.",
+            "evidence": {
+              "text": "Reisepass – Name: VILLANUEVA · Vorname: JOY · Staatsangehörigkeit: PHILIPPINISCH · Geburtsdatum: 04.12.1989 · Geburtsort: CEBU CITY · Passnummer: P7743021 · ausgestellt am: 15.03.2022 · gültig bis: 14.03.2032",
+              "hit": "Geburtsdatum: 04.12.1989"
+            },
+            "accept": [
+              "4.12.1989",
+              "04.12.89",
+              "4.12.89",
+              "4. Dezember 1989",
+              "04. Dezember 1989"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "philippinisch",
+            "explanation": "Im Pass steht die Staatsangehörigkeit: philippinisch. Cebu City ist nur der Geburtsort.",
+            "evidence": {
+              "text": "Reisepass – Name: VILLANUEVA · Vorname: JOY · Staatsangehörigkeit: PHILIPPINISCH · Geburtsdatum: 04.12.1989 · Geburtsort: CEBU CITY · Passnummer: P7743021 · ausgestellt am: 15.03.2022 · gültig bis: 14.03.2032",
+              "hit": "Staatsangehörigkeit: PHILIPPINISCH"
+            },
+            "accept": [
+              "Philippinen",
+              "philippinische",
+              "Philippinin",
+              "Filipina"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "47798",
+            "explanation": "Joy wohnt jetzt in Krefeld, die Postleitzahl ist 47798. Die Nummer 47051 ist ihre alte Adresse in Duisburg.",
+            "evidence": {
+              "text": "Joy kommt von den Philippinen und arbeitet als Verkäuferin in einem Modegeschäft. Bis letzten Monat hat sie in Duisburg gewohnt, im Kastanienweg 5, 47051 Duisburg. Jetzt hat sie eine neue Wohnung: Rosenstraße 31, 47798 Krefeld. Am Wochenende macht sie mit ihrer Freundin Rhea einen Ausflug nach Rothenburg. Ihre Kollegin Marisol wollte auch mitkommen, aber sie ist krank und hat abgesagt.",
+              "hit": "47798 Krefeld"
+            },
+            "accept": [
+              "47798 Krefeld"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "P7743021",
+            "explanation": "Die Passnummer steht im Reisepass. Schreib die Zahlen genau ab.",
+            "evidence": {
+              "text": "Reisepass – Name: VILLANUEVA · Vorname: JOY · Staatsangehörigkeit: PHILIPPINISCH · Geburtsdatum: 04.12.1989 · Geburtsort: CEBU CITY · Passnummer: P7743021 · ausgestellt am: 15.03.2022 · gültig bis: 14.03.2032",
+              "hit": "Passnummer: P7743021"
+            },
+            "accept": [
+              "P 7743021",
+              "P-7743021"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "1",
+            "explanation": "Nur Rhea reist mit Joy, also eine Person. Marisol ist krank und kommt nicht mit.",
+            "evidence": {
+              "text": "Joy kommt von den Philippinen und arbeitet als Verkäuferin in einem Modegeschäft. Bis letzten Monat hat sie in Duisburg gewohnt, im Kastanienweg 5, 47051 Duisburg. Jetzt hat sie eine neue Wohnung: Rosenstraße 31, 47798 Krefeld. Am Wochenende macht sie mit ihrer Freundin Rhea einen Ausflug nach Rothenburg. Ihre Kollegin Marisol wollte auch mitkommen, aber sie ist krank und hat abgesagt.",
+              "hit": "mit ihrer Freundin Rhea"
+            },
+            "accept": [
+              "eins",
+              "eine",
+              "eine Person",
+              "1 Person"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Villanueva"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-08-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.357Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Kollegin Frau Hesse hat Sie zur Eröffnung ihrer Ausstellung eingeladen. Antworten Sie Frau Hesse mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Ausstellung am Freitag",
+            "situation": "Ihre Kollegin Frau Hesse malt in ihrer Freizeit. Am Freitag um 18 Uhr zeigt sie ihre Bilder zum ersten Mal im Café Lindgrün. Sie hat Sie zur Eröffnung eingeladen.",
+            "points": [
+              "Dank für die Einladung",
+              "Mann oder Frau mitbringen",
+              "früher gehen müssen – warum?",
+              "Bilder kaufen?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Liebe Frau Hesse,\nvielen Dank für Ihre Einladung! Ich komme sehr gern ins Café Lindgrün. Darf ich meinen Mann mitbringen? Er interessiert sich auch für Bilder. Leider muss ich schon um halb acht gehen, weil meine Schwester mit dem Zug ankommt. Ich hole sie am Bahnhof ab.\nViele Grüße\nAna Costa"
+          }
+        ]
+      }
+    }
+  ]
+}

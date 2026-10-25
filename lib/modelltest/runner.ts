@@ -4,6 +4,7 @@ import { ownsExam } from "@/lib/entitlements"
 import { indicativeLevel } from "@/lib/exam/band"
 import { isStartExam, typedRight } from "@/lib/exam/scoring/start"
 import { closedScore, type PartPoints } from "@/lib/exam/scoring/telc-b1"
+import { isOesdExam, scoreOesdClosed, type OesdItem } from "@/lib/exam/scoring/oesd"
 import type { ItemKey } from "@/lib/exam/kurztest"
 import type { PartId } from "@/lib/exam/types"
 import type { ExamId } from "@/lib/exams"
@@ -26,11 +27,11 @@ async function setRow(exam: ExamId, skill: PartId, n: number) {
   return data as SetRow | null
 }
 
-/** A published set the user may open (free, owned, or an admin preview of an unpublished one), stripped for the browser. */
+/** A published set the user may open (free or owned; admins too need the pass), or an admin preview of an unpublished one, stripped for the browser. */
 export async function loadRunnerSet(exam: ExamId, skill: PartId, n: number, userId: string): Promise<Access> {
   const [set, admin] = await Promise.all([setRow(exam, skill, n), requireAdmin()])
   if (!set || (!set.published && !admin)) return { ok: false, reason: "missing" }
-  if (!set.is_free && !admin && !(await ownsExam(userId, exam))) return { ok: false, reason: "locked" }
+  if (set.published && !set.is_free && !(await ownsExam(userId, exam))) return { ok: false, reason: "locked" }
   const { data, error } = await createAdminClient().from(tableOf(skill)).select(ROW_COLUMNS).eq("set_id", set.id).order("teil").order("sort_order")
   if (error) throw error
   const blocks = (data as Row[]).map((r) => rowToBlock(r, exam, skill)).map(({ id, skill, teil, display, example, exampleAnswers }) => ({ id, skill, teil, display, ...(example ? { example } : {}), ...(exampleAnswers ? { exampleAnswers } : {}) }))
@@ -79,7 +80,25 @@ export async function scoreClosed(attemptId: string, setId: string, exam: ExamId
     for (const it of b.display.items)
       if (it.type === "gap") for (const p of it.data.parts) if (typeof p !== "string" && !p.options.length) typed.set(p.n, b.key.answers.find((a) => a.n === p.n)?.accept ?? [])
   const keys: ItemKey[] = qs.map((q) => ({ n: q.n, correct: q.mt_options.find((o) => o.is_correct)?.label ?? "", explanation: q.explanation ?? "", ...(q.evidence ? { evidence: q.evidence } : {}), ...(typed.get(q.n)?.length ? { accept: typed.get(q.n) } : {}) }))
+  // ÖSD: exact typed answers, multi-tick rows and mark-N-of-M groups, scored with the official tables.
+  const oesd = isOesdExam(exam) && (skill === "lesen" || skill === "hoeren")
+    ? (() => {
+        const items: OesdItem[] = []
+        const exact = new Set<number>()
+        for (const { block: b } of blocks) {
+          for (const a of b.key.answers) if (a.exact) exact.add(a.n)
+          for (const it of b.display.items) {
+            if (it.type === "grid") for (const r of it.data.rows) items.push({ n: r.n, kind: it.data.multi ? "row" : "plain", columns: it.data.columns.length })
+            if (it.type === "marks") for (const n of it.data.ns) items.push({ n, kind: "marks", group: it.data.ns })
+          }
+        }
+        for (const n of typed.keys()) items.push({ n, kind: "plain", typed: true })
+        for (const k of keys) if (exact.has(k.n)) k.exact = true
+        return scoreOesdClosed(exam, skill, items, keys, answers)
+      })()
+    : undefined
   const right = (n: number) => {
+    if (oesd) return oesd.right.get(n) ?? false
     const k = keys.find((x) => x.n === n)
     if (answers[n] === undefined || !k) return false
     return typed.has(n) ? typedRight(answers[n], String(k.correct), typed.get(n)) : answers[n] === k.correct
@@ -88,8 +107,9 @@ export async function scoreClosed(attemptId: string, setId: string, exam: ExamId
   if (insErr) throw insErr
   const correct = keys.filter((k) => right(k.n)).length
   const byTeil = [...new Set(qs.map((q) => q.mt_stimuli.teil))].map((teil) => ({ teil, items: qs.filter((q) => q.mt_stimuli.teil === teil).map((q) => ({ n: q.n, right: right(q.n) })) }))
-  const points =
-    exam === "telc-b1"
+  const points = oesd
+    ? { points: oesd.points, max: oesd.max, parts: oesd.parts }
+    : exam === "telc-b1"
       ? closedScore(skill, new Set(keys.filter((k) => right(k.n)).map((k) => k.n)))
       : isStartExam(exam)
         ? (() => {

@@ -1,0 +1,477 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-06-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.352Z",
+        "textType": "Wegweiser in einem Bahnhof"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie fahren morgen mit dem Zug und möchten heute schon ein Ticket kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Sie haben einen großen Koffer dabei und möchten ihn für ein paar Stunden nicht tragen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Ihr Opa ist schon sehr alt und reist allein. Jemand soll mit ihm zum nächsten Zug gehen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Sie möchten am Wochenende mit dem Auto an einen See fahren, haben aber kein eigenes.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Die Fahrt dauert lange. Sie möchten etwas zum Lesen kaufen, zum Beispiel eine Zeitschrift.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Ihr Zug fährt erst in einer Stunde. Sie haben Hunger und möchten noch richtig zu Mittag essen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Hauptbahnhof Karlsruhe",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "2. Obergeschoss: Autovermietung · Parkhaus-Kasse · Ladestation für E-Autos · Fahrradverleih",
+            "1. Obergeschoss: Restaurants · Café · Bahnhofsmission (Begleitung beim Umsteigen) · Wartebereich mit WLAN",
+            "Erdgeschoss: Reisezentrum (Fahrkarten, Reservierungen) · Information (Abfahrtszeiten, Gleise) · Presse & Bücher · Bäckerei · Blumen · Geldautomat",
+            "Untergeschoss: Schließfächer · Gepäckaufbewahrung · Toiletten · Duschen · Friseur · Reinigung"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Schließfächer und Gepäckaufbewahrung sind im Untergeschoss. Im 1. Obergeschoss kannst du nur warten.",
+            "evidence": {
+              "text": "Untergeschoss: Schließfächer · Gepäckaufbewahrung · Toiletten · Duschen · Friseur · Reinigung",
+              "hit": "Schließfächer · Gepäckaufbewahrung"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Die Bahnhofsmission begleitet Reisende beim Umsteigen, und sie ist im 1. Obergeschoss. Die Information im Erdgeschoss gibt nur Abfahrtszeiten und Gleise.",
+            "evidence": {
+              "text": "1. Obergeschoss: Restaurants · Café · Bahnhofsmission (Begleitung beim Umsteigen) · Wartebereich mit WLAN",
+              "hit": "Bahnhofsmission (Begleitung beim Umsteigen)"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Ein Auto kannst du bei der Autovermietung im 2. Obergeschoss mieten. Im 1. Obergeschoss gibt es keine Autos.",
+            "evidence": {
+              "text": "2. Obergeschoss: Autovermietung · Parkhaus-Kasse · Ladestation für E-Autos · Fahrradverleih",
+              "hit": "Autovermietung"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Zeitschriften gibt es bei Presse & Bücher im Erdgeschoss. Im Untergeschoss und im 2. Obergeschoss gibt es nichts zum Lesen.",
+            "evidence": {
+              "text": "Erdgeschoss: Reisezentrum (Fahrkarten, Reservierungen) · Information (Abfahrtszeiten, Gleise) · Presse & Bücher · Bäckerei · Blumen · Geldautomat",
+              "hit": "Presse & Bücher"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "b",
+            "explanation": "Ein Mittagessen bekommst du in den Restaurants im 1. Obergeschoss. Die Bäckerei im Erdgeschoss hat nur Brot und Brötchen.",
+            "evidence": {
+              "text": "1. Obergeschoss: Restaurants · Café · Bahnhofsmission (Begleitung beim Umsteigen) · Wartebereich mit WLAN",
+              "hit": "Restaurants"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-06-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.352Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Tabea Wessel arbeitet jeden Tag mit Tieren."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Tabea sitzt schon seit ihrer Kindheit auf Pferden."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Tabea ist auf einem Bauernhof groß geworden."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Die Besitzer bringen ihre Pferde zu Tabea in die Werkstatt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Tabea hat länger als drei Jahre für ihren Beruf gelernt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "In Tabeas Klasse gab es außer ihr nur Männer."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Neue Eisen für vier Hufe",
+            "Tabea Wessel (26) aus Celle hat einen ungewöhnlichen Beruf: Sie ist Hufschmiedin. Sie macht Hufeisen und bringt sie an den Füßen von Pferden an. Mit Pferden hat sie schon lange zu tun: Mit zehn Jahren hat sie reiten gelernt. Dabei ist sie in einer kleinen Wohnung mitten in der Stadt aufgewachsen, und ein eigenes Pferd hatte die Familie nie.",
+            "Nach der Schule wollte Tabea zuerst Tierärztin werden. Doch dann hat sie bei einem Praktikum einen Hufschmied bei der Arbeit gesehen. Ihre Ausbildung hat dreieinhalb Jahre gedauert. In ihrer Klasse waren 14 Männer und noch zwei andere Frauen.",
+            "Eine eigene Werkstatt hat Tabea nicht. Ihr Werkzeug ist in einem kleinen Transporter. Mit ihm fährt sie jeden Tag zu den Ställen in der Umgebung. Bis zu acht Pferde schafft sie an einem Tag. „Die Arbeit ist schwer, und am Abend tut mir oft der Rücken weh“, sagt sie. „Aber ich bin den ganzen Tag draußen, und das liebe ich.“"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Tabea hat mit zehn Jahren reiten gelernt, also schon als Kind.",
+            "evidence": {
+              "text": "Tabea Wessel (26) aus Celle hat einen ungewöhnlichen Beruf: Sie ist Hufschmiedin. Sie macht Hufeisen und bringt sie an den Füßen von Pferden an. Mit Pferden hat sie schon lange zu tun: Mit zehn Jahren hat sie reiten gelernt. Dabei ist sie in einer kleinen Wohnung mitten in der Stadt aufgewachsen, und ein eigenes Pferd hatte die Familie nie.",
+              "hit": "Mit zehn Jahren hat sie reiten gelernt."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Tabea ist in einer kleinen Wohnung mitten in der Stadt aufgewachsen. Ihre Familie hatte nie ein eigenes Pferd.",
+            "evidence": {
+              "text": "Tabea Wessel (26) aus Celle hat einen ungewöhnlichen Beruf: Sie ist Hufschmiedin. Sie macht Hufeisen und bringt sie an den Füßen von Pferden an. Mit Pferden hat sie schon lange zu tun: Mit zehn Jahren hat sie reiten gelernt. Dabei ist sie in einer kleinen Wohnung mitten in der Stadt aufgewachsen, und ein eigenes Pferd hatte die Familie nie.",
+              "hit": "in einer kleinen Wohnung mitten in der Stadt aufgewachsen"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Tabea hat keine Werkstatt. Sie fährt mit ihrem Transporter selbst zu den Ställen.",
+            "evidence": {
+              "text": "Eine eigene Werkstatt hat Tabea nicht. Ihr Werkzeug ist in einem kleinen Transporter. Mit ihm fährt sie jeden Tag zu den Ställen in der Umgebung. Bis zu acht Pferde schafft sie an einem Tag. „Die Arbeit ist schwer, und am Abend tut mir oft der Rücken weh“, sagt sie. „Aber ich bin den ganzen Tag draußen, und das liebe ich.“",
+              "hit": "Eine eigene Werkstatt hat Tabea nicht."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Die Ausbildung hat dreieinhalb Jahre gedauert. Das ist länger als drei Jahre.",
+            "evidence": {
+              "text": "Nach der Schule wollte Tabea zuerst Tierärztin werden. Doch dann hat sie bei einem Praktikum einen Hufschmied bei der Arbeit gesehen. Ihre Ausbildung hat dreieinhalb Jahre gedauert. In ihrer Klasse waren 14 Männer und noch zwei andere Frauen.",
+              "hit": "Ihre Ausbildung hat dreieinhalb Jahre gedauert."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "In der Klasse waren 14 Männer, aber auch noch zwei andere Frauen. Tabea war also nicht die einzige Frau.",
+            "evidence": {
+              "text": "Nach der Schule wollte Tabea zuerst Tierärztin werden. Doch dann hat sie bei einem Praktikum einen Hufschmied bei der Arbeit gesehen. Ihre Ausbildung hat dreieinhalb Jahre gedauert. In ihrer Klasse waren 14 Männer und noch zwei andere Frauen.",
+              "hit": "In ihrer Klasse waren 14 Männer und noch zwei andere Frauen."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-06-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.352Z",
+        "textType": "Anzeigen und Webseiten: Gesundheit und Wohlfühlen in Oldenburg"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Yoga im Hinterhof",
+                  "text": "Ruhig werden nach einem langen Tag: Yoga für Anfänger, montags und donnerstags um 19 Uhr. Matten sind da. Die erste Stunde ist gratis."
+                },
+                {
+                  "key": "b",
+                  "title": "Gesundheitszentrum Eversten: Rückenschule",
+                  "text": "Bürojob und Schmerzen im Kreuz? An acht Abenden lernen Sie Übungen für einen starken Rücken. Die Krankenkasse zahlt meistens mit."
+                },
+                {
+                  "key": "c",
+                  "title": "www.gesund-essen-oldenburg.de",
+                  "text": "Ernährungsberatung: Wir zeigen Ihnen, wie Sie leckere und gesunde Gerichte kochen und dabei ohne Hunger abnehmen."
+                },
+                {
+                  "key": "d",
+                  "title": "Volkshochschule Oldenburg",
+                  "text": "Rauchfrei in sechs Wochen: Gruppenkurs mit vielen Tipps für die Zeit ohne Nikotin. Start am 3. März, Raum 12."
+                },
+                {
+                  "key": "e",
+                  "title": "Massagepraxis Hansen",
+                  "text": "Klassische Massage und Fußmassage. Termine auch am Samstag. Gutscheine gibt es auch als Geschenk."
+                },
+                {
+                  "key": "f",
+                  "title": "Apotheke am Markt",
+                  "text": "Unser Lieferservice bringt Ihre Medikamente kostenlos zu Ihnen nach Hause. Am 12. und 26. Oktober haben wir auch sonntags Notdienst."
+                },
+                {
+                  "key": "g",
+                  "title": "Hebammenpraxis Storchennest",
+                  "text": "Kurse zur Geburtsvorbereitung für Paare: Atmen, Entspannen und viele Infos für die ersten Wochen mit dem Kind."
+                },
+                {
+                  "key": "h",
+                  "title": "Gesprächsgruppe „Besser schlafen“",
+                  "text": "Sie liegen nachts lange wach? Wir sprechen über Tipps für ruhige Nächte. Jeden zweiten Dienstag im Nachbarschaftshaus Bürgerfelde."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Sie sitzen den ganzen Tag am Computer, und Ihr Rücken tut oft weh."
+                },
+                {
+                  "n": 11,
+                  "text": "Sie rauchen seit vielen Jahren und möchten damit endlich aufhören."
+                },
+                {
+                  "n": 12,
+                  "text": "Ihr Kind hat am Sonntag hohes Fieber. Eine Ärztin oder ein Arzt soll es untersuchen."
+                },
+                {
+                  "n": 13,
+                  "text": "Sie möchten gesünder essen und ein paar Kilo leichter werden."
+                },
+                {
+                  "n": 14,
+                  "text": "Sie können im Moment schlecht laufen. Jemand soll Ihnen Ihre Tabletten bringen."
+                },
+                {
+                  "n": 15,
+                  "text": "Ihre Frau und Sie bekommen im Juli ein Baby. Sie möchten vorher zusammen einen Kurs machen."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "d",
+            "explanation": "Der Kurs der Volkshochschule hilft dir, ohne Zigaretten und Nikotin zu leben.",
+            "evidence": {
+              "text": "Volkshochschule Oldenburg. Rauchfrei in sechs Wochen: Gruppenkurs mit vielen Tipps für die Zeit ohne Nikotin. Start am 3. März, Raum 12.",
+              "hit": "Rauchfrei in sechs Wochen"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "x",
+            "explanation": "Keine Anzeige bietet einen Arzt am Sonntag. Die Apotheke hat sonntags Notdienst, aber dort untersucht niemand dein Kind.",
+            "evidence": {
+              "text": "Apotheke am Markt. Unser Lieferservice bringt Ihre Medikamente kostenlos zu Ihnen nach Hause. Am 12. und 26. Oktober haben wir auch sonntags Notdienst.",
+              "hit": "Am 12. und 26. Oktober haben wir auch sonntags Notdienst."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Die Ernährungsberatung zeigt dir gesunde Gerichte und hilft beim Abnehmen.",
+            "evidence": {
+              "text": "www.gesund-essen-oldenburg.de. Ernährungsberatung: Wir zeigen Ihnen, wie Sie leckere und gesunde Gerichte kochen und dabei ohne Hunger abnehmen.",
+              "hit": "gesunde Gerichte kochen und dabei ohne Hunger abnehmen"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "f",
+            "explanation": "Die Apotheke am Markt bringt Medikamente kostenlos nach Hause. So musst du nicht selbst gehen.",
+            "evidence": {
+              "text": "Apotheke am Markt. Unser Lieferservice bringt Ihre Medikamente kostenlos zu Ihnen nach Hause. Am 12. und 26. Oktober haben wir auch sonntags Notdienst.",
+              "hit": "Unser Lieferservice bringt Ihre Medikamente kostenlos zu Ihnen nach Hause."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "g",
+            "explanation": "Die Hebammenpraxis hat Kurse für Paare, bevor das Kind kommt. Die Gruppe „Besser schlafen“ ist nur für Leute, die nachts wach liegen.",
+            "evidence": {
+              "text": "Hebammenpraxis Storchennest. Kurse zur Geburtsvorbereitung für Paare: Atmen, Entspannen und viele Infos für die ersten Wochen mit dem Kind.",
+              "hit": "Kurse zur Geburtsvorbereitung für Paare"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

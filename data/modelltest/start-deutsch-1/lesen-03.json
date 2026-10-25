@@ -1,0 +1,704 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "lesen",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-lesen-03-t1-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "exampleAnswers": [
+        "richtig"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Kurze Notiz an die Tochter"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Linas Mutter kommt heute spät nach Hause."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Linas Fahrrad ist im Hof."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 2,
+              "statement": "Lina soll heute mit ihrer Großmutter telefonieren."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Papa",
+          "source": "Notiz",
+          "paragraphs": [
+            "Hallo Lina,",
+            "Mama muss heute lange arbeiten. Sie kommt erst um 19 Uhr nach Hause. Im Kühlschrank ist Nudelsalat für dich. Dein Fahrrad steht nicht mehr im Hof. Ich habe es in den Keller gestellt. Und bitte ruf heute Nachmittag Oma an! Sie hat Geburtstag.",
+            "Bis heute Abend!",
+            "Papa"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Das Fahrrad stand im Hof, aber jetzt ist es im Keller. Papa hat es dort hingestellt.",
+            "evidence": {
+              "text": "Mama muss heute lange arbeiten. Sie kommt erst um 19 Uhr nach Hause. Im Kühlschrank ist Nudelsalat für dich. Dein Fahrrad steht nicht mehr im Hof. Ich habe es in den Keller gestellt. Und bitte ruf heute Nachmittag Oma an! Sie hat Geburtstag.",
+              "hit": "Ich habe es in den Keller gestellt."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "richtig",
+            "explanation": "Oma hat Geburtstag. Papa schreibt: Bitte ruf Oma an.",
+            "evidence": {
+              "text": "Mama muss heute lange arbeiten. Sie kommt erst um 19 Uhr nach Hause. Im Kühlschrank ist Nudelsalat für dich. Dein Fahrrad steht nicht mehr im Hof. Ich habe es in den Keller gestellt. Und bitte ruf heute Nachmittag Oma an! Sie hat Geburtstag.",
+              "hit": "Und bitte ruf heute Nachmittag Oma an!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t1-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Kurze E-Mail an eine Nachbarin"
+      },
+      "display": {
+        "instruction": "Hier sind zwei kurze Texte. Stimmen die Aussagen 1 bis 5? Wählen Sie richtig oder falsch.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Merve braucht am Montag Hilfe."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 4,
+              "statement": "Nadine soll die Kinder am Nachmittag wieder nach Hause bringen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Die Kinder warten vor dem Haus auf Nadine."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Merve",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Nadine,",
+            "ich habe eine große Bitte. Am Donnerstag um 8 Uhr habe ich eine wichtige Prüfung. Mein Mann arbeitet bis Montag in Stuttgart. Kannst du an dem Tag meine zwei Kinder zur Schule bringen? Sie müssen um 7:45 Uhr in der Schule sein. Die beiden warten schon um 7:30 Uhr unten an der Haustür. Nach der Schule hole ich sie selbst ab.",
+            "Vielen Dank!",
+            "Merve"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Merve hat am Donnerstag eine Prüfung und braucht dann Hilfe. Am Montag kommt nur ihr Mann zurück.",
+            "evidence": {
+              "text": "ich habe eine große Bitte. Am Donnerstag um 8 Uhr habe ich eine wichtige Prüfung. Mein Mann arbeitet bis Montag in Stuttgart. Kannst du an dem Tag meine zwei Kinder zur Schule bringen? Sie müssen um 7:45 Uhr in der Schule sein. Die beiden warten schon um 7:30 Uhr unten an der Haustür. Nach der Schule hole ich sie selbst ab.",
+              "hit": "Am Donnerstag um 8 Uhr habe ich eine wichtige Prüfung."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "falsch",
+            "explanation": "Nadine bringt die Kinder nur am Morgen zur Schule. Nach der Schule holt Merve sie selbst ab.",
+            "evidence": {
+              "text": "ich habe eine große Bitte. Am Donnerstag um 8 Uhr habe ich eine wichtige Prüfung. Mein Mann arbeitet bis Montag in Stuttgart. Kannst du an dem Tag meine zwei Kinder zur Schule bringen? Sie müssen um 7:45 Uhr in der Schule sein. Die beiden warten schon um 7:30 Uhr unten an der Haustür. Nach der Schule hole ich sie selbst ab.",
+              "hit": "Nach der Schule hole ich sie selbst ab."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Die Kinder warten um 7:30 Uhr unten an der Haustür. Dort holt Nadine sie ab.",
+            "evidence": {
+              "text": "ich habe eine große Bitte. Am Donnerstag um 8 Uhr habe ich eine wichtige Prüfung. Mein Mann arbeitet bis Montag in Stuttgart. Kannst du an dem Tag meine zwei Kinder zur Schule bringen? Sie müssen um 7:45 Uhr in der Schule sein. Die beiden warten schon um 7:30 Uhr unten an der Haustür. Nach der Schule hole ich sie selbst ab.",
+              "hit": "Die beiden warten schon um 7:30 Uhr unten an der Haustür."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t2-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "example": true,
+      "exampleAnswers": [
+        "b"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Ihre Tochter ist fünf. Sie möchten mit ihr am Wochenende ein Stück auf der Bühne sehen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.stadttheater-hellingen.de · Heute um 20 Uhr: „Die Räuber“. Für Erwachsene und Jugendliche ab 16 Jahren. Karten ab 18 €."
+                },
+                {
+                  "key": "b",
+                  "label": "www.puppenbuehne-kleeblatt.de · „Kasper und der Drache“ für Kinder ab 4 Jahren. Samstag und Sonntag um 15 Uhr. Eintritt 6 €."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t2-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihre Oma ist alt und hat kein Auto. Sie hat einen Termin in einer Praxis.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.fahrdienst-sonnenschein.de · Wir fahren ältere Menschen zum Arzt, zum Einkaufen oder zur Apotheke. Bitte einen Tag vorher anrufen: 0521 48 93 06."
+                },
+                {
+                  "key": "b",
+                  "label": "www.autovermietung-schnell.de · Autos mieten ab 29 € am Tag. Nur mit Führerschein und ab 21 Jahren. Online buchen!"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Der Fahrdienst in a fährt alte Menschen zum Arzt. In b muss man das Auto selbst fahren, und Oma hat keinen Führerschein dabei.",
+            "evidence": {
+              "text": "www.fahrdienst-sonnenschein.de · Wir fahren ältere Menschen zum Arzt, zum Einkaufen oder zur Apotheke. Bitte einen Tag vorher anrufen: 0521 48 93 06.",
+              "hit": "Wir fahren ältere Menschen zum Arzt"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t2-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie brauchen einen Computer. Er muss nicht neu sein.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.zweite-chance-technik.de · Gebrauchte Laptops und PCs, alle geprüft, mit einem Jahr Garantie. Schon ab 150 €."
+                },
+                {
+                  "key": "b",
+                  "label": "www.pc-doktor-mitte.de · Ihr Computer ist kaputt? Wir reparieren ihn schnell und billig. Auch am Samstag geöffnet."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "In a kann man gebrauchte Computer kaufen. In b reparieren sie nur kaputte Computer.",
+            "evidence": {
+              "text": "www.zweite-chance-technik.de · Gebrauchte Laptops und PCs, alle geprüft, mit einem Jahr Garantie. Schon ab 150 €.",
+              "hit": "Gebrauchte Laptops und PCs"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t2-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihre Fenster sind sehr schmutzig. Jemand soll sie für Sie putzen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.baumarkt-holzmann.de · Neue Fenster für Haus und Wohnung. Große Auswahl, Beratung im Markt. Mo–Sa 8–20 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "www.glanz-service.de · Glasreinigung für Wohnungen, Büros und Läden: Wir kommen zu Ihnen, auch am Wochenende. Tel. 0176 3304 218"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Die Firma in b kommt zu Ihnen und macht das Glas sauber. In a kann man nur neue Fenster kaufen.",
+            "evidence": {
+              "text": "www.glanz-service.de · Glasreinigung für Wohnungen, Büros und Läden: Wir kommen zu Ihnen, auch am Wochenende. Tel. 0176 3304 218",
+              "hit": "Glasreinigung für Wohnungen, Büros und Läden"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t2-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Ihr Sohn geht in die 6. Klasse. Er hat schlechte Noten in Mathe und braucht Hilfe.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.vhs-hellingen.de · Mathematik für Erwachsene: Rechnen im Alltag, ab 18 Jahren. Dienstags 19–20.30 Uhr, 10 Termine."
+                },
+                {
+                  "key": "b",
+                  "label": "www.lernhilfe-eule.de · Nachhilfe in allen Fächern für Schüler von Klasse 1 bis 10. Kleine Gruppen, Montag bis Freitag 14–18 Uhr."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "b",
+            "explanation": "In b gibt es Nachhilfe für Schüler bis Klasse 10, also auch für Ihren Sohn. Der Mathekurs in a ist nur für Erwachsene.",
+            "evidence": {
+              "text": "www.lernhilfe-eule.de · Nachhilfe in allen Fächern für Schüler von Klasse 1 bis 10. Kleine Gruppen, Montag bis Freitag 14–18 Uhr.",
+              "hit": "Nachhilfe in allen Fächern für Schüler von Klasse 1 bis 10."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t2-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Zwei Webseiten-Ausschnitte zu einer Situation"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 6–10. Zu jeder Situation gibt es zwei Texte. Wo finden Sie die Information: a oder b?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Sie möchten heute mit Freunden klettern. Aber das Wetter ist schlecht.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "www.boulderhalle-griffig.de · Bei jedem Wetter drinnen an die Wand! Gruppen ab 4 Personen zahlen weniger. Täglich 10–22 Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "www.alpenverein-hellingen.de · Klettern in den Bergen: Wochenendtour im Juli, nur bei gutem Wetter. Anmeldung bis 30. Juni."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Die Halle in a ist jeden Tag offen, und man klettert drinnen. Die Tour in b ist erst im Juli und nur bei gutem Wetter.",
+            "evidence": {
+              "text": "www.boulderhalle-griffig.de · Bei jedem Wetter drinnen an die Wand! Gruppen ab 4 Personen zahlen weniger. Täglich 10–22 Uhr.",
+              "hit": "Bei jedem Wetter drinnen an die Wand!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t3-bsp",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "example": true,
+      "exampleAnswers": [
+        "falsch"
+      ],
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Schild im Aufzug"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Sieben Personen dürfen zusammen mit dem Aufzug fahren."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Im Aufzug",
+          "source": "Schild",
+          "paragraphs": [
+            "Aufzug",
+            "höchstens 6 Personen oder 450 kg"
+          ]
+        }
+      },
+      "key": {
+        "answers": []
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t3-01",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Schild an der Bank"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Sie können hier am Sonntag Geld bekommen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür von der Bank",
+          "source": "Schild",
+          "paragraphs": [
+            "Schalter: Mo–Fr 9–16 Uhr",
+            "Geldautomat im Eingang: rund um die Uhr, jeden Tag"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "richtig",
+            "explanation": "Der Geldautomat geht jeden Tag, rund um die Uhr. Nur der Schalter ist am Sonntag zu.",
+            "evidence": {
+              "text": "Schalter: Mo–Fr 9–16 Uhr Geldautomat im Eingang: rund um die Uhr, jeden Tag",
+              "hit": "Geldautomat im Eingang: rund um die Uhr, jeden Tag"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t3-02",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Schild an einer Toilette"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 12,
+              "statement": "Für die Toilette brauchen Sie Geld."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "In der Fußgängerzone",
+          "source": "Schild",
+          "paragraphs": [
+            "Öffentliche Toilette",
+            "Benutzung: 50 Cent",
+            "Bitte Münzen bereithalten."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "richtig",
+            "explanation": "Die Toilette kostet 50 Cent. Sie brauchen also Münzen.",
+            "evidence": {
+              "text": "Öffentliche Toilette Benutzung: 50 Cent Bitte Münzen bereithalten.",
+              "hit": "Benutzung: 50 Cent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t3-03",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Schild auf dem Campingplatz"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 13,
+              "statement": "Um 23 Uhr darf man hier laut Musik hören."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Auf dem Campingplatz",
+          "source": "Schild",
+          "paragraphs": [
+            "Campingplatz Seeblick",
+            "Nachtruhe: 22–7 Uhr",
+            "Bitte keine laute Musik!"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 13,
+            "correct": "falsch",
+            "explanation": "Von 22 bis 7 Uhr ist Nachtruhe. Um 23 Uhr muss es also leise sein.",
+            "evidence": {
+              "text": "Campingplatz Seeblick Nachtruhe: 22–7 Uhr Bitte keine laute Musik!",
+              "hit": "Nachtruhe: 22–7 Uhr"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t3-04",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Schild am Wertstoffhof"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 14,
+              "statement": "Für einen alten Fernseher müssen Sie hier bezahlen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Am Tor vom Wertstoffhof",
+          "source": "Schild",
+          "paragraphs": [
+            "Alte Elektrogeräte (Fernseher, Computer, Handys): kostenlos",
+            "Autoreifen: 3 € pro Stück",
+            "Di–Sa 8–16 Uhr"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 14,
+            "correct": "falsch",
+            "explanation": "Alte Elektrogeräte wie Fernseher kosten nichts. Bezahlen muss man nur für Autoreifen.",
+            "evidence": {
+              "text": "Alte Elektrogeräte (Fernseher, Computer, Handys): kostenlos Autoreifen: 3 € pro Stück Di–Sa 8–16 Uhr",
+              "hit": "Alte Elektrogeräte (Fernseher, Computer, Handys): kostenlos"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-lesen-03-t3-05",
+      "exam": "start-deutsch-1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.316Z",
+        "textType": "Schild an der Sauna"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Schilder und die Aussagen 11–15. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 15,
+              "statement": "Am Mittwoch können Männer nicht in die Sauna gehen."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "An der Tür von der Sauna im Stadtbad",
+          "source": "Schild",
+          "paragraphs": [
+            "Sauna",
+            "Mittwoch: nur für Frauen",
+            "Alle anderen Tage: für alle"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 15,
+            "correct": "richtig",
+            "explanation": "Am Mittwoch ist die Sauna nur für Frauen. Männer können an den anderen Tagen kommen.",
+            "evidence": {
+              "text": "Sauna Mittwoch: nur für Frauen Alle anderen Tage: für alle",
+              "hit": "Mittwoch: nur für Frauen"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-10-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.135Z",
+        "textType": "Formular: Online-Bewerbung für einen Minijob"
+      },
+      "display": {
+        "instruction": "Ihr Bekannter Khaled möchte als Zeitungszusteller arbeiten. Sie helfen ihm bei der Online-Bewerbung. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Kurier am Morgen GmbH, Limburg – Bewerbung als Zeitungszusteller/in (Minijob)\n\nVorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nFamilienname: Mansour\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: Lerchenweg 7\nPLZ, Ort: 65549 Limburg\nTelefon (mobil): ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nGewünschtes Zustellgebiet (Stadtteil): ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nDeutschkenntnisse (Niveau): ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nDerzeitige Tätigkeit: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nGewünschte Arbeitszeit: früh am Morgen",
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Khaled Mansour",
+          "source": "Aufenthaltstitel, Zertifikat und Notiz",
+          "paragraphs": [
+            "Aufenthaltstitel – Name: MANSOUR · Vorname: KHALED · Geburtsdatum: 12.10.1987 · Staatsangehörigkeit: SYRISCH · ausgestellt am: 01.10.2023 · gültig bis: 30.09.2028",
+            "Sprachzertifikat Deutsch – Name: Khaled Mansour · Niveau: A2 · Prüfungsdatum: 14.06.2025 · Ergebnis: bestanden",
+            "Notiz von Rasha: Khaled möchte früh am Morgen Zeitungen austragen, bevor er zur Arbeit geht. Seit einem Jahr arbeitet er als Lagerhelfer bei einem Getränkehändler, immer ab 9 Uhr. In Syrien war er Elektriker. Wir wohnen in Blumenrod, und hier möchte er auch die Zeitungen bringen. Im Moment besucht er einen B1-Kurs an der Volkshochschule. Seine Handynummer ist 0162 55902817."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "12.10.1987",
+            "explanation": "Das Geburtsdatum steht im Aufenthaltstitel. Die anderen Daten sind Ausstellung und Gültigkeit. Zahlen müssen genau stimmen.",
+            "evidence": {
+              "text": "Aufenthaltstitel – Name: MANSOUR · Vorname: KHALED · Geburtsdatum: 12.10.1987 · Staatsangehörigkeit: SYRISCH · ausgestellt am: 01.10.2023 · gültig bis: 30.09.2028",
+              "hit": "Geburtsdatum: 12.10.1987"
+            },
+            "accept": [
+              "12.10.87",
+              "12. Oktober 1987",
+              "12.Oktober 1987",
+              "12/10/1987"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "0162 55902817",
+            "explanation": "Rasha schreibt Khaleds Handynummer in die Notiz. Zahlen müssen genau stimmen.",
+            "evidence": {
+              "text": "Notiz von Rasha: Khaled möchte früh am Morgen Zeitungen austragen, bevor er zur Arbeit geht. Seit einem Jahr arbeitet er als Lagerhelfer bei einem Getränkehändler, immer ab 9 Uhr. In Syrien war er Elektriker. Wir wohnen in Blumenrod, und hier möchte er auch die Zeitungen bringen. Im Moment besucht er einen B1-Kurs an der Volkshochschule. Seine Handynummer ist 0162 55902817.",
+              "hit": "0162 55902817"
+            },
+            "accept": [
+              "016255902817",
+              "0162-55902817",
+              "0162/55902817",
+              "0162 5590 2817",
+              "0162 559 028 17"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "Blumenrod",
+            "explanation": "Khaled möchte die Zeitungen dort bringen, wo die Familie wohnt: in Blumenrod. Limburg ist die Stadt, nicht der Stadtteil.",
+            "evidence": {
+              "text": "Notiz von Rasha: Khaled möchte früh am Morgen Zeitungen austragen, bevor er zur Arbeit geht. Seit einem Jahr arbeitet er als Lagerhelfer bei einem Getränkehändler, immer ab 9 Uhr. In Syrien war er Elektriker. Wir wohnen in Blumenrod, und hier möchte er auch die Zeitungen bringen. Im Moment besucht er einen B1-Kurs an der Volkshochschule. Seine Handynummer ist 0162 55902817.",
+              "hit": "Wir wohnen in Blumenrod, und hier möchte er auch die Zeitungen bringen"
+            },
+            "accept": [
+              "in Blumenrod",
+              "Limburg-Blumenrod"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "A2",
+            "explanation": "Das Zertifikat zeigt: Khaled hat Deutsch auf Niveau A2. Den B1-Kurs macht er gerade erst, er hat B1 noch nicht.",
+            "evidence": {
+              "text": "Sprachzertifikat Deutsch – Name: Khaled Mansour · Niveau: A2 · Prüfungsdatum: 14.06.2025 · Ergebnis: bestanden",
+              "hit": "Niveau: A2"
+            },
+            "accept": [
+              "A 2",
+              "Niveau A2"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "Lagerhelfer",
+            "explanation": "Jetzt arbeitet Khaled als Lagerhelfer. Elektriker war er früher in Syrien.",
+            "evidence": {
+              "text": "Notiz von Rasha: Khaled möchte früh am Morgen Zeitungen austragen, bevor er zur Arbeit geht. Seit einem Jahr arbeitet er als Lagerhelfer bei einem Getränkehändler, immer ab 9 Uhr. In Syrien war er Elektriker. Wir wohnen in Blumenrod, und hier möchte er auch die Zeitungen bringen. Im Moment besucht er einen B1-Kurs an der Volkshochschule. Seine Handynummer ist 0162 55902817.",
+              "hit": "arbeitet er als Lagerhelfer"
+            },
+            "accept": [
+              "Lagerarbeiter",
+              "Helfer im Lager",
+              "Lagerhelfer bei einem Getränkehändler",
+              "Lagerhelfer beim Getränkehändler"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Khaled"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-10-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.135Z",
+        "textType": "Antwort auf eine Einladung"
+      },
+      "display": {
+        "instruction": "Ihre Kollegin Sabine Ehlers hat Sie zur Taufe von ihrem Sohn eingeladen. Antworten Sie Sabine Ehlers mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Taufe am Sonntag",
+            "situation": "Ihre Kollegin Sabine Ehlers hat ein Baby bekommen. Ihr Sohn Emil wird am Sonntag um 11 Uhr in der Kirche getauft. Danach gibt es ein Mittagessen. Sabine Ehlers hat Sie eingeladen.",
+            "points": [
+              "Glückwunsch und Dank",
+              "nur Kirche, nicht Essen",
+              "Partner mitbringen",
+              "Parkplatz"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Liebe Sabine Ehlers,\nherzlichen Glückwunsch zu Ihrem Sohn und vielen Dank für die Einladung! Ich komme gern in die Kirche. Zum Essen kann ich leider nicht bleiben, weil meine Eltern am Sonntag zu Besuch kommen. Darf ich meinen Mann mitbringen?\nViele Grüße\nIhre Mariana Costa"
+          }
+        ]
+      }
+    }
+  ]
+}

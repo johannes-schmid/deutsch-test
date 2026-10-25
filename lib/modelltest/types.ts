@@ -6,7 +6,9 @@ import type { PartId } from "@/lib/exam/types"
 import type { ExamId } from "@/lib/exams"
 
 /** Sound design under or before a clip (research/dtz-blueprint.md §2.1). */
-export type SoundKey = "beep" | "gong" | "station" | "store" | "radio" | "train"
+export type SoundKey = "beep" | "gong" | "station" | "store" | "radio" | "train" | "phone" | "pool" | "boat"
+  // ÖSD A1/A2 (research/oesd-a1.md §9.2): a 2–4 s cue before each dialogue, street noise under interviews, the voicemail playback sound.
+  | "market" | "lobby" | "roller" | "river" | "street" | "playback"
 
 /**
  * `example`: the block is a Teil's Beispiel with its own clip or text.
@@ -15,6 +17,8 @@ export type SoundKey = "beep" | "gong" | "station" | "store" | "radio" | "train"
  */
 export type MtBlock = Omit<KurztestBlock, "display" | "key"> & {
   example?: boolean
+  /** Photos for picture options, per item number (0 = the picture grid of a matching task). Filled by images-options.ts. */
+  photos?: Record<number, MtOptionPhotos>
   sound?: SoundKey
   exampleAnswers?: string[]
   display: Omit<KurztestBlock["display"], "speaking"> & { speaking?: MtSpeaking }
@@ -30,6 +34,8 @@ export type SpeakPhase = "1A" | "1B" | "2A" | "2B" | "3" | "1" | "2"
 export type MtSpeakTurn = SpeakingTurn & { phase: SpeakPhase; live?: "followup" | "partner"; seconds?: number }
 /** A Pexels photo, re-encoded into our Storage. Pexels asks for a photographer credit and a link. */
 export type MtPhoto = { query: string; alt: string; src?: string; credit?: { name: string; url: string; pexelsId: number } }
+/** A photo for a picture option or a picture to match (Goethe A2 Hören Teil 2–3), by option key; `src` lands in the option. */
+export type MtOptionPhotos = Record<string, MtPhoto>
 export type MtSpeaking = Omit<NonNullable<KurztestBlock["display"]["speaking"]>, "turns"> & {
   turns: MtSpeakTurn[]
   photos?: { du: MtPhoto; partner: MtPhoto }

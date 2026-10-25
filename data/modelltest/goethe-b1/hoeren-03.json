@@ -1,0 +1,2307 @@
+{
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "goethe-b1-hoeren-03-t1-bsp",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Sina hat Karten für ein Fußballspiel bekommen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sina und Kai treffen sich …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "direkt vor der Sporthalle."
+                },
+                {
+                  "key": "b",
+                  "label": "an der Haltestelle am Marktplatz."
+                },
+                {
+                  "key": "c",
+                  "label": "vor Sinas Wohnung."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Sina",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Jemand hat Ihnen auf den Anrufbeantworter gesprochen.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t1-bsp.mp3",
+          "duration": 36.7
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Hallo Kai, hier ist Sina. Stell dir vor, ich hab zwei Karten für Sonntag bekommen! Nicht für Fußball wie letztes Mal, sondern für Handball, in der neuen Sporthalle. Hast du Lust? Das Spiel fängt um drei an. Direkt an der Halle treffen ist blöd, da ist es immer total voll. Und zu mir kommen lohnt sich nicht, ich wohn ja am anderen Ende der Stadt. Treffen wir uns doch um zwei an der Straßenbahnhaltestelle am Marktplatz. Sag mir bis morgen Bescheid, ja? Tschüss!",
+            "delivery": "[cheerful, excited voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "falsch",
+        "b"
+      ]
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t1-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Handwerker)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die richtigen Wandfliesen sind schon geliefert worden."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Herr Schröder schlägt vor, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zuerst den Boden zu machen."
+                },
+                {
+                  "key": "b",
+                  "label": "andere Fliesen zu nehmen."
+                },
+                {
+                  "key": "c",
+                  "label": "den Termin abzusagen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Andreas Schröder",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Jemand hat Ihnen auf den Anrufbeantworter gesprochen.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t1-01.mp3",
+          "duration": 37.51
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "falsch",
+            "explanation": "Die gelieferten Wandfliesen haben die falsche Farbe. Die richtigen kommen erst in zwei Wochen.",
+            "evidence": {
+              "text": "Guten Tag, Frau Neumann, hier ist Andreas Schröder von Fliesen Schröder. Leider ist heute die falsche Lieferung für Ihr Bad gekommen: Die Wandfliesen sind grau statt hellblau. Die richtigen kommen erst in zwei Wochen. Andere Fliesen würde ich nicht nehmen, die hellblauen passen einfach besser. Die Bodenfliesen sind aber in Ordnung. Mein Vorschlag: Wir fangen am Montag trotzdem an und machen erst mal den Boden. Dann verlieren wir keine Zeit. Absagen müssen wir den Termin also nicht. Rufen Sie mich bitte kurz zurück. Danke!",
+              "hit": "Die richtigen kommen erst in zwei Wochen."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "a",
+            "explanation": "Er will am Montag trotzdem anfangen und zuerst den Boden machen. Andere Fliesen will er nicht, und den Termin muss man nicht absagen.",
+            "evidence": {
+              "text": "Guten Tag, Frau Neumann, hier ist Andreas Schröder von Fliesen Schröder. Leider ist heute die falsche Lieferung für Ihr Bad gekommen: Die Wandfliesen sind grau statt hellblau. Die richtigen kommen erst in zwei Wochen. Andere Fliesen würde ich nicht nehmen, die hellblauen passen einfach besser. Die Bodenfliesen sind aber in Ordnung. Mein Vorschlag: Wir fangen am Montag trotzdem an und machen erst mal den Boden. Dann verlieren wir keine Zeit. Absagen müssen wir den Termin also nicht. Rufen Sie mich bitte kurz zurück. Danke!",
+              "hit": "Wir fangen am Montag trotzdem an und machen erst mal den Boden."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Guten Tag, Frau Neumann, hier ist Andreas Schröder von Fliesen Schröder. Leider ist heute die falsche Lieferung für Ihr Bad gekommen: Die Wandfliesen sind grau statt hellblau. Die richtigen kommen erst in zwei Wochen. Andere Fliesen würde ich nicht nehmen, die hellblauen passen einfach besser. Die Bodenfliesen sind aber in Ordnung. Mein Vorschlag: Wir fangen am Montag trotzdem an und machen erst mal den Boden. Dann verlieren wir keine Zeit. Absagen müssen wir den Termin also nicht. Rufen Sie mich bitte kurz zurück. Danke!",
+            "delivery": "[polite, practical tradesman on voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t1-02",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Eine Räbe kostet am Markt zwei Franken."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Wo kann man am Freitag Räben schnitzen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Zu Hause mit Anleitung."
+                },
+                {
+                  "key": "b",
+                  "label": "Im Gemeindesaal."
+                },
+                {
+                  "key": "c",
+                  "label": "Im Schulhaus."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t1-02.mp3",
+          "duration": 38.66
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "richtig",
+            "explanation": "Richtig: „Am Samstagmorgen gibt es sie am Markt, für zwei Franken das Stück.“",
+            "evidence": {
+              "text": "Und hier noch ein Tipp fürs Wochenende: Am Samstag ist in Aarau wieder Räbenlichter-Umzug. Um achtzehn Uhr ziehen Kinder und Erwachsene mit ihren leuchtenden Räben durch die Altstadt. Wer noch keine Räbe hat: Am Samstagmorgen gibt es sie am Markt, für zwei Franken das Stück. Und schnitzen muss man sie nicht allein zu Hause. Am Freitagnachmittag zeigen Ihnen Helferinnen im Schulhaus Rosengarten, wie es geht. Messer und Kerzen sind dort vorhanden. Der Umzug endet beim Gemeindesaal, mit warmem Punsch für alle.",
+              "hit": "für zwei Franken das Stück"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "c",
+            "explanation": "Am Freitag hilft man beim Schnitzen im Schulhaus. Beim Gemeindesaal endet nur der Umzug am Samstag.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp fürs Wochenende: Am Samstag ist in Aarau wieder Räbenlichter-Umzug. Um achtzehn Uhr ziehen Kinder und Erwachsene mit ihren leuchtenden Räben durch die Altstadt. Wer noch keine Räbe hat: Am Samstagmorgen gibt es sie am Markt, für zwei Franken das Stück. Und schnitzen muss man sie nicht allein zu Hause. Am Freitagnachmittag zeigen Ihnen Helferinnen im Schulhaus Rosengarten, wie es geht. Messer und Kerzen sind dort vorhanden. Der Umzug endet beim Gemeindesaal, mit warmem Punsch für alle.",
+              "hit": "Am Freitagnachmittag zeigen Ihnen Helferinnen im Schulhaus Rosengarten, wie es geht."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_ela",
+            "text": "Und hier noch ein Tipp fürs Wochenende: Am Samstag ist in Aarau wieder Räbenlichter-Umzug. Um achtzehn Uhr ziehen Kinder und Erwachsene mit ihren leuchtenden Räben durch die Altstadt. Wer noch keine Räbe hat: Am Samstagmorgen gibt es sie am Markt, für zwei Franken das Stück. Und schnitzen muss man sie nicht allein zu Hause. Am Freitagnachmittag zeigen Ihnen Helferinnen im Schulhaus Rosengarten, wie es geht. Messer und Kerzen sind dort vorhanden. Der Umzug endet beim Gemeindesaal, mit warmem Punsch für alle.",
+            "delivery": "[warm, cosy radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t1-03",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Durchsage auf einem Messegelände"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Heute ist eine Halle nicht so lange offen wie sonst."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Zum Bahnhof kommt man heute am besten …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zu Fuß in vierzig Minuten."
+                },
+                {
+                  "key": "b",
+                  "label": "mit dem Bus ab Eingang Süd."
+                },
+                {
+                  "key": "c",
+                  "label": "mit der Buslinie fünf."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage auf der Messe",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage auf einem Messegelände.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t1-03.mp3",
+          "duration": 39.42
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Halle drei schließt heute schon um siebzehn Uhr. Das ist eine Stunde früher als sonst.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher der Gartenmesse Dornbirn, bitte beachten Sie: Halle drei schließt heute schon um siebzehn Uhr, also eine Stunde früher als sonst. Alle anderen Hallen sind wie gewohnt bis achtzehn Uhr geöffnet. Für die Fahrt zum Bahnhof steht ab sofort ein kostenloser Shuttlebus bereit. Er fährt alle fünfzehn Minuten vom Eingang Süd ab. Die Buslinie fünf fährt heute wegen einer Baustelle leider nicht. Zu Fuß brauchen Sie etwa vierzig Minuten. Tickets für morgen bekommen Sie an der Kassa im Foyer. Vielen Dank.",
+              "hit": "Halle drei schließt heute schon um siebzehn Uhr, also eine Stunde früher als sonst."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Der kostenlose Shuttlebus fährt ab Eingang Süd zum Bahnhof. Die Linie fünf fährt heute nicht, und zu Fuß dauert es lange.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher der Gartenmesse Dornbirn, bitte beachten Sie: Halle drei schließt heute schon um siebzehn Uhr, also eine Stunde früher als sonst. Alle anderen Hallen sind wie gewohnt bis achtzehn Uhr geöffnet. Für die Fahrt zum Bahnhof steht ab sofort ein kostenloser Shuttlebus bereit. Er fährt alle fünfzehn Minuten vom Eingang Süd ab. Die Buslinie fünf fährt heute wegen einer Baustelle leider nicht. Zu Fuß brauchen Sie etwa vierzig Minuten. Tickets für morgen bekommen Sie an der Kassa im Foyer. Vielen Dank.",
+              "hit": "Er fährt alle fünfzehn Minuten vom Eingang Süd ab."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Liebe Besucherinnen und Besucher der Gartenmesse Dornbirn, bitte beachten Sie: Halle drei schließt heute schon um siebzehn Uhr, also eine Stunde früher als sonst. Alle anderen Hallen sind wie gewohnt bis achtzehn Uhr geöffnet. Für die Fahrt zum Bahnhof steht ab sofort ein kostenloser Shuttlebus bereit. Er fährt alle fünfzehn Minuten vom Eingang Süd ab. Die Buslinie fünf fährt heute wegen einer Baustelle leider nicht. Zu Fuß brauchen Sie etwa vierzig Minuten. Tickets für morgen bekommen Sie an der Kassa im Foyer. Vielen Dank.",
+            "delivery": "[calm, clear public announcement]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t1-04",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Für die Reinigung muss man das Sofa ins Geschäft bringen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "In diesem Monat …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommt man zehn Prozent Rabatt."
+                },
+                {
+                  "key": "b",
+                  "label": "ist die Abholung des Sofas gratis."
+                },
+                {
+                  "key": "c",
+                  "label": "wird ein Teppich gratis gereinigt."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t1-04.mp3",
+          "duration": 39.18
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Die Firma kommt zu dir nach Hause und reinigt das Sofa im Wohnzimmer. Du musst nichts transportieren.",
+            "evidence": {
+              "text": "Ihr Sofa hat schon bessere Tage gesehen? Flecken von Kaffee oder Rotwein? Dann rufen Sie Polsterpflege Meyerhoff! Wir kommen zu Ihnen nach Hause und reinigen Ihr Sofa direkt im Wohnzimmer. Sie müssen nichts schleppen und nichts abholen lassen. Und das zum Festpreis von neunundsiebzig Euro. Nur in diesem Monat gibt's noch etwas Besonderes: Diesmal keine zehn Prozent Rabatt, sondern einen Teppich, den wir kostenlos mitreinigen. Termine unter null fünf zwei eins, drei drei acht acht fünf. Polsterpflege Meyerhoff, wir kommen zu Ihnen!",
+              "hit": "Wir kommen zu Ihnen nach Hause und reinigen Ihr Sofa direkt im Wohnzimmer."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Diesen Monat reinigt die Firma einen Teppich kostenlos mit. Zehn Prozent Rabatt gibt es diesmal ausdrücklich nicht.",
+            "evidence": {
+              "text": "Ihr Sofa hat schon bessere Tage gesehen? Flecken von Kaffee oder Rotwein? Dann rufen Sie Polsterpflege Meyerhoff! Wir kommen zu Ihnen nach Hause und reinigen Ihr Sofa direkt im Wohnzimmer. Sie müssen nichts schleppen und nichts abholen lassen. Und das zum Festpreis von neunundsiebzig Euro. Nur in diesem Monat gibt's noch etwas Besonderes: Diesmal keine zehn Prozent Rabatt, sondern einen Teppich, den wir kostenlos mitreinigen. Termine unter null fünf zwei eins, drei drei acht acht fünf. Polsterpflege Meyerhoff, wir kommen zu Ihnen!",
+              "hit": "sondern einen Teppich, den wir kostenlos mitreinigen"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_lisa",
+            "text": "Ihr Sofa hat schon bessere Tage gesehen? Flecken von Kaffee oder Rotwein? Dann rufen Sie Polsterpflege Meyerhoff! Wir kommen zu Ihnen nach Hause und reinigen Ihr Sofa direkt im Wohnzimmer. Sie müssen nichts schleppen und nichts abholen lassen. Und das zum Festpreis von neunundsiebzig Euro. Nur in diesem Monat gibt's noch etwas Besonderes: Diesmal keine zehn Prozent Rabatt, sondern einen Teppich, den wir kostenlos mitreinigen. Termine unter null fünf zwei eins, drei drei acht acht fünf. Polsterpflege Meyerhoff, wir kommen zu Ihnen!",
+            "delivery": "[bright, upbeat radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t1-05",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Nachbarin)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Frau Jankowski ist ab morgen eine Woche weg."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ab morgen ist das Paket …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "beim Hausmeister."
+                },
+                {
+                  "key": "b",
+                  "label": "im Keller."
+                },
+                {
+                  "key": "c",
+                  "label": "vor Herrn Brandts Tür."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Ewa Jankowski",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Jemand hat Ihnen auf den Anrufbeantworter gesprochen.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t1-05.mp3",
+          "duration": 33.38
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Richtig: „Ich fahre morgen früh für eine Woche zu meiner Schwester.“",
+            "evidence": {
+              "text": "Hallo Herr Brandt, hier ist Ewa Jankowski aus dem zweiten Stock. Heute Vormittag war der Paketbote da, und ich hab ein Paket für Sie angenommen. Das Problem ist: Ich fahre morgen früh für eine Woche zu meiner Schwester. Vor Ihre Tür oder in den Keller stellen will ich es nicht, das ist mir zu unsicher. Deshalb gebe ich das Paket heute Abend Herrn Kowalski, unserem Hausmeister. Ab morgen holen Sie es einfach bei ihm im Erdgeschoss ab. Bis bald!",
+              "hit": "ich hab ein Paket für Sie angenommen"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Sie gibt das Paket heute Abend dem Hausmeister. Vor die Tür oder in den Keller will sie es nicht stellen.",
+            "evidence": {
+              "text": "Hallo Herr Brandt, hier ist Ewa Jankowski aus dem zweiten Stock. Heute Vormittag war der Paketbote da, und ich hab ein Paket für Sie angenommen. Das Problem ist: Ich fahre morgen früh für eine Woche zu meiner Schwester. Vor Ihre Tür oder in den Keller stellen will ich es nicht, das ist mir zu unsicher. Deshalb gebe ich das Paket heute Abend Herrn Kowalski, unserem Hausmeister. Ab morgen holen Sie es einfach bei ihm im Erdgeschoss ab. Bis bald!",
+              "hit": "Deshalb gebe ich das Paket heute Abend Herrn Kowalski, unserem Hausmeister."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_irene",
+            "text": "Hallo Herr Brandt, hier ist Ewa Jankowski aus dem zweiten Stock. Heute Vormittag war der Paketbote da, und ich hab ein Paket für Sie angenommen. Das Problem ist: Ich fahre morgen früh für eine Woche zu meiner Schwester. Vor Ihre Tür oder in den Keller stellen will ich es nicht, das ist mir zu unsicher. Deshalb gebe ich das Paket heute Abend Herrn Kowalski, unserem Hausmeister. Ab morgen holen Sie es einfach bei ihm im Erdgeschoss ab. Bis bald!",
+            "delivery": "[friendly neighbour, slightly hurried voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t2-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Informationen bei einer Pilzwanderung"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Die Pilze soll man …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in einer Plastiktüte sammeln."
+                },
+                {
+                  "key": "b",
+                  "label": "in einem Korb tragen."
+                },
+                {
+                  "key": "c",
+                  "label": "im Rucksack transportieren."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Jede Person darf …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "so viele Pilze mitnehmen, wie sie will."
+                },
+                {
+                  "key": "b",
+                  "label": "fast drei Kilo Pilze sammeln."
+                },
+                {
+                  "key": "c",
+                  "label": "höchstens ein Kilo Pilze mitnehmen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Am Ende der Wanderung …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kochen alle zusammen eine Pilzsuppe."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommt jeder ein kleines Pilzbuch."
+                },
+                {
+                  "key": "c",
+                  "label": "prüft eine Fachfrau alle Pilze."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Hunde …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "müssen immer an der Leine bleiben."
+                },
+                {
+                  "key": "b",
+                  "label": "dürfen heute nicht mitkommen."
+                },
+                {
+                  "key": "c",
+                  "label": "dürfen frei laufen, wenn sie brav sind."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Nächsten Samstag trifft man sich …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Parkplatz um zwei Uhr."
+                },
+                {
+                  "key": "b",
+                  "label": "am Waldhaus um halb drei."
+                },
+                {
+                  "key": "c",
+                  "label": "am Bahnhof um halb drei."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Pilzwanderung im Wald",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Beatrice Gerber, Försterin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie nehmen an einer Pilzwanderung im Pfälzerwald teil. Die Leiterin gibt Informationen.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t2-01.mp3",
+          "duration": 167.44
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Plastiktüten sollen im Auto bleiben, und im Rucksack werden die Pilze zerdrückt. Man soll einen Korb nehmen.",
+            "evidence": {
+              "text": "Guten Tag, meine Damen und Herren, und herzlich willkommen im Pfälzerwald! Ich hoffe, Sie haben den Parkplatz gut gefunden. Mein Name ist Beatrice Gerber, ich bin Försterin hier im Revier, und ich mache diese Pilzwanderungen jetzt schon seit acht Jahren. Schön, dass heute so viele gekommen sind, trotz des Nebels am Morgen. Bevor wir losgehen, ein paar wichtige Informationen. Zuerst zum Sammeln. Ich sehe, einige von Ihnen haben Plastiktüten dabei. Die lassen Sie bitte im Auto. In einer Tüte werden Pilze ganz schnell warm und matschig. Auch im Rucksack werden sie leicht zerdrückt. Nehmen Sie also einen Korb. Wer keinen hat: Hier vorne stehen noch zehn Körbe, die kann man sich für heute ausleihen. Dann zur Menge. Viele denken, im Wald darf man einfach so viel mitnehmen, wie man will. Das stimmt nicht. Pro Person ist höchstens ein Kilo erlaubt, und das reicht für eine Familie auch locker für ein gutes Abendessen. Früher hatten wir in der Gruppe mal jemanden mit fast drei Kilo, da musste ich leider streng werden. Zum Ablauf: Wir laufen jetzt ungefähr zwei Stunden. Unterwegs zeige ich Ihnen, wo welche Pilze wachsen und woran man die giftigen erkennt. Bleiben Sie bitte in der Gruppe, im Wald verliert man sich hier schnell. Ich trage eine rote Jacke, Sie sehen mich also gut. Am Ende treffen wir uns wieder hier am Parkplatz. Dann kommt das Wichtigste: Meine Kollegin Doris Brenner ist Pilzsachverständige, und sie schaut sich jeden einzelnen Pilz in Ihrem Korb an. Bitte essen Sie nichts, was sie nicht gesehen hat! Eine gemeinsame Pilzsuppe wie letztes Jahr gibt es diesmal leider nicht, aber Rezepte bekommen Sie gern von mir. Und wer möchte, kann bei Frau Brenner auch ein kleines Pilzbuch kaufen. Ach ja, ich sehe auch ein paar Hunde. Die dürfen natürlich gern mitkommen. Aber im Wald sind gerade viele Rehe unterwegs. Deshalb bleiben die Hunde bitte die ganze Zeit an der Leine, auch wenn sie sonst noch so brav sind. Und zum Schluss noch etwas für alle, die nächste Woche wieder mitkommen möchten. Dann treffen wir uns nicht hier am Parkplatz, der ist am Samstag wegen Bauarbeiten gesperrt. Wir treffen uns am Waldhaus, um halb drei, nicht wie heute um zwei. Vom Bahnhof fährt ein Bus direkt dorthin. So, haben Sie noch Fragen? Nein? Gut, dann nehmen Sie Ihre Körbe, und los geht's! Viel Glück beim Suchen!",
+              "hit": "Nehmen Sie also einen Korb."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Pro Person ist höchstens ein Kilo erlaubt. Drei Kilo hatte früher nur einmal jemand, und das war zu viel.",
+            "evidence": {
+              "text": "Guten Tag, meine Damen und Herren, und herzlich willkommen im Pfälzerwald! Ich hoffe, Sie haben den Parkplatz gut gefunden. Mein Name ist Beatrice Gerber, ich bin Försterin hier im Revier, und ich mache diese Pilzwanderungen jetzt schon seit acht Jahren. Schön, dass heute so viele gekommen sind, trotz des Nebels am Morgen. Bevor wir losgehen, ein paar wichtige Informationen. Zuerst zum Sammeln. Ich sehe, einige von Ihnen haben Plastiktüten dabei. Die lassen Sie bitte im Auto. In einer Tüte werden Pilze ganz schnell warm und matschig. Auch im Rucksack werden sie leicht zerdrückt. Nehmen Sie also einen Korb. Wer keinen hat: Hier vorne stehen noch zehn Körbe, die kann man sich für heute ausleihen. Dann zur Menge. Viele denken, im Wald darf man einfach so viel mitnehmen, wie man will. Das stimmt nicht. Pro Person ist höchstens ein Kilo erlaubt, und das reicht für eine Familie auch locker für ein gutes Abendessen. Früher hatten wir in der Gruppe mal jemanden mit fast drei Kilo, da musste ich leider streng werden. Zum Ablauf: Wir laufen jetzt ungefähr zwei Stunden. Unterwegs zeige ich Ihnen, wo welche Pilze wachsen und woran man die giftigen erkennt. Bleiben Sie bitte in der Gruppe, im Wald verliert man sich hier schnell. Ich trage eine rote Jacke, Sie sehen mich also gut. Am Ende treffen wir uns wieder hier am Parkplatz. Dann kommt das Wichtigste: Meine Kollegin Doris Brenner ist Pilzsachverständige, und sie schaut sich jeden einzelnen Pilz in Ihrem Korb an. Bitte essen Sie nichts, was sie nicht gesehen hat! Eine gemeinsame Pilzsuppe wie letztes Jahr gibt es diesmal leider nicht, aber Rezepte bekommen Sie gern von mir. Und wer möchte, kann bei Frau Brenner auch ein kleines Pilzbuch kaufen. Ach ja, ich sehe auch ein paar Hunde. Die dürfen natürlich gern mitkommen. Aber im Wald sind gerade viele Rehe unterwegs. Deshalb bleiben die Hunde bitte die ganze Zeit an der Leine, auch wenn sie sonst noch so brav sind. Und zum Schluss noch etwas für alle, die nächste Woche wieder mitkommen möchten. Dann treffen wir uns nicht hier am Parkplatz, der ist am Samstag wegen Bauarbeiten gesperrt. Wir treffen uns am Waldhaus, um halb drei, nicht wie heute um zwei. Vom Bahnhof fährt ein Bus direkt dorthin. So, haben Sie noch Fragen? Nein? Gut, dann nehmen Sie Ihre Körbe, und los geht's! Viel Glück beim Suchen!",
+              "hit": "Pro Person ist höchstens ein Kilo erlaubt"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Am Schluss schaut sich die Pilzsachverständige jeden Pilz an. Eine Suppe gibt es diesmal nicht, und das Pilzbuch muss man kaufen.",
+            "evidence": {
+              "text": "Guten Tag, meine Damen und Herren, und herzlich willkommen im Pfälzerwald! Ich hoffe, Sie haben den Parkplatz gut gefunden. Mein Name ist Beatrice Gerber, ich bin Försterin hier im Revier, und ich mache diese Pilzwanderungen jetzt schon seit acht Jahren. Schön, dass heute so viele gekommen sind, trotz des Nebels am Morgen. Bevor wir losgehen, ein paar wichtige Informationen. Zuerst zum Sammeln. Ich sehe, einige von Ihnen haben Plastiktüten dabei. Die lassen Sie bitte im Auto. In einer Tüte werden Pilze ganz schnell warm und matschig. Auch im Rucksack werden sie leicht zerdrückt. Nehmen Sie also einen Korb. Wer keinen hat: Hier vorne stehen noch zehn Körbe, die kann man sich für heute ausleihen. Dann zur Menge. Viele denken, im Wald darf man einfach so viel mitnehmen, wie man will. Das stimmt nicht. Pro Person ist höchstens ein Kilo erlaubt, und das reicht für eine Familie auch locker für ein gutes Abendessen. Früher hatten wir in der Gruppe mal jemanden mit fast drei Kilo, da musste ich leider streng werden. Zum Ablauf: Wir laufen jetzt ungefähr zwei Stunden. Unterwegs zeige ich Ihnen, wo welche Pilze wachsen und woran man die giftigen erkennt. Bleiben Sie bitte in der Gruppe, im Wald verliert man sich hier schnell. Ich trage eine rote Jacke, Sie sehen mich also gut. Am Ende treffen wir uns wieder hier am Parkplatz. Dann kommt das Wichtigste: Meine Kollegin Doris Brenner ist Pilzsachverständige, und sie schaut sich jeden einzelnen Pilz in Ihrem Korb an. Bitte essen Sie nichts, was sie nicht gesehen hat! Eine gemeinsame Pilzsuppe wie letztes Jahr gibt es diesmal leider nicht, aber Rezepte bekommen Sie gern von mir. Und wer möchte, kann bei Frau Brenner auch ein kleines Pilzbuch kaufen. Ach ja, ich sehe auch ein paar Hunde. Die dürfen natürlich gern mitkommen. Aber im Wald sind gerade viele Rehe unterwegs. Deshalb bleiben die Hunde bitte die ganze Zeit an der Leine, auch wenn sie sonst noch so brav sind. Und zum Schluss noch etwas für alle, die nächste Woche wieder mitkommen möchten. Dann treffen wir uns nicht hier am Parkplatz, der ist am Samstag wegen Bauarbeiten gesperrt. Wir treffen uns am Waldhaus, um halb drei, nicht wie heute um zwei. Vom Bahnhof fährt ein Bus direkt dorthin. So, haben Sie noch Fragen? Nein? Gut, dann nehmen Sie Ihre Körbe, und los geht's! Viel Glück beim Suchen!",
+              "hit": "sie schaut sich jeden einzelnen Pilz in Ihrem Korb an"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a",
+            "explanation": "Hunde dürfen mit, aber sie bleiben die ganze Zeit an der Leine. Das gilt auch für brave Hunde.",
+            "evidence": {
+              "text": "Guten Tag, meine Damen und Herren, und herzlich willkommen im Pfälzerwald! Ich hoffe, Sie haben den Parkplatz gut gefunden. Mein Name ist Beatrice Gerber, ich bin Försterin hier im Revier, und ich mache diese Pilzwanderungen jetzt schon seit acht Jahren. Schön, dass heute so viele gekommen sind, trotz des Nebels am Morgen. Bevor wir losgehen, ein paar wichtige Informationen. Zuerst zum Sammeln. Ich sehe, einige von Ihnen haben Plastiktüten dabei. Die lassen Sie bitte im Auto. In einer Tüte werden Pilze ganz schnell warm und matschig. Auch im Rucksack werden sie leicht zerdrückt. Nehmen Sie also einen Korb. Wer keinen hat: Hier vorne stehen noch zehn Körbe, die kann man sich für heute ausleihen. Dann zur Menge. Viele denken, im Wald darf man einfach so viel mitnehmen, wie man will. Das stimmt nicht. Pro Person ist höchstens ein Kilo erlaubt, und das reicht für eine Familie auch locker für ein gutes Abendessen. Früher hatten wir in der Gruppe mal jemanden mit fast drei Kilo, da musste ich leider streng werden. Zum Ablauf: Wir laufen jetzt ungefähr zwei Stunden. Unterwegs zeige ich Ihnen, wo welche Pilze wachsen und woran man die giftigen erkennt. Bleiben Sie bitte in der Gruppe, im Wald verliert man sich hier schnell. Ich trage eine rote Jacke, Sie sehen mich also gut. Am Ende treffen wir uns wieder hier am Parkplatz. Dann kommt das Wichtigste: Meine Kollegin Doris Brenner ist Pilzsachverständige, und sie schaut sich jeden einzelnen Pilz in Ihrem Korb an. Bitte essen Sie nichts, was sie nicht gesehen hat! Eine gemeinsame Pilzsuppe wie letztes Jahr gibt es diesmal leider nicht, aber Rezepte bekommen Sie gern von mir. Und wer möchte, kann bei Frau Brenner auch ein kleines Pilzbuch kaufen. Ach ja, ich sehe auch ein paar Hunde. Die dürfen natürlich gern mitkommen. Aber im Wald sind gerade viele Rehe unterwegs. Deshalb bleiben die Hunde bitte die ganze Zeit an der Leine, auch wenn sie sonst noch so brav sind. Und zum Schluss noch etwas für alle, die nächste Woche wieder mitkommen möchten. Dann treffen wir uns nicht hier am Parkplatz, der ist am Samstag wegen Bauarbeiten gesperrt. Wir treffen uns am Waldhaus, um halb drei, nicht wie heute um zwei. Vom Bahnhof fährt ein Bus direkt dorthin. So, haben Sie noch Fragen? Nein? Gut, dann nehmen Sie Ihre Körbe, und los geht's! Viel Glück beim Suchen!",
+              "hit": "Deshalb bleiben die Hunde bitte die ganze Zeit an der Leine"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Nächste Woche ist der Treffpunkt das Waldhaus um halb drei. Der Parkplatz ist gesperrt, und vom Bahnhof fährt nur der Bus dorthin.",
+            "evidence": {
+              "text": "Guten Tag, meine Damen und Herren, und herzlich willkommen im Pfälzerwald! Ich hoffe, Sie haben den Parkplatz gut gefunden. Mein Name ist Beatrice Gerber, ich bin Försterin hier im Revier, und ich mache diese Pilzwanderungen jetzt schon seit acht Jahren. Schön, dass heute so viele gekommen sind, trotz des Nebels am Morgen. Bevor wir losgehen, ein paar wichtige Informationen. Zuerst zum Sammeln. Ich sehe, einige von Ihnen haben Plastiktüten dabei. Die lassen Sie bitte im Auto. In einer Tüte werden Pilze ganz schnell warm und matschig. Auch im Rucksack werden sie leicht zerdrückt. Nehmen Sie also einen Korb. Wer keinen hat: Hier vorne stehen noch zehn Körbe, die kann man sich für heute ausleihen. Dann zur Menge. Viele denken, im Wald darf man einfach so viel mitnehmen, wie man will. Das stimmt nicht. Pro Person ist höchstens ein Kilo erlaubt, und das reicht für eine Familie auch locker für ein gutes Abendessen. Früher hatten wir in der Gruppe mal jemanden mit fast drei Kilo, da musste ich leider streng werden. Zum Ablauf: Wir laufen jetzt ungefähr zwei Stunden. Unterwegs zeige ich Ihnen, wo welche Pilze wachsen und woran man die giftigen erkennt. Bleiben Sie bitte in der Gruppe, im Wald verliert man sich hier schnell. Ich trage eine rote Jacke, Sie sehen mich also gut. Am Ende treffen wir uns wieder hier am Parkplatz. Dann kommt das Wichtigste: Meine Kollegin Doris Brenner ist Pilzsachverständige, und sie schaut sich jeden einzelnen Pilz in Ihrem Korb an. Bitte essen Sie nichts, was sie nicht gesehen hat! Eine gemeinsame Pilzsuppe wie letztes Jahr gibt es diesmal leider nicht, aber Rezepte bekommen Sie gern von mir. Und wer möchte, kann bei Frau Brenner auch ein kleines Pilzbuch kaufen. Ach ja, ich sehe auch ein paar Hunde. Die dürfen natürlich gern mitkommen. Aber im Wald sind gerade viele Rehe unterwegs. Deshalb bleiben die Hunde bitte die ganze Zeit an der Leine, auch wenn sie sonst noch so brav sind. Und zum Schluss noch etwas für alle, die nächste Woche wieder mitkommen möchten. Dann treffen wir uns nicht hier am Parkplatz, der ist am Samstag wegen Bauarbeiten gesperrt. Wir treffen uns am Waldhaus, um halb drei, nicht wie heute um zwei. Vom Bahnhof fährt ein Bus direkt dorthin. So, haben Sie noch Fragen? Nein? Gut, dann nehmen Sie Ihre Körbe, und los geht's! Viel Glück beim Suchen!",
+              "hit": "Wir treffen uns am Waldhaus, um halb drei, nicht wie heute um zwei."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Guten Tag, meine Damen und Herren, und herzlich willkommen im Pfälzerwald! Ich hoffe, Sie haben den Parkplatz gut gefunden. Mein Name ist Beatrice Gerber, ich bin Försterin hier im Revier, und ich mache diese Pilzwanderungen jetzt schon seit acht Jahren. Schön, dass heute so viele gekommen sind, trotz des Nebels am Morgen. Bevor wir losgehen, ein paar wichtige Informationen. Zuerst zum Sammeln. Ich sehe, einige von Ihnen haben Plastiktüten dabei. Die lassen Sie bitte im Auto. In einer Tüte werden Pilze ganz schnell warm und matschig. Auch im Rucksack werden sie leicht zerdrückt. Nehmen Sie also einen Korb. Wer keinen hat: Hier vorne stehen noch zehn Körbe, die kann man sich für heute ausleihen. Dann zur Menge. Viele denken, im Wald darf man einfach so viel mitnehmen, wie man will. Das stimmt nicht. Pro Person ist höchstens ein Kilo erlaubt, und das reicht für eine Familie auch locker für ein gutes Abendessen. Früher hatten wir in der Gruppe mal jemanden mit fast drei Kilo, da musste ich leider streng werden. Zum Ablauf: Wir laufen jetzt ungefähr zwei Stunden. Unterwegs zeige ich Ihnen, wo welche Pilze wachsen und woran man die giftigen erkennt. Bleiben Sie bitte in der Gruppe, im Wald verliert man sich hier schnell. Ich trage eine rote Jacke, Sie sehen mich also gut. Am Ende treffen wir uns wieder hier am Parkplatz. Dann kommt das Wichtigste: Meine Kollegin Doris Brenner ist Pilzsachverständige, und sie schaut sich jeden einzelnen Pilz in Ihrem Korb an. Bitte essen Sie nichts, was sie nicht gesehen hat! Eine gemeinsame Pilzsuppe wie letztes Jahr gibt es diesmal leider nicht, aber Rezepte bekommen Sie gern von mir. Und wer möchte, kann bei Frau Brenner auch ein kleines Pilzbuch kaufen. Ach ja, ich sehe auch ein paar Hunde. Die dürfen natürlich gern mitkommen. Aber im Wald sind gerade viele Rehe unterwegs. Deshalb bleiben die Hunde bitte die ganze Zeit an der Leine, auch wenn sie sonst noch so brav sind. Und zum Schluss noch etwas für alle, die nächste Woche wieder mitkommen möchten. Dann treffen wir uns nicht hier am Parkplatz, der ist am Samstag wegen Bauarbeiten gesperrt. Wir treffen uns am Waldhaus, um halb drei, nicht wie heute um zwei. Vom Bahnhof fährt ein Bus direkt dorthin. So, haben Sie noch Fragen? Nein? Gut, dann nehmen Sie Ihre Körbe, und los geht's! Viel Glück beim Suchen!",
+            "delivery": "[friendly forest guide addressing a group outdoors, clear, relaxed]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t3-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Gespräch zwischen Bekannten an der Bushaltestelle"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Florian war am Wochenende auch in Wien."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Theresa hat für die Musicalkarten nichts bezahlt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Jonas hatte am Anfang keine Lust auf das Musical."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Theresa und Jonas hatten Plätze nahe an der Bühne."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Jonas hat in der Pause Mitschüler getroffen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Nach dem Musical haben die beiden in einem Restaurant gegessen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Florian möchte mit Theresa ins Musical gehen."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch an der Haltestelle",
+          "segments": [],
+          "speakers": {
+            "t": {
+              "name": "Theresa",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "f": {
+              "name": "Florian",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie warten in Tulln an der Bushaltestelle und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t3-01.mp3",
+          "duration": 180.32
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Florian war zu Hause im Garten und am Sonntag am Fußballplatz. In Wien war nur Theresa.",
+            "evidence": {
+              "text": "Ruhig. Ich war daheim und hab ein bisschen im Garten gearbeitet. Am Sonntag war ich dann am Fußballplatz, meine Tochter hat ein Spiel gehabt. Und du? Du schaust so zufrieden aus.",
+              "hit": "Ich war daheim und hab ein bisschen im Garten gearbeitet."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "richtig",
+            "explanation": "Eine kranke Kollegin hat ihr die Karten geschenkt. Selbst gekauft hätte Theresa sie nie.",
+            "evidence": {
+              "text": "Nie. Ich hätte mir das auch nie selbst gekauft, die Karten sind ja wahnsinnig teuer. Aber eine Kollegin von mir ist krank geworden, und die hat gesagt: Theresa, nimm du die Karten, sonst verfallen sie. Einfach so, geschenkt.",
+              "hit": "Einfach so, geschenkt."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "richtig",
+            "explanation": "Jonas fand ein Musical zuerst peinlich und wollte nicht mit. Erst neue Turnschuhe haben ihn überzeugt.",
+            "evidence": {
+              "text": "Ja, wirklich. Nur der Jonas … du weißt ja, der ist jetzt fünfzehn. Als ich ihm das erzählt hab, hat er gesagt: Ein Musical? Mama, das ist doch peinlich. Der wollte zuerst überhaupt nicht mit.",
+              "hit": "Der wollte zuerst überhaupt nicht mit."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "falsch",
+            "explanation": "Sie saßen ganz oben im letzten Rang. Von Plätzen vorne konnten sie nur träumen.",
+            "evidence": {
+              "text": "Am Rand nicht, aber ganz oben, im letzten Rang. Von den Plätzen vorne konnten wir nur träumen. Aber man hat trotzdem alles gut gesehen, und der Ton war super.",
+              "hit": "aber ganz oben, im letzten Rang"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "In der Pause hat Jonas zwei Jungen aus seiner Klasse getroffen. Danach fand er das Musical nicht mehr peinlich.",
+            "evidence": {
+              "text": "Das ist das Lustige. In der Pause hat er auf einmal zwei Burschen aus seiner Klasse getroffen, die waren mit ihren Eltern da. Und plötzlich war das Musical gar nicht mehr peinlich. Die haben die ganze Pause gequatscht und nachher die Lieder mitgesungen.",
+              "hit": "In der Pause hat er auf einmal zwei Burschen aus seiner Klasse getroffen"
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Theresa wollte ins Restaurant, aber der Zug fuhr schon um elf. Sie haben nur am Bahnhof ein Würstel gegessen.",
+            "evidence": {
+              "text": "Das war der Plan, ja. Ich hab extra ein Restaurant in der Nähe rausgesucht. Aber das Musical hat bis halb elf gedauert, und unser Zug nach Tulln ist um elf gefahren. Also haben wir nur schnell ein Würstel am Bahnhof gegessen. Ehrlich gesagt war das für den Jonas fast das Beste am ganzen Abend.",
+              "hit": "Also haben wir nur schnell ein Würstel am Bahnhof gegessen."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "falsch",
+            "explanation": "Theresa bietet an mitzukommen, aber Florian will nur mit seiner Tochter gehen. Das Musical ist ihr Geburtstagsgeschenk.",
+            "evidence": {
+              "text": "Ha, danke, aber ich glaub, das machen wir zwei allein, meine Tochter und ich. Das soll ja ihr Geschenk sein. Und ich kauf dann Karten weiter vorne!",
+              "hit": "das machen wir zwei allein, meine Tochter und ich"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Hallo Theresa! Wartest du auch auf den Bus?",
+            "delivery": "[friendly, casual]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Florian, hallo! Ja, der ist mal wieder spät dran. Na, wie war dein Wochenende?",
+            "delivery": "[pleased, lively]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Ruhig. Ich war daheim und hab ein bisschen im Garten gearbeitet. Am Sonntag war ich dann am Fußballplatz, meine Tochter hat ein Spiel gehabt. Und du? Du schaust so zufrieden aus.",
+            "delivery": "[relaxed, curious]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Bin ich auch. Ich war am Samstag mit dem Jonas in Wien, im Musical. Stell dir vor, das war mein allererstes Musical.",
+            "delivery": "[happy, a bit proud]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Na geh! Echt? Du warst noch nie in einem Musical?",
+            "delivery": "[surprised, overlapping]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Nie. Ich hätte mir das auch nie selbst gekauft, die Karten sind ja wahnsinnig teuer. Aber eine Kollegin von mir ist krank geworden, und die hat gesagt: Theresa, nimm du die Karten, sonst verfallen sie. Einfach so, geschenkt.",
+            "delivery": "[chatty, animated]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Mhm, nette Kollegin. So was wünsch ich mir auch.",
+            "delivery": "[short back-channel, amused]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Ja, wirklich. Nur der Jonas … du weißt ja, der ist jetzt fünfzehn. Als ich ihm das erzählt hab, hat er gesagt: Ein Musical? Mama, das ist doch peinlich. Der wollte zuerst überhaupt nicht mit.",
+            "delivery": "[rolling eyes, imitating a teenager]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Kenn ich. Und wie hast du ihn überredet?",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Ich hab gesagt, wir gehen vorher noch einkaufen und er kriegt neue Turnschuhe. Da war er plötzlich dabei.",
+            "delivery": "[mischievous]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Clever. Und, wie waren die Plätze? Bei geschenkten Karten sitzt man ja meistens irgendwo am Rand.",
+            "delivery": "[teasing]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Am Rand nicht, aber ganz oben, im letzten Rang. Von den Plätzen vorne konnten wir nur träumen. Aber man hat trotzdem alles gut gesehen, und der Ton war super.",
+            "delivery": "[laughing, content]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Und hat's dem Jonas dann gefallen?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Das ist das Lustige. In der Pause hat er auf einmal zwei Burschen aus seiner Klasse getroffen, die waren mit ihren Eltern da. Und plötzlich war das Musical gar nicht mehr peinlich. Die haben die ganze Pause gequatscht und nachher die Lieder mitgesungen.",
+            "delivery": "[amused, storytelling]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Klar, mit Freunden ist alles gleich viel cooler. Und danach? Wart ihr noch schön essen?",
+            "delivery": "[knowing, friendly]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Das war der Plan, ja. Ich hab extra ein Restaurant in der Nähe rausgesucht. Aber das Musical hat bis halb elf gedauert, und unser Zug nach Tulln ist um elf gefahren. Also haben wir nur schnell ein Würstel am Bahnhof gegessen. Ehrlich gesagt war das für den Jonas fast das Beste am ganzen Abend.",
+            "delivery": "[self-ironic, laughing]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Typisch! Weißt du, meine Tochter will schon lange einmal in ein Musical. Das wär vielleicht was zu ihrem Geburtstag im Dezember.",
+            "delivery": "[laughing, then thoughtful]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Mach das unbedingt! Das Stück läuft heuer noch bis Weihnachten, ich schick dir gern den Link. Und ich würd sogar glatt noch einmal mitkommen.",
+            "delivery": "[enthusiastic]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Ha, danke, aber ich glaub, das machen wir zwei allein, meine Tochter und ich. Das soll ja ihr Geschenk sein. Und ich kauf dann Karten weiter vorne!",
+            "delivery": "[warm, joking]"
+          },
+          {
+            "speaker": "t",
+            "voice": "woman_ela",
+            "text": "Klar, verstehe ich. Ah, schau, da kommt endlich der Bus.",
+            "delivery": "[easygoing, relieved]"
+          },
+          {
+            "speaker": "f",
+            "voice": "man_ben",
+            "text": "Na endlich. Komm, setzen wir uns nach hinten, da ist noch Platz.",
+            "delivery": "[casual]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-03-t4-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.863Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Kleine Kinder merken oft nicht, dass etwas Werbung ist.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Was Kinder essen, sollten die Eltern bestimmen und nicht der Staat.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "In anderen Ländern gibt es ein solches Verbot schon lange.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Die eigene Firma wirbt kaum noch im Fernsehen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Ein Verbot würde besonders kleine Firmen treffen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Die eigenen Kinder sehen fast nur noch Videos im Internet.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Auch Werbeplakate in der Nähe von Schulen sollte man verbieten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Die eigene Firma hat den Zucker in ihren Produkten reduziert.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Neben einem Verbot braucht es mehr Unterricht über Ernährung in der Schule.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Jan Albrecht, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Birgit Haider, Ernährungswissenschaftlerin"
+                },
+                {
+                  "key": "c",
+                  "label": "Marco Steiner, Schokoladenhersteller"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Jan Albrecht, Moderator",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "h": {
+              "name": "Birgit Haider, Ernährungswissenschaftlerin",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "s": {
+              "name": "Marco Steiner, Schokoladenhersteller",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Der Moderator der Radiosendung „Pro & Contra“, Jan Albrecht, diskutiert mit Mag. Birgit Haider, Ernährungswissenschaftlerin aus Klosterneuburg, und Marco Steiner, Chef einer kleinen Schokoladenfabrik in Wädenswil, über das Thema „Keine Süßigkeiten-Werbung für Kinder?“",
+          "src": "goethe-b1/hoeren-03/goethe-b1-hoeren-03-t4-01.mp3",
+          "duration": 298.27
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "c",
+            "explanation": "Herr Steiner sagt, dass Mütter und Väter das bestimmen sollen und nicht der Staat. Frau Haider sagt nur, dass die Eltern es trotzdem schwer haben.",
+            "evidence": {
+              "text": "Nein, sicher nicht. Ich verstehe die Sorge ja, ich habe selbst zwei Kinder. Aber ich finde, der Staat muss nicht alles regeln. Was ein Kind isst und wie viel Schokolade es bekommt, das sollen die Mütter und Väter bestimmen. Die kennen ihre Kinder am besten. Ein Verbot sagt den Eltern eigentlich: Ihr schafft das nicht allein.",
+              "hit": "das sollen die Mütter und Väter bestimmen"
+            }
+          },
+          {
+            "n": 24,
+            "correct": "b",
+            "explanation": "Frau Haider nennt Schweden, wo es die Regel seit über dreißig Jahren gibt. Der Moderator sagt nur, dass man in einigen Ländern gerade darüber diskutiert.",
+            "evidence": {
+              "text": "Die Eltern entscheiden ja trotzdem. Aber sie stehen jeden Tag im Supermarkt an der Kassa und müssen mit ihrem Kind diskutieren, weil es den Bären aus dem Fernsehen will. Und das ist übrigens keine neue Idee. In Schweden darf man schon seit über dreißig Jahren im Fernsehen keine Werbung für Kinder machen. Dort hat das niemandem geschadet.",
+              "hit": "In Schweden darf man schon seit über dreißig Jahren im Fernsehen keine Werbung für Kinder machen."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Herr Steiner sagt, dass seine Firma fast keine Fernsehwerbung mehr macht, weil sie zu teuer ist. Der Moderator stellt nur die Frage.",
+            "evidence": {
+              "text": "Fast gar nicht mehr. Ein Spot im Fernsehen kostet schnell zwanzigtausend Franken, das können wir uns nicht leisten. Wir zeigen unsere Schokolade heute vor allem in sozialen Netzwerken und auf unserer Website, und ein bisschen in Zeitschriften. Und ehrlich gesagt, unsere Kundschaft sind sowieso eher die Erwachsenen, die ein Geschenk suchen.",
+              "hit": "Fast gar nicht mehr."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "c",
+            "explanation": "Herr Steiner meint, dass am Ende die Kleinen verlieren. Frau Haider glaubt dagegen, dass vor allem die großen Firmen das spüren.",
+            "evidence": {
+              "text": "Für uns schon, ja. Die grossen Konzerne finden immer einen Weg. Die haben eigene Abteilungen, die nichts anderes machen als Werbung, und genug Geld für Anwälte. Aber eine kleine Firma wie unsere, mit fünfundzwanzig Leuten, die kann nicht einfach auf andere Wege ausweichen. Am Ende verlieren genau die Kleinen.",
+              "hit": "Am Ende verlieren genau die Kleinen."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "a",
+            "explanation": "Der Moderator erzählt von seinen Söhnen, die fast nur Videos am Tablet sehen. Herr Steiner hat auch Kinder, sagt dazu aber nichts.",
+            "evidence": {
+              "text": "Bleiben wir beim Internet. Ich merke das ja zu Hause: Meine zwei Söhne schauen kaum noch fernsehen. Die sitzen am Tablet und sehen sich Videos an, eins nach dem anderen. Und dazwischen kommt ständig Werbung. Frau Haider, kann man das überhaupt kontrollieren?",
+              "hit": "Die sitzen am Tablet und sehen sich Videos an, eins nach dem anderen."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Frau Haider will auch das Plakat gegenüber der Volksschule verbieten. Herr Steiner glaubt nicht, dass so ein Plakat viel verändert.",
+            "evidence": {
+              "text": "Schwierig, aber möglich. Es gibt ja schon heute Regeln für Plattformen. Mir ist aber noch etwas anderes wichtig: die Werbung auf der Straße. Bei uns in Klosterneuburg hängt direkt gegenüber einer Volksschule ein riesiges Plakat für Schokoriegel. Jeden Morgen gehen die Kinder daran vorbei. Auch so etwas müsste ein Gesetz verbieten, nicht nur die Spots im Fernsehen.",
+              "hit": "Auch so etwas müsste ein Gesetz verbieten, nicht nur die Spots im Fernsehen."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Herr Steiner erzählt, dass seine Produkte für Kinder heute ein Viertel weniger Zucker haben. Frau Haider sagt nur, dass große Firmen das oft nur versprechen.",
+            "evidence": {
+              "text": "Eben nicht. Ich kann nur von uns sprechen. Wir haben vor zwei Jahren unsere Rezepte geändert. In unseren Produkten für Kinder ist heute ein Viertel weniger Zucker drin als früher, und sie schmeckt trotzdem. Das war viel Arbeit, aber die Leute kaufen sie sogar lieber. So etwas bringt mehr als jedes Verbot.",
+              "hit": "In unseren Produkten für Kinder ist heute ein Viertel weniger Zucker drin als früher"
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Frau Haider sagt, dass ein Verbot allein nicht reicht und die Schule Ernährung unterrichten soll. Herr Steiner ist ganz gegen ein Verbot.",
+            "evidence": {
+              "text": "Das ist ein guter Schritt, wirklich. Leider versprechen viele große Firmen weniger Zucker, und dann passiert jahrelang nichts. Aber ich will ehrlich sein: Ein Verbot allein löst das Problem auch nicht. Die Kinder müssen lernen, was gesund ist. Und das gehört in die Schule, mit eigenen Stunden über Ernährung. Bei uns lernen manche Kinder erst in der Schule, wie eine gesunde Jause aussieht.",
+              "hit": "Ein Verbot allein löst das Problem auch nicht."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Guten Abend und willkommen bei „Pro & Contra“. Heute geht es um Werbung für Süßigkeiten. Sollte man sie verbieten, wenn sie sich an Kinder richtet? In einigen Ländern wird das gerade heftig diskutiert. Bei mir im Studio ist Mag. Birgit Haider, Ernährungswissenschaftlerin aus Klosterneuburg. Guten Abend, Frau Haider.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_lisa",
+            "text": "Guten Abend, schön, dass ich da sein darf.",
+            "delivery": "[friendly, composed]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Und aus Wädenswil ist Marco Steiner zugeschaltet. Er leitet dort eine kleine Schokoladenfabrik. Guten Abend, Herr Steiner.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "s",
+            "voice": "man_michael",
+            "text": "Grüezi miteinander.",
+            "delivery": "[relaxed, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Frau Haider, Sie sind für ein Verbot. Warum?",
+            "delivery": "[direct]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_lisa",
+            "text": "Weil Kinder sich gegen Werbung kaum wehren können. Erwachsene wissen: Da will mir jemand etwas verkaufen. Aber ein Kind mit fünf oder sechs Jahren versteht das oft nicht. Für das Kind ist der lustige Bär im Werbespot genauso eine Geschichte wie der Zeichentrickfilm davor. Es merkt gar nicht, dass das Werbung ist. Und genau das nutzen die Firmen aus.",
+            "delivery": "[clear, engaged]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Steiner, nutzen Sie das aus?",
+            "delivery": "[slightly provocative]"
+          },
+          {
+            "speaker": "s",
+            "voice": "man_michael",
+            "text": "Nein, sicher nicht. Ich verstehe die Sorge ja, ich habe selbst zwei Kinder. Aber ich finde, der Staat muss nicht alles regeln. Was ein Kind isst und wie viel Schokolade es bekommt, das sollen die Mütter und Väter bestimmen. Die kennen ihre Kinder am besten. Ein Verbot sagt den Eltern eigentlich: Ihr schafft das nicht allein.",
+            "delivery": "[calm, firm]",
+            "item": 23
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_lisa",
+            "text": "Die Eltern entscheiden ja trotzdem. Aber sie stehen jeden Tag im Supermarkt an der Kassa und müssen mit ihrem Kind diskutieren, weil es den Bären aus dem Fernsehen will. Und das ist übrigens keine neue Idee. In Schweden darf man schon seit über dreißig Jahren im Fernsehen keine Werbung für Kinder machen. Dort hat das niemandem geschadet.",
+            "delivery": "[countering, lively]",
+            "item": 24
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Steiner, wo machen Sie denn eigentlich Werbung? Auch im Fernsehen?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "s",
+            "voice": "man_michael",
+            "text": "Fast gar nicht mehr. Ein Spot im Fernsehen kostet schnell zwanzigtausend Franken, das können wir uns nicht leisten. Wir zeigen unsere Schokolade heute vor allem in sozialen Netzwerken und auf unserer Website, und ein bisschen in Zeitschriften. Und ehrlich gesagt, unsere Kundschaft sind sowieso eher die Erwachsenen, die ein Geschenk suchen.",
+            "delivery": "[matter-of-fact]",
+            "item": 25
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Aber ein Verbot würde ja auch fürs Internet gelten. Wäre das für Sie ein Problem?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "s",
+            "voice": "man_michael",
+            "text": "Für uns schon, ja. Die grossen Konzerne finden immer einen Weg. Die haben eigene Abteilungen, die nichts anderes machen als Werbung, und genug Geld für Anwälte. Aber eine kleine Firma wie unsere, mit fünfundzwanzig Leuten, die kann nicht einfach auf andere Wege ausweichen. Am Ende verlieren genau die Kleinen.",
+            "delivery": "[concerned, earnest]",
+            "item": 26
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_lisa",
+            "text": "Das sehe ich anders. Die Regel wäre für alle gleich, und die großen Firmen machen nun einmal die meiste Werbung. Gerade die würden das also spüren.",
+            "delivery": "[polite but firm]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Bleiben wir beim Internet. Ich merke das ja zu Hause: Meine zwei Söhne schauen kaum noch fernsehen. Die sitzen am Tablet und sehen sich Videos an, eins nach dem anderen. Und dazwischen kommt ständig Werbung. Frau Haider, kann man das überhaupt kontrollieren?",
+            "delivery": "[personal, a little sighing]",
+            "item": 27
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_lisa",
+            "text": "Schwierig, aber möglich. Es gibt ja schon heute Regeln für Plattformen. Mir ist aber noch etwas anderes wichtig: die Werbung auf der Straße. Bei uns in Klosterneuburg hängt direkt gegenüber einer Volksschule ein riesiges Plakat für Schokoriegel. Jeden Morgen gehen die Kinder daran vorbei. Auch so etwas müsste ein Gesetz verbieten, nicht nur die Spots im Fernsehen.",
+            "delivery": "[thoughtful, then emphatic]",
+            "item": 28
+          },
+          {
+            "speaker": "s",
+            "voice": "man_michael",
+            "text": "Na ja, ob das Plakat wirklich etwas verändert, weiss ich nicht. Die Kinder sehen die Schokolade ja sowieso im Laden.",
+            "delivery": "[sceptical]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Herr Steiner, was tut denn die Branche selbst? Muss es immer gleich ein Gesetz sein?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "s",
+            "voice": "man_michael",
+            "text": "Eben nicht. Ich kann nur von uns sprechen. Wir haben vor zwei Jahren unsere Rezepte geändert. In unseren Produkten für Kinder ist heute ein Viertel weniger Zucker drin als früher, und sie schmeckt trotzdem. Das war viel Arbeit, aber die Leute kaufen sie sogar lieber. So etwas bringt mehr als jedes Verbot.",
+            "delivery": "[proud, convinced]",
+            "item": 29
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_lisa",
+            "text": "Das ist ein guter Schritt, wirklich. Leider versprechen viele große Firmen weniger Zucker, und dann passiert jahrelang nichts. Aber ich will ehrlich sein: Ein Verbot allein löst das Problem auch nicht. Die Kinder müssen lernen, was gesund ist. Und das gehört in die Schule, mit eigenen Stunden über Ernährung. Bei uns lernen manche Kinder erst in der Schule, wie eine gesunde Jause aussieht.",
+            "delivery": "[fair, measured]",
+            "item": 30
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Zum Schluss eine kurze Frage an Sie beide: Glauben Sie, dass es in fünf Jahren so ein Verbot gibt? Herr Steiner?",
+            "delivery": "[wrapping up]"
+          },
+          {
+            "speaker": "s",
+            "voice": "man_michael",
+            "text": "Ich fürchte, ja. Und dann machen wir eben noch bessere Schokolade, die man den Kindern nicht verkaufen muss, weil die Eltern sie gern für sie kaufen.",
+            "delivery": "[good-humoured]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Frau Haider?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "h",
+            "voice": "woman_lisa",
+            "text": "Ich hoffe es. Aber es geht mir nicht darum, Schokolade schlecht zu machen. Ich esse selbst gern ein Stück. Es geht nur darum, dass Kinder in Ruhe groß werden dürfen, ohne dass ihnen jemand ständig etwas verkaufen will.",
+            "delivery": "[warm, smiling]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_christian",
+            "text": "Ein gutes Schlusswort. Vielen Dank, Frau Haider, vielen Dank, Herr Steiner. Und Ihnen, liebe Hörerinnen und Hörer, noch einen schönen Abend.",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ],
+  "track": {
+    "src": "goethe-b1/hoeren-03/track.mp3",
+    "duration": 2250.79,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.06,
+        "to": 19.75
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.79,
+        "to": 26.72
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.72,
+        "to": 37.25
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.25,
+        "to": 40.33
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 41.87,
+        "to": 78.58
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 80.61,
+        "to": 82.94
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 83.98,
+        "to": 120.69
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 120.69,
+        "to": 123.22
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 123.22,
+        "to": 129.41
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 129.41,
+        "to": 139.94
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 139.94,
+        "to": 143.02
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 144.56,
+        "to": 182.07
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 184.11,
+        "to": 186.44
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 187.48,
+        "to": 224.99
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 224.99,
+        "to": 227.53
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 227.53,
+        "to": 233.69
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 233.69,
+        "to": 244.22
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 244.22,
+        "to": 246.91
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 248.45,
+        "to": 287.11
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 289.15,
+        "to": 291.47
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 292.52,
+        "to": 331.18
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 331.18,
+        "to": 333.71
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 333.71,
+        "to": 340.06
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 340.06,
+        "to": 350.59
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 350.59,
+        "to": 353.67
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 355.21,
+        "to": 394.63
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 396.67,
+        "to": 398.99
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 400.04,
+        "to": 439.46
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 439.46,
+        "to": 441.99
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 441.99,
+        "to": 448.29
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 448.29,
+        "to": 458.81
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 458.81,
+        "to": 460.96
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 462.5,
+        "to": 501.68
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 503.72,
+        "to": 506.04
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 507.09,
+        "to": 546.27
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 546.27,
+        "to": 548.81
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 548.81,
+        "to": 554.95
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 554.95,
+        "to": 565.47
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 565.47,
+        "to": 568.56
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 570.1,
+        "to": 603.48
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 605.52,
+        "to": 607.84
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 608.89,
+        "to": 642.27
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 642.27,
+        "to": 644.81
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 652.07,
+        "to": 666.23
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 668.26,
+        "to": 674.72
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 674.72,
+        "to": 734.75
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 734.75,
+        "to": 740.28
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 741.83,
+        "to": 909.27
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 909.27,
+        "to": 918.31
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 925.6,
+        "to": 937.77
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 939.81,
+        "to": 946.29
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 946.29,
+        "to": 1006.32
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1006.32,
+        "to": 1012.92
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1014.47,
+        "to": 1194.79
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1194.79,
+        "to": 1203.83
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1211.04,
+        "to": 1223.24
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1225.27,
+        "to": 1231.78
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1231.78,
+        "to": 1291.81
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1291.81,
+        "to": 1307.45
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1313.04,
+        "to": 1611.31
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1615.36,
+        "to": 1618.39
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1618.39,
+        "to": 1621.13
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1626.72,
+        "to": 1924.99
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1929.04,
+        "to": 1938.08
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1945.34,
+        "to": 1951.14
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1951.14,
+        "to": 2251.18
+      }
+    ]
+  }
+}

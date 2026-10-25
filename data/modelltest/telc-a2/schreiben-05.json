@@ -1,0 +1,192 @@
+{
+  "exam": "telc-a2",
+  "skill": "schreiben",
+  "number": 5,
+  "title": "Modelltest 5",
+  "blocks": [
+    {
+      "id": "telc-a2-schreiben-05-t1",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.350Z",
+        "textType": "Formular: Anmeldung in der Musikschule"
+      },
+      "display": {
+        "instruction": "Ihre Bekannte Priya möchte in der Musikschule Unterricht nehmen. Sie helfen ihr bei der Anmeldung. Schreiben Sie die fünf fehlenden Angaben in das Formular.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Musikschule Allegro Potsdam – Anmeldung für Erwachsene\n\nFamilienname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nVorname: Priya\nGeburtsdatum: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nStaatsangehörigkeit: indisch\nStraße, Hausnummer: Gutenbergstraße 41\nPLZ, Ort: 14467 Potsdam\nTelefon: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nInstrument: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nWunschtag für den Unterricht: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nBeruf: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Priya Sharma",
+          "source": "Pass und Notiz",
+          "paragraphs": [
+            "Reisepass – Name: SHARMA · Vorname: PRIYA · Staatsangehörigkeit: INDISCH · Geburtsdatum: 09.05.1990 · Geburtsort: PUNE · ausgestellt am: 14.02.2018 · gültig bis: 13.02.2028",
+            "Hallo! Hier sind meine Informationen für die Musikschule. Ich wohne mit meinem Mann Arjun in der Gutenbergstraße 41. Ich arbeite als Ingenieurin bei einer Firma für Solaranlagen. Als Kind habe ich ein bisschen Gitarre gespielt, aber jetzt möchte ich endlich Klavier lernen. Montags habe ich Spätschicht, aber dienstags bin ich ab 17 Uhr immer frei. Bitte schreib meine Nummer auf: 0331 7084215. Die Nummer von Arjun, 0331 7084290, ist nicht so gut, er ist oft auf Reisen. Danke! Priya"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "09.05.1990",
+            "explanation": "Das Geburtsdatum steht im Pass. Die anderen Daten sind Ausstellungsdatum und Gültigkeit des Passes.",
+            "evidence": {
+              "text": "Reisepass – Name: SHARMA · Vorname: PRIYA · Staatsangehörigkeit: INDISCH · Geburtsdatum: 09.05.1990 · Geburtsort: PUNE · ausgestellt am: 14.02.2018 · gültig bis: 13.02.2028",
+              "hit": "Geburtsdatum: 09.05.1990"
+            },
+            "accept": [
+              "9.5.1990",
+              "09.05.90",
+              "9.5.90",
+              "09.5.1990",
+              "9.05.1990",
+              "9. Mai 1990",
+              "09. Mai 1990"
+            ]
+          },
+          {
+            "n": 2,
+            "correct": "0331 7084215",
+            "explanation": "Priya möchte ihre eigene Nummer im Formular. Die Nummer mit 4290 gehört Arjun.",
+            "evidence": {
+              "text": "Hallo! Hier sind meine Informationen für die Musikschule. Ich wohne mit meinem Mann Arjun in der Gutenbergstraße 41. Ich arbeite als Ingenieurin bei einer Firma für Solaranlagen. Als Kind habe ich ein bisschen Gitarre gespielt, aber jetzt möchte ich endlich Klavier lernen. Montags habe ich Spätschicht, aber dienstags bin ich ab 17 Uhr immer frei. Bitte schreib meine Nummer auf: 0331 7084215. Die Nummer von Arjun, 0331 7084290, ist nicht so gut, er ist oft auf Reisen. Danke! Priya",
+              "hit": "Bitte schreib meine Nummer auf: 0331 7084215"
+            },
+            "accept": [
+              "03317084215",
+              "0331/7084215",
+              "0331-7084215",
+              "0331 708 4215",
+              "0331/708 4215"
+            ]
+          },
+          {
+            "n": 3,
+            "correct": "Klavier",
+            "explanation": "Priya möchte jetzt Klavier lernen. Gitarre hat sie nur als Kind gespielt.",
+            "evidence": {
+              "text": "Hallo! Hier sind meine Informationen für die Musikschule. Ich wohne mit meinem Mann Arjun in der Gutenbergstraße 41. Ich arbeite als Ingenieurin bei einer Firma für Solaranlagen. Als Kind habe ich ein bisschen Gitarre gespielt, aber jetzt möchte ich endlich Klavier lernen. Montags habe ich Spätschicht, aber dienstags bin ich ab 17 Uhr immer frei. Bitte schreib meine Nummer auf: 0331 7084215. Die Nummer von Arjun, 0331 7084290, ist nicht so gut, er ist oft auf Reisen. Danke! Priya",
+              "hit": "jetzt möchte ich endlich Klavier lernen"
+            },
+            "accept": [
+              "Piano",
+              "Klavierunterricht"
+            ]
+          },
+          {
+            "n": 4,
+            "correct": "Dienstag",
+            "explanation": "Dienstags hat Priya ab 17 Uhr frei. Am Montag geht es nicht, weil sie Spätschicht hat.",
+            "evidence": {
+              "text": "Hallo! Hier sind meine Informationen für die Musikschule. Ich wohne mit meinem Mann Arjun in der Gutenbergstraße 41. Ich arbeite als Ingenieurin bei einer Firma für Solaranlagen. Als Kind habe ich ein bisschen Gitarre gespielt, aber jetzt möchte ich endlich Klavier lernen. Montags habe ich Spätschicht, aber dienstags bin ich ab 17 Uhr immer frei. Bitte schreib meine Nummer auf: 0331 7084215. Die Nummer von Arjun, 0331 7084290, ist nicht so gut, er ist oft auf Reisen. Danke! Priya",
+              "hit": "dienstags bin ich ab 17 Uhr immer frei"
+            },
+            "accept": [
+              "dienstags",
+              "am Dienstag",
+              "Dienstagabend"
+            ]
+          },
+          {
+            "n": 5,
+            "correct": "Ingenieurin",
+            "explanation": "Priya schreibt, dass sie als Ingenieurin arbeitet. Die Firma für Solaranlagen ist ihr Arbeitgeber, nicht ihr Beruf.",
+            "evidence": {
+              "text": "Hallo! Hier sind meine Informationen für die Musikschule. Ich wohne mit meinem Mann Arjun in der Gutenbergstraße 41. Ich arbeite als Ingenieurin bei einer Firma für Solaranlagen. Als Kind habe ich ein bisschen Gitarre gespielt, aber jetzt möchte ich endlich Klavier lernen. Montags habe ich Spätschicht, aber dienstags bin ich ab 17 Uhr immer frei. Bitte schreib meine Nummer auf: 0331 7084215. Die Nummer von Arjun, 0331 7084290, ist nicht so gut, er ist oft auf Reisen. Danke! Priya",
+              "hit": "Ich arbeite als Ingenieurin"
+            },
+            "accept": [
+              "Ingenieur",
+              "Ingeneurin"
+            ]
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "Sharma"
+      ]
+    },
+    {
+      "id": "telc-a2-schreiben-05-t2",
+      "exam": "telc-a2",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.350Z",
+        "textType": "Antwort auf eine persönliche Nachricht"
+      },
+      "display": {
+        "instruction": "Ihre Freundin Ilka ist krank und hat Ihnen geschrieben. Antworten Sie Ilka mit einem Brief. Unten stehen vier Punkte. Wählen Sie drei Punkte aus und schreiben Sie zu jedem ein bis zwei Sätze. Denken Sie an die Anrede am Anfang und an den Gruß am Ende. Schreiben Sie etwa 40 Wörter.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "Ilka ist krank",
+            "situation": "Ihre Freundin Ilka hat Grippe. Ihr Mann ist diese Woche nicht zu Hause und sie ist allein. Sie fragt, ob Sie sie besuchen können.",
+            "points": [
+              "Zeit für den Besuch",
+              "Etwas mitbringen",
+              "Wochenende: keine Zeit (warum?)",
+              "Termin beim Arzt"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Liebe Ilka,\ndas tut mir leid, gute Besserung! Ich komme gern am Mittwoch nach der Arbeit, so um sechs Uhr. Ich bringe dir Tee und Orangen mit. Am Wochenende kann ich leider nicht, denn meine Eltern besuchen mich.\nLiebe Grüße\nSofia"
+          }
+        ]
+      }
+    }
+  ]
+}

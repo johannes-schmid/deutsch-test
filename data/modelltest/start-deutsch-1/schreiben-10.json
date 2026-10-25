@@ -1,0 +1,194 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 10,
+  "title": "Modelltest 10",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-10-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.340Z",
+        "textType": "Formular ausfüllen: Anmeldung für eine Krabbelgruppe"
+      },
+      "exampleAnswers": [
+        "Sultani, Farida"
+      ],
+      "display": {
+        "instruction": "Ihre Nachbarin möchte sich mit ihrer Tochter für eine Krabbelgruppe anmelden. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihre Nachbarin Farida Sultani hat eine kleine Tochter. Lale ist 14 Monate alt. Farida möchte mit Lale in die Krabbelgruppe im Familienzentrum Kunterbunt gehen.",
+            "Die Gruppe trifft sich am Montagvormittag oder am Mittwochvormittag. Am Montag arbeitet Farida. Sie geht also am Mittwoch in die Gruppe.",
+            "Farida wohnt in der Kolpingstraße 6, 33330 Gütersloh. Ihre Handynummer ist 0176 4829 315."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Familienzentrum Kunterbunt · Anmeldung Krabbelgruppe\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nPostleitzahl, Wohnort: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nAlter des Kindes: ",
+                {
+                  "n": 3,
+                  "options": []
+                },
+                "\nGruppentag: ",
+                {
+                  "n": 4,
+                  "options": [
+                    "Montag",
+                    "Mittwoch"
+                  ]
+                },
+                "\nHandynummer: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Kolpingstraße 6",
+            "accept": [
+              "Kolpingstr. 6",
+              "Kolpingstrasse 6",
+              "Kolpingstraße 6, Gütersloh",
+              "Kolpingstr. 6, Gütersloh"
+            ],
+            "explanation": "Farida wohnt in der Kolpingstraße 6. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Nachbarin Farida Sultani hat eine kleine Tochter. Lale ist 14 Monate alt. Farida möchte mit Lale in die Krabbelgruppe im Familienzentrum Kunterbunt gehen. Die Gruppe trifft sich am Montagvormittag oder am Mittwochvormittag. Am Montag arbeitet Farida. Sie geht also am Mittwoch in die Gruppe. Farida wohnt in der Kolpingstraße 6, 33330 Gütersloh. Ihre Handynummer ist 0176 4829 315.",
+              "hit": "Farida wohnt in der Kolpingstraße 6"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "33330 Gütersloh",
+            "accept": [
+              "33330 Guetersloh",
+              "33330 Gutersloh",
+              "33330, Gütersloh",
+              "Gütersloh 33330",
+              "33330 in Gütersloh"
+            ],
+            "explanation": "Farida wohnt in 33330 Gütersloh. Die Postleitzahl muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Nachbarin Farida Sultani hat eine kleine Tochter. Lale ist 14 Monate alt. Farida möchte mit Lale in die Krabbelgruppe im Familienzentrum Kunterbunt gehen. Die Gruppe trifft sich am Montagvormittag oder am Mittwochvormittag. Am Montag arbeitet Farida. Sie geht also am Mittwoch in die Gruppe. Farida wohnt in der Kolpingstraße 6, 33330 Gütersloh. Ihre Handynummer ist 0176 4829 315.",
+              "hit": "33330 Gütersloh"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "14 Monate",
+            "accept": [
+              "14",
+              "vierzehn Monate",
+              "14 Mon.",
+              "14 Monaten",
+              "vierzehn"
+            ],
+            "explanation": "Lale ist 14 Monate alt. Die Zahl muss genau stimmen.",
+            "evidence": {
+              "text": "Ihre Nachbarin Farida Sultani hat eine kleine Tochter. Lale ist 14 Monate alt. Farida möchte mit Lale in die Krabbelgruppe im Familienzentrum Kunterbunt gehen. Die Gruppe trifft sich am Montagvormittag oder am Mittwochvormittag. Am Montag arbeitet Farida. Sie geht also am Mittwoch in die Gruppe. Farida wohnt in der Kolpingstraße 6, 33330 Gütersloh. Ihre Handynummer ist 0176 4829 315.",
+              "hit": "Lale ist 14 Monate alt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "Mittwoch",
+            "explanation": "Am Montag arbeitet Farida. Deshalb geht sie am Mittwoch in die Gruppe.",
+            "evidence": {
+              "text": "Ihre Nachbarin Farida Sultani hat eine kleine Tochter. Lale ist 14 Monate alt. Farida möchte mit Lale in die Krabbelgruppe im Familienzentrum Kunterbunt gehen. Die Gruppe trifft sich am Montagvormittag oder am Mittwochvormittag. Am Montag arbeitet Farida. Sie geht also am Mittwoch in die Gruppe. Farida wohnt in der Kolpingstraße 6, 33330 Gütersloh. Ihre Handynummer ist 0176 4829 315.",
+              "hit": "Sie geht also am Mittwoch in die Gruppe."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "0176 4829 315",
+            "accept": [
+              "01764829315",
+              "0176 4829315",
+              "0176-4829 315",
+              "0176-4829315",
+              "0176/4829315",
+              "0176/4829 315"
+            ],
+            "explanation": "Die Nummer muss genau stimmen: 0176 4829 315.",
+            "evidence": {
+              "text": "Ihre Nachbarin Farida Sultani hat eine kleine Tochter. Lale ist 14 Monate alt. Farida möchte mit Lale in die Krabbelgruppe im Familienzentrum Kunterbunt gehen. Die Gruppe trifft sich am Montagvormittag oder am Mittwochvormittag. Am Montag arbeitet Farida. Sie geht also am Mittwoch in die Gruppe. Farida wohnt in der Kolpingstraße 6, 33330 Gütersloh. Ihre Handynummer ist 0176 4829 315.",
+              "hit": "Ihre Handynummer ist 0176 4829 315."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-10-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.340Z",
+        "textType": "Kurze E-Mail an den Bruder"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an den Bruder",
+            "situation": "Sie haben am Freitag eine Fortbildung in Darmstadt. Ihr Bruder Arne wohnt in Darmstadt. Schreiben Sie Arne eine E-Mail.",
+            "points": [
+              "Warum kommen Sie nach Darmstadt?",
+              "Wann kommen Sie an?",
+              "Frage: Bei Arne übernachten?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "informell",
+            "modelAnswer": "Hallo Arne,\nich habe am Freitag eine Fortbildung in Darmstadt. Ich komme schon am Donnerstag um 20 Uhr an. Kann ich bitte bei dir schlafen? Das wäre super!\nLiebe Grüße\nFemke"
+          }
+        ]
+      }
+    }
+  ]
+}

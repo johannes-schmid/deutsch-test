@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { createElement, useState } from "react"
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { pictoIcon } from "@/lib/exam/pictos"
-import type { ChoiceData, GapData, MatchData, PictureData, TrueFalse, TrueFalseData } from "@/lib/exam/types"
+import { ticks, type ChoiceData, type GapData, type MatchData, type PictureData, type TrueFalse, type TrueFalseData } from "@/lib/exam/types"
 import { LetterSheet } from "./sheet"
 import { ItemHeader, Mark, OptionCard, isChosen, optionState, stateSurface, useExamCopy } from "./primitives"
 
@@ -46,7 +46,7 @@ export function TrueFalseItem({ item, label, value, onChange, review }: { item: 
               )}
             >
               {s === "right" ? <Mark kind="right" inverse className="size-5" /> : s === "solution" ? <Mark kind="right" className="size-5" /> : s === "wrong" ? <Mark kind="wrong" className="size-5" /> : null}
-              {v === "richtig" ? t.richtig : t.falsch}
+              {item.labels ? item.labels[v === "richtig" ? 0 : 1] : v === "richtig" ? t.richtig : t.falsch}
             </button>
           )
         })}
@@ -97,7 +97,7 @@ export function PictureItem({ item, label, value, onChange, review }: { item: Pi
 }
 
 /** Numbered tabs for the situations or texts of a matching task, with what was chosen and, in review, right/wrong. */
-export function SituationTabs({ items, active, onActive, value, review, label }: { items: { n: number }[]; active: number; onActive: (i: number) => void; value: Record<number, string>; review?: Record<number, string>; label: string }) {
+export function SituationTabs({ items, active, onActive, value, review, label, show = (k) => k }: { items: { n: number }[]; active: number; onActive: (i: number) => void; value: Record<number, string>; review?: Record<number, string>; label: string; show?: (key: string) => string }) {
   return (
     <div className="flex flex-wrap items-center gap-2" role="tablist" aria-label={label}>
       {items.map((x, j) => {
@@ -114,7 +114,7 @@ export function SituationTabs({ items, active, onActive, value, review, label }:
               j === active ? "bg-v-ink text-v-bg" : graded === "right" ? "bg-(--p-glow) text-[#0A0D18]" : graded === "wrong" ? "bg-[color-mix(in_srgb,var(--v-sk-schreiben)_30%,var(--v-surface))]" : value[x.n] ? "bg-v-soft" : "border border-v-line text-v-muted"
             )}
           >
-            {x.n}{value[x.n] ? ` · ${value[x.n]}` : ""}
+            {x.n}{value[x.n] ? ` · ${show(value[x.n])}` : ""}
           </button>
         )
       })}
@@ -122,15 +122,26 @@ export function SituationTabs({ items, active, onActive, value, review, label }:
   )
 }
 
-/** Situations to ads (+ x for "no match"). One situation at a time; the ads scroll sideways. */
+/** A sign or pictogram to match (ÖSD A1 Lesen Aufgabe 3): printed without its label, which only names it for screen readers. */
+function Picto({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <span className="grid aspect-[4/3] w-full place-items-center rounded-xl bg-v-soft" role="img" aria-label={label}>
+      {children}
+    </span>
+  )
+}
+
+/** Situations to ads (+ x for "no match", printed as the exam prints it: "0", "X"). One situation at a time; the ads
+ * scroll sideways. An ad with an image is a picture to match (Goethe A2 Hören Teil 2): the photo leads, the label names it. */
 export function MatchItem({ data, value, onChange, review, noMatch = true }: { data: MatchData; value: Record<number, string>; onChange?: (n: number, k: string) => void; review?: Record<number, string>; noMatch?: boolean }) {
   const t = useExamCopy()
   const [i, setI] = useState(0)
   const s = data.situations[i]
-  const ads = noMatch ? [...data.ads, { key: "x", title: t.noMatch, text: t.noMatchText }] : data.ads
+  const ads: MatchData["ads"] = noMatch ? [...data.ads, { key: "x", title: t.noMatch, text: t.noMatchText }] : data.ads
+  const show = (k: string) => (k === "x" && data.noMatchLabel ? data.noMatchLabel : k)
   return (
     <div className="flex flex-col gap-4">
-      <SituationTabs items={data.situations} active={i} onActive={setI} value={value} review={review} label={t.situations} />
+      <SituationTabs items={data.situations} active={i} onActive={setI} value={value} review={review} label={t.situations} show={show} />
       <ItemHeader>{s.text}</ItemHeader>
       <div className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-2 overflow-x-auto px-5 pb-1" role="radiogroup" aria-label={s.text}>
         {ads.map((a) => {
@@ -150,11 +161,16 @@ export function MatchItem({ data, value, onChange, review, noMatch = true }: { d
               )}
             >
               <span className="flex items-center justify-between">
-                <span className={cn("v-num grid size-7 place-items-center rounded-full text-[13px]", st === "selected" ? "bg-v-ink text-v-bg" : "bg-v-soft")}>{a.key}</span>
+                <span className={cn("v-num grid size-7 place-items-center rounded-full text-[13px]", st === "selected" ? "bg-v-ink text-v-bg" : "bg-v-soft")}>{show(a.key)}</span>
                 {st === "selected" ? <Check className="size-4" strokeWidth={2.5} aria-hidden="true" /> : st === "right" ? <Mark kind="right" inverse /> : st === "solution" ? <Mark kind="right" /> : st === "wrong" ? <Mark kind="wrong" /> : null}
               </span>
-              <b className="font-semibold">{a.title}</b>
-              <span className={cn(st === "right" ? "opacity-75" : "text-v-muted")}>{a.text}</span>
+              {a.image ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={a.image} alt={a.text} loading="lazy" className="aspect-[4/3] w-full rounded-xl bg-v-soft object-cover" />
+              ) : null}
+              {a.picto ? <Picto label={a.title}>{createElement(pictoIcon(a.picto) ?? "span", { className: "size-14", strokeWidth: 1.25, "aria-hidden": true })}</Picto> : null}
+              {a.title && !a.picto ? <b className="font-semibold">{a.title}</b> : null}
+              <span className={cn(st === "right" ? "opacity-75" : a.image ? "text-v-ink" : "text-v-muted")}>{a.text}</span>
             </button>
           )
         })}
@@ -163,7 +179,7 @@ export function MatchItem({ data, value, onChange, review, noMatch = true }: { d
   )
 }
 
-type Gap = { n: number; options: string[] }
+type Gap = { n: number; options: string[]; pick?: number }
 const isTyped = (g: Gap) => g.options.length === 0
 
 /** One line of a form: the label before the field, the field, and what follows it on the line ("Uhr"). */
@@ -228,9 +244,42 @@ function TypedField({ gap, value, onChange, review, marks, inline }: { gap: Gap;
   )
 }
 
+/** Tick boxes of a form where several are right (ÖSD A1: "Kurs für" 2 of 4): checkboxes, stored in option order. */
+function TickField({ gap, value, onChange, review }: { gap: Gap; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string> }) {
+  const t = useExamCopy()
+  const mine = ticks(value[gap.n])
+  const right = review ? ticks(review[gap.n]) : null
+  return (
+    <div className="flex flex-wrap gap-2" role="group" aria-label={t.gap(gap.n)}>
+      {gap.options.map((o) => {
+        const on = mine.includes(o)
+        const s = right ? (on ? (right.includes(o) ? "right" : "wrong") : right.includes(o) ? "solution" : "idle") : on ? "selected" : "idle"
+        return (
+          <button
+            key={o}
+            type="button"
+            role="checkbox"
+            aria-checked={on}
+            disabled={!!review || !onChange}
+            onClick={() => onChange?.(gap.n, gap.options.filter((x) => (x === o ? !on : mine.includes(x))).join(","))}
+            className={cn("flex h-11 cursor-pointer items-center gap-2 rounded-xl border px-3.5 text-[15.5px] font-semibold transition-[background-color,border-color,transform] duration-150 ease-out active:scale-[0.97] disabled:cursor-default disabled:active:scale-100", stateSurface[s])}
+          >
+            <span className={cn("grid size-5 place-items-center rounded-[5px] border-2", s === "selected" ? "border-v-ink bg-v-ink text-v-bg" : s === "idle" ? "border-v-ink/25" : "border-transparent")}>
+              {s === "selected" ? <Check className="size-3.5" strokeWidth={3} aria-hidden="true" /> : null}
+            </span>
+            {o}
+            {s === "right" ? <Mark kind="right" inverse className="size-4" /> : s === "solution" ? <Mark kind="right" className="size-4" /> : s === "wrong" ? <Mark kind="wrong" className="size-4" /> : null}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 /** Pick fields of a form (ja / nein): inline toggles, no tray. */
 function PickField({ gap, value, onChange, review }: { gap: Gap; value: Record<number, string>; onChange?: (n: number, v: string) => void; review?: Record<number, string> }) {
   const t = useExamCopy()
+  if ((gap.pick ?? 1) > 1) return <TickField gap={gap} value={value} onChange={onChange} review={review} />
   return (
     <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t.gap(gap.n)}>
       {gap.options.map((o) => {

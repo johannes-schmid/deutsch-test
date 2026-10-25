@@ -1,0 +1,479 @@
+{
+  "exam": "telc-a2",
+  "skill": "lesen",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "telc-a2-lesen-07-t1-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.354Z",
+        "textType": "Wegweiser in einem Möbelhaus"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Wegweiser und die Situationen 1–5. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie haben einen Schrank gekauft und schon bezahlt. Jetzt möchten Sie ihn mitnehmen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Sie brauchen eine neue Couch, weil Ihre alte kaputt ist.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Ihr Baby soll bald in einem eigenen kleinen Bett schlafen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Obergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Ihre Nachbarn können abends in Ihr Wohnzimmer sehen. Das möchten Sie nicht mehr.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Sie haben Hunger auf ein Stück Kuchen und möchten einen Kaffee trinken.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Im Badezimmer ist der Spiegel kaputt. Sie brauchen einen neuen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Obergeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderes Stockwerk"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Wohnwelt Kranich",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "3. Obergeschoss: Badmöbel · Spiegel · Handtuchhalter · Gardinen und Vorhänge · Dekoration · Bilderrahmen",
+            "2. Obergeschoss: Schlafzimmer · Betten und Matratzen · Kleiderschränke · Kinderzimmer · Babymöbel",
+            "1. Obergeschoss: Wohnzimmer · Sofas und Sessel · Regale · Couchtische · Teppiche · Lampen",
+            "Erdgeschoss: Information · Kasse · Küchen · Esstische und Stühle · Restaurant „Kranich-Stube“ · Toiletten",
+            "Untergeschoss: Warenausgabe · Lieferservice · Kinderland (für Kinder von 3 bis 8 Jahren) · Parkhaus"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Sofas gibt es im 1. Obergeschoss. Im 2. Obergeschoss gibt es nur Möbel fürs Schlafzimmer und Kinderzimmer.",
+            "evidence": {
+              "text": "1. Obergeschoss: Wohnzimmer · Sofas und Sessel · Regale · Couchtische · Teppiche · Lampen",
+              "hit": "Sofas und Sessel"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Ein Bett für ein Baby findest du bei den Babymöbeln im 2. Obergeschoss. Im 1. Obergeschoss gibt es Sofas, aber keine Betten.",
+            "evidence": {
+              "text": "2. Obergeschoss: Schlafzimmer · Betten und Matratzen · Kleiderschränke · Kinderzimmer · Babymöbel",
+              "hit": "Babymöbel"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Mit Gardinen kann niemand mehr ins Zimmer sehen, und die gibt es im 3. Obergeschoss. Die Wohnzimmermöbel sind im 1. Obergeschoss, aber dort gibt es keine Gardinen.",
+            "evidence": {
+              "text": "3. Obergeschoss: Badmöbel · Spiegel · Handtuchhalter · Gardinen und Vorhänge · Dekoration · Bilderrahmen",
+              "hit": "Gardinen und Vorhänge"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Kaffee und Kuchen bekommst du im Restaurant im Erdgeschoss. Im 3. Obergeschoss gibt es nur Bad und Dekoration.",
+            "evidence": {
+              "text": "Erdgeschoss: Information · Kasse · Küchen · Esstische und Stühle · Restaurant „Kranich-Stube“ · Toiletten",
+              "hit": "Restaurant „Kranich-Stube“"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Spiegel gibt es bei den Badmöbeln im 3. Obergeschoss. Im 2. Obergeschoss sind Schlafzimmermöbel, im Untergeschoss holt man nur Möbel ab.",
+            "evidence": {
+              "text": "3. Obergeschoss: Badmöbel · Spiegel · Handtuchhalter · Gardinen und Vorhänge · Dekoration · Bilderrahmen",
+              "hit": "Spiegel"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-07-t2-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.354Z",
+        "textType": "Zeitungsartikel: Leute"
+      },
+      "display": {
+        "instruction": "Lesen Sie den Zeitungstext und die Aussagen 6–10. Ist die Aussage richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Elias Weidner hat einen deutschen Rekord."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Seinen ersten Zauberwürfel hat Elias von seinem Opa bekommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Elias hat die Tricks in einer Gruppe an seiner Schule gelernt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Elias übt nur am Wochenende."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Elias war beim Turnier schneller als sechs Sekunden."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Die Mutter von Elias war beim Turnier dabei."
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Schneller als alle anderen in Deutschland",
+            "Elias Weidner (15) aus Erlangen hat einen neuen deutschen Rekord: Bei einem Turnier in Kopenhagen hat der Schüler einen Zauberwürfel in nur 5,87 Sekunden gelöst. So schnell war in Deutschland noch niemand.",
+            "Den ersten Würfel hat Elias mit elf Jahren von seinem Großvater zum Geburtstag bekommen. „Am Anfang hat es eine Woche gedauert, bis alle Farben richtig waren“, erzählt er. In seiner Schule konnte ihm niemand helfen. Deshalb hat er die Tricks mit Videos im Internet gelernt.",
+            "Heute übt Elias jeden Tag eine Stunde, immer nach den Hausaufgaben. Zu Hause hat er schon über 30 Würfel, große und kleine.",
+            "Seine Mutter Sandra ist mit nach Kopenhagen gefahren und hat im Publikum gesessen. „Ich war nervöser als Elias“, sagt sie und lacht. Der Opa konnte nicht mitkommen, aber er hat das Turnier im Internet angeschaut. Im nächsten Sommer möchte Elias zur Europameisterschaft fahren."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "richtig",
+            "explanation": "Elias hat den ersten Würfel mit elf Jahren von seinem Großvater bekommen. Großvater und Opa sind dieselbe Person.",
+            "evidence": {
+              "text": "Den ersten Würfel hat Elias mit elf Jahren von seinem Großvater zum Geburtstag bekommen. „Am Anfang hat es eine Woche gedauert, bis alle Farben richtig waren“, erzählt er. In seiner Schule konnte ihm niemand helfen. Deshalb hat er die Tricks mit Videos im Internet gelernt.",
+              "hit": "von seinem Großvater zum Geburtstag bekommen"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "In der Schule konnte ihm niemand helfen. Er hat die Tricks allein mit Videos im Internet gelernt.",
+            "evidence": {
+              "text": "Den ersten Würfel hat Elias mit elf Jahren von seinem Großvater zum Geburtstag bekommen. „Am Anfang hat es eine Woche gedauert, bis alle Farben richtig waren“, erzählt er. In seiner Schule konnte ihm niemand helfen. Deshalb hat er die Tricks mit Videos im Internet gelernt.",
+              "hit": "Deshalb hat er die Tricks mit Videos im Internet gelernt."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Elias übt jeden Tag, nicht nur am Wochenende. Er übt immer nach den Hausaufgaben.",
+            "evidence": {
+              "text": "Heute übt Elias jeden Tag eine Stunde, immer nach den Hausaufgaben. Zu Hause hat er schon über 30 Würfel, große und kleine.",
+              "hit": "Heute übt Elias jeden Tag eine Stunde"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Er hat nur 5,87 Sekunden gebraucht. Das ist weniger als sechs Sekunden.",
+            "evidence": {
+              "text": "Elias Weidner (15) aus Erlangen hat einen neuen deutschen Rekord: Bei einem Turnier in Kopenhagen hat der Schüler einen Zauberwürfel in nur 5,87 Sekunden gelöst. So schnell war in Deutschland noch niemand.",
+              "hit": "in nur 5,87 Sekunden gelöst"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "richtig",
+            "explanation": "Die Mutter ist mit nach Kopenhagen gefahren und hat im Publikum gesessen. Nur der Opa war nicht dabei.",
+            "evidence": {
+              "text": "Seine Mutter Sandra ist mit nach Kopenhagen gefahren und hat im Publikum gesessen. „Ich war nervöser als Elias“, sagt sie und lacht. Der Opa konnte nicht mitkommen, aber er hat das Turnier im Internet angeschaut. Im nächsten Sommer möchte Elias zur Europameisterschaft fahren.",
+              "hit": "Seine Mutter Sandra ist mit nach Kopenhagen gefahren und hat im Publikum gesessen."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "richtig"
+      ]
+    },
+    {
+      "id": "telc-a2-lesen-07-t3-01",
+      "exam": "telc-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:50:48.354Z",
+        "textType": "Anzeigen: Angebote für Familien in Paderborn"
+      },
+      "display": {
+        "instruction": "Lesen Sie die Situationen 11–15 und die acht Anzeigen. Wo finden Sie, was Sie suchen? Wählen Sie für jede Situation eine Anzeige (a–h). Bei einer Situation hilft keine Anzeige: Dann wählen Sie x.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "Babysitterin gesucht?",
+                  "text": "Ich bin Marie, 22, Studentin in Paderborn. Ich passe abends und am Wochenende auf Ihre Kinder auf. Erste-Hilfe-Kurs gemacht. Tel. 0176 52390418"
+                },
+                {
+                  "key": "b",
+                  "title": "Nachhilfe-Team Paderborn",
+                  "text": "Mathe, Deutsch und Englisch für die Klassen 5 bis 10. Unterricht bei Ihnen zu Hause. Die erste Stunde ist gratis."
+                },
+                {
+                  "key": "c",
+                  "title": "Naturkundemuseum Paderborn",
+                  "text": "Feiern Sie zwischen Dinosauriern! Kindergeburtstag mit Führung, Spielen und Kuchen für bis zu 12 Kinder ab 6 Jahren."
+                },
+                {
+                  "key": "d",
+                  "title": "Krabbelgruppe „Kleine Füße“",
+                  "text": "Für Babys von 6 bis 18 Monaten mit Mama oder Papa: spielen, singen, neue Leute treffen. Dienstags 9.30–11 Uhr im Familienzentrum Südstadt."
+                },
+                {
+                  "key": "e",
+                  "title": "Oma auf Zeit",
+                  "text": "Ältere Damen betreuen Ihre Kinder, Montag bis Freitag von 14 bis 18 Uhr. Vermittlung über das Seniorenbüro Paderborn."
+                },
+                {
+                  "key": "f",
+                  "title": "Kinderflohmarkt in der Paderhalle",
+                  "text": "Verkaufen Sie Kinderkleidung, Spielzeug und Kinderwagen! Sonntag, 9. März, 10–14 Uhr. Ein Tisch kostet 8 €. Anmeldung online."
+                },
+                {
+                  "key": "g",
+                  "title": "Familienberatung Paderborn",
+                  "text": "Ihr Kind hört nicht? Streit in der Familie? Wir beraten Eltern kostenlos. Termine unter 05251 7738210."
+                },
+                {
+                  "key": "h",
+                  "title": "Spielzeugbox",
+                  "text": "Spielzeug leihen statt kaufen: Puppen, Bausteine, Brettspiele. Bis zu vier Wochen, nur 2 € pro Spiel."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Ihr Sohn versteht im Matheunterricht wenig und hat schlechte Noten."
+                },
+                {
+                  "n": 11,
+                  "text": "Ihre Tochter ist drei. Sie braucht ab August einen Platz in einer Kita, jeden Vormittag."
+                },
+                {
+                  "n": 12,
+                  "text": "Sie möchten am Samstagabend ins Konzert gehen. Jemand soll so lange bei Ihren Kindern bleiben."
+                },
+                {
+                  "n": 13,
+                  "text": "Ihre Tochter wird sieben. Sie möchte mit ihren Freundinnen an einem besonderen Ort feiern."
+                },
+                {
+                  "n": 14,
+                  "text": "Ihrem Sohn passen seine Jacken und Hosen nicht mehr. Sie möchten damit noch etwas Geld bekommen."
+                },
+                {
+                  "n": 15,
+                  "text": "Ihr Sohn ist neun Monate alt. Sie suchen Kontakt zu anderen Eltern."
+                }
+              ]
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "x",
+            "explanation": "Keine Anzeige hat einen Platz in einer Kita. Die Krabbelgruppe ist nur einmal pro Woche für Babys, und „Oma auf Zeit“ hilft nur am Nachmittag.",
+            "evidence": {
+              "text": "Krabbelgruppe „Kleine Füße“. Für Babys von 6 bis 18 Monaten mit Mama oder Papa: spielen, singen, neue Leute treffen. Dienstags 9.30–11 Uhr im Familienzentrum Südstadt.",
+              "hit": "Dienstags 9.30–11 Uhr"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Marie passt auch abends und am Wochenende auf Kinder auf. „Oma auf Zeit“ passt nicht, das gibt es nur von Montag bis Freitag am Nachmittag.",
+            "evidence": {
+              "text": "Babysitterin gesucht?. Ich bin Marie, 22, Studentin in Paderborn. Ich passe abends und am Wochenende auf Ihre Kinder auf. Erste-Hilfe-Kurs gemacht. Tel. 0176 52390418",
+              "hit": "Ich passe abends und am Wochenende auf Ihre Kinder auf."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Im Naturkundemuseum kann man einen Kindergeburtstag feiern. Kinder ab sechs Jahren dürfen kommen.",
+            "evidence": {
+              "text": "Naturkundemuseum Paderborn. Feiern Sie zwischen Dinosauriern! Kindergeburtstag mit Führung, Spielen und Kuchen für bis zu 12 Kinder ab 6 Jahren.",
+              "hit": "Kindergeburtstag mit Führung, Spielen und Kuchen"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "f",
+            "explanation": "Auf dem Kinderflohmarkt kannst du alte Kinderkleidung verkaufen. Die Spielzeugbox verleiht nur Spielzeug und kauft nichts.",
+            "evidence": {
+              "text": "Kinderflohmarkt in der Paderhalle. Verkaufen Sie Kinderkleidung, Spielzeug und Kinderwagen! Sonntag, 9. März, 10–14 Uhr. Ein Tisch kostet 8 €. Anmeldung online.",
+              "hit": "Verkaufen Sie Kinderkleidung"
+            }
+          },
+          {
+            "n": 15,
+            "correct": "d",
+            "explanation": "Die Krabbelgruppe ist für Babys mit ihren Eltern, und dort trifft man neue Leute. Dein Sohn ist mit neun Monaten im richtigen Alter.",
+            "evidence": {
+              "text": "Krabbelgruppe „Kleine Füße“. Für Babys von 6 bis 18 Monaten mit Mama oder Papa: spielen, singen, neue Leute treffen. Dienstags 9.30–11 Uhr im Familienzentrum Südstadt.",
+              "hit": "neue Leute treffen"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    }
+  ]
+}

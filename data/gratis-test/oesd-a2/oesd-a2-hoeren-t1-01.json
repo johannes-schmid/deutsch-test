@@ -3,11 +3,11 @@
   "exam": "oesd-a2",
   "skill": "hoeren",
   "teil": 1,
-  "status": "reviewed",
+  "status": "draft",
   "generated": {
     "model": "claude-opus-5-5",
-    "at": "2026-10-13T05:52:25.319Z",
-    "textType": "Zwei kurze Radiomeldungen zum selben Thema (Wetter am Wochenende)"
+    "at": "2026-10-24T12:00:00.000Z",
+    "textType": "Zwei kurze Radiomeldungen zum selben Thema (Veranstaltung in der Stadt)"
   },
   "display": {
     "instruction": "Sie hören zwei kurze Meldungen im Radio. Beide sagen dasselbe, aber mit anderen Worten. Ist die Aussage richtig oder falsch? Sie hören die Meldungen einmal.",
@@ -16,36 +16,36 @@
         "type": "rf",
         "item": {
           "n": 1,
-          "statement": "Am Samstag ist es warm und es regnet nicht."
+          "statement": "Die Museen sind am Samstag bis ein Uhr in der Nacht offen."
         }
       },
       {
         "type": "rf",
         "item": {
           "n": 2,
-          "statement": "Am Sonntag regnet es schon am Vormittag."
+          "statement": "Für die Shuttlebusse braucht man ein extra Ticket."
         }
       }
     ],
     "clip": {
-      "duration": 44.08,
+      "duration": 36.24,
       "plays": 1,
-      "situation": "Wetter im Radio",
+      "situation": "Tipp im Radio",
       "segments": [
         {
           "speaker": "S1",
           "from": 0,
-          "to": 21.6
+          "to": 18.64
         },
         {
           "speaker": "S2",
-          "from": 21.6,
-          "to": 44.08
+          "from": 18.64,
+          "to": 36.24
         }
       ],
       "speakers": {
         "S1": {
-          "name": "Radio Alpenwelle",
+          "name": "Radio Bergland",
           "tone": "var(--v-sk-lesen)"
         },
         "S2": {
@@ -61,19 +61,19 @@
       {
         "n": 1,
         "correct": "richtig",
-        "explanation": "Beide Sender sagen: Am Samstag ist es sonnig und bis zu vierundzwanzig Grad warm. Regen gibt es erst am Sonntag.",
+        "explanation": "Beide Sender sagen: Die Museen sind bis ein Uhr in der Nacht offen. Sie beginnen um sechs Uhr am Abend.",
         "evidence": {
-          "text": "Hier ist Radio Alpenwelle. Und hier das Wetter für das Wochenende in Tirol. Am Samstag scheint den ganzen Tag die Sonne, bei Temperaturen bis vierundzwanzig Grad. Am Sonntag wird es kühler. Ab Mittag kommen Wolken, und am Nachmittag regnet es in vielen Orten. In den Bergen kann es auch Gewitter geben. Wer wandern möchte, sollte also am besten am Samstag gehen.",
-          "hit": "Am Samstag scheint den ganzen Tag die Sonne, bei Temperaturen bis vierundzwanzig Grad."
+          "text": "Hier ist Radio Bergland mit einem Tipp für Samstag. In Innsbruck ist am Samstag die Lange Nacht der Museen. Alle Museen in der Stadt sind von achtzehn Uhr bis ein Uhr in der Nacht offen. Ein Ticket kostet fünfzehn Euro und gilt für alle Museen. Mit dem Ticket fahren Sie auch gratis mit den Shuttlebussen von Museum zu Museum.",
+          "hit": "Alle Museen in der Stadt sind von achtzehn Uhr bis ein Uhr in der Nacht offen."
         }
       },
       {
         "n": 2,
         "correct": "falsch",
-        "explanation": "Am Sonntagvormittag ist es noch freundlich. Die Wolken kommen erst ab Mittag, der Regen am Nachmittag.",
+        "explanation": "Die Busse sind im Preis dabei. Mit dem Museumsticket fährt man gratis.",
         "evidence": {
-          "text": "Hier ist Radio Alpenwelle. Und hier das Wetter für das Wochenende in Tirol. Am Samstag scheint den ganzen Tag die Sonne, bei Temperaturen bis vierundzwanzig Grad. Am Sonntag wird es kühler. Ab Mittag kommen Wolken, und am Nachmittag regnet es in vielen Orten. In den Bergen kann es auch Gewitter geben. Wer wandern möchte, sollte also am besten am Samstag gehen.",
-          "hit": "Ab Mittag kommen Wolken, und am Nachmittag regnet es in vielen Orten."
+          "text": "Radio Inntal, unser Tipp für das Wochenende: die Lange Nacht der Museen am Samstag in Innsbruck. Sie brauchen nur ein Ticket für fünfzehn Euro, dann können Sie alle Museen besuchen. Die kleinen Busse zwischen den Museen sind im Preis dabei. Los geht es um sechs Uhr am Abend, und erst um ein Uhr früh ist Schluss.",
+          "hit": "Die kleinen Busse zwischen den Museen sind im Preis dabei."
         }
       }
     ],
@@ -81,20 +81,20 @@
       {
         "speaker": "S1",
         "voice": "woman_alexandra_at",
-        "text": "Hier ist Radio Alpenwelle. Und hier das Wetter für das Wochenende in Tirol. Am Samstag scheint den ganzen Tag die Sonne, bei Temperaturen bis vierundzwanzig Grad. Am Sonntag wird es kühler. Ab Mittag kommen Wolken, und am Nachmittag regnet es in vielen Orten. In den Bergen kann es auch Gewitter geben. Wer wandern möchte, sollte also am besten am Samstag gehen.",
+        "text": "Hier ist Radio Bergland mit einem Tipp für Samstag. In Innsbruck ist am Samstag die Lange Nacht der Museen. Alle Museen in der Stadt sind von achtzehn Uhr bis ein Uhr in der Nacht offen. Ein Ticket kostet fünfzehn Euro und gilt für alle Museen. Mit dem Ticket fahren Sie auch gratis mit den Shuttlebussen von Museum zu Museum.",
         "delivery": "[calm, radio announcer]"
       },
       {
         "speaker": "S2",
-        "voice": "man_thomas_ch",
-        "text": "Radio Inntal, das Wetter am Wochenende für Tirol. Für Ausflüge in die Berge ist der Samstag der bessere Tag. Da bleibt es trocken und sonnig, und es wird bis zu vierundzwanzig Grad warm. Der Sonntag beginnt noch freundlich, aber gegen zwölf Uhr wird der Himmel grau. Später gibt es Regen, im Gebirge sind auch Gewitter möglich. Die Temperaturen gehen am Sonntag etwas zurück.",
-        "delivery": "[calm, radio announcer]"
+        "voice": "man_gruber_at",
+        "text": "Radio Inntal, unser Tipp für das Wochenende: die Lange Nacht der Museen am Samstag in Innsbruck. Sie brauchen nur ein Ticket für fünfzehn Euro, dann können Sie alle Museen besuchen. Die kleinen Busse zwischen den Museen sind im Preis dabei. Los geht es um sechs Uhr am Abend, und erst um ein Uhr früh ist Schluss.",
+        "delivery": "[friendly, radio presenter]"
       }
     ],
     "tts": {
-      "model": "eleven_v4",
-      "characters": 785,
-      "at": "2026-10-13T05:54:45.396Z"
+      "model": "eleven_v4_turbo",
+      "characters": 691,
+      "at": "2026-10-24T11:18:10.010Z"
     }
   }
 }

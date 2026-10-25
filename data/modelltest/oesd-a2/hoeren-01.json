@@ -1,0 +1,779 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 1,
+  "title": "Modelltest 1",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-01-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:00:00.000Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Adventmarkt in Steyr",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Montag"
+                },
+                {
+                  "key": "b",
+                  "label": "Freitag"
+                },
+                {
+                  "key": "c",
+                  "label": "Parkplätze"
+                },
+                {
+                  "key": "d",
+                  "label": "Eintritt frei"
+                },
+                {
+                  "key": "e",
+                  "label": "21 Uhr"
+                },
+                {
+                  "key": "f",
+                  "label": "18 Uhr"
+                },
+                {
+                  "key": "g",
+                  "label": "Feuerwerk"
+                },
+                {
+                  "key": "h",
+                  "label": "Kinderprogramm"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Tipps im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Ennstal",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Radio Pyhrn",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "duration": 50.57,
+          "src": "oesd-a2/hoeren-01/oesd-a2-hoeren-01-t1.review.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Beide Sender sagen: Der Markt beginnt am Freitag. Montag hört man gar nicht.",
+            "evidence": {
+              "text": "Radio Ennstal, unsere Tipps für das Wochenende. In Steyr beginnt am Freitag der Adventmarkt auf dem Stadtplatz. Die Hütten sind jeden Tag bis einundzwanzig Uhr geöffnet, und der Eintritt ist frei. Für Familien gibt es jeden Samstag ein Kinderprogramm mit Basteln und Musik. Wichtig: Heuer gibt es am Stadtplatz keine Parkplätze. Fahren Sie also am besten mit dem Bus. Und natürlich gibt es auch warmen Punsch.",
+              "hit": "In Steyr beginnt am Freitag der Adventmarkt auf dem Stadtplatz."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "d",
+            "explanation": "Der Eintritt ist frei: Am Eingang zahlt man keinen Cent. Parkplätze gibt es dagegen heuer keine.",
+            "evidence": {
+              "text": "Radio Ennstal, unsere Tipps für das Wochenende. In Steyr beginnt am Freitag der Adventmarkt auf dem Stadtplatz. Die Hütten sind jeden Tag bis einundzwanzig Uhr geöffnet, und der Eintritt ist frei. Für Familien gibt es jeden Samstag ein Kinderprogramm mit Basteln und Musik. Wichtig: Heuer gibt es am Stadtplatz keine Parkplätze. Fahren Sie also am besten mit dem Bus. Und natürlich gibt es auch warmen Punsch.",
+              "hit": "und der Eintritt ist frei"
+            }
+          },
+          {
+            "n": 3,
+            "correct": "e",
+            "explanation": "Die Hütten haben bis 21 Uhr offen, also bis neun Uhr am Abend. Von 18 Uhr sagt niemand etwas.",
+            "evidence": {
+              "text": "Radio Ennstal, unsere Tipps für das Wochenende. In Steyr beginnt am Freitag der Adventmarkt auf dem Stadtplatz. Die Hütten sind jeden Tag bis einundzwanzig Uhr geöffnet, und der Eintritt ist frei. Für Familien gibt es jeden Samstag ein Kinderprogramm mit Basteln und Musik. Wichtig: Heuer gibt es am Stadtplatz keine Parkplätze. Fahren Sie also am besten mit dem Bus. Und natürlich gibt es auch warmen Punsch.",
+              "hit": "Die Hütten sind jeden Tag bis einundzwanzig Uhr geöffnet"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "h",
+            "explanation": "Am Samstag gibt es ein Programm für Kinder. Ein Feuerwerk kommt in den Texten nicht vor.",
+            "evidence": {
+              "text": "Radio Ennstal, unsere Tipps für das Wochenende. In Steyr beginnt am Freitag der Adventmarkt auf dem Stadtplatz. Die Hütten sind jeden Tag bis einundzwanzig Uhr geöffnet, und der Eintritt ist frei. Für Familien gibt es jeden Samstag ein Kinderprogramm mit Basteln und Musik. Wichtig: Heuer gibt es am Stadtplatz keine Parkplätze. Fahren Sie also am besten mit dem Bus. Und natürlich gibt es auch warmen Punsch.",
+              "hit": "Für Familien gibt es jeden Samstag ein Kinderprogramm mit Basteln und Musik."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_alexandra_at",
+            "text": "Radio Ennstal, unsere Tipps für das Wochenende. In Steyr beginnt am Freitag der Adventmarkt auf dem Stadtplatz. Die Hütten sind jeden Tag bis einundzwanzig Uhr geöffnet, und der Eintritt ist frei. Für Familien gibt es jeden Samstag ein Kinderprogramm mit Basteln und Musik. Wichtig: Heuer gibt es am Stadtplatz keine Parkplätze. Fahren Sie also am besten mit dem Bus. Und natürlich gibt es auch warmen Punsch.",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_gruber_at",
+            "text": "Hallo, ihr Lieben, hier ist wieder Radio Pyhrn! Ihr wollt Punsch trinken und Geschenke anschauen? Dann ab nach Steyr! Der Adventmarkt dort macht diesen Freitag auf, und am Eingang zahlt ihr keinen Cent. Bleiben könnt ihr jeden Tag bis neun Uhr am Abend. Und die Kleinen? Die haben samstags ihr eigenes Programm. Mein Tipp: Lasst das Auto daheim, denn heuer könnt ihr beim Stadtplatz nicht parken. Der Bus bringt euch hin.",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-01-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:00:00.000Z",
+        "textType": "Sprachnachricht von einem Kollegen"
+      },
+      "display": {
+        "instruction": "Situation: Ein Kollege hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Ausflug in die Therme\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nZug um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nEintritt: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nDaniels Telefon: 0676 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Handy",
+          "speakers": {
+            "daniel": {
+              "name": "Daniel",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "duration": 38.48,
+          "src": "oesd-a2/hoeren-01/oesd-a2-hoeren-01-t2.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Samstag",
+            "accept": [
+              "am Samstag",
+              "Sa."
+            ],
+            "explanation": "Am Sonntag kann Daniel nicht, darum fahren alle am Samstag.",
+            "evidence": {
+              "text": "Servus, hier ist der Daniel aus der Arbeit. Äh, du, es geht um unseren Ausflug in die Therme im Burgenland. Am Sonntag kann ich leider nicht, also fahren wir am Samstag. Wir nehmen den Zug um acht Uhr fünfzehn, also Viertel nach acht. Der Eintritt kostet einundzwanzig Euro für den ganzen Tag. Äh, der Kinderpreis ist zwölf Euro, aber den brauchen wir ja nicht. Bademäntel kann man dort ausborgen, aber nimm bitte ein Handtuch mit, das kostet dort nämlich extra. Ja, und ruf mich bitte zurück, ob du mitkommst, okay? Meine Nummer ist null sechs sieben sechs, zwei neun fünf, vier eins, drei acht. Also noch einmal: zwei neun fünf, vier eins, drei acht. Bis bald!",
+              "hit": "also fahren wir am Samstag"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "8.15",
+            "accept": [
+              "8:15",
+              "8 Uhr 15",
+              "acht Uhr fünfzehn",
+              "Viertel nach acht",
+              "8.15 Uhr"
+            ],
+            "explanation": "Der Zug fährt um acht Uhr fünfzehn, also um Viertel nach acht.",
+            "evidence": {
+              "text": "Servus, hier ist der Daniel aus der Arbeit. Äh, du, es geht um unseren Ausflug in die Therme im Burgenland. Am Sonntag kann ich leider nicht, also fahren wir am Samstag. Wir nehmen den Zug um acht Uhr fünfzehn, also Viertel nach acht. Der Eintritt kostet einundzwanzig Euro für den ganzen Tag. Äh, der Kinderpreis ist zwölf Euro, aber den brauchen wir ja nicht. Bademäntel kann man dort ausborgen, aber nimm bitte ein Handtuch mit, das kostet dort nämlich extra. Ja, und ruf mich bitte zurück, ob du mitkommst, okay? Meine Nummer ist null sechs sieben sechs, zwei neun fünf, vier eins, drei acht. Also noch einmal: zwei neun fünf, vier eins, drei acht. Bis bald!",
+              "hit": "Wir nehmen den Zug um acht Uhr fünfzehn"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "21",
+            "accept": [
+              "21 Euro",
+              "einundzwanzig"
+            ],
+            "explanation": "Der Eintritt kostet 21 Euro. 12 Euro ist der Preis für Kinder.",
+            "evidence": {
+              "text": "Servus, hier ist der Daniel aus der Arbeit. Äh, du, es geht um unseren Ausflug in die Therme im Burgenland. Am Sonntag kann ich leider nicht, also fahren wir am Samstag. Wir nehmen den Zug um acht Uhr fünfzehn, also Viertel nach acht. Der Eintritt kostet einundzwanzig Euro für den ganzen Tag. Äh, der Kinderpreis ist zwölf Euro, aber den brauchen wir ja nicht. Bademäntel kann man dort ausborgen, aber nimm bitte ein Handtuch mit, das kostet dort nämlich extra. Ja, und ruf mich bitte zurück, ob du mitkommst, okay? Meine Nummer ist null sechs sieben sechs, zwei neun fünf, vier eins, drei acht. Also noch einmal: zwei neun fünf, vier eins, drei acht. Bis bald!",
+              "hit": "Der Eintritt kostet einundzwanzig Euro für den ganzen Tag."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Handtuch",
+            "accept": [
+              "ein Handtuch",
+              "Handtücher"
+            ],
+            "explanation": "Du sollst ein Handtuch mitnehmen. Einen Bademantel kann man dort ausborgen.",
+            "evidence": {
+              "text": "Servus, hier ist der Daniel aus der Arbeit. Äh, du, es geht um unseren Ausflug in die Therme im Burgenland. Am Sonntag kann ich leider nicht, also fahren wir am Samstag. Wir nehmen den Zug um acht Uhr fünfzehn, also Viertel nach acht. Der Eintritt kostet einundzwanzig Euro für den ganzen Tag. Äh, der Kinderpreis ist zwölf Euro, aber den brauchen wir ja nicht. Bademäntel kann man dort ausborgen, aber nimm bitte ein Handtuch mit, das kostet dort nämlich extra. Ja, und ruf mich bitte zurück, ob du mitkommst, okay? Meine Nummer ist null sechs sieben sechs, zwei neun fünf, vier eins, drei acht. Also noch einmal: zwei neun fünf, vier eins, drei acht. Bis bald!",
+              "hit": "aber nimm bitte ein Handtuch mit"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "2954138",
+            "accept": [
+              "295 41 38",
+              "2954 138",
+              "295 4138"
+            ],
+            "exact": true,
+            "explanation": "Daniel sagt die Nummer zweimal: zwei neun fünf, vier eins, drei acht. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Servus, hier ist der Daniel aus der Arbeit. Äh, du, es geht um unseren Ausflug in die Therme im Burgenland. Am Sonntag kann ich leider nicht, also fahren wir am Samstag. Wir nehmen den Zug um acht Uhr fünfzehn, also Viertel nach acht. Der Eintritt kostet einundzwanzig Euro für den ganzen Tag. Äh, der Kinderpreis ist zwölf Euro, aber den brauchen wir ja nicht. Bademäntel kann man dort ausborgen, aber nimm bitte ein Handtuch mit, das kostet dort nämlich extra. Ja, und ruf mich bitte zurück, ob du mitkommst, okay? Meine Nummer ist null sechs sieben sechs, zwei neun fünf, vier eins, drei acht. Also noch einmal: zwei neun fünf, vier eins, drei acht. Bis bald!",
+              "hit": "zwei neun fünf, vier eins, drei acht"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "daniel",
+            "voice": "man_martin_at",
+            "text": "Servus, hier ist der Daniel aus der Arbeit. Äh, du, es geht um unseren Ausflug in die Therme im Burgenland. Am Sonntag kann ich leider nicht, also fahren wir am Samstag. Wir nehmen den Zug um acht Uhr fünfzehn, also Viertel nach acht. Der Eintritt kostet einundzwanzig Euro für den ganzen Tag. Äh, der Kinderpreis ist zwölf Euro, aber den brauchen wir ja nicht. Bademäntel kann man dort ausborgen, aber nimm bitte ein Handtuch mit, das kostet dort nämlich extra. Ja, und ruf mich bitte zurück, ob du mitkommst, okay? Meine Nummer ist null sechs sieben sechs, zwei neun fünf, vier eins, drei acht. Also noch einmal: zwei neun fünf, vier eins, drei acht. Bis bald!",
+            "delivery": "[casual, friendly, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-01-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:00:00.000Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, wie sie zur Arbeit oder in die Schule kommen. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Wie kommen Sie zur Arbeit oder in die Schule?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Auto"
+                },
+                {
+                  "key": "b",
+                  "label": "Bus"
+                },
+                {
+                  "key": "c",
+                  "label": "Straßenbahn"
+                },
+                {
+                  "key": "d",
+                  "label": "Fahrrad"
+                },
+                {
+                  "key": "e",
+                  "label": "zu Fuß"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "duration": 106.37,
+          "src": "oesd-a2/hoeren-01/oesd-a2-hoeren-01-t3.review.mp3"
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "b,e",
+            "explanation": "Sie nimmt den Bus und geht das letzte Stück zu Fuß. Ein Auto ist ihr zu teuer, und das Tram nimmt sie nie.",
+            "evidence": {
+              "text": "Also, ich wohne in Bern, und ein Auto ist mir hier viel zu teuer. Die Parkplätze in der Stadt kosten so viel Geld! Am Morgen nehme ich den Bus bis zum Bahnhof, und das letzte Stück gehe ich zu Fuss. Das sind etwa zehn Minuten. Das Tram nehme ich eigentlich nie, das ist mir am Morgen zu voll.",
+              "hit": "Am Morgen nehme ich den Bus bis zum Bahnhof"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Er fährt jeden Tag mit dem Auto. Den Bus hat er nur einmal probiert.",
+            "evidence": {
+              "text": "Ich? Mit dem Auto, ganz klar. Ich wohne ja nicht in der Stadt, sondern draußen in einem kleinen Dorf. Von dort fährt der Bus nur zweimal am Tag. Einmal habe ich es probiert, äh, da war ich eine Stunde zu spät in der Firma. Seitdem fahre ich wieder jeden Tag mit dem Auto.",
+              "hit": "Seitdem fahre ich wieder jeden Tag mit dem Auto."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c,d,e",
+            "explanation": "Sie fährt mit dem Fahrrad, bei Regen mit der Straßenbahn, und manchmal geht sie zu Fuß. Ein Auto hat sie nicht.",
+            "evidence": {
+              "text": "Na ja, das kommt aufs Wetter an. Ich wohne in Freiburg, und wenn die Sonne scheint, fahre ich mit dem Fahrrad zur Arbeit. Bei Regen nehme ich lieber die Straßenbahn, die hält direkt vor meinem Büro. Und manchmal, wenn ich Zeit habe, gehe ich auch zu Fuß. Ein Auto habe ich gar nicht.",
+              "hit": "Bei Regen nehme ich lieber die Straßenbahn"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b,d",
+            "explanation": "Er fährt mit dem Fahrrad in den Betrieb und mit dem Bus zur Berufsschule. Mit dem Auto fährt er erst später.",
+            "evidence": {
+              "text": "Ich bin Lehrling, ich lerne Elektriker. In den Betrieb fahre ich mit dem Fahrrad, das geht schnell. Aber die Berufsschule ist in der nächsten Stadt, da nehme ich den Bus. Einen Führerschein habe ich noch nicht, äh, den mache ich erst nächstes Jahr. Dann fahre ich vielleicht mit dem Auto.",
+              "hit": "da nehme ich den Bus"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "a,c",
+            "explanation": "Sie fährt mit dem Auto zum Stadtrand und dann mit der Straßenbahn. Mit dem Fahrrad fährt sie nie.",
+            "evidence": {
+              "text": "Ich fahre zuerst mit dem Auto bis zum Parkplatz am Stadtrand. Dort steige ich in die Straßenbahn um und fahre ins Zentrum. So muss ich in der Stadt keinen Parkplatz suchen. Mit dem Fahrrad fahre ich nie, äh, das ist mir zu gefährlich, mit den vielen Autos auf der Straße.",
+              "hit": "Dort steige ich in die Straßenbahn um"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Guten Tag! Wir machen heute eine kleine Umfrage für das Radio. Wie kommen Sie zur Arbeit oder in die Schule?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_heidi_ch",
+            "text": "Also, ich wohne in Bern, und ein Auto ist mir hier viel zu teuer. Die Parkplätze in der Stadt kosten so viel Geld! Am Morgen nehme ich den Bus bis zum Bahnhof, und das letzte Stück gehe ich zu Fuss. Das sind etwa zehn Minuten. Das Tram nehme ich eigentlich nie, das ist mir am Morgen zu voll.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Ich? Mit dem Auto, ganz klar. Ich wohne ja nicht in der Stadt, sondern draußen in einem kleinen Dorf. Von dort fährt der Bus nur zweimal am Tag. Einmal habe ich es probiert, äh, da war ich eine Stunde zu spät in der Firma. Seitdem fahre ich wieder jeden Tag mit dem Auto.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_laura",
+            "text": "Na ja, das kommt aufs Wetter an. Ich wohne in Freiburg, und wenn die Sonne scheint, fahre ich mit dem Fahrrad zur Arbeit. Bei Regen nehme ich lieber die Straßenbahn, die hält direkt vor meinem Büro. Und manchmal, wenn ich Zeit habe, gehe ich auch zu Fuß. Ein Auto habe ich gar nicht.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich bin Lehrling, ich lerne Elektriker. In den Betrieb fahre ich mit dem Fahrrad, das geht schnell. Aber die Berufsschule ist in der nächsten Stadt, da nehme ich den Bus. Einen Führerschein habe ich noch nicht, äh, den mache ich erst nächstes Jahr. Dann fahre ich vielleicht mit dem Auto.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_alexandra_at",
+            "text": "Ich fahre zuerst mit dem Auto bis zum Parkplatz am Stadtrand. Dort steige ich in die Straßenbahn um und fahre ins Zentrum. So muss ich in der Stadt keinen Parkplatz suchen. Mit dem Fahrrad fahre ich nie, äh, das ist mir zu gefährlich, mit den vielen Autos auf der Straße.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-01/track.mp3",
+    "duration": 576.63,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.33,
+        "to": 15.36
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.36,
+        "to": 45.4
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.4,
+        "to": 58.57
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.74,
+        "to": 91.4
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 95.69,
+        "to": 121.13
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 130.3,
+        "to": 136.31
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 136.31,
+        "to": 166.35
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 166.35,
+        "to": 177.53
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 185,
+        "to": 223.48
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 229.43,
+        "to": 232.65
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 240.12,
+        "to": 278.6
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 284.55,
+        "to": 289.1
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 289.1,
+        "to": 309.13
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 314.64,
+        "to": 320.65
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 320.65,
+        "to": 350.69
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 350.69,
+        "to": 368.59
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 374.1,
+        "to": 380.71
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 382.25,
+        "to": 402.47
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 406.52,
+        "to": 425.12
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 429.17,
+        "to": 447.74
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 451.79,
+        "to": 469.29
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 473.34,
+        "to": 490.92
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 500.48,
+        "to": 504.97
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 504.97,
+        "to": 565
+      }
+    ]
+  }
+}

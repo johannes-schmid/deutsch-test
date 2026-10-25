@@ -1,0 +1,742 @@
+{
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "goethe-a2-lesen-02-t1-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.428Z",
+        "textType": "Zeitungsartikel: Lokales"
+      },
+      "display": {
+        "instruction": "Sie lesen diesen Text in der Zeitung. Wählen Sie für die Aufgaben 1–5 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Frau Brandner …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "spielt sonntags mit großen Figuren im Park."
+                },
+                {
+                  "key": "b",
+                  "label": "verkauft im Park Schachfiguren aus Holz."
+                },
+                {
+                  "key": "c",
+                  "label": "spielt jeden Sonntag in einem Verein."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Im Park spielen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "vor allem ältere Spaziergänger."
+                },
+                {
+                  "key": "b",
+                  "label": "junge Leute von der Uni und Kinder."
+                },
+                {
+                  "key": "c",
+                  "label": "nur Mitglieder aus einem Verein."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Die Stadt …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "hat die großen Figuren bezahlt."
+                },
+                {
+                  "key": "b",
+                  "label": "hat einen neuen Spielplatz gebaut."
+                },
+                {
+                  "key": "c",
+                  "label": "hat Tische zum Schachspielen aufgestellt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Im Winter spielt die Gruppe …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in einem Café in der Altstadt."
+                },
+                {
+                  "key": "b",
+                  "label": "in der Wohnung von Frau Brandner."
+                },
+                {
+                  "key": "c",
+                  "label": "an den Tischen im Stadtpark."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Frau Brandner hat Schach …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "in einem Verein gelernt."
+                },
+                {
+                  "key": "b",
+                  "label": "von ihrem Vater gelernt."
+                },
+                {
+                  "key": "c",
+                  "label": "von ihrer Mutter gelernt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Im Sommer möchte Frau Brandner …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "wieder in einen Schachverein gehen."
+                },
+                {
+                  "key": "b",
+                  "label": "im Café einen Kurs für Anfänger geben."
+                },
+                {
+                  "key": "c",
+                  "label": "einen Wettbewerb im Park organisieren."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Schach im Stadtpark",
+            "Jeden Sonntag um zwei Uhr bringt Helga Brandner große Schachfiguren in den Gießener Stadtpark. Die Figuren sind aus Holz und fast einen halben Meter hoch. Die 71-jährige Rentnerin hat sie vor drei Jahren selbst gekauft. „Am Anfang habe ich oft allein gespielt, gegen mich selbst“, erzählt sie und lacht.",
+            "Heute kommen jede Woche zehn bis fünfzehn Leute. Viele von ihnen studieren an der Universität, aber auch Kinder aus dem Viertel spielen gern mit. Ältere Spaziergänger bleiben meistens nur stehen und schauen zu. Vor einem Jahr hat die Stadt neben dem Spielplatz zwei Steintische mit Schachbrettern gebaut. Dort kann man auch mit kleinen Figuren spielen.",
+            "Im Winter ist es im Park zu kalt. Früher hat Frau Brandner dann bei sich zu Hause gespielt, aber ihre Wohnung ist zu klein für so viele Gäste. Heute trifft sich die Gruppe von November bis März im Café Rosengarten in der Altstadt. Der Besitzer reserviert jeden Sonntag zwei große Tische für sie.",
+            "Schach hat Frau Brandner schon als Kind gelernt. „Meine Mutter fand das Spiel langweilig, aber mein Vater hat fast jeden Abend mit mir gespielt“, sagt sie. Später war sie zwanzig Jahre lang in einem Schachverein. Für den Sommer plant sie jetzt ein kleines Turnier im Park. Mitmachen kann jeder, auch Anfänger."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "b",
+            "explanation": "Viele Spieler studieren an der Universität, und auch Kinder spielen mit. Die älteren Spaziergänger schauen nur zu.",
+            "evidence": {
+              "text": "Heute kommen jede Woche zehn bis fünfzehn Leute. Viele von ihnen studieren an der Universität, aber auch Kinder aus dem Viertel spielen gern mit. Ältere Spaziergänger bleiben meistens nur stehen und schauen zu. Vor einem Jahr hat die Stadt neben dem Spielplatz zwei Steintische mit Schachbrettern gebaut. Dort kann man auch mit kleinen Figuren spielen.",
+              "hit": "Viele von ihnen studieren an der Universität, aber auch Kinder aus dem Viertel spielen gern mit."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "c",
+            "explanation": "Die Stadt hat zwei Steintische mit Schachbrettern gebaut. Der Spielplatz war schon da, und die großen Figuren hat Frau Brandner selbst gekauft.",
+            "evidence": {
+              "text": "Heute kommen jede Woche zehn bis fünfzehn Leute. Viele von ihnen studieren an der Universität, aber auch Kinder aus dem Viertel spielen gern mit. Ältere Spaziergänger bleiben meistens nur stehen und schauen zu. Vor einem Jahr hat die Stadt neben dem Spielplatz zwei Steintische mit Schachbrettern gebaut. Dort kann man auch mit kleinen Figuren spielen.",
+              "hit": "Vor einem Jahr hat die Stadt neben dem Spielplatz zwei Steintische mit Schachbrettern gebaut."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "a",
+            "explanation": "Von November bis März trifft sich die Gruppe im Café Rosengarten. Bei Frau Brandner zu Hause hat man nur früher gespielt, denn ihre Wohnung ist zu klein.",
+            "evidence": {
+              "text": "Im Winter ist es im Park zu kalt. Früher hat Frau Brandner dann bei sich zu Hause gespielt, aber ihre Wohnung ist zu klein für so viele Gäste. Heute trifft sich die Gruppe von November bis März im Café Rosengarten in der Altstadt. Der Besitzer reserviert jeden Sonntag zwei große Tische für sie.",
+              "hit": "Heute trifft sich die Gruppe von November bis März im Café Rosengarten in der Altstadt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Ihr Vater hat fast jeden Abend mit ihr gespielt. Ihre Mutter fand Schach langweilig, und in den Verein ist sie erst später gegangen.",
+            "evidence": {
+              "text": "Schach hat Frau Brandner schon als Kind gelernt. „Meine Mutter fand das Spiel langweilig, aber mein Vater hat fast jeden Abend mit mir gespielt“, sagt sie. Später war sie zwanzig Jahre lang in einem Schachverein. Für den Sommer plant sie jetzt ein kleines Turnier im Park. Mitmachen kann jeder, auch Anfänger.",
+              "hit": "mein Vater hat fast jeden Abend mit mir gespielt"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "c",
+            "explanation": "Sie plant ein kleines Turnier im Park, das ist ein Wettbewerb. Im Verein war sie früher, und von einem Kurs im Café steht nichts im Text.",
+            "evidence": {
+              "text": "Schach hat Frau Brandner schon als Kind gelernt. „Meine Mutter fand das Spiel langweilig, aber mein Vater hat fast jeden Abend mit mir gespielt“, sagt sie. Später war sie zwanzig Jahre lang in einem Schachverein. Für den Sommer plant sie jetzt ein kleines Turnier im Park. Mitmachen kann jeder, auch Anfänger.",
+              "hit": "Für den Sommer plant sie jetzt ein kleines Turnier im Park."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-02-t2-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.428Z",
+        "textType": "Wegweiser: Kaufhaus"
+      },
+      "display": {
+        "instruction": "Sie sind im Kaufhaus Seidel und lesen den Wegweiser. Lesen Sie die Aufgaben 6–10. In welchen Stock gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie brauchen neue Handtücher für Ihr Bad.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Sie haben ein Geschenk für Ihre Kollegin gekauft. Es soll schön eingepackt werden.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Sie fahren im Sommer ans Meer und brauchen einen neuen Badeanzug.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Ihre Armbanduhr geht nicht mehr. Sie braucht nur eine neue Batterie.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Ihre alte Kaffeemaschine ist kaputt. Sie möchten eine neue kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Untergeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Ihre Nichte hat bald Geburtstag. Sie möchten ihr ein Puzzle schenken.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Kaufhaus Seidel",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "Kaufhaus Seidel – Wegweiser · Montag bis Samstag 9:30 bis 20:00 Uhr",
+            "4. Stock: Restaurant „Seidel-Blick“ mit Dachterrasse · Kundenservice (Geschenkverpackung, Umtausch, Lieferung nach Hause) · Reparaturannahme für Elektrogeräte · Friseursalon · Toiletten · Wickelraum",
+            "3. Stock: Haushaltswaren · Geschirr und Gläser · Küchengeräte · Elektrogeräte · Staubsauger · Lampen · Bettwäsche · Handtücher · Vorhänge · Teppiche · Dekoration",
+            "2. Stock: Herrenmode · Herrenschuhe · Kindermode · Kinderschuhe · Babyartikel · Spielwaren · Sportartikel · Schreibwaren und Schulbedarf · Bücher",
+            "1. Stock: Damenmode · Damenschuhe · Bademode · Strümpfe und Wäsche · Sportbekleidung · Hüte und Tücher",
+            "Erdgeschoss: Uhren und Schmuck (Batteriewechsel sofort, während Sie warten) · Kosmetik und Parfüm · Taschen und Koffer · Regenschirme · Sonnenbrillen · Information",
+            "Untergeschoss: Lebensmittel · Getränke · Kaffee und Tee · Bäckerei · Feinkost · Weinabteilung · Drogerie · Schlüsseldienst"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "b",
+            "explanation": "Der Kundenservice im 4. Stock packt Geschenke ein. Im Erdgeschoss gibt es nur eine Information, aber keine Geschenkverpackung.",
+            "evidence": {
+              "text": "4. Stock: Restaurant „Seidel-Blick“ mit Dachterrasse · Kundenservice (Geschenkverpackung, Umtausch, Lieferung nach Hause) · Reparaturannahme für Elektrogeräte · Friseursalon · Toiletten · Wickelraum",
+              "hit": "Kundenservice (Geschenkverpackung"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "a",
+            "explanation": "Bademode für Frauen gibt es im 1. Stock. Im 2. Stock gibt es Sportartikel und Mode für Männer und Kinder.",
+            "evidence": {
+              "text": "1. Stock: Damenmode · Damenschuhe · Bademode · Strümpfe und Wäsche · Sportbekleidung · Hüte und Tücher",
+              "hit": "Bademode"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Eine neue Batterie bekommst du sofort bei Uhren und Schmuck im Erdgeschoss. Im 3. und 4. Stock gibt es Elektrogeräte und Reparaturen, aber keine Uhren.",
+            "evidence": {
+              "text": "Erdgeschoss: Uhren und Schmuck (Batteriewechsel sofort, während Sie warten) · Kosmetik und Parfüm · Taschen und Koffer · Regenschirme · Sonnenbrillen · Information",
+              "hit": "Uhren und Schmuck (Batteriewechsel sofort, während Sie warten)"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Eine Kaffeemaschine ist ein Küchengerät, und die gibt es im 3. Stock. Im Untergeschoss kannst du nur Kaffee kaufen.",
+            "evidence": {
+              "text": "3. Stock: Haushaltswaren · Geschirr und Gläser · Küchengeräte · Elektrogeräte · Staubsauger · Lampen · Bettwäsche · Handtücher · Vorhänge · Teppiche · Dekoration",
+              "hit": "Küchengeräte"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "b",
+            "explanation": "Ein Puzzle findest du bei den Spielwaren im 2. Stock. Im 3. Stock gibt es Dinge für den Haushalt, aber kein Spielzeug.",
+            "evidence": {
+              "text": "2. Stock: Herrenmode · Herrenschuhe · Kindermode · Kinderschuhe · Babyartikel · Spielwaren · Sportartikel · Schreibwaren und Schulbedarf · Bücher",
+              "hit": "Spielwaren"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "b"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-02-t3-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.428Z",
+        "textType": "Persönliche E-Mail: Arbeit im Homeoffice"
+      },
+      "display": {
+        "instruction": "Sie lesen eine E-Mail. Wählen Sie für die Aufgaben 11–15 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Pia gefällt die Arbeit zu Hause, weil sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "morgens mehr Zeit hat."
+                },
+                {
+                  "key": "b",
+                  "label": "weniger für den Zug bezahlt."
+                },
+                {
+                  "key": "c",
+                  "label": "jeden Tag joggen gehen kann."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Pias Schreibtisch steht …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "im Wohnzimmer beim Fernseher."
+                },
+                {
+                  "key": "b",
+                  "label": "in der Küche am Fenster."
+                },
+                {
+                  "key": "c",
+                  "label": "in dem Raum, wo sie schläft."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Ins Büro fährt Pia …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "montags und freitags."
+                },
+                {
+                  "key": "b",
+                  "label": "an zwei Tagen pro Woche."
+                },
+                {
+                  "key": "c",
+                  "label": "nur zum Treffen mit dem Team."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Pia stört, dass …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "der Fernseher im Wohnzimmer laut ist."
+                },
+                {
+                  "key": "b",
+                  "label": "es bei den Nachbarn oft laut ist."
+                },
+                {
+                  "key": "c",
+                  "label": "es in ihrem Zimmer zu dunkel ist."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Pia schlägt vor, dass Leonie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "mittags zu ihr nach Hause kommt."
+                },
+                {
+                  "key": "b",
+                  "label": "sie einmal in ihrem Büro besucht."
+                },
+                {
+                  "key": "c",
+                  "label": "dienstags mit ihr essen geht."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Pia",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Leonie,",
+            "vielen Dank für deine Karte aus Italien! Bei mir gibt es auch etwas Neues: Seit Anfang des Monats arbeite ich drei Tage pro Woche von zu Hause. Meine Firma erlaubt das jetzt allen im Team.",
+            "Das Beste daran: Ich muss nicht mehr so früh aufstehen. Früher war ich jeden Tag eine Stunde mit dem Zug unterwegs, und der Zug war oft zu spät. Jetzt habe ich morgens Zeit für ein ruhiges Frühstück. Und nach der Arbeit gehe ich manchmal noch joggen. Die Monatskarte brauche ich aber trotzdem, sie kostet genauso viel wie früher.",
+            "Unsere Wohnung ist ja nicht groß. Deshalb war die erste Frage: Wo soll mein Schreibtisch stehen? Im Wohnzimmer steht der Fernseher, und in der Küche ist zu wenig Platz. Jetzt steht der Schreibtisch im Schlafzimmer direkt am Fenster. Das ist ein bisschen komisch, aber dort ist es schön hell.",
+            "Was mir fehlt, sind meine Kolleginnen. Ich vermisse unsere Gespräche in der Kaffeeküche! Montags, mittwochs und freitags bin ich jetzt zu Hause. Dienstags und donnerstags fahre ich weiter ins Büro. Am Dienstag trifft sich immer das ganze Team, das ist mein Lieblingstag.",
+            "Etwas nervt mich aber: Unsere Nachbarn renovieren gerade ihre Wohnung. Seit zwei Wochen bohren und hämmern sie, manchmal schon um acht Uhr morgens. Bei Videokonferenzen müssen meine Kollegen dann oft fragen: „Was hast du gesagt?“",
+            "Du arbeitest doch ganz in der Nähe von mir. Hast du nicht Lust, mal in deiner Mittagspause vorbeizukommen? Ich koche dann etwas Leckeres für uns zwei. Es geht aber nur montags, mittwochs oder freitags, denn an den anderen Tagen bin ich ja im Büro. Schreib mir einfach, wann es dir passt!",
+            "Liebe Grüße",
+            "Pia"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "a",
+            "explanation": "Pia muss nicht mehr früh aufstehen und hat morgens Zeit zum Frühstücken. Joggen geht sie nur manchmal, und die Monatskarte kostet gleich viel.",
+            "evidence": {
+              "text": "Das Beste daran: Ich muss nicht mehr so früh aufstehen. Früher war ich jeden Tag eine Stunde mit dem Zug unterwegs, und der Zug war oft zu spät. Jetzt habe ich morgens Zeit für ein ruhiges Frühstück. Und nach der Arbeit gehe ich manchmal noch joggen. Die Monatskarte brauche ich aber trotzdem, sie kostet genauso viel wie früher.",
+              "hit": "Jetzt habe ich morgens Zeit für ein ruhiges Frühstück."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Der Schreibtisch steht im Schlafzimmer am Fenster. Im Wohnzimmer ist der Fernseher, und in der Küche ist zu wenig Platz.",
+            "evidence": {
+              "text": "Unsere Wohnung ist ja nicht groß. Deshalb war die erste Frage: Wo soll mein Schreibtisch stehen? Im Wohnzimmer steht der Fernseher, und in der Küche ist zu wenig Platz. Jetzt steht der Schreibtisch im Schlafzimmer direkt am Fenster. Das ist ein bisschen komisch, aber dort ist es schön hell.",
+              "hit": "Jetzt steht der Schreibtisch im Schlafzimmer direkt am Fenster."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "b",
+            "explanation": "Pia fährt dienstags und donnerstags ins Büro, also zweimal pro Woche. Das Team trifft sich nur am Dienstag, aber sie fährt auch am Donnerstag.",
+            "evidence": {
+              "text": "Was mir fehlt, sind meine Kolleginnen. Ich vermisse unsere Gespräche in der Kaffeeküche! Montags, mittwochs und freitags bin ich jetzt zu Hause. Dienstags und donnerstags fahre ich weiter ins Büro. Am Dienstag trifft sich immer das ganze Team, das ist mein Lieblingstag.",
+              "hit": "Dienstags und donnerstags fahre ich weiter ins Büro."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b",
+            "explanation": "Die Nachbarn renovieren und bohren schon morgens. Ihr Zimmer ist nicht dunkel, sondern schön hell.",
+            "evidence": {
+              "text": "Etwas nervt mich aber: Unsere Nachbarn renovieren gerade ihre Wohnung. Seit zwei Wochen bohren und hämmern sie, manchmal schon um acht Uhr morgens. Bei Videokonferenzen müssen meine Kollegen dann oft fragen: „Was hast du gesagt?“",
+              "hit": "Unsere Nachbarn renovieren gerade ihre Wohnung."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Leonie soll in ihrer Mittagspause zu Pia kommen, und Pia kocht. Am Dienstag geht es nicht, denn da ist Pia im Büro.",
+            "evidence": {
+              "text": "Du arbeitest doch ganz in der Nähe von mir. Hast du nicht Lust, mal in deiner Mittagspause vorbeizukommen? Ich koche dann etwas Leckeres für uns zwei. Es geht aber nur montags, mittwochs oder freitags, denn an den anderen Tagen bin ich ja im Büro. Schreib mir einfach, wann es dir passt!",
+              "hit": "Hast du nicht Lust, mal in deiner Mittagspause vorbeizukommen?"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-lesen-02-t4-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T15:16:33.428Z",
+        "textType": "Anzeigen im Internet: Haustiere"
+      },
+      "display": {
+        "instruction": "Sechs Personen suchen im Internet nach Angeboten rund um Tiere. Lesen Sie die Aufgaben 16–20 und die Anzeigen a–f. Welche Anzeige passt zu welcher Person? Für eine Aufgabe gibt es keine Lösung. Dann wählen Sie X. Die Anzeige aus dem Beispiel können Sie nicht mehr wählen.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "www.hundeschule-pfotenglueck.de",
+                  "text": "Ihr Hund zieht an der Leine oder macht nicht, was Sie sagen? In unseren Kursen lernen junge und erwachsene Hunde zusammen mit ihren Besitzern die wichtigsten Regeln. Kleine Gruppen, Treffpunkt auf unserem Platz am Waldrand. Die erste Stunde ist kostenlos."
+                },
+                {
+                  "key": "b",
+                  "title": "www.zoohaus-merz.de",
+                  "text": "Alles für Ihr Aquarium: über 200 Sorten Fische, Wasserpflanzen, Futter und Technik. Bestellen Sie bequem online, wir bringen Ihnen alles in zwei Tagen nach Hause. Ab 30 Euro ist die Lieferung kostenlos. Unser Laden in der Bahnhofstraße ist montags geschlossen."
+                },
+                {
+                  "key": "c",
+                  "title": "Katzensitterin Ute",
+                  "text": "Sie sind im Urlaub, und Ihre Katze bleibt zu Hause? Ich komme ein- oder zweimal am Tag zu Ihnen, gebe Futter und frisches Wasser, mache das Katzenklo sauber und spiele mit Ihrer Katze. Ich betreue nur Katzen. Anruf genügt: 0176 4419 2083"
+                },
+                {
+                  "key": "d",
+                  "title": "www.hundepension-waldblick.de",
+                  "text": "Sie fahren weg und können Ihren Hund nicht mitnehmen? Bei uns wohnt er in einem hellen Zimmer mit großem Garten. Wir nehmen Hunde nur zum Übernachten, nicht für ein paar Stunden am Tag. Bitte bringen Sie Ihren Hund selbst und holen Sie ihn wieder ab."
+                },
+                {
+                  "key": "e",
+                  "title": "Reiterhof Sonnenwiese",
+                  "text": "Reiten lernen auf dem Land! Für Kinder von 7 bis 14 Jahren gibt es bei uns Reitstunden auf ruhigen Ponys, immer mittwochs und samstags. Helme kann man bei uns leihen. Für Erwachsene bieten wir Ausritte in den Wald an."
+                },
+                {
+                  "key": "f",
+                  "title": "Hundesalon Struppi",
+                  "text": "Waschen, schneiden, Krallen kürzen: Bei uns sieht Ihr Hund danach wieder schön aus. Wir haben viel Erfahrung mit Hunden mit lockigem oder langem Fell. Termine bitte telefonisch vereinbaren, auch am Samstag."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Familie Roth fährt zwei Wochen weg. Jemand soll zu Hause nach ihrer Katze sehen."
+                },
+                {
+                  "n": 16,
+                  "text": "Herr Abel hat einen Pudel. Er findet, dass das Fell von seinem Hund viel zu lang ist."
+                },
+                {
+                  "n": 17,
+                  "text": "Die Tochter von Frau Yıldız ist neun Jahre alt und möchte gern auf einem Pferd sitzen lernen."
+                },
+                {
+                  "n": 18,
+                  "text": "Herr Kühn arbeitet den ganzen Tag. Er sucht jemanden, der mittags mit seinem Hund spazieren geht."
+                },
+                {
+                  "n": 19,
+                  "text": "Der junge Hund von Frau Lenz hört nie, wenn sie ihn ruft."
+                },
+                {
+                  "n": 20,
+                  "text": "Jonas hat ein Aquarium und möchte Fischfutter bestellen, das man ihm nach Hause bringt."
+                }
+              ],
+              "noMatchLabel": "X"
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "f",
+            "explanation": "Im Hundesalon Struppi kann man das Fell vom Hund schneiden lassen. Die Hundeschule hilft nur, wenn ein Hund nicht hört.",
+            "evidence": {
+              "text": "Waschen, schneiden, Krallen kürzen: Bei uns sieht Ihr Hund danach wieder schön aus. Wir haben viel Erfahrung mit Hunden mit lockigem oder langem Fell. Termine bitte telefonisch vereinbaren, auch am Samstag.",
+              "hit": "Wir haben viel Erfahrung mit Hunden mit lockigem oder langem Fell."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "e",
+            "explanation": "Auf dem Reiterhof gibt es Reitstunden für Kinder von 7 bis 14 Jahren. Die Ausritte in den Wald sind nur für Erwachsene.",
+            "evidence": {
+              "text": "Reiten lernen auf dem Land! Für Kinder von 7 bis 14 Jahren gibt es bei uns Reitstunden auf ruhigen Ponys, immer mittwochs und samstags. Helme kann man bei uns leihen. Für Erwachsene bieten wir Ausritte in den Wald an.",
+              "hit": "Für Kinder von 7 bis 14 Jahren gibt es bei uns Reitstunden auf ruhigen Ponys"
+            }
+          },
+          {
+            "n": 18,
+            "correct": "x",
+            "explanation": "Die Hundepension passt fast, aber sie nimmt Hunde nur zum Übernachten, nicht für ein paar Stunden. Die Katzensitterin betreut nur Katzen.",
+            "evidence": {
+              "text": "Sie fahren weg und können Ihren Hund nicht mitnehmen? Bei uns wohnt er in einem hellen Zimmer mit großem Garten. Wir nehmen Hunde nur zum Übernachten, nicht für ein paar Stunden am Tag. Bitte bringen Sie Ihren Hund selbst und holen Sie ihn wieder ab.",
+              "hit": "Wir nehmen Hunde nur zum Übernachten, nicht für ein paar Stunden am Tag."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "a",
+            "explanation": "In der Hundeschule lernen auch junge Hunde, was ihre Besitzer sagen. Der Hundesalon macht den Hund nur schön.",
+            "evidence": {
+              "text": "Ihr Hund zieht an der Leine oder macht nicht, was Sie sagen? In unseren Kursen lernen junge und erwachsene Hunde zusammen mit ihren Besitzern die wichtigsten Regeln. Kleine Gruppen, Treffpunkt auf unserem Platz am Waldrand. Die erste Stunde ist kostenlos.",
+              "hit": "In unseren Kursen lernen junge und erwachsene Hunde zusammen mit ihren Besitzern die wichtigsten Regeln."
+            }
+          },
+          {
+            "n": 20,
+            "correct": "b",
+            "explanation": "Beim Zoohaus kann man Futter für Fische online bestellen, und es wird nach Hause gebracht. Die anderen Anzeigen haben nichts mit Fischen zu tun.",
+            "evidence": {
+              "text": "Alles für Ihr Aquarium: über 200 Sorten Fische, Wasserpflanzen, Futter und Technik. Bestellen Sie bequem online, wir bringen Ihnen alles in zwei Tagen nach Hause. Ab 30 Euro ist die Lieferung kostenlos. Unser Laden in der Bahnhofstraße ist montags geschlossen.",
+              "hit": "Bestellen Sie bequem online, wir bringen Ihnen alles in zwei Tagen nach Hause."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ]
+}

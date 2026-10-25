@@ -1,0 +1,742 @@
+{
+  "exam": "goethe-a2",
+  "skill": "lesen",
+  "number": 4,
+  "title": "Modelltest 4",
+  "blocks": [
+    {
+      "id": "goethe-a2-lesen-04-t1-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.981Z",
+        "textType": "Zeitungsartikel: Lokales"
+      },
+      "display": {
+        "instruction": "Sie lesen diesen Text in der Zeitung. Wählen Sie für die Aufgaben 1–5 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Das Besondere an den gelben Bänken ist: …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Man kann dort kostenlos Kaffee trinken."
+                },
+                {
+                  "key": "b",
+                  "label": "Sie stehen nur im Stadtpark."
+                },
+                {
+                  "key": "c",
+                  "label": "Wer dort sitzt, möchte gern reden."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 1,
+              "prompt": "Die Idee für die Plauderbänke hatte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Rentnerin, die früher Briefe gebracht hat."
+                },
+                {
+                  "key": "b",
+                  "label": "ein Tischler, der im Ort arbeitet."
+                },
+                {
+                  "key": "c",
+                  "label": "eine Mitarbeiterin der Stadt."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Die Bänke stehen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "alle zusammen im Stadtpark."
+                },
+                {
+                  "key": "b",
+                  "label": "an drei verschiedenen Orten."
+                },
+                {
+                  "key": "c",
+                  "label": "vor dem Krankenhaus."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 3,
+              "prompt": "Die Helferinnen und Helfer sind …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "jeden Tag auf den Bänken."
+                },
+                {
+                  "key": "b",
+                  "label": "nur am Wochenende da."
+                },
+                {
+                  "key": "c",
+                  "label": "an zwei Vormittagen pro Woche da."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Auf die Bänke setzen sich …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "nur ältere Menschen."
+                },
+                {
+                  "key": "b",
+                  "label": "Menschen in jedem Alter."
+                },
+                {
+                  "key": "c",
+                  "label": "vor allem Patienten."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 5,
+              "prompt": "Im Herbst …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "kommt eine neue Bank dazu."
+                },
+                {
+                  "key": "b",
+                  "label": "bezahlt die Stadt neue Farbe."
+                },
+                {
+                  "key": "c",
+                  "label": "braucht die Stadt einen Tischler."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "",
+          "source": "Zeitung",
+          "paragraphs": [
+            "Gelbe Bänke zum Plaudern",
+            "In Hollerbach gibt es seit dem Frühling drei neue Bänke. Sie sind leuchtend gelb, und auf jeder steht in großen Buchstaben „Plauderbank“. Wer sich dort hinsetzt, zeigt: Ich habe Zeit und möchte mich gern mit jemandem unterhalten. Die Bänke stehen vor dem Rathaus, am Busbahnhof und am Teich im Stadtpark.",
+            "Die Idee hatte Gisela Marx. Die 67-Jährige war früher Briefträgerin. „Bei meiner Arbeit habe ich jeden Tag mit vielen Menschen gesprochen. Als Rentnerin war ich plötzlich oft allein“, erzählt sie. Ein Tischler aus dem Ort hat die Bänke gebaut, und die Stadt hat die Farbe bezahlt.",
+            "Damit am Anfang niemand allein sitzt, kommen Helferinnen und Helfer. Sie sind dienstags und donnerstags von 10 bis 12 Uhr auf den Bänken. Am Wochenende sitzt dort niemand vom Team. Zu den Bänken kommen viele ältere Menschen, aber nicht nur sie. „Auch junge Mütter und Väter mit Kinderwagen und Studenten setzen sich zu uns“, sagt Frau Marx.",
+            "Im Herbst soll eine vierte Bank vor dem Krankenhaus stehen. „Dort warten oft Besucher und Patienten, und viele möchten gern ein bisschen reden“, meint sie. Wer als Helfer mitmachen möchte, kann sich im Rathaus melden."
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Gisela Marx war früher Briefträgerin und ist jetzt Rentnerin. Der Tischler hat die Bänke nur gebaut.",
+            "evidence": {
+              "text": "Die Idee hatte Gisela Marx. Die 67-Jährige war früher Briefträgerin. „Bei meiner Arbeit habe ich jeden Tag mit vielen Menschen gesprochen. Als Rentnerin war ich plötzlich oft allein“, erzählt sie. Ein Tischler aus dem Ort hat die Bänke gebaut, und die Stadt hat die Farbe bezahlt.",
+              "hit": "Die 67-Jährige war früher Briefträgerin."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Die Bänke stehen am Rathaus, am Busbahnhof und im Stadtpark. Vor dem Krankenhaus soll erst im Herbst eine Bank stehen.",
+            "evidence": {
+              "text": "In Hollerbach gibt es seit dem Frühling drei neue Bänke. Sie sind leuchtend gelb, und auf jeder steht in großen Buchstaben „Plauderbank“. Wer sich dort hinsetzt, zeigt: Ich habe Zeit und möchte mich gern mit jemandem unterhalten. Die Bänke stehen vor dem Rathaus, am Busbahnhof und am Teich im Stadtpark.",
+              "hit": "Die Bänke stehen vor dem Rathaus, am Busbahnhof und am Teich im Stadtpark."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "c",
+            "explanation": "Die Helfer kommen dienstags und donnerstags am Vormittag. Am Wochenende ist niemand vom Team da.",
+            "evidence": {
+              "text": "Damit am Anfang niemand allein sitzt, kommen Helferinnen und Helfer. Sie sind dienstags und donnerstags von 10 bis 12 Uhr auf den Bänken. Am Wochenende sitzt dort niemand vom Team. Zu den Bänken kommen viele ältere Menschen, aber nicht nur sie. „Auch junge Mütter und Väter mit Kinderwagen und Studenten setzen sich zu uns“, sagt Frau Marx.",
+              "hit": "Sie sind dienstags und donnerstags von 10 bis 12 Uhr auf den Bänken."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "b",
+            "explanation": "Es kommen ältere Menschen, aber auch junge Eltern und Studenten. Darum ist „nur ältere Menschen“ falsch.",
+            "evidence": {
+              "text": "Damit am Anfang niemand allein sitzt, kommen Helferinnen und Helfer. Sie sind dienstags und donnerstags von 10 bis 12 Uhr auf den Bänken. Am Wochenende sitzt dort niemand vom Team. Zu den Bänken kommen viele ältere Menschen, aber nicht nur sie. „Auch junge Mütter und Väter mit Kinderwagen und Studenten setzen sich zu uns“, sagt Frau Marx.",
+              "hit": "„Auch junge Mütter und Väter mit Kinderwagen und Studenten setzen sich zu uns“"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "a",
+            "explanation": "Im Herbst kommt eine vierte Bank vor dem Krankenhaus dazu. Die Farbe hat die Stadt schon für die ersten Bänke bezahlt.",
+            "evidence": {
+              "text": "Im Herbst soll eine vierte Bank vor dem Krankenhaus stehen. „Dort warten oft Besucher und Patienten, und viele möchten gern ein bisschen reden“, meint sie. Wer als Helfer mitmachen möchte, kann sich im Rathaus melden.",
+              "hit": "Im Herbst soll eine vierte Bank vor dem Krankenhaus stehen."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-04-t2-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.981Z",
+        "textType": "Wegweiser: Kaufhaus"
+      },
+      "display": {
+        "instruction": "Sie sind im Warenhaus Albrecht. Lesen Sie die Aufgaben 6–10 und den Wegweiser. In welchen Stock gehen Sie? Wählen Sie a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Sie möchten neben Ihrem Bett eine kleine Lampe zum Lesen haben.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Ihre Kollegin heiratet. Sie möchten ihr schriftlich gratulieren.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "b",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Ihr Mann hat bald ein wichtiges Gespräch und braucht ein neues Hemd.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Zu Hause sehen Sie: Bei Ihrem neuen Topf fehlt der Deckel. Sie möchten sich beschweren.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "3. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Im Winter haben Sie oft kalte Beine. Sie möchten etwas Warmes für unter die Hose kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "1. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "2. Stock"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Sie möchten für das Frühstück morgen frische Brötchen kaufen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "4. Stock"
+                },
+                {
+                  "key": "b",
+                  "label": "Erdgeschoss"
+                },
+                {
+                  "key": "c",
+                  "label": "anderer Stock"
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Warenhaus Albrecht",
+          "source": "Wegweiser",
+          "paragraphs": [
+            "Warenhaus Albrecht – Wegweiser · Wir sind für Sie da: Montag bis Samstag von 9 bis 20 Uhr",
+            "4. Stock: Restaurant „Albrechts Aussicht“ mit Dachterrasse · Kundenservice: Reklamationen, Umtausch, Lieferservice, Geschenkgutscheine · Fundbüro · Toiletten · Wickelraum",
+            "3. Stock: Haushaltswaren · Töpfe und Pfannen · Küchengeräte · Glas und Porzellan · Lampen und Leuchten · Bettwäsche und Handtücher · Dekoration",
+            "2. Stock: Herrenmode: Anzüge, Jacken, Hosen, Pullover · Herrenwäsche · Gürtel · Schuhe für Damen, Herren und Kinder · Sportschuhe · Koffer und Reisetaschen",
+            "1. Stock: Damenmode: Röcke, Kleider, Blusen · Unterwäsche · Strümpfe und Strumpfhosen · Taschen und Accessoires · Hüte und Schals · Schmuck",
+            "Erdgeschoss: Information · Schreibwaren · Glückwunschkarten und Geschenkpapier · Bücher, Zeitschriften und Kalender · Kosmetik und Parfüm · Uhren · Schlüsseldienst",
+            "Untergeschoss: Lebensmittel · Feinkost · Bäckerei und Konditorei · Getränke und Wein · Obst und Gemüse"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "a",
+            "explanation": "Glückwunschkarten gibt es im Erdgeschoss. Im 3. Stock gibt es Haushaltswaren, aber keine Karten.",
+            "evidence": {
+              "text": "Erdgeschoss: Information · Schreibwaren · Glückwunschkarten und Geschenkpapier · Bücher, Zeitschriften und Kalender · Kosmetik und Parfüm · Uhren · Schlüsseldienst",
+              "hit": "Glückwunschkarten und Geschenkpapier"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "b",
+            "explanation": "Hemden findest du bei der Herrenmode im 2. Stock. Im 1. Stock gibt es nur Mode für Damen.",
+            "evidence": {
+              "text": "2. Stock: Herrenmode: Anzüge, Jacken, Hosen, Pullover · Herrenwäsche · Gürtel · Schuhe für Damen, Herren und Kinder · Sportschuhe · Koffer und Reisetaschen",
+              "hit": "2. Stock: Herrenmode"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "c",
+            "explanation": "Reklamationen macht der Kundenservice im 4. Stock. Im 3. Stock gibt es Töpfe, aber dort kann man sich nicht beschweren.",
+            "evidence": {
+              "text": "4. Stock: Restaurant „Albrechts Aussicht“ mit Dachterrasse · Kundenservice: Reklamationen, Umtausch, Lieferservice, Geschenkgutscheine · Fundbüro · Toiletten · Wickelraum",
+              "hit": "Kundenservice: Reklamationen"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "a",
+            "explanation": "Strumpfhosen gibt es im 1. Stock. Im 2. Stock gibt es zwar Hosen, aber nur für Herren.",
+            "evidence": {
+              "text": "1. Stock: Damenmode: Röcke, Kleider, Blusen · Unterwäsche · Strümpfe und Strumpfhosen · Taschen und Accessoires · Hüte und Schals · Schmuck",
+              "hit": "Strümpfe und Strumpfhosen"
+            }
+          },
+          {
+            "n": 10,
+            "correct": "c",
+            "explanation": "Die Bäckerei ist im Untergeschoss. Im 4. Stock gibt es nur ein Restaurant.",
+            "evidence": {
+              "text": "Untergeschoss: Lebensmittel · Feinkost · Bäckerei und Konditorei · Getränke und Wein · Obst und Gemüse",
+              "hit": "Bäckerei und Konditorei"
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    },
+    {
+      "id": "goethe-a2-lesen-04-t3-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.981Z",
+        "textType": "Persönliche E-Mail: Theatergruppe"
+      },
+      "display": {
+        "instruction": "Sie lesen eine E-Mail. Wählen Sie für die Aufgaben 11–15 die richtige Antwort: a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Ilka ist zur Theatergruppe gekommen …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "durch eine Anzeige in der Zeitung."
+                },
+                {
+                  "key": "b",
+                  "label": "durch eine Frau, mit der sie arbeitet."
+                },
+                {
+                  "key": "c",
+                  "label": "durch ihre Schwester."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Im Theaterstück …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "spielt Ilka eine Frau, die in einem Hotel arbeitet."
+                },
+                {
+                  "key": "b",
+                  "label": "spielt Ilka die wichtigste Rolle."
+                },
+                {
+                  "key": "c",
+                  "label": "hilft Ilka nur bei den Kostümen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Für Ilka ist es schwer, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "vor vielen Leuten zu spielen."
+                },
+                {
+                  "key": "b",
+                  "label": "jeden Mittwoch zu den Proben zu gehen."
+                },
+                {
+                  "key": "c",
+                  "label": "sich den Text zu merken."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Die erste Vorstellung ist …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "am Freitag im Gemeindesaal."
+                },
+                {
+                  "key": "b",
+                  "label": "am Samstag in einer Schule."
+                },
+                {
+                  "key": "c",
+                  "label": "am Samstag im Gemeindesaal."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Ilka lädt Nadine ein, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zur Premiere zu kommen und bei ihr zu schlafen."
+                },
+                {
+                  "key": "b",
+                  "label": "in der Theatergruppe mitzuspielen."
+                },
+                {
+                  "key": "c",
+                  "label": "mit ihr zusammen den Text zu lernen."
+                }
+              ]
+            }
+          }
+        ],
+        "reading": {
+          "sender": "Ilka",
+          "source": "E-Mail",
+          "paragraphs": [
+            "Liebe Nadine,",
+            "wie geht es dir? Hier ist viel passiert, und ich muss dir unbedingt etwas erzählen: Ich spiele jetzt Theater! Seit Januar bin ich in der Gruppe „Rampenlicht“.",
+            "Meine Schwester sagt schon lange, dass ich das mal probieren soll. Und letzten Herbst habe ich in der Zeitung eine Anzeige von der Gruppe gesehen, aber ich hatte keinen Mut. Dann hat mir eine Kollegin aus dem Büro erzählt, dass sie dort mitspielt. Sie hat mich einfach zu einer Probe mitgenommen, und ich bin geblieben.",
+            "Wir proben jeden Mittwoch von sieben bis zehn im Gemeindesaal St. Markus. Das ist ganz in der Nähe von meiner Wohnung, ich kann zu Fuß hingehen. Die Hauptrolle spielt eine Frau, die schon seit zwanzig Jahren dabei ist. Am Anfang wollte ich nur bei den Kostümen helfen, aber unser Regisseur hat gesagt: „Du spielst mit!“ Jetzt bin ich eine Kellnerin in einem kleinen Hotel und habe nicht viele Sätze.",
+            "Das Schwierigste für mich ist der Text. Ich lese ihn jeden Abend, aber am nächsten Tag habe ich die Hälfte wieder vergessen. Mein Mann hilft mir und liest die anderen Rollen. Vor vielen Leuten auf der Bühne stehen ist dagegen kein Problem. Das macht mir sogar richtig Spaß!",
+            "Zuerst wollten wir in der Aula einer Grundschule spielen, aber die wird im Frühling renoviert. Darum ist die Premiere jetzt im Gemeindesaal, am Samstag, dem 14. März, um 19 Uhr. Am Freitag davor haben wir die letzte Probe.",
+            "Hast du Lust zu kommen? Du kannst gern bei uns übernachten, unser Sofa ist sehr bequem. Dann frühstücken wir am Sonntag zusammen, und du erzählst mir, wie ich war!",
+            "Liebe Grüße",
+            "Ilka"
+          ]
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Eine Kollegin hat Ilka zu einer Probe mitgenommen. Die Anzeige in der Zeitung hat sie gesehen, aber sie ist damals nicht hingegangen.",
+            "evidence": {
+              "text": "Meine Schwester sagt schon lange, dass ich das mal probieren soll. Und letzten Herbst habe ich in der Zeitung eine Anzeige von der Gruppe gesehen, aber ich hatte keinen Mut. Dann hat mir eine Kollegin aus dem Büro erzählt, dass sie dort mitspielt. Sie hat mich einfach zu einer Probe mitgenommen, und ich bin geblieben.",
+              "hit": "Dann hat mir eine Kollegin aus dem Büro erzählt, dass sie dort mitspielt."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "a",
+            "explanation": "Ilka spielt eine Kellnerin in einem Hotel. Bei den Kostümen wollte sie nur am Anfang helfen, und die Hauptrolle hat eine andere Frau.",
+            "evidence": {
+              "text": "Wir proben jeden Mittwoch von sieben bis zehn im Gemeindesaal St. Markus. Das ist ganz in der Nähe von meiner Wohnung, ich kann zu Fuß hingehen. Die Hauptrolle spielt eine Frau, die schon seit zwanzig Jahren dabei ist. Am Anfang wollte ich nur bei den Kostümen helfen, aber unser Regisseur hat gesagt: „Du spielst mit!“ Jetzt bin ich eine Kellnerin in einem kleinen Hotel und habe nicht viele Sätze.",
+              "hit": "Jetzt bin ich eine Kellnerin in einem kleinen Hotel"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "c",
+            "explanation": "Ilka vergisst am nächsten Tag die Hälfte vom Text. Vor Leuten spielen ist für sie kein Problem, das macht ihr Spaß.",
+            "evidence": {
+              "text": "Das Schwierigste für mich ist der Text. Ich lese ihn jeden Abend, aber am nächsten Tag habe ich die Hälfte wieder vergessen. Mein Mann hilft mir und liest die anderen Rollen. Vor vielen Leuten auf der Bühne stehen ist dagegen kein Problem. Das macht mir sogar richtig Spaß!",
+              "hit": "aber am nächsten Tag habe ich die Hälfte wieder vergessen"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Die Premiere ist am Samstag im Gemeindesaal. Die Schule wird renoviert, und am Freitag ist nur die letzte Probe.",
+            "evidence": {
+              "text": "Zuerst wollten wir in der Aula einer Grundschule spielen, aber die wird im Frühling renoviert. Darum ist die Premiere jetzt im Gemeindesaal, am Samstag, dem 14. März, um 19 Uhr. Am Freitag davor haben wir die letzte Probe.",
+              "hit": "Darum ist die Premiere jetzt im Gemeindesaal, am Samstag, dem 14. März, um 19 Uhr."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "a",
+            "explanation": "Ilka fragt, ob Nadine kommt, und sie kann bei ihr übernachten. Beim Text hilft Ilka ihr Mann, nicht Nadine.",
+            "evidence": {
+              "text": "Hast du Lust zu kommen? Du kannst gern bei uns übernachten, unser Sofa ist sehr bequem. Dann frühstücken wir am Sonntag zusammen, und du erzählst mir, wie ich war!",
+              "hit": "Du kannst gern bei uns übernachten"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2-lesen-04-t4-01",
+      "exam": "goethe-a2",
+      "skill": "lesen",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T12:24:25.981Z",
+        "textType": "Anzeigen im Internet: Hilfe für Computer und Handy"
+      },
+      "display": {
+        "instruction": "Sechs Personen suchen im Internet nach Hilfe für Computer und Handy. Lesen Sie die Aufgaben 16–20 und die Anzeigen a–f. Welche Anzeige passt zu welcher Person? Für eine Aufgabe gibt es keine Lösung. Dann wählen Sie X. Die Anzeige aus dem Beispiel können Sie nicht mehr wählen.",
+        "items": [
+          {
+            "type": "match",
+            "data": {
+              "ads": [
+                {
+                  "key": "a",
+                  "title": "www.pc-doktor-hausbesuch.de",
+                  "text": "Neuer Drucker, WLAN zu Hause oder ein neues Programm? Wir kommen zu Ihnen nach Hause und richten alles ein. Wir machen auch langsame PCs und Laptops wieder schnell. Termine auch abends und am Wochenende."
+                },
+                {
+                  "key": "b",
+                  "title": "Handywerkstatt Tellbach",
+                  "text": "Display kaputt oder Akku schwach? Wir reparieren Smartphones und Tablets von allen Marken, ein neues Display meistens in nur einer Stunde. Bitte beachten Sie: Neue Geräte verkaufen wir nicht, nur Hüllen und Ladekabel."
+                },
+                {
+                  "key": "c",
+                  "title": "www.netz-fuer-alle.de",
+                  "text": "Sie denken, das Internet ist nichts für Sie? Falsch! In unserem Kurs für Menschen ab 60 lernen Sie in Ruhe, wie man E-Mails schreibt, online Fahrkarten kauft und mit der Familie per Video telefoniert. Jeden Dienstag von 10 bis 12 Uhr im Bürgerhaus Mitte."
+                },
+                {
+                  "key": "d",
+                  "title": "Datenrettung Schulz",
+                  "text": "Festplatte kaputt und alle Bilder und Dokumente sind weg? Keine Panik! Wir holen Ihre Daten auch von alten oder beschädigten Festplatten und USB-Sticks. Die erste Prüfung ist kostenlos. Ihre Dateien bekommen Sie auf einem neuen Stick zurück."
+                },
+                {
+                  "key": "e",
+                  "title": "www.code-kids-kurse.de",
+                  "text": "Ein eigenes Computerspiel programmieren? Bei uns lernen Kinder von 8 bis 12 Jahren Schritt für Schritt, wie Programmieren funktioniert. Die Kurse sind am Samstagvormittag, Laptops stellen wir. Für Jugendliche ab 13 gibt es eigene Gruppen."
+                },
+                {
+                  "key": "f",
+                  "title": "Laptop-Lager Ost",
+                  "text": "Gebrauchte Laptops und PCs, geprüft und gereinigt, schon ab 129 Euro. Ideal für Schule, Uni und Homeoffice. Auf alle Geräte geben wir ein Jahr Garantie. Mit Studentenausweis bekommen Sie zehn Prozent Rabatt."
+                }
+              ],
+              "situations": [
+                {
+                  "n": 0,
+                  "text": "Die Großmutter von Herrn Diehl ist 80 Jahre alt und möchte lernen, wie man E-Mails schreibt."
+                },
+                {
+                  "n": 16,
+                  "text": "Frau Kowalskis Handy ist auf den Boden gefallen. Jetzt ist der Bildschirm kaputt."
+                },
+                {
+                  "n": 17,
+                  "text": "Herr Neumann ist Student und braucht für seine Hausarbeiten einen Laptop. Viel Geld hat er nicht."
+                },
+                {
+                  "n": 18,
+                  "text": "Der alte Computer von Frau Eckert geht nicht mehr an. Die Fotos darauf möchte sie aber gern behalten."
+                },
+                {
+                  "n": 19,
+                  "text": "Herr Wolff möchte sich ein neues Smartphone kaufen."
+                },
+                {
+                  "n": 20,
+                  "text": "Der Sohn von Familie Tran ist zehn. Er möchte wissen, wie man selbst ein kleines Spiel für den Computer macht."
+                }
+              ],
+              "noMatchLabel": "X"
+            },
+            "noMatch": true
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "b",
+            "explanation": "Die Handywerkstatt repariert kaputte Displays, oft in einer Stunde. Die Datenrettung hilft nur bei Festplatten und USB-Sticks.",
+            "evidence": {
+              "text": "Display kaputt oder Akku schwach? Wir reparieren Smartphones und Tablets von allen Marken, ein neues Display meistens in nur einer Stunde. Bitte beachten Sie: Neue Geräte verkaufen wir nicht, nur Hüllen und Ladekabel.",
+              "hit": "ein neues Display meistens in nur einer Stunde"
+            }
+          },
+          {
+            "n": 17,
+            "correct": "f",
+            "explanation": "Das Laptop-Lager verkauft gebrauchte Laptops ab 129 Euro, Studenten bekommen Rabatt. Der PC-Doktor verkauft keine Geräte, er kommt nur nach Hause.",
+            "evidence": {
+              "text": "Gebrauchte Laptops und PCs, geprüft und gereinigt, schon ab 129 Euro. Ideal für Schule, Uni und Homeoffice. Auf alle Geräte geben wir ein Jahr Garantie. Mit Studentenausweis bekommen Sie zehn Prozent Rabatt.",
+              "hit": "Gebrauchte Laptops und PCs, geprüft und gereinigt, schon ab 129 Euro."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "d",
+            "explanation": "Die Datenrettung holt Bilder auch von kaputten Festplatten. Der PC-Doktor macht nur langsame Computer wieder schnell.",
+            "evidence": {
+              "text": "Festplatte kaputt und alle Bilder und Dokumente sind weg? Keine Panik! Wir holen Ihre Daten auch von alten oder beschädigten Festplatten und USB-Sticks. Die erste Prüfung ist kostenlos. Ihre Dateien bekommen Sie auf einem neuen Stick zurück.",
+              "hit": "Wir holen Ihre Daten auch von alten oder beschädigten Festplatten und USB-Sticks."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "x",
+            "explanation": "Die Handywerkstatt passt fast, aber sie repariert nur und verkauft keine neuen Geräte. Das Laptop-Lager hat nur gebrauchte Laptops und PCs.",
+            "evidence": {
+              "text": "Display kaputt oder Akku schwach? Wir reparieren Smartphones und Tablets von allen Marken, ein neues Display meistens in nur einer Stunde. Bitte beachten Sie: Neue Geräte verkaufen wir nicht, nur Hüllen und Ladekabel.",
+              "hit": "Neue Geräte verkaufen wir nicht"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "e",
+            "explanation": "Bei den Code-Kids lernen Kinder von 8 bis 12 Jahren programmieren. Der Internetkurs im Bürgerhaus ist für Menschen ab 60.",
+            "evidence": {
+              "text": "Ein eigenes Computerspiel programmieren? Bei uns lernen Kinder von 8 bis 12 Jahren Schritt für Schritt, wie Programmieren funktioniert. Die Kurse sind am Samstagvormittag, Laptops stellen wir. Für Jugendliche ab 13 gibt es eigene Gruppen.",
+              "hit": "Bei uns lernen Kinder von 8 bis 12 Jahren Schritt für Schritt, wie Programmieren funktioniert."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ]
+}

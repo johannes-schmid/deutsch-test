@@ -1,0 +1,196 @@
+{
+  "exam": "start-deutsch-1",
+  "skill": "schreiben",
+  "number": 3,
+  "title": "Modelltest 3",
+  "blocks": [
+    {
+      "id": "start-deutsch-1-schreiben-03-t1",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.119Z",
+        "textType": "Formular ausfüllen: Garagenplatz mieten"
+      },
+      "exampleAnswers": [
+        "Moreno, Luis"
+      ],
+      "display": {
+        "instruction": "Ihr Freund möchte einen Garagenplatz mieten. Lesen Sie den Text. Im Formular fehlen noch fünf Angaben. Schreiben Sie sie in das Formular. Alle Informationen stehen im Text.",
+        "reading": {
+          "sender": "",
+          "source": "Situation",
+          "paragraphs": [
+            "Ihr Freund Luis Moreno möchte bei der Firma Wohnbau Nordheide einen Garagenplatz mieten. Er wohnt im Heideweg 9 in Lüneburg.",
+            "Das rote Auto vor seinem Haus gehört seiner Schwester. Luis hat kein Auto, er fährt Motorrad. Er möchte die Garage ab dem 1. Juni mieten.",
+            "Luis ist am 23.03.1994 geboren. Seine Handynummer ist 0176 4482 915."
+          ]
+        },
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Formular",
+              "parts": [
+                "Wohnbau Nordheide · Mietantrag Garagenplatz\n\nFamilienname, Vorname: ",
+                {
+                  "n": 0,
+                  "options": []
+                },
+                "\nStraße, Hausnummer: ",
+                {
+                  "n": 1,
+                  "options": []
+                },
+                "\nGeburtsdatum: ",
+                {
+                  "n": 2,
+                  "options": []
+                },
+                "\nFahrzeug: ",
+                {
+                  "n": 3,
+                  "options": [
+                    "Auto",
+                    "Motorrad"
+                  ]
+                },
+                "\nMietbeginn: ",
+                {
+                  "n": 4,
+                  "options": []
+                },
+                "\nHandynummer: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "Heideweg 9",
+            "accept": [
+              "Heideweg Nr. 9",
+              "Heideweg 9, Lüneburg",
+              "Heideweg 9 in Lüneburg",
+              "im Heideweg 9"
+            ],
+            "explanation": "Luis wohnt im Heideweg 9. Die Hausnummer muss genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Luis Moreno möchte bei der Firma Wohnbau Nordheide einen Garagenplatz mieten. Er wohnt im Heideweg 9 in Lüneburg. Das rote Auto vor seinem Haus gehört seiner Schwester. Luis hat kein Auto, er fährt Motorrad. Er möchte die Garage ab dem 1. Juni mieten. Luis ist am 23.03.1994 geboren. Seine Handynummer ist 0176 4482 915.",
+              "hit": "Er wohnt im Heideweg 9 in Lüneburg."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "23.03.1994",
+            "accept": [
+              "23.3.1994",
+              "23. 03. 1994",
+              "23. 3. 1994",
+              "23.03.94"
+            ],
+            "explanation": "Luis ist am 23.03.1994 geboren. Tag, Monat und Jahr müssen genau stimmen.",
+            "evidence": {
+              "text": "Ihr Freund Luis Moreno möchte bei der Firma Wohnbau Nordheide einen Garagenplatz mieten. Er wohnt im Heideweg 9 in Lüneburg. Das rote Auto vor seinem Haus gehört seiner Schwester. Luis hat kein Auto, er fährt Motorrad. Er möchte die Garage ab dem 1. Juni mieten. Luis ist am 23.03.1994 geboren. Seine Handynummer ist 0176 4482 915.",
+              "hit": "Luis ist am 23.03.1994 geboren."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "Motorrad",
+            "explanation": "Luis fährt Motorrad. Das Auto gehört seiner Schwester, nicht ihm.",
+            "evidence": {
+              "text": "Ihr Freund Luis Moreno möchte bei der Firma Wohnbau Nordheide einen Garagenplatz mieten. Er wohnt im Heideweg 9 in Lüneburg. Das rote Auto vor seinem Haus gehört seiner Schwester. Luis hat kein Auto, er fährt Motorrad. Er möchte die Garage ab dem 1. Juni mieten. Luis ist am 23.03.1994 geboren. Seine Handynummer ist 0176 4482 915.",
+              "hit": "Luis hat kein Auto, er fährt Motorrad."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "1. Juni",
+            "accept": [
+              "1.6.",
+              "01.06.",
+              "1.6",
+              "01.06",
+              "ab 1. Juni",
+              "ab dem 1. Juni",
+              "1. 6.",
+              "01. Juni"
+            ],
+            "explanation": "Luis möchte die Garage ab dem 1. Juni mieten.",
+            "evidence": {
+              "text": "Ihr Freund Luis Moreno möchte bei der Firma Wohnbau Nordheide einen Garagenplatz mieten. Er wohnt im Heideweg 9 in Lüneburg. Das rote Auto vor seinem Haus gehört seiner Schwester. Luis hat kein Auto, er fährt Motorrad. Er möchte die Garage ab dem 1. Juni mieten. Luis ist am 23.03.1994 geboren. Seine Handynummer ist 0176 4482 915.",
+              "hit": "Er möchte die Garage ab dem 1. Juni mieten."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "0176 4482 915",
+            "accept": [
+              "01764482915",
+              "0176 4482915",
+              "0176-4482 915",
+              "0176-4482915",
+              "0176/4482915",
+              "0176/4482 915"
+            ],
+            "explanation": "Die Nummer muss genau stimmen: 0176 4482 915.",
+            "evidence": {
+              "text": "Ihr Freund Luis Moreno möchte bei der Firma Wohnbau Nordheide einen Garagenplatz mieten. Er wohnt im Heideweg 9 in Lüneburg. Das rote Auto vor seinem Haus gehört seiner Schwester. Luis hat kein Auto, er fährt Motorrad. Er möchte die Garage ab dem 1. Juni mieten. Luis ist am 23.03.1994 geboren. Seine Handynummer ist 0176 4482 915.",
+              "hit": "Seine Handynummer ist 0176 4482 915."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "start-deutsch-1-schreiben-03-t2",
+      "exam": "start-deutsch-1",
+      "skill": "schreiben",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T06:58:05.119Z",
+        "textType": "Kurze E-Mail an die Trainerin"
+      },
+      "display": {
+        "instruction": "Schreiben Sie eine kurze E-Mail, etwa 30 Wörter. Zu jedem Punkt passen ein oder zwei Sätze. Denken Sie auch an Anrede und Gruß.",
+        "items": [],
+        "writing": [
+          {
+            "key": "A",
+            "title": "E-Mail an die Judo-Trainerin",
+            "situation": "Ihr Sohn Elias macht Judo. Am Samstag ist ein Turnier. Schreiben Sie seiner Trainerin, Frau Okafor, eine E-Mail.",
+            "points": [
+              "Warum schreiben Sie?",
+              "Elias kann am Samstag nicht kommen",
+              "Fragen Sie: Wann ist das nächste Training?"
+            ]
+          }
+        ]
+      },
+      "key": {
+        "answers": [],
+        "writing": [
+          {
+            "key": "A",
+            "register": "formell",
+            "modelAnswer": "Liebe Frau Okafor,\nmein Sohn Elias ist krank. Er hat Fieber. Leider kann er am Samstag nicht zum Turnier kommen. Wann ist das nächste Training? Können Sie mir das bitte schreiben?\nViele Grüße\nMonika Berger"
+          }
+        ]
+      }
+    }
+  ]
+}

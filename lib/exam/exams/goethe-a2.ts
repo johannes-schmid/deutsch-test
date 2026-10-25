@@ -4,26 +4,31 @@
 
 import type { ExamSpec } from "../exam-blueprints"
 
+const U = "research/goethe-a2.md §11 (Übungssatz 01 + Modellsatz, verified 2026-10-24; Modellsatz audio measured)"
+
 export const spec: ExamSpec = {
   context: { name: "Goethe-Zertifikat A2", level: "A2", setting: "Alltag in Deutschland", copyright: "Goethe-Institut" },
   parts: [
     {
       skill: "lesen", teil: 1, answer: "abc", itemsReal: 5, itemsPerBlock: 5,
+      full: { items: 5, first: 1, blocks: 1, itemsPerBlock: 5, length: { min: 180, max: 220, unit: "words" }, example: true, source: U },
       textTypes: ["Zeitungsartikel über eine Person oder ein Projekt"],
-      length: { min: 200, max: 250, unit: "words" },
+      length: { min: 180, max: 220, unit: "words" },
       instruction: "Lesen Sie den Artikel. Wählen Sie für jede Aufgabe die richtige Antwort: a, b oder c.",
       todo: "TODO(hannes): not in the taster (a ~220-word article doesn't fit 5 minutes next to the other Teile); not drafted yet.",
     },
     {
       skill: "lesen", teil: 2, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 6, blocks: 1, itemsPerBlock: 5, length: { min: 90, max: 230, unit: "words" }, example: true, fixedLast: "andere Halle / anderer Stock", source: U },
       textTypes: ["Informationstafel in einem Kaufhaus", "Wegweiser in einem Einkaufszentrum"],
       length: { min: 50, max: 100, unit: "words" },
       instruction: "Lesen Sie die Aufgaben und die Informationstafel. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c.",
-      hint: `Der Text ist eine Liste: jede Zeile in "paragraphs" ist ein Stockwerk mit Abteilungen (z. B. "2. Stock: Damenmode, Schuhe, Taschen"). Jede Aufgabe ist eine Situation ("Sie möchten …"). Optionen a und b sind zwei Stockwerke aus der Tafel, Option c heißt immer genau "anderes Stockwerk". Bei einer der zwei Aufgaben ist c richtig.`,
+      hint: `Der Text ist eine Liste: jede Zeile in "paragraphs" ist ein Stockwerk mit Abteilungen (z. B. "2. Stock: Damenmode, Schuhe, Taschen"). Jede Aufgabe ist eine Situation ("Sie möchten …"). Optionen a und b sind zwei Stockwerke aus der Tafel, Option c heißt immer genau "anderer Stock" (bei einem Messeprogramm "andere Halle"). Bei einer der zwei Aufgaben ist c richtig.`,
       todo: "TODO(hannes): unverified — the real Teil 2 text can also be a ~240-word event programme (research §9); the taster uses the store directory.",
     },
     {
       skill: "lesen", teil: 3, answer: "abc", itemsReal: 5, itemsPerBlock: 5,
+      full: { items: 5, first: 11, blocks: 1, itemsPerBlock: 5, length: { min: 230, max: 280, unit: "words" }, example: false, source: U },
       textTypes: ["Private E-Mail an eine Freundin oder einen Freund"],
       length: { min: 220, max: 270, unit: "words" },
       instruction: "Lesen Sie die E-Mail. Wählen Sie für jede Aufgabe die richtige Antwort: a, b oder c.",
@@ -31,6 +36,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "lesen", teil: 4, answer: "match", ads: 6, noMatch: true, itemsReal: 5, itemsPerBlock: 5,
+      full: { items: 5, first: 16, blocks: 1, itemsPerBlock: 5, length: { min: 190, max: 250, unit: "words" }, example: true, options: 6, source: U },
       textTypes: ["Kurze Anzeigen im Internet (Kurse, Freizeit, Dienstleistungen, Einkaufen, Reisen)"],
       length: { min: 170, max: 260, unit: "words" },
       instruction: "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Person? Für eine Person gibt es keine passende Anzeige. Dann wählen Sie x.",
@@ -39,6 +45,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 1, answer: "abc", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 1, blocks: 5, itemsPerBlock: 1, length: { min: 15, max: 30, unit: "seconds" }, example: false, pace: { min: 134, max: 170 }, pauses: { before: 5, after: 5 }, sound: "Radio-Jingle; Anrufbeantworter beginnt sofort", source: U },
       textTypes: ["Radio: Hinweis auf eine Veranstaltung", "Nachricht auf dem Anrufbeantworter", "Durchsage am Bahnhof oder im Kaufhaus", "Radio: Wetterbericht"],
       length: { min: 20, max: 32, unit: "seconds" }, voices: { min: 1, max: 1 }, plays: 2,
       instruction: "Sie hören einen kurzen Text. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text zweimal.",
@@ -46,6 +53,7 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 2, answer: "match", itemsReal: 5, itemsPerBlock: 5,
+      full: { items: 5, first: 6, blocks: 1, itemsPerBlock: 5, length: { min: 75, max: 100, unit: "seconds" }, example: true, options: 9, pace: { min: 150, max: 175 }, pauses: { before: 20, after: 5 }, source: U },
       textTypes: ["Gespräch zwischen einer Frau und einem Mann über eine Woche oder eine Reise"],
       length: { min: 100, max: 130, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 1,
       instruction: "Sie hören ein Gespräch. Was hat die Person an welchem Tag gemacht? Wählen Sie für jede Aufgabe ein Bild. Sie hören den Text einmal.",
@@ -53,14 +61,16 @@ export const spec: ExamSpec = {
     },
     {
       skill: "hoeren", teil: 3, answer: "pic", itemsReal: 5, itemsPerBlock: 1,
+      full: { items: 5, first: 11, blocks: 5, itemsPerBlock: 1, length: { min: 14, max: 30, unit: "seconds" }, example: false, pace: { min: 146, max: 181 }, pauses: { before: 5, after: 5 }, sound: "Telefonklingeln vor Telefongesprächen", source: U },
       textTypes: ["Gespräch beim Einkaufen", "Gespräch über einen Termin", "Gespräch bei der Arbeit", "Gespräch zu Hause oder unter Nachbarn"],
       length: { min: 25, max: 35, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 1,
       instruction: "Sie hören ein kurzes Gespräch. Wählen Sie die richtige Antwort: a, b oder c. Sie hören jeden Text einmal.",
-      hint: `Zwei Personen (eine Frau und ein Mann), ein Alltagsgespräch mit 4–8 Beiträgen, 60–75 Wörter, natürlich gesprochen (A2). Die Frage fragt nach etwas, das man auf einem Bild zeigen kann: was die Person kauft, isst, mitnimmt, womit sie fährt, wo sie sich treffen, wie das Wetter wird, um wie viel Uhr. Jede Option hat ein Piktogramm ("pictos", ein Schlüssel aus der Liste) und eine kurze Beschriftung (ein bis drei Wörter, eine Uhrzeit wie "15:30" oder ein Preis). Alle drei Optionen kommen im Gespräch vor; eine wird geändert oder abgelehnt, nur eine passt am Ende.`,
+      hint: `Zwei Personen (eine Frau und ein Mann), ein Alltagsgespräch mit 4–8 Beiträgen, 45–65 Wörter, natürlich gesprochen (A2). Die Frage fragt nach etwas, das man auf einem Bild zeigen kann: was die Person kauft, isst, mitnimmt, womit sie fährt, wo sie sich treffen, wie das Wetter wird, um wie viel Uhr. Jede Option hat ein Piktogramm ("pictos", ein Schlüssel aus der Liste) und eine kurze Beschriftung (ein bis drei Wörter, eine Uhrzeit wie "15:30" oder ein Preis). Alle drei Optionen kommen im Gespräch vor; eine wird geändert oder abgelehnt, nur eine passt am Ende.`,
       todo: "TODO(hannes): the real options are drawings or text; pictograms + label stand in (lib/exam/pictos.ts).",
     },
     {
       skill: "hoeren", teil: 4, answer: "rf", itemsReal: 5, itemsPerBlock: 5,
+      full: { items: 5, first: 16, blocks: 1, itemsPerBlock: 5, length: { min: 70, max: 90, unit: "seconds" }, example: true, readingSeconds: 30, pace: { min: 150, max: 170 }, pauses: { before: 3, after: 5 }, source: U },
       textTypes: ["Interview im Radio mit einer Person über ihr Leben oder ein Projekt"],
       length: { min: 90, max: 115, unit: "seconds" }, voices: { min: 2, max: 2 }, plays: 2,
       instruction: "Sie hören ein Interview. Sind die Aussagen richtig? Wählen Sie Ja oder Nein. Sie hören den Text zweimal.",

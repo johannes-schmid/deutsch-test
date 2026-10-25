@@ -1,0 +1,2385 @@
+{
+  "exam": "goethe-b1",
+  "skill": "hoeren",
+  "number": 7,
+  "title": "Modelltest 7",
+  "blocks": [
+    {
+      "id": "goethe-b1-hoeren-07-t1-bsp",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Nachricht auf der Mailbox (privat)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 0,
+              "statement": "Carla möchte am Samstag Minigolf spielen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Was soll man mitbringen?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Sonnencreme."
+                },
+                {
+                  "key": "b",
+                  "label": "Eigene Schläger."
+                },
+                {
+                  "key": "c",
+                  "label": "Bargeld."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf der Mailbox",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Carla",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t1-bsp.mp3",
+          "duration": 36.62
+        }
+      },
+      "key": {
+        "answers": [],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_lisa",
+            "text": "Hallo, ich bin's, Carla. Du, wegen Minigolf am Samstag: Ich hab gerade den Wetterbericht gesehen, und am Samstag soll es den ganzen Tag regnen. Wollen wir nicht lieber am Sonntag gehen? Da wird's sonnig. Wir treffen uns dann um drei am Eingang, okay? Schläger und Bälle bekommt man dort, die musst du nicht mitbringen. Sonnencreme hab ich genug für uns beide. Aber nimm bitte Bargeld mit, am Kiosk kann man nämlich nicht mit Karte zahlen. Meld dich kurz, ja? Bis dann!",
+            "delivery": "[friendly, casual voicemail to a friend]"
+          }
+        ]
+      },
+      "sound": "beep",
+      "example": true,
+      "exampleAnswers": [
+        "falsch",
+        "c"
+      ]
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t1-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Getränkehandel)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 1,
+              "statement": "Die Getränke werden am Samstag geliefert."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 2,
+              "prompt": "Statt der Bierbänke bekommt Herr Lindqvist …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "einige Stühle."
+                },
+                {
+                  "key": "b",
+                  "label": "zwei Stehtische."
+                },
+                {
+                  "key": "c",
+                  "label": "ein kleines Zelt."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Getränke Brückmann",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t1-01.mp3",
+          "duration": 37.54
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "richtig",
+            "explanation": "Die Firma bringt die Getränke am Samstagvormittag vorbei. Nur um acht Uhr klappt es nicht.",
+            "evidence": {
+              "text": "Guten Tag, Herr Lindqvist, hier ist Getränke Brückmann aus Herne. Es geht um Ihre Bestellung für die Feier am Samstag. Die Getränke stehen schon bereit, die bringen wir Ihnen am Samstagvormittag vorbei, zwischen neun und elf. Um acht schaffen wir es leider nicht. Die Bierbänke sind an dem Wochenende aber alle ausgebucht, Stühle und Zelte haben wir auch keine mehr. Wir könnten Ihnen stattdessen zwei Stehtische mitbringen. Bezahlen können Sie an der Tür, auch mit Karte. Rufen Sie uns kurz zurück, ja? Danke!",
+              "hit": "die bringen wir Ihnen am Samstagvormittag vorbei, zwischen neun und elf."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Die Firma bietet zwei Stehtische an. Stühle und Zelte hat sie keine mehr.",
+            "evidence": {
+              "text": "Guten Tag, Herr Lindqvist, hier ist Getränke Brückmann aus Herne. Es geht um Ihre Bestellung für die Feier am Samstag. Die Getränke stehen schon bereit, die bringen wir Ihnen am Samstagvormittag vorbei, zwischen neun und elf. Um acht schaffen wir es leider nicht. Die Bierbänke sind an dem Wochenende aber alle ausgebucht, Stühle und Zelte haben wir auch keine mehr. Wir könnten Ihnen stattdessen zwei Stehtische mitbringen. Bezahlen können Sie an der Tür, auch mit Karte. Rufen Sie uns kurz zurück, ja? Danke!",
+              "hit": "Wir könnten Ihnen stattdessen zwei Stehtische mitbringen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Guten Tag, Herr Lindqvist, hier ist Getränke Brückmann aus Herne. Es geht um Ihre Bestellung für die Feier am Samstag. Die Getränke stehen schon bereit, die bringen wir Ihnen am Samstagvormittag vorbei, zwischen neun und elf. Um acht schaffen wir es leider nicht. Die Bierbänke sind an dem Wochenende aber alle ausgebucht, Stühle und Zelte haben wir auch keine mehr. Wir könnten Ihnen stattdessen zwei Stehtische mitbringen. Bezahlen können Sie an der Tür, auch mit Karte. Rufen Sie uns kurz zurück, ja? Danke!",
+            "delivery": "[friendly, businesslike shop voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t1-02",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Veranstaltungstipp im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 3,
+              "statement": "Bei Regen fällt der Film aus."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 4,
+              "prompt": "Die Besucherinnen und Besucher sollen … mitbringen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine Decke"
+                },
+                {
+                  "key": "b",
+                  "label": "einen Stuhl"
+                },
+                {
+                  "key": "c",
+                  "label": "etwas zu trinken"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Veranstaltungstipp im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Radio",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören einen Veranstaltungstipp im Radio.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t1-02.mp3",
+          "duration": 39.86
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 3,
+            "correct": "falsch",
+            "explanation": "Bei Regen zeigt man den Film im Kino Rex. Er findet also trotzdem statt.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp fürs Wochenende: Ab heute läuft wieder das «Kino am Rhein» in Rheinfelden, direkt am Ufer beim Stadtpark. Die Filme beginnen, sobald es dunkel ist, also etwa um Viertel nach neun. Stühle stehen bereit, und an der Bar gibt es Getränke und Snacks. Nehmen Sie aber eine Decke mit, die Abende am Wasser werden kühl. Das Billett kostet fünfzehn Franken, Kinder zahlen die Hälfte. Und falls es regnet: Dann zeigt man den Film einfach im Kino Rex in der Altstadt.",
+              "hit": "Dann zeigt man den Film einfach im Kino Rex in der Altstadt."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "a",
+            "explanation": "Wegen der kühlen Abende soll man eine Decke mitnehmen. Stühle und Getränke gibt es schon vor Ort.",
+            "evidence": {
+              "text": "Und hier noch ein Tipp fürs Wochenende: Ab heute läuft wieder das «Kino am Rhein» in Rheinfelden, direkt am Ufer beim Stadtpark. Die Filme beginnen, sobald es dunkel ist, also etwa um Viertel nach neun. Stühle stehen bereit, und an der Bar gibt es Getränke und Snacks. Nehmen Sie aber eine Decke mit, die Abende am Wasser werden kühl. Das Billett kostet fünfzehn Franken, Kinder zahlen die Hälfte. Und falls es regnet: Dann zeigt man den Film einfach im Kino Rex in der Altstadt.",
+              "hit": "Nehmen Sie aber eine Decke mit, die Abende am Wasser werden kühl."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_ela",
+            "text": "Und hier noch ein Tipp fürs Wochenende: Ab heute läuft wieder das «Kino am Rhein» in Rheinfelden, direkt am Ufer beim Stadtpark. Die Filme beginnen, sobald es dunkel ist, also etwa um Viertel nach neun. Stühle stehen bereit, und an der Bar gibt es Getränke und Snacks. Nehmen Sie aber eine Decke mit, die Abende am Wasser werden kühl. Das Billett kostet fünfzehn Franken, Kinder zahlen die Hälfte. Und falls es regnet: Dann zeigt man den Film einfach im Kino Rex in der Altstadt.",
+            "delivery": "[warm, relaxed radio presenter]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t1-03",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Durchsage in einem Erlebnispark"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 5,
+              "statement": "Heute ist nur die Achterbahn geschlossen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Gäste mit einer Tageskarte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommen ihr Eintrittsgeld zurück."
+                },
+                {
+                  "key": "b",
+                  "label": "dürfen morgen gratis wiederkommen."
+                },
+                {
+                  "key": "c",
+                  "label": "bekommen einen Gutschein fürs Essen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Durchsage im Erlebnispark",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Durchsage",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Durchsage in einem Erlebnispark.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t1-03.mp3",
+          "duration": 39
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "richtig",
+            "explanation": "Richtig: „Alle anderen Fahrgeschäfte … sind wie gewohnt für Sie geöffnet.“",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher, bitte beachten Sie: Unsere Achterbahn bleibt heute wegen einer technischen Störung den ganzen Tag geschlossen. Alle anderen Fahrgeschäfte im Erlebnispark Rosental in Feldkirchen sind wie gewohnt für Sie geöffnet. Gäste mit Tageskarte bekommen als kleine Entschuldigung an der Kassa beim Haupteingang einen Gutschein für unsere Restaurants. Das Eintrittsgeld zurückzahlen oder die Karte für morgen verlängern können wir leider nicht. Und noch ein Tipp: Heuer im Herbst eröffnet bei uns eine ganz neue Familienbahn. Wir wünschen Ihnen einen schönen Tag!",
+              "hit": "Alle anderen Fahrgeschäfte im Erlebnispark Rosental in Feldkirchen sind wie gewohnt für Sie geöffnet."
+            }
+          },
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "An der Kassa gibt es einen Gutschein für die Restaurants. Geld zurück oder eine Karte für morgen gibt es nicht.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher, bitte beachten Sie: Unsere Achterbahn bleibt heute wegen einer technischen Störung den ganzen Tag geschlossen. Alle anderen Fahrgeschäfte im Erlebnispark Rosental in Feldkirchen sind wie gewohnt für Sie geöffnet. Gäste mit Tageskarte bekommen als kleine Entschuldigung an der Kassa beim Haupteingang einen Gutschein für unsere Restaurants. Das Eintrittsgeld zurückzahlen oder die Karte für morgen verlängern können wir leider nicht. Und noch ein Tipp: Heuer im Herbst eröffnet bei uns eine ganz neue Familienbahn. Wir wünschen Ihnen einen schönen Tag!",
+              "hit": "Gäste mit Tageskarte bekommen als kleine Entschuldigung an der Kassa beim Haupteingang einen Gutschein für unsere Restaurants."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_michael",
+            "text": "Liebe Besucherinnen und Besucher, bitte beachten Sie: Unsere Achterbahn bleibt heute wegen einer technischen Störung den ganzen Tag geschlossen. Alle anderen Fahrgeschäfte im Erlebnispark Rosental in Feldkirchen sind wie gewohnt für Sie geöffnet. Gäste mit Tageskarte bekommen als kleine Entschuldigung an der Kassa beim Haupteingang einen Gutschein für unsere Restaurants. Das Eintrittsgeld zurückzahlen oder die Karte für morgen verlängern können wir leider nicht. Und noch ein Tipp: Heuer im Herbst eröffnet bei uns eine ganz neue Familienbahn. Wir wünschen Ihnen einen schönen Tag!",
+            "delivery": "[calm, clear public announcement]"
+          }
+        ]
+      },
+      "sound": "gong"
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t1-04",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Werbung im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Die Matratze muss man im Geschäft testen."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Nur in dieser Woche …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "ist die Lieferung kostenlos."
+                },
+                {
+                  "key": "b",
+                  "label": "wird die alte Matratze gratis abgeholt."
+                },
+                {
+                  "key": "c",
+                  "label": "kann man hundert Nächte lang testen."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Werbung im Radio",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Werbung",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören Werbung im Radio.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t1-04.mp3",
+          "duration": 37.83
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 7,
+            "correct": "falsch",
+            "explanation": "Man testet die Matratze hundert Nächte zu Hause. Im Geschäft muss man sie nicht testen.",
+            "evidence": {
+              "text": "Schlafen Sie schlecht? Dann wird es Zeit für Schlummerland! Im Matratzenhaus Schlummerland in Salzgitter finden Sie über zweihundert Matratzen für jeden Geschmack. Und das Beste: Sie testen Ihre neue Matratze nicht nur kurz im Geschäft, sondern hundert Nächte lang bei sich zu Hause. Passt sie nicht, tauschen wir sie um. Die Lieferung ist bei uns sowieso immer kostenlos. Und nur diese Woche nehmen wir Ihre alte Matratze gratis mit. Schlummerland, Berliner Straße vierzig. Gut schlafen fängt bei uns an!",
+              "hit": "Sie testen Ihre neue Matratze nicht nur kurz im Geschäft, sondern hundert Nächte lang bei sich zu Hause."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Nur diese Woche nimmt das Geschäft die alte Matratze gratis mit. Die Lieferung und der Test gelten immer.",
+            "evidence": {
+              "text": "Schlafen Sie schlecht? Dann wird es Zeit für Schlummerland! Im Matratzenhaus Schlummerland in Salzgitter finden Sie über zweihundert Matratzen für jeden Geschmack. Und das Beste: Sie testen Ihre neue Matratze nicht nur kurz im Geschäft, sondern hundert Nächte lang bei sich zu Hause. Passt sie nicht, tauschen wir sie um. Die Lieferung ist bei uns sowieso immer kostenlos. Und nur diese Woche nehmen wir Ihre alte Matratze gratis mit. Schlummerland, Berliner Straße vierzig. Gut schlafen fängt bei uns an!",
+              "hit": "Und nur diese Woche nehmen wir Ihre alte Matratze gratis mit."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_laura",
+            "text": "Schlafen Sie schlecht? Dann wird es Zeit für Schlummerland! Im Matratzenhaus Schlummerland in Salzgitter finden Sie über zweihundert Matratzen für jeden Geschmack. Und das Beste: Sie testen Ihre neue Matratze nicht nur kurz im Geschäft, sondern hundert Nächte lang bei sich zu Hause. Passt sie nicht, tauschen wir sie um. Die Lieferung ist bei uns sowieso immer kostenlos. Und nur diese Woche nehmen wir Ihre alte Matratze gratis mit. Schlummerland, Berliner Straße vierzig. Gut schlafen fängt bei uns an!",
+            "delivery": "[soft, cheerful radio advert]"
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t1-05",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Nachricht auf dem Anrufbeantworter (Entsorgungsbetrieb)"
+      },
+      "display": {
+        "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung.",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Der Sperrmüll wird später abgeholt als geplant."
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Herr Demir soll …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "die Sachen am Abend davor an den Grundstücksrand stellen."
+                },
+                {
+                  "key": "b",
+                  "label": "die Elektrogeräte zu den anderen Sachen stellen."
+                },
+                {
+                  "key": "c",
+                  "label": "am Morgen der Abholung zu Hause sein."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Anrufbeantworter",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Entsorgungsbetriebe",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie hören eine Nachricht auf dem Anrufbeantworter.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t1-05.mp3",
+          "duration": 35.32
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Richtig: Nicht am Dienstag, sondern erst am Donnerstag.",
+            "evidence": {
+              "text": "Guten Tag, Herr Demir, hier sind die Entsorgungsbetriebe Bottrop. Es geht um Ihre Sperrmüllabholung. Wegen des Feiertags können wir leider nicht wie geplant am Dienstag kommen, sondern erst am Donnerstag. Bitte stellen Sie Ihre Sachen schon am Abend vorher an den Rand von Ihrem Grundstück, aber nicht auf den Gehweg. Die alte Waschmaschine und den Fernseher stellen Sie bitte nicht dazu, Elektrogeräte holen wir extra ab. Zu Hause sein müssen Sie an dem Tag nicht. Vielen Dank und auf Wiederhören.",
+              "hit": "Wegen des Feiertags können wir leider nicht wie geplant am Dienstag kommen, sondern erst am Donnerstag."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Er soll die Sachen am Abend vorher an den Rand vom Grundstück stellen. Elektrogeräte gehören nicht dazu, und zu Hause sein muss er nicht.",
+            "evidence": {
+              "text": "Guten Tag, Herr Demir, hier sind die Entsorgungsbetriebe Bottrop. Es geht um Ihre Sperrmüllabholung. Wegen des Feiertags können wir leider nicht wie geplant am Dienstag kommen, sondern erst am Donnerstag. Bitte stellen Sie Ihre Sachen schon am Abend vorher an den Rand von Ihrem Grundstück, aber nicht auf den Gehweg. Die alte Waschmaschine und den Fernseher stellen Sie bitte nicht dazu, Elektrogeräte holen wir extra ab. Zu Hause sein müssen Sie an dem Tag nicht. Vielen Dank und auf Wiederhören.",
+              "hit": "Bitte stellen Sie Ihre Sachen schon am Abend vorher an den Rand von Ihrem Grundstück, aber nicht auf den Gehweg."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "man_christian",
+            "text": "Guten Tag, Herr Demir, hier sind die Entsorgungsbetriebe Bottrop. Es geht um Ihre Sperrmüllabholung. Wegen des Feiertags können wir leider nicht wie geplant am Dienstag kommen, sondern erst am Donnerstag. Bitte stellen Sie Ihre Sachen schon am Abend vorher an den Rand von Ihrem Grundstück, aber nicht auf den Gehweg. Die alte Waschmaschine und den Fernseher stellen Sie bitte nicht dazu, Elektrogeräte holen wir extra ab. Zu Hause sein müssen Sie an dem Tag nicht. Vielen Dank und auf Wiederhören.",
+            "delivery": "[neutral, polite office voicemail]"
+          }
+        ]
+      },
+      "sound": "beep"
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t2-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Informationen vor einer Wattwanderung"
+      },
+      "display": {
+        "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 11,
+              "prompt": "Welche Schuhe empfiehlt die Führerin?",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Gar keine, man läuft am besten barfuß."
+                },
+                {
+                  "key": "b",
+                  "label": "Alte Turnschuhe oder Neoprensocken."
+                },
+                {
+                  "key": "c",
+                  "label": "Gummistiefel, damit die Füße trocken bleiben."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 12,
+              "prompt": "Die Gruppe muss wieder am Deich sein, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "um halb drei, wenn das Wasser am niedrigsten ist."
+                },
+                {
+                  "key": "b",
+                  "label": "um vier Uhr, weil dann der Bus fährt."
+                },
+                {
+                  "key": "c",
+                  "label": "spätestens um zwanzig vor vier, wegen der Flut."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 13,
+              "prompt": "Muscheln …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "darf man nur mitnehmen, wenn sie leer sind."
+                },
+                {
+                  "key": "b",
+                  "label": "darf man im Watt gar nicht mitnehmen."
+                },
+                {
+                  "key": "c",
+                  "label": "kauft man besser in einem Laden im Ort."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 14,
+              "prompt": "Wer unterwegs nicht mehr weiterkann, …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "wartet allein, bis die Gruppe zurückkommt."
+                },
+                {
+                  "key": "b",
+                  "label": "geht allein langsam zum Deich zurück."
+                },
+                {
+                  "key": "c",
+                  "label": "sagt Bescheid und geht mit einem Helfer zurück."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 15,
+              "prompt": "Nach der Wanderung …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "bekommen alle eine Urkunde."
+                },
+                {
+                  "key": "b",
+                  "label": "kann man sich am Deich die Füße waschen."
+                },
+                {
+                  "key": "c",
+                  "label": "gibt es Tee und Kuchen für die Gruppe."
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Führung im Watt",
+          "segments": [],
+          "speakers": {
+            "s1": {
+              "name": "Antje Hansen, Wattführerin",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "lead": "Sie nehmen an einer Wattwanderung in Büsum teil.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t2-01.mp3",
+          "duration": 174.94
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Am besten sind alte Turnschuhe oder Neoprensocken. Barfuß ist es wegen der Muscheln gefährlich, und Gummistiefel bleiben stecken.",
+            "evidence": {
+              "text": "Moin, moin, und herzlich willkommen in Büsum! Mein Name ist Antje Hansen, und ich bin heute Ihre Wattführerin. Schön, dass Sie so zahlreich gekommen sind, und dann auch noch bei so herrlichem Wetter. Bevor wir losgehen, möchte ich Ihnen ein paar wichtige Dinge sagen. Hören Sie bitte gut zu, das Watt ist wunderschön, aber nicht ganz ungefährlich. Zuerst zu den Schuhen. Ich sehe, einige von Ihnen haben die Schuhe schon ausgezogen. Barfuß laufen ist zwar ein schönes Gefühl, aber draußen liegen überall Muschelschalen, und die sind scharf wie Glas. Gummistiefel sind aber auch keine gute Idee, die bleiben im Schlick stecken, und dann stehen Sie plötzlich ohne Schuh da. Am besten sind alte Turnschuhe, die nass und schmutzig werden dürfen, oder Neoprensocken. Wer keine hat: Bei mir in der Kiste liegen noch ein paar Paar zum Ausleihen. Dann zur Zeit. Wir gehen jetzt gleich los, um Viertel vor zwei. Das Niedrigwasser ist heute um halb drei, dann sind wir schon ziemlich weit draußen. Aber danach kommt die Flut, und die kommt schneller, als man denkt. Deshalb müssen wir spätestens um zwanzig vor vier wieder hier am Deich sein. Das ist keine Empfehlung, das ist eine Regel. Der Bus zurück in den Ort fährt übrigens erst um vier, Sie haben also genug Zeit. Viele fragen mich, ob man etwas mitnehmen darf. Lebende Tiere bleiben im Watt, auch die kleinen Krebse. Muscheln, in denen noch ein Tier lebt, lassen Sie bitte auch liegen. Leere Schalen dürfen Sie aber gern einstecken, die sind ein schönes Andenken. Im Ort gibt es auch Läden, die schöne Muscheln verkaufen, aber die sind meistens gar nicht von hier. Ganz wichtig: Wir bleiben immer zusammen. Gehen Sie nie allein vor und nie allein zurück. Wenn jemand nicht mehr kann, weil die Beine müde sind oder es zu kalt wird, dann sagen Sie es mir einfach. Mein Kollege Hauke läuft ganz hinten mit, und er geht dann mit Ihnen zurück zum Deich. Das ist überhaupt kein Problem und passiert fast bei jeder Führung. Und zum Schluss: Wenn wir wieder da sind, sehen Ihre Füße aus wie nach einem Schlammbad. Gleich hier rechts am Deich gibt es eine Wasserstelle, da können Sie Füße und Schuhe abspülen. Eine Urkunde gibt es heute leider nicht, die bekommen nur die Kinder bei unserer Familienführung am Sonntag. Wer danach noch Lust auf Tee und Kuchen hat, dem empfehle ich das kleine Café an der Promenade. So, haben Sie noch Fragen? Nein? Dann ziehen Sie Ihre Schuhe an, und los geht's!",
+              "hit": "Am besten sind alte Turnschuhe, die nass und schmutzig werden dürfen, oder Neoprensocken."
+            }
+          },
+          {
+            "n": 12,
+            "correct": "c",
+            "explanation": "Wegen der Flut muss die Gruppe spätestens um zwanzig vor vier zurück sein. Um halb drei ist nur das Niedrigwasser, und der Bus um vier ist nicht der Grund.",
+            "evidence": {
+              "text": "Moin, moin, und herzlich willkommen in Büsum! Mein Name ist Antje Hansen, und ich bin heute Ihre Wattführerin. Schön, dass Sie so zahlreich gekommen sind, und dann auch noch bei so herrlichem Wetter. Bevor wir losgehen, möchte ich Ihnen ein paar wichtige Dinge sagen. Hören Sie bitte gut zu, das Watt ist wunderschön, aber nicht ganz ungefährlich. Zuerst zu den Schuhen. Ich sehe, einige von Ihnen haben die Schuhe schon ausgezogen. Barfuß laufen ist zwar ein schönes Gefühl, aber draußen liegen überall Muschelschalen, und die sind scharf wie Glas. Gummistiefel sind aber auch keine gute Idee, die bleiben im Schlick stecken, und dann stehen Sie plötzlich ohne Schuh da. Am besten sind alte Turnschuhe, die nass und schmutzig werden dürfen, oder Neoprensocken. Wer keine hat: Bei mir in der Kiste liegen noch ein paar Paar zum Ausleihen. Dann zur Zeit. Wir gehen jetzt gleich los, um Viertel vor zwei. Das Niedrigwasser ist heute um halb drei, dann sind wir schon ziemlich weit draußen. Aber danach kommt die Flut, und die kommt schneller, als man denkt. Deshalb müssen wir spätestens um zwanzig vor vier wieder hier am Deich sein. Das ist keine Empfehlung, das ist eine Regel. Der Bus zurück in den Ort fährt übrigens erst um vier, Sie haben also genug Zeit. Viele fragen mich, ob man etwas mitnehmen darf. Lebende Tiere bleiben im Watt, auch die kleinen Krebse. Muscheln, in denen noch ein Tier lebt, lassen Sie bitte auch liegen. Leere Schalen dürfen Sie aber gern einstecken, die sind ein schönes Andenken. Im Ort gibt es auch Läden, die schöne Muscheln verkaufen, aber die sind meistens gar nicht von hier. Ganz wichtig: Wir bleiben immer zusammen. Gehen Sie nie allein vor und nie allein zurück. Wenn jemand nicht mehr kann, weil die Beine müde sind oder es zu kalt wird, dann sagen Sie es mir einfach. Mein Kollege Hauke läuft ganz hinten mit, und er geht dann mit Ihnen zurück zum Deich. Das ist überhaupt kein Problem und passiert fast bei jeder Führung. Und zum Schluss: Wenn wir wieder da sind, sehen Ihre Füße aus wie nach einem Schlammbad. Gleich hier rechts am Deich gibt es eine Wasserstelle, da können Sie Füße und Schuhe abspülen. Eine Urkunde gibt es heute leider nicht, die bekommen nur die Kinder bei unserer Familienführung am Sonntag. Wer danach noch Lust auf Tee und Kuchen hat, dem empfehle ich das kleine Café an der Promenade. So, haben Sie noch Fragen? Nein? Dann ziehen Sie Ihre Schuhe an, und los geht's!",
+              "hit": "Deshalb müssen wir spätestens um zwanzig vor vier wieder hier am Deich sein."
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a",
+            "explanation": "Leere Schalen darf man mitnehmen, Muscheln mit einem Tier nicht. Die Läden im Ort erwähnt sie nur, sie empfiehlt sie nicht.",
+            "evidence": {
+              "text": "Moin, moin, und herzlich willkommen in Büsum! Mein Name ist Antje Hansen, und ich bin heute Ihre Wattführerin. Schön, dass Sie so zahlreich gekommen sind, und dann auch noch bei so herrlichem Wetter. Bevor wir losgehen, möchte ich Ihnen ein paar wichtige Dinge sagen. Hören Sie bitte gut zu, das Watt ist wunderschön, aber nicht ganz ungefährlich. Zuerst zu den Schuhen. Ich sehe, einige von Ihnen haben die Schuhe schon ausgezogen. Barfuß laufen ist zwar ein schönes Gefühl, aber draußen liegen überall Muschelschalen, und die sind scharf wie Glas. Gummistiefel sind aber auch keine gute Idee, die bleiben im Schlick stecken, und dann stehen Sie plötzlich ohne Schuh da. Am besten sind alte Turnschuhe, die nass und schmutzig werden dürfen, oder Neoprensocken. Wer keine hat: Bei mir in der Kiste liegen noch ein paar Paar zum Ausleihen. Dann zur Zeit. Wir gehen jetzt gleich los, um Viertel vor zwei. Das Niedrigwasser ist heute um halb drei, dann sind wir schon ziemlich weit draußen. Aber danach kommt die Flut, und die kommt schneller, als man denkt. Deshalb müssen wir spätestens um zwanzig vor vier wieder hier am Deich sein. Das ist keine Empfehlung, das ist eine Regel. Der Bus zurück in den Ort fährt übrigens erst um vier, Sie haben also genug Zeit. Viele fragen mich, ob man etwas mitnehmen darf. Lebende Tiere bleiben im Watt, auch die kleinen Krebse. Muscheln, in denen noch ein Tier lebt, lassen Sie bitte auch liegen. Leere Schalen dürfen Sie aber gern einstecken, die sind ein schönes Andenken. Im Ort gibt es auch Läden, die schöne Muscheln verkaufen, aber die sind meistens gar nicht von hier. Ganz wichtig: Wir bleiben immer zusammen. Gehen Sie nie allein vor und nie allein zurück. Wenn jemand nicht mehr kann, weil die Beine müde sind oder es zu kalt wird, dann sagen Sie es mir einfach. Mein Kollege Hauke läuft ganz hinten mit, und er geht dann mit Ihnen zurück zum Deich. Das ist überhaupt kein Problem und passiert fast bei jeder Führung. Und zum Schluss: Wenn wir wieder da sind, sehen Ihre Füße aus wie nach einem Schlammbad. Gleich hier rechts am Deich gibt es eine Wasserstelle, da können Sie Füße und Schuhe abspülen. Eine Urkunde gibt es heute leider nicht, die bekommen nur die Kinder bei unserer Familienführung am Sonntag. Wer danach noch Lust auf Tee und Kuchen hat, dem empfehle ich das kleine Café an der Promenade. So, haben Sie noch Fragen? Nein? Dann ziehen Sie Ihre Schuhe an, und los geht's!",
+              "hit": "Leere Schalen dürfen Sie aber gern einstecken"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "c",
+            "explanation": "Man sagt der Führerin Bescheid, und ein Kollege geht mit zurück. Allein soll niemand gehen oder warten.",
+            "evidence": {
+              "text": "Moin, moin, und herzlich willkommen in Büsum! Mein Name ist Antje Hansen, und ich bin heute Ihre Wattführerin. Schön, dass Sie so zahlreich gekommen sind, und dann auch noch bei so herrlichem Wetter. Bevor wir losgehen, möchte ich Ihnen ein paar wichtige Dinge sagen. Hören Sie bitte gut zu, das Watt ist wunderschön, aber nicht ganz ungefährlich. Zuerst zu den Schuhen. Ich sehe, einige von Ihnen haben die Schuhe schon ausgezogen. Barfuß laufen ist zwar ein schönes Gefühl, aber draußen liegen überall Muschelschalen, und die sind scharf wie Glas. Gummistiefel sind aber auch keine gute Idee, die bleiben im Schlick stecken, und dann stehen Sie plötzlich ohne Schuh da. Am besten sind alte Turnschuhe, die nass und schmutzig werden dürfen, oder Neoprensocken. Wer keine hat: Bei mir in der Kiste liegen noch ein paar Paar zum Ausleihen. Dann zur Zeit. Wir gehen jetzt gleich los, um Viertel vor zwei. Das Niedrigwasser ist heute um halb drei, dann sind wir schon ziemlich weit draußen. Aber danach kommt die Flut, und die kommt schneller, als man denkt. Deshalb müssen wir spätestens um zwanzig vor vier wieder hier am Deich sein. Das ist keine Empfehlung, das ist eine Regel. Der Bus zurück in den Ort fährt übrigens erst um vier, Sie haben also genug Zeit. Viele fragen mich, ob man etwas mitnehmen darf. Lebende Tiere bleiben im Watt, auch die kleinen Krebse. Muscheln, in denen noch ein Tier lebt, lassen Sie bitte auch liegen. Leere Schalen dürfen Sie aber gern einstecken, die sind ein schönes Andenken. Im Ort gibt es auch Läden, die schöne Muscheln verkaufen, aber die sind meistens gar nicht von hier. Ganz wichtig: Wir bleiben immer zusammen. Gehen Sie nie allein vor und nie allein zurück. Wenn jemand nicht mehr kann, weil die Beine müde sind oder es zu kalt wird, dann sagen Sie es mir einfach. Mein Kollege Hauke läuft ganz hinten mit, und er geht dann mit Ihnen zurück zum Deich. Das ist überhaupt kein Problem und passiert fast bei jeder Führung. Und zum Schluss: Wenn wir wieder da sind, sehen Ihre Füße aus wie nach einem Schlammbad. Gleich hier rechts am Deich gibt es eine Wasserstelle, da können Sie Füße und Schuhe abspülen. Eine Urkunde gibt es heute leider nicht, die bekommen nur die Kinder bei unserer Familienführung am Sonntag. Wer danach noch Lust auf Tee und Kuchen hat, dem empfehle ich das kleine Café an der Promenade. So, haben Sie noch Fragen? Nein? Dann ziehen Sie Ihre Schuhe an, und los geht's!",
+              "hit": "Mein Kollege Hauke läuft ganz hinten mit, und er geht dann mit Ihnen zurück zum Deich."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "b",
+            "explanation": "Am Deich gibt es eine Wasserstelle für Füße und Schuhe. Eine Urkunde bekommen heute nur Kinder bei einer anderen Führung, und das Café ist nur ein Tipp.",
+            "evidence": {
+              "text": "Moin, moin, und herzlich willkommen in Büsum! Mein Name ist Antje Hansen, und ich bin heute Ihre Wattführerin. Schön, dass Sie so zahlreich gekommen sind, und dann auch noch bei so herrlichem Wetter. Bevor wir losgehen, möchte ich Ihnen ein paar wichtige Dinge sagen. Hören Sie bitte gut zu, das Watt ist wunderschön, aber nicht ganz ungefährlich. Zuerst zu den Schuhen. Ich sehe, einige von Ihnen haben die Schuhe schon ausgezogen. Barfuß laufen ist zwar ein schönes Gefühl, aber draußen liegen überall Muschelschalen, und die sind scharf wie Glas. Gummistiefel sind aber auch keine gute Idee, die bleiben im Schlick stecken, und dann stehen Sie plötzlich ohne Schuh da. Am besten sind alte Turnschuhe, die nass und schmutzig werden dürfen, oder Neoprensocken. Wer keine hat: Bei mir in der Kiste liegen noch ein paar Paar zum Ausleihen. Dann zur Zeit. Wir gehen jetzt gleich los, um Viertel vor zwei. Das Niedrigwasser ist heute um halb drei, dann sind wir schon ziemlich weit draußen. Aber danach kommt die Flut, und die kommt schneller, als man denkt. Deshalb müssen wir spätestens um zwanzig vor vier wieder hier am Deich sein. Das ist keine Empfehlung, das ist eine Regel. Der Bus zurück in den Ort fährt übrigens erst um vier, Sie haben also genug Zeit. Viele fragen mich, ob man etwas mitnehmen darf. Lebende Tiere bleiben im Watt, auch die kleinen Krebse. Muscheln, in denen noch ein Tier lebt, lassen Sie bitte auch liegen. Leere Schalen dürfen Sie aber gern einstecken, die sind ein schönes Andenken. Im Ort gibt es auch Läden, die schöne Muscheln verkaufen, aber die sind meistens gar nicht von hier. Ganz wichtig: Wir bleiben immer zusammen. Gehen Sie nie allein vor und nie allein zurück. Wenn jemand nicht mehr kann, weil die Beine müde sind oder es zu kalt wird, dann sagen Sie es mir einfach. Mein Kollege Hauke läuft ganz hinten mit, und er geht dann mit Ihnen zurück zum Deich. Das ist überhaupt kein Problem und passiert fast bei jeder Führung. Und zum Schluss: Wenn wir wieder da sind, sehen Ihre Füße aus wie nach einem Schlammbad. Gleich hier rechts am Deich gibt es eine Wasserstelle, da können Sie Füße und Schuhe abspülen. Eine Urkunde gibt es heute leider nicht, die bekommen nur die Kinder bei unserer Familienführung am Sonntag. Wer danach noch Lust auf Tee und Kuchen hat, dem empfehle ich das kleine Café an der Promenade. So, haben Sie noch Fragen? Nein? Dann ziehen Sie Ihre Schuhe an, und los geht's!",
+              "hit": "Gleich hier rechts am Deich gibt es eine Wasserstelle, da können Sie Füße und Schuhe abspülen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "s1",
+            "voice": "woman_irene",
+            "text": "Moin, moin, und herzlich willkommen in Büsum! Mein Name ist Antje Hansen, und ich bin heute Ihre Wattführerin. Schön, dass Sie so zahlreich gekommen sind, und dann auch noch bei so herrlichem Wetter. Bevor wir losgehen, möchte ich Ihnen ein paar wichtige Dinge sagen. Hören Sie bitte gut zu, das Watt ist wunderschön, aber nicht ganz ungefährlich. Zuerst zu den Schuhen. Ich sehe, einige von Ihnen haben die Schuhe schon ausgezogen. Barfuß laufen ist zwar ein schönes Gefühl, aber draußen liegen überall Muschelschalen, und die sind scharf wie Glas. Gummistiefel sind aber auch keine gute Idee, die bleiben im Schlick stecken, und dann stehen Sie plötzlich ohne Schuh da. Am besten sind alte Turnschuhe, die nass und schmutzig werden dürfen, oder Neoprensocken. Wer keine hat: Bei mir in der Kiste liegen noch ein paar Paar zum Ausleihen. Dann zur Zeit. Wir gehen jetzt gleich los, um Viertel vor zwei. Das Niedrigwasser ist heute um halb drei, dann sind wir schon ziemlich weit draußen. Aber danach kommt die Flut, und die kommt schneller, als man denkt. Deshalb müssen wir spätestens um zwanzig vor vier wieder hier am Deich sein. Das ist keine Empfehlung, das ist eine Regel. Der Bus zurück in den Ort fährt übrigens erst um vier, Sie haben also genug Zeit. Viele fragen mich, ob man etwas mitnehmen darf. Lebende Tiere bleiben im Watt, auch die kleinen Krebse. Muscheln, in denen noch ein Tier lebt, lassen Sie bitte auch liegen. Leere Schalen dürfen Sie aber gern einstecken, die sind ein schönes Andenken. Im Ort gibt es auch Läden, die schöne Muscheln verkaufen, aber die sind meistens gar nicht von hier. Ganz wichtig: Wir bleiben immer zusammen. Gehen Sie nie allein vor und nie allein zurück. Wenn jemand nicht mehr kann, weil die Beine müde sind oder es zu kalt wird, dann sagen Sie es mir einfach. Mein Kollege Hauke läuft ganz hinten mit, und er geht dann mit Ihnen zurück zum Deich. Das ist überhaupt kein Problem und passiert fast bei jeder Führung. Und zum Schluss: Wenn wir wieder da sind, sehen Ihre Füße aus wie nach einem Schlammbad. Gleich hier rechts am Deich gibt es eine Wasserstelle, da können Sie Füße und Schuhe abspülen. Eine Urkunde gibt es heute leider nicht, die bekommen nur die Kinder bei unserer Familienführung am Sonntag. Wer danach noch Lust auf Tee und Kuchen hat, dem empfehle ich das kleine Café an der Promenade. So, haben Sie noch Fragen? Nein? Dann ziehen Sie Ihre Schuhe an, und los geht's!",
+            "delivery": "[friendly outdoor guide addressing a group, clear, lively]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t3-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Gespräch zwischen Bekannten auf dem Markt"
+      },
+      "display": {
+        "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen richtig oder falsch?",
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 16,
+              "statement": "Bernhard kennt die Leute aus Marlies' alter Klasse."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 17,
+              "statement": "Eine frühere Mitschülerin hat das Treffen organisiert."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 18,
+              "statement": "Marlies hat alle früheren Mitschüler sofort wiedererkannt."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 19,
+              "statement": "Auch ihr früherer Deutschlehrer ist zum Treffen gekommen."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 20,
+              "statement": "Marlies' beste Freundin war über das Internet beim Treffen dabei."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 21,
+              "statement": "Das Treffen war schon früh am Abend zu Ende."
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 22,
+              "statement": "Bernhard will jetzt nach seinen früheren Mitschülern suchen."
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Gespräch auf dem Markt",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Marlies",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "b": {
+              "name": "Bernhard",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "lead": "Sie sind auf einem Bauernmarkt und hören, wie sich eine Frau und ein Mann unterhalten.",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t3-01.mp3",
+          "duration": 186.17
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 16,
+            "correct": "falsch",
+            "explanation": "Bernhard ist erst mit dreißig nach Korneuburg gezogen. Aus ihrer Klasse kennt er niemanden außer Marlies.",
+            "evidence": {
+              "text": "Nein, nein, ich bin ja erst mit dreißig nach Korneuburg gezogen. Von deiner Klasse kenn ich eigentlich niemanden. Na ja, außer dir halt.",
+              "hit": "Von deiner Klasse kenn ich eigentlich niemanden."
+            }
+          },
+          {
+            "n": 17,
+            "correct": "richtig",
+            "explanation": "Sabine ist früher neben Marlies gesessen. Sie hat die Adressen gesucht und alle eingeladen.",
+            "evidence": {
+              "text": "Genau. Also, organisiert hat das alles die Sabine. Die ist damals in der Schule neben mir gesessen. Sie hat monatelang alle Adressen zusammengesucht und dann jedem eine Einladung geschickt.",
+              "hit": "Die ist damals in der Schule neben mir gesessen. Sie hat monatelang alle Adressen zusammengesucht und dann jedem eine Einladung geschickt."
+            }
+          },
+          {
+            "n": 18,
+            "correct": "falsch",
+            "explanation": "Nur ein paar hat sie sofort erkannt. Bei manchen musste sie auf das Namensschild schauen.",
+            "evidence": {
+              "text": "Ja, wirklich! Ein paar hab ich sofort erkannt, die Sabine natürlich. Aber bei manchen hab ich echt auf das Namensschild schauen müssen. Der Florian zum Beispiel, der hat damals lange Haare gehabt, und jetzt hat er gar keine mehr.",
+              "hit": "Aber bei manchen hab ich echt auf das Namensschild schauen müssen."
+            }
+          },
+          {
+            "n": 19,
+            "correct": "richtig",
+            "explanation": "Der alte Deutschprofessor, Herr Haas, war beim Treffen. Er hat sogar eine kleine Rede gehalten.",
+            "evidence": {
+              "text": "Und weißt du, wer auch da war? Unser alter Deutschprofessor, der Herr Haas! Der ist schon über achtzig, aber er hat noch alle Namen gewusst.",
+              "hit": "Unser alter Deutschprofessor, der Herr Haas!"
+            }
+          },
+          {
+            "n": 20,
+            "correct": "richtig",
+            "explanation": "Petra konnte aus Kanada nicht kommen. Die Klasse hat sie aber per Video angerufen.",
+            "evidence": {
+              "text": "Warte, das Beste kommt noch. Wir haben sie per Video angerufen und den Laptop einfach auf den Tisch gestellt. Bei ihr war's Nachmittag, bei uns schon spät am Abend. Sie hat mit uns angestoßen, mit Kaffee halt.",
+              "hit": "Wir haben sie per Video angerufen und den Laptop einfach auf den Tisch gestellt."
+            }
+          },
+          {
+            "n": 21,
+            "correct": "falsch",
+            "explanation": "Bernhard denkt, sie waren um zehn zu Hause. Aber sie sind bis nach Mitternacht geblieben.",
+            "evidence": {
+              "text": "Von wegen! Erst nach Mitternacht hat uns der Wirt sozusagen rausgeworfen. Und ich bin dann mit dem Taxi heimgefahren, weil kein Bus mehr gefahren ist.",
+              "hit": "Erst nach Mitternacht hat uns der Wirt sozusagen rausgeworfen."
+            }
+          },
+          {
+            "n": 22,
+            "correct": "richtig",
+            "explanation": "Marlies' Geschichte macht ihm Lust. Er will noch heute Abend nach seinen alten Mitschülern schauen.",
+            "evidence": {
+              "text": "Ja, ich glaub, das mach ich. Heute Abend schau ich gleich mal nach. Vielleicht find ich ja den Thomas, mit dem hab ich jeden Tag Fußball gespielt.",
+              "hit": "Ja, ich glaub, das mach ich. Heute Abend schau ich gleich mal nach."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Marlies! Hallo! Du auch hier am Markt?",
+            "delivery": "[surprised, cheerful]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Bernhard, servus! Ja, ich hol mir nur schnell Eier und Brot. Und du?",
+            "delivery": "[warm, lively]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Erdbeeren für die Kinder. Sag mal, du schaust so gut gelaunt aus. Ist was passiert?",
+            "delivery": "[curious, friendly]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Na ja, ich war am Samstag beim Maturatreffen. Fünfundzwanzig Jahre nach der Matura, stell dir vor!",
+            "delivery": "[excited]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Wirklich? Fünfundzwanzig Jahre? Wahnsinn.",
+            "delivery": "[impressed]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Ja, eh. Du warst ja nicht bei uns am Gymnasium, oder?",
+            "delivery": "[casual]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Nein, nein, ich bin ja erst mit dreißig nach Korneuburg gezogen. Von deiner Klasse kenn ich eigentlich niemanden. Na ja, außer dir halt.",
+            "delivery": "[laughing a little]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Genau. Also, organisiert hat das alles die Sabine. Die ist damals in der Schule neben mir gesessen. Sie hat monatelang alle Adressen zusammengesucht und dann jedem eine Einladung geschickt.",
+            "delivery": "[storytelling]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Mhm. Das ist aber viel Arbeit.",
+            "delivery": "[short back-channel]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Total. Und dann, am Abend, komm ich ins Gasthaus, und da stehen so zwanzig Leute, und ich denk mir: Wer sind die alle?",
+            "delivery": "[animated, laughing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Echt jetzt?",
+            "delivery": "[laughing, overlapping]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Ja, wirklich! Ein paar hab ich sofort erkannt, die Sabine natürlich. Aber bei manchen hab ich echt auf das Namensschild schauen müssen. Der Florian zum Beispiel, der hat damals lange Haare gehabt, und jetzt hat er gar keine mehr.",
+            "delivery": "[amused]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Oje.",
+            "delivery": "[chuckling]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Und weißt du, wer auch da war? Unser alter Deutschprofessor, der Herr Haas! Der ist schon über achtzig, aber er hat noch alle Namen gewusst.",
+            "delivery": "[enthusiastic]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Nein! Der war auch eingeladen?",
+            "delivery": "[surprised]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Ja, die Sabine hat ihn angerufen. Er hat sogar eine kleine Rede gehalten, über unsere Maturaaufsätze. Ich bin fast rot geworden.",
+            "delivery": "[a bit embarrassed, laughing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Und? Waren alle aus deiner Klasse da?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Fast. Zwei konnten nicht. Und meine beste Freundin, die Petra, die wohnt seit Jahren in Kanada. Die hätte nie kommen können, so ein Flug ist ja teuer.",
+            "delivery": "[slightly wistful]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Schade.",
+            "delivery": "[sympathetic]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Warte, das Beste kommt noch. Wir haben sie per Video angerufen und den Laptop einfach auf den Tisch gestellt. Bei ihr war's Nachmittag, bei uns schon spät am Abend. Sie hat mit uns angestoßen, mit Kaffee halt.",
+            "delivery": "[delighted]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Das ist ja lustig.",
+            "delivery": "[laughing]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Ja, voll schön. Ich hab fast geweint.",
+            "delivery": "[warm, touched]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Und wie lang seid ihr geblieben? Ich nehm an, ihr seid alle so um zehn heim, mit Babysitter und so?",
+            "delivery": "[teasing]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Von wegen! Erst nach Mitternacht hat uns der Wirt sozusagen rausgeworfen. Und ich bin dann mit dem Taxi heimgefahren, weil kein Bus mehr gefahren ist.",
+            "delivery": "[proud, laughing]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Respekt.",
+            "delivery": "[quick, overlapping]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Und wir wollen uns jetzt öfter treffen. Nicht erst in fünfundzwanzig Jahren. Vielleicht heuer im Herbst noch einmal, zum Wandern.",
+            "delivery": "[hopeful]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Weißt du was, das macht mir jetzt richtig Lust. Ich hab von meiner Klasse fast niemanden mehr gesehen seit der Matura.",
+            "delivery": "[thoughtful]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Dann such sie doch! Die Sabine hat viele übers Internet gefunden.",
+            "delivery": "[encouraging]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Ja, ich glaub, das mach ich. Heute Abend schau ich gleich mal nach. Vielleicht find ich ja den Thomas, mit dem hab ich jeden Tag Fußball gespielt.",
+            "delivery": "[decided, enthusiastic]"
+          },
+          {
+            "speaker": "m",
+            "voice": "woman_ela",
+            "text": "Siehst du! Viel Glück dabei.",
+            "delivery": "[pleased]"
+          },
+          {
+            "speaker": "b",
+            "voice": "man_ben",
+            "text": "Danke. So, und jetzt hol ich mir meine Erdbeeren. Schönes Wochenende, Marlies!",
+            "delivery": "[cheerful goodbye]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1-hoeren-07-t4-01",
+      "exam": "goethe-b1",
+      "skill": "hoeren",
+      "teil": 4,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-25T07:31:20.868Z",
+        "textType": "Diskussion im Radio"
+      },
+      "display": {
+        "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was?",
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Viele Roller liegen einfach mitten auf dem Gehweg.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 23,
+              "prompt": "Unsere Roller darf man nur noch in markierten Zonen abstellen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 24,
+              "prompt": "Für kurze Wege zum Bahnhof sind die Roller ideal.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 25,
+              "prompt": "Für Menschen, die schlecht sehen, sind liegende Roller gefährlich.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 26,
+              "prompt": "Ich bin selbst noch nie mit so einem Roller gefahren.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 27,
+              "prompt": "Paris hat die Leihroller schon verboten.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 28,
+              "prompt": "Wer falsch parkt, zahlt bei uns eine Strafe.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 29,
+              "prompt": "Die Städte sollten mehr Platz für Fußgänger schaffen, nicht für Roller.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 30,
+              "prompt": "Viele junge Leute lassen wegen der Roller das Auto stehen.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Oliver Brandes, Moderator"
+                },
+                {
+                  "key": "b",
+                  "label": "Matthias Ebner, Rollerverleih"
+                },
+                {
+                  "key": "c",
+                  "label": "Fabienne Rüegg, Fußgängerverband"
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Diskussion im Radio",
+          "segments": [],
+          "speakers": {
+            "m": {
+              "name": "Oliver Brandes, Moderator",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "e": {
+              "name": "Matthias Ebner, Rollerverleih",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "f": {
+              "name": "Fabienne Rüegg, Fußgängerverband",
+              "tone": "var(--v-sk-sprechen)"
+            }
+          },
+          "lead": "Der Moderator der Radiosendung „Stadtgespräch“, Oliver Brandes, diskutiert mit Matthias Ebner, Leiter des E-Scooter-Verleihs „Flitzer“ aus Bludenz, und Fabienne Rüegg vom Fußgängerverband in Dübendorf über das Thema „Leih-E-Scooter – verbieten oder besser regeln?“",
+          "src": "goethe-b1/hoeren-07/goethe-b1-hoeren-07-t4-01.mp3",
+          "duration": 301.71
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 23,
+            "correct": "b",
+            "explanation": "Herr Ebner sagt, dass man die Fahrt nur in markierten Parkzonen beenden kann. Frau Rüegg spricht über Roller, die falsch herumliegen.",
+            "evidence": {
+              "text": "Ja, das Problem kennen wir, das will ich gar nicht schönreden. Aber wir haben reagiert. Seit heuer kann man unsere Roller nicht mehr überall abstellen. In der App sieht man markierte Parkzonen, und nur dort kann man die Fahrt beenden. Wer woanders aufhört, der zahlt einfach weiter.",
+              "hit": "In der App sieht man markierte Parkzonen, und nur dort kann man die Fahrt beenden."
+            }
+          },
+          {
+            "n": 24,
+            "correct": "b",
+            "explanation": "Herr Ebner findet den Roller für den Weg zum Bahnhof perfekt. Frau Rüegg empfiehlt für diese Strecke das Velo.",
+            "evidence": {
+              "text": "Nein, gar nicht. Natürlich fahren auch Touristen damit. Aber die meisten Fahrten sind kurz, zwei, drei Kilometer. Die Leute fahren von zu Hause zum Bahnhof oder vom Bahnhof ins Büro. Für so eine Strecke ist der Bus oft zu langsam, und zu Fuß dauert es zu lang. Genau dafür ist so ein Roller perfekt.",
+              "hit": "Genau dafür ist so ein Roller perfekt."
+            }
+          },
+          {
+            "n": 25,
+            "correct": "c",
+            "explanation": "Frau Rüegg sagt, liegende Roller sind für Menschen, die schlecht sehen, eine echte Gefahr. Der Moderator fragt nur, wen es besonders trifft.",
+            "evidence": {
+              "text": "Vor allem ältere Menschen und Eltern mit Kinderwagen. Und ganz besonders Leute, die schlecht oder gar nicht sehen. Für sie ist ein Roller, der auf dem Boden liegt, eine echte Gefahr. Mit dem Stock merken sie ihn oft zu spät, und dann fallen sie. Bei uns im Verband haben sich schon mehrere Mitglieder dabei verletzt.",
+              "hit": "Für sie ist ein Roller, der auf dem Boden liegt, eine echte Gefahr."
+            }
+          },
+          {
+            "n": 26,
+            "correct": "a",
+            "explanation": "Der Moderator gibt zu, dass er noch nie einen Roller ausprobiert hat. Herr Ebner lädt ihn nur zu einer Probefahrt ein.",
+            "evidence": {
+              "text": "Ich muss an dieser Stelle etwas zugeben: Ich habe selbst noch nie so einen Roller ausprobiert. Meine Kinder lachen mich deswegen aus. Herr Ebner, ist das Fahren eigentlich schwierig?",
+              "hit": "Ich habe selbst noch nie so einen Roller ausprobiert."
+            }
+          },
+          {
+            "n": 27,
+            "correct": "c",
+            "explanation": "Frau Rüegg erzählt, dass es in Paris keine Leihroller mehr gibt. Herr Ebner spricht auch über Paris, sagt aber nur, dass man es nicht vergleichen kann.",
+            "evidence": {
+              "text": "Ja, das stimmt. In Paris hat man die Bevölkerung gefragt, und eine grosse Mehrheit war dagegen. Seitdem gibt es dort keine Leihroller mehr. Und die Stadt funktioniert trotzdem, die Leute gehen zu Fuss oder nehmen die Metro. Ich finde, das zeigt doch, dass es auch ohne geht.",
+              "hit": "Seitdem gibt es dort keine Leihroller mehr."
+            }
+          },
+          {
+            "n": 28,
+            "correct": "b",
+            "explanation": "Bei Herrn Ebners Firma kostet falsches Parken beim zweiten Mal zwanzig Euro. Frau Rüegg freut sich nur darüber.",
+            "evidence": {
+              "text": "Dann merken wir das über das GPS. Beim ersten Mal bekommt der Kunde eine Warnung. Beim zweiten Mal kostet es ihn zwanzig Euro, die buchen wir direkt vom Konto ab. Und wer es dann immer noch nicht lernt, den sperren wir. Das spricht sich schnell herum, glauben Sie mir. Die Beschwerden sind deutlich weniger geworden.",
+              "hit": "Beim zweiten Mal kostet es ihn zwanzig Euro, die buchen wir direkt vom Konto ab."
+            }
+          },
+          {
+            "n": 29,
+            "correct": "c",
+            "explanation": "Frau Rüegg möchte zuerst breite Wege für Menschen zu Fuß statt Platz für Roller. Herr Ebner findet breitere Gehsteige nur auch gut.",
+            "evidence": {
+              "text": "Ehrlich gesagt: Ich glaube, die Städte denken falsch herum. Jetzt sucht man überall Platz für Parkzonen, für Velos, für Roller. Aber das Trottoir wird immer schmaler. Die Städte sollten zuerst breite, sichere Wege für Menschen zu Fuss bauen. Gehen ist die älteste und gesündeste Art, sich zu bewegen, und es braucht keine App.",
+              "hit": "Die Städte sollten zuerst breite, sichere Wege für Menschen zu Fuss bauen."
+            }
+          },
+          {
+            "n": 30,
+            "correct": "b",
+            "explanation": "Herr Ebner berichtet, dass viele junge Kunden ihr Auto jetzt in der Garage lassen. Frau Rüegg will das zuerst messen.",
+            "evidence": {
+              "text": "Beides gibt es, das muss man ehrlich sagen. Aber wir haben unsere Kundinnen und Kunden befragt. Gerade bei den jungen Leuten unter dreißig sagen viele, dass sie für kurze Wege jetzt das Auto in der Garage lassen. Und jedes Auto weniger in der Stadt, das hilft am Ende auch den Fußgängern.",
+              "hit": "Gerade bei den jungen Leuten unter dreißig sagen viele, dass sie für kurze Wege jetzt das Auto in der Garage lassen."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Guten Abend und willkommen beim „Stadtgespräch“. Sie sind praktisch, sie sind schnell, und sie liegen oft im Weg: Leih-E-Scooter. In vielen Städten gibt es Streit darüber. Sollte man sie verbieten oder einfach besser regeln? Darüber spreche ich heute mit Matthias Ebner. Er leitet den Rollerverleih „Flitzer“ aus Bludenz. Guten Abend, Herr Ebner.",
+            "delivery": "[warm, professional radio host]"
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Grüß Gott, guten Abend, ich freu mich, dass ich da sein darf.",
+            "delivery": "[friendly, confident]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Und mit Fabienne Rüegg vom Fußgängerverband in Dübendorf. Guten Abend, Frau Rüegg.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Guten Abend, danke für die Einladung.",
+            "delivery": "[calm, polite]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Frau Rüegg, Sie sind gegen die Roller. Was stört Sie am meisten?",
+            "delivery": "[curious]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Ganz einfach: Wenn ich am Morgen zur Arbeit gehe, muss ich ständig über Roller steigen. Die werden nicht ordentlich abgestellt, sondern liegen einfach quer auf dem Trottoir, mitten im Weg. Ein bisschen Ordnung, das würde ja schon reichen. Aber so, wie es jetzt ist, geht es nicht weiter.",
+            "delivery": "[firm, slightly annoyed]",
+            "item": 0
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Herr Ebner, das hört man oft. Was sagen Sie dazu?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Ja, das Problem kennen wir, das will ich gar nicht schönreden. Aber wir haben reagiert. Seit heuer kann man unsere Roller nicht mehr überall abstellen. In der App sieht man markierte Parkzonen, und nur dort kann man die Fahrt beenden. Wer woanders aufhört, der zahlt einfach weiter.",
+            "delivery": "[matter-of-fact]",
+            "item": 23
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Und wofür werden die Roller überhaupt benutzt? Viele sagen ja, das ist nur ein Spielzeug für Touristen.",
+            "delivery": "[slightly challenging]"
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Nein, gar nicht. Natürlich fahren auch Touristen damit. Aber die meisten Fahrten sind kurz, zwei, drei Kilometer. Die Leute fahren von zu Hause zum Bahnhof oder vom Bahnhof ins Büro. Für so eine Strecke ist der Bus oft zu langsam, und zu Fuß dauert es zu lang. Genau dafür ist so ein Roller perfekt.",
+            "delivery": "[convinced]",
+            "item": 24
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Für die Strecke zum Bahnhof gibt es aber auch das Velo. Das liegt danach nicht im Weg herum.",
+            "delivery": "[dry, interjecting]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Frau Rüegg, Sie sprechen ja für alle Fußgänger. Wen trifft es denn besonders?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Vor allem ältere Menschen und Eltern mit Kinderwagen. Und ganz besonders Leute, die schlecht oder gar nicht sehen. Für sie ist ein Roller, der auf dem Boden liegt, eine echte Gefahr. Mit dem Stock merken sie ihn oft zu spät, und dann fallen sie. Bei uns im Verband haben sich schon mehrere Mitglieder dabei verletzt.",
+            "delivery": "[serious, measured]",
+            "item": 25
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Ich muss an dieser Stelle etwas zugeben: Ich habe selbst noch nie so einen Roller ausprobiert. Meine Kinder lachen mich deswegen aus. Herr Ebner, ist das Fahren eigentlich schwierig?",
+            "delivery": "[self-ironic, light]",
+            "item": 26
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Überhaupt nicht. Nach zwei Minuten haben Sie das im Gefühl. Ich lade Sie gern zu einer Probefahrt ein.",
+            "delivery": "[laughing, inviting]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Mal sehen. Frau Rüegg, manche Städte sind ja schon einen Schritt weiter gegangen.",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Ja, das stimmt. In Paris hat man die Bevölkerung gefragt, und eine grosse Mehrheit war dagegen. Seitdem gibt es dort keine Leihroller mehr. Und die Stadt funktioniert trotzdem, die Leute gehen zu Fuss oder nehmen die Metro. Ich finde, das zeigt doch, dass es auch ohne geht.",
+            "delivery": "[confident]",
+            "item": 27
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Paris ist aber eine Riesenstadt mit einer sehr guten Metro. Das kann man nicht mit einer kleinen Stadt vergleichen, wo der Bus nur jede halbe Stunde fährt.",
+            "delivery": "[objecting]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Herr Ebner, Sie haben vorhin die Parkzonen erwähnt. Aber was passiert, wenn jemand den Roller trotzdem irgendwo hinlegt?",
+            "delivery": "[probing]"
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Dann merken wir das über das GPS. Beim ersten Mal bekommt der Kunde eine Warnung. Beim zweiten Mal kostet es ihn zwanzig Euro, die buchen wir direkt vom Konto ab. Und wer es dann immer noch nicht lernt, den sperren wir. Das spricht sich schnell herum, glauben Sie mir. Die Beschwerden sind deutlich weniger geworden.",
+            "delivery": "[firm, businesslike]",
+            "item": 28
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Das freut mich. Aber die Roller, die richtig in den Zonen stehen, nehmen ja auch Platz weg. Und am Abend fahren manche viel zu schnell, sogar auf dem Trottoir, obwohl das verboten ist.",
+            "delivery": "[polite but critical]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Was wäre denn Ihre Lösung, Frau Rüegg?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Ehrlich gesagt: Ich glaube, die Städte denken falsch herum. Jetzt sucht man überall Platz für Parkzonen, für Velos, für Roller. Aber das Trottoir wird immer schmaler. Die Städte sollten zuerst breite, sichere Wege für Menschen zu Fuss bauen. Gehen ist die älteste und gesündeste Art, sich zu bewegen, und es braucht keine App.",
+            "delivery": "[engaged, clear]",
+            "item": 29
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Da bin ich gar nicht so weit weg von Ihnen. Breitere Gehsteige finde ich auch gut.",
+            "delivery": "[conciliatory]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Herr Ebner, zum Schluss: Bringen die Roller denn wirklich etwas für die Umwelt? Oder ersetzen sie nur das Zu-Fuß-Gehen?",
+            "delivery": "[host]"
+          },
+          {
+            "speaker": "e",
+            "voice": "man_christian",
+            "text": "Beides gibt es, das muss man ehrlich sagen. Aber wir haben unsere Kundinnen und Kunden befragt. Gerade bei den jungen Leuten unter dreißig sagen viele, dass sie für kurze Wege jetzt das Auto in der Garage lassen. Und jedes Auto weniger in der Stadt, das hilft am Ende auch den Fußgängern.",
+            "delivery": "[honest, persuasive]",
+            "item": 30
+          },
+          {
+            "speaker": "f",
+            "voice": "woman_laura",
+            "text": "Wenn das wirklich so ist, gut. Aber das müsste man zuerst einmal genau messen.",
+            "delivery": "[sceptical]"
+          },
+          {
+            "speaker": "m",
+            "voice": "man_michael",
+            "text": "Da bleibt also noch einiges zu klären. Vielen Dank, Frau Rüegg, vielen Dank, Herr Ebner. Und Ihnen zu Hause einen schönen Abend.",
+            "delivery": "[warm sign-off]"
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "c"
+      ]
+    }
+  ],
+  "track": {
+    "src": "goethe-b1/hoeren-07/track.mp3",
+    "duration": 2270.82,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "from": 6.11,
+        "to": 19.8
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 21.84,
+        "to": 26.78
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          0,
+          0
+        ],
+        "from": 26.78,
+        "to": 37.3
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 37.3,
+        "to": 40.44
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 41.98,
+        "to": 78.6
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          0,
+          0
+        ],
+        "from": 80.64,
+        "to": 82.96
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          0,
+          0
+        ],
+        "from": 84.01,
+        "to": 120.63
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          0,
+          0
+        ],
+        "from": 120.63,
+        "to": 123.17
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 123.17,
+        "to": 129.36
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2
+        ],
+        "from": 129.36,
+        "to": 139.89
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 139.89,
+        "to": 143.02
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 144.56,
+        "to": 182.1
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2
+        ],
+        "from": 184.14,
+        "to": 186.46
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2
+        ],
+        "from": 187.51,
+        "to": 225.04
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          1,
+          2
+        ],
+        "from": 225.04,
+        "to": 227.58
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 227.58,
+        "to": 233.74
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          3,
+          4
+        ],
+        "from": 233.74,
+        "to": 244.27
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 244.27,
+        "to": 246.96
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 248.5,
+        "to": 288.37
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          3,
+          4
+        ],
+        "from": 290.4,
+        "to": 292.73
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          3,
+          4
+        ],
+        "from": 293.77,
+        "to": 333.64
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          3,
+          4
+        ],
+        "from": 333.64,
+        "to": 336.17
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 336.17,
+        "to": 342.52
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          5,
+          6
+        ],
+        "from": 342.52,
+        "to": 353.04
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 353.04,
+        "to": 356.18
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 357.72,
+        "to": 396.72
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          5,
+          6
+        ],
+        "from": 398.76,
+        "to": 401.08
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          5,
+          6
+        ],
+        "from": 402.13,
+        "to": 441.13
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          5,
+          6
+        ],
+        "from": 441.13,
+        "to": 443.66
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 443.66,
+        "to": 449.96
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          7,
+          8
+        ],
+        "from": 449.96,
+        "to": 460.49
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 460.49,
+        "to": 462.63
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 464.17,
+        "to": 502
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          7,
+          8
+        ],
+        "from": 504.03,
+        "to": 506.36
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          7,
+          8
+        ],
+        "from": 507.4,
+        "to": 545.23
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          7,
+          8
+        ],
+        "from": 545.23,
+        "to": 547.76
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 547.76,
+        "to": 553.9
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          9,
+          10
+        ],
+        "from": 553.9,
+        "to": 564.43
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 564.43,
+        "to": 567.56
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 569.1,
+        "to": 604.42
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          9,
+          10
+        ],
+        "from": 606.46,
+        "to": 608.78
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          9,
+          10
+        ],
+        "from": 609.83,
+        "to": 645.15
+      },
+      {
+        "teil": 1,
+        "phase": "answer",
+        "items": [
+          9,
+          10
+        ],
+        "from": 645.15,
+        "to": 647.68
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 654.94,
+        "to": 669.1
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 671.14,
+        "to": 677.59
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 677.59,
+        "to": 737.62
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 737.62,
+        "to": 741.04
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 742.58,
+        "to": 917.52
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "from": 917.52,
+        "to": 926.56
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 933.85,
+        "to": 946.02
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 948.06,
+        "to": 954.54
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 954.54,
+        "to": 1014.57
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1014.57,
+        "to": 1020.29
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1021.83,
+        "to": 1208.01
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "from": 1208.01,
+        "to": 1217.04
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1224.25,
+        "to": 1236.45
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1238.49,
+        "to": 1245
+      },
+      {
+        "teil": 4,
+        "phase": "reading",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1245,
+        "to": 1305.03
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          0,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1305.03,
+        "to": 1320.67
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1326.26,
+        "to": 1627.98
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1632.03,
+        "to": 1635.06
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1635.06,
+        "to": 1637.8
+      },
+      {
+        "teil": 4,
+        "phase": "clip",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1643.39,
+        "to": 1945.1
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1949.15,
+        "to": 1958.19
+      },
+      {
+        "teil": 4,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1965.45,
+        "to": 1971.25
+      },
+      {
+        "teil": 4,
+        "phase": "answer",
+        "items": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "from": 1971.25,
+        "to": 2271.29
+      }
+    ]
+  }
+}

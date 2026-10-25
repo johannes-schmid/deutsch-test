@@ -61,7 +61,7 @@ export const SETS: TelcB1Set[] = [
     sb2: "Anfrage an einen Sportverein: Probetraining für ein Kind, Beitrag und Ausrüstung",
     hoeren1: "Kaufen Sie lieber im Geschäft oder im Internet ein?",
     hoeren2: "Interview mit einer Hebamme über ihren Alltag auf dem Land",
-    hoeren3: [["anrufbeantworter", "Stadtbibliothek: Öffnungszeiten zwischen den Feiertagen"], ["programm", "Kinoprogramm des Programmkinos am Dienstag"], ["wetter", "Unwetterwarnung für den Abend"], ["verkehr", "Verkehrsfunk: Baustelle und Stau auf der Autobahn"], ["geschaeft", "Durchsage im Möbelhaus: Restaurant und Kinderbetreuung"]],
+    hoeren3: [["anrufbeantworter", "Stadtwerke: Wasser wird am Vormittag wegen einer Reparatur abgestellt"], ["programm", "Kinoprogramm des Programmkinos am Dienstag"], ["wetter", "Unwetterwarnung für den Abend"], ["verkehr", "Verkehrsfunk: Baustelle und Stau auf der Autobahn"], ["geschaeft", "Durchsage im Möbelhaus: Restaurant und Kinderbetreuung"]],
     schreiben: "Ein Nachbar (Sie) bittet Sie, im Urlaub die Blumen zu gießen und die Post zu holen",
     sprechen2: "Urlaub zu Hause statt Reisen",
     sprechen3: "Einen Ausflug mit dem Deutschkurs in eine Nachbarstadt planen",
@@ -132,7 +132,7 @@ export const SETS: TelcB1Set[] = [
     sprechen3: "Einen Kochabend mit Gerichten aus verschiedenen Ländern planen",
   },
   {
-    lesen1: ["Studie: Großeltern betreuen oft die Enkel", "Verbrauchertipp: Heizkosten senken im Winter", "Reiseangebot: Kanutour auf der Spree", "Buchtipp: Sachbuch über gesunden Schlaf bei Schichtarbeit", "Stadt: Neue Hundewiese im Stadtwald"],
+    lesen1: ["Studie: Großeltern betreuen oft die Enkel", "Verbrauchertipp: Heizkosten senken im Winter", "Reiseangebot: Kanutour auf der Spree", "Buchtipp: Krimi, der in einer Kleinstadt an der Donau spielt", "Stadt: Neue Hundewiese im Stadtwald"],
     lesen2: "Eine Firma bietet ihren Mitarbeitenden Deutschkurse während der Arbeitszeit an",
     lesen3: "Kultur und Freizeit: Theater, Chor, Malkurs, Museumsführungen, Tanz",
     sb1: "E-Mail an einen Freund: Nachricht von der bestandenen Führerscheinprüfung",
@@ -147,7 +147,7 @@ export const SETS: TelcB1Set[] = [
   {
     lesen1: ["Studie: Wer singt, ist glücklicher", "Verbrauchertipp: Kleidung länger tragen und reparieren", "Reiseangebot: Fahrt mit der historischen Dampfeisenbahn", "Buchtipp: Ratgeber für Gespräche mit Behörden", "Stadt: Neue Fahrradstraße zum Bahnhof"],
     lesen2: "Ein Stadtviertel teilt Autos: Erfahrungen nach einem Jahr Carsharing",
-    lesen3: "Lernen und Kurse: Sprachen, Prüfungsvorbereitung, Nachhilfe, Computer, Fahrschule",
+    lesen3: "Lernen und Kurse: Sprachen, Prüfungsvorbereitung, Nachhilfe, Computer, Nähen",
     sb1: "E-Mail an eine Freundin: Absage für das Konzert und Vorschlag für einen anderen Abend",
     sb2: "Brief an den Kindergarten: Anfrage nach einem Platz ab Herbst und Fragen zur Eingewöhnung",
     hoeren1: "Haben Sie ein Hobby, das wenig kostet?",

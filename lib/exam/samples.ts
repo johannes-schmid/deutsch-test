@@ -2,7 +2,7 @@
 // Solutions sit apart from items on purpose: real items never ship their answer to the client.
 
 import { Bike, Bus, Car } from "lucide-react"
-import type { AudioClip, ChoiceData, Evidence, GapData, MatchData, PartResult, Person, PictureData, ReadingData, ReviewEntry, SpeakingData, TrueFalse, TrueFalseData, Turn, WritingOption } from "./types"
+import type { AudioClip, ChoiceData, Evidence, GapData, GridData, MarkData, MatchData, PartResult, Person, PictureData, PlanSheet, ReadingData, ReviewEntry, SpeakingData, TrueFalse, TrueFalseData, Turn, WritingOption } from "./types"
 
 export const SPEAKERS = {
   ben: { name: "Ben", tone: "var(--v-sk-lesen)" },
@@ -332,3 +332,82 @@ export const POOL_GAP: GapData = {
   ],
 }
 export const POOL_GAP_SOLUTION: Record<number, string> = { 31: "für", 32: "seit", 33: "ob", 34: "deshalb", 35: "dankbar" }
+
+// ÖSD Zertifikat A1 / A2 specimens (design only, not reviewed content).
+export const OESD_PHOTOS: MatchData = {
+  layout: "textNumber",
+  ads: [
+    { key: "A", title: "", text: "Kinokasse: eine Frau verkauft Karten" },
+    { key: "B", title: "", text: "Im Zug: ein Schaffner kontrolliert eine Fahrkarte" },
+    { key: "C", title: "", text: "Fahrkartenautomat an der Haltestelle" },
+    { key: "D", title: "", text: "Ein Mann fotografiert eine Frau an einer Brücke" },
+    { key: "E", title: "", text: "Marktstand mit Obst" },
+    { key: "F", title: "", text: "Zwei Personen streichen eine Wand" },
+  ],
+  situations: [1, 2, 3, 4, 5].map((n) => ({ n, text: `Text ${n}` })),
+}
+export const OESD_PHOTOS_SOLUTION: Record<number, string> = { 1: "B", 2: "E", 3: "A", 4: "F", 5: "D" }
+export const OESD_GRID: GridData = {
+  title: "Welche Jahreszeit mögen Sie am liebsten?",
+  columns: [{ key: "a", label: "Frühling" }, { key: "b", label: "Sommer" }, { key: "c", label: "Herbst" }, { key: "d", label: "Winter" }],
+  rows: [11, 12, 13].map((n, i) => ({ n, text: `Text ${i + 1}` })),
+}
+export const OESD_MULTI: GridData = {
+  title: "Wie kommen Sie zur Arbeit oder in die Schule?",
+  multi: true,
+  columns: [{ key: "a", label: "Auto" }, { key: "b", label: "Bus" }, { key: "c", label: "Straßenbahn" }, { key: "d", label: "Fahrrad" }, { key: "e", label: "zu Fuß" }],
+  rows: [10, 11, 12].map((n, i) => ({ n, text: `Person ${i + 1}` })),
+}
+export const OESD_MULTI_SOLUTION: Record<number, string> = { 10: "b,e", 11: "a", 12: "c,d,e" }
+export const OESD_MARKS: MarkData = {
+  title: "Adventmarkt",
+  pick: 4,
+  ns: [1, 2, 3, 4],
+  options: ["Montag", "Freitag", "Parkplätze", "Eintritt frei", "21 Uhr", "18 Uhr", "Feuerwerk", "Kinderprogramm"].map((label, i) => ({ key: "abcdefgh"[i], label })),
+}
+export const OESD_MARKS_SOLUTION: Record<number, string> = { 1: "b", 2: "d", 3: "e", 4: "h" }
+export const OESD_PICTOS: MatchData = {
+  ads: [
+    { key: "1", title: "Baby", text: "", picto: "baby" },
+    { key: "2", title: "Altglas", text: "", picto: "altglas" },
+    { key: "3", title: "Mülleimer", text: "", picto: "muell" },
+    { key: "4", title: "Taxi", text: "", picto: "taxi" },
+    { key: "5", title: "Kaffee", text: "", picto: "kaffee" },
+    { key: "6", title: "Bitte leise", text: "", picto: "ruhe" },
+  ],
+  situations: [
+    { n: 12, text: "Liebe Nachbarinnen und Nachbarn! Bitte werfen Sie hier nur weißes und buntes Glas ein, keine Deckel." },
+    { n: 13, text: "Liebe Gäste! Im Lesesaal lernen Studentinnen und Studenten. Bitte sprechen Sie nicht laut." },
+  ],
+}
+export const OESD_HEADINGS: MatchData = {
+  ads: [
+    { key: "A", title: "Konzerte im Park: Eintritt frei", text: "" },
+    { key: "B", title: "Ärztin zieht in die Altstadt", text: "" },
+    { key: "C", title: "Musikschule sucht Lehrerinnen und Lehrer", text: "" },
+    { key: "E", title: "Grippe-Impfung ohne Termin", text: "" },
+  ],
+  situations: [
+    { n: 3, origin: "aus einer Schweizer Zeitung", text: "Wer sich gegen Grippe impfen lassen möchte, muss nicht mehr zum Hausarzt. Viele Apotheken in der Stadt impfen ab Oktober ohne Termin. Die Impfung kostet 30 Franken.", table: [["Tag", "Zeit"], ["Montag–Freitag", "9–12 Uhr"], ["Samstag", "9–11 Uhr"]] },
+  ],
+}
+export const OESD_FORM: GapData = {
+  sheet: "Formular",
+  parts: ["Erste-Hilfe-Kurs · Anmeldung\nFamilienname: ", { n: 0, options: [] }, "\nVorname: ", { n: 1, options: [] }, "\nKurstag: ", { n: 2, options: ["Samstag", "Sonntag"] }, "\nKurs für: ", { n: 3, options: ["Führerschein", "Arbeit", "Kinder", "Sport"], pick: 2 }],
+}
+export const OESD_TOPICS: SpeakingData = { part: "Sprechen · Aufgabe 1", title: "Sich vorstellen", task: "Wählen Sie vier Themen und sprechen Sie über sich.", points: ["Wohnort?", "Wohnung?", "Familie?", "Sprachen?", "Arbeit?", "Wochenende?"], choose: 4 }
+export const OESD_SCENES: NonNullable<SpeakingData["scenes"]> = [
+  { key: "1", label: "Im Handygeschäft", roles: ["Verkäuferin", "Kunde"] },
+  { key: "2", label: "Beim Skiverleih", roles: ["Angestellter", "Skifahrerin"] },
+  { key: "3", label: "In der Putzerei", roles: ["Angestellte", "Kunde"] },
+]
+export const OESD_SHEET: PlanSheet = {
+  title: "Kochabend im Deutschkurs",
+  rows: [
+    { label: "Wo?", pictures: [{ label: "im Kursraum", picto: "schule" }, { label: "im Park mit Grillplatz", picto: "baum" }, { label: "bei jemandem zu Hause", picto: "haus" }] },
+    { label: "Wann?", pictures: [{ label: "Wochentag", picto: "kalender" }, { label: "Monat", picto: "kalender" }, { label: "Uhrzeit", picto: "uhr" }] },
+    { label: "Was essen?", pictures: [{ label: "Suppe", picto: "suppe" }, { label: "Reisgericht", picto: "kochtopf" }, { label: "Kuchen", picto: "kuchen" }] },
+    { label: "Wer bringt was?", pictures: [{ label: "Teller und Besteck", picto: "restaurant" }, { label: "Getränke", picto: "limonade" }] },
+  ],
+  more: "noch etwas?",
+}

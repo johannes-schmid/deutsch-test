@@ -1,0 +1,781 @@
+{
+  "exam": "oesd-a2",
+  "skill": "hoeren",
+  "number": 8,
+  "title": "Modelltest 8",
+  "blocks": [
+    {
+      "id": "oesd-a2-hoeren-08-t1",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.705Z",
+        "textType": "Zwei Radiomeldungen mit denselben Informationen"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören zwei kurze Texte im Radio. Beide Texte geben dieselben Informationen. Kreuzen Sie an: Was hören Sie? Vier Antworten sind richtig. Sie hören die Texte einmal.",
+        "items": [
+          {
+            "type": "marks",
+            "data": {
+              "title": "Drachenfest",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "Samstag"
+                },
+                {
+                  "key": "b",
+                  "label": "ab 11 Uhr"
+                },
+                {
+                  "key": "c",
+                  "label": "Sonntag"
+                },
+                {
+                  "key": "d",
+                  "label": "ab 14 Uhr"
+                },
+                {
+                  "key": "e",
+                  "label": "Drohnen"
+                },
+                {
+                  "key": "f",
+                  "label": "Bühne"
+                },
+                {
+                  "key": "g",
+                  "label": "Drachen bauen"
+                },
+                {
+                  "key": "h",
+                  "label": "Preis"
+                }
+              ],
+              "pick": 4,
+              "ns": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Tipps im Radio",
+          "speakers": {
+            "c1": {
+              "name": "Radio Weinviertel",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "c2": {
+              "name": "Radio Kamptal",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-08/oesd-a2-hoeren-08-t1.review.mp3",
+          "duration": 50.96
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "a",
+            "explanation": "Beide Sender sagen: Das Fest ist am Samstag. Den Sonntag hörst du nicht.",
+            "evidence": {
+              "text": "Radio Weinviertel, unser Tipp für das Wochenende. Am Samstag findet in Hollabrunn wieder das Drachenfest statt, und zwar auf der Wiese hinter dem Feuerwehrhaus. Los geht es am Vormittag um elf Uhr. In einem großen Zelt kann jeder seinen eigenen Drachen bauen. Am Ende des Festes bekommt der schönste Drache einen Preis. Eine Bitte an alle Besucher: Drohnen dürfen heuer leider nicht fliegen. Am Himmel sind nur Drachen erlaubt.",
+              "hit": "Am Samstag findet in Hollabrunn wieder das Drachenfest statt"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "b",
+            "explanation": "Das Fest beginnt um elf Uhr am Vormittag. Von 14 Uhr sagt niemand etwas.",
+            "evidence": {
+              "text": "Radio Weinviertel, unser Tipp für das Wochenende. Am Samstag findet in Hollabrunn wieder das Drachenfest statt, und zwar auf der Wiese hinter dem Feuerwehrhaus. Los geht es am Vormittag um elf Uhr. In einem großen Zelt kann jeder seinen eigenen Drachen bauen. Am Ende des Festes bekommt der schönste Drache einen Preis. Eine Bitte an alle Besucher: Drohnen dürfen heuer leider nicht fliegen. Am Himmel sind nur Drachen erlaubt.",
+              "hit": "Los geht es am Vormittag um elf Uhr."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "g",
+            "explanation": "In einem Zelt kann jeder selbst einen Drachen machen. Drohnen dürfen heuer dagegen nicht fliegen.",
+            "evidence": {
+              "text": "Radio Weinviertel, unser Tipp für das Wochenende. Am Samstag findet in Hollabrunn wieder das Drachenfest statt, und zwar auf der Wiese hinter dem Feuerwehrhaus. Los geht es am Vormittag um elf Uhr. In einem großen Zelt kann jeder seinen eigenen Drachen bauen. Am Ende des Festes bekommt der schönste Drache einen Preis. Eine Bitte an alle Besucher: Drohnen dürfen heuer leider nicht fliegen. Am Himmel sind nur Drachen erlaubt.",
+              "hit": "In einem großen Zelt kann jeder seinen eigenen Drachen bauen."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "h",
+            "explanation": "Der schönste Drache gewinnt am Ende etwas. Eine Bühne kommt in den Texten nicht vor.",
+            "evidence": {
+              "text": "Radio Weinviertel, unser Tipp für das Wochenende. Am Samstag findet in Hollabrunn wieder das Drachenfest statt, und zwar auf der Wiese hinter dem Feuerwehrhaus. Los geht es am Vormittag um elf Uhr. In einem großen Zelt kann jeder seinen eigenen Drachen bauen. Am Ende des Festes bekommt der schönste Drache einen Preis. Eine Bitte an alle Besucher: Drohnen dürfen heuer leider nicht fliegen. Am Himmel sind nur Drachen erlaubt.",
+              "hit": "Am Ende des Festes bekommt der schönste Drache einen Preis."
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "c1",
+            "voice": "woman_alexandra_at",
+            "text": "Radio Weinviertel, unser Tipp für das Wochenende. Am Samstag findet in Hollabrunn wieder das Drachenfest statt, und zwar auf der Wiese hinter dem Feuerwehrhaus. Los geht es am Vormittag um elf Uhr. In einem großen Zelt kann jeder seinen eigenen Drachen bauen. Am Ende des Festes bekommt der schönste Drache einen Preis. Eine Bitte an alle Besucher: Drohnen dürfen heuer leider nicht fliegen. Am Himmel sind nur Drachen erlaubt.",
+            "delivery": "[calm, radio news presenter]",
+            "clip": 1
+          },
+          {
+            "speaker": "c2",
+            "voice": "man_martin_at",
+            "text": "Hallo, liebe Leute, hier ist Radio Kamptal! Habt ihr schon einen Drachen? Nein? Kein Problem! Beim Drachenfest in Hollabrunn baut ihr euch in einem Zelt einfach selbst einen. Und der schönste Drache gewinnt am Schluss sogar einen Preis. Das Ganze ist diesen Samstag auf der Wiese hinter dem Feuerwehrhaus, ab elf Uhr am Vormittag. Ach ja, die Drohne bleibt bitte daheim, die ist heuer nicht erlaubt. Also, kommt vorbei!",
+            "delivery": "[cheerful, chatty radio host]",
+            "clip": 2
+          }
+        ]
+      },
+      "sound": "radio"
+    },
+    {
+      "id": "oesd-a2-hoeren-08-t2",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.705Z",
+        "textType": "Sprachnachricht von einem Freund"
+      },
+      "display": {
+        "instruction": "Situation: Ihr Freund Matthias hat Ihnen eine Nachricht auf das Handy gesprochen. Schreiben Sie die wichtigen Informationen auf den Notizzettel. Sie hören die Nachricht zweimal.",
+        "items": [
+          {
+            "type": "gap",
+            "data": {
+              "sheet": "Notiz",
+              "parts": [
+                "Zirkus\nTag: ",
+                {
+                  "n": 5,
+                  "options": []
+                },
+                "\nTreffen um ",
+                {
+                  "n": 6,
+                  "options": []
+                },
+                " Uhr\nKarte: ",
+                {
+                  "n": 7,
+                  "options": []
+                },
+                " Euro\nMitnehmen: ",
+                {
+                  "n": 8,
+                  "options": []
+                },
+                "\nMatthias' Telefon: 0676 / ",
+                {
+                  "n": 9,
+                  "options": []
+                }
+              ]
+            }
+          }
+        ],
+        "clip": {
+          "plays": 2,
+          "situation": "Nachricht auf dem Handy",
+          "speakers": {
+            "matthias": {
+              "name": "Matthias",
+              "tone": "var(--v-sk-lesen)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-08/oesd-a2-hoeren-08-t2.mp3",
+          "duration": 40.41
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 5,
+            "correct": "Samstag",
+            "accept": [
+              "am Samstag",
+              "Sa.",
+              "Samstag Nachmittag"
+            ],
+            "explanation": "Die Premiere am Freitag ist ausverkauft, darum geht ihr am Samstag.",
+            "evidence": {
+              "text": "Servus, Matthias da! Du, ich hab Karten für den Zirkus Montani, der hat sein Zelt ja jetzt in Gänserndorf. Äh, die Premiere am Freitag ist leider schon ausverkauft, also gehen wir am Samstag am Nachmittag. Die Vorstellung fängt um fünf an. Treffen wir uns um Viertel vor fünf am Nachmittag bei der Kassa, okay? Deine Karte kostet siebzehn Euro, an der Abendkassa kostet sie zwanzig. Na ja, die billigen Plätze sind ganz hinten oben, darum nimm bitte ein Fernglas mit, sonst siehst du die Akrobaten kaum. Eine Decke brauchst du nicht, das Zelt ist geheizt. Ruf mich kurz an, ja? Null sechs sieben sechs, acht drei eins, fünf null, sieben zwei. Noch einmal: acht drei eins, fünf null, sieben zwei. Bis dann!",
+              "hit": "also gehen wir am Samstag am Nachmittag"
+            }
+          },
+          {
+            "n": 6,
+            "correct": "16.45",
+            "accept": [
+              "16:45",
+              "4.45",
+              "4:45",
+              "16.45 Uhr",
+              "16 Uhr 45",
+              "Viertel vor fünf"
+            ],
+            "explanation": "Ihr trefft euch um Viertel vor fünf an der Kassa. Um fünf Uhr beginnt erst die Vorstellung.",
+            "evidence": {
+              "text": "Servus, Matthias da! Du, ich hab Karten für den Zirkus Montani, der hat sein Zelt ja jetzt in Gänserndorf. Äh, die Premiere am Freitag ist leider schon ausverkauft, also gehen wir am Samstag am Nachmittag. Die Vorstellung fängt um fünf an. Treffen wir uns um Viertel vor fünf am Nachmittag bei der Kassa, okay? Deine Karte kostet siebzehn Euro, an der Abendkassa kostet sie zwanzig. Na ja, die billigen Plätze sind ganz hinten oben, darum nimm bitte ein Fernglas mit, sonst siehst du die Akrobaten kaum. Eine Decke brauchst du nicht, das Zelt ist geheizt. Ruf mich kurz an, ja? Null sechs sieben sechs, acht drei eins, fünf null, sieben zwei. Noch einmal: acht drei eins, fünf null, sieben zwei. Bis dann!",
+              "hit": "Treffen wir uns um Viertel vor fünf am Nachmittag bei der Kassa"
+            }
+          },
+          {
+            "n": 7,
+            "correct": "17",
+            "accept": [
+              "17 Euro",
+              "siebzehn"
+            ],
+            "explanation": "Deine Karte kostet 17 Euro. 20 Euro kostet sie nur an der Abendkassa.",
+            "evidence": {
+              "text": "Servus, Matthias da! Du, ich hab Karten für den Zirkus Montani, der hat sein Zelt ja jetzt in Gänserndorf. Äh, die Premiere am Freitag ist leider schon ausverkauft, also gehen wir am Samstag am Nachmittag. Die Vorstellung fängt um fünf an. Treffen wir uns um Viertel vor fünf am Nachmittag bei der Kassa, okay? Deine Karte kostet siebzehn Euro, an der Abendkassa kostet sie zwanzig. Na ja, die billigen Plätze sind ganz hinten oben, darum nimm bitte ein Fernglas mit, sonst siehst du die Akrobaten kaum. Eine Decke brauchst du nicht, das Zelt ist geheizt. Ruf mich kurz an, ja? Null sechs sieben sechs, acht drei eins, fünf null, sieben zwei. Noch einmal: acht drei eins, fünf null, sieben zwei. Bis dann!",
+              "hit": "Deine Karte kostet siebzehn Euro"
+            }
+          },
+          {
+            "n": 8,
+            "correct": "Fernglas",
+            "accept": [
+              "ein Fernglas",
+              "Ferngläser"
+            ],
+            "explanation": "Du sollst ein Fernglas mitnehmen, weil die Plätze weit hinten sind. Eine Decke brauchst du nicht.",
+            "evidence": {
+              "text": "Servus, Matthias da! Du, ich hab Karten für den Zirkus Montani, der hat sein Zelt ja jetzt in Gänserndorf. Äh, die Premiere am Freitag ist leider schon ausverkauft, also gehen wir am Samstag am Nachmittag. Die Vorstellung fängt um fünf an. Treffen wir uns um Viertel vor fünf am Nachmittag bei der Kassa, okay? Deine Karte kostet siebzehn Euro, an der Abendkassa kostet sie zwanzig. Na ja, die billigen Plätze sind ganz hinten oben, darum nimm bitte ein Fernglas mit, sonst siehst du die Akrobaten kaum. Eine Decke brauchst du nicht, das Zelt ist geheizt. Ruf mich kurz an, ja? Null sechs sieben sechs, acht drei eins, fünf null, sieben zwei. Noch einmal: acht drei eins, fünf null, sieben zwei. Bis dann!",
+              "hit": "darum nimm bitte ein Fernglas mit"
+            }
+          },
+          {
+            "n": 9,
+            "correct": "8315072",
+            "accept": [
+              "831 50 72",
+              "831 5072",
+              "8315 072"
+            ],
+            "exact": true,
+            "explanation": "Matthias sagt die Nummer zweimal: acht drei eins, fünf null, sieben zwei. Jede Ziffer muss stimmen.",
+            "evidence": {
+              "text": "Servus, Matthias da! Du, ich hab Karten für den Zirkus Montani, der hat sein Zelt ja jetzt in Gänserndorf. Äh, die Premiere am Freitag ist leider schon ausverkauft, also gehen wir am Samstag am Nachmittag. Die Vorstellung fängt um fünf an. Treffen wir uns um Viertel vor fünf am Nachmittag bei der Kassa, okay? Deine Karte kostet siebzehn Euro, an der Abendkassa kostet sie zwanzig. Na ja, die billigen Plätze sind ganz hinten oben, darum nimm bitte ein Fernglas mit, sonst siehst du die Akrobaten kaum. Eine Decke brauchst du nicht, das Zelt ist geheizt. Ruf mich kurz an, ja? Null sechs sieben sechs, acht drei eins, fünf null, sieben zwei. Noch einmal: acht drei eins, fünf null, sieben zwei. Bis dann!",
+              "hit": "acht drei eins, fünf null, sieben zwei"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "matthias",
+            "voice": "man_gruber_at",
+            "text": "Servus, Matthias da! Du, ich hab Karten für den Zirkus Montani, der hat sein Zelt ja jetzt in Gänserndorf. Äh, die Premiere am Freitag ist leider schon ausverkauft, also gehen wir am Samstag am Nachmittag. Die Vorstellung fängt um fünf an. Treffen wir uns um Viertel vor fünf am Nachmittag bei der Kassa, okay? Deine Karte kostet siebzehn Euro, an der Abendkassa kostet sie zwanzig. Na ja, die billigen Plätze sind ganz hinten oben, darum nimm bitte ein Fernglas mit, sonst siehst du die Akrobaten kaum. Eine Decke brauchst du nicht, das Zelt ist geheizt. Ruf mich kurz an, ja? Null sechs sieben sechs, acht drei eins, fünf null, sieben zwei. Noch einmal: acht drei eins, fünf null, sieben zwei. Bis dann!",
+            "delivery": "[casual, friendly, slightly hurried voice message]"
+          }
+        ]
+      },
+      "sound": "playback"
+    },
+    {
+      "id": "oesd-a2-hoeren-08-t3",
+      "exam": "oesd-a2",
+      "skill": "hoeren",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.705Z",
+        "textType": "Straßenumfrage"
+      },
+      "display": {
+        "instruction": "Situation: Sie hören eine Umfrage. Fünf Personen sagen, wie sie sich ihre Termine merken. Kreuzen Sie für jede Person an: Was sagt sie? Bei jeder Person sind mehrere Antworten möglich. Sie hören die Umfrage einmal.",
+        "items": [
+          {
+            "type": "grid",
+            "data": {
+              "title": "Wie merken Sie sich Ihre Termine?",
+              "columns": [
+                {
+                  "key": "a",
+                  "label": "Papierkalender"
+                },
+                {
+                  "key": "b",
+                  "label": "Handy"
+                },
+                {
+                  "key": "c",
+                  "label": "Zettel"
+                },
+                {
+                  "key": "d",
+                  "label": "im Kopf"
+                },
+                {
+                  "key": "e",
+                  "label": "die Familie erinnert mich"
+                }
+              ],
+              "rows": [
+                {
+                  "n": 10,
+                  "text": "Person 1"
+                },
+                {
+                  "n": 11,
+                  "text": "Person 2"
+                },
+                {
+                  "n": 12,
+                  "text": "Person 3"
+                },
+                {
+                  "n": 13,
+                  "text": "Person 4"
+                },
+                {
+                  "n": 14,
+                  "text": "Person 5"
+                }
+              ],
+              "multi": true
+            }
+          }
+        ],
+        "clip": {
+          "plays": 1,
+          "situation": "Umfrage auf der Straße",
+          "speakers": {
+            "int": {
+              "name": "Reporterin",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p1": {
+              "name": "Person 1",
+              "tone": "var(--v-sk-schreiben)"
+            },
+            "p2": {
+              "name": "Person 2",
+              "tone": "var(--v-sk-hoeren)"
+            },
+            "p3": {
+              "name": "Person 3",
+              "tone": "var(--v-sk-sprechen)"
+            },
+            "p4": {
+              "name": "Person 4",
+              "tone": "var(--v-sk-lesen)"
+            },
+            "p5": {
+              "name": "Person 5",
+              "tone": "var(--v-sk-schreiben)"
+            }
+          },
+          "segments": [],
+          "src": "oesd-a2/hoeren-08/oesd-a2-hoeren-08-t3.review.mp3",
+          "duration": 99.5
+        }
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "a,c,e",
+            "explanation": "Sie hat einen Kalender aus Papier, schreibt Zettel, und ihr Mann erinnert sie. Den Kalender im Handy benutzt sie nicht.",
+            "evidence": {
+              "text": "Also, ich arbeite in Bremen im Büro, und zu Hause habe ich einen großen Kalender aus Papier in der Küche. Da schreibe ich alles hinein. Kleine Sachen schreibe ich auf Zettel und hänge sie an den Kühlschrank. Und wenn ich etwas vergesse, sagt es mir mein Mann. Den Kalender im Handy finde ich viel zu klein.",
+              "hit": "einen großen Kalender aus Papier in der Küche"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "b",
+            "explanation": "Er schreibt alle Termine ins Handy und stellt einen Alarm ein. Zettel benutzt er nicht, die verliert er.",
+            "evidence": {
+              "text": "Ich bin Vertreter, ich bin den ganzen Tag bei Kunden unterwegs. Äh, da schreibe ich alles ins Handy, jeden Termin, und ich stelle mir immer einen Alarm ein. Dann piepst es eine halbe Stunde vorher. Zettel verlier ich sowieso, die sind nach einem Tag weg.",
+              "hit": "da schreibe ich alles ins Handy"
+            }
+          },
+          {
+            "n": 12,
+            "correct": "d,e",
+            "explanation": "Sie merkt sich fast alles selbst, und ihre Mutter erinnert sie an Geburtstage. Einen Papierkalender hatte sie nie.",
+            "evidence": {
+              "text": "Na ja, ich bin Studentin, und ich habe eigentlich ein gutes Gedächtnis. Die meisten Termine weiß ich einfach so, die merke ich mir im Kopf. Nur Geburtstage vergesse ich oft, aber da ruft mich meine Mutter vorher an. Einen Papierkalender hatte ich noch nie, äh, das brauche ich nicht.",
+              "hit": "die merke ich mir im Kopf"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "a,d",
+            "explanation": "Er hat einen kleinen Kalender aus Papier und behält kleine Sachen im Kopf. Das Handy benutzt er nicht.",
+            "evidence": {
+              "text": "Ich bin Fliesenleger, und für die Arbeit habe ich so einen kleinen Kalender aus Papier, der ist immer in meiner Hosentasche. Da stehen alle Baustellen drin. Kleine Sachen, zum Beispiel einen Anruf, die behalte ich im Kopf. Im Handy such ich ewig, äh, das ist nichts für mich.",
+              "hit": "so einen kleinen Kalender aus Papier"
+            }
+          },
+          {
+            "n": 14,
+            "correct": "b,c",
+            "explanation": "Sie speichert ihre Schichten im Handy und hat einen Zettel in der Jacke. Im Kopf behält sie nichts.",
+            "evidence": {
+              "text": "Ich bin Pflegefachfrau im Spital in Biel und arbeite in Schichten. Die Schichten speichere ich alle im Handy, das ist am einfachsten. Und für andere Sachen habe ich immer einen Zettel in der Jackentasche, gleich neben dem Portemonnaie. Im Kopf behalte ich gar nichts, das klappt bei mir nie.",
+              "hit": "Die Schichten speichere ich alle im Handy"
+            }
+          }
+        ],
+        "script": [
+          {
+            "speaker": "int",
+            "voice": "woman_emilia_at",
+            "text": "Grüß Gott! Wir machen heute eine kleine Umfrage für das Radio. Wie merken Sie sich Ihre Termine?",
+            "delivery": "[friendly street reporter]"
+          },
+          {
+            "speaker": "p1",
+            "voice": "woman_laura",
+            "text": "Also, ich arbeite in Bremen im Büro, und zu Hause habe ich einen großen Kalender aus Papier in der Küche. Da schreibe ich alles hinein. Kleine Sachen schreibe ich auf Zettel und hänge sie an den Kühlschrank. Und wenn ich etwas vergesse, sagt es mir mein Mann. Den Kalender im Handy finde ich viel zu klein.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 1
+          },
+          {
+            "speaker": "p2",
+            "voice": "man_martin_at",
+            "text": "Ich bin Vertreter, ich bin den ganzen Tag bei Kunden unterwegs. Äh, da schreibe ich alles ins Handy, jeden Termin, und ich stelle mir immer einen Alarm ein. Dann piepst es eine halbe Stunde vorher. Zettel verlier ich sowieso, die sind nach einem Tag weg.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 2
+          },
+          {
+            "speaker": "p3",
+            "voice": "woman_alexandra_at",
+            "text": "Na ja, ich bin Studentin, und ich habe eigentlich ein gutes Gedächtnis. Die meisten Termine weiß ich einfach so, die merke ich mir im Kopf. Nur Geburtstage vergesse ich oft, aber da ruft mich meine Mutter vorher an. Einen Papierkalender hatte ich noch nie, äh, das brauche ich nicht.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 3
+          },
+          {
+            "speaker": "p4",
+            "voice": "man_gruber_at",
+            "text": "Ich bin Fliesenleger, und für die Arbeit habe ich so einen kleinen Kalender aus Papier, der ist immer in meiner Hosentasche. Da stehen alle Baustellen drin. Kleine Sachen, zum Beispiel einen Anruf, die behalte ich im Kopf. Im Handy such ich ewig, äh, das ist nichts für mich.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 4
+          },
+          {
+            "speaker": "p5",
+            "voice": "woman_heidi_ch",
+            "text": "Ich bin Pflegefachfrau im Spital in Biel und arbeite in Schichten. Die Schichten speichere ich alle im Handy, das ist am einfachsten. Und für andere Sachen habe ich immer einen Zettel in der Jackentasche, gleich neben dem Portemonnaie. Im Kopf behalte ich gar nichts, das klappt bei mir nie.",
+            "delivery": "[spontaneous, natural, street interview]",
+            "clip": 5
+          }
+        ]
+      },
+      "sound": "street"
+    }
+  ],
+  "track": {
+    "src": "oesd-a2/hoeren-08/track.mp3",
+    "duration": 573.26,
+    "cues": [
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 9.38,
+        "to": 15.41
+      },
+      {
+        "teil": 1,
+        "phase": "reading",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 15.41,
+        "to": 45.45
+      },
+      {
+        "teil": 1,
+        "phase": "instruction",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 45.45,
+        "to": 58.62
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 67.79,
+        "to": 92.58
+      },
+      {
+        "teil": 1,
+        "phase": "clip",
+        "items": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "from": 96.86,
+        "to": 121.6
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 130.77,
+        "to": 136.78
+      },
+      {
+        "teil": 2,
+        "phase": "reading",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 136.78,
+        "to": 166.82
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 166.82,
+        "to": 178.49
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 185.97,
+        "to": 226.38
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 232.33,
+        "to": 235.55
+      },
+      {
+        "teil": 2,
+        "phase": "clip",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 243.02,
+        "to": 283.43
+      },
+      {
+        "teil": 2,
+        "phase": "instruction",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 289.38,
+        "to": 293.93
+      },
+      {
+        "teil": 2,
+        "phase": "answer",
+        "items": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "from": 293.93,
+        "to": 313.97
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 319.48,
+        "to": 325.49
+      },
+      {
+        "teil": 3,
+        "phase": "reading",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 325.49,
+        "to": 355.53
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 355.53,
+        "to": 372.01
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 377.52,
+        "to": 383.14
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          10
+        ],
+        "from": 384.68,
+        "to": 404.3
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          11
+        ],
+        "from": 408.35,
+        "to": 424.18
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          12
+        ],
+        "from": 428.23,
+        "to": 445.41
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          13
+        ],
+        "from": 449.46,
+        "to": 466.26
+      },
+      {
+        "teil": 3,
+        "phase": "clip",
+        "items": [
+          14
+        ],
+        "from": 470.31,
+        "to": 487.47
+      },
+      {
+        "teil": 3,
+        "phase": "instruction",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 497.03,
+        "to": 501.52
+      },
+      {
+        "teil": 3,
+        "phase": "answer",
+        "items": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "from": 501.52,
+        "to": 561.55
+      }
+    ]
+  }
+}

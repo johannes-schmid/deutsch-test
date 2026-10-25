@@ -1,0 +1,479 @@
+{
+  "exam": "oesd-a1",
+  "skill": "lesen",
+  "number": 6,
+  "title": "Modelltest 6",
+  "blocks": [
+    {
+      "id": "oesd-a1-lesen-06-t1",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.646Z",
+        "textType": "Zeitungsanzeigen (Situation zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie suchen verschiedene Dinge in der Zeitung. Lesen Sie die Situationen 1 bis 5 und die Anzeigen. Welche Anzeige passt zu welcher Situation? Achtung: Eine Anzeige passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Glanz & Klar, Wil",
+                  "text": "Wir putzen Ihre Fenster, auch grosse Fenster oben im Dachgeschoss. Wir haben lange Leitern. Ab CHF 8.– pro Fenster. Termine von Montag bis Samstag: www.glanzundklar-wil.ch"
+                },
+                {
+                  "key": "2",
+                  "title": "Samtpfote, Mödling",
+                  "text": "Sie sind im Urlaub? Wir besuchen Ihre Katze zweimal am Tag bei Ihnen zu Hause, geben Futter und spielen mit ihr. Telefon 0664 318 27 59"
+                },
+                {
+                  "key": "3",
+                  "title": "Schuhmacher Gratzer, St. Pölten",
+                  "text": "Alte Schuhe kaputt? Werfen Sie sie nicht weg! Wir reparieren Schuhe und Taschen: neue Sohlen, neue Absätze. In zwei Tagen fertig. Schmiedgasse 6, Montag bis Freitag."
+                },
+                {
+                  "key": "4",
+                  "title": "Fotowerk Lübeck",
+                  "text": "Ihre schönsten Bilder als Buch! Fotobücher ab 20 Seiten mit festem Umschlag, einfach online bestellen. Nach drei Tagen ist Ihr Buch fertig. www.fotowerk-luebeck.de"
+                },
+                {
+                  "key": "5",
+                  "title": "Tierwelt Saarbrücken",
+                  "text": "Alles für Hund und Katze! Diese Woche: Katzenfutter 20 Prozent billiger, lustige Karnevalskostüme für Hunde. Am Samstag machen wir Fotos von Ihrem Tier. Bahnhofstraße 31."
+                },
+                {
+                  "key": "6",
+                  "title": "Kostümverleih Maskerade, Osnabrück",
+                  "text": "Pirat, Prinzessin oder Clown? Wir verleihen über 500 Kostüme für Erwachsene und Kinder. Für ein Wochenende ab 15 Euro. Telefon 0541 772 40 18"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Ihre Lieblingsschuhe sind kaputt. Sie möchten keine neuen Schuhe kaufen."
+                },
+                {
+                  "n": 2,
+                  "text": "Ihre Freunde machen am Samstag eine Kostümparty. Sie haben kein Kostüm."
+                },
+                {
+                  "n": 3,
+                  "text": "Ihre Fenster sind sehr hoch. Sie können sie nicht selbst putzen."
+                },
+                {
+                  "n": 4,
+                  "text": "Sie fahren zwei Wochen weg. Jemand muss Ihrer Katze Futter geben."
+                },
+                {
+                  "n": 5,
+                  "text": "Sie waren in Italien und haben viele Fotos gemacht. Sie möchten ein Buch mit den Fotos machen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "3",
+            "explanation": "Der Schuhmacher in St. Pölten repariert kaputte Schuhe. So musst du keine neuen kaufen.",
+            "evidence": {
+              "text": "Schuhmacher Gratzer, St. Pölten Alte Schuhe kaputt? Werfen Sie sie nicht weg! Wir reparieren Schuhe und Taschen: neue Sohlen, neue Absätze. In zwei Tagen fertig. Schmiedgasse 6, Montag bis Freitag.",
+              "hit": "Wir reparieren Schuhe und Taschen"
+            }
+          },
+          {
+            "n": 2,
+            "correct": "6",
+            "explanation": "Der Kostümverleih in Osnabrück hat Kostüme für Erwachsene. Die Tierhandlung hat nur Kostüme für Hunde.",
+            "evidence": {
+              "text": "Kostümverleih Maskerade, Osnabrück Pirat, Prinzessin oder Clown? Wir verleihen über 500 Kostüme für Erwachsene und Kinder. Für ein Wochenende ab 15 Euro. Telefon 0541 772 40 18",
+              "hit": "Wir verleihen über 500 Kostüme für Erwachsene und Kinder."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "1",
+            "explanation": "Die Firma in Wil putzt Fenster, auch ganz oben. Sie hat lange Leitern.",
+            "evidence": {
+              "text": "Glanz & Klar, Wil Wir putzen Ihre Fenster, auch grosse Fenster oben im Dachgeschoss. Wir haben lange Leitern. Ab CHF 8.– pro Fenster. Termine von Montag bis Samstag: www.glanzundklar-wil.ch",
+              "hit": "Wir putzen Ihre Fenster, auch grosse Fenster oben im Dachgeschoss."
+            }
+          },
+          {
+            "n": 4,
+            "correct": "2",
+            "explanation": "Die Katzensitter in Mödling kommen zu dir nach Hause und geben der Katze Futter. In der Tierhandlung kaufst du nur Futter, aber niemand füttert die Katze.",
+            "evidence": {
+              "text": "Samtpfote, Mödling Sie sind im Urlaub? Wir besuchen Ihre Katze zweimal am Tag bei Ihnen zu Hause, geben Futter und spielen mit ihr. Telefon 0664 318 27 59",
+              "hit": "Wir besuchen Ihre Katze zweimal am Tag bei Ihnen zu Hause, geben Futter"
+            }
+          },
+          {
+            "n": 5,
+            "correct": "4",
+            "explanation": "In Lübeck kannst du Fotobücher bestellen. Die Tierhandlung macht nur Fotos von Tieren.",
+            "evidence": {
+              "text": "Fotowerk Lübeck Ihre schönsten Bilder als Buch! Fotobücher ab 20 Seiten mit festem Umschlag, einfach online bestellen. Nach drei Tagen ist Ihr Buch fertig. www.fotowerk-luebeck.de",
+              "hit": "Ihre schönsten Bilder als Buch!"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-06-t2-01",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.646Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Bürgerverein Oldenburg-Ost",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Laternenumzug für Groß und Klein",
+            "Montag, 9. November, um 18 Uhr",
+            "Start: vor der Grundschule Am Wall. Ende: um ca. 19 Uhr.",
+            "Bitte bringen Sie Ihre Laternen mit. Wir verkaufen keine Laternen."
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 6,
+              "statement": "Kann man beim Umzug Laternen kaufen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 7,
+              "statement": "Ist der Umzug am Abend?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "falsch",
+            "explanation": "Der Verein verkauft keine Laternen. Du musst deine Laterne selbst mitbringen.",
+            "evidence": {
+              "text": "Laternenumzug für Groß und Klein Montag, 9. November, um 18 Uhr Start: vor der Grundschule Am Wall. Ende: um ca. 19 Uhr. Bitte bringen Sie Ihre Laternen mit. Wir verkaufen keine Laternen.",
+              "hit": "Wir verkaufen keine Laternen."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "richtig",
+            "explanation": "Der Umzug beginnt um 18 Uhr und endet um 19 Uhr. Das ist am Abend.",
+            "evidence": {
+              "text": "Laternenumzug für Groß und Klein Montag, 9. November, um 18 Uhr Start: vor der Grundschule Am Wall. Ende: um ca. 19 Uhr. Bitte bringen Sie Ihre Laternen mit. Wir verkaufen keine Laternen.",
+              "hit": "Montag, 9. November, um 18 Uhr"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-06-t2-02",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.646Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Gymnasium Am Inn, Braunau",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Maturaball 2027",
+            "Samstag, 23. Jänner, im Stadtsaal Braunau. Einlass ab 20 Uhr.",
+            "Karten im Vorverkauf: € 18 im Sekretariat der Schule (Montag bis Freitag, 8 bis 12 Uhr).",
+            "An der Abendkasse: € 22. Wir freuen uns auf Sie!"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 8,
+              "statement": "Ist der Ball am Freitag?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 9,
+              "statement": "Kann man die Karten schon vor dem Ball kaufen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 8,
+            "correct": "falsch",
+            "explanation": "Der Ball ist am Samstag. Montag bis Freitag ist nur das Sekretariat für die Karten offen.",
+            "evidence": {
+              "text": "Maturaball 2027 Samstag, 23. Jänner, im Stadtsaal Braunau. Einlass ab 20 Uhr. Karten im Vorverkauf: € 18 im Sekretariat der Schule (Montag bis Freitag, 8 bis 12 Uhr). An der Abendkasse: € 22. Wir freuen uns auf Sie!",
+              "hit": "Samstag, 23. Jänner, im Stadtsaal Braunau."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "richtig",
+            "explanation": "Im Vorverkauf gibt es Karten im Sekretariat der Schule. Sie kosten dort nur 18 Euro.",
+            "evidence": {
+              "text": "Maturaball 2027 Samstag, 23. Jänner, im Stadtsaal Braunau. Einlass ab 20 Uhr. Karten im Vorverkauf: € 18 im Sekretariat der Schule (Montag bis Freitag, 8 bis 12 Uhr). An der Abendkasse: € 22. Wir freuen uns auf Sie!",
+              "hit": "Karten im Vorverkauf: € 18 im Sekretariat der Schule"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-06-t2-03",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.646Z",
+        "textType": "Kurze Anzeige (JA/NEIN)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen drei Anzeigen. Zu jeder Anzeige gibt es zwei Fragen. Kreuzen Sie an: JA oder NEIN.",
+        "reading": {
+          "sender": "Ferienpass Langenthal",
+          "source": "Anzeige",
+          "paragraphs": [
+            "Ferienpass Sommer 2027",
+            "Zwei Wochen voller Spass: Kurse und Ausflüge in den Sommerferien für Kinder von 6 bis 14 Jahren.",
+            "Preis: CHF 35.–",
+            "Das Programm kommt Anfang April per Post. Anmeldung nur online bis 15. Mai: www.ferienpass-langenthal.ch"
+          ]
+        },
+        "items": [
+          {
+            "type": "rf",
+            "item": {
+              "n": 10,
+              "statement": "Können 16-jährige Jugendliche mitmachen?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          },
+          {
+            "type": "rf",
+            "item": {
+              "n": 11,
+              "statement": "Kann man sich in einem Büro anmelden?",
+              "labels": [
+                "Ja",
+                "Nein"
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 10,
+            "correct": "falsch",
+            "explanation": "Der Ferienpass ist nur für Kinder von 6 bis 14 Jahren. Mit 16 Jahren bist du zu alt.",
+            "evidence": {
+              "text": "Ferienpass Sommer 2027 Zwei Wochen voller Spass: Kurse und Ausflüge in den Sommerferien für Kinder von 6 bis 14 Jahren. Preis: CHF 35.– Das Programm kommt Anfang April per Post. Anmeldung nur online bis 15. Mai: www.ferienpass-langenthal.ch",
+              "hit": "für Kinder von 6 bis 14 Jahren"
+            }
+          },
+          {
+            "n": 11,
+            "correct": "falsch",
+            "explanation": "Die Anmeldung geht nur online. Per Post kommt nur das Programm.",
+            "evidence": {
+              "text": "Ferienpass Sommer 2027 Zwei Wochen voller Spass: Kurse und Ausflüge in den Sommerferien für Kinder von 6 bis 14 Jahren. Preis: CHF 35.– Das Programm kommt Anfang April per Post. Anmeldung nur online bis 15. Mai: www.ferienpass-langenthal.ch",
+              "hit": "Anmeldung nur online bis 15. Mai"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a1-lesen-06-t3",
+      "exam": "oesd-a1",
+      "skill": "lesen",
+      "teil": 3,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.646Z",
+        "textType": "Kurze Aushänge (Bild zuordnen)"
+      },
+      "display": {
+        "instruction": "Situation: Sie lesen fünf kurze Texte an verschiedenen Orten. Welches Bild passt zu welchem Text? Achtung: Ein Bild passt nicht.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "1",
+                  "title": "Koffer, Gepäck",
+                  "text": "",
+                  "picto": "koffer"
+                },
+                {
+                  "key": "2",
+                  "title": "Glühbirne, Licht",
+                  "text": "",
+                  "picto": "licht"
+                },
+                {
+                  "key": "3",
+                  "title": "Elektroschrott: alter Fernseher und Computer",
+                  "text": "",
+                  "picto": "elektroschrott"
+                },
+                {
+                  "key": "4",
+                  "title": "Kinderwagen",
+                  "text": "",
+                  "picto": "kinderwagen"
+                },
+                {
+                  "key": "5",
+                  "title": "Tiere füttern verboten",
+                  "text": "",
+                  "picto": "fuettern-verboten"
+                },
+                {
+                  "key": "6",
+                  "title": "Batterie",
+                  "text": "",
+                  "picto": "batterie"
+                }
+              ],
+              "situations": [
+                {
+                  "n": 12,
+                  "text": "Liebe Bewohnerinnen und Bewohner! Bitte stellen Sie keine Kinderwagen ins Stiegenhaus. Für Kinderwagen gibt es einen eigenen Raum im Erdgeschoß, links neben der Haustür. Danke! Die Hausverwaltung"
+                },
+                {
+                  "n": 13,
+                  "text": "Liebe Kundinnen und Kunden! Alte Batterien gehören nicht in den Müll. Sie können sie hier an der Kasse abgeben. Das kostet nichts."
+                },
+                {
+                  "n": 14,
+                  "text": "Liebe Mieterinnen und Mieter! Im Keller brennt oft die ganze Nacht das Licht. Gehen Sie aus dem Keller? Dann schalten Sie bitte das Licht aus. Danke!"
+                },
+                {
+                  "n": 15,
+                  "text": "Liebe Besucherinnen und Besucher des Wildparks! Bitte geben Sie den Tieren nichts zu essen. Unsere Tiere bekommen spezielles Futter. Sonst werden sie krank."
+                },
+                {
+                  "n": 16,
+                  "text": "Liebe Hotelgäste! Sie möchten nach dem Check-out noch die Stadt ansehen? Dann lassen Sie Ihre grossen Koffer bis 18 Uhr bei uns an der Rezeption."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 12,
+            "correct": "4",
+            "explanation": "Der Text sagt, wo die Kinderwagen stehen sollen. Das passt zum Bild mit dem Kinderwagen.",
+            "evidence": {
+              "text": "Liebe Bewohnerinnen und Bewohner! Bitte stellen Sie keine Kinderwagen ins Stiegenhaus. Für Kinderwagen gibt es einen eigenen Raum im Erdgeschoß, links neben der Haustür. Danke! Die Hausverwaltung",
+              "hit": "Für Kinderwagen gibt es einen eigenen Raum im Erdgeschoß"
+            }
+          },
+          {
+            "n": 13,
+            "correct": "6",
+            "explanation": "Hier gibt man alte Batterien ab. Das Bild mit Fernseher und Computer zeigt andere Geräte.",
+            "evidence": {
+              "text": "Liebe Kundinnen und Kunden! Alte Batterien gehören nicht in den Müll. Sie können sie hier an der Kasse abgeben. Das kostet nichts.",
+              "hit": "Alte Batterien gehören nicht in den Müll."
+            }
+          },
+          {
+            "n": 14,
+            "correct": "2",
+            "explanation": "Man soll im Keller das Licht ausschalten. Das passt zur Glühbirne.",
+            "evidence": {
+              "text": "Liebe Mieterinnen und Mieter! Im Keller brennt oft die ganze Nacht das Licht. Gehen Sie aus dem Keller? Dann schalten Sie bitte das Licht aus. Danke!",
+              "hit": "Dann schalten Sie bitte das Licht aus."
+            }
+          },
+          {
+            "n": 15,
+            "correct": "5",
+            "explanation": "Im Wildpark darf man die Tiere nicht füttern. Das zeigt das Verbotszeichen.",
+            "evidence": {
+              "text": "Liebe Besucherinnen und Besucher des Wildparks! Bitte geben Sie den Tieren nichts zu essen. Unsere Tiere bekommen spezielles Futter. Sonst werden sie krank.",
+              "hit": "Bitte geben Sie den Tieren nichts zu essen."
+            }
+          },
+          {
+            "n": 16,
+            "correct": "1",
+            "explanation": "Die Gäste können ihre Koffer an der Rezeption lassen. Das passt zum Bild mit dem Koffer.",
+            "evidence": {
+              "text": "Liebe Hotelgäste! Sie möchten nach dem Check-out noch die Stadt ansehen? Dann lassen Sie Ihre grossen Koffer bis 18 Uhr bei uns an der Rezeption.",
+              "hit": "Dann lassen Sie Ihre grossen Koffer bis 18 Uhr bei uns an der Rezeption."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

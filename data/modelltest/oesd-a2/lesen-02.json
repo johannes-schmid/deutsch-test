@@ -1,0 +1,389 @@
+{
+  "exam": "oesd-a2",
+  "skill": "lesen",
+  "number": 2,
+  "title": "Modelltest 2",
+  "blocks": [
+    {
+      "id": "oesd-a2-lesen-02-t1",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 1,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.682Z",
+        "textType": "Kurze Zeitungsmeldungen"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst die zehn Überschriften und dann die fünf Texte. Welche Überschrift passt zu welchem Text? Es gibt nur eine richtige Lösung pro Text.",
+        "items": [
+          {
+            "type": "match",
+            "noMatch": false,
+            "data": {
+              "ads": [
+                {
+                  "key": "A",
+                  "title": "Jetzt den Reisepass beantragen",
+                  "text": ""
+                },
+                {
+                  "key": "B",
+                  "title": "Sicher über die Straße zur Schule",
+                  "text": ""
+                },
+                {
+                  "key": "C",
+                  "title": "Ladestationen für Elektroautos",
+                  "text": ""
+                },
+                {
+                  "key": "D",
+                  "title": "Bürgeramt am Donnerstag länger offen",
+                  "text": ""
+                },
+                {
+                  "key": "E",
+                  "title": "Schulbus fährt im Winter früher",
+                  "text": ""
+                },
+                {
+                  "key": "F",
+                  "title": "Solaranlage auf dem Rathausdach",
+                  "text": ""
+                },
+                {
+                  "key": "G",
+                  "title": "Neue Tablets für Schulkinder",
+                  "text": ""
+                },
+                {
+                  "key": "H",
+                  "title": "Strom sparen im Haushalt",
+                  "text": ""
+                },
+                {
+                  "key": "I",
+                  "title": "Formulare jetzt auch online",
+                  "text": ""
+                },
+                {
+                  "key": "K",
+                  "title": "Neue Hausnummern in der Siedlung",
+                  "text": ""
+                }
+              ],
+              "situations": [
+                {
+                  "n": 1,
+                  "text": "Göttingen. Das Bürgeramt im Neuen Rathaus hat ab April jeden Donnerstag bis 19 Uhr geöffnet. So können auch Berufstätige nach der Arbeit kommen. An den anderen Tagen schließt das Amt wie bisher um 16 Uhr. Einen Termin können Sie wie immer am Telefon oder auf www.buergeramt-goettingen.de buchen.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 2,
+                  "text": "Wolfsberg. Die Gemeinde bezahlt 30 neue Tablets für die Volksschule am Weyerplatz. Ab Herbst lernen die Kinder der dritten und vierten Klassen damit Lesen und Rechnen. Die Geräte bleiben in der Schule, die Kinder nehmen sie nicht mit nach Hause. Die Lehrerinnen besuchen im Sommer einen Kurs dazu.",
+                  "origin": "aus einer österreichischen Zeitung"
+                },
+                {
+                  "n": 3,
+                  "text": "Schaffhausen. Mit ein paar einfachen Tipps brauchen Haushalte weniger Strom und sparen Geld, heisst es bei den Stadtwerken. Waschen Sie mit 30 statt mit 60 Grad. Kochen Sie im Wasserkocher nur so viel Wasser, wie Sie brauchen. Ein alter Kühlschrank braucht viel mehr Strom als ein neuer. So viel kosten die Geräte pro Jahr:",
+                  "origin": "aus einer Schweizer Zeitung",
+                  "table": [
+                    [
+                      "Gerät",
+                      "kWh pro Jahr",
+                      "Kosten in CHF"
+                    ],
+                    [
+                      "Kühlschrank",
+                      "250",
+                      "75.–"
+                    ],
+                    [
+                      "Waschmaschine",
+                      "180",
+                      "54.–"
+                    ],
+                    [
+                      "Wasserkocher",
+                      "90",
+                      "27.–"
+                    ]
+                  ]
+                },
+                {
+                  "n": 4,
+                  "text": "Erfurt. Vor den Sommerferien wollen viele Familien noch schnell einen Reisepass. Das Bürgerbüro rät: Kommen Sie nicht erst im Juni! Im Moment dauert es etwa sechs Wochen, bis der neue Pass fertig ist. Bitte bringen Sie ein aktuelles Foto und Ihren alten Ausweis mit. Den Antrag stellen Sie persönlich, online geht das nicht.",
+                  "origin": "aus einer deutschen Zeitung"
+                },
+                {
+                  "n": 5,
+                  "text": "Krems. Jeden Morgen um halb acht stehen Gertrude und Walter mit gelben Westen an der Wiener Straße. Die beiden Pensionisten helfen den Kindern auf dem Schulweg über die Kreuzung. Dort fahren um diese Zeit sehr viele Autos. Ein Schulbus fährt hier nicht, die meisten Kinder gehen zu Fuß.",
+                  "origin": "aus einer österreichischen Zeitung"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 1,
+            "correct": "D",
+            "explanation": "Das Bürgeramt hat am Donnerstag bis 19 Uhr offen, also länger. Online kann man Termine schon immer buchen, das ist nicht neu.",
+            "evidence": {
+              "text": "Göttingen. Das Bürgeramt im Neuen Rathaus hat ab April jeden Donnerstag bis 19 Uhr geöffnet. So können auch Berufstätige nach der Arbeit kommen. An den anderen Tagen schließt das Amt wie bisher um 16 Uhr. Einen Termin können Sie wie immer am Telefon oder auf www.buergeramt-goettingen.de buchen.",
+              "hit": "Das Bürgeramt im Neuen Rathaus hat ab April jeden Donnerstag bis 19 Uhr geöffnet."
+            }
+          },
+          {
+            "n": 2,
+            "correct": "G",
+            "explanation": "Die Gemeinde kauft neue Tablets für die Kinder der Volksschule. Um den Schulweg oder einen Schulbus geht es nicht.",
+            "evidence": {
+              "text": "Wolfsberg. Die Gemeinde bezahlt 30 neue Tablets für die Volksschule am Weyerplatz. Ab Herbst lernen die Kinder der dritten und vierten Klassen damit Lesen und Rechnen. Die Geräte bleiben in der Schule, die Kinder nehmen sie nicht mit nach Hause. Die Lehrerinnen besuchen im Sommer einen Kurs dazu.",
+              "hit": "Die Gemeinde bezahlt 30 neue Tablets für die Volksschule am Weyerplatz."
+            }
+          },
+          {
+            "n": 3,
+            "correct": "H",
+            "explanation": "Die Stadtwerke geben Tipps, wie man zu Hause weniger Strom braucht. Von Elektroautos oder einer Solaranlage steht nichts im Text.",
+            "evidence": {
+              "text": "Schaffhausen. Mit ein paar einfachen Tipps brauchen Haushalte weniger Strom und sparen Geld, heisst es bei den Stadtwerken. Waschen Sie mit 30 statt mit 60 Grad. Kochen Sie im Wasserkocher nur so viel Wasser, wie Sie brauchen. Ein alter Kühlschrank braucht viel mehr Strom als ein neuer. So viel kosten die Geräte pro Jahr:",
+              "hit": "Mit ein paar einfachen Tipps brauchen Haushalte weniger Strom und sparen Geld"
+            }
+          },
+          {
+            "n": 4,
+            "correct": "A",
+            "explanation": "Ein neuer Pass dauert sechs Wochen, darum soll man ihn jetzt beantragen. Online geht der Antrag nicht, also passt I nicht.",
+            "evidence": {
+              "text": "Erfurt. Vor den Sommerferien wollen viele Familien noch schnell einen Reisepass. Das Bürgerbüro rät: Kommen Sie nicht erst im Juni! Im Moment dauert es etwa sechs Wochen, bis der neue Pass fertig ist. Bitte bringen Sie ein aktuelles Foto und Ihren alten Ausweis mit. Den Antrag stellen Sie persönlich, online geht das nicht.",
+              "hit": "Das Bürgerbüro rät: Kommen Sie nicht erst im Juni! Im Moment dauert es etwa sechs Wochen, bis der neue Pass fertig ist."
+            }
+          },
+          {
+            "n": 5,
+            "correct": "B",
+            "explanation": "Zwei Pensionisten helfen den Kindern über eine Kreuzung mit viel Verkehr. Einen Schulbus gibt es dort nicht.",
+            "evidence": {
+              "text": "Krems. Jeden Morgen um halb acht stehen Gertrude und Walter mit gelben Westen an der Wiener Straße. Die beiden Pensionisten helfen den Kindern auf dem Schulweg über die Kreuzung. Dort fahren um diese Zeit sehr viele Autos. Ein Schulbus fährt hier nicht, die meisten Kinder gehen zu Fuß.",
+              "hit": "Die beiden Pensionisten helfen den Kindern auf dem Schulweg über die Kreuzung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "oesd-a2-lesen-02-t2",
+      "exam": "oesd-a2",
+      "skill": "lesen",
+      "teil": 2,
+      "status": "draft",
+      "generated": {
+        "model": "claude-opus-5-5",
+        "at": "2026-10-24T19:59:13.682Z",
+        "textType": "Zeitungsbericht über eine Person"
+      },
+      "display": {
+        "instruction": "Lesen Sie zuerst den Text. Lösen Sie dann die Aufgaben: Kreuzen Sie bei jeder Aufgabe die richtige Antwort an, a, b oder c.",
+        "reading": {
+          "sender": "Ischler Wochenblatt",
+          "source": "aus einer österreichischen Zeitung",
+          "paragraphs": [
+            "Der Schach-Opa von Bad Ischl",
+            "Herbert Steiner ist 73 Jahre alt. Früher war er Elektriker, seit acht Jahren ist er in Pension. Langweilig ist ihm aber nie, denn er hat eine große Liebe: das Schachspiel.",
+            "Gelernt hat er es als Bub von seiner Großmutter. „Mein Vater hat nie Zeit gehabt, er war immer in der Werkstatt“, erzählt er. „Aber die Oma hat jeden Sonntag mit mir gespielt.“",
+            "Heute gibt er sein Wissen weiter. Jeden Mittwoch kommen etwa 15 Kinder zwischen sieben und zwölf Jahren in den Pfarrsaal. Der Kurs ist gratis. Die Eltern geben nur ein paar Euro für den Kuchen, und dieses Geld bekommt die Pfarre.",
+            "Am liebsten spielen die Kinder gegen den Schach-Opa selbst. „Manchmal gewinnen sie sogar, und dann sind sie natürlich sehr stolz“, sagt er und lacht. Die Übungen aus den Schachbüchern finden viele dagegen langweilig.",
+            "Ein Mädchen ist besonders gut: Lea, elf Jahre alt, hat im letzten Jahr ein Turnier in der Region gewonnen. Jetzt trainiert sie zweimal pro Woche.",
+            "Und die Zukunft? „Ich werde nicht jünger“, sagt Herbert Steiner. Darum sucht er jetzt einen jüngeren Helfer oder eine Helferin. Dann kann die Gruppe weitermachen, auch wenn er einmal nicht mehr kommen kann."
+          ]
+        },
+        "items": [
+          {
+            "type": "choice",
+            "item": {
+              "n": 0,
+              "prompt": "Herbert Steiner hat früher …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "als Elektriker gearbeitet."
+                },
+                {
+                  "key": "b",
+                  "label": "in einer Schule unterrichtet."
+                },
+                {
+                  "key": "c",
+                  "label": "für die Pfarre gearbeitet."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 6,
+              "prompt": "Das Schachspielen hat ihm … beigebracht.",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "sein Vater"
+                },
+                {
+                  "key": "b",
+                  "label": "ein Lehrer in der Schule"
+                },
+                {
+                  "key": "c",
+                  "label": "seine Großmutter"
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 7,
+              "prompt": "Für den Kurs …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "zahlen die Eltern ein paar Euro."
+                },
+                {
+                  "key": "b",
+                  "label": "bekommt die Pfarre Geld von der Stadt."
+                },
+                {
+                  "key": "c",
+                  "label": "müssen die Familien nichts bezahlen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 8,
+              "prompt": "Die Kinder kommen vor allem, weil sie …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "gern mit Schachbüchern üben."
+                },
+                {
+                  "key": "b",
+                  "label": "gegen Herbert Steiner spielen dürfen."
+                },
+                {
+                  "key": "c",
+                  "label": "dort immer Kuchen bekommen."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 9,
+              "prompt": "Lea …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "hilft Herbert Steiner beim Kurs."
+                },
+                {
+                  "key": "b",
+                  "label": "trainiert nur am Mittwoch."
+                },
+                {
+                  "key": "c",
+                  "label": "war bei einem Turnier die Beste."
+                }
+              ]
+            }
+          },
+          {
+            "type": "choice",
+            "item": {
+              "n": 10,
+              "prompt": "Herbert Steiner möchte …",
+              "options": [
+                {
+                  "key": "a",
+                  "label": "eine jüngere Person für die Gruppe finden."
+                },
+                {
+                  "key": "b",
+                  "label": "mit dem Kurs bald aufhören."
+                },
+                {
+                  "key": "c",
+                  "label": "noch mehr Kinder in die Gruppe holen."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "key": {
+        "answers": [
+          {
+            "n": 6,
+            "correct": "c",
+            "explanation": "Seine Oma hat jeden Sonntag mit ihm gespielt. Der Vater hatte dafür nie Zeit.",
+            "evidence": {
+              "text": "Der Schach-Opa von Bad Ischl Herbert Steiner ist 73 Jahre alt. Früher war er Elektriker, seit acht Jahren ist er in Pension. Langweilig ist ihm aber nie, denn er hat eine große Liebe: das Schachspiel. Gelernt hat er es als Bub von seiner Großmutter. „Mein Vater hat nie Zeit gehabt, er war immer in der Werkstatt“, erzählt er. „Aber die Oma hat jeden Sonntag mit mir gespielt.“ Heute gibt er sein Wissen weiter. Jeden Mittwoch kommen etwa 15 Kinder zwischen sieben und zwölf Jahren in den Pfarrsaal. Der Kurs ist gratis. Die Eltern geben nur ein paar Euro für den Kuchen, und dieses Geld bekommt die Pfarre. Am liebsten spielen die Kinder gegen den Schach-Opa selbst. „Manchmal gewinnen sie sogar, und dann sind sie natürlich sehr stolz“, sagt er und lacht. Die Übungen aus den Schachbüchern finden viele dagegen langweilig. Ein Mädchen ist besonders gut: Lea, elf Jahre alt, hat im letzten Jahr ein Turnier in der Region gewonnen. Jetzt trainiert sie zweimal pro Woche. Und die Zukunft? „Ich werde nicht jünger“, sagt Herbert Steiner. Darum sucht er jetzt einen jüngeren Helfer oder eine Helferin. Dann kann die Gruppe weitermachen, auch wenn er einmal nicht mehr kommen kann.",
+              "hit": "Gelernt hat er es als Bub von seiner Großmutter."
+            }
+          },
+          {
+            "n": 7,
+            "correct": "c",
+            "explanation": "Der Kurs ist gratis, die Familien zahlen also nichts dafür. Die paar Euro sind nur für den Kuchen.",
+            "evidence": {
+              "text": "Der Schach-Opa von Bad Ischl Herbert Steiner ist 73 Jahre alt. Früher war er Elektriker, seit acht Jahren ist er in Pension. Langweilig ist ihm aber nie, denn er hat eine große Liebe: das Schachspiel. Gelernt hat er es als Bub von seiner Großmutter. „Mein Vater hat nie Zeit gehabt, er war immer in der Werkstatt“, erzählt er. „Aber die Oma hat jeden Sonntag mit mir gespielt.“ Heute gibt er sein Wissen weiter. Jeden Mittwoch kommen etwa 15 Kinder zwischen sieben und zwölf Jahren in den Pfarrsaal. Der Kurs ist gratis. Die Eltern geben nur ein paar Euro für den Kuchen, und dieses Geld bekommt die Pfarre. Am liebsten spielen die Kinder gegen den Schach-Opa selbst. „Manchmal gewinnen sie sogar, und dann sind sie natürlich sehr stolz“, sagt er und lacht. Die Übungen aus den Schachbüchern finden viele dagegen langweilig. Ein Mädchen ist besonders gut: Lea, elf Jahre alt, hat im letzten Jahr ein Turnier in der Region gewonnen. Jetzt trainiert sie zweimal pro Woche. Und die Zukunft? „Ich werde nicht jünger“, sagt Herbert Steiner. Darum sucht er jetzt einen jüngeren Helfer oder eine Helferin. Dann kann die Gruppe weitermachen, auch wenn er einmal nicht mehr kommen kann.",
+              "hit": "Der Kurs ist gratis."
+            }
+          },
+          {
+            "n": 8,
+            "correct": "b",
+            "explanation": "Am liebsten spielen die Kinder gegen den Schach-Opa selbst. Die Übungen aus den Büchern finden viele langweilig.",
+            "evidence": {
+              "text": "Der Schach-Opa von Bad Ischl Herbert Steiner ist 73 Jahre alt. Früher war er Elektriker, seit acht Jahren ist er in Pension. Langweilig ist ihm aber nie, denn er hat eine große Liebe: das Schachspiel. Gelernt hat er es als Bub von seiner Großmutter. „Mein Vater hat nie Zeit gehabt, er war immer in der Werkstatt“, erzählt er. „Aber die Oma hat jeden Sonntag mit mir gespielt.“ Heute gibt er sein Wissen weiter. Jeden Mittwoch kommen etwa 15 Kinder zwischen sieben und zwölf Jahren in den Pfarrsaal. Der Kurs ist gratis. Die Eltern geben nur ein paar Euro für den Kuchen, und dieses Geld bekommt die Pfarre. Am liebsten spielen die Kinder gegen den Schach-Opa selbst. „Manchmal gewinnen sie sogar, und dann sind sie natürlich sehr stolz“, sagt er und lacht. Die Übungen aus den Schachbüchern finden viele dagegen langweilig. Ein Mädchen ist besonders gut: Lea, elf Jahre alt, hat im letzten Jahr ein Turnier in der Region gewonnen. Jetzt trainiert sie zweimal pro Woche. Und die Zukunft? „Ich werde nicht jünger“, sagt Herbert Steiner. Darum sucht er jetzt einen jüngeren Helfer oder eine Helferin. Dann kann die Gruppe weitermachen, auch wenn er einmal nicht mehr kommen kann.",
+              "hit": "Am liebsten spielen die Kinder gegen den Schach-Opa selbst."
+            }
+          },
+          {
+            "n": 9,
+            "correct": "c",
+            "explanation": "Lea hat letztes Jahr ein Turnier in der Region gewonnen. Sie trainiert zweimal pro Woche, nicht nur am Mittwoch.",
+            "evidence": {
+              "text": "Der Schach-Opa von Bad Ischl Herbert Steiner ist 73 Jahre alt. Früher war er Elektriker, seit acht Jahren ist er in Pension. Langweilig ist ihm aber nie, denn er hat eine große Liebe: das Schachspiel. Gelernt hat er es als Bub von seiner Großmutter. „Mein Vater hat nie Zeit gehabt, er war immer in der Werkstatt“, erzählt er. „Aber die Oma hat jeden Sonntag mit mir gespielt.“ Heute gibt er sein Wissen weiter. Jeden Mittwoch kommen etwa 15 Kinder zwischen sieben und zwölf Jahren in den Pfarrsaal. Der Kurs ist gratis. Die Eltern geben nur ein paar Euro für den Kuchen, und dieses Geld bekommt die Pfarre. Am liebsten spielen die Kinder gegen den Schach-Opa selbst. „Manchmal gewinnen sie sogar, und dann sind sie natürlich sehr stolz“, sagt er und lacht. Die Übungen aus den Schachbüchern finden viele dagegen langweilig. Ein Mädchen ist besonders gut: Lea, elf Jahre alt, hat im letzten Jahr ein Turnier in der Region gewonnen. Jetzt trainiert sie zweimal pro Woche. Und die Zukunft? „Ich werde nicht jünger“, sagt Herbert Steiner. Darum sucht er jetzt einen jüngeren Helfer oder eine Helferin. Dann kann die Gruppe weitermachen, auch wenn er einmal nicht mehr kommen kann.",
+              "hit": "Lea, elf Jahre alt, hat im letzten Jahr ein Turnier in der Region gewonnen."
+            }
+          },
+          {
+            "n": 10,
+            "correct": "a",
+            "explanation": "Er sucht einen jüngeren Helfer oder eine Helferin für die Gruppe. Aufhören will er nicht, die Gruppe soll weitermachen.",
+            "evidence": {
+              "text": "Der Schach-Opa von Bad Ischl Herbert Steiner ist 73 Jahre alt. Früher war er Elektriker, seit acht Jahren ist er in Pension. Langweilig ist ihm aber nie, denn er hat eine große Liebe: das Schachspiel. Gelernt hat er es als Bub von seiner Großmutter. „Mein Vater hat nie Zeit gehabt, er war immer in der Werkstatt“, erzählt er. „Aber die Oma hat jeden Sonntag mit mir gespielt.“ Heute gibt er sein Wissen weiter. Jeden Mittwoch kommen etwa 15 Kinder zwischen sieben und zwölf Jahren in den Pfarrsaal. Der Kurs ist gratis. Die Eltern geben nur ein paar Euro für den Kuchen, und dieses Geld bekommt die Pfarre. Am liebsten spielen die Kinder gegen den Schach-Opa selbst. „Manchmal gewinnen sie sogar, und dann sind sie natürlich sehr stolz“, sagt er und lacht. Die Übungen aus den Schachbüchern finden viele dagegen langweilig. Ein Mädchen ist besonders gut: Lea, elf Jahre alt, hat im letzten Jahr ein Turnier in der Region gewonnen. Jetzt trainiert sie zweimal pro Woche. Und die Zukunft? „Ich werde nicht jünger“, sagt Herbert Steiner. Darum sucht er jetzt einen jüngeren Helfer oder eine Helferin. Dann kann die Gruppe weitermachen, auch wenn er einmal nicht mehr kommen kann.",
+              "hit": "Darum sucht er jetzt einen jüngeren Helfer oder eine Helferin."
+            }
+          }
+        ]
+      },
+      "exampleAnswers": [
+        "a"
+      ]
+    }
+  ]
+}
