@@ -1,4 +1,5 @@
 import { Host_Grotesk, JetBrains_Mono, Onest, Reddit_Mono } from "next/font/google"
+import { Clarity } from "@/components/analytics/clarity"
 import "./landing.css"
 
 const hostGrotesk = Host_Grotesk({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-host" })
@@ -9,5 +10,10 @@ const onest = Onest({ subsets: ["cyrillic"], variable: "--font-cyr", preload: fa
 const jetbrainsMono = JetBrains_Mono({ subsets: ["cyrillic"], variable: "--font-cyrmono", preload: false, adjustFontFallback: false, fallback: [] })
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
-  return <div className={`${hostGrotesk.variable} ${redditMono.variable} ${onest.variable} ${jetbrainsMono.variable}`}>{children}</div>
+  return (
+    <div className={`${hostGrotesk.variable} ${redditMono.variable} ${onest.variable} ${jetbrainsMono.variable}`}>
+      {children}
+      <Clarity />
+    </div>
+  )
 }

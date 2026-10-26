@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Host_Grotesk, Reddit_Mono } from "next/font/google"
+import { Clarity } from "@/components/analytics/clarity"
 import { DesignShell } from "@/components/design/shell"
 import "../(main)/landing.css"
 
@@ -19,6 +20,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           {children}
         </div>
       </DesignShell>
+      <Clarity />
     </div>
   )
 }

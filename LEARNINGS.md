@@ -697,3 +697,9 @@
 **Outcome:** SUCCESS (tsc, eslint, `next build`; screenshots at 390 + 1440 of every admin page and the drawer with a throwaway local admin, deleted afterwards)
 **What worked / went wrong:** Reusing the portal's `PortalLink` / `SideGroup` gave the admin sidebar active states and folding for free. The Funnel table clipped its last two columns at 1440 until cells went to px-3 and the DTZ used its short name.
 **Lesson:** One nav definition feeds desktop and mobile. Local admin screenshots: magic-link session + a temporary `admin_users` row via the secret key, Playwright from `../inburgering-website/node_modules` (this repo has none).
+
+## 2026-10-26 — Microsoft Clarity
+**Changed:** `components/analytics/clarity.tsx` (next/script, production builds only) rendered in the `(main)`, `(app)` and `(auth)` layouts; `(admin)` has none.
+**Outcome:** SUCCESS (tsc, eslint, `next build`; `next start` shows the tag on /, /gratis-test, /anmelden)
+**What worked / went wrong:** Putting the tag per route group instead of the root layout keeps the admin out without a pathname check (which `cacheComponents` would force into Suspense). No consent banner exists yet: Clarity enforces consent signals for EEA visitors since 2025-10-31, so German sessions run cookieless until `clarity('consentv2', …)` is wired to a banner.
+**Lesson:** Scope third-party scripts by route-group layout; a curl check behind the proxy follows redirects, so read the status code before trusting a hit.

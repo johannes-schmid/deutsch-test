@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import { Host_Grotesk, Reddit_Mono } from "next/font/google"
+import { Clarity } from "@/components/analytics/clarity"
 import { DesignShell } from "@/components/design/shell"
 import { SiteGlow } from "@/components/design/site-chrome"
 import { AccountRow, Avatar, PortalMobileHeader, PortalSidebar, PortalTabBar, SidePlan } from "@/components/portal/portal-shell"
@@ -62,6 +63,7 @@ export default async function PortalLayout({ children }: { children: React.React
           <PortalTabBar />
         </div>
       </DesignShell>
+      <Clarity />
     </div>
   )
 }
