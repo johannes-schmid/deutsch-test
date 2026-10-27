@@ -3,8 +3,10 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 import { AdminPage, DataTable, Empty, Panel, PanelSkeleton, Progress, Section, TBODY, TD, TH, THEAD, TOTAL } from "@/components/admin/admin-ui"
+import { Sales, SalesSkeleton } from "@/components/admin/sales"
 import { requireAdmin } from "@/lib/admin/guard"
 import { ADMIN_EXAMS, modelltestPath } from "@/lib/admin/nav"
+import { isoWeek } from "@/lib/admin/sales"
 import { signupsPerWeek } from "@/lib/admin/stats"
 import { funnel } from "@/lib/kurztest/stats"
 import { MODELLTESTS } from "@/lib/portal"
@@ -13,14 +15,6 @@ import { SKILLS, setOverview } from "@/lib/modelltest/admin"
 export const metadata = { title: "Übersicht" }
 
 const DAY = 86_400_000
-
-/** ISO week number of a Monday given as YYYY-MM-DD. */
-function isoWeek(monday: string) {
-  const d = new Date(`${monday}T00:00:00Z`)
-  const thursday = new Date(d.getTime() + 3 * DAY)
-  const jan1 = Date.UTC(thursday.getUTCFullYear(), 0, 1)
-  return Math.floor((thursday.getTime() - jan1) / DAY / 7) + 1
-}
 
 const short = (d: Date) => d.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", timeZone: "UTC" })
 
@@ -130,9 +124,12 @@ async function Signups() {
 
 export default function AdminHomePage() {
   return (
-    <AdminPage title="Übersicht" description="Konten, Gratis-Test und der Stand der Modelltests auf einen Blick.">
+    <AdminPage title="Übersicht" description="Konten, Umsatz, Gratis-Test und der Stand der Modelltests auf einen Blick.">
       <Suspense fallback={<StatsSkeleton />}>
         <Stats />
+      </Suspense>
+      <Suspense fallback={<SalesSkeleton />}>
+        <Sales />
       </Suspense>
       <div id="konten" className="scroll-mt-24">
         <Section title="Neue Konten pro Woche" note="Woche von Montag bis Sonntag, deutsche Zeit. Zählt jedes Konto, das sich mit Google registriert hat.">

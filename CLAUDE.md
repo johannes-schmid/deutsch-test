@@ -330,6 +330,7 @@ lib/i18n/pass.ts                     # PassBuilder copy (de/uk/ru); components/d
 app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
 app/(admin)/admin/                   # /admin = stats + signups per week, /admin/kurztest = funnel, /admin/kurztest/emails = latest leads + CSV, /admin/modelltests = per-exam overview → [exam] slot grid → [exam]/[skill]/[n] review; Google login + `admin_users` allowlist (lib/admin/guard.ts, checked in proxy.ts and every page/route; also guards /design/kurztest)
+lib/admin/sales.ts · components/admin/sales{,-charts}.tsx # /admin sales: revenue, MRR/churn, conversion (pure + tested; loaded by salesOverview() in lib/admin/stats.ts; recharts via components/ui/chart.tsx)
 components/admin/                    # admin-shell (sidebar + mobile nav, from lib/admin/nav.ts), admin-drawer (client), admin-ui (AdminPage, Panel, DataTable, skeletons), modelltest-review
 proxy.ts                             # also: Supabase session refresh on /dashboard + auth pages; no session → /anmelden, session on auth pages → /dashboard
 lib/supabase/{client,server}.ts      # @supabase/ssr clients (publishable key, never the service key); getSessionUser() = Google profile only
