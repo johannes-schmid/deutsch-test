@@ -150,6 +150,12 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
     the Sprachbausteine; a shared-timer block like Lesen + Schreiben is drafted to fit that one timer).
   - **Exam-wide framing** (Anleitung, transitions, closing) lives outside the sets and is rendered once per exam.
   - Never draft a single skill of set *n* without the plan entries for the other skills of *n*.
+- **Lifecycle emails (Hannes, 2026-10-27):** at most **5 emails per person**, each kind once (Willkommen, Dein Stand,
+  Zahlung offen, Endspurt, Wie war's?), only with consent (§ 7 UWG): an unticked checkbox under every Google sign-up
+  button (opt-out is not valid consent in DE, Hannes agreed 2026-10-27), changeable in Konto; ≥ 48 h apart. Browser push
+  runs the same five moments (one moment, every channel the learner turned on; push toggle in Konto, iPhone needs the
+  home-screen app); the dashboard shows the next step in-app to everyone without a pass; a purchase ends the
+  series except "Wie war's?". Rules in `lib/lifecycle/rules.ts` (tested); drafts on the artifact page shown to Hannes.
 - **Prices include 19% VAT** for German consumers (OSS). Never show prices excluding VAT to
   consumers.
 - **One source of truth for prices** (`lib/pricing.ts`). Derived numbers (savings %, per-month
@@ -325,6 +331,12 @@ app/api/mollie/{checkout,webhook,status,cancel} · app/api/cron/reconcile-paymen
 lib/email/{resend,billing}.ts + templates/ # one Resend REST sender; activation + cancellation emails, contact-form mail to support@; nothing sends without RESEND_API_KEY
 app/(app)/dashboard/kontakt/          # portal contact form (components/portal/contact-form.tsx): topic + message → support inbox, reply-to = account email, 5/day via app_metadata.contact
 app/(main)/(site)/{agb,widerruf}/    # AGB, Widerrufsbelehrung + Muster-Formular; German only, linked in the footer legal line with "Verträge hier kündigen" (→ /dashboard/konto/kuendigen)
+lib/lifecycle/{rules,prefs}.ts       # lifecycle moments: nextEmail() (pure, *.test.ts) · examGoal() + CONSENT_VERSION; ExamDateWidget (countdown only, /dashboard aside) + ExamGoalForm (konto: exam, date, email consent, push switch) in components/portal/exam-goal.tsx → app/(app)/dashboard/goal-actions.ts
+lib/lifecycle/{state,push,push-copy}.ts # cron state per learner · web-push sender (VAPID env, drops 404/410) · push texts per moment (tested); public/sw.js shows them; app/(app)/dashboard/push-actions.ts stores subscriptions
+app/api/cron/lifecycle               # daily 07:00 UTC: claims the due moment in lifecycle_messages, sends push (email joins with its templates); CRON_SECRET
+components/portal/next-step.tsx      # in-app next step (next free Modelltest 1 → pass) for everyone without a pass
+lib/lifecycle/consent-cookie.ts      # sign-up checkbox → `lc_consent` cookie → app/auth/callback records it (recordSignupConsent)
+supabase/migrations/*_lifecycle_*.sql # lifecycle_prefs (exam (NULL = not chosen yet), exam_date, consent + version, unsubscribe token) + lifecycle_messages (moment log, channels) + push_subscriptions + lifecycle_emails (one row per sent kind, unique)
 lib/billing/cancel.ts                # cancelForUser(): the one cancel path (portal button)
 supabase/migrations/*_payments.sql   # payments (one row per Mollie payment, period, country, revoked) + mollie_customers (customer, subscription, canceled_at); server writes only
 lib/i18n/pass.ts                     # PassBuilder copy (de/uk/ru); components/design/pass-builder.tsx = the configurator

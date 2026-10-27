@@ -91,7 +91,7 @@ export const ru: KurztestCopy = {
     lead: (teil: number) => `Часть ${teil} уже ждёт. Войдите через Google. И вы продолжите прямо с этого места.`,
     free: "Бесплатно · платёжные данные не нужны",
     login: ["Уже есть аккаунт?", "Войти"],
-    google: { label: "Зарегистрироваться через Google", pending: "Открываем Google …" },
+    google: { label: "Зарегистрироваться через Google", pending: "Открываем Google …", consent: "Присылайте мне план подготовки до дня экзамена по электронной почте (на немецком, не больше 5 писем, с предложениями по Prüfungspass). Отписаться можно в любой момент." },
     hGraded: "Начните с бесплатного аккаунта",
     leadGraded: (speaking: boolean, n: number) =>
       speaking

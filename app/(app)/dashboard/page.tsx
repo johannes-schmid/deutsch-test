@@ -5,9 +5,18 @@ import { getSessionUser, type SessionUser } from "@/lib/supabase/server"
 import { portalFamilies, type PortalFamily } from "@/lib/portal"
 import { portalStats, type PortalStats } from "@/lib/modelltest/portal"
 import { EXAMS, type ExamId } from "@/lib/exams"
-import { isSkill } from "@/lib/kurztest/data"
+import { isExam, isSkill } from "@/lib/kurztest/data"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
+import { ExamDateWidget } from "@/components/portal/exam-goal"
+import { NextStepCard } from "@/components/portal/next-step"
+import { PushAutoSync } from "@/components/portal/push-sync"
+import { doneSkills } from "@/lib/lifecycle/state"
+import { passStatus } from "@/lib/entitlements"
+import { hasAccess } from "@/lib/billing/period"
+import type { Skill } from "@/lib/lifecycle/push-copy"
+import { examGoal } from "@/lib/lifecycle/prefs"
+import { daysUntil } from "@/lib/lifecycle/rules"
 
 const T = PORTAL_COPY
 
@@ -54,19 +63,32 @@ function Stats({ stats }: { stats: PortalStats }) {
   )
 }
 
+type Side = { goal: { exam: ExamId; examDate: string | null } | null; suggested: ExamId; next: { exam: ExamId; done: Skill[] } | null }
+
 async function UserOverview({ families }: { families: PortalFamily[] }) {
   const user = await getSessionUser()
-  const stats = user ? await portalStats(user.id) : EMPTY
+  const [stats, goal, pass] = user ? await Promise.all([portalStats(user.id), examGoal(user.id), passStatus(user.id)]) : [EMPTY, null, null]
   const started = families.filter((f) => f.exams.some((e) => stats.done[e.id])).length
+  const recent = stats.recent[0]?.exam
+  const exam: ExamId = goal?.exam ?? (isExam(recent) ? recent : "dtz")
+  const paying = pass ? hasAccess(pass, new Date()) : false
+  const side: Side | null = user
+    ? {
+        goal: goal?.exam ? { exam: goal.exam, examDate: goal.examDate } : null,
+        suggested: exam,
+        next: paying ? null : { exam, done: await doneSkills(user.id, exam) },
+      }
+    : null
   return (
     <>
       <Greeting user={user} date={today()} sub={started ? T.started(started) : T.sub} />
-      <Body families={families} stats={stats} />
+      <Body families={families} stats={stats} side={side} />
+      {user ? <PushAutoSync ask={!paying} /> : null}
     </>
   )
 }
 
-function Body({ families, stats }: { families: PortalFamily[]; stats: PortalStats }) {
+function Body({ families, stats, side = null }: { families: PortalFamily[]; stats: PortalStats; side?: Side | null }) {
   return (
     <section id="pruefungen" aria-labelledby="exams-h" className="mt-10 flex scroll-mt-24 flex-col gap-6">
       <h2 id="exams-h" className="text-[clamp(24px,2.6vw,30px)] leading-tight font-semibold tracking-[-0.02em]">
@@ -76,7 +98,9 @@ function Body({ families, stats }: { families: PortalFamily[]; stats: PortalStat
       <div className="grid grid-cols-[minmax(0,1fr)] gap-10 xl:grid-cols-[minmax(0,1fr)_300px] xl:gap-4">
         <Families families={families} stats={stats} />
         <aside className="flex flex-col gap-4 xl:sticky xl:top-8 xl:self-start">
+          {side?.next ? <NextStepCard exam={side.next.exam} done={side.next.done} /> : null}
           <Stats stats={stats} />
+          {side ? <ExamDateWidget goal={side.goal} suggested={side.suggested} left={side.goal?.examDate ? daysUntil(side.goal.examDate, new Date()) : null} /> : null}
         </aside>
       </div>
     </section>

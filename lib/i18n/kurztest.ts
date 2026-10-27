@@ -3,6 +3,7 @@
 
 import type { ExamId } from "@/lib/exams"
 import type { SiteLocale } from "./locale"
+import { AUTH_COPY } from "./portal"
 import { uk, ukPages } from "./kurztest.uk"
 import { ru, ruPages } from "./kurztest.ru"
 import { page as oesdA1 } from "./exam-pages/oesd-a1"
@@ -91,7 +92,7 @@ const de = {
     lead: (teil: number) => `Teil ${teil} wartet schon. Melde dich mit Google an. Dann machst du genau hier weiter.`,
     free: "Gratis · keine Zahlungsdaten nötig",
     login: ["Schon ein Konto?", "Anmelden"],
-    google: { label: "Mit Google registrieren", pending: "Google wird geöffnet …" },
+    google: { label: "Mit Google registrieren", pending: "Google wird geöffnet …", consent: AUTH_COPY.google.consent },
     hGraded: "Starte mit einem Gratis-Konto",
     leadGraded: (speaking: boolean, n: number) =>
       speaking

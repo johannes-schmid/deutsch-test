@@ -1,7 +1,11 @@
 // German only for now: the portal gets the explanation locales when next-intl lands (LEARNINGS 2026-10-12).
 
+// TODO(hannes): consent wording to be checked by a lawyer (§ 7 UWG, Art. 7 DSGVO); a change needs a new CONSENT_VERSION
+// (lib/lifecycle/prefs.ts). The uk/ru sign-up cards carry translations of the same sentence.
+const EMAIL_CONSENT = "Schick mir einen Lernplan bis zu meinem Prüfungstag per E-Mail (höchstens 5 Mails, mit Angeboten zum Prüfungspass). Abmelden geht jederzeit."
+
 export const AUTH_COPY = {
-  google: { register: "Mit Google registrieren", login: "Mit Google anmelden", pending: "Google wird geöffnet …" },
+  google: { register: "Mit Google registrieren", login: "Mit Google anmelden", pending: "Google wird geöffnet …", consent: EMAIL_CONSENT },
   register: {
     title: "Konto erstellen | deutschtest üben",
     h1: "Gratis weiterüben.",
@@ -282,6 +286,44 @@ export const PORTAL_COPY = {
     alreadyH: "Schon gekündigt",
     already: (date: string | null) => (date ? `Dein Pass verlängert sich nicht mehr. Er endet am ${date}.` : "Dein Pass verlängert sich nicht mehr."),
     back: "Zum Konto",
+  },
+  /** The in-app next step beside the stats (same moments as the lifecycle messages, shown to everyone without a pass). */
+  next: {
+    h: "Dein nächster Schritt",
+    start: (skill: string) => ({ title: `${skill}: Modelltest 1`, body: skill === "Hören" ? "25 Minuten, gratis. Dann weißt du, wo du stehst." : "Gratis. Wie in der echten Prüfung.", cta: `${skill} starten` }),
+    cont: (skill: string, done: number) => ({ title: `Weiter mit ${skill}`, body: `Du hast ${done} von 4 Teilen gemacht. Als Nächstes: ${skill}.`, cta: `${skill} starten` }),
+    all: { title: "Du kennst jetzt deinen Stand", body: "Mit dem Prüfungspass übst du mit allen Modelltests, für jede Prüfung.", cta: "Prüfungspass ansehen" },
+  },
+  /** Exam + date: the optional widget beside the stats on /dashboard; with email consent on /dashboard/konto. */
+  goal: {
+    widgetH: "Prüfungstermin",
+    widgetEmpty: "Trag deinen Termin ein. Dann siehst du, wie viel Zeit du noch hast.",
+    widgetNoDate: "Noch kein Termin. Trag ihn ein, sobald du ihn kennst.",
+    widgetPast: "Deine Prüfung ist vorbei. Machst du sie noch einmal? Trag den neuen Termin ein.",
+    days: (n: number) => (n === 1 ? "Tag bis zur Prüfung" : "Tage bis zur Prüfung"),
+    today: "Heute ist deine Prüfung. Viel Erfolg.",
+    add: "Termin eintragen",
+    edit: "Ändern",
+    cancel: "Abbrechen",
+    noDateYet: "Ich habe noch keinen Termin",
+    pushLabel: "Im Browser erinnern",
+    pushNote: "Höchstens 5 Mitteilungen bis zur Prüfung.",
+    pushBlocked: "Mitteilungen sind in deinem Browser blockiert. Du kannst sie in den Browser-Einstellungen erlauben.",
+    pushIos: "Auf dem iPhone geht das erst, wenn du die Seite zum Home-Bildschirm hinzufügst: In Safari auf „Teilen“ tippen, dann „Zum Home-Bildschirm“.",
+    pushFailed: "Das hat nicht geklappt. Versuch es noch einmal.",
+    settingsH: "Prüfung und Erinnerungen",
+    exam: "Prüfung",
+    dateH: "Termin",
+    hasDate: "Termin steht",
+    noDate: "Noch kein Termin",
+    dateLabel: "Datum der Prüfung",
+    consent: EMAIL_CONSENT,
+    save: "Speichern",
+    saving: "Wird gespeichert …",
+    saved: "Gespeichert.",
+    error: "Speichern hat nicht geklappt. Versuch es noch einmal.",
+    dateMissing: "Wähl ein Datum oder „Noch kein Termin“.",
+    dateInvalid: "Wähl ein Datum ab heute.",
   },
   /** /dashboard/kontakt: a message to support, sent from the signed-in account (reply goes to the account email). */
   contact: {

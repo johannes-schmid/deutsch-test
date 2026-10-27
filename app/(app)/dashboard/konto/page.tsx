@@ -13,6 +13,8 @@ import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { PORTAL_HOME } from "@/lib/auth/redirect"
 import { passView } from "@/lib/billing/view"
 import { RENEWAL, formatEuro } from "@/lib/pricing"
+import { ExamGoalForm } from "@/components/portal/exam-goal"
+import { examGoal, type ExamGoal } from "@/lib/lifecycle/prefs"
 
 const T = PORTAL_COPY
 
@@ -23,12 +25,15 @@ const dtzRows = (done: Record<string, { done: number }>): ProgressItem[] =>
 
 const free = (): PassView => ({ state: "free", until: null, renewal: formatEuro(RENEWAL.cents) })
 
-function Layout({ user, items, started, pass }: { user: SessionUser | null; items: ProgressItem[]; started: boolean; pass: PassView }) {
+function Layout({ user, items, started, pass, goal }: { user: SessionUser | null; items: ProgressItem[]; started: boolean; pass: PassView; goal?: ExamGoal | null }) {
   return (
     <>
       <AccountHead user={user} />
       <div className="mt-8 grid grid-cols-[minmax(0,1fr)] items-start gap-4 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <ProgressCard items={items} empty={started ? null : { href: portalPath("dtz") }} />
+        <div className="flex flex-col gap-4">
+          <ProgressCard items={items} empty={started ? null : { href: portalPath("dtz") }} />
+          {user && goal !== undefined ? <ExamGoalForm initial={{ exam: goal?.exam ?? "dtz", examDate: goal?.examDate ?? null, consent: goal?.consent ?? false, answered: !!goal?.exam }} /> : null}
+        </div>
         <div className="flex flex-col gap-4 lg:sticky lg:top-8">
           <PassCard pass={pass} />
           <AccountCard user={user} signOut={user ? <SignOutButton variant="full" /> : null} />
@@ -41,10 +46,10 @@ function Layout({ user, items, started, pass }: { user: SessionUser | null; item
 async function Account() {
   const user = await getSessionUser()
   if (!user) return <Layout user={null} items={dtzRows({})} started={false} pass={free()} />
-  const [stats, dtz, pass] = await Promise.all([portalStats(user.id), skillProgress("dtz", user.id), passView(user.id)])
+  const [stats, dtz, pass, goal] = await Promise.all([portalStats(user.id), skillProgress("dtz", user.id), passView(user.id), examGoal(user.id)])
   const others: ProgressItem[] = Object.entries(stats.done)
     .flatMap(([id, n]) => (id !== "dtz" && isExam(id) ? [{ id, brand: EXAMS[id].brand, label: EXAMS[id].short ?? EXAMS[id].name, href: portalPath(id), done: n, total: SKILLS.length * MODELLTESTS }] : []))
-  return <Layout user={user} items={[...dtzRows(dtz), ...others]} started={Object.keys(stats.done).length > 0} pass={pass} />
+  return <Layout user={user} items={[...dtzRows(dtz), ...others]} started={Object.keys(stats.done).length > 0} pass={pass} goal={goal} />
 }
 
 /** The account page, after inburgeringoefenen.nl's /dashboard/profiel: who you are, your pass, your progress. */

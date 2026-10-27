@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
     "/api/kurztest/**": ["./data/kurztest/drafts/**/*"],
   },
   partialPrefetching: true,
+  async headers() {
+    return [
+      // The push service worker (public/sw.js) must never be served stale, or a fix to it would not reach browsers.
+      { source: "/sw.js", headers: [{ key: "Cache-Control", value: "no-cache, no-store, must-revalidate" }, { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self'" }] },
+    ];
+  },
   async redirects() {
     return [
       // German became the default on 2026-10-12; English lives at /en.
