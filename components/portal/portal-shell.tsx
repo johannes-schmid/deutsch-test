@@ -1,12 +1,12 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { ArrowRight, Euro, LayoutGrid, ListChecks, UserRound } from "lucide-react"
+import { ArrowRight, Euro, LayoutGrid, ListChecks, MessageCircle, UserRound } from "lucide-react"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { PortalLink, SideGroup, SignOutButton } from "@/components/portal/portal-client"
 import type { SessionUser } from "@/lib/supabase/server"
 import type { Brand } from "@/lib/exams"
-import { PORTAL_ACCOUNT, PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
+import { PORTAL_ACCOUNT, PORTAL_CONTACT, PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { cn } from "@/lib/utils"
 
@@ -118,6 +118,12 @@ export function PortalSidebar({ groups, account, plan, className }: { groups: Na
       {T.nav.overview}
     </>
   )
+  const contact = (
+    <>
+      <MessageCircle className="size-[18px]" strokeWidth={2} aria-hidden="true" />
+      {T.nav.contact}
+    </>
+  )
   return (
     <aside className={cn("nz-chrome sticky top-3 z-20 m-3 me-0 hidden h-[calc(100dvh-24px)] w-[280px] shrink-0 flex-col gap-5 rounded-[28px] p-3 lg:flex", className)}>
       <Link href="/" className="w-fit rounded-lg px-2 pt-2">
@@ -152,6 +158,11 @@ export function PortalSidebar({ groups, account, plan, className }: { groups: Na
           </ul>
         </div>
       </nav>
+      <div className="-mb-3 flex flex-col">
+        <Suspense fallback={<Link href={PORTAL_CONTACT} className={SIDE_LINK}>{contact}</Link>}>
+          <PortalLink href={PORTAL_CONTACT} className={SIDE_LINK} activeClassName={SIDE_ACTIVE}>{contact}</PortalLink>
+        </Suspense>
+      </div>
       {plan ?? <SidePlan until={null} />}
       <div className="border-t border-v-line pt-2">{account}</div>
     </aside>
@@ -194,7 +205,7 @@ export function PortalTabBar({ className }: { className?: string }) {
     <nav aria-label={T.nav.overview} className={cn("fixed inset-x-0 bottom-[max(10px,env(safe-area-inset-bottom))] z-30 mx-auto w-[calc(100%-24px)] max-w-[440px] lg:hidden", className)}>
       <div className="nz-chrome flex h-16 items-stretch gap-1 rounded-full p-1.5">
         <Suspense fallback={<Link href={PORTAL_HOME} className={TAB}>{overview}</Link>}>
-          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE} nested except={[PORTAL_PASS, PORTAL_ACCOUNT]}>{overview}</PortalLink>
+          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE} nested except={[PORTAL_PASS, PORTAL_ACCOUNT, PORTAL_CONTACT]}>{overview}</PortalLink>
         </Suspense>
         {tabs.map(({ href, label, icon: Icon }) => {
           const body = (

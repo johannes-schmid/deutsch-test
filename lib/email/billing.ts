@@ -1,8 +1,8 @@
 import "server-only"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { PLANS, RENEWAL } from "@/lib/pricing"
-import { OPERATOR } from "@/lib/seo"
-import { activationEmail, cancellationEmail, type Email } from "@/lib/email/templates/billing"
+import { sendEmail } from "@/lib/email/resend"
+import { activationEmail, cancellationEmail } from "@/lib/email/templates/billing"
 
 /**
  * Sends the billing emails through Resend's REST API (drafts approved by Hannes 2026-10-24; changes to the wording need
@@ -10,20 +10,6 @@ import { activationEmail, cancellationEmail, type Email } from "@/lib/email/temp
  * Never throws: the payment or cancellation has already happened, so a mail outage must not turn it into an error.
  * Logs ids only, never addresses.
  */
-
-const FROM = process.env.EMAIL_FROM ?? "deutschtest üben <kontakt@deutschtest-ueben.de>"
-
-async function send(to: string, email: Email, idempotencyKey: string) {
-  const key = process.env.RESEND_API_KEY
-  if (!key) return false
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json", "Idempotency-Key": idempotencyKey },
-    body: JSON.stringify({ from: FROM, to, reply_to: OPERATOR.email, subject: email.subject, html: email.html, text: email.text }),
-  })
-  if (!res.ok) throw new Error(`resend ${res.status}`)
-  return true
-}
 
 async function recipient(userId: string) {
   const { data } = await createAdminClient().auth.admin.getUserById(userId)
@@ -49,11 +35,11 @@ export async function sendActivationEmail(molliePaymentId: string, userId: strin
     const to = row ? await recipient(userId) : null
     if (!row || !to) return
     const plan = PLANS.find((p) => p.id === row.plan_id)
-    await send(
-      to.email,
-      activationEmail({ firstName: to.firstName, planName: plan?.name ?? row.plan_id, paidCents: row.amount_cents, until: new Date(row.period_ends_at), renewalCents: RENEWAL.cents, consentAt: row.consent_at ? new Date(row.consent_at) : null }),
-      `activation-${molliePaymentId}`
-    )
+    await sendEmail({
+      to: to.email,
+      email: activationEmail({ firstName: to.firstName, planName: plan?.name ?? row.plan_id, paidCents: row.amount_cents, until: new Date(row.period_ends_at), renewalCents: RENEWAL.cents, consentAt: row.consent_at ? new Date(row.consent_at) : null }),
+      idempotencyKey: `activation-${molliePaymentId}`,
+    })
   } catch (err) {
     console.error("[billing-email] activation failed", molliePaymentId, err instanceof Error ? err.message : err)
   }
@@ -62,7 +48,7 @@ export async function sendActivationEmail(molliePaymentId: string, userId: strin
 /** The confirmation § 312k Abs. 4 BGB requires: what was cancelled, when it was received, when the contract ends. */
 export async function sendCancellationEmail(to: string, receivedAt: Date, until: Date | null, firstName: string | null = null) {
   try {
-    await send(to, cancellationEmail({ firstName, receivedAt, until }), `cancel-${receivedAt.getTime()}-${to.length}`)
+    await sendEmail({ to, email: cancellationEmail({ firstName, receivedAt, until }), idempotencyKey: `cancel-${receivedAt.getTime()}-${to.length}` })
   } catch (err) {
     console.error("[billing-email] cancellation failed", err instanceof Error ? err.message : err)
   }

@@ -39,7 +39,7 @@ export const OPERATOR = {
   // Same company and address as inburgeringoefenen.nl (its /terugbetalingsbeleid), checked 2026-10-24.
   address: "van Naeltwijckstraat 13, 2274 NV Voorburg, Niederlande" as string | null,
   phone: "+31 6 57587278",
-  email: "kontakt@deutschtest-ueben.de",
+  email: "support@deutschtest-ueben.de",
 }
 export const CONTACT_EMAIL = OPERATOR.email
 /** Legal pages stay noindex until the Impressum is complete. */

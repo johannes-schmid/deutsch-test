@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Check, Mail, ShieldCheck, Ticket } from "lucide-react"
+import { ArrowRight, Check, Mail, MessageCircle, ShieldCheck, Ticket } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { ExamMark, PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { Avatar } from "@/components/portal/portal-shell"
@@ -7,7 +7,7 @@ import { ProgressBar } from "@/components/portal/portal-overview"
 import type { Brand } from "@/lib/exams"
 import type { PartId } from "@/lib/exam/types"
 import type { SessionUser } from "@/lib/supabase/server"
-import { PORTAL_CANCEL, PORTAL_PASS } from "@/lib/auth/redirect"
+import { PORTAL_CANCEL, PORTAL_CONTACT, PORTAL_PASS } from "@/lib/auth/redirect"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 
 const T = PORTAL_COPY.konto
@@ -47,6 +47,12 @@ export function AccountCard({ user, signOut }: { user: SessionUser | null; signO
       <ul className="flex flex-col">
         <SettingsRow icon={Mail} label={T.email}><span className="truncate">{user?.email ?? " "}</span></SettingsRow>
         <SettingsRow icon={ShieldCheck} label={T.login}>{T.google}</SettingsRow>
+        <SettingsRow icon={MessageCircle} label={PORTAL_COPY.contact.rowH}>
+          <Link href={PORTAL_CONTACT} className="group flex items-center gap-1.5 rounded-full font-semibold text-v-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-v-ink">
+            {PORTAL_COPY.contact.rowLink}
+            <ArrowRight className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
+          </Link>
+        </SettingsRow>
       </ul>
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-[18px] bg-v-soft/60 p-4">
         <span className="text-[14.5px] text-v-muted">{T.signOutLead}</span>

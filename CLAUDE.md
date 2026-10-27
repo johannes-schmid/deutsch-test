@@ -322,7 +322,8 @@ components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/so
 lib/pricing.ts · seo/facts.md        # the one price source (Prüfungspass 1/3 Monate, then RENEWAL monthly) · every number/legal fact with source + date
 lib/billing/                         # ★ payments: period.ts (terms, grace), process.ts (idempotent payment → state, *.test.ts), mollie.ts (server adapters, syncPayment), view.ts (portal PassView)
 app/api/mollie/{checkout,webhook,status,cancel} · app/api/cron/reconcile-payments  # checkout (plan id + consent only) · webhook · return poll · Kündigung · daily re-sync (vercel.json)
-lib/email/{billing.ts,templates/billing.ts}  # activation + cancellation emails via Resend REST; nothing sends without RESEND_API_KEY
+lib/email/{resend,billing}.ts + templates/ # one Resend REST sender; activation + cancellation emails, contact-form mail to support@; nothing sends without RESEND_API_KEY
+app/(app)/dashboard/kontakt/          # portal contact form (components/portal/contact-form.tsx): topic + message → support inbox, reply-to = account email, 5/day via app_metadata.contact
 app/(main)/(site)/{agb,widerruf}/    # AGB, Widerrufsbelehrung + Muster-Formular; German only, linked in the footer legal line with "Verträge hier kündigen" (→ /dashboard/konto/kuendigen)
 lib/billing/cancel.ts                # cancelForUser(): the one cancel path (portal button)
 supabase/migrations/*_payments.sql   # payments (one row per Mollie payment, period, country, revoked) + mollie_customers (customer, subscription, canceled_at); server writes only
