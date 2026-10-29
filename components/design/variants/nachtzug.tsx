@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
 import { FORMAT_STAND } from "@/lib/design/content"
-import { PLANS, formatEuro } from "@/lib/pricing"
+import { formatEuro, priceLine } from "@/lib/pricing"
 import { LANDING, type LandingCopy } from "@/lib/i18n/landing"
 import { LOCALE_NAMES, NUMBER_LOCALE, lp, siteLocale, type Locale } from "@/lib/i18n/locale"
 import { Check, Clock as ClockIcon, Headphones, Lock } from "lucide-react"
@@ -213,7 +213,7 @@ function audienceArt(t: LandingCopy) {
 
 export function Nachtzug({ locale }: { locale: Locale }) {
   const t = LANDING[locale]
-  const price = formatEuro(PLANS.find((p) => p.featured)!.cents, NUMBER_LOCALE[locale])
+  const price = priceLine((cents) => formatEuro(cents, NUMBER_LOCALE[locale]))
   const art = audienceArt(t)
   return (
     <div>

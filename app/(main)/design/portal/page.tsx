@@ -131,9 +131,10 @@ export default function PortalDesignPage() {
               ]}
             />
             <div className="flex flex-col gap-4">
-              <PassCard pass={{ state: "free", until: null, renewal: "19,95 €" }} />
-              <PassCard pass={{ state: "renewing", until: "24. Januar 2027", renewal: "19,95 €" }} />
-              <PassCard pass={{ state: "canceled", until: "24. Januar 2027", renewal: "19,95 €" }} />
+              <PassCard pass={{ state: "free", until: null, renewal: "19,95 €", name: null, canUpgrade: false }} />
+              <PassCard pass={{ state: "renewing", until: "24. Januar 2027", renewal: "19,95 €", name: null, canUpgrade: false }} />
+              <PassCard pass={{ state: "renewing", until: "24. Januar 2027", renewal: "9,95 €", name: "Sprechen", canUpgrade: true }} />
+              <PassCard pass={{ state: "canceled", until: "24. Januar 2027", renewal: "19,95 €", name: null, canUpgrade: false }} />
               <AccountCard user={USER} signOut={null} />
             </div>
           </div>

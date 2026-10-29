@@ -160,7 +160,16 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   consumers.
 - **One source of truth for prices** (`lib/pricing.ts`). Derived numbers (savings %, per-month
   price) are computed, never typed in by hand.
-- **Check entitlement with one helper** (e.g. `ownsDtz(meta)`), never with a bare `plan` field.
+- **Pricing is switchable (Hannes, 2026-10-29):** offers (first term, renewal, grants) live in catalogues; `ACTIVE_CATALOGUE`
+  picks what is on sale. Every payment row stores a snapshot of what it bought (`catalogue`, `grants`, `term_months`,
+  `renewal_cents`), and access reads only that snapshot, so switching or changing prices never touches past buyers.
+  Never edit or delete a sold offer; add a new one. Plan for the per-skill Teil-Pass: artifact "Teil-Pass Pricing Draft".
+  Catalogues: `pass-2026-10` (on sale) and `teil-2026-11` (built, not on sale: any skills at 9.95 € each, all four = 3 ×
+  skill; one offer per pick of one or two skills plus all four, `coveringOffer()` turns a pick of three into all four;
+  adding skills later costs the monthly difference once (`upgradeCost()`), then the subscription moves to the new price). Try one locally with
+  `NEXT_PUBLIC_PRICING_CATALOGUE=teil-2026-11` in `.env.development.local` (ignored in production builds). Every copy
+  surface (pricing pages, home FAQ, AGB, lifecycle and activation emails) follows `ACTIVE_LAYOUT`.
+- **Check entitlement with one helper** (`canOpen(userId, exam, skill)`), never with a bare `plan` field.
   This bug shipped twice on the Dutch site: a paying customer read as `plan: 'free'`.
 - Every Schreiben/Sprechen feedback maps to the **official DTZ assessment criteria**.
 
@@ -325,7 +334,9 @@ app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}  # bra
 lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
 app/(main)/(site)/                   # German text pages on one layout: dtz, preise, a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, impressum, datenschutz
 components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/sources), TestCta, Todo marker
-lib/pricing.ts · seo/facts.md        # the one price source (Prüfungspass 1/3 Monate, then RENEWAL monthly) · every number/legal fact with source + date
+lib/pricing.ts · seo/facts.md        # the one price source: offers per catalogue, ACTIVE_CATALOGUE, offerById (any catalogue) / sellableOffer (checkout) · every number/legal fact with source + date
+lib/billing/grants.ts                # Grants (skills × exams × simulation), allows(), activeGrants(), parseGrants(); tested
+lib/billing/default-skill.ts         # mostPracticed(): the skill the Teil-Pass page preselects (tested); query in lib/modelltest/portal.ts
 lib/billing/                         # ★ payments: period.ts (terms, grace), process.ts (idempotent payment → state, *.test.ts), mollie.ts (server adapters, syncPayment), view.ts (portal PassView)
 app/api/mollie/{checkout,webhook,status,cancel} · app/api/cron/reconcile-payments  # checkout (plan id + consent only) · webhook · return poll · Kündigung · daily re-sync (vercel.json)
 lib/email/{resend,billing}.ts + templates/ # one Resend REST sender; activation + cancellation emails, contact-form mail to support@; nothing sends without RESEND_API_KEY
@@ -354,7 +365,7 @@ app/(auth)/{registrieren,anmelden}/  # Google-only sign-up/sign-in (noindex); co
 app/(app)/dashboard/                 # portal (login-only): overview by level → [exam] (4 skill cards) → [exam]/[skill] (10 Modelltests); components/portal/ = sidebar, tab bar, account, exam pages; /dashboard/preise (Prüfungspass) and /dashboard/konto (account: progress, pass, sign-in; portal-account.tsx)
 app/(app)/dashboard/[exam]/[skill]/[n]/ # ★ the Modelltest runner page + actions.ts (startAttempt, submitClosed, submitWriting, finishSpeaking; session + ownership checked in each)
 components/modelltest/               # runner.tsx (intro → test → result; Hören follows the one track, Lesen/Schreiben timed) · speaking.tsx (live pair exam)
-lib/entitlements.ts                  # ownsExam() + passStatus(): the one paid-access check, from `payments`; one active Prüfungspass = every exam (Modelltest 1 per skill is free)
+lib/entitlements.ts                  # canOpen(user, exam, skill) + passStatus(): the one paid-access check, from the grant snapshots on `payments` (Modelltest 1 per skill is free)
 lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
 lib/modelltest/speaking-telc.ts      # telc B1 Sprechen live: partner per Teil, Teil-1 extra topic, examiner rescue line, grading per Teil on the 4 official criteria (/75)
 lib/modelltest/anleitung-telc-b1.ts  # telc B1 Anleitung per skill (audio: scripts/modelltest/anleitung.ts --exam telc-b1)

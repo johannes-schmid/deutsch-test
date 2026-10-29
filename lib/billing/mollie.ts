@@ -3,7 +3,7 @@ import createMollieClient, { SubscriptionStatus } from "@mollie/api-client"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { SITE_URL } from "@/lib/seo"
 import { sendActivationEmail } from "@/lib/email/billing"
-import { processPayment, toCents, type BillingApi, type BillingStore, type PaymentRow } from "@/lib/billing/process"
+import { processPayment, snapshotColumns, toCents, type BillingApi, type BillingStore, type PaymentRow } from "@/lib/billing/process"
 
 /** Server-only Mollie + Supabase adapters for lib/billing/process.ts. MOLLIE_API_KEY is a `test_` key locally, `live_` only on Vercel. */
 
@@ -26,7 +26,17 @@ const euro = (cents: number) => ({ currency: "EUR", value: (cents / 100).toFixed
 /** Active, pending (waiting on a mandate) and suspended subscriptions can still charge, so they count as live. */
 const LIVE: string[] = [SubscriptionStatus.active, SubscriptionStatus.pending, SubscriptionStatus.suspended]
 
-type Row = { mollie_payment_id: string; user_id: string; plan_id: string; kind: "first" | "renewal"; amount_cents: number; status: string; subscription_id: string | null }
+type Row = {
+  mollie_payment_id: string
+  user_id: string
+  plan_id: string
+  kind: PaymentRow["kind"]
+  amount_cents: number
+  status: string
+  subscription_id: string | null
+}
+
+const ROW = "mollie_payment_id, user_id, plan_id, kind, amount_cents, status, subscription_id"
 
 const toRow = (r: Row): PaymentRow => ({
   molliePaymentId: r.mollie_payment_id,
@@ -48,14 +58,25 @@ export function supabaseStore(): BillingStore {
   const touch = () => ({ updated_at: new Date().toISOString() })
   return {
     async findPayment(id) {
-      const { data } = throwOn(await db.from("payments").select("mollie_payment_id, user_id, plan_id, kind, amount_cents, status, subscription_id").eq("mollie_payment_id", id).maybeSingle())
+      const { data } = throwOn(await db.from("payments").select(ROW).eq("mollie_payment_id", id).maybeSingle())
       return data ? toRow(data as Row) : null
     },
     async insertPayment(r) {
       throwOn(
         await db
           .from("payments")
-          .upsert({ mollie_payment_id: r.molliePaymentId, user_id: r.userId, plan_id: r.planId, kind: r.kind, amount_cents: r.amountCents, status: r.status }, { onConflict: "mollie_payment_id", ignoreDuplicates: true })
+          .upsert(
+            {
+              mollie_payment_id: r.molliePaymentId,
+              user_id: r.userId,
+              plan_id: r.planId,
+              kind: r.kind,
+              amount_cents: r.amountCents,
+              status: r.status,
+              ...snapshotColumns(r),
+            },
+            { onConflict: "mollie_payment_id", ignoreDuplicates: true }
+          )
       )
     },
     async setStatus(id, status) {
@@ -123,6 +144,9 @@ export function mollieApi(): BillingApi {
     },
     async cancelSubscriptions(customerId) {
       for (const s of await liveSubscriptions(customerId)) await client.customerSubscriptions.cancel(s.id, { customerId })
+    },
+    async updateSubscription(p) {
+      await client.customerSubscriptions.update(p.subscriptionId, { customerId: p.customerId, amount: euro(p.amountCents), description: p.description, metadata: p.metadata })
     },
   }
 }

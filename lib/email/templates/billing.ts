@@ -104,23 +104,26 @@ export function text({ hero, facts, note, after, footnote }: Body) {
 
 const legalLinks = `${link(`${SITE_URL}/agb`, "AGB")} · ${link(`${SITE_URL}/widerruf`, "Widerrufsbelehrung und Muster-Widerrufsformular")}`
 
-export function activationEmail({ firstName, planName, paidCents, until, renewalCents, consentAt = null }: { firstName: string | null; planName: string; paidCents: number; until: Date; renewalCents: number; consentAt?: Date | null }): Email {
+/** `skill`: the skills a Teil-Pass unlocks ("Schreiben und Sprechen"); null = every skill. TODO(hannes): approve this wording. */
+export function activationEmail({ firstName, planName, paidCents, until, renewalCents, skill = null, consentAt = null }: { firstName: string | null; planName: string; paidCents: number; until: Date; renewalCents: number | null; skill?: string | null; consentAt?: Date | null }): Email {
   const hi = firstName ? `Hallo ${esc(firstName)}, danke` : "Danke"
   const body: Body = {
     preheader: `Gültig bis ${formatDay(until)}. Viel Erfolg beim Üben.`,
     hero: {
       pill: { label: "Aktiv", glow: true },
       title: "Dein Prüfungspass ist aktiv",
-      lead: `${hi} für deinen Kauf. Du kannst jetzt alle Modelltests machen: Hören, Lesen, Schreiben und Sprechen.`,
+      lead: skill
+        ? `${hi} für deinen Kauf. Du kannst jetzt alle Modelltests für ${skill} machen, in jeder Prüfung.`
+        : `${hi} für deinen Kauf. Du kannst jetzt alle Modelltests machen: Hören, Lesen, Schreiben und Sprechen.`,
       label: "Bezahlt bis",
       big: formatDay(until),
       cta: { label: "Jetzt üben", href: `${SITE_URL}/dashboard` },
     },
     factsTitle: "Dein Pass",
     facts: [
-      ["Pass", `${planName} · alle Teile, alle Modelltests`],
+      ["Pass", skill ? `${planName} · alle Modelltests für ${skill}` : `${planName} · alle Teile, alle Modelltests`],
       ["Bezahlt", `${euro(paidCents)} inkl. MwSt.`],
-      ["Danach", `${euro(renewalCents)} im Monat`],
+      ...(renewalCents === null ? [] : [["Danach", `${euro(renewalCents)} im Monat`] as [string, string]]),
     ],
     note: `Nach dem ${formatDay(until)} verlängert sich dein Pass jeden Monat. Du kannst jederzeit kündigen, mit einem Klick in deinem Konto: ${link(`${SITE_URL}/dashboard/konto/kuendigen`, "Vertrag kündigen")}`,
     after: [

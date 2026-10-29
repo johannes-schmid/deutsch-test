@@ -1,6 +1,6 @@
 import "server-only"
 import { requireAdmin } from "@/lib/admin/guard"
-import { ownsExam } from "@/lib/entitlements"
+import { canOpen } from "@/lib/entitlements"
 import { indicativeLevel } from "@/lib/exam/band"
 import { isStartExam, typedRight } from "@/lib/exam/scoring/start"
 import { closedScore, type PartPoints } from "@/lib/exam/scoring/telc-b1"
@@ -32,7 +32,7 @@ async function setRow(exam: ExamId, skill: PartId, n: number) {
 export async function loadRunnerSet(exam: ExamId, skill: PartId, n: number, userId: string): Promise<Access> {
   const [set, admin] = await Promise.all([setRow(exam, skill, n), requireAdmin()])
   if (!set || (!set.published && !admin)) return { ok: false, reason: "missing" }
-  if (set.published && !set.is_free && !(await ownsExam(userId, exam))) return { ok: false, reason: "locked" }
+  if (set.published && !set.is_free && !(await canOpen(userId, exam, skill))) return { ok: false, reason: "locked" }
   const { data, error } = await createAdminClient().from(tableOf(skill)).select(ROW_COLUMNS).eq("set_id", set.id).order("teil").order("sort_order")
   if (error) throw error
   const blocks = (data as Row[]).map((r) => rowToBlock(r, exam, skill)).map(({ id, skill, teil, display, example, exampleAnswers }) => ({ id, skill, teil, display, ...(example ? { example } : {}), ...(exampleAnswers ? { exampleAnswers } : {}) }))

@@ -29,7 +29,7 @@ export const salesOverview = cache(async (): Promise<SalesView> => {
   const db = createAdminClient()
   const [payments, customers, signups] = await Promise.all([
     pages<SalePayment>((from, to) =>
-      db.from("payments").select("user_id, plan_id, kind, amount_cents, paid_at, period_ends_at, revoked_at").eq("status", "paid").not("paid_at", "is", null).order("paid_at").range(from, to),
+      db.from("payments").select("user_id, plan_id, kind, term_months, renewal_cents, amount_cents, paid_at, period_ends_at, revoked_at").eq("status", "paid").not("paid_at", "is", null).order("paid_at").range(from, to),
     ),
     pages<SaleCustomer>((from, to) => db.from("mollie_customers").select("user_id, subscription_id, canceled_at").order("user_id").range(from, to)),
     signupsPerWeek(),

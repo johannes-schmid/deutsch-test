@@ -51,7 +51,7 @@ async function Summary() {
     )
   const facts: [string, string][] = [
     [C.contract, C.contractName],
-    [C.price, C.priceValue(formatEuro(RENEWAL.cents))],
+    [C.price, C.priceValue(formatEuro(s.renewalCents ?? RENEWAL.cents))],
     [C.kind, C.kindValue],
     [C.ends, until!],
     ...(user.name ? [[C.name, user.name] as [string, string]] : []),

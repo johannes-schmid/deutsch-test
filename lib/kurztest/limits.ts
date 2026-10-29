@@ -1,6 +1,6 @@
 import "server-only"
 import { createHash } from "node:crypto"
-import { ownsExam } from "@/lib/entitlements"
+import { canOpen } from "@/lib/entitlements"
 import type { SessionUser } from "@/lib/supabase/server"
 import { FREE_PER_SKILL, verdict, type LimitError } from "./quota"
 import { countGradedSince } from "./store"
@@ -26,7 +26,7 @@ export async function checkLimit(ip: string, user: SessionUser, skill: "schreibe
     countGradedSince(d),
     countGradedSince(d, { column: "ip_hash", value: hashIp(ip) }),
     countGradedSince("1970-01-01T00:00:00Z", { column: "email", value: user.email.toLowerCase() }, skill),
-    ownsExam(user.id, "dtz"),
+    canOpen(user.id, "dtz", skill),
   ])
   return verdict({ usedForSkill, todayByIp, todayAll, paid }, { perSkill: FREE_PER_SKILL, perIp: PER_IP, daily: DAILY })
 }

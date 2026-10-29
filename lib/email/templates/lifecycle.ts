@@ -1,5 +1,5 @@
 import { EXAMS, portalPath, type ExamId } from "@/lib/exams"
-import { PLANS, RENEWAL, formatEuro } from "@/lib/pricing"
+import { ACTIVE_LAYOUT, PLANS, formatEuro } from "@/lib/pricing"
 import { SITE_URL } from "@/lib/seo"
 import { nextSkill, SKILL_ORDER, type Skill } from "@/lib/lifecycle/push-copy"
 import type { Due } from "@/lib/lifecycle/rules"
@@ -33,7 +33,11 @@ const days = (n: number) => `${n} ${n === 1 ? "Tag" : "Tage"}`
 const hi = (name: string | null) => (name ? `, ${esc(name)}` : "")
 
 const ASK = "Fragen? Antworte einfach auf diese E-Mail."
-const threeMonths = PLANS.find((p) => p.months === 3)!
+// The offers these emails quote: the Prüfungspass (terms) or the Teil-Pass (skills), whichever is on sale.
+// TODO(hannes): the Teil-Pass sentences below are drafts; approve them before that catalogue goes live.
+const featured = PLANS.find((p) => p.featured)!
+const oneSkill = PLANS.find((p) => p.grants.skills.length === 1)
+const monthly = formatEuro(featured.renews?.cents ?? featured.cents)
 
 function consentFooter(ctx: LifecycleContext) {
   const links = [ctx.unsubscribeUrl ? muted(ctx.unsubscribeUrl, "Abmelden") : null, muted(url("/dashboard/konto"), "Prüfungstermin ändern")].filter(Boolean).join(" · ")
@@ -41,7 +45,9 @@ function consentFooter(ctx: LifecycleContext) {
 }
 
 function passNote() {
-  return `Mit dem Prüfungspass hast du alle Modelltests in jedem Teil, für jede Prüfung. 3 Monate kosten ${formatEuro(threeMonths.cents)}, danach ${formatEuro(RENEWAL.cents)} im Monat. Jederzeit kündbar. Modelltest 1 bleibt gratis.`
+  if (ACTIVE_LAYOUT === "skills")
+    return `Mit dem Prüfungspass wählst du die Teile, die du brauchst: ${formatEuro(oneSkill!.cents)} pro Teil im Monat, alle vier für ${formatEuro(featured.cents)}, für jede Prüfung. Jederzeit kündbar. Modelltest 1 bleibt gratis.`
+  return `Mit dem Prüfungspass hast du alle Modelltests in jedem Teil, für jede Prüfung. 3 Monate kosten ${formatEuro(featured.cents)}, danach ${monthly} im Monat. Jederzeit kündbar. Modelltest 1 bleibt gratis.`
 }
 
 function freeRows(done: Skill[]): [string, string][] {
@@ -133,14 +139,14 @@ function zahlung(ctx: LifecycleContext): Body {
       title: "Hat etwas nicht geklappt?",
       lead: "Du wolltest den Prüfungspass kaufen. Die Zahlung ist nicht fertig geworden. Du kannst es einfach noch einmal versuchen.",
       label: "Zum Beispiel",
-      big: `3 Monate · ${formatEuro(threeMonths.cents)}`,
+      big: ACTIVE_LAYOUT === "skills" ? `1 Teil · ${formatEuro(oneSkill!.cents)}` : `3 Monate · ${formatEuro(featured.cents)}`,
       cta: { label: "Zahlung abschließen", href: url("/dashboard/preise") },
     },
     factsTitle: "Gut zu wissen",
     facts: [
-      ["Danach", `${formatEuro(RENEWAL.cents)} im Monat`],
+      ACTIVE_LAYOUT === "skills" ? ["Alle vier Teile", `${formatEuro(featured.cents)} im Monat`] : ["Danach", `${monthly} im Monat`],
       ["Kündigen", "jederzeit, mit einem Klick"],
-      ["Im Pass", "alle Prüfungen, alle Teile"],
+      ["Im Pass", ACTIVE_LAYOUT === "skills" ? "alle Prüfungen, die Teile, die du wählst" : "alle Prüfungen, alle Teile"],
     ],
     note: "Alle Preise inkl. MwSt.",
     after: ["Problem bei der Zahlung? Antworte auf diese E-Mail. Wir helfen dir."],
@@ -185,7 +191,10 @@ function endspurt(due: Due, ctx: LifecycleContext): Body {
       ["Nächste Woche", "Ein Probetag: alle vier Teile"],
       ["Der Tag davor", "Nichts Neues. Gut schlafen."],
     ],
-    note: `Für zwei Wochen reicht der Pass für 1 Monat: ${formatEuro(RENEWAL.cents)}. Du kannst jederzeit kündigen, mit einem Klick.`,
+    note:
+      ACTIVE_LAYOUT === "skills"
+        ? `Dein schwerster Teil kostet ${formatEuro(oneSkill!.cents)} im Monat, alle vier ${formatEuro(featured.cents)}. Du kannst jederzeit kündigen, mit einem Klick.`
+        : `Für zwei Wochen reicht der Pass für 1 Monat: ${monthly}. Du kannst jederzeit kündigen, mit einem Klick.`,
     after: [ASK],
     footnote,
   }

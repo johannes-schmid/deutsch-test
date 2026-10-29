@@ -1,6 +1,7 @@
 import "server-only"
 import { createAdminClient } from "@/lib/supabase/admin"
-import { PLANS, RENEWAL } from "@/lib/pricing"
+import { offerById } from "@/lib/pricing"
+import { parseGrants } from "@/lib/billing/grants"
 import { sendEmail } from "@/lib/email/resend"
 import { activationEmail, cancellationEmail } from "@/lib/email/templates/billing"
 
@@ -30,14 +31,16 @@ export async function sendActivationEmail(molliePaymentId: string, userId: strin
       .update({ activation_email_sent: true })
       .eq("mollie_payment_id", molliePaymentId)
       .eq("activation_email_sent", false)
-      .select("plan_id, amount_cents, period_ends_at, consent_at")
+      .select("plan_id, amount_cents, period_ends_at, consent_at, renewal_cents, grants")
     const row = claim?.[0]
     const to = row ? await recipient(userId) : null
     if (!row || !to) return
-    const plan = PLANS.find((p) => p.id === row.plan_id)
+    const plan = offerById(row.plan_id)
+    const skills = parseGrants(row.grants)?.skills ?? []
+    const SKILL_DE = { hoeren: "Hören", lesen: "Lesen", schreiben: "Schreiben", sprechen: "Sprechen" }
     await sendEmail({
       to: to.email,
-      email: activationEmail({ firstName: to.firstName, planName: plan?.name ?? row.plan_id, paidCents: row.amount_cents, until: new Date(row.period_ends_at), renewalCents: RENEWAL.cents, consentAt: row.consent_at ? new Date(row.consent_at) : null }),
+      email: activationEmail({ firstName: to.firstName, planName: plan?.name ?? row.plan_id, paidCents: row.amount_cents, until: new Date(row.period_ends_at), renewalCents: row.renewal_cents, skill: skills.length > 0 && skills.length < 4 ? skills.map((s) => SKILL_DE[s]).join(" und ") : null, consentAt: row.consent_at ? new Date(row.consent_at) : null }),
       idempotencyKey: `activation-${molliePaymentId}`,
     })
   } catch (err) {

@@ -23,4 +23,6 @@ export type PricePage = Omit<TextPage, "body" | "byline"> & {
   vatNote: string
   faq: ReactNode
   cta: { h2: string; text: string }
+  /** The wording for the Teil-Pass (catalogue layout "skills" in lib/pricing.ts); replaces these fields while it is active. */
+  skills: Pick<PricePage, "title" | "description" | "h1" | "h1Muted" | "lead" | "vatNote" | "faq">
 }

@@ -8,6 +8,8 @@ const pay = (p: Partial<SalePayment> & Pick<SalePayment, "paid_at">): SalePaymen
   user_id: "u1",
   plan_id: "1m",
   kind: "first",
+  term_months: 1,
+  renewal_cents: 1995,
   amount_cents: 1995,
   period_ends_at: null,
   revoked_at: null,
@@ -30,7 +32,7 @@ describe("computeSales", () => {
       signups: [],
       payments: [
         pay({ paid_at: "2026-10-27T08:00:00Z" }),
-        pay({ paid_at: "2026-10-26T22:30:00Z", amount_cents: 4495, plan_id: "3m" }),
+        pay({ paid_at: "2026-10-26T22:30:00Z", amount_cents: 4495, plan_id: "3m", term_months: 3 }),
         pay({ paid_at: "2026-10-20T12:00:00Z" }),
         pay({ paid_at: "2026-10-27T07:00:00Z", revoked_at: "2026-10-27T08:00:00Z" }),
       ],
@@ -57,7 +59,7 @@ describe("computeSales", () => {
       signups: [],
       payments: [
         pay({ user_id: "a", paid_at: "2026-10-10T10:00:00Z", period_ends_at: "2026-11-10T10:00:00Z" }),
-        pay({ user_id: "b", plan_id: "3m", amount_cents: 4495, paid_at: "2026-09-01T10:00:00Z", period_ends_at: "2026-12-01T10:00:00Z" }),
+        pay({ user_id: "b", plan_id: "3m", term_months: 3, amount_cents: 4495, paid_at: "2026-09-01T10:00:00Z", period_ends_at: "2026-12-01T10:00:00Z" }),
         pay({ user_id: "c", paid_at: "2026-10-15T10:00:00Z", period_ends_at: "2026-11-15T10:00:00Z" }),
         // Lapsed beyond the grace days: no longer recurring.
         pay({ user_id: "d", paid_at: "2026-08-01T10:00:00Z", period_ends_at: "2026-09-01T10:00:00Z" }),
@@ -70,6 +72,20 @@ describe("computeSales", () => {
     expect(s.canceled30).toBe(1)
     expect(s.churnPct).toBeCloseTo(100 / 3)
     expect(s.cancellations).toEqual([{ userId: "c", canceledAt: "2026-10-20T10:00:00Z", until: "2026-11-15T10:00:00Z" }])
+  })
+
+  it("counts an upgraded pass at its new monthly price, not at the one-off difference", () => {
+    const s = computeSales({
+      now,
+      signups: [],
+      customers: [{ user_id: "a", subscription_id: "sub_a", canceled_at: null }],
+      payments: [
+        pay({ user_id: "a", plan_id: "teil-sprechen", amount_cents: 995, renewal_cents: 995, paid_at: "2026-10-10T10:00:00Z", period_ends_at: "2026-11-10T10:00:00Z" }),
+        pay({ user_id: "a", plan_id: "teil-alle", kind: "upgrade", amount_cents: 1990, renewal_cents: 2985, paid_at: "2026-10-20T10:00:00Z", period_ends_at: "2026-11-10T10:00:00Z" }),
+      ],
+    })
+    expect(s.mrrCents).toBe(2985)
+    expect(s.total).toEqual({ cents: 2985, count: 2 })
   })
 
   it("keeps a renewing pass in the MRR during the grace days", () => {

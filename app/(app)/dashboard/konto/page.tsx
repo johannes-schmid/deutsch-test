@@ -23,7 +23,7 @@ export const metadata: Metadata = { title: T.konto.title }
 const dtzRows = (done: Record<string, { done: number }>): ProgressItem[] =>
   SKILLS.map((s) => ({ id: `dtz-${s}`, part: s, label: `DTZ · ${KURZTEST_COPY.names[s]}`, href: portalPath("dtz", s), done: done[s]?.done ?? 0, total: MODELLTESTS }))
 
-const free = (): PassView => ({ state: "free", until: null, renewal: formatEuro(RENEWAL.cents) })
+const free = (): PassView => ({ state: "free", until: null, renewal: formatEuro(RENEWAL.cents), name: null, canUpgrade: false })
 
 function Layout({ user, items, started, pass, goal }: { user: SessionUser | null; items: ProgressItem[]; started: boolean; pass: PassView; goal?: ExamGoal | null }) {
   return (

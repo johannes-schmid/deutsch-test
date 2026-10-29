@@ -62,7 +62,8 @@ export function AccountCard({ user, signOut }: { user: SessionUser | null; signO
   )
 }
 
-export type PassView = { state: "free" | "renewing" | "canceled" | "ended"; until: string | null; renewal: string }
+/** `name`: the one skill of a Teil-Pass (null = every skill); `canUpgrade`: a running Teil-Pass can switch to all four. */
+export type PassView = { state: "free" | "renewing" | "canceled" | "ended"; until: string | null; renewal: string; name: string | null; canUpgrade: boolean }
 
 /** The learner's Prüfungspass: free, renewing (paid until, monthly price, cancel link), cancelled (runs until) or ended. */
 export function PassCard({ pass }: { pass: PassView }) {
@@ -87,7 +88,14 @@ export function PassCard({ pass }: { pass: PassView }) {
           <span className="v-num rounded-full bg-v-soft px-2.5 py-1 text-[12.5px] font-medium">{T.passFree}</span>
         )}
       </div>
+      {pass.name && active ? <p className="-mt-1 text-[15px] font-semibold text-pretty">{pass.name}</p> : null}
       <p className={active ? "text-[15px] text-white/80 text-pretty" : "text-[15px] text-v-muted text-pretty"}>{lead}</p>
+      {pass.canUpgrade ? (
+        <VButton kind="light" render={<Link href={PORTAL_PASS} />} nativeButton={false} className="w-full">
+          {T.passUpgrade}
+          <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+        </VButton>
+      ) : null}
       {pass.state === "renewing" ? (
         <Link
           id="kuendigen"

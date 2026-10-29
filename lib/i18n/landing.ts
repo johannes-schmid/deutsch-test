@@ -1,4 +1,5 @@
 import { NUMBER_LOCALE, type Locale } from "./locale"
+import type { PriceLine } from "@/lib/pricing"
 import { uk } from "./landing.uk"
 import { ru } from "./landing.ru"
 
@@ -86,7 +87,10 @@ const de = {
   },
   faq: {
     h2: "Fragen",
-    price: (p: string) => `3 Monate kosten ${p}, inkl. MwSt. Der Gratis-Test kostet nichts.`,
+    price: (p: PriceLine) =>
+      p.layout === "terms"
+        ? `3 Monate kosten ${p.featured}, inkl. MwSt. Der Gratis-Test kostet nichts.`
+        : `Ein Teil kostet ${p.skill} im Monat, alle vier ${p.all}. Inkl. MwSt., jederzeit kündbar. Der Gratis-Test kostet nichts.`,
     items: [
       { q: "Kann ich den DTZ online üben?", a: "Ja. Bei uns machst du komplette DTZ-Modelltests im Browser oder auf dem Handy. Ein Test pro Teil ist gratis." },
       { q: "Was mache ich, wenn ich beim DTZ nur A2 hatte?", a: "Mach einen Modelltest. Dann siehst du, welcher Teil dir noch zu B1 fehlt, und übst genau diesen Teil." },
@@ -240,7 +244,10 @@ const en: LandingCopy = {
   },
   faq: {
     h2: "Questions",
-    price: (p: string) => `3 months cost ${p}, VAT included. The free test costs nothing.`,
+    price: (p: PriceLine) =>
+      p.layout === "terms"
+        ? `3 months cost ${p.featured}, VAT included. The free test costs nothing.`
+        : `One part costs ${p.skill} a month, all four ${p.all}. VAT included, cancel any time. The free test costs nothing.`,
     items: [
       { q: "Can I practice the DTZ online?", a: "Yes. You take complete DTZ mock exams in your browser or on your phone. One test per part is free." },
       { q: "What if I only got A2 in the DTZ?", a: "Take a mock exam. You'll see which part still keeps you from B1, and you practice exactly that part." },

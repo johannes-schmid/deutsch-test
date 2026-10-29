@@ -1,5 +1,4 @@
 import { hasAccess } from "@/lib/billing/period"
-import { planById } from "@/lib/pricing"
 
 // Sales numbers for /admin, from `payments` + `mollie_customers` (never user_metadata). Pure, so it is unit-tested; the
 // fetching lives in lib/admin/stats.ts. Days and weeks are Berlin time, like admin_signups_per_week().
@@ -7,7 +6,11 @@ import { planById } from "@/lib/pricing"
 export type SalePayment = {
   user_id: string | null
   plan_id: string
-  kind: "first" | "renewal"
+  kind: "first" | "renewal" | "upgrade"
+  /** Months the payment bought (the snapshot on the row), whatever the offer. */
+  term_months: number
+  /** What the subscription charges per month after this payment; null = a one-off offer. */
+  renewal_cents: number | null
   amount_cents: number
   paid_at: string
   period_ends_at: string | null
@@ -61,8 +64,6 @@ export function berlinWeek(at: Date | string) {
   return shiftDay(day, -((dow + 6) % 7))
 }
 
-const monthsOf = (planId: string) => (planId === "renewal" ? 1 : (planById(planId)?.months ?? 1))
-
 const pct = (part: number, whole: number) => (whole > 0 ? (part / whole) * 100 : null)
 
 export function computeSales({ payments, customers, signups, now = new Date() }: { payments: SalePayment[]; customers: SaleCustomer[]; signups: SignupWeek[]; now?: Date }): Sales {
@@ -76,12 +77,13 @@ export function computeSales({ payments, customers, signups, now = new Date() }:
   const byDay = (d: string) => tally(paid.filter((p) => berlinDay(p.paid_at) === d))
   const byWeek = (w: string) => tally(paid.filter((p) => berlinWeek(p.paid_at) === w))
 
-  // The latest paid period per customer decides access and what one month of their subscription is worth.
+  // The latest paid period per customer decides access and what one month of their subscription is worth. Payments come
+  // in paid order, so on an equal end the later one wins (an upgrade shares the end of the period it upgraded).
   const latest = new Map<string, SalePayment>()
   for (const p of paid) {
     if (!p.user_id || !p.period_ends_at) continue
     const prev = latest.get(p.user_id)
-    if (!prev || p.period_ends_at > prev.period_ends_at!) latest.set(p.user_id, p)
+    if (!prev || p.period_ends_at >= prev.period_ends_at!) latest.set(p.user_id, p)
   }
 
   let mrrCents = 0
@@ -93,7 +95,8 @@ export function computeSales({ payments, customers, signups, now = new Date() }:
   for (const c of customers) {
     const last = latest.get(c.user_id)
     const until = last?.period_ends_at ?? null
-    const monthly = last ? Math.round(last.amount_cents / monthsOf(last.plan_id)) : 0
+    // An upgrade pays only the difference once; the subscription is worth its new monthly price.
+    const monthly = !last ? 0 : last.kind === "upgrade" ? (last.renewal_cents ?? 0) : Math.round(last.amount_cents / last.term_months)
     if (c.canceled_at) {
       cancellations.push({ userId: c.user_id, canceledAt: c.canceled_at, until })
       if (now.getTime() - Date.parse(c.canceled_at) <= 30 * DAY) canceled30++

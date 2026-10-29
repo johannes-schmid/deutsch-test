@@ -18,7 +18,7 @@ export async function GET() {
     .from("payments")
     .select("mollie_payment_id, status, period_ends_at, plan_id")
     .eq("user_id", data.user.id)
-    .eq("kind", "first")
+    .in("kind", ["first", "upgrade"])
     .gte("created_at", since)
     .order("created_at", { ascending: false })
     .limit(1)

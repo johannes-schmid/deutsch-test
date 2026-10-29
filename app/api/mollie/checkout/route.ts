@@ -3,13 +3,17 @@ import { Locale, SequenceType } from "@mollie/api-client"
 import { createClient } from "@/lib/supabase/server"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { liveSubscriptions, mollie, mollieConfigured, webhookUrl } from "@/lib/billing/mollie"
-import { planById } from "@/lib/pricing"
+import { offerById, sellableOffer, upgradeCost } from "@/lib/pricing"
+import { snapshotColumns, snapshotOf } from "@/lib/billing/process"
 import { SITE_URL } from "@/lib/seo"
 
 /**
- * Starts a Prüfungspass purchase. The client posts only the plan id and the consent; the price comes from
- * lib/pricing.ts here, never from the request. A `first` payment on a Mollie customer creates the mandate the monthly
+ * Starts a Prüfungspass purchase. The client posts only the offer id and the consent; the offer must be in the active
+ * catalogue and its price comes from lib/pricing.ts here, never from the request. A `first` payment on a Mollie customer creates the mandate the monthly
  * renewal charges later; the subscription itself is created once the payment is paid (lib/billing/process.ts).
+ * A learner whose running pass the chosen offer extends (more skills, lib/pricing.ts upgradeCost) pays the monthly
+ * difference once (`oneoff`); the same subscription then moves to the new price. Any other purchase over a running
+ * subscription is refused (409).
  */
 export async function POST(req: Request) {
   const supabase = await createClient()
@@ -24,8 +28,8 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "bad_json" }, { status: 400 })
   }
-  const plan = planById(body.planId)
-  if (!plan) return NextResponse.json({ error: "bad_plan" }, { status: 400 })
+  const requested = offerById(body.planId)
+  if (!requested) return NextResponse.json({ error: "bad_plan" }, { status: 400 })
   if (body.consent !== true) return NextResponse.json({ error: "consent_required" }, { status: 400 })
 
   const db = createAdminClient()
@@ -33,7 +37,14 @@ export async function POST(req: Request) {
   try {
     const { data: cust } = await db.from("mollie_customers").select("customer_id").eq("user_id", user.id).maybeSingle()
     let customerId = cust?.customer_id as string | undefined
-    if (customerId && (await liveSubscriptions(customerId)).length > 0) return NextResponse.json({ error: "renewing" }, { status: 409 })
+    const live = customerId ? await liveSubscriptions(customerId) : []
+    const current = live[0] ? offerById((live[0].metadata as { planId?: unknown } | null)?.planId) : null
+    // An upgrade target counts even after its catalogue left sale, so passes sold before a switch can still upgrade.
+    const cost = current ? upgradeCost(current, requested) : null
+    const upgrade = cost !== null ? current : null
+    if (live.length > 0 && !upgrade) return NextResponse.json({ error: "renewing" }, { status: 409 })
+    const plan = upgrade ? requested : sellableOffer(requested.id)
+    if (!plan) return NextResponse.json({ error: "bad_plan" }, { status: 400 })
     if (!customerId) {
       const m = user.user_metadata ?? {}
       const created = await client.customers.create({ name: m.full_name ?? m.name ?? undefined, email: user.email ?? undefined, locale: Locale.de_DE, metadata: { userId: user.id }, idempotencyKey: `cust-${user.id}` })
@@ -46,16 +57,17 @@ export async function POST(req: Request) {
 
     const origin = process.env.VERCEL_ENV === "production" ? SITE_URL : new URL(req.url).origin
     const hook = webhookUrl()
+    const cents = cost ?? plan.cents
     const payment = await client.payments.create({
-      amount: { currency: "EUR", value: (plan.cents / 100).toFixed(2) },
-      description: `deutschtest üben Prüfungspass, ${plan.name}`,
+      amount: { currency: "EUR", value: (cents / 100).toFixed(2) },
+      description: upgrade ? `deutschtest üben Prüfungspass, Wechsel auf ${plan.name}` : `deutschtest üben Prüfungspass, ${plan.name}`,
       redirectUrl: `${origin}/dashboard/zahlung`,
       cancelUrl: `${origin}/dashboard/preise`,
       ...(hook ? { webhookUrl: hook } : {}),
       customerId,
-      sequenceType: SequenceType.first,
+      sequenceType: upgrade ? SequenceType.oneoff : SequenceType.first,
       locale: Locale.de_DE,
-      metadata: { kind: "pass", userId: user.id, planId: plan.id },
+      metadata: { kind: "pass", userId: user.id, planId: plan.id, ...(upgrade ? { upgradeFrom: upgrade.id } : {}) },
     })
 
     // Written before the redirect: the return poll finds the purchase by this row.
@@ -63,9 +75,10 @@ export async function POST(req: Request) {
       mollie_payment_id: payment.id,
       user_id: user.id,
       plan_id: plan.id,
-      kind: "first",
-      amount_cents: plan.cents,
+      kind: upgrade ? "upgrade" : "first",
+      amount_cents: cents,
       status: payment.status,
+      ...snapshotColumns(snapshotOf(plan, upgrade ? plan.renews! : plan)),
       consent_at: new Date().toISOString(),
     })
     if (error) console.error("[checkout] payments insert failed", payment.id, error.message)

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHeader, Prose } from "@/components/design/content-page"
 import { LEGAL_COMPLETE, OPERATOR, SITE_URL } from "@/lib/seo"
-import { PLANS, RENEWAL, formatEuro } from "@/lib/pricing"
+import { ACTIVE_LAYOUT, PLANS, RENEWAL, formatEuro } from "@/lib/pricing"
 
 export const metadata: Metadata = {
   title: "AGB | deutschtest üben",
@@ -13,10 +13,14 @@ export const metadata: Metadata = {
 
 // Draft after inburgeringoefenen.nl's /gebruiksvoorwaarden (same operator), adapted to German consumer law and the
 // Prüfungspass subscription. TODO(hannes): legal review (IT-Recht Kanzlei / Händlerbund or a lawyer) before go-live.
+// The Teil-Pass wording (ACTIVE_LAYOUT "skills", 2026-10-29) is a draft too and needs the same review before that switch.
 export default function AgbPage() {
   const mail = <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>
   const site = SITE_URL.replace("https://", "")
   const plans = PLANS.map((p) => `${p.name}: ${formatEuro(p.cents)}`).join(", ")
+  const skills = ACTIVE_LAYOUT === "skills"
+  const all = PLANS.find((p) => p.grants.skills.length === 4)
+  const one = PLANS.find((p) => p.grants.skills.length === 1)
   return (
     <>
       <PageHeader crumbs={[{ name: "Start", path: "/" }, { name: "AGB", path: "/agb" }]} h1="Allgemeine Geschäftsbedingungen" meta="Stand: 24. Oktober 2026" />
@@ -38,10 +42,18 @@ export default function AgbPage() {
           <li>
             <strong>Gratis:</strong> die Gratis-Tests ohne Konto und mit Konto Modelltest 1 in jedem Teil.
           </li>
-          <li>
-            <strong>Prüfungspass:</strong> Zugang zu allen Modelltests aller Prüfungen auf der Plattform, solange der
-            Pass läuft. Neue Modelltests, die während der Laufzeit erscheinen, sind inklusive.
-          </li>
+          {skills ? (
+            <li>
+              <strong>Prüfungspass:</strong> Zugang zu allen Modelltests der Prüfungsteile, die du wählst (Hören, Lesen,
+              Schreiben, Sprechen), aller Prüfungen auf der Plattform, solange der Pass läuft. Mit allen vier Teilen ist
+              auch die Prüfungssimulation dabei. Neue Modelltests, die während der Laufzeit erscheinen, sind inklusive.
+            </li>
+          ) : (
+            <li>
+              <strong>Prüfungspass:</strong> Zugang zu allen Modelltests aller Prüfungen auf der Plattform, solange der
+              Pass läuft. Neue Modelltests, die während der Laufzeit erscheinen, sind inklusive.
+            </li>
+          )}
         </ul>
         <p>
           Wir sind keine offizielle Stelle und nicht mit dem BAMF, telc, g.a.s.t., dem Goethe-Institut oder dem ÖSD
@@ -58,7 +70,7 @@ export default function AgbPage() {
 
         <h2>4. So kommt der Vertrag zustande</h2>
         <ol>
-          <li>Du wählst auf der Seite Prüfungspass die Laufzeit für den Start (1 oder 3 Monate).</li>
+          <li>{skills ? "Du wählst auf der Seite Prüfungspass einen oder mehrere Prüfungsteile." : "Du wählst auf der Seite Prüfungspass die Laufzeit für den Start (1 oder 3 Monate)."}</li>
           <li>Du bestätigst, dass der Pass sofort starten soll (siehe Nr. 7).</li>
           <li>
             Mit dem Klick auf <strong>„Zahlungspflichtig bestellen“</strong> gibst du ein verbindliches Angebot ab. Vorher
@@ -72,10 +84,20 @@ export default function AgbPage() {
         </p>
 
         <h2>5. Preise und Zahlung</h2>
-        <p>
-          Die Preise für die erste Laufzeit sind: {plans}. Danach kostet jeder weitere Monat {formatEuro(RENEWAL.cents)}.
-          Alle Preise sind Endpreise in Euro und enthalten die gesetzliche Umsatzsteuer.
-        </p>
+        {skills ? (
+          <p>
+            Jeder Prüfungsteil kostet {one ? formatEuro(one.cents) : null} im Monat. Alle vier Teile kosten zusammen{" "}
+            {all ? formatEuro(all.cents) : null} im Monat. Wählst du drei Teile, bekommst du alle vier zu diesem Preis. Jeder
+            weitere Monat kostet denselben Preis. Nimmst du während der Laufzeit Teile dazu, zahlst du für den Rest des
+            laufenden Monats einmal den Unterschied zum neuen Monatspreis, danach den neuen Monatspreis. Alle Preise sind
+            Endpreise in Euro und enthalten die gesetzliche Umsatzsteuer.
+          </p>
+        ) : (
+          <p>
+            Die Preise für die erste Laufzeit sind: {plans}. Danach kostet jeder weitere Monat {formatEuro(RENEWAL.cents)}.
+            Alle Preise sind Endpreise in Euro und enthalten die gesetzliche Umsatzsteuer.
+          </p>
+        )}
         <p>
           Du zahlst über Mollie B.V. (Amsterdam) mit den Zahlungsarten, die dort angezeigt werden. Die erste Laufzeit
           zahlst du bei der Bestellung. Jeden weiteren Monat buchen wir zu Beginn des Monats über dieselbe Zahlungsart ab.
@@ -83,7 +105,7 @@ export default function AgbPage() {
 
         <h2>6. Laufzeit, Verlängerung und Kündigung</h2>
         <ul>
-          <li>Die erste Laufzeit beträgt 1 oder 3 Monate, je nach deiner Wahl.</li>
+          <li>{skills ? "Die erste Laufzeit beträgt 1 Monat." : "Die erste Laufzeit beträgt 1 oder 3 Monate, je nach deiner Wahl."}</li>
           <li>Danach verlängert sich der Pass jeweils um 1 Monat, wenn du nicht kündigst.</li>
           <li>
             Du kannst <strong>jederzeit kündigen</strong>, ohne Frist, zum Ende der Laufzeit, die du schon bezahlt hast.

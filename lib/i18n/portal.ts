@@ -214,6 +214,7 @@ export const PORTAL_COPY = {
     crumb: "Prüfungspass",
     h1: "Dein Prüfungspass",
     lead: "Ein Pass für alle Teile und alle Modelltests. Nach der ersten Laufzeit verlängert er sich jeden Monat. Du kannst jederzeit kündigen.",
+    leadSkills: "Wähle die Teile, die dir noch fehlen. Alle vier bekommst du zum Preis von drei. Der Pass verlängert sich jeden Monat. Du kannst jederzeit kündigen.",
   },
   konto: {
     title: "Konto | deutschtest üben",
@@ -233,6 +234,7 @@ export const PORTAL_COPY = {
     passCta: "Prüfungspass ansehen",
     passBuyAgain: "Neuen Pass kaufen",
     passCancel: "Vertrag kündigen",
+    passUpgrade: "Teile dazunehmen",
     progressH: "Dein Fortschritt",
     progressEmpty: "Noch kein Modelltest gemacht. Starte mit Modelltest 1, er ist gratis.",
     progressStart: "Zum DTZ",

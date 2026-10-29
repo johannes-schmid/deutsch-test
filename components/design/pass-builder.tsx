@@ -3,11 +3,14 @@
 import { useId, useRef, useState, useSyncExternalStore } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { ArrowRight, CalendarCheck, CalendarClock, Check, LoaderCircle, Repeat } from "lucide-react"
+import { ArrowRight, CalendarCheck, CalendarClock, Check, LoaderCircle, Lock, Plus, Repeat } from "lucide-react"
 import { VButton } from "@/components/design/kit"
+import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { PASS_COPY } from "@/lib/i18n/pass"
 import { NUMBER_LOCALE, type SiteLocale } from "@/lib/i18n/locale"
-import { PLANS, RENEWAL, formatEuro, passEnds, perMonthCents, savingCents, savingsPercent, singleMonthsCents } from "@/lib/pricing"
+import { SKILLS } from "@/lib/billing/grants"
+import type { PartId } from "@/lib/exam/types"
+import { ACTIVE_LAYOUT, PLANS, RENEWAL, coveringOffer, formatEuro, offerById, passEnds, upgradeCost, perMonthCents, savingCents, savingsPercent, singleMonthsCents } from "@/lib/pricing"
 import { cn } from "@/lib/utils"
 
 const H = "text-[19px] leading-tight font-semibold tracking-[-0.01em]"
@@ -17,6 +20,42 @@ const FOCUS = "has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offse
 const noop = () => () => {}
 const todayKey = () => new Date().toDateString()
 
+type BuilderProps = {
+  locale: SiteLocale
+  freeHref: string
+  buyHref?: string
+  checkout?: boolean
+  renewing?: boolean
+  accountHref?: string
+  /** Skills layout: the skill to preselect (most practised); null preselects all four. */
+  defaultSkill?: PartId | null
+  /** Skills layout: the offer of the learner's running pass; its skills stay checked and adding more is a switch. */
+  current?: string | null
+}
+
+/** The configurator for the active catalogue (lib/pricing.ts): `terms` (the Prüfungspass) or `skills` (the Teil-Pass). */
+export function PassBuilder(props: BuilderProps) {
+  return ACTIVE_LAYOUT === "skills" ? <SkillPassBuilder {...props} /> : <TermPassBuilder {...props} />
+}
+
+const OPTION = cn(
+  "relative flex cursor-pointer flex-col gap-3 rounded-[20px] bg-v-surface p-5 shadow-[inset_0_0_0_1px_var(--v-line)] transition-[box-shadow,transform] duration-150 ease-out active:scale-[0.985]",
+  "hover:shadow-[inset_0_0_0_1px_color-mix(in_srgb,var(--v-ink)_35%,transparent)] has-[:checked]:shadow-[inset_0_0_0_2px_var(--v-ink)]",
+  FOCUS
+)
+
+/** The square tick of a multi-pick tile. */
+function CheckMark() {
+  return (
+    <span
+      className="absolute end-5 top-5 grid size-6 place-items-center rounded-[8px] shadow-[inset_0_0_0_1.5px_var(--v-line)] transition-[background-color,box-shadow] duration-150 ease-out peer-checked:bg-v-ink peer-checked:shadow-none peer-disabled:opacity-60 [&>svg]:opacity-0 peer-checked:[&>svg]:opacity-100"
+      aria-hidden="true"
+    >
+      <Check className="size-3.5 text-v-bg" strokeWidth={3} />
+    </span>
+  )
+}
+
 /**
  * The Prüfungspass configurator, after inburgeringoefenen.nl's ModulePicker: the choices on the left, the running
  * summary on a Nacht card on the right (sticky from lg, below the choices on phones). The exam date only recommends a
@@ -24,7 +63,7 @@ const todayKey = () => new Date().toDateString()
  * `checkout` (portal): consent + "Zahlungspflichtig bestellen" → Mollie. Otherwise (public /preise) the button leads to
  * `buyHref`, the portal page behind the Google sign-in. `renewing`: the learner already has a renewing pass.
  */
-export function PassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref }: { locale: SiteLocale; freeHref: string; buyHref?: string; checkout?: boolean; renewing?: boolean; accountHref?: string }) {
+function TermPassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref }: BuilderProps) {
   const T = PASS_COPY[locale]
   const numberLocale = NUMBER_LOCALE[locale]
   const [when, setWhen] = useState<string | null>(null)
@@ -191,8 +230,239 @@ export function PassBuilder({ locale, freeHref, buyHref, checkout = false, renew
   )
 }
 
+/**
+ * The Teil-Pass configurator (catalogue layout `skills`): pick any skills; all four come for the price of three, so a
+ * third pick shows the fourth as free and resolves to all four (lib/pricing.ts coveringOffer). The most practised skill is
+ * preselected. A learner with a running pass keeps their skills checked and locked; adding any turns the order into a
+ * switch (the monthly difference now, then the new price on the same subscription).
+ */
+function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref, defaultSkill = null, current = null }: BuilderProps) {
+  const T = PASS_COPY[locale]
+  const S = T.skills
+  const euro = (cents: number) => formatEuro(cents, NUMBER_LOCALE[locale])
+  const all = PLANS.find((p) => p.grants.skills.length === SKILLS.length)!
+  const one = PLANS.find((p) => p.grants.skills.length === 1)!
+  const running = renewing && current ? offerById(current) : null
+  const owned = running?.catalogue === all.catalogue ? running.grants.skills : []
+  const [picked, setPicked] = useState<PartId[]>(owned.length ? owned : defaultSkill ? [defaultSkill] : SKILLS)
+  const offer = coveringOffer(picked)
+  const isAll = offer?.id === all.id
+  const covered = offer?.grants.skills ?? []
+  const upgradeCents = running && offer ? upgradeCost(running, offer) : null
+  const unchanged = !!running && offer?.id === running.id
+  const today = useSyncExternalStore(noop, todayKey, () => null)
+  const ends = today && offer ? new Intl.DateTimeFormat(NUMBER_LOCALE[locale], { day: "numeric", month: "long", year: "numeric" }).format(passEnds(offer, new Date(today))) : null
+  const names = isAll ? S.all : S.names(covered)
+  const chip = "v-num rounded-full bg-v-soft px-2.5 py-1 text-[12px] font-medium whitespace-nowrap"
+  const nudge = S.nudge(picked.length, euro(one.cents), euro(all.cents))
+
+  const toggle = (s: PartId) => setPicked((p) => (p.includes(s) ? p.filter((x) => x !== s) : SKILLS.filter((x) => x === s || p.includes(x))))
+  const toggleAll = () => setPicked(isAll ? owned : SKILLS)
+  const tag = (s: PartId) => (owned.includes(s) ? S.yours : s === defaultSkill && !running ? S.mostPracticed : null)
+
+  return (
+    <div className="grid grid-cols-[minmax(0,1fr)] items-start gap-4 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <div className="nz-paper flex flex-col rounded-[28px] p-5 sm:p-7">
+        <fieldset className="flex flex-col">
+          <legend className="sr-only">{S.pickH}</legend>
+          <p className={H} aria-hidden="true">{S.pickH}</p>
+          <p className="mt-1.5 mb-4 text-[14.5px] text-pretty text-v-muted">{S.pickHint}</p>
+
+          <label className={cn(OPTION, "bg-[linear-gradient(135deg,var(--v-surface)_0%,color-mix(in_srgb,var(--p-glow)_14%,var(--v-surface))_100%)] sm:p-6")}>
+            <input type="checkbox" name="pass-all" checked={isAll} onChange={toggleAll} disabled={owned.length === SKILLS.length} className="peer sr-only" />
+            <span className="flex min-h-7 flex-wrap items-center gap-x-3 gap-y-2 pe-8">
+              <span className="flex gap-1" aria-hidden="true">
+                {SKILLS.map((s) => (
+                  <span key={s} className="size-2.5 rounded-full" style={{ background: `var(--v-sk-${s})` }} />
+                ))}
+              </span>
+              <b className="text-[17px] font-semibold">{S.all}</b>
+              {owned.length === SKILLS.length ? (
+                <span className={chip}>{S.yours}</span>
+              ) : (
+                <span className="rounded-full bg-(--p-glow) px-2.5 py-1 text-[12px] font-semibold whitespace-nowrap text-[#0A0D18]">{T.recommended}</span>
+              )}
+            </span>
+            <CheckMark />
+            <span className="flex items-baseline gap-2">
+              <span className="v-display text-[38px] leading-none tabular-nums">{euro(all.cents)}</span>
+              <span className="text-[14px] text-v-muted">{S.perMonth}</span>
+            </span>
+            <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[14px] text-v-muted">
+              <span className="v-num rounded-full bg-v-soft px-2 py-0.5 text-[12px] font-medium text-v-ink">{S.oneFree}</span>
+              <span>{S.instead(euro(one.cents))}</span>
+            </span>
+            <span className="text-[14.5px] text-pretty text-v-muted">{S.allNote}</span>
+          </label>
+
+          <div className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
+            {SKILLS.map((s) => {
+              const free = covered.includes(s) && !picked.includes(s)
+              const locked = owned.includes(s)
+              return (
+                <label
+                  key={s}
+                  className={cn(
+                    OPTION,
+                    free && "shadow-[inset_0_0_0_2px_color-mix(in_srgb,var(--p-glow)_80%,transparent)]",
+                    locked && "cursor-default active:scale-100"
+                  )}
+                >
+                  <input type="checkbox" name="pass-skill" value={s} checked={picked.includes(s)} onChange={() => toggle(s)} disabled={locked} className="peer sr-only" />
+                  <span className="flex min-h-9 flex-wrap items-center gap-x-3 gap-y-2 pe-8">
+                    <PartIcon part={s} size="sm" />
+                    <b className="text-[17px] font-semibold">{S.skillName[s]}</b>
+                    {free ? (
+                      <span className="rounded-full bg-(--p-glow) px-2.5 py-1 text-[12px] font-semibold whitespace-nowrap text-[#0A0D18]">{S.freeExtra}</span>
+                    ) : tag(s) ? (
+                      <span className={chip}>{tag(s)}</span>
+                    ) : null}
+                  </span>
+                  <CheckMark />
+                  <span className="flex items-baseline gap-2">
+                    <span className="v-display text-[30px] leading-none tabular-nums">{euro(one.cents)}</span>
+                    <span className="text-[14px] text-v-muted">{S.perMonth}</span>
+                  </span>
+                </label>
+              )
+            })}
+          </div>
+          {nudge ? (
+            <p aria-live="polite" className="mt-4 flex items-start gap-2 text-[14.5px] text-v-muted">
+              <Plus className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+              {nudge}
+            </p>
+          ) : null}
+        </fieldset>
+
+        <section aria-labelledby="pass-inc" className="mt-7 border-t border-v-line pt-7">
+          <h2 id="pass-inc" className={H}>{S.includesH}</h2>
+          <ul aria-live="polite" className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-x-6 gap-y-2.5 text-[15.5px] md:grid-cols-2">
+            {(isAll || !offer ? S.includesAll : S.includesSkills(covered)).map((f) => (
+              <li key={f} className="flex items-start gap-2.5">
+                <Check className="mt-1 size-4 shrink-0 text-v-accent" strokeWidth={2.5} aria-hidden="true" />
+                {f}
+              </li>
+            ))}
+            {offer && !isAll ? (
+              <li className="flex items-start gap-2.5 text-v-muted">
+                <Lock className="mt-1 size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
+                {S.noSimulation}
+              </li>
+            ) : null}
+          </ul>
+          <p className="mt-4 text-[14.5px] text-v-muted">{T.newTests}</p>
+        </section>
+
+        <section aria-labelledby="pass-free" className="mt-7 flex flex-col gap-3 rounded-[20px] bg-v-soft/60 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-1">
+            <h2 id="pass-free" className="text-[16px] font-semibold">{T.freeH}</h2>
+            <p className="text-[14.5px] text-v-muted">{T.free.join(" · ")}</p>
+          </div>
+          <Link href={freeHref} className="group flex min-h-11 w-fit shrink-0 items-center gap-1.5 text-[15px] font-semibold">
+            {T.freeCta}
+            <ArrowRight className="size-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
+          </Link>
+        </section>
+      </div>
+
+      <aside aria-label={T.summaryH} className="lg:sticky lg:top-8">
+        <div className="nz-night flex flex-col gap-5 rounded-[28px] p-6 shadow-[0_40px_80px_-44px_rgba(8,10,30,0.7)] sm:p-7">
+          {offer ? (
+            <>
+              <div className="flex flex-col gap-1">
+                <p className="text-[14px] text-white/70">{upgradeCents !== null ? S.upgradeH : T.summaryH}</p>
+                <p className="text-[18px] font-semibold text-balance">
+                  {names} · <span className="font-normal text-white/80">{isAll ? S.scopeAll : S.scopeSkills}</span>
+                </p>
+              </div>
+              <div aria-live="polite" className="flex flex-col gap-1.5">
+                <p className="flex items-baseline gap-2">
+                  <span className="v-display text-[52px] leading-none tabular-nums">{euro(upgradeCents ?? offer.cents)}</span>
+                  {upgradeCents !== null ? null : <span className="text-[15px] text-white/70">{S.perMonth}</span>}
+                </p>
+                {upgradeCents !== null ? (
+                  <p className="text-[14.5px] text-white/85">{S.upgradeNow(euro(upgradeCents), euro(offer.renews!.cents))}</p>
+                ) : (
+                  <>
+                    {isAll ? <p className="text-[15px] font-semibold text-(--p-glow)">{S.saving(euro(SKILLS.length * one.cents - all.cents))}</p> : null}
+                    <p className="text-[14.5px] text-white/85">{S.monthly}</p>
+                  </>
+                )}
+              </div>
+              {upgradeCents !== null || running ? null : (
+                <p className="flex items-center gap-2 text-[14.5px] text-white/85">
+                  <CalendarClock className="size-4 shrink-0" aria-hidden="true" />
+                  {ends ? T.ends(ends) : T.endsAfter(T.planName(offer.months))}
+                </p>
+              )}
+            </>
+          ) : (
+            <p aria-live="polite" className="text-[16px] font-semibold">{S.emptyPick}</p>
+          )}
+          <ul className="flex flex-col gap-2 border-t border-white/15 pt-5 text-[14.5px]">
+            {[...T.trust, ...(offer && !isAll && !running ? [S.addLater] : [])].map((t) => (
+              <li key={t} className="flex items-start gap-2.5">
+                <Check className="mt-0.5 size-4 shrink-0 text-(--p-glow)" strokeWidth={2.5} aria-hidden="true" />
+                {t}
+              </li>
+            ))}
+          </ul>
+          {!offer ? null : upgradeCents !== null && checkout ? (
+            <Checkout planId={offer.id} T={T} orderLabel={S.upgradeOrder} />
+          ) : renewing ? (
+            <div className="flex flex-col gap-3">
+              <p className="text-[14.5px] text-white/85">{unchanged && owned.length < SKILLS.length ? S.renewingSkill : T.renewing}</p>
+              <VButton kind="light" size="lg" render={<Link href={accountHref ?? "/dashboard/konto"} />} nativeButton={false} className="w-full">
+                {T.renewingCta}
+                <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+              </VButton>
+            </div>
+          ) : checkout ? (
+            <Checkout planId={offer.id} T={T} />
+          ) : (
+            <div className="flex flex-col gap-3">
+              <VButton kind="light" size="lg" render={<Link href={buyHref ?? "/dashboard/preise"} />} nativeButton={false} className="w-full">
+                {T.buy}
+                <ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+              </VButton>
+              <p className="text-[13.5px] text-white/70">{T.buyNote}</p>
+            </div>
+          )}
+        </div>
+      </aside>
+    </div>
+  )
+}
+
+/**
+ * What the portal shows while the learner's pass and practice history load: the builder's two cards without choices,
+ * so no default selection flashes and then jumps once the real one is known.
+ */
+export function PassBuilderSkeleton() {
+  const bar = "rounded-full bg-v-soft animate-pulse motion-reduce:animate-none"
+  return (
+    <div aria-hidden="true" className="grid grid-cols-[minmax(0,1fr)] items-start gap-4 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <div className="nz-paper flex flex-col gap-4 rounded-[28px] p-5 sm:p-7">
+        <span className={cn(bar, "h-5 w-48")} />
+        <span className="h-[150px] rounded-[20px] bg-v-soft/60" />
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
+          {SKILLS.map((s) => (
+            <span key={s} className="h-[118px] rounded-[20px] bg-v-soft/60" />
+          ))}
+        </div>
+      </div>
+      <div className="nz-night flex flex-col gap-5 rounded-[28px] p-6 sm:p-7">
+        <span className="h-4 w-32 rounded-full bg-white/15" />
+        <span className="h-12 w-40 rounded-2xl bg-white/15" />
+        <span className="h-[52px] rounded-full bg-white/10" />
+      </div>
+    </div>
+  )
+}
+
 /** Consent (required before paying), the order button, and the hand-off to Mollie's hosted checkout. */
-function Checkout({ planId, T }: { planId: string; T: (typeof PASS_COPY)[SiteLocale] }) {
+function Checkout({ planId, T, orderLabel }: { planId: string; T: (typeof PASS_COPY)[SiteLocale]; orderLabel?: string }) {
   const [consent, setConsent] = useState(false)
   const [state, setState] = useState<"idle" | "busy" | "consent" | "error">("idle")
   const box = useRef<HTMLInputElement>(null)
@@ -244,7 +514,7 @@ function Checkout({ planId, T }: { planId: string; T: (typeof PASS_COPY)[SiteLoc
       </label>
       <VButton kind="light" size="lg" onClick={order} disabled={state === "busy"} aria-busy={state === "busy"} className="w-full disabled:opacity-80">
         {state === "busy" ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" /> : null}
-        {state === "busy" ? T.ordering : T.order}
+        {state === "busy" ? T.ordering : (orderLabel ?? T.order)}
       </VButton>
       <p id={`${id}-msg`} aria-live="polite" className={cn("text-[13.5px]", message ? "font-semibold text-(--p-glow)" : "text-white/70")}>
         {message ?? T.payNote}

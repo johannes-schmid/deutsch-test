@@ -1,10 +1,11 @@
 import "server-only"
 import { requireAdmin } from "@/lib/admin/guard"
-import { ownsExam } from "@/lib/entitlements"
+import { canOpen } from "@/lib/entitlements"
 import type { PartId } from "@/lib/exam/types"
 import { portalPath, type ExamId } from "@/lib/exams"
 import { MODELLTESTS } from "@/lib/portal"
 import { createAdminClient } from "@/lib/supabase/admin"
+import { mostPracticed } from "@/lib/billing/default-skill"
 
 export { MODELLTESTS }
 
@@ -37,7 +38,7 @@ export async function modelltestSlots(exam: ExamId, skill: PartId, userId: strin
   const [{ data: sets, error }, admin, owns] = await Promise.all([
     db.from("mt_sets").select("id, number, is_free, published").eq("exam", exam).eq("skill", skill).gt("number", 0),
     requireAdmin(),
-    ownsExam(userId, exam),
+    canOpen(userId, exam, skill),
   ])
   if (error) throw error
   const ids = (sets as SetRow[]).map((s) => s.id)
@@ -137,4 +138,11 @@ export async function portalStats(userId: string): Promise<PortalStats> {
     trend: scored.slice(0, 12).map((r) => Math.round(pct(r))).reverse(),
     week,
   }
+}
+
+/** The skill this learner finished the most Modelltests in (lib/billing/default-skill.ts), for the pricing page. */
+export async function mostPracticedSkill(userId: string): Promise<PartId | null> {
+  const { data, error } = await createAdminClient().from("mt_attempts").select("skill, completed_at").eq("user_id", userId).not("completed_at", "is", null).limit(1000)
+  if (error) throw error
+  return mostPracticed((data ?? []).map((r) => ({ skill: r.skill as string, completedAt: r.completed_at as string })))
 }

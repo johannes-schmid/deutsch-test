@@ -1,4 +1,5 @@
 import type { SiteLocale } from "@/lib/i18n/locale"
+import type { PartId } from "@/lib/exam/types"
 
 /** The Prüfungspass configurator (`PassBuilder`), on /preise in every site locale and in German in the portal. uk/ru are machine-translated. */
 export type PassCopy = {
@@ -42,9 +43,45 @@ export type PassCopy = {
   error: string
   renewing: string
   renewingCta: string
+  /** The Teil-Pass layout (catalogue layout "skills"): any skills, all four for the price of three. */
+  skills: {
+    pickH: string
+    pickHint: string
+    skillName: Record<PartId, string>
+    /** Several skills in one phrase ("Schreiben und Sprechen"). */
+    names: (skills: PartId[]) => string
+    all: string
+    allNote: string
+    oneFree: string
+    freeExtra: string
+    instead: (price: string) => string
+    perMonth: string
+    mostPracticed: string
+    yours: string
+    /** Under the picker, by the number of skills picked (0–4); null = no line. */
+    nudge: (picked: number, perSkill: string, all: string) => string | null
+    emptyPick: string
+    includesH: string
+    includesAll: string[]
+    includesSkills: (skills: PartId[]) => string[]
+    noSimulation: string
+    scopeAll: string
+    scopeSkills: string
+    saving: (amount: string) => string
+    monthly: string
+    addLater: string
+    upgradeH: string
+    upgradeNow: (now: string, then: string) => string
+    upgradeOrder: string
+    renewingSkill: string
+  }
 }
 
 const planName = (months: number) => (months === 1 ? "1 Monat" : `${months} Monate`)
+
+// Skill names stay German in every locale: they are the exam's own terms.
+const DE_SKILLS: Record<PartId, string> = { hoeren: "Hören", lesen: "Lesen", schreiben: "Schreiben", sprechen: "Sprechen" }
+const joinDe = (names: string[]) => (names.length < 2 ? names.join("") : `${names.slice(0, -1).join(", ")} und ${names[names.length - 1]}`)
 
 const de: PassCopy = {
   whenH: "Wann ist deine Prüfung?",
@@ -91,6 +128,55 @@ const de: PassCopy = {
   error: "Die Zahlung konnte nicht starten. Versuch es noch einmal.",
   renewing: "Dein Pass läuft schon und verlängert sich jeden Monat.",
   renewingCta: "Zu deinem Konto",
+  skills: {
+    pickH: "Was willst du üben?",
+    pickHint: "Wähle einen oder mehrere Teile. Alle vier bekommst du zum Preis von drei.",
+    skillName: DE_SKILLS,
+    names: (skills) => joinDe(skills.map((s) => DE_SKILLS[s])),
+    all: "Alle vier Teile",
+    allNote: "Hören, Lesen, Schreiben und Sprechen, plus die Prüfungssimulation",
+    oneFree: "1 Teil gratis",
+    freeExtra: "Gratis dazu",
+    instead: (price) => `statt 4 × ${price}`,
+    perMonth: "im Monat",
+    mostPracticed: "Am meisten geübt",
+    yours: "Dein Pass",
+    nudge: (picked, perSkill, all) =>
+      picked === 1
+        ? `Jeder weitere Teil kostet ${perSkill}. Ab drei Teilen bekommst du alle vier für ${all}.`
+        : picked === 2
+          ? `Nimm noch einen Teil dazu, dann bekommst du alle vier für ${all}.`
+          : picked === 3
+            ? "Der vierte Teil ist gratis dabei."
+            : null,
+    emptyPick: "Wähle mindestens einen Teil.",
+    includesH: "Das ist dabei",
+    includesAll: [
+      "Alle Modelltests für Hören, Lesen, Schreiben und Sprechen",
+      "Die Prüfungssimulation: alle Teile an einem Stück",
+      "Feedback für Schreiben und Sprechen nach den Kriterien der Prüfung",
+      "Sprechen zu zweit, mit Prüferin und Partner",
+      "Erklärungen auf Ukrainisch und Russisch",
+    ],
+    includesSkills: (skills) => [
+      `Alle Modelltests für ${joinDe(skills.map((s) => DE_SKILLS[s]))}, in jeder Prüfung`,
+      "Echte Prüfungsbedingungen: Zeit, Ablauf und Ergebnis wie in der Prüfung",
+      ...(skills.includes("hoeren") ? ["Audios mit mehreren Stimmen, so oft gespielt wie in der Prüfung"] : []),
+      ...(skills.includes("lesen") ? ["Echte Textsorten: Briefe vom Amt, Anzeigen, Aushänge"] : []),
+      ...(skills.includes("sprechen") ? ["Sprechen zu zweit, mit Prüferin und Partner"] : []),
+      ...(skills.includes("schreiben") || skills.includes("sprechen") ? ["Feedback nach den Kriterien der Prüfung"] : []),
+    ],
+    noSimulation: "Prüfungssimulation: nur mit allen vier Teilen",
+    scopeAll: "Alle Teile, alle Modelltests",
+    scopeSkills: "alle Modelltests, jede Prüfung",
+    saving: (amount) => `Du sparst ${amount} im Monat`,
+    monthly: "Verlängert sich jeden Monat. Jederzeit kündbar.",
+    addLater: "Später Teile dazunehmen: Du zahlst nur den Unterschied.",
+    upgradeH: "Teile dazunehmen",
+    upgradeNow: (now, then) => `Du zahlst jetzt ${now} für den Rest deines Monats. Danach ${then} im Monat.`,
+    upgradeOrder: "Zahlungspflichtig dazunehmen",
+    renewingSkill: "Das ist dein Pass. Wähle Teile dazu, um ihn zu erweitern.",
+  },
 }
 
 function monthLabel(n: number) {
@@ -146,6 +232,55 @@ const uk: PassCopy = {
   error: "Не вдалося почати оплату. Спробуйте ще раз.",
   renewing: "Ваш пропуск уже діє і продовжується щомісяця.",
   renewingCta: "До акаунта",
+  skills: {
+    pickH: "Що ви хочете тренувати?",
+    pickHint: "Виберіть одну або кілька частин. Усі чотири ви отримаєте за ціною трьох.",
+    skillName: DE_SKILLS,
+    names: (skills) => skills.map((s) => DE_SKILLS[s]).join(" і "),
+    all: "Усі чотири частини",
+    allNote: "Hören, Lesen, Schreiben і Sprechen, а також симуляція іспиту",
+    oneFree: "1 частина безкоштовно",
+    freeExtra: "Безкоштовно",
+    instead: (price) => `замість 4 × ${price}`,
+    perMonth: "на місяць",
+    mostPracticed: "Найбільше тренувалися",
+    yours: "Ваш пропуск",
+    nudge: (picked, perSkill, all) =>
+      picked === 1
+        ? `Кожна наступна частина коштує ${perSkill}. Від трьох частин ви отримаєте всі чотири за ${all}.`
+        : picked === 2
+          ? `Додайте ще одну частину, і ви отримаєте всі чотири за ${all}.`
+          : picked === 3
+            ? "Четверта частина безкоштовно."
+            : null,
+    emptyPick: "Виберіть принаймні одну частину.",
+    includesH: "Що входить",
+    includesAll: [
+      "Усі пробні іспити для Hören, Lesen, Schreiben і Sprechen",
+      "Симуляція іспиту: усі частини поспіль",
+      "Відгук на письмо та говоріння за критеріями іспиту",
+      "Говоріння в парі, з екзаменаторкою та партнером",
+      "Пояснення українською та російською",
+    ],
+    includesSkills: (skills) => [
+      `Усі пробні іспити для ${skills.map((s) => DE_SKILLS[s]).join(" і ")}, у кожному іспиті`,
+      "Справжні умови іспиту: час, порядок і результат, як на іспиті",
+      ...(skills.includes("hoeren") ? ["Аудіо з кількома голосами, стільки разів, як на іспиті"] : []),
+      ...(skills.includes("lesen") ? ["Справжні типи текстів: листи з установ, оголошення"] : []),
+      ...(skills.includes("sprechen") ? ["Говоріння в парі, з екзаменаторкою та партнером"] : []),
+      ...(skills.includes("schreiben") || skills.includes("sprechen") ? ["Відгук за критеріями іспиту"] : []),
+    ],
+    noSimulation: "Симуляція іспиту: лише з усіма чотирма частинами",
+    scopeAll: "Усі частини, усі пробні іспити",
+    scopeSkills: "усі пробні іспити, кожен іспит",
+    saving: (amount) => `Ви заощаджуєте ${amount} на місяць`,
+    monthly: "Продовжується щомісяця. Скасувати можна будь-коли.",
+    addLater: "Пізніше додати частини: ви платите лише різницю.",
+    upgradeH: "Додати частини",
+    upgradeNow: (now, then) => `Зараз ви платите ${now} за решту місяця. Далі ${then} на місяць.`,
+    upgradeOrder: "Додати з оплатою",
+    renewingSkill: "Це ваш пропуск. Виберіть частини, щоб розширити його.",
+  },
 }
 
 function monthsRu(n: number) {
@@ -201,6 +336,55 @@ const ru: PassCopy = {
   error: "Не удалось начать оплату. Попробуйте ещё раз.",
   renewing: "Ваш пропуск уже действует и продлевается каждый месяц.",
   renewingCta: "В аккаунт",
+  skills: {
+    pickH: "Что вы хотите тренировать?",
+    pickHint: "Выберите одну или несколько частей. Все четыре вы получите по цене трёх.",
+    skillName: DE_SKILLS,
+    names: (skills) => skills.map((s) => DE_SKILLS[s]).join(" и "),
+    all: "Все четыре части",
+    allNote: "Hören, Lesen, Schreiben и Sprechen, а также симуляция экзамена",
+    oneFree: "1 часть бесплатно",
+    freeExtra: "Бесплатно",
+    instead: (price) => `вместо 4 × ${price}`,
+    perMonth: "в месяц",
+    mostPracticed: "Больше всего тренировались",
+    yours: "Ваш пропуск",
+    nudge: (picked, perSkill, all) =>
+      picked === 1
+        ? `Каждая следующая часть стоит ${perSkill}. С трёх частей вы получите все четыре за ${all}.`
+        : picked === 2
+          ? `Добавьте ещё одну часть, и вы получите все четыре за ${all}.`
+          : picked === 3
+            ? "Четвёртая часть бесплатно."
+            : null,
+    emptyPick: "Выберите хотя бы одну часть.",
+    includesH: "Что входит",
+    includesAll: [
+      "Все пробные экзамены по Hören, Lesen, Schreiben и Sprechen",
+      "Симуляция экзамена: все части подряд",
+      "Обратная связь по письму и говорению по критериям экзамена",
+      "Говорение в паре, с экзаменатором и партнёром",
+      "Объяснения на украинском и русском",
+    ],
+    includesSkills: (skills) => [
+      `Все пробные экзамены по ${skills.map((s) => DE_SKILLS[s]).join(" и ")}, в каждом экзамене`,
+      "Настоящие условия экзамена: время, порядок и результат, как на экзамене",
+      ...(skills.includes("hoeren") ? ["Аудио с несколькими голосами, столько раз, как на экзамене"] : []),
+      ...(skills.includes("lesen") ? ["Настоящие типы текстов: письма из учреждений, объявления"] : []),
+      ...(skills.includes("sprechen") ? ["Говорение в паре, с экзаменатором и партнёром"] : []),
+      ...(skills.includes("schreiben") || skills.includes("sprechen") ? ["Обратная связь по критериям экзамена"] : []),
+    ],
+    noSimulation: "Симуляция экзамена: только со всеми четырьмя частями",
+    scopeAll: "Все части, все пробные экзамены",
+    scopeSkills: "все пробные экзамены, каждый экзамен",
+    saving: (amount) => `Вы экономите ${amount} в месяц`,
+    monthly: "Продлевается каждый месяц. Отменить можно в любой момент.",
+    addLater: "Позже добавить части: вы платите только разницу.",
+    upgradeH: "Добавить части",
+    upgradeNow: (now, then) => `Сейчас вы платите ${now} за остаток месяца. Затем ${then} в месяц.`,
+    upgradeOrder: "Добавить с оплатой",
+    renewingSkill: "Это ваш пропуск. Выберите части, чтобы расширить его.",
+  },
 }
 
 export const PASS_COPY: Record<SiteLocale, PassCopy> = { de, uk, ru }
