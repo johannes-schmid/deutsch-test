@@ -32,15 +32,15 @@ const FONT = "'Host Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Rob
 const NIGHT_BG = `background-color:${C.night};background-image:radial-gradient(55% 140% at 100% 110%, rgba(255,180,94,0.55) 0%, rgba(255,180,94,0) 70%), radial-gradient(45% 120% at 0% 0%, #2E4FB8 0%, rgba(46,79,184,0) 70%);`
 const PAGE_BG = `background-color:${C.bg};background-image:radial-gradient(40% 30% at 85% 0%, rgba(255,180,94,0.35) 0%, rgba(255,180,94,0) 70%), radial-gradient(45% 35% at 10% 4%, rgba(157,178,242,0.45) 0%, rgba(157,178,242,0) 70%);`
 
-type Hero = { pill: { label: string; glow: boolean }; title: string; lead: string; label: string; big: string; cta: { label: string; href: string } }
-type Body = { preheader: string; hero: Hero; facts: [string, string][]; factsTitle: string; note: string; after: string[] }
+export type Hero = { pill: { label: string; glow: boolean }; title: string; lead: string; label: string; big: string; cta: { label: string; href: string } }
+export type Body = { preheader: string; hero: Hero; facts: [string, string][]; factsTitle: string; note: string; after: string[]; footnote?: string }
 
 function pill({ label, glow }: Hero["pill"]) {
   const style = glow ? `background-color:${C.glow};color:#0A0D18;` : "background-color:rgba(255,255,255,0.15);color:#FFFFFF;"
   return `<span style="${style}display:inline-block;border-radius:999px;padding:5px 12px;font-size:13px;line-height:16px;font-weight:600">${esc(label)}</span>`
 }
 
-function render({ preheader, hero, facts, factsTitle, note, after }: Body) {
+export function render({ preheader, hero, facts, factsTitle, note, after, footnote }: Body) {
   const rows = facts
     .map(
       ([k, v], i) =>
@@ -88,17 +88,18 @@ function render({ preheader, hero, facts, factsTitle, note, after }: Body) {
 
 <tr><td style="padding:22px 6px 0">
   ${after.map((t) => `<p style="margin:0 0 8px;font-size:14.5px;line-height:22px;color:${C.muted}">${t}</p>`).join("\n  ")}
-  <p style="margin:18px 0 0;font-size:12px;line-height:18px;color:${C.muted}">${esc(legal)}<br>Wir sind nicht mit dem BAMF, telc, g.a.s.t., dem Goethe-Institut oder dem ÖSD verbunden.</p>
+  ${footnote ? `<p style="margin:18px 0 0;font-size:12px;line-height:18px;color:${C.muted}">${footnote}</p>` : ""}
+  <p style="margin:${footnote ? 10 : 18}px 0 0;font-size:12px;line-height:18px;color:${C.muted}">${esc(legal)}<br>Wir sind nicht mit dem BAMF, telc, g.a.s.t., dem Goethe-Institut oder dem ÖSD verbunden.</p>
 </td></tr>
 
 </table></td></tr></table></body></html>`
 }
 
-const link = (href: string, label: string) => `<a href="${href}" style="color:${C.ink};font-weight:600;text-decoration:underline;text-underline-offset:3px">${esc(label)}</a>`
+export const link = (href: string, label: string) => `<a href="${href}" style="color:${C.ink};font-weight:600;text-decoration:underline;text-underline-offset:3px">${esc(label)}</a>`
 const strip = (html: string) => html.replace(/<a href="([^"]+)"[^>]*>([^<]+)<\/a>/g, "$2 ($1)").replace(/<[^>]+>/g, "")
 
-function text({ hero, facts, note, after }: Body) {
-  return [hero.title, "", strip(hero.lead), "", `${hero.label}: ${hero.big}`, `${hero.cta.label}: ${hero.cta.href}`, "", ...facts.map(([k, v]) => `${k}: ${v}`), "", strip(note), "", ...after.map(strip)].join("\n")
+export function text({ hero, facts, note, after, footnote }: Body) {
+  return [hero.title, "", strip(hero.lead), "", `${hero.label}: ${hero.big}`, `${hero.cta.label}: ${hero.cta.href}`, "", ...facts.map(([k, v]) => `${k}: ${v}`), "", strip(note), "", ...after.map(strip), ...(footnote ? ["", strip(footnote)] : [])].join("\n")
 }
 
 const legalLinks = `${link(`${SITE_URL}/agb`, "AGB")} · ${link(`${SITE_URL}/widerruf`, "Widerrufsbelehrung und Muster-Widerrufsformular")}`

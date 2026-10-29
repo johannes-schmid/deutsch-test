@@ -735,3 +735,15 @@
 **Outcome:** SUCCESS (push auto-sync tested headless; welcome-at-sign-up sending not wired yet)
 **What worked / went wrong:** a `permissions` change listener catches an "Allow" set in Chrome's site settings without a reload. Headless Chrome can't subscribe ("permission denied"), so real delivery needs a manual test.
 **Lesson:** a welcome email can go without consent only while it carries no offer (BGH VI ZR 134/15): never add the pass, prices or discounts to it. Server code that reads a new table must not ship before its migration runs in production: `examGoal()` throws and would take down /dashboard.
+
+## 2026-10-27 — Lifecycle emails wired: welcome at sign-up, emails 2–5 with consent
+**Changed:** `lib/email/templates/lifecycle.ts` (all five, built on the billing layout, now exported with a `footnote`), `lib/lifecycle/email.ts` (sendWelcome, sendLifecycleEmail with RFC 8058 headers), `/auth/callback` sends the welcome via `after()` for accounts < 10 min old, `lib/lifecycle/state.ts` + cron: email consent is a channel next to push, `app/api/lifecycle/abmelden` (GET page + one-click POST), `lib/lifecycle/email-copy.test.ts`; final renders on the "Lifecycle-Mails Freigabe" artifact.
+**Outcome:** SUCCESS locally (tsc, eslint, 56 tests, `next build`; welcome claimed once on a double call, cron sent "Dein Stand A" by email 4 days later, unsubscribe page 200 + bad token 400, cron skips after unsubscribe).
+**What worked / went wrong:** Hannes wanted all five without the tick; declined for 2–5 (§ 7 Abs. 2 Nr. 2 UWG, advertising needs consent), he chose welcome-to-all + 2–5 opt-in. The local cron run also mailed every other consented local account (Hannes's own test Gmail got a welcome + push).
+**Lesson:** Never run the lifecycle cron against a database with real addresses, local included; test one learner by filtering, or use delivered@resend.dev only. A no-consent service email must not ask for consent either: the request itself counts as advertising.
+
+## 2026-10-28 — Clarity sent no data
+**Changed:** `components/analytics/clarity.tsx`: `<Script id="clarity">` → `id="ms-clarity"`.
+**Outcome:** SUCCESS (tsc, eslint, `next build`; `next start` in Chrome: `clarity.js` loads, `q.clarity.ms/collect` fires)
+**What worked / went wrong:** The element id `clarity` became `window.clarity` (named element access), so the snippet's `c[a]=c[a]||function…` kept the element and Clarity never booted. The 2026-10-26 check only looked for the tag in the HTML.
+**Lesson:** Never give a script element an id equal to the global the snippet defines (`clarity`, `gtag`, `fbq`, …). Verify analytics by its outgoing collect request, not by the tag being present.

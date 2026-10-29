@@ -333,7 +333,8 @@ app/(app)/dashboard/kontakt/          # portal contact form (components/portal/c
 app/(main)/(site)/{agb,widerruf}/    # AGB, Widerrufsbelehrung + Muster-Formular; German only, linked in the footer legal line with "Verträge hier kündigen" (→ /dashboard/konto/kuendigen)
 lib/lifecycle/{rules,prefs}.ts       # lifecycle moments: nextEmail() (pure, *.test.ts) · examGoal() + CONSENT_VERSION; ExamDateWidget (countdown only, /dashboard aside) + ExamGoalForm (konto: exam, date, email consent, push switch) in components/portal/exam-goal.tsx → app/(app)/dashboard/goal-actions.ts
 lib/lifecycle/{state,push,push-copy}.ts # cron state per learner · web-push sender (VAPID env, drops 404/410) · push texts per moment (tested); public/sw.js shows them; app/(app)/dashboard/push-actions.ts stores subscriptions
-app/api/cron/lifecycle               # daily 07:00 UTC: claims the due moment in lifecycle_messages, sends push (email joins with its templates); CRON_SECRET
+app/api/cron/lifecycle               # daily 07:00 UTC: claims the due moment in lifecycle_messages, sends it by email (consent) and push; CRON_SECRET
+lib/lifecycle/email.ts + lib/email/templates/lifecycle.ts # the five emails; sendWelcome() from /auth/callback to every new account (service mail, never an offer); app/api/lifecycle/abmelden = one-click unsubscribe
 components/portal/next-step.tsx      # in-app next step (next free Modelltest 1 → pass) for everyone without a pass
 lib/lifecycle/consent-cookie.ts      # sign-up checkbox → `lc_consent` cookie → app/auth/callback records it (recordSignupConsent)
 supabase/migrations/*_lifecycle_*.sql # lifecycle_prefs (exam (NULL = not chosen yet), exam_date, consent + version, unsubscribe token) + lifecycle_messages (moment log, channels) + push_subscriptions + lifecycle_emails (one row per sent kind, unique)
