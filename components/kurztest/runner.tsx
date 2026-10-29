@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Clock, EyeOff, Headphones, Mic, PenLine, Users } from "lucide-react"
 import { ConfirmSheet, ExamAudio, ExamButton, ExamCopyProvider, ExamReading, ExamShell, PartIntro, ReadingLayout, SpeakingTask, WritingTask, useExamTimer } from "@/components/exam"
+import { track } from "@/lib/analytics"
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { examPath, type ExamId } from "@/lib/exams"
 import { createClient } from "@/lib/supabase/client"
@@ -377,6 +378,7 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
   }
 
   const submit = async (payload: Record<string, unknown>) => {
+    if (payload !== lastPayload.current) track("test_complete", { exam, skill })
     lastPayload.current = payload
     setPhase("sending")
     setError(null)
@@ -425,6 +427,7 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
   }
 
   const start = () => {
+    track("test_start", { exam, skill })
     setStartedAt(new Date().toISOString())
     setPhase("test")
   }
@@ -473,7 +476,10 @@ function Runner({ exam, page, skill, minutes, blocks }: RunnerProps) {
     <ExamCopyProvider locale={locale}>
       {phase === "test" ? (
         skill === "lesen" || skill === "hoeren" ? (
-          <ClosedTest exam={exam} skill={skill} minutes={minutes} blocks={blocks} values={values} onChange={(n, v) => setValues((m) => ({ ...m, [n]: v }))} onFinish={(left) => {
+          <ClosedTest exam={exam} skill={skill} minutes={minutes} blocks={blocks} values={values} onChange={(n, v) => {
+              if (!(n in values)) track("question_answer", { exam, skill, question_number: n })
+              setValues((m) => ({ ...m, [n]: v }))
+            }} onFinish={(left) => {
               setUsed(minutes * 60 - left)
               void submit({ answers: values })
             }} guest={!signedIn} onWall={saveForResume} start={resumed} />

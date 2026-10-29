@@ -7,9 +7,8 @@ import { Cookie } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { Switch } from "@/components/ui/switch"
 import type { Locale } from "@/lib/i18n/locale"
+import { CONSENT_KEY as KEY, GA_ID } from "@/lib/analytics"
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID
-const KEY = "dtu-consent-v2"
 const OPEN_EVENT = "dtu:consent-open"
 
 type Prefs = { analytics: boolean }

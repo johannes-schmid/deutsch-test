@@ -230,7 +230,7 @@ export function Nachtzug({ locale }: { locale: Locale }) {
             <p className="max-w-[48ch] text-lg text-v-muted">{t.hero.lead}</p>
             <div className="flex flex-wrap gap-3">
               <VButton size="lg" render={<Link href={lp(siteLocale(locale), "/gratis-test")} />} nativeButton={false}>{t.hero.cta}</VButton>
-              <VButton size="lg" kind="ghost" render={<Link href={lp(siteLocale(locale), "/preise")} />} nativeButton={false}>{t.hero.cta2}</VButton>
+              <VButton size="lg" kind="ghost" data-cta="hero-preise" render={<Link href={lp(siteLocale(locale), "/preise")} />} nativeButton={false}>{t.hero.cta2}</VButton>
             </div>
             <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] text-v-muted">
               {t.hero.proof.map((p) => (

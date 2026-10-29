@@ -5,13 +5,14 @@ import { CircleAlert, CircleCheck, CreditCard, Hourglass, LoaderCircle, Search }
 import { VButton } from "@/components/design/kit"
 import { BillingPanel, NextButton as Next } from "@/components/portal/billing-panel"
 import { PORTAL_ACCOUNT, PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
+import { track } from "@/lib/analytics"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { CONTACT_EMAIL } from "@/lib/seo"
 
 const P = PORTAL_COPY.payment
 const C = PORTAL_COPY.cancel
 
-type Status = { status: "checking" | "paid" | "failed" | "pending" | "none"; until?: string }
+type Status = { status: "checking" | "paid" | "failed" | "pending" | "none"; until?: string; planId?: string; paymentId?: string; amountCents?: number }
 
 const day = (iso: string) => new Intl.DateTimeFormat("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Berlin" }).format(new Date(iso))
 
@@ -28,6 +29,8 @@ export function PaymentStatus() {
         const res = await fetch("/api/mollie/status", { cache: "no-store" })
         const data = (await res.json()) as Status
         if (stop) return
+        if (data.status === "paid" && data.paymentId)
+          track("purchase", { transaction_id: data.paymentId, value: (data.amountCents ?? 0) / 100, currency: "EUR", plan_id: data.planId })
         if (data.status !== "pending" || tries >= 20) return setS(data)
       } catch {
         if (tries >= 20) return setS({ status: "pending" })

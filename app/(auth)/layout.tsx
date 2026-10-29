@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Host_Grotesk, Reddit_Mono } from "next/font/google"
 import { Clarity } from "@/components/analytics/clarity"
+import { FunnelTracking } from "@/components/analytics/funnel"
 import { DesignShell } from "@/components/design/shell"
 import "../(main)/landing.css"
 
@@ -21,6 +22,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         </div>
       </DesignShell>
       <Clarity />
+      <FunnelTracking loadGa />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { safeNext } from "@/lib/auth/redirect"
 import { CONSENT_COOKIE } from "@/lib/lifecycle/consent-cookie"
 import { recordSignupConsent } from "@/lib/lifecycle/prefs"
 import { sendWelcome } from "@/lib/lifecycle/email"
+import { AUTH_EVENT_COOKIE } from "@/lib/analytics"
 
 /**
  * Google → Supabase → here with a PKCE code. Exchanges it for a session cookie, records a ticked sign-up email consent,
@@ -29,10 +30,12 @@ export async function GET(req: NextRequest) {
   const consent = req.cookies.get(CONSENT_COOKIE)?.value === "1"
   if (consent && data.user) await recordSignupConsent(data.user.id)
   const user = data.user
-  if (user && Date.now() - new Date(user.created_at).getTime() < NEW_ACCOUNT_MS) after(() => sendWelcome(user.id))
+  const isNew = !!user && Date.now() - new Date(user.created_at).getTime() < NEW_ACCOUNT_MS
+  if (isNew && user) after(() => sendWelcome(user.id))
 
   const host = process.env.NODE_ENV === "development" ? null : req.headers.get("x-forwarded-host")
   const res = NextResponse.redirect(host ? `https://${host}${next}` : new URL(next, origin))
   if (req.cookies.has(CONSENT_COOKIE)) res.cookies.delete(CONSENT_COOKIE)
+  res.cookies.set(AUTH_EVENT_COOKIE, isNew ? "sign_up" : "login", { path: "/", maxAge: 120, sameSite: "lax" })
   return res
 }

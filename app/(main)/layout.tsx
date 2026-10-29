@@ -1,5 +1,6 @@
 import { Host_Grotesk, JetBrains_Mono, Onest, Reddit_Mono } from "next/font/google"
 import { Clarity } from "@/components/analytics/clarity"
+import { FunnelTracking } from "@/components/analytics/funnel"
 import "./landing.css"
 
 const hostGrotesk = Host_Grotesk({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-host" })
@@ -14,6 +15,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     <div className={`${hostGrotesk.variable} ${redditMono.variable} ${onest.variable} ${jetbrainsMono.variable}`}>
       {children}
       <Clarity />
+      <FunnelTracking />
     </div>
   )
 }

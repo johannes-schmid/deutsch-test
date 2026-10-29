@@ -1,11 +1,12 @@
 "use client"
 
-import { useId, useRef, useState, useSyncExternalStore } from "react"
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ArrowRight, CalendarCheck, CalendarClock, Check, LoaderCircle, Lock, Plus, Repeat } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
+import { track } from "@/lib/analytics"
 import { PASS_COPY } from "@/lib/i18n/pass"
 import { NUMBER_LOCALE, type SiteLocale } from "@/lib/i18n/locale"
 import { SKILLS } from "@/lib/billing/grants"
@@ -33,8 +34,16 @@ type BuilderProps = {
   current?: string | null
 }
 
+// The portal's Suspense fallback mounts a builder before the real one; count that as one view.
+let lastView = 0
+
 /** The configurator for the active catalogue (lib/pricing.ts): `terms` (the Prüfungspass) or `skills` (the Teil-Pass). */
 export function PassBuilder(props: BuilderProps) {
+  useEffect(() => {
+    if (Date.now() - lastView < 3000) return
+    lastView = Date.now()
+    track("view_pricing", { surface: props.checkout ? "portal" : "site", locale: props.locale })
+  }, [props.checkout, props.locale])
   return ACTIVE_LAYOUT === "skills" ? <SkillPassBuilder {...props} /> : <TermPassBuilder {...props} />
 }
 
@@ -476,6 +485,8 @@ function Checkout({ planId, T, orderLabel }: { planId: string; T: (typeof PASS_C
       return
     }
     setState("busy")
+    const offer = offerById(planId)
+    track("begin_checkout", { plan_id: planId, value: offer ? offer.cents / 100 : undefined, currency: "EUR" })
     try {
       const res = await fetch("/api/mollie/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ planId, consent: true }) })
       const data = await res.json().catch(() => ({}))

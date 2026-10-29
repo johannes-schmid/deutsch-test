@@ -9,6 +9,7 @@ import { LevelSeal, ScoreSeal } from "@/components/design/variants/nachtzug-icon
 import { KurztestFrame } from "@/components/kurztest/frame"
 import { BlockItems, type Values } from "@/components/kurztest/items"
 import { KurztestLocale, useKurztest } from "@/components/kurztest/locale"
+import { track } from "@/lib/analytics"
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { A2_SPEAKING_TEILE, B1_SPEAKING_TEILE, isGoetheB1, isGoetheExam } from "@/lib/exam/scoring/goethe"
 import { isOesdExam } from "@/lib/exam/scoring/oesd"
@@ -94,6 +95,7 @@ function Runner({ set }: { set: RunnerSet }) {
     const r = await startAttempt(set.exam, set.skill, set.number)
     setBusy(false)
     if (!r.ok) return setError(P.errors[r.error])
+    track("modeltest_start", { exam: set.exam, skill: set.skill, set: set.number })
     setAttemptId(r.attemptId)
     setValues({})
     setTexts({})
@@ -107,6 +109,7 @@ function Runner({ set }: { set: RunnerSet }) {
       setError(r.error === "limit" && skill === "sprechen" ? P.errors.limitSpeaking : P.errors[r.error])
       return setPhase("error")
     }
+    track("modeltest_complete", { exam: set.exam, skill: set.skill, set: set.number })
     setResult(r.result)
     setPhase("result")
     router.refresh()
