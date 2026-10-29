@@ -13,7 +13,7 @@ If it isn't in this file, it doesn't ship.
 | Timings: Hören ca. 25, Lesen 45, Schreiben 30, Sprechen ca. 16 Min | /blog/dtz-pruefung, landing | CLAUDE.md §2. TODO(hannes): official source (telc DTZ Modelltest / Handbuch) | unverified |
 | VAT included in prices (DE 19 %, AT 20 %, same gross price) | /preise | UStG § 12 Abs. 1; AT UStG § 10 Abs. 1. TODO(hannes): confirm OSS setup with the tax advisor | 2026-10-24 |
 | Prüfungspass 19.95 € (1 Monat) / 44.95 € (3 Monate), then 19.95 € per month, cancellable any time, incl. VAT | /preise, /dashboard/preise | Set by Hannes, `lib/pricing.ts` | 2026-10-24 |
-| Teil-Pass (catalogue `teil-2026-11`, not on sale yet): one skill 9.95 € per month, all four 29.85 € per month (3 × 9.95), switch from one to all four 19.90 € once, all monthly, cancellable any time, incl. VAT | /preise, /dashboard/preise, home FAQ (when active) | Set by Hannes, `lib/pricing.ts` | 2026-10-29 |
+| Teil-Pass (catalogue `teil-2026-11`, on sale since 2026-10-29): one skill 9.95 € per month, all four 29.85 € per month (3 × 9.95), switch from one to all four 19.90 € once, all monthly, cancellable any time, incl. VAT | /preise, /dashboard/preise, home FAQ (when active) | Set by Hannes, `lib/pricing.ts` | 2026-10-29 |
 
 ## Free tests: exam formats (`lib/exams.ts`, `/gratis-test`)
 

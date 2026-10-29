@@ -67,7 +67,7 @@ export const CATALOGUES: Record<CatalogueId, Catalogue> = {
 }
 
 /** The switch. NEXT_PUBLIC_PRICING_CATALOGUE overrides it outside production only, to try another catalogue locally. */
-const PRODUCTION_CATALOGUE: CatalogueId = "pass-2026-10"
+const PRODUCTION_CATALOGUE: CatalogueId = "teil-2026-11"
 const override = process.env.NODE_ENV !== "production" ? process.env.NEXT_PUBLIC_PRICING_CATALOGUE : undefined
 export const ACTIVE_CATALOGUE: CatalogueId = override && override in CATALOGUES ? (override as CatalogueId) : PRODUCTION_CATALOGUE
 

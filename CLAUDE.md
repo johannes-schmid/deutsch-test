@@ -164,9 +164,11 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   picks what is on sale. Every payment row stores a snapshot of what it bought (`catalogue`, `grants`, `term_months`,
   `renewal_cents`), and access reads only that snapshot, so switching or changing prices never touches past buyers.
   Never edit or delete a sold offer; add a new one. Plan for the per-skill Teil-Pass: artifact "Teil-Pass Pricing Draft".
-  Catalogues: `pass-2026-10` (on sale) and `teil-2026-11` (built, not on sale: any skills at 9.95 € each, all four = 3 ×
+  Catalogues: `teil-2026-11` (on sale since 2026-10-29: any skills at 9.95 € each, all four = 3 ×
   skill; one offer per pick of one or two skills plus all four, `coveringOffer()` turns a pick of three into all four;
-  adding skills later costs the monthly difference once (`upgradeCost()`), then the subscription moves to the new price). Try one locally with
+  adding skills later costs the monthly difference once (`upgradeCost()`), then the subscription moves to the new price).
+  `pass-2026-10` (the 1/3-month Prüfungspass, sold 2026-10-24 → 2026-10-29) stays resolvable for its renewing customers;
+  switch back by setting `PRODUCTION_CATALOGUE` in `lib/pricing.ts`. Try one locally with
   `NEXT_PUBLIC_PRICING_CATALOGUE=teil-2026-11` in `.env.development.local` (ignored in production builds). Every copy
   surface (pricing pages, home FAQ, AGB, lifecycle and activation emails) follows `ACTIVE_LAYOUT`; the Teil-Pass wording
   was approved by Hannes 2026-10-29.
