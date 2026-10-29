@@ -168,7 +168,8 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   skill; one offer per pick of one or two skills plus all four, `coveringOffer()` turns a pick of three into all four;
   adding skills later costs the monthly difference once (`upgradeCost()`), then the subscription moves to the new price). Try one locally with
   `NEXT_PUBLIC_PRICING_CATALOGUE=teil-2026-11` in `.env.development.local` (ignored in production builds). Every copy
-  surface (pricing pages, home FAQ, AGB, lifecycle and activation emails) follows `ACTIVE_LAYOUT`.
+  surface (pricing pages, home FAQ, AGB, lifecycle and activation emails) follows `ACTIVE_LAYOUT`; the Teil-Pass wording
+  was approved by Hannes 2026-10-29.
 - **Check entitlement with one helper** (`canOpen(userId, exam, skill)`), never with a bare `plan` field.
   This bug shipped twice on the Dutch site: a paying customer read as `plan: 'free'`.
 - Every Schreiben/Sprechen feedback maps to the **official DTZ assessment criteria**.

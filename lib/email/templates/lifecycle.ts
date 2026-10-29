@@ -34,7 +34,7 @@ const hi = (name: string | null) => (name ? `, ${esc(name)}` : "")
 
 const ASK = "Fragen? Antworte einfach auf diese E-Mail."
 // The offers these emails quote: the Prüfungspass (terms) or the Teil-Pass (skills), whichever is on sale.
-// TODO(hannes): the Teil-Pass sentences below are drafts; approve them before that catalogue goes live.
+// The Teil-Pass sentences below were approved by Hannes 2026-10-29.
 const featured = PLANS.find((p) => p.featured)!
 const oneSkill = PLANS.find((p) => p.grants.skills.length === 1)
 const monthly = formatEuro(featured.renews?.cents ?? featured.cents)

@@ -104,7 +104,7 @@ export function text({ hero, facts, note, after, footnote }: Body) {
 
 const legalLinks = `${link(`${SITE_URL}/agb`, "AGB")} · ${link(`${SITE_URL}/widerruf`, "Widerrufsbelehrung und Muster-Widerrufsformular")}`
 
-/** `skill`: the skills a Teil-Pass unlocks ("Schreiben und Sprechen"); null = every skill. TODO(hannes): approve this wording. */
+/** `skill`: the skills a Teil-Pass unlocks ("Schreiben und Sprechen"); null = every skill. Wording approved by Hannes 2026-10-29. */
 export function activationEmail({ firstName, planName, paidCents, until, renewalCents, skill = null, consentAt = null }: { firstName: string | null; planName: string; paidCents: number; until: Date; renewalCents: number | null; skill?: string | null; consentAt?: Date | null }): Email {
   const hi = firstName ? `Hallo ${esc(firstName)}, danke` : "Danke"
   const body: Body = {

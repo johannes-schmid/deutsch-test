@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 // Draft after inburgeringoefenen.nl's /gebruiksvoorwaarden (same operator), adapted to German consumer law and the
 // Prüfungspass subscription. TODO(hannes): legal review (IT-Recht Kanzlei / Händlerbund or a lawyer) before go-live.
-// The Teil-Pass wording (ACTIVE_LAYOUT "skills", 2026-10-29) is a draft too and needs the same review before that switch.
+// The Teil-Pass wording (ACTIVE_LAYOUT "skills") was approved by Hannes 2026-10-29.
 export default function AgbPage() {
   const mail = <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>
   const site = SITE_URL.replace("https://", "")
