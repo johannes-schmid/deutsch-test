@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
+import { useEffect, useId, useRef, useState, useSyncExternalStore, type RefObject } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ArrowRight, CalendarCheck, CalendarClock, Check, LoaderCircle, Lock, Plus, Repeat } from "lucide-react"
@@ -32,6 +32,8 @@ type BuilderProps = {
   defaultSkill?: PartId | null
   /** Skills layout: the offer of the learner's running pass; its skills stay checked and adding more is a switch. */
   current?: string | null
+  /** Phones: lift the floating buy bar above the portal's tab bar. */
+  aboveTabBar?: boolean
 }
 
 // The portal's Suspense fallback mounts a builder before the real one; count that as one view.
@@ -240,12 +242,57 @@ function TermPassBuilder({ locale, freeHref, buyHref, checkout = false, renewing
 }
 
 /**
+ * Phones: a slim night pill with the pick and its price while the summary card is still below the fold. The button
+ * scrolls to that card, because the order button must stay next to the summary and the Widerruf consent.
+ */
+function BuyBar({ target, aboveTabBar, label, price, unit, cta }: { target: RefObject<HTMLElement | null>; aboveTabBar: boolean; label: string; price: string; unit?: string; cta: string }) {
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    const el = target.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setShow(!e.isIntersecting && e.boundingClientRect.top > 0), { rootMargin: "0px 0px -120px 0px" })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [target])
+
+  const go = () => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    target.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" })
+  }
+
+  return (
+    <div
+      data-show={show}
+      inert={!show}
+      className={cn(
+        "buy-bar fixed inset-x-0 z-30 mx-auto w-[calc(100%-24px)] max-w-[440px] lg:hidden",
+        aboveTabBar ? "bottom-[calc(max(10px,env(safe-area-inset-bottom))+74px)]" : "bottom-[max(10px,env(safe-area-inset-bottom))]"
+      )}
+    >
+      <div className="nz-night flex items-center gap-3 rounded-[28px] p-2.5 ps-5 shadow-[0_28px_56px_-22px_rgba(8,10,30,0.8)]">
+        <p className="flex min-w-0 flex-1 flex-col gap-0.5 leading-tight">
+          <span className="truncate text-[13.5px] text-white/75">{label}</span>
+          <span className="flex items-baseline gap-1.5 whitespace-nowrap">
+            <span className="text-[22px] font-semibold tracking-[-0.01em] tabular-nums">{price}</span>
+            {unit ? <span className="truncate text-[13px] text-white/75">{unit}</span> : null}
+          </span>
+        </p>
+        <VButton kind="light" size="lg" onClick={go} className="h-14 shrink-0 px-6 text-[16.5px]">
+          {cta}
+          <ArrowRight className="size-[18px] rtl:-scale-x-100" aria-hidden="true" />
+        </VButton>
+      </div>
+    </div>
+  )
+}
+
+/**
  * The Teil-Pass configurator (catalogue layout `skills`): pick any skills; all four come for the price of three, so a
  * third pick shows the fourth as free and resolves to all four (lib/pricing.ts coveringOffer). The most practised skill is
  * preselected. A learner with a running pass keeps their skills checked and locked; adding any turns the order into a
  * switch (the monthly difference now, then the new price on the same subscription).
  */
-function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref, defaultSkill = null, current = null }: BuilderProps) {
+function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref, defaultSkill = null, current = null, aboveTabBar = false }: BuilderProps) {
   const T = PASS_COPY[locale]
   const S = T.skills
   const euro = (cents: number) => formatEuro(cents, NUMBER_LOCALE[locale])
@@ -264,6 +311,8 @@ function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewin
   const names = isAll ? S.all : S.names(covered)
   const chip = "v-num rounded-full bg-v-soft px-2.5 py-1 text-[12px] font-medium whitespace-nowrap"
   const nudge = S.nudge(picked.length, euro(one.cents), euro(all.cents))
+  const summary = useRef<HTMLElement>(null)
+  const canBuy = !!offer && (upgradeCents !== null ? checkout : !renewing)
 
   const toggle = (s: PartId) => setPicked((p) => (p.includes(s) ? p.filter((x) => x !== s) : SKILLS.filter((x) => x === s || p.includes(x))))
   const toggleAll = () => setPicked(isAll ? owned : SKILLS)
@@ -375,7 +424,7 @@ function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewin
         </section>
       </div>
 
-      <aside aria-label={T.summaryH} className="lg:sticky lg:top-8">
+      <aside ref={summary} aria-label={T.summaryH} className="scroll-mt-6 lg:sticky lg:top-8">
         <div className="nz-night flex flex-col gap-5 rounded-[28px] p-6 shadow-[0_40px_80px_-44px_rgba(8,10,30,0.7)] sm:p-7">
           {offer ? (
             <>
@@ -440,6 +489,16 @@ function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewin
           )}
         </div>
       </aside>
+      {canBuy && offer ? (
+        <BuyBar
+          target={summary}
+          aboveTabBar={aboveTabBar}
+          label={names}
+          price={euro(upgradeCents ?? offer.cents)}
+          unit={upgradeCents !== null ? undefined : S.perMonth}
+          cta={T.buy}
+        />
+      ) : null}
     </div>
   )
 }

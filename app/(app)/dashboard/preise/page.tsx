@@ -22,7 +22,7 @@ const free = portalPath("dtz")
 async function Builder() {
   const user = await getSessionUser()
   const [status, defaultSkill] = user ? await Promise.all([passStatus(user.id), ACTIVE_LAYOUT === "skills" ? mostPracticedSkill(user.id) : null]) : [null, null]
-  return <PassBuilder locale="de" freeHref={free} checkout renewing={status?.renewing ?? false} current={status?.offerId ?? null} defaultSkill={defaultSkill} accountHref={PORTAL_ACCOUNT} />
+  return <PassBuilder locale="de" freeHref={free} checkout renewing={status?.renewing ?? false} current={status?.offerId ?? null} defaultSkill={defaultSkill} accountHref={PORTAL_ACCOUNT} aboveTabBar />
 }
 
 /**
