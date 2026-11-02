@@ -1,5 +1,6 @@
 import "server-only"
-import { EXAMS, FAMILIES, FAMILY_IDS, examPath, familyLevels, familyPath, portalPath, type Brand, type Exam, type ExamId, type FamilyId, type Level } from "@/lib/exams"
+import { EXAMS, FAMILIES, FAMILY_IDS, examPath, familyLevels, familyOf, familyPath, portalPath, type Brand, type Exam, type ExamId, type FamilyId, type Level } from "@/lib/exams"
+import type { FocusInfo, SwitchFamily } from "@/components/portal/exam-focus"
 import { SKILLS, examLive, liveSkills, type Skill } from "@/lib/kurztest/data"
 
 export type PortalExam = Exam & { id: ExamId; href: string; free: string | null }
@@ -29,4 +30,18 @@ export async function portalSkills(exam: ExamId): Promise<PortalSkill[]> {
   "use cache"
   const live = examLive(exam) ? liveSkills(exam) : []
   return SKILLS.map((skill) => ({ skill, href: portalPath(exam, skill), free: live.includes(skill) ? `${examPath(exam)}/${skill}` : null }))
+}
+
+/** Every exam by family for the dashboard's exam switch. Start Deutsch 1 sits under Goethe and telc. */
+export async function switchFamilies(): Promise<SwitchFamily[]> {
+  "use cache"
+  return FAMILY_IDS.map((id) => ({ id, name: FAMILIES[id].name, brand: FAMILIES[id].brand, exams: FAMILIES[id].exams.map((e) => ({ id: e, level: EXAMS[e].levels.join("–") })) }))
+}
+
+/** The dashboard's exam with its family's other levels as keys. Start Deutsch 1 belongs to two families and shows Goethe's levels. */
+export function focusInfo(id: ExamId): FocusInfo {
+  const exam = EXAMS[id]
+  const family = FAMILIES[familyOf(id) ?? "goethe"]
+  const siblings = family.exams.length > 1 ? family.exams.map((e) => ({ id: e, level: EXAMS[e].levels.join("–") })) : null
+  return { id, name: exam.name, brand: exam.brand, summary: exam.summary, range: exam.levels.join("–"), siblings }
 }

@@ -2,18 +2,19 @@ import { Suspense } from "react"
 import Link from "next/link"
 import { ArrowRight, Euro, LayoutGrid, ListChecks, MessageCircle, UserRound } from "lucide-react"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
-import { ExamMark } from "@/components/design/variants/nachtzug-icons"
-import { PortalLink, SideGroup, SignOutButton } from "@/components/portal/portal-client"
+import { PartIcon } from "@/components/design/variants/nachtzug-icons"
+import { PortalLink, SignOutButton } from "@/components/portal/portal-client"
 import type { SessionUser } from "@/lib/supabase/server"
-import type { Brand } from "@/lib/exams"
+import type { PartId } from "@/lib/exam/types"
+import { MODELLTESTS } from "@/lib/portal"
 import { PORTAL_ACCOUNT, PORTAL_CONTACT, PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { cn } from "@/lib/utils"
 
 const T = PORTAL_COPY
 
-export type NavLevel = { id: string; level: string; label: string; href: string }
-export type NavFamily = { id: string; label: string; brand: Brand; href: string; levels: NavLevel[] }
+/** One part in the sidebar: its Modelltest page and how many of its ten this learner has done. */
+export type NavPart = { part: PartId; label: string; href: string; done: number }
 
 const initials = (u: SessionUser) => (u.name ?? u.email).split(/[\s@.]+/).filter(Boolean).slice(0, 2).map((p) => p[0]!.toUpperCase()).join("")
 
@@ -61,41 +62,9 @@ export function AccountRow({ user }: { user: SessionUser | null }) {
 export const SIDE_LINK = "flex min-h-11 items-center gap-3 rounded-full px-3 text-[14.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
 export const SIDE_ACTIVE = "bg-v-ink font-semibold text-v-bg hover:bg-v-ink hover:text-v-bg"
 
-/** One exam family in the sidebar, lit on its page (and, for the DTZ, its skill pages). */
-function SideFamily({ family, grouped }: { family: NavFamily; grouped?: boolean }) {
-  const body = (
-    <>
-      <ExamMark brand={family.brand} size="sm" />
-      <span className="truncate">{family.label}</span>
-    </>
-  )
-  const cls = cn(SIDE_LINK, "text-v-ink", grouped && "pe-11")
-  return (
-    <Suspense fallback={<Link href={family.href} className={cls}>{body}</Link>}>
-      <PortalLink href={family.href} className={cls} activeClassName={SIDE_ACTIVE} nested>{body}</PortalLink>
-    </Suspense>
-  )
-}
-
 export const SIDE_SUB = "flex min-h-9 items-center gap-2.5 rounded-full px-3 text-[13.5px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink"
 export const SIDE_SUB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
 
-/** One level under its family: level pill and exam name, lit on the exam and its skill pages. */
-function SideLevel({ level }: { level: NavLevel }) {
-  const body = (
-    <>
-      <span className="v-num w-[42px] shrink-0 text-[11.5px] font-semibold text-v-ink">{level.level}</span>
-      <span className="truncate">{level.label}</span>
-    </>
-  )
-  return (
-    <Suspense fallback={<Link href={level.href} className={SIDE_SUB}>{body}</Link>}>
-      <PortalLink href={level.href} className={SIDE_SUB} activeClassName={SIDE_SUB_ACTIVE} nested>{body}</PortalLink>
-    </Suspense>
-  )
-}
-
-/** The floating glass sidebar from lg up: overview, the exam families with their levels, the plan card and the account row. */
 /** The plan card at the foot of the sidebar: "Gratis" with the way to the pass, or the active pass with its end date. */
 export function SidePlan({ until }: { until: string | null }) {
   return (
@@ -111,7 +80,52 @@ export function SidePlan({ until }: { until: string | null }) {
   )
 }
 
-export function PortalSidebar({ groups, account, plan, className }: { groups: NavFamily[]; account: React.ReactNode; plan?: React.ReactNode; className?: string }) {
+/** The four parts of the learner's exam, each lit on its Modelltest list and the tests below it. */
+export function SideParts({ exam, parts }: { exam: string | null; parts: NavPart[] }) {
+  if (!exam) return <p className="px-3 pt-1 text-[13.5px] leading-snug text-v-muted text-pretty">{T.focus.sideEmpty}</p>
+  return (
+    <>
+      <h2 className="px-3 pt-2 pb-1 font-[family-name:var(--v-font-mono)] text-[11px] tracking-[0.08em] text-v-muted uppercase">{T.focus.sideH(exam)}</h2>
+      <ul className="flex flex-col gap-1">
+        {parts.map((p) => {
+          const body = (
+            <>
+              <PartIcon part={p.part} size="sm" />
+              <span className="min-w-0 flex-1 truncate">{p.label}</span>
+              <span className="v-num pe-1 text-[12px] opacity-70">{T.focus.sideCount(p.done, MODELLTESTS)}</span>
+            </>
+          )
+          const cls = cn(SIDE_LINK, "ps-1.5 text-v-ink")
+          return (
+            <li key={p.part}>
+              <Suspense fallback={<Link href={p.href} className={cls}>{body}</Link>}>
+                <PortalLink href={p.href} className={cls} activeClassName={SIDE_ACTIVE} nested>{body}</PortalLink>
+              </Suspense>
+            </li>
+          )
+        })}
+      </ul>
+    </>
+  )
+}
+
+/** SideParts while the learner's exam loads. */
+export function SidePartsSkeleton() {
+  return (
+    <div className="flex flex-col gap-1" aria-hidden="true">
+      <span className="mx-3 mt-3 mb-2 h-2.5 w-24 rounded-full bg-v-soft" />
+      {[0, 1, 2, 3].map((i) => (
+        <span key={i} className="flex min-h-11 items-center gap-3 px-1.5">
+          <span className="size-9 rounded-[10px] bg-v-soft" />
+          <span className="h-3 w-20 rounded-full bg-v-soft" />
+        </span>
+      ))}
+    </div>
+  )
+}
+
+/** The floating glass sidebar from lg up: overview, the four parts of the learner's exam, contact, the plan card and the account row. */
+export function PortalSidebar({ parts, account, plan, className }: { parts: React.ReactNode; account: React.ReactNode; plan?: React.ReactNode; className?: string }) {
   const overview = (
     <>
       <LayoutGrid className="size-[18px]" strokeWidth={2} aria-hidden="true" />
@@ -133,30 +147,7 @@ export function PortalSidebar({ groups, account, plan, className }: { groups: Na
         <Suspense fallback={<Link href={PORTAL_HOME} className={SIDE_LINK}>{overview}</Link>}>
           <PortalLink href={PORTAL_HOME} className={SIDE_LINK} activeClassName={SIDE_ACTIVE}>{overview}</PortalLink>
         </Suspense>
-        <div className="-mx-1 mt-2 flex min-h-0 flex-col gap-1 overflow-y-auto px-1 pb-1">
-          <h2 className="px-3 pt-2 pb-1 font-[family-name:var(--v-font-mono)] text-[11px] tracking-[0.08em] text-v-muted uppercase">{T.nav.exams}</h2>
-          <ul className="flex flex-col gap-1">
-            {groups.map((f) => (
-              <li key={f.id} className="flex flex-col">
-                {f.levels.length > 1 ? (
-                  <Suspense fallback={<SideFamily family={f} grouped />}>
-                    <SideGroup href={f.href} levelHrefs={f.levels.map((l) => l.href)} label={T.nav.levels(f.label)} head={<SideFamily family={f} grouped />}>
-                      <ul className="ms-[30px] mt-0.5 flex flex-col border-s border-v-line ps-1.5">
-                        {f.levels.map((l) => (
-                          <li key={l.id}>
-                            <SideLevel level={l} />
-                          </li>
-                        ))}
-                      </ul>
-                    </SideGroup>
-                  </Suspense>
-                ) : (
-                  <SideFamily family={f} />
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div className="-mx-1 mt-2 flex min-h-0 flex-col gap-1 overflow-y-auto px-1 pb-1">{parts}</div>
       </nav>
       <div className="-mb-3 flex flex-col">
         <Suspense fallback={<Link href={PORTAL_CONTACT} className={SIDE_LINK}>{contact}</Link>}>
@@ -191,7 +182,7 @@ const TAB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
 /** Phones and tablets: the floating tab bar at the bottom. */
 export function PortalTabBar({ className }: { className?: string }) {
   const tabs = [
-    { href: `${PORTAL_HOME}#pruefungen`, label: T.nav.exams, icon: ListChecks },
+    { href: `${PORTAL_HOME}#teile`, label: T.nav.parts, icon: ListChecks },
     { href: PORTAL_PASS, label: T.nav.pricing, icon: Euro },
     { href: PORTAL_ACCOUNT, label: T.nav.account, icon: UserRound },
   ]

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, Check, ChevronRight, Clock, Lock, RotateCcw } from "lucide-react"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
+import { ProgressBar } from "@/components/portal/portal-overview"
 import type { PartId } from "@/lib/exam/types"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { cn } from "@/lib/utils"
@@ -45,7 +46,7 @@ export function PortalHeader({ mark, title, lead, children }: { mark: React.Reac
 }
 
 /** One skill of an exam: icon, name, Modelltest count, and the free test where one exists. The whole card opens the skill page. */
-export function SkillCard({ skill, name, href, free, count, status }: { skill: PartId; name: string; href: string; free: string | null; count: string; status: string }) {
+export function SkillCard({ skill, name, href, free, count, status, progress }: { skill: PartId; name: string; href: string; free: string | null; count: string; status: string; progress?: { done: number; total: number } }) {
   return (
     <article className="nz-paper group relative flex h-full flex-col gap-7 rounded-[24px] p-5 transition-transform duration-200 ease-out hover:-translate-y-0.5 has-[a:active]:scale-[0.99] sm:p-6">
       <div className="flex items-start justify-between gap-3">
@@ -63,6 +64,7 @@ export function SkillCard({ skill, name, href, free, count, status }: { skill: P
           {status}
         </p>
       </div>
+      {progress ? <ProgressBar done={progress.done} total={progress.total} /> : null}
       <div className="mt-auto flex min-h-9 items-center justify-between gap-3">
         {free ? (
           <Link href={free} className="relative z-10 -ms-1 rounded-full px-1 py-1 text-[14px] font-semibold underline decoration-v-ink/25 underline-offset-4 transition-[text-decoration-color] duration-150 ease-out hover:decoration-v-ink">

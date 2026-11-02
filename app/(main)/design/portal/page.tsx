@@ -2,12 +2,15 @@ import type { Metadata } from "next"
 import { DesignShell } from "@/components/design/shell"
 import { GoogleButtonFallback } from "@/components/auth/google-button"
 import { ExamCard } from "@/components/kurztest/exam-card"
-import { AccountRow, Avatar, PortalSidebar, PortalTabBar } from "@/components/portal/portal-shell"
+import { AccountRow, Avatar, PortalSidebar, PortalTabBar, SideParts, SidePartsSkeleton } from "@/components/portal/portal-shell"
+import { ExamChooser, ExamFocusHeader } from "@/components/portal/exam-focus"
+import { PassBanner } from "@/components/portal/pass-banner"
+import { focusInfo, switchFamilies } from "@/lib/portal"
 import { ModelltestRow, PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
-import { FamilyCard, LevelCard, ScoreCard, WeekCard } from "@/components/portal/portal-overview"
+import { LevelCard, ScoreCard, WeekCard } from "@/components/portal/portal-overview"
 import { AccountCard, PassCard, ProgressCard } from "@/components/portal/portal-account"
 import { PassBuilder } from "@/components/design/pass-builder"
-import { EXAMS, FAMILIES, FAMILY_IDS } from "@/lib/exams"
+import { EXAMS } from "@/lib/exams"
 import type { SessionUser } from "@/lib/supabase/server"
 
 export const metadata: Metadata = {
@@ -16,7 +19,7 @@ export const metadata: Metadata = {
 }
 
 const USER: SessionUser = { id: "design-preview", email: "amina@example.com", name: "Amina Rahimi", firstName: "Amina", avatar: null }
-const NAV = FAMILY_IDS.map((f) => ({ id: f, label: f === "dtz" ? "DTZ" : FAMILIES[f].name, brand: FAMILIES[f].brand, href: `#${f}`, levels: FAMILIES[f].exams.map((id) => ({ id, level: EXAMS[id].levels.join("–"), label: EXAMS[id].short ?? EXAMS[id].name, href: `#${id}` })) }))
+const PARTS = (["hoeren", "lesen", "schreiben", "sprechen"] as const).map((part, i) => ({ part, label: ["Hören", "Lesen", "Schreiben", "Sprechen"][i], href: `#${part}`, done: [1, 2, 0, 0][i] }))
 
 function Spec({ name, note, children }: { name: string; note: string; children: React.ReactNode }) {
   return (
@@ -29,7 +32,8 @@ function Spec({ name, note, children }: { name: string; note: string; children: 
 }
 
 /** The portal and auth pieces with specimen data. Live: /registrieren, /anmelden, /dashboard (after sign-in). */
-export default function PortalDesignPage() {
+export default async function PortalDesignPage() {
+  const families = await switchFamilies()
   return (
     <DesignShell id="nachtzug" lang="de">
       <div className="v-container py-16">
@@ -38,13 +42,30 @@ export default function PortalDesignPage() {
           Aufbau wie das Portal von inburgeringoefenen.nl, gebaut aus Nachtzug. Komponenten in components/portal/ und components/auth/. Daten hier sind Muster.
         </p>
 
-        <Spec name="PortalSidebar" note="Ab lg: schwebende Glas-Leiste, 280px. Übersicht (aktiv = Tinte), dann die Prüfungsfamilien (DTZ, Goethe, telc, ÖSD) mit ExamMark und darunter ihre Niveaus an einer Haarlinie. Ein Niveau leuchtet auch auf seinen Teil-Seiten. Paket-Karte, Konto-Zeile.">
-          <div className="photo rounded-[32px] p-6" style={{ ["--photo" as string]: "var(--g-photo-1)" }}>
-            <PortalSidebar groups={NAV} account={<AccountRow user={USER} />} className="static m-0 flex h-[720px]" />
+        <Spec name="PortalSidebar · SideParts" note="Ab lg: schwebende Glas-Leiste, 280px. Übersicht (aktiv = Tinte), dann die vier Teile der Prüfung, auf der das Dashboard steht (PartIcon, Name, „x/10“; leuchtet auf der Modelltest-Liste und den Tests darunter). Ohne Prüfung: ein Hinweis; beim Laden: Skelett. Kontakt, Paket-Karte, Konto-Zeile.">
+          <div className="photo flex flex-wrap gap-6 rounded-[32px] p-6" style={{ ["--photo" as string]: "var(--g-photo-1)" }}>
+            <PortalSidebar parts={<SideParts exam="DTZ" parts={PARTS} />} account={<AccountRow user={USER} />} className="static m-0 flex h-[720px]" />
+            <PortalSidebar parts={<SidePartsSkeleton />} account={<AccountRow user={null} />} className="static m-0 flex h-[720px]" />
+            <PortalSidebar parts={<SideParts exam={null} parts={[]} />} account={<AccountRow user={USER} />} className="static m-0 flex h-[720px]" />
           </div>
         </Spec>
 
-        <Spec name="PortalTabBar" note="Unter lg: schwebende Tab-Leiste unten, 64px, max. 440px. Prüfungen und Konto springen zu Abschnitten der Übersicht.">
+        <Spec name="ExamFocusHeader" note="/dashboard öffnet auf der Prüfung des Lernenden (aus dem Gratis-Test bei der Anmeldung, sonst letzter Modelltest oder Gratis-Test, gewechselt hier oder im Konto). ExamMark, Name, Kurzbeschreibung; Niveau-Tasten der Familie (der DTZ zeigt „A2–B1 · ein Test“); „Andere Prüfung“ klappt die Liste aller Prüfungen in der Karte auf (kein Modal).">
+          <div className="flex max-w-[860px] flex-col gap-4">
+            <ExamFocusHeader exam={focusInfo("dtz")} families={families} />
+            <ExamFocusHeader exam={focusInfo("goethe-b1")} families={families} />
+          </div>
+        </Spec>
+
+        <Spec name="PassBanner" note="Zwischen Prüfung und Teilen, nur ohne Pass. Die eine Nacht-Karte des Dashboards: Überschrift zweifarbig, Gratis-Regel, die vier Teile als Punkte, Preis pro Teil und alle vier mit „1 Teil gratis“ aus lib/pricing.ts, helle Taste zu /dashboard/preise.">
+          <div className="max-w-[860px]"><PassBanner /></div>
+        </Spec>
+
+        <Spec name="ExamChooser" note="Erster Besuch ohne gespeicherte Prüfung: dieselbe Liste wie im Wechsel-Panel als eigene Karte. Ein Tipp speichert die Prüfung, dann öffnet das Dashboard darauf.">
+          <div className="max-w-[860px]"><ExamChooser families={families} /></div>
+        </Spec>
+
+        <Spec name="PortalTabBar" note="Unter lg: schwebende Tab-Leiste unten, 64px, max. 440px. „Teile“ springt zu den vier Teilen auf der Übersicht.">
           <PortalTabBar className="static mx-0 w-full lg:block" />
         </Spec>
 
@@ -69,13 +90,6 @@ export default function PortalDesignPage() {
           </ul>
         </Spec>
 
-        <Spec name="FamilyCard" note="/dashboard: eine Prüfungsfamilie. ExamMark, Niveau-Spanne, zuletzt gemachter Modelltest (sonst Kurzbeschreibung), Fortschritt über alle Niveaus. Gestartet: Tinten-Knopf „Weiter“, sonst „Beginnen“ als Umriss. Die ganze Karte öffnet die Familie; der DTZ öffnet direkt seine Prüfung.">
-          <ul className="grid max-w-[760px] grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
-            <li><FamilyCard name="Deutsch-Test für Zuwanderer" brand="dtz" levels="A2–B1" href="#" line="Zuletzt: Modelltest 3 · Hören" done={7} total={40} /></li>
-            <li><FamilyCard name="ÖSD Zertifikat" brand="oesd" levels="A1–B1" href="#" line={FAMILIES.oesd.summary} done={0} total={120} /></li>
-          </ul>
-        </Spec>
-
         <Spec name="LevelCard" note="/dashboard/goethe (telc, oesd): ein Niveau der Familie. Niveau als Tinten-Kachel, Name, Kurzbeschreibung, Fortschritt. Öffnet /dashboard/[exam].">
           <ul className="grid max-w-[760px] grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
             <li><LevelCard level="A2" name={EXAMS["goethe-a2"].name} summary={EXAMS["goethe-a2"].summary} href="#" done={3} total={40} /></li>
@@ -95,9 +109,9 @@ export default function PortalDesignPage() {
           <PortalCrumbs items={[{ label: "Übersicht", href: "#" }, { label: "Goethe B1", href: "#" }, { label: "Hören" }]} />
         </Spec>
 
-        <Spec name="SkillCard" note="/dashboard/[exam]: ein Teil der Prüfung. PartIcon, Anzahl Modelltests, Status. Die ganze Karte öffnet den Teil; der Gratis-Test-Link liegt darüber und erscheint nur, wenn es geprüften Inhalt gibt.">
+        <Spec name="SkillCard" note="/dashboard und /dashboard/[exam]: ein Teil der Prüfung. PartIcon, Anzahl Modelltests, Status, auf dem Dashboard ein Fortschrittsbalken (x von 10). Die ganze Karte öffnet den Teil; der Gratis-Test-Link liegt darüber und erscheint nur, wenn es geprüften Inhalt gibt.">
           <ul className="grid max-w-[760px] grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
-            <li><SkillCard skill="hoeren" name="Hören" href="#" free="#" count="10 Modelltests" status="Modelltests kommen bald" /></li>
+            <li><SkillCard skill="hoeren" name="Hören" href="#" free="#" count="10 Modelltests" status="2 von 3 Modelltests gemacht" progress={{ done: 2, total: 10 }} /></li>
             <li><SkillCard skill="sprechen" name="Sprechen" href="#" free={null} count="10 Modelltests" status="Modelltests kommen bald" /></li>
           </ul>
         </Spec>

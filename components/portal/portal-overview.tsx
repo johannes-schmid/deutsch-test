@@ -1,13 +1,10 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { ExamMark } from "@/components/design/variants/nachtzug-icons"
-import type { Brand } from "@/lib/exams"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { cn } from "@/lib/utils"
 
 const T = PORTAL_COPY
 
-const CHIP = "v-num rounded-full bg-v-soft px-2.5 py-1 text-[12px] font-medium tracking-[0.02em] text-v-ink"
 const CARD = "nz-paper group relative flex h-full flex-col gap-6 rounded-[24px] p-5 transition-transform duration-200 ease-out has-[a:active]:scale-[0.99] sm:p-6 [@media(hover:hover)]:hover:-translate-y-0.5"
 const STRETCH = "rounded outline-none after:absolute after:inset-0 after:rounded-[24px] focus-visible:after:ring-2 focus-visible:after:ring-v-ink"
 
@@ -39,25 +36,6 @@ function Footer({ done, total, started }: { done: number; total: number; started
         </span>
       </div>
     </div>
-  )
-}
-
-/** One exam family on the overview: badge, level range, last Modelltest or summary, progress. The whole card opens the family. */
-export function FamilyCard({ name, brand, levels, href, line, done, total }: { name: string; brand: Brand; levels: string; href: string; line: string; done: number; total: number }) {
-  return (
-    <article className={CARD}>
-      <div className="flex items-start justify-between gap-3">
-        <ExamMark brand={brand} />
-        <span className={CHIP}>{levels}</span>
-      </div>
-      <div className="flex flex-col gap-1.5">
-        <h3 className="text-[23px] leading-tight font-semibold tracking-[-0.02em] text-balance">
-          <Link href={href} className={STRETCH}>{name}</Link>
-        </h3>
-        <p className="text-[15px] text-v-muted text-pretty">{line}</p>
-      </div>
-      <Footer done={done} total={total} started={done > 0} />
-    </article>
   )
 }
 
