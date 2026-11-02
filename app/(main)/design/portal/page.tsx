@@ -65,8 +65,8 @@ export default async function PortalDesignPage() {
           <div className="max-w-[860px]"><ExamChooser families={families} /></div>
         </Spec>
 
-        <Spec name="PortalTabBar" note="Unter lg: schwebende Tab-Leiste unten, 64px, max. 440px. „Teile“ springt zu den vier Teilen auf der Übersicht.">
-          <PortalTabBar className="static mx-0 w-full lg:block" />
+        <Spec name="PortalTabBar" note="Unter lg: schwebende Tab-Leiste unten, 64px, max. 440px. Übersicht leuchtet nur auf /dashboard. „Teile“ öffnet ein Sheet von unten mit den vier Teilen der Prüfung (SideParts sheet, Titel = Prüfung) und Kontakt; leuchtet auf jeder Modelltest-Seite und solange das Sheet offen ist.">
+          <PortalTabBar parts={<SideParts exam="DTZ" parts={PARTS} sheet />} className="static mx-0 w-full lg:block" />
         </Spec>
 
         <Spec name="Avatar · AccountRow" note="Google-Profilbild, sonst Initialen. Ohne Nutzer (Suspense-Fallback): Platzhalter-Balken.">

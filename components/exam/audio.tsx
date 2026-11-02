@@ -120,8 +120,12 @@ export type ExamTrackData = { src: string; duration: number; cues: ExamTrackCue[
  * The whole Hören part as one track, as in the real exam: one start, then it runs to the end. No pause, no seek, no
  * replay. `cue` is where the track is now, so the runner can show the matching task.
  */
-export function useExamTrack(track: ExamTrackData) {
-  const [time, setTime] = useState(0)
+/**
+ * `from`: where the track starts (a Modelltest resumed after the free half). The track ends at `track.duration` even
+ * when the file runs on (the free half stops before the first locked Teil).
+ */
+export function useExamTrack(track: ExamTrackData, from = 0) {
+  const [time, setTime] = useState(from)
   const [state, setState] = useState<"idle" | "playing" | "blocked" | "ended">("idle")
   const audio = useRef<HTMLAudioElement | null>(null)
 
@@ -129,7 +133,15 @@ export function useExamTrack(track: ExamTrackData) {
     if (!track.src) return
     const el = new Audio(track.src)
     el.preload = "auto"
-    el.ontimeupdate = () => setTime(el.currentTime)
+    el.ontimeupdate = () => {
+      if (el.currentTime >= track.duration) {
+        el.onpause = null
+        el.pause()
+        setTime(track.duration)
+        return setState("ended")
+      }
+      setTime(el.currentTime)
+    }
     el.onended = () => { setTime(track.duration); setState("ended") }
     // The exam does not stop when the candidate looks away; only the OS can pause us (calls, headphones out).
     el.onpause = () => !el.ended && setState((s) => (s === "playing" ? "blocked" : s))
@@ -140,6 +152,7 @@ export function useExamTrack(track: ExamTrackData) {
   const start = () => {
     const el = audio.current
     if (!el || state === "playing" || state === "ended") return
+    if (from && el.currentTime < from) el.currentTime = from
     void el.play().then(() => setState("playing")).catch(() => setState("blocked"))
   }
 

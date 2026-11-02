@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRight, Euro, LayoutGrid, ListChecks, MessageCircle, UserRound } from "lucide-react"
 import { NzLogo } from "@/components/design/variants/nachtzug-logo"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
-import { PortalLink, SignOutButton } from "@/components/portal/portal-client"
+import { PartsTab, PortalLink, SignOutButton } from "@/components/portal/portal-client"
 import type { SessionUser } from "@/lib/supabase/server"
 import type { PartId } from "@/lib/exam/types"
 import { MODELLTESTS } from "@/lib/portal"
@@ -80,22 +80,35 @@ export function SidePlan({ until }: { until: string | null }) {
   )
 }
 
-/** The four parts of the learner's exam, each lit on its Modelltest list and the tests below it. */
-export function SideParts({ exam, parts }: { exam: string | null; parts: NavPart[] }) {
-  if (!exam) return <p className="px-3 pt-1 text-[13.5px] leading-snug text-v-muted text-pretty">{T.focus.sideEmpty}</p>
+/** The four parts of the learner's exam, each lit on its Modelltest list and the tests below it. `sheet`: the phone tab bar's sheet, with the exam as its title and bigger rows. */
+export function SideParts({ exam, parts, sheet }: { exam: string | null; parts: NavPart[]; sheet?: boolean }) {
+  const head = sheet ? (
+    <h2 id="parts-sheet-h" className="px-3 pt-2 pe-14 pb-2 text-[19px] leading-tight font-semibold tracking-[-0.01em] text-balance">{exam ? T.focus.sideH(exam) : T.nav.parts}</h2>
+  ) : (
+    <h2 className="px-3 pt-2 pb-1 font-[family-name:var(--v-font-mono)] text-[11px] tracking-[0.08em] text-v-muted uppercase">{T.focus.sideH(exam ?? "")}</h2>
+  )
+  if (!exam) {
+    return (
+      <>
+        {sheet ? head : null}
+        <p className={cn("px-3 pt-1 leading-snug text-v-muted text-pretty", sheet ? "pe-14 text-[15px]" : "text-[13.5px]")}>{T.focus.sideEmpty}</p>
+        {sheet ? <Link href={PORTAL_HOME} className="mx-3 mt-2 flex h-11 w-fit items-center gap-1.5 text-[15px] font-semibold">{T.nav.overview}<ArrowRight className="size-4 rtl:-scale-x-100" aria-hidden="true" /></Link> : null}
+      </>
+    )
+  }
   return (
     <>
-      <h2 className="px-3 pt-2 pb-1 font-[family-name:var(--v-font-mono)] text-[11px] tracking-[0.08em] text-v-muted uppercase">{T.focus.sideH(exam)}</h2>
+      {head}
       <ul className="flex flex-col gap-1">
         {parts.map((p) => {
           const body = (
             <>
               <PartIcon part={p.part} size="sm" />
               <span className="min-w-0 flex-1 truncate">{p.label}</span>
-              <span className="v-num pe-1 text-[12px] opacity-70">{T.focus.sideCount(p.done, MODELLTESTS)}</span>
+              <span className={cn("v-num pe-1 opacity-70", sheet ? "pe-2 text-[13px]" : "text-[12px]")}>{T.focus.sideCount(p.done, MODELLTESTS)}</span>
             </>
           )
-          const cls = cn(SIDE_LINK, "ps-1.5 text-v-ink")
+          const cls = cn(SIDE_LINK, "ps-1.5 text-v-ink", sheet && "min-h-14 text-[16px]")
           return (
             <li key={p.part}>
               <Suspense fallback={<Link href={p.href} className={cls}>{body}</Link>}>
@@ -179,10 +192,9 @@ export function PortalMobileHeader({ avatar }: { avatar: React.ReactNode }) {
 const TAB = "flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-full py-1.5 text-[11.5px] font-medium text-v-muted transition-[background-color,color,transform] duration-150 ease-out active:scale-[0.95]"
 const TAB_ACTIVE = "bg-v-ink/7 font-semibold text-v-ink"
 
-/** Phones and tablets: the floating tab bar at the bottom. */
-export function PortalTabBar({ className }: { className?: string }) {
+/** Phones and tablets: the floating tab bar at the bottom. "Teile" opens a sheet with `parts` (the sidebar's list, as a sheet). */
+export function PortalTabBar({ parts, className }: { parts: React.ReactNode; className?: string }) {
   const tabs = [
-    { href: `${PORTAL_HOME}#teile`, label: T.nav.parts, icon: ListChecks },
     { href: PORTAL_PASS, label: T.nav.pricing, icon: Euro },
     { href: PORTAL_ACCOUNT, label: T.nav.account, icon: UserRound },
   ]
@@ -196,7 +208,17 @@ export function PortalTabBar({ className }: { className?: string }) {
     <nav aria-label={T.nav.overview} className={cn("fixed inset-x-0 bottom-[max(10px,env(safe-area-inset-bottom))] z-30 mx-auto w-[calc(100%-24px)] max-w-[440px] lg:hidden", className)}>
       <div className="nz-chrome flex h-16 items-stretch gap-1 rounded-full p-1.5">
         <Suspense fallback={<Link href={PORTAL_HOME} className={TAB}>{overview}</Link>}>
-          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE} nested except={[PORTAL_PASS, PORTAL_ACCOUNT, PORTAL_CONTACT]}>{overview}</PortalLink>
+          <PortalLink href={PORTAL_HOME} className={TAB} activeClassName={TAB_ACTIVE}>{overview}</PortalLink>
+        </Suspense>
+        <Suspense
+          fallback={
+            <Link href={PORTAL_HOME} className={TAB}>
+              <ListChecks className="size-5" strokeWidth={2} aria-hidden="true" />
+              {T.nav.parts}
+            </Link>
+          }
+        >
+          <PartsTab className={TAB} activeClassName={TAB_ACTIVE}>{parts}</PartsTab>
         </Suspense>
         {tabs.map(({ href, label, icon: Icon }) => {
           const body = (

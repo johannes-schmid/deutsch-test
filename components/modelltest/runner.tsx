@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import { ChevronDown, Clock, EyeOff, Headphones, Mic, NotebookPen, PenLine, Users } from "lucide-react"
-import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamInstructions, ExamShell, ExamTrack, PartIntro, PartResultCard, PointsBar, ExamReading, ReadingLayout, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack } from "@/components/exam"
+import { ConfirmSheet, ContinueCard, ExamBar, ExamButton, ExamCopyProvider, ExamInstructions, ExamShell, ExamTrack, HalfwayStop, PartIntro, PartResultCard, PointsBar, ExamReading, ReadingLayout, ResultSummary, ScoreRing, WritingTask, fmt, useExamCopy, useExamTimer, useExamTrack, type HalfwayRow } from "@/components/exam"
+import { PartIcon } from "@/components/design/variants/nachtzug-icons"
+import { UnlockSheet, unlockOffers } from "@/components/portal/unlock-sheet"
 import { LevelScale } from "@/components/design/kit"
 import { LevelSeal, ScoreSeal } from "@/components/design/variants/nachtzug-icons"
 import { KurztestFrame } from "@/components/kurztest/frame"
@@ -21,24 +23,32 @@ import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { DTZ_ANLEITUNG } from "@/lib/modelltest/anleitung"
 import { TELC_B1_ANLEITUNG } from "@/lib/modelltest/anleitung-telc-b1"
 import type { MtGradedResult } from "@/lib/modelltest/grade"
-import type { MtClosedResult, PublicMtBlock, RunnerSet } from "@/lib/modelltest/runner"
+import { resumeFrom, type LockedGrade } from "@/lib/modelltest/half"
+import type { MtClosedResult, Paused, PublicMtBlock, RunnerSet } from "@/lib/modelltest/runner"
+import { PORTAL_PASS } from "@/lib/auth/redirect"
+import { formatEuro } from "@/lib/pricing"
 import type { MtSpeakingResult } from "@/lib/modelltest/speaking"
-import { finishSpeaking, startAttempt, submitClosed, submitWriting, type WritingAnswer } from "@/app/(app)/dashboard/[exam]/[skill]/[n]/actions"
+import { finishSpeaking, pauseAttempt, revealGrade, startAttempt, submitClosed, submitWriting, type PauseInput, type WritingAnswer } from "@/app/(app)/dashboard/[exam]/[skill]/[n]/actions"
 import { SpeakingRun, speakingPrep } from "./speaking"
 
 const P = PORTAL_COPY.run
+const H = PORTAL_COPY.run.half
 const SEAL = { B1: "b1", A2: "a2", "unter A2": "unter-a2" } as const
 const MAX_TEXT = 3000
 
-type Phase = "intro" | "anleitung" | "test" | "sending" | "result" | "error"
+type Phase = "intro" | "anleitung" | "test" | "sending" | "result" | "error" | "halfway" | "resume" | "reveal"
 type Result = MtClosedResult | MtGradedResult | MtSpeakingResult
 
-/** A Modelltest from the portal: intro, the full timed part, then the result with every solution. German UI. */
-export function ModelltestRunner({ set }: { set: RunnerSet }) {
+/**
+ * A Modelltest from the portal: intro, the full timed part, then the result with every solution. German UI.
+ * Modelltest 1 without a pass (`set.half`) stops after the free half; `waiting` is an attempt stopped there earlier,
+ * resumed once the learner owns the skill. `hasPass`: the learner has a pass for other Teile (buys more on /preise).
+ */
+export function ModelltestRunner({ set, waiting, hasPass }: { set: RunnerSet; waiting: { attemptId: string; paused: Paused } | null; hasPass: boolean }) {
   return (
     <KurztestLocale locale="de">
       <ExamCopyProvider locale="de">
-        <Runner set={set} />
+        <Runner set={set} waiting={waiting} hasPass={hasPass} />
       </ExamCopyProvider>
     </KurztestLocale>
   )
@@ -56,14 +66,15 @@ function useExit(href: string) {
 const teilName = (exam: string, skill: string, teil: number, fallback: string) => (exam === "telc-b1" ? TELC_B1_TEILE.find((t) => t.skill === skill && t.teil === teil)?.label ?? fallback : fallback)
 const scoredItems = (b: PublicMtBlock) => itemNumbers(b.display.items).filter((n) => n > 0)
 
-function Runner({ set }: { set: RunnerSet }) {
+function Runner({ set, waiting, hasPass }: { set: RunnerSet; waiting: { attemptId: string; paused: Paused } | null; hasPass: boolean }) {
   const C = useKurztest().T
   const { start: startLabel, next: nextLabel } = useExamCopy()
   const router = useRouter()
-  const [phase, setPhase] = useState<Phase>("intro")
-  const [attemptId, setAttemptId] = useState<string | null>(null)
-  const [values, setValues] = useState<Values>({})
-  const [texts, setTexts] = useState<Record<string, string>>({})
+  const [phase, setPhase] = useState<Phase>(() => (!waiting ? "intro" : set.half ? "halfway" : waiting.paused.grade ? "reveal" : "resume"))
+  const [attemptId, setAttemptId] = useState<string | null>(waiting?.attemptId ?? null)
+  const [paused, setPaused] = useState<Paused | null>(waiting?.paused ?? null)
+  const [values, setValues] = useState<Values>(() => Object.fromEntries(Object.entries(waiting?.paused.values ?? {}).map(([k, v]) => [Number(k), v])))
+  const [texts, setTexts] = useState<Record<string, string>>(waiting?.paused.texts ?? {})
   const [result, setResult] = useState<Result | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
@@ -78,6 +89,37 @@ function Runner({ set }: { set: RunnerSet }) {
   const goethe = isGoetheExam(set.exam)
   const oesd = isOesdExam(set.exam)
   const prep = speakingPrep(set.exam)
+  const half = set.half?.mode === "teile" ? set.half.upTo : null
+  // Resumed after paying: the paused attempt goes on at the first locked Teil.
+  const upTo = !set.half && paused?.upTo ? paused.upTo : null
+
+  /** End of the free half: keep the answers on the attempt and show the stop. */
+  const pause = async (input: PauseInput) => {
+    if (!attemptId) return
+    setPhase("sending")
+    const r = await pauseAttempt(attemptId, input)
+    if (!r.ok) {
+      setError(P.errors[r.error])
+      return setPhase("error")
+    }
+    track("modeltest_halfway", { exam: set.exam, skill: set.skill, set: set.number })
+    setPaused(r.paused)
+    setPhase("halfway")
+  }
+
+  /** Sprechen needs the microphone before the talk goes on. */
+  const goOn = async () => {
+    if (skill === "sprechen") {
+      try {
+        const st = await navigator.mediaDevices.getUserMedia({ audio: true })
+        st.getTracks().forEach((tr) => tr.stop())
+      } catch {
+        return setError(C.speaking.micDenied)
+      }
+    }
+    setError(null)
+    setPhase("test")
+  }
 
   const start = async () => {
     setBusy(true)
@@ -97,17 +139,23 @@ function Runner({ set }: { set: RunnerSet }) {
     if (!r.ok) return setError(P.errors[r.error])
     track("modeltest_start", { exam: set.exam, skill: set.skill, set: set.number })
     setAttemptId(r.attemptId)
+    setPaused(null)
     setValues({})
     setTexts({})
     setPhase("test")
   }
 
-  const handIn = async (submit: () => Promise<{ ok: true; result: Result } | { ok: false; error: keyof typeof P.errors }>) => {
+  const handIn = async (submit: () => Promise<{ ok: true; result: Result } | { ok: true; locked: LockedGrade } | { ok: false; error: keyof typeof P.errors }>) => {
     setPhase("sending")
     const r = await submit()
     if (!r.ok) {
       setError(r.error === "limit" && skill === "sprechen" ? P.errors.limitSpeaking : P.errors[r.error])
       return setPhase("error")
+    }
+    if ("locked" in r) {
+      track("modeltest_halfway", { exam: set.exam, skill: set.skill, set: set.number })
+      setPaused({ at: new Date().toISOString(), grade: r.locked })
+      return setPhase("halfway")
     }
     track("modeltest_complete", { exam: set.exam, skill: set.skill, set: set.number })
     setResult(r.result)
@@ -172,30 +220,84 @@ function Runner({ set }: { set: RunnerSet }) {
   }
 
   if (phase === "test" && attemptId) {
-    if (skill === "sprechen") return <SpeakingRun attemptId={attemptId} exam={set.exam} blocks={set.blocks} onExit={() => router.push(back)} onFinish={() => void handIn(() => finishSpeaking(attemptId))} />
+    const answers = () => Object.fromEntries(Object.entries(values).map(([k, v]) => [k, v]))
+    const from = upTo !== null ? set.blocks.findIndex((b) => b.teil > upTo) : 0
+    if (skill === "sprechen")
+      return (
+        <SpeakingRun
+          attemptId={attemptId}
+          exam={set.exam}
+          blocks={upTo !== null ? set.blocks.filter((b) => b.teil > upTo) : set.blocks}
+          choice={paused?.choice}
+          finishLabel={half !== null ? C.run.next : undefined}
+          onExit={() => router.push(back)}
+          onFinish={() => void (half !== null ? pause({}) : handIn(() => finishSpeaking(attemptId)))}
+        />
+      )
     if (skill === "schreiben")
       return (
         <WritingTest
           set={set}
+          start={Math.max(0, from)}
+          seconds={paused?.left}
+          initialChosen={paused?.chosen}
+          finishLabel={half !== null ? C.run.next : undefined}
           texts={texts}
           onText={(id, v) => setTexts((m) => ({ ...m, [id]: v }))}
           values={values}
           onValue={(n, v) => setValues((m) => ({ ...m, [n]: v }))}
-          onFinish={(answers) => void handIn(() => submitWriting(attemptId, answers, Object.fromEntries(Object.entries(values).map(([k, v]) => [k, v]))))}
+          onFinish={(letters, chosen, left) => void (half !== null ? pause({ values: answers(), texts, chosen, left }) : handIn(() => submitWriting(attemptId, letters, answers())))}
           back={back}
         />
       )
     return (
       <ClosedTest
         set={set}
+        start={Math.max(0, from)}
+        seconds={paused?.left}
+        trackFrom={upTo !== null && set.track ? resumeFrom(set.track, upTo) : 0}
+        finishLabel={half !== null ? C.run.next : undefined}
         values={values}
         onChange={(n, v) => setValues((m) => ({ ...m, [n]: v }))}
         back={back}
         onFinish={(left) => {
+          if (half !== null) return void pause({ values: answers(), ...(left !== undefined ? { left } : {}) })
           if (left !== undefined) setUsed(set.seconds - left)
-          void handIn(() => submitClosed(attemptId, Object.fromEntries(Object.entries(values).map(([k, v]) => [k, v]))))
+          void handIn(() => submitClosed(attemptId, answers()))
         }}
       />
+    )
+  }
+
+  if (phase === "halfway" && paused) return <Halfway set={set} paused={paused} hasPass={hasPass} back={back} />
+
+  if ((phase === "resume" || phase === "reveal") && paused) {
+    const next = (paused.upTo ?? 0) + 1
+    const reveal = phase === "reveal"
+    return (
+      <KurztestFrame scene={skill}>
+        <div className="mx-auto flex w-full max-w-[560px] flex-col gap-4">
+          <div className="nz-app flex flex-col gap-5 rounded-[24px] p-6 sm:p-8">
+            <div className="flex items-start gap-4">
+              <PartIcon part={set.skill} size="lg" />
+              <h2 className="pt-1 text-[26px] leading-[1.12] font-semibold tracking-[-0.025em] text-balance sm:text-[30px]">{reveal ? H.reveal.h : H.resume.h(next)}</h2>
+            </div>
+            <p className="text-[15.5px] leading-relaxed text-v-muted text-pretty">{reveal ? H.reveal.lead : H.resume.lead}</p>
+            {!reveal && paused.teile?.length ? (
+              <ol className="flex flex-col">
+                {paused.teile.map((x) => (
+                  <li key={x.label} className="flex items-baseline justify-between gap-4 border-b border-v-line py-3 text-[15.5px] last:border-b-0">
+                    <b className="font-semibold">{teilName(set.exam, skill, Number(x.label.replace(/\D/g, "")), x.label)}</b>
+                    <span className="v-num text-[14px] text-v-muted">{H.right(x.right, x.total)}</span>
+                  </li>
+                ))}
+              </ol>
+            ) : null}
+            <ExamButton onClick={() => (reveal ? void handIn(() => revealGrade(attemptId!)) : void goOn())} className="w-full">{reveal ? H.reveal.cta : H.resume.cta(next)}</ExamButton>
+            {error ? <p role="alert" className="rounded-2xl bg-v-soft p-4 text-[14.5px]">{error}</p> : null}
+          </div>
+        </div>
+      </KurztestFrame>
     )
   }
 
@@ -243,13 +345,14 @@ function TimeUp({ left, onFinish }: { left: number; onFinish: () => void }) {
 }
 
 /** Lesen with its 45-minute clock, or Hören driven by the one continuous track. */
-function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet; values: Values; onChange: (n: number, v: string) => void; onFinish: (left?: number) => void; back: string }) {
+/** `start`, `seconds`, `trackFrom`: where a resumed attempt goes on. `finishLabel`: the free half ends with "Weiter", not "Abgeben". */
+function ClosedTest({ set, values, onChange, onFinish, back, start = 0, seconds, trackFrom = 0, finishLabel }: { set: RunnerSet; values: Values; onChange: (n: number, v: string) => void; onFinish: (left?: number) => void; back: string; start?: number; seconds?: number; trackFrom?: number; finishLabel?: string }) {
   const C = useKurztest().T
   const [exit, exitSheet] = useExit(back)
   const [confirm, setConfirm] = useState(false)
-  const [i, setI] = useState(0)
+  const [i, setI] = useState(start)
   const hoeren = set.skill === "hoeren" && !!set.track
-  const left = useExamTimer(set.seconds, !hoeren)
+  const left = useExamTimer(seconds ?? set.seconds, !hoeren)
   const blocks = set.blocks
   const name = C.names[set.skill as "hoeren" | "lesen"]
   const finished = useRef(false)
@@ -260,7 +363,7 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
   }
 
   const track = useMemo(() => set.track ?? { src: "", duration: 0, cues: [] }, [set.track])
-  const player = useExamTrack(track)
+  const player = useExamTrack(track, trackFrom)
   // The page follows the track: when a new item's cue begins, its task comes into view.
   const cueKey = `${player.cue?.teil}-${player.cue?.items.join(",")}`
   useEffect(() => {
@@ -311,7 +414,7 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
           <>
             {i > 0 ? <ExamButton kind="soft" onClick={() => setI(i - 1)}>{C.run.back}</ExamButton> : null}
             {last || trackDone ? (
-              <ExamButton onClick={() => (open ? setConfirm(true) : finish())}>{C.run.finish}</ExamButton>
+              <ExamButton onClick={() => (open ? setConfirm(true) : finish())}>{finishLabel ?? C.run.finish}</ExamButton>
             ) : (
               <ExamButton onClick={() => setI(i + 1)}>{C.run.next}</ExamButton>
             )}
@@ -319,12 +422,12 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
         }
       >
         {hoeren ? <ExamTrack track={track} player={player} /> : null}
-        {trackDone ? <p className="rounded-2xl bg-v-soft p-4 text-[15px]">{P.trackEnded}</p> : null}
+        {trackDone ? <p className="rounded-2xl bg-v-soft p-4 text-[15px]">{finishLabel ? H.trackEnded : P.trackEnded}</p> : null}
         <p className="text-[15px] leading-relaxed text-v-muted">{block.display.instruction}</p>
         {reading ? <ReadingLayout key={block.id} answered={answered(block)} total={scoredItems(block).length} text={<ExamReading exam={set.exam} skill={set.skill} teil={block.teil} data={reading} />} tasks={items} /> : items}
       </ExamShell>
       {exitSheet}
-      <ConfirmSheet open={confirm} onOpenChange={setConfirm} {...C.run.finishConfirm} text={C.run.finishConfirm.text(open)} onConfirm={finish} />
+      <ConfirmSheet open={confirm} onOpenChange={setConfirm} {...C.run.finishConfirm} {...(finishLabel ? H.confirm : {})} text={C.run.finishConfirm.text(open)} onConfirm={finish} />
       {!hoeren ? <TimeUp left={left} onFinish={finish} /> : null}
     </KurztestFrame>
   )
@@ -334,20 +437,20 @@ function ClosedTest({ set, values, onChange, onFinish, back }: { set: RunnerSet;
  * Schreiben on one clock. Start Deutsch 1 / telc A2 and ÖSD A1 have a form (typed fields) and a message; Goethe A2 has two
  * messages, Goethe/ÖSD B1 three. Every letter keeps its own text; candidates move freely between the Teile.
  */
-function WritingTest({ set, texts, onText, values, onValue, onFinish, back }: { set: RunnerSet; texts: Record<string, string>; onText: (block: string, t: string) => void; values: Values; onValue: (n: number, v: string) => void; onFinish: (answers: WritingAnswer[]) => void; back: string }) {
+function WritingTest({ set, texts, onText, values, onValue, onFinish, back, start = 0, seconds, initialChosen, finishLabel }: { set: RunnerSet; texts: Record<string, string>; onText: (block: string, t: string) => void; values: Values; onValue: (n: number, v: string) => void; onFinish: (answers: WritingAnswer[], chosen: Record<string, string>, left: number) => void; back: string; start?: number; seconds?: number; initialChosen?: Record<string, string>; finishLabel?: string }) {
   const C = useKurztest().T
   const [exit, exitSheet] = useExit(back)
-  const [i, setI] = useState(0)
+  const [i, setI] = useState(start)
   const blocks = set.blocks
   const letters = blocks.filter((b) => b.display.writing?.length)
-  const [chosen, setChosen] = useState<Record<string, string>>(() => Object.fromEntries(letters.flatMap((b) => (b.display.writing!.length === 1 ? [[b.id, b.display.writing![0].key]] : []))))
-  const left = useExamTimer(set.seconds, true)
+  const [chosen, setChosen] = useState<Record<string, string>>(() => ({ ...Object.fromEntries(letters.flatMap((b) => (b.display.writing!.length === 1 ? [[b.id, b.display.writing![0].key]] : []))), ...initialChosen }))
+  const left = useExamTimer(seconds ?? set.seconds, true)
   const finished = useRef(false)
   const answers = () => letters.map((b) => ({ block: b.id, task: chosen[b.id] ?? b.display.writing![0].key, text: texts[b.id] ?? "" }))
   const finish = () => {
     if (finished.current) return
     finished.current = true
-    onFinish(answers())
+    onFinish(answers(), chosen, left)
   }
   useEffect(() => {
     document.getElementById("test")?.scrollIntoView({ behavior: "instant", block: "start" })
@@ -371,7 +474,7 @@ function WritingTest({ set, texts, onText, values, onValue, onFinish, back }: { 
         action={
           <>
             {i > 0 ? <ExamButton kind="soft" onClick={() => setI(i - 1)}>{C.run.back}</ExamButton> : null}
-            {last ? <ExamButton disabled={!ready} onClick={finish}>{C.run.finish}</ExamButton> : <ExamButton onClick={() => setI(i + 1)}>{C.run.next}</ExamButton>}
+            {last ? <ExamButton disabled={!ready} onClick={finish}>{finishLabel ?? C.run.finish}</ExamButton> : <ExamButton onClick={() => setI(i + 1)}>{C.run.next}</ExamButton>}
           </>
         }
       >
@@ -386,6 +489,52 @@ function WritingTest({ set, texts, onText, values, onValue, onFinish, back }: { 
       </ExamShell>
       {exitSheet}
       <TimeUp left={left} onFinish={finish} />
+    </KurztestFrame>
+  )
+}
+
+/** The stop after the free half (or after a single letter's first criteria), with the offer for this Teil. */
+function Halfway({ set, paused, hasPass, back }: { set: RunnerSet; paused: Paused; hasPass: boolean; back: string }) {
+  const C = useKurztest().T
+  const t = useExamCopy()
+  const [open, setOpen] = useState(false)
+  const skill = set.skill as "hoeren" | "lesen" | "schreiben" | "sprechen"
+  const name = C.names[skill]
+  const offers = unlockOffers(set.skill)
+  const grade = paused.grade
+  const upTo = paused.upTo ?? 0
+  const label = (teil: number) => teilName(set.exam, skill, teil, C.teil(teil))
+  const freeTeile = set.teile.filter((x) => x <= upTo)
+  const rows: HalfwayRow[] = grade
+    ? [...grade.shown.map((c) => ({ label: c.name, detail: c.points ? t.points(c.points.points, c.points.max) : "", note: c.comment })), ...grade.locked.map((n) => ({ label: n, detail: H.locked, locked: true }))]
+    : [
+        ...freeTeile.map((teil) => {
+          const score = paused.teile?.find((x) => x.label === `Teil ${teil}`)
+          return { label: label(teil), detail: score ? H.right(score.right, score.total) : H.saved }
+        }),
+        ...set.teile.filter((x) => x > upTo).map((teil) => ({ label: label(teil), detail: H.locked, locked: true })),
+      ]
+  const lead = grade ? H.feedbackLead : H.lead(upTo + 1)
+  const offer =
+    offers && !hasPass
+      ? { lead, price: formatEuro(offers.one.cents), per: H.per(name), cta: H.cta(name), onCta: () => { track("view_pricing", { surface: "halfway", skill: set.skill }); setOpen(true) }, all: { text: PORTAL_COPY.banner.all(formatEuro(offers.all.cents)), badge: PORTAL_COPY.banner.oneFree } }
+      : { lead: H.moreLead, cta: H.more, href: PORTAL_PASS }
+  return (
+    <KurztestFrame scene={skill}>
+      {/* Bottom room on phones: the portal tab bar floats over the page. */}
+      <div className="mx-auto flex w-full max-w-[560px] flex-col gap-4 pb-24 lg:pb-0">
+        <div className="nz-app rounded-[24px] p-6 sm:p-8">
+          <HalfwayStop
+            part={set.skill}
+            title={grade ? H.feedbackH : H.h}
+            muted={grade ? H.feedbackMuted : H.done(freeTeile)}
+            rows={rows}
+            offer={offer}
+            later={<a href={back} className="mx-auto text-[14.5px] font-semibold text-v-muted underline decoration-v-ink/20 underline-offset-4 hover:text-v-ink">{H.later}</a>}
+          />
+        </div>
+      </div>
+      <UnlockSheet open={open} onOpenChange={setOpen} skill={set.skill} next={`${back}/${set.number}`} />
     </KurztestFrame>
   )
 }

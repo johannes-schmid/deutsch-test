@@ -30,13 +30,13 @@ async function Plan() {
 }
 
 /** The four parts of the exam the dashboard is on. */
-async function Parts() {
+async function Parts({ sheet }: { sheet?: boolean }) {
   const user = await getSessionUser()
   const exam = user ? await focusExam(user.id, user.email) : null
-  if (!user || !exam) return <SideParts exam={null} parts={[]} />
+  if (!user || !exam) return <SideParts exam={null} parts={[]} sheet={sheet} />
   const [skills, progress] = await Promise.all([portalSkills(exam), skillProgress(exam, user.id)])
   const parts = skills.map((s) => ({ part: s.skill, label: KURZTEST_COPY.names[s.skill], href: s.href, done: progress[s.skill]?.done ?? 0 }))
-  return <SideParts exam={EXAMS[exam].short ?? EXAMS[exam].name} parts={parts} />
+  return <SideParts exam={EXAMS[exam].short ?? EXAMS[exam].name} parts={parts} sheet={sheet} />
 }
 
 async function HeaderAvatar() {
@@ -77,7 +77,13 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
             />
             {children}
           </div>
-          <PortalTabBar />
+          <PortalTabBar
+            parts={
+              <Suspense fallback={<SidePartsSkeleton />}>
+                <Parts sheet />
+              </Suspense>
+            }
+          />
         </div>
       </DesignShell>
       <Clarity />

@@ -123,8 +123,10 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
 
 ## 3. Product rules
 
-- **Free first:** at least one full mock exam per skill without an account, plus the full
-  Einbürgerungstest. The paywall comes after value.
+- **Free first:** the free tests (~5-minute tasters, no account) plus the full Einbürgerungstest. **Modelltest 1 per skill: the first
+  half is free after sign-up** (Hannes, 2026-11-02): the first ⌊n/2⌋ Teile, or for a single letter (DTZ, telc B1, ÖSD A2 Schreiben)
+  half of its criteria. Then the halfway stop sells the Teil-Pass for that skill (asks once for all four) and the attempt goes on at
+  the next Teil after paying (`lib/modelltest/half.ts`, `mt_attempts.paused`). The paywall comes after value.
 - **Sell one Prüfungspass, not modules** (Hannes, 2026-10-23). One pass unlocks every exam, level and part on
   the platform; candidates take all parts on one day. This deliberately differs from inburgeringoefenen.nl,
   which sells per module. Only list exams as included once they have reviewed Modelltests; never promise
@@ -370,7 +372,9 @@ app/(auth)/{registrieren,anmelden}/  # Google-only sign-up/sign-in (noindex); co
 app/(app)/dashboard/                 # portal (login-only): overview by level → [exam] (4 skill cards) → [exam]/[skill] (10 Modelltests); components/portal/ = sidebar, tab bar, account, exam pages; /dashboard/preise (Prüfungspass) and /dashboard/konto (account: progress, pass, sign-in; portal-account.tsx)
 app/(app)/dashboard/[exam]/[skill]/[n]/ # ★ the Modelltest runner page + actions.ts (startAttempt, submitClosed, submitWriting, finishSpeaking; session + ownership checked in each)
 components/modelltest/               # runner.tsx (intro → test → result; Hören follows the one track, Lesen/Schreiben timed) · speaking.tsx (live pair exam)
-lib/entitlements.ts                  # canOpen(user, exam, skill) + passStatus(): the one paid-access check, from the grant snapshots on `payments` (Modelltest 1 per skill is free)
+lib/entitlements.ts                  # canOpen(user, exam, skill) + passStatus(): the one paid-access check, from the grant snapshots on `payments` (Modelltest 1 per skill: first half free)
+lib/modelltest/half.ts               # Modelltest 1 without a pass: freePart() (first ⌊n/2⌋ Teile, or "feedback" for one letter), lockGrade(), trimTrack()/resumeFrom() (tested); halfOf()/loadPaused()/scoreHalf() in runner.ts strip locked Teile before they reach the browser; pauseAttempt/revealGrade in the runner actions; Sprechen turns past the cut get 402
+components/exam/halfway.tsx · components/portal/unlock-sheet.tsx # the halfway stop + the two-step buy sheet (all four? → order summary with Checkout, `next` back to the Modelltest; /dashboard/zahlung?next= forwards there once paid)
 lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
 lib/modelltest/speaking-telc.ts      # telc B1 Sprechen live: partner per Teil, Teil-1 extra topic, examiner rescue line, grading per Teil on the 4 official criteria (/75)
 lib/modelltest/anleitung-telc-b1.ts  # telc B1 Anleitung per skill (audio: scripts/modelltest/anleitung.ts --exam telc-b1)

@@ -10,7 +10,9 @@ import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
 import { SKILLS, isExam, isSkill } from "@/lib/kurztest/data"
-import { loadRunnerSet } from "@/lib/modelltest/runner"
+import { loadPaused, loadRunnerSet } from "@/lib/modelltest/runner"
+import { passStatus } from "@/lib/entitlements"
+import { activeGrants } from "@/lib/billing/grants"
 import { MODELLTESTS, portalPath } from "@/lib/portal"
 import { getSessionUser } from "@/lib/supabase/server"
 
@@ -50,9 +52,12 @@ async function Run({ params }: { params: PageProps<"/dashboard/[exam]/[skill]/[n
   const crumbs = [{ label: T.exam.back, href: PORTAL_HOME }, ...familyCrumb(exam), { label: EXAMS[exam].short ?? EXAMS[exam].name, href: portalPath(exam) }, { label: KURZTEST_COPY.names[skill], href: portalPath(exam, skill) }, { label: T.run.crumb(n) }]
   const access = await loadRunnerSet(exam, skill, n, user.id)
   if (!access.ok) return access.reason === "locked" ? <Notice crumbs={crumbs} h={T.run.locked.h} lead={T.run.locked.lead} cta={{ href: PORTAL_PASS, label: T.skill.lockedCta }} /> : <Notice crumbs={crumbs} h={T.run.missing.h} lead={T.run.missing.lead} />
+  // An attempt stopped after the free half: the stop again without a pass, the way on with one.
+  const [waiting, pass] = await Promise.all([access.set.free ? loadPaused(access.set.id, user.id) : null, passStatus(user.id)])
+  const hasPass = activeGrants(pass.periods, pass.renewing, new Date()).length > 0
   return (
     <div className="px-3 py-4 sm:px-6 sm:py-8">
-      <ModelltestRunner set={access.set} />
+      <ModelltestRunner set={access.set} waiting={waiting} hasPass={hasPass} />
     </div>
   )
 }

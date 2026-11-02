@@ -6,6 +6,7 @@ import { liveSubscriptions, mollie, mollieConfigured, webhookUrl } from "@/lib/b
 import { offerById, sellableOffer, upgradeCost } from "@/lib/pricing"
 import { snapshotColumns, snapshotOf } from "@/lib/billing/process"
 import { SITE_URL } from "@/lib/seo"
+import { PORTAL_HOME, PORTAL_PASS, PORTAL_PAYMENT, safeNext } from "@/lib/auth/redirect"
 
 /**
  * Starts a Prüfungspass purchase. The client posts only the offer id and the consent; the offer must be in the active
@@ -22,7 +23,7 @@ export async function POST(req: Request) {
   if (!user) return NextResponse.json({ error: "signed_out" }, { status: 401 })
   if (!mollieConfigured()) return NextResponse.json({ error: "not_configured" }, { status: 503 })
 
-  let body: { planId?: unknown; consent?: unknown }
+  let body: { planId?: unknown; consent?: unknown; next?: unknown }
   try {
     body = await req.json()
   } catch {
@@ -56,13 +57,16 @@ export async function POST(req: Request) {
     }
 
     const origin = process.env.VERCEL_ENV === "production" ? SITE_URL : new URL(req.url).origin
+    // Bought from the halfway stop: back to that exam after paying (or cancelling). Portal paths only.
+    const next = typeof body.next === "string" ? safeNext(body.next, "") : ""
+    const back = next.startsWith(`${PORTAL_HOME}/`) ? next : ""
     const hook = webhookUrl()
     const cents = cost ?? plan.cents
     const payment = await client.payments.create({
       amount: { currency: "EUR", value: (cents / 100).toFixed(2) },
       description: upgrade ? `deutschtest üben Prüfungspass, Wechsel auf ${plan.name}` : `deutschtest üben Prüfungspass, ${plan.name}`,
-      redirectUrl: `${origin}/dashboard/zahlung`,
-      cancelUrl: `${origin}/dashboard/preise`,
+      redirectUrl: `${origin}${PORTAL_PAYMENT}${back ? `?next=${encodeURIComponent(back)}` : ""}`,
+      cancelUrl: `${origin}${back || PORTAL_PASS}`,
       ...(hook ? { webhookUrl: hook } : {}),
       customerId,
       sequenceType: upgrade ? SequenceType.oneoff : SequenceType.first,

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { transcribe } from "@/lib/kurztest/stt"
-import { loadKeyedBlocks } from "@/lib/modelltest/runner"
+import { halfOfAttempt, loadKeyedBlocks } from "@/lib/modelltest/runner"
 import { followup, partnerLine, speak, SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking"
 import { rescueLine, telcFollowup, telcPartnerLine, TELC_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-telc"
 import { startFollowup, startPartnerLine, START_SPEAKING_RUBRIC_VERSION } from "@/lib/modelltest/speaking-start"
@@ -51,8 +51,10 @@ export async function POST(req: Request) {
   const attempt = data as Attempt | null
   if (!attempt || attempt.user_id !== user.id || attempt.skill !== "sprechen" || attempt.completed_at) return fail("attempt", 403)
 
-  const { data: set } = await db.from("mt_sets").select("is_free").eq("id", attempt.set_id).single()
-  if (await capped(!!set?.is_free)) {
+  // Modelltest 1 without a pass: only the free Teile, and the free seconds cap. A learner who owns Sprechen talks freely.
+  const half = await halfOfAttempt({ ...attempt, skill: "sprechen" }, user.id)
+  if (half?.mode === "teile" && teil > half.upTo) return fail("locked", 402)
+  if (half && (await capped(true))) {
     const used = await freeSecondsUsed(user.id)
     if (used + seconds > FREE_SPEAKING_SECONDS) return fail("free_limit", 402)
   }

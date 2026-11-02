@@ -1,14 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { ChevronDown, Loader2, LogOut } from "lucide-react"
+import { Dialog } from "@base-ui/react/dialog"
+import { ChevronDown, ListChecks, Loader2, LogOut, MessageCircle, X } from "lucide-react"
+import { PORTAL_ACCOUNT, PORTAL_CONTACT, PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
 import { createClient } from "@/lib/supabase/client"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { cn } from "@/lib/utils"
 
 const T = PORTAL_COPY.account
+const N = PORTAL_COPY.nav
 
 const under = (path: string, href: string) => path === href || path.startsWith(`${href}/`)
 
@@ -80,5 +83,53 @@ export function SignOutButton({ variant = "icon" }: { variant?: "icon" | "full" 
     <button type="button" onClick={signOut} disabled={pending} aria-label={T.signOut} title={T.signOut} className="grid size-11 shrink-0 place-items-center rounded-full text-v-muted transition-[background-color,color,transform] duration-150 ease-out hover:bg-v-ink/6 hover:text-v-ink active:scale-[0.95] disabled:opacity-70">
       <Icon className={cn("size-[18px] rtl:-scale-x-100", pending && "animate-spin")} aria-hidden="true" />
     </button>
+  )
+}
+
+/**
+ * The tab bar's "Teile" tab: opens a bottom sheet with the four parts of the learner's exam (`children`, rendered on the
+ * server like the sidebar's list) and Kontakt. Lit on every Modelltest page below /dashboard and while the sheet is open.
+ */
+export function PartsTab({ className, activeClassName, children }: { className: string; activeClassName: string; children: React.ReactNode }) {
+  const path = usePathname()
+  const [open, setOpen] = useState(false)
+  const anchor = useRef<HTMLSpanElement>(null)
+  const [frame, setFrame] = useState<HTMLElement | null>(null)
+  useEffect(() => setFrame(anchor.current?.closest<HTMLElement>(".v-frame") ?? null), [])
+  const onPart = path.startsWith(`${PORTAL_HOME}/`) && ![PORTAL_PASS, PORTAL_ACCOUNT, PORTAL_CONTACT].some((e) => under(path, e))
+  const closeOnLink = (e: React.MouseEvent) => {
+    if ((e.target as Element).closest("a")) setOpen(false)
+  }
+  return (
+    <Dialog.Root open={open} onOpenChange={setOpen}>
+      <span ref={anchor} hidden />
+      <Dialog.Trigger aria-current={onPart ? "true" : undefined} className={cn(className, (onPart || open) && activeClassName)}>
+        <ListChecks className="size-5" strokeWidth={2} aria-hidden="true" />
+        {N.parts}
+      </Dialog.Trigger>
+      <Dialog.Portal container={frame}>
+        <Dialog.Backdrop className="fixed inset-0 z-50 bg-[rgba(8,10,30,0.4)] backdrop-blur-[2px] transition-opacity duration-300 ease-(--ease-out-strong) data-ending-style:opacity-0 data-starting-style:opacity-0 lg:hidden" />
+        <Dialog.Popup
+          aria-labelledby="parts-sheet-h"
+          className="fixed inset-x-0 bottom-0 z-50 mx-auto max-h-[85dvh] w-full max-w-[520px] overflow-y-auto rounded-t-[28px] bg-v-bg text-v-ink shadow-[0_-12px_40px_rgba(8,10,30,0.18)] outline-none transition-[translate,opacity] duration-300 ease-(--ease-out-strong) data-ending-style:translate-y-full data-starting-style:translate-y-full motion-reduce:transition-opacity motion-reduce:data-ending-style:translate-y-0 motion-reduce:data-ending-style:opacity-0 motion-reduce:data-starting-style:translate-y-0 motion-reduce:data-starting-style:opacity-0 lg:hidden"
+        >
+          <div className="flex flex-col gap-3 px-3 pt-2.5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+            <span aria-hidden="true" className="mx-auto h-1 w-10 shrink-0 rounded-full bg-v-ink/15" />
+            <div onClick={closeOnLink} className="relative flex flex-col gap-1">
+              {children}
+              <Dialog.Close aria-label={N.close} className="absolute end-0 top-0 grid size-11 place-items-center rounded-full text-v-muted transition-[background-color,color,transform] duration-150 ease-out hover:bg-v-ink/6 hover:text-v-ink active:scale-[0.95]">
+                <X className="size-5" aria-hidden="true" />
+              </Dialog.Close>
+            </div>
+            <div onClick={closeOnLink} className="border-t border-v-line pt-2">
+              <Link href={PORTAL_CONTACT} className="flex min-h-12 items-center gap-3 rounded-full px-3 text-[15px] text-v-muted transition-[background-color,color] duration-150 ease-out hover:bg-v-ink/5 hover:text-v-ink">
+                <MessageCircle className="size-[18px]" strokeWidth={2} aria-hidden="true" />
+                {N.contact}
+              </Link>
+            </div>
+          </div>
+        </Dialog.Popup>
+      </Dialog.Portal>
+    </Dialog.Root>
   )
 }

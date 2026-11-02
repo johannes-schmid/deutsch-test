@@ -529,8 +529,8 @@ export function PassBuilderSkeleton() {
   )
 }
 
-/** Consent (required before paying), the order button, and the hand-off to Mollie's hosted checkout. */
-function Checkout({ planId, T, orderLabel }: { planId: string; T: (typeof PASS_COPY)[SiteLocale]; orderLabel?: string }) {
+/** Consent (required before paying), the order button, and the hand-off to Mollie's hosted checkout. `next`: the portal page to return to after paying (the halfway stop). */
+export function Checkout({ planId, T, orderLabel, next }: { planId: string; T: (typeof PASS_COPY)[SiteLocale]; orderLabel?: string; next?: string }) {
   const [consent, setConsent] = useState(false)
   const [state, setState] = useState<"idle" | "busy" | "consent" | "error">("idle")
   const box = useRef<HTMLInputElement>(null)
@@ -547,7 +547,7 @@ function Checkout({ planId, T, orderLabel }: { planId: string; T: (typeof PASS_C
     const offer = offerById(planId)
     track("begin_checkout", { plan_id: planId, value: offer ? offer.cents / 100 : undefined, currency: "EUR" })
     try {
-      const res = await fetch("/api/mollie/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ planId, consent: true }) })
+      const res = await fetch("/api/mollie/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ planId, consent: true, ...(next ? { next } : {}) }) })
       const data = await res.json().catch(() => ({}))
       if (res.status === 409) return router.push("/dashboard/konto")
       if (!res.ok || !data.checkoutUrl) throw new Error(data.error ?? "failed")

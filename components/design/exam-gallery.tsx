@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
-  ChoiceItem, ConfirmSheet, ExamAudio, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
+  ChoiceItem, ConfirmSheet, ExamAudio, HalfwayStop, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
   ReadingLayout, ReadingText, SpeakingTask, SpeakingSheet, SheetPeek, SpeakingPrep, NotesPeek, TrueFalseItem, WritingTask, type ShellSection,
   AdBoard, ArticleText, HeadlineMatch, WordPoolGap, PhotoNumberGrid, TickGrid, MatchTask, MarkBoxes, TopicCard, SceneChoice, PlanningSheet,
 } from "@/components/exam"
@@ -271,6 +271,40 @@ export function ExamGallery() {
           <div className="nz-app mx-auto flex max-w-[560px] flex-col rounded-[24px] px-5 pt-6 pb-5">
             <TrackDemo />
           </div>
+        </ExamStage>
+      </Block>
+
+      <Block title="Halbzeit (Modelltest 1 ohne Pass)" note="Ohne Pass ist die erste Hälfte von Modelltest 1 gratis: die ersten Teile (die Hälfte, abgerundet), bei nur einer Schreibaufgabe die Hälfte der Kriterien. Danach hält der Test an wie in einer Pause: erledigte Teile mit Glut-Haken und Punkten, gesperrte Teile mit Schloss, darunter ein Angebot für genau diesen Teil. Die Antworten bleiben gespeichert; nach dem Kauf geht es am nächsten Teil weiter.">
+        <ExamStage scene="intro" framed className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:grid-cols-2">
+          <Panel className="p-6">
+            <HalfwayStop
+              part="hoeren"
+              title="Halbzeit."
+              muted="Teil 1 und 2 sind geschafft."
+              rows={[
+                { label: "Teil 1", detail: "4 von 6 richtig" },
+                { label: "Teil 2", detail: "3 von 5 richtig" },
+                { label: "Teil 3", detail: "Teil-Pass", locked: true },
+                { label: "Teil 4", detail: "Teil-Pass", locked: true },
+              ]}
+              offer={{ lead: "Weiter mit Teil 3. Deine Antworten bleiben gespeichert.", price: "9,95 €", per: "im Monat · Hören", cta: "Hören freischalten", onCta: () => {}, all: { text: "Alle vier Teile 29,85 €", badge: "1 Teil gratis" } }}
+              later={<span className="mx-auto text-[14.5px] font-semibold text-v-muted underline decoration-v-ink/20 underline-offset-4">Später weitermachen</span>}
+            />
+          </Panel>
+          <Panel className="p-6">
+            <HalfwayStop
+              part="schreiben"
+              title="Dein Brief ist bewertet."
+              muted="Hier ist die erste Hälfte."
+              rows={[
+                { label: "Aufgabenbewältigung", detail: "4 von 5 Punkten", note: "Du schreibst zu allen vier Punkten. Der Grund für die Absage ist klar." },
+                { label: "Kommunikative Gestaltung", detail: "3 von 5 Punkten", note: "Anrede und Gruß passen. Die Sätze hängen noch wenig zusammen." },
+                { label: "Korrektheit", detail: "Teil-Pass", locked: true },
+                { label: "Wortschatz", detail: "Teil-Pass", locked: true },
+              ]}
+              offer={{ lead: "Die ganze Bewertung mit Niveau, Punkten und Musterlösung ist im Teil-Pass.", price: "9,95 €", per: "im Monat · Schreiben", cta: "Schreiben freischalten", onCta: () => {}, all: { text: "Alle vier Teile 29,85 €", badge: "1 Teil gratis" } }}
+            />
+          </Panel>
         </ExamStage>
       </Block>
 

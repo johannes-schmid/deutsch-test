@@ -6,7 +6,10 @@ import { isGoetheExam } from "@/lib/exam/scoring/goethe"
 import { isOesdExam } from "@/lib/exam/scoring/oesd"
 import { isStartExam, typedRight } from "@/lib/exam/scoring/start"
 import { gradeDtzWriting, gradeStartWriting, gradeTelcWriting, RUBRIC_VERSION, START_RUBRIC_VERSION, TELC_RUBRIC_VERSION, type MtGradedResult } from "@/lib/modelltest/grade"
-import { loadKeyedBlocks, loadRunnerSet, scoreClosed, type MtClosedResult } from "@/lib/modelltest/runner"
+import { canOpen } from "@/lib/entitlements"
+import { itemNumbers } from "@/lib/exam/kurztest"
+import { keepFreeAnswers, lockGrade, type LockedGrade } from "@/lib/modelltest/half"
+import { halfOfAttempt, loadKeyedBlocks, loadRunnerSet, scoreClosed, scoreHalf, type MtClosedResult, type Paused } from "@/lib/modelltest/runner"
 import { gradeSpeaking, type MtSpeakingResult } from "@/lib/modelltest/speaking"
 import { gradeTelcSpeaking } from "@/lib/modelltest/speaking-telc"
 import { gradeStartSpeaking } from "@/lib/modelltest/speaking-start"
@@ -22,7 +25,7 @@ import { getSessionUser } from "@/lib/supabase/server"
 type Fail = { ok: false; error: "auth" | "access" | "attempt" | "limit" | "failed" }
 export type StartResult = { ok: true; attemptId: string } | Fail
 export type ClosedSubmit = { ok: true; result: MtClosedResult } | Fail
-export type WritingSubmit = { ok: true; result: MtGradedResult } | Fail
+export type WritingSubmit = { ok: true; result: MtGradedResult } | { ok: true; locked: LockedGrade } | Fail
 export type SpeakingSubmit = { ok: true; result: MtSpeakingResult } | Fail
 
 const SKILLS: PartId[] = ["hoeren", "lesen", "schreiben", "sprechen"]
@@ -59,11 +62,12 @@ async function openAttempt(attemptId: string, skill: PartId[]) {
 export async function submitClosed(attemptId: string, answers: Record<string, string>): Promise<ClosedSubmit> {
   const o = await openAttempt(attemptId, ["lesen", "hoeren"])
   if ("error" in o) return { ok: false, error: o.error! }
+  if (await halfOfAttempt(o.attempt, o.user.id)) return { ok: false, error: "access" }
   const clean: Record<number, string> = {}
   for (const [k, v] of Object.entries(answers ?? {})) if (/^\d{1,2}$/.test(k) && Number(k) > 0 && typeof v === "string" && v.length <= 60) clean[Number(k)] = v
   try {
     const result = await scoreClosed(o.attempt.id, o.attempt.set_id, o.attempt.exam, o.attempt.skill, clean)
-    const { error } = await createAdminClient().from("mt_attempts").update({ completed_at: new Date().toISOString(), score: result.points?.points ?? result.correct, max_score: result.points?.max ?? result.total, result: { level: result.level, correct: result.correct, total: result.total, ...(result.points ? { points: result.points } : {}) } }).eq("id", o.attempt.id)
+    const { error } = await createAdminClient().from("mt_attempts").update({ completed_at: new Date().toISOString(), paused: null, score: result.points?.points ?? result.correct, max_score: result.points?.max ?? result.total, result: { level: result.level, correct: result.correct, total: result.total, ...(result.points ? { points: result.points } : {}) } }).eq("id", o.attempt.id)
     if (error) throw error
     return { ok: true, result }
   } catch (e) {
@@ -81,6 +85,9 @@ export type WritingAnswer = { block: string; task: string; text: string }
 export async function submitWriting(attemptId: string, answers: WritingAnswer[], form?: Record<string, string>): Promise<WritingSubmit> {
   const o = await openAttempt(attemptId, ["schreiben"])
   if ("error" in o) return { ok: false, error: o.error! }
+  // A single letter without a pass is graded in full; the learner sees half the criteria until they own Schreiben.
+  const half = await halfOfAttempt(o.attempt, o.user.id)
+  if (half?.mode === "teile") return { ok: false, error: "access" }
   const db = createAdminClient()
   const since = `${new Date().toISOString().slice(0, 10)}T00:00:00Z`
   const { count } = await db.from("mt_attempts").select("id", { count: "exact", head: true }).eq("user_id", o.user.id).eq("skill", "schreiben").gte("graded_at", since)
@@ -130,9 +137,11 @@ export async function submitWriting(attemptId: string, answers: WritingAnswer[],
     const sub = await db.from("mt_submissions").insert(rows)
     if (sub.error) throw sub.error
     const now = new Date().toISOString()
-    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, result: { level: result.level ?? null, score: result.score, task: letters.map((l) => l.task!.key).join(","), grade: result } }).eq("id", o.attempt.id)
+    const locked = half ? lockGrade(result) : null
+    const paused: Paused | null = locked ? { at: now, grade: locked } : null
+    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, paused, score: result.score.points, max_score: result.score.max, result: { level: result.level ?? null, score: result.score, task: letters.map((l) => l.task!.key).join(","), grade: result } }).eq("id", o.attempt.id)
     if (error) throw error
-    return { ok: true, result }
+    return locked ? { ok: true, locked } : { ok: true, result }
   } catch (e) {
     console.error("modelltest writing grade failed", e instanceof Error ? e.message : e)
     await db.from("mt_attempts").update({ grade_error: e instanceof Error ? e.message.slice(0, 200) : "failed" }).eq("id", o.attempt.id)
@@ -144,6 +153,7 @@ export async function submitWriting(attemptId: string, answers: WritingAnswer[],
 export async function finishSpeaking(attemptId: string): Promise<SpeakingSubmit> {
   const o = await openAttempt(attemptId, ["sprechen"])
   if ("error" in o) return { ok: false, error: o.error! }
+  if (await halfOfAttempt(o.attempt, o.user.id)) return { ok: false, error: "access" }
   const db = createAdminClient()
   const since = `${new Date().toISOString().slice(0, 10)}T00:00:00Z`
   const { count } = await db.from("mt_attempts").select("id", { count: "exact", head: true }).eq("user_id", o.user.id).eq("skill", "sprechen").gte("graded_at", since)
@@ -169,7 +179,7 @@ export async function finishSpeaking(attemptId: string): Promise<SpeakingSubmit>
               ? await gradeOesdSpeaking(exam, state.lines, keyed.map((k) => k.block), teileDone, state.choice ?? {})
               : await gradeSpeaking(state.lines, partner, phasesDone(state.lines))
     const now = new Date().toISOString()
-    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, score: result.score.points, max_score: result.score.max, conversation: state, result: { level: result.level ?? null, score: result.score, grade: result } }).eq("id", o.attempt.id)
+    const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, paused: null, score: result.score.points, max_score: result.score.max, conversation: state, result: { level: result.level ?? null, score: result.score, grade: result } }).eq("id", o.attempt.id)
     if (error) throw error
     return { ok: true, result }
   } catch (e) {
@@ -193,4 +203,65 @@ export async function skipSpeaking(attemptId: string, teil: number, from: number
   skipTo(state, block, from)
   const { error } = await db.from("mt_attempts").update({ conversation: state }).eq("id", o.attempt.id)
   return { ok: !error }
+}
+
+export type PauseInput = { values?: Record<string, string>; texts?: Record<string, string>; chosen?: Record<string, string>; left?: number }
+export type PauseResult = { ok: true; paused: Paused } | Fail
+
+/**
+ * The learner reached the end of the free half: keeps their answers for the free Teile on the attempt (Lesen/Hören
+ * also get their right answers per Teil), so they go on at the next Teil once they own the skill. Sprechen keeps its
+ * talk on the attempt already; only the ÖSD picks are copied.
+ */
+export async function pauseAttempt(attemptId: string, input: PauseInput): Promise<PauseResult> {
+  const o = await openAttempt(attemptId, SKILLS)
+  if ("error" in o) return { ok: false, error: o.error! }
+  const half = await halfOfAttempt(o.attempt, o.user.id)
+  if (half?.mode !== "teile") return { ok: false, error: "access" }
+  const db = createAdminClient()
+  const { exam, skill } = o.attempt
+  const free = (await loadKeyedBlocks(o.attempt.set_id, exam, skill)).filter((k) => k.block.teil <= half.upTo)
+  const items = new Set(free.flatMap((k) => itemNumbers(k.block.display.items)).filter((n) => n > 0))
+  const blockIds = new Set(free.map((k) => k.block.id))
+  const values: Record<number, string> = {}
+  for (const [k, v] of Object.entries(input?.values ?? {})) if (/^\d{1,2}$/.test(k) && typeof v === "string" && v.length <= 60) values[Number(k)] = v
+  const pick = (m: Record<string, string> | undefined, max: number) => Object.fromEntries(Object.entries(m ?? {}).filter(([k, v]) => blockIds.has(k) && typeof v === "string").map(([k, v]) => [k, v.slice(0, max)]))
+  const left = Number.isFinite(input?.left) ? Math.max(0, Math.min(7200, Math.round(input!.left!))) : undefined
+  const kept = keepFreeAnswers(values, items)
+  const paused: Paused = {
+    at: new Date().toISOString(),
+    upTo: half.upTo,
+    values: Object.fromEntries(Object.entries(kept).map(([k, v]) => [k, v])),
+    ...(skill === "schreiben" ? { texts: pick(input?.texts, MAX_TEXT), chosen: pick(input?.chosen, 20) } : {}),
+    ...(left !== undefined ? { left } : {}),
+  }
+  try {
+    if (skill === "lesen" || skill === "hoeren") paused.teile = await scoreHalf(o.attempt.set_id, exam, skill, kept, half.upTo)
+    if (skill === "sprechen") {
+      const { data } = await db.from("mt_attempts").select("conversation").eq("id", o.attempt.id).single()
+      const choice = (data?.conversation as RunState | null)?.choice
+      if (choice) paused.choice = choice
+    }
+    const { error } = await db.from("mt_attempts").update({ paused }).eq("id", o.attempt.id)
+    if (error) throw error
+    return { ok: true, paused }
+  } catch (e) {
+    console.error("modelltest pause failed", e instanceof Error ? e.message : e)
+    return { ok: false, error: "failed" }
+  }
+}
+
+/** A letter graded before the pass: the full feedback, once the learner owns Schreiben. Clears the wait. */
+export async function revealGrade(attemptId: string): Promise<WritingSubmit> {
+  const user = await getSessionUser()
+  if (!user) return { ok: false, error: "auth" }
+  if (!/^[0-9a-f-]{36}$/.test(attemptId)) return { ok: false, error: "attempt" }
+  const db = createAdminClient()
+  const { data } = await db.from("mt_attempts").select("id, user_id, exam, skill, result, paused").eq("id", attemptId).maybeSingle()
+  const grade = (data?.result as { grade?: MtGradedResult } | null)?.grade
+  if (!data || data.user_id !== user.id || !(data.paused as Paused | null)?.grade || !grade || !isExam(data.exam)) return { ok: false, error: "attempt" }
+  if (!(await canOpen(user.id, data.exam, data.skill as PartId))) return { ok: false, error: "access" }
+  const { error } = await db.from("mt_attempts").update({ paused: null }).eq("id", data.id)
+  if (error) return { ok: false, error: "failed" }
+  return { ok: true, result: grade }
 }

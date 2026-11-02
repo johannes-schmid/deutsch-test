@@ -11,3 +11,4 @@ export { ResultHero, PartResultCard, ReviewList, NextStepCard, ScoreRing, Result
 export { ConfirmSheet } from "./confirm"
 export { HeadlineMatch, ArticleText, AdBoard, WordPoolGap, MatchTask, GapTask, ExamReading } from "./print"
 export { PhotoNumberGrid, TickGrid, MarkBoxes, TopicCard, SceneChoice, PlanningSheet } from "./oesd"
+export { HalfwayStop, type HalfwayRow, type HalfwayOffer } from "./halfway"

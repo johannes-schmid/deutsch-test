@@ -10,6 +10,7 @@ import { isOesdExam, OESD_SPEAKING_PREP_MINUTES } from "@/lib/exam/scoring/oesd"
 import { TELC_B1_SPEAKING_MINUTES, TELC_B1_SPEAKING_PREP_MINUTES, TELC_B1_SPEAKING_TEILE } from "@/lib/exam/scoring/telc-b1"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import type { PublicMtBlock } from "@/lib/modelltest/runner"
+import type { RunChoice } from "@/lib/modelltest/sprechen-run"
 import type { MtSpeakTurn } from "@/lib/modelltest/types"
 import { skipSpeaking } from "@/app/(app)/dashboard/[exam]/[skill]/[n]/actions"
 
@@ -70,7 +71,7 @@ function B1Sheet({ block, peek }: { block: PublicMtBlock; peek?: boolean }) {
  * to pick the topics (and, A1, the photo); the picks go to the server with every answer, so the Interlokutorin asks about
  * them and plays the right role. A1 Aufgabe 3 starts once the candidate has picked a role.
  */
-export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { attemptId: string; exam: string; blocks: PublicMtBlock[]; onFinish: () => void; onExit: () => void }) {
+export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit, choice, finishLabel }: { attemptId: string; exam: string; blocks: PublicMtBlock[]; onFinish: () => void; onExit: () => void; choice?: RunChoice; finishLabel?: string }) {
   const C = useKurztest().T
   const telc = exam === "telc-b1"
   const b1 = isGoetheB1(exam)
@@ -79,9 +80,9 @@ export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { att
   const [stage, setStage] = useState<"prep" | "talk">(prepMinutes ? "prep" : "talk")
   const [notes, setNotes] = useState("")
   const prepLeft = useExamTimer(prepMinutes * 60, stage === "prep")
-  const [topics, setTopics] = useState<string[]>([])
-  const [scene, setScene] = useState<string>()
-  const [role, setRole] = useState<string>()
+  const [topics, setTopics] = useState<string[]>(choice?.topics ?? [])
+  const [scene, setScene] = useState<string | undefined>(choice?.scene)
+  const [role, setRole] = useState<string | undefined>(choice?.role)
   const topicData = blocks.find((bl) => bl.display.speaking?.data.choose)?.display.speaking!.data
   const scenes = blocks.find((bl) => bl.display.speaking?.data.scenes?.length)?.display.speaking!.data.scenes
   const sheet = blocks.find((bl) => bl.display.speaking?.data.sheet)?.display.speaking!.data.sheet
@@ -344,7 +345,7 @@ export function SpeakingRun({ attemptId, exam, blocks, onFinish, onExit }: { att
                 setT(0)
               }}
             >
-              {lastTeil ? C.run.finish : C.run.nextTeil(blocks[b + 1].teil)}
+              {lastTeil ? (finishLabel ?? C.run.finish) : C.run.nextTeil(blocks[b + 1].teil)}
             </ExamButton>
           ) : undefined
         }

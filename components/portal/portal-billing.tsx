@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import { CircleAlert, CircleCheck, CreditCard, Hourglass, LoaderCircle, Search } from "lucide-react"
 import { VButton } from "@/components/design/kit"
 import { BillingPanel, NextButton as Next } from "@/components/portal/billing-panel"
-import { PORTAL_ACCOUNT, PORTAL_HOME, PORTAL_PASS } from "@/lib/auth/redirect"
+import { PORTAL_ACCOUNT, PORTAL_HOME, PORTAL_PASS, safeNext } from "@/lib/auth/redirect"
 import { track } from "@/lib/analytics"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
 import { CONTACT_EMAIL } from "@/lib/seo"
@@ -16,9 +17,25 @@ type Status = { status: "checking" | "paid" | "failed" | "pending" | "none"; unt
 
 const day = (iso: string) => new Intl.DateTimeFormat("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Berlin" }).format(new Date(iso))
 
-/** /dashboard/zahlung: polls /api/mollie/status after Mollie's redirect (every 1.5 s for ~30 s), then shows the outcome. */
+/**
+ * /dashboard/zahlung: polls /api/mollie/status after Mollie's redirect (every 1.5 s for ~30 s), then shows the outcome.
+ * `?next=` (a purchase from the halfway stop): once paid, back to that Modelltest after a short moment.
+ */
 export function PaymentStatus() {
   const [s, setS] = useState<Status>({ status: "checking" })
+  // Read once on the client; the first render ("checking") does not use it, so server and client markup match.
+  const [next] = useState<string | null>(() => {
+    if (typeof window === "undefined") return null
+    const path = safeNext(new URLSearchParams(window.location.search).get("next"), "")
+    return path.startsWith(`${PORTAL_HOME}/`) ? path : null
+  })
+  const router = useRouter()
+
+  useEffect(() => {
+    if (s.status !== "paid" || !next) return
+    const id = setTimeout(() => router.replace(next), 2000)
+    return () => clearTimeout(id)
+  }, [s.status, next, router])
 
   useEffect(() => {
     let stop = false
@@ -51,14 +68,14 @@ export function PaymentStatus() {
     )
   if (s.status === "paid")
     return (
-      <BillingPanel icon={CircleCheck} tone="glow" title={P.paidH} lead={P.paid(s.until ? day(s.until) : "")}>
-        <Next href={PORTAL_HOME}>{P.paidCta}</Next>
+      <BillingPanel icon={CircleCheck} tone="glow" title={P.paidH} lead={next ? P.backLead : P.paid(s.until ? day(s.until) : "")}>
+        <Next href={next ?? PORTAL_HOME}>{next ? P.backCta : P.paidCta}</Next>
       </BillingPanel>
     )
   if (s.status === "failed")
     return (
       <BillingPanel icon={CircleAlert} tone="alert" title={P.failedH} lead={P.failed}>
-        <Next href={PORTAL_PASS}>{P.failedCta}</Next>
+        <Next href={next ?? PORTAL_PASS}>{next ? P.failedBack : P.failedCta}</Next>
       </BillingPanel>
     )
   if (s.status === "none")
