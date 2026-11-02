@@ -8,7 +8,7 @@ const D = 24 * H
 const NOW = at("2026-11-10T07:00:00Z")
 
 function state(over: Partial<LifecycleState> = {}): LifecycleState {
-  return { consentAt: at("2026-10-27T10:00:00Z"), unsubscribedAt: null, examDate: "2026-12-12", skillsDone: 0, ownsPass: false, abandonedAt: null, sent: [], ...over }
+  return { since: at("2026-10-27T10:00:00Z"), unsubscribedAt: null, examDate: "2026-12-12", skillsDone: 0, ownsPass: false, abandonedAt: null, sent: [], ...over }
 }
 const sent = (kind: LifecycleState["sent"][number]["kind"], ago: number) => ({ kind, at: new Date(NOW.getTime() - ago) })
 
@@ -21,8 +21,8 @@ describe("daysUntil", () => {
 })
 
 describe("nextEmail", () => {
-  it("sends nothing without consent or after unsubscribing", () => {
-    expect(nextEmail(state({ consentAt: null }), NOW)).toBeNull()
+  it("sends to every account by default and nothing after unsubscribing", () => {
+    expect(nextEmail(state(), NOW)).not.toBeNull()
     expect(nextEmail(state({ unsubscribedAt: at("2026-11-01T00:00:00Z") }), NOW)).toBeNull()
   })
 
@@ -64,10 +64,10 @@ describe("nextEmail", () => {
     expect(nextEmail(state({ sent: [sentAt("willkommen", 6), sentAt("stand", 3)] }), now)).toEqual({ kind: "endspurt", variant: "a" })
   })
 
-  it("asks for a date 14 days after consent when there is none", () => {
-    const s = state({ examDate: null, consentAt: at("2026-10-27T10:00:00Z"), sent: [sent("willkommen", 14 * D), sent("stand", 11 * D)] })
+  it("asks for a date 14 days after the series started when there is none", () => {
+    const s = state({ examDate: null, since: at("2026-10-27T10:00:00Z"), sent: [sent("willkommen", 14 * D), sent("stand", 11 * D)] })
     expect(nextEmail(s, at("2026-11-10T07:00:00Z"))).toEqual({ kind: "endspurt", variant: "b" })
-    expect(nextEmail({ ...s, consentAt: at("2026-10-28T10:00:00Z") }, at("2026-11-10T07:00:00Z"))).toBeNull()
+    expect(nextEmail({ ...s, since: at("2026-10-28T10:00:00Z") }, at("2026-11-10T07:00:00Z"))).toBeNull()
   })
 
   it("skips Dein Stand once the exam is over", () => {

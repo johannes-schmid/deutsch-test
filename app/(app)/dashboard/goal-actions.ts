@@ -2,7 +2,6 @@
 
 import { isExam } from "@/lib/kurztest/data"
 import { daysUntil } from "@/lib/lifecycle/rules"
-import { CONSENT_VERSION } from "@/lib/lifecycle/prefs"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { getSessionUser } from "@/lib/supabase/server"
 
@@ -12,18 +11,17 @@ const YMD = /^\d{4}-\d{2}-\d{2}$/
 const MAX_DAYS_AHEAD = 3 * 366
 
 /**
- * Saves exam, date and, when given, email consent (the dashboard widget leaves consent alone; /dashboard/konto sets it).
- * Ticking the box records a fresh consent with the wording version; unticking an active consent records the opt-out and
- * keeps the proof of the earlier consent.
- * TODO(hannes): no double opt-in click, because Google sign-in already proves the address; confirm with a lawyer.
+ * Saves exam, date and, when given, the lifecycle-email switch (the dashboard widget leaves it alone; /dashboard/konto sets it).
+ * Emails are on for every account (§ 7 Abs. 3 UWG); switching off records the objection, switching on clears it.
+ * consent_at and the notice proof stay untouched.
  */
-export async function saveExamGoal(input: { exam: string; examDate: string | null; consent?: boolean }): Promise<GoalResult> {
+export async function saveExamGoal(input: { exam: string; examDate: string | null; emails?: boolean }): Promise<GoalResult> {
   const user = await getSessionUser()
   if (!user) return { ok: false, error: "auth" }
-  if (!isExam(input.exam) || (input.consent !== undefined && typeof input.consent !== "boolean")) return { ok: false, error: "failed" }
+  if (!isExam(input.exam) || (input.emails !== undefined && typeof input.emails !== "boolean")) return { ok: false, error: "failed" }
 
   const db = createAdminClient()
-  const { data: row, error: readError } = await db.from("lifecycle_prefs").select("exam_date, consent_at, unsubscribed_at").eq("user_id", user.id).maybeSingle()
+  const { data: row, error: readError } = await db.from("lifecycle_prefs").select("exam_date, unsubscribed_at").eq("user_id", user.id).maybeSingle()
   if (readError) return { ok: false, error: "failed" }
 
   const date = input.examDate
@@ -34,19 +32,12 @@ export async function saveExamGoal(input: { exam: string; examDate: string | nul
   }
 
   const now = new Date().toISOString()
-  const active = !!row?.consent_at && !row.unsubscribed_at
-  const consent =
-    input.consent === undefined
-      ? {}
-      : input.consent && !active
-        ? { consent_at: now, consent_version: CONSENT_VERSION, unsubscribed_at: null }
-        : !input.consent && active
-          ? { unsubscribed_at: now }
-          : {}
+  const on = !row?.unsubscribed_at
+  const emails = input.emails === undefined || input.emails === on ? {} : { unsubscribed_at: input.emails ? null : now }
 
   const { data, error } = await db
     .from("lifecycle_prefs")
-    .upsert({ user_id: user.id, exam: input.exam, exam_date: date, updated_at: now, ...consent }, { onConflict: "user_id" })
+    .upsert({ user_id: user.id, exam: input.exam, exam_date: date, updated_at: now, ...emails }, { onConflict: "user_id" })
     .select("user_id")
   if (error || !data?.length) {
     console.error("[lifecycle] save failed", error?.message)

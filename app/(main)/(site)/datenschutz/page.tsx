@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 // Mirrors what the code does today: Google Analytics only after opt-in (components/design/consent.tsx), Kurztest data and accounts in
-// Supabase (EU), Google sign-in, payments via Mollie (lib/billing/), billing emails via Resend,
+// Supabase (EU), Google sign-in, payments via Mollie (lib/billing/), billing + lifecycle emails via Resend,
 // Schreiben graded by Anthropic, Sprechen transcribed by ElevenLabs. Update this page before adding a tracker or a new service.
 export default function DatenschutzPage() {
   const mail = <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>
@@ -20,7 +20,7 @@ export default function DatenschutzPage() {
         crumbs={[{ name: "Start", path: "/" }, { name: "Datenschutz", path: "/datenschutz" }]}
         h1="Datenschutzerklärung"
         lead="Hier steht, welche Daten wir verarbeiten, warum wir das tun und welche Rechte du hast."
-        meta="Stand: 24. Oktober 2026"
+        meta="Stand: 2. November 2026"
       />
       <Prose>
         <h2>1. Wer ist verantwortlich?</h2>
@@ -93,6 +93,12 @@ export default function DatenschutzPage() {
           deine Aufnahmen in einem geschützten Speicher, auf den nur du und wir zugreifen.
         </p>
         <p>Rechtsgrundlage: Wir brauchen die Daten, damit du die Plattform nutzen kannst (Art. 6 Abs. 1 lit. b DSGVO).</p>
+        <p>
+          <strong>Lernplan per E-Mail:</strong> Nach der Anmeldung schicken wir dir höchstens 5 E-Mails zu deiner Prüfung, auch
+          mit Angeboten zu unserem Prüfungspass. Dafür nutzen wir <strong>Resend</strong>. Rechtsgrundlage: unser berechtigtes
+          Interesse, dir ähnliche eigene Angebote zu zeigen (Art. 6 Abs. 1 lit. f DSGVO, § 7 Abs. 3 UWG). Du kannst jederzeit
+          kostenlos widersprechen: mit dem Link in jeder E-Mail, in deinem Konto oder per E-Mail an {mail}.
+        </p>
 
         <h2>5. Wenn du den Prüfungspass kaufst</h2>
         <p>
@@ -130,7 +136,7 @@ export default function DatenschutzPage() {
         <ul>
           <li><strong>Vercel Inc.</strong>: Hosting der Website.</li>
           <li><strong>Supabase Inc.</strong>: Datenbank, Anmeldung und Speicher, mit Servern in der EU.</li>
-          <li><strong>Resend Inc.</strong>: Versand der E-Mails zu deinem Vertrag.</li>
+          <li><strong>Resend Inc.</strong>: Versand der E-Mails zu deinem Vertrag und des Lernplans per E-Mail.</li>
           <li><strong>Anthropic PBC</strong>: Feedback für Schreiben.</li>
           <li><strong>ElevenLabs Inc.</strong>: Umwandlung von Sprachaufnahmen in Text, und die Stimmen in den Hörtexten.</li>
           <li><strong>Google Ireland Limited</strong>: Statistik mit Google Analytics, nur mit deiner Einwilligung.</li>

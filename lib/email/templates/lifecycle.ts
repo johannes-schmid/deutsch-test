@@ -7,8 +7,8 @@ import { esc, render, text, type Body, type Email } from "./billing"
 
 /**
  * The five lifecycle emails (Hannes, 2026-10-27; drafts on the "Lebenszyklus-E-Mails" artifact). German, du, short sentences.
- * The welcome goes to every new account as a service email, so it must never carry an offer: no Prüfungspass, no price, no
- * discount (BGH VI ZR 134/15). Emails 2–5 need the sign-up consent and always carry the unsubscribe link.
+ * All five go to every account that has not objected (§ 7 Abs. 3 UWG after EuGH C-654/23, Hannes 2026-11-02), so each one
+ * carries the objection notice and the one-click unsubscribe link. The welcome still carries no offer.
  */
 
 const SKILL_NAMES: Record<Skill, string> = { hoeren: "Hören", lesen: "Lesen", schreiben: "Schreiben", sprechen: "Sprechen" }
@@ -20,7 +20,7 @@ export type LifecycleContext = {
   examDate: string | null
   daysLeft: number | null
   done: Skill[]
-  /** One-click unsubscribe; null only for the welcome service email. */
+  /** One-click unsubscribe; null only in previews. */
   unsubscribeUrl: string | null
 }
 
@@ -39,9 +39,9 @@ const featured = PLANS.find((p) => p.featured)!
 const oneSkill = PLANS.find((p) => p.grants.skills.length === 1)
 const monthly = formatEuro(featured.renews?.cents ?? featured.cents)
 
-function consentFooter(ctx: LifecycleContext) {
+function footer(ctx: LifecycleContext) {
   const links = [ctx.unsubscribeUrl ? muted(ctx.unsubscribeUrl, "Abmelden") : null, muted(url("/dashboard/konto"), "Prüfungstermin ändern")].filter(Boolean).join(" · ")
-  return `Du bekommst diese E-Mail, weil du bei der Anmeldung den Lernplan per E-Mail bestellt hast. ${links}`
+  return `Du bekommst diese E-Mail, weil du ein Konto bei deutschtest-ueben.de hast. Du kannst jederzeit kostenlos widersprechen. ${links}`
 }
 
 function passNote() {
@@ -69,13 +69,13 @@ function welcome(ctx: LifecycleContext): Body {
     facts: freeRows([]),
     note: "Jeder Modelltest ist wie der Teil in der echten Prüfung: gleiche Aufgaben, gleiche Zeit, das gleiche Ergebnis-Format.",
     after: [ASK],
-    footnote: "Du bekommst diese E-Mail, weil du ein Konto bei deutschtest-ueben.de angelegt hast. Wir schicken sie nur einmal.",
+    footnote: footer(ctx),
   }
 }
 
 function stand(due: Due, ctx: LifecycleContext): Body {
   const next = nextSkill(ctx.done)
-  const footnote = consentFooter(ctx)
+  const footnote = footer(ctx)
   if (due.variant === "c" || !next) {
     const left = ctx.daysLeft !== null && ctx.daysLeft > 0 ? ctx.daysLeft : null
     return {
@@ -150,12 +150,12 @@ function zahlung(ctx: LifecycleContext): Body {
     ],
     note: "Alle Preise inkl. MwSt.",
     after: ["Problem bei der Zahlung? Antworte auf diese E-Mail. Wir helfen dir."],
-    footnote: consentFooter(ctx),
+    footnote: footer(ctx),
   }
 }
 
 function endspurt(due: Due, ctx: LifecycleContext): Body {
-  const footnote = consentFooter(ctx)
+  const footnote = footer(ctx)
   if (due.variant === "b" || !ctx.examDate || ctx.daysLeft === null) {
     return {
       preheader: "Ein Klick. Dann passt dein Plan bis zum Prüfungstag.",
@@ -218,7 +218,7 @@ function nachPruefung(ctx: LifecycleContext): Body {
     ],
     note: "Dein offizielles Ergebnis bekommst du von deinem Prüfungszentrum. Wir sehen es nicht.",
     after: [ASK],
-    footnote: consentFooter(ctx),
+    footnote: footer(ctx),
   }
 }
 

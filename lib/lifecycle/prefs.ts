@@ -3,28 +3,52 @@ import { createAdminClient } from "@/lib/supabase/admin"
 import { isExam } from "@/lib/kurztest/data"
 import type { ExamId } from "@/lib/exams"
 
-/** The consent wording (EMAIL_CONSENT in lib/i18n/portal.ts and its uk/ru translations); bump it whenever that text changes. */
-export const CONSENT_VERSION = "2026-10-27.2"
+/** The objection notice under the sign-up button (EMAIL_NOTICE in lib/i18n/portal.ts and its uk/ru translations); bump it whenever that text changes. */
+export const NOTICE_VERSION = "2026-11-02.1"
 
-/** `exam` is null when the row only holds a sign-up consent and no exam was chosen yet. */
-export type ExamGoal = { exam: ExamId | null; examDate: string | null; consent: boolean }
+/** `exam` is null when the row was created before an exam was chosen. `emails` = lifecycle emails on (default for every account). */
+export type ExamGoal = { exam: ExamId | null; examDate: string | null; emails: boolean }
 
-/** The learner's exam, date and whether lifecycle emails are on; null = no row yet. */
+/** The learner's exam, date and whether lifecycle emails are on; null = no row yet (emails are on). */
 export async function examGoal(userId: string): Promise<ExamGoal | null> {
-  const { data, error } = await createAdminClient().from("lifecycle_prefs").select("exam, exam_date, consent_at, unsubscribed_at").eq("user_id", userId).maybeSingle()
+  const { data, error } = await createAdminClient().from("lifecycle_prefs").select("exam, exam_date, unsubscribed_at").eq("user_id", userId).maybeSingle()
   if (error) throw new Error(`[lifecycle] ${error.message}`)
   if (!data) return null
-  return { exam: isExam(data.exam) ? data.exam : null, examDate: data.exam_date, consent: !!data.consent_at && !data.unsubscribed_at }
+  return { exam: isExam(data.exam) ? data.exam : null, examDate: data.exam_date, emails: !data.unsubscribed_at }
 }
 
-/** The ticked sign-up checkbox, recorded by /auth/callback. Keeps an active consent as it is; never touches exam or date. */
-export async function recordSignupConsent(userId: string) {
+/** Stores the exam a sign-up came from (a free test) as the portal's exam, only while none is stored: a choice is never overwritten. */
+export async function presetExam(userId: string, exam: ExamId): Promise<void> {
   const db = createAdminClient()
-  const { data: row } = await db.from("lifecycle_prefs").select("consent_at, unsubscribed_at").eq("user_id", userId).maybeSingle()
-  if (row?.consent_at && !row.unsubscribed_at) return
-  const now = new Date().toISOString()
-  const { error } = await db
+  const row = await db.from("lifecycle_prefs").upsert({ user_id: userId }, { onConflict: "user_id", ignoreDuplicates: true })
+  const set = row.error ? row : await db.from("lifecycle_prefs").update({ exam, updated_at: new Date().toISOString() }).eq("user_id", userId).is("exam", null)
+  if (set.error) console.error("[lifecycle] exam preset failed", set.error.message)
+}
+
+/** Switches the portal's exam (dashboard header, level keys). Keeps the date and the email setting. */
+export async function setExam(userId: string, exam: ExamId): Promise<boolean> {
+  const { data, error } = await createAdminClient()
     .from("lifecycle_prefs")
-    .upsert({ user_id: userId, consent_at: now, consent_version: CONSENT_VERSION, unsubscribed_at: null, updated_at: now }, { onConflict: "user_id" })
-  if (error) console.error("[lifecycle] signup consent failed", error.message)
+    .upsert({ user_id: userId, exam, updated_at: new Date().toISOString() }, { onConflict: "user_id" })
+    .select("user_id")
+  if (error || !data?.length) console.error("[lifecycle] exam switch failed", error?.message)
+  return !error && !!data?.length
+}
+
+/**
+ * The learner's prefs row (created when missing) and its unsubscribe token; null on a database error.
+ * With `notice`, records that the sign-up objection notice was shown (/auth/callback, new accounts only).
+ */
+export async function ensurePrefs(userId: string, notice = false): Promise<string | null> {
+  const db = createAdminClient()
+  const now = new Date().toISOString()
+  const { error } = notice
+    ? await db.from("lifecycle_prefs").upsert({ user_id: userId, notice_at: now, notice_version: NOTICE_VERSION, updated_at: now }, { onConflict: "user_id" })
+    : await db.from("lifecycle_prefs").upsert({ user_id: userId }, { onConflict: "user_id", ignoreDuplicates: true })
+  if (error) {
+    console.error("[lifecycle] prefs row failed", error.message)
+    return null
+  }
+  const { data } = await db.from("lifecycle_prefs").select("unsubscribe_token").eq("user_id", userId).maybeSingle()
+  return data?.unsubscribe_token ?? null
 }

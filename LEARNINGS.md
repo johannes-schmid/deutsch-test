@@ -771,3 +771,10 @@
 **Outcome:** SUCCESS (tsc, eslint, 92 vitest, `next build`; Playwright `.unit-cache/e2e/ga-flow.mts` with GA hits intercepted and answered locally: all 11 events with their params, real Mollie test payment → `purchase`; 0 GA requests on /anmelden without consent).
 **What worked / went wrong:** The running dev server served the old `(app)` layout (no GA in the portal) until restarted. GA4 batches events for ~5 s and flushes the queue on unload, so an event right before `location.assign` to Mollie never shows in Playwright (requests after the cross-origin process swap are invisible); `event_callback` fires instantly and proves nothing. Routing the checkout redirect to a same-origin page showed the flush.
 **Lesson:** Test GA by intercepting `g/collect` and waiting ≥ 6 s, or navigate same-origin to see the unload flush. Never trust gtag's `event_callback` as a delivery signal.
+
+## 2026-11-02 — Lifecycle emails without consent (§ 7 Abs. 3 UWG)
+**Changed:** the email audience is every account that has not objected, existing accounts included (`lib/lifecycle/{rules,state,prefs,email}.ts`, `app/api/cron/lifecycle`); the sign-up checkbox is now an objection notice (`components/auth/google-button.tsx`, recorded in the new `notice_at`/`notice_version` columns, migration `20261102120000_lifecycle_notice.sql`); Konto has an on-by-default switch; the objection sentence is in every email footer, including the welcome; Datenschutz cites Art. 6 Abs. 1 lit. f.
+**Outcome:** SUCCESS (tsc, vitest 92/92, eslint, next build; sign-up page checked at 390 + 1440). Local migration not applied yet because Docker was off.
+**What worked / went wrong:** Hannes called it a "new German ruling"; it is EuGH C-654/23 (Nov 2025), which only opens the existing-customer exception. That exception still needs the objection notice at collection, which pre-2026-11-02 accounts never saw (flagged; Hannes chose to include them).
+**Lesson:** a legal basis like this needs proof (when, and which notice text) stored per account, not just a boolean. Keep `notice_version` bumped with the wording.
+

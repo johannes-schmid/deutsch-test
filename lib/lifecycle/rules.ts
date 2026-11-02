@@ -9,8 +9,8 @@ export type LifecycleVariant = "a" | "b" | "c" | null
 export type Due = { kind: LifecycleKind; variant: LifecycleVariant }
 
 export type LifecycleState = {
-  /** Marketing consent from onboarding; null = never given, nothing is sent. */
-  consentAt: Date | null
+  /** Start of the series: account creation (§ 7 Abs. 3 UWG, every account by default) or the first push subscription. */
+  since: Date
   unsubscribedAt: Date | null
   /** Berlin calendar day of the exam (YYYY-MM-DD); null = "Noch kein Termin". */
   examDate: string | null
@@ -48,7 +48,7 @@ export function daysUntil(ymd: string, now: Date) {
 }
 
 export function nextEmail(s: LifecycleState, now: Date): Due | null {
-  if (!s.consentAt || s.unsubscribedAt) return null
+  if (s.unsubscribedAt) return null
   const sentAt = (k: LifecycleKind) => s.sent.find((x) => x.kind === k)?.at ?? null
   const last = Math.max(0, ...s.sent.map((x) => x.at.getTime()))
   if (s.sent.length && now.getTime() - last < GAP) return null
@@ -75,7 +75,7 @@ export function nextEmail(s: LifecycleState, now: Date): Due | null {
 
   if (!sentAt("endspurt") && now.getTime() - stand.getTime() >= ENDSPURT_AFTER_STAND) {
     if (left !== null) return left <= ENDSPURT_FROM && left >= ENDSPURT_UNTIL ? { kind: "endspurt", variant: "a" } : null
-    if (-daysUntil(berlinDay(s.consentAt), now) >= NO_DATE_AFTER) return { kind: "endspurt", variant: "b" }
+    if (-daysUntil(berlinDay(s.since), now) >= NO_DATE_AFTER) return { kind: "endspurt", variant: "b" }
   }
   return null
 }

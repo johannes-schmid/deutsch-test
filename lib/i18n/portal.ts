@@ -1,11 +1,13 @@
 // German only for now: the portal gets the explanation locales when next-intl lands (LEARNINGS 2026-10-12).
 
-// TODO(hannes): consent wording to be checked by a lawyer (§ 7 UWG, Art. 7 DSGVO); a change needs a new CONSENT_VERSION
-// (lib/lifecycle/prefs.ts). The uk/ru sign-up cards carry translations of the same sentence.
-const EMAIL_CONSENT = "Schick mir einen Lernplan bis zu meinem Prüfungstag per E-Mail (höchstens 5 Mails, mit Angeboten zum Prüfungspass). Abmelden geht jederzeit."
+// The objection notice of § 7 Abs. 3 Nr. 4 UWG under the sign-up button (every account gets the emails by default, Hannes 2026-11-02).
+// TODO(hannes): wording to be checked by a lawyer; a change needs a new NOTICE_VERSION (lib/lifecycle/prefs.ts).
+// The uk/ru sign-up cards carry translations of the same sentences.
+const EMAIL_NOTICE = "Wir schicken dir bis zu 5 E-Mails zu deiner Prüfung, auch mit Angeboten zum Prüfungspass. Du kannst jederzeit kostenlos widersprechen: mit einem Klick in jeder E-Mail."
+const EMAIL_SETTING = "Lernplan per E-Mail bis zu meinem Prüfungstag (höchstens 5 Mails, mit Angeboten zum Prüfungspass). Abmelden geht jederzeit."
 
 export const AUTH_COPY = {
-  google: { register: "Mit Google registrieren", login: "Mit Google anmelden", pending: "Google wird geöffnet …", consent: EMAIL_CONSENT },
+  google: { register: "Mit Google registrieren", login: "Mit Google anmelden", pending: "Google wird geöffnet …", notice: EMAIL_NOTICE },
   register: {
     title: "Konto erstellen | deutschtest üben",
     h1: "Gratis weiterüben.",
@@ -296,7 +298,7 @@ export const PORTAL_COPY = {
     cont: (skill: string, done: number) => ({ title: `Weiter mit ${skill}`, body: `Du hast ${done} von 4 Teilen gemacht. Als Nächstes: ${skill}.`, cta: `${skill} starten` }),
     all: { title: "Du kennst jetzt deinen Stand", body: "Mit dem Prüfungspass übst du mit allen Modelltests, für jede Prüfung.", cta: "Prüfungspass ansehen" },
   },
-  /** Exam + date: the optional widget beside the stats on /dashboard; with email consent on /dashboard/konto. */
+  /** Exam + date: the optional widget beside the stats on /dashboard; with the email setting on /dashboard/konto. */
   goal: {
     widgetH: "Prüfungstermin",
     widgetEmpty: "Trag deinen Termin ein. Dann siehst du, wie viel Zeit du noch hast.",
@@ -319,7 +321,7 @@ export const PORTAL_COPY = {
     hasDate: "Termin steht",
     noDate: "Noch kein Termin",
     dateLabel: "Datum der Prüfung",
-    consent: EMAIL_CONSENT,
+    emails: EMAIL_SETTING,
     save: "Speichern",
     saving: "Wird gespeichert …",
     saved: "Gespeichert.",

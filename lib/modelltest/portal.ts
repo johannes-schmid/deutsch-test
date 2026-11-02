@@ -1,4 +1,7 @@
 import "server-only"
+import { cache } from "react"
+import { examGoal } from "@/lib/lifecycle/prefs"
+import { isExam } from "@/lib/kurztest/data"
 import { requireAdmin } from "@/lib/admin/guard"
 import { canOpen } from "@/lib/entitlements"
 import type { PartId } from "@/lib/exam/types"
@@ -146,3 +149,19 @@ export async function mostPracticedSkill(userId: string): Promise<PartId | null>
   if (error) throw error
   return mostPracticed((data ?? []).map((r) => ({ skill: r.skill as string, completedAt: r.completed_at as string })))
 }
+
+/**
+ * The exam the portal opens on: the stored choice (preset from the free test at sign-up, or switched later), else the
+ * exam of the last Modelltest, else of the last free test under this email. Null = ask.
+ */
+export const focusExam = cache(async (userId: string, email: string): Promise<ExamId | null> => {
+  const goal = await examGoal(userId)
+  if (goal?.exam) return goal.exam
+  const db = createAdminClient()
+  const [mt, kt] = await Promise.all([
+    db.from("mt_attempts").select("exam").eq("user_id", userId).order("started_at", { ascending: false }).limit(1).maybeSingle(),
+    db.from("kurztest_attempts").select("exam").in("email", [...new Set([email, email.toLowerCase()])]).order("finished_at", { ascending: false }).limit(1).maybeSingle(),
+  ])
+  const exam = mt.data?.exam ?? kt.data?.exam
+  return isExam(exam) ? exam : null
+})

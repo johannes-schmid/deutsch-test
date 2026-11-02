@@ -213,15 +213,15 @@ export function ExamDateWidget({ goal, suggested, left }: { goal: { exam: ExamId
   )
 }
 
-/** Exam, date, the email consent and this browser's notifications on /dashboard/konto. */
-export function ExamGoalForm({ initial }: { initial: { exam: ExamId; examDate: string | null; consent: boolean; answered: boolean } }) {
+/** Exam, date, the lifecycle-email switch and this browser's notifications on /dashboard/konto. */
+export function ExamGoalForm({ initial }: { initial: { exam: ExamId; examDate: string | null; emails: boolean; answered: boolean } }) {
   const id = useId()
   const router = useRouter()
   const today = useSyncExternalStore(noop, todayKey, () => undefined)
   const [exam, setExam] = useState<ExamId>(initial.exam)
   const [when, setWhen] = useState<"date" | "none" | null>(initial.answered ? (initial.examDate ? "date" : "none") : null)
   const [date, setDate] = useState(initial.examDate ?? "")
-  const [consent, setConsent] = useState(initial.consent)
+  const [emails, setEmails] = useState(initial.emails)
   const [status, setStatus] = useState<Status>("idle")
 
   const touch = () => status !== "busy" && setStatus("idle")
@@ -230,7 +230,7 @@ export function ExamGoalForm({ initial }: { initial: { exam: ExamId; examDate: s
     e.preventDefault()
     if (!when || (when === "date" && !date)) return setStatus("dateMissing")
     setStatus("busy")
-    const res = await saveExamGoal({ exam, examDate: when === "date" ? date : null, consent }).catch(() => null)
+    const res = await saveExamGoal({ exam, examDate: when === "date" ? date : null, emails }).catch(() => null)
     if (!res?.ok) return setStatus(res?.error === "date" ? "dateInvalid" : "error")
     setStatus("saved")
     router.refresh()
@@ -283,15 +283,15 @@ export function ExamGoalForm({ initial }: { initial: { exam: ExamId; examDate: s
           ) : null}
         </fieldset>
 
-        <label htmlFor={`${id}-consent`} className="group flex cursor-pointer items-start gap-3 rounded-[16px] bg-v-soft/60 p-4 text-[14.5px] leading-snug text-v-ink has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-v-ink">
-          <input id={`${id}-consent`} type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); touch() }} className="peer sr-only" />
+        <label htmlFor={`${id}-emails`} className="group flex cursor-pointer items-start gap-3 rounded-[16px] bg-v-soft/60 p-4 text-[14.5px] leading-snug text-v-ink has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-v-ink">
+          <input id={`${id}-emails`} type="checkbox" checked={emails} onChange={(e) => { setEmails(e.target.checked); touch() }} className="peer sr-only" />
           <span
             aria-hidden="true"
             className="mt-px grid size-5 shrink-0 place-items-center rounded-[6px] bg-v-surface shadow-[inset_0_0_0_1.5px_var(--v-line)] transition-[background-color,box-shadow,transform] duration-150 ease-out group-active:scale-[0.92] peer-checked:bg-v-ink peer-checked:shadow-none [&>svg]:scale-75 [&>svg]:opacity-0 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100"
           >
             <Check className="size-3.5 text-v-bg transition-[opacity,transform] duration-150 ease-out" strokeWidth={3.25} />
           </span>
-          <span className="text-pretty">{T.consent}</span>
+          <span className="text-pretty">{T.emails}</span>
         </label>
 
         <PushSetting />

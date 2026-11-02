@@ -21,18 +21,25 @@ async function pushUserIds(db: Db) {
   }
 }
 
-/** Every user id with an active email consent (paged). */
+/** Every account that has not unsubscribed (paged). Emails go to all accounts by default (§ 7 Abs. 3 UWG, Hannes 2026-11-02). */
 async function emailUserIds(db: Db) {
-  const ids = new Set<string>()
+  const out = new Set<string>()
+  const unsubscribed = new Set<string>()
   for (let from = 0; ; from += PAGE) {
-    const { data, error } = await db.from("lifecycle_prefs").select("user_id").not("consent_at", "is", null).is("unsubscribed_at", null).order("user_id").range(from, from + PAGE - 1)
+    const { data, error } = await db.from("lifecycle_prefs").select("user_id").not("unsubscribed_at", "is", null).order("user_id").range(from, from + PAGE - 1)
     if (error) throw new Error(`[lifecycle] ${error.message}`)
-    for (const r of data ?? []) ids.add(r.user_id as string)
-    if (!data || data.length < PAGE) return ids
+    for (const r of data ?? []) unsubscribed.add(r.user_id as string)
+    if (!data || data.length < PAGE) break
+  }
+  for (let page = 1; ; page++) {
+    const { data, error } = await db.auth.admin.listUsers({ page, perPage: PAGE })
+    if (error) throw new Error(`[lifecycle] ${error.message}`)
+    for (const u of data.users) if (u.email && !unsubscribed.has(u.id)) out.add(u.id)
+    if (data.users.length < PAGE) return out
   }
 }
 
-/** Learners with at least one live channel: an active email consent or a browser push subscription. */
+/** Learners with at least one live channel: email (every account that has not unsubscribed) or a browser push subscription. */
 export async function reachableUsers(): Promise<string[]> {
   const db = createAdminClient()
   const [push, email] = await Promise.all([pushUserIds(db), emailUserIds(db)])
@@ -50,21 +57,23 @@ export type Channel = "email" | "push"
 export type LearnerState = { state: LifecycleState; exam: ExamId | null; done: Skill[]; channels: Channel[]; unsubscribeToken: string | null }
 
 /**
- * Everything the rules need for one learner. Each channel has its own opt-in: email from the sign-up checkbox (or Konto),
- * push from the browser permission. The series starts with the earliest of the two; null = no live channel.
+ * Everything the rules need for one learner. Email is on for every account until it unsubscribes (sign-up notice,
+ * § 7 Abs. 3 UWG); push needs the browser permission. The series starts with the earlier of the two; null = no live channel.
  */
 export async function learnerState(userId: string, now: Date): Promise<LearnerState | null> {
   const db = createAdminClient()
-  const [prefs, subs, sent, lastFirst] = await Promise.all([
-    db.from("lifecycle_prefs").select("exam, exam_date, consent_at, unsubscribed_at, unsubscribe_token").eq("user_id", userId).maybeSingle(),
+  const [account, prefs, subs, sent, lastFirst] = await Promise.all([
+    db.auth.admin.getUserById(userId),
+    db.from("lifecycle_prefs").select("exam, exam_date, unsubscribed_at, unsubscribe_token").eq("user_id", userId).maybeSingle(),
     db.from("push_subscriptions").select("created_at").eq("user_id", userId).order("created_at").limit(1),
     db.from("lifecycle_messages").select("kind, sent_at").eq("user_id", userId),
     db.from("payments").select("status, created_at").eq("user_id", userId).eq("kind", "first").order("created_at", { ascending: false }).limit(1).maybeSingle(),
   ])
-  const failed = prefs.error ?? subs.error ?? sent.error ?? lastFirst.error
+  const failed = account.error ?? prefs.error ?? subs.error ?? sent.error ?? lastFirst.error
   if (failed) throw new Error(`[lifecycle] ${failed.message}`)
 
-  const emailSince = prefs.data?.consent_at && !prefs.data.unsubscribed_at ? new Date(prefs.data.consent_at) : null
+  const user = account.data.user
+  const emailSince = user?.email && !prefs.data?.unsubscribed_at ? new Date(user.created_at) : null
   const pushSince = subs.data?.length ? new Date(subs.data[0].created_at) : null
   const channels: Channel[] = [...(emailSince ? (["email"] as const) : []), ...(pushSince ? (["push"] as const) : [])]
   if (!channels.length) return null
@@ -73,14 +82,14 @@ export async function learnerState(userId: string, now: Date): Promise<LearnerSt
   const done = await doneSkills(userId, exam ?? "dtz")
 
   const pay = lastFirst.data
-  const since = [emailSince, pushSince].filter((d): d is Date => !!d).sort((a, b) => a.getTime() - b.getTime())[0]
+  const since = [emailSince, pushSince].filter((d): d is Date => !!d).sort((a, b) => a.getTime() - b.getTime())[0]!
   return {
     exam,
     done,
     channels,
     unsubscribeToken: prefs.data?.unsubscribe_token ?? null,
     state: {
-      consentAt: since,
+      since,
       unsubscribedAt: null,
       examDate: prefs.data?.exam_date ?? null,
       skillsDone: done.length,

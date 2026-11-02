@@ -92,7 +92,7 @@ const de = {
     lead: (teil: number) => `Teil ${teil} wartet schon. Melde dich mit Google an. Dann machst du genau hier weiter.`,
     free: "Gratis · keine Zahlungsdaten nötig",
     login: ["Schon ein Konto?", "Anmelden"],
-    google: { label: "Mit Google registrieren", pending: "Google wird geöffnet …", consent: AUTH_COPY.google.consent },
+    google: { label: "Mit Google registrieren", pending: "Google wird geöffnet …", notice: AUTH_COPY.google.notice },
     hGraded: "Starte mit einem Gratis-Konto",
     leadGraded: (speaking: boolean, n: number) =>
       speaking

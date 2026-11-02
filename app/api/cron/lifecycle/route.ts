@@ -4,11 +4,12 @@ import { daysUntil, nextEmail } from "@/lib/lifecycle/rules"
 import { learnerState, reachableUsers, type Channel } from "@/lib/lifecycle/state"
 import { pushMessage } from "@/lib/lifecycle/push-copy"
 import { pushConfigured, sendPush } from "@/lib/lifecycle/push"
+import { ensurePrefs } from "@/lib/lifecycle/prefs"
 import { emailConfigured, recipient, sendLifecycleEmail, unsubscribeUrl } from "@/lib/lifecycle/email"
 
 /**
  * Daily Vercel Cron (vercel.json, 07:00 UTC): sends each learner the lifecycle moment that is due (lib/lifecycle/rules.ts)
- * on every channel they turned on: email (sign-up consent) and browser push. A moment is claimed in `lifecycle_messages`
+ * on every live channel: email (every account until it unsubscribes, § 7 Abs. 3 UWG) and browser push. A moment is claimed in `lifecycle_messages`
  * before sending (unique per kind), so a retried or doubled run never sends it twice; the claim is dropped when nothing
  * went out. Fails closed without CRON_SECRET.
  */
@@ -36,10 +37,11 @@ export async function GET(req: Request) {
 
       const left = learner.state.examDate ? daysUntil(learner.state.examDate, now) : null
       const delivered: Channel[] = []
-      if (channels.includes("email") && learner.unsubscribeToken) {
+      const token = channels.includes("email") ? (learner.unsubscribeToken ?? (await ensurePrefs(userId))) : null
+      if (token) {
         try {
           const to = await recipient(userId)
-          const ctx = { firstName: to?.firstName ?? null, exam: learner.exam, examDate: learner.state.examDate, daysLeft: left, done: learner.done, unsubscribeUrl: unsubscribeUrl(learner.unsubscribeToken) }
+          const ctx = { firstName: to?.firstName ?? null, exam: learner.exam, examDate: learner.state.examDate, daysLeft: left, done: learner.done, unsubscribeUrl: unsubscribeUrl(token) }
           if (to && (await sendLifecycleEmail(userId, to.email, due, ctx))) delivered.push("email")
         } catch (err) {
           console.error("[lifecycle-cron] email", userId, err instanceof Error ? err.message : err)

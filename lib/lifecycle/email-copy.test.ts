@@ -23,19 +23,20 @@ const CONSENT: Due[] = [
 ]
 
 describe("lifecycle emails", () => {
-  it("keeps the welcome free of offers, since it goes out without consent", () => {
-    const m = lifecycleEmail({ kind: "willkommen", variant: null }, ctx({ unsubscribeUrl: null, exam: null, examDate: null, daysLeft: null }))
+  it("keeps the welcome free of offers", () => {
+    const m = lifecycleEmail({ kind: "willkommen", variant: null }, ctx({ exam: null, examDate: null, daysLeft: null }))
     for (const s of [m.subject, m.html, m.text]) {
       expect(s).not.toMatch(/€|Prüfungspass|Preis|Rabatt|kaufen|\/preise/)
     }
-    expect(m.html).toContain("Konto bei deutschtest-ueben.de angelegt")
+    expect(m.html).toContain("Konto bei deutschtest-ueben.de")
   })
 
-  it("puts the unsubscribe link in every email with consent", () => {
-    for (const due of CONSENT) {
+  it("puts the objection notice and unsubscribe link in every email", () => {
+    for (const due of [{ kind: "willkommen", variant: null } as const, ...CONSENT]) {
       const m = lifecycleEmail(due, ctx({ done: due.variant === "b" ? ["hoeren"] : due.variant === "c" ? ["hoeren", "lesen", "schreiben", "sprechen"] : [] }))
       expect(m.html, `${due.kind}/${due.variant}`).toContain("/api/lifecycle/abmelden?t=")
       expect(m.text, `${due.kind}/${due.variant}`).toContain("/api/lifecycle/abmelden?t=")
+      expect(m.text, `${due.kind}/${due.variant}`).toContain("jederzeit kostenlos widersprechen")
     }
   })
 

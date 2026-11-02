@@ -32,7 +32,7 @@ function Layout({ user, items, started, pass, goal }: { user: SessionUser | null
       <div className="mt-8 grid grid-cols-[minmax(0,1fr)] items-start gap-4 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div className="flex flex-col gap-4">
           <ProgressCard items={items} empty={started ? null : { href: portalPath("dtz") }} />
-          {user && goal !== undefined ? <ExamGoalForm initial={{ exam: goal?.exam ?? "dtz", examDate: goal?.examDate ?? null, consent: goal?.consent ?? false, answered: !!goal?.exam }} /> : null}
+          {user && goal !== undefined ? <ExamGoalForm initial={{ exam: goal?.exam ?? "dtz", examDate: goal?.examDate ?? null, emails: goal?.emails ?? true, answered: !!goal?.exam }} /> : null}
         </div>
         <div className="flex flex-col gap-4 lg:sticky lg:top-8">
           <PassCard pass={pass} />

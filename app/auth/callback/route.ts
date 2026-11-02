@@ -1,14 +1,15 @@
 import { after, NextResponse, type NextRequest } from "next/server"
 import { createClient } from "@/lib/supabase/server"
 import { safeNext } from "@/lib/auth/redirect"
-import { CONSENT_COOKIE } from "@/lib/lifecycle/consent-cookie"
-import { recordSignupConsent } from "@/lib/lifecycle/prefs"
 import { sendWelcome } from "@/lib/lifecycle/email"
+import { examFromPath } from "@/lib/lifecycle/focus"
+import { presetExam } from "@/lib/lifecycle/prefs"
 import { AUTH_EVENT_COOKIE } from "@/lib/analytics"
 
 /**
- * Google → Supabase → here with a PKCE code. Exchanges it for a session cookie, records a ticked sign-up email consent,
- * sends a new account the welcome service email after the response, and sends the user on.
+ * Google → Supabase → here with a PKCE code. Exchanges it for a session cookie, records that a new account saw the
+ * lifecycle-email notice under the sign-up button, stores the exam of the free test it came from (when none is stored),
+ * sends it the welcome email after the response, and sends the user on.
  */
 /** An account created this recently is a sign-up, not a returning login (Google creates the user during the redirect). */
 const NEW_ACCOUNT_MS = 10 * 60_000
@@ -27,15 +28,15 @@ export async function GET(req: NextRequest) {
   const { data, error } = await supabase.auth.exchangeCodeForSession(code)
   if (error) return fail("exchange_failed")
 
-  const consent = req.cookies.get(CONSENT_COOKIE)?.value === "1"
-  if (consent && data.user) await recordSignupConsent(data.user.id)
   const user = data.user
+  const fromExam = examFromPath(next)
+  if (user && fromExam) await presetExam(user.id, fromExam)
   const isNew = !!user && Date.now() - new Date(user.created_at).getTime() < NEW_ACCOUNT_MS
-  if (isNew && user) after(() => sendWelcome(user.id))
+  if (isNew && user) after(() => sendWelcome(user.id, true))
 
   const host = process.env.NODE_ENV === "development" ? null : req.headers.get("x-forwarded-host")
   const res = NextResponse.redirect(host ? `https://${host}${next}` : new URL(next, origin))
-  if (req.cookies.has(CONSENT_COOKIE)) res.cookies.delete(CONSENT_COOKIE)
+  if (req.cookies.has("lc_consent")) res.cookies.delete("lc_consent")
   res.cookies.set(AUTH_EVENT_COOKIE, isNew ? "sign_up" : "login", { path: "/", maxAge: 120, sameSite: "lax" })
   return res
 }
