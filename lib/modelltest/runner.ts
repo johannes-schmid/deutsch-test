@@ -53,9 +53,9 @@ export async function halfOfAttempt(a: { set_id: string; exam: ExamId; skill: Pa
 
 /** A published set the user may open (free or owned; admins too need the pass), or an admin preview of an unpublished one, stripped for the browser. */
 export async function loadRunnerSet(exam: ExamId, skill: PartId, n: number, userId: string): Promise<Access> {
-  const [set, admin] = await Promise.all([setRow(exam, skill, n), requireAdmin()])
+  const [set, admin, owns] = await Promise.all([setRow(exam, skill, n), requireAdmin(), canOpen(userId, exam, skill)])
   if (!set || (!set.published && !admin)) return { ok: false, reason: "missing" }
-  if (set.published && !set.is_free && !(await canOpen(userId, exam, skill))) return { ok: false, reason: "locked" }
+  if (set.published && !set.is_free && !owns) return { ok: false, reason: "locked" }
   const { data, error } = await createAdminClient().from(tableOf(skill)).select(ROW_COLUMNS).eq("set_id", set.id).order("teil").order("sort_order")
   if (error) throw error
   const all = (data as Row[]).map((r) => rowToBlock(r, exam, skill)).map(({ id, skill, teil, display, example, exampleAnswers }) => ({ id, skill, teil, display, ...(example ? { example } : {}), ...(exampleAnswers ? { exampleAnswers } : {}) }))

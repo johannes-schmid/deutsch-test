@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
+import { LoadingVeil } from "@/components/design/leuchte-loader"
 import { ScoreCard, WeekCard } from "@/components/portal/portal-overview"
 import { SkillCard } from "@/components/portal/portal-exam"
 import { ExamChooser, ExamFocusHeader } from "@/components/portal/exam-focus"
@@ -39,15 +40,17 @@ function Greeting({ user, date, sub }: { user: SessionUser | null; date: string 
 function OverviewSkeleton() {
   const block = "nz-paper rounded-[24px]"
   return (
-    <div className="mt-8 flex flex-col gap-6" aria-hidden="true">
-      <div className={`${block} h-[104px]`} />
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-10 xl:grid-cols-[minmax(0,1fr)_300px] xl:gap-4">
-        <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
-          {[0, 1, 2, 3].map((i) => <div key={i} className={`${block} h-[236px]`} />)}
+    <LoadingVeil label={T.loading.page} className="mt-8">
+      <div className="flex flex-col gap-6" aria-hidden="true">
+        <div className={`${block} h-[104px]`} />
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-10 xl:grid-cols-[minmax(0,1fr)_300px] xl:gap-4">
+          <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
+            {[0, 1, 2, 3].map((i) => <div key={i} className={`${block} h-[236px]`} />)}
+          </div>
+          <div className={`${block} h-[180px]`} />
         </div>
-        <div className={`${block} h-[180px]`} />
       </div>
-    </div>
+    </LoadingVeil>
   )
 }
 

@@ -2,7 +2,7 @@ import "server-only"
 import { cache } from "react"
 import { connection } from "next/server"
 import type { SupabaseClient } from "@supabase/supabase-js"
-import { createClient } from "@/lib/supabase/server"
+import { createClient, getSessionUser } from "@/lib/supabase/server"
 
 /** Is this session's user on the `admin_users` allowlist? Asked with the user's own client, so RLS answers, not the secret key. */
 export async function adminEmail(supabase: SupabaseClient, email: string | undefined): Promise<string | null> {
@@ -14,7 +14,6 @@ export async function adminEmail(supabase: SupabaseClient, email: string | undef
 /** The admin's email, or null. proxy.ts gates /admin too; this keeps every page and route safe on its own. */
 export const requireAdmin = cache(async (): Promise<string | null> => {
   await connection()
-  const supabase = await createClient()
-  const { data } = await supabase.auth.getUser()
-  return adminEmail(supabase, data.user?.email)
+  const user = await getSessionUser()
+  return user ? adminEmail(await createClient(), user.email) : null
 })

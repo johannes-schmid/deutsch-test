@@ -63,14 +63,16 @@ export async function modelltestSlots(exam: ExamId, skill: PartId, userId: strin
 }
 
 /** Per skill: how many Modelltests this user finished and how many are out. For the exam page's skill cards. */
-export async function skillProgress(exam: ExamId, userId: string): Promise<Record<string, { done: number; available: number }>> {
+export const skillProgress = cache(async (exam: ExamId, userId: string): Promise<Record<string, { done: number; available: number }>> => {
   const db = createAdminClient()
-  const [{ data: sets, error }, admin] = await Promise.all([db.from("mt_sets").select("id, skill, published").eq("exam", exam).gt("number", 0), requireAdmin()])
+  const [{ data: sets, error }, { data: attempts, error: aErr }, admin] = await Promise.all([
+    db.from("mt_sets").select("id, skill, published").eq("exam", exam).gt("number", 0),
+    db.from("mt_attempts").select("set_id").eq("user_id", userId).eq("exam", exam).not("completed_at", "is", null),
+    requireAdmin(),
+  ])
   if (error) throw error
+  if (aErr) throw aErr
   const visible = (sets as { id: string; skill: string; published: boolean }[]).filter((s) => s.published || admin)
-  const { data: attempts } = visible.length
-    ? await db.from("mt_attempts").select("set_id").eq("user_id", userId).in("set_id", visible.map((s) => s.id)).not("completed_at", "is", null)
-    : { data: [] }
   const doneSets = new Set((attempts ?? []).map((a) => a.set_id))
   const out: Record<string, { done: number; available: number }> = {}
   for (const s of visible) {
@@ -79,7 +81,7 @@ export async function skillProgress(exam: ExamId, userId: string): Promise<Recor
     if (doneSets.has(s.id)) out[s.skill].done++
   }
   return out
-}
+})
 
 type DoneRow = { set_id: string; exam: string; skill: string; number: number; score: number | null; max_score: number | null; completed_at: string }
 

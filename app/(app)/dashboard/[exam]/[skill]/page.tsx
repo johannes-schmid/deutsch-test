@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
+import { LoadingVeil } from "@/components/design/leuchte-loader"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
@@ -38,7 +39,7 @@ export default async function PortalSkillPage({ params }: PageProps<"/dashboard/
 
       <PortalHeader mark={<PartIcon part={skill} />} title={name} lead={T.skill.lead(MODELLTESTS, exam.name)} />
 
-      <Suspense fallback={<SlotList slots={Array.from({ length: MODELLTESTS }, (_, i) => ({ n: i + 1, state: "soon", href: null, free: false, result: null }))} />}>
+      <Suspense fallback={<LoadingVeil label={T.loading.page}><SlotList slots={Array.from({ length: MODELLTESTS }, (_, i) => ({ n: i + 1, state: "soon", href: null, free: false, result: null }))} /></LoadingVeil>}>
         <Slots exam={id} skill={skill} free={free} />
       </Suspense>
     </main>

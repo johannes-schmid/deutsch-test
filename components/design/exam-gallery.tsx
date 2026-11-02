@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ArrowRight, Clock, Headphones, RotateCcw, Users } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
+import { LeuchteLoader, LoadingVeil } from "@/components/design/leuchte-loader"
 import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
   ChoiceItem, ConfirmSheet, ExamAudio, HalfwayStop, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
@@ -239,6 +240,18 @@ export function ExamGallery() {
               <span className="text-[12px] leading-tight text-v-muted">{EXAMS[id].name}</span>
             </span>
           ))}
+        </div>
+      </Block>
+
+      <Block title="Laden" note="Das Logo als Ladezustand, reines CSS, erscheint erst nach 300 ms. Atmend (die Punkte leuchten abwechselnd) über dem Skelett jeder Portalseite; Signal (der Hören-Punkt fährt die U-Schiene entlang und schaltet den Lesen-Punkt an) bevor ein Modelltest öffnet. Bei reduzierter Bewegung pulsiert nur die Deckkraft.">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
+          <Panel className="min-h-[240px] items-center justify-center"><LeuchteLoader label="Einen Moment …" size={72} /></Panel>
+          <Panel className="min-h-[240px] items-center justify-center"><LeuchteLoader variant="signal" label="Modelltest wird geladen …" size={72} /></Panel>
+          <LoadingVeil label="Einen Moment …" className="sm:col-span-2">
+            <div className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2" aria-hidden="true">
+              {[0, 1].map((i) => <div key={i} className="nz-paper h-[200px] rounded-[24px]" />)}
+            </div>
+          </LoadingVeil>
         </div>
       </Block>
 

@@ -234,7 +234,7 @@ same Mollie organisation as the Dutch sites with its own website profile. Ported
 - **Mollie** for payments: hosted checkout with a `first` payment (mandate), then a monthly subscription
   (`lib/billing/`). Recurring works with cards (incl. Apple/Google Pay), PayPal and EPS (needs SEPA Direct Debit on the
   profile); Klarna can't recur. Mollie computes no VAT: we store the detected country per payment for the OSS return.
-- **Resend** · **Vercel** hosting + crons
+- **Resend** · **Vercel** hosting + crons. Functions run in **`dub1`** (`vercel.json` `regions`), next to Supabase in **eu-west-1** (Ireland); without it they ran in iad1 and every query crossed the Atlantic.
 - **PostHog** (+ Meta Pixel for ads) and GA4. **TODO(hannes):** use the shared PostHog project
   split by `$host` (as the Dutch sites do), or a separate one?
 - **ElevenLabs:** a designed German voice cast for Hören monologues and dialogues

@@ -1,4 +1,5 @@
 import "server-only"
+import { cache } from "react"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { isExam } from "@/lib/kurztest/data"
 import type { ExamId } from "@/lib/exams"
@@ -10,12 +11,12 @@ export const NOTICE_VERSION = "2026-11-02.1"
 export type ExamGoal = { exam: ExamId | null; examDate: string | null; emails: boolean }
 
 /** The learner's exam, date and whether lifecycle emails are on; null = no row yet (emails are on). */
-export async function examGoal(userId: string): Promise<ExamGoal | null> {
+export const examGoal = cache(async (userId: string): Promise<ExamGoal | null> => {
   const { data, error } = await createAdminClient().from("lifecycle_prefs").select("exam, exam_date, unsubscribed_at").eq("user_id", userId).maybeSingle()
   if (error) throw new Error(`[lifecycle] ${error.message}`)
   if (!data) return null
   return { exam: isExam(data.exam) ? data.exam : null, examDate: data.exam_date, emails: !data.unsubscribed_at }
-}
+})
 
 /** Stores the exam a sign-up came from (a free test) as the portal's exam, only while none is stored: a choice is never overwritten. */
 export async function presetExam(userId: string, exam: ExamId): Promise<void> {

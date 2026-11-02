@@ -23,15 +23,18 @@ export async function createClient() {
 
 export type SessionUser = { id: string; email: string; name: string | null; firstName: string | null; avatar: string | null }
 
-/** The signed-in user from Google's profile data, or null; one auth call per request. Profile fields only: never read entitlements from user_metadata. */
+/**
+ * The signed-in user from Google's profile data, or null; one check per request. getClaims() verifies the JWT against
+ * the project's ES256 key locally (no Auth round trip). Profile fields only: never read entitlements from user_metadata.
+ */
 export const getSessionUser = cache(async (): Promise<SessionUser | null> => {
   // Supabase checks token expiry with Date.now(), which cacheComponents only allows at request time.
   await connection()
   const supabase = await createClient()
-  const { data } = await supabase.auth.getUser()
-  const u = data.user
-  if (!u) return null
-  const m = u.user_metadata ?? {}
+  const { data } = await supabase.auth.getClaims()
+  const c = data?.claims
+  if (!c?.sub) return null
+  const m = (c.user_metadata ?? {}) as Record<string, string | undefined>
   const name: string | null = m.full_name ?? m.name ?? null
-  return { id: u.id, email: u.email ?? "", name, firstName: m.given_name ?? name?.split(" ")[0] ?? null, avatar: m.avatar_url ?? m.picture ?? null }
+  return { id: c.sub, email: c.email ?? "", name, firstName: m.given_name ?? name?.split(" ")[0] ?? null, avatar: m.avatar_url ?? m.picture ?? null }
 })

@@ -32,6 +32,7 @@ export const AUTH_COPY = {
 
 export const PORTAL_COPY = {
   title: "Übersicht | deutschtest üben",
+  loading: { page: "Einen Moment …", exam: "Modelltest wird geladen …" },
   nav: { overview: "Übersicht", exams: "Prüfungen", parts: "Teile", pricing: "Preise", account: "Konto", contact: "Kontakt", close: "Schließen", levels: (name: string) => `Niveaus von ${name}` },
   /** The dashboard opens on the learner's exam (preset from the free test at sign-up, switchable in the header and in Konto). */
   focus: {

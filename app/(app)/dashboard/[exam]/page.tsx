@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
+import { LoadingVeil } from "@/components/design/leuchte-loader"
 import { notFound } from "next/navigation"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import { PortalCrumbs, PortalHeader, SkillCard } from "@/components/portal/portal-exam"
@@ -55,7 +56,7 @@ export default async function PortalExamPage({ params }: PageProps<"/dashboard/[
           {T.exam.skillsH}
           <span className="text-v-muted"> {T.exam.skillsMuted}</span>
         </h2>
-        <Suspense fallback={<Cards skills={skills} />}>
+        <Suspense fallback={<LoadingVeil label={T.loading.page}><Cards skills={skills} /></LoadingVeil>}>
           <ProgressCards exam={id} skills={skills} />
         </Suspense>
       </section>
@@ -97,7 +98,7 @@ async function FamilyPage({ id }: { id: FamilyId }) {
           {T.family.levelsH}
           <span className="text-v-muted"> {T.family.levelsMuted}</span>
         </h2>
-        <Suspense fallback={<Levels family={family} done={{}} />}>
+        <Suspense fallback={<LoadingVeil label={T.loading.page}><Levels family={family} done={{}} /></LoadingVeil>}>
           <UserLevels family={family} />
         </Suspense>
       </section>

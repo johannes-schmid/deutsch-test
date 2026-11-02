@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
+import { LeuchteLoader } from "@/components/design/leuchte-loader"
 import Link from "next/link"
 import { notFound, redirect } from "next/navigation"
 import { ArrowRight } from "lucide-react"
@@ -64,7 +65,7 @@ async function Run({ params }: { params: PageProps<"/dashboard/[exam]/[skill]/[n
 
 export default function ModelltestPage({ params }: PageProps<"/dashboard/[exam]/[skill]/[n]">) {
   return (
-    <Suspense fallback={<p className="px-6 py-12 text-v-muted">…</p>}>
+    <Suspense fallback={<div className="grid min-h-[70dvh] place-items-center px-6"><LeuchteLoader variant="signal" label={T.loading.exam} size={72} /></div>}>
       <Run params={params} />
     </Suspense>
   )

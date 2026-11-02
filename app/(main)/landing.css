@@ -185,3 +185,38 @@
 }
 :is(.nz-steps, .v-prose ol) > li:not(:last-child)::after { content: ""; position: absolute; inset-inline-start: 16.5px; top: 36px; bottom: 2px; width: 1px; background: var(--v-line); }
 article.group:hover > .photo::before { scale: 1.05; }
+
+/* Leuchte loader (components/design/leuchte-loader.tsx): the logo drawn at 56 units, scaled by --k. Fades in after 300 ms. */
+.leuchte-loader { animation: leuchte-appear 200ms var(--ease-out-strong) 300ms backwards; }
+@keyframes leuchte-appear { from { opacity: 0; transform: scale(0.96); } }
+.leuchte { --k: 1; position: relative; display: block; flex: none; width: calc(56px * var(--k)); height: calc(56px * var(--k)); }
+.leuchte-u { position: absolute; left: 0; top: 0; width: 56px; height: 56px; transform: scale(var(--k)); transform-origin: 0 0; }
+.leuchte svg { display: block; overflow: visible; }
+.leuchte-a { fill: var(--v-sk-hoeren); }
+.leuchte-b { fill: var(--v-sk-lesen); }
+.leuchte-dot, .leuchte-halo { transform-box: fill-box; transform-origin: center; }
+.leuchte-halo { filter: blur(3px); }
+.leuchte-breathe .leuchte-dot { animation: leuchte-breathe 1.6s cubic-bezier(0.77, 0, 0.175, 1) infinite; }
+.leuchte-breathe .leuchte-halo { animation: leuchte-halo 1.6s cubic-bezier(0.77, 0, 0.175, 1) infinite; }
+.leuchte-breathe .leuchte-b { animation-delay: -0.8s; }
+@keyframes leuchte-breathe { 0%, 100% { opacity: 0.35; transform: scale(0.88); } 50% { opacity: 1; transform: scale(1.06); } }
+@keyframes leuchte-halo { 0%, 100% { opacity: 0.08; transform: scale(0.88); } 50% { opacity: 0.45; transform: scale(1.06); } }
+.leuchte-train {
+  position: absolute; left: 0; top: 0; width: 8.8px; height: 8.8px; margin: -4.4px 0 0 -4.4px; border-radius: 50%;
+  background: var(--v-sk-hoeren); box-shadow: 0 0 6px 1px color-mix(in srgb, var(--v-sk-hoeren) 55%, transparent);
+  offset-path: path("M19 13 L15 24 V35 A13 13 0 0 0 41 35 V24 L37 13"); offset-rotate: 0deg; offset-anchor: 0 0;
+  animation: leuchte-ride 2.2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+.leuchte-signal .leuchte-a { animation: leuchte-home-a 2.2s ease infinite; }
+.leuchte-signal .leuchte-b { animation: leuchte-home-b 2.2s var(--ease-out-strong) infinite; }
+@keyframes leuchte-ride { 0% { offset-distance: 0%; opacity: 0; } 6% { opacity: 1; } 70% { offset-distance: 100%; opacity: 1; } 76%, 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes leuchte-home-a { 0%, 2% { opacity: 1; } 8%, 78% { opacity: 0.18; } 92%, 100% { opacity: 1; } }
+@keyframes leuchte-home-b { 0%, 66% { opacity: 0.18; transform: scale(0.9); } 74% { opacity: 1; transform: scale(1.12); } 84%, 100% { opacity: 1; transform: none; } }
+@keyframes leuchte-calm { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@media (prefers-reduced-motion: reduce) {
+  .leuchte-loader { animation-name: leuchte-fade; }
+  .leuchte .leuchte-dot, .leuchte .leuchte-halo { animation: none; }
+  .leuchte-train { display: none; }
+  .leuchte-u { animation: leuchte-calm 1.8s ease infinite; }
+}
+@keyframes leuchte-fade { from { opacity: 0; } }
