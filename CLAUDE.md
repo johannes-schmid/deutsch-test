@@ -240,7 +240,8 @@ same Mollie organisation as the Dutch sites with its own website profile. Ported
 - **ElevenLabs:** a designed German voice cast for Hören monologues and dialogues
 - **Live-site Claude calls (grading, Sprechen partner) go through Vercel AI Gateway** (`lib/ai/claude.ts`, `AI_GATEWAY_API_KEY`;
   Hannes, 2026-10-25, for cost control). **Content generation** (`scripts/`, Batches API) stays on the direct Anthropic API, never the Gateway.
-  ElevenLabs (TTS, Scribe) stays direct: the Gateway has no ElevenLabs.
+  ElevenLabs TTS and the graded Scribe transcript stay direct. The live transcript the learner sees while speaking runs on
+  the Gateway (`elevenlabs/scribe-v2-realtime`, browser stream with a 5-minute token from `/api/modelltest/sprechen/token`; Hannes, 2026-11-03).
 
 ### Voice cast (approved by Hannes after listening, 2026-10-22)
 
@@ -378,6 +379,8 @@ components/exam/halfway.tsx · components/portal/unlock-sheet.tsx # the halfway 
 lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
 lib/modelltest/speaking-telc.ts      # telc B1 Sprechen live: partner per Teil, Teil-1 extra topic, examiner rescue line, grading per Teil on the 4 official criteria (/75)
 lib/modelltest/anleitung-telc-b1.ts  # telc B1 Anleitung per skill (audio: scripts/modelltest/anleitung.ts --exam telc-b1)
+lib/exam/{mic,live-transcript}.ts    # Sprechen in the browser: MicSession (one mic per run: recorder stream, real level, 16 kHz PCM worklet) · live words via AI Gateway (display only; grading uses the upload)
+app/api/modelltest/sprechen/token/   # Gateway token for the live transcript: session + attempt + free cap, ≤ 60 per attempt (RunState.liveTokens)
 lib/modelltest/{grade,speaking,sprechen-run}.ts # official DTZ steps: Schreiben 4×0–5, Sprechen 5/5/10/10/20 + 10/10/15/15 · live lines (Haiku) + voice (eleven_v4_turbo) · run state + FREE_SPEAKING_SECONDS cap
 app/api/modelltest/sprechen/turn/    # one answer: private recording → Scribe → next live line as audio (or null = pre-rendered fallback)
 lib/portal.ts · lib/i18n/portal.ts   # exam groups for the portal ("use cache") · auth + portal copy

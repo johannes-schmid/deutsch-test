@@ -62,7 +62,8 @@ export type ReadingData = { sender: string; source: string; paragraphs: string[]
 export type WritingOption = { key: string; title: string; situation: string; points: string[]; opener?: string }
 
 export type Person = { name: string; initial: string; tone: string }
-export type Turn = { who: "pruefer" | "partner" | "du"; text: string }
+/** `muted`: a placeholder in the Du bubble (listening, nothing heard), not the learner's words. */
+export type Turn = { who: "pruefer" | "partner" | "du"; text: string; muted?: boolean }
 /** `cards`: the drawn task cards (Start Deutsch: topic + keyword, or a pictogram for a request). */
 export type SpeakingData = {
   part: string

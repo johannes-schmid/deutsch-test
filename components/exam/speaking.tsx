@@ -1,11 +1,12 @@
 "use client"
 
-import { useEffect, useState, type ReactNode } from "react"
-import { Check, ChevronDown, Mic, NotebookPen, Square } from "lucide-react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
+import { Check, ChevronDown, Mic, MicOff, NotebookPen, Square } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { pictoIcon } from "@/lib/exam/pictos"
 import type { Person, SpeakingData, Turn } from "@/lib/exam/types"
-import { fmt, useExamCopy } from "./primitives"
+import { SPEECH_LEVEL } from "@/lib/exam/mic"
+import { ExamButton, fmt, useExamCopy } from "./primitives"
 
 const LEVEL = [4, 9, 14, 20, 26, 18, 10, 22, 30, 16, 8, 12]
 
@@ -13,20 +14,18 @@ const LEVEL = [4, 9, 14, 20, 26, 18, 10, 22, 30, 16, 8, 12]
 /** `photo`: DTZ Teil 2, the picture the current speaker talks about (each candidate has a different one). */
 /** `sheet`: a printed task sheet (telc, `SpeakingSheet`) in place of the task line and point chips. */
 /** `material`: the candidate's own task material under the task line (ÖSD: `TopicCard`, `SceneChoice`, `PlanningSheet`). */
-export function SpeakingTask({ data, people, turns, covered = [], onRecordStart, onRecordStop, canRecord = true, idleLabel, photo, sheet, material }: { data: SpeakingData; people: Record<Turn["who"], Person>; turns: Turn[]; covered?: string[]; onRecordStart?: () => void; onRecordStop?: () => void; canRecord?: boolean; idleLabel?: string; photo?: { src?: string; alt: string; caption?: string; credit?: { name: string; url: string } }; sheet?: ReactNode; material?: ReactNode }) {
+/**
+ * `recording` makes the mic controlled (the Modelltest starts it by itself after each question); `level` drives the
+ * meter from the real input (`MicSession.level`); `hint` is the line under the mic: a pause ("Fertig?") or no signal.
+ */
+export function SpeakingTask({ data, people, turns, covered = [], onRecordStart, onRecordStop, canRecord = true, idleLabel, photo, sheet, material, recording, level, hint }: { data: SpeakingData; people: Record<Turn["who"], Person>; turns: Turn[]; covered?: string[]; onRecordStart?: () => void; onRecordStop?: () => void; canRecord?: boolean; idleLabel?: string; photo?: { src?: string; alt: string; caption?: string; credit?: { name: string; url: string } }; sheet?: ReactNode; material?: ReactNode; recording?: boolean; level?: () => number; hint?: "pause" | "silent" | null }) {
   const t = useExamCopy()
-  const [rec, setRec] = useState(false)
-  const [secs, setSecs] = useState(0)
-  const [tick, setTick] = useState(0)
-  useEffect(() => {
-    if (!rec) return
-    const s = setInterval(() => setSecs((x) => x + 1), 1000)
-    const l = setInterval(() => setTick((x) => x + 1), 140)
-    return () => { clearInterval(s); clearInterval(l) }
-  }, [rec])
+  const [own, setOwn] = useState(false)
+  const rec = recording ?? own
   const toggle = () => {
-    if (rec) { onRecordStop?.(); setSecs(0) } else onRecordStart?.()
-    setRec((r) => !r)
+    if (rec) onRecordStop?.()
+    else onRecordStart?.()
+    if (recording === undefined) setOwn((r) => !r)
   }
   return (
     <div className="-mx-5 -mt-6 -mb-5 flex flex-col">
@@ -80,7 +79,7 @@ export function SpeakingTask({ data, people, turns, covered = [], onRecordStart,
           return (
             <div key={i} className={cn("flex items-end gap-2", me && "flex-row-reverse")}>
               <span className="grid size-8 shrink-0 place-items-center rounded-full text-[11px] font-semibold text-[#0A0D18]" style={{ background: p.tone }} aria-label={p.name}>{p.initial}</span>
-              <p className={cn("max-w-[80%] rounded-2xl px-4 py-2.5 text-[15px] leading-snug", me ? "rounded-br-md bg-v-ink text-v-bg" : "rounded-bl-md bg-v-soft", turn.who === "pruefer" && "bg-transparent px-0 text-[13.5px] text-v-muted")}>
+              <p className={cn("max-w-[80%] rounded-2xl px-4 py-2.5 text-[15px] leading-snug", me ? "rounded-br-md bg-v-ink text-v-bg" : "rounded-bl-md bg-v-soft", turn.who === "pruefer" && "bg-transparent px-0 text-[13.5px] text-v-muted", turn.muted && "text-v-bg/60 italic")}>
                 {turn.text}
               </p>
             </div>
@@ -88,21 +87,160 @@ export function SpeakingTask({ data, people, turns, covered = [], onRecordStart,
         })}
       </div>
       <div className="flex flex-col items-center gap-3 border-t border-v-line bg-v-surface/60 p-5">
-        <div className="flex h-8 items-center gap-1" aria-hidden="true">
-          {LEVEL.map((h, i) => (
-            <span key={i} className="w-1.5 rounded-full bg-v-ink transition-[height] duration-150 ease-out" style={{ height: rec ? Math.max(4, ((h * ((tick + i) % 5)) / 4) % 32) : 4, opacity: rec ? 1 : 0.2 }} />
-          ))}
-        </div>
-        <button type="button" onClick={toggle} disabled={!canRecord && !rec} aria-pressed={rec} aria-label={rec ? t.stopRecording : t.record} className={cn("grid size-18 cursor-pointer place-items-center rounded-full transition-[transform,background-color] duration-150 ease-out active:scale-95 disabled:cursor-default disabled:opacity-30 disabled:active:scale-100", rec ? "nz-rec bg-(--p-glow) text-[#0A0D18]" : "bg-v-ink text-v-bg")}>
+        <MicMeter on={rec} level={level} />
+        <button type="button" onClick={toggle} disabled={!canRecord && !rec} aria-pressed={rec} aria-label={rec ? t.stopRecording : t.record} className={cn("grid size-18 cursor-pointer place-items-center rounded-full transition-[transform,background-color,box-shadow] duration-150 ease-out active:scale-95 disabled:cursor-default disabled:opacity-30 disabled:active:scale-100", rec ? "nz-rec bg-(--p-glow) text-[#0A0D18]" : "bg-v-ink text-v-bg", rec && hint === "pause" && "outline-2 outline-offset-4 outline-v-ink")}>
           {rec ? <Square className="size-6 fill-current" aria-hidden="true" /> : <Mic className="size-7" aria-hidden="true" />}
         </button>
-        <span className="text-[13.5px] text-v-muted">{rec ? <>{t.recording} · <span className="v-num">{fmt(secs)}</span></> : idleLabel ?? t.yourTurn(people.partner.name)}</span>
+        <span className="text-[13.5px] text-v-muted">{rec ? <>{t.recording} · <RecClock /></> : idleLabel ?? t.yourTurn(people.partner.name)}</span>
+        <div aria-live="polite" className="min-h-6">
+          {rec && hint ? (
+            <p key={hint} className="mic-hint flex max-w-[34ch] items-center gap-2 rounded-2xl bg-v-soft px-3.5 py-1.5 text-[13.5px] leading-snug font-medium text-balance">
+              {hint === "silent" ? <MicOff className="size-3.5 shrink-0" aria-hidden="true" /> : <Square className="size-3 shrink-0 fill-current" aria-hidden="true" />}
+              {hint === "pause" ? t.pauseHint : t.silentHint}
+            </p>
+          ) : null}
+        </div>
       </div>
     </div>
   )
 }
 
 const label = "v-num text-[11.5px] tracking-[0.08em] text-v-muted uppercase"
+
+/** Seconds since the recording started; mounts with each recording, so it always starts at 0:00. */
+function RecClock() {
+  const [secs, setSecs] = useState(0)
+  useEffect(() => {
+    const s = setInterval(() => setSecs((x) => x + 1), 1000)
+    return () => clearInterval(s)
+  }, [])
+  return <span className="v-num">{fmt(secs)}</span>
+}
+
+const BARS = 12
+
+/**
+ * The input level as bars. With `level` (the real mic) the bars are the last ~0.8 s of input, newest on the right,
+ * written straight to the DOM each frame. Without it (free tests, previews) a calm placeholder pattern.
+ */
+export function MicMeter({ on, level, bars = BARS, className }: { on: boolean; level?: () => number; bars?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [tick, setTick] = useState(0)
+  useEffect(() => {
+    if (!on || level) return
+    const id = setInterval(() => setTick((x) => x + 1), 140)
+    return () => clearInterval(id)
+  }, [on, level])
+  useEffect(() => {
+    const el = ref.current
+    if (!on || !level || !el) return
+    const spans = [...el.children] as HTMLElement[]
+    const hist = new Array<number>(spans.length).fill(0)
+    let last = 0
+    let raf = 0
+    const draw = (now: number) => {
+      raf = requestAnimationFrame(draw)
+      if (now - last < 66) return
+      last = now
+      hist.shift()
+      hist.push(level())
+      spans.forEach((s, i) => {
+        s.style.transform = `scaleY(${Math.max(0.125, hist[i])})`
+        s.style.opacity = hist[i] >= SPEECH_LEVEL ? "1" : "0.45"
+      })
+    }
+    raf = requestAnimationFrame(draw)
+    return () => {
+      cancelAnimationFrame(raf)
+      spans.forEach((s) => {
+        s.style.transform = ""
+        s.style.opacity = ""
+      })
+    }
+  }, [on, level])
+  return (
+    <div ref={ref} className={cn("flex h-8 items-center gap-1", className)} aria-hidden="true">
+      {Array.from({ length: bars }, (_, i) => {
+        const h = LEVEL[i % LEVEL.length]
+        const fake = on && !level ? Math.max(4, ((h * ((tick + i) % 5)) / 4) % 32) / 32 : 0.125
+        return <span key={i} className={cn("h-full w-1.5 origin-center rounded-full bg-v-ink", !level && "transition-transform duration-150 ease-out")} style={{ transform: `scaleY(${fake})`, opacity: on ? 1 : 0.2 }} />
+      })}
+    </div>
+  )
+}
+
+export type MicCheckDevice = { id: string; label: string }
+
+/**
+ * Before the first answer: one sentence into the mic, a real level meter, and "Wir hören dich gut" once speech came
+ * through. Silence after 6 s offers the device picker and "Trotzdem weiter". `needsStart`: the browser kept audio
+ * suspended, so one tap starts it. `error`: the mic could not be opened at all.
+ */
+export function MicCheck({ level, needsStart, onStart, error, devices = [], device, onDevice, onGo }: { level?: () => number; needsStart?: boolean; onStart?: () => void; error?: string | null; devices?: MicCheckDevice[]; device?: string; onDevice?: (id: string) => void; onGo: () => void }) {
+  const t = useExamCopy().micCheck
+  const [state, setState] = useState<"listening" | "heard" | "silent">("listening")
+  const live = !!level && !needsStart && !error
+  useEffect(() => {
+    if (!live) return
+    let spoken = 0
+    const started = Date.now()
+    const id = setInterval(() => {
+      if (level() >= SPEECH_LEVEL) spoken += 100
+      const next = spoken >= 600 ? "heard" : Date.now() - started > 6000 ? "silent" : "listening"
+      setState(next)
+      if (next === "heard") clearInterval(id)
+    }, 100)
+    return () => clearInterval(id)
+  }, [live, level, device])
+  return (
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-1.5">
+        <h2 className="text-[22px] leading-tight font-semibold tracking-[-0.015em]">{t.title}</h2>
+        <p className="max-w-[46ch] text-[15.5px] text-v-muted">{t.lead}</p>
+      </div>
+      <div className="flex flex-col items-center gap-4 rounded-2xl bg-v-soft px-5 py-7">
+        <MicMeter on={live} level={live ? level : undefined} bars={20} className="h-12" />
+        {error ? (
+          <p role="alert" className="flex items-center gap-2 text-center text-[14.5px] font-medium"><MicOff className="size-4 shrink-0" aria-hidden="true" /> {error}</p>
+        ) : needsStart ? (
+          <ExamButton onClick={onStart} className="flex items-center gap-2"><Mic className="size-4" aria-hidden="true" /> {t.start}</ExamButton>
+        ) : (
+          <p aria-live="polite" className="flex min-h-7 items-center gap-2 text-[15px] font-medium">
+            {state === "heard" ? (
+              <>
+                <span className="grid size-6 place-items-center rounded-full bg-(--p-glow) text-[#0A0D18]"><Check className="size-3.5" strokeWidth={3} aria-hidden="true" /></span>
+                {t.heard}
+              </>
+            ) : state === "silent" ? (
+              <>
+                <MicOff className="size-4 shrink-0" aria-hidden="true" />
+                <span className="text-center">{t.silent}</span>
+              </>
+            ) : (
+              <span className="text-v-muted">{t.listening}</span>
+            )}
+          </p>
+        )}
+        {devices.length > 1 && onDevice ? (
+          <label className="flex w-full max-w-sm flex-col gap-1.5 text-[13px] text-v-muted">
+            {t.device}
+            <span className="relative">
+              <select value={device} onChange={(e) => onDevice(e.target.value)} className="h-11 w-full cursor-pointer appearance-none rounded-full border border-v-line bg-v-surface pr-10 pl-4 text-[15px] text-v-ink focus-visible:ring-2 focus-visible:ring-v-ink focus-visible:outline-none">
+                {devices.map((d) => <option key={d.id} value={d.id}>{d.label}</option>)}
+              </select>
+              <ChevronDown className="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-v-muted" aria-hidden="true" />
+            </span>
+          </label>
+        ) : null}
+      </div>
+      <p className="text-[14px] text-v-muted">{t.auto}</p>
+      <div className="flex flex-col gap-2 sm:flex-row-reverse sm:justify-start">
+        <ExamButton disabled={state !== "heard"} onClick={onGo}>{t.go}</ExamButton>
+        {state === "silent" || error ? <ExamButton kind="soft" onClick={onGo}>{t.anyway}</ExamButton> : null}
+      </div>
+    </div>
+  )
+}
 
 export type SheetKind = "topics" | "opinion" | "plan"
 

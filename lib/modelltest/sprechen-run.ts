@@ -10,8 +10,11 @@ import type { MtBlock, SpeakPhase } from "./types"
 /** What the candidate picked on the sheets: the topics to talk about (ÖSD), the photo and the role (ÖSD A1). */
 export type RunChoice = { topics?: string[]; scene?: string; role?: string }
 
-/** `rescued`: turns where the examiner already stepped in (telc), as "teil-turn". */
-export type RunState = { lines: ConvoLine[]; live: Record<string, string>; upTo: Record<string, number>; rescued?: string[]; choice?: RunChoice }
+/** `rescued`: turns where the examiner already stepped in (telc), as "teil-turn". `liveTokens`: live-transcript tokens minted. */
+export type RunState = { lines: ConvoLine[]; live: Record<string, string>; upTo: Record<string, number>; rescued?: string[]; choice?: RunChoice; liveTokens?: number }
+
+/** Live transcript tokens per attempt: about three per answer of the longest run, with room for retries. */
+export const MAX_LIVE_TOKENS = 60
 
 export const emptyState = (): RunState => ({ lines: [], live: {}, upTo: {} })
 

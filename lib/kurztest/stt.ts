@@ -5,7 +5,7 @@ export async function transcribe(file: Blob): Promise<string> {
   const form = new FormData()
   form.append("model_id", "scribe_v2")
   form.append("language_code", "de")
-  form.append("file", file, "answer.webm")
+  form.append("file", file, file instanceof File ? file.name : "answer.webm")
   const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", {
     method: "POST",
     headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY ?? "" },

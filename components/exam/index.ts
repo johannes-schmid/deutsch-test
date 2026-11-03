@@ -5,7 +5,7 @@ export { ChoiceItem, TrueFalseItem, PictureItem, MatchItem, GapItem, SituationTa
 export { FeedbackSheet } from "./feedback"
 export { ReadingLayout, ReadingText } from "./reading"
 export { WritingTask } from "./writing"
-export { SpeakingTask, SpeakingSheet, SheetPeek, SpeakingPrep, NotesPeek, type SheetKind } from "./speaking"
+export { SpeakingTask, SpeakingSheet, SheetPeek, SpeakingPrep, NotesPeek, MicMeter, MicCheck, type SheetKind, type MicCheckDevice } from "./speaking"
 export { ExamInstructions, PartIntro } from "./part-intro"
 export { ResultHero, PartResultCard, ReviewList, NextStepCard, ScoreRing, ResultSummary, PointsBar, ContinueCard } from "./result"
 export { ConfirmSheet } from "./confirm"

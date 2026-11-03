@@ -9,7 +9,7 @@ import { LeuchteLoader, LoadingVeil } from "@/components/design/leuchte-loader"
 import { EXAMS, EXAM_IDS } from "@/lib/exams"
 import {
   ChoiceItem, ConfirmSheet, ExamAudio, HalfwayStop, ExamButton, ExamInstructions, ExamShell, ExamTrack, useExamTrack, ExamStage, FeedbackSheet, GapItem, MatchItem, PartIntro, PictureItem,
-  ReadingLayout, ReadingText, SpeakingTask, SpeakingSheet, SheetPeek, SpeakingPrep, NotesPeek, TrueFalseItem, WritingTask, type ShellSection,
+  ReadingLayout, ReadingText, SpeakingTask, SpeakingSheet, SheetPeek, SpeakingPrep, NotesPeek, MicCheck, TrueFalseItem, WritingTask, type ShellSection,
   AdBoard, ArticleText, HeadlineMatch, WordPoolGap, PhotoNumberGrid, TickGrid, MatchTask, MarkBoxes, TopicCard, SceneChoice, PlanningSheet,
 } from "@/components/exam"
 import type { TrueFalse } from "@/lib/exam/types"
@@ -129,6 +129,9 @@ const FLOW = [
   { id: "schreiben", label: "Schreiben", scene: "schreiben", C: SchreibenScreen },
   { id: "sprechen", label: "Sprechen", scene: "sprechen", C: SprechenScreen },
 ] as const
+
+// A speaking voice for the previews: rises and falls like speech, never a real microphone.
+const demoLevel = () => Math.max(0, 0.42 + 0.32 * Math.sin(Date.now() / 170) * Math.sin(Date.now() / 610))
 
 function Block({ title, note, children }: { title: string; note: string; children: React.ReactNode }) {
   return (
@@ -338,6 +341,24 @@ export function ExamGallery() {
           </div>
         </ExamStage>
         <p className="flex items-center gap-2 text-[13.5px] text-v-muted"><Users className="size-4" aria-hidden="true" /> Ela ist eine echte Stimme aus der Besetzung in <code className="v-num">data/tts-voices.json</code>.</p>
+      </Block>
+
+      <Block title="Sprechen live: Mikrofon-Test, Live-Text, Pause" note="Vor der ersten Antwort ein Mikrofon-Test mit echtem Pegel: erst nach einem gehörten Satz geht es weiter, bei Stille nach 6 s Mikrofonwahl und „Trotzdem weiter“. Im Gespräch startet die Aufnahme nach jeder Frage von selbst; die Balken zeigen den echten Pegel der letzten Sekunde. Die Du-Blase zeigt live, was wir hören (nur Anzeige, bewertet wird die Aufnahme). Nach 3 s Pause: „Fertig? Dann tipp auf Stopp.“ mit Ring um den Stopp-Knopf; ohne Signal nach 5 s: Mikrofon prüfen.">
+        <ExamStage scene="sprechen" framed>
+          <div className="nz-app mx-auto flex max-w-[560px] flex-col rounded-[24px] px-5 pt-6 pb-5">
+            <MicCheck level={demoLevel} devices={[{ id: "a", label: "MacBook-Mikrofon" }, { id: "b", label: "AirPods" }]} device="a" onDevice={() => {}} onGo={() => {}} />
+          </div>
+        </ExamStage>
+        <ExamStage scene="sprechen" framed>
+          <div className="nz-app mx-auto flex max-w-[560px] flex-col rounded-[24px] px-5 pt-6 pb-5">
+            <SpeakingTask data={SPEAKING} people={PEOPLE} turns={[...TURNS.slice(0, 2), { who: "du", text: "Vielleicht Blumen und ein Buch? Sie liest doch" }]} recording level={demoLevel} hint="pause" />
+          </div>
+        </ExamStage>
+        <ExamStage scene="sprechen" framed>
+          <div className="nz-app mx-auto flex max-w-[560px] flex-col rounded-[24px] px-5 pt-6 pb-5">
+            <SpeakingTask data={SPEAKING} people={PEOPLE} turns={[...TURNS.slice(0, 2), { who: "du", text: "…", muted: true }]} recording level={() => 0} hint="silent" />
+          </div>
+        </ExamStage>
       </Block>
 
       <Block title="Sprechen telc: Aufgabenblätter, Vorbereitung, Notizen" note="telc Mündlicher Ausdruck: jedes Teil hat ein gedrucktes Blatt (Papier, Teil als Mono-Label, wem es gehört rechts): Themen (Teil 1), eine Meinung aus einer Zeitschrift mit Name, Alter, Beruf (Teil 2, nur das eigene Blatt) und die Planungsliste mit „…“ (Teil 3). Vorher 20 Minuten Vorbereitung mit allen Blättern und einem Notizblock; im Gespräch sind Blatt und Notizen eingeklappt, damit Gespräch und Mikrofon sichtbar bleiben.">

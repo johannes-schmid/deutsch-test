@@ -123,6 +123,9 @@
 .nz-rec { animation: nz-pulse 1.4s ease-out infinite; }
 @keyframes nz-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--p-glow) 55%, transparent); } 100% { box-shadow: 0 0 0 16px transparent; } }
 @media (prefers-reduced-motion: reduce) { .nz-screen, .nz-rec { animation: none; } }
+.mic-hint { transition: opacity 200ms var(--ease-out-strong), transform 200ms var(--ease-out-strong); }
+@starting-style { .mic-hint { opacity: 0; transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { @starting-style { .mic-hint { transform: none; } } }
 @media (prefers-reduced-transparency: reduce) { .nz-app { background: #FFFFFF; backdrop-filter: none; -webkit-backdrop-filter: none; } .dark .nz-app { background: #0B0F1C; } }
 .glass-dark { background: rgba(10, 13, 24, 0.45); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border: 1px solid rgba(255, 255, 255, 0.14); color: #F7F4EE; }
 
