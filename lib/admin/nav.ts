@@ -1,4 +1,4 @@
-import { FileSearch, Filter, LayoutGrid, ListChecks, Mail, Milestone, Users, type LucideIcon } from "lucide-react"
+import { FileSearch, Filter, LayoutGrid, ListChecks, Mail, Milestone, Search, Users, type LucideIcon } from "lucide-react"
 import { EXAM_IDS, EXAMS, type ExamId } from "@/lib/exams"
 
 // The admin navigation in one place: the desktop sidebar and the mobile drawer both render it, so they can't drift.
@@ -29,6 +29,7 @@ export const ADMIN_NAV: AdminNavSection[] = [
       { href: ADMIN_HOME, label: "Übersicht", icon: LayoutGrid },
       { href: "/admin/konten", label: "Konten", icon: Users },
       { href: "/admin/funnel", label: "Funnel", icon: Milestone },
+      { href: "/admin/seo", label: "SEO", icon: Search },
     ],
   },
   {

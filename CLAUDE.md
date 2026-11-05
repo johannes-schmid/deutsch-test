@@ -127,6 +127,10 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   half is free after sign-up** (Hannes, 2026-11-02): the first ⌊n/2⌋ Teile, or for a single letter (DTZ, telc B1, ÖSD A2 Schreiben)
   half of its criteria. Then the halfway stop sells the Teil-Pass for that skill (asks once for all four) and the attempt goes on at
   the next Teil after paying (`lib/modelltest/half.ts`, `mt_attempts.paused`). The paywall comes after value.
+- **Übungsmodus (Hannes, 2026-11-03):** a Lesen/Hören Modelltest can be started in Übungsmodus: instant right/wrong per tap
+  with sparks, confetti, sound and a buzz (`components/exam/instant.tsx`). **Prüfungsmodus stays the default** and the
+  Prüfungssimulation always runs as an exam. The first answer per item scores the attempt, so retrying never raises the
+  level; the result is labelled "Übungsmodus". The server checks each tap (`checkItem`) and never sends the key.
 - **Sell one Prüfungspass, not modules** (Hannes, 2026-10-23). One pass unlocks every exam, level and part on
   the platform; candidates take all parts on one day. This deliberately differs from inburgeringoefenen.nl,
   which sells per module. Only list exams as included once they have reviewed Modelltests; never promise
@@ -366,6 +370,11 @@ app/(admin)/admin/                   # /admin = stats + signups per week, /admin
 lib/admin/users.ts · app/(admin)/admin/konten/ · components/admin/users-table.tsx # /admin/konten: every account with pass state, payments, goal, Modelltests; drawer with "Vertrag kündigen" (actions.ts → cancelForUser + confirmation email)
 lib/admin/funnel.ts · app/(admin)/admin/funnel/ # /admin/funnel: Konto → Modelltest → Paywall (mt_attempts.paused, cleared on paying: buyers with a Modelltest 1 before checkout count too) → Kasse → bezahlt, this week vs last, per exam/skill (pure + tested; funnelOverview() in lib/admin/stats.ts)
 lib/admin/sales.ts · components/admin/sales{,-charts}.tsx # /admin sales: revenue, MRR/churn, conversion (pure + tested; loaded by salesOverview() in lib/admin/stats.ts; recharts via components/ui/chart.tsx)
+seo/README.md · seo/keyword-strategy.md · seo/facts.md # ★ the content standard + pre-ship checklist, page ownership (one query, one page), every publishable number with source
+seo-agent/                           # ★ the SEO/GEO loop (ported from inburgering 2026-11-05): README.md (how it works, keys), config.json (site, competitors, GEO prompts, rules, protected paths), data/<ISO-week>/*.json (Friday snapshots, committed), data/history/health.json (score per week), pages.json (triage, generated), ledger.json (experiments, never delete rows), recommendations.json (the to-do list on /admin/seo), briefs/, reports/; SEO-WEEKLY.md = the weekly skill text, copy to .claude/skills/seo-weekly/SKILL.md
+scripts/seo-agent/                   # collect.mjs (gsc, bing, health, competitors, geo; a missing key = skipped, never zero) → pages.mjs → score.mjs; .github/workflows/seo-collect.yml runs them Friday 21:00 UTC and commits on main
+lib/admin/seo{,-model,-live,-prompts}.ts · lib/admin/seo-score.mjs # /admin/seo loader (snapshots + live Search Console with GSC_SA_JSON) · pure model (tested) · live GSC/Bing · Claude Code prompt per page · the one score formula (page /10, site /100) shared with score.mjs
+app/(admin)/admin/seo/ · components/admin/seo-{structure,trend-chart}.tsx # the SEO page (English, Hannes's workplace): health score, sources, site-wide actions, site structure per section → page drawer with prompt, More (to-do, numbers, experiments, PRs)
 components/admin/                    # admin-shell (sidebar + mobile nav, from lib/admin/nav.ts), admin-drawer (client), admin-ui (AdminPage, Panel, DataTable, skeletons), modelltest-review
 proxy.ts                             # also: Supabase session refresh on /dashboard + auth pages; no session → /anmelden, session on auth pages → /dashboard
 lib/supabase/{client,server}.ts      # @supabase/ssr clients (publishable key, never the service key); getSessionUser() = Google profile only
@@ -377,6 +386,7 @@ app/(app)/dashboard/[exam]/[skill]/[n]/ # ★ the Modelltest runner page + actio
 components/modelltest/               # runner.tsx (intro → test → result; Hören follows the one track, Lesen/Schreiben timed) · speaking.tsx (live pair exam)
 lib/entitlements.ts                  # canOpen(user, exam, skill) + passStatus(): the one paid-access check, from the grant snapshots on `payments` (Modelltest 1 per skill: first half free)
 lib/modelltest/half.ts               # Modelltest 1 without a pass: freePart() (first ⌊n/2⌋ Teile, or "feedback" for one letter), lockGrade(), trimTrack()/resumeFrom() (tested); halfOf()/loadPaused()/scoreHalf() in runner.ts strip locked Teile before they reach the browser; pauseAttempt/revealGrade in the runner actions; Sprechen turns past the cut get 402
+lib/modelltest/instant.ts            # Übungsmodus (Hannes 2026-11-03): instantItems() (which items get instant right/wrong), practiceAnswers() (first tap scores), tapRefusal() (tested); checkItem() in the runner actions; mt_attempts.mode = 'practice' + first_taps (mt_first_tap()); UI in components/exam/instant.tsx
 components/exam/halfway.tsx · components/portal/unlock-sheet.tsx # the halfway stop + the two-step buy sheet (all four? → order summary with Checkout, `next` back to the Modelltest; /dashboard/zahlung?next= forwards there once paid)
 lib/modelltest/{rows,portal,runner}.ts # row → MtBlock (shared with admin) · slots per user (open/done/locked/soon/preview) · runner set with keys stripped + scoring against mt_options
 lib/modelltest/speaking-telc.ts      # telc B1 Sprechen live: partner per Teil, Teil-1 extra topic, examiner rescue line, grading per Teil on the 4 official criteria (/75)

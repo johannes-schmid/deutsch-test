@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   outputFileTracingIncludes: {
     "/api/kurztest/**": ["./data/kurztest/drafts/**/*"],
+    // /admin/seo reads the SEO loop's snapshots and lists from disk (lib/admin/seo.ts).
+    "/admin/seo": ["./seo-agent/**/*"],
   },
   partialPrefetching: true,
   async headers() {

@@ -1,0 +1,80 @@
+{
+  "$comment": "The to-do list on /admin/seo. The Saturday run (/seo-weekly) writes this file: new tasks added, status updated, never an id reused. Every task has why, steps and expect. Hannes's tasks carry minutes; their sum per week stays under rules.owner_minutes_per_week in config.json.",
+  "updated": "2026-11-05",
+  "items": [
+    {
+      "id": "2026-11-05-gsc-access",
+      "created": "2026-11-05",
+      "site": "deutschtest",
+      "owner": "hannes",
+      "kind": "measurement",
+      "priority": "now",
+      "task": "Give the SEO loop access to deutschtest-ueben.de in Search Console",
+      "why": "Without it every Google number on this page is unknown. This site gets its own Google Cloud project and service account, separate from the Dutch sites.",
+      "steps": [
+        "Search Console > deutschtest-ueben.de > Settings > Users and permissions > Add user.",
+        "Email: the service account from seo-agent/google-api-access.md (claude-seo-reader@deutschtest-seo.iam.gserviceaccount.com), permission: Full.",
+        "GitHub > this repo > Settings > Secrets and variables > Actions > New repository secret: GSC_SA_JSON = the whole JSON key file.",
+        "Vercel > project > Environment variables: the same GSC_SA_JSON for Production, so this page can read Search Console live."
+      ],
+      "expect": "The next Friday run writes gsc.json with data, and this page shows Google live within a minute of the Vercel redeploy.",
+      "minutes": 10,
+      "source": "seo-agent/README.md",
+      "status": "done"
+    },
+    {
+      "id": "2026-11-05-first-run",
+      "created": "2026-11-05",
+      "site": "deutschtest",
+      "owner": "hannes",
+      "kind": "measurement",
+      "priority": "now",
+      "task": "Run the Friday data pull once by hand",
+      "why": "The first snapshot and the page triage have to exist before the Saturday routine has anything to read.",
+      "steps": [
+        "GitHub > Actions > \"SEO snapshot (Friday evening)\" > Run workflow, with backfill ticked once GSC access is in.",
+        "Or locally: node scripts/seo-agent/collect.mjs && node scripts/seo-agent/pages.mjs && node scripts/seo-agent/score.mjs, then commit seo-agent/."
+      ],
+      "expect": "seo-agent/data/<week>/ appears on main and this page shows the site structure with a score.",
+      "minutes": 5,
+      "source": "seo-agent/README.md",
+      "status": "open"
+    },
+    {
+      "id": "2026-11-05-bing",
+      "created": "2026-11-05",
+      "site": "deutschtest",
+      "owner": "hannes",
+      "kind": "measurement",
+      "priority": "next",
+      "task": "Add the site to Bing Webmaster Tools and set BING_API_KEY",
+      "why": "ChatGPT search leans on Bing, and Bing is the control group when Google drops: if Bing holds, the site is fine and Google changed its mind.",
+      "steps": [
+        "bing.com/webmasters > Add site > import from Search Console (fastest).",
+        "Settings > API access > generate a key; add it as the GitHub secret BING_API_KEY (and on Vercel for the live tile)."
+      ],
+      "expect": "The Bing tile fills from the next Friday run.",
+      "minutes": 10,
+      "source": "seo-agent/README.md",
+      "status": "done"
+    },
+    {
+      "id": "2026-11-05-competitors",
+      "created": "2026-11-05",
+      "site": "deutschtest",
+      "owner": "hannes",
+      "kind": "decision",
+      "priority": "later",
+      "task": "Confirm the competitor domains in seo-agent/config.json",
+      "why": "CLAUDE.md names TestGerman, Plakos and Preparaio; the domains in config.json are a guess until you check them. The Firecrawl map only runs with FIRECRAWL_API_KEY.",
+      "steps": [
+        "Open seo-agent/config.json > competitors and correct the three domains.",
+        "Add FIRECRAWL_API_KEY (free tier: 1,000 credits a month, about 3 a week needed) if you want the weekly new-pages diff."
+      ],
+      "expect": "competitors.json lists each site's URL count and what they added since last week.",
+      "minutes": 5,
+      "source": "seo-agent/config.json",
+      "status": "open"
+    }
+  ]
+}

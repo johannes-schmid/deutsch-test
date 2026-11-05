@@ -1,0 +1,76 @@
+{
+  "$comment": "The fixed facts of the SEO loop. Read seo-agent/README.md for the rules; this file is the only place where domains, competitors, prompts and limits live.",
+  "sites": {
+    "deutschtest": {
+      "domain": "deutschtest-ueben.de",
+      "gsc_property": "sc-domain:deutschtest-ueben.de",
+      "bing_site_url": "https://deutschtest-ueben.de/",
+      "sitemap": "https://deutschtest-ueben.de/sitemap.xml",
+      "brand_terms": ["deutschtest üben", "deutschtest ueben", "deutschtest-ueben"],
+      "in_this_repo": true
+    }
+  },
+  "competitors": [
+    "testgerman.com",
+    "plakos-akademie.de",
+    "preparaio.com"
+  ],
+  "$competitors_note": "TODO(hannes): confirm the three domains (CLAUDE.md §2 names TestGerman, Plakos, Preparaio) before the first Firecrawl run. Add any other site you want tracked.",
+  "geo": {
+    "cadence": "even-iso-weeks",
+    "engines": ["openai", "perplexity", "anthropic"],
+    "country": "DE",
+    "prompts": [
+      { "id": "de-dtz-ueben", "lang": "de", "text": "Wo kann ich online für den DTZ (Deutsch-Test für Zuwanderer) üben?" },
+      { "id": "de-dtz-modelltest", "lang": "de", "text": "Welche Website hat realistische DTZ Modelltests mit Hören und Sprechen?" },
+      { "id": "de-dtz-b1", "lang": "de", "text": "Ich habe beim DTZ nur A2 geschafft. Wie komme ich auf B1?" },
+      { "id": "de-dtz-hoeren", "lang": "de", "text": "Wie übe ich den Teil Hören vom DTZ?" },
+      { "id": "de-dtz-schreiben", "lang": "de", "text": "Wie bereite ich mich auf den Brief im DTZ Schreiben vor?" },
+      { "id": "de-dtz-sprechen", "lang": "de", "text": "Wie läuft die mündliche Prüfung beim DTZ ab und wie kann ich das üben?" },
+      { "id": "de-b1-einbuergerung", "lang": "de", "text": "Welches B1 Zertifikat brauche ich für die Einbürgerung und wo kann ich dafür üben?" },
+      { "id": "de-telc-b1", "lang": "de", "text": "Wo gibt es gratis Übungstests für telc Deutsch B1?" },
+      { "id": "de-goethe-b1", "lang": "de", "text": "Wie kann ich online für das Goethe-Zertifikat B1 üben?" },
+      { "id": "de-gratis", "lang": "de", "text": "Gibt es kostenlose Deutschprüfung Übungstests online für A2 und B1?" },
+      { "id": "de-einbuergerungstest", "lang": "de", "text": "Wo kann ich den Einbürgerungstest mit allen Fragen online üben?" },
+      { "id": "uk-dtz", "lang": "uk", "text": "Де можна онлайн потренуватися до іспиту DTZ з німецької мови?" },
+      { "id": "ru-dtz", "lang": "ru", "text": "Где можно онлайн подготовиться к экзамену DTZ по немецкому языку?" },
+      { "id": "en-dtz", "lang": "en", "text": "Where can I practice for the German DTZ exam (Deutsch-Test für Zuwanderer) online?" },
+      { "id": "en-b1-citizenship", "lang": "en", "text": "How do I prepare for the B1 German exam needed for German citizenship?" }
+    ]
+  },
+  "rules": {
+    "cooldown_days": 42,
+    "weekly_pr_cap": 3,
+    "monthly_pr_cap": 2,
+    "window_days": 28,
+    "striking_distance": { "position_min": 8, "position_max": 15, "min_impressions": 50 },
+    "decay_threshold_pct": -30,
+    "verdict_after_days": 35,
+    "owner_minutes_per_week": 90
+  },
+  "protected_paths": [
+    "seo/facts.md",
+    "lib/pricing.ts",
+    "data/kurztest/**",
+    "data/modelltest/**",
+    "data/explanations/**",
+    "data/blog/uk/**",
+    "data/blog/ru/**",
+    "data/pages/uk/**",
+    "data/pages/ru/**",
+    "research/**",
+    "supabase/**",
+    "scripts/**"
+  ],
+  "protected_fields": {
+    "data/blog/*.tsx": ["sections", "faq", "status", "reviewed", "author"],
+    "data/pages/de/*.ts": ["body", "faq"]
+  },
+  "editable_surfaces": [
+    "lib/i18n/landing.ts, lib/i18n/exam-pages/*.ts, lib/i18n/kurztest.ts — only title / description keys",
+    "data/blog/<slug>.tsx — title, description, related links (never sections, faq or status)",
+    "lib/seo.ts, components/design/blog-article.tsx — structured data",
+    "app/sitemap.ts, app/robots.txt/route.ts, app/llms.txt/",
+    "seo/keyword-strategy.md, seo/used-keywords.md — append only"
+  ]
+}
