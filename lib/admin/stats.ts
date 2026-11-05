@@ -2,6 +2,7 @@ import "server-only"
 import { cache } from "react"
 import { createAdminClient } from "@/lib/supabase/admin"
 import { computeSales, type SaleCustomer, type SalePayment, type Sales } from "@/lib/admin/sales"
+import { computeFunnel, type Funnel, type FunnelAttempt, type FunnelPayment } from "@/lib/admin/funnel"
 
 export type WeekSignups = { week: string; signups: number }
 
@@ -39,4 +40,14 @@ export const salesOverview = cache(async (): Promise<SalesView> => {
     sales.cancellations.map(async (c) => ({ ...c, email: (await db.auth.admin.getUserById(c.userId)).data.user?.email ?? null })),
   )
   return { ...sales, cancellations }
+})
+
+export const funnelOverview = cache(async (): Promise<Funnel> => {
+  const db = createAdminClient()
+  const [attempts, payments, signups] = await Promise.all([
+    pages<FunnelAttempt>((from, to) => db.from("mt_attempts").select("user_id, exam, skill, number, started_at, paused").order("started_at").range(from, to)),
+    pages<FunnelPayment>((from, to) => db.from("payments").select("user_id, kind, status, created_at, paid_at").order("created_at").range(from, to)),
+    signupsPerWeek(),
+  ])
+  return computeFunnel({ attempts, payments, signups })
 })
