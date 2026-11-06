@@ -4,11 +4,12 @@ import { b1Pruefung } from "@/data/blog/b1-pruefung"
 import { dtzBestehen } from "@/data/blog/dtz-bestehen"
 import { b1BriefSchreiben } from "@/data/blog/b1-brief-schreiben"
 import { dtzPruefung } from "@/data/blog/dtz-pruefung"
+import { einbuergerungstestErgebnisWartezeit } from "@/data/blog/einbuergerungstest-ergebnis-wartezeit"
 import * as uk from "@/data/blog/uk"
 import * as ru from "@/data/blog/ru"
 
 /** Every post. A new post = one file in data/blog/ + one entry here + a two-line route in app/(main)/(site)/blog/, then its translations in data/blog/{uk,ru}/. */
-export const POSTS: BlogPost[] = [b1Pruefung, dtzBestehen, b1BriefSchreiben, dtzPruefung]
+export const POSTS: BlogPost[] = [b1Pruefung, dtzBestehen, b1BriefSchreiben, dtzPruefung, einbuergerungstestErgebnisWartezeit]
 
 /** Translations share the German slug, status and dates: a translation goes live with its reviewed German original. */
 export const POSTS_BY: Record<SiteLocale, BlogPost[]> = {

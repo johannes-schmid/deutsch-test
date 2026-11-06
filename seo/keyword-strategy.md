@@ -58,6 +58,7 @@ match search phrasing in a guide that explains the result levels.
 | `/a2-zu-b1` | DTZ nur A2 | DTZ wiederholen · von A2 zu B1 |
 | `/b1-einbuergerung` | B1 für Einbürgerung | Sprachnachweis Einbürgerung B1 |
 | `/einbuergerungstest` | Einbürgerungstest online üben | Einbürgerungstest bestehen · 310 Fragen (see the LiD TODO in CLAUDE.md §4) |
+| `/blog/einbuergerungstest-ergebnis-wartezeit` | Einbürgerungstest Ergebnis wie lange | Einbürgerungstest Bescheinigung · Einbürgerungstest Ergebnis Wartezeit · BAMF Bearbeitungsstand Einbürgerungstest (added 2026-11-06 from the community scan; the practice page keeps "üben/bestehen") |
 | `/blog/dtz-bestehen` | DTZ bestehen | DTZ Ergebnis · DTZ Punkte · DTZ Bewertung · "Was heißt beim DTZ bestanden?" (not "DTZ Prüfung B1": `/dtz` owns it) |
 | `/blog/b1-pruefung` | B1 Prüfung | B1 Deutsch Prüfung · welche B1 Prüfung · DTZ oder telc B1 · B1 Prüfung Einbürgerung |
 | `/blog/b1-brief-schreiben` | B1 Prüfung Schreiben Tipps | telc B1 Prüfung Schreiben Tipps · B1 Brief schreiben Beispiel · Redemittel. `/dtz/schreiben` (not built) keeps "DTZ Schreiben üben" |
