@@ -37,6 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const has = (l: SiteLocale) => !!EXAM_PAGES_BY[l][e]
       return [...everyLocale(examPath(e), "weekly", 0.9, has), ...skills.flatMap((s) => everyLocale(`${examPath(e)}/${s}`, "monthly", 0.8, has))]
     }),
+    // The DTZ Modelltest product page is German only (no uk/ru mirror yet).
+    { url: absUrl("/dtz/modelltest"), changeFrequency: "monthly", priority: 0.9 },
     ...["/a2-zu-b1", "/b1-einbuergerung", "/preise"].flatMap((p) => everyLocale(p, "monthly", 0.7)),
     // Reviewed posts only; drafts are noindex and 404 outside dev.
     ...(livePosts().length ? everyLocale("/blog", "weekly", 0.6) : []),
