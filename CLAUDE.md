@@ -282,6 +282,7 @@ All audio on `eleven_v4_turbo`. Voice IDs live only in `data/tts-voices.json`; c
 ```
 /                         home, diagnostic CTA ("Wie weit bist du von B1?")
 /dtz                      308 → /blog/dtz-pruefung (the DTZ overview is a blog article since 2026-10-16)
+/dtz/modelltest           ★ bottom-of-funnel product page: demo, format, realism, prices, FAQ → /registrieren?next=/dashboard/dtz (German only; data/pages/de/dtz-modelltest.tsx, components/pages/modelltest-page.tsx)
 /dtz/modelltest/[n]       full mock exams
 /gratis-test              free tests: pick level (A1/A2/B1) → exam → /gratis-test/{exam}/{skill}
                           (only exams with reviewed content link out; /dtz/kurztest 308s to /gratis-test/dtz)

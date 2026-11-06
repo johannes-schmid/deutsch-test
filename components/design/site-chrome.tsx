@@ -76,7 +76,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
   const at = (path: string) => lp(sl, path)
   // Impressum, Datenschutz, AGB and Widerruf exist in German only: they are the legally binding texts.
   const groups = [
-    { title: f.groups.exam, links: [{ label: "DTZ", href: at("/blog/dtz-pruefung") }, { label: t.nav.links[1].label, href: at("/gratis-test") }, { label: "A2 → B1", href: at("/a2-zu-b1") }, { label: u.footerCitizenship, href: at("/b1-einbuergerung") }, { label: t.nav.links[2].label, href: at("/preise") }] },
+    { title: f.groups.exam, links: [{ label: "DTZ", href: at("/blog/dtz-pruefung") }, ...(sl === "de" ? [{ label: "DTZ Modelltest", href: "/dtz/modelltest" }] : []), { label: t.nav.links[1].label, href: at("/gratis-test") }, { label: "A2 → B1", href: at("/a2-zu-b1") }, { label: u.footerCitizenship, href: at("/b1-einbuergerung") }, { label: t.nav.links[2].label, href: at("/preise") }] },
     { title: f.groups.info, links: [...(livePosts().length ? [{ label: f.blog, href: at("/blog") }] : []), { label: f.about, href: at("/ueber-uns") }, { label: f.contact, href: at("/kontakt") }, { label: f.imprint, href: "/impressum" }, { label: f.privacy, href: "/datenschutz" }] },
   ]
   return (

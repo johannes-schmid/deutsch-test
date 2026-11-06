@@ -54,6 +54,7 @@ match search phrasing in a guide that explains the result levels.
 | `/` | DTZ online üben | DTZ Modelltest online · DTZ Prüfung vorbereiten · Deutsch-Test für Zuwanderer üben (also "Deutschtest") · DTZ B1 üben · DTZ Prüfungssimulation A2–B1 |
 | `/dtz` | DTZ Prüfung | DTZ Aufbau · DTZ B1 Prüfung · DTZ Ablauf · DTZ Bewertung |
 | `/dtz/{hoeren,lesen,schreiben,sprechen}` | DTZ [Teil] üben | DTZ Schreiben Brief · DTZ Sprechen gemeinsam etwas planen · DTZ Hören Teil 1–4 |
+| `/dtz/modelltest` | DTZ Modelltest online | DTZ B1 Prüfung Online-Test · DTZ Prüfungssimulation online · DTZ Modelltest mit Lösung (bottom-of-funnel product page, built 2026-11-06; SERP: only PDFs, books and exercise sites rank) |
 | `/dtz/modelltest/[n]` | DTZ Modelltest [n] | DTZ Übungstest |
 | `/a2-zu-b1` | DTZ nur A2 | DTZ wiederholen · von A2 zu B1 |
 | `/b1-einbuergerung` | B1 für Einbürgerung | Sprachnachweis Einbürgerung B1 |
