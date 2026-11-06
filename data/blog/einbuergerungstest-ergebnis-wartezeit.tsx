@@ -12,7 +12,7 @@ const VHS = { name: "VHS Tempelhof-Schöneberg: Einbürgerungstest", url: "https
 
 export const einbuergerungstestErgebnisWartezeit: BlogPost = {
   slug: "einbuergerungstest-ergebnis-wartezeit",
-  status: "draft",
+  status: "reviewed",
   title: "Einbürgerungstest Ergebnis: Wie lange wartest du auf das Zertifikat?",
   crumb: "Einbürgerungstest Ergebnis",
   description: "Nach dem Einbürgerungstest wertet das BAMF zentral aus und schickt die Bescheinigung per Post. So lange dauert es, was der Bearbeitungsstand bedeutet und was du tun kannst.",
