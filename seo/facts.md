@@ -15,6 +15,21 @@ If it isn't in this file, it doesn't ship.
 | Prüfungspass 19.95 € (1 Monat) / 44.95 € (3 Monate), then 19.95 € per month, cancellable any time, incl. VAT | /preise, /dashboard/preise | Set by Hannes, `lib/pricing.ts` | 2026-10-24 |
 | Teil-Pass (catalogue `teil-2026-11`, on sale since 2026-10-29): one skill 9.95 € per month, all four 29.85 € per month (3 × 9.95), switch from one to all four 19.90 € once, all monthly, cancellable any time, incl. VAT | /preise, /dashboard/preise, home FAQ (when active) | Set by Hannes, `lib/pricing.ts` | 2026-10-29 |
 
+## Einbürgerungstest (`/blog/einbuergerungstest-ergebnis-wartezeit`, checked 2026-11-06)
+
+| Fact | Used on | Source | Checked |
+|---|---|---|---|
+| 33 questions, 60 minutes, passed with at least 17 correct | /blog/einbuergerungstest-ergebnis-wartezeit | [EinbTestV § 1 Abs. 2, 3](https://www.gesetze-im-internet.de/einbtestv/BJNR164900008.html) | 2026-11-06 |
+| Fee 25 € per participant | /blog/einbuergerungstest-ergebnis-wartezeit | [EinbTestV § 2 Abs. 1](https://www.gesetze-im-internet.de/einbtestv/BJNR164900008.html); BAMF page "Die Teilnahme am Einbürgerungstest kostet 25 Euro." | 2026-11-06 |
+| The Regionalstelle of the BAMF evaluates the tests centrally in a fully standardised procedure; the Prüfstelle may not tell the result | /blog/einbuergerungstest-ergebnis-wartezeit | [Prüfungsordnung Einbürgerungstest § 12 Abs. 1, § 10 Abs. 11 (Stand 28.07.2008)](https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/einbuergerungstest-pruefungsordnung.pdf?__blob=publicationFile&v=2) | 2026-11-06 |
+| The Bescheinigung (standard form, signed and sealed, shows Gesamtpunktzahl and Prädikat "erfolgreich teilgenommen" / "teilgenommen") is sent by post to the participant | /blog/einbuergerungstest-ergebnis-wartezeit | Prüfungsordnung § 12 Abs. 2, § 13 Abs. 1–3 (same link) | 2026-11-06 |
+| A new copy of the Bescheinigung is issued only against the original or a written declaration of loss | /blog/einbuergerungstest-ergebnis-wartezeit | Prüfungsordnung § 13 Abs. 4 (same link) | 2026-11-06 |
+| The Bescheinigung stays valid after a change of residence | /blog/einbuergerungstest-ergebnis-wartezeit | [EinbTestV § 1 Abs. 4](https://www.gesetze-im-internet.de/einbtestv/BJNR164900008.html) | 2026-11-06 |
+| The BAMF publishes which test date it is currently evaluating: "Aktuell wertet das Bundesamt Tests bis Prüfungsdatum 24.08.2026 aus." (page dated 02.11.2026, i.e. about 10 weeks) | /blog/einbuergerungstest-ergebnis-wartezeit | [BAMF: Einbürgerung](https://www.bamf.de/DE/Themen/Integration/ZugewanderteTeilnehmende/Einbuergerung/einbuergerung-node.html) | 2026-11-06 |
+| The BAMF names no fixed processing time; questions go to the BAMF Bürgerservice or the Einbürgerungsbehörde | /blog/einbuergerungstest-ergebnis-wartezeit | BAMF page (same link); [BAMF Bürgerservice](https://www.bamf.de/DE/Service/ServiceCenter/Buergerservice/buergerservice-node.html) | 2026-11-06 |
+| A VHS states "in der Regel 6 bis 8 Wochen" by post, and to contact the BAMF Regionalstelle after that (a Prüfstelle's statement, not the BAMF's) | /blog/einbuergerungstest-ergebnis-wartezeit | [VHS Tempelhof-Schöneberg: Einbürgerung](https://www.berlin.de/vhs-tempelhof-schoeneberg/kurse/deutsch-als-zweitsprache/pruefungen-und-abschluesse/einbuergerung/) | 2026-11-06 |
+| Test repeatable when fewer than 17 answers are correct | /blog/einbuergerungstest-ergebnis-wartezeit | BAMF page: "können Sie den Test wiederholen." | 2026-11-06 |
+
 ## Free tests: exam formats (`lib/exams.ts`, `/gratis-test`)
 
 Full blueprints with every source are in `research/<exam>.md`. Only the numbers the site shows are listed here.
