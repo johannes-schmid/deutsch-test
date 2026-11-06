@@ -23,7 +23,7 @@ export const dtzBestehen: BlogPost = {
   category: "pruefungen",
   published: "2026-10-16",
   reviewed: "2026-10-16",
-  readingMinutes: 7,
+  readingMinutes: 9,
   cover: {
     photo: "--g-photo-5",
     label: "DTZ-Ergebnis: Stufe B1 auf der Skala unter A2, A2, B1",
@@ -48,6 +48,7 @@ export const dtzBestehen: BlogPost = {
     {
       id: "kein-bestanden",
       title: "Beim DTZ gibt es kein „bestanden“",
+      kurz: "Du bekommst eine Stufe: B1, A2 oder unter A2. Für Integrationskurs und Einbürgerung brauchst du in der Regel B1.",
       body: (
         <>
           <p>
@@ -71,8 +72,9 @@ export const dtzBestehen: BlogPost = {
       ),
     },
     {
-      id: "drei-bereiche",
-      title: "Drei Bereiche, drei Ergebnisse",
+      id: "punkte",
+      title: "Drei Bereiche und die Punktgrenzen",
+      kurz: "Hören und Lesen zählen zusammen (33 von 45 Punkten für B1), Schreiben 15 von 20, Sprechen 75 von 100.",
       body: (
         <>
           <p>
@@ -92,17 +94,8 @@ export const dtzBestehen: BlogPost = {
           />
           <p>
             Beim Hören und Lesen gibt es für jede richtige Antwort einen Punkt. Das sind 45 Punkte. Schreiben und Sprechen
-            bewerten zwei Prüferinnen oder Prüfer nach festen Kriterien.
+            bewerten zwei Prüferinnen oder Prüfer nach festen Kriterien. So viele Punkte brauchst du in jedem Bereich:
           </p>
-        </>
-      ),
-    },
-    {
-      id: "punkte",
-      title: "Die Punktgrenzen für B1 und A2",
-      body: (
-        <>
-          <p>So viele Punkte brauchst du in jedem Bereich. Die Grenzen sind offiziell veröffentlicht.</p>
           <DataTable
             head={["Bereich", "B1", "A2", "unter A2"]}
             rows={[
@@ -124,6 +117,7 @@ export const dtzBestehen: BlogPost = {
     {
       id: "gesamtergebnis",
       title: "So entsteht dein Gesamtergebnis",
+      kurz: "B1 bekommst du nur mit B1 im Sprechen plus B1 in einem weiteren Bereich. Sprechen entscheidet immer mit.",
       body: (
         <>
           <p>Aus den drei Stufen wird am Ende ein Gesamtergebnis. Dafür gilt eine feste Regel:</p>
@@ -181,6 +175,7 @@ export const dtzBestehen: BlogPost = {
     {
       id: "schreiben",
       title: "So wird Schreiben bewertet",
+      kurz: "Vier Kriterien, je 0 bis 5 Punkte. Ein Text, der nicht zur Aufgabe passt, bekommt überall 0.",
       body: (
         <>
           <p>
@@ -207,6 +202,7 @@ export const dtzBestehen: BlogPost = {
     {
       id: "sprechen",
       title: "So wird Sprechen bewertet",
+      kurz: "Die Hälfte der 100 Punkte gibt es dafür, dass du die Aufgabe löst und mitredest. Kleine Fehler kosten wenig.",
       body: (
         <>
           <p>
@@ -245,6 +241,7 @@ export const dtzBestehen: BlogPost = {
     {
       id: "nur-a2",
       title: "Nur A2? Das kannst du tun",
+      kurz: "Du kannst den ganzen DTZ so oft wiederholen, wie du willst. Oft bezahlt das BAMF den zweiten Versuch.",
       body: (
         <>
           <p>Ein A2 ist kein Grund aufzugeben. Du kannst den DTZ noch einmal machen.</p>

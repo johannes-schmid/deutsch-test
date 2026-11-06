@@ -21,7 +21,7 @@ export const b1BriefSchreiben: BlogPost = {
   category: "schreiben",
   published: "2026-10-16",
   reviewed: "2026-10-16",
-  readingMinutes: 9,
+  readingMinutes: 10,
   cover: {
     photo: "--g-photo-4",
     label: "Ein Brief mit vier abgehakten Punkten",
@@ -68,6 +68,7 @@ export const b1BriefSchreiben: BlogPost = {
     {
       id: "aufgabe",
       title: "Was du in der Prüfung schreibst",
+      kurz: "Im DTZ und im telc B1 schreibst du in 30 Minuten einen Brief oder eine E-Mail zu vier Punkten. Eine feste Wortzahl gibt es nicht.",
       body: (
         <>
           <p>
@@ -108,6 +109,7 @@ export const b1BriefSchreiben: BlogPost = {
     {
       id: "bewertung",
       title: "Darauf achten die Prüfer",
+      kurz: "Alle vier Punkte beantworten zählt am meisten. Ein vergessener Punkt kostet mehr als ein Grammatikfehler.",
       body: (
         <>
           <p>Prüfer lesen deinen Text mit festen Kriterien. Beim DTZ sind es vier:</p>
@@ -140,6 +142,7 @@ export const b1BriefSchreiben: BlogPost = {
     {
       id: "aufbau",
       title: "Der Aufbau in sechs Schritten",
+      kurz: "Betreff, Anrede, Einleitung, die vier Punkte, Schluss, Gruß. Immer in dieser Reihenfolge, dann vergisst du nichts.",
       body: (
         <>
           <p>Ein guter Prüfungsbrief hat immer dieselben Teile. Wenn du sie kennst, musst du in der Prüfung nicht lange überlegen.</p>
@@ -164,6 +167,7 @@ export const b1BriefSchreiben: BlogPost = {
     {
       id: "beispiel",
       title: "Ein Beispiel mit Erklärung",
+      kurz: "Eine E-Mail an die Kursleiterin, etwa 100 Wörter, mit allen vier Punkten. Jede Zeile ist erklärt.",
       body: (
         <>
           <p>
@@ -211,6 +215,7 @@ export const b1BriefSchreiben: BlogPost = {
     {
       id: "saetze",
       title: "Sätze, die fast immer passen",
+      kurz: "Lern je einen Satz für Anrede, Einleitung, Bitte, Entschuldigung, Vorschlag, Schluss und Gruß, formell und informell.",
       body: (
         <>
           <p>
@@ -244,7 +249,8 @@ export const b1BriefSchreiben: BlogPost = {
     },
     {
       id: "fehler",
-      title: "Typische Fehler und wie du sie vermeidest",
+      title: "Typische Fehler und dein Zeitplan",
+      kurz: "Die häufigsten Fehler: ein Punkt fehlt, der Ton wechselt, jeder Satz beginnt mit „Ich“. Plane fünf Minuten zum Prüfen ein.",
       body: (
         <>
           <DoDont
@@ -267,14 +273,6 @@ export const b1BriefSchreiben: BlogPost = {
             Bei telc bekommst du im Kriterium Kommunikative Gestaltung keine volle Punktzahl, wenn fast alle Sätze mit „Ich“ oder
             „Wir“ beginnen. Das steht in den Bewertungshinweisen von telc. Ein guter Grund, die Satzanfänge zu wechseln.
           </p>
-        </>
-      ),
-    },
-    {
-      id: "zeit",
-      title: "So nutzt du die 30 Minuten",
-      body: (
-        <>
           <p>Dreißig Minuten sind nicht viel. Mit einem Plan geht es leichter. Das ist unser Vorschlag:</p>
           <Steps
             items={[

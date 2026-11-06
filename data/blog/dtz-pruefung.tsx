@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { QuizCard } from "@/components/design/article-interactive"
 import { LevelScale } from "@/components/design/kit"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { SKILLS } from "@/lib/design/content"
@@ -21,7 +22,7 @@ export const dtzPruefung: BlogPost = {
   category: "pruefungen",
   published: "2026-10-12",
   reviewed: "2026-10-16",
-  readingMinutes: 3,
+  readingMinutes: 4,
   cover: {
     photo: "--g-photo-2",
     label: "Die vier Teile vom DTZ: Hören, Lesen, Schreiben, Sprechen",
@@ -55,6 +56,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "was-ist-der-dtz",
       title: "Was ist der DTZ?",
+      kurz: "Der DTZ ist die Sprachprüfung am Ende vom Integrationskurs. Er prüft A2 und B1 in einer Prüfung.",
       body: (
         <>
           <p>
@@ -71,6 +73,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "die-vier-teile",
       title: "Die vier Teile",
+      kurz: "Hören, Lesen und Schreiben machst du schriftlich am Stück, Sprechen an einem eigenen Termin zu zweit.",
       body: (
         <>
           <p>Der DTZ hat vier Teile. Hören, Lesen und Schreiben machst du schriftlich. Sprechen machst du zu zweit.</p>
@@ -96,6 +99,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "ergebnis",
       title: "Das Ergebnis: B1, A2 oder unter A2",
+      kurz: "Es gibt kein „bestanden“. Du bekommst eine Stufe, und für das Zertifikat Integrationskurs brauchst du B1.",
       body: (
         <>
           <p>
@@ -105,6 +109,16 @@ export const dtzPruefung: BlogPost = {
           <div>
             <LevelScale level="B1" ariaLabel="Mögliche Ergebnisse im DTZ" />
           </div>
+          <QuizCard
+            prompt="Du hast im DTZ in allen Bereichen A2. Was bekommst du?"
+            options={[
+              { key: "a", label: "Nichts, die Prüfung ist nicht bestanden" },
+              { key: "b", label: "Ein DTZ-Zertifikat A2" },
+              { key: "c", label: "Ein DTZ-Zertifikat B1" },
+            ]}
+            correct="b"
+            explain="Beim DTZ gibt es kein Durchfallen. Mit A2 in allen Bereichen bekommst du ein Zertifikat A2. Für das Zertifikat Integrationskurs und meist für die Einbürgerung brauchst du aber B1."
+          />
           <p>
             Für das <strong>Zertifikat Integrationskurs</strong> brauchst du zwei Dinge: B1 im DTZ und den Test
             „Leben in Deutschland“. Das steht in § 17 der Integrationskursverordnung.
@@ -121,6 +135,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "vorbereitung",
       title: "So bereitest du dich vor",
+      kurz: "Mach einen ganzen Modelltest mit Zeit, finde den Teil, der dir zu B1 fehlt, und übe genau den.",
       body: (
         <>
           <ol>

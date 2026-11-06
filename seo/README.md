@@ -48,6 +48,23 @@ The product promise is **the most realistic DTZ mock exams, built on research of
    Metadata, canonical, hreflang, OG and JSON-LD come from the registry; don't hand-roll them.
 6. **Images.** One hero via Pexels, local file under `public/`, under ~150 KB, descriptive alt text.
 
+## Blog post standard (Hannes, 2026-11-06)
+
+Encoded in `lib/blog/standard.ts`; `npm test` runs it over every post in every locale, and the prompts on
+`/admin/blog` and the weekly ranking carry the same rules. Background: the length research in
+LEARNINGS.md (2026-11-06). Posts for A2/B1 readers are read at about half native speed, so the win is
+structure, not words.
+
+- **350–1,300 words** in total: a single-question post 350–700, a guide 800–1,200. As long as the answer, never padded.
+- **3–6 sections, one question each.** The heading is the question people ask or its answer. Every section starts with
+  `kurz`: the answer in one sentence (25–170 characters), shown as "Kurz gesagt", so a reader who came from the table of
+  contents can stop there. Sections stand alone; nothing repeats what another post owns, link there instead.
+- **One worked example or self-check** in the real exam format per post (`QuizCard`, `LetterSample`).
+- **Split instead of stuffing.** An addition that would push a post past the cap, or that serves a different search
+  query than the post's owning one, becomes its own post with its own owning query, linked both ways.
+- Short sentences (about 15 words), du-form, numbers only from `seo/facts.md`. Summary card 3–5 rows, at most 5 FAQ
+  entries, at least 2 sources, `readingMinutes` = ceil(words / 130) (the test prints the expected number).
+
 ## On-page checklist (every page, before it ships)
 
 - [ ] Owning query in the title (≤ 60 chars, query near the front) and in the first 100 words

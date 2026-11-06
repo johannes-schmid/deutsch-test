@@ -161,6 +161,9 @@
 .article-body a:hover { text-decoration-color: currentColor; }
 .article-body ::selection, .v-frame ::selection { background: color-mix(in srgb, var(--p-glow) 45%, transparent); color: var(--v-ink); }
 .article-body h2 { scroll-margin-top: 24px; }
+/* "Kurz gesagt": the answer of a section in one line, so a reader who came from the table of contents can stop after it. */
+.article-body .kurz { margin: -6px 0 20px; padding: 12px 16px 12px 18px; border-inline-start: 1px solid var(--v-line); font-size: 16px; line-height: 1.55; color: var(--v-ink); text-wrap: pretty; }
+.article-body .kurz-label { display: block; margin-bottom: 2px; font-family: var(--v-font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--v-muted); }
 /* The one dark block on a blog page (closing CTA). */
 .nz-night { position: relative; isolation: isolate; overflow: hidden; color: #F2EFE9; background: radial-gradient(55% 140% at 100% 110%, color-mix(in srgb, var(--p-glow) 55%, transparent) 0%, transparent 70%), radial-gradient(45% 120% at 0% 0%, #2E4FB8 0%, transparent 70%), #0B1020; }
 .nz-night::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: var(--noise); mix-blend-mode: overlay; opacity: 0.3; pointer-events: none; }
@@ -223,3 +226,19 @@ article.group:hover > .photo::before { scale: 1.05; }
   .leuchte-u { animation: leuchte-calm 1.8s ease infinite; }
 }
 @keyframes leuchte-fade { from { opacity: 0; } }
+
+/* Übungsmodus feedback (components/exam/instant.tsx). The marks pop on mount; sparks, confetti and +1 live in a portal
+   outside .v-frame, so their colours carry Glut fallbacks. The press target's bump/shake runs in WAAPI. */
+.ins-pop { animation: ins-pop 320ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+@keyframes ins-pop { from { transform: scale(0.5); opacity: 0; } }
+.ins-spark { position: absolute; left: 0; top: 0; width: 6px; height: 6px; margin: -3px; border-radius: 999px; background: var(--p-glow, #FFB45E); box-shadow: 0 0 0 1.5px #0A0D18; opacity: 0; animation: ins-spark 560ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+@keyframes ins-spark { from { opacity: 1; transform: rotate(var(--a)) translateX(4px) scale(1); } to { opacity: 0; transform: rotate(var(--a)) translateX(var(--d)) scale(0.4); } }
+.ins-confetti { position: absolute; left: 0; top: 0; width: var(--w); height: 10px; margin: -5px 0 0 calc(var(--w) / -2); border-radius: 1.5px; background: var(--c); opacity: 0; animation: ins-confetti 900ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+@keyframes ins-confetti {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.6); }
+  55% { opacity: 1; transform: translate(var(--tx), var(--ty)) rotate(calc(var(--r) * 0.6)) scale(1); }
+  100% { opacity: 0; transform: translate(calc(var(--tx) * 1.15), calc(var(--ty) + 36px)) rotate(var(--r)) scale(0.9); }
+}
+.ins-plus { animation: ins-plus 800ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+@keyframes ins-plus { from { opacity: 0; transform: translateY(8px); } 25% { opacity: 1; transform: translateY(0); } 75% { opacity: 1; } to { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .ins-pop { animation: none; } }

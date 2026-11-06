@@ -25,7 +25,7 @@ export const b1Pruefung: BlogPost = {
   category: "pruefungen",
   published: "2026-10-16",
   reviewed: "2026-10-16",
-  readingMinutes: 8,
+  readingMinutes: 9,
   cover: {
     photo: "--g-photo-1",
     label: "Vier B1-Prüfungen: DTZ, telc, Goethe und ÖSD",
@@ -60,36 +60,20 @@ export const b1Pruefung: BlogPost = {
   },
   sections: [
     {
-      id: "was-ist-b1",
-      title: "B1 ist ein Niveau, keine Prüfung",
-      body: (
-        <>
-          <p>
-            B1 ist eine Stufe im <strong>Gemeinsamen europäischen Referenzrahmen</strong> (GER). Die Stufen gehen von A1 bis C2.
-            Mit B1 verstehst du die wichtigsten Punkte, wenn jemand klar über bekannte Themen spricht. Du kannst über deinen
-            Alltag sprechen und kurze Texte schreiben.
-          </p>
-          <p>
-            Viele Prüfungen testen dieses Niveau. Sie messen alle B1, aber sie tun es auf verschiedene Art. Die Teile, die Zeit und
-            das Ergebnis sind nicht gleich. Deshalb lohnt sich ein Blick, bevor du dich anmeldest.
-          </p>
-          <Note kind="info">
-            <p>
-              Die Beschreibung der Stufen kommt vom Europarat. Du findest sie im{" "}
-              <a href={GER.url} rel="noopener">Referenzrahmen (Globalskala)</a>.
-            </p>
-          </Note>
-        </>
-      ),
-    },
-    {
       id: "ueberblick",
       title: "Die vier B1-Prüfungen im Überblick",
+      kurz: "B1 ist ein Niveau, keine Prüfung. In Deutschland prüfen es vor allem DTZ, telc, Goethe und ÖSD, jede etwas anders.",
       body: (
         <>
           <p>
+            B1 ist eine Stufe im <strong>Gemeinsamen europäischen Referenzrahmen</strong> (
+            <a href={GER.url} rel="noopener">GER</a>). Mit B1 verstehst du die wichtigsten Punkte, wenn jemand klar über bekannte
+            Themen spricht. Du kannst über deinen Alltag sprechen und kurze Texte schreiben.
+          </p>
+          <p>
             In Deutschland machen die meisten Menschen eine dieser vier Prüfungen. Alle haben die vier Teile Hören, Lesen,
-            Schreiben und Sprechen. Sprechen ist bei allen eine Prüfung zu zweit.
+            Schreiben und Sprechen. Sprechen ist bei allen eine Prüfung zu zweit. Die Teile, die Zeit und das Ergebnis sind aber
+            nicht gleich.
           </p>
           <Compare
             highlight={0}
@@ -154,6 +138,7 @@ export const b1Pruefung: BlogPost = {
     {
       id: "dauer",
       title: "So lange dauern die Prüfungen",
+      kurz: "Der DTZ ist mit 100 Minuten schriftlich am kürzesten; Goethe und ÖSD dauern am längsten, weil du drei Texte schreibst.",
       body: (
         <>
           <p>
@@ -214,6 +199,7 @@ export const b1Pruefung: BlogPost = {
     {
       id: "ergebnis",
       title: "Bestanden oder Stufe: der größte Unterschied",
+      kurz: "telc, Goethe und ÖSD sagen bestanden ab 60 Prozent. Der DTZ gibt dir eine Stufe: B1, A2 oder unter A2.",
       body: (
         <>
           <p>
@@ -237,6 +223,7 @@ export const b1Pruefung: BlogPost = {
     {
       id: "wiederholen",
       title: "Einen Teil wiederholen: geht das?",
+      kurz: "Bei Goethe und ÖSD wiederholst du ein Modul allein, bei telc einen Teil, beim DTZ immer die ganze Prüfung.",
       body: (
         <>
           <p>Das hängt von der Prüfung ab:</p>
@@ -265,6 +252,7 @@ export const b1Pruefung: BlogPost = {
     {
       id: "einbuergerung",
       title: "Welche B1-Prüfung gilt für die Einbürgerung?",
+      kurz: "Das Gesetz verlangt B1, aber keine bestimmte Prüfung. Welches Zertifikat gilt, entscheidet deine Einbürgerungsbehörde.",
       body: (
         <>
           <p>
@@ -293,7 +281,8 @@ export const b1Pruefung: BlogPost = {
     },
     {
       id: "welche-passt",
-      title: "Welche Prüfung passt zu dir?",
+      title: "Welche Prüfung passt zu dir, und wie fängst du an?",
+      kurz: "Im Integrationskurs ist es der DTZ. Sonst entscheidet deine Behörde oder dein Ziel. Übe dann genau dieses Format.",
       body: (
         <>
           <p>Diese Tabelle hilft dir beim ersten Überblick. Sie ersetzt keine Beratung.</p>
@@ -306,14 +295,6 @@ export const b1Pruefung: BlogPost = {
               ["Du willst eine kurze Prüfung", "DTZ", "Der schriftliche Teil dauert 100 Minuten am Stück."],
             ]}
           />
-        </>
-      ),
-    },
-    {
-      id: "vorbereiten",
-      title: "So bereitest du dich richtig vor",
-      body: (
-        <>
           <p>Egal welche Prüfung: Übe genau das Format, das du später machst.</p>
           <ul>
             <li><strong>Übe mit Zeit.</strong> Jede Prüfung hat feste Zeiten pro Teil. Stell dir einen Timer.</li>

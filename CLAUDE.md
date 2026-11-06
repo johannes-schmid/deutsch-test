@@ -165,6 +165,13 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   Browser push runs the same five moments (one moment, every channel the learner turned on; push toggle in Konto, iPhone needs the
   home-screen app); the dashboard shows the next step in-app to everyone without a pass; a purchase ends the
   series except "Wie war's?". Rules in `lib/lifecycle/rules.ts` (tested); drafts on the artifact page shown to Hannes.
+- **Blog CMS = workbench, not an editor (Hannes, 2026-11-06):** posts stay TSX in `data/blog/`, reviewed by hand and shipped by PR.
+  `/admin/blog` shows every post with its Google numbers and hands out Claude Code prompts (improve, fix snippet, translate);
+  it never edits content. Every Friday a Vercel cron pulls community questions through Apify (Reddit searches, Google
+  "People also ask" and related searches, gutefrage.net via `site:` queries; Facebook groups are login-gated and skipped) and
+  Claude ranks them into ≤ 8 ideas per week in three kinds: new article, adjustment to a page, tool people look for. Ideas
+  carry quotes as evidence and a brief; building a tool is a separate decision. Sources and limits live in
+  `seo-agent/config.json` › `community`; the AI Act and content rules of §4 apply to every draft that comes out of a prompt.
 - **Prices include 19% VAT** for German consumers (OSS). Never show prices excluding VAT to
   consumers.
 - **One source of truth for prices** (`lib/pricing.ts`). Derived numbers (savings %, per-month
@@ -199,6 +206,9 @@ most likely because most of its content was AI-written. Don't repeat that here.
 - Every guide needs a **named author**, a **review date** and **sources**.
   **TODO(hannes):** who is the named author/reviewer on the site?
 - Fewer, deeper pages that answer the real question beat many thin ones.
+- **Blog post standard** (Hannes, 2026-11-06; `lib/blog/standard.ts`, enforced by `npm test`, written out in `seo/README.md`):
+  350–1,300 words, 3–6 sections that each answer one question with a `kurz` answer line, one worked example or quiz, split
+  into a new post instead of adding a second intent. The `/admin/blog` prompts and the weekly ranking carry the same rules.
 - **One query, one owning page.** Guides and blog posts never target practice-exam keywords.
   Those belong to `/dtz/*`.
   - **TODO(hannes):** `/einbuergerungstest` and `/leben-in-deutschland` draw on the same BAMF
@@ -358,6 +368,10 @@ app/(main)/(site)/{agb,widerruf}/    # AGB, Widerrufsbelehrung + Muster-Formular
 lib/lifecycle/{rules,prefs}.ts       # lifecycle moments: nextEmail() (pure, *.test.ts) · examGoal(), ensurePrefs() + NOTICE_VERSION; ExamDateWidget (countdown only, /dashboard aside) + ExamGoalForm (konto: exam, date, email switch, push switch) in components/portal/exam-goal.tsx → app/(app)/dashboard/goal-actions.ts
 lib/lifecycle/{state,push,push-copy}.ts # cron state per learner · web-push sender (VAPID env, drops 404/410) · push texts per moment (tested); public/sw.js shows them; app/(app)/dashboard/push-actions.ts stores subscriptions
 app/api/cron/lifecycle               # daily 07:00 UTC: claims the due moment in lifecycle_messages, sends it by email (every account that has not objected) and push; CRON_SECRET
+lib/content-ideas/                   # ★ weekly community scan (Hannes 2026-11-06): model.ts (question rows, dedupe key, Apify item mappers, ranking schema; tested) · apify.ts (start run / status / dataset, APIFY_API_KEY) · collect.ts (startScan/collectScan → content_scans + content_questions; sources + limits in seo-agent/config.json › community) · rank.ts (one Opus call → content_suggestions: article / adjust / tool with evidence; direct ANTHROPIC_API_KEY) · run.ts (the step shared by the cron and "Scan now")
+app/api/cron/content-scan            # Friday 20:00 UTC starts the Apify runs (Reddit searches + Google PAA/related incl. site:gutefrage.net), 22:00 collects and ranks; CRON_SECRET
+lib/admin/blog{,-prompts}.ts · app/(admin)/admin/blog/ · components/admin/blog-{posts,ideas}.tsx · components/admin/copy-button.tsx # /admin/blog: every post with live GSC numbers, uk/ru presence and a drawer (improve / fix snippet / translate prompts) + this week's ideas with evidence, Plan/Done/Dismiss, a Claude Code prompt per idea and "Scan now"; prompts are pure + tested; posts stay TSX, nothing here edits content
+supabase/migrations/*_content_scans.sql # content_scans (one per ISO week, Apify run ids, stats) · content_questions (unique key per thread) · content_suggestions (kind, status, evidence); server writes only
 lib/lifecycle/email.ts + lib/email/templates/lifecycle.ts # the five emails; sendWelcome() from /auth/callback to every new account (service mail, never an offer); app/api/lifecycle/abmelden = one-click unsubscribe
 components/portal/next-step.tsx      # in-app next step (next free Modelltest 1 → pass) for everyone without a pass
 supabase/migrations/*_lifecycle_*.sql # lifecycle_prefs (exam (NULL = not chosen yet), exam_date, legacy consent + version, sign-up notice + version, unsubscribed_at, unsubscribe token) + lifecycle_messages (moment log, channels) + push_subscriptions + lifecycle_emails (one row per sent kind, unique)

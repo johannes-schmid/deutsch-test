@@ -36,6 +36,7 @@ export const ru: UiCopy = {
     dont: "Так не надо",
     do: "Так правильно",
     toc: "В этой статье",
+    kurz: "Коротко",
     quiz: "Проверьте себя",
     quizRight: "Верно. ",
     quizAnswer: (key: string) => `Правильный ответ: ${key}. `,

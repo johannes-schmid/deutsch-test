@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { QuizCard } from "@/components/design/article-interactive"
 import { LevelScale } from "@/components/design/kit"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import type { SkillId } from "@/lib/design/content"
@@ -53,6 +54,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "was-ist-der-dtz",
       title: "Что такое DTZ?",
+      kurz: "DTZ — это языковой экзамен в конце интеграционного курса. Он проверяет A2 и B1 в одном экзамене.",
       body: (
         <>
           <p>
@@ -69,6 +71,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "die-vier-teile",
       title: "Четыре части",
+      kurz: "Аудирование, чтение и письмо вы сдаёте письменно подряд, говорение — в отдельный день вдвоём.",
       body: (
         <>
           <p>В DTZ четыре части. Аудирование, чтение и письмо вы сдаёте письменно. Говорение вы сдаёте вдвоём.</p>
@@ -94,6 +97,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "ergebnis",
       title: "Результат: B1, A2 или ниже A2",
+      kurz: "Оценки «сдал» нет. Вы получаете уровень, а для Zertifikat Integrationskurs вам нужен B1.",
       body: (
         <>
           <p>
@@ -103,6 +107,17 @@ export const dtzPruefung: BlogPost = {
           <div>
             <LevelScale level="B1" belowLabel="ниже A2" ariaLabel="Возможные результаты в DTZ" />
           </div>
+          <QuizCard
+            l="ru"
+            prompt="У вас в DTZ по всем областям A2. Что вы получите?"
+            options={[
+              { key: "a", label: "Ничего, экзамен не сдан" },
+              { key: "b", label: "Сертификат DTZ A2" },
+              { key: "c", label: "Сертификат DTZ B1" },
+            ]}
+            correct="b"
+            explain="В DTZ нельзя «провалиться». С A2 по всем областям вы получаете сертификат A2. Но для Zertifikat Integrationskurs и обычно для натурализации нужен B1."
+          />
           <p>
             Для <strong>Zertifikat Integrationskurs</strong> вам нужны две вещи: B1 в DTZ и тест
             «Leben in Deutschland». Так написано в § 17 Integrationskursverordnung.
@@ -119,6 +134,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "vorbereitung",
       title: "Как подготовиться",
+      kurz: "Пройдите целый пробный тест с таймером, найдите часть, которой вам не хватает до B1, и тренируйте именно её.",
       body: (
         <>
           <ol>

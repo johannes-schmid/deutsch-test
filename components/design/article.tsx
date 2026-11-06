@@ -184,12 +184,16 @@ export function SummaryCard({ summary }: { summary: BlogPost["summary"] }) {
 }
 
 /** The long-form text. `.article-body` (landing.css) styles only the prose children of each section, so blocks keep their own styles. */
-export function ArticleBody({ sections }: { sections: BlogPost["sections"] }) {
+export function ArticleBody({ sections, l = "de" }: { sections: BlogPost["sections"]; l?: SiteLocale }) {
   return (
     <div className="article-body">
       {sections.map((s) => (
         <section key={s.id} aria-labelledby={s.id}>
           <h2 id={s.id}>{s.title}</h2>
+          <p className="kurz">
+            <span className="kurz-label">{UI[l].blog.kurz}</span>
+            {s.kurz}
+          </p>
           {s.body}
         </section>
       ))}

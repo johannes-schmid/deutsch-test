@@ -69,7 +69,7 @@ export function BlogArticle({ slug, locale = "de" }: { slug: string; locale?: Si
         <article className="min-w-0 max-w-[68ch]">
           <ArticleTocFold sections={toc} label={u.blog.toc} />
           <SummaryCard summary={post.summary} />
-          <ArticleBody sections={post.sections} />
+          <ArticleBody sections={post.sections} l={locale} />
           <ArticleFaq items={post.faq} l={locale} />
           <ArticleProof post={post} />
           <NightCta {...post.cta} />

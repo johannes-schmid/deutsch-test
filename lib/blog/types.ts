@@ -30,7 +30,8 @@ export type BlogPost = {
   cover: { photo: string; art: ReactNode; mini: ReactNode; label: string }
   /** The fact card at the top of the reading card. */
   summary: { title: string; rows: { k: string; v: string }[] }
-  sections: { id: string; title: string; body: ReactNode }[]
+  /** `kurz`: the answer of the section in one sentence, shown under the heading as "Kurz gesagt" (lib/blog/standard.ts). */
+  sections: { id: string; title: string; kurz: string; body: ReactNode }[]
   faq: { q: string; a: string }[]
   sources: Source[]
   cta: { title: string; text: string; href: string; button: string }

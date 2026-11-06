@@ -28,6 +28,7 @@ export const uk: UiCopy = {
     dont: "Так не треба",
     do: "Так правильно",
     toc: "У цій статті",
+    kurz: "Коротко",
     quiz: "Перевірте себе",
     quizRight: "Правильно. ",
     quizAnswer: (key: string) => `Правильна відповідь: ${key}. `,

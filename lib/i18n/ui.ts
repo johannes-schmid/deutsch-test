@@ -30,6 +30,7 @@ const de = {
     dont: "So nicht",
     do: "So geht's",
     toc: "In diesem Artikel",
+    kurz: "Kurz gesagt",
     quiz: "Teste dich",
     quizRight: "Richtig. ",
     quizAnswer: (key: string) => `Richtig ist ${key}. `,

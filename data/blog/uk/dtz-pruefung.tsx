@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { QuizCard } from "@/components/design/article-interactive"
 import { LevelScale } from "@/components/design/kit"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import type { BlogPost } from "@/lib/blog/types"
@@ -15,6 +16,7 @@ const SKILLS: { id: SkillId; name: string; time: string; text: string }[] = [
 export const dtzPruefung: BlogPost = {
   ...de,
   locale: "uk",
+  readingMinutes: 3,
   title: "Іспит DTZ: структура, перебіг і оцінювання",
   crumb: "Іспит DTZ",
   description: "Як побудований Deutsch-Test für Zuwanderer: чотири частини, час, завдання і результат B1, A2 або нижче A2. Просто пояснюємо.",
@@ -53,6 +55,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "was-ist-der-dtz",
       title: "Що таке DTZ?",
+      kurz: "DTZ — це мовний іспит наприкінці інтеграційного курсу. Він перевіряє A2 і B1 в одному іспиті.",
       body: (
         <>
           <p>
@@ -69,6 +72,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "die-vier-teile",
       title: "Чотири частини",
+      kurz: "Аудіювання, читання і письмо ви складаєте письмово підряд, говоріння — в окремий день, удвох.",
       body: (
         <>
           <p>DTZ має чотири частини. Аудіювання, читання і письмо ви складаєте письмово. Говоріння — удвох.</p>
@@ -94,6 +98,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "ergebnis",
       title: "Результат: B1, A2 або нижче A2",
+      kurz: "«Склав» тут немає. Ви отримуєте рівень, а для Zertifikat Integrationskurs вам потрібен B1.",
       body: (
         <>
           <p>
@@ -103,6 +108,17 @@ export const dtzPruefung: BlogPost = {
           <div>
             <LevelScale level="B1" belowLabel="нижче A2" ariaLabel="Можливі результати DTZ" />
           </div>
+          <QuizCard
+            l="uk"
+            prompt="У вас на DTZ в усіх сферах A2. Що ви отримуєте?"
+            options={[
+              { key: "a", label: "Нічого, іспит не складено" },
+              { key: "b", label: "Сертифікат DTZ A2" },
+              { key: "c", label: "Сертифікат DTZ B1" },
+            ]}
+            correct="b"
+            explain="На DTZ не можна «провалитися». З A2 в усіх сферах ви отримуєте сертифікат A2. Але для Zertifikat Integrationskurs і зазвичай для натуралізації вам потрібен B1."
+          />
           <p>
             Для <strong>Zertifikat Integrationskurs</strong> вам потрібні дві речі: B1 у DTZ і тест
             «Leben in Deutschland». Так написано в § 17 Integrationskursverordnung.
@@ -119,6 +135,7 @@ export const dtzPruefung: BlogPost = {
     {
       id: "vorbereitung",
       title: "Як підготуватися",
+      kurz: "Пройдіть цілий Modelltest із часом, знайдіть частину, якої вам бракує до B1, і тренуйте саме її.",
       body: (
         <>
           <ol>
