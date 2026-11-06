@@ -1,7 +1,19 @@
 {
-  "regions": ["dub1"],
+  "regions": [
+    "dub1"
+  ],
   "crons": [
-    { "path": "/api/cron/reconcile-payments", "schedule": "0 7 * * *" },
-    { "path": "/api/cron/lifecycle", "schedule": "0 7 * * *" }
+    {
+      "path": "/api/cron/reconcile-payments",
+      "schedule": "0 7 * * *"
+    },
+    {
+      "path": "/api/cron/lifecycle",
+      "schedule": "0 7 * * *"
+    },
+    {
+      "path": "/api/cron/content-scan",
+      "schedule": "0 20,22 * * 5"
+    }
   ]
 }

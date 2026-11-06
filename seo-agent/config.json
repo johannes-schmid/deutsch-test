@@ -72,5 +72,19 @@
     "lib/seo.ts, components/design/blog-article.tsx — structured data",
     "app/sitemap.ts, app/robots.txt/route.ts, app/llms.txt/",
     "seo/keyword-strategy.md, seo/used-keywords.md — append only"
-  ]
+  ],
+  "community": {
+    "$comment": "Weekly community scan (Hannes, 2026-11-06): Apify pulls these, Claude ranks them into article / adjust / tool ideas on /admin/blog (lib/content-ideas/). Reddit is searched by phrase (harshmaur/reddit-scraper). Facebook groups are login-gated and not scanned.",
+    "reddit": {
+      "searches": ["DTZ Prüfung", "Deutsch-Test für Zuwanderer", "DTZ B1", "telc B1 Prüfung", "Einbürgerungstest", "Integrationskurs Prüfung", "Einbürgerung B1 Zertifikat"],
+      "max_posts": 60,
+      "time": "month"
+    },
+    "google": {
+      "queries": ["dtz prüfung", "dtz b1 bestehen", "dtz schreiben brief", "dtz sprechen", "dtz hören üben", "telc b1 prüfung", "einbürgerungstest fragen", "b1 zertifikat einbürgerung", "site:gutefrage.net dtz prüfung", "site:gutefrage.net telc b1", "site:gutefrage.net einbürgerungstest"],
+      "country": "de",
+      "language": "de"
+    },
+    "limits": { "max_suggestions_per_week": 8, "min_evidence": 2 }
+  }
 }

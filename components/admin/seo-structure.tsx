@@ -1,7 +1,8 @@
 "use client"
 
 import { useMemo, useState, type ReactNode } from "react"
-import { Check, ChevronDown, ClipboardCopy, ExternalLink, ListChecks, Sparkles, TriangleAlert } from "lucide-react"
+import { ChevronDown, ExternalLink, ListChecks } from "lucide-react"
+import { CopyButton } from "@/components/admin/copy-button"
 import type { SiteStructure, StructurePage } from "@/lib/admin/seo"
 import { aiPrompt, manualSteps, type PromptPage } from "@/lib/admin/seo-prompts"
 
@@ -268,32 +269,5 @@ function PageDetail({ id, p, sectionLabel }: { id: string; p: StructurePage; sec
         </ol>
       )}
     </div>
-  )
-}
-
-function CopyButton({ text }: { text: () => string }) {
-  const [state, setState] = useState<"idle" | "copied" | "failed">("idle")
-  const [fallback, setFallback] = useState<string | null>(null)
-  const copy = async () => {
-    const value = text()
-    try {
-      await navigator.clipboard.writeText(value)
-      setState("copied")
-      setFallback(null)
-      setTimeout(() => setState("idle"), 1800)
-    } catch {
-      setState("failed")
-      setFallback(value)
-    }
-  }
-  return (
-    <>
-      <button type="button" onClick={copy} className="v-cta inline-flex h-9 items-center gap-1.5 rounded-full px-3.5 text-[13.5px] font-medium transition-[opacity,transform] duration-150 ease-out outline-none hover:opacity-90 focus-visible:ring-2 focus-visible:ring-v-ink focus-visible:ring-offset-2 active:scale-[0.97]">
-        {state === "copied" ? <Check className="size-4" aria-hidden="true" /> : state === "failed" ? <TriangleAlert className="size-4" aria-hidden="true" /> : <Sparkles className="size-4" aria-hidden="true" />}
-        <span aria-live="polite">{state === "copied" ? "Prompt copied" : state === "failed" ? "Copy failed, select below" : "Fix with Claude Code: copy prompt"}</span>
-        {state === "idle" && <ClipboardCopy className="size-3.5 opacity-70" aria-hidden="true" />}
-      </button>
-      {fallback && <textarea readOnly value={fallback} onFocus={(e) => e.currentTarget.select()} className="mt-2 h-48 w-full rounded-xl bg-v-bg p-3 font-[family-name:var(--v-font-mono)] text-[12px] outline-none focus-visible:ring-2 focus-visible:ring-v-ink" />}
-    </>
   )
 }

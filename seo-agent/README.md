@@ -36,6 +36,17 @@ something every week makes it impossible to see what worked. So:
 | monthly | decay, cannibalisation, internal links, competitor diff | briefs + ≤ 2 link PRs |
 | quarterly | market and scope | one paragraph |
 
+## Community questions (since 2026-11-06)
+
+Next to the search data, a Vercel cron (`app/api/cron/content-scan`, Friday 20:00 start, 22:00 collect) pulls
+what people ask on Reddit (keyword searches), in Google's "People also ask" and related searches, and on
+gutefrage.net (`site:` queries) through Apify. The queries and limits are the `community` block in
+`config.json`. Claude turns the week's new questions into at most 8 ideas (new article, adjustment to an
+existing page, tool people look for), each with quotes as evidence and a brief. They land in
+`content_suggestions` and show on `/admin/blog`, where Hannes plans, finishes or dismisses them and copies
+a Claude Code prompt per idea. Rules are the same as here: a prompt ends in a draft PR, never a published
+page; dismissed ideas are never proposed again. Facebook groups are login-gated and not scanned.
+
 ## What an agent may touch
 
 See `editable_surfaces` and `protected_paths` in `seo-agent/config.json`. In short: titles, meta

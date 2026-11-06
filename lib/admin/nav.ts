@@ -1,4 +1,4 @@
-import { FileSearch, Filter, LayoutGrid, ListChecks, Mail, Milestone, Search, Users, type LucideIcon } from "lucide-react"
+import { FileSearch, Filter, LayoutGrid, ListChecks, Mail, Milestone, Newspaper, Search, Users, type LucideIcon } from "lucide-react"
 import { EXAM_IDS, EXAMS, type ExamId } from "@/lib/exams"
 
 // The admin navigation in one place: the desktop sidebar and the mobile drawer both render it, so they can't drift.
@@ -42,6 +42,7 @@ export const ADMIN_NAV: AdminNavSection[] = [
         nested: true,
         children: ADMIN_EXAMS.map((e) => ({ href: modelltestPath(e), level: EXAMS[e].levels.join("–"), label: EXAMS[e].short ?? EXAMS[e].name })),
       },
+      { href: "/admin/blog", label: "Blog", icon: Newspaper },
       { href: "/design/kurztest", label: "Gratis-Test-Inhalte", icon: FileSearch },
     ],
   },
