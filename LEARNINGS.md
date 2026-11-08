@@ -868,3 +868,9 @@
 **Outcome:** SUCCESS locally (tsc, eslint, `next build`; Playwright `.unit-cache/e2e/modelltest-shot.mts` at 1440 + 390, no page errors).
 **What worked / went wrong:** Research first: Apify `apify/google-search-scraper` (8 buying-intent queries, DE) showed the "DTZ Modelltest online" SERP is PDFs, books, gast.de and exercise sites, with related queries "DTZ B1 Prüfung Online-Test" and "Modelltest mit Lösung"; our own `/dtz` 308s to a blog article, so the product had no public page. GSC (W45) confirmed the site's biggest impression cluster is "B1 Brief schreiben", but that is owned by the blog. `harshmaur/reddit-scraper` with the phrase "DTZ" returned unrelated threads (substring match on titles); Reddit is useless for this niche query. `pageMetadata()` adds uk/ru hreflang to every page: a German-only page needs its own metadata.
 **Lesson:** Before a new landing, scrape the SERP for the buying-intent query and check whether the product even has a public URL; the gap was structural, not a copy problem. Don't state Modelltest counts on marketing pages until production confirms them (local has 0 published).
+
+## 2026-11-08 — /admin/seo crashed on skipped snapshot sources
+**Changed:** `lib/admin/seo.ts` (and `scripts/seo-agent/pages.mjs`) read `snapshot.sites?.[SITE_KEY]` instead of `snapshot.sites[SITE_KEY]`.
+**Outcome:** SUCCESS
+**What worked / went wrong:** The 2026-W45 snapshot had gsc/bing/geo skipped (no key), and a skipped source is written as `{ week, generated_at, skipped }` with no `sites`. The loader assumed `sites` always exists, so production threw `Cannot read properties of undefined (reading 'deutschtest')`. Reproduced by running `loadSeoCockpit()` against the committed snapshot before and after.
+**Lesson:** Every snapshot reader must treat a source as possibly skipped: optional-chain `sites`, and type it `sites?:`.

@@ -19,9 +19,9 @@ const ROOT = 'seo-agent';
 const weeks = readdirSync(`${ROOT}/data`).filter(d => /^\d{4}-W\d{2}$/.test(d)).sort();
 if (!weeks.length) throw new Error('no snapshot yet: run node scripts/seo-agent/collect.mjs --only health first');
 const latest = weeks.at(-1);
-const health = JSON.parse(readFileSync(`${ROOT}/data/${latest}/health.json`, 'utf8')).sites.deutschtest;
+const health = JSON.parse(readFileSync(`${ROOT}/data/${latest}/health.json`, 'utf8')).sites?.deutschtest ?? {};
 let gsc = null;
-try { gsc = JSON.parse(readFileSync(`${ROOT}/data/${latest}/gsc.json`, 'utf8')).sites.deutschtest; } catch {}
+try { gsc = JSON.parse(readFileSync(`${ROOT}/data/${latest}/gsc.json`, 'utf8')).sites?.deutschtest; } catch {}
 const toPath = url => decodeURI(url.replace(/^https?:\/\/[^/]+/, '')) || '/';
 const demand = new Map((gsc?.previous?.page ?? []).map(r => [toPath(r.keys[0]), r.impressions]));
 
