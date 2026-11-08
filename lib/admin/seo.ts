@@ -129,9 +129,9 @@ export async function loadSeoCockpit(now = new Date()): Promise<SeoCockpit> {
     fetchLiveGsc(now),
     fetchLiveBing(),
     latestWeek ? json<{ generated_at: string; sources: Record<string, string> }>(`data/${latestWeek}/index.json`) : null,
-    latestWeek ? json<{ sites: Record<string, GscSite> }>(`data/${latestWeek}/gsc.json`) : null,
-    latestWeek ? json<{ sites: Record<string, BingSite> }>(`data/${latestWeek}/bing.json`) : null,
-    latestWeek ? json<{ sites: Record<string, HealthSite> }>(`data/${latestWeek}/health.json`) : null,
+    latestWeek ? json<{ sites?: Record<string, GscSite> }>(`data/${latestWeek}/gsc.json`) : null,
+    latestWeek ? json<{ sites?: Record<string, BingSite> }>(`data/${latestWeek}/bing.json`) : null,
+    latestWeek ? json<{ sites?: Record<string, HealthSite> }>(`data/${latestWeek}/health.json`) : null,
     latestWeek ? json<GeoSnapshot & { skipped?: string }>(`data/${latestWeek}/geo.json`) : null,
     json<{ entries: LedgerEntry[] }>("ledger.json"),
     json<{ items: Recommendation[] }>("recommendations.json"),
@@ -144,28 +144,29 @@ export async function loadSeoCockpit(now = new Date()): Promise<SeoCockpit> {
   // Old → new: first the backfills, then every week; the newest snapshot wins per day.
   const googleRuns: GscDay[][] = []
   for (const f of history.filter((f) => f.startsWith("gsc-daily-"))) {
-    const h = await json<{ sites: Record<string, GscDay[]> }>(`data/history/${f}`)
-    if (h?.sites[SITE_KEY]) googleRuns.push(h.sites[SITE_KEY])
+    const h = await json<{ sites?: Record<string, GscDay[]> }>(`data/history/${f}`)
+    const run = h?.sites?.[SITE_KEY]
+    if (run) googleRuns.push(run)
   }
   for (const w of weeks) {
-    const g = w === latestWeek ? gsc : await json<{ sites: Record<string, GscSite> }>(`data/${w}/gsc.json`)
-    const d = g?.sites[SITE_KEY]?.daily
+    const g = w === latestWeek ? gsc : await json<{ sites?: Record<string, GscSite> }>(`data/${w}/gsc.json`)
+    const d = g?.sites?.[SITE_KEY]?.daily
     if (d) googleRuns.push(d)
   }
   const live = liveGsc && !("error" in liveGsc) ? liveGsc : null
   if (live) googleRuns.push(live.daily)
-  const bingRows = liveBing ?? bing?.sites[SITE_KEY]?.GetRankAndTrafficStats ?? []
+  const bingRows = liveBing ?? bing?.sites?.[SITE_KEY]?.GetRankAndTrafficStats ?? []
   const today = now.toISOString().slice(0, 10)
   const daily = markPreliminary(mergeDaily(googleRuns, Array.isArray(bingRows) ? bingRows : []), today)
 
-  const g = gsc?.sites[SITE_KEY]
+  const g = gsc?.sites?.[SITE_KEY]
   const near: NearQuery[] = (g?.current?.query_page ?? [])
     .filter((r) => r.position >= 4 && r.position <= 20 && r.impressions >= 5)
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 6)
     .map((r) => ({ query: r.keys[0], page: r.keys[1], impressions: r.impressions, clicks: r.clicks, position: r.position }))
 
-  const h = health?.sites[SITE_KEY]
+  const h = health?.sites?.[SITE_KEY]
   const problems = Object.entries(h?.problems ?? {})
   const errors = problems.map(([url, issues]) => ({ url, issues: issues.filter((i) => !LENGTH_ISSUE.test(i)) })).filter((p) => p.issues.length > 0)
 
