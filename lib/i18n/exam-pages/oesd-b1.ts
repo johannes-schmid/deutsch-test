@@ -12,7 +12,7 @@ export const page: ExamPage = {
     eyebrow: "Gratis-Test · ÖSD Zertifikat B1 · B1",
     h1: "ÖSD Zertifikat B1 gratis testen",
     lead: "Die Prüfung hat vier Module. Du kannst jedes Modul einzeln machen. Viele Texte spielen in Österreich und der Schweiz. Du hörst Stimmen aus beiden Ländern. Wähl ein Modul. Jeder Kurztest dauert etwa 5 Minuten.",
-    note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+    note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
     disclaimer: "Übungstest im Format des ÖSD Zertifikats B1. Wir sind nicht mit dem ÖSD verbunden.",
   },
   skills: {

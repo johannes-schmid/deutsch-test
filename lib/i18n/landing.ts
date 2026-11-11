@@ -100,7 +100,7 @@ const de = {
       { q: "Gibt es Erklärungen in meiner Sprache?", a: "Ja, auf Ukrainisch und Russisch. Die ganze Seite gibt es auch in diesen Sprachen, maschinell aus dem Deutschen übersetzt. Die Prüfungsaufgaben bleiben auf Deutsch, wie in der Prüfung." },
     ],
   },
-  cta: { h2: "Bereit für den Prüfungstag?", text: "Mach jetzt deinen ersten Modelltest. Gratis und ohne Anmeldung.", button: "Gratis Test starten" },
+  cta: { h2: "Bereit für den Prüfungstag?", text: "Mach jetzt deinen ersten Gratis-Test. Lesen und Hören ohne Anmeldung.", button: "Gratis Test starten" },
   footer: { blurb: "Realistische Modelltests für Goethe, telc, DTZ und ÖSD. Gleiche Teile, gleiche Zeiten.", disclaimer: "Nicht verbunden mit BAMF, telc, g.a.s.t., Goethe-Institut oder ÖSD", imprint: "Impressum", privacy: "Datenschutz", terms: "AGB", withdrawal: "Widerrufsbelehrung", cancel: "Verträge hier kündigen", about: "Über uns", blog: "Blog", contact: "Kontakt", groups: { exam: "Prüfung", info: "Info" } },
   parts: {
     hoeren: { name: "Hören", meta: "ca. 25 Min" },
@@ -257,7 +257,7 @@ const en: LandingCopy = {
       { q: "Are there explanations in my language?", a: "Yes, in Ukrainian and Russian. The whole site is also available in both, machine-translated from German. The exam tasks stay in German, as in the real exam." },
     ],
   },
-  cta: { h2: "Ready for exam day?", text: "Take your first mock exam now. Free, no account needed.", button: "Start free test" },
+  cta: { h2: "Ready for exam day?", text: "Take your first free test now. Reading and listening need no account.", button: "Start free test" },
   footer: { blurb: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Same parts, same timing.", disclaimer: "Not affiliated with BAMF, telc, g.a.s.t., Goethe-Institut or ÖSD", imprint: "Imprint", privacy: "Privacy", terms: "Terms (AGB)", withdrawal: "Right of withdrawal", cancel: "Cancel contracts here", about: "About us", blog: "Blog", contact: "Contact", groups: { exam: "Exam", info: "Info" } },
   parts: {
     hoeren: { name: "Listening", meta: "approx. 25 min" },

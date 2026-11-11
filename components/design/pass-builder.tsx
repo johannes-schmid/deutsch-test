@@ -1,13 +1,15 @@
 "use client"
 
-import { useEffect, useId, useRef, useState, useSyncExternalStore, type RefObject } from "react"
+import { Suspense, useEffect, useId, useRef, useState, useSyncExternalStore, type RefObject } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ArrowRight, CalendarCheck, CalendarClock, Check, LoaderCircle, Lock, Plus, Repeat } from "lucide-react"
+import { GoogleButton, GoogleButtonFallback } from "@/components/auth/google-button"
 import { VButton } from "@/components/design/kit"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { track } from "@/lib/analytics"
 import { PASS_COPY } from "@/lib/i18n/pass"
+import { KURZTEST } from "@/lib/i18n/kurztest"
 import { NUMBER_LOCALE, type SiteLocale } from "@/lib/i18n/locale"
 import { SKILLS } from "@/lib/billing/grants"
 import type { PartId } from "@/lib/exam/types"
@@ -34,6 +36,16 @@ type BuilderProps = {
   current?: string | null
   /** Phones: lift the floating buy bar above the portal's tab bar. */
   aboveTabBar?: boolean
+  /** Skills layout, paywall: the skills checked at first (the Teil of the free test, or the pick carried through Google). */
+  initial?: PartId[]
+  /** Skills layout, paywall, signed out: the pay card signs in with Google and comes back to this path for the chosen offer. */
+  signIn?: (planId: string) => string
+  /** Where Mollie returns to after paying (a portal path). */
+  next?: string
+  /** Bring the order summary into view once (back from Google, on a phone the summary is below the packages). */
+  showSummary?: boolean
+  /** The `surface` of the view_pricing event; defaults to portal or site. */
+  surface?: string
 }
 
 // The portal's Suspense fallback mounts a builder before the real one; count that as one view.
@@ -44,8 +56,8 @@ export function PassBuilder(props: BuilderProps) {
   useEffect(() => {
     if (Date.now() - lastView < 3000) return
     lastView = Date.now()
-    track("view_pricing", { surface: props.checkout ? "portal" : "site", locale: props.locale })
-  }, [props.checkout, props.locale])
+    track("view_pricing", { surface: props.surface ?? (props.checkout ? "portal" : "site"), locale: props.locale })
+  }, [props.checkout, props.locale, props.surface])
   return ACTIVE_LAYOUT === "skills" ? <SkillPassBuilder {...props} /> : <TermPassBuilder {...props} />
 }
 
@@ -292,7 +304,7 @@ function BuyBar({ target, aboveTabBar, label, price, unit, cta }: { target: RefO
  * preselected. A learner with a running pass keeps their skills checked and locked; adding any turns the order into a
  * switch (the monthly difference now, then the new price on the same subscription).
  */
-function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref, defaultSkill = null, current = null, aboveTabBar = false }: BuilderProps) {
+function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewing = false, accountHref, defaultSkill = null, current = null, aboveTabBar = false, initial, signIn, next, showSummary = false }: BuilderProps) {
   const T = PASS_COPY[locale]
   const S = T.skills
   const euro = (cents: number) => formatEuro(cents, NUMBER_LOCALE[locale])
@@ -300,7 +312,7 @@ function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewin
   const one = PLANS.find((p) => p.grants.skills.length === 1)!
   const running = renewing && current ? offerById(current) : null
   const owned = running?.catalogue === all.catalogue ? running.grants.skills : []
-  const [picked, setPicked] = useState<PartId[]>(owned.length ? owned : defaultSkill ? [defaultSkill] : SKILLS)
+  const [picked, setPicked] = useState<PartId[]>(owned.length ? owned : initial?.length ? initial : defaultSkill ? [defaultSkill] : SKILLS)
   const offer = coveringOffer(picked)
   const isAll = offer?.id === all.id
   const covered = offer?.grants.skills ?? []
@@ -313,6 +325,9 @@ function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewin
   const nudge = S.nudge(picked.length, euro(one.cents), euro(all.cents))
   const summary = useRef<HTMLElement>(null)
   const canBuy = !!offer && (upgradeCents !== null ? checkout : !renewing)
+  useEffect(() => {
+    if (showSummary) summary.current?.scrollIntoView({ block: "center" })
+  }, [showSummary])
 
   const toggle = (s: PartId) => setPicked((p) => (p.includes(s) ? p.filter((x) => x !== s) : SKILLS.filter((x) => x === s || p.includes(x))))
   const toggleAll = () => setPicked(isAll ? owned : SKILLS)
@@ -467,7 +482,7 @@ function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewin
             ))}
           </ul>
           {!offer ? null : upgradeCents !== null && checkout ? (
-            <Checkout planId={offer.id} T={T} orderLabel={S.upgradeOrder} />
+            <Checkout planId={offer.id} T={T} orderLabel={S.upgradeOrder} next={next} />
           ) : renewing ? (
             <div className="flex flex-col gap-3">
               <p className="text-[14.5px] text-white/85">{unchanged && owned.length < SKILLS.length ? S.renewingSkill : T.renewing}</p>
@@ -477,7 +492,14 @@ function SkillPassBuilder({ locale, freeHref, buyHref, checkout = false, renewin
               </VButton>
             </div>
           ) : checkout ? (
-            <Checkout planId={offer.id} T={T} />
+            <Checkout planId={offer.id} T={T} next={next} />
+          ) : signIn ? (
+            <div className="flex flex-col gap-3">
+              <Suspense fallback={<GoogleButtonFallback mode="register" label={T.googlePay.label} night />}>
+                <GoogleButton mode="register" next={signIn(offer.id)} labels={{ ...T.googlePay, notice: KURZTEST[locale].wall.google.notice }} night />
+              </Suspense>
+              <p className="text-[13.5px] text-white/70">{T.googlePayNote}</p>
+            </div>
           ) : (
             <div className="flex flex-col gap-3">
               <VButton kind="light" size="lg" render={<Link href={buyHref ?? "/dashboard/preise"} />} nativeButton={false} className="w-full">

@@ -3,10 +3,14 @@ import { berlinWeek, type SignupWeek } from "@/lib/admin/sales"
 // The Modelltest funnel for /admin/funnel: sign-up → Modelltest started → halfway paywall seen → checkout → paid.
 // Pure, so it is unit-tested; the fetching lives in lib/admin/stats.ts. Weeks are Berlin weeks like the sales numbers.
 //
-// A paywall sighting is `mt_attempts.paused` (written when the free half ends) and is cleared once the learner pays and
-// goes on. So a buyer is counted as having seen the paywall when they had a Modelltest 1 attempt before their checkout.
+// A paywall sighting is `mt_attempts.paywall_at`, written once when the free half ends and never cleared. Attempts from
+// before that column (2026-11-11) only have `paused`, which paying clears, so for those a buyer still counts as having
+// seen the paywall when they had a Modelltest 1 attempt before their checkout.
 
-export type FunnelAttempt = { user_id: string; exam: string; skill: string; number: number; started_at: string; paused: { at?: string } | null }
+export type FunnelAttempt = { user_id: string; exam: string; skill: string; number: number; started_at: string; paused: { at?: string } | null; paywall_at?: string | null }
+
+/** When the learner first stood at the halfway stop of this attempt, or null. */
+const sighting = (a: FunnelAttempt) => a.paywall_at ?? a.paused?.at ?? null
 export type FunnelPayment = { user_id: string | null; kind: string; status: string; created_at: string; paid_at: string | null }
 
 export type FunnelWeek = {
@@ -14,9 +18,9 @@ export type FunnelWeek = {
   signups: number
   /** People who started any Modelltest. */
   started: number
-  /** People who reached the halfway stop (paused attempts, plus buyers whose pause was cleared by paying). */
+  /** People who reached the halfway stop. */
   paywall: number
-  /** Attempts still waiting at the halfway stop. */
+  /** Attempts that reached the halfway stop. */
   paywallAttempts: number
   /** People who opened a Mollie checkout for a first purchase. */
   checkout: number
@@ -36,7 +40,7 @@ export function computeFunnel({ signups, attempts, payments, now = new Date() }:
   for (const a of attempts) if (a.number === 1 && (!firstModelltest.has(a.user_id) || a.started_at < firstModelltest.get(a.user_id)!)) firstModelltest.set(a.user_id, a.started_at)
 
   const stages = (inWeek: (at: string) => boolean): Omit<FunnelWeek, "week" | "signups"> => {
-    const paused = attempts.filter((a) => a.paused?.at && inWeek(a.paused.at))
+    const paused = attempts.filter((a) => { const at = sighting(a); return !!at && inWeek(at) })
     const checkouts = firsts.filter((p) => inWeek(p.created_at))
     const paywallUsers = new Set(paused.map((a) => a.user_id))
     for (const p of checkouts) if ((firstModelltest.get(p.user_id!) ?? "￿") <= p.created_at) paywallUsers.add(p.user_id!)
@@ -52,10 +56,11 @@ export function computeFunnel({ signups, attempts, payments, now = new Date() }:
 
   const bySkill = new Map<string, FunnelSkillRow>()
   for (const a of attempts) {
-    if (!a.paused?.at) continue
+    const at = sighting(a)
+    if (!at) continue
     const key = `${a.exam}/${a.skill}`
     const row = bySkill.get(key) ?? { exam: a.exam, skill: a.skill, thisWeek: 0, lastWeek: 0, total: 0 }
-    const w = berlinWeek(a.paused.at)
+    const w = berlinWeek(at)
     row.total++
     if (w === week) row.thisWeek++
     else if (w === last) row.lastWeek++

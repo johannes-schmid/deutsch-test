@@ -32,6 +32,27 @@ export type PassCopy = {
   /** Public /preise: the button leads into the portal (Google sign-in first). */
   buy: string
   buyNote: string
+  /** The paywall after a free test: sign in with Google, then the order summary. */
+  googlePay: { label: string; pending: string }
+  googlePayNote: string
+  paywall: {
+    title: string
+    h1: string
+    h1Muted: string
+    lead: (test: string) => string
+    leadPlain: string
+    stepsH: string
+    steps: string[]
+    back: string
+    hub: string
+    signedIn: string
+    /** The two benefit steps before the packages: three points each, shown next to a product screen. */
+    why: { points: { title: string; text: string }[]; cta: string }
+    see: { h1: string; h1Muted: string; lead: string; points: { title: string; text: string }[]; cta: string }
+    plans: { h1: string; h1Muted: string }
+    prev: string
+    progress: (step: number, of: number) => string
+  }
   /** Portal checkout. TODO(hannes): have the consent wording (§ 356 Abs. 5 / § 357a BGB) checked before going live. */
   consent: string
   consentNeeded: string
@@ -119,6 +140,42 @@ const de: PassCopy = {
   trust: ["Kündigen mit einem Klick im Konto", "Preis inkl. MwSt."],
   buy: "Pass kaufen",
   buyNote: "Du meldest dich mit Google an. Dann geht es zur Zahlung.",
+  googlePay: { label: "Mit Google weiter zur Zahlung", pending: "Google wird geöffnet …" },
+  googlePayNote: "Du meldest dich an. Danach siehst du deine Bestellung und bezahlst.",
+  paywall: {
+    title: "Weiter mit dem Modelltest | deutschtest üben",
+    h1: "Jetzt die ganze Prüfung üben.",
+    h1Muted: "Teil für Teil, wie am Prüfungstag.",
+    lead: (test) => `Du hast den Gratis-Test ${test} gemacht. Im Modelltest übst du jeden Teil in voller Länge, mit der Zeit und den Aufgaben der Prüfung.`,
+    leadPlain: "Im Modelltest übst du jeden Teil in voller Länge, mit der Zeit und den Aufgaben der Prüfung.",
+    stepsH: "So geht es weiter",
+    steps: ["Wähl die Teile, die du üben willst.", "Melde dich mit Google an und bezahle.", "Starte sofort mit Modelltest 1."],
+    back: "Zum Ergebnis",
+    hub: "Gratis-Tests",
+    signedIn: "Du bist angemeldet. Prüf deine Bestellung und bezahle.",
+    why: {
+      points: [
+        { title: "Gleiche Teile, gleiche Zeit", text: "Jeder Modelltest hat die Aufgaben und die Zeit der echten Prüfung." },
+        { title: "Hören wie in der Prüfung", text: "Mehrere Stimmen und echte Situationen. Kein Zurückspulen, wo die Prüfung keins hat." },
+        { title: "Sprechen zu zweit", text: "Du sprichst mit Prüferin und Partner, nicht allein ins Mikrofon." },
+      ],
+      cta: "Weiter",
+    },
+    see: {
+      h1: "Sieh genau, was dir noch fehlt.",
+      h1Muted: "Nach jedem Modelltest.",
+      lead: "Du bekommst dein Ergebnis so, wie die Prüfung es bewertet. So weißt du, welchen Teil du noch üben musst.",
+      points: [
+        { title: "Ergebnis pro Teil", text: "Hören, Lesen, Schreiben und Sprechen einzeln, im Format deiner Prüfung." },
+        { title: "Feedback für Schreiben und Sprechen", text: "Nach den Kriterien der Prüfung. Du siehst, wo du Punkte verlierst." },
+        { title: "Erklärungen auf Ukrainisch und Russisch", text: "Die Prüfung bleibt auf Deutsch. Die Erklärung kannst du in deiner Sprache lesen." },
+      ],
+      cta: "Pakete ansehen",
+    },
+    plans: { h1: "Wähl deine Teile.", h1Muted: "Alle vier zum Preis von drei." },
+    prev: "Zurück",
+    progress: (step, of) => `Schritt ${step} von ${of}`,
+  },
   consent: "Mein Pass soll sofort starten. Mir ist bekannt, dass mein Widerrufsrecht damit erlischt.",
   consentNeeded: "Bitte bestätige zuerst, dass dein Pass sofort starten soll.",
   order: "Zahlungspflichtig bestellen",
@@ -223,6 +280,42 @@ const uk: PassCopy = {
   trust: ["Скасування одним кліком в акаунті", "Ціна з ПДВ"],
   buy: "Купити пропуск",
   buyNote: "Ви входите через Google. Потім переходите до оплати.",
+  googlePay: { label: "Далі до оплати через Google", pending: "Відкриваємо Google …" },
+  googlePayNote: "Ви входите в акаунт. Потім бачите своє замовлення й оплачуєте.",
+  paywall: {
+    title: "Далі до пробного іспиту | deutschtest üben",
+    h1: "Тепер тренуйте весь іспит.",
+    h1Muted: "Частина за частиною, як у день іспиту.",
+    lead: (test) => `Ви пройшли безкоштовний тест ${test}. У пробному іспиті ви тренуєте кожну частину повністю, з часом і завданнями іспиту.`,
+    leadPlain: "У пробному іспиті ви тренуєте кожну частину повністю, з часом і завданнями іспиту.",
+    stepsH: "Що далі",
+    steps: ["Оберіть частини, які хочете тренувати.", "Увійдіть через Google і оплатіть.", "Одразу починайте пробний іспит 1."],
+    back: "До результату",
+    hub: "Безкоштовні тести",
+    signedIn: "Ви увійшли. Перевірте замовлення й оплатіть.",
+    why: {
+      points: [
+        { title: "Ті самі частини, той самий час", text: "Кожен пробний іспит має завдання і час справжнього іспиту." },
+        { title: "Аудіювання як на іспиті", text: "Кілька голосів і справжні ситуації. Без перемотування там, де його немає на іспиті." },
+        { title: "Говоріння удвох", text: "Ви говорите з екзаменаторкою і партнером, а не самі в мікрофон." },
+      ],
+      cta: "Далі",
+    },
+    see: {
+      h1: "Побачте точно, чого вам ще бракує.",
+      h1Muted: "Після кожного пробного іспиту.",
+      lead: "Ви отримуєте результат так, як його оцінює іспит. Так ви знаєте, яку частину ще треба тренувати.",
+      points: [
+        { title: "Результат за кожну частину", text: "Аудіювання, читання, письмо і говоріння окремо, у форматі вашого іспиту." },
+        { title: "Відгук на письмо і говоріння", text: "За критеріями іспиту. Ви бачите, де втрачаєте бали." },
+        { title: "Пояснення українською та російською", text: "Іспит залишається німецькою. Пояснення можна читати своєю мовою." },
+      ],
+      cta: "Переглянути пакети",
+    },
+    plans: { h1: "Оберіть свої частини.", h1Muted: "Усі чотири за ціною трьох." },
+    prev: "Назад",
+    progress: (step, of) => `Крок ${step} з ${of}`,
+  },
   consent: "Мій пропуск має почати діяти одразу. Я знаю, що через це втрачаю право на відмову.",
   consentNeeded: "Спочатку підтвердьте, що пропуск має почати діяти одразу.",
   order: "Замовити з оплатою",
@@ -327,6 +420,42 @@ const ru: PassCopy = {
   trust: ["Отмена одним кликом в аккаунте", "Цена с НДС"],
   buy: "Купить пропуск",
   buyNote: "Вы входите через Google. Затем переходите к оплате.",
+  googlePay: { label: "Далее к оплате через Google", pending: "Открываем Google …" },
+  googlePayNote: "Вы входите в аккаунт. Затем видите свой заказ и оплачиваете.",
+  paywall: {
+    title: "Далее к пробному экзамену | deutschtest üben",
+    h1: "Теперь тренируйте весь экзамен.",
+    h1Muted: "Часть за частью, как в день экзамена.",
+    lead: (test) => `Вы прошли бесплатный тест ${test}. В пробном экзамене вы тренируете каждую часть полностью, со временем и заданиями экзамена.`,
+    leadPlain: "В пробном экзамене вы тренируете каждую часть полностью, со временем и заданиями экзамена.",
+    stepsH: "Что дальше",
+    steps: ["Выберите части, которые хотите тренировать.", "Войдите через Google и оплатите.", "Сразу начинайте пробный экзамен 1."],
+    back: "К результату",
+    hub: "Бесплатные тесты",
+    signedIn: "Вы вошли. Проверьте заказ и оплатите.",
+    why: {
+      points: [
+        { title: "Те же части, то же время", text: "В каждом пробном экзамене задания и время настоящего экзамена." },
+        { title: "Аудирование как на экзамене", text: "Несколько голосов и настоящие ситуации. Без перемотки там, где её нет на экзамене." },
+        { title: "Говорение вдвоём", text: "Вы говорите с экзаменатором и партнёром, а не одни в микрофон." },
+      ],
+      cta: "Далее",
+    },
+    see: {
+      h1: "Увидьте точно, чего вам ещё не хватает.",
+      h1Muted: "После каждого пробного экзамена.",
+      lead: "Вы получаете результат так, как его оценивает экзамен. Так вы знаете, какую часть ещё нужно тренировать.",
+      points: [
+        { title: "Результат по каждой части", text: "Аудирование, чтение, письмо и говорение отдельно, в формате вашего экзамена." },
+        { title: "Отзыв на письмо и говорение", text: "По критериям экзамена. Вы видите, где теряете баллы." },
+        { title: "Объяснения на украинском и русском", text: "Экзамен остаётся на немецком. Объяснение можно читать на своём языке." },
+      ],
+      cta: "Посмотреть пакеты",
+    },
+    plans: { h1: "Выберите свои части.", h1Muted: "Все четыре по цене трёх." },
+    prev: "Назад",
+    progress: (step, of) => `Шаг ${step} из ${of}`,
+  },
   consent: "Мой пропуск должен начать действовать сразу. Я знаю, что из-за этого теряю право на отказ.",
   consentNeeded: "Сначала подтвердите, что пропуск должен начать действовать сразу.",
   order: "Заказать с оплатой",

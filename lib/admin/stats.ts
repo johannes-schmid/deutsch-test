@@ -45,7 +45,7 @@ export const salesOverview = cache(async (): Promise<SalesView> => {
 export const funnelOverview = cache(async (): Promise<Funnel> => {
   const db = createAdminClient()
   const [attempts, payments, signups] = await Promise.all([
-    pages<FunnelAttempt>((from, to) => db.from("mt_attempts").select("user_id, exam, skill, number, started_at, paused").order("started_at").range(from, to)),
+    pages<FunnelAttempt>((from, to) => db.from("mt_attempts").select("user_id, exam, skill, number, started_at, paused, paywall_at").order("started_at").range(from, to)),
     pages<FunnelPayment>((from, to) => db.from("payments").select("user_id, kind, status, created_at, paid_at").order("created_at").range(from, to)),
     signupsPerWeek(),
   ])

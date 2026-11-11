@@ -12,7 +12,7 @@ export const page: ExamPage = {
     eyebrow: "Gratis-Test · Goethe-Zertifikat B1 · B1",
     h1: "Goethe-Zertifikat B1 gratis testen",
     lead: "Die Prüfung hat vier Module. Du kannst jedes Modul einzeln machen. Das ÖSD Zertifikat B1 hat die gleichen Aufgaben. Wähl ein Modul. Jeder Kurztest dauert etwa 5 Minuten.",
-    note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+    note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
     disclaimer: "Übungstest im Format des Goethe-Zertifikats B1. Wir sind nicht mit dem Goethe-Institut verbunden.",
   },
   skills: {

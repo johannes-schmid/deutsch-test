@@ -11,7 +11,7 @@ export const page: ExamPage = {
     eyebrow: "Gratis-Test · ÖSD Zertifikat A2 · A2",
     h1: "ÖSD Zertifikat A2 gratis testen",
     lead: "Wähl einen Teil. Jeder Kurztest dauert etwa 5 Minuten und hat Aufgaben wie das ÖSD Zertifikat A2. Du hörst Stimmen aus Österreich, Deutschland und der Schweiz. Danach siehst du dein Ergebnis mit allen Lösungen.",
-    note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+    note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
     disclaimer: "Übungstest im Format des ÖSD Zertifikats A2. Wir sind nicht mit dem ÖSD verbunden.",
   },
   skills: {

@@ -12,7 +12,7 @@ export const page: ExamPage = {
     eyebrow: "Gratis-Test · telc Deutsch B1 · B1",
     h1: "telc Deutsch B1 gratis testen",
     lead: "Für telc Deutsch B1, auch Zertifikat Deutsch genannt. Wähl einen Teil. Jeder Kurztest dauert etwa 5 Minuten und hat Aufgaben wie in der Prüfung.",
-    note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+    note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
     disclaimer: "Übungstest im Format von telc Deutsch B1. Wir sind nicht mit telc verbunden.",
   },
   skills: {

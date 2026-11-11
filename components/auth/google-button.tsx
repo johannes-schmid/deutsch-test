@@ -22,9 +22,9 @@ function GoogleG() {
   )
 }
 
-function Button({ label, pending, pendingLabel = T.pending, onClick, disabled }: { label: string; pending?: boolean; pendingLabel?: string; onClick?: () => void; disabled?: boolean }) {
+function Button({ label, pending, pendingLabel = T.pending, onClick, disabled, night }: { label: string; pending?: boolean; pendingLabel?: string; onClick?: () => void; disabled?: boolean; night?: boolean }) {
   return (
-    <VButton kind="ink" size="lg" onClick={onClick} disabled={disabled || pending} aria-busy={pending} className="w-full gap-3 disabled:opacity-70">
+    <VButton kind={night ? "light" : "ink"} size="lg" onClick={onClick} disabled={disabled || pending} aria-busy={pending} className="w-full gap-3 disabled:opacity-70">
       {pending ? <Loader2 className="size-5 animate-spin" aria-hidden="true" /> : <GoogleG />}
       {pending ? pendingLabel : label}
     </VButton>
@@ -35,8 +35,9 @@ function Button({ label, pending, pendingLabel = T.pending, onClick, disabled }:
  * The one Supabase Auth caller. Reads ?next and ?error, so it renders inside <Suspense> (fallback: GoogleButtonFallback).
  * `next` overrides ?next; `labels` replaces the German button text on translated pages. On sign-up it shows the notice that
  * every account gets the lifecycle emails and can object at any time (§ 7 Abs. 3 Nr. 4 UWG); /auth/callback records it.
+ * `night`: the button sits on a night card (the paywall's pay card), so it is light and its notice is white.
  */
-export function GoogleButton({ mode, next: nextPath, labels }: { mode: "register" | "login"; next?: string; labels?: { label: string; pending: string; notice?: string } }) {
+export function GoogleButton({ mode, next: nextPath, labels, night }: { mode: "register" | "login"; next?: string; labels?: { label: string; pending: string; notice?: string }; night?: boolean }) {
   const params = useSearchParams()
   const [pending, setPending] = useState(false)
   const [error, setError] = useState(() => authError(params.get("error")))
@@ -58,8 +59,8 @@ export function GoogleButton({ mode, next: nextPath, labels }: { mode: "register
 
   return (
     <div className="flex flex-col gap-3">
-      <Button label={labels?.label ?? T[mode]} pendingLabel={labels?.pending} pending={pending} onClick={signIn} />
-      {notice ? <p className="text-pretty text-start text-[13px] leading-snug text-v-muted">{notice}</p> : null}
+      <Button label={labels?.label ?? T[mode]} pendingLabel={labels?.pending} pending={pending} onClick={signIn} night={night} />
+      {notice ? <p className={`text-pretty text-start text-[13px] leading-snug ${night ? "text-white/70" : "text-v-muted"}`}>{notice}</p> : null}
       {error ? (
         <p role="alert" className="rounded-2xl bg-[color-mix(in_srgb,var(--v-sk-schreiben)_22%,var(--v-surface))] px-4 py-3 text-[14.5px] leading-snug text-v-ink">
           {error}
@@ -69,6 +70,6 @@ export function GoogleButton({ mode, next: nextPath, labels }: { mode: "register
   )
 }
 
-export function GoogleButtonFallback({ mode, label }: { mode: "register" | "login"; label?: string }) {
-  return <Button label={label ?? T[mode]} disabled />
+export function GoogleButtonFallback({ mode, label, night }: { mode: "register" | "login"; label?: string; night?: boolean }) {
+  return <Button label={label ?? T[mode]} disabled night={night} />
 }

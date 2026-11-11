@@ -141,6 +141,7 @@ export async function submitWriting(attemptId: string, answers: WritingAnswer[],
     const paused: Paused | null = locked ? { at: now, grade: locked } : null
     const { error } = await db.from("mt_attempts").update({ completed_at: now, graded_at: now, paused, score: result.score.points, max_score: result.score.max, result: { level: result.level ?? null, score: result.score, task: letters.map((l) => l.task!.key).join(","), grade: result } }).eq("id", o.attempt.id)
     if (error) throw error
+    if (locked) await markPaywall(o.attempt.id, now)
     return locked ? { ok: true, locked } : { ok: true, result }
   } catch (e) {
     console.error("modelltest writing grade failed", e instanceof Error ? e.message : e)
@@ -205,6 +206,15 @@ export async function skipSpeaking(attemptId: string, teil: number, from: number
   return { ok: !error }
 }
 
+/**
+ * The first time a learner stands at the halfway stop of an attempt, for /admin/funnel. Its own timestamp, because
+ * `paused` is cleared once they pay. Never fails the pause itself: a stop that works matters more than the count.
+ */
+async function markPaywall(attemptId: string, at: string) {
+  const { error } = await createAdminClient().from("mt_attempts").update({ paywall_at: at }).eq("id", attemptId).is("paywall_at", null)
+  if (error) console.error("modelltest paywall_at failed", error.message)
+}
+
 export type PauseInput = { values?: Record<string, string>; texts?: Record<string, string>; chosen?: Record<string, string>; left?: number }
 export type PauseResult = { ok: true; paused: Paused } | Fail
 
@@ -244,6 +254,7 @@ export async function pauseAttempt(attemptId: string, input: PauseInput): Promis
     }
     const { error } = await db.from("mt_attempts").update({ paused }).eq("id", o.attempt.id)
     if (error) throw error
+    await markPaywall(o.attempt.id, paused.at)
     return { ok: true, paused }
   } catch (e) {
     console.error("modelltest pause failed", e instanceof Error ? e.message : e)

@@ -62,7 +62,7 @@ const de = {
     writing: "Schreib zu allen Punkten",
   },
   about: {
-    closed: (min: number) => [`Ein Kurztest: ungefähr ${min} Minuten, ein paar Aufgaben aus jedem Teil der Prüfung.`, "Danach gibst du deine E-Mail-Adresse ein. Dann siehst du dein Ergebnis mit allen Lösungen und Erklärungen."],
+    closed: (min: number) => [`Ein Kurztest: ungefähr ${min} Minuten, ein paar Aufgaben aus jedem Teil der Prüfung.`, "Danach siehst du dein Ergebnis mit allen Lösungen und Erklärungen."],
     schreiben: (min: number) => [`Du schreibst ${min} Minuten lang einen kurzen Text, wie in der Prüfung.`, "Danach bekommst du Feedback zu deinem Text und eine Musterlösung. Dafür brauchst du ein Gratis-Konto."],
     sprechen: (min: number) => [`Ungefähr ${min} Minuten. Du hörst die Prüferin und deinen Partner und antwortest mit dem Mikrofon.`, "Danach siehst du, was wir verstanden haben, neben einer Beispielantwort. Dafür brauchst du ein Gratis-Konto."],
   },
@@ -149,6 +149,8 @@ const de = {
     time: (used: string, budget?: string) => (budget ? `Deine Zeit: ${used} von ${budget}.` : `Deine Zeit: ${used}.`),
     portalCta: "Im Portal weiterüben",
     registerCta: "Mit Gratis-Konto weiterüben",
+    paywallCta: "Weiter zum Modelltest",
+    paywallNote: "Die ganze Prüfung, Teil für Teil · Schon ein Konto?",
     portalNote: "Alle Prüfungen an einem Ort · Modelltests kommen bald",
     registerNote: "Gratis-Konto · keine Zahlungsdaten nötig ·",
     login: "Anmelden",
@@ -185,7 +187,7 @@ export const EXAM_PAGES: ExamPages = {
       eyebrow: "Gratis-Test · DTZ · A2–B1",
       h1: "Wie weit bist du von B1?",
       lead: "Wähl einen Teil. Jeder Kurztest dauert etwa 5 Minuten und hat die gleichen Aufgabentypen wie der Deutsch-Test für Zuwanderer. Danach siehst du dein Ergebnis mit allen Lösungen.",
-      note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+      note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
       disclaimer: "Übungstest im Format des DTZ. Wir sind nicht mit dem BAMF, telc oder g.a.s.t. verbunden.",
     },
     skills: {
@@ -234,7 +236,7 @@ export const EXAM_PAGES: ExamPages = {
       eyebrow: "Gratis-Test · Start Deutsch 1 · A1",
       h1: "Start Deutsch 1 gratis testen",
       lead: "Für das Goethe-Zertifikat A1 und telc Deutsch A1: Beide Prüfungen haben die gleichen Aufgaben. Wähl einen Teil. Jeder Kurztest dauert etwa 5 Minuten.",
-      note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+      note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
       disclaimer: "Übungstest im Format von Start Deutsch 1. Wir sind nicht mit dem Goethe-Institut oder telc verbunden.",
     },
     skills: {

@@ -120,6 +120,10 @@
 @media (prefers-reduced-motion: reduce) { .nz-float { animation: none; } }
 .nz-screen { animation: nz-in 420ms var(--ease-out-strong) both; }
 @keyframes nz-in { from { opacity: 0; transform: translateY(6px); filter: blur(4px); } }
+/* Paywall steps only fade: a transform here would pin the fixed buy bar and step button to the step. */
+.pw-step { animation: pw-in 240ms var(--ease-out-strong) both; }
+@keyframes pw-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pw-step { animation: none; } }
 .nz-rec { animation: nz-pulse 1.4s ease-out infinite; }
 @keyframes nz-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--p-glow) 55%, transparent); } 100% { box-shadow: 0 0 0 16px transparent; } }
 @media (prefers-reduced-motion: reduce) { .nz-screen, .nz-rec { animation: none; } }

@@ -11,7 +11,7 @@ export const page: ExamPage | undefined = {
     eyebrow: "Gratis-Test · ÖSD Zertifikat A1 · A1",
     h1: "ÖSD Zertifikat A1 gratis testen",
     lead: "Wähl einen Teil. Jeder Kurztest dauert etwa 5 Minuten und hat Aufgaben wie das ÖSD Zertifikat A1. Du hörst Stimmen aus Österreich, Deutschland und der Schweiz.",
-    note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+    note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
     disclaimer: "Übungstest im Format des ÖSD Zertifikats A1. Wir sind nicht mit dem ÖSD verbunden.",
   },
   skills: {

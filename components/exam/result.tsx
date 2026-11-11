@@ -284,13 +284,21 @@ export function PointsBar({ score, pass }: { score: Score; pass: number }) {
 }
 
 /** The way on: one big ink button, a note under it, then quiet text links. */
-export function ContinueCard({ href, cta, note, links }: { href: string; cta: string; note?: ReactNode; links?: ReactNode }) {
+export function ContinueCard({ href, onClick, cta, note, links }: { href?: string; onClick?: () => void; cta: string; note?: ReactNode; links?: ReactNode }) {
+  const button = "group flex h-14 w-full items-center justify-center gap-2 rounded-full bg-v-ink px-6 text-[16.5px] font-semibold text-v-bg shadow-[0_18px_36px_-18px_rgba(8,10,30,0.6)] transition-transform duration-150 ease-out active:scale-[0.98]"
+  const body = (
+    <>
+      {cta}
+      <ArrowRight className="size-5 transition-transform duration-150 ease-out group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden="true" />
+    </>
+  )
   return (
     <section className="nz-app flex flex-col items-center gap-3 rounded-[28px] p-5 text-center sm:p-6">
-      <Link href={href} className="group flex h-14 w-full items-center justify-center gap-2 rounded-full bg-v-ink px-6 text-[16.5px] font-semibold text-v-bg shadow-[0_18px_36px_-18px_rgba(8,10,30,0.6)] transition-transform duration-150 ease-out active:scale-[0.98]">
-        {cta}
-        <ArrowRight className="size-5 transition-transform duration-150 ease-out group-hover:translate-x-0.5" aria-hidden="true" />
-      </Link>
+      {href ? (
+        <Link href={href} className={button}>{body}</Link>
+      ) : (
+        <button type="button" onClick={onClick} data-cta="result_paywall" className={button}>{body}</button>
+      )}
       {note ? <p className="text-[13.5px] leading-relaxed text-v-muted">{note}</p> : null}
       {links ? <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-[14px] font-semibold">{links}</div> : null}
     </section>

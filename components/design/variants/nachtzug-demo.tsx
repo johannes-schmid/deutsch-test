@@ -16,7 +16,8 @@ const PARTS = [
   { id: "ergebnis", time: "" },
 ] as const
 
-type PartId = (typeof PARTS)[number]["id"]
+export type DemoPart = (typeof PARTS)[number]["id"]
+type PartId = DemoPart
 
 const LETTER = "Sehr geehrte Frau Weber,\n\nin meiner Wohnung ist seit Montag die Heizung kaputt. Können Sie bitte einen Techniker schicken?\n\n"
 
@@ -224,9 +225,10 @@ function Ergebnis({ t }: { t: LandingCopy }) {
 
 const SCREENS: Record<PartId, (p: { t: LandingCopy }) => React.JSX.Element> = { hoeren: Hoeren, lesen: Lesen, schreiben: Schreiben, sprechen: Sprechen, ergebnis: Ergebnis }
 
-export function PlatformDemo({ locale }: { locale: Locale }) {
+/** `start`: the screen it opens on (the paywall opens its second step on the result). */
+export function PlatformDemo({ locale, start = "hoeren" }: { locale: Locale; start?: DemoPart }) {
   const t = LANDING[locale]
-  const [active, setActive] = useState<PartId>("hoeren")
+  const [active, setActive] = useState<PartId>(start)
   const idx = PARTS.findIndex((p) => p.id === active)
   const Screen = SCREENS[active]
   const part = PARTS[idx]

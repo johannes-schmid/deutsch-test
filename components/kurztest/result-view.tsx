@@ -13,6 +13,7 @@ import type { ExamPage } from "@/lib/i18n/kurztest"
 import type { Level } from "@/lib/exam/types"
 import type { PublicBlock } from "@/lib/kurztest/data"
 import type { ClosedResult, KurztestResult } from "@/lib/kurztest/types"
+import { PaywallTakeover } from "@/components/paywall/paywall"
 import { BlockItems, type Values } from "./items"
 import { useKurztest } from "./locale"
 
@@ -103,7 +104,8 @@ function Solutions({ blocks, values, result }: { blocks: PublicBlock[]; values: 
 export function ResultView({ exam, page, skill, blocks, values, result, signedIn, seconds, onRetry }: { exam: ExamId; page: ExamPage; skill: Skill; blocks: PublicBlock[]; values: Values; result: KurztestResult; signedIn: boolean; seconds?: { used: number; budget?: number }; onRetry: () => void }) {
   const router = useRouter()
   const t = useExamCopy()
-  const { T: K, at } = useKurztest()
+  const { T: K, at, locale } = useKurztest()
+  const [paywall, setPaywall] = useState(false)
   const T = K.result
   const name = K.names[skill]
   const pass = EXAMS[exam].pass
@@ -114,14 +116,15 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
 
   const next = (
     <ContinueCard
-      href={signedIn ? portal : `/registrieren?next=${encodeURIComponent(portal)}`}
-      cta={signedIn ? T.portalCta : T.registerCta}
+      href={signedIn ? portal : undefined}
+      onClick={() => setPaywall(true)}
+      cta={signedIn ? T.portalCta : T.paywallCta}
       note={
         signedIn ? (
           T.portalNote
         ) : (
           <>
-            {T.registerNote}{" "}
+            {T.paywallNote}{" "}
             <Link href={`/anmelden?next=${encodeURIComponent(portal)}`} className="font-semibold text-v-ink underline decoration-v-ink/30 underline-offset-4 hover:decoration-v-ink">{T.login}</Link>
           </>
         )
@@ -134,6 +137,7 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
       }
     />
   )
+  const takeover = signedIn ? null : <PaywallTakeover open={paywall} onOpenChange={setPaywall} locale={locale} exam={exam} skill={skill} />
 
   if (result.kind === "transcript") {
     return (
@@ -150,6 +154,7 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
           ))}
         </Panel>
         {next}
+        {takeover}
       </>
     )
   }
@@ -175,6 +180,7 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
         {bar}
         <ResultSummary visual={visual} eyebrow={T.eyebrowGraded(`${page.short} ${name}`)} headline={headline} lead={result.summary} scale={scale} time={time} note={note} />
         {next}
+        {takeover}
         <PartResultCard result={{ part: skill, name, level: result.level, score: result.score, passed: result.passed, criteria: result.criteria }} defaultOpen />
         {result.modelAnswer ? (
           <Panel title={T.modelAnswer}>
@@ -203,6 +209,7 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
         note={note}
       />
       {next}
+      {takeover}
       <Solutions blocks={blocks} values={values} result={result} />
     </>
   )

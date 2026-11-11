@@ -123,10 +123,14 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
 
 ## 3. Product rules
 
-- **Free first:** the free tests (~5-minute tasters, no account) plus the full Einbürgerungstest. **Modelltest 1 per skill: the first
+- **Free first:** the free tests (~5-minute tasters; Lesen/Hören without an account, result included; Schreiben/Sprechen need a free account because grading costs) plus the full Einbürgerungstest. **Modelltest 1 per skill: the first
   half is free after sign-up** (Hannes, 2026-11-02): the first ⌊n/2⌋ Teile, or for a single letter (DTZ, telc B1, ÖSD A2 Schreiben)
   half of its criteria. Then the halfway stop sells the Teil-Pass for that skill (asks once for all four) and the attempt goes on at
   the next Teil after paying (`lib/modelltest/half.ts`, `mt_attempts.paused`). The paywall comes after value.
+- **Paywall after the free test (Hannes, 2026-11-11, after knmoefenen.nl):** a guest finishes the whole free Lesen/Hören test and sees
+  the result with no email or sign-up. "Weiter zum Modelltest" opens the paywall (`components/paywall/`): a full-screen takeover,
+  packages left, pay card right; Google sign-in returns to `/weiter?plan=…` with the pick, then the order summary. The free
+  account stays reachable through the builder's "Gratis" row. Locked Modelltest rows in the portal link to `/dashboard/preise`.
 - **Übungsmodus (Hannes, 2026-11-03):** a Lesen/Hören Modelltest can be started in Übungsmodus: instant right/wrong per tap
   with sparks, confetti, sound and a buzz (`components/exam/instant.tsx`). **Prüfungsmodus stays the default** and the
   Prüfungssimulation always runs as an exam. The first answer per item scores the attempt, so retrying never raises the
@@ -347,7 +351,8 @@ data/kurztest/drafts/                # ★ Kurztest content: one JSON per block,
 public/audio/kurztest/               # rendered eleven_v4 clips for Hören blocks and Sprechen turns
 lib/exam/{blueprint,kurztest,validate,band}.ts  # part specs + 10-item composition, block types, blueprint validator, indicative band
 lib/kurztest/                        # server-only: data loader (strips keys), store (Supabase `kurztest_attempts` via the secret-key client in `lib/supabase/admin.ts`), score, grade (Claude), stt, stats
-components/kurztest/                 # runner (Lesen/Hören, Schreiben, Sprechen), email gate, result view, shared item renderer
+components/kurztest/                 # runner (Lesen/Hören, Schreiben, Sprechen), sign-up card for graded tests, result view, shared item renderer
+components/paywall/paywall.tsx       # ★ the paywall after a free test: Paywall (header, steps, PassBuilder with Google pay card), PaywallTakeover (over the result), PaywallPage (/weiter, app/(auth)/weiter: where Google returns with ?plan)
 app/(main)/gratis-test/              # level + exam picker; dtz/ = hub + /{hoeren,lesen,schreiben,sprechen} lead-magnet tests, site layout, indexed
 lib/exams.ts                         # ★ the 9 free-test exams (name, brand badge, levels, official result format, pass mark); research/<exam>.md = their blueprints
 lib/exam/exams/<exam>.ts             # ★ one file per non-DTZ exam: generator context, part specs, Schreiben/Sprechen briefs, rubric, 5-min taster (from research/<exam>.md; goethe-b1 + oesd-b1 share research/goethe-oesd-b1.md)
@@ -379,11 +384,11 @@ supabase/migrations/*_lifecycle_*.sql # lifecycle_prefs (exam (NULL = not chosen
 lib/billing/cancel.ts                # cancelForUser(): the one cancel path (portal button)
 supabase/migrations/*_payments.sql   # payments (one row per Mollie payment, period, country, revoked) + mollie_customers (customer, subscription, canceled_at); server writes only
 lib/i18n/pass.ts                     # PassBuilder copy (de/uk/ru); components/design/pass-builder.tsx = the configurator
-app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock takes email → result; quota = limit check before Schreiben/Sprechen
+app/api/kurztest/{submit,unlock,quota}  # submit stores attempt → id only; unlock returns the result (Lesen/Hören also to guests; Schreiben/Sprechen need a session); quota = limit check before Schreiben/Sprechen
 lib/kurztest/limits.ts               # paid runs (Claude grading, speech-to-text) capped per day: per IP, per email, global (salted hashes, env-tunable)
 app/(admin)/admin/                   # /admin = stats + signups per week, /admin/kurztest = funnel, /admin/kurztest/emails = latest leads + CSV, /admin/modelltests = per-exam overview → [exam] slot grid → [exam]/[skill]/[n] review; Google login + `admin_users` allowlist (lib/admin/guard.ts, checked in proxy.ts and every page/route; also guards /design/kurztest)
 lib/admin/users.ts · app/(admin)/admin/konten/ · components/admin/users-table.tsx # /admin/konten: every account with pass state, payments, goal, Modelltests; drawer with "Vertrag kündigen" (actions.ts → cancelForUser + confirmation email)
-lib/admin/funnel.ts · app/(admin)/admin/funnel/ # /admin/funnel: Konto → Modelltest → Paywall (mt_attempts.paused, cleared on paying: buyers with a Modelltest 1 before checkout count too) → Kasse → bezahlt, this week vs last, per exam/skill (pure + tested; funnelOverview() in lib/admin/stats.ts)
+lib/admin/funnel.ts · app/(admin)/admin/funnel/ # /admin/funnel: Konto → Modelltest → Paywall (mt_attempts.paywall_at, written once at the halfway stop; older attempts fall back to `paused` and the buyer rule) → Kasse → bezahlt, this week vs last, per exam/skill (pure + tested; funnelOverview() in lib/admin/stats.ts)
 lib/admin/sales.ts · components/admin/sales{,-charts}.tsx # /admin sales: revenue, MRR/churn, conversion (pure + tested; loaded by salesOverview() in lib/admin/stats.ts; recharts via components/ui/chart.tsx)
 seo/README.md · seo/keyword-strategy.md · seo/facts.md # ★ the content standard + pre-ship checklist, page ownership (one query, one page), every publishable number with source
 seo-agent/                           # ★ the SEO/GEO loop (ported from inburgering 2026-11-05): README.md (how it works, keys), config.json (site, competitors, GEO prompts, rules, protected paths), data/<ISO-week>/*.json (Friday snapshots, committed), data/history/health.json (score per week), pages.json (triage, generated), ledger.json (experiments, never delete rows), recommendations.json (the to-do list on /admin/seo), briefs/, reports/; SEO-WEEKLY.md = the weekly skill text, copy to .claude/skills/seo-weekly/SKILL.md

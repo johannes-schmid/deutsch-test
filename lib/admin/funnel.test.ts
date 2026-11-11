@@ -69,3 +69,30 @@ describe("computeFunnel", () => {
     expect(f.total.paywallAttempts).toBe(4)
   })
 })
+
+describe("computeFunnel with paywall_at", () => {
+  it("counts a sighting by its own timestamp, also after paying cleared the pause", () => {
+    const f = computeFunnel({
+      now,
+      signups: [],
+      attempts: [
+        attempt({ user_id: "g", started_at: "2026-10-27T10:00:00Z", exam: "dtz", skill: "hoeren", paywall_at: "2026-11-02T08:00:00Z" }),
+        attempt({ user_id: "h", started_at: "2026-11-02T10:00:00Z", number: 2, paywall_at: null }),
+      ],
+      payments: [],
+    })
+    expect(f.thisWeek).toMatchObject({ paywall: 1, paywallAttempts: 1 })
+    expect(f.lastWeek).toMatchObject({ paywall: 0, started: 1 })
+    expect(f.paywallBySkill).toEqual([{ exam: "dtz", skill: "hoeren", thisWeek: 1, lastWeek: 0, total: 1 }])
+  })
+
+  it("does not count one person twice when the timestamp and the old pause both exist", () => {
+    const f = computeFunnel({
+      now,
+      signups: [],
+      attempts: [attempt({ user_id: "i", started_at: "2026-11-02T10:00:00Z", paused: { at: "2026-11-02T10:20:00Z" }, paywall_at: "2026-11-02T10:20:00Z" })],
+      payments: [payment({ user_id: "i", created_at: "2026-11-02T10:30:00Z" })],
+    })
+    expect(f.thisWeek).toMatchObject({ paywall: 1, paywallAttempts: 1, checkout: 1 })
+  })
+})

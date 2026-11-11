@@ -4,6 +4,8 @@ export const PORTAL_CANCEL = "/dashboard/konto/kuendigen"
 export const PORTAL_PAYMENT = "/dashboard/zahlung"
 export const PORTAL_ACCOUNT = "/dashboard/konto"
 export const PORTAL_CONTACT = "/dashboard/kontakt"
+/** The paywall after a free test (components/paywall), outside the portal: guests land here. */
+export const PAYWALL_PATH = "/weiter"
 
 /** Only same-site paths: "/x" passes, "//evil.com", "/\\evil.com" and absolute URLs fall back. */
 export function safeNext(raw: string | null | undefined, fallback = PORTAL_HOME): string {

@@ -11,7 +11,7 @@ export const page: ExamPage = {
     eyebrow: "Gratis-Test · telc Deutsch A2 · A2",
     h1: "telc Deutsch A2 gratis testen",
     lead: "Für telc Deutsch A2, auch Start Deutsch 2 genannt. Wähl einen Teil. Jeder Kurztest dauert etwa 5 Minuten und hat die gleichen Aufgabentypen wie die Prüfung.",
-    note: "Gratis und ohne Anmeldung. Für das Ergebnis brauchst du nur deine E-Mail-Adresse.",
+    note: "Lesen und Hören ohne Anmeldung. Für Schreiben und Sprechen brauchst du ein Gratis-Konto.",
     disclaimer: "Übungstest im Format von telc Deutsch A2. Wir sind nicht mit telc verbunden.",
   },
   skills: {

@@ -351,3 +351,8 @@ missing, add it to `components/exam/`, show it on `/design/pruefung`, and list i
 - Don't use evening or after-work framing. The message is exam readiness.
 - Don't use serif display type, stock photos, or a second accent colour.
 - Don't use pure-black shadows or hard drop shadows.
+
+## Paywall (after a free test)
+
+`components/paywall/paywall.tsx`. A full-screen takeover with no site nav or footer, in three steps with a progress mark in the header. Steps 1 and 2 (`Benefits`) put a headline, three points with `Tile` icons and one button beside the live `PlatformDemo` on a `Photo` field (step 1 opens on Hören, step 2 on Ergebnis); on phones the button is a fixed bar. Step 3 is the `PassBuilder` (packages on paper, the pay card on Nacht) under three numbered steps. Steps change with `.pw-step` (opacity only, 240 ms). Signed out, the pay card carries the light `GoogleButton` (`night`) instead of the order button. It only fades in (opacity, 200 ms, `--ease-out-strong`); no transform, or the builder's fixed buy bar would be pinned to the popup. Never add social proof here that is not from our own data.
+
