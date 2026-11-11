@@ -2,6 +2,7 @@ import { readFile, readdir } from "node:fs/promises"
 import path from "node:path"
 import { expectedSnapshotWeek, isLive, markPreliminary, mergeDaily, nextCollectDate, parseBingDate, parseSourceStatus, trendRead, type BingDay, type DayPoint, type GscDay, type LedgerEntry, type Recommendation, type SourceState, type TrendRead } from "./seo-model"
 import { fetchLiveBing, fetchLiveGsc, type LiveGsc, type PageRow } from "./seo-live"
+import type { IndexRecord } from "./seo-funnel-model"
 import { pageScore, pageWeight, rollup, type HistoryRow, type ScoreFactor, type ScoreInput, type Verdict } from "./seo-score.mjs"
 
 /**
@@ -85,6 +86,8 @@ export type SeoCockpit = {
   recommendations: Recommendation[]
   ownerBudget: number
   reports: { name: string; href: string }[]
+  /** URL Inspection per page from the newest week that has it; `null` = never checked. */
+  indexing: { checkedAt: string; pages: Record<string, IndexRecord> } | null
 }
 
 async function json<T>(file: string): Promise<T | null> {
@@ -116,7 +119,7 @@ function bingWindow(rows: BingDay[] | undefined | null): Window28 | null {
   return { clicks: sum(cur, "c"), impressions: sum(cur, "i"), prevClicks: sum(prev, "c"), prevImpressions: sum(prev, "i") }
 }
 
-const SOURCE_LABELS: Record<string, string> = { gsc: "Search Console", bing: "Bing Webmaster", health: "Health check", competitors: "Competitors", geo: "AI search engines" }
+const SOURCE_LABELS: Record<string, string> = { gsc: "Search Console", bing: "Bing Webmaster", health: "Health check", competitors: "Competitors", geo: "AI search engines", indexing: "Indexing", backlinks: "Backlinks" }
 
 const LENGTH_ISSUE = /^(title|description) \d+ chars$/
 
@@ -152,6 +155,14 @@ export async function loadSeoCockpit(now = new Date()): Promise<SeoCockpit> {
     const g = w === latestWeek ? gsc : await json<{ sites?: Record<string, GscSite> }>(`data/${w}/gsc.json`)
     const d = g?.sites?.[SITE_KEY]?.daily
     if (d) googleRuns.push(d)
+  }
+  let indexing: SeoCockpit["indexing"] = null
+  for (const w of [...weeks].reverse()) {
+    const snap = await json<{ generated_at: string; pages?: Record<string, IndexRecord> }>(`data/${w}/indexing.json`)
+    if (snap?.pages) {
+      indexing = { checkedAt: snap.generated_at, pages: snap.pages }
+      break
+    }
   }
   const live = liveGsc && !("error" in liveGsc) ? liveGsc : null
   if (live) googleRuns.push(live.daily)
@@ -201,6 +212,7 @@ export async function loadSeoCockpit(now = new Date()): Promise<SeoCockpit> {
     recommendations: recs?.items ?? [],
     ownerBudget: config?.rules.owner_minutes_per_week ?? 90,
     reports: reportFiles.filter((f) => f.endsWith(".md")).reverse().map((f) => ({ name: f.replace(/\.md$/, ""), href: `${REPO_URL}/blob/main/seo-agent/reports/${f}` })),
+    indexing,
   }
 }
 

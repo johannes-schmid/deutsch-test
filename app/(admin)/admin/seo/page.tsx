@@ -2,9 +2,12 @@ import { Suspense, type ReactNode } from "react"
 import { notFound } from "next/navigation"
 import { Check, ChevronDown, CircleSlash, ExternalLink, GitPullRequest, Radio, TriangleAlert, X } from "lucide-react"
 import { AdminPage, Empty, Panel, PanelSkeleton, Section } from "@/components/admin/admin-ui"
-import { SeoStructure } from "@/components/admin/seo-structure"
+import { SeoBacklinks } from "@/components/admin/seo-backlinks"
+import { SeoBoard } from "@/components/admin/seo-board"
 import { SeoTrendChart } from "@/components/admin/seo-trend-chart"
 import { requireAdmin } from "@/lib/admin/guard"
+import { loadBacklinks } from "@/lib/admin/seo-backlinks"
+import { fetchSeoFunnel } from "@/lib/admin/seo-funnel"
 import { fetchSeoPulls, loadSeoCockpit, REPO_URL, type SeoCockpit, type SeoPull, type SourceRow } from "@/lib/admin/seo"
 import { byPriority, isLive, ledgerStatus, planOwnerWeek, type LedgerEntry, type Owner, type Recommendation } from "@/lib/admin/seo-model"
 
@@ -16,9 +19,12 @@ export const metadata = { title: "SEO" }
  * **This page is English**, like the inburgering one (owner decision 2026-10-26): it is his own
  * workplace, not a screen for a learner. One page, three questions: how healthy is the site (score out
  * of 100, kept per week in `seo-agent/data/history/health.json`), what do the sources say (Google,
- * Bing, AI search), and which page asks for what (the site structure, every page out of 10). The
- * to-do list, experiments and numbers sit folded under "More". Google comes live from Search Console
- * (`lib/admin/seo-live.ts`) when the key is on the server, the rest from `seo-agent/`.
+ * Bing, AI search), and which page asks for what. Since 2026-11-11 that last part is one board, as on
+ * inburgering (`components/admin/seo-board.tsx`): widgets on top that filter one list of every page, with
+ * its index state and its search-to-paid funnel from GA4. The to-do list, experiments and numbers sit folded
+ * under "More". The Backlinks tab (`?tab=backlinks`) shows who links to us (Bing) and hand-checked
+ * candidates. Google comes live from Search Console (`lib/admin/seo-live.ts`) when the key is on the
+ * server, the rest from `seo-agent/`.
  */
 
 const nf = new Intl.NumberFormat("en-GB")
@@ -51,16 +57,6 @@ function Delta({ now, before, inverse }: { now: number; before: number; inverse?
   const change = Math.round((now / before - 1) * 100)
   const sign = inverse ? -change : change
   return <span className="font-medium text-v-ink">{sign > 0 ? "▲" : sign < 0 ? "▼" : "±"} {Math.abs(change)} %</span>
-}
-
-function Tile({ label, value, sub }: { label: ReactNode; value: ReactNode; sub: ReactNode }) {
-  return (
-    <div className="flex min-w-0 flex-col gap-1 p-4 sm:p-5">
-      <span className="text-[13px] text-v-muted">{label}</span>
-      <b className="text-[24px] leading-tight font-semibold tracking-[-0.02em] tabular-nums sm:text-[28px]">{value}</b>
-      <span className="text-[12.5px] leading-snug text-v-muted tabular-nums sm:text-[13px]">{sub}</span>
-    </div>
-  )
 }
 
 /* ── How healthy is the site ─────────────────────────────────────────────── */
@@ -123,35 +119,6 @@ function HealthBand({ data }: { data: SeoCockpit }) {
   )
 }
 
-/* ── What the sources say ────────────────────────────────────────────────── */
-
-function SourceTiles({ data }: { data: SeoCockpit }) {
-  const t = data.google.totals
-  const live = data.live.state === "live"
-  const geo = data.sources.find((s) => s.key === "geo")
-  return (
-    <Panel>
-      <div className="grid grid-cols-1 gap-px bg-v-line md:grid-cols-3 [&>*]:bg-v-surface">
-        <Tile
-          label={<span className="flex items-center justify-between gap-2">Google {live ? <span className="inline-flex items-center gap-1 text-[11.5px] font-medium text-v-ink"><Radio className="size-3" aria-hidden="true" /> live</span> : <Chip>{data.google.error ? "unknown" : "Friday’s pull"}</Chip>}</span>}
-          value={t ? nf.format(t.current.clicks) : "n/a"}
-          sub={t ? <>clicks · {nf.format(t.current.impressions)} impressions · <Delta now={t.current.clicks} before={t.previous.clicks} /> vs 28 days before</> : data.google.error === "no snapshot" ? "No data yet. Needs Search Console access (see To-do)." : `Unknown: ${data.google.error}`}
-        />
-        <Tile
-          label={<span className="flex items-center justify-between gap-2">Bing {data.live.bingLive ? <span className="inline-flex items-center gap-1 text-[11.5px] font-medium text-v-ink"><Radio className="size-3" aria-hidden="true" /> live</span> : <Chip>{data.bing ? "Friday’s pull" : "not connected"}</Chip>}</span>}
-          value={data.bing ? nf.format(data.bing.clicks) : "n/a"}
-          sub={data.bing ? <>clicks · {nf.format(data.bing.impressions)} impressions · <Delta now={data.bing.clicks} before={data.bing.prevClicks} /> vs 28 days before</> : "Unknown, not zero. Needs BING_API_KEY (see To-do)."}
-        />
-        <Tile
-          label={<span className="flex items-center justify-between gap-2">AI search <Chip>{data.geo ? `measured ${data.latestWeek}` : "not measured"}</Chip></span>}
-          value={data.geo && data.geo.share !== null ? pct(data.geo.share) : "n/a"}
-          sub={data.geo ? `of ${data.geo.prompts} questions cite us (${data.geo.engines.join(", ")})` : geo?.state === "error" ? `Last run failed: ${geo.detail}` : `Whether ChatGPT, Perplexity and Claude name us for our questions. Runs in even weeks, next on ${dayLabel(data.nextCollect)}.`}
-        />
-      </div>
-    </Panel>
-  )
-}
-
 /* ── Site-wide actions ───────────────────────────────────────────────────── */
 
 function RecItem({ r, waiting }: { r: Recommendation; waiting?: boolean }) {
@@ -190,7 +157,7 @@ function SiteWideActions({ data }: { data: SeoCockpit }) {
   if (items.length === 0) return null
   const minutes = items.filter((r) => r.owner === "hannes").reduce((s, r) => s + (r.minutes ?? 0), 0)
   return (
-    <Section title="Site-wide actions" aside={<span className="text-[13px] text-v-muted tabular-nums">your part ≈ {minutes} min</span>} note="Not about one page. These come first; each page below shows the ones that touch it.">
+    <Section title="Site-wide actions" aside={<span className="text-[13px] text-v-muted tabular-nums">your part ≈ {minutes} min</span>} note="Not about one page. These come first; each page in the list below shows the ones that touch it.">
       <Panel>
         <ul className="divide-y divide-v-line">{items.map((r) => <li key={r.id}><RecItem r={r} /></li>)}</ul>
       </Panel>
@@ -424,16 +391,50 @@ function Pulls({ pulls, reports }: { pulls: SeoPull[] | null; reports: SeoCockpi
 
 /* ── The page ────────────────────────────────────────────────────────────── */
 
-async function Cockpit() {
+const TABS = [["overview", "Overview", "/admin/seo"], ["backlinks", "Backlinks", "/admin/seo?tab=backlinks"]] as const
+
+function Tabs({ tab }: { tab: (typeof TABS)[number][0] }) {
+  return (
+    <nav aria-label="SEO views" className="-mt-2 inline-flex self-start rounded-full bg-v-soft p-0.5 text-[13.5px]">
+      {TABS.map(([key, label, href]) => (
+        <a
+          key={key}
+          href={href}
+          aria-current={tab === key ? "page" : undefined}
+          className={`rounded-full px-3.5 py-1.5 font-medium transition-[background-color,color,transform] duration-150 ease-out outline-none focus-visible:ring-2 focus-visible:ring-v-ink active:scale-[0.97] ${tab === key ? "bg-v-surface text-v-ink shadow-[0_1px_2px_rgba(14,19,34,0.08)]" : "text-v-muted hover:text-v-ink"}`}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  )
+}
+
+async function Backlinks() {
   if (!(await requireAdmin())) notFound()
-  const [data, pulls] = await Promise.all([loadSeoCockpit(), fetchSeoPulls()])
+  const data = await loadBacklinks()
+  return (
+    <>
+      <Tabs tab="backlinks" />
+      <SeoBacklinks data={data} />
+    </>
+  )
+}
+
+async function Cockpit({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
+  if ((await searchParams).tab === "backlinks") return <Backlinks />
+  if (!(await requireAdmin())) notFound()
+  const [data, pulls, funnel] = await Promise.all([loadSeoCockpit(), fetchSeoPulls(), fetchSeoFunnel()])
   const today = new Date().toISOString().slice(0, 10)
   const stale = data.latestWeek !== null && data.latestWeek < data.expectedWeek
   const live = data.live
+  const t = data.google.totals
+  const geo = data.sources.find((s) => s.key === "geo")
 
   return (
     <>
-      <p className="-mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13.5px] text-v-muted">
+      <Tabs tab="overview" />
+      <p className="-mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13.5px] text-v-muted">
         {live.state === "live" ? (
           <><span className="inline-flex items-center gap-1.5 font-medium text-v-ink"><Radio className="size-3.5" aria-hidden="true" /> Live from Search Console</span><span>updated {timeLabel(live.fetchedAt!)} · the last 3 days are preliminary.</span></>
         ) : (
@@ -444,17 +445,25 @@ async function Cockpit() {
       </p>
 
       <HealthBand data={data} />
-      <SourceTiles data={data} />
 
-      {data.daily.length > 0 && (
-        <Section title="Impressions per day" note="Google and Bing side by side. Grows by a day every day once Search Console is connected.">
-          <Panel><SeoTrendChart points={data.daily} changes={data.ledger.map((e) => ({ date: e.date, change: e.change ?? e.id ?? "" }))} /></Panel>
-        </Section>
-      )}
-
-      <SiteWideActions data={data} />
-
-      {data.structure ? <SeoStructure structure={data.structure} /> : <Empty>No page triage yet. Run the Friday data pull, then node scripts/seo-agent/pages.mjs.</Empty>}
+      {data.structure ? (
+        <SeoBoard
+          structure={data.structure}
+          funnel={funnel}
+          indexing={data.indexing}
+          google={t ? { clicks: t.current.clicks, prev: t.previous.clicks, live: live.state === "live" } : null}
+          googleNote={t ? `${nf.format(t.current.impressions)} Google impressions${data.bing ? `, ${nf.format(data.bing.impressions)} on Bing` : ""}. Change vs the 28 days before.` : data.google.error === "no snapshot" ? "Google: no data yet. Needs Search Console access (see To-do)." : `Google unknown: ${data.google.error}`}
+          bing={data.bing}
+          geo={data.geo ? { share: data.geo.share, week: data.latestWeek } : null}
+          geoNote={data.geo ? `Citation share measured ${data.latestWeek} over ${data.geo.prompts} questions.` : geo?.state === "error" ? `Last citation run failed: ${geo.detail}` : `Whether ChatGPT, Perplexity and Claude cite us: runs in even weeks, next on ${dayLabel(data.nextCollect)}.`}
+          trend={data.daily.length > 0 ? (
+            <Section title="Impressions per day" note="Google and Bing side by side. Grows by a day every day once Search Console is connected.">
+              <Panel><SeoTrendChart points={data.daily} changes={data.ledger.map((e) => ({ date: e.date, change: e.change ?? e.id ?? "" }))} /></Panel>
+            </Section>
+          ) : undefined}
+          actions={<SiteWideActions data={data} />}
+        />
+      ) : <Empty>No page triage yet. Run the Friday data pull, then node scripts/seo-agent/pages.mjs.</Empty>}
 
       <Section title="More" note="The background behind the scores. Closed until you need it.">
         <div className="flex flex-col gap-3">
@@ -475,11 +484,11 @@ async function Cockpit() {
   )
 }
 
-export default function SeoPage() {
+export default function SeoPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
   return (
     <AdminPage
       title="SEO"
-      description="How healthy the site is, what Google, Bing and the AI engines say, and which page asks for what. Fed by the Friday data pull in seo-agent/ and the Saturday routine."
+      description="How healthy the site is, what Google, Bing and the AI engines say, which page asks for what, and who links to us. Fed by the Friday data pull in seo-agent/, GA4 and the Saturday routine."
       actions={
         <a href="https://search.google.com/search-console?resource_id=sc-domain%3Adeutschtest-ueben.de" target="_blank" rel="noreferrer" className="inline-flex h-9 items-center gap-1.5 rounded-full bg-v-soft px-3.5 text-[13.5px] font-medium transition-[background-color,transform] duration-150 ease-out outline-none hover:bg-v-line focus-visible:ring-2 focus-visible:ring-v-ink active:scale-[0.97]">
           Search Console <ExternalLink className="size-3.5" aria-hidden="true" />
@@ -487,7 +496,7 @@ export default function SeoPage() {
       }
     >
       <Suspense fallback={<PanelSkeleton rows={4} />}>
-        <Cockpit />
+        <Cockpit searchParams={searchParams} />
       </Suspense>
     </AdminPage>
   )

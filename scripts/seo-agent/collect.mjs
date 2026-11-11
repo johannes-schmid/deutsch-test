@@ -20,6 +20,8 @@ import { collectBing } from './bing.mjs';
 import { collectHealth } from './health.mjs';
 import { collectCompetitors } from './competitors.mjs';
 import { collectGeo } from './geo.mjs';
+import { collectIndexing } from './indexing.mjs';
+import { collectBacklinks } from './backlinks.mjs';
 
 const args = process.argv.slice(2);
 const flag = name => { const i = args.indexOf(`--${name}`); return i >= 0 ? (args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : true) : null; };
@@ -34,6 +36,8 @@ const SOURCES = {
   bing: () => collectBing(config),
   health: () => collectHealth(config),
   competitors: () => collectCompetitors(config, { week }),
+  indexing: () => collectIndexing(config),
+  backlinks: () => collectBacklinks(config),
   geo: () => (geoDue ? collectGeo(config) : Promise.resolve({ skipped: `odd week (${week}); GEO runs in even weeks` })),
 };
 
