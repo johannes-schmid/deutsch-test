@@ -885,3 +885,9 @@
 **Outcome:** SUCCESS locally (vitest 169/169, tsc, eslint, `next build`; checked in the browser at 1440 and 390 with live Search Console). GA4 funnel, indexing and backlinks show "unknown" until their keys/first Friday run.
 **What worked / went wrong:** Ported logic, not markup: inburgering's tokens (primary, surface-container) don't exist here, so the board was rebuilt on Panel/Section/v-* with ember only for state. Funnel steps mapped to our own GA4 events (`lib/analytics.ts`), which only fire with "Statistik" consent, so the page calls every number a floor. Local admin preview: email sign-in is off, so a local test admin got a session from `admin.generateLink` + `verifyOtp` and the `sb-127-auth-token` cookie set by hand; `signInWithPassword` fails with `email_provider_disabled`. supabase-js needs Node ≥ 22 for scripts (WebSocket).
 **Lesson:** When porting an admin view between the sister sites, port the pure models and tests one-to-one and re-skin the UI on the local design system; and map analytics events to what this site actually sends before trusting a funnel.
+
+## 2026-11-11 — Dashboard redesign reverted to the original SkillCards
+**Changed:** tried skill tabs with ten Modelltest cards, then big `SkillProgressCard`s with a 10-stop route on `/dashboard`; Hannes chose to keep the original four `SkillCard`s. Removed both; `app/(app)/dashboard/page.tsx` is back to its pre-redesign state. `ModelltestCard` stays on `/dashboard/[exam]/[skill]`.
+**Outcome:** SUCCESS (revert)
+**What worked / went wrong:** Tabs + a grid of mostly locked cards was too much for a free user; the heavier progress cards weren't wanted either.
+**Lesson:** Hannes likes the calm white SkillCards on the overview. Show a mock on `/design/portal` before reworking the dashboard.

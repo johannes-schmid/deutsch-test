@@ -6,8 +6,7 @@ import { AccountRow, Avatar, PortalSidebar, PortalTabBar, SideParts, SidePartsSk
 import { ExamChooser, ExamFocusHeader } from "@/components/portal/exam-focus"
 import { PassBanner } from "@/components/portal/pass-banner"
 import { focusInfo, switchFamilies } from "@/lib/portal"
-import { PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
-import { SkillTabs } from "@/components/portal/skill-tabs"
+import { ModelltestGrid, PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
 import { LevelCard, ScoreCard, WeekCard } from "@/components/portal/portal-overview"
 import { AccountCard, PassCard, ProgressCard } from "@/components/portal/portal-account"
 import { PassBuilder } from "@/components/design/pass-builder"
@@ -117,19 +116,19 @@ export default async function PortalDesignPage() {
           </ul>
         </Spec>
 
-<Spec name="ModelltestCard · SkillTabs" note="/dashboard: die vier Teile als Tabs (Pfeiltasten wechseln, x/10 gemacht), darunter die zehn Modelltests als Karten (nach dem Proefexamen-Raster von knmoefenen.nl). /dashboard/[exam]/[skill]: dasselbe Raster. Band im Ton des Teils mit Nummer oder bestem Ergebnis, Flagge oben, ein Knopf unten. Gratis: Glut-Flagge. Gemacht: Ergebnis + Ember-Haken, „Noch einmal“. Gesperrt: weiches Band, führt zu den Preisen. Bald: gestrichelt, ohne Link. Vorschau: nur für Admins.">
+        <Spec name="ModelltestCard" note="/dashboard/[exam]/[skill]: die zehn Modelltests als Karten (nach dem Proefexamen-Raster von knmoefenen.nl). Band im Ton des Teils mit Nummer oder bestem Ergebnis, Flagge oben, ein Knopf unten. Gratis: Glut-Flagge. Gemacht: Ergebnis + Ember-Haken, „Noch einmal“. Gesperrt: weiches Band, führt zu den Preisen. Bald: gestrichelt, ohne Link. Vorschau: nur für Admins.">
           <div className="max-w-[760px]">
-            <SkillTabs
-              initial="lesen"
-              tabs={(["hoeren", "lesen", "schreiben", "sprechen"] as const).map((skill, k) => ({
-                skill,
-                name: { hoeren: "Hören", lesen: "Lesen", schreiben: "Schreiben", sprechen: "Sprechen" }[skill],
-                free: k < 3 ? "#" : null,
-                slots: Array.from({ length: 6 }, (_, i) => {
-                  const state = (["done", "open", "preview", "locked", "soon", "open"] as const)[(i + k) % 6]
-                  return { n: i + 1, state, href: state === "locked" || state === "soon" ? null : "#", free: i === 0, result: state === "done" ? "B1" : null }
-                }),
-              }))}
+            <ModelltestGrid
+              skill="lesen"
+              label="Lesen: 10 Modelltests"
+              slots={[
+                { n: 1, state: "done", href: "#", free: true, result: "B1" },
+                { n: 2, state: "open", href: "#", free: false, result: null },
+                { n: 3, state: "preview", href: "#", free: false, result: null },
+                { n: 4, state: "locked", href: null, free: false, result: null },
+                { n: 5, state: "soon", href: null, free: false, result: null },
+                { n: 6, state: "open", href: "#", free: true, result: null },
+              ]}
             />
           </div>
         </Spec>

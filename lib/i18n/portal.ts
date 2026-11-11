@@ -127,8 +127,6 @@ export const PORTAL_COPY = {
       sub: { open: "Wie in der echten Prüfung", free: "Erste Hälfte gratis", done: "Dein bestes Ergebnis", locked: "Mit Prüfungspass", soon: "Noch in Arbeit", preview: "Nur für Admins" },
       best: "Bestes Ergebnis",
     },
-    tabs: "Teil wählen",
-    tabCount: (done: number, total: number) => `${done} von ${total} gemacht`,
     lockedNote: "Die erste Hälfte von Modelltest 1 ist gratis. Für den Rest und Modelltest 2 bis 10 brauchst du den Prüfungspass.",
     lockedCta: "Preise ansehen",
   },
