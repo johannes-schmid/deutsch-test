@@ -5,7 +5,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
-import { ModelltestRow, PortalCrumbs, PortalHeader } from "@/components/portal/portal-exam"
+import { ModelltestGrid, PortalCrumbs, PortalHeader } from "@/components/portal/portal-exam"
 import { EXAMS, EXAM_IDS, familyCrumb } from "@/lib/exams"
 import { SKILLS, isExam, isSkill } from "@/lib/kurztest/data"
 import { MODELLTESTS, portalPath, portalSkills } from "@/lib/portal"
@@ -39,7 +39,7 @@ export default async function PortalSkillPage({ params }: PageProps<"/dashboard/
 
       <PortalHeader mark={<PartIcon part={skill} />} title={name} lead={T.skill.lead(MODELLTESTS, exam.name)} />
 
-      <Suspense fallback={<LoadingVeil label={T.loading.page}><SlotList slots={Array.from({ length: MODELLTESTS }, (_, i) => ({ n: i + 1, state: "soon", href: null, free: false, result: null }))} /></LoadingVeil>}>
+      <Suspense fallback={<LoadingVeil label={T.loading.page}><SlotList skill={skill} slots={Array.from({ length: MODELLTESTS }, (_, i) => ({ n: i + 1, state: "soon", href: null, free: false, result: null }))} /></LoadingVeil>}>
         <Slots exam={id} skill={skill} free={free} />
       </Suspense>
     </main>
@@ -60,15 +60,11 @@ function Note({ text, cta }: { text: string; cta?: { href: string; label: string
   )
 }
 
-function SlotList({ slots }: { slots: ModelltestSlot[] }) {
+function SlotList({ skill, slots }: { skill: Skill; slots: ModelltestSlot[] }) {
   return (
-    <ol aria-label={T.exam.count(MODELLTESTS)} className="nz-paper mt-6 flex flex-col divide-y divide-v-line overflow-hidden rounded-[24px]">
-      {slots.map((s) => (
-        <li key={s.n}>
-          <ModelltestRow slot={s} />
-        </li>
-      ))}
-    </ol>
+    <div className="mt-6">
+      <ModelltestGrid slots={slots} skill={skill} label={T.exam.count(MODELLTESTS)} />
+    </div>
   )
 }
 
@@ -81,7 +77,7 @@ async function Slots({ exam, skill, free }: { exam: ExamId; skill: Skill; free: 
   return (
     <>
       {noneOpen ? <Note text={free ? T.skill.soonNote : T.skill.soonNoteNoFree} cta={free ? { href: free, label: T.skill.freeCta } : undefined} /> : locked ? <Note text={T.skill.lockedNote} cta={{ href: PORTAL_PASS, label: T.skill.lockedCta }} /> : null}
-      <SlotList slots={slots} />
+      <SlotList skill={skill} slots={slots} />
     </>
   )
 }

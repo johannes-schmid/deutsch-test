@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { ArrowRight, Check, ChevronRight, Clock, Lock, RotateCcw } from "lucide-react"
-import { PartIcon } from "@/components/design/variants/nachtzug-icons"
+import { ArrowRight, Check, ChevronRight, Clock, Eye, Lock, RotateCcw } from "lucide-react"
+import { PART_ICONS, PartIcon } from "@/components/design/variants/nachtzug-icons"
+import { PORTAL_PASS } from "@/lib/auth/redirect"
 import { ProgressBar } from "@/components/portal/portal-overview"
 import type { PartId } from "@/lib/exam/types"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
@@ -81,46 +82,102 @@ export function SkillCard({ skill, name, href, free, count, status, progress }: 
   )
 }
 
-/** One Modelltest in a skill's list. Open, done and preview rows start the test; locked and coming rows wait. */
-export function ModelltestRow({ slot }: { slot: { n: number; state: "open" | "done" | "locked" | "soon" | "preview"; href: string | null; free: boolean; result: string | null } }) {
-  const { n, state, href, free, result } = slot
-  const live = !!href
-  const sub = state === "done" ? T.skill.slot.done(result) : state === "preview" ? T.skill.slot.preview : state === "locked" ? T.skill.slot.locked : state === "soon" ? T.soon : free ? `${T.skill.slot.free} · ${T.skill.slot.open}` : T.skill.slot.open
-  const body = (
-    <>
-      <span
-        className={cn(
-          "v-num relative grid size-12 shrink-0 place-items-center rounded-[14px] text-[17px] font-semibold",
-          live ? "bg-v-ink text-v-bg" : state === "locked" ? "bg-v-soft text-v-muted" : "border border-dashed border-v-ink/25 text-v-muted"
-        )}
-        aria-hidden="true"
-      >
-        {String(n).padStart(2, "0")}
-        {state === "done" ? (
-          <span className="absolute -end-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--p-ember) text-[#0A0D18] ring-2 ring-v-surface">
-            <Check className="size-3" strokeWidth={3} />
-          </span>
-        ) : null}
-      </span>
-      <span className="flex min-w-0 flex-1 flex-col leading-tight">
-        <b className={cn("text-[16.5px] font-semibold", !live && "text-v-ink/70")}>{T.skill.test(n)}</b>
-        <span className="mt-1 truncate text-[14px] text-v-muted">{sub}</span>
-      </span>
-      {live ? (
-        <span className={cn(ARROW, "group-hover:translate-x-0.5")} aria-hidden="true">
-          {state === "done" ? <RotateCcw className="size-4" strokeWidth={2.25} /> : <ArrowRight className="size-4 rtl:-scale-x-100" strokeWidth={2.25} />}
-        </span>
-      ) : state === "locked" ? (
-        <Lock className="me-2 size-[18px] shrink-0 text-v-muted/70" strokeWidth={2} aria-hidden="true" />
-      ) : (
-        <Clock className="me-2 size-[18px] shrink-0 text-v-muted/70" strokeWidth={2} aria-hidden="true" />
+export type CardSlot = { n: number; state: "open" | "done" | "locked" | "soon" | "preview"; href: string | null; free: boolean; result: string | null }
+
+const BAND = "radial-gradient(120% 90% at 100% 100%, color-mix(in oklab, var(--sk) 42%, transparent), transparent 70%), color-mix(in oklab, var(--sk) 16%, var(--v-surface))"
+
+/**
+ * One Modelltest as a card (after knmoefenen.nl's Proefexamen grid): a band in the skill's tone with the number or the
+ * best result, a flag for the state, and one button at the foot. Open, done and preview start the test; locked opens the
+ * pass page; soon waits. The whole card is the link.
+ */
+export function ModelltestCard({ slot, skill }: { slot: CardSlot; skill: PartId }) {
+  const { n, state, free, result } = slot
+  const C = T.skill.card
+  const href = state === "locked" ? PORTAL_PASS : slot.href
+  const soon = state === "soon"
+  const Icon = PART_ICONS[skill]
+  const badge = state === "open" && free ? C.badge.free : C.badge[state]
+  const sub = state === "open" && free ? C.sub.free : state === "done" && !result ? T.skill.slot.done(null) : C.sub[state]
+  const Cta = state === "done" ? RotateCcw : state === "locked" ? Lock : state === "preview" ? Eye : soon ? Clock : ArrowRight
+  return (
+    <article
+      style={{ "--sk": `var(--v-sk-${skill})` } as React.CSSProperties}
+      className={cn(
+        "group relative flex h-full flex-col overflow-hidden rounded-[20px]",
+        soon ? "border border-dashed border-v-ink/20 bg-v-surface/40" : "nz-paper transition-[transform,box-shadow] duration-200 ease-out has-[a:active]:scale-[0.98] [@media(hover:hover)]:hover:-translate-y-0.5"
       )}
-    </>
+    >
+      <div
+        className={cn(
+          "relative h-[104px] overflow-hidden sm:h-[116px]",
+          state === "locked" && "bg-v-soft"
+        )}
+        style={state === "locked" || soon ? undefined : { background: BAND }}
+      >
+        <Icon
+          className={cn("absolute -end-3 -bottom-4 size-[92px] rotate-[-8deg] sm:size-[104px]", state === "locked" || soon ? "text-v-ink/[0.07]" : "text-(--sk) opacity-40 mix-blend-multiply dark:mix-blend-screen")}
+          strokeWidth={1.25}
+          aria-hidden="true"
+        />
+        <span
+          className={cn(
+            "absolute start-3 top-3 rounded-full px-2.5 py-1 font-[family-name:var(--v-font-mono)] text-[10.5px] leading-none tracking-[0.08em] uppercase",
+            state === "done" ? "bg-v-ink text-v-bg" : state === "open" && free ? "bg-(--p-ember) text-[#0A0D18]" : "bg-v-surface/85 text-v-ink shadow-[inset_0_0_0_1px_var(--v-line)]"
+          )}
+        >
+          {badge}
+        </span>
+        <span className={cn("absolute start-3.5 bottom-2.5 flex items-end gap-1.5 leading-none font-semibold tracking-[-0.04em] tabular-nums", soon || state === "locked" ? "text-v-ink/35" : "text-v-ink")}>
+          {state === "done" && result ? (
+            <>
+              <span className="text-[34px] sm:text-[40px]">{result}</span>
+              <span className="mb-1 grid size-5 place-items-center rounded-full bg-(--p-ember) text-[#0A0D18]" aria-hidden="true">
+                <Check className="size-3" strokeWidth={3} />
+              </span>
+            </>
+          ) : (
+            <span className="text-[40px] sm:text-[46px]">{String(n).padStart(2, "0")}</span>
+          )}
+        </span>
+      </div>
+      <div className="flex flex-1 flex-col gap-3 p-3.5 sm:p-4">
+        <div className="flex flex-col gap-0.5">
+          <h3 className="text-[16px] leading-tight font-semibold sm:text-[17px]">
+            {href ? (
+              <Link href={href} className="outline-none after:absolute after:inset-0 after:rounded-[20px] focus-visible:after:ring-2 focus-visible:after:ring-v-ink">
+                {T.skill.test(n)}
+              </Link>
+            ) : (
+              <span className="text-v-ink/60">{T.skill.test(n)}</span>
+            )}
+          </h3>
+          <p className="text-[13.5px] leading-snug text-v-muted text-pretty">{state === "done" && result ? `${C.best}: ${result}` : sub}</p>
+        </div>
+        <span
+          aria-hidden="true"
+          className={cn(
+            "mt-auto flex h-10 items-center justify-center gap-1.5 rounded-full text-[14px] font-semibold transition-[background-color,transform] duration-150 ease-out",
+            soon ? "text-v-muted" : state === "locked" ? "bg-v-soft text-v-ink" : state === "done" ? "bg-v-soft text-v-ink [@media(hover:hover)]:group-hover:bg-v-ink [@media(hover:hover)]:group-hover:text-v-bg" : "bg-v-ink text-v-bg"
+          )}
+        >
+          <Cta className={cn("size-4 shrink-0", Cta === ArrowRight && "rtl:-scale-x-100")} strokeWidth={2.25} />
+          {C.cta[state]}
+        </span>
+      </div>
+    </article>
   )
-  const row = "flex min-h-[76px] items-center gap-4 px-4 py-3 sm:px-5"
-  return href ? (
-    <Link href={href} className={cn(row, "group transition-colors duration-150 ease-out hover:bg-v-ink/[0.03] active:bg-v-ink/[0.05]")}>{body}</Link>
-  ) : (
-    <div className={row}>{body}</div>
+}
+
+/** The ten Modelltests of one skill as a card grid: two columns on a phone, three from sm. */
+export function ModelltestGrid({ slots, skill, label }: { slots: CardSlot[]; skill: PartId; label: string }) {
+  return (
+    <ol aria-label={label} className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+      {slots.map((s) => (
+        <li key={s.n}>
+          <ModelltestCard slot={s} skill={skill} />
+        </li>
+      ))}
+    </ol>
   )
 }

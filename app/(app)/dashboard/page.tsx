@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { Suspense } from "react"
 import { LoadingVeil } from "@/components/design/leuchte-loader"
 import { ScoreCard, WeekCard } from "@/components/portal/portal-overview"
-import { SkillCard } from "@/components/portal/portal-exam"
+import { SkillTabs } from "@/components/portal/skill-tabs"
 import { ExamChooser, ExamFocusHeader } from "@/components/portal/exam-focus"
 import { PassBanner } from "@/components/portal/pass-banner"
 import { getSessionUser, type SessionUser } from "@/lib/supabase/server"
-import { MODELLTESTS, focusInfo, portalSkills, switchFamilies } from "@/lib/portal"
-import { focusExam, portalStats, skillProgress, type PortalStats } from "@/lib/modelltest/portal"
+import { focusInfo, portalSkills, switchFamilies } from "@/lib/portal"
+import { focusExam, modelltestSlots, mostPracticedSkill, portalStats, type PortalStats } from "@/lib/modelltest/portal"
 import { EXAMS, type ExamId } from "@/lib/exams"
 import { KURZTEST_COPY } from "@/lib/i18n/kurztest"
 import { PORTAL_COPY } from "@/lib/i18n/portal"
@@ -44,8 +44,11 @@ function OverviewSkeleton() {
       <div className="flex flex-col gap-6" aria-hidden="true">
         <div className={`${block} h-[104px]`} />
         <div className="grid grid-cols-[minmax(0,1fr)] gap-10 xl:grid-cols-[minmax(0,1fr)_300px] xl:gap-4">
-          <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
-            {[0, 1, 2, 3].map((i) => <div key={i} className={`${block} h-[236px]`} />)}
+          <div className="flex flex-col gap-5">
+            <div className="h-[88px] rounded-[20px] bg-v-soft sm:h-[96px]" />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+              {[0, 1, 2, 3, 4, 5].map((i) => <div key={i} className={`${block} h-[218px]`} />)}
+            </div>
           </div>
           <div className={`${block} h-[180px]`} />
         </div>
@@ -63,28 +66,13 @@ function Stats({ stats }: { stats: PortalStats }) {
   )
 }
 
+/** The four skills as tabs, each with its ten Modelltests as cards. Opens on the most practised skill, else the first with an open test. */
 async function Parts({ exam, userId }: { exam: ExamId; userId: string }) {
-  const [skills, progress] = await Promise.all([portalSkills(exam), skillProgress(exam, userId)])
-  return (
-    <ul className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-2">
-      {skills.map((s) => {
-        const p = progress[s.skill]
-        return (
-          <li key={s.skill}>
-            <SkillCard
-              skill={s.skill}
-              name={KURZTEST_COPY.names[s.skill]}
-              href={s.href}
-              free={s.free}
-              count={T.exam.count(MODELLTESTS)}
-              status={p ? T.exam.progress(p.done, p.available) : T.exam.soonLine}
-              progress={p ? { done: p.done, total: MODELLTESTS } : undefined}
-            />
-          </li>
-        )
-      })}
-    </ul>
-  )
+  const [skills, practiced] = await Promise.all([portalSkills(exam), mostPracticedSkill(userId)])
+  const slots = await Promise.all(skills.map((s) => modelltestSlots(exam, s.skill, userId)))
+  const tabs = skills.map((s, i) => ({ skill: s.skill, name: KURZTEST_COPY.names[s.skill], free: s.free, slots: slots[i] }))
+  const initial = tabs.find((t) => t.skill === practiced)?.skill ?? tabs.find((t) => t.slots.some((x) => x.state === "open"))?.skill ?? tabs[0].skill
+  return <SkillTabs tabs={tabs} initial={initial} />
 }
 
 async function UserOverview() {

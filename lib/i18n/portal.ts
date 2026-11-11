@@ -120,6 +120,15 @@ export const PORTAL_COPY = {
       locked: "Mit Prüfungspass",
       preview: "Vorschau · noch nicht veröffentlicht",
     },
+    /** ModelltestCard: the flag on the card's band and the button at its foot. */
+    card: {
+      badge: { open: "Bereit", free: "Gratis", done: "Gemacht", locked: "Gesperrt", soon: "Bald", preview: "Vorschau" },
+      cta: { open: "Starten", done: "Noch einmal", locked: "Freischalten", soon: "Kommt bald", preview: "Ansehen" },
+      sub: { open: "Wie in der echten Prüfung", free: "Erste Hälfte gratis", done: "Dein bestes Ergebnis", locked: "Mit Prüfungspass", soon: "Noch in Arbeit", preview: "Nur für Admins" },
+      best: "Bestes Ergebnis",
+    },
+    tabs: "Teil wählen",
+    tabCount: (done: number, total: number) => `${done} von ${total} gemacht`,
     lockedNote: "Die erste Hälfte von Modelltest 1 ist gratis. Für den Rest und Modelltest 2 bis 10 brauchst du den Prüfungspass.",
     lockedCta: "Preise ansehen",
   },

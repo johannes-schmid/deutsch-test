@@ -874,3 +874,9 @@
 **Outcome:** SUCCESS
 **What worked / went wrong:** The 2026-W45 snapshot had gsc/bing/geo skipped (no key), and a skipped source is written as `{ week, generated_at, skipped }` with no `sites`. The loader assumed `sites` always exists, so production threw `Cannot read properties of undefined (reading 'deutschtest')`. Reproduced by running `loadSeoCockpit()` against the committed snapshot before and after.
 **Lesson:** Every snapshot reader must treat a source as possibly skipped: optional-chain `sites`, and type it `sites?:`.
+
+## 2026-11-11 — Portal overview: Modelltests as cards with skill tabs
+**Changed:** `components/portal/portal-exam.tsx` (`ModelltestRow` → `ModelltestCard` + `ModelltestGrid`), new `components/portal/skill-tabs.tsx`, `/dashboard` shows the four skills as tabs with their ten Modelltests as cards (KNM Proefexamen grid), `/dashboard/[exam]/[skill]` uses the same grid, `/design/portal` + DESIGN.md updated, copy in `lib/i18n/portal.ts` (`skill.card`, `skill.tabs`).
+**Outcome:** SUCCESS locally (tsc, eslint, `next build`; `/design/portal` checked at 1440 + 375, tab click and arrow keys work). The logged-in dashboard itself was not viewed (Google login).
+**What worked / went wrong:** A Tailwind arbitrary `bg-[radial-gradient(...),color-mix(...)]` list silently rendered nothing; an inline `style` with a `--sk` custom property works. The shadcn `TabsList` sets its height under `group-data-horizontal/tabs:h-8`, so a plain `h-auto` doesn't override it: repeat the variant. A fresh worktree needs `npx next typegen` before `tsc` (PageProps) and the main checkout's `.env*` linked in.
+**Lesson:** For layered gradients or per-item tokens use inline style + CSS variables, not arbitrary Tailwind values; override shadcn classes with the same variant prefix.

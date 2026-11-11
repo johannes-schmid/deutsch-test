@@ -6,7 +6,8 @@ import { AccountRow, Avatar, PortalSidebar, PortalTabBar, SideParts, SidePartsSk
 import { ExamChooser, ExamFocusHeader } from "@/components/portal/exam-focus"
 import { PassBanner } from "@/components/portal/pass-banner"
 import { focusInfo, switchFamilies } from "@/lib/portal"
-import { ModelltestRow, PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
+import { PortalCrumbs, SkillCard } from "@/components/portal/portal-exam"
+import { SkillTabs } from "@/components/portal/skill-tabs"
 import { LevelCard, ScoreCard, WeekCard } from "@/components/portal/portal-overview"
 import { AccountCard, PassCard, ProgressCard } from "@/components/portal/portal-account"
 import { PassBuilder } from "@/components/design/pass-builder"
@@ -116,14 +117,21 @@ export default async function PortalDesignPage() {
           </ul>
         </Spec>
 
-        <Spec name="ModelltestRow" note="/dashboard/[exam]/[skill]: zehn Zeilen in einer Papierkarte, ein Zustand pro Zeile. Gemacht: Ember-Haken an der Nummer, bestes Ergebnis, Pfeil wird „noch einmal“. Gesperrt: weiche Nummer und Schloss. Bald: gestrichelte Nummer und Uhr. Vorschau: nur für Admins, unveröffentlicht.">
-          <ol className="nz-paper flex max-w-[760px] flex-col divide-y divide-v-line overflow-hidden rounded-[24px]">
-            <li><ModelltestRow slot={{ n: 1, state: "done", href: "#", free: true, result: "B1" }} /></li>
-            <li><ModelltestRow slot={{ n: 2, state: "open", href: "#", free: false, result: null }} /></li>
-            <li><ModelltestRow slot={{ n: 3, state: "preview", href: "#", free: false, result: null }} /></li>
-            <li><ModelltestRow slot={{ n: 4, state: "locked", href: null, free: false, result: null }} /></li>
-            <li><ModelltestRow slot={{ n: 5, state: "soon", href: null, free: false, result: null }} /></li>
-          </ol>
+<Spec name="ModelltestCard · SkillTabs" note="/dashboard: die vier Teile als Tabs (Pfeiltasten wechseln, x/10 gemacht), darunter die zehn Modelltests als Karten (nach dem Proefexamen-Raster von knmoefenen.nl). /dashboard/[exam]/[skill]: dasselbe Raster. Band im Ton des Teils mit Nummer oder bestem Ergebnis, Flagge oben, ein Knopf unten. Gratis: Glut-Flagge. Gemacht: Ergebnis + Ember-Haken, „Noch einmal“. Gesperrt: weiches Band, führt zu den Preisen. Bald: gestrichelt, ohne Link. Vorschau: nur für Admins.">
+          <div className="max-w-[760px]">
+            <SkillTabs
+              initial="lesen"
+              tabs={(["hoeren", "lesen", "schreiben", "sprechen"] as const).map((skill, k) => ({
+                skill,
+                name: { hoeren: "Hören", lesen: "Lesen", schreiben: "Schreiben", sprechen: "Sprechen" }[skill],
+                free: k < 3 ? "#" : null,
+                slots: Array.from({ length: 6 }, (_, i) => {
+                  const state = (["done", "open", "preview", "locked", "soon", "open"] as const)[(i + k) % 6]
+                  return { n: i + 1, state, href: state === "locked" || state === "soon" ? null : "#", free: i === 0, result: state === "done" ? "B1" : null }
+                }),
+              }))}
+            />
+          </div>
         </Spec>
 
         <Spec name="PassBuilder" note="/preise und /dashboard/preise: der Prüfungspass, nach dem ModulePicker von inburgeringoefenen.nl. Links die Wahl (Prüfungstermin → empfohlene Laufzeit, Laufzeit als Radio-Kacheln, was drin ist, was gratis bleibt), rechts die Zusammenfassung auf Nacht (ab lg sticky, auf dem Handy darunter): Preis für die erste Laufzeit, pro Monat, Ersparnis gegenüber Einzelmonaten, danach monatlich, Ende der ersten Laufzeit, Vertrauenszeilen. Öffentlich: „Pass kaufen“ ins Portal. Im Portal (checkout): Einwilligung (Häkchen in Glut) und „Zahlungspflichtig bestellen“ → Mollie; läuft schon ein Pass, ein Hinweis mit Link zum Konto.">
