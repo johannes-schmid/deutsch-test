@@ -891,3 +891,9 @@
 **Outcome:** SUCCESS (revert)
 **What worked / went wrong:** Tabs + a grid of mostly locked cards was too much for a free user; the heavier progress cards weren't wanted either.
 **Lesson:** Hannes likes the calm white SkillCards on the overview. Show a mock on `/design/portal` before reworking the dashboard.
+
+## 2026-11-11 — Blog byline: editorial team instead of Amber
+**Changed:** `lib/blog/author.ts` now names "Redaktion deutschtest üben" (logo as avatar, no bio); BlogPosting `author` = the Organization; text/Modelltest page bylines, Über-uns (de/uk/ru) and the AboutPage `founder` no longer name Amber.
+**Outcome:** SUCCESS
+**What worked / went wrong:** one AUTHOR constant fed every byline, so the swap was small. Her name stays on Impressum, Datenschutz and AGB (§ 5 DDG legal owner).
+**Lesson:** keep the legal operator (`OPERATOR`) and the content author (`AUTHOR`) separate; never derive a byline from the Impressum person.

@@ -13,7 +13,7 @@ export const page: TextPage = {
     <>
       <h2>Wer wir sind</h2>
       <p>
-        deutschtest üben ist ein Angebot von {OPERATOR.company} (Inhaberin: {OPERATOR.person}). Von uns kommen auch
+        deutschtest üben ist ein Angebot von {OPERATOR.company}. Von uns kommen auch
         zwei Übungsseiten für Prüfungen in den Niederlanden: inburgeringoefenen.nl und knmoefenen.nl.
         deutschtest üben ist die deutsche Schwesterseite.
       </p>

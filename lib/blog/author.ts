@@ -1,16 +1,13 @@
-import { OPERATOR } from "@/lib/seo"
+import { SITE_NAME } from "@/lib/seo"
 
 /**
- * The one byline on the blog. A byline must be accurate (Google treats a made-up author as deception).
- * The bio states only what samensterkintaal's Over page says (checked 2026-10-16): Dutch NT2/inburgering, not German exams.
- * TODO(hannes): add a photo (public/images/…); until then the card shows initials.
+ * The one byline on the blog: the editorial team, not a person (Hannes, 2026-11-11).
+ * A byline must be accurate (Google treats a made-up author as deception), so no invented expert, bio or photo.
  */
 export const AUTHOR = {
-  name: OPERATOR.person,
-  role: OPERATOR.company,
+  name: `Redaktion ${SITE_NAME}`,
+  role: null as string | null,
   href: "/ueber-uns",
-  bio: "Ausgebildete Grundschullehrerin mit über zehn Jahren im Unterricht. Sie unterrichtet online Niederländisch als Zweitsprache und bereitet Erwachsene auf die Inburgering und das Staatsexamen NT2 in den Niederlanden vor." as string | null,
-  jobTitle: "Sprachtrainerin",
-  sameAs: ["https://sites.google.com/view/samensterkintaal/over"],
-  photo: null as string | null,
+  bio: null as string | null,
+  photo: "/icon.svg" as string | null,
 }

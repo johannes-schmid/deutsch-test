@@ -49,7 +49,7 @@ export function BlogArticle({ slug, locale = "de" }: { slug: string; locale?: Si
         datePublished: post.published,
         dateModified: post.reviewed,
         image: absUrl(OG_IMAGE.url),
-        author: { "@type": "Person", name: AUTHOR.name, url: absUrl(lp(locale, AUTHOR.href)), jobTitle: AUTHOR.jobTitle, ...(AUTHOR.bio && locale === "de" ? { description: AUTHOR.bio } : {}), sameAs: AUTHOR.sameAs, worksFor: PROVIDER },
+        author: PROVIDER,
         publisher: PROVIDER,
         citation: post.sources.map((s) => s.url),
       },

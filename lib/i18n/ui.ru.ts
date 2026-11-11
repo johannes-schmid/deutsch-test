@@ -44,7 +44,7 @@ export const ru: UiCopy = {
     all: "Все",
     readingTime: (min: number) => `${min} ${minWord(min)} чтения`,
     minutesShort: (min: number) => `${min} мин.`,
-    authorFallback: (role: string) => `${role}. У каждой цифры в наших статьях есть источник и дата.`,
+    authorFallback: "У каждой цифры в наших статьях есть источник и дата.",
     categories: { pruefungen: "Экзамены и результат", schreiben: "Письмо и говорение", tipps: "Советы и подготовка" },
     index: {
       title: "Блог: экзамены по немецкому и подготовка к ним",

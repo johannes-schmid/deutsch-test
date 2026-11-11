@@ -36,7 +36,7 @@ export const uk: UiCopy = {
     all: "Усі",
     readingTime: (min: number) => `${min} хв читання`,
     minutesShort: (min: number) => `${min} хв`,
-    authorFallback: (role: string) => `${role}. Кожне число в наших статтях подано з джерелом і датою.`,
+    authorFallback: "Кожне число в наших статтях подано з джерелом і датою.",
     categories: { pruefungen: "Іспити й результат", schreiben: "Письмо й говоріння", tipps: "Поради й підготовка" },
     index: {
       title: "Блог: іспити з німецької — розуміти й готуватися",

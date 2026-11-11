@@ -38,7 +38,7 @@ const de = {
     all: "Alle",
     readingTime: (min: number) => `${min} Min. Lesezeit`,
     minutesShort: (min: number) => `${min} Min.`,
-    authorFallback: (role: string) => `${role}. Jede Zahl in unseren Artikeln steht mit Quelle und Datum.`,
+    authorFallback: "Jede Zahl in unseren Artikeln steht mit Quelle und Datum.",
     categories: { pruefungen: "Prüfungen & Ergebnis", schreiben: "Schreiben & Sprechen", tipps: "Tipps & Vorbereitung" },
     index: {
       title: "Blog: Deutschprüfungen verstehen und gut vorbereiten",

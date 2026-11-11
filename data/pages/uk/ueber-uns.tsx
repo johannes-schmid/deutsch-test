@@ -13,7 +13,7 @@ export const page: TextPage = {
     <>
       <h2>Хто ми</h2>
       <p>
-        deutschtest üben — це сервіс {OPERATOR.company} (власниця: {OPERATOR.person}). Ми також створили два сайти
+        deutschtest üben — це сервіс {OPERATOR.company}. Ми також створили два сайти
         для підготовки до іспитів у Нідерландах: inburgeringoefenen.nl і knmoefenen.nl. deutschtest üben — їхній
         німецький сайт-побратим.
       </p>

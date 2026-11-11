@@ -9,7 +9,8 @@ import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { NUMBER_LOCALE, type SiteLocale } from "@/lib/i18n/locale"
 import type { ModelltestPage } from "@/lib/pages/types"
 import { PLANS, formatEuro, priceLine } from "@/lib/pricing"
-import { OPERATOR, PROVIDER, absUrl, breadcrumbList } from "@/lib/seo"
+import { PROVIDER, absUrl, breadcrumbList } from "@/lib/seo"
+import { AUTHOR } from "@/lib/blog/author"
 import { pageCrumbs } from "./text-page"
 
 export const MODELLTEST_PATH = "/dtz/modelltest"
@@ -142,7 +143,7 @@ export function ModelltestPageView({ page, locale }: { page: ModelltestPage; loc
       </section>
 
       <Prose className="mt-4">{page.faq}</Prose>
-      <Byline author={`${OPERATOR.person}, ${OPERATOR.company}`} reviewed={page.byline.reviewed} sources={page.byline.sources} locale={locale} />
+      <Byline author={AUTHOR.name} reviewed={page.byline.reviewed} sources={page.byline.sources} locale={locale} />
 
       <Photo token="--g-photo-6" className="mt-20 flex min-h-[340px] flex-col items-center justify-center gap-5 rounded-[28px] px-6 py-14 text-center sm:min-h-[380px]">
         <h2 className="v-display max-w-[18ch] text-[clamp(32px,4.6vw,60px)] leading-[1.04]">{page.closing.h2}</h2>

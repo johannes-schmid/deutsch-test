@@ -6,6 +6,7 @@ import { alternates, lp, type SiteLocale } from "@/lib/i18n/locale"
 import { UI } from "@/lib/i18n/ui"
 import type { ContactPage, TextPage } from "@/lib/pages/types"
 import { CONTACT_EMAIL, OPERATOR, ORG_ID, PROVIDER, SITE_NAME, SITE_URL, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/seo"
+import { AUTHOR } from "@/lib/blog/author"
 
 export function pageMetadata(page: Pick<TextPage, "title" | "description">, path: string, locale: SiteLocale): Metadata {
   return {
@@ -29,7 +30,7 @@ function schema(type: SchemaType, page: TextPage, path: string, locale: SiteLoca
   const url = absUrl(lp(locale, path))
   const extra =
     type === "AboutPage"
-      ? { about: { "@type": "Organization", "@id": ORG_ID, name: SITE_NAME, url: SITE_URL, legalName: OPERATOR.company, founder: { "@type": "Person", name: OPERATOR.person }, email: OPERATOR.email } }
+      ? { about: { "@type": "Organization", "@id": ORG_ID, name: SITE_NAME, url: SITE_URL, legalName: OPERATOR.company, email: OPERATOR.email } }
       : { description: page.description, publisher: PROVIDER }
   return { "@context": "https://schema.org", "@graph": [{ "@type": type, "@id": `${url}#page`, url, name: page.title, inLanguage: locale, ...extra }, breadcrumbList(crumbs)] }
 }
@@ -42,7 +43,7 @@ export function TextPageView({ page, path, locale, type = "WebPage" }: { page: T
       <JsonLd data={schema(type, page, path, locale, crumbs)} />
       <PageHeader crumbs={crumbs} h1={page.h1} h1Muted={page.h1Muted} lead={page.lead} meta={page.meta} locale={locale} />
       <Prose>{page.body}</Prose>
-      {page.byline ? <Byline author={`${OPERATOR.person}, ${OPERATOR.company}`} reviewed={page.byline.reviewed} sources={page.byline.sources} locale={locale} /> : null}
+      {page.byline ? <Byline author={AUTHOR.name} reviewed={page.byline.reviewed} sources={page.byline.sources} locale={locale} /> : null}
       {page.cta ? <TestCta h2={page.cta.h2} text={page.cta.text} locale={locale} /> : null}
     </>
   )

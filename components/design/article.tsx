@@ -37,7 +37,7 @@ export function Byline({ date, minutes, l = "de" }: { date: string; minutes: num
         <AuthorAvatar size={46} />
         <span className="flex flex-col leading-snug">
           <Link href={lp(l, AUTHOR.href)} className="text-[14.5px] font-semibold">{AUTHOR.name}</Link>
-          <span className="text-[13.5px] text-v-muted">{AUTHOR.role} · <time dateTime={date}>{formatDate(date, l)}</time></span>
+          <span className="text-[13.5px] text-v-muted">{AUTHOR.role ? <>{AUTHOR.role} · </> : null}<time dateTime={date}>{formatDate(date, l)}</time></span>
         </span>
       </span>
       <span className="hidden h-8 w-px bg-v-line sm:block" aria-hidden="true" />
@@ -53,7 +53,7 @@ export function AuthorCard({ l = "de" }: { l?: SiteLocale }) {
       <AuthorAvatar size={42} />
       <span className="flex flex-col leading-snug">
         <Link href={lp(l, AUTHOR.href)} className="text-[14px] font-semibold">{AUTHOR.name}</Link>
-        <span className="text-[13px] text-v-muted">{(l === "de" ? AUTHOR.bio : null) ?? UI[l].blog.authorFallback(AUTHOR.role)}</span>
+        <span className="text-[13px] text-v-muted">{(l === "de" ? AUTHOR.bio : null) ?? UI[l].blog.authorFallback}</span>
       </span>
     </div>
   )
