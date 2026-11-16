@@ -1,12 +1,13 @@
 "use client"
 
 import { useEffect, useRef, useState, useTransition, type ReactNode } from "react"
-import { Check, ClipboardCopy, ExternalLink, LoaderCircle, Mail, Send, Sparkles, X } from "lucide-react"
+import { ArrowLeft, Check, ClipboardCopy, Eye, ExternalLink, LoaderCircle, Mail, Send, Sparkles, X } from "lucide-react"
 import { Empty, Panel } from "@/components/admin/admin-ui"
 import { draftRequest, logStep, sendRequest, type ActionResult } from "@/app/(admin)/admin/seo/actions"
 import { followUpDueAt, prospectOutreachState, type OutreachKind, type OutreachState } from "@/lib/admin/backlink-outreach-model"
 import type { OutreachRow } from "@/lib/admin/backlink-outreach"
 import type { Prospect, ProspectStatus } from "@/lib/admin/seo-backlinks-model"
+import { REPLY_TO, SENDER_FROM } from "@/lib/admin/backlink-outreach-prompt"
 import { cn } from "@/lib/utils"
 
 /**
@@ -52,9 +53,10 @@ export function BacklinkSuggestions({ prospects, outreach, outreachError }: { pr
     .map((p) => ({ p, events: outreach?.[p.domain] ?? [], state: prospectOutreachState(p, outreach?.[p.domain] ?? [], now) }))
     .sort((a, b) => ORDER.indexOf(a.state) - ORDER.indexOf(b.state))
   const open = rows.find((r) => r.p.domain === selected) ?? null
+  const isOpen = open !== null
 
   useEffect(() => {
-    if (open) {
+    if (isOpen) {
       closeRef.current?.focus()
       const onKey = (e: KeyboardEvent) => e.key === "Escape" && setSelected(null)
       window.addEventListener("keydown", onKey)
@@ -65,7 +67,7 @@ export function BacklinkSuggestions({ prospects, outreach, outreachError }: { pr
       wasOpen.current = false
       lastRow.current?.focus({ preventScroll: true })
     }
-  }, [open])
+  }, [isOpen, selected])
 
   if (!prospects.length) return <Empty>No suggestions yet. Add them to seo-agent/backlink-prospects.json.</Empty>
 
@@ -156,7 +158,8 @@ function Details({ p, events, state, outreachError, draft, setDraft, onClose, cl
   const [pending, start] = useTransition()
   const [busy, setBusy] = useState<string | null>(null)
   const [result, setResult] = useState<{ ok: boolean; text: string } | null>(null)
-  const [confirming, setConfirming] = useState(false)
+  const [previewing, setPreviewing] = useState(false)
+  const bodyRef = useRef<HTMLTextAreaElement>(null)
   const [copied, setCopied] = useState(false)
   const [note, setNote] = useState("")
 
@@ -166,7 +169,6 @@ function Details({ p, events, state, outreachError, draft, setDraft, onClose, cl
       setResult(null)
       const r = await fn()
       setBusy(null)
-      setConfirming(false)
       setResult(r.ok ? (r.message ? { ok: true, text: r.message } : null) : { ok: false, text: r.error })
       after?.(r)
     })
@@ -174,7 +176,9 @@ function Details({ p, events, state, outreachError, draft, setDraft, onClose, cl
   const draftNow = () =>
     sendKind &&
     run("draft", () => draftRequest(p.domain, sendKind), (r) => {
-      if (r.ok && r.data) setDraft(r.data as { subject: string; body: string })
+      if (!r.ok || !r.data) return
+      setDraft(r.data as { subject: string; body: string })
+      requestAnimationFrame(() => bodyRef.current?.focus({ preventScroll: true }))
     })
 
   const copy = async () => {
@@ -194,6 +198,9 @@ function Details({ p, events, state, outreachError, draft, setDraft, onClose, cl
     if (result && !result.ok) setResult(null)
   }
   const ready = Boolean(draft?.subject.trim() && draft?.body.trim())
+  const words = editable.body.trim() ? editable.body.trim().split(/\s+/).length : 0
+  const isEmail = contact?.channel === "email" && Boolean(contact.email)
+  const firstSent = events.find((e) => e.kind === "sent")
   const blocked = Boolean(outreachError)
 
   return (
@@ -217,38 +224,43 @@ function Details({ p, events, state, outreachError, draft, setDraft, onClose, cl
         {sendKind ? (
           <Block title={sendKind === "sent" ? (contact?.channel === "self-serve" ? "Listing text" : "Request") : "Follow-up"} aside={<button type="button" onClick={draftNow} disabled={pending || blocked} className={QUIET}>{busy === "draft" ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" /> : <Sparkles className="size-4" aria-hidden="true" />}{draft ? "Draft again" : "Draft with Claude"}</button>}>
             {sendKind === "follow_up" && due && <p className="text-[13px] text-v-muted">No answer since {day(events.find((e) => e.kind === "sent")!.at)}. This is the one follow-up; after it the site moves to “No reply” in 14 days.</p>}
-            <label className="flex flex-col gap-1.5">
-              <span className="text-[12.5px] font-semibold text-v-muted">Subject</span>
-              <input value={editable.subject} onChange={(e) => edit({ ...editable, subject: e.target.value })} disabled={busy === "draft"} className={`${FIELD} h-11`} placeholder={busy === "draft" ? "Drafting…" : "Draft with Claude, or write it yourself"} />
-            </label>
-            <label className="flex flex-col gap-1.5">
-              <span className="text-[12.5px] font-semibold text-v-muted">Text</span>
-              <textarea value={editable.body} onChange={(e) => edit({ ...editable, body: e.target.value })} disabled={busy === "draft"} rows={14} className={`${FIELD} resize-y py-3 leading-relaxed`} placeholder={busy === "draft" ? "Drafting…" : "Plain text, Sie-form. Offer only the free pages."} />
-            </label>
-            <p className="text-[12.5px] text-v-muted">Check every claim before it goes out. Offer only free pages that are live, and never say “offiziell”.</p>
+            {isEmail && previewing ? (
+              <>
+                <Preview to={contact?.name ? `${contact.name} <${contact.email}>` : contact!.email!} subject={editable.subject} body={editable.body} inReplyTo={sendKind === "follow_up" && firstSent ? day(firstSent.at) : null} />
+                <div className="flex flex-wrap items-center gap-2">
+                  <button type="button" onClick={() => run("send", () => sendRequest(p.domain, sendKind, editable), (r) => r.ok && setPreviewing(false))} disabled={pending || !ready || blocked} className={PRIMARY}>
+                    {busy === "send" ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" /> : <Send className="size-4" aria-hidden="true" />}Send now to {contact!.email}
+                  </button>
+                  <button type="button" onClick={() => setPreviewing(false)} disabled={pending} className={QUIET}><ArrowLeft className="size-4" aria-hidden="true" />Back to edit</button>
+                </div>
+              </>
+            ) : (
+              <>
+                <label className="flex flex-col gap-1.5">
+                  <span className="text-[12.5px] font-semibold text-v-muted">Subject</span>
+                  <input value={editable.subject} onChange={(e) => edit({ ...editable, subject: e.target.value })} disabled={busy === "draft"} className={`${FIELD} h-11`} placeholder={busy === "draft" ? "Drafting…" : "Draft with Claude, or write it yourself"} />
+                </label>
+                <label className="flex flex-col gap-1.5">
+                  <span className="flex items-baseline justify-between gap-3 text-[12.5px] font-semibold text-v-muted">Text<span className="font-normal tabular-nums">{words ? `${words} words` : ""}</span></span>
+                  <textarea ref={bodyRef} value={editable.body} onChange={(e) => edit({ ...editable, body: e.target.value })} disabled={busy === "draft"} spellCheck lang="de" className={`${FIELD} field-sizing-content min-h-[320px] resize-none py-3 leading-relaxed`} placeholder={busy === "draft" ? "Drafting…" : "Plain text, Sie-form. Offer only the free pages."} />
+                </label>
+                <p className="text-[12.5px] text-v-muted">Check every claim before it goes out. Offer only free pages that are live, and never say “offiziell”.</p>
 
-            <div className="flex flex-wrap items-center gap-2">
-              {contact?.channel === "email" && contact.email ? (
-                confirming ? (
-                  <>
-                    <button type="button" onClick={() => run("send", () => sendRequest(p.domain, sendKind, editable))} disabled={pending || !ready || blocked} className={PRIMARY}>
-                      {busy === "send" ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" /> : <Send className="size-4" aria-hidden="true" />}Send now to {contact.email}
-                    </button>
-                    <button type="button" onClick={() => setConfirming(false)} disabled={pending} className={QUIET}>Cancel</button>
-                  </>
-                ) : (
-                  <button type="button" onClick={() => setConfirming(true)} disabled={pending || !ready || blocked} className={PRIMARY}><Send className="size-4" aria-hidden="true" />Send email…</button>
-                )
-              ) : (
-                <>
-                  <button type="button" onClick={copy} disabled={!ready} className={PRIMARY}>{copied ? <Check className="size-4" aria-hidden="true" /> : <ClipboardCopy className="size-4" aria-hidden="true" />}<span aria-live="polite">{copied ? "Copied" : "Copy text"}</span></button>
-                  {contact?.form && <a href={contact.form} target="_blank" rel="noreferrer" className={QUIET}>Open {contact.channel === "self-serve" ? "site" : "form"}<ExternalLink className="size-3.5" aria-hidden="true" /></a>}
-                </>
-              )}
-              <button type="button" onClick={() => run("mark", () => logStep(p.domain, sendKind, editable))} disabled={pending || blocked} className={`${BTN} text-v-muted hover:text-v-ink`}>
-                {busy === "mark" && <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />}Mark as sent
-              </button>
-            </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  {isEmail ? (
+                    <button type="button" onClick={() => setPreviewing(true)} disabled={!ready || blocked} className={PRIMARY}><Eye className="size-4" aria-hidden="true" />Preview email</button>
+                  ) : (
+                    <>
+                      <button type="button" onClick={copy} disabled={!ready} className={PRIMARY}>{copied ? <Check className="size-4" aria-hidden="true" /> : <ClipboardCopy className="size-4" aria-hidden="true" />}<span aria-live="polite">{copied ? "Copied" : "Copy text"}</span></button>
+                      {contact?.form && <a href={contact.form} target="_blank" rel="noreferrer" className={QUIET}>Open {contact.channel === "self-serve" ? "site" : "form"}<ExternalLink className="size-3.5" aria-hidden="true" /></a>}
+                    </>
+                  )}
+                  <button type="button" onClick={() => run("mark", () => logStep(p.domain, sendKind, editable))} disabled={pending || blocked} className={`${BTN} text-v-muted hover:text-v-ink`}>
+                    {busy === "mark" && <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />}Mark as sent
+                  </button>
+                </div>
+              </>
+            )}
           </Block>
         ) : state === "asked" && due ? (
           <p className="text-[13.5px]">Asked on {day(events.find((e) => e.kind === "sent")!.at)}. A follow-up is possible from <b className="font-semibold">{day(due)}</b> if they don’t answer.</p>
@@ -299,6 +311,38 @@ function Details({ p, events, state, outreachError, draft, setDraft, onClose, cl
         </Block>
       </div>
     </>
+  )
+}
+
+/** The email as the recipient gets it: plain text, the From/To/Reply-To lines, links clickable to check them. */
+function Preview({ to, subject, body, inReplyTo }: { to: string; subject: string; body: string; inReplyTo: string | null }) {
+  const rows: [string, string][] = [["From", SENDER_FROM], ["To", to], ["Reply-To", REPLY_TO]]
+  return (
+    <figure aria-label="Email preview" className="overflow-hidden rounded-[18px] ring-1 ring-v-line ring-inset">
+      <dl className="grid grid-cols-[72px_minmax(0,1fr)] gap-x-3 gap-y-1 border-b border-v-line bg-v-bg/60 px-4 py-3 text-[13px]">
+        {rows.map(([k, v]) => (
+          <div key={k} className="contents">
+            <dt className="text-v-muted">{k}</dt>
+            <dd className="truncate" title={v}>{v}</dd>
+          </div>
+        ))}
+        {inReplyTo && (
+          <div className="contents">
+            <dt className="text-v-muted">Thread</dt>
+            <dd>Reply to your email of {inReplyTo}</dd>
+          </div>
+        )}
+        <div className="contents">
+          <dt className="text-v-muted">Subject</dt>
+          <dd className="font-semibold text-pretty">{subject.trim()}</dd>
+        </div>
+      </dl>
+      <div className="max-h-[52vh] overflow-y-auto px-4 py-4 text-[14.5px] leading-relaxed whitespace-pre-wrap [overflow-wrap:anywhere]">
+        {body.trim().split(/(https?:\/\/[^\s)>\]]+)/g).map((part, i) =>
+          i % 2 ? <a key={i} href={part} target="_blank" rel="noreferrer" className="rounded-sm underline underline-offset-4 outline-none focus-visible:ring-2 focus-visible:ring-v-ink">{part}</a> : part,
+        )}
+      </div>
+    </figure>
   )
 }
 

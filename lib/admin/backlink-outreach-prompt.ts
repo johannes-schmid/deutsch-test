@@ -16,6 +16,9 @@ export const OUTREACH_PAGES = [
 ]
 
 export const SENDER = { name: "Hannes", site: "deutschtest-ueben.de" }
+/** What the recipient sees in From; replies go to support@ (sendEmail's default reply_to). */
+export const SENDER_FROM = `${SENDER.name} von deutschtest üben <support@deutschtest-ueben.de>`
+export const REPLY_TO = "support@deutschtest-ueben.de"
 
 export const DRAFT_SYSTEM = `You write short outreach emails for deutschtest-ueben.de, a small German exam-prep site for migrants (DTZ, telc, Goethe, ÖSD). The site asks curated link lists (city integration pages, universities, charities, directories) to list its free practice tests.
 

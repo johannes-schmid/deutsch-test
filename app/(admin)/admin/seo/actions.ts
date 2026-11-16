@@ -5,7 +5,7 @@ import { refresh } from "next/cache"
 import { requireAdmin } from "@/lib/admin/guard"
 import { canSend, outreachState, replySubject, type OutreachKind } from "@/lib/admin/backlink-outreach-model"
 import { draftingConfigured, draftOutreach, loadDomainOutreach } from "@/lib/admin/backlink-outreach"
-import { SENDER } from "@/lib/admin/backlink-outreach-prompt"
+import { REPLY_TO, SENDER_FROM } from "@/lib/admin/backlink-outreach-prompt"
 import { loadBacklinks } from "@/lib/admin/seo-backlinks"
 import { sendEmail } from "@/lib/email/resend"
 import { createAdminClient } from "@/lib/supabase/admin"
@@ -20,7 +20,6 @@ import { createAdminClient } from "@/lib/supabase/admin"
 export type ActionResult<T = undefined> = { ok: true; data?: T; message?: string } | { ok: false; error: string }
 type Draft = { subject: string; body: string }
 
-const FROM = `${SENDER.name} von deutschtest üben <support@deutschtest-ueben.de>`
 const MAX_BODY = 4000
 
 async function context(domain: string) {
@@ -77,7 +76,7 @@ export async function sendRequest(domain: string, kind: "sent" | "follow_up", in
 
   let resendId: string
   try {
-    const sent = await sendEmail({ to, from: FROM, email: { subject: draft.subject, html: "", text: draft.body }, idempotencyKey: `outreach-${domain}-${kind}`, headers })
+    const sent = await sendEmail({ to, from: SENDER_FROM, replyTo: REPLY_TO, email: { subject: draft.subject, html: "", text: draft.body }, idempotencyKey: `outreach-${domain}-${kind}`, headers })
     if (!sent) return { ok: false, error: "RESEND_API_KEY is not set, so nothing was sent." }
     resendId = sent.id
   } catch (e) {
