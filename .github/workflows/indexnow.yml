@@ -1,0 +1,82 @@
+name: IndexNow (after production deploy)
+
+# After a push to main, wait for Vercel's production deploy of that commit (Vercel reports it as a
+# GitHub deployment), then submit sitemap URLs that are new or have a newer <lastmod>.
+# The previous sitemap lives in the actions cache, not the repo: a commit from here would start
+# another deploy. Not `on: deployment_status`: that event has no ref, so actions/cache neither
+# reads nor writes (learned on inburgeringoefenen.nl, 2026-10-13).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'Paths or URLs, space-separated (empty = only new/changed URLs)'
+        type: string
+        default: ''
+      all:
+        description: 'The whole sitemap (once, or after a big restructure)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  deployments: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Wait for the production deploy
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.sha }}
+        run: |
+          for i in $(seq 1 90); do
+            ID=$(gh api "repos/$GITHUB_REPOSITORY/deployments?sha=$SHA&environment=Production" --jq '.[0].id // empty')
+            if [ -n "$ID" ]; then
+              STATE=$(gh api "repos/$GITHUB_REPOSITORY/deployments/$ID/statuses" --jq '.[0].state // empty')
+              echo "deploy $ID: ${STATE:-no status yet}"
+              case "$STATE" in
+                success) exit 0 ;;
+                failure|error|inactive) echo "production deploy failed"; exit 1 ;;
+              esac
+            fi
+            sleep 10
+          done
+          echo "no production deploy within 15 minutes"; exit 1
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/seo-agent/indexnow.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache/restore@v4
+        with:
+          path: indexnow-state.json
+          key: indexnow-${{ github.run_id }}
+          restore-keys: indexnow-
+      - name: Submit
+        env:
+          URLS: ${{ inputs.urls }}
+          ALL: ${{ inputs.all }}
+        run: |
+          if [ -n "$URLS" ]; then
+            node scripts/seo-agent/indexnow.mjs $URLS
+          elif [ "$ALL" = "true" ]; then
+            node scripts/seo-agent/indexnow.mjs --all --state indexnow-state.json
+          else
+            node scripts/seo-agent/indexnow.mjs --changed --state indexnow-state.json
+          fi
+      - uses: actions/cache/save@v4
+        if: hashFiles('indexnow-state.json') != ''
+        with:
+          path: indexnow-state.json
+          key: indexnow-${{ github.run_id }}

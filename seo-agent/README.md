@@ -103,3 +103,12 @@ to-do list, experiments and numbers sit folded under "More".
 `node scripts/seo-agent/collect.mjs --week 2026-W00 --only health` (and delete the folder afterwards).
 
 A snapshot with `skipped` or `error` means **unknown**, never zero.
+
+## IndexNow (Bing, Yandex, Seznam, Naver)
+
+`.github/workflows/indexnow.yml` runs on every push to `main`: it waits for Vercel's production deploy of that
+commit, then `scripts/seo-agent/indexnow.mjs --changed` submits sitemap URLs that are new or carry a newer
+`<lastmod>` (blog posts). The previous sitemap lives in the actions cache; with no cache it records a baseline and
+sends nothing. The key is public (`public/04040a59e9e49bdcafa194b6b8babf33.txt`), no secret needed.
+Run it by hand (Actions → IndexNow → Run workflow) with `all` once after the first deploy, or with a list of paths
+after a real content change to a page without `<lastmod>`. Check receipt in Bing Webmaster Tools › IndexNow.

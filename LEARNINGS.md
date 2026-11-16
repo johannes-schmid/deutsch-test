@@ -909,3 +909,9 @@
 **Outcome:** SUCCESS locally (tsc, eslint on changed files, vitest, `next build`; Playwright `.unit-cache/e2e/paywall-flow.mts` at 390 + 1440: result → step 1 → step 2 (demo on Ergebnis) → packages → back twice → result, no page errors).
 **What worked / went wrong:** Reusing the interactive landing demo gave real product screens with no new mock. The existing `.nz-screen` entrance has a transform, which would pin the fixed step button and buy bar to the step while it runs, so steps got their own opacity-only class. `text-balance` forced the two-part headline onto four lines in the narrow desktop column. The demo always shows a DTZ Modelltest, also for a Goethe or ÖSD visitor.
 **Lesson:** Inside a takeover with fixed children, entrances are opacity only. Reuse a live component as the "screenshot" before drawing a new one.
+
+## 2026-11-16 — IndexNow for Bing
+**Changed:** key file `public/04040a59e9e49bdcafa194b6b8babf33.txt`, `scripts/seo-agent/indexnow.mjs` (`--changed --state`, `--all`, paths, `--dry-run`), `.github/workflows/indexnow.yml` (push to main → wait for Vercel's Production deploy → submit); ported from inburgering.
+**Outcome:** SUCCESS (dry run against the live sitemap: 178 URLs; key file served with HTTP 200 from `next start`; live only after merge)
+**What worked / went wrong:** inburgering's version already had the `deployment_status` + actions/cache trap fixed, so it was reused as-is. Our sitemap carries `<lastmod>` on blog posts, so the state is `{url: lastmod}` and a re-reviewed post is resubmitted too.
+**Lesson:** IndexNow is for changed URLs: the whole sitemap once (`workflow_dispatch` with `all`), then only new/changed ones or paths named by hand. Read the first run's log, not just the green tick.
