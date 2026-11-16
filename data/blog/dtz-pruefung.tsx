@@ -21,7 +21,7 @@ export const dtzPruefung: BlogPost = {
   lead: "Der Deutsch-Test für Zuwanderer (DTZ) ist die Sprachprüfung am Ende des Integrationskurses. Hier siehst du, wie er aufgebaut ist.",
   category: "pruefungen",
   published: "2026-10-12",
-  reviewed: "2026-10-16",
+  reviewed: "2026-11-06",
   readingMinutes: 4,
   cover: {
     photo: "--g-photo-2",

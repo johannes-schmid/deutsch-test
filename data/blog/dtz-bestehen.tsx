@@ -22,7 +22,7 @@ export const dtzBestehen: BlogPost = {
   lead: "Beim DTZ gibt es kein „bestanden“ oder „nicht bestanden“. Du bekommst eine Stufe: B1, A2 oder unter A2. Hier liest du, wie sie entsteht.",
   category: "pruefungen",
   published: "2026-10-16",
-  reviewed: "2026-10-16",
+  reviewed: "2026-11-06",
   readingMinutes: 9,
   cover: {
     photo: "--g-photo-5",

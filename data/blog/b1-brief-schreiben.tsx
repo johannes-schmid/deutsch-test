@@ -20,7 +20,7 @@ export const b1BriefSchreiben: BlogPost = {
   lead: "Im DTZ und im telc B1 schreibst du einen Brief oder eine E-Mail. Hier lernst du den Aufbau und nützliche Sätze. Und du siehst ein ganzes Beispiel.",
   category: "schreiben",
   published: "2026-10-16",
-  reviewed: "2026-10-16",
+  reviewed: "2026-11-06",
   readingMinutes: 10,
   cover: {
     photo: "--g-photo-4",

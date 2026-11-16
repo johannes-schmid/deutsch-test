@@ -927,3 +927,9 @@
 **Outcome:** SUCCESS (tsc, 171 tests, build; checked at 375 and 1440).
 **What worked / went wrong:** The DTZ hub H1 "Wie weit bist du von B1?" carried no keyword. Bing queries for these pages say "Test", "kostenlos" and "online" far more often than "gratis testen", so H1s now read "{Prüfung} Test: … gratis online üben" and leads open with "Kostenloser Übungstest". The DTZ hub stays off "Modelltest", which `/dtz/modelltest` owns.
 **Lesson:** An H1 names the exam and the action; the hook goes in the lead. Check Bing and GSC queries before wording a heading. A fresh worktree needs `next build` once before `tsc` (PageProps types are generated).
+
+## 2026-11-16 — Honest lastmod on every sitemap URL
+**Changed:** `app/sitemap.ts` has a hand-set `CHANGED` map (page → day its content last really changed) and `FREE_TESTS`; `/blog` takes the newest review date. `reviewed` of the four posts rewritten on 6 Nov set to 2026-11-06 (Hannes confirmed he reviewed them).
+**Outcome:** SUCCESS (tsc, 181 tests, build; 177 of 177 URLs carry a lastmod, `dateModified` of the brief post is 2026-11-06).
+**What worked / went wrong:** Google had not recrawled `/blog/b1-brief-schreiben` since 25 Oct because the edit of 6 Nov left `reviewed` at 16 Oct, and the free-test pages had no lastmod, so the IndexNow workflow sent nothing after their copy changed.
+**Lesson:** Bump the date in `CHANGED` (or the post's `reviewed`, after a real review) in the same commit as the copy. Never a build date.

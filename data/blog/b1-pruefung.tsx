@@ -24,7 +24,7 @@ export const b1Pruefung: BlogPost = {
   lead: "Es gibt mehrere B1-Prüfungen. Sie sehen ähnlich aus, sind aber verschieden. Hier siehst du die vier wichtigsten im Vergleich.",
   category: "pruefungen",
   published: "2026-10-16",
-  reviewed: "2026-10-16",
+  reviewed: "2026-11-06",
   readingMinutes: 9,
   cover: {
     photo: "--g-photo-1",
