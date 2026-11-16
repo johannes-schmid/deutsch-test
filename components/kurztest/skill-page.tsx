@@ -39,6 +39,8 @@ export function SkillPage({ exam, skill, locale = "de" }: { exam: ExamId; skill:
     { name: p.crumb, path: at(examPath(exam)) },
     { name: T.names[skill], path: at(path(exam, skill)) },
   ]
+  // The letter guide answers "how do I write this?" for the two exams it covers.
+  const guide = skill === "schreiben" && (exam === "dtz" || exam === "telc-b1") ? { href: at("/blog/b1-brief-schreiben"), label: T.guides.brief } : undefined
   const closed = skill === "lesen" || skill === "hoeren"
   const url = absUrl(at(path(exam, skill)))
   const levels = EXAMS[exam].levels
@@ -61,7 +63,7 @@ export function SkillPage({ exam, skill, locale = "de" }: { exam: ExamId; skill:
   return (
     <div className="v-container pb-16">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [resource, breadcrumbList(crumbs)] }} />
-      <KurztestHeader crumbs={crumbs} crumbsAria={UI[locale].crumbsAria} eyebrow={c.eyebrow ?? p.hub.eyebrow} h1={c.h1} lead={c.lead} chips={[c.count, T.minutes(minutes), T.chips.free]} />
+      <KurztestHeader crumbs={crumbs} crumbsAria={UI[locale].crumbsAria} eyebrow={c.eyebrow ?? p.hub.eyebrow} h1={c.h1} lead={c.lead} chips={[c.count, T.minutes(minutes), T.chips.free]} guide={guide} />
       <KurztestRunner locale={locale} exam={exam} page={p} skill={skill} minutes={minutes} blocks={blocks} />
     </div>
   )

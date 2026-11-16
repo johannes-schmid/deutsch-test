@@ -13,14 +13,14 @@ const GOETHE = { name: "Goethe-Institut / ÖSD: Goethe-Zertifikat B1, Übungssat
 export const b1BriefSchreiben: BlogPost = {
   slug: "b1-brief-schreiben",
   status: "reviewed",
-  title: "B1-Prüfung Schreiben: Brief und E-Mail mit Beispiel",
-  crumb: "B1-Prüfung Schreiben",
-  description: "So schreibst du den Brief in der B1-Prüfung: Aufbau, nützliche Sätze und ein Beispiel. Für DTZ und telc Deutsch B1, mit den echten Bewertungskriterien.",
-  h1: "B1-Prüfung Schreiben: So gelingt dein Brief",
-  lead: "Im DTZ und im telc B1 schreibst du einen Brief oder eine E-Mail. Hier lernst du den Aufbau und nützliche Sätze. Und du siehst ein ganzes Beispiel.",
+  title: "B1 Brief schreiben: Aufgabe, Muster und Sätze (DTZ, telc)",
+  crumb: "B1 Brief schreiben",
+  description: "Brief schreiben in der B1-Prüfung: die Aufgabe, der Aufbau in sechs Schritten und zwei Muster mit Erklärung. Für DTZ und telc B1, mit den Bewertungskriterien.",
+  h1: "Brief schreiben in der B1-Prüfung: Aufgabe, Aufbau und Muster",
+  lead: "Im DTZ und im telc B1 schreibst du einen Brief oder eine E-Mail. Hier siehst du die Aufgabe, den Aufbau und zwei Muster. Dazu Sätze, die fast immer passen.",
   category: "schreiben",
   published: "2026-10-16",
-  reviewed: "2026-11-06",
+  reviewed: "2026-11-16",
   readingMinutes: 10,
   cover: {
     photo: "--g-photo-4",
@@ -67,7 +67,7 @@ export const b1BriefSchreiben: BlogPost = {
   sections: [
     {
       id: "aufgabe",
-      title: "Was du in der Prüfung schreibst",
+      title: "Die Aufgabe: Das schreibst du in der B1-Prüfung",
       kurz: "Im DTZ und im telc B1 schreibst du in 30 Minuten einen Brief oder eine E-Mail zu vier Punkten. Eine feste Wortzahl gibt es nicht.",
       body: (
         <>
@@ -100,15 +100,12 @@ export const b1BriefSchreiben: BlogPost = {
               },
             ]}
           />
-          <p>
-            Dieser Artikel zeigt dir den Brief für DTZ und telc B1. Die Tipps zum Aufbau helfen dir aber auch bei Goethe und ÖSD.
-          </p>
         </>
       ),
     },
     {
       id: "bewertung",
-      title: "Darauf achten die Prüfer",
+      title: "Bewertung: Darauf achten die Prüfer",
       kurz: "Alle vier Punkte beantworten zählt am meisten. Ein vergessener Punkt kostet mehr als ein Grammatikfehler.",
       body: (
         <>
@@ -141,7 +138,7 @@ export const b1BriefSchreiben: BlogPost = {
     },
     {
       id: "aufbau",
-      title: "Der Aufbau in sechs Schritten",
+      title: "Aufbau: ein B1-Brief in sechs Schritten",
       kurz: "Betreff, Anrede, Einleitung, die vier Punkte, Schluss, Gruß. Immer in dieser Reihenfolge, dann vergisst du nichts.",
       body: (
         <>
@@ -156,18 +153,13 @@ export const b1BriefSchreiben: BlogPost = {
               { title: "Gruß", text: "Formell: „Mit freundlichen Grüßen“ und dein Name." },
             ]}
           />
-          <Note kind="info">
-            <p>
-              Absender, Adresse und Datum musst du bei einer E-Mail nicht schreiben. Das steht in den Bewertungshinweisen von telc.
-            </p>
-          </Note>
         </>
       ),
     },
     {
       id: "beispiel",
-      title: "Ein Beispiel mit Erklärung",
-      kurz: "Eine E-Mail an die Kursleiterin, etwa 100 Wörter, mit allen vier Punkten. Jede Zeile ist erklärt.",
+      title: "Muster: zwei B1-Briefe mit Erklärung",
+      kurz: "Zwei Muster: eine formelle E-Mail wie im DTZ und eine Antwort an einen Freund wie bei telc B1. Jede Zeile ist erklärt.",
       body: (
         <>
           <p>
@@ -182,7 +174,7 @@ export const b1BriefSchreiben: BlogPost = {
             <li>um eine Antwort bitten</li>
           </ul>
           <LetterSample
-            title="Beispiel: E-Mail an die Kursleiterin"
+            title="Muster 1 (DTZ): E-Mail an die Kursleiterin"
             lines={[
               { text: "Betreff: Erste-Hilfe-Kurs am Samstag", mark: 1 },
               { text: "Sehr geehrte Frau Kaya,", mark: 2 },
@@ -206,15 +198,44 @@ export const b1BriefSchreiben: BlogPost = {
             ]}
           />
           <p>
-            Der Brief hat etwa 100 Wörter. Eine feste Wortzahl gibt es im DTZ nicht. Wichtig ist: Jeder Punkt ist klar
-            beantwortet, und die Sätze sind verbunden.
+            <strong>Das zweite Muster</strong> ist informell, wie oft bei telc B1. Auch diese Aufgabe haben wir selbst
+            geschrieben. Dein Freund Jonas zieht bald um und fragt, ob du hilfst. Antworte ihm.
+          </p>
+          <ul>
+            <li>wann du Zeit hast</li>
+            <li>wie du helfen kannst</li>
+            <li>wer noch helfen könnte</li>
+            <li>was ihr danach machen könnt</li>
+          </ul>
+          <LetterSample
+            title="Muster 2 (telc B1): Antwort an einen Freund"
+            lines={[
+              { text: "Lieber Jonas,", mark: 1 },
+              { text: "danke für deine E-Mail! Schön, dass du eine neue Wohnung gefunden hast.", mark: 2 },
+              { text: "Natürlich helfe ich dir. Am Samstag habe ich den ganzen Tag Zeit, am Sonntag nur am Vormittag.", mark: 3 },
+              { text: "Ich kann Kartons tragen und die Möbel aufbauen. Außerdem bringe ich mein Werkzeug mit." },
+              { text: "Frag doch auch Malik. Er hat ein großes Auto, damit geht es schneller." },
+              { text: "Nach dem Umzug können wir zusammen Pizza bestellen. Was meinst du?" },
+              { text: "Viele Grüße", mark: 4 },
+              { text: "Samir", join: true },
+            ]}
+            notes={[
+              { n: 1, text: "Informelle Anrede mit Vornamen. Du schreibst „du“, nicht „Sie“." },
+              { n: 2, text: "Zuerst reagierst du auf die E-Mail deines Freundes." },
+              { n: 3, text: "Die vier Punkte, je ein bis zwei Sätze. „Außerdem“ und „damit“ verbinden die Sätze." },
+              { n: 4, text: "Informeller Gruß und nur dein Vorname." },
+            ]}
+          />
+          <p>
+            Jetzt du: Schreib einen Brief im <Link href="/gratis-test/dtz/schreiben">DTZ Schreiben Test</Link> oder im{" "}
+            <Link href="/gratis-test/telc-b1/schreiben">telc B1 Schreiben Test</Link>.
           </p>
         </>
       ),
     },
     {
       id: "saetze",
-      title: "Sätze, die fast immer passen",
+      title: "Sätze für deinen Brief, formell und informell",
       kurz: "Lern je einen Satz für Anrede, Einleitung, Bitte, Entschuldigung, Vorschlag, Schluss und Gruß, formell und informell.",
       body: (
         <>
@@ -249,7 +270,7 @@ export const b1BriefSchreiben: BlogPost = {
     },
     {
       id: "fehler",
-      title: "Typische Fehler und dein Zeitplan",
+      title: "Typische Fehler im B1-Brief",
       kurz: "Die häufigsten Fehler: ein Punkt fehlt, der Ton wechselt, jeder Satz beginnt mit „Ich“. Plane fünf Minuten zum Prüfen ein.",
       body: (
         <>
@@ -270,18 +291,9 @@ export const b1BriefSchreiben: BlogPost = {
             ]}
           />
           <p>
-            Bei telc bekommst du im Kriterium Kommunikative Gestaltung keine volle Punktzahl, wenn fast alle Sätze mit „Ich“ oder
-            „Wir“ beginnen. Das steht in den Bewertungshinweisen von telc. Ein guter Grund, die Satzanfänge zu wechseln.
+            Bei telc kostet es Punkte, wenn fast alle Sätze mit „Ich“ oder „Wir“ beginnen. Das steht in den
+            Bewertungshinweisen. Wechsle deshalb die Satzanfänge.
           </p>
-          <p>Dreißig Minuten sind nicht viel. Mit einem Plan geht es leichter. Das ist unser Vorschlag:</p>
-          <Steps
-            items={[
-              { title: "Lesen und wählen (3 Minuten)", text: "Lies beide Aufgaben. Nimm die, zu der dir schneller Ideen kommen." },
-              { title: "Notizen (5 Minuten)", text: "Schreib zu jedem Punkt zwei, drei Stichwörter. Entscheide: formell oder informell?" },
-              { title: "Schreiben (17 Minuten)", text: "Schreib den Brief in der Reihenfolge der Punkte. Nutze die Sätze von oben." },
-              { title: "Prüfen (5 Minuten)", text: "Alle vier Punkte da? Anrede und Gruß? Verben an der richtigen Stelle?" },
-            ]}
-          />
         </>
       ),
     },

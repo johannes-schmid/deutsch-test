@@ -10,6 +10,7 @@ const mins = (n: number) => `${n} ${plural(n, "minute", "minutes")}`
 export const en: KurztestCopy = {
   crumbs: { home: "Home", overview: "Free tests" },
   chips: { free: "Free", noAccount: "No sign-up", solutions: "With answers" },
+  guides: { brief: "Guide: how to write the B1 letter, with samples" },
   overview: {
     title: "Free German exam practice: A1, A2 and B1 | deutschtest üben",
     description: "Free practice tests for Goethe, telc, ÖSD and DTZ at A1, A2 and B1. Pick your level and your exam. No sign-up, with answers.",

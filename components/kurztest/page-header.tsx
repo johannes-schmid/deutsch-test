@@ -3,7 +3,7 @@ import { Check, ChevronRight } from "lucide-react"
 import type { Crumb } from "@/lib/seo"
 
 /** Breadcrumb, eyebrow, H1, lead and fact chips: the indexable top of every Kurztest page. */
-export function KurztestHeader({ crumbs, eyebrow, h1, lead, chips, crumbsAria = "Brotkrumen" }: { crumbs: Crumb[]; eyebrow: string; h1: string; lead: string; chips: string[]; crumbsAria?: string }) {
+export function KurztestHeader({ crumbs, eyebrow, h1, lead, chips, guide, crumbsAria = "Brotkrumen" }: { crumbs: Crumb[]; eyebrow: string; h1: string; lead: string; chips: string[]; guide?: { href: string; label: string }; crumbsAria?: string }) {
   return (
     <header className="flex max-w-[64ch] flex-col items-start gap-5 pt-8 pb-10 sm:pt-12 sm:pb-14">
       <nav aria-label={crumbsAria}>
@@ -31,6 +31,11 @@ export function KurztestHeader({ crumbs, eyebrow, h1, lead, chips, crumbsAria = 
           </li>
         ))}
       </ul>
+      {guide ? (
+        <Link href={guide.href} className="rounded text-[15px] font-medium text-v-ink underline decoration-v-accent/60 underline-offset-4 transition-colors hover:decoration-v-accent">
+          {guide.label}
+        </Link>
+      ) : null}
     </header>
   )
 }

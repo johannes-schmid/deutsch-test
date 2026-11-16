@@ -11,11 +11,11 @@ const G3 = { name: "g.a.s.t.: DTZ Übungssatz 2 (06/2024), S. 24 und 42", url: "
 export const b1BriefSchreiben: BlogPost = {
   ...de,
   locale: "uk",
-  title: "Іспит B1, письмо: лист і e-mail із прикладом",
-  crumb: "Іспит B1: письмо",
-  description: "Як написати лист на іспиті B1: структура, корисні фрази та приклад. Для DTZ і telc Deutsch B1, за справжніми критеріями оцінювання.",
-  h1: "Іспит B1, письмо (Schreiben): як написати вдалий лист",
-  lead: "На DTZ і telc B1 ви пишете лист або e-mail. Тут ви вивчите структуру й корисні фрази. А ще побачите цілий приклад.",
+  title: "Лист на іспиті B1: завдання, зразки та фрази (DTZ, telc)",
+  crumb: "Лист на іспиті B1",
+  description: "Як написати лист на іспиті B1: завдання, структура за шість кроків і два зразки з поясненнями. Для DTZ і telc B1, з критеріями оцінювання.",
+  h1: "Лист на іспиті B1 (Brief schreiben): завдання, структура і зразки",
+  lead: "На DTZ і telc B1 ви пишете лист або e-mail. Тут ви побачите завдання, структуру і два зразки. А ще фрази, які підходять майже завжди.",
   cover: {
     ...de.cover,
     label: "Лист із чотирма позначеними пунктами",
@@ -53,7 +53,7 @@ export const b1BriefSchreiben: BlogPost = {
   sections: [
     {
       id: "aufgabe",
-      title: "Що ви пишете на іспиті",
+      title: "Завдання: що ви пишете на іспиті B1",
       kurz: "На DTZ і telc B1 ви за 30 хвилин пишете лист або e-mail за чотирма пунктами. Фіксованої кількості слів немає.",
       body: (
         <>
@@ -87,15 +87,12 @@ export const b1BriefSchreiben: BlogPost = {
               },
             ]}
           />
-          <p>
-            Ця стаття показує лист для DTZ і telc B1. Але поради щодо структури допоможуть вам і на Goethe та ÖSD.
-          </p>
         </>
       ),
     },
     {
       id: "bewertung",
-      title: "На що зважають екзаменатори",
+      title: "Оцінювання: на що звертають увагу екзаменатори",
       kurz: "Найбільше важить відповідь на всі чотири пункти. Пропущений пункт коштує більше, ніж граматична помилка.",
       body: (
         <>
@@ -128,7 +125,7 @@ export const b1BriefSchreiben: BlogPost = {
     },
     {
       id: "aufbau",
-      title: "Структура в шість кроків",
+      title: "Структура: лист B1 за шість кроків",
       kurz: "Тема, звертання, вступ, чотири пункти, завершення, прощання. Завжди в цьому порядку, тоді ви нічого не забудете.",
       body: (
         <>
@@ -143,18 +140,13 @@ export const b1BriefSchreiben: BlogPost = {
               { title: "Прощання (Gruß)", text: "Офіційно: «Mit freundlichen Grüßen» і ваше ім’я." },
             ]}
           />
-          <Note kind="info" l="uk">
-            <p>
-              Відправника, адресу й дату в e-mail писати не потрібно. Так сказано в настановах telc з оцінювання.
-            </p>
-          </Note>
         </>
       ),
     },
     {
       id: "beispiel",
-      title: "Приклад із поясненням",
-      kurz: "E-mail до керівниці курсу, близько 100 слів, з усіма чотирма пунктами. Кожен рядок пояснено.",
+      title: "Зразки: два листи B1 з поясненнями",
+      kurz: "Два зразки: формальний e-mail, як на DTZ, і відповідь другові, як на telc B1. Кожен рядок пояснено.",
       body: (
         <>
           <p>
@@ -170,7 +162,7 @@ export const b1BriefSchreiben: BlogPost = {
           </ul>
           <LetterSample
             l="uk"
-            title="Приклад: e-mail керівниці курсу"
+            title="Зразок 1 (DTZ): e-mail керівниці курсу"
             lines={[
               { text: "Betreff: Erste-Hilfe-Kurs am Samstag", mark: 1 },
               { text: "Sehr geehrte Frau Kaya,", mark: 2 },
@@ -194,15 +186,45 @@ export const b1BriefSchreiben: BlogPost = {
             ]}
           />
           <p>
-            У листі приблизно 100 слів. Фіксованої кількості слів на DTZ немає. Важливо ось що: на кожен пункт є чітка
-            відповідь, а речення пов’язані між собою.
+            <strong>Другий зразок</strong> неформальний, як часто буває на telc B1. Це завдання ми теж написали самі. Ваш друг Йонас
+            скоро переїжджає і питає, чи ви допоможете. Дайте йому відповідь.
+          </p>
+          <ul>
+            <li>wann du Zeit hast (коли ви маєте час)</li>
+            <li>wie du helfen kannst (як ви можете допомогти)</li>
+            <li>wer noch helfen könnte (хто ще міг би допомогти)</li>
+            <li>was ihr danach machen könnt (що ви можете зробити потім)</li>
+          </ul>
+          <LetterSample
+            l="uk"
+            title="Зразок 2 (telc B1): відповідь другові"
+            lines={[
+              { text: "Lieber Jonas,", mark: 1 },
+              { text: "danke für deine E-Mail! Schön, dass du eine neue Wohnung gefunden hast.", mark: 2 },
+              { text: "Natürlich helfe ich dir. Am Samstag habe ich den ganzen Tag Zeit, am Sonntag nur am Vormittag.", mark: 3 },
+              { text: "Ich kann Kartons tragen und die Möbel aufbauen. Außerdem bringe ich mein Werkzeug mit." },
+              { text: "Frag doch auch Malik. Er hat ein großes Auto, damit geht es schneller." },
+              { text: "Nach dem Umzug können wir zusammen Pizza bestellen. Was meinst du?" },
+              { text: "Viele Grüße", mark: 4 },
+              { text: "Samir", join: true },
+            ]}
+            notes={[
+              { n: 1, text: "Неформальне звертання на ім’я. Ви пишете „du“, а не „Sie“." },
+              { n: 2, text: "Спочатку ви реагуєте на e-mail друга." },
+              { n: 3, text: "Чотири пункти, по одному-два речення на кожен. „Außerdem“ (крім того) і „damit“ (з ним) поєднують речення." },
+              { n: 4, text: "Неформальне прощання і лише ваше ім’я." },
+            ]}
+          />
+          <p>
+            Тепер ваша черга: напишіть лист у <Link href="/uk/bezkoshtovnyi-test/dtz/pysmo">тесті DTZ Schreiben</Link> або в 
+            <Link href="/uk/bezkoshtovnyi-test/telc-b1/pysmo">тесті telc B1 Schreiben</Link>.
           </p>
         </>
       ),
     },
     {
       id: "saetze",
-      title: "Фрази, які підходять майже завжди",
+      title: "Фрази для вашого листа, формальні й неформальні",
       kurz: "Вивчіть по одній фразі для звертання, вступу, прохання, вибачення, пропозиції, завершення і прощання, офіційно й неофіційно.",
       body: (
         <>
@@ -238,7 +260,7 @@ export const b1BriefSchreiben: BlogPost = {
     },
     {
       id: "fehler",
-      title: "Типові помилки та ваш план часу",
+      title: "Типові помилки в листі B1",
       kurz: "Найчастіші помилки: бракує пункту, змінюється тон, кожне речення починається з «Ich». Залиште п’ять хвилин на перевірку.",
       body: (
         <>
@@ -260,18 +282,9 @@ export const b1BriefSchreiben: BlogPost = {
             ]}
           />
           <p>
-            На telc за критерієм Kommunikative Gestaltung ви не отримаєте повного балу, якщо майже всі речення починаються з «Ich» або
-            «Wir». Так сказано в настановах telc з оцінювання. Це добра причина змінювати початок речень.
+            На telc ви втрачаєте бали, якщо майже всі речення починаються з „Ich“ або „Wir“ (вказівки telc щодо оцінювання).
+            Тому змінюйте початок речень.
           </p>
-          <p>Тридцять хвилин — це небагато. З планом легше. Ось наша пропозиція:</p>
-          <Steps
-            items={[
-              { title: "Прочитати й обрати (3 хвилини)", text: "Прочитайте обидва завдання. Оберіть те, до якого швидше з’являються ідеї." },
-              { title: "Нотатки (5 хвилин)", text: "Запишіть до кожного пункту два-три ключові слова. Вирішіть: офіційно чи неофіційно?" },
-              { title: "Письмо (17 хвилин)", text: "Пишіть лист у порядку пунктів. Використовуйте фрази, наведені вище." },
-              { title: "Перевірка (5 хвилин)", text: "Чи є всі чотири пункти? Звертання і прощання? Дієслова на правильному місці?" },
-            ]}
-          />
         </>
       ),
     },

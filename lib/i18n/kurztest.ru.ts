@@ -16,6 +16,7 @@ const minuty = (n: number) => plural(n, "минута", "минуты", "мин�
 export const ru: KurztestCopy = {
   crumbs: { home: "Главная", overview: "Бесплатные тесты" },
   chips: { free: "Бесплатно", noAccount: "Без регистрации", solutions: "С ответами" },
+  guides: { brief: "Руководство: как написать письмо на экзамене B1, с примером" },
   overview: {
     title: "Экзамен по немецкому: тест онлайн бесплатно A1, A2, B1 | deutschtest üben",
     description: "Бесплатные тесты Goethe, telc, ÖSD и DTZ на уровни A1, A2 и B1. Выберите уровень и экзамен. Без регистрации, с ответами.",

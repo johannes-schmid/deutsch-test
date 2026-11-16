@@ -18,6 +18,7 @@ import { page as telcB1 } from "./exam-pages/telc-b1"
 const de = {
   crumbs: { home: "Startseite", overview: "Gratis-Tests" },
   chips: { free: "Gratis", noAccount: "Ohne Anmeldung", solutions: "Mit Lösungen" },
+  guides: { brief: "Anleitung: Brief schreiben in der B1-Prüfung, mit Muster" },
   overview: {
     title: "Deutschprüfung gratis üben: A1, A2 und B1 | deutschtest üben",
     description: "Gratis-Tests für Goethe, telc, ÖSD und DTZ auf A1, A2 und B1. Wähl dein Niveau und deine Prüfung. Ohne Anmeldung, mit Lösungen.",

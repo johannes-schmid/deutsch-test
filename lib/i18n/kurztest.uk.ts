@@ -15,6 +15,7 @@ const tasks = (n: number) => `${n} ${plural(n, "завдання", "завдан
 export const uk: KurztestCopy = {
   crumbs: { home: "Головна", overview: "Безкоштовні тести" },
   chips: { free: "Безкоштовно", noAccount: "Без реєстрації", solutions: "З відповідями" },
+  guides: { brief: "Посібник: як написати лист на іспиті B1, з прикладом" },
   overview: {
     title: "Іспит з німецької безкоштовно: A1, A2 і B1 | deutschtest üben",
     description: "Безкоштовні тести Goethe, telc, ÖSD і DTZ на рівнях A1, A2 і B1. Оберіть рівень та іспит. Без реєстрації, з відповідями.",

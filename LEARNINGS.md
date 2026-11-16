@@ -933,3 +933,9 @@
 **Outcome:** SUCCESS (tsc, 181 tests, build; 177 of 177 URLs carry a lastmod, `dateModified` of the brief post is 2026-11-06).
 **What worked / went wrong:** Google had not recrawled `/blog/b1-brief-schreiben` since 25 Oct because the edit of 6 Nov left `reviewed` at 16 Oct, and the free-test pages had no lastmod, so the IndexNow workflow sent nothing after their copy changed.
 **Lesson:** Bump the date in `CHANGED` (or the post's `reviewed`, after a real review) in the same commit as the copy. Never a build date.
+
+## 2026-11-16 — Brief post reworked around the queries it showed for
+**Changed:** `data/blog/b1-brief-schreiben.tsx` (title, H1, description, section headings now say "Brief schreiben", "Aufgabe", "Muster"; a second, informal telc B1 Muster; time plan and one duplicate note cut to stay under 1,300 words); guide link under the header of `/gratis-test/{dtz,telc-b1}/schreiben` (`components/kurztest/{page-header,skill-page}.tsx`, `guides.brief` in every `lib/i18n/kurztest*.ts`).
+**Outcome:** SUCCESS (181 tests, tsc, build; ranking effect not known yet)
+**What worked / went wrong:** Search Console showed the post for "b1 brief muster", "brief schreiben b1 aufgabe" and "telc b1 brief schreiben", words the post never used. The drop itself (position ~30 → ~60) came on 25–26 October, eleven days before the only edit, so the edit was not the cause. The en/uk/ru translations override `sections`, so each needed the same edits by hand; English runs longer than German and went over 1,300 words until a tip note, two intro lines and one FAQ entry were cut.
+**Lesson:** Before rewriting a page that "lost rankings", line up the daily position data with the git log; and write headings from the queries the page already gets impressions for, not from the editor's outline.

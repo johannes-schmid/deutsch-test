@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Check, PenLine } from "lucide-react"
-import { Compare, DataTable, DoDont, FactBox, LetterSample, Note, Steps } from "@/components/design/article"
+import { Compare, DataTable, DoDont, FactBox, LetterSample, Steps } from "@/components/design/article"
 import { QuizCard } from "@/components/design/article-interactive"
 import { ExamMark } from "@/components/design/variants/nachtzug-icons"
 import type { BlogPost } from "@/lib/blog/types"
@@ -11,11 +11,11 @@ const G3 = { name: "g.a.s.t.: DTZ Übungssatz 2 (06/2024), S. 24 und 42", url: "
 export const b1BriefSchreiben: BlogPost = {
   ...de,
   locale: "en",
-  title: "B1 exam Writing: letter and email with an example",
-  crumb: "B1 exam: Writing",
-  description: "How to write the letter in the B1 exam: structure, useful sentences and an example. For the DTZ and telc Deutsch B1, with the real scoring criteria.",
-  h1: "B1 exam Writing (Schreiben): how to write a good letter",
-  lead: "In the DTZ and in telc B1 you write a letter or an email. Here you learn the structure and useful sentences. And you see a full example.",
+  title: "B1 letter writing: task, samples and sentences (DTZ, telc)",
+  crumb: "B1 letter writing",
+  description: "Writing the letter in the B1 exam: the task, the structure in six steps and two samples with explanations. For the DTZ and telc B1, with the scoring criteria.",
+  h1: "Writing the letter in the B1 exam: task, structure and samples",
+  lead: "In the DTZ and in telc B1 you write a letter or an email. Here you see the task, the structure and two samples. Plus sentences that almost always fit.",
   cover: {
     ...de.cover,
     label: "A letter with four ticked points",
@@ -53,7 +53,7 @@ export const b1BriefSchreiben: BlogPost = {
   sections: [
     {
       id: "aufgabe",
-      title: "What you write in the exam",
+      title: "The task: what you write in the B1 exam",
       kurz: "In the DTZ and in telc B1 you write a letter or an email about four points in 30 minutes. There is no fixed number of words.",
       body: (
         <>
@@ -86,15 +86,12 @@ export const b1BriefSchreiben: BlogPost = {
               },
             ]}
           />
-          <p>
-            This article is about the DTZ and telc B1 letter. The structure tips also help for Goethe and ÖSD.
-          </p>
         </>
       ),
     },
     {
       id: "bewertung",
-      title: "What the examiners look for",
+      title: "Scoring: what the examiners look for",
       kurz: "Answering all four points counts the most. A forgotten point costs more than a grammar mistake.",
       body: (
         <>
@@ -116,18 +113,12 @@ export const b1BriefSchreiben: BlogPost = {
             The points you need for B1 in the DTZ are in{" "}
             <Link href="/en/blog/pass-the-dtz">Passing the DTZ: how the result works</Link>.
           </p>
-          <Note kind="tipp" title="The most important thing first" l="en">
-            <p>
-              A forgotten point costs more than a grammar mistake. Write simple sentences about all four points, not nice
-              sentences about three.
-            </p>
-          </Note>
         </>
       ),
     },
     {
       id: "aufbau",
-      title: "The structure in six steps",
+      title: "Structure: a B1 letter in six steps",
       kurz: "Subject, greeting, opening, the four points, ending, closing. Always in this order, so you forget nothing.",
       body: (
         <>
@@ -142,18 +133,13 @@ export const b1BriefSchreiben: BlogPost = {
               { title: "Closing (Gruß)", text: "Formal: „Mit freundlichen Grüßen“ and your name." },
             ]}
           />
-          <Note kind="info" l="en">
-            <p>
-              An email needs no sender details, address or date (telc scoring notes).
-            </p>
-          </Note>
         </>
       ),
     },
     {
       id: "beispiel",
-      title: "An example with explanations",
-      kurz: "An email to the course leader, about 100 words, with all four points. Every line is explained.",
+      title: "Samples: two B1 letters with explanations",
+      kurz: "Two samples: a formal email as in the DTZ and a reply to a friend as in telc B1. Every line is explained.",
       body: (
         <>
           <p>
@@ -169,7 +155,7 @@ export const b1BriefSchreiben: BlogPost = {
           </ul>
           <LetterSample
             l="en"
-            title="Example: email to the course leader"
+            title="Sample 1 (DTZ): email to the course leader"
             lines={[
               { text: "Betreff: Erste-Hilfe-Kurs am Samstag", mark: 1 },
               { text: "Sehr geehrte Frau Kaya,", mark: 2 },
@@ -193,21 +179,48 @@ export const b1BriefSchreiben: BlogPost = {
             ]}
           />
           <p>
-            The letter has about 100 words. What matters: each point has a clear answer, and the sentences are connected.
+            <strong>The second sample</strong> is informal, as often in telc B1. Your friend Jonas is moving soon and asks
+            for help. Reply to him.
+          </p>
+          <ul>
+            <li>wann du Zeit hast (when you have time)</li>
+            <li>wie du helfen kannst (how you can help)</li>
+            <li>wer noch helfen könnte (who else could help)</li>
+            <li>was ihr danach machen könnt (what you can do afterwards)</li>
+          </ul>
+          <LetterSample
+            l="en"
+            title="Sample 2 (telc B1): reply to a friend"
+            lines={[
+              { text: "Lieber Jonas,", mark: 1 },
+              { text: "danke für deine E-Mail! Schön, dass du eine neue Wohnung gefunden hast.", mark: 2 },
+              { text: "Natürlich helfe ich dir. Am Samstag habe ich den ganzen Tag Zeit, am Sonntag nur am Vormittag.", mark: 3 },
+              { text: "Ich kann Kartons tragen und die Möbel aufbauen. Außerdem bringe ich mein Werkzeug mit." },
+              { text: "Frag doch auch Malik. Er hat ein großes Auto, damit geht es schneller." },
+              { text: "Nach dem Umzug können wir zusammen Pizza bestellen. Was meinst du?" },
+              { text: "Viele Grüße", mark: 4 },
+              { text: "Samir", join: true },
+            ]}
+            notes={[
+              { n: 1, text: "Informal greeting with the first name. You write „du“, not „Sie“." },
+              { n: 2, text: "First you react to your friend's email." },
+              { n: 3, text: "The four points, one or two sentences each. „Außerdem“ and „damit“ join the sentences." },
+              { n: 4, text: "Informal closing and only your first name." },
+            ]}
+          />
+          <p>
+            Your turn: write a letter in the <Link href="/en/free-test/dtz/writing">DTZ Writing test</Link> or the 
+            <Link href="/en/free-test/telc-b1/writing">telc B1 Writing test</Link>.
           </p>
         </>
       ),
     },
     {
       id: "saetze",
-      title: "Sentences that almost always fit",
+      title: "Sentences for your letter, formal and informal",
       kurz: "Learn one sentence each for greeting, opening, request, apology, suggestion, ending and closing, formal and informal.",
       body: (
         <>
-          <p>
-            Learn these sentences by heart to save time in the exam. Write formally to offices, landlords or teachers, and
-            informally to friends.
-          </p>
           <DataTable
             head={["What for", "Formal (Sie)", "Informal (du)"]}
             rows={[
@@ -236,7 +249,7 @@ export const b1BriefSchreiben: BlogPost = {
     },
     {
       id: "fehler",
-      title: "Common mistakes and your time plan",
+      title: "Common mistakes in the B1 letter",
       kurz: "The most common mistakes: a point is missing, the tone changes, every sentence starts with „Ich“. Plan five minutes to check.",
       body: (
         <>
@@ -258,18 +271,8 @@ export const b1BriefSchreiben: BlogPost = {
             ]}
           />
           <p>
-            In telc you do not get full points for Kommunikative Gestaltung if almost all sentences start with „Ich“ or „Wir“.
-            So vary how your sentences start.
+            In telc it costs points if almost all sentences start with „Ich“ or „Wir“. So vary your sentence starts.
           </p>
-          <p>Thirty minutes is not much. Our suggested plan:</p>
-          <Steps
-            items={[
-              { title: "Read and choose (3 minutes)", text: "Read both tasks. Take the one with more ideas." },
-              { title: "Notes (5 minutes)", text: "Two or three keywords per point. Formal or informal?" },
-              { title: "Write (17 minutes)", text: "Follow the order of the points. Use the sentences above." },
-              { title: "Check (5 minutes)", text: "All four points there? Greeting and closing? Verbs in the right place?" },
-            ]}
-          />
         </>
       ),
     },
@@ -278,7 +281,6 @@ export const b1BriefSchreiben: BlogPost = {
     { q: "How many words do I have to write in the DTZ?", a: "There is no fixed number of words. What matters is that you write something about all four points." },
     { q: "Letter or email: what is the difference?", a: "The structure is almost the same. An email has a subject, but no sender details, address or date." },
     { q: "Can I write the points in a different order?", a: "In telc you can choose the order. The order of the task is easiest, so you forget no point." },
-    { q: "What happens if I miss the topic?", a: "Then you get very few points or none. In the DTZ it is 0 points in all four criteria. So read the task twice." },
   ],
   cta: { title: "Write your first exam letter", text: "In the free test you write a letter in the DTZ format and get feedback based on the DTZ criteria.", href: "/en/free-test/dtz/writing", button: "Start free test" },
 }
