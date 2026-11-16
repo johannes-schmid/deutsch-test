@@ -12,10 +12,10 @@ export type TranslatedLocale = "en" | "uk" | "ru"
 export const TRANSLATED: TranslatedLocale[] = ["en", "uk", "ru"]
 export const isTranslated = (l: string): l is TranslatedLocale => l === "en" || l === "uk" || l === "ru"
 
-/** Locales Google may index. Russian is noindex for now (Hannes, 2026-11-16): out of the sitemap and hreflang. */
-export const INDEXED: Locale[] = ["de", "en", "uk"]
+/** Locales Google may index. Russian and Ukrainian are noindex for now (Hannes, 2026-11-16): out of the sitemap and hreflang. */
+export const INDEXED: Locale[] = ["de", "en"]
 export const isIndexed = (l: Locale) => INDEXED.includes(l)
-/** `robots` for a page in locale `l` (also set by app/(main)/ru/layout.tsx and an X-Robots-Tag in next.config.ts). */
+/** `robots` for a page in locale `l` (also set by app/(main)/{ru,uk}/layout.tsx and an X-Robots-Tag in next.config.ts). */
 export const robotsFor = (l: Locale) => (isIndexed(l) ? { index: true, follow: true } : { index: false, follow: true })
 
 /** Kept for callers from before English had inner pages; every locale now has the whole site. */
@@ -59,5 +59,5 @@ export function languages(path: string) {
   return { ...Object.fromEntries(INDEXED.map((l) => [l, lp(l, path)])), "x-default": path } as Record<string, string>
 }
 
-/** `alternates` for a page's metadata: canonical in its own locale, hreflang to the indexed ones. /ru gets noindex from app/(main)/ru/layout.tsx + an X-Robots-Tag. */
+/** `alternates` for a page's metadata: canonical in its own locale, hreflang to the indexed ones. /ru and /uk get noindex from their layout.tsx + an X-Robots-Tag. */
 export const alternates = (l: Locale, path: string) => ({ canonical: lp(l, path), languages: languages(path) })

@@ -939,3 +939,9 @@
 **Outcome:** SUCCESS (181 tests, tsc, build; ranking effect not known yet)
 **What worked / went wrong:** Search Console showed the post for "b1 brief muster", "brief schreiben b1 aufgabe" and "telc b1 brief schreiben", words the post never used. The drop itself (position ~30 → ~60) came on 25–26 October, eleven days before the only edit, so the edit was not the cause. The en/uk/ru translations override `sections`, so each needed the same edits by hand; English runs longer than German and went over 1,300 words until a tip note, two intro lines and one FAQ entry were cut.
 **Lesson:** Before rewriting a page that "lost rankings", line up the daily position data with the git log; and write headings from the queries the page already gets impressions for, not from the editor's outline.
+
+## 2026-11-16 — /uk out of Google, like /ru
+**Changed:** `INDEXED` in `lib/i18n/locale.ts` is now de + en; `app/(main)/uk/layout.tsx` (noindex), X-Robots-Tag for `/uk` in `next.config.ts`; CLAUDE.md §4.
+**Outcome:** SUCCESS
+**What worked / went wrong:** Ukrainian had 0 clicks and 13 impressions in Google since 21 October with 15 of 57 URLs indexed, while 113 URLs (German ones included) had never been crawled. Whether the mirrors held the site back is not proven; the change is one line to revert.
+**Lesson:** A locale is noindex in three places (INDEXED, the locale layout, the header rule); change all three together. Judge a mirror by its own impressions after four weeks, English in mid-December.

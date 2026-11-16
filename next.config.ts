@@ -13,9 +13,9 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       // The push service worker (public/sw.js) must never be served stale, or a fix to it would not reach browsers.
-      // Russian is noindex for now (Hannes, 2026-11-16); the pages stay live for visitors.
-      { source: "/ru", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
-      { source: "/ru/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
+      // Russian and Ukrainian are noindex for now (Hannes, 2026-11-16); the pages stay live for visitors.
+      { source: "/:l(ru|uk)", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
+      { source: "/:l(ru|uk)/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
       { source: "/sw.js", headers: [{ key: "Cache-Control", value: "no-cache, no-store, must-revalidate" }, { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self'" }] },
     ];
   },

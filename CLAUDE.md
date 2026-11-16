@@ -232,8 +232,9 @@ most likely because most of its content was AI-written. Don't repeat that here.
   (AI Act art. 50), plus the item explanations in the free tests. Exam content stays German. Impressum/Datenschutz stay German only.
   - **Slugs are translated** (`lib/i18n/slugs.ts`: English words; uk/ru transliterated Latin); exam ids stay. Always build links with
     `lp(locale, "/german/path")`; hardcoded hrefs in translated copy use the final slug. Renaming a live slug needs a 308.
-  - **`/ru` is noindex for now** (Hannes, 2026-11-16): `robotsFor()`, `app/(main)/ru/layout.tsx`, an X-Robots-Tag, and out of the
-    sitemap and hreflang (`INDEXED` in `lib/i18n/locale.ts`). The pages stay live.
+  - **`/ru` and `/uk` are noindex for now** (Hannes, 2026-11-16; uk followed after 0 Google clicks since its launch): `robotsFor()`,
+    `app/(main)/{ru,uk}/layout.tsx`, an X-Robots-Tag, and out of the sitemap and hreflang (`INDEXED` in `lib/i18n/locale.ts`).
+    The pages stay live. English is indexed; review mid-December 2026 and noindex it too if it has no impressions.
   - Planned later, not built: Arabic, Turkish and Dari. Don't claim a language before it ships.
   - **RTL support** for Arabic and Dari. Every forward arrow flips in RTL.
 - **Code, comments, commit messages and `LEARNINGS.md`:** English. **Chat with Hannes:** English.
@@ -345,7 +346,7 @@ components/exam/                     # ★ Fokus exam system: ExamShell, items, 
 lib/exam/                            # exam types, UI copy (de + en), design specimens (samples.ts, not real content)
 lib/design/                          # content.ts (shared copy, placeholder prices), variants.ts
 lib/i18n/landing.ts                  # landing copy, de (default, /) + en (/en); uk/ru in landing.{uk,ru}.ts
-lib/i18n/{locale,slugs}.ts           # locales, lp() / basePath() (translated slugs), INDEXED + robotsFor() (ru noindex), hreflang alternates(), legacyRedirects() for old /uk /ru URLs
+lib/i18n/{locale,slugs}.ts           # locales, lp() / basePath() (translated slugs), INDEXED + robotsFor() (ru, uk noindex), hreflang alternates(), legacyRedirects() for old /uk /ru URLs
 lib/i18n/ui.ts                       # shared chrome + blog labels (+ ui.{uk,ru}.ts); kurztest/exam copy also has .uk/.ru siblings
 data/pages/{de,uk,ru}/               # text-page copy (a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, preise); views in components/pages/
 data/blog/{uk,ru}/<slug>.tsx         # post translations: `{ ...germanPost, locale, <translated fields> }`, live with their German original

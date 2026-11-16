@@ -31,8 +31,8 @@ describe("lp / basePath", () => {
     }
   })
 
-  it("leaves Russian out of hreflang", () => {
-    expect(Object.keys(languages("/preise")).sort()).toEqual(["de", "en", "uk", "x-default"])
+  it("leaves Russian and Ukrainian out of hreflang", () => {
+    expect(Object.keys(languages("/preise")).sort()).toEqual(["de", "en", "x-default"])
   })
 })
 

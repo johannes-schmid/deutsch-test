@@ -9,7 +9,7 @@ import { livePosts } from "@/lib/blog/posts"
 type Entry = MetadataRoute.Sitemap[number]
 type Freq = Entry["changeFrequency"]
 
-/** Russian is noindex for now, so it is not advertised here. */
+/** Russian and Ukrainian are noindex for now, so they are not advertised here. */
 const LOCALES: SiteLocale[] = INDEXED
 
 /**
