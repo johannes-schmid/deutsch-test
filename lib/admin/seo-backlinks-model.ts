@@ -10,6 +10,8 @@
 export type Backlink = { source: string; anchor: string; target: string }
 
 export type ProspectStatus = "todo" | "asked" | "listed" | "declined"
+/** How to reach the site: email (sent from the admin), form (copy the draft in), self-serve (list it ourselves). */
+export type ProspectContact = { channel: "email" | "form" | "self-serve"; email?: string; name?: string; form?: string }
 export type Prospect = {
   domain: string
   url: string
@@ -19,6 +21,7 @@ export type Prospect = {
   effort: "low" | "medium" | "high"
   verified: string
   status?: ProspectStatus
+  contact?: ProspectContact
 }
 
 export type ReferringDomain = { domain: string; links: Backlink[]; targets: string[] }

@@ -7,6 +7,7 @@ import { SeoBoard } from "@/components/admin/seo-board"
 import { SeoTrendChart } from "@/components/admin/seo-trend-chart"
 import { requireAdmin } from "@/lib/admin/guard"
 import { loadBacklinks } from "@/lib/admin/seo-backlinks"
+import { loadOutreach } from "@/lib/admin/backlink-outreach"
 import { fetchSeoFunnel } from "@/lib/admin/seo-funnel"
 import { fetchSeoPulls, loadSeoCockpit, REPO_URL, type SeoCockpit, type SeoPull, type SourceRow } from "@/lib/admin/seo"
 import { byPriority, isLive, ledgerStatus, planOwnerWeek, type LedgerEntry, type Owner, type Recommendation } from "@/lib/admin/seo-model"
@@ -412,11 +413,11 @@ function Tabs({ tab }: { tab: (typeof TABS)[number][0] }) {
 
 async function Backlinks() {
   if (!(await requireAdmin())) notFound()
-  const data = await loadBacklinks()
+  const [data, outreach] = await Promise.all([loadBacklinks(), loadOutreach().catch((e: Error) => ({ byDomain: null, error: e.message }))])
   return (
     <>
       <Tabs tab="backlinks" />
-      <SeoBacklinks data={data} />
+      <SeoBacklinks data={data} outreach={outreach.byDomain} outreachError={outreach.error} />
     </>
   )
 }
