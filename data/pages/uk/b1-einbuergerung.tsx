@@ -38,7 +38,7 @@ export const page: TextPage = {
         <li>Перед іспитом ще раз пройдіть повний тест з часом.</li>
       </ul>
       <p>
-        Як побудований DTZ, читайте на нашій сторінці <Link href="/uk/blog/dtz-pruefung">Іспит DTZ</Link>.
+        Як побудований DTZ, читайте на нашій сторінці <Link href="/uk/blog/ispyt-dtz">Іспит DTZ</Link>.
       </p>
       <p className="text-[14.5px] text-v-muted">
         Це не юридична консультація. Обов’язковим є те, що каже ваш орган з натуралізації. Станом на: 10/2026.

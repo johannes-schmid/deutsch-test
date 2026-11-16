@@ -123,10 +123,10 @@ export const dtzPruefung: BlogPost = {
             «Leben in Deutschland». Так написано в § 17 Integrationskursverordnung.
           </p>
           <p>
-            Как именно считаются баллы для B1 и A2, читайте в статье <Link href="/ru/blog/dtz-bestehen">Как сдать DTZ</Link>.
+            Как именно считаются баллы для B1 и A2, читайте в статье <Link href="/ru/blog/kak-sdat-dtz">Как сдать DTZ</Link>.
             Вам нужен B1 для натурализации (гражданства)? Тогда прочитайте нашу страницу{" "}
-            <Link href="/ru/b1-einbuergerung">B1 для натурализации</Link>. У вас был только A2? Тогда вам поможет{" "}
-            <Link href="/ru/a2-zu-b1">От A2 к B1</Link>.
+            <Link href="/ru/b1-dlya-grazhdanstva">B1 для натурализации</Link>. У вас был только A2? Тогда вам поможет{" "}
+            <Link href="/ru/s-a2-na-b1">От A2 к B1</Link>.
           </p>
         </>
       ),
@@ -151,5 +151,5 @@ export const dtzPruefung: BlogPost = {
     },
   ],
   faq: [],
-  cta: { title: "Насколько вы далеки от B1?", text: "Пройдите одну часть DTZ как бесплатный тест. Без регистрации, с результатом как на экзамене.", href: "/ru/gratis-test/dtz", button: "Начать бесплатный тест" },
+  cta: { title: "Насколько вы далеки от B1?", text: "Пройдите одну часть DTZ как бесплатный тест. Без регистрации, с результатом как на экзамене.", href: "/ru/besplatnyj-test/dtz", button: "Начать бесплатный тест" },
 }

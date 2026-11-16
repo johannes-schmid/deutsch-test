@@ -227,10 +227,14 @@ most likely because most of its content was AI-written. Don't repeat that here.
 
 - **Site language:** simple German (short sentences, ≤15 words on average, everyday words),
   addressing the user as **du**.
-- **Ukrainian and Russian (since 2026-10-21, Hannes's call):** every public page is mirrored under `/uk` and
-  `/ru`, machine-translated from German and labelled as such at the top of each page (AI Act art. 50), plus the
-  item explanations in the free tests. Exam content stays German. Impressum/Datenschutz stay German only.
-  Planned later, not built: explanations in English, Arabic, Turkish and Dari. Don't claim a language before it ships.
+- **English, Ukrainian and Russian (uk/ru since 2026-10-21, en since 2026-11-16, Hannes's calls):** every public page is
+  mirrored under `/en`, `/uk` and `/ru`, machine-translated from German and labelled as such at the top of each page
+  (AI Act art. 50), plus the item explanations in the free tests. Exam content stays German. Impressum/Datenschutz stay German only.
+  - **Slugs are translated** (`lib/i18n/slugs.ts`: English words; uk/ru transliterated Latin); exam ids stay. Always build links with
+    `lp(locale, "/german/path")`; hardcoded hrefs in translated copy use the final slug. Renaming a live slug needs a 308.
+  - **`/ru` is noindex for now** (Hannes, 2026-11-16): `robotsFor()`, `app/(main)/ru/layout.tsx`, an X-Robots-Tag, and out of the
+    sitemap and hreflang (`INDEXED` in `lib/i18n/locale.ts`). The pages stay live.
+  - Planned later, not built: Arabic, Turkish and Dari. Don't claim a language before it ships.
   - **RTL support** for Arabic and Dari. Every forward arrow flips in RTL.
 - **Code, comments, commit messages and `LEARNINGS.md`:** English. **Chat with Hannes:** English.
 - **URL slugs:** German, lowercase, `ü→ue`, `ö→oe`, `ä→ae`, `ß→ss`.
@@ -332,7 +336,7 @@ deutsch-test/
 DESIGN.md                            # ★ the chosen visual system (Nachtzug + Fokus exam UI): tokens, components, rules
 seo/keyword-strategy.md              # keyword → page ownership, homepage title/H1/meta
 app/(main)/                          # public site: / (German, default) and /en (English) Nachtzug landing; /de 308s to /
-app/(main)/{uk,ru}/                  # machine-translated mirror of every public page: two-line static routes, one per German route (cacheComponents: no [lang] param); Impressum/Datenschutz stay German
+app/(main)/{en,uk,ru}/               # machine-translated mirror of every public page: two-line static routes under translated folder names (lib/i18n/slugs.ts; cacheComponents: no [lang] param); Impressum/Datenschutz stay German
 │   └── design/pruefung/             #   noindex reference: every exam component (+ /ergebnis results page)
 │   └── landing.css                  #   Nachtzug tokens + gradients, mapped onto shadcn tokens
 components/ui/                       # shadcn components (Base UI)
@@ -341,7 +345,7 @@ components/exam/                     # ★ Fokus exam system: ExamShell, items, 
 lib/exam/                            # exam types, UI copy (de + en), design specimens (samples.ts, not real content)
 lib/design/                          # content.ts (shared copy, placeholder prices), variants.ts
 lib/i18n/landing.ts                  # landing copy, de (default, /) + en (/en); uk/ru in landing.{uk,ru}.ts
-lib/i18n/locale.ts                   # locales, lp() path prefix, hreflang alternates()
+lib/i18n/{locale,slugs}.ts           # locales, lp() / basePath() (translated slugs), INDEXED + robotsFor() (ru noindex), hreflang alternates(), legacyRedirects() for old /uk /ru URLs
 lib/i18n/ui.ts                       # shared chrome + blog labels (+ ui.{uk,ru}.ts); kurztest/exam copy also has .uk/.ru siblings
 data/pages/{de,uk,ru}/               # text-page copy (a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, preise); views in components/pages/
 data/blog/{uk,ru}/<slug>.tsx         # post translations: `{ ...germanPost, locale, <translated fields> }`, live with their German original

@@ -35,8 +35,7 @@ ${tests.join("\n")}
 ## Optional
 
 - [Kontakt](${u("/kontakt")})
-- [English homepage](${u("/en")})
-- [Українська версія](${u("/uk")}) und [Русская версия](${u("/ru")}): die ganze Seite, maschinell aus dem Deutschen übersetzt; die Prüfungsaufgaben bleiben auf Deutsch
+- [English version](${u("/en")}) und [Українська версія](${u("/uk")}): die ganze Seite, maschinell aus dem Deutschen übersetzt; die Prüfungsaufgaben bleiben auf Deutsch
 `
 }
 

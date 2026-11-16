@@ -6,7 +6,7 @@ import { openGraph } from "@/lib/seo"
 
 export function homeMetadata(locale: Locale): Metadata {
   const t = LANDING[locale].meta
-  const path = locale === "en" ? "/en" : lp(locale, "/")
+  const path = lp(locale, "/")
   return { title: { absolute: t.title }, description: t.description, alternates: alternates(locale, "/"), openGraph: openGraph(path, t.title, t.description, locale) }
 }
 

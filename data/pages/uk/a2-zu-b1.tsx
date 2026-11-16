@@ -34,7 +34,7 @@ export const page: TextPage = {
         ситуації. Запитайте організатора курсу або BAMF. Їхня відповідь обов’язкова, наша — ні.
       </p>
       <p>
-        Як побудований DTZ, читайте на нашій сторінці <Link href="/uk/blog/dtz-pruefung">Іспит DTZ</Link>.
+        Як побудований DTZ, читайте на нашій сторінці <Link href="/uk/blog/ispyt-dtz">Іспит DTZ</Link>.
       </p>
     </>
   ),

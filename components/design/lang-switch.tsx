@@ -8,11 +8,12 @@ import { Check, ChevronDown, Globe, Languages } from "lucide-react"
 import { LOCALE_NAMES, LOCALE_SHORT, basePath, lp, type Locale } from "@/lib/i18n/locale"
 import { cn } from "@/lib/utils"
 
-/** Every locale the current page exists in, with its URL. English exists for the home page only. */
+const LOCALES: Locale[] = ["de", "en", "uk", "ru"]
+
+/** The current page in every locale, with its translated URL. */
 function useTargets(): { locale: Locale; href: string }[] {
   const base = basePath(usePathname())
-  const locales: Locale[] = base === "/" || base === "/en" ? ["de", "en", "uk", "ru"] : ["de", "uk", "ru"]
-  return locales.map((l) => ({ locale: l, href: l === "en" ? "/en" : lp(l, base === "/en" ? "/" : base) }))
+  return LOCALES.map((l) => ({ locale: l, href: lp(l, base) }))
 }
 
 // Hidden below sm: the pill has no room next to login and the CTA (phones switch in the footer and the landing's language strip).

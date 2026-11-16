@@ -4,6 +4,7 @@
 import type { ExamId } from "@/lib/exams"
 import type { SiteLocale } from "./locale"
 import { AUTH_COPY } from "./portal"
+import { en, enPages } from "./kurztest.en"
 import { uk, ukPages } from "./kurztest.uk"
 import { ru, ruPages } from "./kurztest.ru"
 import { page as oesdA1 } from "./exam-pages/oesd-a1"
@@ -284,5 +285,5 @@ export const EXAM_PAGES: ExamPages = {
   ...(telcB1 && { "telc-b1": telcB1 }),
 }
 
-export const KURZTEST: Record<SiteLocale, KurztestCopy> = { de, uk, ru }
-export const EXAM_PAGES_BY: Record<SiteLocale, ExamPages> = { de: EXAM_PAGES, uk: ukPages, ru: ruPages }
+export const KURZTEST: Record<SiteLocale, KurztestCopy> = { de, en, uk, ru }
+export const EXAM_PAGES_BY: Record<SiteLocale, ExamPages> = { de: EXAM_PAGES, en: enPages, uk: ukPages, ru: ruPages }

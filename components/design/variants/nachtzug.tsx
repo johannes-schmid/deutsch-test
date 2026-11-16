@@ -249,7 +249,7 @@ export function Nachtzug({ locale }: { locale: Locale }) {
         <div className="v-container flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[14px] text-v-muted">
           <span className="text-v-ink">{t.langStrip}</span>
           {LANG_STRIP.filter((l) => l !== locale).map((l) => (
-            <Link key={l} href={l === "en" ? "/en" : lp(l, "/")} hrefLang={l} lang={l} className="rounded underline decoration-v-ink/20 decoration-[1.5px] underline-offset-4 transition-colors hover:text-v-ink hover:decoration-v-ink">
+            <Link key={l} href={lp(l, "/")} hrefLang={l} lang={l} className="rounded underline decoration-v-ink/20 decoration-[1.5px] underline-offset-4 transition-colors hover:text-v-ink hover:decoration-v-ink">
               {LOCALE_NAMES[l]}
             </Link>
           ))}

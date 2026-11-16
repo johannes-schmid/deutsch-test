@@ -5,7 +5,7 @@ import { ArticleToc, ArticleTocFold } from "@/components/design/article-interact
 import { JsonLd } from "@/components/design/json-ld"
 import { AUTHOR } from "@/lib/blog/author"
 import { findPost, isLive } from "@/lib/blog/posts"
-import { alternates, lp, OG_LOCALE, type SiteLocale } from "@/lib/i18n/locale"
+import { alternates, lp, OG_LOCALE, robotsFor, type SiteLocale } from "@/lib/i18n/locale"
 import { UI } from "@/lib/i18n/ui"
 import { OG_IMAGE, PROVIDER, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/seo"
 
@@ -18,7 +18,7 @@ export function blogMetadata(slug: string, locale: SiteLocale = "de"): Metadata 
     description: post.description,
     alternates: alternates(locale, path),
     openGraph: { ...openGraph(lp(locale, path), post.title, post.description, locale), type: "article", publishedTime: post.published, modifiedTime: post.reviewed, authors: [AUTHOR.name], locale: OG_LOCALE[locale] },
-    robots: post.status === "reviewed" ? undefined : { index: false, follow: false },
+    robots: post.status === "reviewed" ? robotsFor(locale) : { index: false, follow: false },
   }
 }
 

@@ -34,7 +34,7 @@ export const page: TextPage = {
         Спросите организатора курса или BAMF. Их ответ обязателен, наш нет.
       </p>
       <p>
-        Как устроен DTZ, читайте на нашей странице <Link href="/ru/blog/dtz-pruefung">Экзамен DTZ</Link>.
+        Как устроен DTZ, читайте на нашей странице <Link href="/ru/blog/ekzamen-dtz">Экзамен DTZ</Link>.
       </p>
     </>
   ),

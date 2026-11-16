@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/design/json-ld"
 import { itemNumbers } from "@/lib/exam/kurztest"
 import { EXAMS, examPath, type ExamId } from "@/lib/exams"
 import { EXAM_PAGES_BY, KURZTEST } from "@/lib/i18n/kurztest"
-import { alternates, lp, type SiteLocale } from "@/lib/i18n/locale"
+import { alternates, lp, robotsFor, type SiteLocale } from "@/lib/i18n/locale"
 import { UI } from "@/lib/i18n/ui"
 import { publicSet, tasterMinutes, type Skill } from "@/lib/kurztest/data"
 import { PROVIDER, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/seo"
@@ -20,7 +20,7 @@ export function skillMetadata(exam: ExamId, skill: Skill, locale: SiteLocale = "
     title: c.title,
     description: c.description,
     alternates: alternates(locale, path(exam, skill)),
-    robots: { index: true, follow: true },
+    robots: robotsFor(locale),
     openGraph: openGraph(lp(locale, path(exam, skill)), c.title, c.description, locale),
   }
 }

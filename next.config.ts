@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacyRedirects } from "./lib/i18n/slugs";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -12,6 +13,9 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       // The push service worker (public/sw.js) must never be served stale, or a fix to it would not reach browsers.
+      // Russian is noindex for now (Hannes, 2026-11-16); the pages stay live for visitors.
+      { source: "/ru", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
+      { source: "/ru/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
       { source: "/sw.js", headers: [{ key: "Cache-Control", value: "no-cache, no-store, must-revalidate" }, { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self'" }] },
     ];
   },
@@ -23,6 +27,8 @@ const nextConfig: NextConfig = {
       { source: "/dtz", destination: "/blog/dtz-pruefung", permanent: true },
       { source: "/dtz/kurztest", destination: "/gratis-test/dtz", permanent: true },
       { source: "/dtz/kurztest/:skill", destination: "/gratis-test/dtz/:skill", permanent: true },
+      // /uk and /ru got translated slugs on 2026-11-16 (lib/i18n/slugs.ts).
+      ...legacyRedirects(),
     ];
   },
   turbopack: {

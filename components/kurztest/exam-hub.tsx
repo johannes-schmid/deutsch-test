@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/design/json-ld"
 import { PartIcon } from "@/components/design/variants/nachtzug-icons"
 import { examPath, type ExamId } from "@/lib/exams"
 import { EXAM_PAGES_BY, KURZTEST } from "@/lib/i18n/kurztest"
-import { alternates, lp, type SiteLocale } from "@/lib/i18n/locale"
+import { alternates, lp, robotsFor, type SiteLocale } from "@/lib/i18n/locale"
 import { UI } from "@/lib/i18n/ui"
 import { liveSkills } from "@/lib/kurztest/data"
 import { PROVIDER, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/seo"
@@ -17,7 +17,7 @@ export function examHubMetadata(exam: ExamId, locale: SiteLocale = "de"): Metada
   const p = EXAM_PAGES_BY[locale][exam]
   if (!p) return {}
   const path = examPath(exam)
-  return { title: p.hub.title, description: p.hub.description, alternates: alternates(locale, path), robots: { index: true, follow: true }, openGraph: openGraph(lp(locale, path), p.hub.title, p.hub.description, locale) }
+  return { title: p.hub.title, description: p.hub.description, alternates: alternates(locale, path), robots: robotsFor(locale), openGraph: openGraph(lp(locale, path), p.hub.title, p.hub.description, locale) }
 }
 
 /** One exam's free tests: a card per skill with reviewed content. Without any, the page doesn't exist. */
@@ -70,7 +70,7 @@ export function ExamHub({ exam, locale = "de" }: { exam: ExamId; locale?: SiteLo
                 text={c.summary}
                 meta={<span className="text-[13.5px] text-v-muted">{c.detail}</span>}
                 cta={T.overview.start}
-                href={`${path}/${s}`}
+                href={at(`${examPath(exam)}/${s}`)}
               />
             </li>
           )

@@ -1,6 +1,7 @@
 // Shared UI strings for the public site chrome, text pages and blog. Simple German, du-form.
 
 import type { SiteLocale } from "./locale"
+import { en } from "./ui.en"
 import { uk } from "./ui.uk"
 import { ru } from "./ui.ru"
 
@@ -54,8 +55,8 @@ const de = {
 
 export type UiCopy = typeof de
 
-export const UI: Record<SiteLocale, UiCopy> = { de, uk, ru }
+export const UI: Record<SiteLocale, UiCopy> = { de, en, uk, ru }
 
-const DATE_LOCALE: Record<SiteLocale, string> = { de: "de-DE", uk: "uk-UA", ru: "ru-RU" }
+const DATE_LOCALE: Record<SiteLocale, string> = { de: "de-DE", en: "en-IE", uk: "uk-UA", ru: "ru-RU" }
 export const formatDate = (iso: string, l: SiteLocale = "de") =>
   new Intl.DateTimeFormat(DATE_LOCALE[l], { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${iso}T12:00:00Z`))

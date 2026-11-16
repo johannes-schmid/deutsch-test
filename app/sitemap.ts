@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 import { EXAM_IDS, examPath } from "@/lib/exams"
 import { EXAM_PAGES_BY } from "@/lib/i18n/kurztest"
-import { TRANSLATED, languages, lp, type SiteLocale } from "@/lib/i18n/locale"
+import { INDEXED, languages, lp, type SiteLocale } from "@/lib/i18n/locale"
 import { liveSkills } from "@/lib/kurztest/data"
 import { LEGAL_COMPLETE, absUrl } from "@/lib/seo"
 import { livePosts } from "@/lib/blog/posts"
@@ -9,12 +9,13 @@ import { livePosts } from "@/lib/blog/posts"
 type Entry = MetadataRoute.Sitemap[number]
 type Freq = Entry["changeFrequency"]
 
-const LOCALES: SiteLocale[] = ["de", ...TRANSLATED]
+/** Russian is noindex for now, so it is not advertised here. */
+const LOCALES: SiteLocale[] = INDEXED
 
-/** One URL per locale, each listing all of them as hreflang alternates (and English on the home page). */
+/** One URL per indexed locale, each listing all of them as hreflang alternates. */
 function everyLocale(path: string, changeFrequency: Freq, priority: number, has: (l: SiteLocale) => boolean = () => true, lastModified?: string): Entry[] {
   const present = LOCALES.filter(has)
-  const alt = Object.fromEntries(Object.entries(languages(path)).filter(([k]) => k === "en" || k === "x-default" || present.includes(k as SiteLocale)).map(([k, v]) => [k, absUrl(v)]))
+  const alt = Object.fromEntries(Object.entries(languages(path)).filter(([k]) => k === "x-default" || present.includes(k as SiteLocale)).map(([k, v]) => [k, absUrl(v)]))
   return present.map((l) => ({ url: absUrl(lp(l, path)), changeFrequency, priority: l === "de" ? priority : Math.round(priority * 8) / 10, alternates: { languages: alt }, ...(lastModified ? { lastModified } : {}) }))
 }
 
@@ -24,11 +25,8 @@ function everyLocale(path: string, changeFrequency: Freq, priority: number, has:
  * teaches Google to ignore it.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const home = everyLocale("/", "monthly", 1)
-  const homeAlt = home[0].alternates
   return [
-    ...home,
-    { url: absUrl("/en"), changeFrequency: "monthly", priority: 0.8, alternates: homeAlt },
+    ...everyLocale("/", "monthly", 1),
     ...everyLocale("/gratis-test", "weekly", 0.9),
     // An exam or skill without reviewed content is a 404, so it is never advertised.
     ...EXAM_IDS.flatMap((e) => {
@@ -37,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const has = (l: SiteLocale) => !!EXAM_PAGES_BY[l][e]
       return [...everyLocale(examPath(e), "weekly", 0.9, has), ...skills.flatMap((s) => everyLocale(`${examPath(e)}/${s}`, "monthly", 0.8, has))]
     }),
-    // The DTZ Modelltest product page is German only (no uk/ru mirror yet).
+    // The DTZ Modelltest product page is German only (no translated mirror yet).
     { url: absUrl("/dtz/modelltest"), changeFrequency: "monthly", priority: 0.9 },
     ...["/a2-zu-b1", "/b1-einbuergerung", "/preise"].flatMap((p) => everyLocale(p, "monthly", 0.7)),
     // Reviewed posts only; drafts are noindex and 404 outside dev.

@@ -5,15 +5,17 @@ import { dtzBestehen } from "@/data/blog/dtz-bestehen"
 import { b1BriefSchreiben } from "@/data/blog/b1-brief-schreiben"
 import { dtzPruefung } from "@/data/blog/dtz-pruefung"
 import { einbuergerungstestErgebnisWartezeit } from "@/data/blog/einbuergerungstest-ergebnis-wartezeit"
+import * as en from "@/data/blog/en"
 import * as uk from "@/data/blog/uk"
 import * as ru from "@/data/blog/ru"
 
-/** Every post. A new post = one file in data/blog/ + one entry here + a two-line route in app/(main)/(site)/blog/, then its translations in data/blog/{uk,ru}/. */
+/** Every post. A new post = one file in data/blog/ + one entry here + a two-line route in app/(main)/(site)/blog/, then its translations in data/blog/{en,uk,ru}/ (+ a slug in lib/i18n/slugs.ts). */
 export const POSTS: BlogPost[] = [b1Pruefung, dtzBestehen, b1BriefSchreiben, dtzPruefung, einbuergerungstestErgebnisWartezeit]
 
 /** Translations share the German slug, status and dates: a translation goes live with its reviewed German original. */
 export const POSTS_BY: Record<SiteLocale, BlogPost[]> = {
   de: POSTS,
+  en: [en.b1Pruefung, en.dtzBestehen, en.b1BriefSchreiben, en.dtzPruefung],
   uk: [uk.b1Pruefung, uk.dtzBestehen, uk.b1BriefSchreiben, uk.dtzPruefung],
   ru: [ru.b1Pruefung, ru.dtzBestehen, ru.b1BriefSchreiben, ru.dtzPruefung],
 }

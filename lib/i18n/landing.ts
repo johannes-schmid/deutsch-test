@@ -168,7 +168,7 @@ const en: LandingCopy = {
     title: "Pass Goethe, telc, DTZ & ÖSD | German exam practice online",
     description: "Realistic mock exams for Goethe, telc, DTZ and ÖSD. Practice listening, reading, writing and speaking. Also in Ukrainian and Russian. Start free.",
   },
-  nav: { links: [{ label: "Blog", href: "/blog" }, { label: "Free test", href: "/gratis-test" }, { label: "Pricing", href: "/preise" }, { label: "FAQ", href: "/en#fragen" }], login: "Log in", start: "Start free" },
+  nav: { links: [{ label: "Blog", href: "/blog" }, { label: "Free test", href: "/gratis-test" }, { label: "Pricing", href: "/preise" }, { label: "FAQ", href: "/#fragen" }], login: "Log in", start: "Start free" },
   hero: {
     eyebrow: "German exam prep online",
     h1: "Pass Goethe, telc, DTZ & ÖSD.",

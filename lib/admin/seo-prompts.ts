@@ -1,4 +1,5 @@
 import type { ScoreFactor, Verdict } from "./seo-score.mjs"
+import { basePath } from "@/lib/i18n/locale"
 
 /**
  * The two buttons on a page row of `/admin/seo`: a prompt to paste into Claude Code, and the steps to
@@ -29,19 +30,20 @@ const ORIGIN = "https://deutschtest-ueben.de"
 /** Where a page's copy lives. An honest signpost beats a guessed file name. */
 export function sourceHint(path: string): string {
   const parts = path.split("/").filter(Boolean)
-  const [first, second, third] = parts
-  if (first === "uk" || first === "ru") {
+  const [first] = parts
+  if (first === "en" || first === "uk" || first === "ru") {
+    const [, second, third] = basePath(path).split("/")
     if (second === "blog" && third) return `data/blog/${first}/${third}.tsx (the translated fields; the German original is data/blog/${third}.tsx)`
     if (second === "gratis-test") return `lib/i18n/exam-pages/<exam>.ts and lib/i18n/kurztest.${first}.ts`
     if (second) return `data/pages/${first}/${second}.ts`
-    return `lib/i18n/landing.${first}.ts`
+    return first === "en" ? "lib/i18n/landing.ts (the en block)" : `lib/i18n/landing.${first}.ts`
   }
+  const [, second] = parts
   if (first === "blog" && second) return `data/blog/${second}.tsx (title, description; sections stay with the reviewer)`
   if (first === "blog") return "app/(main)/(site)/blog/page.tsx and lib/i18n/ui.ts"
   if (first === "gratis-test" && second === "dtz") return "lib/i18n/kurztest.ts (DTZ hub and skill pages)"
   if (first === "gratis-test" && second) return `lib/i18n/exam-pages/${second}.ts`
   if (first === "gratis-test") return "app/(main)/gratis-test/page.tsx and lib/i18n/kurztest.ts"
-  if (first === "en") return "lib/i18n/landing.ts (the en block)"
   if (!first) return "lib/i18n/landing.ts (the de block) and seo/keyword-strategy.md › Homepage on-page"
   return `data/pages/de/${first}.ts (metadata in app/(main)/(site)/${first}/page.tsx)`
 }

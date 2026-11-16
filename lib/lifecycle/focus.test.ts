@@ -4,6 +4,8 @@ import { examFromPath } from "./focus"
 describe("examFromPath", () => {
   it("reads the exam from a free-test path", () => {
     expect(examFromPath("/gratis-test/goethe-b1/hoeren")).toBe("goethe-b1")
+    expect(examFromPath("/en/free-test/telc-b1/reading")).toBe("telc-b1")
+    expect(examFromPath("/uk/bezkoshtovnyi-test/dtz/chytannia")).toBe("dtz")
     expect(examFromPath("/gratis-test/dtz")).toBe("dtz")
   })
 

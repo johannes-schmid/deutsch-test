@@ -14,7 +14,7 @@ import { isTranslated, lp, siteLocale, type Locale } from "@/lib/i18n/locale"
 import { UI } from "@/lib/i18n/ui"
 import { livePosts } from "@/lib/blog/posts"
 
-const home = (l: Locale) => (l === "en" ? "/en" : lp(l, "/"))
+const home = (l: Locale) => lp(l, "/")
 
 /** The site's top bar: a floating glass pill inside the container, shared by the landing pages and every inner page. Translated pages get the machine-translation notice under it. */
 export function SiteNav({ locale }: { locale: Locale }) {

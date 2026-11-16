@@ -1,0 +1,51 @@
+// English, machine-translated from `de` in ./ui.ts. Keep keys in sync.
+
+import type { UiCopy } from "./ui"
+
+export const en: UiCopy = {
+  crumbsAria: "Breadcrumbs",
+  home: "Home",
+  /** The notice on machine-translated pages (AI Act art. 50), with a link to the German original. */
+  machine: { text: "This page was machine-translated from German.", original: "Original in German" },
+  langMenu: "Language",
+  footerCitizenship: "B1 for citizenship",
+  vat: "USt-IdNr.",
+  byline: { responsible: "Responsible", stand: "Updated", sources: "Sources" },
+  testCta: "Start free test",
+  blog: {
+    crumb: "Blog",
+    faq: "Frequently asked questions",
+    reviewed: (name: string, date: string) => `Checked by ${name} on ${date}. Every number has a source; you can find the list here.`,
+    draft: "Draft: not yet checked by a person. Only visible locally.",
+    sources: "Sources",
+    more: "Read more",
+    source: "Source",
+    stand: "Updated",
+    notes: { tipp: "Tip", info: "Good to know", wichtig: "Important" },
+    stripLink: "Try for free",
+    stripMinutes: (min: number, approx?: boolean) => `${approx ? "approx. " : ""}${min} min`,
+    noteMark: (n: number) => `Note ${n}`,
+    dont: "Don't do this",
+    do: "Do this",
+    toc: "In this article",
+    kurz: "In short",
+    quiz: "Test yourself",
+    quizRight: "Correct. ",
+    quizAnswer: (key: string) => `The correct answer is ${key}. `,
+    filterAria: "Filter by topic",
+    all: "All",
+    readingTime: (min: number) => `${min} min read`,
+    minutesShort: (min: number) => `${min} min`,
+    authorFallback: "Every number in our articles has a source and a date.",
+    categories: { pruefungen: "Exams & results", schreiben: "Writing & Speaking", tipps: "Tips & preparation" },
+    index: {
+      title: "Blog: understand German exams and prepare well",
+      description: "Clear answers about DTZ, telc, Goethe and ÖSD: structure, results, Writing and Speaking. Every number with a source and date.",
+      h1: "Blog about",
+      h1Muted: "German exams",
+      ctaH2: "Practise for free in the real exam format",
+      ctaText: "Choose your exam and take a test in 5 minutes. No sign-up.",
+      ctaButton: "Start free test",
+    },
+  },
+}

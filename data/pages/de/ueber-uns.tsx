@@ -46,7 +46,7 @@ export const page: TextPage = {
           <strong>Feedback für Schreiben und Sprechen.</strong> Ein Sprachmodell bewertet deinen Text nach den
           Kriterien der Prüfung. Das ist Übungsfeedback, kein offizielles Ergebnis.
         </li>
-        <li><strong>Übersetzte Seiten.</strong> Die Seiten auf Ukrainisch und Russisch sind maschinell aus dem Deutschen übersetzt. Das steht oben auf jeder Seite.</li>
+        <li><strong>Übersetzte Seiten.</strong> Die Seiten auf Englisch, Ukrainisch und Russisch sind maschinell aus dem Deutschen übersetzt. Das steht oben auf jeder Seite.</li>
       </ul>
 
       <h2>Was wir nicht machen</h2>

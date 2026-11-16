@@ -4,7 +4,7 @@ import { ExamPicker, type PickerExam } from "@/components/kurztest/exam-picker"
 import { KurztestHeader } from "@/components/kurztest/page-header"
 import { EXAMS, EXAM_IDS, examPath } from "@/lib/exams"
 import { KURZTEST } from "@/lib/i18n/kurztest"
-import { alternates, lp, type SiteLocale } from "@/lib/i18n/locale"
+import { alternates, lp, robotsFor, type SiteLocale } from "@/lib/i18n/locale"
 import { UI } from "@/lib/i18n/ui"
 import { examLive } from "@/lib/kurztest/data"
 import { PROVIDER, absUrl, breadcrumbList, openGraph, type Crumb } from "@/lib/seo"
@@ -17,7 +17,7 @@ export function overviewMetadata(locale: SiteLocale = "de"): Metadata {
     title: T.overview.title,
     description: T.overview.description,
     alternates: alternates(locale, PATH),
-    robots: { index: true, follow: true },
+    robots: robotsFor(locale),
     openGraph: openGraph(lp(locale, PATH), T.overview.title, T.overview.description, locale),
   }
 }
