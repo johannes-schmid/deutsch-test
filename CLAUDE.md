@@ -127,10 +127,12 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
   half is free after sign-up** (Hannes, 2026-11-02): the first ⌊n/2⌋ Teile, or for a single letter (DTZ, telc B1, ÖSD A2 Schreiben)
   half of its criteria. Then the halfway stop sells the Teil-Pass for that skill (asks once for all four) and the attempt goes on at
   the next Teil after paying (`lib/modelltest/half.ts`, `mt_attempts.paused`). The paywall comes after value.
-- **Paywall after the free test (Hannes, 2026-11-11, after knmoefenen.nl):** a guest finishes the whole free Lesen/Hören test and sees
-  the result with no email or sign-up. "Weiter zum Modelltest" opens the paywall (`components/paywall/`): a full-screen takeover,
-  packages left, pay card right; Google sign-in returns to `/weiter?plan=…` with the pick, then the order summary. The free
-  account stays reachable through the builder's "Gratis" row. Locked Modelltest rows in the portal link to `/dashboard/preise`.
+- **Onboarding after the free test (Hannes, 2026-11-20; replaces the paywall there, which ran 2026-11-11 → 2026-11-20):** a guest
+  finishes the whole free Lesen/Hören test and sees the result with no email or sign-up. "Weiter zum Modelltest" opens a full-screen
+  onboarding (`components/paywall/onboarding.tsx`): exam (the free test's preselected), exam date (only an exact date is stored),
+  goal (`lifecycle_prefs.goal`), then Google. The answers ride in `next` to `/auth/willkommen` (`lib/lifecycle/onboarding.ts`,
+  tested), which saves them and opens `/dashboard/{exam}/{skill}` of the free test. The paywall (`/weiter`) stays for links and
+  emails; locked Modelltest rows in the portal link to `/dashboard/preise`.
 - **Übungsmodus (Hannes, 2026-11-03):** a Lesen/Hören Modelltest can be started in Übungsmodus: instant right/wrong per tap
   with sparks, confetti, sound and a buzz (`components/exam/instant.tsx`). **Prüfungsmodus stays the default** and the
   Prüfungssimulation always runs as an exam. The first answer per item scores the attempt, so retrying never raises the
@@ -357,7 +359,8 @@ public/audio/kurztest/               # rendered eleven_v4 clips for Hören block
 lib/exam/{blueprint,kurztest,validate,band}.ts  # part specs + 10-item composition, block types, blueprint validator, indicative band
 lib/kurztest/                        # server-only: data loader (strips keys), store (Supabase `kurztest_attempts` via the secret-key client in `lib/supabase/admin.ts`), score, grade (Claude), stt, stats
 components/kurztest/                 # runner (Lesen/Hören, Schreiben, Sprechen), sign-up card for graded tests, result view, shared item renderer
-components/paywall/paywall.tsx       # ★ the paywall after a free test: Paywall (header, steps, PassBuilder with Google pay card), PaywallTakeover (over the result), PaywallPage (/weiter, app/(auth)/weiter: where Google returns with ?plan)
+components/paywall/paywall.tsx       # the paywall: Paywall (header, steps, PassBuilder with Google pay card), Takeover (full-screen dialog over a page), PaywallPage (/weiter, app/(auth)/weiter: where Google returns with ?plan)
+components/paywall/onboarding.tsx    # ★ the onboarding after a free test (exam, date, goal → Google → /auth/willkommen → skill page); copy in lib/i18n/onboarding.ts
 app/(main)/gratis-test/              # level + exam picker; dtz/ = hub + /{hoeren,lesen,schreiben,sprechen} lead-magnet tests, site layout, indexed
 lib/exams.ts                         # ★ the 9 free-test exams (name, brand badge, levels, official result format, pass mark); research/<exam>.md = their blueprints
 lib/exam/exams/<exam>.ts             # ★ one file per non-DTZ exam: generator context, part specs, Schreiben/Sprechen briefs, rubric, 5-min taster (from research/<exam>.md; goethe-b1 + oesd-b1 share research/goethe-oesd-b1.md)

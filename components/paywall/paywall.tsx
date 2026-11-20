@@ -204,11 +204,10 @@ export function PaywallPage() {
 }
 
 /**
- * The paywall over the free-test result: a full-screen takeover inside the page frame, so the result and its solutions
- * are still there when the visitor goes back. It only fades (opacity, 200 ms): a transform on the popup would pin the
- * builder's fixed buy bar to it.
+ * A full-screen takeover inside the page frame, so the result and its solutions are still there when the visitor goes
+ * back. It only fades (opacity, 200 ms): a transform on the popup would pin fixed bars (the builder's buy bar) to it.
  */
-export function PaywallTakeover({ open, onOpenChange, ...props }: { open: boolean; onOpenChange: (open: boolean) => void } & Omit<PaywallProps, "onBack" | "plan">) {
+export function Takeover({ open, onOpenChange, label, children }: { open: boolean; onOpenChange: (open: boolean) => void; label: string; children: React.ReactNode }) {
   const anchor = useRef<HTMLSpanElement>(null)
   const [frame, setFrame] = useState<HTMLElement | null>(null)
   useEffect(() => setFrame(anchor.current?.closest<HTMLElement>(".v-frame") ?? null), [])
@@ -218,10 +217,10 @@ export function PaywallTakeover({ open, onOpenChange, ...props }: { open: boolea
       <Dialog.Root open={open} onOpenChange={onOpenChange}>
         <Dialog.Portal container={frame}>
           <Dialog.Popup
-            aria-label={PASS_COPY[props.locale].paywall.h1}
+            aria-label={label}
             className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-[linear-gradient(160deg,#E4EAF8_0%,#EEF1F6_45%,#E2E8F6_100%)] text-v-ink outline-none transition-opacity duration-200 ease-(--ease-out-strong) data-ending-style:opacity-0 data-starting-style:opacity-0 motion-reduce:transition-none"
           >
-            <Paywall {...props} onBack={() => onOpenChange(false)} />
+            {children}
           </Dialog.Popup>
         </Dialog.Portal>
       </Dialog.Root>

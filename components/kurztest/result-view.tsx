@@ -13,7 +13,7 @@ import type { ExamPage } from "@/lib/i18n/kurztest"
 import type { Level } from "@/lib/exam/types"
 import type { PublicBlock } from "@/lib/kurztest/data"
 import type { ClosedResult, KurztestResult } from "@/lib/kurztest/types"
-import { PaywallTakeover } from "@/components/paywall/paywall"
+import { OnboardingTakeover } from "@/components/paywall/onboarding"
 import { BlockItems, type Values } from "./items"
 import { useKurztest } from "./locale"
 
@@ -137,7 +137,7 @@ export function ResultView({ exam, page, skill, blocks, values, result, signedIn
       }
     />
   )
-  const takeover = signedIn ? null : <PaywallTakeover open={paywall} onOpenChange={setPaywall} locale={locale} exam={exam} skill={skill} />
+  const takeover = signedIn ? null : <OnboardingTakeover open={paywall} onOpenChange={setPaywall} locale={locale} exam={exam} skill={skill} />
 
   if (result.kind === "transcript") {
     return (

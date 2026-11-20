@@ -193,7 +193,8 @@ export function ExamShell({
   const t = useExamCopy()
   const [open, setOpen] = useState(false)
   return (
-    <div className={cn("mx-auto flex w-full flex-col gap-3", wide ? "max-w-[1040px]" : "max-w-[560px]")}>
+    // --exam-top: where sticky rows inside the card stop, just under the sticky ExamBar (top-3 + its 52px).
+    <div className={cn("mx-auto flex w-full flex-col gap-3 [--exam-top:64px]", wide ? "max-w-[1040px]" : "max-w-[560px]")}>
       <ExamBar part={part} sections={sections} label={progressLabel} seconds={seconds} lowAt={lowAt} onExit={onExit} />
       {/* --exam-dock: where docked option trays (gaps, word pool) stop, just above the sticky action bar. */}
       <div className={cn("nz-app relative flex w-full flex-col overflow-clip rounded-[24px]", (action || overview) && "[--exam-dock:84px]")}>

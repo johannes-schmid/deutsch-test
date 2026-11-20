@@ -957,3 +957,9 @@
 **Outcome:** SUCCESS (199 tests, tsc, eslint; Playwright at 1440 + 390: typing keeps focus in subject and text, text grows 320 → ~700 px, preview and back to edit keep the text, no overflow, no page errors).
 **What worked / went wrong:** Every keystroke moved focus to the close button: the drawer's focus effect depended on a row object rebuilt on each render, so it re-ran and called `focus()`.
 **Lesson:** A focus-on-open effect depends on a primitive (the open id or a boolean), never on an object derived during render.
+
+## 2026-11-20 — Sticky reading switch; onboarding instead of the paywall after a free test
+**Changed:** `components/exam/reading.tsx` (Text/Aufgaben switch sticks under the exam bar on phones, solid backing only while pinned, switching tabs while scrolled starts the pane at its top; `--exam-top` set in `components/exam/shell.tsx`). `components/paywall/onboarding.tsx` + `lib/i18n/onboarding.ts` (4-step onboarding after the free test), `lib/lifecycle/onboarding.ts` (answers ↔ URL, date bounds; tested), `app/auth/willkommen/route.ts` (saves exam/date/goal, redirects to the skill page), `supabase/migrations/20261120120000_lifecycle_prefs_goal.sql`; `PaywallTakeover` removed, `Takeover` shared.
+**Outcome:** SUCCESS locally (9 new tests, tsc; mobile 375 + desktop 1440 walked through all four steps; signed-out `/auth/willkommen` redirects to `/anmelden?next=…`; goal column write checked in a rolled-back transaction). Not verified: the real Google round trip into `/auth/willkommen`; the migration is not on production yet.
+**What worked / went wrong:** A frosted backing that reached up behind the exam bar covered the instruction text before the switch was pinned and read as an empty white block. Toggling the backing with an IntersectionObserver sentinel fixed it.
+**Lesson:** A sticky bar's background belongs to the stuck state only; never extend it beyond the bar's own box.

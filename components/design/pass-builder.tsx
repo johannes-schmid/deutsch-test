@@ -61,14 +61,15 @@ export function PassBuilder(props: BuilderProps) {
   return ACTIVE_LAYOUT === "skills" ? <SkillPassBuilder {...props} /> : <TermPassBuilder {...props} />
 }
 
-const OPTION = cn(
+/** A pickable card (checkbox or radio inside a <label>); also the onboarding after a free test. */
+export const OPTION = cn(
   "relative flex cursor-pointer flex-col gap-3 rounded-[20px] bg-v-surface p-5 shadow-[inset_0_0_0_1px_var(--v-line)] transition-[box-shadow,transform] duration-150 ease-out active:scale-[0.985]",
   "hover:shadow-[inset_0_0_0_1px_color-mix(in_srgb,var(--v-ink)_35%,transparent)] has-[:checked]:shadow-[inset_0_0_0_2px_var(--v-ink)]",
   FOCUS
 )
 
 /** The square tick of a multi-pick tile. */
-function CheckMark() {
+export function CheckMark() {
   return (
     <span
       className="absolute end-5 top-5 grid size-6 place-items-center rounded-[8px] shadow-[inset_0_0_0_1.5px_var(--v-line)] transition-[background-color,box-shadow] duration-150 ease-out peer-checked:bg-v-ink peer-checked:shadow-none peer-disabled:opacity-60 [&>svg]:opacity-0 peer-checked:[&>svg]:opacity-100"
