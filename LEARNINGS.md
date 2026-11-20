@@ -963,3 +963,9 @@
 **Outcome:** SUCCESS locally (9 new tests, tsc; mobile 375 + desktop 1440 walked through all four steps; signed-out `/auth/willkommen` redirects to `/anmelden?next=…`; goal column write checked in a rolled-back transaction). Not verified: the real Google round trip into `/auth/willkommen`; the migration is not on production yet.
 **What worked / went wrong:** A frosted backing that reached up behind the exam bar covered the instruction text before the switch was pinned and read as an empty white block. Toggling the backing with an IntersectionObserver sentinel fixed it.
 **Lesson:** A sticky bar's background belongs to the stuck state only; never extend it beyond the bar's own box.
+
+## 2026-11-20 — Next.js 16.4.2 → 16.4.6 (security gate)
+**Changed:** `next`, `eslint-config-next`, `@next/third-parties` to 16.4.6 in `package.json` / `package-lock.json`.
+**Outcome:** SUCCESS
+**What worked / went wrong:** `next build` on 16.4.2 compiled everything, then exited 1 with `SecurityFatalError` (the 2026-11-03 advisories, patched in 16.4.5). 16.4.6 is a bug-fix release on top; no code changes needed, `cacheComponents` + `partialPrefetching` still on. In a fresh worktree `tsc --noEmit` fails on `PageProps`/`LayoutProps` until `npx next typegen` (or a build) writes `.next/types`.
+**Lesson:** When a build dies at the very end with `SecurityFatalError`, bump to the latest patch of the same minor (check `gh release view` for the advisory list). Run `npx next typegen` before `tsc` in a new checkout.
