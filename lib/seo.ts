@@ -29,6 +29,9 @@ export function openGraph(path: string, title: string, description: string, loca
   return { type: "website" as const, locale: OG_LOCALE[locale], siteName: SITE_NAME, url: absUrl(path), title, description, images: [OG_IMAGE] }
 }
 
+// The address in parts, so the Impressum line and the Organization markup cannot disagree.
+const POSTAL = { street: "van Naeltwijckstraat 13", postalCode: "2274 NV", city: "Voorburg", country: "NL" }
+
 // The operator, as on inburgeringoefenen.nl: Samen Sterk in Taal, represented by Amber van der Zalm.
 // TODO(hannes): § 5 DDG needs a postal address that accepts service; the Dutch repo has none. Confirm the mailbox exists.
 export const OPERATOR = {
@@ -37,10 +40,32 @@ export const OPERATOR = {
   kvk: "77533216",
   vatId: "NL003205081B10",
   // Same company and address as inburgeringoefenen.nl (its /terugbetalingsbeleid), checked 2026-10-24.
-  address: "van Naeltwijckstraat 13, 2274 NV Voorburg, Niederlande" as string | null,
+  address: `${POSTAL.street}, ${POSTAL.postalCode} ${POSTAL.city}, Niederlande` as string | null,
   phone: "+31 6 57587278",
   email: "support@deutschtest-ueben.de",
 }
 export const CONTACT_EMAIL = OPERATOR.email
 /** Legal pages stay noindex until the Impressum is complete. */
 export const LEGAL_COMPLETE = OPERATOR.address !== null
+
+// TODO(hannes): the YouTube channel URL, and the Trustpilot profile once it has reviews. Empty = no sameAs.
+export const PROFILES: string[] = []
+
+/** Organization and WebSite for the root home page, the one place that describes the entity; other pages refer to ORG_ID. */
+export function siteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...PROVIDER,
+        legalName: OPERATOR.company,
+        logo: { "@type": "ImageObject", url: absUrl("/icon-512.png"), width: 512, height: 512 },
+        email: OPERATOR.email,
+        vatID: OPERATOR.vatId,
+        address: { "@type": "PostalAddress", streetAddress: POSTAL.street, postalCode: POSTAL.postalCode, addressLocality: POSTAL.city, addressCountry: POSTAL.country },
+        ...(PROFILES.length ? { sameAs: PROFILES } : {}),
+      },
+      { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: SITE_NAME, alternateName: "deutschtest-ueben.de", inLanguage: "de", publisher: { "@id": ORG_ID } },
+    ],
+  }
+}

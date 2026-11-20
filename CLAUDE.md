@@ -368,7 +368,7 @@ lib/exam/exam-blueprints.ts          # aggregates lib/exam/exams/*; drafts → d
 lib/i18n/exam-pages/<exam>.ts        # hub + skill page copy per non-DTZ exam (DTZ and Start Deutsch 1 stay in lib/i18n/kurztest.ts)
 components/design/site-chrome.tsx    # SiteNav / SiteGlow / SiteFooter shared by the landing and every inner page
 app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}  # brand icons + share card (rendered from the Leuchte mark)
-lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
+lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), siteSchema() (Organization + WebSite, on / only), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
 app/(main)/(site)/                   # German text pages on one layout: dtz, preise, a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, impressum, datenschutz
 components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/sources), TestCta, Todo marker
 lib/pricing.ts · seo/facts.md        # the one price source: offers per catalogue, ACTIVE_CATALOGUE, offerById (any catalogue) / sellableOffer (checkout) · every number/legal fact with source + date
