@@ -246,3 +246,14 @@ article.group:hover > .photo::before { scale: 1.05; }
 .ins-plus { animation: ins-plus 800ms cubic-bezier(0.23, 1, 0.32, 1) both; }
 @keyframes ins-plus { from { opacity: 0; transform: translateY(8px); } 25% { opacity: 1; transform: translateY(0); } 75% { opacity: 1; } to { opacity: 0; transform: translateY(-6px); } }
 @media (prefers-reduced-motion: reduce) { .ins-pop { animation: none; } }
+/* Result calculators (components/design/result-calculator.tsx): the native range, themed from the palette. */
+.calc-range { appearance: none; height: 28px; background: transparent; cursor: pointer; touch-action: pan-y; }
+.calc-range::-webkit-slider-runnable-track { height: 6px; border-radius: 999px; background: var(--v-soft); }
+.calc-range::-moz-range-track { height: 6px; border-radius: 999px; background: var(--v-soft); }
+.calc-range::-webkit-slider-thumb { appearance: none; width: 24px; height: 24px; margin-top: -9px; border-radius: 999px; background: var(--v-sel); border: 3px solid var(--v-surface); box-shadow: 0 1px 4px rgb(14 19 34 / 0.25); transition: transform 150ms var(--ease-out-strong); }
+.calc-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 999px; background: var(--v-sel); border: 3px solid var(--v-surface); box-shadow: 0 1px 4px rgb(14 19 34 / 0.25); }
+.calc-range:active::-webkit-slider-thumb { transform: scale(1.12); }
+.calc-range:focus-visible { outline: none; }
+.calc-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 2px var(--v-surface), 0 0 0 4px var(--v-sel); }
+.calc-range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 2px var(--v-surface), 0 0 0 4px var(--v-sel); }
+@media (prefers-reduced-motion: reduce) { .calc-range::-webkit-slider-thumb { transition: none; } }

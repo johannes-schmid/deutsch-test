@@ -18,6 +18,13 @@ export type TextPage = {
   cta?: { h2: string; text: string }
 }
 
+/** A free tool page (calculator): the tool sits between the header and the reading card. German only so far. */
+export type ToolPage = Pick<TextPage, "title" | "description" | "crumb" | "h1" | "h1Muted" | "lead" | "body"> & {
+  parent?: { name: string; path: string }
+  byline: { reviewed: string; sources: Source[] }
+  cta: { h2: string; text: string; href?: string; button?: string }
+}
+
 export type ContactPage = TextPage & { emailLabel: string }
 
 export type PricePage = Omit<TextPage, "body" | "byline"> & {

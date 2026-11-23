@@ -56,10 +56,15 @@ match search phrasing in a guide that explains the result levels.
 | `/dtz/{hoeren,lesen,schreiben,sprechen}` | DTZ [Teil] üben | DTZ Schreiben Brief · DTZ Sprechen gemeinsam etwas planen · DTZ Hören Teil 1–4 |
 | `/dtz/modelltest` | DTZ Modelltest online | DTZ B1 Prüfung Online-Test · DTZ Prüfungssimulation online · DTZ Modelltest mit Lösung (bottom-of-funnel product page, built 2026-11-06; SERP: only PDFs, books and exercise sites rank) |
 | `/dtz/modelltest/[n]` | DTZ Modelltest [n] | DTZ Übungstest |
-| `/a2-zu-b1` | DTZ nur A2 | DTZ wiederholen · von A2 zu B1 |
+| `/a2-zu-b1` | DTZ nur A2 | DTZ wiederholen · DTZ wiederholen Kosten · 300 Stunden Wiederholung Integrationskurs · von A2 zu B1 (extended 2026-11-23) |
 | `/b1-einbuergerung` | B1 für Einbürgerung | Sprachnachweis Einbürgerung B1 |
 | `/einbuergerungstest` | Einbürgerungstest online üben | Einbürgerungstest bestehen · 310 Fragen (see the LiD TODO in CLAUDE.md §4) |
 | `/blog/einbuergerungstest-ergebnis-wartezeit` | Einbürgerungstest Ergebnis wie lange | Einbürgerungstest Bescheinigung · Einbürgerungstest Ergebnis Wartezeit · BAMF Bearbeitungsstand Einbürgerungstest (added 2026-11-06 from the community scan; the practice page keeps "üben/bestehen") |
+| `/dtz/ergebnis-rechner` | DTZ Ergebnis berechnen | DTZ Rechner · DTZ wie viele Punkte für B1 · DTZ Gesamtergebnis (tool, added 2026-11-23; the explanation stays with `/blog/dtz-bestehen`) |
+| `/telc-b1/punkte-rechner` | telc B1 Punkte Rechner | telc B1 bestanden ab wie viel Punkte · telc B1 Note · telc B1 Teil wiederholen (tool, added 2026-11-23) |
+| `/blog/dtz-neue-regel-b1` | DTZ neue Regel November 2026 | DTZ strenger · DTZ B1 neue Anforderungen · DTZ Schreiben A2 (added 2026-11-23) |
+| `/blog/dtz-ergebnis-wartezeit` | DTZ Ergebnis wie lange | DTZ Zertifikat wann · DTZ Ergebnis online · DTZ Einsicht Einspruch (added 2026-11-23) |
+| `/blog/telc-b1-ergebnis-wartezeit` | telc B1 Ergebnis wie lange | telc Ergebnis Wartezeit · telc Zertifikat digital · telc Ergebnisüberprüfung · telc Zertifikat verloren (added 2026-11-23) |
 | `/blog/dtz-bestehen` | DTZ bestehen | DTZ Ergebnis · DTZ Punkte · DTZ Bewertung · "Was heißt beim DTZ bestanden?" (not "DTZ Prüfung B1": `/dtz` owns it) |
 | `/blog/b1-pruefung` | B1 Prüfung | B1 Deutsch Prüfung · welche B1 Prüfung · DTZ oder telc B1 · B1 Prüfung Einbürgerung |
 | `/blog/b1-brief-schreiben` | B1 Prüfung Schreiben Tipps | telc B1 Prüfung Schreiben Tipps · B1 Brief schreiben Beispiel · Redemittel. `/dtz/schreiben` (not built) keeps "DTZ Schreiben üben" |

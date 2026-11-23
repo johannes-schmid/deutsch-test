@@ -22,7 +22,9 @@ const CHANGED: Record<string, string> = {
   "/": "2026-11-11",
   "/gratis-test": FREE_TESTS,
   "/dtz/modelltest": "2026-11-06",
-  "/a2-zu-b1": "2026-10-22",
+  "/dtz/ergebnis-rechner": "2026-11-23",
+  "/telc-b1/punkte-rechner": "2026-11-23",
+  "/a2-zu-b1": "2026-11-23",
   "/b1-einbuergerung": "2026-10-22",
   "/preise": "2026-10-29",
   "/ueber-uns": "2026-11-11",
@@ -58,6 +60,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
     // The DTZ Modelltest product page is German only (no translated mirror yet).
     { url: absUrl("/dtz/modelltest"), changeFrequency: "monthly", priority: 0.9, lastModified: CHANGED["/dtz/modelltest"] },
+    // The result calculators are German only too.
+    ...["/dtz/ergebnis-rechner", "/telc-b1/punkte-rechner"].map((p) => ({ url: absUrl(p), changeFrequency: "monthly" as const, priority: 0.8, lastModified: CHANGED[p] })),
     ...["/a2-zu-b1", "/b1-einbuergerung", "/preise"].flatMap((p) => everyLocale(p, "monthly", 0.7)),
     // Reviewed posts only; drafts are noindex and 404 outside dev.
     ...(livePosts().length ? everyLocale("/blog", "weekly", 0.6, undefined, livePosts().map((p) => p.reviewed).sort().at(-1)) : []),

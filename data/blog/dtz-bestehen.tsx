@@ -22,8 +22,8 @@ export const dtzBestehen: BlogPost = {
   lead: "Beim DTZ gibt es kein „bestanden“ oder „nicht bestanden“. Du bekommst eine Stufe: B1, A2 oder unter A2. Hier liest du, wie sie entsteht.",
   category: "pruefungen",
   published: "2026-10-16",
-  reviewed: "2026-11-06",
-  readingMinutes: 9,
+  reviewed: "2026-11-23",
+  readingMinutes: 10,
   cover: {
     photo: "--g-photo-5",
     label: "DTZ-Ergebnis: Stufe B1 auf der Skala unter A2, A2, B1",
@@ -117,12 +117,12 @@ export const dtzBestehen: BlogPost = {
     {
       id: "gesamtergebnis",
       title: "So entsteht dein Gesamtergebnis",
-      kurz: "B1 bekommst du nur mit B1 im Sprechen plus B1 in einem weiteren Bereich. Sprechen entscheidet immer mit.",
+      kurz: "B1 bekommst du mit B1 im Sprechen, B1 in einem weiteren Bereich und mindestens A2 im dritten. Sprechen entscheidet immer mit.",
       body: (
         <>
           <p>Aus den drei Stufen wird am Ende ein Gesamtergebnis. Dafür gilt eine feste Regel:</p>
-          <FactBox source={INTTESTV10} checked="10/2026">
-            Du hast B1, wenn du im Sprechen B1 hast und zusätzlich B1 in Hören und Lesen oder im Schreiben.
+          <FactBox source={INTTESTV10} checked="11/2026">
+            Du hast B1, wenn du im Sprechen B1 hast und zusätzlich B1 in Hören und Lesen oder im Schreiben. Seit November 2026 muss der dritte Bereich außerdem mindestens A2 sein.
           </FactBox>
           <p>Für A2 gilt dieselbe Regel mit A2. Sprechen ist also immer dabei. Drei Beispiele:</p>
           <Compare
@@ -163,6 +163,9 @@ export const dtzBestehen: BlogPost = {
             correct="b"
             explain="Für B1 brauchst du B1 im Sprechen und in einem weiteren Bereich. Hier hast du B1 nur im Sprechen. Für A2 reicht es, denn Sprechen und ein weiterer Bereich sind mindestens A2."
           />
+          <p>
+            Mit deinen eigenen Punkten rechnet der <Link href="/dtz/ergebnis-rechner">DTZ Ergebnis-Rechner</Link>.
+          </p>
           <Note kind="wichtig" title="Sprechen entscheidet">
             <p>
               Im zweiten Beispiel hast du zweimal B1 und trotzdem Gesamt A2. Der Grund: Im Sprechen fehlt B1. Übe Sprechen deshalb
@@ -268,11 +271,11 @@ export const dtzBestehen: BlogPost = {
   ],
   faq: [
     { q: "Kann man beim DTZ durchfallen?", a: "Nicht im üblichen Sinn. Du bekommst B1, A2 oder unter A2. Ist dein Gesamtergebnis unter A2, bekommst du kein Zertifikat, sondern einen Ergebnisbogen. Das passiert zum Beispiel, wenn du im Sprechen unter A2 bist." },
-    { q: "Wie viele Punkte brauche ich für B1?", a: "In Hören und Lesen zusammen 33 von 45, im Schreiben 15 von 20 und im Sprechen 75 von 100. Für das Gesamtergebnis B1 brauchst du B1 im Sprechen und in einem der beiden anderen Bereiche." },
+    { q: "Wie viele Punkte brauche ich für B1?", a: "In Hören und Lesen zusammen 33 von 45, im Schreiben 15 von 20 und im Sprechen 75 von 100. Für das Gesamtergebnis B1 brauchst du B1 im Sprechen und in einem der beiden anderen Bereiche. Der dritte Bereich muss seit November 2026 mindestens A2 sein." },
     { q: "Wie oft hört man die Texte im DTZ?", a: "Einmal. Beim DTZ werden alle Hörtexte nur einmal abgespielt." },
     { q: "Wann bekomme ich mein Ergebnis?", a: "Das Ergebnis geht etwa zweieinhalb Wochen nach der Prüfung an das BAMF. Dein Zertifikat holst du dann bei deiner Prüfstelle ab." },
   ],
   sources: [G1, G2, G3, INTTESTV10, INTTESTV9, INTV],
   cta: { title: "Wo stehst du gerade?", text: "Mach den Gratis-Test für einen DTZ-Teil. Du siehst eine Einschätzung: B1, A2 oder unter A2.", href: "/gratis-test/dtz", button: "Gratis Test starten" },
-  related: ["b1-brief-schreiben", "b1-pruefung"],
+  related: ["dtz-neue-regel-b1", "b1-pruefung"],
 }

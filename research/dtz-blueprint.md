@@ -170,7 +170,7 @@ Details:
 - Hören + Lesen: 1 point per item, 45 total. **33–45 = B1, 20–32 = A2, 0–19 = unter A2** (U2 p. 47).
 - Overall certificate (U2 p. 49, IntTestV § 10):
   - Sprechen unter A2 → no certificate.
-  - **B1** = Sprechen B1 + B1 in Hören/Lesen or Schreiben.
+  - **B1** = Sprechen B1 + B1 in Hören/Lesen or Schreiben + at least A2 in the remaining area (IntTestV § 10 Abs. 1 as amended, in force 01.11.2026, BGBl. 2026 I Nr. 306; checked 2026-11-23). Encoded in `lib/exam/dtz-result.ts`. Before November 2026 the third area did not count.
   - **A2** = Sprechen at least A2 + at least A2 in Hören/Lesen or Schreiben.
 - A per-skill Modelltest shows its own Teilergebnis (B1 / A2 / unter A2). Only the later full
   simulation shows the overall certificate level.

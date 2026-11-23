@@ -114,12 +114,12 @@ export const dtzBestehen: BlogPost = {
     {
       id: "gesamtergebnis",
       title: "How your overall result is decided",
-      kurz: "You only get B1 with B1 in Speaking plus B1 in one other area. Speaking always counts.",
+      kurz: "You get B1 with B1 in Speaking, B1 in one other area and at least A2 in the third. Speaking always counts.",
       body: (
         <>
           <p>At the end, the three levels become one overall result. There is a fixed rule for this:</p>
-          <FactBox source={INTTESTV10} checked="10/2026" l="en">
-            You have B1 if you have B1 in Speaking and also B1 in Listening and Reading or in Writing.
+          <FactBox source={INTTESTV10} checked="11/2026" l="en">
+            You have B1 if you have B1 in Speaking and also B1 in Listening and Reading or in Writing. Since November 2026 the third area must also be at least A2.
           </FactBox>
           <p>The same rule applies to A2, with A2. So Speaking always counts. Three examples:</p>
           <Compare
@@ -268,7 +268,7 @@ export const dtzBestehen: BlogPost = {
   ],
   faq: [
     { q: "Can you fail the DTZ?", a: "Not in the usual sense. You get B1, A2 or below A2. If your overall result is below A2, you get no certificate, only a results sheet (Ergebnisbogen). This happens, for example, if you are below A2 in Speaking." },
-    { q: "How many points do I need for B1?", a: "33 of 45 in Listening and Reading together, 15 of 20 in Writing and 75 of 100 in Speaking. For an overall B1 you need B1 in Speaking and in one of the two other areas." },
+    { q: "How many points do I need for B1?", a: "33 of 45 in Listening and Reading together, 15 of 20 in Writing and 75 of 100 in Speaking. For an overall B1 you need B1 in Speaking and in one of the two other areas. Since November 2026 the third area must be at least A2." },
     { q: "How often do you hear the texts in the DTZ?", a: "Once. In the DTZ all listening texts are played only once." },
     { q: "When do I get my result?", a: "The result goes to the BAMF about two and a half weeks after the exam. Then you pick up your certificate at your test centre." },
   ],

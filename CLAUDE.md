@@ -106,6 +106,8 @@ lead with AI and volume, and their mocks drift from the real format (see §7).
 
 ### Exam facts (keep accurate)
 
+- **DTZ overall B1 since 01.11.2026** (IntTestV § 10 Abs. 1): Sprechen B1, plus B1 in Hören/Lesen or Schreiben, plus at least A2
+  in the remaining area. Before that the third area did not count. Encoded in `lib/exam/dtz-result.ts`.
 - **DTZ** is one exam in one sitting: Hören (~25 min), Lesen (45 min), Schreiben (30 min, one
   letter/email), Sprechen (~16 min, **pair exam**).
 - It is a **scaled test with no pass/fail**. The result is B1, A2 or below A2. Show practice results
@@ -295,6 +297,8 @@ All audio on `eleven_v4_turbo`. Voice IDs live only in `data/tts-voices.json`; c
 /dtz                      308 → /blog/dtz-pruefung (the DTZ overview is a blog article since 2026-10-16)
 /dtz/modelltest           ★ bottom-of-funnel product page: demo, format, realism, prices, FAQ → /registrieren?next=/dashboard/dtz (German only; data/pages/de/dtz-modelltest.tsx, components/pages/modelltest-page.tsx)
 /dtz/modelltest/[n]       full mock exams
+/dtz/ergebnis-rechner     free tool: DTZ points → Gesamtergebnis under the rule of 11/2026 (German only; data/pages/de/dtz-ergebnis-rechner.tsx)
+/telc-b1/punkte-rechner   free tool: telc B1 points → bestanden / Note (German only; data/pages/de/telc-b1-punkte-rechner.tsx)
 /gratis-test              free tests: pick level (A1/A2/B1) → exam → /gratis-test/{exam}/{skill}
                           (only exams with reviewed content link out; /dtz/kurztest 308s to /gratis-test/dtz)
                           each test is a ~5-minute taster (TASTER in lib/exam/blueprint.ts), a lead magnet, not a mock
@@ -371,6 +375,9 @@ app/{icon.svg,favicon.ico,apple-icon.png,opengraph-image.png,manifest.ts}  # bra
 lib/seo.ts · app/{sitemap.ts,robots.txt/,llms.txt/}  # site URL, OPERATOR (Impressum data), siteSchema() (Organization + WebSite, on / only), BreadcrumbList/OG helpers, sitemap, robots, llms.txt
 app/(main)/(site)/                   # German text pages on one layout: dtz, preise, a2-zu-b1, b1-einbuergerung, ueber-uns, kontakt, impressum, datenschutz
 components/design/content-page.tsx   # PageHeader, Prose, Byline (author/date/sources), TestCta, Todo marker
+lib/exam/dtz-result.ts               # ★ DTZ Gesamtergebnis (IntTestV § 10 as amended 01.11.2026: Sprechen B1 + one written area B1 + the third at least A2), tested; used by the calculator
+components/design/result-calculator.tsx · components/pages/tool-page.tsx # the two result calculators and the tool page frame (header, tool, sourced reading card); copy in data/pages/de/{dtz-ergebnis-rechner,telc-b1-punkte-rechner}.tsx
+seo/backlog.md                       # ★ SEO backlog from the research of 2026-11-23: what was built, what is next (pages, tools, landing pages), open decisions
 lib/pricing.ts · seo/facts.md        # the one price source: offers per catalogue, ACTIVE_CATALOGUE, offerById (any catalogue) / sellableOffer (checkout) · every number/legal fact with source + date
 lib/billing/grants.ts                # Grants (skills × exams × simulation), allows(), activeGrants(), parseGrants(); tested
 lib/billing/default-skill.ts         # mostPracticed(): the skill the Teil-Pass page preselects (tested); query in lib/modelltest/portal.ts
